@@ -1,7 +1,14 @@
-[SciChart.js Documentation - v0.0.6](README.md) › [Globals](globals.md)
+# SciChart JS Documentation
 
-# SciChart.js Documentation - v0.0.6
+## Quick Start Guide
 
-# README file for SciChart.js Documentation
+* [Creating your first chart](Quick_Start_Guide/1_Creating_your_first_chart.md)
 
-Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.
+## Tutorials
+
+* [Tutorial 2D](Tutorials/Tutorial_2D.md)
+* [Tutorial 3D](Tutorials/Tutorial_3D.md)
+
+## API Reference
+
+* [API](API/globals.md)
