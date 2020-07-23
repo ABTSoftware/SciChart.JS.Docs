@@ -20,7 +20,7 @@
 
 • **Date_DDMM**: = "Date_DDMM"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L10)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L10)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **Date_DDMMYYYY**: = "Date_DDMMYYYY"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L9)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L9)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **Date_HHMM**: = "Date_HHMM"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L11)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L11)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **Decimal_0**: = "Decimal_0"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L6)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L6)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **Decimal_1**: = "Decimal_1"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L7)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **Decimal_2**: = "Decimal_2"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L8)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L8)*
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **NoFormat**: = "NoFormat"
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L5)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L5)*

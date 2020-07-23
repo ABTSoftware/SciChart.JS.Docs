@@ -53,7 +53,7 @@
 
 \+ **new BasePointMarker**(`webAssemblyContext`: TSciChart, `options?`: [IPointMarkerOptions](../interfaces/ipointmarkeroptions.md)): *[BasePointMarker](basepointmarker.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L25)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L25)*
 
 **Parameters:**
 
@@ -72,7 +72,7 @@ Name | Type |
 
 *Implementation of [IPointMarker](../interfaces/ipointmarker.md).[invalidateParentCallback](../interfaces/ipointmarker.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L15)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L15)*
 
 #### Type declaration:
 
@@ -84,13 +84,13 @@ Name | Type |
 
 • **get fill**(): *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L37)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L37)*
 
 **Returns:** *string*
 
 • **set fill**(`fill`: string): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L41)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L41)*
 
 **Parameters:**
 
@@ -106,13 +106,13 @@ ___
 
 • **get height**(): *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L64)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L64)*
 
 **Returns:** *number*
 
 • **set height**(`height`: number): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L68)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L68)*
 
 **Parameters:**
 
@@ -128,13 +128,13 @@ ___
 
 • **get stroke**(): *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L46)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L46)*
 
 **Returns:** *string*
 
 • **set stroke**(`stroke`: string): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L50)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L50)*
 
 **Parameters:**
 
@@ -150,13 +150,13 @@ ___
 
 • **get strokeThickness**(): *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L73)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L73)*
 
 **Returns:** *number*
 
 • **set strokeThickness**(`strokeThickness`: number): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L77)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L77)*
 
 **Parameters:**
 
@@ -172,13 +172,13 @@ ___
 
 • **get width**(): *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L55)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L55)*
 
 **Returns:** *number*
 
 • **set width**(`width`: number): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L59)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L59)*
 
 **Parameters:**
 
@@ -194,7 +194,7 @@ Name | Type |
 
 ▸ **createCanvasTexture**(): *[CanvasTexture](canvastexture.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L96)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L96)*
 
 **Returns:** *[CanvasTexture](canvastexture.md)*
 
@@ -206,7 +206,7 @@ ___
 
 *Implementation of [IPointMarker](../interfaces/ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L91)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L91)*
 
 **Returns:** *void*
 
@@ -218,7 +218,7 @@ ___
 
 *Implementation of [IPointMarker](../interfaces/ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L89)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L89)*
 
 **Parameters:**
 
@@ -238,6 +238,6 @@ ___
 
 *Implementation of [IPointMarker](../interfaces/ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L82)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L82)*
 
 **Returns:** *[CanvasTexture](canvastexture.md)*

@@ -41,7 +41,7 @@
 
 • **dataSeries**: *[BaseDataSeries3D](../classes/basedataseries3d.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L19)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L19)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **invalidateParentCallback**: *function*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L21)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L21)*
 
 #### Type declaration:
 
@@ -61,7 +61,7 @@ ___
 
 • **isVisible**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L20)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L20)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **parentSurface**: *[SciChart3DSurface](../classes/scichart3dsurface.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L18)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L18)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **pointMarker**: *[BasePointMarker3D](../classes/basepointmarker3d.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L22)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L22)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **sceneEntity**: *[IBaseSceneEntity](ibasesceneentity.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L17)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L17)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 • **type**: *[ESeriesType3D](../enums/eseriestype3d.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L16)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L16)*
 
 ## Methods
 
@@ -103,7 +103,7 @@ ___
 
 *Inherited from [IThemeable](ithemeable.md).[applyTheme](ithemeable.md#applytheme)*
 
-*Defined in [src/Charting/Themes/IThemeable.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeable.ts#L13)*
+*Defined in [src/Charting/Themes/IThemeable.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Themes/IThemeable.ts#L13)*
 
 Applies a theme (defined by [IThemeProvider](ithemeprovider.md)) to the current element
 
@@ -123,7 +123,7 @@ ___
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **onAttach**(`scs`: [SciChart3DSurface](../classes/scichart3dsurface.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L24)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L24)*
 
 **Parameters:**
 
@@ -159,6 +159,6 @@ ___
 
 ▸ **onDetach**(): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L25)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L25)*
 
 **Returns:** *void*

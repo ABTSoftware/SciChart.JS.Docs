@@ -41,7 +41,7 @@
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[dataChanged](idataseries3d.md#datachanged)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L32)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L32)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -68,7 +68,7 @@ ___
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[dataSeriesName](idataseries3d.md#dataseriesname)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L36)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L36)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -80,7 +80,7 @@ ___
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[type](idataseries3d.md#readonly-type)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L14)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L14)*
 
 Gets the [EDataSeriesType3D](../enums/edataseriestype3d.md) type of the DataSeries
 
@@ -92,7 +92,7 @@ ___
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[xRange](idataseries3d.md#readonly-xrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L40)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L40)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the x-range
 
@@ -102,7 +102,7 @@ ___
 
 • **xSize**: *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L21)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L21)*
 
 The xSize is the WIDTH or number of elements in each or of the 2-dimensional array,
 e.g. [[1, 2][3, 4][5, 6]] has a xSize of 2
@@ -115,7 +115,7 @@ ___
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[yRange](idataseries3d.md#readonly-yrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L45)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L45)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the y-range
 
@@ -127,7 +127,7 @@ ___
 
 *Inherited from [IDataSeries3D](idataseries3d.md).[zRange](idataseries3d.md#readonly-zrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L50)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L50)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the z-range
 
@@ -137,7 +137,7 @@ ___
 
 • **zSize**: *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L15)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L15)*
 
 The zSize is the HEIGHT or number of rows of the 2-dimensional array,
 e.g. [[1, 2][3, 4][5, 6]] has a height of 3
@@ -150,7 +150,7 @@ e.g. [[1, 2][3, 4][5, 6]] has a height of 3
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -170,7 +170,7 @@ ___
 
 ▸ **getYValue**(`zIndex`: number, `xIndex`: number): *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L28)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L28)*
 
 Gets the YValue at the specific Z,X index where Z must be within 0-zSize and X must be within 0-xSize
 
@@ -189,7 +189,7 @@ ___
 
 ▸ **getYValues**(): *number[][]*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L34)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L34)*
 
 Gets the Y-Values array as a two dimensional array. Output is in the format YValues[z][x]
 where z is 0 to zSize and X is 0 to xSize.
@@ -202,7 +202,7 @@ ___
 
 ▸ **setYValues**(`YValues`: number[][]): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L43)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L43)*
 
 Sets a 2D array of YValues. Input is in the format YValues[z][x]
 where z is 0 to zSize and X is 0 to xSize

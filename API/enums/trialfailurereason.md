@@ -16,7 +16,7 @@
 
 • **LoginDetailsInvalid**:
 
-*Defined in [src/Licensing/licensingClasses.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L40)*
+*Defined in [src/Licensing/licensingClasses.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L40)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **ServerError**:
 
-*Defined in [src/Licensing/licensingClasses.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L42)*
+*Defined in [src/Licensing/licensingClasses.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L42)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **TooManyTrialsAtLocation**:
 
-*Defined in [src/Licensing/licensingClasses.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L41)*
+*Defined in [src/Licensing/licensingClasses.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L41)*

@@ -24,7 +24,7 @@
 
 *Inherited from [IPaletteProvider3D](ipaletteprovider3d.md).[onAttached](ipaletteprovider3d.md#onattached)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L10)*
+*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L10)*
 
 Called when the PaletteProvider3D instance is attached to a 3D RenderableSeries.
 Use this to be notified when attached and keep a reference to the parent series
@@ -45,7 +45,7 @@ ___
 
 *Inherited from [IPaletteProvider3D](ipaletteprovider3d.md).[onDetached](ipaletteprovider3d.md#ondetached)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L15)*
+*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L15)*
 
 Called when the PaletteProvider3D instance is detached from a 3D RenderableSeries
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **overrideColorAbgr**(`xValue`: number, `yValue`: number, `zValue`: number, `index`: number, `metadata?`: [IPointMetadata3D](ipointmetadata3d.md)): *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L29)*
+*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L29)*
 
 Called by SciChart and may be used to override a 3D Point-marker in Scatter or
 Bubble 3D Charts on a per-point basis

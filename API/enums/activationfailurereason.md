@@ -22,7 +22,7 @@
 
 • **InvalidPlatform**:
 
-*Defined in [src/Licensing/licensingClasses.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L106)*
+*Defined in [src/Licensing/licensingClasses.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L106)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **InvalidSerialKey**:
 
-*Defined in [src/Licensing/licensingClasses.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L98)*
+*Defined in [src/Licensing/licensingClasses.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L98)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **InvalidUser**:
 
-*Defined in [src/Licensing/licensingClasses.ts:99](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L99)*
+*Defined in [src/Licensing/licensingClasses.ts:99](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L99)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **MaxActivationsReached**:
 
-*Defined in [src/Licensing/licensingClasses.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L100)*
+*Defined in [src/Licensing/licensingClasses.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L100)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **NotActivated**:
 
-*Defined in [src/Licensing/licensingClasses.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L103)*
+*Defined in [src/Licensing/licensingClasses.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L103)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **SerialActivatedBySomeoneElse**:
 
-*Defined in [src/Licensing/licensingClasses.ts:101](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L101)*
+*Defined in [src/Licensing/licensingClasses.ts:101](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L101)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **SerializationError**:
 
-*Defined in [src/Licensing/licensingClasses.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L105)*
+*Defined in [src/Licensing/licensingClasses.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L105)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **ServerError**:
 
-*Defined in [src/Licensing/licensingClasses.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L102)*
+*Defined in [src/Licensing/licensingClasses.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L102)*
 
 ___
 
@@ -86,4 +86,4 @@ ___
 
 • **ServerUnreachable**:
 
-*Defined in [src/Licensing/licensingClasses.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L104)*
+*Defined in [src/Licensing/licensingClasses.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L104)*

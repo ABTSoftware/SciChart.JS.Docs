@@ -18,7 +18,7 @@ when added to the [SciChartSurface.annotations](../classes/scichartsurface.md#re
 
 • **AboveChart**:
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L17)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L17)*
 
 The [Annotation](../interfaces/iannotation.md) will be displayed above the chart series and grid
 
@@ -31,7 +31,7 @@ ___
 
 • **BelowChart**:
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L25)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L25)*
 
 The [Annotation](../interfaces/iannotation.md) will be displayed below the chart series and grid.
 

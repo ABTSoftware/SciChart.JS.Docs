@@ -37,7 +37,7 @@
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[margin](scichartlegendbase.md#margin)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L89)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L89)*
 
 **Returns:** *number*
 
@@ -45,7 +45,7 @@
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[margin](scichartlegendbase.md#margin)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L92)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L92)*
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[orientation](scichartlegendbase.md#orientation)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L65)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L65)*
 
 **Returns:** *[ELegendOrientation](../enums/elegendorientation.md)*
 
@@ -71,7 +71,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[orientation](scichartlegendbase.md#orientation)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L68)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L68)*
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[placement](scichartlegendbase.md#placement)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L81)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L81)*
 
 **Returns:** *[ELegendPlacement](../enums/elegendplacement.md)*
 
@@ -97,7 +97,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[placement](scichartlegendbase.md#placement)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L84)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L84)*
 
 **Parameters:**
 
@@ -113,13 +113,13 @@ ___
 
 • **get showCheckboxes**(): *boolean*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L15)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L15)*
 
 **Returns:** *boolean*
 
 • **set showCheckboxes**(`value`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L18)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L18)*
 
 **Parameters:**
 
@@ -137,7 +137,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[showLegend](scichartlegendbase.md#showlegend)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L73)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L73)*
 
 **Returns:** *boolean*
 
@@ -145,7 +145,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[showLegend](scichartlegendbase.md#showlegend)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L76)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L76)*
 
 **Parameters:**
 
@@ -161,13 +161,13 @@ ___
 
 • **get showSeriesMarkers**(): *boolean*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L23)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L23)*
 
 **Returns:** *boolean*
 
 • **set showSeriesMarkers**(`value`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L26)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L26)*
 
 **Parameters:**
 
@@ -185,7 +185,7 @@ Name | Type |
 
 *Overrides [SciChartLegendBase](scichartlegendbase.md).[applyTheme](scichartlegendbase.md#abstract-applytheme)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L11)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L11)*
 
 **Returns:** *void*
 
@@ -197,7 +197,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[invalidateLegend](scichartlegendbase.md#invalidatelegend)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L60)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L60)*
 
 **Returns:** *void*
 
@@ -209,7 +209,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[setInvalidateParentSurface](scichartlegendbase.md#setinvalidateparentsurface)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L31)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L31)*
 
 **Parameters:**
 
@@ -225,7 +225,7 @@ ___
 
 ▸ **setRenderableSeriesArray**(`renderableSeriesArray`: [IRenderableSeries](../interfaces/irenderableseries.md)[]): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L31)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L31)*
 
 **Parameters:**
 
@@ -243,7 +243,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[setRootDiv](scichartlegendbase.md#setrootdiv)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L35)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L35)*
 
 **Parameters:**
 
@@ -261,7 +261,7 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[setSeriesViewRect](scichartlegendbase.md#setseriesviewrect)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L39)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L39)*
 
 **Parameters:**
 
@@ -279,6 +279,6 @@ ___
 
 *Inherited from [SciChartLegendBase](scichartlegendbase.md).[update](scichartlegendbase.md#update)*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L46)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L46)*
 
 **Returns:** *void*

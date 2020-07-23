@@ -22,7 +22,7 @@
 
 • **dimensions**: *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L5)*
+*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L5)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **isVisible**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L9)*
+*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L9)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **xAxisDescriptor**: *[IAxisDescriptor](../interfaces/iaxisdescriptor.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L6)*
+*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L6)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **yAxisDescriptor**: *[IAxisDescriptor](../interfaces/iaxisdescriptor.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L7)*
+*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L7)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **zAxisDescriptor**: *[IAxisDescriptor](../interfaces/iaxisdescriptor.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L8)*
+*Defined in [src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/AxisCubeDescriptor.ts#L8)*

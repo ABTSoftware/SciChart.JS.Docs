@@ -20,7 +20,7 @@
 
 • **id**? : *string*
 
-*Defined in [src/Charting3D/CameraController.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L25)*
+*Defined in [src/Charting3D/CameraController.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/CameraController.ts#L25)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **position**? : *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L26)*
+*Defined in [src/Charting3D/CameraController.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/CameraController.ts#L26)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **target**? : *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L27)*
+*Defined in [src/Charting3D/CameraController.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/CameraController.ts#L27)*

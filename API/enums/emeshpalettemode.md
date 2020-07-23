@@ -16,7 +16,7 @@
 
 • **HEIGHT_MAP_INTERPOLATED**: = "HEIGHT_MAP_INTERPOLATED"
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L63)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L63)*
 
 The Height Map is linear interpolated
 
@@ -26,7 +26,7 @@ ___
 
 • **HEIGHT_MAP_SOLID_CELLS**: = "HEIGHT_MAP_SOLID_CELLS"
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L67)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L67)*
 
 The Height Map has steps between cells
 
@@ -36,6 +36,6 @@ ___
 
 • **TEXTURED_SOLID_CELLS**: = "TEXTURED_SOLID_CELLS"
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L71)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L71)*
 
 The Height Map is ignored and applied as a texture instead

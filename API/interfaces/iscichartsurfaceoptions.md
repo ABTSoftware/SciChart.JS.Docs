@@ -19,7 +19,7 @@
 
 • **canvases**? : *[TSciChartSurfaceCanvases](../globals.md#tscichartsurfacecanvases)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L41)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L41)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **viewportSize**? : *Size*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L40)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L40)*

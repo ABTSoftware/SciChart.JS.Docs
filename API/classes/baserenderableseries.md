@@ -94,7 +94,7 @@ See derived types of [IRenderableSeries](../interfaces/irenderableseries.md) to 
 
 \+ **new BaseRenderableSeries**(`webAssemblyContext`: TSciChart, `options?`: [IBaseRenderableSeriesOptions](../interfaces/ibaserenderableseriesoptions.md)): *[BaseRenderableSeries](baserenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L161)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L161)*
 
 Creates an instance of the [BaseRenderableSeries](baserenderableseries.md)
 
@@ -115,7 +115,7 @@ Name | Type | Description |
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[drawingProviders](../interfaces/irenderableseries.md#drawingproviders)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:147](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L147)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:147](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L147)*
 
 Gets a list of [Series Drawing Providers](../interfaces/iseriesdrawingprovider.md), which perform specific drawing operations in the series
 
@@ -127,7 +127,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[hitTestProvider](../interfaces/irenderableseries.md#hittestprovider)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L149)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L149)*
 
 Gets the current [IHitTestProvider](../interfaces/ihittestprovider.md), used to call methods [IHitTestProvider.hitTest](../interfaces/ihittestprovider.md#hittest), [IHitTestProvider.getNearestPoint2D](../interfaces/ihittestprovider.md#getnearestpoint2d)
 and [IHitTestProvider.getNearestHorizontalPoint](../interfaces/ihittestprovider.md#getnearesthorizontalpoint) and provide info about the series data-points at mouse or touch locations
@@ -140,7 +140,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[id](../interfaces/irenderableseries.md#readonly-id)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L137)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L137)*
 
 A unique, auto-generated Id for the [IRenderableSeries](../interfaces/irenderableseries.md)
 
@@ -152,7 +152,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[invalidateParentCallback](../interfaces/irenderableseries.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L145)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L145)*
 
 A callback which tells the parent [SciChartSurface](scichartsurface.md) that it must be redrawn, e.g. when a property changes
 
@@ -168,7 +168,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[isStacked](../interfaces/irenderableseries.md#readonly-isstacked)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L139)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L139)*
 
 Returns true if the series is a stacked series or not
 
@@ -180,7 +180,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[parentSurface](../interfaces/irenderableseries.md#parentsurface)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:143](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L143)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:143](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L143)*
 
 The parent [SciChartSurface](scichartsurface.md) that this RenderableSeries is attached to
 
@@ -192,7 +192,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[rolloverModifierProps](../interfaces/irenderableseries.md#readonly-rollovermodifierprops)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L141)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L141)*
 
 Gets or sets [RolloverModifierRenderableSeriesProps](rollovermodifierrenderableseriesprops.md) for [RolloverModifier](rollovermodifier.md) tooltips
 
@@ -204,7 +204,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[type](../interfaces/irenderableseries.md#readonly-type)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L135)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L135)*
 
 Returns the type of the series. See {@link ESeriesType} for a list of values
 
@@ -214,7 +214,7 @@ Returns the type of the series. See {@link ESeriesType} for a list of values
 
 • **get dataSeries**(): *[IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:296](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L296)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:296](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L296)*
 
 The [DataSeries](../interfaces/idataseries.md) which provides a datasource for this [IRenderableSeries](../interfaces/irenderableseries.md) to draw
 
@@ -224,7 +224,7 @@ The [DataSeries](../interfaces/idataseries.md) which provides a datasource for t
 
 • **set dataSeries**(`dataSeries`: [IDataSeries](../interfaces/idataseries.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L300)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L300)*
 
 The [DataSeries](../interfaces/idataseries.md) which provides a datasource for this [IRenderableSeries](../interfaces/irenderableseries.md) to draw
 
@@ -244,7 +244,7 @@ ___
 
 • **get drawNaNAs**(): *[ELineDrawMode](../enums/elinedrawmode.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L235)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L235)*
 
 How to treat NAN (Not a number) values in the input [dataSeries](baserenderableseries.md#dataseries). See [ELineDrawMode](../enums/elinedrawmode.md) for a list of values.
 
@@ -254,7 +254,7 @@ How to treat NAN (Not a number) values in the input [dataSeries](baserenderables
 
 • **set drawNaNAs**(`drawNaNAs`: [ELineDrawMode](../enums/elinedrawmode.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:239](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L239)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:239](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L239)*
 
 How to treat NAN (Not a number) values in the input [dataSeries](baserenderableseries.md#dataseries). See [ELineDrawMode](../enums/elinedrawmode.md) for a list of values.
 
@@ -274,7 +274,7 @@ ___
 
 • **get effect**(): *[ShaderEffect](shadereffect.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:310](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L310)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:310](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L310)*
 
 Gets an optional [ShaderEffect](shadereffect.md) for modifying the render output of this [IRenderableSeries](../interfaces/irenderableseries.md)
 
@@ -284,7 +284,7 @@ Gets an optional [ShaderEffect](shadereffect.md) for modifying the render output
 
 • **set effect**(`effect`: [ShaderEffect](shadereffect.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:317](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L317)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:317](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L317)*
 
 Sets an optional [ShaderEffect](shadereffect.md) for modifying the render output of this [IRenderableSeries](../interfaces/irenderableseries.md)
 
@@ -304,7 +304,7 @@ ___
 
 • **get isVisible**(): *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:209](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L209)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:209](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L209)*
 
 When true, the series is visible and drawn
 
@@ -314,7 +314,7 @@ When true, the series is visible and drawn
 
 • **set isVisible**(`isVisible`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L213)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L213)*
 
 When true, the series is visible and drawn
 
@@ -334,7 +334,7 @@ ___
 
 • **get paletteProvider**(): *[IPaletteProvider](../interfaces/ipaletteprovider.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L198)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L198)*
 
 An optional [IPaletteProvider](../interfaces/ipaletteprovider.md) which is used to provide per data-point coloring or paletting.
 
@@ -344,7 +344,7 @@ An optional [IPaletteProvider](../interfaces/ipaletteprovider.md) which is used 
 
 • **set paletteProvider**(`paletteProvider`: [IPaletteProvider](../interfaces/ipaletteprovider.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L202)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L202)*
 
 An optional [IPaletteProvider](../interfaces/ipaletteprovider.md) which is used to provide per data-point coloring or paletting.
 
@@ -364,7 +364,7 @@ ___
 
 • **get pointMarker**(): *[IPointMarker](../interfaces/ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L218)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L218)*
 
 A [Point Marker](../interfaces/ipointmarker.md) which is used to draw an optional point-marker at each data-point. Applicable to some series types only
 
@@ -374,7 +374,7 @@ A [Point Marker](../interfaces/ipointmarker.md) which is used to draw an optiona
 
 • **set pointMarker**(`pointMarker`: [IPointMarker](../interfaces/ipointmarker.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:222](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L222)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:222](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L222)*
 
 A [Point Marker](../interfaces/ipointmarker.md) which is used to draw an optional point-marker at each data-point. Applicable to some series types only
 
@@ -394,7 +394,7 @@ ___
 
 • **get stroke**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L244)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L244)*
 
 A Stroke for lines, outlines and edges of this RenderableSeries
 
@@ -404,7 +404,7 @@ A Stroke for lines, outlines and edges of this RenderableSeries
 
 • **set stroke**(`htmlColorCode`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L248)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L248)*
 
 A Stroke for lines, outlines and edges of this RenderableSeries
 
@@ -424,7 +424,7 @@ ___
 
 • **get strokeThickness**(): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L253)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L253)*
 
 The Stroke Thickness for lines, outlines and edges of this RenderableSeries
 
@@ -434,7 +434,7 @@ The Stroke Thickness for lines, outlines and edges of this RenderableSeries
 
 • **set strokeThickness**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L257)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L257)*
 
 The Stroke Thickness for lines, outlines and edges of this RenderableSeries
 
@@ -454,7 +454,7 @@ ___
 
 • **get xAxis**(): *[AxisCore](axiscore.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:275](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L275)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:275](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L275)*
 
 Gets the bound [XAxis](axiscore.md) for this [BaseRenderableSeries](baserenderableseries.md).
 
@@ -468,7 +468,7 @@ ___
 
 • **get xAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L262)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L262)*
 
 **`inheritdoc`** 
 
@@ -476,7 +476,7 @@ ___
 
 • **set xAxisId**(`id`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L266)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L266)*
 
 **`inheritdoc`** 
 
@@ -494,7 +494,7 @@ ___
 
 • **get yAxis**(): *[AxisCore](axiscore.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:283](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L283)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:283](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L283)*
 
 Gets the bound [XAxis](axiscore.md) for this [BaseRenderableSeries](baserenderableseries.md).
 
@@ -508,7 +508,7 @@ ___
 
 • **get yAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:287](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L287)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:287](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L287)*
 
 **`inheritdoc`** 
 
@@ -516,7 +516,7 @@ ___
 
 • **set yAxisId**(`id`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:291](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L291)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:291](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L291)*
 
 **`inheritdoc`** 
 
@@ -536,7 +536,7 @@ Name | Type |
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L191)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L191)*
 
 **`inheritdoc`** 
 
@@ -556,7 +556,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:335](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L335)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:335](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L335)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -578,7 +578,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L324)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L324)*
 
 Called when the [BaseRenderableSeries](baserenderableseries.md) must be drawn
 
@@ -599,7 +599,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:403](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L403)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:403](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L403)*
 
 Returns the [IDataSeries.getNativeXValues](../interfaces/idataseries.md#getnativexvalues) as a JavaScript array for the primary / base series in the [SciChartSurface](scichartsurface.md)
 
@@ -611,7 +611,7 @@ ___
 
 ▸ **getDataPointWidth**(`xCoordCalc`: [CoordinateCalculatorBase](coordinatecalculatorbase.md), `widthFraction`: number): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:358](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L358)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:358](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L358)*
 
 **`description`** Calculates data point width in pixels
 
@@ -632,7 +632,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:412](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L412)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:412](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L412)*
 
 Returns the associated [IDataSeries.dataSeriesName](../interfaces/idataseries.md#dataseriesname)
 
@@ -646,7 +646,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:399](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L399)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:399](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L399)*
 
 Returns [IDataSeries.count](../interfaces/idataseries.md#count) for the linked [dataSeries](baserenderableseries.md#dataseries)
 
@@ -660,7 +660,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:416](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L416)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:416](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L416)*
 
 Returns the [IDataSeries.getNativeXValues](../interfaces/idataseries.md#getnativexvalues) for the associated [dataSeries](baserenderableseries.md#dataseries)
 
@@ -672,7 +672,7 @@ ___
 
 ▸ **getNativeYValues**(): *DoubleVector*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:420](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L420)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:420](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L420)*
 
 **Returns:** *DoubleVector*
 
@@ -684,7 +684,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:340](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L340)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:340](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L340)*
 
 Gets the X-Range of the series. Override in derived classes to provide series specific implementations
 
@@ -698,7 +698,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:344](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L344)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:344](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L344)*
 
 Gets the Y-Range of the series for the current X-Range. Override in derived classes to provide series specific implementations
 
@@ -719,7 +719,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:395](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L395)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:395](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L395)*
 
 Returns true if the [BaseRenderableSeries](baserenderableseries.md) has a [dataSeries](baserenderableseries.md#dataseries)
 
@@ -733,7 +733,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:391](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L391)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:391](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L391)*
 
 Returns true if the [BaseRenderableSeries](baserenderableseries.md) has a [dataSeries](baserenderableseries.md#dataseries) and [IDataSeries.hasValues](../interfaces/idataseries.md#hasvalues) is true
 
@@ -747,7 +747,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:386](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L386)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:386](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L386)*
 
 Returns true if the [BaseRenderableSeries](baserenderableseries.md) has an IStrokePaletteProvider
 
@@ -759,7 +759,7 @@ ___
 
 ▸ **notifyPropertyChanged**(`propertyName`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:348](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L348)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:348](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L348)*
 
 **`inheritdoc`** 
 
@@ -779,7 +779,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:372](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L372)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:372](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L372)*
 
 Called when the [BaseRenderableSeries](baserenderableseries.md) is attached to a parent [SciChartSurface](scichartsurface.md)
 
@@ -799,7 +799,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:365](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L365)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:365](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L365)*
 
 Called when the [BaseRenderableSeries](baserenderableseries.md) is detached from a [SciChartSurface](scichartsurface.md)
 

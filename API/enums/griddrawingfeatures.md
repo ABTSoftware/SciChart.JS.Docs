@@ -17,7 +17,7 @@
 
 • **SCRT_GRID_DRAWING_FEATURES_CONTOURS**: = 4
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L34)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L34)*
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **SCRT_GRID_DRAWING_FEATURES_SKIRT**: = 8
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L35)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L35)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **SCRT_GRID_DRAWING_FEATURES_SOLID**: = 1
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L32)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L32)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **SCRT_GRID_DRAWING_FEATURES_WIREFRAME**: = 2
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L33)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L33)*

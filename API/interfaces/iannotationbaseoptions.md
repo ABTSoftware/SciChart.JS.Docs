@@ -36,7 +36,7 @@ Options passed to the constructor of an [AnnotationBase](../classes/annotationba
 
 • **annotationLayer**? : *[EAnnotationLayer](../enums/eannotationlayer.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L16)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L16)*
 
 **`description`** The layer to place the annotation on. See [EAnnotationLayer](../enums/eannotationlayer.md) for a list of values
 
@@ -48,7 +48,7 @@ ___
 
 • **isEditable**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L24)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L24)*
 
 **`description`** if true, the annotation is editable (can be dragged and manipulated by the user)
 
@@ -58,7 +58,7 @@ ___
 
 • **isHidden**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L20)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L20)*
 
 **`description`** if true, the annotation is hidden
 
@@ -68,7 +68,7 @@ ___
 
 • **x1**? : *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L29)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L29)*
 
 **`description`** the X1 coordinate of the annotation
 
@@ -80,7 +80,7 @@ ___
 
 • **x2**? : *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L34)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L34)*
 
 **`description`** the X2 coordinate of the annotation
 
@@ -92,7 +92,7 @@ ___
 
 • **xAxisId**? : *string*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L79)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L79)*
 
 **`summary`** The current XAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -135,7 +135,7 @@ ___
 
 • **xCoordinateMode**? : *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L86)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L86)*
 
 The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -149,7 +149,7 @@ ___
 
 • **y1**? : *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L39)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L39)*
 
 **`description`** the Y1 coordinate of the annotation
 
@@ -161,7 +161,7 @@ ___
 
 • **y2**? : *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L44)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L44)*
 
 **`description`** the Y2 coordinate of the annotation
 
@@ -173,7 +173,7 @@ ___
 
 • **yAxisId**? : *string*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L121)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L121)*
 
 **`summary`** The current YAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -216,7 +216,7 @@ ___
 
 • **yCoordinateMode**? : *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L128)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L128)*
 
 The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 

@@ -55,7 +55,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L6)*
+*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L6)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ Name | Type |
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[children](rootsceneentity.md#readonly-children)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L31)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L31)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[isDirty](rootsceneentity.md#isdirty)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L32)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L32)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[isVisible](rootsceneentity.md#isvisible)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L33)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L33)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[parent](rootsceneentity.md#parent)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L34)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L34)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[rootSceneEntity](rootsceneentity.md#readonly-rootsceneentity)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L30)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L30)*
 
 ___
 
@@ -135,7 +135,7 @@ ___
 
 *Overrides [BaseSceneEntity3D](basesceneentity3d.md).[type](basesceneentity3d.md#readonly-abstract-type)*
 
-*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L6)*
+*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L6)*
 
 ## Accessors
 
@@ -143,13 +143,13 @@ ___
 
 • **get enableGizmo**(): *boolean*
 
-*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L18)*
+*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L18)*
 
 **Returns:** *boolean*
 
 • **set enableGizmo**(`isEnabled`: boolean): *void*
 
-*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L22)*
+*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L22)*
 
 **Parameters:**
 
@@ -167,7 +167,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[entityId](rootsceneentity.md#entityid)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L103)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L103)*
 
 **Returns:** *number*
 
@@ -175,7 +175,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[entityId](rootsceneentity.md#entityid)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:107](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L107)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:107](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L107)*
 
 **Parameters:**
 
@@ -193,7 +193,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[nativeEntity](rootsceneentity.md#nativeentity)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L151)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L151)*
 
 **Returns:** *SCRTXyzGizmoEntity*
 
@@ -205,7 +205,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[Render](rootsceneentity.md#render)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L88)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L88)*
 
 Render method called from WebAssembly engine. Use this to do immediate-mode 3D drawing, or to draw created meshes
 When overriding, you must call super.Update() for the object to draw in the scene
@@ -220,7 +220,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[Update](rootsceneentity.md#update)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L72)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L72)*
 
 Update method called from WebAssembly engine. Use this to update meshes, properties, geometry before draw.
 When overriding, you must call super.Update() for the object to draw in the scene
@@ -243,7 +243,7 @@ ___
 
 *Inherited from [BaseSceneEntity3D](basesceneentity3d.md).[delete](basesceneentity3d.md#delete)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L62)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L62)*
 
 **Returns:** *void*
 
@@ -257,7 +257,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[getEntity](rootsceneentity.md#getentity)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L116)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L116)*
 
 **Parameters:**
 
@@ -275,7 +275,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[invalidateScene](rootsceneentity.md#invalidatescene)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:127](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L127)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:127](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L127)*
 
 **Returns:** *void*
 
@@ -289,7 +289,7 @@ ___
 
 *Overrides [BaseSceneEntity3D](basesceneentity3d.md).[notifySeriesPropertyChanged](basesceneentity3d.md#abstract-notifyseriespropertychanged)*
 
-*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L14)*
+*Defined in [src/Charting3D/Visuals/GizmoEntity.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/GizmoEntity.ts#L14)*
 
 **Parameters:**
 
@@ -309,7 +309,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[onAttached](rootsceneentity.md#onattached)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:131](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L131)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:131](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L131)*
 
 **Returns:** *void*
 
@@ -323,7 +323,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[onDetached](rootsceneentity.md#ondetached)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L140)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L140)*
 
 **Returns:** *void*
 
@@ -337,7 +337,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[onEngineRestart](rootsceneentity.md#onenginerestart)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L98)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L98)*
 
 **Returns:** *void*
 
@@ -351,7 +351,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[setRenderPassData](rootsceneentity.md#setrenderpassdata)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L112)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L112)*
 
 **Parameters:**
 
@@ -369,7 +369,7 @@ ___
 
 *Inherited from [RootSceneEntity](rootsceneentity.md).[visitEntities](rootsceneentity.md#visitentities)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:144](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L144)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:144](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L144)*
 
 **Parameters:**
 

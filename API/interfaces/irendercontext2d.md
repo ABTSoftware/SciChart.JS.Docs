@@ -33,7 +33,7 @@ to draw shapes, lines, fills, images and more
 
 ▸ **createPen**(`stroke`: string, `strokeThickness`: number, `antiAliased?`: boolean): *[IPen2D](ipen2d.md)*
 
-*Defined in [src/Charting/Drawing/IRenderContext2D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L19)*
+*Defined in [src/Charting/Drawing/IRenderContext2D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L19)*
 
 **`description`** creates a pen (which you should cache) from the provided stroke and strokeThickness
 
@@ -53,7 +53,7 @@ ___
 
 ▸ **createSolidBrush**(`fill`: string, `opacity?`: number): *[IBrush2D](ibrush2d.md)*
 
-*Defined in [src/Charting/Drawing/IRenderContext2D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L25)*
+*Defined in [src/Charting/Drawing/IRenderContext2D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L25)*
 
 **`description`** creates a solid color brush (which you should cache) from the provided fillColor and opacity
 
@@ -74,7 +74,7 @@ ___
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -94,7 +94,7 @@ ___
 
 ▸ **drawLine**(`x1`: number, `y1`: number, `x2`: number, `y2`: number, `strokePen`: [IPen2D](ipen2d.md), `viewRect`: Rect): *void*
 
-*Defined in [src/Charting/Drawing/IRenderContext2D.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L35)*
+*Defined in [src/Charting/Drawing/IRenderContext2D.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L35)*
 
 **`description`** Draws a single line from (x1,y1) to (x2,y2) with the specified Pen
 
@@ -117,7 +117,7 @@ ___
 
 ▸ **drawLines**(`xyValues`: number[], `strokePen`: [IPen2D](ipen2d.md), `viewRect`: Rect, `lineDrawMode?`: [ELineDrawMode](../enums/elinedrawmode.md)): *void*
 
-*Defined in [src/Charting/Drawing/IRenderContext2D.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L43)*
+*Defined in [src/Charting/Drawing/IRenderContext2D.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L43)*
 
 **`description`** Draws a polyline with the specified Pen
 
@@ -138,7 +138,7 @@ ___
 
 ▸ **drawRect**(`rect`: Rect, `viewRect`: Rect, `strokePen?`: [IPen2D](ipen2d.md), `fillBrush?`: [IBrush2D](ibrush2d.md)): *void*
 
-*Defined in [src/Charting/Drawing/IRenderContext2D.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L51)*
+*Defined in [src/Charting/Drawing/IRenderContext2D.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IRenderContext2D.ts#L51)*
 
 **`description`** Draws a Rect with optional fill and stroke
 

@@ -57,7 +57,7 @@
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[constructor](basedataseries3d.md#constructor)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L22)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L22)*
 
 **Parameters:**
 
@@ -78,7 +78,7 @@ Name | Type |
 
 *Inherited from [BaseDataSeries3D](basedataseries3d.md).[dataChanged](basedataseries3d.md#readonly-datachanged)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L46)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L46)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -107,7 +107,7 @@ ___
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[type](basedataseries3d.md#readonly-abstract-type)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L17)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L17)*
 
 ## Accessors
 
@@ -117,7 +117,7 @@ ___
 
 *Inherited from [BaseDataSeries3D](basedataseries3d.md).[dataSeriesName](basedataseries3d.md#dataseriesname)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L75)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L75)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -129,7 +129,7 @@ Gets the DataSeries name. This is used in legend controls and tooltips to identi
 
 *Inherited from [BaseDataSeries3D](basedataseries3d.md).[dataSeriesName](basedataseries3d.md#dataseriesname)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L82)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L82)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -151,7 +151,7 @@ ___
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[xRange](basedataseries3d.md#xrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L53)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L53)*
 
 **Returns:** *NumberRange*
 
@@ -163,7 +163,7 @@ ___
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[yRange](basedataseries3d.md#yrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L60)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L60)*
 
 **Returns:** *NumberRange*
 
@@ -175,7 +175,7 @@ ___
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[zRange](basedataseries3d.md#zrange)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L67)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L67)*
 
 **Returns:** *NumberRange*
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **append**(`x`: number, `y`: number, `z`: number, `metadata?`: [IPointMetadata3D](../interfaces/ipointmetadata3d.md)): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L74)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L74)*
 
 **Parameters:**
 
@@ -204,7 +204,7 @@ ___
 
 ▸ **appendRange**(`xValues`: number[], `yValues`: number[], `zValues`: number[], `metadatas?`: [IPointMetadata3D](../interfaces/ipointmetadata3d.md)[]): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L84)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L84)*
 
 **Parameters:**
 
@@ -223,7 +223,7 @@ ___
 
 ▸ **clear**(): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:183](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L183)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:183](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L183)*
 
 **Returns:** *void*
 
@@ -233,7 +233,7 @@ ___
 
 ▸ **count**(): *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L202)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L202)*
 
 **Returns:** *number*
 
@@ -247,7 +247,7 @@ ___
 
 *Overrides [BaseDataSeries3D](basedataseries3d.md).[delete](basedataseries3d.md#delete)*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L193)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L193)*
 
 **Returns:** *void*
 
@@ -259,7 +259,7 @@ ___
 
 *Inherited from [BaseDataSeries3D](basedataseries3d.md).[getIsDeleted](basedataseries3d.md#getisdeleted)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L90)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L90)*
 
 Returns true if this DataSeries has been deleted and native memory destroyed
 
@@ -271,7 +271,7 @@ ___
 
 ▸ **getMetadataValues**(): *[IPointMetadata3D](../interfaces/ipointmetadata3d.md)[]*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L49)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L49)*
 
 **Returns:** *[IPointMetadata3D](../interfaces/ipointmetadata3d.md)[]*
 
@@ -281,7 +281,7 @@ ___
 
 ▸ **getNativeXValues**(): *DoubleVector*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L37)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L37)*
 
 **Returns:** *DoubleVector*
 
@@ -291,7 +291,7 @@ ___
 
 ▸ **getNativeYValues**(): *DoubleVector*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L41)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L41)*
 
 **Returns:** *DoubleVector*
 
@@ -301,7 +301,7 @@ ___
 
 ▸ **getNativeZValues**(): *DoubleVector*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L45)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L45)*
 
 **Returns:** *DoubleVector*
 
@@ -311,7 +311,7 @@ ___
 
 ▸ **insert**(`startIndex`: number, `x`: number, `y`: number, `z`: number, `metadata?`: [IPointMetadata3D](../interfaces/ipointmetadata3d.md)): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L119)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L119)*
 
 **Parameters:**
 
@@ -331,7 +331,7 @@ ___
 
 ▸ **insertRange**(`startIndex`: number, `xValues`: number[], `yValues`: number[], `zValues`: number[], `metadatas?`: [IPointMetadata3D](../interfaces/ipointmetadata3d.md)[]): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L132)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L132)*
 
 **Parameters:**
 
@@ -353,7 +353,7 @@ ___
 
 *Inherited from [BaseDataSeries3D](basedataseries3d.md).[notifyDataChanged](basedataseries3d.md#notifydatachanged)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L106)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L106)*
 
 Call this method to notify subscribers of [dataChanged](xyzdataseries3d.md#readonly-datachanged) that the data has changed
 and [3D JavaScript Chart](https://www.scichart.com/javascript-chart-features)
@@ -367,7 +367,7 @@ ___
 
 ▸ **removeAt**(`index`: number): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L156)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L156)*
 
 **Parameters:**
 
@@ -383,7 +383,7 @@ ___
 
 ▸ **removeRange**(`startIndex`: number, `count`: number): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:169](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L169)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:169](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L169)*
 
 **Parameters:**
 
@@ -400,7 +400,7 @@ ___
 
 ▸ **update**(`index`: number, `x`: number, `y`: number, `z`: number, `metadata?`: [IPointMetadata3D](../interfaces/ipointmetadata3d.md)): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:109](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L109)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:109](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L109)*
 
 **Parameters:**
 

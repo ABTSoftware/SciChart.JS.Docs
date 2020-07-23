@@ -63,7 +63,7 @@ See derived types of [IRenderableSeries](../interfaces/irenderableseries.md) to 
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md).[dataChanged](../interfaces/idataseries.md#datachanged)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L45)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L45)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -93,7 +93,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md).[minXSpacing](../interfaces/idataseries.md#minxspacing)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L46)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L46)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md).[type](../interfaces/idataseries.md#readonly-type)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L41)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L41)*
 
 Gets the [EDataSeriesType](../enums/edataseriestype.md) type of the DataSeries
 
@@ -113,7 +113,7 @@ Gets the [EDataSeriesType](../enums/edataseriestype.md) type of the DataSeries
 
 • **get dataSeriesName**(): *string*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L91)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L91)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -123,7 +123,7 @@ Gets the DataSeries name. This is used in legend controls and tooltips to identi
 
 • **set dataSeriesName**(`dataSeriesName`: string): *void*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L97)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L97)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -143,7 +143,7 @@ ___
 
 • **get hasValues**(): *boolean*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L198)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L198)*
 
 When true, the DataSeries has values, else it is empty
 
@@ -157,7 +157,7 @@ ___
 
 • **get isSorted**(): *boolean*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:78](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L78)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:78](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L78)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -168,7 +168,7 @@ See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for
 
 • **set isSorted**(`isSorted`: boolean): *void*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L84)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L84)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -189,7 +189,7 @@ ___
 
 • **get xRange**(): *NumberRange*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L162)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L162)*
 
 Gets the range in the X-direction for this DataSeries
 
@@ -205,7 +205,7 @@ Gets the range in the X-direction for this DataSeries
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L104)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L104)*
 
 Gets the count of data-points in the DataSeries
 
@@ -219,7 +219,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L146)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L146)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -239,7 +239,7 @@ ___
 
 ▸ **getIndicesRange**(`xRange`: NumberRange): *NumberRange*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L191)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L191)*
 
 **Parameters:**
 
@@ -257,7 +257,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L113)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L113)*
 
 Returns true if this DataSeries has been deleted and native memory destroyed
 
@@ -271,7 +271,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L119)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L119)*
 
 Gets a native / WebAssembly Vector of Indexes in the DataSeries
 
@@ -285,7 +285,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L134)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L134)*
 
 Gets a native / WebAssembly vector of X-values in the DataSeries
 
@@ -299,7 +299,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L140)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L140)*
 
 Gets a native / WebAssembly vector of Y-values in the DataSeries
 
@@ -313,7 +313,7 @@ ___
 
 *Implementation of [IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L179)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L179)*
 
 Gets the Y-range of the data within the specified X-Range: a 'windowed'
 Y-range used for zooming into series on the [SciChartSurface](scichartsurface.md)
@@ -334,7 +334,7 @@ ___
 
 ▸ **notifyDataChanged**(): *void*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L156)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L156)*
 
 Call to notify subscribers of [dataChanged](basedataseries.md#readonly-datachanged) that the data has changed and [SciChartSurface](scichartsurface.md) needs redrawing
 

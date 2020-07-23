@@ -26,7 +26,7 @@
 
 • **propertyChanged**: *EventHandler‹PropertyChangedEventArgs›*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
 
 ## Methods
 
@@ -34,7 +34,7 @@
 
 ▸ **getTexture**(`size`: Size): *[CanvasTexture](canvastexture.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L16)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L16)*
 
 **Parameters:**
 

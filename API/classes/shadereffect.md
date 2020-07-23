@@ -34,7 +34,7 @@
 
 • **propertyChanged**: *EventHandler‹PropertyChangedEventArgs›*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L20)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L20)*
 
 ## Accessors
 
@@ -42,13 +42,13 @@
 
 • **get color**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L71)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L71)*
 
 **Returns:** *string*
 
 • **set color**(`color`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L74)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L74)*
 
 **Parameters:**
 
@@ -64,13 +64,13 @@ ___
 
 • **get intensity**(): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L51)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L51)*
 
 **Returns:** *number*
 
 • **set intensity**(`intensity`: number): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L54)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L54)*
 
 **Parameters:**
 
@@ -86,13 +86,13 @@ ___
 
 • **get offset**(): *Point*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L60)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L60)*
 
 **Returns:** *Point*
 
 • **set offset**(`offset`: Point): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L63)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L63)*
 
 **Parameters:**
 
@@ -108,13 +108,13 @@ ___
 
 • **get range**(): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L84)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L84)*
 
 **Returns:** *number*
 
 • **set range**(`range`: number): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:87](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L87)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:87](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L87)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ Name | Type |
 
 ▸ **getNativeEffect**(): *SCRTSeriesEffect*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L47)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L47)*
 
 **Returns:** *SCRTSeriesEffect*
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **notifyPropertyChanged**(`propertyName`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:93](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L93)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:93](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L93)*
 
 **Parameters:**
 

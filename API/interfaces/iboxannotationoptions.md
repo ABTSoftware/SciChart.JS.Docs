@@ -37,7 +37,7 @@ Options passed to the constructor of a [BoxAnnotation](../classes/boxannotation.
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[annotationLayer](iannotationbaseoptions.md#optional-annotationlayer)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L16)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L16)*
 
 **`description`** The layer to place the annotation on. See [EAnnotationLayer](../enums/eannotationlayer.md) for a list of values
 
@@ -49,7 +49,7 @@ ___
 
 • **fill**? : *string*
 
-*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L31)*
+*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L31)*
 
 The fill for the [BoxAnnotation](../classes/boxannotation.md)
 
@@ -63,7 +63,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[isEditable](iannotationbaseoptions.md#optional-iseditable)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L24)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L24)*
 
 **`description`** if true, the annotation is editable (can be dragged and manipulated by the user)
 
@@ -75,7 +75,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[isHidden](iannotationbaseoptions.md#optional-ishidden)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L20)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L20)*
 
 **`description`** if true, the annotation is hidden
 
@@ -85,7 +85,7 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L22)*
+*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L22)*
 
 The stroke for the outline of the [BoxAnnotation](../classes/boxannotation.md)
 
@@ -97,7 +97,7 @@ ___
 
 • **strokeThickness**? : *number*
 
-*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L26)*
+*Defined in [src/Charting/Visuals/Annotations/BoxAnnotation.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/BoxAnnotation.ts#L26)*
 
 The strokeThickness for the outline of the [BoxAnnotation](../classes/boxannotation.md)
 
@@ -109,7 +109,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[x1](iannotationbaseoptions.md#optional-x1)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L29)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L29)*
 
 **`description`** the X1 coordinate of the annotation
 
@@ -123,7 +123,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[x2](iannotationbaseoptions.md#optional-x2)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L34)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L34)*
 
 **`description`** the X2 coordinate of the annotation
 
@@ -137,7 +137,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[xAxisId](iannotationbaseoptions.md#optional-xaxisid)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L79)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L79)*
 
 **`summary`** The current XAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -182,7 +182,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[xCoordinateMode](iannotationbaseoptions.md#optional-xcoordinatemode)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L86)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L86)*
 
 The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -198,7 +198,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[y1](iannotationbaseoptions.md#optional-y1)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L39)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L39)*
 
 **`description`** the Y1 coordinate of the annotation
 
@@ -212,7 +212,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[y2](iannotationbaseoptions.md#optional-y2)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L44)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L44)*
 
 **`description`** the Y2 coordinate of the annotation
 
@@ -226,7 +226,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[yAxisId](iannotationbaseoptions.md#optional-yaxisid)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L121)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L121)*
 
 **`summary`** The current YAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -271,7 +271,7 @@ ___
 
 *Inherited from [IAnnotationBaseOptions](iannotationbaseoptions.md).[yCoordinateMode](iannotationbaseoptions.md#optional-ycoordinatemode)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L128)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L128)*
 
 The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 

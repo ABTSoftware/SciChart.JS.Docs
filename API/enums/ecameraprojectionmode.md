@@ -18,7 +18,7 @@ Defines the Project Mode the [CameraController](../classes/cameracontroller.md) 
 
 • **Orthogonal**: = "Orthogonal"
 
-*Defined in [src/Charting3D/CameraController.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L21)*
+*Defined in [src/Charting3D/CameraController.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/CameraController.ts#L21)*
 
 The [CameraController.projectionMode](../classes/cameracontroller.md#projectionmode) is Orthogonal
 
@@ -28,6 +28,6 @@ ___
 
 • **Perspective**: = "Perspective"
 
-*Defined in [src/Charting3D/CameraController.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L17)*
+*Defined in [src/Charting3D/CameraController.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/CameraController.ts#L17)*
 
 The [CameraController.projectionMode](../classes/cameracontroller.md#projectionmode) is Perspective

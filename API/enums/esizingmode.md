@@ -15,7 +15,7 @@
 
 • **Absolute**:
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L19)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L19)*
 
 The size value is specified as absolute value ( e.g. 1px, 10dp etc)
 
@@ -25,6 +25,6 @@ ___
 
 • **Relative**:
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L24)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L24)*
 
 The size value is specified as relative value ( e.g. 10% from available size )

@@ -47,7 +47,7 @@
 
 • **children**: *ObservableArray‹[IBaseSceneEntity](ibasesceneentity.md)›*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L11)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L11)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **entityId**: *number*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L12)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L12)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 • **isDirty**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L14)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L14)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 • **isVisible**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L13)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L13)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 • **nativeEntity**: *SCRTSceneEntity*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L17)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L17)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 • **parent**: *[IBaseSceneEntity](ibasesceneentity.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L15)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L15)*
 
 ___
 
@@ -95,7 +95,7 @@ ___
 
 • **rootSceneEntity**: *[RootSceneEntity](../classes/rootsceneentity.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L16)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L16)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 • **type**: *ESceneEntityType*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L10)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L10)*
 
 ## Methods
 
@@ -113,7 +113,7 @@ ___
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -133,7 +133,7 @@ ___
 
 ▸ **getEntity**(`type`: ESceneEntityType): *[IBaseSceneEntity](ibasesceneentity.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L25)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L25)*
 
 **Parameters:**
 
@@ -149,7 +149,7 @@ ___
 
 ▸ **notifySeriesPropertyChanged**(`propertyName`: string): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L19)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L19)*
 
 **Parameters:**
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **onAttached**(): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L22)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L22)*
 
 **Returns:** *void*
 
@@ -175,7 +175,7 @@ ___
 
 ▸ **onDetached**(): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L23)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L23)*
 
 **Returns:** *void*
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **onEngineRestart**(): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L24)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L24)*
 
 **Returns:** *void*
 
@@ -195,7 +195,7 @@ ___
 
 ▸ **setRenderPassData**(`rpd`: [RenderPassInfo3D](../classes/renderpassinfo3d.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L21)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L21)*
 
 **Parameters:**
 
@@ -211,7 +211,7 @@ ___
 
 ▸ **visitEntities**(`operation`: function): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L20)*
+*Defined in [src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/BaseSceneEntity3D.ts#L20)*
 
 **Parameters:**
 

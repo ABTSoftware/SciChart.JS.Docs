@@ -21,7 +21,7 @@
 
 • **color**? : *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L15)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L15)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **intensity**? : *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L13)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L13)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **offset**? : *Point*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L16)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L16)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **range**? : *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L14)*
+*Defined in [src/Charting/Visuals/RenderableSeries/ShaderEffect.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/ShaderEffect.ts#L14)*

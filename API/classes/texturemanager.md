@@ -23,7 +23,7 @@
 
 \+ **new TextureManager**(`webAssemblyContext`: TSciChart): *[TextureManager](texturemanager.md)*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L28)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L28)*
 
 **Parameters:**
 
@@ -39,7 +39,7 @@ Name | Type |
 
 ▸ **createAxisLabelsTexture**(`tickLabels`: string[], `tickCoords`: number[], `labelStyle`: [TTextStyle](../globals.md#ttextstyle), `textureWidth`: number, `textureHeight`: number, `isAxisFlipped`: boolean, `axisAlignment`: EAxisAlignment, `tickSize`: number): *object*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L56)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L56)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **createTextTexture**(`text`: string, `fontSizePx`: number, `fontFamily`: string, `color`: string): *object*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L40)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L40)*
 
 **Parameters:**
 

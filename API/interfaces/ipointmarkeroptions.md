@@ -24,7 +24,7 @@
 
 • **fill**? : *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L9)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L9)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **height**? : *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L8)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L8)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L10)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L10)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **strokeThickness**? : *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L11)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L11)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **width**? : *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L7)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L7)*

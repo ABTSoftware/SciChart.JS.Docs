@@ -23,7 +23,7 @@
 
 • **color**? : *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L11)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L11)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **colorLinearGradient**? : *GradientParams*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L12)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L12)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **isSelected**? : *boolean*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L13)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L13)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **percentage**? : *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L10)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L10)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **text**? : *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L8)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L8)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **value**? : *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L9)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/PieSegment.ts#L9)*

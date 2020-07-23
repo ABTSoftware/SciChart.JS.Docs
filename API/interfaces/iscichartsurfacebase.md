@@ -42,7 +42,7 @@ to use the SciChartSurface and create a 2D or 3D [JavaScript Chart](https://www.
 
 • **domCanvas2D**: *HTMLCanvasElement*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L26)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L26)*
 
 ## Methods
 
@@ -52,7 +52,7 @@ to use the SciChartSurface and create a 2D or 3D [JavaScript Chart](https://www.
 
 *Inherited from [IThemeable](ithemeable.md).[applyTheme](ithemeable.md#applytheme)*
 
-*Defined in [src/Charting/Themes/IThemeable.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeable.ts#L13)*
+*Defined in [src/Charting/Themes/IThemeable.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Themes/IThemeable.ts#L13)*
 
 Applies a theme (defined by [IThemeProvider](ithemeprovider.md)) to the current element
 
@@ -70,7 +70,7 @@ ___
 
 ▸ **changeViewportSize**(`width`: number, `height`: number): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L33)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L33)*
 
 Changes the Viewport Size of the [SciChartSurfaceBase](../classes/scichartsurfacebase.md)
 
@@ -91,7 +91,7 @@ ___
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 

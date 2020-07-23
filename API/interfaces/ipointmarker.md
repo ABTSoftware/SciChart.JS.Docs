@@ -41,7 +41,7 @@
 
 • **fill**: *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L7)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L7)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L9)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L9)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **invalidateParentCallback**: *function*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L5)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L5)*
 
 #### Type declaration:
 
@@ -69,7 +69,7 @@ ___
 
 • **stroke**: *string*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L6)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L6)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 • **strokeThickness**: *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L10)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L10)*
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 • **width**: *number*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L8)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L8)*
 
 ## Methods
 
@@ -95,7 +95,7 @@ ___
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -115,7 +115,7 @@ ___
 
 ▸ **drawSprite**(`canvas`: CanvasRenderingContext2D, `spriteWidth`: number, `spriteHeight`: number): *void*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L12)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L12)*
 
 **Parameters:**
 
@@ -133,6 +133,6 @@ ___
 
 ▸ **getSprite**(): *[CanvasTexture](../classes/canvastexture.md)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L14)*
+*Defined in [src/Charting/Visuals/PointMarkers/IPointMarker.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/IPointMarker.ts#L14)*
 
 **Returns:** *[CanvasTexture](../classes/canvastexture.md)*

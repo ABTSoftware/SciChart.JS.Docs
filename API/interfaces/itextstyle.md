@@ -22,7 +22,7 @@
 
 • **alignment**: *eSCRTTextAlignement*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L41)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L41)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **dpiScaling**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L42)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L42)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **fontFamily**: *string*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L43)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L43)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **fontSize**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L44)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L44)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **foreground**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L45)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L45)*

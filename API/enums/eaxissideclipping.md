@@ -21,7 +21,7 @@ Set Clipping rule on the [AxisBase3D.negativeSideClipping](../classes/axisbase3d
 
 • **Default**:
 
-*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L15)*
+*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L15)*
 
 Default [Javascript 3D Chart](https://www.scichart.com/javascript-chart-features) Axis clipping is
 [AxisCore.visibleRange](../classes/axiscore.md#visiblerange) for X and Z Axis, and None for Y Axis
@@ -37,7 +37,7 @@ ___
 
 • **None**:
 
-*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L22)*
+*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L22)*
 
 3D Axis Clipping is disabled
 
@@ -51,7 +51,7 @@ ___
 
 • **VisibleRange**:
 
-*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L30)*
+*Defined in [src/Charting3D/Visuals/Axis/EAxisSideClipping.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/EAxisSideClipping.ts#L30)*
 
 RenderableSeries are clipped by [AxisCore.visibleRange](../classes/axiscore.md#visiblerange)
 

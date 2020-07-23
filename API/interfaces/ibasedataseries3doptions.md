@@ -20,4 +20,4 @@
 
 • **dataSeriesName**? : *string*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*

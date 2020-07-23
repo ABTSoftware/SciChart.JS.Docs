@@ -19,7 +19,7 @@
 
 • **fill**? : *string*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L26)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L26)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **size**? : *number*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L27)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L27)*

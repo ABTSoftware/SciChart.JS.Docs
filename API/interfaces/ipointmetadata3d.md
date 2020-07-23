@@ -19,7 +19,7 @@
 
 • **pointScale**: *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPointMetadata3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPointMetadata3D.ts#L9)*
+*Defined in [src/Charting3D/Model/DataSeries/IPointMetadata3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPointMetadata3D.ts#L9)*
 
 Override the scale for this particular point. Set=1.0 for default
 
@@ -29,6 +29,6 @@ ___
 
 • **vertexColorAbgr**? : *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPointMetadata3D.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPointMetadata3D.ts#L5)*
+*Defined in [src/Charting3D/Model/DataSeries/IPointMetadata3D.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPointMetadata3D.ts#L5)*
 
 Override the color for this particular point. Set=undefined for default

@@ -31,7 +31,7 @@ Interface to minimal set of parameters which define an [Axis](../classes/axiscor
 
 • **majorDelta**: *number*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L86)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L86)*
 
 The MajorDelta is the spacing between major gridlines and axis labels.
 
@@ -48,7 +48,7 @@ ___
 
 • **minorDelta**: *number*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L96)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L96)*
 
 The MinorDelta is the spacing between minor gridlines.
 
@@ -65,7 +65,7 @@ ___
 
 • **visibleRange**: *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L76)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L76)*
 
 The VisibleRange is the range of the Axis (min to max).
 

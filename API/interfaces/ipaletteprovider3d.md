@@ -21,7 +21,7 @@
 
 ▸ **onAttached**(`parentSeries`: [IRenderableSeries3D](irenderableseries3d.md)): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L10)*
+*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L10)*
 
 Called when the PaletteProvider3D instance is attached to a 3D RenderableSeries.
 Use this to be notified when attached and keep a reference to the parent series
@@ -40,7 +40,7 @@ ___
 
 ▸ **onDetached**(): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L15)*
+*Defined in [src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IPaletteProvider3D.ts#L15)*
 
 Called when the PaletteProvider3D instance is detached from a 3D RenderableSeries
 

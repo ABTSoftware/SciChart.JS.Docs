@@ -69,7 +69,7 @@
 
 \+ **new BaseStackedRenderableSeries**(`webAssemblyContext`: TSciChart): *[BaseStackedRenderableSeries](basestackedrenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L38)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L38)*
 
 **Parameters:**
 
@@ -87,7 +87,7 @@ Name | Type |
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[hitTestProvider](../interfaces/irenderableseries.md#hittestprovider)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L25)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L25)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[id](../interfaces/irenderableseries.md#readonly-id)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L21)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L21)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[isStacked](../interfaces/irenderableseries.md#readonly-isstacked)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L22)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L22)*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[rolloverModifierProps](../interfaces/irenderableseries.md#readonly-rollovermodifierprops)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L23)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L23)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md).[type](../interfaces/irenderableseries.md#readonly-type)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L20)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L20)*
 
 ## Accessors
 
@@ -135,13 +135,13 @@ ___
 
 • **get dataSeries**(): *[IDataSeries](../interfaces/idataseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L129)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L129)*
 
 **Returns:** *[IDataSeries](../interfaces/idataseries.md)*
 
 • **set dataSeries**(`dataSeries`: [IDataSeries](../interfaces/idataseries.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L132)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L132)*
 
 **Parameters:**
 
@@ -157,13 +157,13 @@ ___
 
 • **get drawNaNAs**(): *[ELineDrawMode](../enums/elinedrawmode.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L139)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L139)*
 
 **Returns:** *[ELineDrawMode](../enums/elinedrawmode.md)*
 
 • **set drawNaNAs**(`drawNaNAs`: [ELineDrawMode](../enums/elinedrawmode.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L142)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L142)*
 
 **Parameters:**
 
@@ -179,13 +179,13 @@ ___
 
 • **get drawingProviders**(): *[ISeriesDrawingProvider](../interfaces/iseriesdrawingprovider.md)[]*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L200)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L200)*
 
 **Returns:** *[ISeriesDrawingProvider](../interfaces/iseriesdrawingprovider.md)[]*
 
 • **set drawingProviders**(`value`: [ISeriesDrawingProvider](../interfaces/iseriesdrawingprovider.md)[]): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L203)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L203)*
 
 **Parameters:**
 
@@ -201,13 +201,13 @@ ___
 
 • **get effect**(): *[ShaderEffect](shadereffect.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L221)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L221)*
 
 **Returns:** *[ShaderEffect](shadereffect.md)*
 
 • **set effect**(`effect`: [ShaderEffect](shadereffect.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:224](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L224)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:224](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L224)*
 
 **Parameters:**
 
@@ -223,13 +223,13 @@ ___
 
 • **get isVisible**(): *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:147](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L147)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:147](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L147)*
 
 **Returns:** *boolean*
 
 • **set isVisible**(`value`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:150](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L150)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:150](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L150)*
 
 **Parameters:**
 
@@ -245,13 +245,13 @@ ___
 
 • **get paletteProvider**(): *[IPaletteProvider](../interfaces/ipaletteprovider.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:155](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L155)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:155](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L155)*
 
 **Returns:** *[IPaletteProvider](../interfaces/ipaletteprovider.md)*
 
 • **set paletteProvider**(`paletteProvider`: [IPaletteProvider](../interfaces/ipaletteprovider.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:158](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L158)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:158](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L158)*
 
 **Parameters:**
 
@@ -267,13 +267,13 @@ ___
 
 • **get parentSurface**(): *[SciChartSurface](scichartsurface.md)‹›*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L122)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L122)*
 
 **Returns:** *[SciChartSurface](scichartsurface.md)‹›*
 
 • **set parentSurface**(`value`: [SciChartSurface](scichartsurface.md)‹›): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:125](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L125)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:125](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L125)*
 
 **Parameters:**
 
@@ -289,13 +289,13 @@ ___
 
 • **get pointMarker**(): *[IPointMarker](../interfaces/ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L166)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L166)*
 
 **Returns:** *[IPointMarker](../interfaces/ipointmarker.md)*
 
 • **set pointMarker**(`pointMarker`: [IPointMarker](../interfaces/ipointmarker.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:169](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L169)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:169](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L169)*
 
 **Parameters:**
 
@@ -311,13 +311,13 @@ ___
 
 • **get stroke**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:182](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L182)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:182](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L182)*
 
 **Returns:** *string*
 
 • **set stroke**(`htmlColorCode`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:185](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L185)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:185](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L185)*
 
 **Parameters:**
 
@@ -333,13 +333,13 @@ ___
 
 • **get strokeThickness**(): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L190)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L190)*
 
 **Returns:** *number*
 
 • **set strokeThickness**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L193)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L193)*
 
 **Parameters:**
 
@@ -355,13 +355,13 @@ ___
 
 • **get xAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:207](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L207)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:207](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L207)*
 
 **Returns:** *string*
 
 • **set xAxisId**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L210)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L210)*
 
 **Parameters:**
 
@@ -377,13 +377,13 @@ ___
 
 • **get yAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:214](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L214)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:214](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L214)*
 
 **Returns:** *string*
 
 • **set yAxisId**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L217)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L217)*
 
 **Parameters:**
 
@@ -401,7 +401,7 @@ Name | Type |
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L49)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L49)*
 
 **Parameters:**
 
@@ -419,7 +419,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L53)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L53)*
 
 **Returns:** *void*
 
@@ -431,7 +431,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L84)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L84)*
 
 **Parameters:**
 
@@ -450,7 +450,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L88)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L88)*
 
 **Returns:** *number[]*
 
@@ -462,7 +462,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L55)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L55)*
 
 **Returns:** *string*
 
@@ -474,7 +474,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L59)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L59)*
 
 **Returns:** *number*
 
@@ -486,7 +486,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L63)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:63](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L63)*
 
 **Returns:** *DoubleVector*
 
@@ -498,7 +498,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L92)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L92)*
 
 **Returns:** *NumberRange*
 
@@ -510,7 +510,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L96)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L96)*
 
 **Parameters:**
 
@@ -529,7 +529,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L100)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L100)*
 
 **Returns:** *boolean*
 
@@ -541,7 +541,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L104)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L104)*
 
 **Returns:** *boolean*
 
@@ -553,7 +553,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:108](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L108)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:108](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L108)*
 
 **Returns:** *boolean*
 
@@ -563,7 +563,7 @@ ___
 
 ▸ **invalidateParentCallback**(): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:80](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L80)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:80](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L80)*
 
 **Returns:** *void*
 
@@ -573,7 +573,7 @@ ___
 
 ▸ **notifyPropertyChanged**(`propertyName`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L73)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L73)*
 
 **Parameters:**
 
@@ -591,7 +591,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L112)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L112)*
 
 **Parameters:**
 
@@ -609,7 +609,7 @@ ___
 
 *Implementation of [IRenderableSeries](../interfaces/irenderableseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L116)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L116)*
 
 **Returns:** *void*
 
@@ -619,6 +619,6 @@ ___
 
 ▸ **onDetachFromParentCollection**(): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L67)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseStackedRenderableSeries.ts#L67)*
 
 **Returns:** *void*

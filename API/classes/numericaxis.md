@@ -99,7 +99,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L16)*
+*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L16)*
 
 **Parameters:**
 
@@ -118,7 +118,7 @@ Name | Type |
 
 *Inherited from [AxisBase2D](axisbase2d.md).[axisLayoutState](axisbase2d.md#readonly-axislayoutstate)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L70)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L70)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[axisRenderer](axisbase2d.md#readonly-axisrenderer)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L68)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L68)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[axisTitleRenderer](axisbase2d.md#readonly-axistitlerenderer)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L69)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L69)*
 
 ___
 
@@ -148,7 +148,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[invalidateParentCallback](axiscore.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:224](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L224)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:224](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L224)*
 
 Callback to invalidate the parent 2D [SciChartSurface](scichartsurface.md) or 3D [SciChart3DSurface](scichart3dsurface.md)
 
@@ -164,7 +164,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[parentSurface](axisbase2d.md#parentsurface)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L67)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L67)*
 
 ___
 
@@ -174,7 +174,7 @@ ___
 
 *Overrides [AxisCore](axiscore.md).[type](axiscore.md#readonly-abstract-type)*
 
-*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L16)*
+*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L16)*
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[viewRect](axisbase2d.md#viewrect)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L71)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:71](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L71)*
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[visibleRangeChanged](axiscore.md#visiblerangechanged)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L229)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L229)*
 
 An {@link EventHandler} which fires a callback when the [AxisCore.visibleRange](axiscore.md#visiblerange) property changes.
 
@@ -208,7 +208,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[DEFAULT_AXIS_ID](axiscore.md#static-readonly-default_axis_id)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:216](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L216)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:216](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L216)*
 
 The Default [AxisCore.id](axiscore.md#id)
 
@@ -229,7 +229,7 @@ you want them to be registered on.
 
 *Inherited from [AxisCore](axiscore.md).[autoRange](axiscore.md#autorange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:884](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L884)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:884](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L884)*
 
 **Returns:** *EAutoRange*
 
@@ -237,7 +237,7 @@ you want them to be registered on.
 
 *Inherited from [AxisCore](axiscore.md).[autoRange](axiscore.md#autorange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:888](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L888)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:888](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L888)*
 
 **Parameters:**
 
@@ -255,7 +255,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[autoTicks](axiscore.md#autoticks)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:982](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L982)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:982](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L982)*
 
 **Returns:** *boolean*
 
@@ -263,7 +263,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[autoTicks](axiscore.md#autoticks)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:986](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L986)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:986](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L986)*
 
 **Parameters:**
 
@@ -281,7 +281,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[axisAlignment](axisbase2d.md#axisalignment)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L124)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L124)*
 
 **Returns:** *EAxisAlignment*
 
@@ -289,7 +289,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[axisAlignment](axisbase2d.md#axisalignment)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L128)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L128)*
 
 **Parameters:**
 
@@ -307,7 +307,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[axisBandsFill](axiscore.md#axisbandsfill)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:875](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L875)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:875](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L875)*
 
 **Returns:** *string*
 
@@ -315,7 +315,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[axisBandsFill](axiscore.md#axisbandsfill)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:879](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L879)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:879](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L879)*
 
 **Parameters:**
 
@@ -333,7 +333,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[axisTitle](axiscore.md#axistitle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:938](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L938)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:938](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L938)*
 
 **Returns:** *string*
 
@@ -341,7 +341,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[axisTitle](axiscore.md#axistitle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:941](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L941)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:941](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L941)*
 
 **Parameters:**
 
@@ -359,7 +359,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[cursorTextFormatting](axiscore.md#cursortextformatting)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:680](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L680)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:680](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L680)*
 
 **Returns:** *string*
 
@@ -367,7 +367,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[cursorTextFormatting](axiscore.md#cursortextformatting)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:684](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L684)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:684](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L684)*
 
 **Parameters:**
 
@@ -385,7 +385,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[deltaCalculator](axiscore.md#deltacalculator)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:964](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L964)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:964](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L964)*
 
 **Returns:** *[DeltaCalculator](deltacalculator.md)*
 
@@ -393,7 +393,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[deltaCalculator](axiscore.md#deltacalculator)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:968](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L968)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:968](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L968)*
 
 **Parameters:**
 
@@ -411,7 +411,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawLabels](axiscore.md#drawlabels)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:836](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L836)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:836](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L836)*
 
 When true, draws labels on the axis, else they are not drawn
 
@@ -421,7 +421,7 @@ When true, draws labels on the axis, else they are not drawn
 
 *Inherited from [AxisCore](axiscore.md).[drawLabels](axiscore.md#drawlabels)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:844](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L844)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:844](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L844)*
 
 When true, draws labels on the axis, else they are not drawn
 
@@ -441,7 +441,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorBands](axiscore.md#drawmajorbands)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:818](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L818)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:818](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L818)*
 
 When true, draws bands, a solid color fill between alternative major gridlines, else they are not drawn
 
@@ -454,7 +454,7 @@ See also the [AxisCore.axisBandsFill](axiscore.md#axisbandsfill) property to sty
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorBands](axiscore.md#drawmajorbands)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:827](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L827)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:827](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L827)*
 
 When true, draws bands, a solid color fill between alternative major gridlines, else they are not drawn
 
@@ -477,7 +477,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorGridLines](axiscore.md#drawmajorgridlines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:700](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L700)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:700](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L700)*
 
 When true, major gridlines (lines inside the chart viewport area) are drawn, else they are not drawn
 
@@ -497,7 +497,7 @@ See also [AxisCore.majorGridLineStyle](axiscore.md#majorgridlinestyle) to style 
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorGridLines](axiscore.md#drawmajorgridlines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:715](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L715)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:715](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L715)*
 
 When true, major gridlines (lines inside the chart viewport area) are drawn, else they are not drawn
 
@@ -527,7 +527,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorTickLines](axiscore.md#drawmajorticklines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:762](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L762)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:762](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L762)*
 
 When true, major gridlines (small lines outside the chart viewport area) are drawn, else they are not drawn
 
@@ -547,7 +547,7 @@ See also [AxisCore.majorTickLineStyle](axiscore.md#majorticklinestyle) to style 
 
 *Inherited from [AxisCore](axiscore.md).[drawMajorTickLines](axiscore.md#drawmajorticklines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:777](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L777)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:777](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L777)*
 
 When true, major gridlines (small lines outside the chart viewport area) are drawn, else they are not drawn
 
@@ -577,7 +577,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawMinorGridLines](axiscore.md#drawminorgridlines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:731](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L731)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:731](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L731)*
 
 When true, minor gridlines (lines inside the chart viewport area) are drawn, else they are not drawn
 
@@ -597,7 +597,7 @@ See also [AxisCore.minorGridLineStyle](axiscore.md#minorgridlinestyle) to style 
 
 *Inherited from [AxisCore](axiscore.md).[drawMinorGridLines](axiscore.md#drawminorgridlines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:746](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L746)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:746](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L746)*
 
 When true, minor gridlines (lines inside the chart viewport area) are drawn, else they are not drawn
 
@@ -627,7 +627,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[drawMinorTickLines](axiscore.md#drawminorticklines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:793](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L793)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:793](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L793)*
 
 When true, minor gridlines (small lines outside the chart viewport area) are drawn, else they are not drawn
 
@@ -647,7 +647,7 @@ See also [AxisCore.minorTickLineStyle](axiscore.md#minorticklinestyle) to style 
 
 *Inherited from [AxisCore](axiscore.md).[drawMinorTickLines](axiscore.md#drawminorticklines)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:808](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L808)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:808](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L808)*
 
 When true, minor gridlines (small lines outside the chart viewport area) are drawn, else they are not drawn
 
@@ -677,7 +677,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[flippedCoordinates](axiscore.md#flippedcoordinates)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:853](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L853)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:853](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L853)*
 
 When true, axis coordinates are flipped, e.g. a [NumericAxis](numericaxis.md) with @{link AxisCore.visibleRange | VisibleRange}
 0..10 will render from 10 to 0
@@ -688,7 +688,7 @@ When true, axis coordinates are flipped, e.g. a [NumericAxis](numericaxis.md) wi
 
 *Inherited from [AxisCore](axiscore.md).[flippedCoordinates](axiscore.md#flippedcoordinates)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:861](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L861)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:861](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L861)*
 
 When true, axis coordinates are flipped, e.g. a [NumericAxis](numericaxis.md) with @{link AxisCore.visibleRange | VisibleRange}
 0..10 will render from 10 to 0
@@ -709,7 +709,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[growBy](axiscore.md#growby)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:519](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L519)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:519](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L519)*
 
 Gets or sets the GrowBy: a padding factor on the axis
 
@@ -726,7 +726,7 @@ axis.growBy = new NumberRange(0.1, 0.2);
 
 *Inherited from [AxisCore](axiscore.md).[growBy](axiscore.md#growby)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:532](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L532)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:532](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L532)*
 
 Gets or sets the GrowBy: a padding factor on the axis
 
@@ -753,7 +753,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[hasDefaultVisibleRange](axiscore.md#hasdefaultvisiblerange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:444](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L444)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:444](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L444)*
 
 When true, the axis has the default [AxisCore.visibleRange](axiscore.md#visiblerange).
 
@@ -771,7 +771,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[hasValidVisibleRange](axiscore.md#hasvalidvisiblerange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:428](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L428)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:428](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L428)*
 
 When true, the axis has a valid [AxisCore.visibleRange](axiscore.md#visiblerange) which can be drawn
 
@@ -789,7 +789,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[id](axiscore.md#id)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:459](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L459)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:459](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L459)*
 
 Gets or sets the unique Axis Id
 
@@ -808,7 +808,7 @@ you want them to be registered on.
 
 *Inherited from [AxisCore](axiscore.md).[id](axiscore.md#id)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:474](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L474)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:474](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L474)*
 
 Gets or sets the unique Axis Id
 
@@ -837,7 +837,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[isAxisFlipped](axisbase2d.md#isaxisflipped)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L116)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L116)*
 
 **Returns:** *boolean*
 
@@ -849,7 +849,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[isHorizontalAxis](axisbase2d.md#ishorizontalaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L112)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L112)*
 
 **Returns:** *boolean*
 
@@ -861,7 +861,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[isPrimaryAxis](axisbase2d.md#isprimaryaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L142)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L142)*
 
 **Returns:** *boolean*
 
@@ -869,7 +869,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[isPrimaryAxis](axisbase2d.md#isprimaryaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L146)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L146)*
 
 **Parameters:**
 
@@ -887,7 +887,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[isVerticalChart](axisbase2d.md#isverticalchart)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L159)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L159)*
 
 **Returns:** *boolean*
 
@@ -899,7 +899,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[isVisible](axiscore.md#isvisible)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:490](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L490)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:490](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L490)*
 
 When true, the axis is visible. Default value is also true for the axis
 
@@ -918,7 +918,7 @@ An invisible axis can be used to scale series to the viewport. For example:
 
 *Inherited from [AxisCore](axiscore.md).[isVisible](axiscore.md#isvisible)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:505](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L505)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:505](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L505)*
 
 When true, the axis is visible. Default value is also true for the axis
 
@@ -947,7 +947,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[isXAxis](axiscore.md#isxaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:408](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L408)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:408](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L408)*
 
 SET INTERNALLY. Gets or sets whether this axis is an XAxis or not
 
@@ -960,7 +960,7 @@ See [AxisBase2D.axisAlignment](axisbase2d.md#axisalignment) if you want to set a
 
 *Inherited from [AxisCore](axiscore.md).[isXAxis](axiscore.md#isxaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:417](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L417)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:417](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L417)*
 
 SET INTERNALLY. Gets or sets whether this axis is an XAxis or not
 
@@ -983,7 +983,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[labelProvider](axiscore.md#labelprovider)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:955](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L955)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:955](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L955)*
 
 **Returns:** *[LabelProvider](labelprovider.md)*
 
@@ -991,7 +991,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[labelProvider](axiscore.md#labelprovider)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:959](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L959)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:959](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L959)*
 
 **Parameters:**
 
@@ -1009,7 +1009,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[labelStyle](axisbase2d.md#labelstyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:167](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L167)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:167](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L167)*
 
 **Returns:** *[TTextStyle](../globals.md#ttextstyle)*
 
@@ -1017,7 +1017,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[labelStyle](axisbase2d.md#labelstyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:171](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L171)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:171](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L171)*
 
 **Parameters:**
 
@@ -1035,7 +1035,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[majorDelta](axiscore.md#majordelta)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:613](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L613)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:613](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L613)*
 
 The MajorDelta is the spacing between major gridlines and axis labels.
 
@@ -1052,7 +1052,7 @@ spacing.
 
 *Inherited from [AxisCore](axiscore.md).[majorDelta](axiscore.md#majordelta)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:625](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L625)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:625](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L625)*
 
 The MajorDelta is the spacing between major gridlines and axis labels.
 
@@ -1079,7 +1079,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[majorGridLineStyle](axiscore.md#majorgridlinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:911](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L911)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:911](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L911)*
 
 **Returns:** *[TGridLineStyle](../globals.md#tgridlinestyle)*
 
@@ -1087,7 +1087,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[majorGridLineStyle](axiscore.md#majorgridlinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:915](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L915)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:915](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L915)*
 
 **Parameters:**
 
@@ -1105,7 +1105,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[majorTickLineStyle](axiscore.md#majorticklinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:893](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L893)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:893](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L893)*
 
 **Returns:** *[TTickLineStyle](../globals.md#tticklinestyle)*
 
@@ -1113,7 +1113,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[majorTickLineStyle](axiscore.md#majorticklinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:897](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L897)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:897](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L897)*
 
 **Parameters:**
 
@@ -1131,7 +1131,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[maxAutoTicks](axiscore.md#maxautoticks)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:973](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L973)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:973](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L973)*
 
 **Returns:** *number*
 
@@ -1139,7 +1139,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[maxAutoTicks](axiscore.md#maxautoticks)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:977](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L977)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:977](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L977)*
 
 **Parameters:**
 
@@ -1157,7 +1157,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorDelta](axiscore.md#minordelta)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:638](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L638)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:638](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L638)*
 
 The MinorDelta is the spacing between minor gridlines.
 
@@ -1174,7 +1174,7 @@ spacing.
 
 *Inherited from [AxisCore](axiscore.md).[minorDelta](axiscore.md#minordelta)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:650](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L650)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:650](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L650)*
 
 The MinorDelta is the spacing between minor gridlines.
 
@@ -1201,7 +1201,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorGridLineStyle](axiscore.md#minorgridlinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:920](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L920)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:920](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L920)*
 
 **Returns:** *[TGridLineStyle](../globals.md#tgridlinestyle)*
 
@@ -1209,7 +1209,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorGridLineStyle](axiscore.md#minorgridlinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:924](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L924)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:924](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L924)*
 
 **Parameters:**
 
@@ -1227,7 +1227,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorTickLineStyle](axiscore.md#minorticklinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:902](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L902)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:902](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L902)*
 
 **Returns:** *[TTickLineStyle](../globals.md#tticklinestyle)*
 
@@ -1235,7 +1235,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorTickLineStyle](axiscore.md#minorticklinestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:906](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L906)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:906](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L906)*
 
 **Parameters:**
 
@@ -1253,7 +1253,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[minorsPerMajor](axiscore.md#minorspermajor)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:658](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L658)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:658](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L658)*
 
 When [AxisCore.autoTicks](axiscore.md#autoticks) is true, minorsPerMajor is a hint of how many minor gridlines should be drawn between each major gridline
 
@@ -1263,7 +1263,7 @@ When [AxisCore.autoTicks](axiscore.md#autoticks) is true, minorsPerMajor is a hi
 
 *Inherited from [AxisCore](axiscore.md).[minorsPerMajor](axiscore.md#minorspermajor)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:665](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L665)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:665](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L665)*
 
 When [AxisCore.autoTicks](axiscore.md#autoticks) is true, minorsPerMajor is a hint of how many minor gridlines should be drawn between each major gridline
 
@@ -1283,7 +1283,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[textFormatting](axiscore.md#textformatting)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:671](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L671)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:671](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L671)*
 
 **Returns:** *string*
 
@@ -1291,7 +1291,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[textFormatting](axiscore.md#textformatting)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:675](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L675)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:675](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L675)*
 
 **Parameters:**
 
@@ -1309,7 +1309,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[tickProvider](axiscore.md#tickprovider)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:946](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L946)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:946](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L946)*
 
 **Returns:** *[TickProvider](tickprovider.md)*
 
@@ -1317,7 +1317,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[tickProvider](axiscore.md#tickprovider)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:950](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L950)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:950](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L950)*
 
 **Parameters:**
 
@@ -1335,7 +1335,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[tickTextBrush](axiscore.md#ticktextbrush)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:866](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L866)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:866](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L866)*
 
 **Returns:** *string*
 
@@ -1343,7 +1343,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[tickTextBrush](axiscore.md#ticktextbrush)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:870](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L870)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:870](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L870)*
 
 **Parameters:**
 
@@ -1361,7 +1361,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[titleStyle](axiscore.md#titlestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:929](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L929)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:929](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L929)*
 
 **Returns:** *[TTextStyle](../globals.md#ttextstyle)*
 
@@ -1369,7 +1369,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[titleStyle](axiscore.md#titlestyle)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:933](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L933)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:933](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L933)*
 
 **Parameters:**
 
@@ -1387,7 +1387,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[visibleRange](axiscore.md#visiblerange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:549](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L549)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:549](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L549)*
 
 The VisibleRange is the range of the Axis (min to max).
 
@@ -1408,7 +1408,7 @@ for [CategoryAxis](categoryaxis.md) types.
 
 *Inherited from [AxisCore](axiscore.md).[visibleRange](axiscore.md#visiblerange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:565](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L565)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:565](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L565)*
 
 The VisibleRange is the range of the Axis (min to max).
 
@@ -1439,7 +1439,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[visibleRangeLimit](axisbase2d.md#visiblerangelimit)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:133](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L133)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:133](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L133)*
 
 **Returns:** *NumberRange‹›*
 
@@ -1447,7 +1447,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[visibleRangeLimit](axisbase2d.md#visiblerangelimit)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L137)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L137)*
 
 **Parameters:**
 
@@ -1465,7 +1465,7 @@ Name | Type |
 
 *Inherited from [AxisCore](axiscore.md).[animateVisibleRange](axiscore.md#animatevisiblerange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:580](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L580)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:580](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L580)*
 
 Sets and animates the visibleRange of the axis from the current value to the provided value over the duration and with
 {@link TEasing | Easing Function} provided
@@ -1490,7 +1490,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[applyTheme](axisbase2d.md#applytheme)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L103)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L103)*
 
 **Parameters:**
 
@@ -1508,7 +1508,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[draw](axisbase2d.md#draw)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L203)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L203)*
 
 **Parameters:**
 
@@ -1526,7 +1526,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[drawDebug](axisbase2d.md#drawdebug)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L266)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L266)*
 
 Function to draw axis areas with red color
 
@@ -1546,7 +1546,7 @@ ___
 
 *Overrides [AxisCore](axiscore.md).[getCurrentCoordinateCalculator](axiscore.md#abstract-getcurrentcoordinatecalculator)*
 
-*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L28)*
+*Defined in [src/Charting/Visuals/Axis/NumericAxis.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/NumericAxis.ts#L28)*
 
 **Returns:** *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
@@ -1560,7 +1560,7 @@ ___
 
 *Overrides [AxisCore](axiscore.md).[getDefaultNonZeroRange](axiscore.md#abstract-getdefaultnonzerorange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:296](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L296)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:296](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L296)*
 
 **Returns:** *NumberRange*
 
@@ -1572,7 +1572,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[getMaximumRange](axisbase2d.md#getmaximumrange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L300)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L300)*
 
 **Returns:** *NumberRange*
 
@@ -1584,7 +1584,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[getWindowedYRange](axisbase2d.md#getwindowedyrange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:326](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L326)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:326](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L326)*
 
 **`description`** Returns the max range only for that axis (by the data-series on it),
 based on associated XAxis visible range of series on the same axis
@@ -1605,7 +1605,7 @@ ___
 
 *Inherited from [AxisCore](axiscore.md).[isValidRange](axiscore.md#isvalidrange)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:995](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L995)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:995](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L995)*
 
 **Parameters:**
 
@@ -1623,7 +1623,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[measure](axisbase2d.md#measure)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L176)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L176)*
 
 **Returns:** *void*
 
@@ -1635,7 +1635,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[prepareRenderData](axisbase2d.md#preparerenderdata)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:199](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L199)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:199](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L199)*
 
 **Returns:** *void*
 
@@ -1647,7 +1647,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[scroll](axisbase2d.md#scroll)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:309](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L309)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:309](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L309)*
 
 **Parameters:**
 
@@ -1666,7 +1666,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[zoom](axisbase2d.md#zoom)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:365](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L365)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:365](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L365)*
 
 **Parameters:**
 
@@ -1687,7 +1687,7 @@ ___
 
 *Inherited from [AxisBase2D](axisbase2d.md).[zoomBy](axisbase2d.md#zoomby)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:355](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L355)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:355](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L355)*
 
 **Parameters:**
 

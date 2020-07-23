@@ -17,7 +17,7 @@ Enum constants to specify SciChartSurface type
 
 • **SciChart3DSurfaceType**: = "SciChart3DSurfaceType"
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L47)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L47)*
 
 A 3D Cartesian [SciChart3DSurface](../classes/scichart3dsurface.md)
 
@@ -27,6 +27,6 @@ ___
 
 • **SciChartSurfaceType**: = "SciChartSurfaceType"
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L43)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L43)*
 
 A 2D Cartesian [SciChartSurface](../classes/scichartsurface.md)

@@ -44,7 +44,7 @@ See also [TickProvider](tickprovider.md) for the base implementation.
 
 \+ **new NumericTickProvider**(`webAssemblyContext`: TSciChart | TSciChart3D): *[NumericTickProvider](numerictickprovider.md)*
 
-*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L23)*
+*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L23)*
 
 Creates an instance of a NumericTickProvider
 
@@ -64,7 +64,7 @@ Name | Type | Description |
 
 *Inherited from [TickProvider](tickprovider.md).[parentAxis](tickprovider.md#parentaxis)*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L21)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L21)*
 
 Gets the parent [Axis](axiscore.md) this TickProvider is attached to
 
@@ -76,7 +76,7 @@ Gets the parent [Axis](axiscore.md) this TickProvider is attached to
 
 *Inherited from [TickProvider](tickprovider.md).[attachedToAxis](tickprovider.md#attachedtoaxis)*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L27)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L27)*
 
 Called when the TickProvider is attached to an [Axis](axiscore.md)
 
@@ -96,7 +96,7 @@ ___
 
 *Overrides [TickProvider](tickprovider.md).[getMajorTicks](tickprovider.md#abstract-getmajorticks)*
 
-*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L50)*
+*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L50)*
 
 **`inheritdoc`** 
 
@@ -118,7 +118,7 @@ ___
 
 *Overrides [TickProvider](tickprovider.md).[getMinorTicks](tickprovider.md#abstract-getminorticks)*
 
-*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L38)*
+*Defined in [src/Charting/Numerics/TickProviders/NumericTickProvider.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/TickProviders/NumericTickProvider.ts#L38)*
 
 **`inheritdoc`** 
 

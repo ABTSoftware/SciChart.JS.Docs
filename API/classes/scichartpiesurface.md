@@ -48,7 +48,7 @@
 
 \+ **new SciChartPieSurface**(`canvases`: [TSciChartSurfaceCanvases](../globals.md#tscichartsurfacecanvases)): *[SciChartPieSurface](scichartpiesurface.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L62)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L62)*
 
 **Parameters:**
 
@@ -64,7 +64,7 @@ Name | Type | Default |
 
 • **animate**: *boolean* = true
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L49)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L49)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 *Implementation of [ISciChartSurfaceBase](../interfaces/iscichartsurfacebase.md).[domCanvas2D](../interfaces/iscichartsurfacebase.md#readonly-domcanvas2d)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L46)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L46)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **domChartRoot**: *HTMLDivElement*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L45)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L45)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **domDivContainer**: *HTMLDivElement*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L48)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L48)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **domSvgContainer**: *SVGSVGElement*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L47)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L47)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **legend**: *[SciChartPieLegend](scichartpielegend.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L51)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L51)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **pieSegments**: *ObservableArray‹[IPieSegment](../interfaces/ipiesegment.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L43)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L43)*
 
 ## Accessors
 
@@ -122,13 +122,13 @@ ___
 
 • **get holeRadius**(): *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L137)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L137)*
 
 **Returns:** *number*
 
 • **set holeRadius**(`holeRadius`: number): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L140)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L140)*
 
 **Parameters:**
 
@@ -144,13 +144,13 @@ ___
 
 • **get holeRadiusSizingMode**(): *[ESizingMode](../enums/esizingmode.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L145)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L145)*
 
 **Returns:** *[ESizingMode](../enums/esizingmode.md)*
 
 • **set holeRadiusSizingMode**(`holeRadiusSizingMode`: [ESizingMode](../enums/esizingmode.md)): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:148](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L148)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:148](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L148)*
 
 **Parameters:**
 
@@ -166,13 +166,13 @@ ___
 
 • **get pieType**(): *[EPieType](../enums/epietype.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L129)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L129)*
 
 **Returns:** *[EPieType](../enums/epietype.md)*
 
 • **set pieType**(`value`: [EPieType](../enums/epietype.md)): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L132)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:132](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L132)*
 
 **Parameters:**
 
@@ -188,13 +188,13 @@ ___
 
 • **get seriesSpacing**(): *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L153)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L153)*
 
 **Returns:** *number*
 
 • **set seriesSpacing**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L156)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L156)*
 
 **Parameters:**
 
@@ -212,7 +212,7 @@ Name | Type |
 
 *Implementation of [ISciChartSurfaceBase](../interfaces/iscichartsurfacebase.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:93](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L93)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:93](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L93)*
 
 **Parameters:**
 
@@ -230,7 +230,7 @@ ___
 
 *Implementation of [ISciChartSurfaceBase](../interfaces/iscichartsurfacebase.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L122)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L122)*
 
 **Parameters:**
 
@@ -249,7 +249,7 @@ ___
 
 *Implementation of [ISciChartSurfaceBase](../interfaces/iscichartsurfacebase.md)*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L111)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L111)*
 
 **Returns:** *void*
 
@@ -259,7 +259,7 @@ ___
 
 ▸ **invalidateElement**(): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L97)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L97)*
 
 **Returns:** *void*
 
@@ -269,7 +269,7 @@ ___
 
 ▸ **update**(): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L103)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L103)*
 
 **Returns:** *void*
 
@@ -279,7 +279,7 @@ ___
 
 ▸ **create**(`divElementId`: string, `width`: number, `height`: number): *Promise‹[SciChartPieSurface](scichartpiesurface.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L33)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L33)*
 
 **Parameters:**
 

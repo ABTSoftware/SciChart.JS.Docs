@@ -21,7 +21,7 @@
 
 • **metadata**? : *[IPointMetadata3D](ipointmetadata3d.md)[]*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L13)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L13)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **xValues**? : *number[]*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L10)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L10)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **yValues**? : *number[]*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L11)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L11)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **zValues**? : *number[]*
 
-*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L12)*
+*Defined in [src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/XyzDataSeries3D.ts#L12)*

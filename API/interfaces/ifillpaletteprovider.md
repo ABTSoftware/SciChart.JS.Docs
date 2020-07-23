@@ -30,7 +30,7 @@ See type [IStrokePaletteProvider](istrokepaletteprovider.md) for per data-point 
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onAttached](ipaletteprovider.md#onattached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
 
 Called when the PaletteProvider instance is attached to a [RenderableSeries](../classes/baserenderableseries.md).
 Use this to be notified when attached and keep a reference to the parent series
@@ -51,7 +51,7 @@ ___
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onDetached](ipaletteprovider.md#ondetached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
 
 Called when the PaletteProvider instance is detached from a [RenderableSeries](../classes/baserenderableseries.md).
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **overrideFillAbgr**(`xValue`: number, `yValue`: number, `index`: number): *number*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L69)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L69)*
 
 Called by SciChart and may be used to override the color of filled polygon in various chart types.
 

@@ -38,7 +38,7 @@
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **draw**(`renderContext`: [WebGlRenderContext2D](../classes/webglrendercontext2d.md), `renderPassData`: [RenderPassData](../classes/renderpassdata.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L6)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L6)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **onAttachSeries**(): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L7)*
 
 **Returns:** *void*
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **onDetachSeries**(): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L8)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L8)*
 
 **Returns:** *void*
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **onSeriesPropertyChange**(`propertyName`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L9)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/ISeriesDrawingProvider.ts#L9)*
 
 **Parameters:**
 

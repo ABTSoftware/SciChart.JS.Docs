@@ -45,7 +45,7 @@
 
 *Overrides [BasePointMarker](basepointmarker.md).[constructor](basepointmarker.md#constructor)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/CrossPointMarker.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/CrossPointMarker.ts#L4)*
+*Defined in [src/Charting/Visuals/PointMarkers/CrossPointMarker.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/CrossPointMarker.ts#L4)*
 
 **Parameters:**
 
@@ -66,7 +66,7 @@ Name | Type |
 
 *Inherited from [BasePointMarker](basepointmarker.md).[invalidateParentCallback](basepointmarker.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L15)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L15)*
 
 #### Type declaration:
 
@@ -80,7 +80,7 @@ Name | Type |
 
 *Inherited from [BasePointMarker](basepointmarker.md).[fill](basepointmarker.md#fill)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L37)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L37)*
 
 **Returns:** *string*
 
@@ -88,7 +88,7 @@ Name | Type |
 
 *Inherited from [BasePointMarker](basepointmarker.md).[fill](basepointmarker.md#fill)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L41)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L41)*
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[height](basepointmarker.md#height)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L64)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L64)*
 
 **Returns:** *number*
 
@@ -114,7 +114,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[height](basepointmarker.md#height)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L68)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L68)*
 
 **Parameters:**
 
@@ -132,7 +132,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[stroke](basepointmarker.md#stroke)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L46)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L46)*
 
 **Returns:** *string*
 
@@ -140,7 +140,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[stroke](basepointmarker.md#stroke)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L50)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L50)*
 
 **Parameters:**
 
@@ -158,7 +158,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[strokeThickness](basepointmarker.md#strokethickness)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L73)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L73)*
 
 **Returns:** *number*
 
@@ -166,7 +166,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[strokeThickness](basepointmarker.md#strokethickness)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L77)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L77)*
 
 **Parameters:**
 
@@ -184,7 +184,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[width](basepointmarker.md#width)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L55)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L55)*
 
 **Returns:** *number*
 
@@ -192,7 +192,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[width](basepointmarker.md#width)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L59)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L59)*
 
 **Parameters:**
 
@@ -210,7 +210,7 @@ Name | Type |
 
 *Inherited from [BasePointMarker](basepointmarker.md).[createCanvasTexture](basepointmarker.md#createcanvastexture)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L96)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L96)*
 
 **Returns:** *[CanvasTexture](canvastexture.md)*
 
@@ -224,7 +224,7 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[delete](basepointmarker.md#delete)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L91)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L91)*
 
 **Returns:** *void*
 
@@ -238,7 +238,7 @@ ___
 
 *Overrides [BasePointMarker](basepointmarker.md).[drawSprite](basepointmarker.md#abstract-drawsprite)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/CrossPointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/CrossPointMarker.ts#L9)*
+*Defined in [src/Charting/Visuals/PointMarkers/CrossPointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/CrossPointMarker.ts#L9)*
 
 **Parameters:**
 
@@ -260,6 +260,6 @@ ___
 
 *Inherited from [BasePointMarker](basepointmarker.md).[getSprite](basepointmarker.md#getsprite)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L82)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L82)*
 
 **Returns:** *[CanvasTexture](canvastexture.md)*

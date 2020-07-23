@@ -28,7 +28,7 @@
 
 • **numericFormat**: *[ENumericFormat](../enums/enumericformat.md)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L5)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L5)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **parentAxis**: *[AxisCore](axiscore.md)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L7)*
 
 ## Methods
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **attachedToAxis**(`axis`: [AxisCore](axiscore.md)): *void*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L9)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L9)*
 
 **Parameters:**
 
@@ -60,7 +60,7 @@ ___
 
 ▸ **formatCursorLabel**(`dataValue`: number, `formatString`: string): *string*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L17)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L17)*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **formatLabel**(`dataValue`: number): *string*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L15)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L15)*
 
 **Parameters:**
 
@@ -93,6 +93,6 @@ ___
 
 ▸ **onBeginAxisDraw**(): *void*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L13)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L13)*
 
 **Returns:** *void*

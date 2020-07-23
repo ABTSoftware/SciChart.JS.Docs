@@ -22,7 +22,7 @@
 
 \+ **new VisibleRangeChangedArgs**(`visibleRange`: NumberRange): *[VisibleRangeChangedArgs](visiblerangechangedargs.md)*
 
-*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
+*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
 
 **Parameters:**
 
@@ -38,4 +38,4 @@ Name | Type |
 
 • **visibleRange**: *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
+*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*

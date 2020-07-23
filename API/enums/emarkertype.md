@@ -18,7 +18,7 @@ Defines the BasePointMarker3D geometry type: a pixel, a textured-quad or a 3D ob
 
 • **InstancedMesh**:
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L22)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L22)*
 
 each marker rendered as an instanced mesh
 
@@ -28,7 +28,7 @@ ___
 
 • **Pixel**:
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L14)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L14)*
 
 Each marker rendered as a single pixel
 
@@ -38,6 +38,6 @@ ___
 
 • **TexturedQuad**:
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L18)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L18)*
 
 each marker rendered as a textured quad

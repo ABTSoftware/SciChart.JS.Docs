@@ -18,4 +18,4 @@
 
 • **fill**? : *string*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L11)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L11)*

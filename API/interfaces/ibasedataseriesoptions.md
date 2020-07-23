@@ -29,7 +29,7 @@ Options to pass to the [BaseDataSeries](../classes/basedataseries.md) constructo
 
 • **dataIsSortedInX**? : *boolean*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L24)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L24)*
 
 When true, the Data is sorted in X.
 
@@ -43,6 +43,6 @@ ___
 
 • **dataSeriesName**? : *string*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L17)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L17)*
 
 The DataSeries name, used in legends, tooltips to identify the chart series

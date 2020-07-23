@@ -34,7 +34,7 @@
 
 • **color**: *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L8)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L8)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **colorLinearGradient**: *GradientParams*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L9)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L9)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **delta**: *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L11)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L11)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L5)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L5)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **isSelected**: *boolean*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L10)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L10)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **text**: *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L6)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L6)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **value**: *number*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L7)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L7)*
 
 ## Methods
 
@@ -90,7 +90,7 @@ ___
 
 ▸ **getPercentage**(`total`: number): *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L15)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L15)*
 
 **Parameters:**
 
@@ -106,7 +106,7 @@ ___
 
 ▸ **onAttach**(`scs`: [SciChartPieSurface](../classes/scichartpiesurface.md)): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L13)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L13)*
 
 **Parameters:**
 
@@ -122,6 +122,6 @@ ___
 
 ▸ **onDetach**(): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L14)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/PieSegment/IPieSegment.ts#L14)*
 
 **Returns:** *void*

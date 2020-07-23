@@ -29,7 +29,7 @@
 
 \+ **new NumericDeltaCalculator**(`webAssemblyContext`: TSciChart | TSciChart3D): *[NumericDeltaCalculator](numericdeltacalculator.md)*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts#L8)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts#L8)*
 
 **Parameters:**
 
@@ -47,7 +47,7 @@ Name | Type |
 
 *Inherited from [DeltaCalculator](deltacalculator.md).[parentAxis](deltacalculator.md#parentaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L5)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L5)*
 
 ## Methods
 
@@ -57,7 +57,7 @@ Name | Type |
 
 *Inherited from [DeltaCalculator](deltacalculator.md).[attachedToAxis](deltacalculator.md#attachedtoaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L7)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L7)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 *Overrides [DeltaCalculator](deltacalculator.md).[getDeltaFromRange](deltacalculator.md#abstract-getdeltafromrange)*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts#L14)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/NumericDeltaCalculator.ts#L14)*
 
 **Parameters:**
 

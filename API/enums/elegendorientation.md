@@ -15,7 +15,7 @@
 
 • **Horizontal**:
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L6)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L6)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **Vertical**:
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L5)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L5)*

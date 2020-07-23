@@ -25,7 +25,7 @@
 
 \+ **new SciChart3DRenderer**(`scs`: [SciChart3DSurface](scichart3dsurface.md), `wasmContext`: TSciChart3D): *[SciChart3DRenderer](scichart3drenderer.md)*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L54)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L54)*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ Name | Type |
 
 ▸ **render**(): *void*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L62)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L62)*
 
 **Returns:** *void*
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **getSceneDescriptor**(`scs`: [SciChart3DSurface](scichart3dsurface.md)): *[SceneDescriptor](scenedescriptor.md)*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L16)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L16)*
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **prepareRenderData**(`scs`: [SciChart3DSurface](scichart3dsurface.md)): *[RenderPassInfo3D](renderpassinfo3d.md)‹›*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L29)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L29)*
 
 **Parameters:**
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **tryPerformAutoRangeOn**(`axis`: [AxisBase3D](axisbase3d.md), `scs`: [SciChart3DSurface](scichart3dsurface.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L39)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L39)*
 
 **Parameters:**
 

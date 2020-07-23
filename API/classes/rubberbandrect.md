@@ -26,7 +26,7 @@
 
 \+ **new RubberBandRect**(`svgRoot`: SVGSVGElement, `fill`: string, `stroke`: string, `strokeThickness`: number): *[RubberBandRect](rubberbandrect.md)*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L11)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L11)*
 
 **Parameters:**
 
@@ -45,13 +45,13 @@ Name | Type |
 
 • **get isHidden**(): *boolean*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L51)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L51)*
 
 **Returns:** *boolean*
 
 • **set isHidden**(`value`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L54)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L54)*
 
 **Parameters:**
 
@@ -67,13 +67,13 @@ ___
 
 • **get x1**(): *number*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L19)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L19)*
 
 **Returns:** *number*
 
 • **set x1**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L22)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L22)*
 
 **Parameters:**
 
@@ -89,13 +89,13 @@ ___
 
 • **get x2**(): *number*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L27)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L27)*
 
 **Returns:** *number*
 
 • **set x2**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L30)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L30)*
 
 **Parameters:**
 
@@ -111,13 +111,13 @@ ___
 
 • **get y1**(): *number*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L35)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L35)*
 
 **Returns:** *number*
 
 • **set y1**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L38)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L38)*
 
 **Parameters:**
 
@@ -133,13 +133,13 @@ ___
 
 • **get y2**(): *number*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L43)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L43)*
 
 **Returns:** *number*
 
 • **set y2**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L46)*
+*Defined in [src/Charting/Visuals/RubberBandRect/RubberBandRect.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RubberBandRect/RubberBandRect.ts#L46)*
 
 **Parameters:**
 

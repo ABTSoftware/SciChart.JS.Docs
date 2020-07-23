@@ -46,7 +46,7 @@ to draw shapes, lines, fills, images and more
 
 \+ **new WebGlRenderContext2D**(`webAssemblyContext`: TSciChart, `viewportSize`: Size): *[WebGlRenderContext2D](webglrendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L62)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L62)*
 
 Creates an instance of the WebGlRenderContext2D
 
@@ -65,7 +65,7 @@ Name | Type | Description |
 
 • **viewportSize**: *Size*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L58)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L58)*
 
 Gets the current viewport {@link Size}
 
@@ -77,7 +77,7 @@ Gets the current viewport {@link Size}
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L179)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L179)*
 
 **`description`** creates a pen (which you should cache) from the provided stroke and strokeThickness
 
@@ -99,7 +99,7 @@ ___
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L192)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L192)*
 
 **`description`** creates a solid color brush (which you should cache) from the provided fillColor and opacity
 
@@ -120,7 +120,7 @@ ___
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:206](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L206)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:206](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L206)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -140,7 +140,7 @@ ___
 
 ▸ **drawLayers**(): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:148](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L148)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:148](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L148)*
 
 Flushes the {@link layers} which have been enqueued with drawing operations in order.
 Use this in combination with [enqueueLayeredDraw](webglrendercontext2d.md#enqueuelayereddraw) to draw in layers
@@ -155,7 +155,7 @@ ___
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:212](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L212)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:212](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L212)*
 
 **`description`** Draws a single line from (x1,y1) to (x2,y2) with the specified Pen
 
@@ -180,7 +180,7 @@ ___
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:254](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L254)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:254](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L254)*
 
 **`description`** Draws a polyline with the specified Pen
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **drawLinesNative**(`vertices`: VectorColorVertex, `pen`: SCRTPen, `lineDrawMode`: [ELineDrawMode](../enums/elinedrawmode.md), `left`: number, `top`: number): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L89)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L89)*
 
 Draw lines: grid lines, etc.
 
@@ -225,7 +225,7 @@ ___
 
 *Implementation of [IRenderContext2D](../interfaces/irendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:297](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L297)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:297](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L297)*
 
 **`description`** Draws a Rect with optional fill and stroke
 
@@ -246,7 +246,7 @@ ___
 
 ▸ **drawRects**(`vertices`: VectorRectVertex, `brush`: SCRTBrush, `left`: number, `top`: number): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L111)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L111)*
 
 Draw rectangles: grid bands, etc.
 
@@ -267,7 +267,7 @@ ___
 
 ▸ **enqueueLayeredDraw**(`drawFunction`: [TDrawFunction](../globals.md#tdrawfunction), `layer?`: RenderLayer): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L128)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L128)*
 
 Enqueues a draw operation to the specified layer. Use in combination with [drawLayers](webglrendercontext2d.md#drawlayers) to flush layered draws
 
@@ -286,7 +286,7 @@ ___
 
 ▸ **getNativeContext**(): *SCRTRenderContext*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L77)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L77)*
 
 Get the native {@link SCRTRenderContext} for direct access to SciChart's WebAssembly Visual Xccelerator engine
 
@@ -298,7 +298,7 @@ ___
 
 ▸ **popShaderEffect**(): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L170)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L170)*
 
 Pops a [ShaderEffect](shadereffect.md) from the rendering pipeline. Call {@link WebGL2RenderingContext.pushShaderEffect} to apply an effect
 
@@ -310,7 +310,7 @@ ___
 
 ▸ **pushShaderEffect**(`effect`: [ShaderEffect](shadereffect.md)): *void*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L159)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L159)*
 
 Applies a [ShaderEffect](shadereffect.md) to the rendering pipeline. Calling {@link WebGL2RenderingContext.popShaderEffect} pops the effect from the stack
 reverting to normal drawing

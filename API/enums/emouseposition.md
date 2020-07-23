@@ -18,7 +18,7 @@ Defines the MousePosition enum constants, used by the [RolloverModifier](../clas
 
 • **AxisArea**: = "AxisArea"
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L58)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L58)*
 
 The mouse position is in the Axis area
 
@@ -28,7 +28,7 @@ ___
 
 • **OutOfCanvas**: = "OutOfCanvas"
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L54)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L54)*
 
 The mouse position is outside the main canvas
 
@@ -38,6 +38,6 @@ ___
 
 • **SeriesArea**: = "SeriesArea"
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L62)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L62)*
 
 The mouse position is in the Series area

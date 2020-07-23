@@ -16,7 +16,7 @@
 
 • **xAxis**:
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L24)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L24)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **yAxis**:
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L25)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L25)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **zAxis**:
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L26)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L26)*

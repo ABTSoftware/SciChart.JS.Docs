@@ -29,7 +29,7 @@ Defines the interface to a Brush, used for drawing filled areas, polygons and re
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **getPenType**(): *EDrawingTypes*
 
-*Defined in [src/Charting/Drawing/IPen2D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/IPen2D.ts#L11)*
+*Defined in [src/Charting/Drawing/IPen2D.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Drawing/IPen2D.ts#L11)*
 
 Gets the type of the pen. See {@link EDrawingTypes} for list of values
 

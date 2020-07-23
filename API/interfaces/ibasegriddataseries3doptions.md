@@ -25,7 +25,7 @@
 
 *Inherited from [IBaseDataSeries3DOptions](ibasedataseries3doptions.md).[dataSeriesName](ibasedataseries3doptions.md#optional-dataseriesname)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 • **yValues**: *number[][]*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L7)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L7)*

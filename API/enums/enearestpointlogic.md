@@ -15,7 +15,7 @@
 
 • **NearestHorizontalPoint**:
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L7)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **NearestPoint2D**:
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L6)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L6)*

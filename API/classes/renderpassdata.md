@@ -27,7 +27,7 @@
 
 \+ **new RenderPassData**(`indexRange`: NumberRange, `xCoordinateCalculator`: [CoordinateCalculatorBase](coordinatecalculatorbase.md), `yCoordinateCalculator`: [CoordinateCalculatorBase](coordinatecalculatorbase.md), `isVerticalChart`: boolean): *[RenderPassData](renderpassdata.md)*
 
-*Defined in [src/Charting/Services/RenderPassData.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L7)*
+*Defined in [src/Charting/Services/RenderPassData.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L7)*
 
 Creates an instance of RenderPassData
 
@@ -48,7 +48,7 @@ Name | Type | Description |
 
 • **indexRange**: *NumberRange*
 
-*Defined in [src/Charting/Services/RenderPassData.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L18)*
+*Defined in [src/Charting/Services/RenderPassData.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L18)*
 
 The min and max index to data-range currently visible on the [SciChartSurface](scichartsurface.md)
 
@@ -58,7 +58,7 @@ ___
 
 • **isVerticalChart**: *boolean*
 
-*Defined in [src/Charting/Services/RenderPassData.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L21)*
+*Defined in [src/Charting/Services/RenderPassData.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L21)*
 
 A flag indicating if the chart is currently vertically arranged (XAxis on the left, YAxis on the top/bottom)
 
@@ -68,7 +68,7 @@ ___
 
 • **xCoordinateCalculator**: *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
-*Defined in [src/Charting/Services/RenderPassData.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L19)*
+*Defined in [src/Charting/Services/RenderPassData.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L19)*
 
 The XAxis [Coordinate Calculator](coordinatecalculatorbase.md),
 used to transform between pixel and data-coordinates
@@ -79,7 +79,7 @@ ___
 
 • **yCoordinateCalculator**: *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
-*Defined in [src/Charting/Services/RenderPassData.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L20)*
+*Defined in [src/Charting/Services/RenderPassData.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Services/RenderPassData.ts#L20)*
 
 The YAxis [Coordinate Calculator](coordinatecalculatorbase.md),
 used to transform between pixel and data-coordinates

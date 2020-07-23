@@ -65,7 +65,7 @@ Use the Coordinate calculators when drawing, placing markers, annotations or if 
 
 *Overrides void*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/NumericCoordinateCalculator.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/NumericCoordinateCalculator.ts#L26)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/NumericCoordinateCalculator.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/NumericCoordinateCalculator.ts#L26)*
 
 Creates an instance of NumericCoordinateCalculator
 
@@ -89,7 +89,7 @@ Name | Type | Default | Description |
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[hasFlippedCoordinates](coordinatecalculatorbase.md#readonly-hasflippedcoordinates)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L46)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L46)*
 
 When true, this coordinate calculator has flipped coordinates
 
@@ -101,7 +101,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[isCategoryCoordinateCalculator](coordinatecalculatorbase.md#readonly-iscategorycoordinatecalculator)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L50)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L50)*
 
 When true, this coordinate calculator behaves as a Category coordinate calculator, using index not x-value for measuring
 
@@ -113,7 +113,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[nativeCalculator](coordinatecalculatorbase.md#nativecalculator)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L54)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L54)*
 
 Gets the native (WebAssembly) {@link CoordinateCalculator} instance
 
@@ -125,7 +125,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[offset](coordinatecalculatorbase.md#readonly-offset)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L42)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L42)*
 
 Gets or sets a constant offset in pixels for all generated coordinates
 
@@ -137,7 +137,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[viewportDimension](coordinatecalculatorbase.md#readonly-viewportdimension)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L38)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L38)*
 
 Gets or sets the ViewportDimension, corresponding to the size of the associated [Axis](axiscore.md) at the time of drawing
 
@@ -149,7 +149,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[visibleMax](coordinatecalculatorbase.md#readonly-visiblemax)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L34)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L34)*
 
 Gets or sets the Visible maximum value, corresponding to [AxisCore.visibleRange](axiscore.md#visiblerange).max at the time of drawing
 
@@ -161,7 +161,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[visibleMin](coordinatecalculatorbase.md#readonly-visiblemin)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L30)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L30)*
 
 Gets or sets the Visible minimum value, corresponding to [AxisCore.visibleRange](axiscore.md#visiblerange).min at the time of drawing
 
@@ -173,7 +173,7 @@ Gets or sets the Visible minimum value, corresponding to [AxisCore.visibleRange]
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[delete](coordinatecalculatorbase.md#delete)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L135)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L135)*
 
 **`inheritdoc`** 
 
@@ -187,7 +187,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[getCoordinate](coordinatecalculatorbase.md#getcoordinate)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L95)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L95)*
 
 Converts the Data-value to a pixel coordinate
 Performs the inverse operation to [getDataValue](numericcoordinatecalculator.md#getdatavalue)
@@ -210,7 +210,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[getDataValue](coordinatecalculatorbase.md#getdatavalue)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L104)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L104)*
 
 Converts the pixel coordinate to a Data-value.
 Performs the inverse operation to [getCoordinate](numericcoordinatecalculator.md#getcoordinate)
@@ -233,7 +233,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[translateBy](coordinatecalculatorbase.md#translateby)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:114](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L114)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:114](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L114)*
 
 Translates a {@link NumberRange} in Data-coordinates by a specified number of pixels,
 performing intermediate calculations from data-value to pixel and back to perform the translation
@@ -257,7 +257,7 @@ ___
 
 *Inherited from [CoordinateCalculatorBase](coordinatecalculatorbase.md).[zoomTranslateBy](coordinatecalculatorbase.md#zoomtranslateby)*
 
-*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L129)*
+*Defined in [src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts:129](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Numerics/CoordinateCalculators/CoordinateCalculatorBase.ts#L129)*
 
 Zooms a {@link NumberRange} by a specified fractional amount
 

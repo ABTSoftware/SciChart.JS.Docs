@@ -15,7 +15,7 @@
 
 • **GRADIENT**: = "GRADIENT"
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L25)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L25)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **SOLID**: = "SOLID"
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L26)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L26)*

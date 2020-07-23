@@ -34,7 +34,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L15)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L15)*
 
 **Parameters:**
 
@@ -53,7 +53,7 @@ Name | Type |
 
 *Inherited from [MeshColorPalette](meshcolorpalette.md).[propertyChanged](meshcolorpalette.md#propertychanged)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
 
 ## Accessors
 
@@ -61,13 +61,13 @@ Name | Type |
 
 • **get gradientStops**(): *TGradientStop[]*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L26)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L26)*
 
 **Returns:** *TGradientStop[]*
 
 • **set gradientStops**(`gradientStops`: TGradientStop[]): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L30)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L30)*
 
 **Parameters:**
 
@@ -85,7 +85,7 @@ Name | Type |
 
 *Overrides [MeshColorPalette](meshcolorpalette.md).[getTexture](meshcolorpalette.md#abstract-gettexture)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L35)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/f6fba97af2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L35)*
 
 **Parameters:**
 
