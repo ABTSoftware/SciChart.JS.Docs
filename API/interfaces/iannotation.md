@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IAnnotation](iannotation.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IAnnotation](iannotation.md)
 
 # Interface: IAnnotation
 
@@ -52,7 +52,7 @@ Defines the interface to an Annotation - a type of marker, text label, line or c
 
 • **annotationLayer**: *[EAnnotationLayer](../enums/eannotationlayer.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L65)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L65)*
 
 **`description`** The layer to place the annotation on. See [EAnnotationLayer](../enums/eannotationlayer.md) for a list of values
 
@@ -64,7 +64,7 @@ ___
 
 • **invalidateParentCallback**: *function*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L69)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L69)*
 
 **`description`** callback which notifies the parent [SciChartSurface](../classes/scichartsurface.md) it's time to draw
 
@@ -78,7 +78,7 @@ ___
 
 • **isEditable**: *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:177](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L177)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:177](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L177)*
 
 **`description`** if true, the annotation is editable (can be dragged and manipulated by the user)
 
@@ -88,7 +88,7 @@ ___
 
 • **isHidden**: *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L181)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L181)*
 
 **`description`** if true, the annotation is hidden
 
@@ -98,7 +98,7 @@ ___
 
 • **parentSurface**: *[SciChartSurface](../classes/scichartsurface.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:185](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L185)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:185](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L185)*
 
 **`description`** the parent SciChartSurface for this annotation
 
@@ -108,7 +108,7 @@ ___
 
 • **type**: *[EAnnotationType](../enums/eannotationtype.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L60)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L60)*
 
 **`description`** annotation type. See [EAnnotationType](../enums/eannotationtype.md) for a list of values
 
@@ -118,7 +118,7 @@ ___
 
 • **x1**: *number*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:144](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L144)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:144](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L144)*
 
 **`description`** the X1 coordinate of the annotation
 
@@ -130,7 +130,7 @@ ___
 
 • **x2**: *number*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L149)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L149)*
 
 **`description`** the X2 coordinate of the annotation
 
@@ -142,7 +142,7 @@ ___
 
 • **xAxisId**: *string*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L104)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L104)*
 
 **`summary`** The current XAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -185,7 +185,7 @@ ___
 
 • **xCoordinateMode**: *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L166)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L166)*
 
 The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -199,7 +199,7 @@ ___
 
 • **y1**: *number*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:154](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L154)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:154](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L154)*
 
 **`description`** the Y1 coordinate of the annotation
 
@@ -211,7 +211,7 @@ ___
 
 • **y2**: *number*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L159)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:159](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L159)*
 
 **`description`** the Y2 coordinate of the annotation
 
@@ -223,7 +223,7 @@ ___
 
 • **yAxisId**: *string*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L139)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L139)*
 
 **`summary`** The current YAxis Id that this [IAnnotation](iannotation.md) is bound to
 
@@ -266,7 +266,7 @@ ___
 
 • **yCoordinateMode**: *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:173](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L173)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:173](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L173)*
 
 The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -282,7 +282,7 @@ placement.
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -302,7 +302,7 @@ ___
 
 ▸ **onAttach**(`scs`: [SciChartSurfaceBase](../classes/scichartsurfacebase.md)): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L189)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L189)*
 
 **`description`** Called when the annotation is attached to a parent SciChartSurface.
 
@@ -320,7 +320,7 @@ ___
 
 ▸ **onDetach**(): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L193)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:193](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L193)*
 
 **`description`** Called when the annotation is detached from a parent SciChartSurface.
 

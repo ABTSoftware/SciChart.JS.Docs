@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [PaletteFactory](palettefactory.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [PaletteFactory](palettefactory.md)
 
 # Class: PaletteFactory
 
@@ -25,7 +25,7 @@ The PaletteFactory allows easy creation of palettes for some chart types
 
 ▪ **precision**: *number* = 500
 
-*Defined in [src/Charting/Model/PaletteFactory.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L12)*
+*Defined in [src/Charting/Model/PaletteFactory.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L12)*
 
 ## Methods
 
@@ -33,7 +33,7 @@ The PaletteFactory allows easy creation of palettes for some chart types
 
 ▸ **createColorMap**(`webAssemblyContext`: TSciChart, `gradientStops`: TGradientStop[]): *number[]*
 
-*Defined in [src/Charting/Model/PaletteFactory.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L56)*
+*Defined in [src/Charting/Model/PaletteFactory.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L56)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ ___
 
 ▸ **createGradient**(`webAssemblyContext`: TSciChart, `gradientBrush`: GradientParams): *[IStrokePaletteProvider](../interfaces/istrokepaletteprovider.md)*
 
-*Defined in [src/Charting/Model/PaletteFactory.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L20)*
+*Defined in [src/Charting/Model/PaletteFactory.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/PaletteFactory.ts#L20)*
 
 Creates a Gradient Palette for line series, returning a [IStrokePaletteProvider](../interfaces/istrokepaletteprovider.md) implementation which
 colors data-points of line charts depending on the x-index of the data according to the Gradient Brush passed in

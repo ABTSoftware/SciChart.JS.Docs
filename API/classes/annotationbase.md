@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [AnnotationBase](annotationbase.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [AnnotationBase](annotationbase.md)
 
 # Class: AnnotationBase
 
@@ -52,7 +52,7 @@ Defines the base class to an Annotation - a type of marker, text label, line or 
 
 *Implementation of [IAnnotation](../interfaces/iannotation.md).[invalidateParentCallback](../interfaces/iannotation.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L166)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L166)*
 
 **`description`** callback which notifies the parent [SciChartSurface](scichartsurface.md) it's time to draw
 
@@ -68,7 +68,7 @@ ___
 
 *Implementation of [IAnnotation](../interfaces/iannotation.md).[type](../interfaces/iannotation.md#readonly-type)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:164](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L164)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:164](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L164)*
 
 **`description`** annotation type. See [EAnnotationType](../enums/eannotationtype.md) for a list of values
 
@@ -78,7 +78,7 @@ ___
 
 • **get annotationLayer**(): *[EAnnotationLayer](../enums/eannotationlayer.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:199](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L199)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:199](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L199)*
 
 **`inheritdoc`** 
 
@@ -86,7 +86,7 @@ ___
 
 • **set annotationLayer**(`annotationCanvas`: [EAnnotationLayer](../enums/eannotationlayer.md)): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L203)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L203)*
 
 **`inheritdoc`** 
 
@@ -104,7 +104,7 @@ ___
 
 • **get isEditable**(): *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L217)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L217)*
 
 **`inheritdoc`** 
 
@@ -112,7 +112,7 @@ ___
 
 • **set isEditable**(`isEditable`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L221)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L221)*
 
 **`inheritdoc`** 
 
@@ -130,7 +130,7 @@ ___
 
 • **get isHidden**(): *boolean*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:226](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L226)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:226](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L226)*
 
 **`inheritdoc`** 
 
@@ -138,7 +138,7 @@ ___
 
 • **set isHidden**(`isHidden`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:230](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L230)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:230](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L230)*
 
 **`inheritdoc`** 
 
@@ -156,7 +156,7 @@ ___
 
 • **get parentSurface**(): *[SciChartSurface](scichartsurface.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:208](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L208)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:208](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L208)*
 
 **`inheritdoc`** 
 
@@ -164,7 +164,7 @@ ___
 
 • **set parentSurface**(`parentSurface`: [SciChartSurface](scichartsurface.md)): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:212](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L212)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:212](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L212)*
 
 **`inheritdoc`** 
 
@@ -182,7 +182,7 @@ ___
 
 • **get x1**(): *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L253)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L253)*
 
 **`inheritdoc`** 
 
@@ -190,7 +190,7 @@ ___
 
 • **set x1**(`x1`: number): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L257)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L257)*
 
 **`inheritdoc`** 
 
@@ -208,7 +208,7 @@ ___
 
 • **get x2**(): *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L262)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L262)*
 
 **`inheritdoc`** 
 
@@ -216,7 +216,7 @@ ___
 
 • **set x2**(`x2`: number): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L266)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L266)*
 
 **`inheritdoc`** 
 
@@ -234,7 +234,7 @@ ___
 
 • **get xAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:289](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L289)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:289](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L289)*
 
 **`inheritdoc`** 
 
@@ -242,7 +242,7 @@ ___
 
 • **set xAxisId**(`xAxisId`: string): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:293](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L293)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:293](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L293)*
 
 **`inheritdoc`** 
 
@@ -260,7 +260,7 @@ ___
 
 • **get xCoordinateMode**(): *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L235)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L235)*
 
 The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -270,7 +270,7 @@ The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a 
 
 • **set xCoordinateMode**(`xCoordinateMode`: [ECoordinateMode](../enums/ecoordinatemode.md)): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:239](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L239)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:239](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L239)*
 
 The X-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -290,7 +290,7 @@ ___
 
 • **get y1**(): *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:271](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L271)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:271](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L271)*
 
 **`inheritdoc`** 
 
@@ -298,7 +298,7 @@ ___
 
 • **set y1**(`y1`: number): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:275](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L275)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:275](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L275)*
 
 **`inheritdoc`** 
 
@@ -316,7 +316,7 @@ ___
 
 • **get y2**(): *number*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:280](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L280)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:280](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L280)*
 
 **`inheritdoc`** 
 
@@ -324,7 +324,7 @@ ___
 
 • **set y2**(`y2`: number): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:284](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L284)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:284](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L284)*
 
 **`inheritdoc`** 
 
@@ -342,7 +342,7 @@ ___
 
 • **get yAxisId**(): *string*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:298](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L298)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:298](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L298)*
 
 **`inheritdoc`** 
 
@@ -350,7 +350,7 @@ ___
 
 • **set yAxisId**(`yAxisId`: string): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:302](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L302)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:302](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L302)*
 
 **`inheritdoc`** 
 
@@ -368,7 +368,7 @@ ___
 
 • **get yCoordinateMode**(): *[ECoordinateMode](../enums/ecoordinatemode.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L244)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L244)*
 
 The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -378,7 +378,7 @@ The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a 
 
 • **set yCoordinateMode**(`yCoordinateMode`: [ECoordinateMode](../enums/ecoordinatemode.md)): *void*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L248)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L248)*
 
 The Y-Coordinate mode. See [ECoordinateMode](../enums/ecoordinatemode.md) for a list of values
 
@@ -400,7 +400,7 @@ Name | Type |
 
 *Implementation of [IAnnotation](../interfaces/iannotation.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:315](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L315)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:315](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L315)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -422,7 +422,7 @@ ___
 
 *Implementation of [IAnnotation](../interfaces/iannotation.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:307](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L307)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:307](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L307)*
 
 **`description`** Called when the annotation is attached to a parent SciChartSurface.
 
@@ -442,7 +442,7 @@ ___
 
 *Implementation of [IAnnotation](../interfaces/iannotation.md)*
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:311](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L311)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:311](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L311)*
 
 **`description`** Called when the annotation is detached from a parent SciChartSurface.
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ENearestPointLogic](enearestpointlogic.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ENearestPointLogic](enearestpointlogic.md)
 
 # Enumeration: ENearestPointLogic
 
@@ -15,7 +15,7 @@
 
 • **NearestHorizontalPoint**:
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L7)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **NearestPoint2D**:
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L6)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L6)*

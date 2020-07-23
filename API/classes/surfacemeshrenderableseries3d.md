@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [SurfaceMeshRenderableSeries3D](surfacemeshrenderableseries3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [SurfaceMeshRenderableSeries3D](surfacemeshrenderableseries3d.md)
 
 # Class: SurfaceMeshRenderableSeries3D
 
@@ -68,7 +68,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:107](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L107)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:107](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L107)*
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ Name | Type |
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[invalidateParentCallback](baserenderableseries3d.md#invalidateparentcallback)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L38)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L38)*
 
 #### Type declaration:
 
@@ -101,13 +101,13 @@ Name | Type |
 
 • **get cellHardnessFactor**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:226](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L226)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:226](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L226)*
 
 **Returns:** *number*
 
 • **set cellHardnessFactor**(`cellHardnessFactor`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L229)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L229)*
 
 **Parameters:**
 
@@ -123,13 +123,13 @@ ___
 
 • **get colorMapTextureSize**(): *Size*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:138](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L138)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:138](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L138)*
 
 **Returns:** *Size*
 
 • **set colorMapTextureSize**(`colorMapTextureSize`: Size): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L141)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L141)*
 
 **Parameters:**
 
@@ -145,13 +145,13 @@ ___
 
 • **get contourInterval**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L250)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L250)*
 
 **Returns:** *number*
 
 • **set contourInterval**(`contourInterval`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L253)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:253](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L253)*
 
 **Parameters:**
 
@@ -167,13 +167,13 @@ ___
 
 • **get contourOffset**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:258](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L258)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:258](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L258)*
 
 **Returns:** *number*
 
 • **set contourOffset**(`contourOffset`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:261](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L261)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:261](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L261)*
 
 **Parameters:**
 
@@ -189,13 +189,13 @@ ___
 
 • **get contourStroke**(): *string*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L266)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:266](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L266)*
 
 **Returns:** *string*
 
 • **set contourStroke**(`contourStroke`: string): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:269](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L269)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:269](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L269)*
 
 **Parameters:**
 
@@ -211,13 +211,13 @@ ___
 
 • **get contourStrokeThickness**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:242](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L242)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:242](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L242)*
 
 **Returns:** *number*
 
 • **set contourStrokeThickness**(`contourStrokeThickness`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:245](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L245)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:245](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L245)*
 
 **Parameters:**
 
@@ -235,7 +235,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[dataSeries](baserenderableseries3d.md#dataseries)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L105)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L105)*
 
 **Returns:** *[BaseDataSeries3D](basedataseries3d.md)*
 
@@ -243,7 +243,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[dataSeries](baserenderableseries3d.md#dataseries)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:109](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L109)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:109](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L109)*
 
 **Parameters:**
 
@@ -259,13 +259,13 @@ ___
 
 • **get drawMeshAs**(): *[EDrawMeshAs](../enums/edrawmeshas.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L146)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L146)*
 
 **Returns:** *[EDrawMeshAs](../enums/edrawmeshas.md)*
 
 • **set drawMeshAs**(`drawMeshAs`: [EDrawMeshAs](../enums/edrawmeshas.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L149)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L149)*
 
 **Parameters:**
 
@@ -281,13 +281,13 @@ ___
 
 • **get drawSkirt**(): *boolean*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L162)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L162)*
 
 **Returns:** *boolean*
 
 • **set drawSkirt**(`drawSkirt`: boolean): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:165](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L165)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:165](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L165)*
 
 **Parameters:**
 
@@ -303,13 +303,13 @@ ___
 
 • **get heightScaleFactor**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L202)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:202](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L202)*
 
 **Returns:** *number*
 
 • **set heightScaleFactor**(`heightScaleFactor`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:205](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L205)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:205](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L205)*
 
 **Parameters:**
 
@@ -325,13 +325,13 @@ ___
 
 • **get highlight**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:274](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L274)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:274](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L274)*
 
 **Returns:** *number*
 
 • **set highlight**(`highlight`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:277](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L277)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:277](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L277)*
 
 **Parameters:**
 
@@ -349,7 +349,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[isVisible](baserenderableseries3d.md#isvisible)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:133](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L133)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:133](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L133)*
 
 **Returns:** *boolean*
 
@@ -357,7 +357,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[isVisible](baserenderableseries3d.md#isvisible)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L137)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L137)*
 
 **Parameters:**
 
@@ -373,13 +373,13 @@ ___
 
 • **get lightingFactor**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:234](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L234)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:234](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L234)*
 
 **Returns:** *number*
 
 • **set lightingFactor**(`lightingFactor`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:237](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L237)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:237](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L237)*
 
 **Parameters:**
 
@@ -395,13 +395,13 @@ ___
 
 • **get maximum**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L186)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L186)*
 
 **Returns:** *number*
 
 • **set maximum**(`maximum`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L189)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L189)*
 
 **Parameters:**
 
@@ -417,13 +417,13 @@ ___
 
 • **get meshColorPalette**(): *[MeshColorPalette](meshcolorpalette.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L170)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L170)*
 
 **Returns:** *[MeshColorPalette](meshcolorpalette.md)*
 
 • **set meshColorPalette**(`meshColorPalette`: [MeshColorPalette](meshcolorpalette.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:173](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L173)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:173](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L173)*
 
 **Parameters:**
 
@@ -439,13 +439,13 @@ ___
 
 • **get meshPaletteMode**(): *[EMeshPaletteMode](../enums/emeshpalettemode.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:194](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L194)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:194](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L194)*
 
 **Returns:** *[EMeshPaletteMode](../enums/emeshpalettemode.md)*
 
 • **set meshPaletteMode**(`meshPaletteMode`: [EMeshPaletteMode](../enums/emeshpalettemode.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:197](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L197)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:197](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L197)*
 
 **Parameters:**
 
@@ -461,13 +461,13 @@ ___
 
 • **get meshResolution**(): *[EMeshResolution](../enums/emeshresolution.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L210)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L210)*
 
 **Returns:** *[EMeshResolution](../enums/emeshresolution.md)*
 
 • **set meshResolution**(`meshResolution`: [EMeshResolution](../enums/emeshresolution.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L213)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L213)*
 
 **Parameters:**
 
@@ -483,13 +483,13 @@ ___
 
 • **get minimum**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:178](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L178)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:178](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L178)*
 
 **Returns:** *number*
 
 • **set minimum**(`minimum`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L181)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L181)*
 
 **Parameters:**
 
@@ -507,7 +507,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[opacity](baserenderableseries3d.md#opacity)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L69)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L69)*
 
 **Returns:** *number*
 
@@ -515,7 +515,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[opacity](baserenderableseries3d.md#opacity)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L72)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L72)*
 
 **Parameters:**
 
@@ -533,7 +533,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[paletteProvider](baserenderableseries3d.md#paletteprovider)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L89)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L89)*
 
 **Returns:** *[IPaletteProvider3D](../interfaces/ipaletteprovider3d.md)*
 
@@ -541,7 +541,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[paletteProvider](baserenderableseries3d.md#paletteprovider)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L92)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:92](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L92)*
 
 **Parameters:**
 
@@ -559,7 +559,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[parentSurface](baserenderableseries3d.md#parentsurface)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L124)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L124)*
 
 **Returns:** *[SciChart3DSurface](scichart3dsurface.md)*
 
@@ -567,7 +567,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[parentSurface](baserenderableseries3d.md#parentsurface)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L128)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:128](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L128)*
 
 **Parameters:**
 
@@ -585,7 +585,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[pointMarker](baserenderableseries3d.md#pointmarker)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:114](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L114)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:114](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L114)*
 
 **Returns:** *[BasePointMarker3D](basepointmarker3d.md)*
 
@@ -593,7 +593,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[pointMarker](baserenderableseries3d.md#pointmarker)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:117](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L117)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:117](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L117)*
 
 **Parameters:**
 
@@ -611,7 +611,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[sceneEntity](baserenderableseries3d.md#sceneentity)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L77)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L77)*
 
 **Returns:** *[IBaseSceneEntity](../interfaces/ibasesceneentity.md)*
 
@@ -623,7 +623,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[shininess](baserenderableseries3d.md#shininess)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L81)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L81)*
 
 **Returns:** *number*
 
@@ -631,7 +631,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[shininess](baserenderableseries3d.md#shininess)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L84)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L84)*
 
 **Parameters:**
 
@@ -649,7 +649,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[stroke](baserenderableseries3d.md#stroke)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L97)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L97)*
 
 **Returns:** *string*
 
@@ -657,7 +657,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[stroke](baserenderableseries3d.md#stroke)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L100)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L100)*
 
 **Parameters:**
 
@@ -673,13 +673,13 @@ ___
 
 • **get strokeThickness**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:154](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L154)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:154](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L154)*
 
 **Returns:** *number*
 
 • **set strokeThickness**(`strokeThickness`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L157)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L157)*
 
 **Parameters:**
 
@@ -697,7 +697,7 @@ ___
 
 *Overrides [BaseRenderableSeries3D](baserenderableseries3d.md).[type](baserenderableseries3d.md#abstract-type)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L134)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L134)*
 
 **Returns:** *[ESeriesType3D](../enums/eseriestype3d.md)*
 
@@ -707,13 +707,13 @@ ___
 
 • **get yOffset**(): *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L218)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L218)*
 
 **Returns:** *number*
 
 • **set yOffset**(`yOffset`: number): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L221)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts:221](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SurfaceMeshRenderableSeries3D.ts#L221)*
 
 **Parameters:**
 
@@ -733,7 +733,7 @@ Name | Type |
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[applyTheme](baserenderableseries3d.md#applytheme)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L65)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L65)*
 
 **Parameters:**
 
@@ -753,7 +753,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[delete](baserenderableseries3d.md#delete)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L161)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L161)*
 
 **Returns:** *void*
 
@@ -767,7 +767,7 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[onAttach](baserenderableseries3d.md#onattach)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L145)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:145](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L145)*
 
 **Parameters:**
 
@@ -787,6 +787,6 @@ ___
 
 *Inherited from [BaseRenderableSeries3D](baserenderableseries3d.md).[onDetach](baserenderableseries3d.md#ondetach)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L156)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L156)*
 
 **Returns:** *void*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IRolloverModifierOptions](irollovermodifieroptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IRolloverModifierOptions](irollovermodifieroptions.md)
 
 # Interface: IRolloverModifierOptions
 
@@ -26,7 +26,7 @@ Optional parameters used to configure a [RolloverModifier](../classes/rollovermo
 
 • **isHorizontal**? : *boolean*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L73)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L73)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 *Inherited from [IChartModifierBaseOptions](ichartmodifierbaseoptions.md).[modifierGroup](ichartmodifierbaseoptions.md#optional-modifiergroup)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L16)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L16)*
 
 Defines the Modifier Group string - a grouping by ID for sharing mouse events across charts
 
@@ -46,7 +46,7 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L74)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:74](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L74)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 • **strokeThickness**? : *number*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L75)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L75)*
 
 ___
 
@@ -64,6 +64,6 @@ ___
 
 *Inherited from [IChartModifierBaseOptions](ichartmodifierbaseoptions.md).[xyDirection](ichartmodifierbaseoptions.md#optional-xydirection)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L12)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L12)*
 
 Defines the {@link EXyDirection | Xy Direction} - whether the modifier works in X, Y or XY or neither direction

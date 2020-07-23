@@ -1,6 +1,6 @@
-[SciChart.js Documentation - v0.0.6](README.md) › [Globals](globals.md)
+[SciChart JS API - v0.0.6](README.md) › [Globals](globals.md)
 
-# SciChart.js Documentation - v0.0.6
+# SciChart JS API - v0.0.6
 
 # README file for API
 
@@ -8,4 +8,4 @@ Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying ou
 
 ## API Reference
 
-* [API](API/globals.md)
+* [API](globals.md)

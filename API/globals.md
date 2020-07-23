@@ -1,6 +1,6 @@
-[SciChart.js Documentation - v0.0.6](README.md) › [Globals](globals.md)
+[SciChart JS API - v0.0.6](README.md) › [Globals](globals.md)
 
-# SciChart.js Documentation - v0.0.6
+# SciChart JS API - v0.0.6
 
 ## Index
 
@@ -414,7 +414,7 @@
 
 Ƭ **TAxisOptions**: *object*
 
-*Defined in [src/Builder/index.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L20)*
+*Defined in [src/Builder/index.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L20)*
 
 #### Type declaration:
 
@@ -436,7 +436,7 @@ ___
 
 Ƭ **TAxisViewRects**: *object*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L12)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L12)*
 
 #### Type declaration:
 
@@ -450,7 +450,7 @@ ___
 
 Ƭ **TCategoryCoordCalc**: *[CategoryCoordinateCalculator](classes/categorycoordinatecalculator.md) | [FlippedCategoryCoordinateCalculator](classes/flippedcategorycoordinatecalculator.md)*
 
-*Defined in [src/Charting/Visuals/Axis/CategoryAxis.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/CategoryAxis.ts#L11)*
+*Defined in [src/Charting/Visuals/Axis/CategoryAxis.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/CategoryAxis.ts#L11)*
 
 ___
 
@@ -458,7 +458,7 @@ ___
 
 Ƭ **TChartOptions**: *object*
 
-*Defined in [src/Builder/index.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L29)*
+*Defined in [src/Builder/index.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L29)*
 
 #### Type declaration:
 
@@ -472,7 +472,7 @@ ___
 
 Ƭ **TDrawFunction**: *function*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L23)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L23)*
 
 #### Type declaration:
 
@@ -484,7 +484,7 @@ ___
 
 Ƭ **TFastLineRenderableSeriesOptions**: *object*
 
-*Defined in [src/Builder/index.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L9)*
+*Defined in [src/Builder/index.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L9)*
 
 #### Type declaration:
 
@@ -496,7 +496,7 @@ ___
 
 Ƭ **TGridLineStyle**: *object*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L27)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L27)*
 
 A type class to contain information about gridline styles
 
@@ -520,7 +520,7 @@ ___
 
 Ƭ **TLayoutAxisPartsWithStrategyFunc**: *function*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L17)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L17)*
 
 #### Type declaration:
 
@@ -542,7 +542,7 @@ ___
 
 Ƭ **TModifierMouseArgsParams**: *object*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L6)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L6)*
 
 #### Type declaration:
 
@@ -566,7 +566,7 @@ ___
 
 Ƭ **TPadding**: *object*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L18)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L18)*
 
 #### Type declaration:
 
@@ -584,7 +584,7 @@ ___
 
 Ƭ **TRenderLayers**: *object*
 
-*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L28)*
+*Defined in [src/Charting/Drawing/WebGlRenderContext2D.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlRenderContext2D.ts#L28)*
 
 Defines Render Layers 1,2,3,4 which are used to compose rendering
 
@@ -604,7 +604,7 @@ ___
 
 Ƭ **TSciChartDestination**: *object*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L44)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L44)*
 
 #### Type declaration:
 
@@ -622,7 +622,7 @@ ___
 
 Ƭ **TSciChartMaster**: *object*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L51)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L51)*
 
 #### Type declaration:
 
@@ -642,7 +642,7 @@ ___
 
 Ƭ **TSciChartSurfaceCanvases**: *object*
 
-*Defined in [src/sciChartInitCommon.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L10)*
+*Defined in [src/sciChartInitCommon.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L10)*
 
 #### Type declaration:
 
@@ -664,7 +664,7 @@ ___
 
 Ƭ **TSeriesOptions**: *object*
 
-*Defined in [src/Builder/index.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L13)*
+*Defined in [src/Builder/index.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L13)*
 
 #### Type declaration:
 
@@ -682,7 +682,7 @@ ___
 
 Ƭ **TStrokeFill**: *object*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L72)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L72)*
 
 #### Type declaration:
 
@@ -696,7 +696,7 @@ ___
 
 Ƭ **TTextStyle**: *object*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L54)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:54](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L54)*
 
 A type class to contain information about Axis Label text styles
 
@@ -719,7 +719,7 @@ ___
 
 Ƭ **TTextureObject**: *object*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L12)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L12)*
 
 #### Type declaration:
 
@@ -735,7 +735,7 @@ ___
 
 Ƭ **TTickLineStyle**: *object*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L41)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L41)*
 
 A type class to contain information about Tick line styles
 
@@ -759,7 +759,7 @@ ___
 
 Ƭ **TTickObject**: *object*
 
-*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L53)*
+*Defined in [src/Charting/Visuals/Axis/AxisBase2D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisBase2D.ts#L53)*
 
 #### Type declaration:
 
@@ -779,7 +779,7 @@ ___
 
 Ƭ **TTooltipProps**: *object*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L22)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L22)*
 
 Props type used for tooltips in the [RolloverModifier](classes/rollovermodifier.md)
 
@@ -805,7 +805,7 @@ ___
 
 Ƭ **TWebAssemblyChart**: *object*
 
-*Defined in [src/sciChartInitCommon.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L5)*
+*Defined in [src/sciChartInitCommon.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L5)*
 
 #### Type declaration:
 
@@ -819,7 +819,7 @@ ___
 
 Ƭ **TWebAssemblyChart3D**: *object*
 
-*Defined in [src/sciChartInit3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit3D.ts#L10)*
+*Defined in [src/sciChartInit3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit3D.ts#L10)*
 
 #### Type declaration:
 
@@ -833,7 +833,7 @@ ___
 
 • **COLOR_MAP_PREFIX**: *"colorMap."* = "colorMap."
 
-*Defined in [src/Charting/Visuals/RenderableSeries/UniformHeatmapRenderableSeries.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/UniformHeatmapRenderableSeries.ts#L18)*
+*Defined in [src/Charting/Visuals/RenderableSeries/UniformHeatmapRenderableSeries.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/UniformHeatmapRenderableSeries.ts#L18)*
 
 ___
 
@@ -841,7 +841,7 @@ ___
 
 • **DEFAULT_HEIGHT**: *1080* = 1080
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L7)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L7)*
 
 ___
 
@@ -849,7 +849,7 @@ ___
 
 • **DEFAULT_WIDTH**: *1920* = 1920
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L8)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L8)*
 
 ___
 
@@ -857,7 +857,7 @@ ___
 
 • **DEG_TO_RAD**: *number* = Math.PI / 180
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L12)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L12)*
 
 ___
 
@@ -865,7 +865,7 @@ ___
 
 • **MIN_DRAG_SENSITIVITY**: *5* = 5
 
-*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L29)*
+*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L29)*
 
 ___
 
@@ -873,7 +873,7 @@ ___
 
 • **MIN_SERIES_AREA_SIZE**: *10* = 10
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L10)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L10)*
 
 ___
 
@@ -881,7 +881,7 @@ ___
 
 • **PT_TO_PX**: *number* = 96 / 72
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L9)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L9)*
 
 ___
 
@@ -889,7 +889,7 @@ ___
 
 • **PX_TO_PT**: *number* = 72 / 96
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L10)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L10)*
 
 ___
 
@@ -897,7 +897,7 @@ ___
 
 • **START_ANGLE**: *90* = 90
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L13)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L13)*
 
 ___
 
@@ -905,7 +905,7 @@ ___
 
 • **TEXTURE_SIZE**: *256* = 256
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L10)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L10)*
 
 ___
 
@@ -913,7 +913,7 @@ ___
 
 • **TICKS_SIZE**: *12* = 12
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L19)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L19)*
 
 ___
 
@@ -921,7 +921,7 @@ ___
 
 • **TOOLTIP_HEIGHT**: *60* = 60
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:66](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L66)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:66](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L66)*
 
 ___
 
@@ -929,7 +929,7 @@ ___
 
 • **TOOLTIP_PADDING_TOP**: *4* = 4
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L67)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:67](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L67)*
 
 ___
 
@@ -937,7 +937,7 @@ ___
 
 • **TOOLTIP_WIDTH**: *120* = 120
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L65)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L65)*
 
 ___
 
@@ -945,7 +945,7 @@ ___
 
 • **ZeroRangeGrowBy**: *number* = 0.01
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L190)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L190)*
 
 ___
 
@@ -953,7 +953,7 @@ ___
 
 • **isListenerBlocked**: *boolean* = false
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:435](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L435)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:435](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L435)*
 
 ___
 
@@ -961,9 +961,9 @@ ___
 
 • **webAssemblyContextCache**: *TSciChart3D*
 
-*Defined in [src/sciChartInit2DTest.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit2DTest.ts#L5)*
+*Defined in [src/sciChartInit2DTest.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit2DTest.ts#L5)*
 
-*Defined in [src/sciChartInit3DTest.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit3DTest.ts#L5)*
+*Defined in [src/sciChartInit3DTest.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit3DTest.ts#L5)*
 
 ## Functions
 
@@ -971,7 +971,7 @@ ___
 
 ▸ **addEventListenerToPieSegment**(`ps`: [IPieSegment](interfaces/ipiesegment.md), `el`: HTMLElement, `animate`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:437](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L437)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:437](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L437)*
 
 **Parameters:**
 
@@ -989,7 +989,7 @@ ___
 
 ▸ **addEventListenerToSeries**(`rs`: [IRenderableSeries](interfaces/irenderableseries.md)): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L68)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:68](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L68)*
 
 **Parameters:**
 
@@ -1005,7 +1005,7 @@ ___
 
 ▸ **buildAxes**(`webAssemblyContext`: TSciChart, `scs`: [SciChartSurface](classes/scichartsurface.md), `axisOptions`: [TAxisOptions](globals.md#taxisoptions)): *void*
 
-*Defined in [src/Builder/buildAxes.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/buildAxes.ts#L8)*
+*Defined in [src/Builder/buildAxes.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/buildAxes.ts#L8)*
 
 **Parameters:**
 
@@ -1023,7 +1023,7 @@ ___
 
 ▸ **buildChart**(`webAssemblyContext`: TSciChart, `scs`: [SciChartSurface](classes/scichartsurface.md), `chartOptions`: [TChartOptions](globals.md#tchartoptions)): *void*
 
-*Defined in [src/Builder/buildChart.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/buildChart.ts#L7)*
+*Defined in [src/Builder/buildChart.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/buildChart.ts#L7)*
 
 **Parameters:**
 
@@ -1041,7 +1041,7 @@ ___
 
 ▸ **buildSeries**(`webAssemblyContext`: TSciChart, `seriesOptions`: [TSeriesOptions](globals.md#tseriesoptions)): *[IRenderableSeries](interfaces/irenderableseries.md)*
 
-*Defined in [src/Builder/buildSeries.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/buildSeries.ts#L9)*
+*Defined in [src/Builder/buildSeries.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/buildSeries.ts#L9)*
 
 **Parameters:**
 
@@ -1058,7 +1058,7 @@ ___
 
 ▸ **calcLegendPosition**(`seriesViewRect`: Rect, `div`: Rect, `margin`: number, `placement`: [ELegendPlacement](enums/elegendplacement.md)): *object*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L146)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegendBase.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegendBase.ts#L146)*
 
 **Parameters:**
 
@@ -1081,7 +1081,7 @@ ___
 
 ▸ **calcTitlePosition**(`x`: number, `y`: number, `outerRadius`: number, `innerRadius`: number, `a1`: number, `a2`: number, `delta`: number, `divWidth`: number, `divHeight`: number): *object*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:414](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L414)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:414](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L414)*
 
 **Parameters:**
 
@@ -1109,7 +1109,7 @@ ___
 
 ▸ **calcTooltipPositions**(`mousePoint`: Point, `rsList`: [IRenderableSeries](interfaces/irenderableseries.md)[], `seriesViewRect`: Rect, `width`: number, `height`: number, `paddingTop`: number): *object[]*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:333](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L333)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:333](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L333)*
 
 **Parameters:**
 
@@ -1130,7 +1130,7 @@ ___
 
 ▸ **calculateMaxGroupSize**(`outerLayoutSizes`: Record‹string, number›): *number*
 
-*Defined in [src/Charting/LayoutManager/SciChartVerticalGroup.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/SciChartVerticalGroup.ts#L37)*
+*Defined in [src/Charting/LayoutManager/SciChartVerticalGroup.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/SciChartVerticalGroup.ts#L37)*
 
 **Parameters:**
 
@@ -1146,7 +1146,7 @@ ___
 
 ▸ **checkIsOutOfDataRange**(`rs`: [IRenderableSeries](interfaces/irenderableseries.md), `xValue`: number, `isCategoryAxis`: boolean): *boolean*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:413](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L413)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:413](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L413)*
 
 **`description`** Checks if x values is out of data range. FOR SORTED DATA ONLY!
 
@@ -1166,7 +1166,7 @@ ___
 
 ▸ **checkWebGLSupport**(): *[EWebGLSupport](enums/ewebglsupport.md)*
 
-*Defined in [src/sciChartInitCommon.ts:123](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L123)*
+*Defined in [src/sciChartInitCommon.ts:123](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L123)*
 
 **Returns:** *[EWebGLSupport](enums/ewebglsupport.md)*
 
@@ -1176,7 +1176,7 @@ ___
 
 ▸ **convertRelativeToAbsolute**(`relativeValue`: number, `size`: number): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L153)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L153)*
 
 **Parameters:**
 
@@ -1193,7 +1193,7 @@ ___
 
 ▸ **copyToCanvas**(`masterCanasId`: string): *(Anonymous function)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:562](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L562)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:562](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L562)*
 
 **Parameters:**
 
@@ -1209,7 +1209,7 @@ ___
 
 ▸ **createAnnotations**(`rs`: [IRenderableSeries](interfaces/irenderableseries.md), `seriesIndex`: number, `width`: number, `height`: number): *void*
 
-*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:396](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L396)*
+*Defined in [src/Charting/ChartModifiers/RolloverModifier.ts:396](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RolloverModifier.ts#L396)*
 
 **`description`** Creates MarkerAnnotation and TooltipAnnotation and assigns to rolloverSeries properties
 
@@ -1230,7 +1230,7 @@ ___
 
 ▸ **createChartDestination**(`canvasId`: string): *object*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:574](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L574)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:574](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L574)*
 
 **Parameters:**
 
@@ -1254,7 +1254,7 @@ ___
 
 ▸ **createMaster**(): *Promise‹[TSciChartMaster](globals.md#tscichartmaster)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:435](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L435)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:435](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L435)*
 
 **Returns:** *Promise‹[TSciChartMaster](globals.md#tscichartmaster)›*
 
@@ -1264,7 +1264,7 @@ ___
 
 ▸ **createMultichart**(`divElementId`: string, `clearChildren`: boolean, `width`: number, `height`: number): *Promise‹[TWebAssemblyChart](globals.md#twebassemblychart)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:410](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L410)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:410](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L410)*
 
 **Parameters:**
 
@@ -1283,7 +1283,7 @@ ___
 
 ▸ **createNativeRect**(`webAssemblyContext`: TSciChart, `xTopLeft`: number, `yTopLeft`: number, `xBottomRight`: number, `yBottomRight`: number): *SCRTRectVertex‹›*
 
-*Defined in [src/Charting/Visuals/Helpers/createNativeRect.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Helpers/createNativeRect.ts#L3)*
+*Defined in [src/Charting/Visuals/Helpers/createNativeRect.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Helpers/createNativeRect.ts#L3)*
 
 **Parameters:**
 
@@ -1303,7 +1303,7 @@ ___
 
 ▸ **createNewHitTestInfo**(`xCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `yCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `isVerticalChart`: boolean, `seriesType`: string, `xNativeValues`: DoubleVector, `yNativeValues`: DoubleVector, `xHitCoord`: number, `yHitCoord`: number, `nearestPointIndex`: number, `hitTestRadius`: number, `interpolate`: boolean): *[HitTestInfo](classes/hittestinfo.md)‹›*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts:152](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts#L152)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts:152](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts#L152)*
 
 **Parameters:**
 
@@ -1329,7 +1329,7 @@ ___
 
 ▸ **createPen**(`wasmContext`: TSciChart, `htmlColorCode`: string, `strokeThickness`: number): *SCRTPen*
 
-*Defined in [src/Charting/Visuals/Helpers/createPen.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Helpers/createPen.ts#L5)*
+*Defined in [src/Charting/Visuals/Helpers/createPen.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Helpers/createPen.ts#L5)*
 
 **Parameters:**
 
@@ -1347,7 +1347,7 @@ ___
 
 ▸ **createSciChart3DSurface**(`divElementId`: string, `width`: number, `height`: number): *Promise‹[TWebAssemblyChart3D](globals.md#twebassemblychart3d)›*
 
-*Defined in [src/sciChartInit3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit3D.ts#L16)*
+*Defined in [src/sciChartInit3D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit3D.ts#L16)*
 
 **Parameters:**
 
@@ -1365,7 +1365,7 @@ ___
 
 ▸ **createSolidBrush**(`wasmContext`: TSciChart, `htmlColorCode`: string): *SCRTBrush*
 
-*Defined in [src/Charting/Visuals/Helpers/createSolidBrush.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Helpers/createSolidBrush.ts#L5)*
+*Defined in [src/Charting/Visuals/Helpers/createSolidBrush.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Helpers/createSolidBrush.ts#L5)*
 
 **Parameters:**
 
@@ -1382,7 +1382,7 @@ ___
 
 ▸ **createSvg**(`svgString`: string, `svgRoot`: SVGSVGElement): *SVGElement*
 
-*Defined in [src/Charting/Visuals/Annotations/SvgAnnotation.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/SvgAnnotation.ts#L32)*
+*Defined in [src/Charting/Visuals/Annotations/SvgAnnotation.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/SvgAnnotation.ts#L32)*
 
 **Parameters:**
 
@@ -1399,7 +1399,7 @@ ___
 
 ▸ **debugProps**(`props`: SCRTGridDrawingProperties): *void*
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L45)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L45)*
 
 **Parameters:**
 
@@ -1415,7 +1415,7 @@ ___
 
 ▸ **drawBand**(`wasmContext`: TSciChart, `renderContext`: [WebGlRenderContext2D](classes/webglrendercontext2d.md), `renderPassData`: [RenderPassData](classes/renderpassdata.md), `nativeDrawingProvider`: SCRTBandSeriesDrawingProvider, `xValues`: DoubleVector, `yValues`: DoubleVector, `y1Values`: DoubleVector, `fillBrush`: SCRTBrush, `strokePen`: SCRTPen, `strokePenY1`: SCRTPen, `viewRect`: Rect): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/StackedMountainCollection.ts:243](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/StackedMountainCollection.ts#L243)*
+*Defined in [src/Charting/Visuals/RenderableSeries/StackedMountainCollection.ts:243](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/StackedMountainCollection.ts#L243)*
 
 **Parameters:**
 
@@ -1441,7 +1441,7 @@ ___
 
 ▸ **drawColumns**(`wasmContext`: TSciChart, `renderContext`: [WebGlRenderContext2D](classes/webglrendercontext2d.md), `xCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `yCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `isVerticalChart`: boolean, `nativeDrawingProvider`: SCRTStackedColumnSeriesDrawingProvider, `xValues`: DoubleVector, `yValues`: DoubleVector, `y1Values`: DoubleVector, `fillBrush`: SCRTBrush, `strokePen`: SCRTPen, `viewRect`: Rect, `columnWidth`: number, `spacing`: number, `stackedGroupCount`: number, `stackedGroupIndex`: number): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/StackedColumnCollection.ts:325](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/StackedColumnCollection.ts#L325)*
+*Defined in [src/Charting/Visuals/RenderableSeries/StackedColumnCollection.ts:325](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/StackedColumnCollection.ts#L325)*
 
 **Parameters:**
 
@@ -1472,7 +1472,7 @@ ___
 
 ▸ **getCanvas2dId**(`divElementId`: string): *string*
 
-*Defined in [src/sciChartInitCommon.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L25)*
+*Defined in [src/sciChartInitCommon.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L25)*
 
 **Parameters:**
 
@@ -1488,7 +1488,7 @@ ___
 
 ▸ **getCheckboxId**(`pieSegmentId`: string): *string*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartPieLegend.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartPieLegend.ts#L82)*
+*Defined in [src/Charting/Visuals/Legend/SciChartPieLegend.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartPieLegend.ts#L82)*
 
 **Parameters:**
 
@@ -1504,7 +1504,7 @@ ___
 
 ▸ **getDataPointWidth**(`xValues`: DoubleVector, `xCoordCalc`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `seriesViewRectWidth`: number, `widthFraction`: number, `isCategoryAxis`: boolean): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:441](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L441)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:441](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L441)*
 
 **Parameters:**
 
@@ -1524,7 +1524,7 @@ ___
 
 ▸ **getDonutSectorPath**(`x`: number, `y`: number, `outerR`: number, `innerR`: number, `a1`: number, `a2`: number, `delta`: number): *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:386](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L386)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:386](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L386)*
 
 **`description`** Create donut sector path string
 
@@ -1548,7 +1548,7 @@ ___
 
 ▸ **getHitTestInfo**(`xCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `yCoordinateCalculator`: [CoordinateCalculatorBase](classes/coordinatecalculatorbase.md), `isVerticalChart`: boolean, `seriesType`: string, `xNativeValues`: DoubleVector, `yNativeValues`: DoubleVector, `xHitCoord`: number, `yHitCoord`: number, `nearestPointIndex`: number, `hitTestRadius`: number, `interpolate`: boolean): *[HitTestInfo](classes/hittestinfo.md)‹›*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts#L192)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/BaseHitTestProvider.ts#L192)*
 
 **Parameters:**
 
@@ -1574,7 +1574,7 @@ ___
 
 ▸ **getHorizontalAxisRequiredSize**(`axisLayoutState`: [AxisLayoutState](classes/axislayoutstate.md)): *number*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:264](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L264)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:264](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L264)*
 
 **Parameters:**
 
@@ -1590,7 +1590,7 @@ ___
 
 ▸ **getIndicesRange**(`webAssemblyContext`: TSciChart, `xValues`: DoubleVector, `xRange`: NumberRange, `isSorted`: boolean): *NumberRange*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L203)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:203](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L203)*
 
 **Parameters:**
 
@@ -1609,7 +1609,7 @@ ___
 
 ▸ **getMasterCanvas**(`canvasElementId`: string): *HTMLCanvasElement*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:536](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L536)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:536](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L536)*
 
 **Parameters:**
 
@@ -1625,7 +1625,7 @@ ___
 
 ▸ **getSectorPath**(`x`: number, `y`: number, `outerRadius`: number, `a1`: number, `a2`: number, `delta`: number): *string*
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:362](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L362)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:362](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L362)*
 
 **`description`** Create sector path string
 
@@ -1648,7 +1648,7 @@ ___
 
 ▸ **getVerticalAxisRequiredSize**(`axisLayoutState`: [AxisLayoutState](classes/axislayoutstate.md)): *number*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:268](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L268)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:268](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L268)*
 
 **Parameters:**
 
@@ -1664,7 +1664,7 @@ ___
 
 ▸ **getWindowedYRange**(`webAssemblyContext`: TSciChart, `xValues`: DoubleVector, `yValues`: DoubleVector, `xRange`: NumberRange, `getPositiveRange`: boolean, `isXCategoryAxis`: boolean, `isSorted`: boolean): *NumberRange*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L236)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L236)*
 
 **Parameters:**
 
@@ -1686,7 +1686,7 @@ ___
 
 ▸ **getXRange**(`range`: NumberRange, `count`: number, `widthFraction`: number): *NumberRange‹›*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/FastColumnRenderableSeries.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/FastColumnRenderableSeries.ts#L85)*
+*Defined in [src/Charting/Visuals/RenderableSeries/FastColumnRenderableSeries.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/FastColumnRenderableSeries.ts#L85)*
 
 **Parameters:**
 
@@ -1704,7 +1704,7 @@ ___
 
 ▸ **initCanvas**(`divElementId`: string, `width`: number, `height`: number, `activeCanvas`: [ECanvasType](enums/ecanvastype.md)): *[TSciChartSurfaceCanvases](globals.md#tscichartsurfacecanvases)*
 
-*Defined in [src/sciChartInitCommon.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L27)*
+*Defined in [src/sciChartInitCommon.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L27)*
 
 **Parameters:**
 
@@ -1723,7 +1723,7 @@ ___
 
 ▸ **initDrawEngine**(`wasmContext`: TSciChart, `canvases`: [TSciChartSurfaceCanvases](globals.md#tscichartsurfacecanvases), `resolve`: function): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:370](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L370)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:370](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L370)*
 
 **Parameters:**
 
@@ -1749,7 +1749,7 @@ ___
 
 ▸ **layoutAxesFromBottomToTop**(`left`: number, `bottom`: number, `right`: number, `axes`: [AxisBase2D](classes/axisbase2d.md)[]): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L300)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:300](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L300)*
 
 **Parameters:**
 
@@ -1768,7 +1768,7 @@ ___
 
 ▸ **layoutAxesFromLeftToRight**(`left`: number, `top`: number, `bottom`: number, `axes`: [AxisBase2D](classes/axisbase2d.md)[]): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:286](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L286)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:286](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L286)*
 
 **Parameters:**
 
@@ -1787,7 +1787,7 @@ ___
 
 ▸ **layoutAxesFromRightToLeft**(`right`: number, `top`: number, `bottom`: number, `axes`: [AxisBase2D](classes/axisbase2d.md)[]): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:272](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L272)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:272](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L272)*
 
 **Parameters:**
 
@@ -1806,7 +1806,7 @@ ___
 
 ▸ **layoutAxesFromTopToBottom**(`left`: number, `top`: number, `right`: number, `axes`: [AxisBase2D](classes/axisbase2d.md)[]): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:314](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L314)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:314](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L314)*
 
 **Parameters:**
 
@@ -1825,7 +1825,7 @@ ___
 
 ▸ **layoutAxisParts**(`axis`: [AxisBase2D](classes/axisbase2d.md), `layout`: [TLayoutAxisPartsWithStrategyFunc](globals.md#tlayoutaxispartswithstrategyfunc)): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:328](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L328)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:328](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L328)*
 
 **Parameters:**
 
@@ -1842,7 +1842,7 @@ ___
 
 ▸ **layoutAxisPartsBottomStrategy**(`axisRendererWidth`: number, `axisRendererHeight`: number, `axisTitleRendererWidth`: number, `axisTitleRendererHeight`: number, `containerBounds`: Rect): *[TAxisViewRects](globals.md#taxisviewrects)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:419](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L419)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:419](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L419)*
 
 **Parameters:**
 
@@ -1862,7 +1862,7 @@ ___
 
 ▸ **layoutAxisPartsLeftStrategy**(`axisRendererWidth`: number, `axisRendererHeight`: number, `axisTitleRendererWidth`: number, `axisTitleRendererHeight`: number, `containerBounds`: Rect): *[TAxisViewRects](globals.md#taxisviewrects)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:350](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L350)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:350](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L350)*
 
 **Parameters:**
 
@@ -1882,7 +1882,7 @@ ___
 
 ▸ **layoutAxisPartsRightStrategy**(`axisRendererWidth`: number, `axisRendererHeight`: number, `axisTitleRendererWidth`: number, `axisTitleRendererHeight`: number, `containerBounds`: Rect): *[TAxisViewRects](globals.md#taxisviewrects)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:373](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L373)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:373](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L373)*
 
 **Parameters:**
 
@@ -1902,7 +1902,7 @@ ___
 
 ▸ **layoutAxisPartsTopStrategy**(`axisRendererWidth`: number, `axisRendererHeight`: number, `axisTitleRendererWidth`: number, `axisTitleRendererHeight`: number, `containerBounds`: Rect): *[TAxisViewRects](globals.md#taxisviewrects)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:396](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L396)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:396](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L396)*
 
 **Parameters:**
 
@@ -1922,7 +1922,7 @@ ___
 
 ▸ **measureTextHeight**(`fontSizePx`: number): *number*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:233](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L233)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:233](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L233)*
 
 **Parameters:**
 
@@ -1938,7 +1938,7 @@ ___
 
 ▸ **measureTextWidth**(`ctx`: CanvasRenderingContext2D, `text`: string): *number*
 
-*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L235)*
+*Defined in [src/Charting/Visuals/TextureManager/TextureManager.ts:235](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/TextureManager.ts#L235)*
 
 **Parameters:**
 
@@ -1955,7 +1955,7 @@ ___
 
 ▸ **removeEventListenerFromSeries**(`renderableSeriesId`: string): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L76)*
+*Defined in [src/Charting/Visuals/Legend/SciChartLegend.ts:76](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartLegend.ts#L76)*
 
 **Parameters:**
 
@@ -1967,7 +1967,7 @@ Name | Type |
 
 ▸ **removeEventListenerFromSeries**(`renderableSeriesId`: string): *void*
 
-*Defined in [src/Charting/Visuals/Legend/SciChartPieLegend.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartPieLegend.ts#L84)*
+*Defined in [src/Charting/Visuals/Legend/SciChartPieLegend.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Legend/SciChartPieLegend.ts#L84)*
 
 **Parameters:**
 
@@ -1983,7 +1983,7 @@ ___
 
 ▸ **sciChartInit2DTest**(`callback`: function, `done`: function): *void*
 
-*Defined in [src/sciChartInit2DTest.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit2DTest.ts#L8)*
+*Defined in [src/sciChartInit2DTest.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit2DTest.ts#L8)*
 
 **Parameters:**
 
@@ -2015,7 +2015,7 @@ ___
 
 ▸ **sciChartInit3DTest**(`callback`: function, `done`: function): *void*
 
-*Defined in [src/sciChartInit3DTest.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInit3DTest.ts#L8)*
+*Defined in [src/sciChartInit3DTest.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInit3DTest.ts#L8)*
 
 **Parameters:**
 
@@ -2047,7 +2047,7 @@ ___
 
 ▸ **subscribeToResize**(`chartRoot`: HTMLDivElement, `aspect`: number, `sciChartSurface`: [ISciChartSurfaceBase](interfaces/iscichartsurfacebase.md)): *void*
 
-*Defined in [src/sciChartInitCommon.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L134)*
+*Defined in [src/sciChartInitCommon.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L134)*
 
 **Parameters:**
 
@@ -2065,7 +2065,7 @@ ___
 
 ▸ **toLineStyle**(`styleProperty`: [TGridLineStyle](globals.md#tgridlinestyle)): *[ILineStyle](interfaces/ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L324)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L324)*
 
 **Parameters:**
 
@@ -2081,7 +2081,7 @@ ___
 
 ▸ **toScrtLineStyle**(`lineStyle`: [ILineStyle](interfaces/ilinestyle.md), `scrtLineStyle`: SCRTTickStyle): *SCRTTickStyle*
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L105)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L105)*
 
 **Parameters:**
 
@@ -2098,7 +2098,7 @@ ___
 
 ▸ **toScrtTextStyle**(`labelStyle`: [ITextStyle](interfaces/itextstyle.md), `scrtTextStyle`: SCRTTextStyle): *SCRTTextStyle‹›*
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L113)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L113)*
 
 **Parameters:**
 
@@ -2115,7 +2115,7 @@ ___
 
 ▸ **toString**(`vector`: TSRVector3): *string*
 
-*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L12)*
+*Defined in [src/Charting3D/Visuals/SciChart3DRenderer.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/SciChart3DRenderer.ts#L12)*
 
 **Parameters:**
 
@@ -2131,7 +2131,7 @@ ___
 
 ▸ **toStringRange**(`r`: SCRTAxisRange): *string*
 
-*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L42)*
+*Defined in [src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/SurfaceMeshSceneEntity.ts#L42)*
 
 **Parameters:**
 
@@ -2147,7 +2147,7 @@ ___
 
 ▸ **toTickStyle**(`tickLineStyle`: [TTickLineStyle](globals.md#tticklinestyle)): *[ILineStyle](interfaces/ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:333](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L333)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisBase3D.ts:333](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisBase3D.ts#L333)*
 
 **Parameters:**
 
@@ -2163,7 +2163,7 @@ ___
 
 ▸ **updateBottomOuterAxesLayoutState**(`axis`: [AxisBase2D](classes/axisbase2d.md)): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:243](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L243)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:243](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L243)*
 
 **Parameters:**
 
@@ -2179,7 +2179,7 @@ ___
 
 ▸ **updateLeftAndRightChartLayoutState**(`chartLayoutState`: ChartLayoutState, `additionalLeftSize`: number, `additionalRightSize`: number): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L218)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:218](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L218)*
 
 **Parameters:**
 
@@ -2197,7 +2197,7 @@ ___
 
 ▸ **updateLeftOuterAxesLayoutState**(`axis`: [AxisBase2D](classes/axisbase2d.md)): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L250)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L250)*
 
 **Parameters:**
 
@@ -2213,7 +2213,7 @@ ___
 
 ▸ **updateRightOuterAxesLayoutState**(`axis`: [AxisBase2D](classes/axisbase2d.md)): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L257)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:257](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L257)*
 
 **Parameters:**
 
@@ -2229,7 +2229,7 @@ ___
 
 ▸ **updateScrtAxisDescriptor**(`scrtAxisDesc`: SCRTAxisDescriptor, `axisDesc`: [IAxisDescriptor](interfaces/iaxisdescriptor.md)): *void*
 
-*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L72)*
+*Defined in [src/Charting3D/Visuals/Axis/AxisCubeEntity.ts:72](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/AxisCubeEntity.ts#L72)*
 
 **Parameters:**
 
@@ -2246,7 +2246,7 @@ ___
 
 ▸ **updateTopAndBottomChartLayoutState**(`chartLayoutState`: ChartLayoutState, `additionalTopSize`: number, `additionalBottomSize`: number): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:227](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L227)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:227](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L227)*
 
 **Parameters:**
 
@@ -2264,7 +2264,7 @@ ___
 
 ▸ **updateTopOuterAxesLayoutState**(`axis`: [AxisBase2D](classes/axisbase2d.md)): *void*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L236)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L236)*
 
 **Parameters:**
 
@@ -2280,37 +2280,37 @@ Name | Type |
 
 ### ▪ **PADDING**: *object*
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L12)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L12)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L9)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L9)*
 
 ###  BOTTOM
 
 • **BOTTOM**: *number* = 5
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L14)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L14)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L11)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L11)*
 
 ###  LEFT
 
 • **LEFT**: *number* = 5
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L15)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L15)*
 
 ###  RIGHT
 
 • **RIGHT**: *number* = 5
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L16)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L16)*
 
 ###  TOP
 
 • **TOP**: *number* = 10
 
-*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L13)*
+*Defined in [src/Charting/Visuals/Axis/AxisRenderer.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisRenderer.ts#L13)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L10)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L10)*
 
 ___
 
@@ -2318,25 +2318,25 @@ ___
 
 ### ▪ **sciChartMaster**: *object*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L57)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L57)*
 
 ###  createChildSurface
 
 • **createChildSurface**: *undefined* = undefined
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L60)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L60)*
 
 ###  getChildSurfaces
 
 • **getChildSurfaces**: *undefined* = undefined
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L59)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:59](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L59)*
 
 ###  wasmContext
 
 • **wasmContext**: *undefined* = undefined
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L58)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:58](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L58)*
 
 ___
 
@@ -2344,13 +2344,13 @@ ___
 
 ### ▪ **sciChartVanillaJS**: *object*
 
-*Defined in [src/Builder/index.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L34)*
+*Defined in [src/Builder/index.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L34)*
 
 ###  new
 
 ▸ **new**(`canvasElementId`: string, `chartOptions`: [TChartOptions](globals.md#tchartoptions), `width`: number, `height`: number): *Promise‹[SciChartSurface](classes/scichartsurface.md)‹››*
 
-*Defined in [src/Builder/index.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Builder/index.ts#L35)*
+*Defined in [src/Builder/index.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Builder/index.ts#L35)*
 
 **Parameters:**
 
@@ -2369,52 +2369,52 @@ ___
 
 ### ▪ **testLayoutManager**: *object*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:442](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L442)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:442](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L442)*
 
 ###  layoutAxisPartsBottomStrategy
 
 • **layoutAxisPartsBottomStrategy**: *[layoutAxisPartsBottomStrategy](globals.md#layoutaxispartsbottomstrategy)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:450](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L450)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:450](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L450)*
 
 ###  layoutAxisPartsLeftStrategy
 
 • **layoutAxisPartsLeftStrategy**: *[layoutAxisPartsLeftStrategy](globals.md#layoutaxispartsleftstrategy)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:447](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L447)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:447](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L447)*
 
 ###  layoutAxisPartsRightStrategy
 
 • **layoutAxisPartsRightStrategy**: *[layoutAxisPartsRightStrategy](globals.md#layoutaxispartsrightstrategy)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:448](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L448)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:448](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L448)*
 
 ###  layoutAxisPartsTopStrategy
 
 • **layoutAxisPartsTopStrategy**: *[layoutAxisPartsTopStrategy](globals.md#layoutaxispartstopstrategy)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:449](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L449)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:449](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L449)*
 
 ###  updateBottomOuterAxesLayoutState
 
 • **updateBottomOuterAxesLayoutState**: *[updateBottomOuterAxesLayoutState](globals.md#updatebottomouteraxeslayoutstate)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:444](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L444)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:444](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L444)*
 
 ###  updateLeftOuterAxesLayoutState
 
 • **updateLeftOuterAxesLayoutState**: *[updateLeftOuterAxesLayoutState](globals.md#updateleftouteraxeslayoutstate)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:445](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L445)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:445](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L445)*
 
 ###  updateRightOuterAxesLayoutState
 
 • **updateRightOuterAxesLayoutState**: *[updateRightOuterAxesLayoutState](globals.md#updaterightouteraxeslayoutstate)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:446](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L446)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:446](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L446)*
 
 ###  updateTopOuterAxesLayoutState
 
 • **updateTopOuterAxesLayoutState**: *[updateTopOuterAxesLayoutState](globals.md#updatetopouteraxeslayoutstate)*
 
-*Defined in [src/Charting/LayoutManager/LayoutManager.ts:443](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L443)*
+*Defined in [src/Charting/LayoutManager/LayoutManager.ts:443](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/LayoutManager/LayoutManager.ts#L443)*

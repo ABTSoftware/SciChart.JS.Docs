@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IMouseWheelZoomModifier3DOptions](imousewheelzoommodifier3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IMouseWheelZoomModifier3DOptions](imousewheelzoommodifier3doptions.md)
 
 # Interface: IMouseWheelZoomModifier3DOptions
 
@@ -20,4 +20,4 @@
 
 • **mouseWheelSensitivity**? : *number*
 
-*Defined in [src/Charting3D/ChartModifiers/MouseWheelZoomModifier3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/ChartModifiers/MouseWheelZoomModifier3D.ts#L7)*
+*Defined in [src/Charting3D/ChartModifiers/MouseWheelZoomModifier3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/ChartModifiers/MouseWheelZoomModifier3D.ts#L7)*

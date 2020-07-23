@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [SciChartRenderer](scichartrenderer.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [SciChartRenderer](scichartrenderer.md)
 
 # Class: SciChartRenderer
 
@@ -24,7 +24,7 @@ A class used internally in SciChart to perform layout, arrangement, data-prepara
 
 \+ **new SciChartRenderer**(`sciChartSurface`: [SciChartSurface](scichartsurface.md)): *[SciChartRenderer](scichartrenderer.md)*
 
-*Defined in [src/Charting/Services/SciChartRenderer.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Services/SciChartRenderer.ts#L19)*
+*Defined in [src/Charting/Services/SciChartRenderer.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/SciChartRenderer.ts#L19)*
 
 Creates an instance of the SciChartRenderer
 
@@ -42,7 +42,7 @@ Name | Type | Description |
 
 ▸ **render**(`renderContext`: [WebGlRenderContext2D](webglrendercontext2d.md)): *void*
 
-*Defined in [src/Charting/Services/SciChartRenderer.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Services/SciChartRenderer.ts#L33)*
+*Defined in [src/Charting/Services/SciChartRenderer.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Services/SciChartRenderer.ts#L33)*
 
 Render loop for the current {@SciChartSurface}
 

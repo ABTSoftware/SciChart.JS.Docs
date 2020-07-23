@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [RenderPassInfo3D](renderpassinfo3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [RenderPassInfo3D](renderpassinfo3d.md)
 
 # Class: RenderPassInfo3D
 
@@ -22,7 +22,7 @@
 
 • **sceneDescriptor**: *[SceneDescriptor](scenedescriptor.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L9)*
+*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L9)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **worldDimensions**: *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L10)*
+*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L10)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **xCalc**: *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L6)*
+*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L6)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **yCalc**: *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L7)*
+*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L7)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **zCalc**: *[CoordinateCalculatorBase](coordinatecalculatorbase.md)*
 
-*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L8)*
+*Defined in [src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Primitives/RenderPassInfo3D.ts#L8)*

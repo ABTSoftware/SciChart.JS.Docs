@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ModifierMouseArgs](modifiermouseargs.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ModifierMouseArgs](modifiermouseargs.md)
 
 # Class: ModifierMouseArgs
 
@@ -40,7 +40,7 @@ Mouse arguments passed to [ChartModifierBase](chartmodifierbase.md) methods
 
 \+ **new ModifierMouseArgs**(`mousePoint`: Point, `options?`: [TModifierMouseArgsParams](../globals.md#tmodifiermouseargsparams)): *[ModifierMouseArgs](modifiermouseargs.md)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L121)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L121)*
 
 Creates an instance of [ModifierMouseArgs](modifiermouseargs.md)
 
@@ -61,7 +61,7 @@ Name | Type | Description |
 
 *Inherited from [ModifierArgsBase](modifierargsbase.md).[handled](modifierargsbase.md#handled)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierArgsBase.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierArgsBase.ts#L13)*
+*Defined in [src/Charting/ChartModifiers/ModifierArgsBase.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierArgsBase.ts#L13)*
 
 Gets or sets whether the event is handled
 
@@ -77,7 +77,7 @@ ___
 
 • **isMaster**: *boolean*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L116)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L116)*
 
 When true, the event was raised from the master or parent [SciChartSurfaceBase](scichartsurfacebase.md), else
 it came from the child [SciChartSurfaceBase](scichartsurfacebase.md)
@@ -90,7 +90,7 @@ ___
 
 • **modifierGroup**: *string*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L121)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L121)*
 
 The Modifier Group string is an ID which is used to group together [Chart Modifiers](chartmodifierbase.md)
 when used in a multi-chart scenario
@@ -101,7 +101,7 @@ ___
 
 • **mousePoint**: *Point*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L94)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L94)*
 
 The MousePoint as an X,Y coordinate where the event occurred
 
@@ -111,7 +111,7 @@ ___
 
 • **mouseWheelDelta**: *number*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L98)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L98)*
 
 The mouse wheel delta as a positive or negative value depending on mouse wheel direction
 
@@ -121,7 +121,7 @@ ___
 
 • **pointerId**: *number*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L102)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L102)*
 
 The PointerId associated with the current pointer or stylus device
 
@@ -131,7 +131,7 @@ ___
 
 • **pointerType**: *string*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L106)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L106)*
 
 The type of the current Pointer or stylus
 
@@ -141,7 +141,7 @@ ___
 
 • **target**: *Element*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:110](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L110)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:110](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L110)*
 
 The target {@link Element} which raised the event
 
@@ -151,7 +151,7 @@ The target {@link Element} which raised the event
 
 ▸ **copy**(`args`: [ModifierMouseArgs](modifiermouseargs.md), `modifierGroup`: string, `masterViewport`: Size, `slaveViewport`: Size): *[ModifierMouseArgs](modifiermouseargs.md)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L70)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L70)*
 
 Copies or clones a [ModifierMouseArgs](modifiermouseargs.md)
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **fromMouseEvent**(`mouseEvent`: MouseEvent): *[ModifierMouseArgs](modifiermouseargs.md)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L24)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L24)*
 
 Creates a [ModifierMouseArgs](modifiermouseargs.md) instance from Javascript {@link MouseEvent}
 
@@ -190,7 +190,7 @@ ___
 
 ▸ **fromPointerEvent**(`pointerEvent`: PointerEvent): *[ModifierMouseArgs](modifiermouseargs.md)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L51)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L51)*
 
 Creates a [ModifierMouseArgs](modifiermouseargs.md) instance from Javascript {@link PointerEvent}
 
@@ -208,7 +208,7 @@ ___
 
 ▸ **fromWheelEvent**(`wheelEvent`: WheelEvent): *[ModifierMouseArgs](modifiermouseargs.md)*
 
-*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L37)*
+*Defined in [src/Charting/ChartModifiers/ModifierMouseArgs.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierMouseArgs.ts#L37)*
 
 Creates a [ModifierMouseArgs](modifiermouseargs.md) instance from Javascript {@link WheelEvent}
 

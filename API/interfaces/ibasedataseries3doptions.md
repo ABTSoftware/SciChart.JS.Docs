@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseDataSeries3DOptions](ibasedataseries3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseDataSeries3DOptions](ibasedataseries3doptions.md)
 
 # Interface: IBaseDataSeries3DOptions
 
@@ -20,4 +20,4 @@
 
 • **dataSeriesName**? : *string*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*

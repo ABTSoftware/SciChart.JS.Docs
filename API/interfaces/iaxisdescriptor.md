@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IAxisDescriptor](iaxisdescriptor.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IAxisDescriptor](iaxisdescriptor.md)
 
 # Interface: IAxisDescriptor
 
@@ -42,7 +42,7 @@
 
 • **axisSize**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L7)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L7)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **axisTitle**: *string*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L6)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L6)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **backgroundColor**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L8)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L8)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **bandColor**: *TArgb*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L9)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L9)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **borderColor**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L10)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L10)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **borderThickness**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L26)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L26)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **drawBands**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L24)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L24)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **drawMajorGridlines**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L20)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L20)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **drawMajorTicks**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L22)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L22)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **drawMinorGridlines**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L21)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L21)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 • **drawMinorTicks**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L23)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L23)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 • **isVisible**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L25)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L25)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **labelDepthTestEnabled**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L27)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L27)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **labelStyle**: *[ITextStyle](itextstyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L19)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L19)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 • **majorCoordinates**: *number[]*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L11)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L11)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 • **majorLineStyle**: *[ILineStyle](ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L14)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L14)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 • **majorTickStyle**: *[ILineStyle](ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L16)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L16)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • **minorCoordinates**: *number[]*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L12)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L12)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 • **minorLineStyle**: *[ILineStyle](ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L15)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L15)*
 
 ___
 
@@ -194,7 +194,7 @@ ___
 
 • **minorTickStyle**: *[ILineStyle](ilinestyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L17)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L17)*
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 • **smoothLabelOverlapAvoidance**: *boolean*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L30)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L30)*
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 • **tickLabels**: *string[]*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L13)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L13)*
 
 ___
 
@@ -218,7 +218,7 @@ ___
 
 • **tickLabelsOffset**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L29)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L29)*
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 • **titleOffset**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L28)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L28)*
 
 ___
 
@@ -234,4 +234,4 @@ ___
 
 • **titleStyle**: *[ITextStyle](itextstyle.md)*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L18)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L18)*

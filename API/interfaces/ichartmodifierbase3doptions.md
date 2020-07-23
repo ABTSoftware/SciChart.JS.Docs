@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IChartModifierBase3DOptions](ichartmodifierbase3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IChartModifierBase3DOptions](ichartmodifierbase3doptions.md)
 
 # Interface: IChartModifierBase3DOptions
 

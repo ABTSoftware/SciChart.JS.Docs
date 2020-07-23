@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IHitTestProvider](ihittestprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IHitTestProvider](ihittestprovider.md)
 
 # Interface: IHitTestProvider
 
@@ -34,7 +34,7 @@
 
 ▸ **getNearestHorizontalPoint**(`xHitCoord`: number): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L44)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L44)*
 
 **`description`** Performs search of nearest point in x direction only.
 X and Y coordinates provided for Vertical Chart
@@ -55,7 +55,7 @@ ___
 
 ▸ **getNearestPoint2D**(`xHitCoord`: number, `yHitCoord`: number): *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L35)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L35)*
 
 **`description`** Performs search of the nearest point in 2D
 
@@ -76,7 +76,7 @@ ___
 
 ▸ **hitTest**(`point`: Point, `logic`: [ENearestPointLogic](../enums/enearestpointlogic.md), `hitTestRadius`: number, `interpolate`: boolean): *[HitTestInfo](../classes/hittestinfo.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L26)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L26)*
 
 **`description`** Performs a hit-test at the specific mouse point (X,Y coordinate on the parent SciChartSurface),
 returning a HitTestInfo type with the results
@@ -98,7 +98,7 @@ ___
 
 ▸ **update**(`renderPassData`: [RenderPassData](../classes/renderpassdata.md)): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L15)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/IHitTestProvider.ts#L15)*
 
 **`description`** updates the current HitTestProvider with the latest renderPassData
 

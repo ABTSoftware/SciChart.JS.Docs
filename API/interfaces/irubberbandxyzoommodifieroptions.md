@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IRubberBandXyZoomModifierOptions](irubberbandxyzoommodifieroptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IRubberBandXyZoomModifierOptions](irubberbandxyzoommodifieroptions.md)
 
 # Interface: IRubberBandXyZoomModifierOptions
 
@@ -26,7 +26,7 @@ Optional parameters used to configure a [LegendModifier](../classes/legendmodifi
 
 • **fill**? : *string*
 
-*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L18)*
+*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L18)*
 
 Sets the fill of [RubberBandRect](../classes/rubberbandrect.md)
 
@@ -38,7 +38,7 @@ ___
 
 *Inherited from [IChartModifierBaseOptions](ichartmodifierbaseoptions.md).[modifierGroup](ichartmodifierbaseoptions.md#optional-modifiergroup)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L16)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L16)*
 
 Defines the Modifier Group string - a grouping by ID for sharing mouse events across charts
 
@@ -48,7 +48,7 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L22)*
+*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L22)*
 
 Sets the stroke of [RubberBandRect](../classes/rubberbandrect.md)
 
@@ -58,7 +58,7 @@ ___
 
 • **strokeThickness**? : *number*
 
-*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L26)*
+*Defined in [src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/RubberBandXyZoomModifier.ts#L26)*
 
 Sets the strokeThickness of [RubberBandRect](../classes/rubberbandrect.md)
 
@@ -70,6 +70,6 @@ ___
 
 *Inherited from [IChartModifierBaseOptions](ichartmodifierbaseoptions.md).[xyDirection](ichartmodifierbaseoptions.md#optional-xydirection)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L12)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L12)*
 
 Defines the {@link EXyDirection | Xy Direction} - whether the modifier works in X, Y or XY or neither direction

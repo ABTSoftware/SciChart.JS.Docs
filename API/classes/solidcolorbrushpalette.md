@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [SolidColorBrushPalette](solidcolorbrushpalette.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [SolidColorBrushPalette](solidcolorbrushpalette.md)
 
 # Class: SolidColorBrushPalette
 
@@ -34,7 +34,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L14)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L14)*
 
 **Parameters:**
 
@@ -53,7 +53,7 @@ Name | Type |
 
 *Inherited from [MeshColorPalette](meshcolorpalette.md).[propertyChanged](meshcolorpalette.md#propertychanged)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/MeshColorPalette.ts#L8)*
 
 ## Accessors
 
@@ -61,13 +61,13 @@ Name | Type |
 
 • **get fill**(): *string*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L22)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L22)*
 
 **Returns:** *string*
 
 • **set fill**(`fill`: string): *void*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L26)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L26)*
 
 **Parameters:**
 
@@ -85,7 +85,7 @@ Name | Type |
 
 *Overrides [MeshColorPalette](meshcolorpalette.md).[getTexture](meshcolorpalette.md#abstract-gettexture)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L31)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L31)*
 
 **Parameters:**
 

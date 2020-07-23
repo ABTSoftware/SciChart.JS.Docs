@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [RolloverModifierRenderableSeriesProps](rollovermodifierrenderableseriesprops.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [RolloverModifierRenderableSeriesProps](rollovermodifierrenderableseriesprops.md)
 
 # Class: RolloverModifierRenderableSeriesProps
 
@@ -31,7 +31,7 @@
 
 • **marker**: *[MarkerSvgAnnotation](markersvgannotation.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L7)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **tooltip**: *[TooltipSvgAnnotation](tooltipsvgannotation.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L6)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L6)*
 
 ## Accessors
 
@@ -47,13 +47,13 @@ ___
 
 • **get markerColor**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L56)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L56)*
 
 **Returns:** *string*
 
 • **set markerColor**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L60)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L60)*
 
 **Parameters:**
 
@@ -69,13 +69,13 @@ ___
 
 • **get showRollover**(): *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L20)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L20)*
 
 **Returns:** *boolean*
 
 • **set showRollover**(`value`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L24)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L24)*
 
 **Parameters:**
 
@@ -91,13 +91,13 @@ ___
 
 • **get tooltipColor**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L29)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L29)*
 
 **Returns:** *string*
 
 • **set tooltipColor**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L33)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L33)*
 
 **Parameters:**
 
@@ -113,13 +113,13 @@ ___
 
 • **get tooltipTextColor**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L38)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L38)*
 
 **Returns:** *string*
 
 • **set tooltipTextColor**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L42)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L42)*
 
 **Parameters:**
 
@@ -135,13 +135,13 @@ ___
 
 • **get tooltipTitle**(): *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L47)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L47)*
 
 **Returns:** *string*
 
 • **set tooltipTitle**(`value`: string): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L51)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L51)*
 
 **Parameters:**
 
@@ -157,7 +157,7 @@ Name | Type |
 
 ▸ **setInvalidateParentCallback**(`callback`: function): *void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L16)*
+*Defined in [src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/RolloverModifier/RolloverModifierRenderableSeriesProps.ts#L16)*
 
 **Parameters:**
 

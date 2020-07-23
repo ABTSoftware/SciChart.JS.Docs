@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IFastLineRenderableSeriesOptions](ifastlinerenderableseriesoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IFastLineRenderableSeriesOptions](ifastlinerenderableseriesoptions.md)
 
 # Interface: IFastLineRenderableSeriesOptions
 
@@ -29,7 +29,7 @@
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[dataSeries](ibaserenderableseriesoptions.md#optional-dataseries)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L30)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L30)*
 
 The [DataSeries](idataseries.md) which provides a datasource for this [IRenderableSeries](irenderableseries.md) to draw
 
@@ -41,7 +41,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[effect](ibaserenderableseriesoptions.md#optional-effect)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L120)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L120)*
 
 An optional [ShaderEffect](../classes/shadereffect.md) for modifying the render output of this [IRenderableSeries](irenderableseries.md)
 
@@ -55,7 +55,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[isVisible](ibaserenderableseriesoptions.md#optional-isvisible)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L115)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L115)*
 
 When true, the series is visible and drawn
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[pointMarker](ibaserenderableseriesoptions.md#optional-pointmarker)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L34)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L34)*
 
 A [Point Marker](ipointmarker.md) which is used to draw an optional point-marker at each data-point. Applicable to some series types only
 
@@ -79,7 +79,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[stroke](ibaserenderableseriesoptions.md#optional-stroke)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L39)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L39)*
 
 A Stroke for lines, outlines and edges of this RenderableSeries
 
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[strokeThickness](ibaserenderableseriesoptions.md#optional-strokethickness)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L43)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L43)*
 
 The Stroke Thickness for lines, outlines and edges of this RenderableSeries
 
@@ -105,7 +105,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[xAxisId](ibaserenderableseriesoptions.md#optional-xaxisid)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L77)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L77)*
 
 **`summary`** The current XAxis Id that this [BaseRenderableSeries](../classes/baserenderableseries.md) is bound to
 
@@ -149,7 +149,7 @@ ___
 
 *Inherited from [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md).[yAxisId](ibaserenderableseriesoptions.md#optional-yaxisid)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L111)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L111)*
 
 **`summary`** The current YAxis Id that this [BaseRenderableSeries](../classes/baserenderableseries.md) is bound to
 

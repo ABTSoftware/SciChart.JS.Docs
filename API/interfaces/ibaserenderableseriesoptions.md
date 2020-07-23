@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseRenderableSeriesOptions](ibaserenderableseriesoptions.md)
 
 # Interface: IBaseRenderableSeriesOptions
 
@@ -39,7 +39,7 @@ Options to pass to the [BaseRenderableSeries](../classes/baserenderableseries.md
 
 • **dataSeries**? : *[IDataSeries](idataseries.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L30)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L30)*
 
 The [DataSeries](idataseries.md) which provides a datasource for this [IRenderableSeries](irenderableseries.md) to draw
 
@@ -49,7 +49,7 @@ ___
 
 • **effect**? : *[ShaderEffect](../classes/shadereffect.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L120)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L120)*
 
 An optional [ShaderEffect](../classes/shadereffect.md) for modifying the render output of this [IRenderableSeries](irenderableseries.md)
 
@@ -61,7 +61,7 @@ ___
 
 • **isVisible**? : *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L115)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L115)*
 
 When true, the series is visible and drawn
 
@@ -71,7 +71,7 @@ ___
 
 • **pointMarker**? : *[IPointMarker](ipointmarker.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L34)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L34)*
 
 A [Point Marker](ipointmarker.md) which is used to draw an optional point-marker at each data-point. Applicable to some series types only
 
@@ -81,7 +81,7 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L39)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L39)*
 
 A Stroke for lines, outlines and edges of this RenderableSeries
 
@@ -93,7 +93,7 @@ ___
 
 • **strokeThickness**? : *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L43)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L43)*
 
 The Stroke Thickness for lines, outlines and edges of this RenderableSeries
 
@@ -103,7 +103,7 @@ ___
 
 • **xAxisId**? : *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L77)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L77)*
 
 **`summary`** The current XAxis Id that this [BaseRenderableSeries](../classes/baserenderableseries.md) is bound to
 
@@ -145,7 +145,7 @@ ___
 
 • **yAxisId**? : *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L111)*
+*Defined in [src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/BaseRenderableSeries.ts#L111)*
 
 **`summary`** The current YAxis Id that this [BaseRenderableSeries](../classes/baserenderableseries.md) is bound to
 

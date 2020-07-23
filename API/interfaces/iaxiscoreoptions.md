@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IAxisCoreOptions](iaxiscoreoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IAxisCoreOptions](iaxiscoreoptions.md)
 
 # Interface: IAxisCoreOptions
 
@@ -35,7 +35,7 @@ Optional parameters passed to [AxisCore](../classes/axiscore.md) constructor to 
 
 • **autoRange**? : *EAutoRange*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L141)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L141)*
 
 Sets the [AxisCore.autoRange](../classes/axiscore.md#autorange) mode. For a list of values, see {@link EAutoRange}
 
@@ -45,7 +45,7 @@ ___
 
 • **autoTicks**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:172](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L172)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:172](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L172)*
 
 When true, the [AxisCore.majorDelta](../classes/axiscore.md#majordelta) and [AxisCore.minorDelta](../classes/axiscore.md#minordelta) values will be computed automatically.
 Else, the user may specify these values by setting the properties.
@@ -56,7 +56,7 @@ ___
 
 • **axisTitle**? : *string*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L161)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L161)*
 
 Set the Axis Title string to display on this axis
 
@@ -66,7 +66,7 @@ ___
 
 • **drawLabels**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:177](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L177)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:177](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L177)*
 
 When true, draw labels on the chart, else labels are hidden
 
@@ -78,7 +78,7 @@ ___
 
 • **drawMajorTickLines**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:182](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L182)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:182](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L182)*
 
 When true, draw major ticklines on the chart, else major ticks are hidden
 
@@ -90,7 +90,7 @@ ___
 
 • **drawMinorTickLines**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:187](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L187)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:187](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L187)*
 
 When true, draw minor ticklines on the chart, else minor ticks are hidden
 
@@ -102,7 +102,7 @@ ___
 
 • **growBy**? : *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L137)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:137](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L137)*
 
 Sets GrowBy: a padding factor on the axis
 
@@ -119,7 +119,7 @@ ___
 
 • **id**? : *string*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:127](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L127)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:127](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L127)*
 
 The Axis Id - a unique string ID for this axis
 
@@ -138,7 +138,7 @@ ___
 
 • **isVisible**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L153)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:153](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L153)*
 
 When true, the axis is visible. Default value is also true for the axis
 
@@ -157,7 +157,7 @@ ___
 
 • **isXAxis**? : *boolean*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L157)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L157)*
 
 When true, the axis is an XAxis
 
@@ -167,7 +167,7 @@ ___
 
 • **maxAutoTicks**? : *number*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:167](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L167)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:167](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L167)*
 
 The maximum number of ticks on the axis when SciChart's Axis is in [AxisCore.autoTicks](../classes/axiscore.md#autoticks) mode
 
@@ -180,7 +180,7 @@ ___
 
 • **visibleRange**? : *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L115)*
+*Defined in [src/Charting/Visuals/Axis/AxisCore.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisCore.ts#L115)*
 
 The VisibleRange is the range of the Axis (min to max).
 

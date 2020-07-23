@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IGradientColorPaletteOptions](igradientcolorpaletteoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IGradientColorPaletteOptions](igradientcolorpaletteoptions.md)
 
 # Interface: IGradientColorPaletteOptions
 
@@ -18,4 +18,4 @@
 
 • **gradientStops**? : *TGradientStop[]*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L12)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/GradientColorPalette.ts#L12)*

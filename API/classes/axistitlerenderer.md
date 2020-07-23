@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [AxisTitleRenderer](axistitlerenderer.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [AxisTitleRenderer](axistitlerenderer.md)
 
 # Class: AxisTitleRenderer
 
@@ -34,7 +34,7 @@
 
 \+ **new AxisTitleRenderer**(`webAssemblyContext`: TSciChart): *[AxisTitleRenderer](axistitlerenderer.md)*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L21)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L21)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ Name | Type |
 
 • **text**: *string* = ""
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L16)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L16)*
 
 ___
 
@@ -58,7 +58,7 @@ ___
 
 • **viewRect**: *Rect‹›* = Rect.createZero()
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L15)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L15)*
 
 ## Accessors
 
@@ -66,13 +66,13 @@ ___
 
 • **get desiredHeight**(): *number*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L40)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L40)*
 
 **Returns:** *number*
 
 • **set desiredHeight**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L44)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L44)*
 
 **Parameters:**
 
@@ -88,13 +88,13 @@ ___
 
 • **get desiredWidth**(): *number*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L48)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L48)*
 
 **Returns:** *number*
 
 • **set desiredWidth**(`value`: number): *void*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:52](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L52)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:52](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L52)*
 
 **Parameters:**
 
@@ -110,7 +110,7 @@ Name | Type |
 
 ▸ **draw**(`renderContext`: [WebGlRenderContext2D](webglrendercontext2d.md), `textStyle`: [TTextStyle](../globals.md#ttextstyle), `axisAlignment`: EAxisAlignment): *void*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:61](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L61)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:61](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L61)*
 
 **Parameters:**
 
@@ -128,7 +128,7 @@ ___
 
 ▸ **layout**(`rect`: Rect): *void*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L56)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L56)*
 
 **Parameters:**
 
@@ -144,7 +144,7 @@ ___
 
 ▸ **measure**(`textStyle`: [TTextStyle](../globals.md#ttextstyle), `isHorizontal`: boolean): *void*
 
-*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L28)*
+*Defined in [src/Charting/Visuals/Axis/AxisTitleRenderer.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/AxisTitleRenderer.ts#L28)*
 
 **Parameters:**
 

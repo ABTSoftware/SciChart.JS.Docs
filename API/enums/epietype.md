@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [EPieType](epietype.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [EPieType](epietype.md)
 
 # Enumeration: EPieType
 
@@ -15,7 +15,7 @@
 
 • **Donut**: = "Donut"
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L29)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L29)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **Pie**: = "Pie"
 
-*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L28)*
+*Defined in [src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartPieSurface/SciChartPieSurface.ts#L28)*

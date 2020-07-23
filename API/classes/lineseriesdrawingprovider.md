@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [LineSeriesDrawingProvider](lineseriesdrawingprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [LineSeriesDrawingProvider](lineseriesdrawingprovider.md)
 
 # Class: LineSeriesDrawingProvider
 
@@ -37,7 +37,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L22)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L22)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ Name | Type |
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[applyStrokePaletting](baseseriesdrawingprovider.md#applystrokepaletting)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L30)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L30)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[createPen](baseseriesdrawingprovider.md#createpen)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L79)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L79)*
 
 **Parameters:**
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[createSolidBrush](baseseriesdrawingprovider.md#createsolidbrush)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L90)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L90)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[delete](baseseriesdrawingprovider.md#abstract-delete)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L94)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L94)*
 
 **Returns:** *void*
 
@@ -128,7 +128,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[draw](baseseriesdrawingprovider.md#abstract-draw)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L55)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L55)*
 
 **Parameters:**
 
@@ -149,7 +149,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onAttachSeries](baseseriesdrawingprovider.md#onattachseries)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L43)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L43)*
 
 **Returns:** *void*
 
@@ -163,7 +163,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onDetachSeries](baseseriesdrawingprovider.md#ondetachseries)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L49)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L49)*
 
 **Returns:** *void*
 
@@ -177,7 +177,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onSeriesPropertyChange](baseseriesdrawingprovider.md#abstract-onseriespropertychange)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L28)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/LineSeriesDrawingProvider.ts#L28)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [WebGlBrush](webglbrush.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [WebGlBrush](webglbrush.md)
 
 # Class: WebGlBrush
 
@@ -33,7 +33,7 @@ The WebGLBrush is a brush for polygon fills, rectangle fills, which can be passe
 
 \+ **new WebGlBrush**(`scrtBrush`: SCRTBrush): *[WebGlBrush](webglbrush.md)*
 
-*Defined in [src/Charting/Drawing/WebGlBrush.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L10)*
+*Defined in [src/Charting/Drawing/WebGlBrush.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L10)*
 
 Creates an instance of WebGlBrush
 
@@ -51,7 +51,7 @@ Name | Type | Description |
 
 • **get scrtBrush**(): *SCRTBrush*
 
-*Defined in [src/Charting/Drawing/WebGlBrush.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L21)*
+*Defined in [src/Charting/Drawing/WebGlBrush.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L21)*
 
 Get the inner {@link SCRTBrush} which can be passed to SciChart's WebAssembly WebGL engine
 
@@ -65,7 +65,7 @@ Get the inner {@link SCRTBrush} which can be passed to SciChart's WebAssembly We
 
 *Implementation of [IBrush2D](../interfaces/ibrush2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlBrush.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L27)*
+*Defined in [src/Charting/Drawing/WebGlBrush.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L27)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -87,7 +87,7 @@ ___
 
 *Implementation of [IBrush2D](../interfaces/ibrush2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlBrush.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L34)*
+*Defined in [src/Charting/Drawing/WebGlBrush.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlBrush.ts#L34)*
 
 Gets the type of the brush. See {@link EDrawingTypes} for list of values
 

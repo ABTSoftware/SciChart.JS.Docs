@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [UniformHeatmapDataSeries](uniformheatmapdataseries.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [UniformHeatmapDataSeries](uniformheatmapdataseries.md)
 
 # Class: UniformHeatmapDataSeries
 
@@ -70,7 +70,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L29)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L29)*
 
 Creates an instance of [UniformHeatmapDataSeries](uniformheatmapdataseries.md)
 
@@ -95,7 +95,7 @@ Name | Type | Description |
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[arrayHeight](baseheatmapdataseries.md#arrayheight)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L44)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L44)*
 
 Gets the height of the 2-dimensional array of [Z-Values](uniformheatmapdataseries.md#getzvalues) where array is ranked [width][height]
 
@@ -107,7 +107,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[arrayWidth](baseheatmapdataseries.md#arraywidth)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L40)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L40)*
 
 Gets the width of the 2-dimensional array of [Z-Values](uniformheatmapdataseries.md#getzvalues) where array is ranked [width][height]
 
@@ -121,7 +121,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[dataChanged](baseheatmapdataseries.md#readonly-datachanged)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L35)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L35)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -153,7 +153,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[minXSpacing](baseheatmapdataseries.md#minxspacing)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L36)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L36)*
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 *Overrides [BaseHeatmapDataSeries](baseheatmapdataseries.md).[type](baseheatmapdataseries.md#abstract-type)*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L10)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L10)*
 
 Gets the [EDataSeriesType](../enums/edataseriestype.md) type of the DataSeries
 
@@ -175,7 +175,7 @@ ___
 
 • **xStart**: *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L14)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L14)*
 
 xStart defines the Start point on the [XAxis](axisbase2d.md) where this heatmap will be drawn
 
@@ -185,7 +185,7 @@ ___
 
 • **xStep**: *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L18)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L18)*
 
 xStep defines Step on the [XAxis](axisbase2d.md) for each cell in the heatmap
 
@@ -195,7 +195,7 @@ ___
 
 • **yStart**: *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L22)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L22)*
 
 yStart defines the Start point on the [YAxis](axisbase2d.md) where this heatmap will be drawn
 
@@ -205,7 +205,7 @@ ___
 
 • **yStep**: *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L26)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L26)*
 
 yStep defines Step on the [YAxis](axisbase2d.md) for each cell in the heatmap
 
@@ -217,7 +217,7 @@ yStep defines Step on the [YAxis](axisbase2d.md) for each cell in the heatmap
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[dataSeriesName](baseheatmapdataseries.md#dataseriesname)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L198)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L198)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -229,7 +229,7 @@ Gets the DataSeries name. This is used in legend controls and tooltips to identi
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[dataSeriesName](baseheatmapdataseries.md#dataseriesname)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:204](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L204)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:204](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L204)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -251,7 +251,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[hasDataChanges](baseheatmapdataseries.md#hasdatachanges)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L97)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L97)*
 
 Returns true if the Heatmap DataSeries has data changes.
 This flag is set to true when notifyDataChanged is called, and reset to false after
@@ -266,7 +266,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[hasValues](baseheatmapdataseries.md#hasvalues)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:211](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L211)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:211](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L211)*
 
 Gets whether this Heatmap has values to display
 
@@ -280,7 +280,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[isSorted](baseheatmapdataseries.md#issorted)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L84)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L84)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -293,7 +293,7 @@ See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[isSorted](baseheatmapdataseries.md#issorted)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L90)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L90)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -316,7 +316,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[xMax](baseheatmapdataseries.md#xmax)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:180](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L180)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:180](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L180)*
 
 Gets the maximum X-value for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -330,7 +330,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[xMin](baseheatmapdataseries.md#xmin)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:174](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L174)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:174](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L174)*
 
 Gets the minimum X-value for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -344,7 +344,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[xRange](baseheatmapdataseries.md#xrange)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L186)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L186)*
 
 Gets the XRange for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -358,7 +358,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[yMax](baseheatmapdataseries.md#ymax)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:168](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L168)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:168](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L168)*
 
 Gets the maximum Y-value for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -372,7 +372,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[yMin](baseheatmapdataseries.md#ymin)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L162)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L162)*
 
 Gets the minimum Y-value for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -386,7 +386,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[yRange](baseheatmapdataseries.md#yrange)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L192)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:192](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L192)*
 
 Gets the YRange for this heatmap, which controls where it is displayed on a cartesian chart
 
@@ -402,7 +402,7 @@ Gets the YRange for this heatmap, which controls where it is displayed on a cart
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[count](baseheatmapdataseries.md#count)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L217)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:217](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L217)*
 
 Gets the number of heatmap cells
 
@@ -418,7 +418,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[delete](baseheatmapdataseries.md#delete)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:223](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L223)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:223](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L223)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -442,7 +442,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getIsDeleted](baseheatmapdataseries.md#getisdeleted)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:230](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L230)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:230](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L230)*
 
 Returns true if this DataSeries has been deleted and native memory destroyed
 
@@ -458,7 +458,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getNativeIndexes](baseheatmapdataseries.md#getnativeindexes)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L236)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:236](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L236)*
 
 Gets a native / WebAssembly Vector of Indexes in the DataSeries
 
@@ -474,7 +474,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getNativeXValues](baseheatmapdataseries.md#getnativexvalues)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:242](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L242)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:242](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L242)*
 
 Gets a native / WebAssembly vector of X-values in the DataSeries
 
@@ -490,7 +490,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getNativeYValues](baseheatmapdataseries.md#getnativeyvalues)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L248)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:248](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L248)*
 
 Gets a native / WebAssembly vector of Y-values in the DataSeries
 
@@ -504,7 +504,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getNormalizedVector](baseheatmapdataseries.md#getnormalizedvector)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:270](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L270)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:270](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L270)*
 
 Returns a FloatVector with normalized values based on the color map passed in
 
@@ -526,7 +526,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getWindowedYRange](baseheatmapdataseries.md#getwindowedyrange)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:254](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L254)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:254](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L254)*
 
 Gets the Y-range of the data within the specified X-Range: a 'windowed'
 Y-range used for zooming into series on the [SciChartSurface](scichartsurface.md)
@@ -547,7 +547,7 @@ ___
 
 ▸ **getXValue**(`xIndex`: number): *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:66](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L66)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:66](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L66)*
 
 Gets the X-value at the specified index. This will be computed from constructor parameters xStep and xStart
 
@@ -565,7 +565,7 @@ ___
 
 ▸ **getYValue**(`yIndex`: number): *number*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L75)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L75)*
 
 Gets the Y-value at the specified index. This will be computed from constructor parameters yStep and yxStart
 
@@ -585,7 +585,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getZValue](baseheatmapdataseries.md#getzvalue)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L146)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L146)*
 
 Gets the ZValue at the specific Y,X index where Y must be within 0-arrayHeight and X must be within 0-arrayWidth
 
@@ -606,7 +606,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[getZValues](baseheatmapdataseries.md#getzvalues)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L105)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L105)*
 
 Gets a readonly collection of Z-values which can be read in the format zValues[y][x]
 Note that changes or manipulation of the 2D array will not update the Heatmap. Set it back via setZValues()
@@ -622,7 +622,7 @@ ___
 
 *Overrides [BaseHeatmapDataSeries](baseheatmapdataseries.md).[notifyDataChanged](baseheatmapdataseries.md#notifydatachanged)*
 
-*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:83](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L83)*
+*Defined in [src/Charting/Model/UniformHeatmapDataSeries.ts:83](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/UniformHeatmapDataSeries.ts#L83)*
 
 **`inheritdoc`** 
 
@@ -636,7 +636,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[recreateNormalizedVector](baseheatmapdataseries.md#recreatenormalizedvector)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:295](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L295)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:295](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L295)*
 
 Recreates the normalized vector (internally used for drawing heatmap) according to zMin and zMax values
 
@@ -657,7 +657,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[setZValue](baseheatmapdataseries.md#setzvalue)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:155](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L155)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:155](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L155)*
 
 Sets the ZValue at the specific Y,X index where Y must be within 0-arrayHeight and X must be within 0-arrayWidth
 
@@ -679,7 +679,7 @@ ___
 
 *Inherited from [BaseHeatmapDataSeries](baseheatmapdataseries.md).[setZValues](baseheatmapdataseries.md#setzvalues)*
 
-*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L112)*
+*Defined in [src/Charting/Model/BaseHeatmapDataSeries.ts:112](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseHeatmapDataSeries.ts#L112)*
 
 Sets a 2D array of zValues. Input is in the format zValues[y][x] where Y is 0 to height and X is 0 to Width
 

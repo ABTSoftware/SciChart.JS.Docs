@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [OhlcDataSeries](ohlcdataseries.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [OhlcDataSeries](ohlcdataseries.md)
 
 # Class: OhlcDataSeries
 
@@ -77,7 +77,7 @@ See derived types of [IRenderableSeries](../interfaces/irenderableseries.md) to 
 
 *Overrides void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L56)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L56)*
 
 Creates an instance of [OhlcDataSeries](ohlcdataseries.md)
 
@@ -100,7 +100,7 @@ Name | Type | Description |
 
 *Inherited from [BaseDataSeries](basedataseries.md).[dataChanged](basedataseries.md#readonly-datachanged)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L45)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L45)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -132,7 +132,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[minXSpacing](basedataseries.md#minxspacing)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L46)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L46)*
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 *Overrides [BaseDataSeries](basedataseries.md).[type](basedataseries.md#readonly-abstract-type)*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L53)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L53)*
 
 Gets the [EDataSeriesType](../enums/edataseriestype.md) type of the DataSeries
 
@@ -156,7 +156,7 @@ Gets the [EDataSeriesType](../enums/edataseriestype.md) type of the DataSeries
 
 *Inherited from [BaseDataSeries](basedataseries.md).[dataSeriesName](basedataseries.md#dataseriesname)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L91)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:91](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L91)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -168,7 +168,7 @@ Gets the DataSeries name. This is used in legend controls and tooltips to identi
 
 *Inherited from [BaseDataSeries](basedataseries.md).[dataSeriesName](basedataseries.md#dataseriesname)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L97)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L97)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -190,7 +190,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[hasValues](basedataseries.md#hasvalues)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L198)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:198](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L198)*
 
 When true, the DataSeries has values, else it is empty
 
@@ -206,7 +206,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[isSorted](basedataseries.md#issorted)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:78](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L78)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:78](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L78)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -219,7 +219,7 @@ See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for
 
 *Inherited from [BaseDataSeries](basedataseries.md).[isSorted](basedataseries.md#issorted)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L84)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:84](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L84)*
 
 Gets or sets whether the X-values are sorted or not.
 See remarks at [IDataSeries.isSorted](../interfaces/idataseries.md#issorted) for further information
@@ -242,7 +242,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[xRange](basedataseries.md#xrange)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L162)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:162](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L162)*
 
 Gets the range in the X-direction for this DataSeries
 
@@ -256,7 +256,7 @@ Gets the range in the X-direction for this DataSeries
 
 ▸ **append**(`x`: number, `open`: number, `high`: number, `low`: number, `close`: number): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L116)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:116](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L116)*
 
 Appends a single X (Date), Open, High, Low, Close point to the DataSeries
 
@@ -284,7 +284,7 @@ ___
 
 ▸ **appendRange**(`xValues`: number[], `openValues`: number[], `highValues`: number[], `lowValues`: number[], `closeValues`: number[]): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L139)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:139](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L139)*
 
 Appends arrays of X (Date), Open, High, Low, Close point to the DataSeries
 
@@ -312,7 +312,7 @@ ___
 
 ▸ **clear**(): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:310](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L310)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:310](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L310)*
 
 Clears the entire DataSeries.
 
@@ -334,7 +334,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[count](basedataseries.md#count)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L104)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L104)*
 
 Gets the count of data-points in the DataSeries
 
@@ -350,7 +350,7 @@ ___
 
 *Overrides [BaseDataSeries](basedataseries.md).[delete](basedataseries.md#delete)*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L324)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:324](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L324)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -372,7 +372,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[getIndicesRange](basedataseries.md#getindicesrange)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L191)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L191)*
 
 **Parameters:**
 
@@ -392,7 +392,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[getIsDeleted](basedataseries.md#getisdeleted)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L113)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:113](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L113)*
 
 Returns true if this DataSeries has been deleted and native memory destroyed
 
@@ -404,7 +404,7 @@ ___
 
 ▸ **getNativeCloseValues**(): *DoubleVector*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L100)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L100)*
 
 Gets a native / WebAssembly vector of Close-values in the DataSeries
 
@@ -416,7 +416,7 @@ ___
 
 ▸ **getNativeHighValues**(): *DoubleVector*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L88)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L88)*
 
 Gets a native / WebAssembly vector of High-values in the DataSeries
 
@@ -432,7 +432,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[getNativeIndexes](basedataseries.md#getnativeindexes)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L119)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L119)*
 
 Gets a native / WebAssembly Vector of Indexes in the DataSeries
 
@@ -444,7 +444,7 @@ ___
 
 ▸ **getNativeLowValues**(): *DoubleVector*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L94)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L94)*
 
 Gets a native / WebAssembly vector of Low-values in the DataSeries
 
@@ -456,7 +456,7 @@ ___
 
 ▸ **getNativeOpenValues**(): *DoubleVector*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L82)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L82)*
 
 Gets a native / WebAssembly vector of Open-values in the DataSeries
 
@@ -472,7 +472,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[getNativeXValues](basedataseries.md#getnativexvalues)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L134)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:134](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L134)*
 
 Gets a native / WebAssembly vector of X-values in the DataSeries
 
@@ -488,7 +488,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[getNativeYValues](basedataseries.md#getnativeyvalues)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L140)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:140](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L140)*
 
 Gets a native / WebAssembly vector of Y-values in the DataSeries
 
@@ -504,7 +504,7 @@ ___
 
 *Overrides [BaseDataSeries](basedataseries.md).[getWindowedYRange](basedataseries.md#getwindowedyrange)*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:336](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L336)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:336](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L336)*
 
 Gets the Y-range of the data within the specified X-Range: a 'windowed'
 Y-range used for zooming into series on the [SciChartSurface](scichartsurface.md)
@@ -525,7 +525,7 @@ ___
 
 ▸ **insert**(`startIndex`: number, `x`: number, `open`: number, `high`: number, `low`: number, `close`: number): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L200)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L200)*
 
 Inserts a single Date, Open, High, Low, Close value at the X-index
 
@@ -550,7 +550,7 @@ ___
 
 ▸ **insertRange**(`startIndex`: number, `xValues`: number[], `openValues`: number[], `highValues`: number[], `lowValues`: number[], `closeValues`: number[]): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:225](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L225)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:225](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L225)*
 
 Inserts a range of Date, Open, High, Low, Close value at the X-index
 
@@ -577,7 +577,7 @@ ___
 
 *Inherited from [BaseDataSeries](basedataseries.md).[notifyDataChanged](basedataseries.md#notifydatachanged)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L156)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L156)*
 
 Call to notify subscribers of [dataChanged](ohlcdataseries.md#readonly-datachanged) that the data has changed and [SciChartSurface](scichartsurface.md) needs redrawing
 
@@ -589,7 +589,7 @@ ___
 
 ▸ **removeAt**(`index`: number): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:269](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L269)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:269](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L269)*
 
 Removes a Date,Open,High,Low,Close value at the specified index
 
@@ -609,7 +609,7 @@ ___
 
 ▸ **removeRange**(`startIndex`: number, `count`: number): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:289](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L289)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:289](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L289)*
 
 Removes a range of Date,Open,High,Low,Close values at the specified index
 
@@ -630,7 +630,7 @@ ___
 
 ▸ **update**(`index`: number, `open`: number, `high`: number, `low`: number, `close`: number): *void*
 
-*Defined in [src/Charting/Model/OhlcDataSeries.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L181)*
+*Defined in [src/Charting/Model/OhlcDataSeries.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/OhlcDataSeries.ts#L181)*
 
 Updates a single Open, High, Low, Close value by X-index
 

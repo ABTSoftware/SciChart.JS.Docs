@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [BaseDataSeries3D](basedataseries3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [BaseDataSeries3D](basedataseries3d.md)
 
 # Class: BaseDataSeries3D
 
@@ -53,7 +53,7 @@ See derived types of [IRenderableSeries3D](../interfaces/irenderableseries3d.md)
 
 \+ **new BaseDataSeries3D**(`webAssemblyContext`: TSciChart3D, `options?`: [IBaseDataSeries3DOptions](../interfaces/ibasedataseries3doptions.md)): *[BaseDataSeries3D](basedataseries3d.md)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L49)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L49)*
 
 **Parameters:**
 
@@ -72,7 +72,7 @@ Name | Type |
 
 *Implementation of [IDataSeries3D](../interfaces/idataseries3d.md).[dataChanged](../interfaces/idataseries3d.md#datachanged)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L46)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L46)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -99,7 +99,7 @@ ___
 
 *Implementation of [IDataSeries3D](../interfaces/idataseries3d.md).[type](../interfaces/idataseries3d.md#readonly-type)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L42)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L42)*
 
 Gets the [EDataSeriesType3D](../enums/edataseriestype3d.md) type of the DataSeries
 
@@ -109,7 +109,7 @@ Gets the [EDataSeriesType3D](../enums/edataseriestype3d.md) type of the DataSeri
 
 • **get dataSeriesName**(): *string*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L75)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L75)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -119,7 +119,7 @@ Gets the DataSeries name. This is used in legend controls and tooltips to identi
 
 • **set dataSeriesName**(`dataSeriesName`: string): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L82)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:82](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L82)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -139,7 +139,7 @@ ___
 
 • **get xRange**(): *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L60)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L60)*
 
 Gets the total extends of the [DataSeries3D](basedataseries3d.md) in the x-range
 
@@ -153,7 +153,7 @@ ___
 
 • **get yRange**(): *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L65)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L65)*
 
 Gets the total extends of the [DataSeries3D](basedataseries3d.md) in the y-range
 
@@ -167,7 +167,7 @@ ___
 
 • **get zRange**(): *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L70)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L70)*
 
 Gets the total extends of the [DataSeries3D](basedataseries3d.md) in the z-range
 
@@ -183,7 +183,7 @@ Gets the total extends of the [DataSeries3D](basedataseries3d.md) in the z-range
 
 *Implementation of [IDataSeries3D](../interfaces/idataseries3d.md)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L97)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L97)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -203,7 +203,7 @@ ___
 
 ▸ **getIsDeleted**(): *boolean*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L90)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L90)*
 
 Returns true if this DataSeries has been deleted and native memory destroyed
 
@@ -215,7 +215,7 @@ ___
 
 ▸ **notifyDataChanged**(): *void*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L106)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L106)*
 
 Call this method to notify subscribers of [dataChanged](basedataseries3d.md#readonly-datachanged) that the data has changed
 and [3D JavaScript Chart](https://www.scichart.com/javascript-chart-features)

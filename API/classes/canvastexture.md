@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [CanvasTexture](canvastexture.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [CanvasTexture](canvastexture.md)
 
 # Class: CanvasTexture
 
@@ -36,7 +36,7 @@
 
 \+ **new CanvasTexture**(`webAssemblyContext`: TSciChart | TSciChart3D, `textureWidth`: number, `textureHeight`: number): *[CanvasTexture](canvastexture.md)*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L13)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L13)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ Name | Type |
 
 • **canvas**: *HTMLCanvasElement*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L10)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L10)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **height**: *number*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L8)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L8)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **width**: *number*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L7)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L7)*
 
 ## Methods
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **clear**(): *void*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L50)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L50)*
 
 **Returns:** *void*
 
@@ -88,7 +88,7 @@ ___
 
 ▸ **copyTexture**(): *void*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L69)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L69)*
 
 **Returns:** *void*
 
@@ -98,7 +98,7 @@ ___
 
 ▸ **delete**(): *void*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L57)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L57)*
 
 **Returns:** *void*
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **getContext**(): *CanvasRenderingContext2D*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L42)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L42)*
 
 **Returns:** *CanvasRenderingContext2D*
 
@@ -118,6 +118,6 @@ ___
 
 ▸ **getTexture**(): *TSRTexture*
 
-*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L46)*
+*Defined in [src/Charting/Visuals/TextureManager/CanvasTexture.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/TextureManager/CanvasTexture.ts#L46)*
 
 **Returns:** *TSRTexture*

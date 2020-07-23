@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [TrialRequest](trialrequest.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [TrialRequest](trialrequest.md)
 
 # Class: TrialRequest
 
@@ -27,7 +27,7 @@
 
 \+ **new TrialRequest**(`username`: string, `password`: string, `productCode`: string, `locationId`: string, `machineId`: string, `resendEmail`: boolean): *[TrialRequest](trialrequest.md)*
 
-*Defined in [src/Licensing/licensingClasses.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L8)*
+*Defined in [src/Licensing/licensingClasses.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L8)*
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ Name | Type |
 
 • **locationId**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L6)*
+*Defined in [src/Licensing/licensingClasses.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L6)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **machineId**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L7)*
+*Defined in [src/Licensing/licensingClasses.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L7)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **password**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L4)*
+*Defined in [src/Licensing/licensingClasses.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L4)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **productCode**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L5)*
+*Defined in [src/Licensing/licensingClasses.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L5)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **resendEmail**: *boolean*
 
-*Defined in [src/Licensing/licensingClasses.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L8)*
+*Defined in [src/Licensing/licensingClasses.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L8)*
 
 ___
 
@@ -88,4 +88,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L3)*
+*Defined in [src/Licensing/licensingClasses.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L3)*

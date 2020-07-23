@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [HitTestInfo](hittestinfo.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [HitTestInfo](hittestinfo.md)
 
 # Class: HitTestInfo
 
@@ -42,7 +42,7 @@
 
 \+ **new HitTestInfo**(`isEmpty`: boolean): *[HitTestInfo](hittestinfo.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L23)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L23)*
 
 **Parameters:**
 
@@ -58,7 +58,7 @@ Name | Type | Default |
 
 • **closeValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L21)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L21)*
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 • **dataSeriesIndex**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L11)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L11)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **dataSeriesName**: *string*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L8)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L8)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 • **highValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L19)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L19)*
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 • **hitTestPoint**: *Point*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L9)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L9)*
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 • **hitTestPointValues**: *Point*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L10)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L10)*
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 • **hitTestRadius**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L16)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L16)*
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 • **isCategoryAxis**: *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L23)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L23)*
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 • **isEmpty**: *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L7)*
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 • **isHit**: *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L17)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L17)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **isWithinDataBounds**: *boolean*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L22)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L22)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **lowValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L20)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L20)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 • **openValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L18)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L18)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 • **xCoord**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L12)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L12)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 • **xValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L14)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L14)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • **yCoord**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L13)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L13)*
 
 ___
 
@@ -186,7 +186,7 @@ ___
 
 • **yValue**: *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L15)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L15)*
 
 ## Methods
 
@@ -194,6 +194,6 @@ ___
 
 ▸ **empty**(): *[HitTestInfo](hittestinfo.md)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L4)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HitTest/HitTestInfo.ts#L4)*
 
 **Returns:** *[HitTestInfo](hittestinfo.md)*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseRenderableSeries3DOptions](ibaserenderableseries3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IBaseRenderableSeries3DOptions](ibaserenderableseries3doptions.md)
 
 # Interface: IBaseRenderableSeries3DOptions
 
@@ -24,7 +24,7 @@
 
 • **dataSeries**? : *[BaseDataSeries3D](../classes/basedataseries3d.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L29)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L29)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **isVisible**? : *boolean*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L31)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L31)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 • **pointMarker**? : *[BasePointMarker3D](../classes/basepointmarker3d.md)*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L30)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L30)*
 
 ___
 
@@ -48,7 +48,7 @@ ___
 
 • **shininess**? : *number*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L33)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L33)*
 
 ___
 
@@ -56,4 +56,4 @@ ___
 
 • **stroke**? : *string*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L32)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/BaseRenderableSeries3D.ts#L32)*

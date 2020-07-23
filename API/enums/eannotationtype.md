@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [EAnnotationType](eannotationtype.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [EAnnotationType](eannotationtype.md)
 
 # Enumeration: EAnnotationType
 
@@ -18,7 +18,7 @@ Annotations are overlays or markers added to the [SciChartSurface.annotations](.
 
 • **RenderContext**:
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L41)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L41)*
 
 The [Annotation](../interfaces/iannotation.md) is a [RenderContextAnnotation](../classes/rendercontextannotationbase.md)
 
@@ -34,7 +34,7 @@ ___
 
 • **SVG**:
 
-*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L50)*
+*Defined in [src/Charting/Visuals/Annotations/IAnnotation.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/IAnnotation.ts#L50)*
 
 The Annotation is an [SvgAnnotation](../classes/svgannotation.md)
 

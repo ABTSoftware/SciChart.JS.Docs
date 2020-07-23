@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ETextAlignment3D](etextalignment3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ETextAlignment3D](etextalignment3d.md)
 
 # Enumeration: ETextAlignment3D
 
@@ -17,7 +17,7 @@
 
 • **Camera**:
 
-*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L9)*
+*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L9)*
 
 Align (billboard) to camera
 
@@ -27,7 +27,7 @@ ___
 
 • **Default**:
 
-*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L5)*
+*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L5)*
 
 Default alignment
 
@@ -37,7 +37,7 @@ ___
 
 • **ScreenAutoRotated**:
 
-*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L17)*
+*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L17)*
 
 2D text, rotated with alignment to corresponding object ( i.e. tick )
 
@@ -47,6 +47,6 @@ ___
 
 • **ScreenHorizontal**:
 
-*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L13)*
+*Defined in [src/Charting3D/Visuals/Axis/ETextAlignment3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ETextAlignment3D.ts#L13)*
 
 2D text

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ActivationRequest](activationrequest.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ActivationRequest](activationrequest.md)
 
 # Class: ActivationRequest
 
@@ -26,7 +26,7 @@
 
 \+ **new ActivationRequest**(`username`: string, `password`: string, `serialKey`: string, `domain`: string): *[ActivationRequest](activationrequest.md)*
 
-*Defined in [src/Licensing/licensingClasses.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L50)*
+*Defined in [src/Licensing/licensingClasses.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L50)*
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ Name | Type |
 
 • **domain**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L49)*
+*Defined in [src/Licensing/licensingClasses.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L49)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **keyType**: *string* = "json"
 
-*Defined in [src/Licensing/licensingClasses.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L50)*
+*Defined in [src/Licensing/licensingClasses.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L50)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **password**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L47)*
+*Defined in [src/Licensing/licensingClasses.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L47)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **serialKey**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L48)*
+*Defined in [src/Licensing/licensingClasses.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L48)*
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 • **username**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L46)*
+*Defined in [src/Licensing/licensingClasses.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L46)*

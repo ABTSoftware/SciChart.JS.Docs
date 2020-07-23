@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [BaseMeshPointMarker3D](basemeshpointmarker3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [BaseMeshPointMarker3D](basemeshpointmarker3d.md)
 
 # Class: BaseMeshPointMarker3D
 
@@ -37,7 +37,7 @@
 
 *Inherited from [BasePointMarker3D](basepointmarker3d.md).[propertyChanged](basepointmarker3d.md#readonly-propertychanged)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L31)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L31)*
 
 ## Accessors
 
@@ -47,7 +47,7 @@
 
 *Inherited from [BasePointMarker3D](basepointmarker3d.md).[fill](basepointmarker3d.md#fill)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L45)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L45)*
 
 **Returns:** *string*
 
@@ -55,7 +55,7 @@
 
 *Inherited from [BasePointMarker3D](basepointmarker3d.md).[fill](basepointmarker3d.md#fill)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L48)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L48)*
 
 **Parameters:**
 
@@ -73,7 +73,7 @@ ___
 
 *Overrides [BasePointMarker3D](basepointmarker3d.md).[markerType](basepointmarker3d.md#markertype)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts#L13)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts#L13)*
 
 Defines the MarkerType, e.g. pixel point marker, Mesh (3d object) or textured-quad
 
@@ -85,7 +85,7 @@ ___
 
 • **get pointsMesh**(): *TSRIndexedMesh*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts#L20)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BaseMeshPointMarker3D.ts#L20)*
 
 Returns the TSRIndexedMesh instance which defines the 3D geometry to draw at each location or point
 
@@ -99,7 +99,7 @@ ___
 
 *Inherited from [BasePointMarker3D](basepointmarker3d.md).[size](basepointmarker3d.md#size)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L53)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L53)*
 
 **Returns:** *number*
 
@@ -107,7 +107,7 @@ ___
 
 *Inherited from [BasePointMarker3D](basepointmarker3d.md).[size](basepointmarker3d.md#size)*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L56)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L56)*
 
 **Parameters:**
 

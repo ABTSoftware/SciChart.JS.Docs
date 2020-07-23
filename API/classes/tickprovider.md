@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [TickProvider](tickprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [TickProvider](tickprovider.md)
 
 # Class: TickProvider
 
@@ -40,7 +40,7 @@ See also [NumericTickProvider](numerictickprovider.md) for a concrete implementa
 
 • **parentAxis**: *[AxisCore](axiscore.md)*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L21)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L21)*
 
 Gets the parent [Axis](axiscore.md) this TickProvider is attached to
 
@@ -50,7 +50,7 @@ Gets the parent [Axis](axiscore.md) this TickProvider is attached to
 
 ▸ **attachedToAxis**(`axis`: [AxisCore](axiscore.md)): *void*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L27)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L27)*
 
 Called when the TickProvider is attached to an [Axis](axiscore.md)
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **getMajorTicks**(`minorDelta`: number, `majorDelta`: number, `visibleRange`: NumberRange): *number[]*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L44)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L44)*
 
 **`summary`** Gets an array of major ticks (data-values values where SciChart will place labels and major gridlines).
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **getMinorTicks**(`minorDelta`: number, `majorDelta`: number, `visibleRange`: NumberRange): *number[]*
 
-*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L60)*
+*Defined in [src/Charting/Numerics/TickProviders/TickProvider.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Numerics/TickProviders/TickProvider.ts#L60)*
 
 **`summary`** Gets an array of minor ticks (data-values values where SciChart will place minor gridlines).
 

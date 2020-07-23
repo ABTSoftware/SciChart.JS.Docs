@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IHeatmapColorMapOptions](iheatmapcolormapoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IHeatmapColorMapOptions](iheatmapcolormapoptions.md)
 
 # Interface: IHeatmapColorMapOptions
 
@@ -20,7 +20,7 @@
 
 • **gradientStops**? : *TGradientStop[]*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L9)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L9)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **maximum**? : *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L8)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L8)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **minimum**? : *number*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L7)*
+*Defined in [src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/HeatmapColorMap.ts#L7)*

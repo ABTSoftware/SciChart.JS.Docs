@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IXyzDataSeriesOptions](ixyzdataseriesoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IXyzDataSeriesOptions](ixyzdataseriesoptions.md)
 
 # Interface: IXyzDataSeriesOptions
 
@@ -28,7 +28,7 @@ Options to pass to the [XyzDataSeries](../classes/xyzdataseries.md) constructor
 
 *Inherited from [IBaseDataSeriesOptions](ibasedataseriesoptions.md).[dataIsSortedInX](ibasedataseriesoptions.md#optional-dataissortedinx)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L24)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:24](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L24)*
 
 When true, the Data is sorted in X.
 
@@ -44,7 +44,7 @@ ___
 
 *Inherited from [IBaseDataSeriesOptions](ibasedataseriesoptions.md).[dataSeriesName](ibasedataseriesoptions.md#optional-dataseriesname)*
 
-*Defined in [src/Charting/Model/BaseDataSeries.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L17)*
+*Defined in [src/Charting/Model/BaseDataSeries.ts:17](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/BaseDataSeries.ts#L17)*
 
 The DataSeries name, used in legends, tooltips to identify the chart series
 
@@ -54,7 +54,7 @@ ___
 
 • **xValues**? : *number[]*
 
-*Defined in [src/Charting/Model/XyzDataSeries.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L15)*
+*Defined in [src/Charting/Model/XyzDataSeries.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L15)*
 
 The X-values array to pre-populate the [XyzDataSeries](../classes/xyzdataseries.md)
 
@@ -64,7 +64,7 @@ ___
 
 • **yValues**? : *number[]*
 
-*Defined in [src/Charting/Model/XyzDataSeries.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L19)*
+*Defined in [src/Charting/Model/XyzDataSeries.ts:19](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L19)*
 
 The Y-values array to pre-populate the [XyzDataSeries](../classes/xyzdataseries.md)
 
@@ -74,6 +74,6 @@ ___
 
 • **zValues**? : *number[]*
 
-*Defined in [src/Charting/Model/XyzDataSeries.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L23)*
+*Defined in [src/Charting/Model/XyzDataSeries.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/XyzDataSeries.ts#L23)*
 
 The Z-values array to pre-populate the [XyzDataSeries](../classes/xyzdataseries.md)

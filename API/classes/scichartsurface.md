@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [SciChartSurface](scichartsurface.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [SciChartSurface](scichartsurface.md)
 
 # Class: SciChartSurface
 
@@ -74,7 +74,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L111)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:111](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L111)*
 
 **Parameters:**
 
@@ -91,7 +91,7 @@ Name | Type |
 
 • **annotationOverlaySurfaceViewRect**: *Rect*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L102)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:102](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L102)*
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 • **annotationUnderlaySurfaceViewRect**: *Rect*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:101](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L101)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:101](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L101)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 • **annotations**: *ObservableArray‹[IAnnotation](../interfaces/iannotation.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L97)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:97](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L97)*
 
 ___
 
@@ -115,7 +115,7 @@ ___
 
 • **chartModifierSurfaceViewRect**: *Rect*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L103)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:103](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L103)*
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[chartModifiers](scichartsurfacebase.md#readonly-chartmodifiers)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L69)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:69](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L69)*
 
 An {@link ObservableArray} of [IChartModifierBase](../interfaces/ichartmodifierbase.md) derived types. Chart Modifiers provide behavior such as zooming, panning,
 tooltips, legends and more in SciChart's High Performance Realtime
@@ -142,7 +142,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[domCanvas2D](scichartsurfacebase.md#readonly-domcanvas2d)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L81)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:81](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L81)*
 
 The {@link HTMLCanvasElement} which is the HTML5 canvas which SciChart draws overlays (cursors, tooltips) to
 
@@ -154,7 +154,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[domCanvasWebGL](scichartsurfacebase.md#readonly-domcanvaswebgl)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L77)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:77](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L77)*
 
 The {@link HTMLCanvasElement} which is the WebGL canvas that SciChart draws to
 
@@ -166,7 +166,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[domChartRoot](scichartsurfacebase.md#readonly-domchartroot)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L73)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:73](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L73)*
 
 The {@link HTMLDivElement} which is the dom chart root
 
@@ -178,7 +178,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[domDivContainer](scichartsurfacebase.md#readonly-domdivcontainer)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L89)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:89](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L89)*
 
 The inner {@link HTMLDivElement} div element
 
@@ -190,7 +190,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[domSvgContainer](scichartsurfacebase.md#readonly-domsvgcontainer)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L85)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L85)*
 
 The {@link SVGSVGElement} which is the SVG canvas which SciChart adds elements (tooltips, annotations) to
 
@@ -202,7 +202,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[mouseManager](scichartsurfacebase.md#readonly-mousemanager)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L94)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:94](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L94)*
 
 The {@link MouseManager} subscribes to mouse events on the [domChartRoot](scichartsurface.md#readonly-domchartroot) and routes them to components within SciChart
 
@@ -214,7 +214,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[propertyChanged](scichartsurfacebase.md#readonly-propertychanged)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L62)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:62](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L62)*
 
 A propertyChanged EventHandler. See {@link EventHandler} for how to subscribe to and be
 notified when a property changes on the [SciChartSurfaceBase](scichartsurfacebase.md)
@@ -225,7 +225,7 @@ ___
 
 • **renderContext2D**: *[RenderContext2D](rendercontext2d.md)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L104)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:104](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L104)*
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 • **renderSurface**: *RenderSurface*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L95)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L95)*
 
 ___
 
@@ -241,7 +241,7 @@ ___
 
 • **renderableSeries**: *ObservableArray‹[IRenderableSeries](../interfaces/irenderableseries.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L96)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:96](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L96)*
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 • **rendered**: *EventHandler‹void›* = new EventHandler<void>()
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L106)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:106](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L106)*
 
 ___
 
@@ -257,7 +257,7 @@ ___
 
 • **test**: *string*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L100)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L100)*
 
 ___
 
@@ -265,7 +265,7 @@ ___
 
 • **xAxes**: *ObservableArray‹[AxisBase2D](axisbase2d.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L98)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L98)*
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 • **yAxes**: *ObservableArray‹[AxisBase2D](axisbase2d.md)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:99](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L99)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:99](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L99)*
 
 ## Accessors
 
@@ -283,7 +283,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[isCopyCanvasSurface](scichartsurfacebase.md#iscopycanvassurface)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L170)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L170)*
 
 **Returns:** *HTMLCanvasElement*
 
@@ -293,7 +293,7 @@ ___
 
 • **get layoutManager**(): *LayoutManager‹›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:237](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L237)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:237](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L237)*
 
 **Returns:** *LayoutManager‹›*
 
@@ -305,7 +305,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[otherSurfaces](scichartsurfacebase.md#othersurfaces)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:178](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L178)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:178](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L178)*
 
 **Returns:** *[SciChartSurfaceBase](scichartsurfacebase.md)[]*
 
@@ -317,7 +317,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[seriesViewRect](scichartsurfacebase.md#seriesviewrect)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:188](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L188)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:188](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L188)*
 
 Gets the Series View {@link Rect}, a rectangle relative to the entire size of the [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -331,7 +331,7 @@ ___
 
 *Overrides [SciChartSurfaceBase](scichartsurfacebase.md).[surfaceType](scichartsurfacebase.md#surfacetype)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L179)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:179](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L179)*
 
 **Returns:** *[ESurfaceType](../enums/esurfacetype.md)*
 
@@ -345,7 +345,7 @@ ___
 
 *Overrides [SciChartSurfaceBase](scichartsurfacebase.md).[applyTheme](scichartsurfacebase.md#applytheme)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:163](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L163)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:163](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L163)*
 
 **Parameters:**
 
@@ -365,7 +365,7 @@ ___
 
 *Overrides [SciChartSurfaceBase](scichartsurfacebase.md).[changeViewportSize](scichartsurfacebase.md#abstract-changeviewportsize)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L170)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L170)*
 
 **Parameters:**
 
@@ -386,7 +386,7 @@ ___
 
 *Overrides [SciChartSurfaceBase](scichartsurfacebase.md).[delete](scichartsurfacebase.md#delete)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L195)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L195)*
 
 **Returns:** *void*
 
@@ -396,7 +396,7 @@ ___
 
 ▸ **doDrawingLoop**(): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L190)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:190](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L190)*
 
 **Returns:** *void*
 
@@ -406,7 +406,7 @@ ___
 
 ▸ **getXAxisById**(`axisId`: string): *[AxisBase2D](axisbase2d.md)‹›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L200)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L200)*
 
 **Parameters:**
 
@@ -422,7 +422,7 @@ ___
 
 ▸ **getYAxisById**(`axisId`: string): *[AxisBase2D](axisbase2d.md)‹›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:204](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L204)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:204](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L204)*
 
 **Parameters:**
 
@@ -440,7 +440,7 @@ ___
 
 *Overrides [SciChartSurfaceBase](scichartsurfacebase.md).[invalidateElement](scichartsurfacebase.md#abstract-invalidateelement)*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:184](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L184)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:184](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L184)*
 
 **Returns:** *void*
 
@@ -452,7 +452,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[setDestinations](scichartsurfacebase.md#setdestinations)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:174](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L174)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:174](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L174)*
 
 **Parameters:**
 
@@ -468,7 +468,7 @@ ___
 
 ▸ **setLayoutManager**(`layoutManager`: LayoutManager): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:241](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L241)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:241](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L241)*
 
 **Parameters:**
 
@@ -486,7 +486,7 @@ ___
 
 *Inherited from [SciChartSurfaceBase](scichartsurfacebase.md).[setSeriesViewRect](scichartsurfacebase.md#setseriesviewrect)*
 
-*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:196](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L196)*
+*Defined in [src/Charting/Visuals/SciChartSurfaceBase.ts:196](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurfaceBase.ts#L196)*
 
 Sets the Series View {@link Rect}, a rectangle relative to the entire size of the [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -504,7 +504,7 @@ ___
 
 ▸ **zoomExtents**(`animationDurationMs`: number, `easingFunction`: TEasing): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:208](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L208)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:208](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L208)*
 
 **Parameters:**
 
@@ -521,7 +521,7 @@ ___
 
 ▸ **zoomExtentsX**(`animationDurationMs`: number, `easingFunction`: TEasing): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L229)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:229](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L229)*
 
 **Parameters:**
 
@@ -538,7 +538,7 @@ ___
 
 ▸ **zoomExtentsY**(`animationDurationMs`: number, `easingFunction`: TEasing): *void*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:233](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L233)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:233](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L233)*
 
 **Parameters:**
 
@@ -555,7 +555,7 @@ ___
 
 ▸ **create**(`divElementId`: string, `width`: number, `height`: number, `clearChildren`: boolean): *Promise‹[TWebAssemblyChart](../globals.md#twebassemblychart)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L86)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:86](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L86)*
 
 **Parameters:**
 
@@ -574,7 +574,7 @@ ___
 
 ▸ **createSingle**(`divElementId`: string, `width`: number, `height`: number): *Promise‹[TWebAssemblyChart](../globals.md#twebassemblychart)›*
 
-*Defined in [src/Charting/Visuals/SciChartSurface.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L64)*
+*Defined in [src/Charting/Visuals/SciChartSurface.ts:64](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/SciChartSurface.ts#L64)*
 
 **Parameters:**
 

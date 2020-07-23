@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [VisibleRangeChangedArgs](visiblerangechangedargs.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [VisibleRangeChangedArgs](visiblerangechangedargs.md)
 
 # Class: VisibleRangeChangedArgs
 
@@ -22,7 +22,7 @@
 
 \+ **new VisibleRangeChangedArgs**(`visibleRange`: NumberRange): *[VisibleRangeChangedArgs](visiblerangechangedargs.md)*
 
-*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
+*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
 
 **Parameters:**
 
@@ -38,4 +38,4 @@ Name | Type |
 
 • **visibleRange**: *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*
+*Defined in [src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/VisibleRangeChangedArgs.ts#L4)*

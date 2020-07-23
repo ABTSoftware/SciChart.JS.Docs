@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [WebGlPen](webglpen.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [WebGlPen](webglpen.md)
 
 # Class: WebGlPen
 
@@ -33,7 +33,7 @@ The WebGlPen is a pen for polygon stroke, line strokes, which can be passed to S
 
 \+ **new WebGlPen**(`scrtPen`: SCRTPen): *[WebGlPen](webglpen.md)*
 
-*Defined in [src/Charting/Drawing/WebGlPen.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L10)*
+*Defined in [src/Charting/Drawing/WebGlPen.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L10)*
 
 Creates an instance of WebGlPen
 
@@ -51,7 +51,7 @@ Name | Type | Description |
 
 • **get scrtPen**(): *SCRTPen*
 
-*Defined in [src/Charting/Drawing/WebGlPen.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L21)*
+*Defined in [src/Charting/Drawing/WebGlPen.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L21)*
 
 the inner {@link SCRTPen} which can be passed to SciChart's WebAssembly WebGL engine
 
@@ -65,7 +65,7 @@ the inner {@link SCRTPen} which can be passed to SciChart's WebAssembly WebGL en
 
 *Implementation of [IPen2D](../interfaces/ipen2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlPen.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L27)*
+*Defined in [src/Charting/Drawing/WebGlPen.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L27)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 
@@ -87,7 +87,7 @@ ___
 
 *Implementation of [IPen2D](../interfaces/ipen2d.md)*
 
-*Defined in [src/Charting/Drawing/WebGlPen.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L33)*
+*Defined in [src/Charting/Drawing/WebGlPen.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/WebGlPen.ts#L33)*
 
 Gets the type of the pen. See {@link EDrawingTypes} for list of values
 

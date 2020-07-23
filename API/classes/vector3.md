@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [Vector3](vector3.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [Vector3](vector3.md)
 
 # Class: Vector3
 
@@ -36,7 +36,7 @@
 
 \+ **new Vector3**(`x`: number, `y`: number, `z`: number): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L13)*
+*Defined in [src/Charting3D/Vector3.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L13)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ Name | Type |
 
 • **get length**(): *number*
 
-*Defined in [src/Charting3D/Vector3.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L56)*
+*Defined in [src/Charting3D/Vector3.ts:56](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L56)*
 
 **Returns:** *number*
 
@@ -64,7 +64,7 @@ ___
 
 • **get x**(): *number*
 
-*Defined in [src/Charting3D/Vector3.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L21)*
+*Defined in [src/Charting3D/Vector3.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L21)*
 
 **Returns:** *number*
 
@@ -74,7 +74,7 @@ ___
 
 • **get y**(): *number*
 
-*Defined in [src/Charting3D/Vector3.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L25)*
+*Defined in [src/Charting3D/Vector3.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L25)*
 
 **Returns:** *number*
 
@@ -84,7 +84,7 @@ ___
 
 • **get z**(): *number*
 
-*Defined in [src/Charting3D/Vector3.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L29)*
+*Defined in [src/Charting3D/Vector3.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L29)*
 
 **Returns:** *number*
 
@@ -94,7 +94,7 @@ ___
 
 • **get zero**(): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L5)*
+*Defined in [src/Charting3D/Vector3.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L5)*
 
 **Returns:** *[Vector3](vector3.md)*
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **add**(`other`: [Vector3](vector3.md)): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L42)*
+*Defined in [src/Charting3D/Vector3.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L42)*
 
 **Parameters:**
 
@@ -120,7 +120,7 @@ ___
 
 ▸ **crossProduct**(`rhs`: [Vector3](vector3.md)): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L50)*
+*Defined in [src/Charting3D/Vector3.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L50)*
 
 **Parameters:**
 
@@ -136,7 +136,7 @@ ___
 
 ▸ **normalize**(): *void*
 
-*Defined in [src/Charting3D/Vector3.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L60)*
+*Defined in [src/Charting3D/Vector3.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L60)*
 
 **Returns:** *void*
 
@@ -146,7 +146,7 @@ ___
 
 ▸ **scalarMultiply**(`scalar`: number): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L46)*
+*Defined in [src/Charting3D/Vector3.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L46)*
 
 **Parameters:**
 
@@ -162,7 +162,7 @@ ___
 
 ▸ **subtract**(`other`: [Vector3](vector3.md)): *[Vector3](vector3.md)*
 
-*Defined in [src/Charting3D/Vector3.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L38)*
+*Defined in [src/Charting3D/Vector3.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L38)*
 
 **Parameters:**
 
@@ -178,7 +178,7 @@ ___
 
 ▸ **toString**(): *string*
 
-*Defined in [src/Charting3D/Vector3.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L70)*
+*Defined in [src/Charting3D/Vector3.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L70)*
 
 **Returns:** *string*
 
@@ -188,7 +188,7 @@ ___
 
 ▸ **toTsrVector3**(`webAssemblyContext`: TSciChart3D): *TSRVector3*
 
-*Defined in [src/Charting3D/Vector3.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Vector3.ts#L33)*
+*Defined in [src/Charting3D/Vector3.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Vector3.ts#L33)*
 
 **Parameters:**
 

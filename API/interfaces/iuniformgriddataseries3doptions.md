@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IUniformGridDataSeries3DOptions](iuniformgriddataseries3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IUniformGridDataSeries3DOptions](iuniformgriddataseries3doptions.md)
 
 # Interface: IUniformGridDataSeries3DOptions
 
@@ -27,7 +27,7 @@
 
 *Inherited from [IBaseDataSeries3DOptions](ibasedataseries3doptions.md).[dataSeriesName](ibasedataseries3doptions.md#optional-dataseriesname)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseDataSeries3D.ts#L26)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **xStart**? : *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L7)*
+*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L7)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **xStep**? : *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L8)*
+*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L8)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IBaseGridDataSeries3DOptions](ibasegriddataseries3doptions.md).[yValues](ibasegriddataseries3doptions.md#yvalues)*
 
-*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L7)*
+*Defined in [src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/BaseGridDataSeries3D.ts#L7)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **zStart**? : *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L9)*
+*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L9)*
 
 ___
 
@@ -69,4 +69,4 @@ ___
 
 • **zStep**? : *number*
 
-*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L10)*
+*Defined in [src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/UniformGridDataSeries3D.ts#L10)*

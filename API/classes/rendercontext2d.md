@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [RenderContext2D](rendercontext2d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [RenderContext2D](rendercontext2d.md)
 
 # Class: RenderContext2D
 
@@ -28,7 +28,7 @@ to draw shapes, lines, fills, images and more
 
 \+ **new RenderContext2D**(`canvas2D`: HTMLCanvasElement): *[RenderContext2D](rendercontext2d.md)*
 
-*Defined in [src/Charting/Drawing/RenderContext2D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L8)*
+*Defined in [src/Charting/Drawing/RenderContext2D.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L8)*
 
 Creates an instance of the RenderContext2D
 
@@ -46,7 +46,7 @@ Name | Type | Description |
 
 ▸ **clear**(): *void*
 
-*Defined in [src/Charting/Drawing/RenderContext2D.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L57)*
+*Defined in [src/Charting/Drawing/RenderContext2D.ts:57](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L57)*
 
 Clears the backing canvas element
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **drawCircle**(`x`: number, `y`: number, `radius`: number, `fillHtmlColor`: string): *void*
 
-*Defined in [src/Charting/Drawing/RenderContext2D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L40)*
+*Defined in [src/Charting/Drawing/RenderContext2D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L40)*
 
 Draws a circle to the specified location and with provided Htmlcolor string
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **drawRect**(`x`: number, `y`: number, `width`: number, `height`: number, `htmlColor`: string): *void*
 
-*Defined in [src/Charting/Drawing/RenderContext2D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L27)*
+*Defined in [src/Charting/Drawing/RenderContext2D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Drawing/RenderContext2D.ts#L27)*
 
 Draws a rectangle to the specified location and with provided Htmlcolor string
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [MouseWheelZoomModifier](mousewheelzoommodifier.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [MouseWheelZoomModifier](mousewheelzoommodifier.md)
 
 # Class: MouseWheelZoomModifier
 
@@ -74,7 +74,7 @@ The speed of mouse-wheel zoom can be modified via the [MouseWheelZoomModifier.gr
 
 *Overrides [ChartModifierBase2D](chartmodifierbase2d.md).[constructor](chartmodifierbase2d.md#constructor)*
 
-*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L28)*
+*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L28)*
 
 Creates an instance of MouseWheelZoomModifier
 
@@ -92,7 +92,7 @@ Name | Type | Description |
 
 • **growFactor**: *number* = 0.001
 
-*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L28)*
+*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L28)*
 
 Modifies the speed of mousewheel zoom, for example growFactor = 0.001 means each mousewheel 'click'
 zooms the chart 0.1%
@@ -107,7 +107,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[invalidateParentCallback](chartmodifierbase.md#invalidateparentcallback)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:126](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L126)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:126](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L126)*
 
 A callback to invalidate the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -125,7 +125,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierGroup](chartmodifierbase.md#modifiergroup)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L122)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L122)*
 
 Specifies a string ID to group modifiers.
 
@@ -139,7 +139,7 @@ ___
 
 *Inherited from [ChartModifierBase2D](chartmodifierbase2d.md).[xyDirection](chartmodifierbase2d.md#xydirection)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L23)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L23)*
 
 ## Accessors
 
@@ -149,7 +149,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[canReceiveMouseEvents](chartmodifierbase.md#canreceivemouseevents)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:183](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L183)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:183](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L183)*
 
 When true, this modifier can receive mouse events
 
@@ -165,7 +165,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[isAttached](chartmodifierbase.md#isattached)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:164](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L164)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:164](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L164)*
 
 When true, the modifier is attached to a [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -181,7 +181,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[isEnabled](chartmodifierbase.md#isenabled)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L151)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L151)*
 
 When true, the modifier is enabled
 
@@ -193,7 +193,7 @@ When true, the modifier is enabled
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[isEnabled](chartmodifierbase.md#isenabled)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L157)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:157](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L157)*
 
 When true, the modifier is enabled
 
@@ -217,7 +217,7 @@ ___
 
 *Overrides [ChartModifierBase](chartmodifierbase.md).[modifierType](chartmodifierbase.md#modifiertype)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L38)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase2D.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase2D.ts#L38)*
 
 The type of Chart Modifier, see [EModifierType](../enums/emodifiertype.md) for a list of values
 
@@ -233,7 +233,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[parentSurface](chartmodifierbase.md#parentsurface)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L141)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L141)*
 
 **`inheritdoc`** 
 
@@ -247,7 +247,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[receiveHandledEvents](chartmodifierbase.md#receivehandledevents)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L170)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:170](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L170)*
 
 When true, this modifier should receive events which have been handled by modifiers
 higher up in the call hierachy.
@@ -260,7 +260,7 @@ higher up in the call hierachy.
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[receiveHandledEvents](chartmodifierbase.md#receivehandledevents)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L176)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L176)*
 
 When true, this modifier should receive events which have been handled by modifiers
 higher up in the call hierachy.
@@ -285,7 +285,7 @@ Name | Type |
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[applyTheme](chartmodifierbase.md#applytheme)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L135)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:135](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L135)*
 
 Applies a theme (defined by [IThemeProvider](../interfaces/ithemeprovider.md)) to the current element
 
@@ -307,7 +307,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierDoubleClick](chartmodifierbase.md#modifierdoubleclick)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L244)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:244](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L244)*
 
 Method called when mouse double-click or touch double-tap occurs on the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -329,7 +329,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierMouseDown](chartmodifierbase.md#modifiermousedown)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:219](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L219)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:219](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L219)*
 
 Method called when mouse-down or touch-down occurs on the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -351,7 +351,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierMouseEnter](chartmodifierbase.md#modifiermouseenter)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L250)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:250](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L250)*
 
 Method called when mouse enters the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -373,7 +373,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierMouseLeave](chartmodifierbase.md#modifiermouseleave)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:256](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L256)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:256](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L256)*
 
 Method called when mouse leaves the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -395,7 +395,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierMouseMove](chartmodifierbase.md#modifiermousemove)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:225](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L225)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:225](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L225)*
 
 Method called when mouse-move or touch-move occurs on the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -417,7 +417,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[modifierMouseUp](chartmodifierbase.md#modifiermouseup)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:232](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L232)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:232](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L232)*
 
 Method called when mouse-up or touch-up occurs on the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -439,7 +439,7 @@ ___
 
 *Overrides [ChartModifierBase](chartmodifierbase.md).[modifierMouseWheel](chartmodifierbase.md#modifiermousewheel)*
 
-*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L41)*
+*Defined in [src/Charting/ChartModifiers/MouseWheelZoomModifier.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/MouseWheelZoomModifier.ts#L41)*
 
 Method called when mouse-wheel scroll occurs on the parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -461,7 +461,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[onAttach](chartmodifierbase.md#onattach)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L189)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:189](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L189)*
 
 Called when the modifier is attached to a parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -477,7 +477,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[onAttachSeries](chartmodifierbase.md#onattachseries)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:201](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L201)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:201](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L201)*
 
 Called when a [RenderableSeries](../interfaces/irenderableseries.md) is attached to this modifier
 
@@ -499,7 +499,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[onDetach](chartmodifierbase.md#ondetach)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L195)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L195)*
 
 Called when the modifier is detached from a parent [SciChartSurfaceBase](scichartsurfacebase.md)
 
@@ -515,7 +515,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[onDetachSeries](chartmodifierbase.md#ondetachseries)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:207](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L207)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:207](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L207)*
 
 Called when a [RenderableSeries](../interfaces/irenderableseries.md) is detached from this modifier
 
@@ -537,7 +537,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[onParentSurfaceRendered](chartmodifierbase.md#onparentsurfacerendered)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L213)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:213](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L213)*
 
 Called when the parent [SciChartSurfaceBase](scichartsurfacebase.md) is rendered
 
@@ -553,7 +553,7 @@ ___
 
 *Inherited from [ChartModifierBase](chartmodifierbase.md).[setParentSurface](chartmodifierbase.md#setparentsurface)*
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L262)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:262](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L262)*
 
 Sets the parent [SciChartSurfaceBase](scichartsurfacebase.md) on this modifier
 

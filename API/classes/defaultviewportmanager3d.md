@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [DefaultViewportManager3D](defaultviewportmanager3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [DefaultViewportManager3D](defaultviewportmanager3d.md)
 
 # Class: DefaultViewportManager3D
 
@@ -29,7 +29,7 @@
 
 *Inherited from [ViewportManager3DBase](viewportmanager3dbase.md).[isAttached](viewportmanager3dbase.md#isattached)*
 
-*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L7)*
+*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L7)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 *Inherited from [ViewportManager3DBase](viewportmanager3dbase.md).[parentSurface](viewportmanager3dbase.md#parentsurface)*
 
-*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L8)*
+*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L8)*
 
 ## Methods
 
@@ -49,7 +49,7 @@ ___
 
 *Inherited from [ViewportManager3DBase](viewportmanager3dbase.md).[attachSciChartSurface](viewportmanager3dbase.md#attachscichartsurface)*
 
-*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L10)*
+*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L10)*
 
 **Parameters:**
 
@@ -67,7 +67,7 @@ ___
 
 *Inherited from [ViewportManager3DBase](viewportmanager3dbase.md).[calculateAutoRange](viewportmanager3dbase.md#calculateautorange)*
 
-*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L23)*
+*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:23](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L23)*
 
 **Parameters:**
 
@@ -85,6 +85,6 @@ ___
 
 *Inherited from [ViewportManager3DBase](viewportmanager3dbase.md).[detachSciChartSurface](viewportmanager3dbase.md#detachscichartsurface)*
 
-*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L18)*
+*Defined in [tests/Charting3D/Visuals/ViewportManager3DBase.ts:18](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/tests/Charting3D/Visuals/ViewportManager3DBase.ts#L18)*
 
 **Returns:** *void*

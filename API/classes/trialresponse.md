@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [TrialResponse](trialresponse.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [TrialResponse](trialresponse.md)
 
 # Class: TrialResponse
 
@@ -27,7 +27,7 @@
 
 • **EmailSent**: *boolean*
 
-*Defined in [src/Licensing/licensingClasses.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L35)*
+*Defined in [src/Licensing/licensingClasses.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L35)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **ExpiryDate**: *Date*
 
-*Defined in [src/Licensing/licensingClasses.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L31)*
+*Defined in [src/Licensing/licensingClasses.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L31)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **FailureReason**: *[TrialFailureReason](../enums/trialfailurereason.md)*
 
-*Defined in [src/Licensing/licensingClasses.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L33)*
+*Defined in [src/Licensing/licensingClasses.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L33)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **IsNew**: *boolean*
 
-*Defined in [src/Licensing/licensingClasses.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L28)*
+*Defined in [src/Licensing/licensingClasses.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L28)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 • **JsonKey**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L32)*
+*Defined in [src/Licensing/licensingClasses.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L32)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 • **Platform**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L30)*
+*Defined in [src/Licensing/licensingClasses.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L30)*
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 • **ProductCode**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L29)*
+*Defined in [src/Licensing/licensingClasses.ts:29](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L29)*
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 • **Success**: *boolean*
 
-*Defined in [src/Licensing/licensingClasses.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L27)*
+*Defined in [src/Licensing/licensingClasses.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L27)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 • **TrialErrorMessage**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L34)*
+*Defined in [src/Licensing/licensingClasses.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L34)*
 
 ___
 
@@ -99,4 +99,4 @@ ___
 
 • **XmlKey**: *string*
 
-*Defined in [src/Licensing/licensingClasses.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Licensing/licensingClasses.ts#L36)*
+*Defined in [src/Licensing/licensingClasses.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Licensing/licensingClasses.ts#L36)*

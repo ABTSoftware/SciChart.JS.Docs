@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IPaletteProvider](ipaletteprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IPaletteProvider](ipaletteprovider.md)
 
 # Interface: IPaletteProvider
 
@@ -32,7 +32,7 @@ See derived type [IFillPaletteProvider](ifillpaletteprovider.md) for coloring fi
 
 ▸ **onAttached**(`parentSeries`: [IRenderableSeries](irenderableseries.md)): *void*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
 
 Called when the PaletteProvider instance is attached to a [RenderableSeries](../classes/baserenderableseries.md).
 Use this to be notified when attached and keep a reference to the parent series
@@ -51,7 +51,7 @@ ___
 
 ▸ **onDetached**(): *void*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
 
 Called when the PaletteProvider instance is detached from a [RenderableSeries](../classes/baserenderableseries.md).
 

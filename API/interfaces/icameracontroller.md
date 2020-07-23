@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ICameraController](icameracontroller.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ICameraController](icameracontroller.md)
 
 # Interface: ICameraController
 
@@ -48,7 +48,7 @@
 
 • **aspectRatio**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L45)*
+*Defined in [src/Charting3D/CameraController.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L45)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **farClip**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L41)*
+*Defined in [src/Charting3D/CameraController.ts:41](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L41)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **fieldOfView**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L39)*
+*Defined in [src/Charting3D/CameraController.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L39)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 • **forward**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L36)*
+*Defined in [src/Charting3D/CameraController.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L36)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 • **id**: *string*
 
-*Defined in [src/Charting3D/CameraController.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L32)*
+*Defined in [src/Charting3D/CameraController.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L32)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **isAttached**: *boolean*
 
-*Defined in [src/Charting3D/CameraController.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L46)*
+*Defined in [src/Charting3D/CameraController.ts:46](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L46)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **nearClip**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L40)*
+*Defined in [src/Charting3D/CameraController.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L40)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **orbitalPitch**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L43)*
+*Defined in [src/Charting3D/CameraController.ts:43](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L43)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **orbitalYaw**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L42)*
+*Defined in [src/Charting3D/CameraController.ts:42](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L42)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **orthoHeight**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L49)*
+*Defined in [src/Charting3D/CameraController.ts:49](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L49)*
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 • **orthoWidth**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L48)*
+*Defined in [src/Charting3D/CameraController.ts:48](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L48)*
 
 ___
 
@@ -136,7 +136,7 @@ ___
 
 • **position**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L33)*
+*Defined in [src/Charting3D/CameraController.ts:33](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L33)*
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 • **projectionMode**: *[ECameraProjectionMode](../enums/ecameraprojectionmode.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L47)*
+*Defined in [src/Charting3D/CameraController.ts:47](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L47)*
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 • **propertyChanged**: *EventHandler‹PropertyChangedEventArgs›*
 
-*Defined in [src/Charting3D/CameraController.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L31)*
+*Defined in [src/Charting3D/CameraController.ts:31](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L31)*
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 • **radius**: *number*
 
-*Defined in [src/Charting3D/CameraController.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L44)*
+*Defined in [src/Charting3D/CameraController.ts:44](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L44)*
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 • **side**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L37)*
+*Defined in [src/Charting3D/CameraController.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L37)*
 
 ___
 
@@ -176,7 +176,7 @@ ___
 
 • **target**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L34)*
+*Defined in [src/Charting3D/CameraController.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L34)*
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 • **up**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L35)*
+*Defined in [src/Charting3D/CameraController.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L35)*
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 • **upGlobal**: *[Vector3](../classes/vector3.md)*
 
-*Defined in [src/Charting3D/CameraController.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L38)*
+*Defined in [src/Charting3D/CameraController.ts:38](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L38)*
 
 ## Methods
 
@@ -200,7 +200,7 @@ ___
 
 ▸ **debugOutput**(): *void*
 
-*Defined in [src/Charting3D/CameraController.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L55)*
+*Defined in [src/Charting3D/CameraController.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L55)*
 
 **Returns:** *void*
 
@@ -210,7 +210,7 @@ ___
 
 ▸ **resetToDefaults**(): *void*
 
-*Defined in [src/Charting3D/CameraController.ts:52](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L52)*
+*Defined in [src/Charting3D/CameraController.ts:52](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L52)*
 
 **Returns:** *void*
 
@@ -220,7 +220,7 @@ ___
 
 ▸ **toOrthogonal**(): *void*
 
-*Defined in [src/Charting3D/CameraController.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L50)*
+*Defined in [src/Charting3D/CameraController.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L50)*
 
 **Returns:** *void*
 
@@ -230,7 +230,7 @@ ___
 
 ▸ **toPerspective**(): *void*
 
-*Defined in [src/Charting3D/CameraController.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L51)*
+*Defined in [src/Charting3D/CameraController.ts:51](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L51)*
 
 **Returns:** *void*
 
@@ -240,7 +240,7 @@ ___
 
 ▸ **updateEngineCamera**(`tsrCamera`: TSRCamera): *void*
 
-*Defined in [src/Charting3D/CameraController.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/CameraController.ts#L53)*
+*Defined in [src/Charting3D/CameraController.ts:53](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/CameraController.ts#L53)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IDataSeries3D](idataseries3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IDataSeries3D](idataseries3d.md)
 
 # Interface: IDataSeries3D
 
@@ -41,7 +41,7 @@ Defines the interface to a DataSeries in SciChart's High Performance Real-time
 
 • **dataChanged**: *EventHandler‹void›*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L32)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L32)*
 
 An {@link EventHandler} which is raised when the data changes.
 
@@ -66,7 +66,7 @@ ___
 
 • **dataSeriesName**: *string*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L36)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L36)*
 
 Gets the DataSeries name. This is used in legend controls and tooltips to identify the series
 
@@ -76,7 +76,7 @@ ___
 
 • **type**: *[EDataSeriesType3D](../enums/edataseriestype3d.md)*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L14)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:14](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L14)*
 
 Gets the [EDataSeriesType3D](../enums/edataseriestype3d.md) type of the DataSeries
 
@@ -86,7 +86,7 @@ ___
 
 • **xRange**: *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L40)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L40)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the x-range
 
@@ -96,7 +96,7 @@ ___
 
 • **yRange**: *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L45)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L45)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the y-range
 
@@ -106,7 +106,7 @@ ___
 
 • **zRange**: *NumberRange*
 
-*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L50)*
+*Defined in [src/Charting3D/Model/DataSeries/IDataSeries3D.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Model/DataSeries/IDataSeries3D.ts#L50)*
 
 Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in the z-range
 
@@ -118,7 +118,7 @@ Gets the total extends of the [DataSeries3D](../classes/basedataseries3d.md) in 
 
 *Inherited from [IBrush2D](ibrush2d.md).[delete](ibrush2d.md#delete)*
 
-*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
+*Defined in [src/Core/IDeletable.ts:12](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Core/IDeletable.ts#L12)*
 
 Deletes native (WebAssembly) memory used by this type, after which it cannot be used.
 

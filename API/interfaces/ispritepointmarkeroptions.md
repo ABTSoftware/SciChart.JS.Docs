@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ISpritePointMarkerOptions](ispritepointmarkeroptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ISpritePointMarkerOptions](ispritepointmarkeroptions.md)
 
 # Interface: ISpritePointMarkerOptions
 
@@ -27,7 +27,7 @@
 
 *Inherited from [IPointMarkerOptions](ipointmarkeroptions.md).[fill](ipointmarkeroptions.md#optional-fill)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L9)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L9)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 *Inherited from [IPointMarkerOptions](ipointmarkeroptions.md).[height](ipointmarkeroptions.md#optional-height)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L8)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:8](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L8)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **image**? : *HTMLImageElement*
 
-*Defined in [src/Charting/Visuals/PointMarkers/SpritePointMarker.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/SpritePointMarker.ts#L6)*
+*Defined in [src/Charting/Visuals/PointMarkers/SpritePointMarker.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/SpritePointMarker.ts#L6)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 *Inherited from [IPointMarkerOptions](ipointmarkeroptions.md).[stroke](ipointmarkeroptions.md#optional-stroke)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L10)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L10)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 *Inherited from [IPointMarkerOptions](ipointmarkeroptions.md).[strokeThickness](ipointmarkeroptions.md#optional-strokethickness)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L11)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L11)*
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 *Inherited from [IPointMarkerOptions](ipointmarkeroptions.md).[width](ipointmarkeroptions.md#optional-width)*
 
-*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L7)*
+*Defined in [src/Charting/Visuals/PointMarkers/BasePointMarker.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/PointMarkers/BasePointMarker.ts#L7)*

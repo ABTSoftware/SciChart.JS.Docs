@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [DeltaCalculator](deltacalculator.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [DeltaCalculator](deltacalculator.md)
 
 # Class: DeltaCalculator
 
@@ -25,7 +25,7 @@
 
 • **parentAxis**: *[AxisCore](axiscore.md)*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L5)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L5)*
 
 ## Methods
 
@@ -33,7 +33,7 @@
 
 ▸ **attachedToAxis**(`axis`: [AxisCore](axiscore.md)): *void*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L7)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L7)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ ___
 
 ▸ **getDeltaFromRange**(`min`: number, `max`: number, `minorsPerMajor`: number, `maxTicks`: number): *NumberRange*
 
-*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L11)*
+*Defined in [src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/DeltaCalculator/DeltaCalculator.ts#L11)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ECanvasType](ecanvastype.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ECanvasType](ecanvastype.md)
 
 # Enumeration: ECanvasType
 
@@ -16,7 +16,7 @@
 
 • **canvas2D**:
 
-*Defined in [src/sciChartInitCommon.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L21)*
+*Defined in [src/sciChartInitCommon.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L21)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **canvasWebGL**:
 
-*Defined in [src/sciChartInitCommon.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L20)*
+*Defined in [src/sciChartInitCommon.ts:20](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L20)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **svg**:
 
-*Defined in [src/sciChartInitCommon.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L22)*
+*Defined in [src/sciChartInitCommon.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L22)*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ModifierArgsBase](modifierargsbase.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ModifierArgsBase](modifierargsbase.md)
 
 # Class: ModifierArgsBase
 
@@ -22,7 +22,7 @@ The base class for arguments passed to [ChartModifierBase](chartmodifierbase.md)
 
 • **handled**: *boolean* = false
 
-*Defined in [src/Charting/ChartModifiers/ModifierArgsBase.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ModifierArgsBase.ts#L13)*
+*Defined in [src/Charting/ChartModifiers/ModifierArgsBase.ts:13](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ModifierArgsBase.ts#L13)*
 
 Gets or sets whether the event is handled
 

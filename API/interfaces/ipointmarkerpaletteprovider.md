@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IPointMarkerPaletteProvider](ipointmarkerpaletteprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IPointMarkerPaletteProvider](ipointmarkerpaletteprovider.md)
 
 # Interface: IPointMarkerPaletteProvider
 
@@ -31,7 +31,7 @@ See type [IFillPaletteProvider](ifillpaletteprovider.md) for per data-point colo
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onAttached](ipaletteprovider.md#onattached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
 
 Called when the PaletteProvider instance is attached to a [RenderableSeries](../classes/baserenderableseries.md).
 Use this to be notified when attached and keep a reference to the parent series
@@ -52,7 +52,7 @@ ___
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onDetached](ipaletteprovider.md#ondetached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
 
 Called when the PaletteProvider instance is detached from a [RenderableSeries](../classes/baserenderableseries.md).
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **overridePointMarkerAbgr**(`xValue`: number, `yValue`: number, `index`: number): *[TStrokeFill](../globals.md#tstrokefill)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L95)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L95)*
 
 Called by SciChart and may be used to override the color of fill/stroke on pointmarkers
 WARNING: CALLED PER-VERTEX, MAY RESULT IN PERFORMANCE DEGREDATION IF COMPLEX CODE EXECUTED HERE

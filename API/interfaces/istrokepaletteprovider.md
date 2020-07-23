@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IStrokePaletteProvider](istrokepaletteprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IStrokePaletteProvider](istrokepaletteprovider.md)
 
 # Interface: IStrokePaletteProvider
 
@@ -32,7 +32,7 @@ See type [IFillPaletteProvider](ifillpaletteprovider.md) for per data-point colo
 
 • **strokePaletteMode**: *[EStrokePaletteMode](../enums/estrokepalettemode.md)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L39)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:39](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L39)*
 
 Gets the stroke palette mode
 
@@ -44,7 +44,7 @@ Gets the stroke palette mode
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onAttached](ipaletteprovider.md#onattached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L16)*
 
 Called when the PaletteProvider instance is attached to a [RenderableSeries](../classes/baserenderableseries.md).
 Use this to be notified when attached and keep a reference to the parent series
@@ -65,7 +65,7 @@ ___
 
 *Inherited from [IPaletteProvider](ipaletteprovider.md).[onDetached](ipaletteprovider.md#ondetached)*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:21](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L21)*
 
 Called when the PaletteProvider instance is detached from a [RenderableSeries](../classes/baserenderableseries.md).
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **overrideStrokeAbgr**(`xValue`: number, `yValue`: number, `index`: number): *number*
 
-*Defined in [src/Charting/Model/IPaletteProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L50)*
+*Defined in [src/Charting/Model/IPaletteProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Model/IPaletteProvider.ts#L50)*
 
 Called by SciChart and may be used to override the color of a line segment or
 stroke outline in various chart types.

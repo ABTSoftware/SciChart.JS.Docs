@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ISolidColorBrushPaletteOptions](isolidcolorbrushpaletteoptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ISolidColorBrushPaletteOptions](isolidcolorbrushpaletteoptions.md)
 
 # Interface: ISolidColorBrushPaletteOptions
 
@@ -18,4 +18,4 @@
 
 • **fill**? : *string*
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L11)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/SurfaceMesh/SolidColorBrushPalette.ts#L11)*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [NumericLabelProvider](numericlabelprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [NumericLabelProvider](numericlabelprovider.md)
 
 # Class: NumericLabelProvider
 
@@ -32,7 +32,7 @@
 
 \+ **new NumericLabelProvider**(`format`: [ENumericFormat](../enums/enumericformat.md)): *[NumericLabelProvider](numericlabelprovider.md)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L15)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L15)*
 
 **Parameters:**
 
@@ -50,7 +50,7 @@ Name | Type | Default |
 
 *Overrides [LabelProvider](labelprovider.md).[numericFormat](labelprovider.md#abstract-numericformat)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L15)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:15](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L15)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 *Inherited from [NumericLabelProvider](numericlabelprovider.md).[parentAxis](numericlabelprovider.md#parentaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L7)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L7)*
 
 ## Methods
 
@@ -70,7 +70,7 @@ ___
 
 *Inherited from [NumericLabelProvider](numericlabelprovider.md).[attachedToAxis](numericlabelprovider.md#attachedtoaxis)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L9)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts:9](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/LabelProvider.ts#L9)*
 
 **Parameters:**
 
@@ -88,7 +88,7 @@ ___
 
 *Overrides [LabelProvider](labelprovider.md).[formatCursorLabel](labelprovider.md#abstract-formatcursorlabel)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L25)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:25](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L25)*
 
 **Parameters:**
 
@@ -107,7 +107,7 @@ ___
 
 *Overrides [LabelProvider](labelprovider.md).[formatLabel](labelprovider.md#abstract-formatlabel)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L32)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:32](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L32)*
 
 **Parameters:**
 
@@ -125,6 +125,6 @@ ___
 
 *Overrides [LabelProvider](labelprovider.md).[onBeginAxisDraw](labelprovider.md#abstract-onbeginaxisdraw)*
 
-*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L22)*
+*Defined in [src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Axis/LabelProvider/NumericLabelProvider.ts#L22)*
 
 **Returns:** *void*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [MountainSeriesDrawingProvider](mountainseriesdrawingprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [MountainSeriesDrawingProvider](mountainseriesdrawingprovider.md)
 
 # Class: MountainSeriesDrawingProvider
 
@@ -37,7 +37,7 @@
 
 *Overrides void*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L16)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:16](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L16)*
 
 **Parameters:**
 
@@ -56,7 +56,7 @@ Name | Type |
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[applyStrokePaletting](baseseriesdrawingprovider.md#applystrokepaletting)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L30)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L30)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[createPen](baseseriesdrawingprovider.md#createpen)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L79)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:79](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L79)*
 
 **Parameters:**
 
@@ -94,7 +94,7 @@ ___
 
 *Inherited from [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[createSolidBrush](baseseriesdrawingprovider.md#createsolidbrush)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L90)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/BaseSeriesDrawingProvider.ts#L90)*
 
 **Parameters:**
 
@@ -114,7 +114,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[delete](baseseriesdrawingprovider.md#abstract-delete)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L22)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:22](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L22)*
 
 **Returns:** *void*
 
@@ -128,7 +128,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[draw](baseseriesdrawingprovider.md#abstract-draw)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L28)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:28](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L28)*
 
 **Parameters:**
 
@@ -149,7 +149,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onAttachSeries](baseseriesdrawingprovider.md#onattachseries)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L88)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:88](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L88)*
 
 **Returns:** *void*
 
@@ -163,7 +163,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onDetachSeries](baseseriesdrawingprovider.md#ondetachseries)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L98)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:98](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L98)*
 
 **Returns:** *void*
 
@@ -177,7 +177,7 @@ ___
 
 *Overrides [BaseSeriesDrawingProvider](baseseriesdrawingprovider.md).[onSeriesPropertyChange](baseseriesdrawingprovider.md#abstract-onseriespropertychange)*
 
-*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L65)*
+*Defined in [src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/RenderableSeries/DrawingProviders/MountainSeriesDrawingProvider.ts#L65)*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IBasePointMarker3DOptions](ibasepointmarker3doptions.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IBasePointMarker3DOptions](ibasepointmarker3doptions.md)
 
 # Interface: IBasePointMarker3DOptions
 
@@ -19,7 +19,7 @@
 
 • **fill**? : *string*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L26)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:26](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L26)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **size**? : *number*
 
-*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L27)*
+*Defined in [src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts:27](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/PointMarkers/BasePointMarker3D.ts#L27)*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IThemeProvider](ithemeprovider.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IThemeProvider](ithemeprovider.md)
 
 # Interface: IThemeProvider
 
@@ -87,7 +87,7 @@ sciChartSurface.applyTheme(new MyCustomTheme());
 
 • **annotationsGripsBackroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L120)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L120)*
 
 The [AnnotationBase](../classes/annotationbase.md) grips background color as an HTML color code
 
@@ -99,7 +99,7 @@ ___
 
 • **annotationsGripsBorderBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L115)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:115](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L115)*
 
 The [AnnotationBase](../classes/annotationbase.md) grips border color as an HTML color code
 
@@ -111,7 +111,7 @@ ___
 
 • **axis3DBandsFill**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:215](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L215)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:215](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L215)*
 
 The default 3D Chart Axis Bands fill color applied as an HTML color code
 
@@ -123,7 +123,7 @@ ___
 
 • **axisBandsFill**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L40)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:40](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L40)*
 
 The Axis Bands fill brush as an HTML color code
 
@@ -135,7 +135,7 @@ ___
 
 • **axisPlaneBackgroundFill**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L210)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:210](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L210)*
 
 The default 3D Chart Axis Plane background color applied as an HTML color code
 
@@ -147,7 +147,7 @@ ___
 
 • **columnFillBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L191)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:191](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L191)*
 
 The default [FastColumnRenderableSeries](../classes/fastcolumnrenderableseries.md) fill brush as an HTML color code
 
@@ -159,7 +159,7 @@ ___
 
 • **columnLineColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L186)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:186](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L186)*
 
 The default [FastColumnRenderableSeries](../classes/fastcolumnrenderableseries.md) stroke brush as an HTML color code
 
@@ -171,7 +171,7 @@ ___
 
 • **cursorLineBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L70)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:70](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L70)*
 
 The Cursor Line brush as an HTML color code
 
@@ -183,7 +183,7 @@ ___
 
 • **defaultColorMapBrush**: *TGradientStop[]*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L195)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:195](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L195)*
 
 The default [UniformHeatmapRenderableSeries](../classes/uniformheatmaprenderableseries.md) color-map gradient stops
 
@@ -193,7 +193,7 @@ ___
 
 • **downBandSeriesFillColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L166)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:166](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L166)*
 
 The default [FastBandRenderableSeries](../classes/fastbandrenderableseries.md) down band fill color as an HTML color code
 
@@ -205,7 +205,7 @@ ___
 
 • **downBandSeriesLineColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L156)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L156)*
 
 The default [FastBandRenderableSeries](../classes/fastbandrenderableseries.md) down line color as an HTML color code
 
@@ -217,7 +217,7 @@ ___
 
 • **downBodyBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L146)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:146](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L146)*
 
 The default [FastCandlestickRenderableSeries](../classes/fastcandlestickrenderableseries.md) down body color as an HTML color code
 
@@ -229,7 +229,7 @@ ___
 
 • **downWickColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:136](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L136)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:136](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L136)*
 
 The default [FastCandlestickRenderableSeries](../classes/fastcandlestickrenderableseries.md) down-wick color as an HTML color code
 
@@ -241,7 +241,7 @@ ___
 
 • **gridBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L60)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:60](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L60)*
 
 The Grid area background brush as an HTML color code
 
@@ -253,7 +253,7 @@ ___
 
 • **gridBorderBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L35)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L35)*
 
 The Grid border brush as an HTML color code
 
@@ -265,7 +265,7 @@ ___
 
 • **labelBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L90)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:90](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L90)*
 
 The [Axis](../classes/axiscore.md) label background brush as an HTML color code
 
@@ -277,7 +277,7 @@ ___
 
 • **labelBorderBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L95)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:95](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L95)*
 
 The [Axis](../classes/axiscore.md) label border brush as an HTML color code
 
@@ -289,7 +289,7 @@ ___
 
 • **labelForegroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L100)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:100](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L100)*
 
 The [Axis](../classes/axiscore.md) label foreground font color brush as an HTML color code
 
@@ -301,7 +301,7 @@ ___
 
 • **legendBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L85)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:85](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L85)*
 
 The [SciChartLegend](../classes/scichartlegend.md) background brush as an HTML color code
 
@@ -313,7 +313,7 @@ ___
 
 • **lineSeriesColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L181)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:181](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L181)*
 
 The default [FastLineRenderableSeries](../classes/fastlinerenderableseries.md) line stroke brush as an HTML color code
 
@@ -325,7 +325,7 @@ ___
 
 • **majorGridLineBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L50)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:50](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L50)*
 
 The Major Gridlines brush as an HTML color code
 
@@ -337,7 +337,7 @@ ___
 
 • **minorGridLineBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L55)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:55](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L55)*
 
 The Minor Gridlines brush as an HTML color code
 
@@ -349,7 +349,7 @@ ___
 
 • **mountainAreaBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:171](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L171)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:171](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L171)*
 
 The default [FastMountainRenderableSeries](../classes/fastmountainrenderableseries.md) mountain fill brush as an HTML color code
 
@@ -361,7 +361,7 @@ ___
 
 • **mountainLineColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L176)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:176](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L176)*
 
 The default [FastMountainRenderableSeries](../classes/fastmountainrenderableseries.md) mountain line brush as an HTML color code
 
@@ -373,7 +373,7 @@ ___
 
 • **overviewFillBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L121)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:121](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L121)*
 
 ___
 
@@ -381,7 +381,7 @@ ___
 
 • **planeBorderColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:205](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L205)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:205](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L205)*
 
 The default 3D Chart Axis Plane border color applied as an HTML color code
 
@@ -393,7 +393,7 @@ ___
 
 • **rolloverLineBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L65)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:65](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L65)*
 
 The [RolloverModifier](../classes/rollovermodifier.md) line brush as an HTML color code
 
@@ -405,7 +405,7 @@ ___
 
 • **rubberBandFillBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L75)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:75](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L75)*
 
 The [RubberBandXyZoomModifier](../classes/rubberbandxyzoommodifier.md) recticule fill brush as an HTML color code
 
@@ -417,7 +417,7 @@ ___
 
 • **rubberBandStrokeBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:80](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L80)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:80](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L80)*
 
 The [RubberBandXyZoomModifier](../classes/rubberbandxyzoommodifier.md) recticule stroke brush as an HTML color code
 
@@ -429,7 +429,7 @@ ___
 
 • **sciChartBackground**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L30)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:30](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L30)*
 
 The Background color as an HTML color code
 
@@ -441,7 +441,7 @@ ___
 
 • **scrollbarBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L122)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:122](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L122)*
 
 ___
 
@@ -449,7 +449,7 @@ ___
 
 • **scrollbarBorderBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:123](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L123)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:123](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L123)*
 
 ___
 
@@ -457,7 +457,7 @@ ___
 
 • **scrollbarGripsBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L124)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:124](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L124)*
 
 ___
 
@@ -465,7 +465,7 @@ ___
 
 • **scrollbarViewportBackgroundBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:125](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L125)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:125](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L125)*
 
 ___
 
@@ -473,7 +473,7 @@ ___
 
 • **scrollbarViewportBorderBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:126](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L126)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:126](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L126)*
 
 ___
 
@@ -481,7 +481,7 @@ ___
 
 • **shadowEffectColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L200)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:200](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L200)*
 
 The default shadow effect color applied to drop-shadows
 
@@ -493,7 +493,7 @@ ___
 
 • **textAnnotationBackground**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:110](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L110)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:110](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L110)*
 
 The TextAnnotation background color as an HTML color code
 
@@ -505,7 +505,7 @@ ___
 
 • **textAnnotationForeground**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L105)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:105](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L105)*
 
 The TextAnnotation font color as an HTML color code
 
@@ -517,7 +517,7 @@ ___
 
 • **tickTextBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L45)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:45](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L45)*
 
 The Tick Text brush as an HTML color code
 
@@ -529,7 +529,7 @@ ___
 
 • **upBandSeriesFillColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L161)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:161](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L161)*
 
 The default [FastBandRenderableSeries](../classes/fastbandrenderableseries.md) up band fill color as an HTML color code
 
@@ -541,7 +541,7 @@ ___
 
 • **upBandSeriesLineColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L151)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:151](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L151)*
 
 The default [FastBandRenderableSeries](../classes/fastbandrenderableseries.md) up line color as an HTML color code
 
@@ -553,7 +553,7 @@ ___
 
 • **upBodyBrush**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L141)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:141](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L141)*
 
 The default [FastCandlestickRenderableSeries](../classes/fastcandlestickrenderableseries.md) up body color as an HTML color code
 
@@ -565,7 +565,7 @@ ___
 
 • **upWickColor**: *string*
 
-*Defined in [src/Charting/Themes/IThemeProvider.ts:131](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L131)*
+*Defined in [src/Charting/Themes/IThemeProvider.ts:131](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Themes/IThemeProvider.ts#L131)*
 
 The default [FastCandlestickRenderableSeries](../classes/fastcandlestickrenderableseries.md) up-wick color as an HTML color code
 

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [IColor](icolor.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [IColor](icolor.md)
 
 # Interface: IColor
 
@@ -21,7 +21,7 @@
 
 • **A**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L37)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:37](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L37)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **B**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L36)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:36](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L36)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **G**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L35)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:35](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L35)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **R**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L34)*
+*Defined in [src/Charting3D/Visuals/Axis/IAxisDescriptor.ts:34](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/IAxisDescriptor.ts#L34)*

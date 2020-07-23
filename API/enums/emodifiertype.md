@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [EModifierType](emodifiertype.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [EModifierType](emodifiertype.md)
 
 # Enumeration: EModifierType
 
@@ -15,7 +15,7 @@
 
 • **Chart2DModifier**: = "2D Chart Modifier"
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L10)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:10](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L10)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **Chart3DModifier**: = "3D Chart Modifier"
 
-*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L11)*
+*Defined in [src/Charting/ChartModifiers/ChartModifierBase.ts:11](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/ChartModifiers/ChartModifierBase.ts#L11)*

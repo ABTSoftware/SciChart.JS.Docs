@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ESeriesType3D](eseriestype3d.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ESeriesType3D](eseriestype3d.md)
 
 # Enumeration: ESeriesType3D
 
@@ -15,7 +15,7 @@
 
 • **ScatterRenderableSeries3D**: = "ScatterRenderableSeries3D"
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts:2](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts#L2)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts:2](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts#L2)*
 
 ___
 
@@ -23,4 +23,4 @@ ___
 
 • **SurfaceMeshRenderableSeries3D**: = "SurfaceMeshRenderableSeries3D"
 
-*Defined in [src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts#L3)*
+*Defined in [src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts:3](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/RenderableSeries/ESeriesType.ts#L3)*

@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [EWebGLSupport](ewebglsupport.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [EWebGLSupport](ewebglsupport.md)
 
 # Enumeration: EWebGLSupport
 
@@ -16,7 +16,7 @@
 
 • **NoWebGL**: = "No WebGL support"
 
-*Defined in [src/sciChartInitCommon.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L120)*
+*Defined in [src/sciChartInitCommon.ts:120](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L120)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **WebGL1**: = "WebGL 1"
 
-*Defined in [src/sciChartInitCommon.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L119)*
+*Defined in [src/sciChartInitCommon.ts:119](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L119)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **WebGL2**: = "WebGL 2"
 
-*Defined in [src/sciChartInitCommon.ts:118](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/sciChartInitCommon.ts#L118)*
+*Defined in [src/sciChartInitCommon.ts:118](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/sciChartInitCommon.ts#L118)*

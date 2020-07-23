@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ECoordinateMode](ecoordinatemode.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ECoordinateMode](ecoordinatemode.md)
 
 # Enumeration: ECoordinateMode
 
@@ -19,7 +19,7 @@ Defines the CoordinateMode for [Annotations](../classes/annotationbase.md) withi
 
 • **DataValue**:
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L142)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:142](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L142)*
 
 The [Annotation.x1](../classes/annotationbase.md#x1), [x2](../classes/annotationbase.md#x2),
 [y1](../classes/annotationbase.md#y1), [y2](../classes/annotationbase.md#y2) coordinate is a data-value,
@@ -32,7 +32,7 @@ ___
 
 • **Pixel**:
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L149)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:149](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L149)*
 
 The [Annotation.x1](../classes/annotationbase.md#x1), [x2](../classes/annotationbase.md#x2),
 [y1](../classes/annotationbase.md#y1), [y2](../classes/annotationbase.md#y2) coordinate is a pixel coordinate,
@@ -45,7 +45,7 @@ ___
 
 • **Relative**:
 
-*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L156)*
+*Defined in [src/Charting/Visuals/Annotations/AnnotationBase.ts:156](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting/Visuals/Annotations/AnnotationBase.ts#L156)*
 
 The [Annotation.x1](../classes/annotationbase.md#x1), [x2](../classes/annotationbase.md#x2),
 [y1](../classes/annotationbase.md#y1), [y2](../classes/annotationbase.md#y2) coordinate is relative,

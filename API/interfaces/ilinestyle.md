@@ -1,4 +1,4 @@
-[SciChart.js Documentation - v0.0.6](../README.md) › [Globals](../globals.md) › [ILineStyle](ilinestyle.md)
+[SciChart JS API - v0.0.6](../README.md) › [Globals](../globals.md) › [ILineStyle](ilinestyle.md)
 
 # Interface: ILineStyle
 
@@ -21,7 +21,7 @@
 
 • **end**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L7)*
+*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:7](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L7)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **start**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L6)*
+*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:6](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L6)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **stroke**: *TArgb*
 
-*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L4)*
+*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:4](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L4)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **strokeThickness**: *number*
 
-*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/46671d21ce/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L5)*
+*Defined in [src/Charting3D/Visuals/Axis/ILineStyle.ts:5](https://github.com/ABTSoftware/SciChart.Dev/blob/34ff3115c2/Web/src/SciChart/src/Charting3D/Visuals/Axis/ILineStyle.ts#L5)*
