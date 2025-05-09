@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# SciChart.js Docs HERE!!!
 
 Let's discover **Docusaurus in less than 5 minutes**.
 
