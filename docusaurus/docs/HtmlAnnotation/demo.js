@@ -19,7 +19,7 @@ async function drawHtmlAnnotationsExample(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
-    // #region ExampleA
+    // region_A_start
     // A CustomHtmlAnnotation which contains an HTML input element
 
     const customHtmlAnnotation = new CustomHtmlAnnotation({
@@ -42,9 +42,9 @@ async function drawHtmlAnnotationsExample(divElementId) {
         </select>`;
 
     sciChartSurface.annotations.add(customHtmlAnnotation);
-    // #endregion
+    // region_A_end
 
-    // #region ExampleB
+    // region_B_start
     // A HtmlTextAnnotation which is resized on zoom and bound to data value coordinates
     const textAnnotation = new HtmlTextAnnotation({
         xCoordinateMode: ECoordinateMode.DataValue,
@@ -70,7 +70,7 @@ async function drawHtmlAnnotationsExample(divElementId) {
     });
 
     sciChartSurface.annotations.add(textAnnotation);
-    // #endregion
+    // region_B_end
 
     sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new MouseWheelZoomModifier());
 }
