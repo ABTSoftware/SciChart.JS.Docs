@@ -4,7 +4,7 @@ import scichartBundle from "!!raw-loader!../../node_modules/scichart/_wasm/scich
 // import scichartWasm2D from "!!raw-loader!../../node_modules/scichart/_wasm/scichart2d.wasm";
 // import scichartWasm3D from "!!raw-loader!../../node_modules/scichart/_wasm/scichart3d.wasm";
 
-export default function ChartContainer(props?: { demoJsContent: string; htmlTemplate?: string }) {
+export default function ChartContainer(props?: { demoJsContent: string; htmlTemplate?: string, cssContent?: string }) {
     return (
         <Sandpack
             template="static"
@@ -32,6 +32,7 @@ export default function ChartContainer(props?: { demoJsContent: string; htmlTemp
         <script type="module" src="/scichart.browser.mjs"></script>
         <script type="module" src="/common.js"></script>
         <script type="module" src="demo.js"></script>
+        <link rel="stylesheet" href="demo.css" />
         <style>
             iframe { border: 0; }
             body { margin: 0; }
@@ -54,6 +55,10 @@ export default function ChartContainer(props?: { demoJsContent: string; htmlTemp
                 "scichart.browser.mjs": {
                     code: scichartBundle,
                     hidden: true
+                },
+                "demo.css": {
+                    code: props?.cssContent ?? "",
+                    hidden: !props?.cssContent
                 },
                 // "scichart2d.wasm": {
                 //     code: scichartWasm2D,
