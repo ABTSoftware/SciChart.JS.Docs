@@ -1,0 +1,28 @@
+import LiveExample from "./LiveExample.tsx";
+
+# Codepen Live Example
+
+## Live example
+
+<LiveExample />
+
+## The same but not live example
+
+This one does not work
+```js
+import NotLiveExample from "./NotLiveExample.tsx";
+
+<NotLiveExample />
+```
+
+Throws an error
+
+```bash
+ERROR in ./node_modules/scichart/_wasm/scichart3d.wasm 1:0
+Module parse failed: Unexpected character '' (1:0)
+The module seem to be a WebAssembly module, but module is not flagged as WebAssembly module for webpack.
+BREAKING CHANGE: Since webpack 5 WebAssembly is not enabled by default and flagged as experimental feature.
+You need to enable one of the WebAssembly experiments via 'experiments.asyncWebAssembly: true' (based on async modules) or 'experiments.syncWebAssembly: true' (like webpack 4, deprecated).
+For files that transpile to WebAssembly, make sure to set the module type in the 'module.rules' section of the config (e. g. 'type: "webassembly/async"').
+(Source code omitted for this binary file)
+```
