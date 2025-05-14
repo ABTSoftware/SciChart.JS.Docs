@@ -3,6 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import CustomCopyPlugin from "./custom-plugins/webpackCustomConfigPlugin"
 import remarkCodeSnippets from "remark-code-snippets";
+import {baseUrl} from "config"
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -15,7 +16,7 @@ const config: Config = {
   url: 'http://stagingdemo2.scichart.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/documentation/',
+  baseUrl: baseUrl,
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.

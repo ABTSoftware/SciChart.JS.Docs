@@ -9,13 +9,18 @@ export default function () {
                 plugins: [
                     new CopyWebpackPlugin({
                         patterns: [
-                            { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "static" },
-                            { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "static" },
-                            { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "static" }
+                            { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "" },
+                            { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
+                            { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
+                            {
+                                from: "docs/**/demo.@(js|css)",
+                                to: "[path][name][ext]",
+                                noErrorOnMissing: false
+                            }
                         ]
                     })
                 ]
             };
         }
     };
-};
+}
