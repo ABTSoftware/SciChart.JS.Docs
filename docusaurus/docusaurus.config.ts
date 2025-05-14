@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import CustomCopyPlugin from "./custom-plugins/webpackCustomConfigPlugin"
 import remarkCodeSnippets from "remark-code-snippets";
-import {baseUrl} from "config"
+import {baseUrl} from "./config"
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
