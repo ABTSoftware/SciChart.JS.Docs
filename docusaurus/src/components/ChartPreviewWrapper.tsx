@@ -12,11 +12,11 @@ export default function ChartPreviewWrapper(props?: { htmlTemplate?: string }) {
         <script type="importmap">
                 {
                     "imports": {
-                        "scichart": "${baseUrl}scichart.browser.mjs"
+                        "scichart": "${baseUrl}scichart.browser.js"
                     }
                 }
         </script>
-        <script type="module" src="${baseUrl}scichart.browser.mjs"></script>
+        <script type="module" src="${baseUrl}scichart.browser.js"></script>
         <script type="module">
             import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 

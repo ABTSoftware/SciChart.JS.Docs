@@ -9,7 +9,7 @@ export default function () {
                 plugins: [
                     new CopyWebpackPlugin({
                         patterns: [
-                            { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "" },
+                            { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "scichart.browser.js" },
                             { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
                             { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
                             {
