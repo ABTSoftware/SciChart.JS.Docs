@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "sourceMap": false,
+        "strict": false,
+        "noImplicitAny": false,
+        "strictNullChecks": false,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": false,
+        "noImplicitThis": true,
+        "alwaysStrict": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "module": "ESNext",
+        "target": "ESNext",
+        "moduleResolution": "bundler",
+        "jsx": "react",
+        "allowJs": true,
+        "typeRoots": ["./node_modules/@types"],
+        "esModuleInterop": false,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "lib": ["es2021", "dom"]
+    },
+    "include": ["docs/**/*.ts"],
+    "exclude": ["node_modules"]
+}

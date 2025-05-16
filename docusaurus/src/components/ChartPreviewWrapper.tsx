@@ -1,6 +1,6 @@
 import { baseUrl } from "@site/config";
 
-export default function ChartPreviewWrapper(props?: { htmlTemplate?: string }) {
+export default function ChartPreviewWrapper(props?: { htmlTemplate?: string, jsContent?: string }) {
     return (
         <iframe
             srcDoc={`
@@ -28,7 +28,7 @@ export default function ChartPreviewWrapper(props?: { htmlTemplate?: string }) {
             });
             SciChartDefaults.performanceWarnings = false;
         </script>
-        <script type="module" src="demo.js"></script>
+        <script type="module" src="demo.js">${props?.jsContent ?? ""}</script>
         <link rel="stylesheet" href="demo.css" />
         <style>
             iframe { border: 0; }
@@ -43,8 +43,8 @@ export default function ChartPreviewWrapper(props?: { htmlTemplate?: string }) {
     </body>
 </html>
 `}
-            width="300"
-            height="200"
+            width="900"
+            height="600"
         ></iframe>
     );
 }
