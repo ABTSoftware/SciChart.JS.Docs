@@ -1,3 +1,8 @@
+---
+title: "API Documentation"
+sidebar_position: 6  # Lower numbers appear first
+---
+
 # TypeDoc API Documentation
 
 <iframe  
