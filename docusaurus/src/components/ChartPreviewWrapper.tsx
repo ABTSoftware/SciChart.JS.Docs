@@ -1,8 +1,8 @@
 import { baseUrl } from "@site/config";
 
-export default function ChartPreviewWrapper(props?: { htmlTemplate?: string, jsContent?: string }) {
+export default function ChartPreviewWrapper(props?: { maxWidth?: string | number, htmlTemplate?: string, jsContent?: string }) {
     return (
-        <div style={{ width: "100%", aspectRatio: 3 / 2 }}>
+        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2 }}>
             <iframe
                 width="100%"
                 height="100%"
@@ -31,7 +31,7 @@ export default function ChartPreviewWrapper(props?: { htmlTemplate?: string, jsC
                 });
                 SciChartDefaults.performanceWarnings = false;
             </script>
-            <script type="module" src="demo.js">${props?.jsContent ?? ""}</script>
+            <script type="module" ${props?.jsContent ? "" : `src="demo.js"`}>${props?.jsContent ?? ""}</script>
             <link rel="stylesheet" href="demo.css" />
             <style>
                 iframe { border: 0; }
