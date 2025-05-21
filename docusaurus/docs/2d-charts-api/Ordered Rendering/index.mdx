@@ -6,6 +6,7 @@ import customOrderExample1 from "!!raw-loader!./demo1";
 import customOrderExample2 from "!!raw-loader!./demo2";
 import customOrderExample3 from "!!raw-loader!./demo3";
 import customOrderExample4 from "!!raw-loader!./demo4";
+import customOrderExample5 from "!!raw-loader!./demo5";
 
 # Ordered Rendering
 
@@ -33,6 +34,9 @@ Thus, text labels usually are above other types of entities.
 
 :::info
 By default, elements of the same type are rendered in the insertion order.
+:::
+:::info
+The default layers are defined in [EDefaultRenderLayer](https://www.scichart.com/documentation/js/current/typedoc/enums/edefaultrenderlayer.html).  
 :::
 
 :::note
@@ -139,6 +143,19 @@ In this example, we demonstrate how to place an annotation on a layer between re
 
 </Tabs>
 
+#### Customizing Render Layer
+
+Setting a custom render layer allows to place an entity at a layer of different entity kinds, as well.
+
+Here we will demonstrate how to place series at the background layer, so that grid lines are rendered above them.  
+For that we can use [renderLayer](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#renderlayer) or [setRenderLayer](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setrenderlayer)
+
+<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample5} />
+
+```ts {2} showLineNumbers file=./demo5.ts start=region_B_start end=region_B_end
+
+```
+
 #### Surface Render Order
 
 It is also possible to change the render order of an element to appear as if it was rendered on another sub-chart,
@@ -164,16 +181,12 @@ Let's consider the following setup:
 
 Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#setsurfacerenderorder) method on a surface:
 
-<Tabs>
+```ts {13} showLineNumbers file=./demo3.js start=region_A_start end=region_A_end
 
-  <TabItem value="js" label="JS" >
-    ```ts {13} showLineNumbers file=./demo3.js start=region_A_start end=region_A_end
+```
 
-    ```
-
-  </TabItem>
-</Tabs>
 Result:
+
 <ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample3} />
 
 Or to modify the render order only of the series from the first chart we can apply the [setSurfaceRenderOrder](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setsurfacerenderorder) method on them:
