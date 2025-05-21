@@ -15,3 +15,7 @@ Use this symbols to mark the status of menu items
 
 🔄 - in progress
 
+# Naming convention
+
+1. It is recommended to **create a separate folder for each document** and to put README.md file inside. Having a separate folder is preferable because often documentation contains doc-snippets and it is nice to have them in the same folder.
+2. In order to have nice URLs it is recommended to create folder names in a **kebab-case notation** like `my-folder-name`.
