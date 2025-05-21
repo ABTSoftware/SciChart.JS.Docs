@@ -1,4 +1,8 @@
-# The Rectangle Series Type
+---
+sidebar_position: 30
+---
+
+# 🔄 The Rectangle Series Type
 
 Rectangle Series can be created using the [FastRectangleRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) type.
 
