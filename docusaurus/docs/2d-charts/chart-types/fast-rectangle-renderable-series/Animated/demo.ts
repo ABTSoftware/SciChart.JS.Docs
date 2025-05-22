@@ -9,7 +9,8 @@ import {
     ICustomTextureOptions,
     applyOpacityToHtmlColor,
     GenericAnimation,
-    easing
+    easing,
+    NumberRange
 } from "scichart";
 
 async function rectangleSeriesAnimated(divElementId) {
@@ -17,8 +18,10 @@ async function rectangleSeriesAnimated(divElementId) {
         theme: new SciChartJsNavyTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    const growBy = new NumberRange(0.1, 0.1);
+
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
     const initialData = {
         xValues: [0, 6, 10, 17],

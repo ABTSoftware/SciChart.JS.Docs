@@ -7,7 +7,8 @@ import {
     FastRectangleRenderableSeries,
     XyxyDataSeries,
     ICustomTextureOptions,
-    applyOpacityToHtmlColor
+    applyOpacityToHtmlColor,
+    NumberRange
 } from "scichart";
 
 class StickFigureTextureOptions implements ICustomTextureOptions {
@@ -89,8 +90,10 @@ async function rectangleSeriesTexture(divElementId) {
         theme: new SciChartJsNavyTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    const growBy = new NumberRange(0.1, 0.1);
+
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
     const xValues = [0, 6, 10, 17];
     const yValues = [0, 6, 2, 5];

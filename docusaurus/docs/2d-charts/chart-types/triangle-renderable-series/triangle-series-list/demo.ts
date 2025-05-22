@@ -23,12 +23,6 @@ async function basicTriangleSeriesChart(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    // const sXValues = [200, 400, 400, 200, 200, 400, 450, 450, 650, 650, 650, 450];
-    // const sYValues = [200, 200, 400, 250, 450, 450, 400, 200, 200, 250, 450, 450];
-
-    const sXValues = [200, 200, 300, 320, 420, 420, 220, 400, 310, 220, 400, 310];
-    const sYValues = [200, 400, 300, 300, 400, 200, 400, 400, 310, 200, 200, 290];
-
     const colors = {
         0: "#f39c12",
         1: "#27ae60",
@@ -54,6 +48,11 @@ async function basicTriangleSeriesChart(divElementId) {
         }
     }
 
+    // region_A_start
+
+    const sXValues = [200, 200, 300, 320, 420, 420, 220, 400, 310, 220, 400, 310];
+    const sYValues = [200, 400, 300, 300, 400, 200, 400, 400, 310, 200, 200, 290];
+
     const polygonSeries = new TriangleRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: sXValues,
@@ -62,17 +61,10 @@ async function basicTriangleSeriesChart(divElementId) {
         isDigitalLine: false,
         opacity: 0.5,
         drawMode: ETriangleSeriesDrawMode.List, // Polygon / List / Strip
-        paletteProvider: new TrianglePaletteProvider(),
-        // dataLabels: {
-        //     style: {
-        //         fontSize: 14
-        //     },
-        //     color: "white",
-        //     precision: 0,
-        //     pointGapThreshold: 0,
-        //     skipNumber: 0
-        // }
+        paletteProvider: new TrianglePaletteProvider()
     });
+
+    // region_A_end
 
     sciChartSurface.renderableSeries.add(polygonSeries);
 
@@ -80,30 +72,3 @@ async function basicTriangleSeriesChart(divElementId) {
 }
 
 basicTriangleSeriesChart("scichart-root");
-
-// async function builderExample(divElementId) {
-//     const { chartBuilder, ESeriesType, EThemeProviderType, ETriangleSeriesDrawMode } = SciChart;
-
-//     const xValues = [200, 200, 400, 400, 400, 200];
-//     const yValues = [400, 200, 200, 220, 420, 420];
-
-//     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
-//         surface: { theme: { type: EThemeProviderType.Navy } },
-//         series: [
-//             {
-//                 type: ESeriesType.TriangleSeries,
-//                 xyData: {
-//                     xValues,
-//                     yValues
-//                 },
-//                 options: {
-//                     isDigitalLine: false,
-//                     fill: "white",
-//                     drawMode: ETriangleSeriesDrawMode.List
-//                 }
-//             }
-//         ]
-//     });
-// }
-
-// if (location.search.includes("builder=1")) builderExample("scichart-root");
