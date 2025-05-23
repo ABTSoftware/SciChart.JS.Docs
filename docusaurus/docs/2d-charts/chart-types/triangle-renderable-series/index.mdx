@@ -6,6 +6,8 @@ import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 import triangleSeriesList from "!!raw-loader!./triangle-series-list/demo";
 import triangleSeriesPolygon from "!!raw-loader!./triangle-series-polygon/demo";
 import triangleSeriesStrip from "!!raw-loader!./triangle-series-strip/demo";
+import australiaMap from "!!raw-loader!./australia-map/demo";
+import triangleSeriesCustomGradient from "!!raw-loader!./triangle-series-custom-gradient/demo";
 
 # 🔄 The Triangle Series Type
 
@@ -15,11 +17,9 @@ The TriangleRenderableSeries class in SciChart.js is a specialized renderable se
 
 Here is a simple Triangle Series example made using [XyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html):
 
-
 ```ts {12} showLineNumbers file=./triangle-series-list/demo.ts start=region_A_start end=region_A_end
 
 ```
-<!-- <ChartPreviewWrapper maxWidth="100%" jsContent={triangleSeriesList} /> -->
 
 ## Overview
 
@@ -48,7 +48,6 @@ In this mode, each group of three consecutive points in the list defines an inde
 
 <ChartPreviewWrapper maxWidth={600} jsContent={triangleSeriesList} />
 
-
 ```ts {12} showLineNumbers file=./triangle-series-list/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -64,6 +63,14 @@ In this mode, each group of two consecutive points and the first one in the list
 In this mode, each group of three consecutive points in the list defines a triangle. The triangles are connected, every point is connected to the last two points.
 
 <ChartPreviewWrapper maxWidth={600} jsContent={triangleSeriesStrip} />
+
+### Australia Map
+
+<ChartPreviewWrapper maxWidth={600} jsContent={australiaMap} />
+
+### Triangle Series Custom Gradient
+
+<ChartPreviewWrapper maxWidth={600} jsContent={triangleSeriesCustomGradient} />
 
 ## Polygon and Strip mode explained by using the same set of data
 
