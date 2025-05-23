@@ -148,7 +148,13 @@ const config: Config = {
         [
             require.resolve("@cmfcmf/docusaurus-search-local"),
             {
-                // Options here
+                indexDocs: true,
+                indexDocSidebarParentCategories: 0,
+                includeParentCategoriesInPageTitle: false,
+                indexBlog: false,
+                indexPages: false,
+                language: "en",
+                maxSearchResults: 10,
             }
         ]
     ]

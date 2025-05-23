@@ -1,7 +1,5 @@
 {
   "label": "AxisMarkerAnnotation",
   "position": 8,
-  "link": {
-    "type": "generated-index"
-  }
+  "link": null
 }

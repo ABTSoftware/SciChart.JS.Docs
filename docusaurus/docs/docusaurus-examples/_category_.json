@@ -1,7 +1,5 @@
 {
   "label": "DOCUSAURUS EXAMPLES",
   "position": 10,
-  "link": {
-    "type": "generated-index"
-  }
+  "link": null
 }

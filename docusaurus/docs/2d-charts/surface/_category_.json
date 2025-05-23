@@ -1,8 +1,5 @@
 {
   "label": "The SciChartSurface",
   "position": 1,
-  "link": {
-    "type": "generated-index",
-    "description": "The SciChartSurface (Root Chart Control)."
-  }
+  "link": null
 }
