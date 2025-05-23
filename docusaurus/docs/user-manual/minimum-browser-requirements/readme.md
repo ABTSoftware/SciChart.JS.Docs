@@ -9,17 +9,16 @@ sidebar_position: 2
 Are you new to SciChart? Check out our most popular pages to get started
 below:
 
-- [SciChart.js Vanilla JavaScript
-  Tutorials](Tutorial%2001%20-%20Setting%20up%20a%20Project%20with%20SciChart.js.html)   
-- [The SciChartSurface Type](SciChartSurface.html)               
-- [Series or Chart Types](What%20is%20a%20RenderableSeries.html)
-- [Axis Types and Configuration](StartHere-AxisOverview.html)
-- [Zooming & Panning](ZoomPanModifier.html)
-- [Tooltips](RolloverModifier.html)
-- [Annotations and Markers](The%20Annotations%20API%20Overview.html)
-- [Styling and Themeing](Chart%20Styling%20-%20ThemeManager%20API.html)
-- [Chart Synchronization APIs](Synchronizing%20Multiple%20Charts.html)
-- [3D charts Basics](Creating%20your%20first%20SciChartSurface3D.html) 
+- [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js/01/README.md)   
+- [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type/README.md)               
+- [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md)
+- [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/README.md)
+- [Zooming & Panning](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/README.md)
+- [Tooltips](/docs/2d-charts/chart-modifier-api/rollover-modifier/README.md)
+- [Annotations and Markers](/docs/2d-charts/annotations-api/annotations-api-overview/README.md)
+- [Styling and Themeing](/docs/2d-charts/styling-and-theming/theme-manager-api/README.md)
+- [Chart Synchronization APIs](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/README.md)
+- [3D charts Basics](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview/README.md) 
 
 
 SciChart.js is a cutting-edge next-generation JavaScript Chart Library.

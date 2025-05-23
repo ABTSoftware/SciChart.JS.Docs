@@ -1,3 +1,0 @@
-# 3D Charts API TODO
-
-TODO
