@@ -21,13 +21,7 @@ async function triangleSeriesPolygonChart(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    // const coordinates = [
-    //     [0, 0],
-    //     [0, 200],
-    //     [200, 0],
-    //     [200, 200]
-    // ];
-
+    // region_A_start
     const coordinates = [
         [100, 100],
         [0, 50],
@@ -53,6 +47,7 @@ async function triangleSeriesPolygonChart(divElementId) {
         fill: "cornflowerblue",
         opacity: 0.5
     });
+    // region_A_end
 
     sciChartSurface.renderableSeries.add(triangleSeries);
 

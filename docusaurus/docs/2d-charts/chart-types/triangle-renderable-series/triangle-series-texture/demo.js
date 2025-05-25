@@ -1,15 +1,32 @@
-import { EColumnMode,NumberRange, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, applyOpacityToHtmlColor } from "scichart";
+import {
+    NumberRange,
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    TriangleRenderableSeries,
+    XyDataSeries,
+    ETriangleSeriesDrawMode,
+    ZoomPanModifier,
+    ZoomExtentsModifier,
+    EFillPaletteMode,
+    parseColorToUIntArgb,
+    GradientParams,
+    Point,
+    XyxyDataSeries,
+    applyOpacityToHtmlColor
+} from "scichart";
+
 class StickFigureTextureOptions {
     isPerPrimitive = false;
     options;
-    textureHeight = 32;
-    textureWidth = 16;
+    textureHeight = 150;
+    textureWidth = 75;
     repeat = true;
     constructor(options) {
         this.options = options;
     }
     createTexture(context, options) {
-
+        // console.log("!!!", options);
         context.fillStyle = applyOpacityToHtmlColor(options.fill, options.opacity);
         context.fillRect(0, 0, this.textureWidth, this.textureHeight);
         context.strokeStyle = applyOpacityToHtmlColor(options.stroke, options.opacity);
@@ -59,35 +76,60 @@ class StickFigureTextureOptions {
         context.stroke();
     }
 }
-async function rectangleSeriesTexture(divElementId) {
+
+async function basicTriangleSeriesChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
 
     const growBy = new NumberRange(0.1, 0.1);
-
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    const xValues = [0, 6, 10, 17];
-    const yValues = [0, 6, 2, 5];
-    const x1Values = [5, 9, 15, 25];
-    const y1Values = [5, 9, 8, 10];
-    const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
-        dataSeries: new XyxyDataSeries(wasmContext, {
-            xValues,
-            yValues,
-            x1Values,
-            y1Values
-        }),
-        columnXMode: EColumnMode.StartEnd, // x, x1
-        columnYMode: EColumnYMode.TopBottom, // y, y1
-        customTextureOptions: new StickFigureTextureOptions({ stroke: "white" }),
+    const polygonSeries = new TriangleRenderableSeries(wasmContext, {
+        isDigitalLine: false,
         fill: "cornflowerblue",
-        stroke: "black",
-        strokeThickness: 1,
+        drawMode: ETriangleSeriesDrawMode.Polygon,
+        polygonVertices: 6, // Sets the number of vertices per polygon. Applies only for drawMode ETriangleSeriesDrawMode.Polygon
+        customTextureOptions: new StickFigureTextureOptions({ stroke: "white" }),
         opacity: 0.5
+        // fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+        //     { color: "#f39c12", offset: 0 },
+        //     { color: "#8e44ad", offset: 1 }
+        // ])
     });
-    sciChartSurface.renderableSeries.add(rectangleSeries);
+
+    sciChartSurface.renderableSeries.add(polygonSeries);
+
+    const dataSeries = new XyxyDataSeries(wasmContext);
+
+    function generateRectangle(minX, maxX, minY, maxY) {
+        const midX = (minX + maxX) / 2;
+        const midY = (minY + maxY) / 2;
+
+        [
+            [midX, midY, 0.5, 0.5], // Center point
+            [minX, minY, 0, 1], // Bottom-left
+            [maxX, minY, 1, 1], // Bottom-right
+            [maxX, maxY, 1, 0], // Top-right
+            [minX, maxY, 0, 0], // Top-left
+            [minX, minY, 0, 1] // Bottom-left (duplicate)
+        ].forEach(d => {
+            dataSeries.append(...d);
+        });
+    }
+
+    generateRectangle(500, 900, 100, 600);
+
+    generateRectangle(350, 450, 100, 600);
+
+    generateRectangle(100, 300, 100, 325);
+
+    generateRectangle(100, 300, 375, 600);
+
+    polygonSeries.dataSeries = dataSeries;
+
+    sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new ZoomExtentsModifier());
 }
-rectangleSeriesTexture("scichart-root");
+
+basicTriangleSeriesChart("scichart-root");

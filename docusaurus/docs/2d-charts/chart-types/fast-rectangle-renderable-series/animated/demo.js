@@ -1,10 +1,25 @@
-import { EColumnMode, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, GenericAnimation, easing } from "scichart";
+import {
+    EColumnMode,
+    NumberRange,
+    EColumnYMode,
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    FastRectangleRenderableSeries,
+    XyxyDataSeries,
+    GenericAnimation,
+    easing
+} from "scichart";
 async function rectangleSeriesAnimated(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+
+    const growBy = new NumberRange(0.1, 0.1);
+
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
+
     const initialData = {
         xValues: [0, 6, 10, 17],
         yValues: [0, 6, 2, 5],
@@ -19,7 +34,7 @@ async function rectangleSeriesAnimated(divElementId) {
         fill: "white",
         stroke: "steelblue",
         strokeThickness: 1,
-        opacity: 1
+        opacity: 0.5
     });
     sciChartSurface.renderableSeries.add(rectangleSeries);
     const getData = () => {
@@ -41,10 +56,8 @@ async function rectangleSeriesAnimated(divElementId) {
         };
     };
     const interpolateNumber = (from, to, progress) => {
-        if (progress < 0)
-            return from;
-        if (progress > 1)
-            return to;
+        if (progress < 0) return from;
+        if (progress > 1) return to;
         return from + (to - from) * progress;
     };
     const dataAnimation = new GenericAnimation({
@@ -70,7 +83,6 @@ async function rectangleSeriesAnimated(divElementId) {
             dataAnimation.from = dataAnimation.to;
             dataAnimation.to = getData();
             dataAnimation.reset();
-            console.log("Data Point Animation Completed");
         }
     });
     sciChartSurface.addAnimation(dataAnimation);

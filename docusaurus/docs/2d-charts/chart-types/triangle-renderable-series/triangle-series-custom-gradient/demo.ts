@@ -8,12 +8,17 @@ import {
     ETriangleSeriesDrawMode,
     ZoomPanModifier,
     ZoomExtentsModifier,
-    IFillPaletteProvider,
     EFillPaletteMode,
-    parseColorToUIntArgb
+    parseColorToUIntArgb,
+    XyxyDataSeries,
+    applyOpacityToHtmlColor,
+    GradientParams,
+    Point
 } from "scichart";
 
 async function basicTriangleSeriesChart(divElementId) {
+
+
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -23,47 +28,44 @@ async function basicTriangleSeriesChart(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    const colors = {
-        0: "#f39c12",
-        1: "#27ae60",
-        2: "#2980b9",
-        3: "#8e44ad"
-    };
-
-    class TrianglePaletteProvider implements IFillPaletteProvider {
-        public readonly fillPaletteMode = EFillPaletteMode.SOLID;
-
-        public onAttached(): void {}
-
-        public onDetached(): void {}
-
-        public overrideFillArgb(_xValue: number, _yValue: number, index: number, opacity: number): number {
-
-            console.log(Math.floor(index / 3));
-
-            const opacityRound = Math.round(opacity * 255);
-
-            return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityRound);
-        }
-    }
-
-    // region_A_start
-
-    const sXValues = [200, 200, 300, 320, 420, 420, 220, 400, 310, 220, 400, 310];
-    const sYValues = [200, 400, 300, 300, 400, 200, 400, 400, 310, 200, 200, 290];
-
     const polygonSeries = new TriangleRenderableSeries(wasmContext, {
-        dataSeries: new XyDataSeries(wasmContext, {
-            xValues: sXValues,
-            yValues: sYValues
-        }),
         isDigitalLine: false,
-        opacity: 0.5,
-        drawMode: ETriangleSeriesDrawMode.List, // Polygon / List / Strip
-        paletteProvider: new TrianglePaletteProvider()
+        fill: "pink",
+        drawMode: ETriangleSeriesDrawMode.Polygon,
+        polygonVertices: 6, // Sets the number of vertices per polygon. Applies only for drawMode ETriangleSeriesDrawMode.Polygon
+        // opacity: 0.5, // not working
+ 
+        fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+            { color: "#f39c12", offset: 0 },
+            { color: "#8e44ad", offset: 1 }
+        ])
     });
 
-    // region_A_end
+    const dataSeries = new XyxyDataSeries(wasmContext);
+
+    dataSeries.append(200, 200, 0.5, 0.5);
+    dataSeries.append(100, 100, 0, 1);
+    dataSeries.append(100, 300, 0, 0);
+    dataSeries.append(300, 300, 1, 0);
+    dataSeries.append(300, 100, 1, 1);
+    dataSeries.append(100, 100, 0, 1);
+
+    // Treat center as bottom and all other points as top to give radial gradient
+    dataSeries.append(200, 500, 0, 0);
+    dataSeries.append(100, 400, 1, 1);
+    dataSeries.append(100, 600, 1, 1);
+    dataSeries.append(300, 600, 1, 1);
+    dataSeries.append(300, 400, 1, 1);
+    dataSeries.append(100, 400, 1, 1);
+
+    dataSeries.append(500, 300, 0, 0.7);
+    dataSeries.append(600, 500, 0.3, 0.2);
+    dataSeries.append(700, 550, 0.5, 0);
+    dataSeries.append(800, 500, 0.7, 0.2);
+    dataSeries.append(900, 300, 1, 0.7);
+    dataSeries.append(700, 200, 0.5, 1);
+
+    polygonSeries.dataSeries = dataSeries;
 
     sciChartSurface.renderableSeries.add(polygonSeries);
 

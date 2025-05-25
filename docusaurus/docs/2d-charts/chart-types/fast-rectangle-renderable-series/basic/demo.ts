@@ -37,10 +37,10 @@ async function basicRectangleSeriesChart(divElementId) {
         }),
         columnXMode: EColumnMode.StartEnd, // x, x1
         columnYMode: EColumnYMode.TopBottom, // y, y1
-        fill: "steelblue",
-        stroke: "white",
+        fill: "cornflowerblue",
+        stroke: "black",
         strokeThickness: 1,
-        opacity: 1
+        opacity: 0.5
     });
 
     // region_A_end

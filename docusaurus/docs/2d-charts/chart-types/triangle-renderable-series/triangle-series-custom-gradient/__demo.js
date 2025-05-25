@@ -1,4 +1,20 @@
-import { EColumnMode,NumberRange, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, applyOpacityToHtmlColor } from "scichart";
+import {
+    NumberRange,
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    TriangleRenderableSeries,
+    XyDataSeries,
+    ETriangleSeriesDrawMode,
+    ZoomPanModifier,
+    ZoomExtentsModifier,
+    EFillPaletteMode,
+    parseColorToUIntArgb,
+    GradientParams,
+    Point,
+    XyxyDataSeries
+} from "scichart";
+
 class StickFigureTextureOptions {
     isPerPrimitive = false;
     options;
@@ -9,7 +25,7 @@ class StickFigureTextureOptions {
         this.options = options;
     }
     createTexture(context, options) {
-
+        console.log("!!!", options);
         context.fillStyle = applyOpacityToHtmlColor(options.fill, options.opacity);
         context.fillRect(0, 0, this.textureWidth, this.textureHeight);
         context.strokeStyle = applyOpacityToHtmlColor(options.stroke, options.opacity);
@@ -59,35 +75,58 @@ class StickFigureTextureOptions {
         context.stroke();
     }
 }
-async function rectangleSeriesTexture(divElementId) {
+
+async function basicTriangleSeriesChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
 
     const growBy = new NumberRange(0.1, 0.1);
-
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    const xValues = [0, 6, 10, 17];
-    const yValues = [0, 6, 2, 5];
-    const x1Values = [5, 9, 15, 25];
-    const y1Values = [5, 9, 8, 10];
-    const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
-        dataSeries: new XyxyDataSeries(wasmContext, {
-            xValues,
-            yValues,
-            x1Values,
-            y1Values
-        }),
-        columnXMode: EColumnMode.StartEnd, // x, x1
-        columnYMode: EColumnYMode.TopBottom, // y, y1
-        customTextureOptions: new StickFigureTextureOptions({ stroke: "white" }),
-        fill: "cornflowerblue",
-        stroke: "black",
-        strokeThickness: 1,
-        opacity: 0.5
+    const polygonSeries = new TriangleRenderableSeries(wasmContext, {
+        isDigitalLine: false,
+        fill: "pink",
+        drawMode: ETriangleSeriesDrawMode.Polygon,
+        polygonVertices: 6, // Sets the number of vertices per polygon. Applies only for drawMode ETriangleSeriesDrawMode.Polygon
+        opacity: 0.5, // not working
+        // customTextureOptions: new StickFigureTextureOptions({ stroke: "black" }),
+        // fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+        //     { color: "#f39c12", offset: 0 },
+        //     { color: "#8e44ad", offset: 1 }
+        // ])
     });
-    sciChartSurface.renderableSeries.add(rectangleSeries);
+
+    sciChartSurface.renderableSeries.add(polygonSeries);
+
+    const dataSeries = new XyxyDataSeries(wasmContext);
+
+    dataSeries.append(200, 200, 0.5, 0.5);
+    dataSeries.append(100, 100, 0, 1);
+    dataSeries.append(100, 300, 0, 0);
+    dataSeries.append(300, 300, 1, 0);
+    dataSeries.append(300, 100, 1, 1);
+    dataSeries.append(100, 100, 0, 1);
+
+    // Treat center as bottom and all other points as top to give radial gradient
+    dataSeries.append(200, 500, 0, 0);
+    dataSeries.append(100, 400, 1, 1);
+    dataSeries.append(100, 600, 1, 1);
+    dataSeries.append(300, 600, 1, 1);
+    dataSeries.append(300, 400, 1, 1);
+    dataSeries.append(100, 400, 1, 1);
+
+    dataSeries.append(500, 300, 0, 0.7);
+    dataSeries.append(600, 500, 0.3, 0.2);
+    dataSeries.append(700, 550, 0.5, 0);
+    dataSeries.append(800, 500, 0.7, 0.2);
+    dataSeries.append(900, 300, 1, 0.7);
+    dataSeries.append(700, 200, 0.5, 1);
+
+    polygonSeries.dataSeries = dataSeries;
+
+    sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new ZoomExtentsModifier());
 }
-rectangleSeriesTexture("scichart-root");
+
+basicTriangleSeriesChart("scichart-root");

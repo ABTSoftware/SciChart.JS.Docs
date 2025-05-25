@@ -1,4 +1,16 @@
-import { SciChartSurface, NumericAxis, SciChartJsNavyTheme, TriangleRenderableSeries, XyDataSeries, ETriangleSeriesDrawMode, ZoomPanModifier, ZoomExtentsModifier, EFillPaletteMode, parseColorToUIntArgb, NumberRange } from "scichart";
+import {
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    TriangleRenderableSeries,
+    XyDataSeries,
+    ETriangleSeriesDrawMode,
+    ZoomPanModifier,
+    ZoomExtentsModifier,
+    EFillPaletteMode,
+    parseColorToUIntArgb,
+    NumberRange
+} from "scichart";
 async function triangleSeriesStripChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -6,12 +18,24 @@ async function triangleSeriesStripChart(divElementId) {
     const growBy = new NumberRange(0.1, 0.1);
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
-    // const coordinates = [
-    //     [0, 0],
-    //     [0, 200],
-    //     [200, 0],
-    //     [200, 200]
-    // ];
+
+    const colors = {
+        0: "#f39c12",
+        1: "#27ae60",
+        2: "#2980b9",
+        3: "#8e44ad"
+    };
+    class TrianglePaletteProvider {
+        fillPaletteMode = EFillPaletteMode.SOLID;
+        onAttached() {}
+        onDetached() {}
+        overrideFillArgb(_xValue, _yValue, index, opacity) {
+            const opacityFix = Math.round(opacity * 255);
+            return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityFix);
+        }
+    }
+
+    // region_A_start
     const coordinates = [
         [0, 150],
         [0, 50],
@@ -28,30 +52,16 @@ async function triangleSeriesStripChart(divElementId) {
         xValues: coordinates.map(p => p[0]),
         yValues: coordinates.map(p => p[1])
     });
-    const colors = {
-        0: "#f39c12",
-        1: "#27ae60",
-        2: "#2980b9",
-        3: "#8e44ad"
-    };
-    class TrianglePaletteProvider {
-        fillPaletteMode = EFillPaletteMode.SOLID;
-        onAttached() { }
-        onDetached() { }
-        overrideFillArgb(_xValue, _yValue, index, opacity) {
-            // return parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
-            // console.log(Math.floor(index / 3));
-            const opacityFix = Math.round(opacity * 255);
-            return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityFix);
-        }
-    }
+
     const triangleSeries = new TriangleRenderableSeries(wasmContext, {
         dataSeries,
-        drawMode: ETriangleSeriesDrawMode.Strip,
+        drawMode: ETriangleSeriesDrawMode.Strip, // each group of three consecutive points in the list defines a triangle, every point is connected to the last two points
         fill: "cornflowerblue",
         opacity: 0.5,
         paletteProvider: new TrianglePaletteProvider()
     });
+    // region_A_end
+
     sciChartSurface.renderableSeries.add(triangleSeries);
     // Add zoom/pan controls
     sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new ZoomExtentsModifier());
