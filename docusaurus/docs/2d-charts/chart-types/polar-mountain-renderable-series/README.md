@@ -17,7 +17,7 @@ The [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/v4
 Above: The JavaScript [Polar Mountain Chart](http://stagingdemo2.scichart.com/demo/react/polar-mountain-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
 </div>
 
-## Create a Basic Polar Mountain Series
+## 🔄 Create a Basic Polar Mountain Series
 
 To create a Javascript [Polar Mountain Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) with SciChart.js, use the following code:
 
