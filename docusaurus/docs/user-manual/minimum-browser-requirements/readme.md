@@ -10,7 +10,7 @@ Are you new to SciChart? Check out our most popular pages to get started
 below:
 
 - [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/README.md)   
-- [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type/README.md)               
+- [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview/README.md)               
 - [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md)
 - [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/README.md)
 - [Zooming & Panning](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/README.md)

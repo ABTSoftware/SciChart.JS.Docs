@@ -1,9 +1,17 @@
 ---
-title: "SciChart.js intro"
+title: "Contributing Guide"
 sidebar_position: 0  # Lower numbers appear first
 ---
 
-# SciChart.js intro
+# SciChart.js Docs Contributing Guide
+
+## TypeDoc links
+
+In order to make all TypeDoc links distinct I would suggest to use a book icon `:blue_book:`, this is an example of SciChartSurface class typedoc link
+
+[SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html)
+
+## Marking document status
 
 Use this symbols to mark the status of menu items
 
