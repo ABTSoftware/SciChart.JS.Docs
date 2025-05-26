@@ -11,6 +11,10 @@ const config: Config = {
     title: "My Site",
     tagline: "Dinosaurs are cool",
     favicon: "img/favicon.ico",
+    markdown: {
+        mermaid: true
+    },
+    themes: ['@docusaurus/theme-mermaid'],
 
     // Set the production url of your site here
     url: "http://stagingdemo2.scichart.com",
@@ -154,7 +158,7 @@ const config: Config = {
                 indexBlog: false,
                 indexPages: false,
                 language: "en",
-                maxSearchResults: 10,
+                maxSearchResults: 10
             }
         ]
     ]

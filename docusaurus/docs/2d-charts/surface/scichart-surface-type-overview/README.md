@@ -29,6 +29,41 @@ Info about the properties and functions available can be found at the [TypeDoc A
 
 ## Series or Chart Types
 
-A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has collections of RenderableSeries (see [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries)), which form the series or chart types on the chart. Each RenderableSeries must have a DataSeries (see [DataSeries types](/docusaurus/docs/2d-charts/chart-types/data-series-api/data-series-api-overview/README.md)) which defines the data for that chart type.
+A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has collections of RenderableSeries (see [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries)), which form the series or chart types on the chart. Each RenderableSeries must have a DataSeries (see [DataSeries types](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview/README.md)) which defines the data for that chart type.
+
+```mermaid
+---
+title: SciChartSurface Class Diagram
+---
+classDiagram
+    SciChartSurface --> "many" IRenderableSeries : renderableSeries
+    SciChartSurface : IRenderableSeries[] renderableSeries
+    SciChartSurface : AxisBase2D[] xAxes
+    SciChartSurface : AxisBase2D[] yAxes
+    SciChartSurface : annotations[] IAnnotation
+    SciChartSurface : chartModifiers[] IChartModifierBase
+    SciChartSurface : ...
+    SciChartSurface : zoomExtents()
+    SciChartSurface : invalidateElement()
+    SciChartSurface : ... ()
+    IRenderableSeries --> IDataSeries
+    IRenderableSeries : IDataSeries dataSeries
+    IRenderableSeries : string stroke
+    IRenderableSeries : string strokeThickness
+    IRenderableSeries : AxisCore xAxis
+    IRenderableSeries : AxisCore yAxis
+    IRenderableSeries : boolean isVisible
+    IRenderableSeries : IPaletteProvider paletteProvider
+    IRenderableSeries : ...
+    IRenderableSeries <|-- FastLineRenderableSeries : implements
+    IRenderableSeries <|-- XyScatterRenderableSeries : implements
+    IRenderableSeries <|-- PolarLineRenderableSeries : implements
+    IDataSeries : count()
+    IDataSeries <|-- XyDataSeries : implements
+    IDataSeries <|-- OhlcDataSeries : implements
+    IDataSeries <|-- XyNDataSeries : implements
+```
+
+Several RenderableSeries types are available in SciChart, including
 
 
