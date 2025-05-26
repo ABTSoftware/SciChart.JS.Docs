@@ -1,0 +1,26 @@
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper"
+
+# LineArrowAnnotation
+
+The [LineArrowAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html) class extends [LineAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/lineannotation.html) and adds an optional arrowhead at each line endpoints. Use it to annotate charts with directional indicators.
+
+The following code will declare 3 [LineArrowAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html)s and add them to the chart.
+
+```ts file=./demo.js start=#region_A_start end=#region_A_end
+```
+
+This results in the following output:
+
+<ChartPreviewWrapper />
+
+### Unique Properties
+| Property | Type | Default | Description |
+|----------|------|---------|-------------|
+| **arrowHeadPosition** | [EArrowHeadPosition](https://www.scichart.com/documentation/js/v4/typedoc/enums/earrowheadposition.html) | *End* | Where to place the arrowhead(s) -> Start, End, Start&End |
+| **isArrowHeadScalable** | boolean | *false* | Whether to scale the arrowhead size with zooming. |
+| **arrowStyle** | [IArrowStyle](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iarrowstyle.html) | - | Arrowhead style options. |
+| **onArrowHeadSizeChanged** | [TArrowheadSizeChangedCallback](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tarrowheadsizechangedcallback) | *undefined* | Callback to modify arrowhead size based on angle. |
+
+> All other properties are inherited from [LineAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/lineannotation.html) & [AnnotationBase](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html) and work as expected.
+
+> **Tip**: Use `headDepth: 0` for simple line arrows without filled heads. Set `isArrowHeadScalable: true` for annotations that maintain relative size during zooming.

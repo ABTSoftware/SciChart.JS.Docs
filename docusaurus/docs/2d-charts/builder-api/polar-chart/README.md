@@ -2,6 +2,24 @@
 sidebar_position: 4
 ---
 
-# ⭕ Creating a Polar Chart
+# Creating a Polar Chart
 
-TODO
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+
+import basicPolarBuilderAPI from "!!raw-loader!./Basic/demo.js";
+
+## Creating a simple Polar Chart with SciChart.js's Builder API
+
+To create a simple Polar Chart using SciChart.js's Builder API, you can use the following code snippet:
+
+```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```
+
+This results in the following output:
+
+<ChartPreviewWrapper maxWidth={"100%"} jsContent={basicPolarBuilderAPI} />
+
+In the code above:
+
+- To create a Polar Surface Chart, you can either use the [chartBuilder.buildChart()](https://www.scichart.com/documentation/js/v4/typedoc/index.html#buildchart) method with type: [ESciChartSurfaceType.Polar2D](https://www.scichart.com/documentation/js/v4/typedoc/enums/escichartsurfacetype.html#polar2d), or do it directly with [chartBuilder.build2DPolarChart()](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.build2dpolarchart) which does not need a type parameter.
+- The options that the polar chart builder accepts are the same as the 2D surface, and can be seen here [ISciChart2DDefinition](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichart2ddefinition.html)

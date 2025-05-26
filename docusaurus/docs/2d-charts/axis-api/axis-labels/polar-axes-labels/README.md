@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ⭕ Polar Axis Labels
+# Polar Axis Labels
 
 TODO
 

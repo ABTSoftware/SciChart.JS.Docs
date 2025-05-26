@@ -1,0 +1,32 @@
+---
+sidebar_position: 12
+---
+
+# The Scatter Series Type
+
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+
+import PolarScatterChart from "!!raw-loader!./Basic/demo.js";
+
+The [PolarXyScatterRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) is a type of renderable series that displays data in a polar scatter format.
+
+<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-scatter-chart" width="100%" height="600px" frameborder="0"></iframe>
+
+<div style={{textAlign: "center"}}> 
+Above: The JavaScript [Polar Scatter Chart](http://stagingdemo2.scichart.com/demo/react/polar-scatter-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
+</div>
+
+## Create a Basic Polar Scatter Series
+
+To create a Javascript [Polar Scatter Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) with SciChart.js, use the following code:
+
+```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```
+
+This results in the following output:
+
+<ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarScatterChart} />
+
+In the code above:
+- We create a [PolarXyScatterRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) instance and append it to the renderableSeries collection.
+- Add an [XyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) to the series, which stores the Xy data to render.

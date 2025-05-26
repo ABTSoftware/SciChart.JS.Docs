@@ -1,0 +1,67 @@
+---
+sidebar_position: 100
+---
+
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+
+import polarColumnChart from "!!raw-loader!./Basic/demo.js";
+import polarRadialColumnChart from "!!raw-loader!./BasicRadial/demo.js";
+import polarColumnMode from "!!raw-loader!./ColumnMode/demo.js";
+
+# The Polar Column Chart Type
+
+The [PolarColumnRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) is a type of renderable series that displays data in a polar column format. It is used to visualize data in a circular layout, where each column represents a data point at a specific angle and radius.
+
+<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-column-chart" width="100%" height="600px" frameborder="0"></iframe>
+
+<div style={{textAlign: "center"}}>
+Above: The JavaScript [Polar Column Chart](http://stagingdemo2.scichart.com/demo/react/polar-column-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
+</div>
+
+## Create a Basic Polar Column Series
+
+To create a Javascript [Polar Column Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) with SciChart.js, use the following code:
+
+```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```
+
+This results in the following output:
+
+<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarColumnChart} />
+
+In the code above:
+- We create a [PolarColumnRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) instance and append it to the renderableSeries collection.
+- Add an [XyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) to the series, which stores the Xy data to render.
+- We set stroke, strokeThickness, fill, [dataPointWidth](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#datapointwidth) and [dataLabels](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#datalabelprovider). For all available properties, see the [IPolarColumnRenderableSeriesOptions](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipolarcolumnrenderableseriesoptions.html).
+
+---
+
+## Polar Radial Columns
+
+The same renderable series can be used as radial columns as well, if we flip the roles of the X and Y axes. This is done by swapping the [polarAxisMode](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html) property in between the axes.
+
+Usually, the xAxis has the [polarAxisMode](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html) set to `Angular` and the yAxis has it set to `Radial`. To create a radial column chart, we need to set the xAxis to `Radial` and the yAxis to `Polar`.
+
+```ts file=./BasicRadial/demo.js start=region_A_start end=region_A_end
+```
+
+<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarRadialColumnChart} />
+
+---
+
+## Polar Column Mode
+
+The [columnXMode](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#columnxmode) is inherited from [FastRectangleRenderableSeries.columnXMode](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html#columnxmode). It defines the way columns start and end on the X axis, giving users more flexibility in how to display data. 
+
+```ts file=./ColumnMode/demo.js start=region_A_start end=region_A_end
+```
+
+<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarColumnMode} />
+
+Note that:  
+
+- [EColumnMode.Start](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#start) and [EColumnMode.Mid](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#mid) can work with just an XyDataSeries type,
+
+- But [EColumnMode.StartWidth](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#startwidth), 
+[EColumnMode.MidWidth](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#midwidth) and [EColumnMode.StartEnd](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#startend) are used for different width column scenarios, so they need at least another point per coordinate, you must have a dataSeries of type [XyxDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxdataseries.html) or [XyxyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) to work with them.
+

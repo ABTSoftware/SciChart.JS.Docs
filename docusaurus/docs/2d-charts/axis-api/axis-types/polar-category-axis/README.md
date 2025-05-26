@@ -2,6 +2,6 @@
 sidebar_position: 8
 ---
 
-# ⭕ The Polar Category Axis
+# The Polar Category Axis
 
 TODO

@@ -2,4 +2,53 @@
 sidebar_position: 100
 ---
 
-# ⭕ The Polar Mountain Chart Type
+# The Polar Mountain Chart Type
+
+<!-- import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+
+import PolarMountainChart from "!!raw-loader!./Basic/demo.js";
+import PolarMountainPaletteProvider from "!!raw-loader!./PaletteProvider/demo.js"; -->
+
+The [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) is a type of renderable series that displays data in a polar mountain format.
+
+<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-mountain-chart" width="100%" height="600px" frameborder="0"></iframe>
+
+<div style={{textAlign: "center"}}> 
+Above: The JavaScript [Polar Mountain Chart](http://stagingdemo2.scichart.com/demo/react/polar-mountain-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
+</div>
+
+## Create a Basic Polar Mountain Series
+
+To create a Javascript [Polar Mountain Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) with SciChart.js, use the following code:
+
+<!-- ```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+``` -->
+
+This results in the following output:
+
+<!-- <ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarMountainChart} /> -->
+
+In the code above:
+- We create a [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) instance and append it to the renderableSeries collection.
+- Add an [XyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) to the series, which stores the Xy data to render.
+- Note that the line wraps for 1 and a half turns around the angular axis, since it calculates xValues as `xVal % visibleRange.max` and visible range is fixed to (0, 8)
+
+---
+
+## Create a Polar Mountain Series with Palette Provider
+
+To create a Javascript [Polar Mountain Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) with SciChart.js using a [Palette Provider](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html), use the following code:
+
+<!-- ```ts file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
+``` -->
+
+This results in the following output:
+
+<!-- <ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarMountainPaletteProvider} /> -->
+
+In the code above:
+- We define the `ThresholdPaletteProvider` class which extends [DefaultPaletteProvider](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) and overrides the [overrideStrokeArgb](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) method to return a different stroke color only when a rule passed in the constructor is met. 
+
+- Our rule in this example is `Math.floor(xValue / 3) % 2 === 0`, so basically points 0, 1, 2 are white, 3, 4, 5 are green, then white again and so on.
+
+- We then set the [paletteProvider](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html#paletteprovider) property of the line series to this instance of our `ThresholdPaletteProvider`. When the overriden method returns `undefined`, the default stroke (green) of the series is used.
