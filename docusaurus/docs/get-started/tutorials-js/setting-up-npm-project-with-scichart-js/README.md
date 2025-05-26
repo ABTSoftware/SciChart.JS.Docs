@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Tutorial 01 - Setting up a npm Project with SciChart.js
 
 <iframe  
