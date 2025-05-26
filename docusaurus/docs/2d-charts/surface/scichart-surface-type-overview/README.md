@@ -66,4 +66,12 @@ classDiagram
 
 Several RenderableSeries types are available in SciChart, including
 
-
+* Line Charts
+* Scatter Charts
+* Column Charts
+* Mountain Charts
+* Band Charts    
+* Candlestick Charts
+* Ohlc Charts
+* Polar Line Charts
+* Polar Column Charts and more.
