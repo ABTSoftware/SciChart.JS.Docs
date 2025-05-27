@@ -66,12 +66,50 @@ classDiagram
 
 Several RenderableSeries types are available in SciChart, including
 
-* Line Charts
-* Scatter Charts
-* Column Charts
-* Mountain Charts
-* Band Charts    
-* Candlestick Charts
-* Ohlc Charts
-* Polar Line Charts
-* Polar Column Charts and more.
+* [Line Charts](/docs/2d-charts/chart-types/fast-line-renderable-series/README.md)
+* [Scatter Charts](/docs/2d-charts/chart-types/xy-scatter-renderable-series/README.md)
+* [Column Charts](/docs/2d-charts/chart-types/fast-column-renderable-series/column-series-type/README.md)
+* [Mountain Charts](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series/README.md)
+* [Band Charts](/docs/2d-charts/chart-types/fast-band-renderable-series/README.md)
+* [Candlestick Charts](/docs/2d-charts/chart-types/fast-candlestick-renderable-series/README.md)
+* [Ohlc Charts](/docs/2d-charts/chart-types/fast-ohlc-renderable-series/README.md)
+* [Polar Line Charts](/docs/2d-charts/chart-types/polar-line-renderable-series/readme.mdx)
+* [Polar Column Charts](/docs/2d-charts/chart-types/polar-column-renderable-series/readme.mdx) and more.
+
+> For more information about chart types in SciChart, head over to the [RenderableSeries API documentation](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md) or see our [Examples](https://scichart.com/demo/react).
+
+## Axis and Axis Types
+
+A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has a collection of X-Axis and Y-Axis (see [sciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#xaxes) collection). Each SciChartSurface can have unlimited, multiple X and Y Axis. SciChart is unique in that you can place axis on the left, right, top, bottom, but [you can also rotate the chart](/docs/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/README.md) to have an XAxis on the left and YAxis on the top. It is this configurability which gives SciChart it's edge over other charting libraries.
+
+```mermaid
+---
+title: SciChartSurface Class Diagram
+---
+classDiagram
+    SciChartSurface --> "many" AxisBase2D : xAxis or yAxis
+    SciChartSurface : IRenderableSeries[] renderableSeries
+    SciChartSurface : AxisBase2D[] xAxes
+    SciChartSurface : AxisBase2D[] yAxes
+    SciChartSurface : annotations[] IAnnotation
+    SciChartSurface : chartModifiers[] IChartModifierBase
+    SciChartSurface : ...
+    SciChartSurface : zoomExtents()
+    SciChartSurface : invalidateElement()
+    SciChartSurface : ... ()
+    AxisBase2D : string id
+    AxisBase2D : NumberRange visibleRange
+    AxisBase2D : boolean isVisible
+    AxisBase2D : ...
+    AxisBase2D <|-- NumericAxis : extends
+    AxisBase2D <|-- CategoryAxis : extends
+```
+
+A few axis types are available in SciChart, such as [Value Axis and Category Axis](/docs/2d-charts/axis-api/axis-types/category-axis/README.md). Axis may be configured by setting [gridline interval](/docs/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/README.md), gridline styling, titles, labels and more. 
+
+> For more information about Axis types and configuration in SciChart, head over to the [Axis API documentation](/docs/2d-charts/axis-api/axis-api-overview/README.md) or see our [Examples](https://scichart.com/demo/react).
+
+## Annotations and Markers
+
+A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has a collection of Annotations (see [sciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#annotations) collection). Annotations are markers (text, labels, lines, custom shapes) which can be placed arbitrarily over the chart ([see types of annotation here](/docusaurus/docs/2d-charts/annotations-api/annotations-api-overview/README.md)), independent of chart types (series) or data. As the chart zooms and pans, the annotations move with the chart, however there is also an [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode) and [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) property on Annotations which allows you to place watermarks, or dock annotations to the left, right, top, bottom or centre of a chart.
+
