@@ -1,16 +1,14 @@
 import {
     EColumnMode,
+    NumberRange,
     EColumnYMode,
     SciChartSurface,
     NumericAxis,
     SciChartJsNavyTheme,
     FastRectangleRenderableSeries,
     XyxyDataSeries,
-    ICustomTextureOptions,
-    applyOpacityToHtmlColor,
     GenericAnimation,
-    easing,
-    NumberRange
+    easing
 } from "scichart";
 
 async function rectangleSeriesAnimated(divElementId) {
@@ -23,38 +21,38 @@ async function rectangleSeriesAnimated(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
+
+    // region_A_start
     const initialData = {
         xValues: [0, 6, 10, 17],
         yValues: [0, 6, 2, 5],
         x1Values: [5, 9, 15, 25],
         y1Values: [5, 9, 8, 10]
     };
-
     const dataSeries = new XyxyDataSeries(wasmContext, initialData);
+
     const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
         dataSeries,
         columnXMode: EColumnMode.StartEnd,
-        columnYMode: EColumnYMode.TopBottom, 
+        columnYMode: EColumnYMode.TopBottom,
         fill: "white",
         stroke: "steelblue",
         strokeThickness: 1,
-        opacity: 1
+        opacity: 0.5
     });
-
     sciChartSurface.renderableSeries.add(rectangleSeries);
 
     const getData = () => {
-        const xValues: number[] = [];
-        const yValues: number[] = [];
-        const x1Values: number[] = [];
-        const y1Values: number[] = [];
+        const xValues = [];
+        const yValues = [];
+        const x1Values = [];
+        const y1Values = [];
         initialData.xValues.forEach((d, i) => {
             xValues.push(Math.random() * 3 + 8 * i);
             yValues.push(Math.random() * 3 * i);
             x1Values.push((Math.random() + 2) * 5);
             y1Values.push((Math.random() + 2) * 3);
         });
-
         return {
             xValues,
             yValues,
@@ -62,7 +60,8 @@ async function rectangleSeriesAnimated(divElementId) {
             y1Values
         };
     };
-    const interpolateNumber = (from: number, to: number, progress: number) => {
+
+    const interpolateNumber = (from, to, progress) => {
         if (progress < 0) return from;
         if (progress > 1) return to;
         return from + (to - from) * progress;
@@ -74,11 +73,10 @@ async function rectangleSeriesAnimated(divElementId) {
         duration: 2000,
         ease: easing.inOutSine,
         onAnimate: (from, to, progress) => {
-            const newXValues: number[] = [];
-            const newYValues: number[] = [];
-            const newX1Values: number[] = [];
-            const newY1Values: number[] = [];
-
+            const newXValues = [];
+            const newYValues = [];
+            const newX1Values = [];
+            const newY1Values = [];
             from.xValues.forEach((value, index) => {
                 newXValues.push(interpolateNumber(from.xValues[index], to.xValues[index], progress));
                 newYValues.push(interpolateNumber(from.yValues[index], to.yValues[index], progress));
@@ -92,11 +90,10 @@ async function rectangleSeriesAnimated(divElementId) {
             dataAnimation.from = dataAnimation.to;
             dataAnimation.to = getData();
             dataAnimation.reset();
-
-            console.log("Data Point Animation Completed");
         }
     });
+    // region_A_end
+
     sciChartSurface.addAnimation(dataAnimation);
 }
-
 rectangleSeriesAnimated("scichart-root");

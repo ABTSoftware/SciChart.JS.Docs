@@ -8,12 +8,11 @@ import {
     ETriangleSeriesDrawMode,
     ZoomPanModifier,
     ZoomExtentsModifier,
-    IFillPaletteProvider,
     EFillPaletteMode,
     parseColorToUIntArgb
 } from "scichart";
 
-async function basicTriangleSeriesChart(divElementId) {
+async function triangleSeriesList(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -30,26 +29,18 @@ async function basicTriangleSeriesChart(divElementId) {
         3: "#8e44ad"
     };
 
-    class TrianglePaletteProvider implements IFillPaletteProvider {
-        public readonly fillPaletteMode = EFillPaletteMode.SOLID;
-
-        public onAttached(): void {}
-
-        public onDetached(): void {}
-
-        public overrideFillArgb(_xValue: number, _yValue: number, index: number, opacity: number): number {
+    class TrianglePaletteProvider {
+        fillPaletteMode = EFillPaletteMode.SOLID;
+        onAttached() {}
+        onDetached() {}
+        overrideFillArgb(_xValue, _yValue, index, opacity) {
             // return SciChart.parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
-
-            console.log(Math.floor(index / 3));
-
             const opacityRound = Math.round(opacity * 255);
-
             return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityRound);
         }
     }
 
     // region_A_start
-
     const sXValues = [200, 200, 300, 320, 420, 420, 220, 400, 310, 220, 400, 310];
     const sYValues = [200, 400, 300, 300, 400, 200, 400, 400, 310, 200, 200, 290];
 
@@ -63,7 +54,6 @@ async function basicTriangleSeriesChart(divElementId) {
         drawMode: ETriangleSeriesDrawMode.List, // Polygon / List / Strip
         paletteProvider: new TrianglePaletteProvider()
     });
-
     // region_A_end
 
     sciChartSurface.renderableSeries.add(polygonSeries);
@@ -71,4 +61,4 @@ async function basicTriangleSeriesChart(divElementId) {
     sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new ZoomExtentsModifier());
 }
 
-basicTriangleSeriesChart("scichart-root");
+triangleSeriesList("scichart-root");

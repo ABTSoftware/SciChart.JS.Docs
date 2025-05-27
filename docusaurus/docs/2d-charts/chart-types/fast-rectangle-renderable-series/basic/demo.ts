@@ -22,7 +22,6 @@ async function basicRectangleSeriesChart(divElementId) {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
     // region_A_start
-
     const xValues = [0, 6, 10, 17];
     const yValues = [0, 6, 2, 5];
     const x1Values = [5, 9, 15, 25];

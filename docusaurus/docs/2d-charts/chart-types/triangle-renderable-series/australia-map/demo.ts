@@ -612,50 +612,6 @@ const australia = [
     [126.14871382050114, -32.21596607842059]
 ];
 
-
-// console.log(constrainedDelaunayTriangulation(tasmania))
-
-// function parsePoints(data) {
-//     return data.map(d => {
-//         // @ts-ignore
-//         return new poly2tri.Point(d[0], d[1]);
-//     });
-// }
-
-// // australia
-// let australiaPoly2triContour = parsePoints(australia);
-// // @ts-ignore
-// const australiaPoly2triSwctx = new poly2tri.SweepContext(australiaPoly2triContour);
-
-// australiaPoly2triSwctx.triangulate();
-
-// let australiaPoly2triTriangles = australiaPoly2triSwctx.getTriangles() || [];
-
-// let australiaData = australiaPoly2triTriangles
-//     .map(d => {
-//         return d.points_.map(p => {
-//             return [p.x, p.y];
-//         });
-//     })
-//     .flat();
-
-// // tasmania
-// let tasmaniaPoly2triContour = parsePoints(tasmania);
-// // @ts-ignore
-// const tasmaniaPoly2triSwctx = new poly2tri.SweepContext(tasmaniaPoly2triContour);
-
-// tasmaniaPoly2triSwctx.triangulate();
-
-// let tasmaniaPoly2triTriangles = tasmaniaPoly2triSwctx.getTriangles() || [];
-
-// let tasmaniaData = tasmaniaPoly2triTriangles
-//     .map(d => {
-//         return d.points_.map(p => {
-//             return [p.x, p.y];
-//         });
-//     })
-//     .flat();
-
 let tasmaniaData = constrainedDelaunayTriangulation(tasmania).flat();
 
 let australiaData = constrainedDelaunayTriangulation(australia).flat();
@@ -677,7 +633,7 @@ async function australiaMap(divElementId) {
 
     const triangleSeriesAustralia = new TriangleRenderableSeries(wasmContext, {
         dataSeries: dataSeriesAustralia,
-        drawMode: ETriangleSeriesDrawMode.List, // triangle connects two last points and the first point
+        drawMode: ETriangleSeriesDrawMode.List,
         fill: "cornflowerblue",
         opacity: 0.5
     });
@@ -689,9 +645,8 @@ async function australiaMap(divElementId) {
 
     const triangleSeriesTasmania = new TriangleRenderableSeries(wasmContext, {
         dataSeries: dataSeriesTasmania,
-        drawMode: ETriangleSeriesDrawMode.List, // triangle connects two last points and the first point
+        drawMode: ETriangleSeriesDrawMode.List,
         fill: "cornflowerblue",
-        polygonVertices: 0, // Sets the number of vertices per polygon. Applies only for drawMode ETriangleSeriesDrawMode.Polygon
         opacity: 0.5
     });
 
