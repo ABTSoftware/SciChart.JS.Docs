@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# 🔄 The SciChartSurface Type
+# ✅ The SciChartSurface Type
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
@@ -83,9 +83,6 @@ Several RenderableSeries types are available in SciChart, including
 A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has a collection of X-Axis and Y-Axis (see [sciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#xaxes) collection). Each SciChartSurface can have unlimited, multiple X and Y Axis. SciChart is unique in that you can place axis on the left, right, top, bottom, but [you can also rotate the chart](/docs/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/README.md) to have an XAxis on the left and YAxis on the top. It is this configurability which gives SciChart it's edge over other charting libraries.
 
 ```mermaid
----
-title: SciChartSurface Class Diagram
----
 classDiagram
     SciChartSurface --> "many" AxisBase2D : xAxis or yAxis
     SciChartSurface : IRenderableSeries[] renderableSeries
@@ -111,5 +108,74 @@ A few axis types are available in SciChart, such as [Value Axis and Category Axi
 
 ## Annotations and Markers
 
-A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has a collection of Annotations (see [sciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#annotations) collection). Annotations are markers (text, labels, lines, custom shapes) which can be placed arbitrarily over the chart ([see types of annotation here](/docusaurus/docs/2d-charts/annotations-api/annotations-api-overview/README.md)), independent of chart types (series) or data. As the chart zooms and pans, the annotations move with the chart, however there is also an [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode) and [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) property on Annotations which allows you to place watermarks, or dock annotations to the left, right, top, bottom or centre of a chart.
+A [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) has a collection of Annotations (see [sciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#annotations) collection). Annotations are markers (text, labels, lines, custom shapes) which can be placed arbitrarily over the chart ([see types of annotation here](/docs/2d-charts/annotations-api/annotations-api-overview/README.md)), independent of chart types (series) or data. As the chart zooms and pans, the annotations move with the chart, however there is also an [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode) and [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) property on Annotations which allows you to place watermarks, or dock annotations to the left, right, top, bottom or centre of a chart.
 
+```mermaid
+classDiagram
+    SciChartSurface --> "many" IAnnotation
+    SciChartSurface : IRenderableSeries[] renderableSeries
+    SciChartSurface : AxisBase2D[] xAxes
+    SciChartSurface : AxisBase2D[] yAxes
+    SciChartSurface : annotations[] IAnnotation
+    SciChartSurface : chartModifiers[] IChartModifierBase
+    SciChartSurface : ...
+    SciChartSurface : zoomExtents()
+    SciChartSurface : invalidateElement()
+    SciChartSurface : ... ()
+    IAnnotation : AxisBase2D xAxis
+    IAnnotation : AxisBase2D yAxis
+    IAnnotation : number x1
+    IAnnotation : number x2
+    IAnnotation : number y1
+    IAnnotation : number y2
+    IAnnotation : boolean isEditable
+    IAnnotation : boolean isHidden
+    IAnnotation : ...
+    IAnnotation <|-- SvgAnnotationBase : implements
+    IAnnotation <|-- BoxAnnotation : implements
+    IAnnotation <|-- LineAnnotation : implements
+    IAnnotation <|-- TextAnnotation : implements
+    IAnnotation <|-- PolarArcAnnotation : implements
+```
+
+> For more information about Annotations types in SciChart, head over to the [Annotations API documentation](/docs/2d-charts/annotations-api/annotations-api-overview/README.md) or see our [Examples](https://scichart.com/demo/react).
+
+## Interaction - Zooming, Panning and Tooltips
+
+Zooming, Panning, interaction such as Tooltips and Legends are provided by [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/README.md). Several modifiers exist out of the box such as the [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/README.md), [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier/README.md) and [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/README.md). Tooltips and Legends are also provided by modifiers - see the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/README.md) and [LegendModifier](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/README.md). You can also create your own modifiers and handle mouse interactions and provide custom behaviours to the chart using this powerful and flexible API.
+
+```mermaid
+classDiagram
+    SciChartSurface --> "many" IChartModifierBase
+    SciChartSurface : IRenderableSeries[] renderableSeries
+    SciChartSurface : AxisBase2D[] xAxes
+    SciChartSurface : AxisBase2D[] yAxes
+    SciChartSurface : annotations[] IAnnotation
+    SciChartSurface : chartModifiers[] IChartModifierBase
+    SciChartSurface : ...
+    SciChartSurface : zoomExtents()
+    SciChartSurface : invalidateElement()
+    SciChartSurface : ... ()
+    IChartModifierBase : boolean isEnabled
+    IChartModifierBase : modifierMouseDown()
+    IChartModifierBase : modifierMouseEnter()
+    IChartModifierBase : modifierMouseLeave()
+    IChartModifierBase : modifierMouseMove()
+    IChartModifierBase : modifierMouseUp()
+    IChartModifierBase : modifierMouseWheel()
+    IChartModifierBase : modifierDoubleClick()
+    IChartModifierBase <|-- ZoomPanModifier : implements
+    IChartModifierBase <|-- RolloverModifier : implements
+    IChartModifierBase <|-- LegendModifier : implements
+    IChartModifierBase <|-- PolarArcZoomModifier : implements
+```
+
+> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/README.md) or see our [Examples](https://scichart.com/demo/react).
+
+## Declaring a SciChartSurface Instance
+
+In [Tutorial #1 - Setting up a Project with SciChart.js](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/README.md), we walk you through how to setup a new project with npm, webpack and install SciChart. In particular we show you how to copy the wasm files to the build output, a step that is necessary for our WebAssembly WebGL powered charts.
+
+If you haven't already, go and watch that tutorial quickly so that you can understand the basics of setting up a project with SciChart. The tutorial series is a great way to learn SciChart.
+
+We also have a comprehensive [Examples Suite](https://scichart.com/demo/react) with many examples of how to use our Fast, JavaScript Charts.

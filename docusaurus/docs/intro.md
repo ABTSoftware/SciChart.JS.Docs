@@ -17,11 +17,11 @@ Use this symbols to mark the status of menu items
 
 ⭕ - new documentation to write
 
-⚠️ - update existing doc
-
-✅ - new document written
+⚠️ - existing doc to update
 
 🔄 - in progress
+
+✅ - done
 
 # Naming convention
 
