@@ -1,0 +1,84 @@
+---
+sidebar_position: 1
+---
+
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import demoLabelFormatting from "!!raw-loader!./demoLabelFormatting.js";
+
+# Adding DataLabels to a Chart Series
+
+DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
+
+You can see several datalabel examples on the SciChart.js demo:
+
+- [The Line Chart example](https://demo.scichart.com/javascript-line-chart)
+- [The Column Chart example](https://demo.scichart.com/javascript-column-chart)
+- [The PaletteProvider example](https://demo.scichart.com/javascript-chart-color-points-individually-with-paletteprovider)
+- [The DataLabels demo](https://demo.scichart.com/javascript-datalabels)
+- [The Stacked Column Chart demo](https://demo.scichart.com/javascript/stacked-column-chart)
+- [The Population Pyramid demo](https://demo.scichart.com/javascript/population-pyramid)
+
+Explore these for some rich examples of how to use this API.
+
+## The DataLabels API
+
+Each RenderableSeries as a [dataLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#datalabelprovider) property. Many also accept Data Label configuration via [constructor options](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaserenderableseriesoptions.html#datalabelprovider).
+
+These defines whether text labels are rendered for data-points, and the style and positioning of these text labels.
+
+[Data Labels Example](https://demo.scichart.com/chart-series-selection)
+
+<iframe src="https://demo.scichart.com/iframe/javascript-datalabels" width="600" height="400"></iframe>
+
+## Adding Data Labels
+
+You an configure data labels for almost any series by setting a valid style on the [dataLabels property](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaselinerenderableseriesoptions.html#datalabels) in the series options:
+
+<Tabs>
+  <TabItem value="ts" label="TS" default>
+    ```ts showLineNumbers {39-45} file=./demo.ts start=region_A_start end=region_A_end
+
+    ```
+
+  </TabItem>
+  <TabItem value="builder" label="Builder API (Config)">
+
+    ```ts showLineNumbers {29-35} file=./demo.ts start=region_B_start end=region_B_end
+
+    ```
+
+  </TabItem>
+</Tabs>
+
+This results in the following output:
+
+<!-- <LiveDocSnippet maxWidth={600} /> -->
+
+## Standard Label Formatting
+
+Datalabels supports the same numeric format and precision options as axis labels. By default the Y-value is printed to the label. The numericFormat option is one of the [ENumericFormat](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) values.
+
+<Tabs>
+  <TabItem value="ts" label="TS" default>
+    ```ts showLineNumbers file=./demoLabelFormatting.ts start=region_A_start end=region_A_end
+
+    ```
+
+  </TabItem>
+  <TabItem value="builder" label="Builder API (Config)">
+
+    ```ts showLineNumbers file=./demoLabelFormatting.ts start=region_B_start end=region_B_end
+
+    ```
+
+  </TabItem>
+</Tabs>
+
+The precision is now increased to 4 decimal places
+
+<ChartPreviewWrapper maxWidth={600} jsContent={demoLabelFormatting} />
+
+Data Labels formatting uses similar code to the [LabelProvider](/2d-charts/axis-api/axis-labels/label-provider-api-overview/README.md) for axis labels. This means that labels can be formatted as dates, exponents or scientific notation.
