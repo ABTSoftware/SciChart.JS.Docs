@@ -16,7 +16,9 @@
     "compileSnippets:watch": "tsc --project tsconfig.demo.json --watch",
     "prettier": "prettier **/demo.{js,ts} --write",
     "pretifyUncommitedSnippets": "git diff --name-only HEAD | grep -E '\\.js$' | cut -c12- | xargs -d '\\n' -r npx prettier --write",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "linkcheck": "node link-checker.js",
+    "bookmark": "node link-bookmark-checker.js"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.2.0",
@@ -26,13 +28,18 @@
     "@docusaurus/theme-mermaid": "^3.7.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "fs": "^0.0.1-security",
+    "http": "^0.0.1-security",
+    "https": "^1.0.0",
+    "path": "^0.12.7",
     "prettier": "^3.5.3",
     "prism-react-renderer": "^2.3.0",
     "raw-loader": "^4.0.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "remark-code-snippets": "^1.1.0",
-    "scichart": "^4.0.0-beta.734"
+    "scichart": "^4.0.0-beta.734",
+    "url": "^0.11.4"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",

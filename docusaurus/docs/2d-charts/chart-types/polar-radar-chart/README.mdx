@@ -18,15 +18,15 @@ The data is usually plotted using the `PolarLineRenderableSeries` or `PolarMount
 
 To create a Javascript Polar Radar Series with SciChart.js, use the following code:
 
-```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarRadarChart} />
+<ChartPreviewWrapper jsContent={PolarRadarChart} />
 
 Key aspects of the code above:
-- This `radar` / `spider` / `cobweb` chart look is achieved by using `gridlineMode`: [EPolarGridlineMode.Polygons](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html) on the radial axis (yAxis), which draws straight lines in between gridlines instead of arcs.
+- This **radar** / **spider** / **cobweb** chart look is achieved by using `gridlineMode`: [EPolarGridlineMode.Polygons](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html) on the radial axis (yAxis), which draws straight lines in between gridlines instead of arcs.
 - We set `labels: [ "Offense", "Shooting", ... ]` on the angular axis (xAxis) to display the categories.
 - While defining the [XyDataSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) for the [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html), we use this trick on the `xValues` array to reach the 1st point from the end of the series, so that the polygon closes correctly:
 ```js

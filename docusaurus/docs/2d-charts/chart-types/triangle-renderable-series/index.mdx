@@ -72,7 +72,7 @@ Out of these four points from this data set we also have two triangles [[0, 0],[
 
 In this mode, each group of three consecutive points in the list defines an independent triangle. The triangles are not connected, every set of three points forms a separate triangle.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={triangleSeriesList} />
+<ChartPreviewWrapper jsContent={triangleSeriesList} />
 
 ```ts {12} showLineNumbers file=./triangle-series-list/demo.ts start=region_A_start end=region_A_end
 
@@ -82,7 +82,7 @@ In this mode, each group of three consecutive points in the list defines an inde
 
 In this mode, each group of two consecutive points and the first one in the list defines a triangle. The triangles are connected in a way that they share the same point defined by the first point on the list.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={triangleSeriesPolygon} />
+<ChartPreviewWrapper jsContent={triangleSeriesPolygon} />
 
 ```ts {22} showLineNumbers file=./triangle-series-polygon/demo.ts start=region_A_start end=region_A_end
 
@@ -92,7 +92,7 @@ In this mode, each group of two consecutive points and the first one in the list
 
 In this mode, each group of three consecutive points in the list defines a triangle. The triangles are connected, every point is connected to the last two points.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={triangleSeriesStrip} />
+<ChartPreviewWrapper jsContent={triangleSeriesStrip} />
 
 ```ts {20} showLineNumbers file=./triangle-series-strip/demo.ts start=region_A_start end=region_A_end
 
@@ -102,7 +102,7 @@ In this mode, each group of three consecutive points in the list defines a trian
 
 In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) and fillLinearGradient to display custom gradient.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={triangleSeriesCustomGradient} />
+<ChartPreviewWrapper jsContent={triangleSeriesCustomGradient} />
 ```ts {30-33} showLineNumbers file=./triangle-series-custom-gradient/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -111,7 +111,7 @@ In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.co
 
 In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html), ETriangleSeriesDrawMode.Polygon and customTextureOptions to display rectangles with custom texture that are comprised of four triangles.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={triangleSeriesTexture} />
+<ChartPreviewWrapper jsContent={triangleSeriesTexture} />
 ```ts showLineNumbers file=./triangle-series-texture/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -120,5 +120,5 @@ In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](http
 
 In this example we have used Sweep-line algorithm for constrained Delaunay triangulation to convert outline of Australia into series of triangles that can be displayed using ETriangleSeriesDrawMode.List mode.
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={australiaMap} />
+<ChartPreviewWrapper jsContent={australiaMap} />
 

@@ -116,7 +116,7 @@ The order can be set as a value via the [renderOrder](https://www.scichart.com/d
 
 For example, in the following setup, we change the order of the first annotation so it is rendered on top of the second one, which is the opposite of the default behaviour.
 
-<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample1} />
+<ChartPreviewWrapper jsContent={customOrderExample1} />
 
 ```ts {12} showLineNumbers file=./demo1.ts start=region_A_start end=region_A_end
 
@@ -129,7 +129,7 @@ Alternatively, an order could be set as an offset from another Ordered Renderabl
 In this example, we demonstrate how to place an annotation on a layer between renderable series via [renderNextTo](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#rendernextto) option
 (or [setRenderNextTo](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#setrendernextto) method).
 
-<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample2} />
+<ChartPreviewWrapper jsContent={customOrderExample2} />
 
 <Tabs>
   <TabItem value="ts" label="TS" default>
@@ -154,7 +154,7 @@ Setting a custom render layer allows to place an entity at a layer of different 
 Here we will demonstrate how to place series at the background layer, so that grid lines are rendered above them.  
 For that we can use [renderLayer](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#renderlayer) or [setRenderLayer](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setrenderlayer)
 
-<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample5} />
+<ChartPreviewWrapper jsContent={customOrderExample5} />
 
 ```ts {2} showLineNumbers file=./demo5.ts start=region_B_start end=region_B_end
 
@@ -191,7 +191,7 @@ Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder](https:
 
 Result:
 
-<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample3} />
+<ChartPreviewWrapper jsContent={customOrderExample3} />
 
 Or to modify the render order only of the series from the first chart we can apply the [setSurfaceRenderOrder](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setsurfacerenderorder) method on them:
 
@@ -210,4 +210,4 @@ Or to modify the render order only of the series from the first chart we can app
 
 Result:
 
-<ChartPreviewWrapper maxWidth={600} jsContent={customOrderExample4} />
+<ChartPreviewWrapper jsContent={customOrderExample4} />

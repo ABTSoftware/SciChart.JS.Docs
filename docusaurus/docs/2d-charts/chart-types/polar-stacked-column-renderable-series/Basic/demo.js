@@ -1,16 +1,15 @@
 import * as SciChart from "scichart";
 
-export async function polarColumnChart(divElementId) {
+export async function polarStackedColumnChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a basic polar column chart using SciChart.js
     const { 
         SciChartPolarSurface, 
         PolarNumericAxis, 
         SciChartJsNavyTheme,
-        PolarColumnRenderableSeries,
+        PolarStackedColumnCollection,
+        PolarStackedColumnRenderableSeries,
         EPolarAxisMode,
-        EAxisAlignment,
-        EPolarLabelMode,
         NumberRange,
         XyDataSeries, 
     } = SciChart;
@@ -22,46 +21,52 @@ export async function polarColumnChart(divElementId) {
 
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular, // Angular == "goes around the center, drawn by arcs"
-        axisAlignment: EAxisAlignment.Top,
-        visibleRange: new NumberRange(0, 20),
+        visibleRange: new NumberRange(0, 10), // to keep column #1 and #10 from touching
         flippedCoordinates: true, // go clockwise
     });
     sciChartSurface.xAxes.add(angularXAxis);
 
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial, // Radial == "goes from center out, drawn by straight lines"
-        axisAlignment: EAxisAlignment.Right,
-        visibleRange: new NumberRange(0, 6),
-        drawLabels: false, // don't draw labels
         innerRadius: 0.1, // donut hole
+        labelPrecision: 0, // no decimals
     });
     sciChartSurface.yAxes.add(radialYAxis);
-
-    const polarColumn = new PolarColumnRenderableSeries(wasmContext, {
-        dataSeries: new XyDataSeries(wasmContext, {
-            xValues: Array.from({ length: 20 }, (_, i) => i),
-            yValues: Array.from({ length: 20 }, (_, i) => Math.random() * 5 + 1),
-        }),
-        stroke: "white",
-        fill: "#0088FF66",
+    
+    // Create the collection the stacked columns will be added to
+    const polarCollection = new PolarStackedColumnCollection(wasmContext, {
+        stroke: "#FFFFFF",
         strokeThickness: 2,
-        dataPointWidth: 1,
-        dataLabels: { // optionally - add data labels
-            color: "white",
-            style: {
-                fontSize: 14,
-                fontFamily: "Default",
-            },
-            polarLabelMode: EPolarLabelMode.Parallel,
-        },
+        isOneHundredPercent: false // set to true to make columns stack to 100%
     });
-    sciChartSurface.renderableSeries.add(polarColumn);
+
+    const polarColumn1 = new PolarStackedColumnRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            yValues: Array.from({ length: 10 }, (_, i) => Math.random() * 11 + 1)
+        }),
+        fill: "#FF3344AA",
+    });
+
+    const polarColumn2 = new PolarStackedColumnRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            yValues: Array.from({ length: 10 }, (_, i) => Math.random() * 2 + 1)
+        }),
+        fill: "#5588FFAA",
+    });
+
+    // Add the columns to the collection
+    polarCollection.add(polarColumn1, polarColumn2);
+
+    // Add the columns to the collection
+    sciChartSurface.renderableSeries.add(polarCollection);
     // #region_A_end
     
     return { sciChartSurface, wasmContext };
 }
 
-polarColumnChart("scichart-root");
+polarStackedColumnChart("scichart-root");
 
 async function builderExample(divElementId) {
     // #region ExampleB

@@ -8,8 +8,8 @@ import { baseUrl } from "./config";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-    title: "My Site",
-    tagline: "Dinosaurs are cool",
+    title: "SciChart JS Docs",
+    tagline: "The Ultimate JavaScript Chart Library",
     favicon: "img/favicon.ico",
     markdown: {
         mermaid: true
@@ -75,9 +75,9 @@ const config: Config = {
         // Replace with your project's social card
         image: "img/docusaurus-social-card.jpg",
         navbar: {
-            title: "My Site",
+            title: "SciChart JS Docs",
             logo: {
-                alt: "My Site Logo",
+                alt: "SciChart LOGO",
                 src: "img/logo.svg"
             },
             items: [
@@ -141,8 +141,8 @@ const config: Config = {
             copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
         },
         prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula
+            theme: prismThemes.vsLight,
+            darkTheme: prismThemes.vsDark,
         }
     } satisfies Preset.ThemeConfig,
 

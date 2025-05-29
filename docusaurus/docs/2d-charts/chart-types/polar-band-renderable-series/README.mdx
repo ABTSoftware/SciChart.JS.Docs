@@ -21,19 +21,19 @@ Above: The JavaScript [Polar Band Chart](http://stagingdemo2.scichart.com/demo/r
 
 To create a Javascript [Polar Band Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) with SciChart.js, use the following code:
 
-```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={simpleBandChart} />
+<ChartPreviewWrapper jsContent={simpleBandChart} />
 
 In the code above:
 
 - 2 Polar Band Series instances are created and added to the `sciChartSurface.renderableSeries` collection.
 - We set the stroke, fill properties for when Y1 > Y2 and vice versa (more info over at [PolarBandRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) in TypeDoc).
 - We assign a DataSeries - in this case an XyyDataSeries which stores X, Y1, Y2 data.
-- Optionally, we can set `interpolateLine: true` to make lines wrap around the axes in a circular fashion.
+- Optionally, we can set [interpolateLine](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html#interpolateline): `true` to make lines wrap around the axes in a circular fashion.
 
 ---
 
@@ -45,10 +45,10 @@ To use this, you need to set the [PolarBandRenderableSeries.fillLinearGradient](
 
 Here's the code example and example:
 
-```ts file=./GradientFill/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./GradientFill/demo.js start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={gradientFillBandChart} />
+<ChartPreviewWrapper jsContent={gradientFillBandChart} />
 
 In the code above:
 - We create a [GradientParams](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html) object with 2 gradient stops, and set the start and end points of the gradient.
@@ -62,10 +62,10 @@ By extending [DefaultPaletteProvider](https://www.scichart.com/documentation/js/
 
 Here is how to do this:
 
-```ts file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={PaletteProviderExample} />
+<ChartPreviewWrapper jsContent={PaletteProviderExample} />
 
 In the code above:
 - We create a class that extends [DefaultPaletteProvider](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) to override [overrideFillArgb](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridefillargb) and [overrideStrokeArgb](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) methods by `xValue`.

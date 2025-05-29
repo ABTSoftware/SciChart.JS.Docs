@@ -46,7 +46,7 @@ export async function polarRadialColumnChart(divElementId) {
             yValues: [6.6, 8.7, 3.5, 5.7, 3.8, 6.8]
         }),
         stroke: "white",
-        fill: "#AAAA4466",
+        fill: "#0088FF66",
         strokeThickness: 2,
         dataPointWidth: 0.8,
         dataLabels: { // optionally - add data labels

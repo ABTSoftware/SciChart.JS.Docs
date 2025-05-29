@@ -11,12 +11,12 @@ SciChart.js provides the ability to Zoom Extents the polar chart (zoom to fit da
 
 Here is how to define the [PolarZoomExtentsModifier](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html) in your code:
 
-```ts file=./demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarZoomExtents} />
+<ChartPreviewWrapper jsContent={PolarZoomExtents} />
 
 ## Zoom to a Preset Range
 If you would like the double-click to zoom to some preset range, rather than the data range, you can set `zoomExtentsRange` on the axes. In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set `zoomExtentsToInitialRange` true, which will set `zoomExtentsRange` to the `visibleRange` passed in.

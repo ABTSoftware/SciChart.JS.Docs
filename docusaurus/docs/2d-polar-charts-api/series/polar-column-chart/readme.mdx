@@ -18,12 +18,12 @@ Above: The JavaScript [Polar Column Chart](http://stagingdemo2.scichart.com/demo
 
 To create a Javascript [Polar Column Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) with SciChart.js, use the following code:
 
-```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarColumnChart} />
+<ChartPreviewWrapper jsContent={polarColumnChart} />
 
 In the code above:
 -
@@ -37,10 +37,12 @@ The same renderable series can be used as radial columns as well, if we flip the
 
 Usually, the xAxis has the [polarAxisMode](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html) set to `Angular` and the yAxis has it set to `Radial`. To create a radial column chart, we need to set the xAxis to `Radial` and the yAxis to `Polar`.
 
-```ts file=./BasicRadial/demo.js start=region_A_start end=region_A_end
+The column series can be unchanged to the one from the previous section, they do not need extra properties set, the only difference is that the xAxis is set to `Radial` and the yAxis to `Angular`.
+
+```ts showLineNumbers file=./BasicRadial/demo.js start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarRadialColumnChart} />
+<ChartPreviewWrapper jsContent={polarRadialColumnChart} />
 
 In the code above:
 - 
@@ -52,7 +54,7 @@ In the code above:
 
 The [columnXMode](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#columnxmode) is inherited from [FastRectangleRenderableSeries.columnXMode](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html#columnxmode)
 
-```ts file=./ColumnMode/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./ColumnMode/demo.js start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={polarColumnMode} />
+<ChartPreviewWrapper jsContent={polarColumnMode} />

@@ -3,7 +3,7 @@
 The [PolarPointerAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarpointerannotation.html) creates a customizable SVG pointer for polar charts, ideal for gauges or radial indicators. It consists of 3 customizable elements: a pointer stick, center circle (optional), and arrowhead (also optional).
 
 ## Basic Usage
-```ts file=./Basic/demo.js
+```ts showLineNumbers file=./Basic/demo.js
 ```
 
 ## Key Configuration Properties
@@ -70,29 +70,8 @@ customPointer.getPointerArrowSvg = (length, height, width) => `
 `;
 ```
 
-## JSON Serialization
-Persist configuration with built-in serialization:
-```ts
-const jsonConfig = pointer.toJSON();
-/* Returns:
-{
-  type: "SVGPolarPointerAnnotation",
-  options: {
-    x1: 45,
-    y1: 75,
-    pointerStyle: { baseSize: 0.1, ... },
-    // ...other properties
-  }
-}
-*/
-```
-
 ## Inheritance & Coordinates
 - Extends `SvgAnnotationBase` - inherits common SVG annotation properties
 - Uses polar coordinate system:
   - `x1`: Angular position (radians or data values)
   - `y1`: Radial length (pixels or axis units)
-
-![Polar Pointer Anatomy](https://www.scichart.com/wp-content/uploads/2022/05/polar-pointer-annotation-components-768x432.png)
-
-> **Pro Tip**: Use relative units (`yCoordinateMode=Relative`) for responsive pointers that maintain proportions when resizing charts. Combine with `headDepth: 0` for minimalist arrowheads.

@@ -46,7 +46,7 @@ async function PolarColumnChart(divElementId) {
         }),
         columnXMode: EColumnMode.StartEnd, // go from start to end (x to x1)
         stroke: "white",
-        fill: "#3388FF66",
+        fill: "#0088FF66",
         strokeThickness: 2,
     });
     sciChartSurface.renderableSeries.add(polarColumn);

@@ -21,12 +21,12 @@ Above: The JavaScript [Polar Line Chart](http://stagingdemo2.scichart.com/demo/r
 
 To create a Javascript [Polar Line Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) with SciChart.js, use the following code:
 
-```ts file=./Basic/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarLineChart} />
+<ChartPreviewWrapper jsContent={PolarLineChart} />
 
 In the code above:
 - We create a [PolarLineRenderableSeries](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) instance and append it to the renderableSeries collection.
@@ -39,12 +39,12 @@ In the code above:
 
 To create a Javascript [Polar Line Series](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) with SciChart.js using a [Palette Provider](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html), use the following code:
 
-```ts file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
+```ts showLineNumbers file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
 ```
 
 This results in the following output:
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={PolarLinePaletteProvider} />
+<ChartPreviewWrapper jsContent={PolarLinePaletteProvider} />
 
 In the code above:
 - We define the `ThresholdPaletteProvider` class which extends [DefaultPaletteProvider](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) and overrides the [overrideStrokeArgb](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) method to return a different stroke color only when a rule passed in the constructor is met. 

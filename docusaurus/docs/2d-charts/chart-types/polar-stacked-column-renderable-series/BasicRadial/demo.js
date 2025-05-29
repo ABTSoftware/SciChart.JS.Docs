@@ -1,67 +1,77 @@
 import * as SciChart from "scichart";
 
-export async function polarColumnChart(divElementId) {
-    // #region_A_start
+export async function polarStackedRadialColumnChart(divElementId) {
     // Demonstrates how to create a basic polar column chart using SciChart.js
     const { 
         SciChartPolarSurface, 
-        PolarNumericAxis, 
         SciChartJsNavyTheme,
-        PolarColumnRenderableSeries,
+        PolarNumericAxis, 
         EPolarAxisMode,
         EAxisAlignment,
         EPolarLabelMode,
         NumberRange,
         XyDataSeries, 
+        EColumnDataLabelPosition,
+        PolarStackedColumnRenderableSeries,
+        PolarStackedColumnCollection,
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
-        theme: new SciChartJsNavyTheme(),
+        theme: new SciChartJsNavyTheme()
     });
 
-    const angularXAxis = new PolarNumericAxis(wasmContext, {
-        polarAxisMode: EPolarAxisMode.Angular, // Angular == "goes around the center, drawn by arcs"
+    // #region_A_start
+    const radialXAxis = new PolarNumericAxis(wasmContext, {
+        polarAxisMode: EPolarAxisMode.Radial, // radial axis -> xAxis
+        axisAlignment: EAxisAlignment.Right,
+        innerRadius: 0.1, // donut hole
+        labelPrecision: 0, // no decimals
+    });
+    sciChartSurface.xAxes.add(radialXAxis);
+
+    const angularYAxis = new PolarNumericAxis(wasmContext, {
+        polarAxisMode: EPolarAxisMode.Angular, // angular axis -> yAxis
         axisAlignment: EAxisAlignment.Top,
-        visibleRange: new NumberRange(0, 20),
+        visibleRange: new NumberRange(0, 15),
+        useNativeText: true,
         flippedCoordinates: true, // go clockwise
     });
-    sciChartSurface.xAxes.add(angularXAxis);
-
-    const radialYAxis = new PolarNumericAxis(wasmContext, {
-        polarAxisMode: EPolarAxisMode.Radial, // Radial == "goes from center out, drawn by straight lines"
-        axisAlignment: EAxisAlignment.Right,
-        visibleRange: new NumberRange(0, 6),
-        drawLabels: false, // don't draw labels
-        innerRadius: 0.1, // donut hole
-    });
-    sciChartSurface.yAxes.add(radialYAxis);
-
-    const polarColumn = new PolarColumnRenderableSeries(wasmContext, {
-        dataSeries: new XyDataSeries(wasmContext, {
-            xValues: Array.from({ length: 20 }, (_, i) => i),
-            yValues: Array.from({ length: 20 }, (_, i) => Math.random() * 5 + 1),
-        }),
-        stroke: "white",
-        fill: "#0088FF66",
-        strokeThickness: 2,
-        dataPointWidth: 1,
-        dataLabels: { // optionally - add data labels
-            color: "white",
-            style: {
-                fontSize: 14,
-                fontFamily: "Default",
-            },
-            polarLabelMode: EPolarLabelMode.Parallel,
-        },
-    });
-    sciChartSurface.renderableSeries.add(polarColumn);
+    sciChartSurface.yAxes.add(angularYAxis);
     // #region_A_end
+
+    // Create the collection the stacked columns will be added to
+    const polarCollection = new PolarStackedColumnCollection(wasmContext, {
+        stroke: "#FFFFFF",
+        strokeThickness: 2,
+    });
+
+    const polarColumn1 = new PolarStackedColumnRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            yValues: Array.from({ length: 10 }, (_, i) => Math.random() * 11 + 1)
+        }),
+        fill: "#FF3344AA",
+    });
+
+    const polarColumn2 = new PolarStackedColumnRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            yValues: Array.from({ length: 10 }, (_, i) => Math.random() * 2 + 1)
+        }),
+        fill: "#5588FFAA",
+    });
+
+    // Add the columns to the collection
+    polarCollection.add(polarColumn1, polarColumn2);
+
+    // Append the collection to the SciChartSurface renderableSeries
+    sciChartSurface.renderableSeries.add(polarCollection);
     
     return { sciChartSurface, wasmContext };
 }
 
-polarColumnChart("scichart-root");
+polarStackedRadialColumnChart("scichart-root");
 
 async function builderExample(divElementId) {
     // #region ExampleB

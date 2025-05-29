@@ -2,8 +2,6 @@ import * as SciChart from "scichart";
 
 // or for npm import { SciChartSurface, ... } from "scichart"
 
-const { MouseWheelZoomModifier, ZoomExtentsModifier, ZoomPanModifier, NativeTextAnnotation } = SciChart;
-
 async function drawExample(divElementId) {
     // #region_A_start
     const {
@@ -25,7 +23,7 @@ async function drawExample(divElementId) {
     const arrow1 = new LineArrowAnnotation({
         x1: 1,
         x2: 6,
-        y1: 1,
+        y1: 2,
         y2: 9,
         isArrowHeadScalable: true, // the arrow head will scale with the visibleRange
         arrowStyle: {
@@ -47,7 +45,7 @@ async function drawExample(divElementId) {
     const arrow2 = new LineArrowAnnotation({
         x1: 4,
         x2: 9,
-        y1: 1,
+        y1: 2,
         y2: 9,
         isArrowHeadScalable: false,
         arrowStyle: {
@@ -72,17 +70,37 @@ async function drawExample(divElementId) {
     sciChartSurface.annotations.add(arrow1, arrow2);
     // #region_A_end
 
+    const { 
+        MouseWheelZoomModifier, 
+        ZoomExtentsModifier, 
+        ZoomPanModifier, 
+        NativeTextAnnotation,
+        EHorizontalAnchorPoint,
+        EVerticalAnchorPoint,
+        ECoordinateMode,
+        NumberRange
+    } = SciChart;
+
     sciChartSurface.annotations.add(
-        new NativeTextAnnotation(wasmContext, {
-            text: "Zoom in and out to see the arrow head scaling in action",
-            x1: 0.5,
-            y1: 0.5,
-            fontSize: 20,
-            textColor: "#FFFFFF",
-            horizontalAnchorPoint: "center",
-            verticalAnchorPoint: "center",
-        })
+        new NativeTextAnnotation({
+            text: "Zoom in and out to see\nthe arrowhead scaling in action",
+            xCoordinateMode: ECoordinateMode.DataValue,
+            yCoordinateMode: ECoordinateMode.DataValue,
+            x1: 5,
+            y1: 1,
+            horizontalAnchorPoint: EHorizontalAnchorPoint.Center,
+            verticalAnchorPoint: EVerticalAnchorPoint.Top,
+            fontSize: 22,
+            lineSpacing: 10,
+            textColor: "gray",
+            drawImmediate: true,
+            renderOrder: 1
+        }),
     )
+    
+    // need to fix the visible range since annotations alone do not set the visible range depending on their x and y range
+    sciChartSurface.xAxes.get(0).zoomExtentsRange = new NumberRange(0, 10);
+    sciChartSurface.yAxes.get(0).zoomExtentsRange = new NumberRange(0, 10); 
 
     sciChartSurface.chartModifiers.add(
         new MouseWheelZoomModifier(),
