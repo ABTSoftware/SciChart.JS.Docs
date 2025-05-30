@@ -2,14 +2,14 @@ import { NumberRange, SciChartSurface, NumericAxis, SciChartJsNavyTheme, Triangl
 class StickFigureTextureOptions {
     isPerPrimitive = false;
     options;
-    textureHeight = 150;
-    textureWidth = 75;
+    textureHeight = 200;
+    textureWidth = 100;
     repeat = true;
     constructor(options) {
         this.options = options;
     }
     createTexture(context, options) {
-        // console.log("!!!", options);
+        console.log("!!!", options);
         context.fillStyle = applyOpacityToHtmlColor(options.fill, options.opacity);
         context.fillRect(0, 0, this.textureWidth, this.textureHeight);
         context.strokeStyle = applyOpacityToHtmlColor(options.stroke, options.opacity);

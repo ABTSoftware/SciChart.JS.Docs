@@ -17,6 +17,8 @@ async function triangleSeriesStripChart(divElementId) {
         onAttached() { }
         onDetached() { }
         overrideFillArgb(_xValue, _yValue, index, opacity) {
+            // return parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
+            // console.log(Math.floor(index / 3));
             const opacityFix = Math.round(opacity * 255);
             return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityFix);
         }

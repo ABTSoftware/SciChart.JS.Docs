@@ -18,6 +18,7 @@ async function triangleSeriesList(divElementId) {
         onDetached() { }
         overrideFillArgb(_xValue, _yValue, index, opacity) {
             // return SciChart.parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
+            console.log(Math.floor(index / 3));
             const opacityRound = Math.round(opacity * 255);
             return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityRound);
         }

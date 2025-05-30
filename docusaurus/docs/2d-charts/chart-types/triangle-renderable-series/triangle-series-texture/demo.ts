@@ -9,26 +9,34 @@ import {
     ZoomExtentsModifier,
     XyxyDataSeries,
     applyOpacityToHtmlColor,
+    ICustomTextureOptions,
 } from "scichart";
 
-class StickFigureTextureOptions {
-    isPerPrimitive = false;
-    options;
-    textureHeight = 150;
-    textureWidth = 75;
+class StickFigureTextureOptions implements ICustomTextureOptions {
+    isPerPrimitive?: boolean = false;
+    options: { stroke: string };
+    textureHeight: number = 200;
+    textureWidth: number = 100;
     repeat = true;
-    constructor(options) {
+
+    public constructor(options: { stroke: string }) {
         this.options = options;
     }
-    createTexture(context, options) {
-        // console.log("!!!", options);
+
+    public createTexture(
+        context: CanvasRenderingContext2D,
+        options: { fill: string; opacity: number } & { stroke: string }
+    ) {
+        console.log("!!!", options);
         context.fillStyle = applyOpacityToHtmlColor(options.fill, options.opacity);
         context.fillRect(0, 0, this.textureWidth, this.textureHeight);
         context.strokeStyle = applyOpacityToHtmlColor(options.stroke, options.opacity);
+
         // Set up transformation: move to center, rotate, move back
         context.translate(this.textureWidth / 2, this.textureHeight / 2);
         //   context.rotate(Math.PI); // 180 degrees
         context.translate(-this.textureWidth / 2, -this.textureHeight / 2);
+
         // Proportional values
         const centerX = this.textureWidth / 2;
         const headRadius = Math.min(this.textureWidth, this.textureHeight) * 0.16; // 16% of smaller dimension
@@ -40,30 +48,36 @@ class StickFigureTextureOptions {
         const legY = bodyBottomY;
         const legSpan = this.textureWidth * 0.25; // legs out 12.5% each side
         const legBottomY = this.textureHeight * 0.97;
+
         // Head
         context.beginPath();
         context.arc(centerX, headY, headRadius, 0, Math.PI * 2);
         context.stroke();
+
         // Body
         context.beginPath();
         context.moveTo(centerX, bodyTopY);
         context.lineTo(centerX, bodyBottomY);
         context.stroke();
+
         // Left Arm
         context.beginPath();
         context.moveTo(centerX, armY);
         context.lineTo(centerX - armSpan, armY + this.textureHeight * 0.09);
         context.stroke();
+
         // Right Arm
         context.beginPath();
         context.moveTo(centerX, armY);
         context.lineTo(centerX + armSpan, armY + this.textureHeight * 0.09);
         context.stroke();
+
         // Left Leg
         context.beginPath();
         context.moveTo(centerX, legY);
         context.lineTo(centerX - legSpan, legBottomY);
         context.stroke();
+
         // Right Leg
         context.beginPath();
         context.moveTo(centerX, legY);

@@ -9,7 +9,8 @@ import {
     ZoomExtentsModifier,
     EFillPaletteMode,
     parseColorToUIntArgb,
-    NumberRange
+    NumberRange,
+    IFillPaletteProvider
 } from "scichart";
 
 async function triangleSeriesStripChart(divElementId) {
@@ -29,12 +30,20 @@ async function triangleSeriesStripChart(divElementId) {
         3: "#8e44ad"
     };
 
-    class TrianglePaletteProvider {
-        fillPaletteMode = EFillPaletteMode.SOLID;
-        onAttached() {}
-        onDetached() {}
-        overrideFillArgb(_xValue, _yValue, index, opacity) {
+    class TrianglePaletteProvider implements IFillPaletteProvider {
+        public readonly fillPaletteMode = EFillPaletteMode.SOLID;
+
+        public onAttached(): void {}
+
+        public onDetached(): void {}
+
+        public overrideFillArgb(_xValue: number, _yValue: number, index: number, opacity: number): number {
+            // return parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
+
+            // console.log(Math.floor(index / 3));
+
             const opacityFix = Math.round(opacity * 255);
+
             return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityFix);
         }
     }

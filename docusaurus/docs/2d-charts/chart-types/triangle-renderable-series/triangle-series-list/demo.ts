@@ -9,7 +9,8 @@ import {
     ZoomPanModifier,
     ZoomExtentsModifier,
     EFillPaletteMode,
-    parseColorToUIntArgb
+    parseColorToUIntArgb,
+    IFillPaletteProvider
 } from "scichart";
 
 async function triangleSeriesList(divElementId) {
@@ -29,13 +30,20 @@ async function triangleSeriesList(divElementId) {
         3: "#8e44ad"
     };
 
-    class TrianglePaletteProvider {
-        fillPaletteMode = EFillPaletteMode.SOLID;
-        onAttached() {}
-        onDetached() {}
-        overrideFillArgb(_xValue, _yValue, index, opacity) {
+    class TrianglePaletteProvider implements IFillPaletteProvider {
+        public readonly fillPaletteMode = EFillPaletteMode.SOLID;
+
+        public onAttached(): void {}
+
+        public onDetached(): void {}
+
+        public overrideFillArgb(_xValue: number, _yValue: number, index: number, opacity: number): number {
             // return SciChart.parseColorToUIntArgb(Math.floor(index / 3) % 2 === 0 ? "cornflowerblue" : "lightgray");
+
+            console.log(Math.floor(index / 3));
+
             const opacityRound = Math.round(opacity * 255);
+
             return parseColorToUIntArgb(colors[Math.floor(index / 3)], opacityRound);
         }
     }

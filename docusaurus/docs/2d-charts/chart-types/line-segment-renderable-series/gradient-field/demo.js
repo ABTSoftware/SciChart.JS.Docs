@@ -1,4 +1,5 @@
 import { NumberRange, SciChartSurface, NumericAxis, SciChartJsNavyTheme, CentralAxesLayoutManager, EAutoRange, LineSegmentRenderableSeries, EStrokePaletteMode, parseColorToUIntArgb, EPaletteProviderType, XyDataSeries, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier } from "scichart";
+// region_A_start
 class LineSegmentPaletteProvider {
     strokePaletteMode = EStrokePaletteMode.GRADIENT;
     palettedStart = parseColorToUIntArgb("red");
@@ -14,7 +15,7 @@ class LineSegmentPaletteProvider {
         return { type: EPaletteProviderType.Custom, customType: "MyPaletteProvider" };
     }
 }
-async function basicRectangleSeriesChart(divElementId) {
+async function gradientField(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -70,4 +71,5 @@ async function basicRectangleSeriesChart(divElementId) {
     sciChartSurface.chartModifiers.add(new ZoomExtentsModifier());
     sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier());
 }
-basicRectangleSeriesChart("scichart-root");
+// region_A_end
+gradientField("scichart-root");

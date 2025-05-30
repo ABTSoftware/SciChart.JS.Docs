@@ -9,6 +9,7 @@ class StickFigureTextureOptions {
         this.options = options;
     }
     createTexture(context, options) {
+        console.log("!!!", options);
         context.fillStyle = applyOpacityToHtmlColor(options.fill, options.opacity);
         context.fillRect(0, 0, this.textureWidth, this.textureHeight);
         context.strokeStyle = applyOpacityToHtmlColor(options.stroke, options.opacity);

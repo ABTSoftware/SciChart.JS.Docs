@@ -1,7 +1,5 @@
-import * as SciChart from "scichart";
-import { NumberRange } from "scichart";
+import { NumberRange, EColumnMode, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries } from "scichart";
 async function basicRectangleSeriesChart(divElementId) {
-    const { EColumnMode, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries } = SciChart;
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });

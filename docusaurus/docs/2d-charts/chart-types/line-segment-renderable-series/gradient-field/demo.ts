@@ -1,12 +1,8 @@
 import {
     NumberRange,
-    EColumnMode,
-    EColumnYMode,
     SciChartSurface,
     NumericAxis,
     SciChartJsNavyTheme,
-    FastRectangleRenderableSeries,
-    XyxyDataSeries,
     CentralAxesLayoutManager,
     EAutoRange,
     LineSegmentRenderableSeries,
@@ -43,7 +39,7 @@ class LineSegmentPaletteProvider implements IStrokePaletteProvider {
     }
 }
 
-async function basicRectangleSeriesChart(divElementId) {
+async function gradientField(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -109,5 +105,5 @@ async function basicRectangleSeriesChart(divElementId) {
 }
 // region_A_end
 
-basicRectangleSeriesChart("scichart-root");
+gradientField("scichart-root");
 
