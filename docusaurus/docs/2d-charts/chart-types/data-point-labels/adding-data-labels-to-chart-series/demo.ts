@@ -1,6 +1,6 @@
 import * as SciChart from "scichart";
 
-async function dataLabelsBasicExample(divElementId) {
+async function dataLabelsBasicExample(divElementId: string | HTMLDivElement) {
     // #region_A_start
     // Demonstrates how to add DataLabels to a chart with SciChart.js
     const {
