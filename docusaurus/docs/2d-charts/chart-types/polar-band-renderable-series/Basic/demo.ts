@@ -1,15 +1,26 @@
-import { SciChartPolarSurface, PolarNumericAxis, PolarBandRenderableSeries, EPolarAxisMode, NumberRange, XyyDataSeries, SciChartJsNavyTheme } from "scichart";
+import {
+    SciChartPolarSurface,
+    PolarNumericAxis,
+    PolarBandRenderableSeries,
+    EPolarAxisMode,
+    NumberRange,
+    XyyDataSeries,
+    SciChartJsNavyTheme
+} from "scichart";
+
 export async function simpleBandChart(divElementId) {
     // #region_A_start
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
+
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         visibleRange: new NumberRange(0, 8),
         drawMinorGridLines: false
     });
     sciChartSurface.xAxes.add(angularXAxis);
+
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial,
         drawMinorGridLines: false,
@@ -19,6 +30,7 @@ export async function simpleBandChart(divElementId) {
         innerRadius: 0.2
     });
     sciChartSurface.yAxes.add(radialYAxis);
+
     // Define the polar band series
     const baiscBand = new PolarBandRenderableSeries(wasmContext, {
         dataSeries: new XyyDataSeries(wasmContext, {
@@ -35,6 +47,8 @@ export async function simpleBandChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(baiscBand);
     // #region_A_end
+
     return { sciChartSurface, wasmContext };
 }
+
 simpleBandChart("scichart-root");

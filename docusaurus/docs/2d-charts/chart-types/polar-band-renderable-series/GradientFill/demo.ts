@@ -1,9 +1,24 @@
-import { SciChartPolarSurface, PolarNumericAxis, PolarBandRenderableSeries, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, XyyDataSeries, Thickness, SciChartJsNavyTheme, GradientParams, Point } from "scichart";
+import {
+        SciChartPolarSurface,
+        PolarNumericAxis,
+        PolarBandRenderableSeries,
+        EPolarAxisMode,
+        EAxisAlignment,
+        EPolarLabelMode,
+        NumberRange,
+        XyyDataSeries,
+        Thickness,
+        SciChartJsNavyTheme,
+        GradientParams,
+        Point
+    } from "scichart";
+
 export async function gradientFillBandChart(divElementId) {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         padding: Thickness.fromNumber(20),
         theme: new SciChartJsNavyTheme(),
     });
+
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         axisAlignment: EAxisAlignment.Top,
@@ -17,6 +32,7 @@ export async function gradientFillBandChart(divElementId) {
         polarLabelMode: EPolarLabelMode.Parallel
     });
     sciChartSurface.xAxes.add(angularXAxis);
+
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         axisAlignment: EAxisAlignment.Right,
         polarAxisMode: EPolarAxisMode.Radial,
@@ -31,6 +47,7 @@ export async function gradientFillBandChart(divElementId) {
         labelPrecision: 0,
     });
     sciChartSurface.yAxes.add(radialYAxis);
+
     // #region_A_start
     const gradientBand = new PolarBandRenderableSeries(wasmContext, {
         dataSeries: new XyyDataSeries(wasmContext, {
@@ -55,6 +72,8 @@ export async function gradientFillBandChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(gradientBand);
     // #region_A_end
+
     return { sciChartSurface, wasmContext };
 }
+
 gradientFillBandChart("scichart-root");

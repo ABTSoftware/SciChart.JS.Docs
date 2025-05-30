@@ -166,7 +166,7 @@ classDiagram
     IChartModifierBase : modifierDoubleClick()
     IChartModifierBase <|-- ZoomPanModifier : implements
     IChartModifierBase <|-- RolloverModifier : implements
-    IChartModifierBase < LegendModifier : implements
+    IChartModifierBase <|-- LegendModifier : implements
     IChartModifierBase <|-- PolarArcZoomModifier : implements
 ```
 
