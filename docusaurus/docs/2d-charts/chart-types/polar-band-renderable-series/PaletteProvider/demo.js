@@ -1,4 +1,4 @@
-import { SciChartPolarSurface, SciChartJsNavyTheme, PolarNumericAxis, PolarBandRenderableSeries, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, XyyDataSeries, Thickness, DefaultPaletteProvider, EStrokePaletteMode, EFillPaletteMode, parseColorToUIntArgb } from "scichart";
+import { SciChartPolarSurface, SciChartJsNavyTheme, PolarNumericAxis, PolarBandRenderableSeries, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, XyyDataSeries, Thickness, DefaultPaletteProvider, EStrokePaletteMode, EFillPaletteMode, parseColorToUIntArgb, } from "scichart";
 async function paletteProviderBandChart(divElementId) {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         padding: Thickness.fromNumber(20),
@@ -40,7 +40,7 @@ async function paletteProviderBandChart(divElementId) {
         fillPaletteMode = EFillPaletteMode.GRADIENT;
         orange = parseColorToUIntArgb("#DD8800");
         lightOrange = parseColorToUIntArgb("#DD880044");
-        overrideFillArgb(xValue, yValue, index) {
+        overrideFillArgb(xValue, yValue, index, opacity, metadata) {
             if ((xValue >= 3 && xValue < 6) || (xValue >= 9 && xValue < 12)) {
                 return this.lightOrange;
             }
@@ -48,7 +48,7 @@ async function paletteProviderBandChart(divElementId) {
                 return undefined;
             }
         }
-        overrideStrokeArgb(xValue, yValue, index) {
+        overrideStrokeArgb(xValue, yValue, index, opacity, metadata) {
             if ((xValue > 3 && xValue <= 6) || (xValue > 9 && xValue <= 12)) {
                 return this.orange;
             }

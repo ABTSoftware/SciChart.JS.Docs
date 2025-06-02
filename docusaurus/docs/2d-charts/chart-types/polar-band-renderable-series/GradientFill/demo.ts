@@ -1,17 +1,17 @@
 import {
-        SciChartPolarSurface,
-        PolarNumericAxis,
-        PolarBandRenderableSeries,
-        EPolarAxisMode,
-        EAxisAlignment,
-        EPolarLabelMode,
-        NumberRange,
-        XyyDataSeries,
-        Thickness,
-        SciChartJsNavyTheme,
-        GradientParams,
-        Point
-    } from "scichart";
+    SciChartPolarSurface,
+    PolarNumericAxis,
+    PolarBandRenderableSeries,
+    EPolarAxisMode,
+    EAxisAlignment,
+    EPolarLabelMode,
+    NumberRange,
+    XyyDataSeries,
+    Thickness,
+    SciChartJsNavyTheme,
+    GradientParams,
+    Point
+} from "scichart";
 
 export async function gradientFillBandChart(divElementId) {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {

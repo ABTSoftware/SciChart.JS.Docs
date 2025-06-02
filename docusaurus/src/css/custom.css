@@ -4,7 +4,6 @@
  * work well for content-centric websites.
  */
 
-
 /*
 Here is the start of a color palette we should use within these Infima variables. 
 
@@ -31,27 +30,34 @@ track it down within inspect element and change the variable from one of these c
 --blue-thin: #8BF1;
  */
 
-/* You can override the default Infima variables here. */
+/* 
+  !! Beware that many variables are combined with alpha values inside of docusaurus, keep them in rgb(255,255,255) format, not #FFFFFF,
+  This only applies for some rgb() variables only, rgba() can be used in any format safely
+*/
 :root {
   /* Global */
-  --docusaurus-highlighted-code-line-bg: #0A01;
-  --ifm-code-background: #88888822;
-  --ifm-alert-background-color-highlight: #88888822;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 170, 0, 0.133);
+  --ifm-code-background: rgba(136, 136, 136, 0.133);
+  --ifm-alert-background-color-highlight: rgba(136, 136, 136, 0.102);
 
   /* Light Mode */
-  --ifm-color-primary: #13C;
-  --ifm-background-color: #F4F4F4;
-  --ifm-color-success-contrast-background: #13C1;
-  --ifm-color-success-dark: #13C;
+  --ifm-color-primary: rgb(17, 51, 204);
+  --aa-muted-color-rgb: rgb(17, 51, 204) !important;
+  --aa-primary-color-rgb: rgb(17, 51, 204);
+  --ifm-color-success-dark: rgb(17, 51, 204);
+  --ifm-background-color: rgb(244, 244, 244);
+  --ifm-color-success-contrast-background: #1133cc11;
 }
 
 [data-theme='dark'] {
   /* Dark Mode */
-  --ifm-color-primary: #8BF;
-  --ifm-background-color: #181818 !important;
-  --ifm-color-success-contrast-background: #8BF1;
-  --ifm-color-success-dark: #8BF;
-  --docusaurus-highlighted-code-line-bg: #0A01;
+  --aa-primary-color-rgb: rgb(136, 187, 255);
+  --ifm-color-primary: rgb(136, 187, 255);
+  --aa-muted-color-rgb: rgb(136, 187, 255) !important;
+  --ifm-color-success-dark: rgb(136, 187, 255);
+  --ifm-background-color: rgb(24, 24, 24) !important;
+  --ifm-color-success-contrast-background: #88bbff11;
+  --docusaurus-highlighted-code-line-bg: #66FF6610;
 
 }
 

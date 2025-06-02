@@ -12,7 +12,7 @@ import {
     DefaultPaletteProvider,
     EStrokePaletteMode,
     EFillPaletteMode,
-    parseColorToUIntArgb
+    parseColorToUIntArgb,
 } from "scichart";
 
 async function paletteProviderBandChart(divElementId: string) {
@@ -61,7 +61,7 @@ async function paletteProviderBandChart(divElementId: string) {
         orange = parseColorToUIntArgb("#DD8800");
         lightOrange = parseColorToUIntArgb("#DD880044");
 
-        overrideFillArgb(xValue, yValue, index) {
+        overrideFillArgb(xValue, yValue, index, opacity, metadata) {
             if ((xValue >= 3 && xValue < 6) || (xValue >= 9 && xValue < 12)) {
                 return this.lightOrange;
             } else {
@@ -69,7 +69,7 @@ async function paletteProviderBandChart(divElementId: string) {
             }
         }
 
-        overrideStrokeArgb(xValue, yValue, index) {
+        overrideStrokeArgb(xValue, yValue, index, opacity, metadata) {
             if ((xValue > 3 && xValue <= 6) || (xValue > 9 && xValue <= 12)) {
                 return this.orange;
             } else {

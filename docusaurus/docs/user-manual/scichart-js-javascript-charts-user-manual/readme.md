@@ -49,7 +49,7 @@ get in touch as **we want to hear from you**.
 The following document serves as a reference and an overview of the
 features in the SciChart.js JavaScript SDK. For a complete code
 reference, see the [TypeDoc API
-Documentation](https://www.scichart.com/documentation/js/current/typedoc/index.html)
+Documentation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html)
 and the [SciChart.js Examples
 Suite](https://demo.scichart.com), which contains many
 code samples you can run, export and modify for yourself.
@@ -84,5 +84,5 @@ TODO: update links
 ### TypeDoc Documentation for SciChart.js
 
 The [TypeDoc documentation for SciChart.js can also be found
-here](https://www.scichart.com/documentation/js/current/typedoc/index.html),
+here:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html),
 or by clicking on API Documentation in the Treeview on the left.

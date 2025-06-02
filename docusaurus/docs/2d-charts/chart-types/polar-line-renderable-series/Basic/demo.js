@@ -1,25 +1,12 @@
 import * as SciChart from "scichart";
-
 export async function PolarLineChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a basic polar line chart using SciChart.js
-    const { 
-        SciChartPolarSurface, 
-        SciChartJsNavyTheme,
-        PolarNumericAxis, 
-        PolarLineRenderableSeries,
-        EPolarAxisMode,
-        EAxisAlignment,
-        NumberRange,
-        XyDataSeries, 
-        EPolarLabelMode
-    } = SciChart;
+    const { SciChartPolarSurface, SciChartJsNavyTheme, PolarNumericAxis, PolarLineRenderableSeries, EPolarAxisMode, EAxisAlignment, NumberRange, XyDataSeries, EPolarLabelMode } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
-
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
     });
-
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         axisAlignment: EAxisAlignment.Top,
@@ -27,7 +14,6 @@ export async function PolarLineChart(divElementId) {
         polarLabelMode: EPolarLabelMode.Parallel,
     });
     sciChartSurface.xAxes.add(angularXAxis);
-
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         axisAlignment: EAxisAlignment.Right,
         polarAxisMode: EPolarAxisMode.Radial,
@@ -35,7 +21,6 @@ export async function PolarLineChart(divElementId) {
         labelPrecision: 0,
     });
     sciChartSurface.yAxes.add(radialYAxis);
-
     const polarLine = new PolarLineRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: Array.from({ length: 20 }, (_, i) => i),
@@ -48,47 +33,40 @@ export async function PolarLineChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(polarLine);
     // #region_A_end
-    
     return { sciChartSurface, wasmContext };
 }
-
 PolarLineChart("scichart-root");
-
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a polar line chart with SciChart.js using the Builder API
-    const { 
-        ESciChartSurfaceType,
-        EPolarAxisMode,
-        EAxisAlignment,
-        EPolarLabelMode,
-        NumberRange,
-        SciChartJsNavyTheme
-    } = SciChart;
+    const { build2DPolarChart, EAxisType, EPolarAxisMode, EAxisAlignment, NumberRange, SciChartJsNavyTheme, ESeriesType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
-
-    const { wasmContext, sciChartSurface } = await chartBuilder.buildChart(divElementId, {
-        type: ESciChartSurfaceType.Polar2D,
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {
-                polarAxisMode: EPolarAxisMode.Angular,
-                axisAlignment: EAxisAlignment.Top,
-                visibleRange: new NumberRange(0, 12),
-                polarLabelMode: EPolarLabelMode.Parallel
+                type: EAxisType.PolarNumericAxis,
+                options: {
+                    polarAxisMode: EPolarAxisMode.Angular,
+                    axisAlignment: EAxisAlignment.Top,
+                    visibleRange: new NumberRange(0, 12),
+                }
             }
         ],
         yAxes: [
             {
-                axisAlignment: EAxisAlignment.Right,
-                polarAxisMode: EPolarAxisMode.Radial,
-                visibleRange: new NumberRange(0, 8),
-                labelPrecision: 0
+                type: EAxisType.PolarNumericAxis,
+                options: {
+                    axisAlignment: EAxisAlignment.Right,
+                    polarAxisMode: EPolarAxisMode.Radial,
+                    visibleRange: new NumberRange(0, 8),
+                    labelPrecision: 0
+                }
             }
         ],
         series: [
             {
-                type: ESeriesType.PolarLineRenderableSeries,
+                type: ESeriesType.PolarBandSeries,
                 xyyData: {
                     xValues: Array.from({ length: 20 }, (_, i) => i),
                     yValues: Array.from({ length: 20 }, (_, i) => 1 + i / 3)
@@ -96,14 +74,12 @@ async function builderExample(divElementId) {
                 options: {
                     stroke: "pink",
                     strokeThickness: 4,
-                    clipToTotalAngle: false 
                 }
             }
         ]
     });
-
     return { sciChartSurface, wasmContext };
     // #region_B_end
 }
-
-if (location.search.includes("builder=1")) builderExample("scichart-root");
+if (location.search.includes("builder=1"))
+    builderExample("scichart-root");

@@ -24,26 +24,26 @@ The annotations could be divided by the node type where they are rendered.
 - Native "Render Context" Annotations - rendered using WebGl and displayed on the canvas layer.
   Some examples are:
 
-    - [BoxAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#BoxAnnotation.html)
-    - [LineAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#LineAnnotation.html)
-    - [HorizontalLineAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#HorizontalLineAnnotation.html)
-    - [VerticalLineAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#VerticalLineAnnotation.html)
-    - [NativeTextAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#NativeTextAnnotation.html)
-    - [AxisMarkerAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#AxisMarkerAnnotation.html)
+    - [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#BoxAnnotation.html)
+    - [LineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#LineAnnotation.html)
+    - [HorizontalLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#HorizontalLineAnnotation.html)
+    - [VerticalLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#VerticalLineAnnotation.html)
+    - [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#NativeTextAnnotation.html)
+    - [AxisMarkerAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#AxisMarkerAnnotation.html)
 
 - HTML Annotations - rendered as a `div` element placed within a DOM layer.
   For example:
-    - [CustomHtmlAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#CustomAnnotation.html)
-    - [HtmlTextAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#TextAnnotation.html)
+    - [CustomHtmlAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#CustomAnnotation.html)
+    - [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#TextAnnotation.html)
 - SVG Annotations - rendered as an SVG element on one of the SVG layers.
   For example:
-    - [CustomAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#CustomAnnotation.html)
-    - [TextAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#TextAnnotation.html)
+    - [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#CustomAnnotation.html)
+    - [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#TextAnnotation.html)
 
-We refer to HTML and SVG Annotations as "DOM Annotations" since they share some similar logic and the same rendering principles. Thus, the common base class is [DomAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/domannotationbase.html).
+We refer to HTML and SVG Annotations as "DOM Annotations" since they share some similar logic and the same rendering principles. Thus, the common base class is [DomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/domannotationbase.html).
 
 :::info
-There are [isDomAnnotation](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#isdomannotation) and [isSvgAnnotation](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#issvgannotation) properties on an annotation.
+There are [isDomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#isdomannotation) and [isSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#issvgannotation) properties on an annotation.
 :::
 So, the significant difference between DOM Annotations and Native Annotations
 is that each DOM Annotation instance is added as a separate node to the DOM tree
@@ -52,8 +52,8 @@ There might be multiple of layers of the same type to allow drawing DOM Annotati
 
 ## CustomHtmlAnnotation
 
-The [CustomHtmlAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#CustomHtmlAnnotation.html) provides a basic functionality of an annotation and renders a `div` element on a chart at a specified position.  
-And exposes a reference to this element via [CustomHtmlAnnotation.htmlElement](https://www.scichart.com/documentation/js/v4/typedoc/classes/customhtmlannotation.html#htmlelement).
+The [CustomHtmlAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#CustomHtmlAnnotation.html) provides a basic functionality of an annotation and renders a `div` element on a chart at a specified position.  
+And exposes a reference to this element via [CustomHtmlAnnotation.htmlElement:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/customhtmlannotation.html#htmlelement).
 
 The use case for this annotation is rendering arbitrary HTML content within a chart.
 This provides a great flexibility by allowing to apply standard JS APIs to work with the content and styling it with CSS.
@@ -77,10 +77,10 @@ For more examples, check the our demo website. #TODO reference HTML Annotations 
 
 ## HtmlTextAnnotation
 
-The [HtmlTextAnnotation](https://www.scichart.com/documentation/js/current/webframe.html#HtmlTextAnnotation.html) extends the `CustomHtmlAnnotation` by providing a simple interface for adding textual annotations to a chart.
+The [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#HtmlTextAnnotation.html) extends the `CustomHtmlAnnotation` by providing a simple interface for adding textual annotations to a chart.
 
 In the form of constructor options:
-[IHtmlTextAnnotationOptions](https://www.scichart.com/documentation/js/current/webframe.html#IHtmlTextAnnotationOptions.html)
+[IHtmlTextAnnotationOptions:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#IHtmlTextAnnotationOptions.html)
 and instance properties:
 
 - **HtmlTextAnnotation.text**
