@@ -25,8 +25,6 @@ export default function LiveDocSnippet(props?: Props) {
     const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl);
     const sandboxHtml = getSandboxSrc(htmlTemplate);
 
-    console.log("files", files);
-
     useEffect(() => {
         const fetchFiles = async () => {
             setIsLoading(true);
