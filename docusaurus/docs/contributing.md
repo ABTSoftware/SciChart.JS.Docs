@@ -38,6 +38,27 @@ Create titles friendly for the site Search. The title h1, h2, h3 can be created 
 ## Create PolarBandRenderableSeries
 ```
 
+## Decorate TypeDoc links and reference v4
+
+This is v4 TypeDoc - https://www.scichart.com/documentation/js/v4/typedoc/
+
+In order to make all TypeDoc links distinct decorate the link with book icon `:blue_book:`, this is an example of SciChartSurface class typedoc link
+
+[SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html)
+
+## Reference scichart.com/demo
+
+Use this link to reference scichart demo app - https://scichart.com/demo/react
+
+## Do not reference DocumentX documents
+
+Reference pages within the docusaurus and make sure the links are not broken. The broken links show up in the build console. Do not reference old DocumentX documents.
+
+## Use kebab-case notation for docs
+
+1. It is recommended to **create a separate folder for each document** and to put `index.md` or `index.mdx` file inside. Having a separate folder is preferable because often documentation contains doc-snippets and it is nice to have them in the same folder.
+2. In order to have nice URLs it is recommended to create folder names in a **kebab-case notation** like `my-folder-name`.
+
 ## Use limited formatting styles
 
 Stick to the limited set of formatting styles.
@@ -73,20 +94,3 @@ classDiagram
     IRenderableSeries <|-- FastLineRenderableSeries : implements
     IRenderableSeries <|-- XyScatterRenderableSeries : implements
 ```
-
-## Decorate TypeDoc links and reference v4
-
-This is v4 TypeDoc - https://www.scichart.com/documentation/js/v4/typedoc/
-
-In order to make all TypeDoc links distinct decorate the link with book icon `:blue_book:`, this is an example of SciChartSurface class typedoc link
-
-[SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html)
-
-## Reference scichart.com/demo
-
-Use this link to reference scichart demo app - https://scichart.com/demo/react
-
-## Use kebab-case notation for docs
-
-1. It is recommended to **create a separate folder for each document** and to put `index.md` or `index.mdx` file inside. Having a separate folder is preferable because often documentation contains doc-snippets and it is nice to have them in the same folder.
-2. In order to have nice URLs it is recommended to create folder names in a **kebab-case notation** like `my-folder-name`.
