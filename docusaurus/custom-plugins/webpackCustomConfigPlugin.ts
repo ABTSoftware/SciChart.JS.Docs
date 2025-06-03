@@ -13,7 +13,7 @@ export default function () {
                             { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
                             { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
                             {
-                                from: "docs/**/*.@(js|css)",
+                                from: "docs/**/*.@(ts|html|js|css)",
                                 to: "[path][name][ext]",
                                 noErrorOnMissing: false
                             }

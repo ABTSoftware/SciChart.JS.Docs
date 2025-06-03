@@ -147,6 +147,25 @@ const config: Config = {
     } satisfies Preset.ThemeConfig,
 
     plugins: [
+        function customWebpackPlugin() {
+            return {
+                name: "custom-wasm-loader",
+                configureWebpack(config, isServer, utils) {
+                    return {
+                        module: {
+                            rules: [
+                                // prevents an error when using scichart import
+                                {
+                                    test: /\.wasm$/,
+                                    type: "asset/resource" // simply copies the file without processing
+                                },
+                            ],
+                            noParse: /\.wasm$/ // optional: avoid parsing entirely
+                        }
+                    };
+                }
+            };
+        },
         CustomCopyPlugin,
         [
             require.resolve("@cmfcmf/docusaurus-search-local"),

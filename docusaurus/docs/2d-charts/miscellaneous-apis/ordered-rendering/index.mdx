@@ -2,16 +2,6 @@
 sidebar_position: 4
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import customOrderExample1 from "!!raw-loader!./demo1";
-import customOrderExample2 from "!!raw-loader!./demo2";
-import customOrderExample3 from "!!raw-loader!./demo3";
-import customOrderExample4 from "!!raw-loader!./demo4";
-import customOrderExample5 from "!!raw-loader!./demo5";
-
 # 🔄 Ordered Rendering
 
 The render order of an element on a 2D chart defines how it will be displayed while overlapping other chart elements.  
@@ -50,11 +40,9 @@ The order may differ depending on some configuration specifics.
 #### Series Render Order
 
 Series render order depends on the insertion order into [renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-While it also may change when series are hovered or selected (this feature can be enabled with [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesselectionmodifier.html)).  
-[Series Selection Example](https://demo.scichart.com/chart-series-selection)
+While it also may change when series are hovered or selected (this feature can be enabled with [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesselectionmodifier.html)).
 
-<iframe src="https://demo.scichart.com/iframe/chart-series-selection" width="600" height="400"></iframe>
-
+<DemoExampleWrapper src="chart-series-selection" label="Series Selection Example" />
 #### Annotations Render Order
 
 Annotations expose [annotationLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#annotationlayer) property,  
@@ -64,9 +52,8 @@ which allows them to be placed behind grid-lines/series or above them.
 :::note
 Dom Annotations have limited support of the layering options due to their rendering specifics.
 :::
-[Example of Annotations on different Layers](https://demo.scichart.com/annotation-layers)
 
-<iframe src="https://demo.scichart.com/iframe/annotation-layers" width="600" height="400"></iframe>
+<DemoExampleWrapper src="annotation-layers" label="Example of Annotations on different Layers" />
 
 #### Native Text Render Order
 
@@ -116,7 +103,7 @@ The order can be set as a value via the [renderOrder:blue_book:](https://www.sci
 
 For example, in the following setup, we change the order of the first annotation so it is rendered on top of the second one, which is the opposite of the default behaviour.
 
-<ChartPreviewWrapper jsContent={customOrderExample1} />
+<LiveDocSnippet name="demo1" />
 
 ```ts {12} showLineNumbers file=./demo1.ts start=region_A_start end=region_A_end
 
@@ -129,23 +116,19 @@ Alternatively, an order could be set as an offset from another Ordered Renderabl
 In this example, we demonstrate how to place an annotation on a layer between renderable series via [renderNextTo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#rendernextto) option
 (or [setRenderNextTo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#setrendernextto) method).
 
-<ChartPreviewWrapper jsContent={customOrderExample2} />
+<LiveDocSnippet name="demo2" />
 
-<Tabs>
-  <TabItem value="ts" label="TS" default>
+<CodeSnippetBlock>
+
     ```ts {16} showLineNumbers file=./demo2.ts start=region_B_start end=region_B_end
 
     ```
 
-  </TabItem>
-  <TabItem value="js" label="JS">
     ```ts {13} showLineNumbers file=./demo2.js start=region_B_start end=region_B_end
 
     ```
 
-  </TabItem>
-
-</Tabs>
+</CodeSnippetBlock>
 
 #### Customizing Render Layer
 
@@ -154,7 +137,7 @@ Setting a custom render layer allows to place an entity at a layer of different 
 Here we will demonstrate how to place series at the background layer, so that grid lines are rendered above them.  
 For that we can use [renderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#renderlayer) or [setRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setrenderlayer)
 
-<ChartPreviewWrapper jsContent={customOrderExample5} />
+<LiveDocSnippet name="demo5" />
 
 ```ts {2} showLineNumbers file=./demo5.ts start=region_B_start end=region_B_end
 
@@ -167,21 +150,17 @@ or to change the render order of a whole sub-chart
 
 Let's consider the following setup:
 
-<Tabs>
-  <TabItem value="ts" label="TS" >
+<CodeSnippetBlock>
 
-    ```js showLineNumbers file=./demo3.ts start=region_S_start end=region_S_end
+    ```ts showLineNumbers file=./demo3.ts start=region_S_start end=region_S_end
 
     ```
 
-  </TabItem>
-  <TabItem value="js" label="JS" >
     ```ts showLineNumbers file=./demo3.js start=region_S_start end=region_S_end
 
     ```
 
-  </TabItem>
-</Tabs>
+</CodeSnippetBlock>
 
 Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#setsurfacerenderorder) method on a surface:
 
@@ -191,23 +170,19 @@ Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder:blue_bo
 
 Result:
 
-<ChartPreviewWrapper jsContent={customOrderExample3} />
+<LiveDocSnippet name="demo3" />
 
 Or to modify the render order only of the series from the first chart we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setsurfacerenderorder) method on them:
 
-<Tabs>
-    <TabItem value="ts" label="TS" default>
-        ```ts {16} showLineNumbers file=./demo4.ts start=region_A_start end=region_A_end 
-        ```
-    </TabItem>
+<CodeSnippetBlock>
 
-    <TabItem value="js" label="JS">
-        ```js {13} showLineNumbers file=./demo4.js start=region_A_start end=region_A_end
-        ```
-    </TabItem>
+    ```ts {16} showLineNumbers file=./demo4.ts start=region_A_start end=region_A_end
+    ```
+    ```js {13} showLineNumbers file=./demo4.js start=region_A_start end=region_A_end
+    ```
 
-</Tabs>
+</CodeSnippetBlock>
 
 Result:
 
-<ChartPreviewWrapper jsContent={customOrderExample4} />
+<LiveDocSnippet name="demo4" />

@@ -3,6 +3,8 @@ import React from "react";
 import MDXComponents from "@theme-original/MDXComponents";
 import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 import { CodeSnippetBlock } from "@site/src/components/CodeSnippetBlock";
+import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
+import LiveDocSnippet from "../components/LiveDocSnippet";
 
 export default {
     // Re-use the default mapping
@@ -10,5 +12,7 @@ export default {
     // Map the "<ChartPreviewWrapper>" tag to our ChartPreviewWrapper component
     // `ChartPreviewWrapper` will receive all props that were passed to `<ChartPreviewWrapper>` in MDX
     ChartPreviewWrapper,
-    CodeSnippetBlock
+    CodeSnippetBlock,
+    LiveDocSnippet,
+    DemoExampleWrapper
 };
