@@ -1,12 +1,12 @@
-import { PolarColumnRenderableSeries, PolarNumericAxis, SciChartPolarSurface, NumberRange, EPolarLabelMode, PolarCursorModifier, PolarDataPointSelectionModifier, EColumnMode, XyxDataSeries, EMultiLineAlignment, EColumnDataLabelPosition, EDataPointWidthMode, GenericAnimation, easing, DoubleAnimator, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme, EPolarAxisMode, EAxisAlignment } from "scichart";
+import { PolarColumnRenderableSeries, PolarNumericAxis, SciChartPolarSurface, EPolarAxisMode, NumberRange, EAxisAlignment, EPolarLabelMode, PolarDataPointSelectionModifier, EColumnMode, XyxDataSeries, EMultiLineAlignment, EColumnDataLabelPosition, EDataPointWidthMode, GenericAnimation, easing, DoubleAnimator, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme } from "scichart";
 class SunburstMetadata {
-    static create(title, start, end, level, id, colorHtml) {
+    static create(title, start, end, level, id, backgroundColor) {
         const md = new SunburstMetadata();
         md.title = title;
         md.start = start;
         md.end = end;
-        md.colorArgb = parseColorToUIntArgb(colorHtml);
-        md.colorArgbWithOpacity = parseColorToUIntArgb(colorHtml, 180);
+        md.colorArgb = parseColorToUIntArgb(backgroundColor);
+        md.colorArgbWithOpacity = parseColorToUIntArgb(backgroundColor, 180);
         md.level = level;
         md.id = id;
         return md;
@@ -42,66 +42,152 @@ export class SunburstPaletteProvider {
     }
 }
 export const sunburstData = {
-    name: "Eve",
-    value: 65,
-    colorHtml: "pink",
+    name: "TechCorp",
+    value: 457,
+    backgroundColor: "#FFFFFF",
     children: [
         {
-            name: "Cain",
-            value: 14,
-            colorHtml: "red",
-            children: []
-        },
-        {
-            name: "Seth",
-            value: 14,
-            colorHtml: "skyblue",
+            name: "Engineering",
+            value: 180,
+            backgroundColor: "#1f5ee8",
             children: [
                 {
-                    name: "Enos",
-                    value: 10,
-                    children: [],
-                    colorHtml: "lightblue"
+                    name: "Frontend",
+                    value: 65,
+                    backgroundColor: "#60a5fa",
+                    children: [
+                        {
+                            name: "React",
+                            value: 35,
+                            backgroundColor: "#93c5fd"
+                        },
+                        {
+                            name: "Mobile",
+                            value: 30,
+                            backgroundColor: "#bfdbfe"
+                        }
+                    ]
                 },
                 {
-                    name: "Noam",
-                    value: 4,
-                    children: [],
-                    colorHtml: "blue"
+                    name: "Backend",
+                    value: 85,
+                    backgroundColor: "#2f6cf8",
+                    children: [
+                        {
+                            name: "API Services",
+                            value: 45,
+                            backgroundColor: "#60a5fa"
+                        },
+                        {
+                            name: "Infra",
+                            value: 40,
+                            backgroundColor: "#93c5fd"
+                        }
+                    ]
+                },
+                {
+                    name: "DevOps",
+                    value: 30,
+                    backgroundColor: "#fb5c66",
                 }
             ]
         },
         {
-            name: "Abel",
-            value: 6,
-            colorHtml: "teal",
-            children: []
-        },
-        {
-            name: "Awan",
-            value: 6,
-            colorHtml: "orange",
+            name: "Product",
+            value: 95,
+            backgroundColor: "#059669",
             children: [
                 {
-                    name: "Enoch",
-                    value: 4,
-                    colorHtml: "orange",
+                    name: "Management",
+                    value: 40,
+                    backgroundColor: "#10b981"
+                },
+                {
+                    name: "UX Design",
+                    value: 35,
+                    backgroundColor: "#34d399",
                     children: [
                         {
-                            name: "Michael",
-                            value: 3,
-                            colorHtml: "lightorange",
-                            children: []
+                            name: "Research",
+                            value: 20,
+                            backgroundColor: "#a7f3d0"
+                        },
+                        {
+                            name: "UI",
+                            value: 15,
+                            backgroundColor: "#d1fae5"
+                        }
+                    ]
+                },
+                {
+                    name: "QA",
+                    value: 20,
+                    backgroundColor: "#6ee7b7"
+                }
+            ]
+        },
+        {
+            name: "Sales & Marketing",
+            value: 120,
+            backgroundColor: "#f59e0b",
+            children: [
+                {
+                    name: "Sales",
+                    value: 70,
+                    backgroundColor: "#fbbf24",
+                    children: [
+                        {
+                            name: "Enterprise",
+                            value: 45,
+                            backgroundColor: "#fcd34d"
+                        },
+                        {
+                            name: "SMB",
+                            value: 25,
+                            backgroundColor: "#fde68a"
+                        }
+                    ]
+                },
+                {
+                    name: "Marketing",
+                    value: 50,
+                    backgroundColor: "#d97706",
+                    children: [
+                        {
+                            name: "Digital",
+                            value: 30,
+                            backgroundColor: "#f97316"
+                        },
+                        {
+                            name: "Content",
+                            value: 20,
+                            backgroundColor: "#fb923c"
                         }
                     ]
                 }
             ]
         },
         {
-            name: "Azura",
-            value: 8,
-            colorHtml: "mutedpurple",
-            children: []
+            name: "Operations",
+            value: 62,
+            backgroundColor: "rgba(139, 92, 246, 1)",
+            children: [
+                {
+                    name: "Finance",
+                    value: 25,
+                    backgroundColor: "rgba(139, 92, 246, 0.8)"
+                },
+                {
+                    name: "HR",
+                    value: 20,
+                    backgroundColor: "rgba(139, 92, 246, 0.6)"
+                },
+                {
+                    name: "Legal",
+                    value: 17,
+                    backgroundColor: "rgba(139, 92, 246, 0.4)"
+                }
+            ]
         }
     ]
 };
@@ -114,11 +200,11 @@ const getDataByLevelInternal = (curId, curLevel, curElement, startX, res) => {
         start: startX,
         end: startX + curElement.value,
         name: curElement.name,
-        colorHtml: curElement.colorHtml
+        backgroundColor: curElement.backgroundColor
     });
     let startChild = startX;
-    for (let i = 0; i < curElement.children.length; i++) {
-        const childElement = curElement.children[i];
+    for (let i = 0; i < curElement?.children?.length; i++) {
+        const childElement = curElement?.children[i];
         getDataByLevelInternal([...curId, i], curLevel + 1, childElement, startChild, res);
         startChild += childElement.value;
     }
@@ -128,7 +214,7 @@ export const getElementById = (id) => {
     let el = {
         name: "root",
         value: -1,
-        colorHtml: "#000000",
+        backgroundColor: "#000000",
         children: [sunburstData]
     };
     for (let i = 0; i < id.length; i++) {
@@ -156,7 +242,7 @@ export const getDataById = (id) => {
             xValues.push(v.start);
             x1Values.push(v.end);
             yValues.push(i + 1);
-            metadata.push(SunburstMetadata.create(v.name, v.start, v.end, i, v.id, v.colorHtml));
+            metadata.push(SunburstMetadata.create(v.name, v.start, v.end, i, v.id, v.backgroundColor));
         });
         res.push({
             data: [xValues, yValues, x1Values],
@@ -193,6 +279,7 @@ const drawSeriesFn = (wasmContext, xAxis, yAxis, sciChartSurface, polarLabelMode
         clearSeriesFn();
         for (let i = 0; i < levelData.length; i++) {
             const rs$ = new PolarColumnRenderableSeries(wasmContext, {
+                dataSeries: createDataFn(levelData[i]),
                 stroke: "black",
                 columnXMode: polarColumnMode,
                 dataLabels: {
@@ -213,7 +300,6 @@ const drawSeriesFn = (wasmContext, xAxis, yAxis, sciChartSurface, polarLabelMode
                         return `${md.title} \n ${md.value}`;
                     }
                 },
-                dataSeries: createDataFn(levelData[i]),
                 strokeThickness: 2,
                 dataPointWidth,
                 dataPointWidthMode: EDataPointWidthMode.Range,
@@ -300,9 +386,8 @@ const drawSeriesFn = (wasmContext, xAxis, yAxis, sciChartSurface, polarLabelMode
         subscribeFn();
     }
 };
-export async function polarSunburstChart(divElementId) {
-    // #region_A_start
-    const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
+export const drawExample = async (rootElement) => {
+    const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(rootElement, {
         theme: new SciChartJsNavyTheme()
     });
     const startAngle = -Math.PI / 2;
@@ -334,23 +419,7 @@ export async function polarSunburstChart(divElementId) {
         selectionFill: "#ff879f33"
     });
     drawSeriesFn(wasmContext, xAxis, yAxis, sciChartSurface, EPolarLabelMode.Parallel, dataPointSelectionModifier, [0], 0, [0]);
-    const tooltipDataTemplate = (seriesInfos, tooltipTitle) => {
-        const res = [];
-        seriesInfos.forEach(si => {
-            if (si.isHit) {
-                const md = si.pointMetadata;
-                res.push(`Name: ${md.title}`);
-                res.push(`Value: ${md.value}`);
-            }
-        });
-        return res;
-    };
-    sciChartSurface.chartModifiers.add(dataPointSelectionModifier, new PolarCursorModifier({
-        showTooltip: true,
-        showCircularLine: false,
-        showRadialLine: false,
-        tooltipDataTemplate,
-    }));
+    sciChartSurface.chartModifiers.add(dataPointSelectionModifier);
     return { sciChartSurface, wasmContext };
-}
-polarSunburstChart("scichart-root");
+};
+drawExample("scichart-root");

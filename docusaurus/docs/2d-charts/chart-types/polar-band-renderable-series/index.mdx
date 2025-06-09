@@ -7,7 +7,7 @@ import simpleBandChart from "!!raw-loader!./Basic/demo.js";
 import gradientFillBandChart from "!!raw-loader!./GradientFill/demo.js";
 import PaletteProviderExample from "!!raw-loader!./PaletteProvider/demo.js";
 
-# The Polar Band Chart Type
+# ✅ The Polar Band Series Type
 
 ## Overview
 
@@ -54,7 +54,7 @@ In the code above:
 
 To use Gradient Fills with a [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html), you need to set the [fillLinearGradient:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html#filllineargradient) & [fillLinearGradientY1:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html#filllineargradienty1) properties with a [GradientParams:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html) object: a type which defines gradients by a number of [TGradientStop:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html#gradientstops) objects inside an array and a start and end [Point:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html#startpoint).
 
-```ts showLineNumbers {10-18} file=./GradientFill/demo.ts start=region_A_start end=region_A_end
+```ts showLineNumbers {10-13,15-18} file=./GradientFill/demo.ts start=region_A_start end=region_A_end
 ```
 
 <ChartPreviewWrapper jsContent={gradientFillBandChart} />
@@ -70,7 +70,7 @@ By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/docume
 
 Here is how to do this:
 
-```ts showLineNumbers {9-15,17-24,36} file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
+```ts showLineNumbers {9-15,17-23,36} file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
 ```
 
 <ChartPreviewWrapper jsContent={PaletteProviderExample} />

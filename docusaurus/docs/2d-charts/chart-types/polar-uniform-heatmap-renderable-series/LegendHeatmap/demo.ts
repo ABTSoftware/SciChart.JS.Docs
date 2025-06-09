@@ -52,7 +52,7 @@ export async function polarUniformHeatmapChart(divElementId, legendElementId) {
         maximum: 100,
         gradientStops: [
             { offset: 0, color: "#000000" },
-            { offset: 1, color: "#FFAA00AA" },
+            { offset: 1, color: "#3333AAAA" },
         ]
     });
 

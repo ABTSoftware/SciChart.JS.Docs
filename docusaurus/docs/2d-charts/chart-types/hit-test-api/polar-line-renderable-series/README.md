@@ -2,4 +2,9 @@
 sidebar_position: 20
 ---
 
-# ⭕ Hit-Test API for Polar Line Series
+# Hit-Test API for Polar Line Series 
+
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+import polarLineHitTest from "!!raw-loader!./Basic/demo.js";
+
+<ChartPreviewWrapper jsContent={polarLineHitTest} />

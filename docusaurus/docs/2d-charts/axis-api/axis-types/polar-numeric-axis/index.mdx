@@ -1,0 +1,68 @@
+---
+sidebar_position: 7
+---
+
+# ✅ The Polar Numeric Axis
+
+import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
+import polarNumericAxisDemo from "!!raw-loader!./Basic/demo.ts";
+
+The [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) is a specialized axis type for polar charts (radar, spider, and polar area plots) in SciChart.js.  
+Polar axes map values either around a circle (**Angular**, or "theta") or outward from the center (**Radial**, or "r"). Their unique properties make them essential for any circular, gauge, or radar visualization.
+
+## What Makes Polar Axes Special?
+
+- **Dual Modes using the [PolarNumericAxis.polarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#polaraaxismode) to either:**
+  - [EPolarAxisMode.Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular): The axis is mapped to sweeps (angles) around the circle. Typically the **xAxis**.
+  - [EPolarAxisMode.Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial): The axis is mapped from the center outward. Typically the **yAxis**.
+- **Fully Customizable Sweep:**  
+  - Start point using [startAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#startangle)
+  - Sweep size on the **Angular** axis via [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#totalangle).
+  - Direction (clockwise/counterclockwise) - manipulated by [flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#flippedcoordinates) set to **true**/**false**. By default, the angular axis starts at 3 o'clock (0 radians) and goes counterclockwise. For a 12 o'clock and clockwise increment set up, use these properties:
+    ```ts
+    const angularAxis = new PolarNumericAxis(wasmContext, {
+      ...
+      flippedCoordinates: true, // increment clockwise
+      startAngle: -Math.PI / 2, // start at 12 o'clock
+      // or `startAngleDegrees: -90 degrees`, the minus is there since we flip the coordinate calculator
+    })
+    ```
+- **Multiple Angular Gridline Styles using [gridlineMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#gridlinemode):**
+  - Choose between [EGridLineMode.Circles:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html#circles) - which is the default, or [EGridLineMode.Polygons:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html#polygons) (spider/radar/cobweb).
+- **Support for Donut Charts:**  
+  - Use [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#innerradius) to hollow out the center—great for gauges and donuts. Takes in values between `0` and `1`.
+- **Multiple axis label appearances using [polarLabelMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#polarlabelmode):**
+   - Options for angular label orientation: [Horizontal:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolarlabelmode.html), [Perpendicular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolarlabelmode.html#perpendicular), [Parallel:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolarlabelmode.html#parallel)
+
+## PolarNumericAxis in Action
+
+Here is how to configure both **angular** and **radial** axes in a polar chart:
+
+```ts showLineNumbers {19-21,25-26,30-31,46-48,50} file=./Basic/demo.ts start=region_A_start end=region_A_end
+```
+
+<ChartPreviewWrapper jsContent={polarNumericAxisDemo} />
+
+## Tips
+
+:::tip
+Always pair an **Angular** and **Radial** axis—never two of the same type.
+:::
+
+:::tip
+For a **vertical polar chart**, set the yAxis's [polarAxisMode](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/polarnumericaxis.html#polaraxismode) to [Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular) and the xAxis's to [Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) 
+:::
+
+## Best Practices
+
+- Use [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#innerradius) for donut/ring charts, or [gridlineMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#gridlinemode): [Polygons:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html#polygons) for radar/spider style.
+
+- Customize tick intervals by setting [autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#autoticks) to `false` and playing with [majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#majordelta) and [minorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#minordelta)
+
+- Use [xCenterOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#xcenteroffset) and [yCenterOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#ycenteroffset) for fine layout control, great for dashboards and overlays.
+
+- The [labelPostfix:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelpostfix) is often set to `°`, along with [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelprecision) = `0` to indicate degrees.
+
+- For smaller polar charts, setting [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#drawminorgirdlines) to `false` can help improve readability by only keeping the major grid lines.
+
+- By default, [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelprecision) is set to `1`, but if you work with degrees or just larger datasets, you may want to set it to `0` and format the label as `270°` instead of `270.0°`.

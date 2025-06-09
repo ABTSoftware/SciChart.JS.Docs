@@ -33,14 +33,14 @@ export async function PolarPieChart(divElementId) {
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         startAngleDegrees: 90, // start at 12 o'clock
-        flippedCoordinates: true, // go clockwise
+        flippedCoordinates: true, // go clockwise (biggest values first, starting from 12 o'clock, clockwise)
         isVisible: false
     });
     sciChartSurface.xAxes.add(angularXAxis);
 
     const COLORS = ["#CC0000", "#00CC00", "#0000CC", "#CCCC00", "#CC00CC", "#00CCCC"];
+    const xWidthValues = [60, 50, 40, 30, 20, 10];
     const metadata = [];
-    const xWidthValues = [10, 20, 30, 40, 50, 60];
     const xValues = [];
     const x1Values = [];
     const yValues = [];
@@ -50,11 +50,12 @@ export async function PolarPieChart(divElementId) {
         xValues.push(xSum);
         x1Values.push(v);
         yValues.push(1);
+
         xSum += v;
 
         metadata.push({
             isSelected: false,
-            fill: COLORS[i] // each column will have a different color
+            fill: COLORS[i] // each column will have a different color, handled by the MetadataPaletteProvider
         });
     });
 
@@ -72,9 +73,6 @@ export async function PolarPieChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(polarColumn);
 
-    polarColumn.getXRange = () => {
-        return new NumberRange(0, xWidthValues.reduce((a, b) => a + b, 0));
-    };
     // #region_A_end
 }
 
