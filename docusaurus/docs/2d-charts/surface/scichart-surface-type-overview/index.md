@@ -73,8 +73,8 @@ Several RenderableSeries types are available in SciChart, including
 * [Band Charts](/docs/2d-charts/chart-types/fast-band-renderable-series/README.md)
 * [Candlestick Charts](/docs/2d-charts/chart-types/fast-candlestick-renderable-series/README.md)
 * [Ohlc Charts](/docs/2d-charts/chart-types/fast-ohlc-renderable-series/README.md)
-* [Polar Line Charts](/docs/2d-charts/chart-types/polar-line-renderable-series/readme.mdx)
-* [Polar Column Charts](/docs/2d-charts/chart-types/polar-column-renderable-series/readme.mdx) and more.
+* [Polar Line Charts](/docs/2d-charts/chart-types/polar-line-renderable-series/index.mdx)
+* [Polar Column Charts](/docs/2d-charts/chart-types/polar-column-renderable-series/index.mdx) and more.
 
 > For more information about chart types in SciChart, head over to the [RenderableSeries API documentation](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md) or see our [Examples](https://scichart.com/demo/react).
 
