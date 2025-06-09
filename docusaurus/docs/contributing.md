@@ -72,6 +72,23 @@ TODO: add more formatting example
 Info about the properties and functions available can be found at the [TypeDoc API Documentation for SciChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html).
 :::
 
+**Info Example**
+
+:::info
+The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/edefaultrenderlayer.html).  
+:::
+
+**Note Example**
+
+:::note
+The order may differ depending on some configuration specifics.
+:::
+
+**Warning**
+
+:::warning
+**Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm, scichart2d.data and scichart2d.js files are from the same version
+:::
 
 **Quotation Example**
 
