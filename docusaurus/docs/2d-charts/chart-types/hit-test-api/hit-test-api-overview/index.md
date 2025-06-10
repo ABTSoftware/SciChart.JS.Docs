@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# RenderableSeries Hit-Test API
+# Hit-Test API overview
 
 TODO
