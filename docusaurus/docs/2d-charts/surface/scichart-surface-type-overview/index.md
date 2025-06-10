@@ -6,7 +6,7 @@ sidebar_position: 0
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
-* [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/README.md)   
+* [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/index.md)   
 * [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md)
 * [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/README.md)
 * [Zooming & Panning](/docs/2d-charts/chart-modifier-api/zooming-and-panning/overview/README.md)
@@ -174,7 +174,7 @@ classDiagram
 
 ## Declaring a SciChartSurface Instance
 
-In [Tutorial #1 - Setting up a Project with SciChart.js](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/README.md), we walk you through how to setup a new project with npm, webpack and install SciChart. In particular we show you how to copy the wasm files to the build output, a step that is necessary for our WebAssembly WebGL powered charts.
+In [Tutorial #1 - Setting up a Project with SciChart.js](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/index.md), we walk you through how to setup a new project with npm, webpack and install SciChart. In particular we show you how to copy the wasm files to the build output, a step that is necessary for our WebAssembly WebGL powered charts.
 
 If you haven't already, go and watch that tutorial quickly so that you can understand the basics of setting up a project with SciChart. The tutorial series is a great way to learn SciChart.
 
