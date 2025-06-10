@@ -62,4 +62,4 @@ Please see our related article [Deploying Wasm or WebAssembly Data Files with y
 
 #### JS Webpack npm Tutorials
 
-[Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/index.md)
+[Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)

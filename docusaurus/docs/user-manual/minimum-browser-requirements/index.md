@@ -9,7 +9,7 @@ sidebar_position: 2
 Are you new to SciChart? Check out our most popular pages to get started
 below:
 
-- [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js/setting-up-npm-project-with-scichart-js/index.md)   
+- [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)   
 - [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview/index.md)               
 - [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md)
 - [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/README.md)
