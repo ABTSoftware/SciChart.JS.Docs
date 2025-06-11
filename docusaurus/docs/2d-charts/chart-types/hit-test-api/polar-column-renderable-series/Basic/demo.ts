@@ -25,70 +25,53 @@ export async function polarColumnChart(divElementId) {
         theme: new SciChartJsNavyTheme(),
     });
 
-    // const angularXAxis = new PolarNumericAxis(wasmContext, {
-    //     polarAxisMode: EPolarAxisMode.Angular,
-    //     axisAlignment: EAxisAlignment.Top,
-    //     visibleRange: new NumberRange(0, 16),
-    //     flippedCoordinates: true,
-    // });
-    // sciChartSurface.xAxes.add(angularXAxis);
-    
-    // const radialYAxis = new PolarNumericAxis(wasmContext, {
-    //     polarAxisMode: EPolarAxisMode.Radial,
-    //     axisAlignment: EAxisAlignment.Right,
-    //     visibleRange: new NumberRange(0, 6),
-    //     innerRadius: 0.1,
-    // });
-    // sciChartSurface.yAxes.add(radialYAxis);
-
-    // ------- FOR TESTING: (Vertical chart + “columnXMode: EColumnMode.Start” => shifting by half column width for hit-test)
     const angularXAxis = new PolarNumericAxis(wasmContext, {
-        flippedCoordinates: true,
-        polarAxisMode: EPolarAxisMode.Radial,
-        axisAlignment: EAxisAlignment.Right,
+        polarAxisMode: EPolarAxisMode.Angular,
+        axisAlignment: EAxisAlignment.Top,
         visibleRange: new NumberRange(0, 16),
+        flippedCoordinates: true,
     });
     sciChartSurface.xAxes.add(angularXAxis);
     
     const radialYAxis = new PolarNumericAxis(wasmContext, {
-        polarAxisMode: EPolarAxisMode.Angular,
-        axisAlignment: EAxisAlignment.Top,
-        visibleRange: new NumberRange(0, 16),
+        polarAxisMode: EPolarAxisMode.Radial,
+        axisAlignment: EAxisAlignment.Right,
+        visibleRange: new NumberRange(0, 6),
         innerRadius: 0.1,
+        labelStyle: {
+            fontSize: 25,
+            fontFamily: "notoserif",
+            color: "#5FFFFF",
+        }
     });
     sciChartSurface.yAxes.add(radialYAxis);
 
-    // add a couple of polar column to the chart
+    // #region_A_start
+    // add a couple of polar columns to the chart
     const polarColumn1 = new PolarColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
-            xValues: [0, 1, 2, 3, 4, 5, 6, 7],
-            yValues: [2.5, 1.8, 3.0, 1.4, 2.0, 1.75, 2.4, 1.5],
+            xValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+            yValues: [2.5, 1.8, 3.0, 1.4, 2.0, 1.75, 2.4, 1.5, 3.0, 4.5, 2],
             dataSeriesName: "Red Columns"
         }),
-        columnXMode: EColumnMode.Start,
         stroke: "white",
         fill: "#883333",
-        dataPointWidth: 0.8,
+        dataPointWidth: 0.6
     });
+
     const polarColumn2 = new PolarColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
-            xValues: [8, 9, 10, 11, 12, 13, 14, 15],
-            yValues: [4.5, 3.2, 5.1, 2.8, 4.0, 3.5, 4.8, 3.0],
+            xValues: [9, 10, 11, 12, 13, 14, 15, 16],
+            yValues: [4.5, 3.2, 3.9, 2.8, 4.0, 3.5, 4.8, 3.0],
             dataSeriesName: "Blue Columns"
         }),
-        columnXMode: EColumnMode.Start,
         stroke: "black",
-        fill: "#3333AA",
-        dataPointWidth: 0.8,
-        pointMarker: new EllipsePointMarker(wasmContext, {
-            width: 10,
-            height: 10,
-            strokeThickness: 2,
-            stroke: "SteelBlue",
-            fill: "LightSteelBlue"
-        }),
+        fill: "#3333AA99",
+        dataPointWidth: 0.8
     });
+
     sciChartSurface.renderableSeries.add(polarColumn1, polarColumn2);
+    // #region_A_end
 
     const SUCCESSFUL_HIT_SVG = `<svg width="8" height="8"><circle cx="50%" cy="50%" r="4" fill="#33AA33" stroke="#000000" stroke-width="0.7"/></svg>`;
     const NO_HIT_SVG = `<svg width="4" height="4"><circle cx="50%" cy="50%" r="2" fill="#FF0000"/></svg>`;
@@ -117,6 +100,7 @@ export async function polarColumnChart(divElementId) {
     });
     sciChartSurface.annotations.add(dotAnnotation, textAnnotation);
 
+    // #region_B_start
     // Add an event listener for mouse down events
     sciChartSurface.domCanvas2D.addEventListener("mousedown", (mouseEvent: MouseEvent) => {
         // Use our DpiHelper class to multiply coordinates, else screens with non-100% scaling will not work very well
@@ -126,13 +110,13 @@ export async function polarColumnChart(divElementId) {
         // optional - flag to stop checking for hit-test on other series once a hit is found
         let wasTheHitSuccessfulAtLeastOnce = false; 
 
-        [...sciChartSurface.renderableSeries.asArray()] // copy the renderable series to an array
-            .reverse() // take all renderable series as an array
+        [...sciChartSurface.renderableSeries.asArray()] // copy the renderable series to an anonymous array to not modify the original collection
+            .reverse() // The default layering of series is from bottom to top in the array, so we reverse it to check from top to bottom
             .forEach(rs => {
             console.log(`Trying hit test on: ${rs.getDataSeriesName()}`);
             
             if (rs.hitTestProvider && mouseEvent && !wasTheHitSuccessfulAtLeastOnce) {
-                const hitTestInfo = rs.hitTestProvider.hitTest(x, y, HIT_TEST_RADIUS);
+                const hitTestInfo = rs.hitTestProvider.hitTestDataPoint(x, y, HIT_TEST_RADIUS);
 
                 dotAnnotation.x1 = hitTestInfo.hitTestPointValues.x;
                 dotAnnotation.y1 = hitTestInfo.hitTestPointValues.y;
@@ -154,6 +138,7 @@ export async function polarColumnChart(divElementId) {
             }
         });
     });
+    // #region_B_end
 
     return { sciChartSurface, wasmContext };
 }

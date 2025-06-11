@@ -1,6 +1,6 @@
 import * as SciChart from "scichart";
 export async function polarLineChart(divElementId) {
-    const { SciChartPolarSurface, PolarNumericAxis, SciChartJsNavyTheme, PolarXyScatterRenderableSeries, EPolarAxisMode, EAxisAlignment, NumberRange, XyDataSeries, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, NativeTextAnnotation, EllipsePointMarker, EMultiLineAlignment, DpiHelper, } = SciChart;
+    const { SciChartPolarSurface, PolarNumericAxis, SciChartJsNavyTheme, PolarXyScatterRenderableSeries, EPolarAxisMode, EAxisAlignment, NumberRange, XyDataSeries, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, NativeTextAnnotation, EllipsePointMarker, TrianglePointMarker, EMultiLineAlignment, DpiHelper, } = SciChart;
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
     });
@@ -37,8 +37,8 @@ export async function polarLineChart(divElementId) {
             yValues: [2.5, 1.8, 3.0, 1.4, 2.0, 1.75, 2.4, 1.5],
             dataSeriesName: "Black Scatter"
         }),
-        pointMarker: new EllipsePointMarker(wasmContext, {
-            width: 12,
+        pointMarker: new TrianglePointMarker(wasmContext, {
+            width: 14,
             height: 12,
             fill: "black",
             stroke: "white",
@@ -90,8 +90,8 @@ export async function polarLineChart(divElementId) {
                     // Successful Hit
                     dotAnnotation.svgString = SUCCESSFUL_HIT_SVG;
                     textAnnotation.text = `Hit (x: ${hitTestInfo.hitTestPointValues.x.toFixed(2)}, y: ${hitTestInfo.hitTestPointValues.y.toFixed(2)})\n`
-                        + `- series: "${hitTestInfo.associatedSeries.getDataSeriesName()}"\n`
-                        + `- scatter index: ${hitTestInfo.dataSeriesIndex}\n`
+                        + `- Series: "${hitTestInfo.associatedSeries.getDataSeriesName()}"\n`
+                        + `- Scatter index: ${hitTestInfo.dataSeriesIndex}\n`
                         + `- yValue: ${hitTestInfo.yValue}`;
                     wasTheHitSuccessfulAtLeastOnce = true;
                 }

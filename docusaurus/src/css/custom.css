@@ -47,6 +47,10 @@ track it down within inspect element and change the variable from one of these c
   --ifm-color-success-dark: rgb(17, 51, 204);
   --ifm-background-color: rgb(244, 244, 244);
   --ifm-color-success-contrast-background: #1133cc11;
+  --code-section-background: rgb(255, 255, 255);
+
+  --absolute-text-color: rgb(0, 0, 0);
+  --gray: #8888;
 }
 
 [data-theme='dark'] {
@@ -58,11 +62,37 @@ track it down within inspect element and change the variable from one of these c
   --ifm-background-color: rgb(24, 24, 24) !important;
   --ifm-color-success-contrast-background: #88bbff11;
   --docusaurus-highlighted-code-line-bg: #66FF6610;
+  --code-section-background: rgb(30, 30, 30);
 
+  --absolute-text-color: rgb(255, 255, 255);
 }
 
 .navbar {
   box-shadow: none !important;
   border-bottom: 1px solid #8882;
   background-color: var(--ifm-background-color);
+}
+
+/* Other components that needed tweaking */
+.tabs__item {
+  margin-top: 0 !important;
+  padding: 6px 12px !important;  
+  border: 2px solid var(--code-section-background) !important;
+  border-bottom: 0 !important;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  color: var(--gray) !important;
+}
+.tabs__item--active {
+  background: var(--code-section-background) !important;
+  color: var(--absolute-text-color) !important;
+}
+.tabs-container .margin-top--md {
+  margin-top: 0 !important;
+}
+.tabs-container pre {
+  border-top-left-radius: 0 !important;
+}
+.tabs {
+  gap: 4px;
 }
