@@ -50,19 +50,19 @@ Always pair an **Angular** and **Radial** axis—never two of the same type.
 :::
 
 :::tip
-For a **vertical polar chart**, set the yAxis's [polarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/polarnumericaxis.html#polaraxismode) to [Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular) and the xAxis's to [Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) 
+For a **vertical polar chart**, set the yAxis's [polarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#polaraxismode) to [Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular) and the xAxis's to [Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) 
 :::
 
 ## Best Practices
 
 - Use [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#innerradius) for donut/ring charts, or [gridlineMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#gridlinemode): [Polygons:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html#polygons) for radar/spider style.
 
-- Customize tick intervals by setting [autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#autoticks) to `false` and playing with [majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#majordelta) and [minorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#minordelta)
+- Customize tick intervals by setting [autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#autoticks) to `false` and playing with [majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#majordelta) and [minorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#minordelta)
 
 - Use [xCenterOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#xcenteroffset) and [yCenterOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#ycenteroffset) for fine layout control, great for dashboards and overlays.
 
-- The [labelPostfix:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelpostfix) is often set to `°`, along with [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelprecision) = `0` to indicate degrees.
+- The [labelPostfix:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelpostfix) is often set to `°`, along with [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelprecision) = `0` to indicate degrees.
 
-- For smaller polar charts, setting [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#drawminorgirdlines) to `false` can help improve readability by only keeping the major grid lines.
+- For smaller polar charts, setting [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#drawminorgirdlines) to `false` can help improve readability by only keeping the major grid lines.
 
-- By default, [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelprecision) is set to `1`, but if you work with degrees or just larger datasets, you may want to set it to `0` and format the label as `270°` instead of `270.0°`.
+- By default, [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelprecision) is set to `1`, but if you work with degrees or just larger datasets, you may want to set it to `0` and format the label as `270°` instead of `270.0°`.

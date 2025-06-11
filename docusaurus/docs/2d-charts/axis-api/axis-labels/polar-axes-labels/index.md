@@ -37,17 +37,17 @@ All of these properties are available on both the [PolarNumericAxis:blue_book:](
 ### 3. The [PolarAxisBase.labelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelprovider): 
 > Provides the ability to modify / customize when and how the axis labels are formatted. 
 
-For the Polar Axes, we have created a special label provider, available out of the box, called [RadianLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html), which formats the labels in radians. Make sure to read the [TSDoc indications:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html) before using it, and observe how the [errorTolerance:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#errortolerance) and [maxDenominator:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#maxdenominator) pair with [AxisBase.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#autoticks) and [AxisBase.majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#majordelta) to determine the label values.
+For the Polar Axes, we have created a special label provider, available out of the box, called [RadianLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html), which formats the labels in radians. Make sure to read the [TSDoc indications:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html) before using it, and observe how the [errorTolerance:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#errortolerance) and [maxDenominator:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#maxdenominator) pair with [AxisBase.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#autoticks) and [AxisBase.majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#majordelta) to determine the label values.
 
 ## Other Base Properties that are of interest for Polar Axes:
 
-- [labelPostfix:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelpostfix): A string that is appended to each label value. 
+- [labelPostfix:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelpostfix): A string that is appended to each label value. 
   - For angular axes, this is often set to `°` to indicate degrees.
   - For radial axes, it can be set to `m`, `km`, or any other unit of measurement.
 
-- [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#drawminorgirdlines): A boolean that determines whether minor grid lines are drawn on the axis. 
+- [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#drawminorgirdlines): A boolean that determines whether minor grid lines are drawn on the axis. 
   - For smaller polar charts, setting this to `false` can help improve readability by only keeping the major grid lines
 
-- [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase.html#labelprecision): A number that specifies the number of decimal places to display in the labels. 
+- [labelPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#labelprecision): A number that specifies the number of decimal places to display in the labels. 
   - By default, this is set to `1`, but if you work with degrees or just larger datasets, you may want to set it to `0` to avoid showing decimal places in the labels.
 
