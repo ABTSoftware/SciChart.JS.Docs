@@ -3,6 +3,9 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 // or, for npm, import { DefaultPaletteProvider, ... } from "scichart"
 // Custom PaletteProvider for line series which colours datapoints a different colour based on a metadata field
 class GapsPaletteProvider extends DefaultPaletteProvider {
+    isNullRule;
+    stroke;
+    parentDataSeries;
     constructor(stroke, isNullRule) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;

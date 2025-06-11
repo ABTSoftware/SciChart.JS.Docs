@@ -2,19 +2,15 @@
 sidebar_position: 11
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import digitalLineChart from "!!raw-loader!./Basic/demo.js";
-
 # The Digital (Step) Line Series
 
 ## Overview
 
 Digital, or Step Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type, and setting the [isDigitalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#isdigitalline) flag to `true`.
 
-> The [JavaScript Digital Line Chart Example](https://demo.scichart.com/javascript-digital-line-chart) can be found in the [SciChart.Js Examples Suite > Digital Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalLineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-digital-line-chart)
+:::tip
+The [JavaScript Digital Line Chart Example](https://demo.scichart.com/javascript-digital-line-chart) can be found in the [SciChart.Js Examples Suite > Digital Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalLineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-digital-line-chart)
+:::
 
 <iframe src="https://demo.scichart.com/iframe/javascript-digital-line-chart" width="100%" height="600px" frameborder="0"></iframe>
 
@@ -26,20 +22,17 @@ Above: The JavaScript [Digital Line Chart](https://demo.scichart.com/javascript-
 
 To create a [JavaScript Digital Line Chart](https://demo.scichart.com/javascript-digital-line-chart) with SciChart.js, use the following code:
 
-<Tabs>
-    <TabItem value="ts" label="TypeScript" default>
-```ts {32} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
-```
-    </TabItem>
-    <TabItem value="builder" label="Builder API">
-```ts {25} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
-```
-    </TabItem>
-</Tabs>
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+    ```ts {32} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
+    ```
+
+    ```ts {25} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
+    ```
+</CodeSnippetBlock>
 
 This results in the following:
 
-<ChartPreviewWrapper jsContent={digitalLineChart} />
+<LiveDocSnippet maxWidth={600} name="./Basic/demo.js" />
 
 In the code above:
 

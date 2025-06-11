@@ -2,20 +2,15 @@
 sidebar_position: 22
 ---
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import CenteredImageWrapper from "@site/src/components/CenteredImageWrapper";
-
-import simpleErrorBarsChart from "!!raw-loader!./Basic/demo.js";
-
 # The Error Bars Chart Type
 
 ## Overview
 
 Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasterrorbarsrenderableseries.html) type.
 
-> The [JavaScript Error Bars Chart Example](https://demo.scichart.com/javascript-error-bars-chart) can be found in the [SciChart.Js Examples Suite > Error Bars Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ErrorBarsChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-error-bars-chart)
+:::tip
+The [JavaScript Error Bars Chart Example](https://demo.scichart.com/javascript-error-bars-chart) can be found in the [SciChart.Js Examples Suite > Error Bars Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ErrorBarsChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-error-bars-chart)
+:::
 
 <iframe src="https://demo.scichart.com/iframe/javascript-error-bars-chart" width="100%" height="600px" frameborder="0"></iframe>
 
@@ -27,20 +22,17 @@ Above: The JavaScript [Error Bars Chart](https://demo.scichart.com/javascript-er
 
 To create a [Javascript Error Bars Chart](https://demo.scichart.com/javascript-error-bars-chart) with SciChart.js, use the following code:
 
-<Tabs>
-    <TabItem value="ts" label="TypeScript" default>
-```ts {23,26-28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
-```
-    </TabItem>
-    <TabItem value="builder" label="Builder API">
-```ts {16,19-21} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
-```
-    </TabItem>
-</Tabs>
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+    ```ts {23,26-28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
+    ```
+
+    ```ts {16,19-21} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
+    ```
+</CodeSnippetBlock>
 
 This results in the following:
 
-<ChartPreviewWrapper jsContent={simpleErrorBarsChart} />
+<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
 In the code above:
 

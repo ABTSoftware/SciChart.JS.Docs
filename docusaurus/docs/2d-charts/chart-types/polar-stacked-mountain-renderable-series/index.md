@@ -2,10 +2,7 @@
 sidebar_position: 100
 ---
 
-# The Polar Stacked Mountain Chart Type
-
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import polarStackedMountainChart from "!!raw-loader!./Basic/demo.js";
+# 🔄 The Polar Stacked Mountain Chart Type
 
 The Polar Stacked Mountain Chart Type is created using a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountaincollection.html) to manage multiple series of [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html), which represent the individual stacked mountains in the chart.
 
@@ -22,4 +19,4 @@ To create a Javascript [Polar Stacked Mountain Series:blue_book:](https://www.sc
 ```ts showLineNumbers {33-35,62} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={polarStackedMountainChart} />
+<LiveDocSnippet name="./Basic/demo" />

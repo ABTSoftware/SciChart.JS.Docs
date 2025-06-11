@@ -2,12 +2,7 @@
 sidebar_position: 100
 ---
 
-# The Polar Stacked Column Chart Type
-
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import PolarStackedColumnChart from "!!raw-loader!./BasicAngular/demo.js";
-import polarStackedRadialColumnChart from "!!raw-loader!./BasicRadial/demo.js";
+# 🔄 The Polar Stacked Column Chart Type
 
 The Polar Stacked Column Chart Type is created using a [PolarStackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedcolumncollection.html) to manage multiple series of [PolarStackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedcolumnrenderableseries.html), which represent the individual stacked columns in the chart.
 
@@ -24,7 +19,7 @@ To create a Javascript [Polar Stacked Column Series:blue_book:](https://www.scic
 ```ts showLineNumbers {33-35,37,47,56} file=./BasicAngular/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={PolarStackedColumnChart} />
+<LiveDocSnippet name="./BasicAngular/demo" />
 
 In the code above:
 
@@ -37,9 +32,7 @@ To create a Javascript **Radial** [Polar Stacked Column Series:blue_book:](https
 ```ts showLineNumbers {2-3,10-11} file=./BasicRadial/demo.js start=region_A_start end=region_A_end
 ```
 
-
-
-<ChartPreviewWrapper jsContent={polarStackedRadialColumnChart} />
+<LiveDocSnippet name="./BasicRadial/demo" />
 
 In the code above:
 

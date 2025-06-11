@@ -6,7 +6,11 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 
 // Custom PaletteProvider for line series which colours datapoints a different colour based on a metadata field
 class GapsPaletteProvider extends DefaultPaletteProvider {
-    constructor(stroke, isNullRule) {
+    public isNullRule: (metadata: any) => boolean;
+    public stroke: number;
+    public parentDataSeries: SciChart.XyDataSeries;
+
+    constructor(stroke: string, isNullRule: (metadata: any) => boolean) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;
         this.isNullRule = isNullRule;
@@ -93,7 +97,7 @@ async function drawLineChartWithPalette(divElementId) {
         }
     });
 
-    lineSeries.dataLabelProvider.getText = dataLabelState => {
+    (lineSeries.dataLabelProvider as SciChart.LineSeriesDataLabelProvider).getText = dataLabelState => {
         return `${dataLabelState.xVal()}`;
     };
 
@@ -114,7 +118,7 @@ async function drawLineChartWithPalette(divElementId) {
         }
     });
 
-    nanLineSeries.dataLabelProvider.getText = dataLabelState => {
+    (nanLineSeries.dataLabelProvider as SciChart.LineSeriesDataLabelProvider).getText = dataLabelState => {
         return `${dataLabelState.xVal()}`;
     };
 

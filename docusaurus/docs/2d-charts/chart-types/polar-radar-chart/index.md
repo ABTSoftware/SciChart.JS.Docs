@@ -4,10 +4,6 @@ sidebar_position: 105
 
 # ✅ The Polar Radar Chart Type
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import PolarRadarChart from "!!raw-loader!./Basic/demo.js";
-
 The Radar chart (or Spider chart) type displays data in a circular layout, where each axis represents a different variable, most often a category. The axes are connected drawn to form a polygon, allowing for easy comparison of multiple variables.
 
 The data is usually plotted using the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) or [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) classes, which are specialized for polar coordinates.
@@ -21,7 +17,7 @@ To create a Javascript Polar Radar Series with SciChart.js, use the following co
 ```ts showLineNumbers {20,49-50} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={PolarRadarChart} />
+<LiveDocSnippet name="./Basic/demo" />
 
 Key aspects of the code above:
 - This **radar** / **spider** / **cobweb** chart look is achieved by using `gridlineMode`: [EPolarGridlineMode.Polygons:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolargridlinemode.html) on the radial axis (yAxis), which draws straight lines in between gridlines instead of arcs.

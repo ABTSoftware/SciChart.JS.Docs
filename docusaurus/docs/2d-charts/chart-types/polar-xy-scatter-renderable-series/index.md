@@ -2,11 +2,6 @@
 sidebar_position: 100
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import simpleScatterChart from "!!raw-loader!./Basic/demo.ts";
-import serialisedPointMarker from "!!raw-loader!./BuilderAPI/demo.ts";
-
 # ✅ The Polar Scatter Chart Type
 
 ## Overview
@@ -39,8 +34,8 @@ Key options for [IPolarXyScatterRenderableSeriesOptions:blue_book:](https://www.
 
 ```ts showLineNumbers {37,41,46-52} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={simpleScatterChart} />
 
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 - The [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) is created and linked to an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html).
@@ -55,7 +50,7 @@ The Scatter series's [pointMarker:blue_book:](https://www.scichart.com/documenta
 ```ts showLineNumbers {7-13} file=./BuilderAPI/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={serialisedPointMarker} />
+<LiveDocSnippet name="./BuilderAPI/demo" />
 
 ## Point Marker Types & Customization
 

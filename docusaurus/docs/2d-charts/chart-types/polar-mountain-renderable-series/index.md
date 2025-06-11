@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# The Polar Mountain Chart Type
+# 🔄 The Polar Mountain Chart Type
 
 <!-- import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 

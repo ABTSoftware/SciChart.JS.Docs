@@ -7,7 +7,10 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 
 // Custom PaletteProvider for line series which colours datapoints above a threshold
 class ThresholdLinePaletteProvider extends DefaultPaletteProvider {
-    constructor(stroke, rule) {
+    public rule: (yValue: number) => boolean;
+    public stroke: number;
+
+    constructor(stroke: string, rule: (yValue: number) => boolean) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;
         this.rule = rule;
@@ -57,7 +60,7 @@ async function drawLineChartWithPalette(divElementId) {
     });
 
     sciChartSurface.renderableSeries.add(lineSeries);
-    // #region_A_end
+    // #region_B_end
 
     const { HorizontalLineAnnotation, ELabelPlacement } = SciChart;
 

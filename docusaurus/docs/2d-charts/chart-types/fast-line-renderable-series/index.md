@@ -6,14 +6,14 @@ sidebar_position: 10
 
 ## Overview
 
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
 import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 import simpleLineChart from "!!raw-loader!./Basic/demo.js";
 
 Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
 
-> The [JavaScript Line Chart Example](https://demo.scichart.com/javascript-line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-line-chart)
+:::tip
+The [JavaScript Line Chart Example](https://demo.scichart.com/javascript-line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-line-chart)
+:::
 
 <iframe src="https://demo.scichart.com/iframe/javascript-line-chart" width="100%" height="600px" frameborder="0"></iframe>
 
@@ -25,20 +25,16 @@ Above: The JavaScript [Line Chart](https://demo.scichart.com/javascript-line-cha
 
 To create a [Javascript Line Chart](https://demo.scichart.com/javascript-line-chart) with SciChart.js, use the following code:
 
-<Tabs>
-    <TabItem value="ts" label="TypeScript" default>
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 ```ts {27-34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
 ```
-    </TabItem>
-    <TabItem value="builder" label="Builder API">
 ```ts {8-18} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
 ```
-    </TabItem>
-</Tabs>
+</CodeSnippetBlock>
 
 This results in the following:
 
-<ChartPreviewWrapper jsContent={simpleLineChart} />
+<LiveDocSnippet maxWidth={600} name="./Basic/demo" />
 
 In the code above:
 
@@ -52,7 +48,7 @@ It is possible to have null points or gaps in a Line Series by passing a data
 
 ## Add Point Markers onto a Line Series
 
-It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Line Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](../common-series-apis/drawing-point-markers/).
+It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Line Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](../common-series-apis/).
 
 To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](../common-series-apis/drawing-point-markers/).
 

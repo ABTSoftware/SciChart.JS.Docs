@@ -2,10 +2,6 @@
 sidebar_position: 100
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import basicPolarHeatmap from "!!raw-loader!./Basic/demo.js";
-import legendHeatmap from "!!raw-loader!./LegendHeatmap/demo.js";
-
 # ✅ The Polar Uniform Heatmap Chart Type
 
 ## Overview
@@ -36,7 +32,7 @@ Key options for [IPolarUniformHeatmapRenderableSeriesOptions:blue_book:](https:/
 ```ts showLineNumbers {22-23,26,28,40,42,50-70} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={basicPolarHeatmap} />
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 - A 2D array of `zValues` is generated via `Array.from`, representing value "intensity" at each polar sector.
@@ -46,7 +42,7 @@ In the code above:
 
 ### Polar Heatmap with Legend
 
-```ts showLineNumbers {1-8,23,27,54} file=./LegendHeatmap/demo.ts start=region_A_start end=region_A_end
+```ts showLineNumbers {1-8,23,27,55} file=./LegendHeatmap/demo.ts start=region_A_start end=region_A_end
 ```
 You also need an additional HTML element for the legend:
 
@@ -58,9 +54,7 @@ With these CSS properties:
 ```css showLineNumbers {10-16} file=./LegendHeatmap/demo.css
 ```
 
-
-<ChartPreviewWrapper jsContent={legendHeatmap} />
-
+<LiveDocSnippet name="./LegendHeatmap/demo" />
 
 In the code above:
 - The [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/heatmaplegend.html) component creates an interactive vertical legend, visually linking the z-value color range.
@@ -73,8 +67,9 @@ In the code above:
 
 <iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-ultrasound" width="100%" height="600px" frameborder="0"></iframe>
 
-> For the full code walkthrough and live demo, see the  
-> **[Polar Ultrasound Heatmap Example](http://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap)**
+:::tip
+For the full code walkthrough and live demo, see the **[Polar Ultrasound Heatmap Example](http://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap)**
+:::
 
 
 ## Tips & Best Practices
