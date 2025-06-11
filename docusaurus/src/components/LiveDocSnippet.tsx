@@ -3,11 +3,17 @@ import { CodePenLauncher } from "./CodePenLauncher";
 import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 
+enum EHtmlType {
+    Default = "Default",
+    WithResult = "WithResult"
+}
+
 type Props = {
     maxWidth?: string | number;
     name?: string;
     htmlPath?: string;
     cssPath?: string;
+    htmlType?: EHtmlType;
 };
 
 export default function LiveDocSnippet(props?: Props) {
@@ -20,10 +26,15 @@ export default function LiveDocSnippet(props?: Props) {
     const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string }>({});
     const [isLoading, setIsLoading] = useState(false);
 
-    const htmlTemplate = files?.html ?? `<div id="scichart-root" ></div>`;
+    let htmlString = `<div id="scichart-root" ></div>`;
+    if (props.htmlType === EHtmlType.WithResult) {
+        htmlString = `<div><div id="scichart-root" ></div><div id="result" style="height: 20px; color: red"></div><div>`
+    }
+
+    const htmlTemplate = files?.html ?? htmlString;
     const cssTemplate = files?.css ?? "";
-    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl);
-    const sandboxHtml = getSandboxSrc(htmlTemplate);
+    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType);
+    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType);
 
     useEffect(() => {
         const fetchFiles = async () => {
@@ -54,7 +65,11 @@ export default function LiveDocSnippet(props?: Props) {
     );
 }
 
-const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string) => {
+const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType) => {
+    let height = "100vh";
+    if (htmlType === EHtmlType.WithResult) {
+        height = `calc(100vh - 20px)`;
+    }
     return `
     <html lang="en-us">
         <head>
@@ -85,7 +100,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string) => {
             <style>
                 iframe { border: 0; }
                 body { margin: 0; }
-                #scichart-root { width: 100%; height: 100vh; }
+                #scichart-root { width: 100%; height: ${height}; }
             </style>
         </head>
         <body>
@@ -95,7 +110,12 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string) => {
     `;
 };
 
-const getSandboxSrc = (htmlTemplate: string) => `
+const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
+    let height = "100vh";
+    if (htmlType === EHtmlType.WithResult) {
+        height = `calc(100vh - 20px)`;
+    }
+    return `
     <html lang="en-us">
         <head>
             <meta charset="utf-8" />
@@ -120,7 +140,7 @@ const getSandboxSrc = (htmlTemplate: string) => `
             <style>
                 iframe { border: 0; }
                 body { margin: 0; }
-                #scichart-root { width: 100%; height: 100vh; }
+                #scichart-root { width: 100%; height: ${height}; }
 
             </style>
         </head>
@@ -129,3 +149,4 @@ const getSandboxSrc = (htmlTemplate: string) => `
         </body>
     </html>
     `;
+}

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# PaletteProvider API Overview
+# ✅ PaletteProvider API Overview
 
 SciChart.js features the ability to change color of series on a point-by-point basis, using the PaletteProvider feature.
 
