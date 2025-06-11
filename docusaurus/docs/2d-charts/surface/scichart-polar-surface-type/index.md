@@ -21,16 +21,16 @@ When [IRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4
 
 When [IChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ichartmodifierbase.html) is attached to the surface a type check is also performed, [chartModifier.modifierType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ichartmodifierbase.html#modifiertype) property should match [sciChartSurface.surfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#surfacetype).
 
-For renderable series and annotations the surface type should be obvious from the name as the polar items have it in the name. For example, [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/README.md) and [PolarLineRenderableSeries](/docs/2d-charts/chart-types/polar-line-renderable-series/index.mdx), [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/README.md) and [PolarCursorModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-cursor-modifier/README.mdx).
+For renderable series and annotations the surface type should be obvious from the name as the polar items have it in the name. For example, [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) and [PolarLineRenderableSeries](/docs/2d-charts/chart-types/polar-line-renderable-series/index.mdx), [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md) and [PolarCursorModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-cursor-modifier/README.mdx).
 
 A similar check is implemented for annotations. When [IAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html) is attached to [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) or to [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) a type check is performed, [annotation.surfaceTypes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) should contain the [ESurfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html). However, unlike the renderable series, the annotations can be compatible with normal surface type `ESurfaceType.SciChartSurfaceType`, polar surface type `ESurfaceType.SciChartPolarSurfaceType` or with both surface types at the same time.
 
-In an annotation is only for polar surface it has "Polar" prefix. For example, [PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation/README.mdx). If annotation has no "Polar" prefix it can be either for normal surface only or for both depending on  [annotation.surfaceTypes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) property.
+In an annotation is only for polar surface it has "Polar" prefix. For example, [PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation/index.mdx). If annotation has no "Polar" prefix it can be either for normal surface only or for both depending on  [annotation.surfaceTypes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) property.
 
 **These are the annotations compatible with both surface types SciChartSurface and SciChartPolarSurface**:
 
-- [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation/README.md)
-- [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation/README.md)
-- [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/README.md)
+- [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation/index.md)
+- [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation/index.md)
+- [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md)
 
 

@@ -11,14 +11,14 @@ below:
 
 - [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)   
 - [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview/index.md)               
-- [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/README.md)
-- [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/README.md)
+- [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview/index.md)
+- [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview/index.md)
 - [Zooming & Panning](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/README.md)
-- [Tooltips](/docs/2d-charts/chart-modifier-api/rollover-modifier/README.md)
-- [Annotations and Markers](/docs/2d-charts/annotations-api/annotations-api-overview/README.md)
-- [Styling and Themeing](/docs/2d-charts/styling-and-theming/theme-manager-api/README.md)
-- [Chart Synchronization APIs](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/README.md)
-- [3D charts Basics](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview/README.md) 
+- [Tooltips](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md)
+- [Annotations and Markers](/docs/2d-charts/annotations-api/annotations-api-overview/index.md)
+- [Styling and Themeing](/docs/2d-charts/styling-and-theming/theme-manager-api/index.md)
+- [Chart Synchronization APIs](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/index.md)
+- [3D charts Basics](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview/index.md) 
 
 
 SciChart.js is a cutting-edge next-generation JavaScript Chart Library.
