@@ -5,6 +5,7 @@ import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 import { CodeSnippetBlock } from "@site/src/components/CodeSnippetBlock";
 import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
+import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
 
 export default {
     // Re-use the default mapping
@@ -14,5 +15,6 @@ export default {
     ChartPreviewWrapper,
     CodeSnippetBlock,
     LiveDocSnippet,
-    DemoExampleWrapper
+    DemoExampleWrapper,
+    ChartFromSciChartDemo
 };
