@@ -6,8 +6,6 @@ type Props = {
 };
 
 export const CodePenLauncher: React.FC<Props> = ({ html, js, css, title = "Demo" }) => {
-    console.log('html', html);
-    console.log('css', css);
     const openInCodePen = () => {
         if (!js) {
             return;
