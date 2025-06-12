@@ -17,7 +17,7 @@ Adding Metadata to Charts
 
 Metadata is optional and can be set when a dataseries is first created, or whenever data is added or updated. Metadata is just a JavaScript object and can contain any properties, objects, even functions.
 
-See the example below for how to create metadata when constructing an [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) and how to consume it in a [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md).
+See the example below for how to create metadata when constructing an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) and how to consume it in a [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md).
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)", "MyMetadata class"]}>
     ```ts showLineNumbers file=./AddingMetadata/demo.ts start=region_A_start end=region_A_end
@@ -41,7 +41,7 @@ Note: You do not have to set metadata on every point. The structure of the meta
 :::
 
 :::warning
-In TypeScript, all metadata must implement the [IPointMetadata](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata.html) interface, ie  ```{ isSelected: boolean }```. For JavaScript, this property can be omitted.
+In TypeScript, all metadata must implement the [IPointMetadata:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata.html) interface, ie  ```{ isSelected: boolean }```. For JavaScript, this property can be omitted.
 :::
 
 Metadata Templates

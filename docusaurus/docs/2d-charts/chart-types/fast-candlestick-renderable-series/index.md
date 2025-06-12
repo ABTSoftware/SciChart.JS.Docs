@@ -4,7 +4,7 @@ sidebar_position: 19
 
 # ✅ The Candlestick Series type
 
-Candlestick Series or JavaScript Stock Charts can be created using the [FastCandlestickRenderableSeries type](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html).
+Candlestick Series or JavaScript Stock Charts can be created using the [FastCandlestickRenderableSeries type:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html).
 
 :::tip
 The [JavaScript Candlestick Chart Example](https://www.scichart.com/demo/react/candlestick-chart) can be found in the [SciChart.Js Examples Suite > Candlestick Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/CandlestickChart) on Github, or our live demo at [demo.scichart.com](https://www.scichart.com/demo/)
@@ -35,13 +35,13 @@ This results in the following output:
 
 In the example above:
 
-*   A Candlestick Series instance is created and added to the [SciChartSurface.renderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   This requires a special dataseries type: [OhlcDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/ohlcdataseries.html), which accepts X, Open, High, Low, Close values as arrays of values.
-*   We set the up/down stroke and fill colors via properties [brushUp](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#brushup), [brushDown](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#brushdown), [strokeUp](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#strokeup), [strokeDown](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#strokedown) properties.
-*   We set [dataPointWidth](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
-*   We use a special axis type called the [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) which removes gaps in stock market data.
+*   A Candlestick Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   This requires a special dataseries type: [OhlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/ohlcdataseries.html), which accepts X, Open, High, Low, Close values as arrays of values.
+*   We set the up/down stroke and fill colors via properties [brushUp:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#brushup), [brushDown:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#brushdown), [strokeUp:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#strokeup), [strokeDown:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#strokedown) properties.
+*   We set [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
+*   We use a special axis type called the [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) which removes gaps in stock market data.
 
-A [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [DateTimeNumericAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) can be used as these are 24/7 markets.
+A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) can be used as these are 24/7 markets.
 
 You can format the date labels on the XAxis by following the instructions on the [Axis Label Formatting](../../axis-api/axis-labels/numeric-formats/) page.
 

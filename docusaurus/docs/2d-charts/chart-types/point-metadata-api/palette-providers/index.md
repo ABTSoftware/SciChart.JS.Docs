@@ -27,7 +27,7 @@ Let's start off by creating the PaletteProvider:
 
 </CodeSnippetBlock>
 
-By inheriting [DefaultPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html) we can override functions like overrideStrokeArgb, overrideFillArgb and overridePointMarkerArgb. Returning a colour code in Uint ARGB format overrides the colour for that data-point. Returning undefined uses the default series colour.
+By inheriting [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html) we can override functions like overrideStrokeArgb, overrideFillArgb and overridePointMarkerArgb. Returning a colour code in Uint ARGB format overrides the colour for that data-point. Returning undefined uses the default series colour.
 
 Next, we can apply the PaletteProvider and metadata to a chart like this.
 
