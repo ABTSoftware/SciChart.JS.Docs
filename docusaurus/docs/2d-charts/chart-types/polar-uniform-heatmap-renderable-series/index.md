@@ -7,7 +7,7 @@ sidebar_position: 100
 The [PolarUniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaruniformheatmaprenderableseries.html) displays "heat" values as colored cells in a polar (circular) coordinate system—perfect for visualizing intensity, density, or other matrix-like data in a circular form. Each cell is mapped from a two-dimensional array of z-values, with color gradients representing the data's magnitude.
 
 <ChartFromSciChartDemo 
-    src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
 />
 

@@ -111,3 +111,40 @@ classDiagram
     IRenderableSeries <|-- FastLineRenderableSeries : implements
     IRenderableSeries <|-- XyScatterRenderableSeries : implements
 ```
+
+
+**Insert Chart iFrame from scichart.com/demo**
+
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
+    title="Polar Uniform Heatmap Series Chart"
+/>
+
+**Insert Live CodePen snippet**
+
+<LiveDocSnippet maxWidth={"100%"} name="./docusaurus-examples/demo" />
+
+The variant with div element with id="result" useful to output something.
+
+```
+<LiveDocSnippet maxWidth={"100%"} name="demo" htmlType="WithResult" />
+```
+
+600 px width
+
+```
+<LiveDocSnippet maxWidth={600} name="demoGapDifferentStyle" />
+```
+
+
+**Code block**
+
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+    ```ts showLineNumbers file=./docusaurus-examples/demo.ts start=region_A_start end=region_A_end
+
+    ```
+    ```ts showLineNumbers file=./docusaurus-examples/demo.ts start=region_B_start end=region_B_end
+
+    ```
+
+</CodeSnippetBlock>
