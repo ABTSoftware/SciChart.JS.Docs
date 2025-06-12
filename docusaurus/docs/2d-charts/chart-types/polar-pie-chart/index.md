@@ -7,11 +7,10 @@ sidebar_position: 105
 The Polar Pie Chart type is achieved using SciChart's `PolarColumnRenderableSeries` and some data manipulation to mimic pie segments while using the [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) class.
 It is the native way to create pie charts in SciChart.js, as opposed to using the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html)
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}>
-    Above: The JavaScript [Polar Pie Chart](http://stagingdemo2.scichart.com/demo/react/polar-pie-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart"
+    title="Polar Pie Chart"
+/>
 
 ## Create a Basic Polar Pie Chart
 

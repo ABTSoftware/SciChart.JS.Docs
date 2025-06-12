@@ -4,19 +4,16 @@ sidebar_position: 100
 
 # ✅ The Polar Scatter Chart Type
 
-## Overview
-
 The [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) visualizes discrete points in a polar (circular) coordinate system, using customizable point markers. Each `(x, y)` data point is mapped as an "angle" (theta, usually in degrees or radians) and a "radius" (distance from center), making this chart type ideal for:
 
 - Visualizing measurement data around a circle (e.g., wind direction/speed)
 - Radar, sonar, and astronomy applications
 - Medical/engineering polar data, and more
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-scatter-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}> 
-Above: The JavaScript [Polar Scatter Chart](http://stagingdemo2.scichart.com/demo/react/polar-scatter-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-scatter-chart"
+    title="Polar Xy Scatter Series Chart"
+/>
 
 ## Properties
 

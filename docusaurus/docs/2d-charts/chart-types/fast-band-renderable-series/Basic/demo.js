@@ -9,27 +9,32 @@ async function simpleBandChart(divElementId) {
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    // Generate some Xyy data for the band series
     const xValues = [];
     const yValues = [];
     const y1Values = [];
     const POINTS = 1000;
     const STEP = (3 * Math.PI) / POINTS;
-    for (let i = 0; i <= 1000; i++) {
+    for (let i = 0; i <= POINTS; i++) {
         const k = 1 - i / 2000;
         xValues.push(i);
         yValues.push(Math.sin(i * STEP) * k * 0.7);
         y1Values.push(Math.cos(i * STEP) * k);
     }
-    const dataSeries = new XyyDataSeries(wasmContext, { xValues, yValues, y1Values });
-    const bandSeries = new FastBandRenderableSeries(wasmContext, {
-        dataSeries,
+    // Create & configure the band series
+    const bandSeries1 = new FastBandRenderableSeries(wasmContext, {
+        dataSeries: new XyyDataSeries(wasmContext, {
+            xValues,
+            yValues,
+            y1Values
+        }),
         stroke: "#F48420",
         strokeY1: "#50C7E0",
-        fill: "#F4842033",
-        fillY1: "#50C7E033",
+        fill: "#F4842033", // the Fill for a data slice where `yVal < y1Val`
+        fillY1: "#50C7E033", // the Fill for a data slice where `yVal > y1Val`
         strokeThickness: 2
     });
-    sciChartSurface.renderableSeries.add(bandSeries);
+    sciChartSurface.renderableSeries.add(bandSeries1);
     // #region_A_end
     // Optional: add zooming, panning for the example
     const { MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier } = SciChart;
@@ -65,8 +70,8 @@ async function builderExample(divElementId) {
                 options: {
                     stroke: "#FF1919FF",
                     strokeY1: "#279B27FF",
-                    fill: "#279B2733",
-                    fillY1: "#FF191933",
+                    fill: "#279B2733", // the Fill for a data slice where `yVal < y1Val`
+                    fillY1: "#FF191933", // the Fill for a data slice where `yVal > y1Val`
                     strokeThickness: 2
                 }
             }

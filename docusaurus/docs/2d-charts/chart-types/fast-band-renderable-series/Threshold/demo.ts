@@ -3,12 +3,12 @@ import * as SciChart from "scichart";
 async function bandChartThresholds(divElementId) {
     // Demonstrates how to create a band chart using SciChart.js
     const { SciChartSurface, NumericAxis, FastBandRenderableSeries, XyyDataSeries, SciChartJsNavyTheme } = SciChart;
-
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
+
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 

@@ -8,6 +8,11 @@ The Polar Sunburst Chart Type is created using [PolarColumnRenderableSeries:blue
 
 <iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-sunburst-chart" width="100%" height="600px" frameborder="0"></iframe>
 
-- 
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-sunburst-chart"
+    title="Polar Sunburst Chart"
+/>
+
+## Create a Basic Polar Sunburst Chart
 
 <LiveDocSnippet name="./Basic/demo" />

@@ -10,16 +10,13 @@ import polarColumnMode from "!!raw-loader!./ColumnMode/demo.js";
 
 # ✅ The Polar Column Chart Type
 
-## Overview
-
 The [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) creates columns in a polar coordinate system, displaying data as vertical bars positioned at specific angles and radial distances from the center, or as angular bars drawn around the center.
 This chart type is ideal for visualizing cyclic data or data with angular relationships.
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-column-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}>
-Above: The JavaScript [Polar Column Chart](http://stagingdemo2.scichart.com/demo/react/polar-column-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-column-chart"
+    title="Polar Column Series Chart"
+/>
 
 ## Properties
 

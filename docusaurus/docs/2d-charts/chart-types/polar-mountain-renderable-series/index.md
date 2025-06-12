@@ -11,11 +11,10 @@ import PolarMountainPaletteProvider from "!!raw-loader!./PaletteProvider/demo.js
 
 The [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) is a type of renderable series that displays data in a polar mountain format.
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-mountain-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}> 
-Above: The JavaScript [Polar Mountain Chart](http://stagingdemo2.scichart.com/demo/react/polar-mountain-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-mountain-chart"
+    title="Polar Mountain Series Chart"
+/>
 
 ## 🔄 Create a Basic Polar Mountain Series
 

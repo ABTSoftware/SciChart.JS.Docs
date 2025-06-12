@@ -9,17 +9,14 @@ import complexArc from "!!raw-loader!./ComplexArc/demo.js";
 
 # ✅ The Polar Gauge Chart Type
 
-## Overview
-
 The Polar Gauge Chart is used to visualize data in a polar coordinate system as a circular gauge or meter, where values are represented by angular position and radial distance. This chart type is ideal for displaying progress indicators, performance metrics, or any data that benefits from a circular visualization.
 
 In SciChart.js, gauge charts are not specific renderable series, and can be created using either [PolarArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararcannotation.html) for simple arc-based gauges or [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) for column-based gauges. Both approaches offer different advantages depending on your specific use case.
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-gauge-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}>
-    Above: The JavaScript [Polar Gauge Chart](http://stagingdemo2.scichart.com/demo/react/polar-gauge-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-gauge-chart"
+    title="Polar Gauge Chart"
+/>
 
 ## Properties
 

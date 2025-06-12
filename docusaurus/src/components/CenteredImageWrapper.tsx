@@ -1,10 +1,10 @@
-export default function CenteredImageWrapper({src, title, height = 600}: {
+export default function CenteredImageWrapper({src, title}: {
     src: string, 
     title: string, 
     height?: string | number
 }) {
     return (
-        <div style={{ width: "100%", height: `${height}`, margin: "0 auto" }}>
+        <div style={{ width: "85%", margin: "0 auto" }}>
             <img
                 src={src}
                 alt={title}
@@ -13,7 +13,6 @@ export default function CenteredImageWrapper({src, title, height = 600}: {
                     display: "block",
                     marginLeft: "auto",
                     marginRight: "auto",
-                    height: `${height}`,
                     objectFit: "contain"
                 }}
             />

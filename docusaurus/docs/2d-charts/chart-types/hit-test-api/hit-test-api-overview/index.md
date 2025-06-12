@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In SciChart.js we have **Hit-Test API** which allows access to information about the point being clicked on the canvas, such as the nearest data point index, X and Y data values, coordinate values and metadata.
 
-The Hit-Test API is a set of functions defined on the [BaseRenderableSeries class](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html), and overridden by some of the series types. This API is used internally by tooltips (see [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) and [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md)) to transform mouse clicks on screen into data-points, and determine if a mouse event occurs over a point or over a series. You can use the same API to determine if a click or touch event was over a series, and take appropriate action.
+The Hit-Test API is a set of functions defined on the [BaseRenderableSeries class:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html), and overridden by some of the series types. This API is used internally by tooltips (see [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) and [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md)) to transform mouse clicks on screen into data-points, and determine if a mouse event occurs over a point or over a series. You can use the same API to determine if a click or touch event was over a series, and take appropriate action.
 
 There are three main Hit-Test methods:
 
@@ -156,7 +156,7 @@ Hit-Test methods return **HitTestInfo** objects which contain the following info
 *   isWithinDataBounds: When true the hit-test operation was within the first and the last DataSeries X-values.
 *   point2dataSeriesIndex: The index of the second data-series point when hit-test is performed for the series body
 
-More information can be found at the [TypeDoc website](https://www.scichart.com/documentation/js/v4/typedoc/index.html).
+More information can be found at the [TypeDoc website:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html).
 
 Calling Hit-Test methods on Spline Series
 -----------------------------------------
@@ -167,7 +167,7 @@ SciChart.js has three different spline series:
 *   **SplineBandRenderableSeries**
 *   **SplineMountainRenderableSeries**
 
-In addition **PolarLineRenderableSeries** has [PolarLineRenderableSeries.interpolateLine](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html#interpolateline) property which draws line as interpolated arcs.
+In addition **PolarLineRenderableSeries** has [PolarLineRenderableSeries.interpolateLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html#interpolateline) property which draws line as interpolated arcs.
     
 
 Hit-Test methods always use the original values which is why all methods such as **hitTest**, **hitTestDataPoint**, **hitTestXSlice** work the same way as for **FastLineRenderableSeries**, **FastBandRenderableSeries**, **SplineMountainRenderableSeries** and for **PolarLineRenderableSeries** with interpolation.

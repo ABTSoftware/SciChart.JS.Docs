@@ -9,17 +9,12 @@ import PaletteProviderExample from "!!raw-loader!./PaletteProvider/demo.js";
 
 # ✅ The Polar Band Series Type
 
-## Overview
-
 The [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) creates a band or area between two polar curves, displaying the relationship between two sets of yValues on a polar coordinate system.
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-band-chart" width="100%" height="600px" frameborder="0"></iframe>
-
-<div style={{textAlign: "center"}}>
-Above: The JavaScript [Polar Band Chart](http://stagingdemo2.scichart.com/demo/react/polar-band-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
-</div>
-
-## Properties
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-band-chart"
+    title="Polar Band Series Chart"
+/>
 
 Some of [IPolarBandRenderableSeriesOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipolarbandrenderableseriesoptions.html)'s key properties include:
 

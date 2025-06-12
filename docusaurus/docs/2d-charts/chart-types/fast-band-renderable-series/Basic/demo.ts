@@ -4,39 +4,42 @@ async function simpleBandChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a band chart using SciChart.js
     const { SciChartSurface, NumericAxis, FastBandRenderableSeries, XyyDataSeries, SciChartJsNavyTheme } = SciChart;
-
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
+
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
+    // Generate some Xyy data for the band series
     const xValues = [];
     const yValues = [];
     const y1Values = [];
     const POINTS = 1000;
     const STEP = (3 * Math.PI) / POINTS;
-    for (let i = 0; i <= 1000; i++) {
+    for (let i = 0; i <= POINTS; i++) {
         const k = 1 - i / 2000;
         xValues.push(i);
         yValues.push(Math.sin(i * STEP) * k * 0.7);
         y1Values.push(Math.cos(i * STEP) * k);
     }
 
-    const dataSeries = new XyyDataSeries(wasmContext, { xValues, yValues, y1Values });
-
-    const bandSeries = new FastBandRenderableSeries(wasmContext, {
-        dataSeries,
+    // Create & configure the band series
+    const bandSeries1 = new FastBandRenderableSeries(wasmContext, {
+        dataSeries: new XyyDataSeries(wasmContext, { 
+            xValues, 
+            yValues, 
+            y1Values 
+        }),
         stroke: "#F48420",
         strokeY1: "#50C7E0",
-        fill: "#F4842033",
-        fillY1: "#50C7E033",
+        fill: "#F4842033",   // the Fill for a data slice where `yVal < y1Val`
+        fillY1: "#50C7E033", // the Fill for a data slice where `yVal > y1Val`
         strokeThickness: 2
     });
-
-    sciChartSurface.renderableSeries.add(bandSeries);
+    sciChartSurface.renderableSeries.add(bandSeries1);
     // #region_A_end
 
     // Optional: add zooming, panning for the example
@@ -50,7 +53,6 @@ async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
     const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const xValues = [];
@@ -78,8 +80,8 @@ async function builderExample(divElementId) {
                 options: {
                     stroke: "#FF1919FF",
                     strokeY1: "#279B27FF",
-                    fill: "#279B2733",
-                    fillY1: "#FF191933",
+                    fill: "#279B2733",   // the Fill for a data slice where `yVal < y1Val`
+                    fillY1: "#FF191933", // the Fill for a data slice where `yVal > y1Val`
                     strokeThickness: 2
                 }
             }

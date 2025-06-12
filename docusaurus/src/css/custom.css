@@ -54,6 +54,10 @@ track it down within inspect element and change the variable from one of these c
 }
 
 [data-theme='dark'] {
+  --docusaurus-highlighted-code-line-bg: rgba(0, 170, 0, 0.133);
+  --ifm-code-background: rgba(136, 136, 136, 0.133);
+  --ifm-alert-background-color-highlight: rgba(136, 136, 136, 0.102);
+
   /* Dark Mode */
   --aa-primary-color-rgb: rgb(136, 187, 255);
   --ifm-color-primary: rgb(136, 187, 255);
@@ -63,7 +67,7 @@ track it down within inspect element and change the variable from one of these c
   --ifm-color-success-contrast-background: #88bbff11;
   --docusaurus-highlighted-code-line-bg: #66FF6610;
   --code-section-background: rgb(30, 30, 30);
-
+  
   --absolute-text-color: rgb(255, 255, 255);
 }
 

@@ -27,7 +27,11 @@ What is the PaletteProvider API?
 
 The PaletteProvider API allows you to achieve per data-point colouring or styling. Here is a quick example below. The following pages have further worked examples for each series type.
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/chart-color-points-individually-with-paletteprovider" title="Coloring Series per-point using PaletteProvider" description="showing how to color data-points based on a rule." />
+<ChartFromSciChartDemo 
+    src="https://demo.scichart.com/iframe/chart-color-points-individually-with-paletteprovider" 
+    title="Coloring Series per-point using PaletteProvider" 
+    description="showing how to color data-points based on a rule." 
+/>
 
 <br/>
 The PaletteProvider API is a powerful extension in SciChart.js which allows you to colour line segments, scatter points, candles/columns or mountain chart segments based on a programatic rule.
@@ -49,7 +53,7 @@ Use this API any time you want to change the colour, fill or scatter-point colou
 Enabling the PaletteProvider
 ----------------------------
 
-To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
+To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
 
 The following articles in this section show you how to do this for each series type:
 

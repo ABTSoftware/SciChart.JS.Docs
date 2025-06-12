@@ -9,14 +9,12 @@ import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
 import PolarLineChart from "!!raw-loader!./Basic/demo.js";
 import PolarLinePaletteProvider from "!!raw-loader!./PaletteProvider/demo.js";
 
-## Overview
-
 The [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) creates lines in a polar coordinate system, connecting data points with either straight line segments or interpolated arcs. This chart type is ideal for visualizing cyclical data, radar charts, or any data that benefits from a circular representation.
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-line-chart" width="100%" height="600px" frameborder="0"></iframe>
 
-<div style={{textAlign: "center"}}> 
-Above: The JavaScript [Polar Line Chart](http://stagingdemo2.scichart.com/demo/react/polar-line-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react)
-</div>
+<ChartFromSciChartDemo 
+    src="http://stagingdemo2.scichart.com/demo/iframe/polar-line-chart"
+    title="Polar Line Series Chart"
+/>
 
 ## Properties
 
