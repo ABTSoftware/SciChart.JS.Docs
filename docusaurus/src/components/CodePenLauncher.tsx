@@ -91,17 +91,17 @@ export const CodePenLauncher: React.FC<Props> = ({ html, js, css, title = "Demo"
             <div className="scichart">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="3 3 18 18">
-                        <path stroke="#007bb0" stroke-width="1.1" d="M 13.1 5.85, l -4.7 3.55 M 13.5 14.5, l -4.7 3.55 M 8.6 10.65, l 4.7 2.8" />
-                        <path stroke="#ed7465" stroke-width="0.68" d="M 16.19 7.15, l -3.32 2.56, 3.5 2.1"/>
+                        <path stroke="#007bb0" strokeWidth="1.1" d="M 13.1 5.85, l -4.7 3.55 M 13.5 14.5, l -4.7 3.55 M 8.6 10.65, l 4.7 2.8" />
+                        <path stroke="#ed7465" strokeWidth="0.68" d="M 16.19 7.15, l -3.32 2.56, 3.5 2.1"/>
                         
-                        <g stroke="#007bb0" stroke-width="0.6">
+                        <g stroke="#007bb0" strokeWidth="0.6">
                             <circle cx="7.85" cy="10.15" r="1"/>
                             <circle cx="13.75" cy="5.35" r="1"/>
                             <circle cx="14.23" cy="13.8" r="1"/>
                             <circle cx="8.05" cy="18.74" r="1"/>
                         </g>
                         
-                        <g stroke="#ed7465" stroke-width="0.8">
+                        <g stroke="#ed7465" strokeWidth="0.8">
                             <circle cx="16.5" cy="12" r="0.4"/>
                             <circle cx="16.5" cy="6.95" r="0.4"/>
                             <circle cx="12.9" cy="9.6" r="0.4"/>
