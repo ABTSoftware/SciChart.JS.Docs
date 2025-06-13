@@ -17,6 +17,7 @@ export default function ChartFromSciChartDemo({
                 Above: The JavaScript <a href={src} target="_blank">{title}</a> example
                 from the <a href="https://www.scichart.com/demo/react" target="_blank">SciChart.js Demo</a> {description}
             </div>
+            <br/>
         </div>
     );
 }
