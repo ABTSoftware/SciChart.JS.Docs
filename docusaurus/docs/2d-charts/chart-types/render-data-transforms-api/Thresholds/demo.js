@@ -1,5 +1,5 @@
 import { FastLineRenderableSeries, MouseWheelZoomModifier, NumberRange, NumericAxis, SciChartSurface, XyDataSeries, XyBaseRenderDataTransform, ZoomExtentsModifier, ZoomPanModifier, ObservableArrayBase, SciChartJsNavyTheme, EllipsePointMarker, parseColorToUIntArgb, DefaultPaletteProvider, EStrokePaletteMode, HorizontalLineAnnotation } from "scichart";
-// #region ExampleA
+// #region_A_start
 class ThresholdRenderDataTransform extends XyBaseRenderDataTransform {
     // Using XyBaseRenderDataTransform here as we are converting to XyPointSeries
     thresholds = new ObservableArrayBase();
@@ -99,8 +99,8 @@ class ThresholdRenderDataTransform extends XyBaseRenderDataTransform {
         return this.pointSeries;
     }
 }
-// #endregion
-// #region ExampleB
+// #region_A_end
+// #region_B_start
 const colorNames = ["green", "blue", "yellow", "red"];
 const colors = colorNames.map(c => parseColorToUIntArgb(c));
 class ThresholdPaletteProvider extends DefaultPaletteProvider {
@@ -129,7 +129,7 @@ class ThresholdPaletteProvider extends DefaultPaletteProvider {
         return colors[this.thresholds.length];
     }
 }
-// #endregion
+// #region_B_end
 async function thresholds(divElementId) {
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -141,7 +141,7 @@ async function thresholds(divElementId) {
         growBy: new NumberRange(0.05, 0.05)
     });
     sciChartSurface.yAxes.add(yAxis);
-    // #region ExampleC
+    // #region_C_start
     // Create a series
     const lineSeries = new FastLineRenderableSeries(wasmContext, {
         pointMarker: new EllipsePointMarker(wasmContext, {
@@ -172,7 +172,7 @@ async function thresholds(divElementId) {
     // Create and set the paletteProvider
     const paletteProvider = new ThresholdPaletteProvider(thresholds);
     lineSeries.paletteProvider = paletteProvider;
-    // #endregion
+    // #region_C_end
     // A function to create and add annotations to represent the thresholds
     const makeThresholdAnnotation = (i) => {
         const thresholdAnn = new HorizontalLineAnnotation({
