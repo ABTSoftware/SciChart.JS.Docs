@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Axis API Overview
+# ✅ Axis API Overview
 
 SciChart.js has a rich and configurable axis API. We believe you won't find a JavaScript Chart in the world with as many options for axis as SciChart!
 
