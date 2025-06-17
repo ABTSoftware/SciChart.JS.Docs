@@ -47,7 +47,7 @@ If applying PointMarkers to the FastMountainRenderableSeries, and you want to ad
 
 Find out how in the documentation page [Per-Point Colouring of Scatter Charts (or PointMarkers)](/docs/2d-charts/chart-types/palette-provider-api/xy-scatter-renderable-series/index.md).
 
-See Also
+#### See Also
 
 - [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md)
 - [Per-point Colouring of Line Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-line-renderable-series/index.md)

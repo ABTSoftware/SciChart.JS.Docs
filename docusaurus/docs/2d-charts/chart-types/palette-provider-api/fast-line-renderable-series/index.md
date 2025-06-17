@@ -66,7 +66,7 @@ This now results in gradient color changes between line segments.
 
 Note: SciChart won't bisect the line at a threshold value but only changes colour between line segments in the data you already have. If you want to have a perfect transistion from one colour to another at a specific Y-value, you will need to include data-points
 
-See Also
+#### See Also
 
 - [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md)
 - [Per-point Colouring of Mountain Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-mountain-renderable-series/index.md)
