@@ -1,0 +1,204 @@
+import * as SciChart from "scichart";
+
+async function multipleAxis(divElementId) {
+    // Demonstrates how to configure multiple axis in SciChart.js
+    const {
+        SciChartSurface,
+        NumericAxis,
+        SciChartJsNavyTheme,
+        ELabelAlignment,
+        EAxisAlignment,
+        NumberRange,
+        ENumericFormat
+    } = SciChart;
+
+    // or, for npm, import { SciChartSurface, ... } from "scichart"
+
+    const titleStyle1 = {
+        color: "#50C7E0",
+        fontSize: 30
+    };
+    const labelStyle1 = {
+        color: "#50C7E0"
+    };
+    const titleStyle2 = {
+        color: "#F48420",
+        fontSize: 30
+    };
+    const labelStyle2 = {
+        color: "#F48420",
+        alignment: ELabelAlignment.Right
+    };
+
+    // #region_A_start
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
+        theme: new SciChartJsNavyTheme()
+    });
+
+    // Add a primary X,Y Axis pair
+    sciChartSurface.xAxes.add(
+        new NumericAxis(wasmContext, {
+            axisAlignment: EAxisAlignment.Bottom,
+            axisTitle: "X Axis Bottom",
+            axisTitleStyle: titleStyle1,
+            labelStyle: labelStyle1,
+            backgroundColor: "#50C7E022",
+            axisBorder: {
+                borderTop: 1,
+                color: "#50C7E0"
+            }
+        })
+    );
+
+    sciChartSurface.yAxes.add(
+        new NumericAxis(wasmContext, {
+            axisAlignment: EAxisAlignment.Left,
+            axisTitle: "Y Axis Left",
+            axisTitleStyle: titleStyle1,
+            labelStyle: labelStyle1,
+            growBy: new NumberRange(0.1, 0.1),
+            backgroundColor: "#50C7E022",
+            axisBorder: {
+                borderRight: 1,
+                color: "#50C7E0"
+            }
+        })
+    );
+
+    // Add a secondary X,Y Axis pair
+    // Capture the axis instance as you may need it's Id which is auto generated
+    const xAxis2 = new NumericAxis(wasmContext, {
+        axisTitleStyle: titleStyle2,
+        labelStyle: labelStyle2,
+        axisAlignment: EAxisAlignment.Top,
+        axisTitle: "X Axis Top",
+        backgroundColor: "#F4842022",
+        axisBorder: {
+            borderBottom: 1,
+            color: "#F48420"
+        }
+    });
+    sciChartSurface.xAxes.add(xAxis2);
+
+    const yAxis2 = new NumericAxis(wasmContext, {
+        axisTitleStyle: titleStyle2,
+        labelStyle: labelStyle2,
+        axisAlignment: EAxisAlignment.Right,
+        axisTitle: "Y Axis Right",
+        labelFormat: ENumericFormat.Decimal,
+        labelPrecision: 2,
+        growBy: new NumberRange(0.1, 0.1),
+        backgroundColor: "#F4842022",
+        axisBorder: {
+            borderLeft: 1,
+            color: "#F48420"
+        }
+    });
+    sciChartSurface.yAxes.add(yAxis2);
+    // #region_A_end
+}
+
+multipleAxis("scichart-root");
+
+async function builderExample(divElementId) {
+    // Demonstrates how to configure multiple axis in SciChart.js using the Builder API
+    const {
+        chartBuilder,
+        EThemeProviderType,
+        EAxisType,
+        ELabelAlignment,
+        NumberRange,
+        ENumericFormat,
+        EAxisAlignment
+    } = SciChart;
+
+    const titleStyle1 = {
+        color: "#50C7E0",
+        fontSize: 30
+    };
+    const labelStyle1 = {
+        color: "#50C7E0"
+    };
+    const titleStyle2 = {
+        color: "#F48420",
+        fontSize: 30
+    };
+    const labelStyle2 = {
+        color: "#F48420",
+        alignment: ELabelAlignment.Right
+    };
+
+    // or, for npm, import { chartBuilder, ... } from "scichart"
+
+    // #region_B_start
+    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+        surface: { theme: { type: EThemeProviderType.Dark } },
+        xAxes: [
+            {
+                type: EAxisType.NumericAxis,
+                options: {
+                    axisAlignment: EAxisAlignment.Bottom,
+                    axisTitle: "X Axis Bottom",
+                    axisTitleStyle: titleStyle1,
+                    labelStyle: labelStyle1,
+                    backgroundColor: "#50C7E022",
+                    axisBorder: {
+                        borderTop: 1,
+                        color: "#50C7E0"
+                    }
+                }
+            },
+            {
+                type: EAxisType.NumericAxis,
+                options: {
+                    axisTitleStyle: titleStyle2,
+                    labelStyle: labelStyle2,
+                    axisAlignment: EAxisAlignment.Top,
+                    axisTitle: "X Axis Top",
+                    backgroundColor: "#F4842022",
+                    axisBorder: {
+                        borderBottom: 1,
+                        color: "#F48420"
+                    }
+                }
+            }
+        ],
+        yAxes: [
+            {
+                type: EAxisType.NumericAxis,
+                options: {
+                    axisAlignment: EAxisAlignment.Left,
+                    axisTitle: "Y Axis Left",
+                    axisTitleStyle: titleStyle1,
+                    labelStyle: labelStyle1,
+                    growBy: new NumberRange(0.1, 0.1),
+                    backgroundColor: "#50C7E022",
+                    axisBorder: {
+                        borderRight: 1,
+                        color: "#50C7E0"
+                    }
+                }
+            },
+            {
+                type: EAxisType.NumericAxis,
+                options: {
+                    axisTitleStyle: titleStyle2,
+                    labelStyle: labelStyle2,
+                    axisAlignment: EAxisAlignment.Right,
+                    axisTitle: "Y Axis Right",
+                    labelFormat: ENumericFormat.Decimal,
+                    labelPrecision: 2,
+                    growBy: new NumberRange(0.1, 0.1),
+                    backgroundColor: "#F4842022",
+                    axisBorder: {
+                        borderLeft: 1,
+                        color: "#F48420"
+                    }
+                }
+            }
+        ]
+    });
+    // #region_B_end
+}
+
+if (location.search.includes("builder=1")) builderExample("scichart-root");
