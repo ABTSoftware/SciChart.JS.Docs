@@ -14,7 +14,7 @@ async function axisVisibility(divElementId) {
         yValues1.push(0.2 * Math.sin(i * 0.1) - Math.cos(i * 0.01) * 0.5);
         yValues2.push(0.2 * Math.sin(i * 0.1) - Math.cos(i * 0.01) * -0.6);
     }
-    // #region ExampleA
+    // #region_A_start
     // Create a SciChartSurface
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -96,7 +96,7 @@ async function axisVisibility(divElementId) {
             }
         });
     });
-    // #endregion
+    // #region_A_end
     const textAnnotation = new TextAnnotation({
         x1: 0.5,
         y1: 0.5,
