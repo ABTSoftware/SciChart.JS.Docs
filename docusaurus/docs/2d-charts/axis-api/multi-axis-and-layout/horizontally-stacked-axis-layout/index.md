@@ -106,8 +106,8 @@ If we combine the [Vertical Chart feature](/docs/2d-charts/axis-api/multi-axis-
 
 <LiveDocSnippet maxWidth={"100%"} name="./Step3/demo" />
 
-See Also
+#### See Also
 
-[Inner Axis Layout](Axis Layout - Inside and Central Axis.html)
+* [Inner Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout/index.md)
+* [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/index.md)
 
-[Secondary and Multiple Axis](Axis Alignment - Setting Axis Alignment.html)
