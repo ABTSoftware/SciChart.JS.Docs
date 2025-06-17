@@ -1,0 +1,139 @@
+import * as SciChart from "scichart";
+
+async function axisStyling(divElementId) {
+    // #region_A_start
+    // Demonstrates how to style numeric axis in SciChart.js
+    const { SciChartSurface, NumericAxis, SciChartJsNavyTheme, EAxisAlignment } = SciChart;
+
+    // or, for npm, import { SciChartSurface, ... } from "scichart"
+
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
+        theme: new SciChartJsNavyTheme()
+    });
+
+    // Create and style xAxis
+    sciChartSurface.xAxes.add(
+        new NumericAxis(wasmContext, {
+            axisTitle: ["X Axis", "bold, italic, with multi-line title"],
+            useNativeText: false, // disable native text to apply bold and italic styling
+            labelStyle: {
+                fontSize: 16,
+                fontWeight: "bold",
+                fontStyle: "Italic",
+                color: "#4682b4"
+            },
+            drawMajorBands: true,
+            axisBandsFill: "#FF665555",
+            axisTitleStyle: {
+                fontSize: 16,
+                color: "#4682b4",
+                fontWeight: "bold",
+                fontStyle: "italic"
+            },
+            majorGridLineStyle: { strokeThickness: 1, color: "#ADFF2F", strokeDashArray: [10, 5] },
+            minorGridLineStyle: { strokeThickness: 1, color: "#EE82EE", strokeDashArray: [2, 2] },
+            majorTickLineStyle: { strokeThickness: 1, color: "Blue", tickSize: 8 },
+            minorTickLineStyle: { strokeThickness: 1, color: "Red", tickSize: 4 }
+        })
+    );
+
+    // Create and style left YAxis
+    sciChartSurface.yAxes.add(
+        new NumericAxis(wasmContext, {
+            axisAlignment: EAxisAlignment.Left,
+            axisBandsFill: "#FF665555",
+            axisTitle: "Left Y Axis",
+            useNativeText: false,
+            axisTitleStyle: {
+                fontSize: 25,
+                fontFamily: "Montserrat",
+                fontWeight: "bold",
+                color: "#DC143C"
+            },
+            majorGridLineStyle: { strokeThickness: 1, color: "#ADFF2F", strokeDashArray: [10, 5] },
+            minorGridLineStyle: { strokeThickness: 1, color: "#EE82EE", strokeDashArray: [2, 2] },
+            majorTickLineStyle: { strokeThickness: 1, color: "#ADFF2F", tickSize: 8 },
+            minorTickLineStyle: { strokeThickness: 1, color: "#EE82EE", tickSize: 4 },
+            labelStyle: {
+                fontSize: 15,
+                color: "#DC143C",
+                fontFamily: "Default"
+            }
+        })
+    );
+
+    sciChartSurface.yAxes.add(
+        new NumericAxis(wasmContext, {
+            axisAlignment: EAxisAlignment.Right,
+            axisTitle: ["Right Axis", "Rotation: 0"],
+            axisTitleStyle: {
+                fontSize: 18,
+                rotation: 0
+            }
+        })
+    );
+    // #region_A_end
+}
+
+axisStyling("scichart-root");
+
+async function builderExample(divElementId) {
+    // #region_B_start
+    // Demonstrates how to style a numeric axis in SciChart.js using the Builder API
+    const { chartBuilder, ESeriesType, EThemeProviderType, EAutoRange, EAxisAlignment, ENumericFormat, EAxisType } =
+        SciChart;
+
+    // or, for npm, import { chartBuilder, ... } from "scichart"
+
+    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+        surface: { theme: { type: EThemeProviderType.Dark } },
+        xAxes: {
+            type: EAxisType.NumericAxis,
+            options: {
+                axisTitle: "X Axis",
+                drawMajorBands: true,
+                axisBandsFill: "#FF665555",
+                axisTitleStyle: {
+                    fontSize: 16,
+                    color: "#4682b4",
+                    fontWeight: "bold",
+                    fontStyle: "italic"
+                },
+                majorGridLineStyle: { strokeThickness: 1, color: "#ADFF2F", strokeDashArray: [10, 5] },
+                minorGridLineStyle: { strokeThickness: 1, color: "#EE82EE", strokeDashArray: [2, 2] },
+                majorTickLineStyle: { strokeThickness: 1, color: "Blue", tickSize: 8 },
+                minorTickLineStyle: { strokeThickness: 1, color: "Red", tickSize: 4 },
+                labelStyle: {
+                    fontSize: 16,
+                    fontWeight: "bold",
+                    fontStyle: "Italic",
+                    color: "#4682b4"
+                }
+            }
+        },
+        yAxes: {
+            type: EAxisType.NumericAxis,
+            options: {
+                axisAlignment: EAxisAlignment.Left,
+                axisBandsFill: "#FF665555",
+                axisTitle: "Left Y Axis",
+                axisTitleStyle: {
+                    fontSize: 25,
+                    fontFamily: "Montserrat",
+                    fontWeight: "bold",
+                    color: "#DC143C"
+                },
+                majorGridLineStyle: { strokeThickness: 1, color: "#ADFF2F", strokeDashArray: [10, 5] },
+                minorGridLineStyle: { strokeThickness: 1, color: "#EE82EE", strokeDashArray: [2, 2] },
+                majorTickLineStyle: { strokeThickness: 1, color: "#ADFF2F", tickSize: 8 },
+                minorTickLineStyle: { strokeThickness: 1, color: "#EE82EE", tickSize: 4 },
+                labelStyle: {
+                    fontSize: 15,
+                    color: "#DC143C",
+                    fontFamily: "Default"
+                }
+            }
+        }
+    });
+    // #region_B_end
+}
