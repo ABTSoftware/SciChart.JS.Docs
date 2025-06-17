@@ -58,7 +58,7 @@ export default function LiveDocSnippet(props?: Props) {
     }, []);
 
     return (
-        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2 }}>
+        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, marginBottom: 10 }}>
             <CodePenLauncher js={files.ts} html={sandboxHtml} css={files.css} />
             <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>
         </div>

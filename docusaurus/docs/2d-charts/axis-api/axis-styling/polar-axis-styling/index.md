@@ -2,6 +2,6 @@
 sidebar_position: 4
 ---
 
-# PolarCartegoryAxis
+# ⭕ Polar Axis Styling
 
 TODO
