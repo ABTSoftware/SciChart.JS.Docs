@@ -1,8 +1,9 @@
 import * as SciChart from "scichart";
 
+import { IPointMetadata } from "scichart"
+
 // #region_A_start
 const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = SciChart;
-
 // or, for npm, import { DefaultPaletteProvider, ... } from "scichart"
 
 // Custom PaletteProvider for line series which colours datapoints above a threshold
@@ -20,7 +21,7 @@ class ThresholdLinePaletteProvider extends DefaultPaletteProvider {
     // This function is called for every data-point.
     // Return undefined to use the default color for the line,
     // else, return a custom colour as an ARGB color code, e.g. 0xFFFF0000 is red
-    overrideStrokeArgb(xValue, yValue, index, opacity, metadata) {
+    overrideStrokeArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: IPointMetadata) {
         return this.rule(yValue) ? this.stroke : undefined;
     }
 }
@@ -81,12 +82,11 @@ async function drawLineChartWithPalette(divElementId) {
 
 drawLineChartWithPalette("scichart-root");
 
-async function builderExample(divElementId) {
+export async function builderExample(divElementId) {
     // #region ExampleC
 
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
     const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
-
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // Register the custom ThresholdLinePaletteProvider with the chartBuilder
@@ -115,7 +115,7 @@ async function builderExample(divElementId) {
                         customType: "ThresholdLinePaletteProvider",
                         options: {
                             stroke: "Green",
-                            rule: yValue => yValue >= 4.0
+                            rule: (yValue: number) => yValue >= 4.0
                         }
                     }
                     // Note: Assigning an instance is also valid, e.g.

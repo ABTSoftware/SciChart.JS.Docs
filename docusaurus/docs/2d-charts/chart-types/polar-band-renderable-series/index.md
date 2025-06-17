@@ -2,11 +2,6 @@
 sidebar_position: 100
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import simpleBandChart from "!!raw-loader!./Basic/demo.js";
-import gradientFillBandChart from "!!raw-loader!./GradientFill/demo.js";
-import PaletteProviderExample from "!!raw-loader!./PaletteProvider/demo.js";
-
 # ✅ The Polar Band Series Type
 
 The [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) creates a band or area between two polar curves, displaying the relationship between two sets of yValues on a polar coordinate system.
@@ -37,7 +32,7 @@ Some of [IPolarBandRenderableSeriesOptions:blue_book:](https://www.scichart.com/
 ```ts showLineNumber {23} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={simpleBandChart} />
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 
@@ -52,7 +47,7 @@ To use Gradient Fills with a [PolarBandRenderableSeries:blue_book:](https://www.
 ```ts showLineNumbers {10-13,15-18} file=./GradientFill/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={gradientFillBandChart} />
+<LiveDocSnippet name="./GradientFill/demo" />
 
 In the code above:
 - We create a [GradientParams:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html) object with 2 gradient stops, and set the start and end points of the gradient.
@@ -68,7 +63,7 @@ Here is how to do this:
 ```ts showLineNumbers {9-15,17-23,36} file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
 ```
 
-<ChartPreviewWrapper jsContent={PaletteProviderExample} />
+<LiveDocSnippet name="./PaletteProvider/demo" />
 
 In the code above:
 - We create a class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) to override [overrideFillArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridefillargb) and [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) methods by `xValue`, more specifically, the orange fill & stroke when this custom rule is met:

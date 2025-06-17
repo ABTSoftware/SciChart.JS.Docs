@@ -2,14 +2,6 @@
 sidebar_position: 31
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import triangleSeriesList from "!!raw-loader!./triangle-series-list/demo";
-import triangleSeriesPolygon from "!!raw-loader!./triangle-series-polygon/demo";
-import triangleSeriesStrip from "!!raw-loader!./triangle-series-strip/demo";
-import australiaMap from "!!raw-loader!./australia-map/demo";
-import triangleSeriesCustomGradient from "!!raw-loader!./triangle-series-custom-gradient/demo";
-import triangleSeriesTexture from "!!raw-loader!./triangle-series-texture/demo";
-
 # 🔄 The Triangle Series Type
 
 The TriangleRenderableSeries is designed to plot data points as triangles, often used for custom scatter plots, mesh visualizations, or highlighting specific data points with a triangle marker. It supports full customization, including stroke, fill, and point marker options.
@@ -70,7 +62,7 @@ Out of these four points from this data set we also have two triangles [[0, 0],[
 
 In this mode, each group of three consecutive points in the list defines an independent triangle. The triangles are not connected, every set of three points forms a separate triangle.
 
-<ChartPreviewWrapper jsContent={triangleSeriesList} />
+<LiveDocSnippet name="./triangle-series-list/demo" />
 
 ```ts {11} showLineNumbers file=./triangle-series-list/demo.ts start=region_A_start end=region_A_end
 
@@ -80,8 +72,8 @@ In this mode, each group of three consecutive points in the list defines an inde
 
 In this mode, each group of two consecutive points and the first one in the list defines a triangle. The triangles are connected in a way that they share the same point defined by the first point on the list.
 
-<ChartPreviewWrapper jsContent={triangleSeriesPolygon} />
-
+<LiveDocSnippet name="./triangle-series-polygon/demo" />
+    
 ```ts {22} showLineNumbers file=./triangle-series-polygon/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -90,7 +82,7 @@ In this mode, each group of two consecutive points and the first one in the list
 
 In this mode, each group of three consecutive points in the list defines a triangle. The triangles are connected, every point is connected to the last two points.
 
-<ChartPreviewWrapper jsContent={triangleSeriesStrip} />
+<LiveDocSnippet name="./triangle-series-strip/demo" />
 
 ```ts {20} showLineNumbers file=./triangle-series-strip/demo.ts start=region_A_start end=region_A_end
 
@@ -100,7 +92,8 @@ In this mode, each group of three consecutive points in the list defines a trian
 
 In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) and fillLinearGradient to display custom gradient.
 
-<ChartPreviewWrapper jsContent={triangleSeriesCustomGradient} />
+<LiveDocSnippet name="./triangle-series-custom-gradient/demo" />
+
 ```ts {30-33} showLineNumbers file=./triangle-series-custom-gradient/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -109,7 +102,8 @@ In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.co
 
 In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html), ETriangleSeriesDrawMode.Polygon and customTextureOptions to display rectangles with custom texture that are comprised of four triangles.
 
-<ChartPreviewWrapper jsContent={triangleSeriesTexture} />
+<LiveDocSnippet name="./triangle-series-texture/demo" />
+
 ```ts showLineNumbers file=./triangle-series-texture/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -118,5 +112,5 @@ In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](http
 
 In this example we have used Sweep-line algorithm for constrained Delaunay triangulation to convert outline of Australia into series of triangles that can be displayed using ETriangleSeriesDrawMode.List mode.
 
-<ChartPreviewWrapper jsContent={australiaMap} />
+<LiveDocSnippet name="./australia-map/demo" />
 

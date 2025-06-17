@@ -6,7 +6,7 @@ sidebar_position: 2
 
 If you want to have absolute control over the gridlines, labels and minor gridline spacing in SciChart.js, you can use the **TickProvider API**.
 
-Every axis implementation has an [axisCore.tickProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#tickprovider) property. This accepts a class which inherits [TickProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/tickprovider.html). Several classes are built-in such as [NumericTickProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html) and [LogarithmicTickProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmictickprovider.html) which SciChart uses internally.
+Every axis implementation has an [axisCore.tickProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#tickprovider) property. This accepts a class which inherits [TickProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/tickprovider.html). Several classes are built-in such as [NumericTickProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html) and [LogarithmicTickProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmictickprovider.html) which SciChart uses internally.
 
 The inheritance diagram for TickProviders in SciChart.js looks like this:
 
@@ -21,12 +21,12 @@ You can create your own TickProvider if you want to have absolute control over t
 Example 1: Our NumericTickProvider  
 ------------------------------------
 
-Below here how our [NumericTickProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html) is implemented. This code is shared for example purposes so you can see the inner workings of this class. **For a worked example, scroll down**.
+Below here how our [NumericTickProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html) is implemented. This code is shared for example purposes so you can see the inner workings of this class. **For a worked example, scroll down**.
 
 In the code below:
 
-*   The method [getMajorTicks()](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html#getmajorticks) returns an array of values where you want to place major gridlines and labels.
-*   The method [getMinorTicks()](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html#getminorticks) returns an array of values where you want to place minor gridlines.
+*   The method [getMajorTicks():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html#getmajorticks) returns an array of values where you want to place major gridlines and labels.
+*   The method [getMinorTicks():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numerictickprovider.html#getminorticks) returns an array of values where you want to place minor gridlines.
 
 Both arrays are in data-coordinates, not pixels. E.g. if your Chart has data between 0..10 then you want to set major gridlines at 2,4,6,8 then return [2, 4, 6, 8] as an array from getMajorTicks.
 

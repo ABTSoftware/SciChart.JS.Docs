@@ -2,12 +2,6 @@
 sidebar_position: 100
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import polarColumnChart from "!!raw-loader!./BasicAngular/demo.js";
-import polarRadialColumnChart from "!!raw-loader!./BasicRadial/demo.js";
-import polarColumnMode from "!!raw-loader!./ColumnMode/demo.js";
-
 # ✅ The Polar Column Chart Type
 
 The [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) creates columns in a polar coordinate system, displaying data as vertical bars positioned at specific angles and radial distances from the center, or as angular bars drawn around the center.
@@ -39,7 +33,8 @@ Some of [IPolarColumnRenderableSeriesOptions:blue_book:](https://www.scichart.co
 
 ```ts showLineNumbers {20,28,36,44} file=./BasicAngular/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={polarColumnChart} />
+
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 
@@ -54,7 +49,8 @@ The same renderable series can be used as radial columns by swapping the axis co
 
 ```ts showLineNumbers {2-3,10-11,15} file=./BasicRadial/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={polarRadialColumnChart} />
+
+<LiveDocSnippet name="./BasicRadial/demo" />
 
 In the code above:
 - The [xAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#xaxis) is configured with [EPolarAxisMode.Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) to control the radial positioning.
@@ -69,7 +65,7 @@ The [columnXMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedo
 
 ```ts showLineNumbers {7} file=./ColumnMode/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={polarColumnMode} />
+<LiveDocSnippet name="./ColumnMode/demo" />
 
 In the code above:
 - We use an [XyxDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxdataseries.html) with `xValues`, `x1Values`, and `yValues` arrays.

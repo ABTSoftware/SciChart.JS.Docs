@@ -2,11 +2,6 @@
 sidebar_position: 99
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import usingArc from "!!raw-loader!./UsingArc/demo.js";
-import usingColumn from "!!raw-loader!./UsingColumn/demo.js";
-import complexArc from "!!raw-loader!./ComplexArc/demo.js";
-
 # ✅ The Polar Gauge Chart Type
 
 The Polar Gauge Chart is used to visualize data in a polar coordinate system as a circular gauge or meter, where values are represented by angular position and radial distance. This chart type is ideal for displaying progress indicators, performance metrics, or any data that benefits from a circular visualization.
@@ -22,8 +17,8 @@ In SciChart.js, gauge charts are not specific renderable series, and can be crea
 
 Polar gauge charts typically consist of:
 
-- **Angular Axis** - a [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) or [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) with [EPolarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html) with [polarAxisMode.Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular) Controls the sweep angle and range of the gauge
-- **Radial Axis** - a [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) or [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) with [EPolarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html) with [polarAxisMode.Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) Defines the radial scale and range
+- **Angular Axis** - [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) / [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) with [polarAxisMode.Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular), which controls the sweep angle and range of the gauge
+- **Radial Axis** - [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) / [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) with [polarAxisMode.Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial), which defines the radial scale and range
 - **Background Elements** - Arcs / Columns for optional visual indicators showing the full range as a gradient
 - **Value Elements** - The actual data representation (arc or column)
 - **Annotations** - Additional elements like pointers, centered dataLabels
@@ -36,7 +31,7 @@ The [PolarArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4
 
 ```ts showLineNumbers {51-61} file=./UsingArc/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={usingArc} />
+<LiveDocSnippet name="./UsingArc/demo" />
 
 In the code above:
 - We configure the angular axis's [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#totalangle) property to define the gauge's sweep angle.
@@ -52,7 +47,8 @@ The [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentat
 
 ```ts showLineNumbers {18-21,23,27-34} file=./UsingColumn/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={usingColumn} />
+
+<LiveDocSnippet name="./UsingColumn/demo" />
 
 In the code above:
 - We use [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) to define both the radial dimensions (`yValues`, `y1Values`) and angular range (`xValues`, `x1Values`)
@@ -65,7 +61,8 @@ For more complex gauge requirements with multiple thresholds, indicators, and st
 
 ```ts showLineNumbers {9-17,33-42,66,80} file=./ComplexArc/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={complexArc} />
+
+<LiveDocSnippet name="./ComplexArc/demo" />
 
 In the code above:
 - **Multiple threshold [arcs:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararcannotation.html)** are created using different colors to represent various performance zones
@@ -86,4 +83,6 @@ In the code above:
 - Dynamic updates are required
 - You want to leverage series-level features like [fillLinearGradient:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#filllineargradient), [paletteProviders:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#paletteproviders) or [animation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html#animation)
 
+:::tip
 Both approaches can be combined in the same chart to create sophisticated gauge visualizations with multiple indicators, thresholds, and interactive elements.
+:::

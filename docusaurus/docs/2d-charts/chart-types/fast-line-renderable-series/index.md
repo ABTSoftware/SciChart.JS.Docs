@@ -4,13 +4,10 @@ sidebar_position: 10
 
 # ✅ The Line Series Type
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import simpleLineChart from "!!raw-loader!./Basic/demo.js";
-
 Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
 
 :::tip
-The [JavaScript Line Chart Example](https://demo.scichart.com/javascript-line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-line-chart)
+The [JavaScript Line Chart Example](https://demo.scichart.com/javascript-line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github
 :::
 
 <ChartFromSciChartDemo 

@@ -1,0 +1,79 @@
+---
+sidebar_position: 40
+---
+
+# 🔄 The Stacked Column Series Type
+
+Stacked Column Charts can be created by a combination of the [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html)  and [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html)  type. StackedColumnRenderableSeries share many properties with the added feature that columns automatically stack vertically or side by side.
+
+<LiveDocSnippet name="./basic-example/demo" />
+
+- We created 5 [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) and added them to a [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html)
+- The [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html) itself is added to sciChartSurface.renderableSeries collection, not the individual column series.
+
+```ts showLineNumbers file=./basic-example/demo.ts start=region_A_start end=region_A_end
+
+```
+
+## How the Stacking and Grouping Works for Column Series
+
+[StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) have a property stackedGroupId which defines how columns are grouped and stacked.
+When two [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) have a stackedGroupId set the grouping behaves differently.
+
+<div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+  <figure style={{ margin: 0, textAlign: 'center', flexGrow: "1" }}>
+    <LiveDocSnippet name="./grouping-options/stackedExample" />
+    {/* <figcaption>Caption </figcaption> */}
+  </figure>
+  <figure style={{ margin: 0, textAlign: 'center', flexGrow: "1"  }}>
+    <LiveDocSnippet name="./grouping-options/groupedExample" />
+    {/* <figcaption>Caption </figcaption> */}
+  </figure>
+</div>
+<div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+  <figure style={{ margin: 0, textAlign: 'center', flexGrow: "1"  }}>
+    <LiveDocSnippet name="./grouping-options/mixedExample" />
+    {/* <figcaption>Caption </figcaption> */}
+  </figure>
+  <figure style={{ margin: 0, textAlign: 'center', flexGrow: "1"  }}>
+   <LiveDocSnippet name="./grouping-options/100PercentExample" />
+    {/* <figcaption>Caption </figcaption> */}
+  </figure>
+</div>
+
+### A: Stacked Column Mode
+
+By default, the stackedGroupId is undefined. When this is unset, or, when set to the same value, columns stack vertically.
+
+```ts showLineNumbers file=./grouping-options/stackedExample.ts start=region_A_start end=region_A_end
+
+```
+### B: Grouped (Side by Side) Mode
+
+When stackedGroupId is different on two columns, then the columns are grouped. This allows you to have multiple stacked groups.
+
+```ts showLineNumbers file=./grouping-options/groupedExample.ts start=region_A_start end=region_A_end
+
+```
+### C: Mixed (Stacked & Grouped) Mode
+
+To demonstrate the purpose of stackedGroupId, below we have set one column to one stackedGroupId, and two other columns to another stackedGroupId. This creates two stacked groups, one with Orange/Red series (which have the same stackedGroupId) and another with the blue series.
+
+```ts showLineNumbers file=./grouping-options/mixedExample.ts start=region_A_start end=region_A_end
+
+```
+### D: 100% Stacked Column Chart Mode
+
+SciChart.js also supports a 100% Stacked Column chart, which can be enabled by setting a single flag: StackedColumnCollection.isOneHundredPercent.
+
+```ts showLineNumbers file=./grouping-options/100PercentExample.ts start=region_A_start end=region_A_end
+
+```
+
+## Gradient Fill Example
+
+<LiveDocSnippet name="./gradient-fill-example/demo" />
+
+```ts showLineNumbers file=./gradient-fill-example/demo.ts start=region_A_start end=region_A_end
+
+```

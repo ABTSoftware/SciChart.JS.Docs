@@ -10,7 +10,7 @@ All of our instructions for licensing can be found at the page [scichart.com/li
 
 
 ```ts
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
+import { SciChartSurface } from "scichart";
 
 // Set a runtime key in JavaScript once before any SciChartSurface is created
 SciChartSurface.setRuntimeLicenseKey("YOUR_RUNTIME_KEY_HERE");

@@ -4,11 +4,6 @@ sidebar_position: 100
 
 # 🔄 The Polar Mountain Chart Type
 
-<!-- import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import PolarMountainChart from "!!raw-loader!./Basic/demo.js";
-import PolarMountainPaletteProvider from "!!raw-loader!./PaletteProvider/demo.js"; -->
-
 The [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) is a type of renderable series that displays data in a polar mountain format.
 
 <ChartFromSciChartDemo 
@@ -23,9 +18,7 @@ To create a Javascript [Polar Mountain Series:blue_book:](https://www.scichart.c
 <!-- ```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
 ``` -->
 
-
-
-<!-- <ChartPreviewWrapper jsContent={PolarMountainChart} /> -->
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 - We create a [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) instance and append it to the renderableSeries collection.
@@ -39,9 +32,7 @@ To create a Javascript [Polar Mountain Series:blue_book:](https://www.scichart.c
 <!-- ```ts showLineNumbers file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
 ``` -->
 
-
-
-<!-- <ChartPreviewWrapper jsContent={PolarMountainPaletteProvider} /> -->
+<LiveDocSnippet name="./PaletteProvider/demo" />
 
 In the code above:
 - We define the `ThresholdPaletteProvider` class which extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) and overrides the [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) method to return a different stroke color only when a rule passed in the constructor is met. 

@@ -16,21 +16,21 @@ In SciChart, **axes are responsible** not only for drawing Ticks and Labels, bu
 Automatic Gridline, Label or Tick Spacing
 -----------------------------------------
 
-In SciChart.js, the difference between two Major Gridlines is defined by [axisCore.MajorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta). The difference between two minor gridlines is defined by [axisCore.MinorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta).
+In SciChart.js, the difference between two Major Gridlines is defined by [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta). The difference between two minor gridlines is defined by [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta).
 
-By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](Axis Ranging - Setting and Getting VisibleRange.html) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
+By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](Axis Ranging - Setting and Getting VisibleRange.html) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
 
 ### Configuring Automatic Tick Spacing
 
 If you want to congigure Automatic Tick Spacing, do the following:
 
-*   set [axis.autoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true
-*   set [axis.maxAutoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) = a numeric value (e.g. 10)
-*   set [axis.minorsPerMajor](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorspermajor) property = a numeric value (e.g. 5)
+*   set [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true
+*   set [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) = a numeric value (e.g. 10)
+*   set [axis.minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorspermajor) property = a numeric value (e.g. 5)
 
 With a configuration like the above, SciChart.js will calculate tick spacing on the axis with up to 10 major gridlines / labels and 5 minor gridlines per major.
 
-Note: [axis.maxAutoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) is a hint. The axis will not output this exact number of ticks, but rather dynamically vary gridline spacing depending on zoom up to this amount.
+Note: [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) is a hint. The axis will not output this exact number of ticks, but rather dynamically vary gridline spacing depending on zoom up to this amount.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts showLineNumbers file=./AutoTicks/demo.ts start=region_A_start end=region_A_end
@@ -51,9 +51,9 @@ Specifying Major & Minor Deltas
 
 There are two methods to control gridline & label spacing in SciChart.js. The first is the simplest, by specifying axis major & minor delta.
 
-*   set [axis.autoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = **false**
-*   set [axis.majorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) = a numeric value (e.g. 2)
-*   set [axis.minorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorspermajor) = a numeric value (e.g. 0.4)
+*   set [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = **false**
+*   set [axis.majorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) = a numeric value (e.g. 2)
+*   set [axis.minorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorspermajor) = a numeric value (e.g. 0.4)
 
 With a configuration like the above, SciChart.js will calculate tick spacing on the axis exactly an interval of 2 between major gridlines / labels and 0.4 between minor gridlines.
 

@@ -77,6 +77,7 @@ export const CodePenLauncher: React.FC<Props> = ({ html, js, css, title = "Demo"
                         .codepen_logo {
                             width: 100px;
                             margin-bottom: -2px;
+                            cursor: pointer;
                         }
                     }
 
