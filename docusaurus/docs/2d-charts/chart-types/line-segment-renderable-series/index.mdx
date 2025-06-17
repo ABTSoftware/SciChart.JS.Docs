@@ -2,11 +2,6 @@
 sidebar_position: 32
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import basicExample from "!!raw-loader!./basic-example/demo";
-import xyxyExample from "!!raw-loader!./xyxy-example/demo";
-import gradientField from "!!raw-loader!./gradient-field/demo";
-
 # 🔄 The Line Segment Series Type
 
 Line segment is a part of a straight line that is bounded by two distinct endpoints. [LineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linesegmentrenderableseries.html) defines a line-series or line chart type in the SciChart's High Performance Real-time JavaScript Charts
@@ -31,7 +26,8 @@ Here is a simple Line Segment Series made using [XyDataSeries:blue_book:](https:
 
 This example is using XyDataSeries
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={basicExample} />
+<LiveDocSnippet name="./basic-example/demo" />
+
 ```ts {23} showLineNumbers file=./basic-example/demo.ts start=region_A_start end=region_A_end
 
 ```
@@ -40,14 +36,16 @@ This example is using XyDataSeries
 
 This example is using XyxyDataSeries
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={xyxyExample} />
+<LiveDocSnippet name="./xyxy-example/demo" />
+
 ```ts {13} showLineNumbers file=./xyxy-example/demo.ts start=region_A_start end=region_A_end
 
 ```
 
 ### Gradient field
 
-<ChartPreviewWrapper maxWidth={"100%"} jsContent={gradientField} />
+<LiveDocSnippet name="./gradient-field/demo" />
+
 ```ts showLineNumbers file=./gradient-field/demo.ts start=region_A_start end=region_A_end
 
 ```

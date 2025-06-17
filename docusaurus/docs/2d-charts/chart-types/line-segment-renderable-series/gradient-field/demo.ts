@@ -24,10 +24,8 @@ class LineSegmentPaletteProvider implements IStrokePaletteProvider {
     private readonly palettedStart = parseColorToUIntArgb("red");
     private readonly palettedEnd = parseColorToUIntArgb("blue");
 
-    // tslint:disable-next-line:no-empty
     public onAttached(parentSeries: IRenderableSeries): void {}
-
-    // tslint:disable-next-line:no-empty
+    
     public onDetached(): void {}
 
     public overrideStrokeArgb(xValue: number, yValue: number, index: number): number {

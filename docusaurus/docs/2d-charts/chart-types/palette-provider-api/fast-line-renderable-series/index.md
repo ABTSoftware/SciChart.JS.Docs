@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # ✅ Per-point Colouring for Line Series
 
-Line series can be colored per-point or per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineRenderableSeries.paletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
+Line series can be colored per-point or per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
 
 Let's start off with the PaletteProvider class:
 
@@ -30,11 +30,11 @@ This results in the following output:
 
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
 
-In TypeScript you only need to implement an interface such as [IStrokePaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), whereas in JavaScript you must extend the [DefaultPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html) class.
+In TypeScript you only need to implement an interface such as [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), whereas in JavaScript you must extend the [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html) class.
 
 ## Gradient Transitions in Lines
 
-Change [strokePaletteMode](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html#strokepalettemode) to [EStrokePaletteMode.GRADIENT](https://www.scichart.com/documentation/js/current/typedoc/enums/estrokepalettemode.html) to get a gradient color transition:
+Change [strokePaletteMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html#strokepalettemode) to [EStrokePaletteMode.GRADIENT:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/estrokepalettemode.html) to get a gradient color transition:
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
 

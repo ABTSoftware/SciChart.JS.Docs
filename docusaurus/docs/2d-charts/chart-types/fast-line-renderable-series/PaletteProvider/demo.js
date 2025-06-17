@@ -63,7 +63,7 @@ async function drawLineChartWithPalette(divElementId) {
     }));
 }
 drawLineChartWithPalette("scichart-root");
-async function builderExample(divElementId) {
+export async function builderExample(divElementId) {
     // #region ExampleC
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
     const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
@@ -89,7 +89,7 @@ async function builderExample(divElementId) {
                         customType: "ThresholdLinePaletteProvider",
                         options: {
                             stroke: "Green",
-                            rule: yValue => yValue >= 4.0
+                            rule: (yValue) => yValue >= 4.0
                         }
                     }
                     // Note: Assigning an instance is also valid, e.g.

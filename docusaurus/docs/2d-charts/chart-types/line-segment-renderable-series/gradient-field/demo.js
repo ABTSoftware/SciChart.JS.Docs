@@ -4,9 +4,7 @@ class LineSegmentPaletteProvider {
     strokePaletteMode = EStrokePaletteMode.GRADIENT;
     palettedStart = parseColorToUIntArgb("red");
     palettedEnd = parseColorToUIntArgb("blue");
-    // tslint:disable-next-line:no-empty
     onAttached(parentSeries) { }
-    // tslint:disable-next-line:no-empty
     onDetached() { }
     overrideStrokeArgb(xValue, yValue, index) {
         return index % 2 === 0 ? this.palettedStart : this.palettedEnd;

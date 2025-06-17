@@ -2,12 +2,7 @@
 sidebar_position: 100
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
 # ✅ The Polar Line Chart Type
-
-import PolarLineChart from "!!raw-loader!./Basic/demo.js";
-import PolarLinePaletteProvider from "!!raw-loader!./PaletteProvider/demo.js";
 
 The [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) creates lines in a polar coordinate system, connecting data points with either straight line segments or interpolated arcs. This chart type is ideal for visualizing cyclical data, radar charts, or any data that benefits from a circular representation.
 
@@ -35,7 +30,8 @@ Some of [IPolarLineRenderableSeriesOptions:blue_book:](https://www.scichart.com/
 
 ```ts showLineNumbers {35} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={PolarLineChart} />
+
+<LiveDocSnippet name="./Basic/demo" />
 
 In the code above:
 
@@ -48,7 +44,8 @@ By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/docume
 
 ```ts showLineNumbers {38-54,64-67} file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={PolarLinePaletteProvider} />
+
+<LiveDocSnippet name="./PaletteProvider/demo" />
 
 In the code above:
 - We create a `ThresholdLinePaletteProvider` class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html)

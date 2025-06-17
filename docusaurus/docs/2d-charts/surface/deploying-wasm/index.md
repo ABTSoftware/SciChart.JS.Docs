@@ -53,7 +53,7 @@ We've packaged a helpful function that automatically loads the latest & correct 
 **Load Wasm from CDN**
 
 ```ts
-import { SciChartSurface } from "scichart/Charting/Visuals/SciChartSurface";
+import { SciChartSurface } from "scichart";
 
 export async function initSciChart() {
     // Call this once before any SciChartSurface is shown.

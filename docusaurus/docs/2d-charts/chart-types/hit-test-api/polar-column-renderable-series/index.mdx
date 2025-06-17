@@ -4,9 +4,6 @@ sidebar_position: 20
 
 # Hit-Test API for Polar Column Series 
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import polarColumnHitTest from "!!raw-loader!./Basic/demo.js";
-
 The IHitTestProvider.hitTest method on [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) tests if the click was within the Column's body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 
 The hitTest method on 1 particular Polar Column Series can be implemented as follows:
@@ -38,4 +35,4 @@ Here is how you would implement it on multiple Polar Column Series:
 
 Which results in this following functionality:
 
-<ChartPreviewWrapper jsContent={polarColumnHitTest} />
+<LiveDocSnippet name="./Basic/demo" />

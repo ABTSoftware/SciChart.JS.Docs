@@ -4,9 +4,6 @@ sidebar_position: 8
 
 # ✅ The Polar Category Axis
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-import polarCategoryAxis from "!!raw-loader!./Basic/demo.js";
-
 The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) brings category (discrete, label-based, or index-based) data to polar charts—enabling radar, spider, and circular bar charts where each sector represents a category or qualitative dimension.
 
 **Key features:**
@@ -27,7 +24,7 @@ The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/
 
 ```ts showLineNumbers {19-26,30-41} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
-<ChartPreviewWrapper jsContent={polarCategoryAxis} />
+<LiveDocSnippet name="./Basic/demo" />
 
 :::tip
 The number of string elements inside the [labels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#labels) array determines the number of *possible* text tick labels, it does not force the chart to render that amount of ticks directly, that is still determined by the [visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#visibleRange) of the angular axis, or the x/y-range calculated to include all the renderable series's points, if present.

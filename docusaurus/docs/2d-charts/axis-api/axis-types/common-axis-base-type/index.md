@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Common Axis Base Type and Options
 
-All the axis types in SciChart inherit from [AxisCore](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) - a common type shared across both 2D and 3D Charts - and all 2D Axis inherit **[AxisBase2D](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html)**. 
+All the axis types in SciChart inherit from [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) - a common type shared across both 2D and 3D Charts - and all 2D Axis inherit **[AxisBase2D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html)**. 
 
 The inheritance diagram for Axis in SciChart.js looks like this:
 
@@ -42,7 +42,7 @@ Common properties on an axis allow you to configure the following things:
 *   Styling border, background
 *   Setting axis title
 
-The properties common to the **AxisBase2D** / **AxisCore** classes can be found in the [TypeDoc API documentation](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html).
+The properties common to the **AxisBase2D** / **AxisCore** classes can be found in the [TypeDoc API documentation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html).
 
 Specific Axis Types
 -------------------

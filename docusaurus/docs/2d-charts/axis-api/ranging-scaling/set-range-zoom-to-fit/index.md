@@ -7,7 +7,7 @@ sidebar_position: 2
 What is VisibleRange?
 ---------------------
 
-**[VisibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange)** is an actual axis range, measured in chart units. This is a part of a chart that is currently visible in a viewport.
+**[VisibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange)** is an actual axis range, measured in chart units. This is a part of a chart that is currently visible in a viewport.
 
 This is a different concept to the Data Range, which is the extents of the data on the chart.
 
@@ -18,7 +18,7 @@ The diagram below explains the concept of the VisibleRange:
 Setting Axis.VisibleRange Programmatically
 ------------------------------------------
 
-To programmatically range an axis, set the [AxisCore.visibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) property with a [NumberRange](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html) type.
+To programmatically range an axis, set the [AxisCore.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) property with a [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html) type.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts showLineNumbers file=./SetGetVisibleRange/demo.ts start=region_A_start end=region_A_end
@@ -36,7 +36,7 @@ This results in the following output: 
 
 Click the button above to update yAxis.visibleRange. View the codepen in full to see how this works.
 
-Note the [CategoryAxis](/docs/2d-charts/axis-api/axis-types/category-axis/index.md) is treated as a special case. Although it has the same property [CategoryAxis.visibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#visiblerange) of type [NumberRange](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html), it expects values to be indices, not data-values.
+Note the [CategoryAxis](/docs/2d-charts/axis-api/axis-types/category-axis/index.md) is treated as a special case. Although it has the same property [CategoryAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#visiblerange) of type [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html), it expects values to be indices, not data-values.
 
 The reason for this is that this axis type works with with **data indexes, not actual data values.** So a **NumberRange** should be applied instead, with lower data index as Min and Upper data index as Max.
 
@@ -47,9 +47,9 @@ Zooming to fit all the Data
 
 Sometimes it is required to make an axis to **show the full extent of the data** associated with it. There are several ways to achieve this in code:
 
-1.  Set the [visibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange) equal to [axis.getMaximumRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#getmaximumrange)
+1.  Set the [visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange) equal to [axis.getMaximumRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#getmaximumrange)
 2.  Configure the axis to auto adjust correspondingly to data changes. See the article [AxisRanging - AutoRange](/docs/2d-charts/axis-api/ranging-scaling/auto-range/index.md).
-3.  Call the functions from [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) such as [ZoomExtents()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextents), [ZoomExtentsY()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsy) and [ZoomExtentsX()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsx) to force a zoom to fit operation once.
+3.  Call the functions from [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) such as [ZoomExtents():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextents), [ZoomExtentsY():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsy) and [ZoomExtentsX():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsx) to force a zoom to fit operation once.
 
 Try this example below:
 

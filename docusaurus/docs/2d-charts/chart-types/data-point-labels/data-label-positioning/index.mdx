@@ -2,11 +2,6 @@
 sidebar_position: 2
 ---
 
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper";
-
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-
 # ✅ Data Label Positioning
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
@@ -30,22 +25,10 @@ You can disable the default behviour by setting [LineSeriesDataLabelProvider.ab
 
 The position properties are where the text should be relative to the data point, so _horizontalTextPosition: EHorizontalTextPosition.Left_ means place the text to the left of the point (ie the text is anchored on the right.) This example also demonstrates the use of the [SkipIfSame:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/edatalabelskipmode.html#skipifsame) option for [skipMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/edatalabelskipmode.html) on a digital line. The other skipMode options are discussed in the section on 'Labels for many points' below.
 
-<Tabs>
-  <TabItem value="ts" label="TS" default>
+<CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers {39-45} file=./demo.ts start=region_A_start end=region_A_end
-
     ```
-
-  </TabItem>
-  <!-- <TabItem value="builder" label="Builder API (Config)">
-
-    ```ts showLineNumbers {29-35} file=./demo.ts start=region_B_start end=region_B_end
-
-    ```
-
-</TabItem> -->
-</Tabs>
-
+</CodeSnippetBlock>
 
 
 <ChartPreviewWrapper maxWidth={600} />
@@ -84,25 +67,12 @@ Although you have access to the full surface and [renderPassInfo:blue_book:](ht
 
 The example below hides labels from the second series which overlap those on the first.
 
-<Tabs>
-  <TabItem value="ts" label="TS" default>
+<CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./demoGlobalLayout.ts start=region_A_start end=region_A_end
-
     ```
+</CodeSnippetBlock>
 
-  </TabItem>
-  <!-- <TabItem value="js" label="JS">
-
-    ```ts showLineNumbers file=./demoGlobalLayout.js start=region_A_start end=region_A_end
-
-    ```
-
-</TabItem> -->
-</Tabs>
-
-
-
-<ChartPreviewWrapper maxWidth={600} />
+<LiveDocSnippet name="./demo" />
 
 :::tip
 Above: Text layout is overridden to take into account label bounds across series. For each label, if the label overlaps an existing label (or is within 2 pixels of the edge of an existing label), skip drawing the label.
