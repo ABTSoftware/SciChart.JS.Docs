@@ -18,7 +18,8 @@
     "pretifyUncommitedSnippets": "git diff --name-only HEAD | grep -E '\\.js$' | cut -c12- | xargs -d '\\n' -r npx prettier --write",
     "typecheck": "tsc",
     "linkcheck": "node link-checker.js",
-    "bookmark": "node link-bookmark-checker.js"
+    "bookmark": "node link-bookmark-checker.js",
+    "status": "node count-docs.js"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.2.0",
