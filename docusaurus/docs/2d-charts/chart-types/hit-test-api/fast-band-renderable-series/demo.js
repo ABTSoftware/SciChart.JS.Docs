@@ -1,22 +1,9 @@
-import {
-    SciChartSurface,
-    NumericAxis,
-    NumberRange,
-    DpiHelper,
-    CustomAnnotation,
-    EHorizontalAnchorPoint,
-    EVerticalAnchorPoint,
-    EAxisAlignment,
-    XyyDataSeries,
-    FastBandRenderableSeries
-} from "scichart";
-
-async function hitTestBand(divElementId) {
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId);
+import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, EAxisAlignment, XyyDataSeries, FastBandRenderableSeries } from "scichart";
+export async function hitTestBandTs(divId) {
+    // #region_A_start
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId);
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { axisAlignment: EAxisAlignment.Top }));
-    sciChartSurface.yAxes.add(
-        new NumericAxis(wasmContext, { axisAlignment: EAxisAlignment.Right, growBy: new NumberRange(0.4, 0.4) })
-    );
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { axisAlignment: EAxisAlignment.Right, growBy: new NumberRange(0.4, 0.4) }));
     const dataSeries = new XyyDataSeries(wasmContext);
     const POINTS = 1000;
     const STEP = (3 * Math.PI) / POINTS;
@@ -41,7 +28,7 @@ async function hitTestBand(divElementId) {
         verticalAnchorPoint: EVerticalAnchorPoint.Center
     });
     sciChartSurface.annotations.add(svgAnnotation);
-    sciChartSurface.domCanvas2D.addEventListener("mousedown", mouseEvent => {
+    sciChartSurface.domCanvas2D.addEventListener("mousedown", (mouseEvent) => {
         const mouseClickX = mouseEvent.offsetX;
         const mouseClickY = mouseEvent.offsetY;
         console.log("mouseClickX", mouseClickX, "mouseClickY", mouseClickY);
@@ -57,6 +44,6 @@ async function hitTestBand(divElementId) {
         resultDiv.innerText = `isHit = ${hitTestInfo.isHit}`;
         console.log("hitTestInfo", hitTestInfo);
     });
+    // #region_A_end
 }
-
-hitTestBand("scichart-root");
+hitTestBandTs("scichart-root");
