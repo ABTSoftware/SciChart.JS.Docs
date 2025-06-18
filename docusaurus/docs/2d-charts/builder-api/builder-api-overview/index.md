@@ -14,14 +14,9 @@ The Builder API is intended to:
 
 It is not intended to completely replace the existing API. The two can be used in combination, and the original api is more suitable for some tasks, and required for others. Currently it only supports 2D charts.
 
-Discovering the Builder API
----------------------------
+## Discovering the Builder API
 
 To use the SciChart.js Builder API, you will need this import.
-
-Example Title
-
-Copy Code
 
 ```ts
 import { chartBuilder } from "scichart";
@@ -33,8 +28,7 @@ The top level method is **buildChart**, which takes the id of the target div, an
 
 Note that all the elements are optional. This lets you define partial definitions that you can reuse and combine.
 
-Worked Examples of the Builder API
-----------------------------------
+## Worked Examples of the Builder API
 
 We've created some worked examples of the Builder API on the following pages. Also check out our [Github](https://www.github.com/abtsoftware/scichart.js.examples) and [SciChart demo](https://demo.scichart.com) where we have published some examples of the Builder API.
 
@@ -53,8 +47,7 @@ We've created some worked examples of the Builder API on the following pages. Al
 *   **Example**: [Reusable Templates with Shared Data](https://demo.scichart.com/javascript-shared-data)
 *   **Example**: [Custom Subtypes with Builder API](https://demo.scichart.com/javascript-custom-types)
 
-TypeScript Intellisense
------------------------
+## TypeScript Intellisense
 
 The Builder API is best when used with Typescript, so it can guide you as to what types are available or required.
 

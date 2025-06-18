@@ -33,7 +33,7 @@ Here's the two-column Markdown table with headers:
 | [PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation/index.md) | Allows to place a pointer on a polar chart. Is used for gauge charts | |
 
 :::info
-Annotations have [surfaceTypes](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) property, which defines list of compatible surface types. [ESurfaceType.SciChartSurfaceType](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartsurfacetype) stands for regular or Cartesian chart and [ESurfaceType.SciChartPolarSurfaceType](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartpolarsurfacetype) stands for Polar chart.
+Annotations have [surfaceTypes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) property, which defines list of compatible surface types. [ESurfaceType.SciChartSurfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartsurfacetype) stands for regular or Cartesian chart and [ESurfaceType.SciChartPolarSurfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartpolarsurfacetype) stands for Polar chart.
 :::
 
 To learn more about any annotation type, please refer to the corresponding article.
@@ -41,7 +41,7 @@ To learn more about any annotation type, please refer to the corresponding artic
 Adding an Annotation to a Chart
 -------------------------------
 
-The [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) stores all its annotations in the [SciChartSurface.annotations](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#annotations) collection. The following code can be used to add an annotation to a chart:
+The [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) stores all its annotations in the [SciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#annotations) collection. The following code can be used to add an annotation to a chart:
 
 *   [Javascript](#i-tab-content-JS)
 *   [json-builder](#i-tab-content-jS)
@@ -314,35 +314,35 @@ Individual Annotation features are discussed in greater detail in the following 
 Common Annotation Properties
 ----------------------------
 
-All annotations in SciChart.js are derived from the [AnnotationBase](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html) **type. Individual Annotations have additional properties however the following common properties of the [AnnotationBase](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html) class listed below can be used to control all annotation types.**
+All annotations in SciChart.js are derived from the [AnnotationBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html) **type. Individual Annotations have additional properties however the following common properties of the [AnnotationBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html) class listed below can be used to control all annotation types.**
 
 **AnnotationBase Property**
 
 **Description**
 
-[annotationLayer](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#annotationlayer)
+[annotationLayer:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#annotationlayer)
 
 Determines which canvas the annotation should be placed on.
 
-The default is [EAnnotationLayer.AboveChart](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html), where annotations are displayed above the chart series.
+The default is [EAnnotationLayer.AboveChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html), where annotations are displayed above the chart series.
 
-Setting this property to [EAnnotationLayer.BelowChart](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html) places an annotation below series but above gridlines, axis bands and axis labels. Note that this method doesn't work with SVG based annotations such as [TextAnnotation](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html) and [CustomAnnotation](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html).
+Setting this property to [EAnnotationLayer.BelowChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html) places an annotation below series but above gridlines, axis bands and axis labels. Note that this method doesn't work with SVG based annotations such as [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html) and [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html).
 
-Finally, setting the property to [EAnnotationLayer.Background](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html#background), places an annotation below all elements on the chart (series, axis bands, gridlines, axis labels). This method works with all annotation types including SVG, and is useful for placing watermarks on the chart.
+Finally, setting the property to [EAnnotationLayer.Background:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eannotationlayer.html#background), places an annotation below all elements on the chart (series, axis bands, gridlines, axis labels). This method works with all annotation types including SVG, and is useful for placing watermarks on the chart.
 
-[xCoordinateMode](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xcoordinatemode),   
-[yCoordinateMode](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ycoordinatemode)
+[xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xcoordinatemode),   
+[yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ycoordinatemode)
 
 Determines how coordinates x1,y2,x2,y2 are used when placing the annotation. X/YCoordinateMode should be used to place watermarks, or annotations anchored to the top or bottom of the viewport etc…
 
-The default is [ECoordinateMode.DataValue](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html). In this mode, x1,y2,x2,y2 correspond to Data-values and the annotion position will update as you zoom and pan the chart.
+The default is [ECoordinateMode.DataValue:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html). In this mode, x1,y2,x2,y2 correspond to Data-values and the annotion position will update as you zoom and pan the chart.
 
-[ECoordinateMode.Relative](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means that coordinates are relative to the viewport. The annotation does not update position as you zoom and pan. E.g. x1=0.0 and y1=0.0 means the annotation will be placed in the top-left corner of the Viewport and x1=1.0, y1=1.0 corresponds to the bottom-left corner of the viewport always (regardless of Zoom or Pan).
+[ECoordinateMode.Relative:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means that coordinates are relative to the viewport. The annotation does not update position as you zoom and pan. E.g. x1=0.0 and y1=0.0 means the annotation will be placed in the top-left corner of the Viewport and x1=1.0, y1=1.0 corresponds to the bottom-left corner of the viewport always (regardless of Zoom or Pan).
 
-[ECoordinateMode.Pixel](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means that coordinates are pixel values relative to the top-left of the viewport. These are also useful to dock annotations to a specific
+[ECoordinateMode.Pixel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means that coordinates are pixel values relative to the top-left of the viewport. These are also useful to dock annotations to a specific
 
-[horizontalAnchorPoint](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#horizontalanchorpoint),   
-[verticalAnchorPoint](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#verticalanchorpointproperty)
+[horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#horizontalanchorpoint),   
+[verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#verticalanchorpointproperty)
 
 The horizontalAnchorPoint, verticalAnchorPoint properties are used to adjust the alignment of certain annotations.
 
@@ -350,45 +350,45 @@ The horizontalAnchorPoint, verticalAnchorPoint properties are used to adjust the
 
 Above: HorizontalAnchorPoint, VerticalAnchorPoint when applied to a TextAnnotation
 
-[isHidden](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishidden)
+[isHidden:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishidden)
 
 isHidden can be set to show or hide an annotation.
 
-[hovered](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#hovered), [isHovered](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishovered), [selectedChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#selectedchanged), [isSelected](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#isselected)
+[hovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#hovered), [isHovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishovered), [selectedChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#selectedchanged), [isSelected:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#isselected)
 
 Annotations can be made interactive with selection and hover callbacks. To find out how to enable this, read the [Annotation Hover](AnnotationHover.html) page.
 
-[resizeDirections](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#resizedirections)
+[resizeDirections:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#resizedirections)
 
 Allows you to specify which direction (X, Y, Xy) an annotation may be resized in.
 
-[dragStarted](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragstarted), [dragDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragdelta), [dragEnded](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragended)
+[dragStarted:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragstarted), [dragDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragdelta), [dragEnded:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragended)
 
 Callbacks may be registered when an annotation is dragged by the user
 
-[x1](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x1),[x2](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x2),[y1](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y1),[y2](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y2)
+[x1:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x1),[x2:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x2),[y1:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y1),[y2:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y2)
 
 x1,x2,y1,y2 properties are set to define the position of the annotation on the parent chart.
 
 Note that annotation position is also defined by the xCoordinateMode, yCoordinateMode properties, which allow you to place annotations using data-values, relative to the viewport or absolute pixel coordinates.
 
-[xAxisId](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xaxisid), [yAxisId](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#yaxisid)
+[xAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xaxisid), [yAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#yaxisid)
 
 In a multiple-axis scenario, AnnotationBase.xAxisId or yAxisId property is used to bind the annotation to a specific X or Y-Axis.
 
 **_NOTE:_** _This value must be supplied if you have axis with non-default Axis Ids._
 
-[isEditable](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#iseditable)
+[isEditable:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#iseditable)
 
 If true, this annotation can be selected and dragged/resized.  See [Editable Annotations](EditableAnnotations.html) for more details
 
-[clicked](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#clicked) / [onClick](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationbaseoptions.html#onclick)
+[clicked:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#clicked) / [onClick:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationbaseoptions.html#onclick)
 
 clicked is an event on the annotation which you can subscribe to to be notified when the annotation is clicked.  This is fired for both editable and non-editable annotations.  You can pass a callback for this using the onClick property of the IAnnotationBaseOptions.  The event arguments contain a point which gives the coordinates of where on the annotation it was clicked, relative to the top left corner.
 
 **_NOTE:_**  If and editable annotation is already selected, clicking on it will fire dragStarted, but not clicked
 
-More annotation properties and the inheritence hierachy may be viewed at the [AnnotationBase Typedoc page](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html).
+More annotation properties and the inheritence hierachy may be viewed at the [AnnotationBase Typedoc page:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html).
 
 See Also
 

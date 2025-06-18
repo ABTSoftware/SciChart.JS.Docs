@@ -1,12 +1,9 @@
 import * as SciChart from "scichart";
-
 async function updatingPieChart(divElementId) {
     // Demonstrates how to create a pie chart with SciChart.js
     const { SciChartPieSurface, EPieType, SciChartJsNavyTheme, PieSegment } = SciChart;
-
     // or, for npm, import { SciChartPieSurface, ... } from "scichart"
-
-    // #region ExampleA
+    // #region_A_start
     // Create a Pie Chart
     const sciChartPieSurface = await SciChartPieSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
@@ -14,10 +11,8 @@ async function updatingPieChart(divElementId) {
         animate: true,
         animationFrames: 30
     });
-
     // Disable the legend for this example
     sciChartPieSurface.legend.showLegend = false;
-
     // Create pie segments and add to the chart
     const pieSegment1 = new PieSegment({
         color: "#F48420",
@@ -36,7 +31,6 @@ async function updatingPieChart(divElementId) {
         value: 20
     });
     sciChartPieSurface.pieSegments.add(pieSegment1, pieSegment2, pieSegment3, pieSegment4);
-
     // Dynamically update the pie segments
     const updateFunc = () => {
         pieSegment1.value = Math.random() * 20 + 10;
@@ -45,9 +39,7 @@ async function updatingPieChart(divElementId) {
         pieSegment4.value = Math.random() * 20 + 10;
         setTimeout(() => updateFunc(), 1500);
     };
-
     setTimeout(updateFunc, 1000);
-    // #endregion
+    // #region_A_end
 }
-
 updatingPieChart("scichart-root");

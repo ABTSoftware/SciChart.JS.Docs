@@ -8,7 +8,7 @@ sidebar_position: 4
 
 To create a simple Polar Chart using SciChart.js's Builder API, you can use the following code snippet:
 
-```ts showLineNumbers file=./Basic/demo.js start=region_A_start end=region_A_end
+```ts {13,14,20,26,35,47-49} showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
 <LiveDocSnippet name="./Basic/demo" />

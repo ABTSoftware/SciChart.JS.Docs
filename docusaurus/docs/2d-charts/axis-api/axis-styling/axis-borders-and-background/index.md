@@ -26,9 +26,9 @@ _**Note:** All colors in SciChart.js are strings, which are HTML color codes. Su
 The Axis Background
 -------------------
 
-The background of the axis can also be set to a solid color using the [AxisBase2D.backgroundColor](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#backgroundcolor) property. This supports an HTML color code as above.
+The background of the axis can also be set to a solid color using the [AxisBase2D.backgroundColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#backgroundcolor) property. This supports an HTML color code as above.
 
 The TBorderType
 ---------------
 
-Axis Borders can be set on the Left, Right, Bottom or Top of the Axis. The thickness of the border can be set individually on each side of the axis. For more information, see the [AxisBase2D.axisBorder](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisborder) property, which is type [TBorder](https://www.scichart.com/documentation/js/current/typedoc/index.html#tborder).
+Axis Borders can be set on the Left, Right, Bottom or Top of the Axis. The thickness of the border can be set individually on each side of the axis. For more information, see the [AxisBase2D.axisBorder:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisborder) property, which is type [TBorder:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tborder).

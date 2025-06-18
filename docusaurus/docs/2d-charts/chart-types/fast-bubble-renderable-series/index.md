@@ -7,7 +7,7 @@ sidebar_position: 25
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
-The [JavaScript Bubble Chart Example](https://demo.scichart.com/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github
+The [JavaScript Bubble Chart Example](https://demo.scichart.com/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/bubble-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -49,7 +49,7 @@ The Bubble chart sizes are scaled using the zValue on the [XyzDataSeries:blue_b
 
 You can scale up/down the entire bubble series by setting the [FastBubbleRenderableSeries.zMultiplier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html#zmultiplier) property. Default value=1.
 
-You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](The DataSeries API.html) pages for more info about data updates.
+You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](../data-series-api/data-series-api-overview/) pages for more info about data updates.
 :::
 
 Bubble sizes can be scaled using the DataSeries zValue, or the zMultiplier property (see above). What if you wanted to scale a bubble series depending on the zoom level of the viewport? Here's a quick worked example:

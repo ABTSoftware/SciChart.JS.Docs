@@ -1,0 +1,21 @@
+---
+sidebar_position: 4
+---
+
+# ✅ PolarPanModifier
+
+The [PolarPanModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarpanmodifier.html) is a modifier that allows users to pan (drag) the polar chart. This modifier is useful for enhancing the user experience by providing an intuitive way to navigate through the chart data.
+
+```ts showLineNumbers file=./demo.js start=region_A_start end=region_A_end
+```
+
+<LiveDocSnippet name="./Basic/demo" />
+
+In the code above:
+
+| Property | Type | Description |
+| -------- | ---- | ----------- |
+| [primaryPanMode] | EPolarPanModifierPanMode | The pan mode to use with primary action |
+| [secondaryPanMode] | EPolarPanModifierPanMode | The pan mode to use with secondary action |
+| [growFactor] | number | The multiplier which applies to sensitivity of panning. Should be greater than 0 |
+| [zoomSize] | boolean | If True uses length scale zoom on the radial axis, otherwise uses visible range zoom. Default True |

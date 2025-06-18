@@ -30,7 +30,7 @@ In the code above:
 To create a Javascript [Polar Mountain Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) with SciChart.js using a [Palette Provider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html), use the following code:
 
 <!-- ```ts showLineNumbers file=./PaletteProvider/demo.js start=region_A_start end=region_A_end
-``` -->
+``` --> 
 
 <LiveDocSnippet name="./PaletteProvider/demo" />
 

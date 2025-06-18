@@ -9,7 +9,7 @@ Colouring Bubble Points Individually with PaletteProvider
 
 It is possible to override the Bubble series point-marker fill & stroke colour on a per-datapoint basis in SciChart.js using the PaletteProvider API.
 
-To use this, we must create a class which implements or confirms to the [IPointMarkerPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interface. Then, apply this to the [XyScatterRenderableSeries.paletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+To use this, we must create a class which implements or confirms to the [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interface. Then, apply this to the [XyScatterRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
 Let's start off by creating a PaletteProvider class:
 

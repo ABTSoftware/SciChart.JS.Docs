@@ -7,7 +7,7 @@ sidebar_position: 18
 Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type.
 
 :::tip
-The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Contours Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ContoursChart) on Github
+The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Contours Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ContoursChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/heatmap-chart).
 :::
 
 <ChartFromSciChartDemo

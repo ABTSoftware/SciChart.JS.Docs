@@ -1,25 +1,14 @@
 import * as SciChart from "scichart";
-
 async function simpleSplineBandChart(divElementId) {
-    // #region ExampleA
+    // #region_A_start
     // Demonstrates how to create a Spline Band chart using SciChart.js
-    const {
-        SciChartSurface,
-        NumericAxis,
-        SplineBandRenderableSeries,
-        XyyDataSeries,
-        SciChartJsNavyTheme,
-        EllipsePointMarker
-    } = SciChart;
-
+    const { SciChartSurface, NumericAxis, SplineBandRenderableSeries, XyyDataSeries, SciChartJsNavyTheme, EllipsePointMarker } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
-
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
-
     const xValues = [];
     const yValues = [];
     const y1Values = [];
@@ -28,9 +17,7 @@ async function simpleSplineBandChart(divElementId) {
         yValues.push(2 + 0.2 * Math.sin(i) - Math.cos(i * 0.12));
         y1Values.push(1.8 + 0.19 * Math.sin(i * 2) - Math.cos(i * 0.24));
     }
-
     const dataSeries = new XyyDataSeries(wasmContext, { xValues, yValues, y1Values });
-
     const bandSeries = new SplineBandRenderableSeries(wasmContext, {
         dataSeries,
         stroke: "#F48420",
@@ -38,6 +25,7 @@ async function simpleSplineBandChart(divElementId) {
         fill: "#F4842033",
         fillY1: "#50C7E033",
         strokeThickness: 2,
+        interpolationPoints: 20, // the larger the number, the smoother the band
         // Add a pointmarker to show where the datapoints are
         pointMarker: new EllipsePointMarker(wasmContext, {
             width: 7,
@@ -46,24 +34,18 @@ async function simpleSplineBandChart(divElementId) {
             strokeThickness: 0
         })
     });
-
     sciChartSurface.renderableSeries.add(bandSeries);
-    // #endregion
-
+    // #region_A_end
     // Optional: add zooming, panning for the example
     const { MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier } = SciChart;
     sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier(), new ZoomPanModifier(), new ZoomExtentsModifier());
 }
-
 simpleSplineBandChart("scichart-root");
-
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
     const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
-
     // or, for npm, import { chartBuilder, ... } from "scichart"
-
     const xValues = [];
     const yValues = [];
     const y1Values = [];
@@ -72,7 +54,6 @@ async function builderExample(divElementId) {
         yValues.push(2 + 0.2 * Math.sin(i) - Math.cos(i * 0.12));
         y1Values.push(1.8 + 0.19 * Math.sin(i * 2) - Math.cos(i * 0.24));
     }
-
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
@@ -89,6 +70,7 @@ async function builderExample(divElementId) {
                     fill: "#279B2733",
                     fillY1: "#FF191933",
                     strokeThickness: 2,
+                    interpolationPoints: 20, // the larger the number, the smoother the band
                     pointMarker: {
                         type: EPointMarkerType.Ellipse,
                         options: {
@@ -103,7 +85,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
-
-if (location.search.includes("builder=1")) builderExample("scichart-root");
+if (location.search.includes("builder=1"))
+    builderExample("scichart-root");

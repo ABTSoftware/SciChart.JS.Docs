@@ -7,7 +7,7 @@ sidebar_position: 21
 Lollipop Charts, otherwise known as Impulse or Stem charts, can be created using the [FastImpulseRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html) type.
 
 :::tip
-The [JavaScript Impulse Series Example](https://demo.scichart.com/javascript/impulse-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github
+The [JavaScript Impulse Series Example](https://demo.scichart.com/javascript/impulse-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/impulse-chart).
 :::
 
 <ChartFromSciChartDemo

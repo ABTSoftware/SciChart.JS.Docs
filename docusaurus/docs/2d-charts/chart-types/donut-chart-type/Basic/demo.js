@@ -1,21 +1,9 @@
 import * as SciChart from "scichart";
-
 async function simpleDonutChart(divElementId) {
-    // #region ExampleA
+    // #region_A_start
     // Demonstrates how to create a pie chart with SciChart.js
-    const {
-        SciChartPieSurface,
-        EPieType,
-        SciChartJsNavyTheme,
-        PieSegment,
-        ELegendPlacement,
-        ELegendOrientation,
-        GradientParams,
-        Point
-    } = SciChart;
-
+    const { SciChartPieSurface, EPieType, SciChartJsNavyTheme, PieSegment, ELegendPlacement, ELegendOrientation, GradientParams, Point } = SciChart;
     // or, for npm, import { SciChartPieSurface, ... } from "scichart"
-
     // Create the Donut chart
     // Note: Code is the same as a pie chart, but we specify pieType and holeRadius
     const sciChartPieSurface = await SciChartPieSurface.create(divElementId, {
@@ -24,14 +12,12 @@ async function simpleDonutChart(divElementId) {
         holeRadius: 0.6,
         animate: true
     });
-
     // Additional legend options
     sciChartPieSurface.legend.showLegend = true;
     sciChartPieSurface.legend.showCheckboxes = true;
     sciChartPieSurface.legend.animate = true;
     sciChartPieSurface.legend.placement = ELegendPlacement.TopRight;
     sciChartPieSurface.legend.orientation = ELegendOrientation.Vertical;
-
     // Create pie segments with value, colour and text
     const pieSegment1 = new PieSegment({
         color: "#228B22",
@@ -68,18 +54,14 @@ async function simpleDonutChart(divElementId) {
         ])
     });
     sciChartPieSurface.pieSegments.add(pieSegment1, pieSegment2, pieSegment3, pieSegment4);
-    // #endregion
+    // #region_A_end
 }
-
 simpleDonutChart("scichart-root");
-
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to create a pie chart with SciChart.js using the Builder API
     const { chartBuilder, ESciChartSurfaceType, EPieType, EThemeProviderType } = SciChart;
-
     // or, for npm, import { chartBuilder, ... } from "scichart"
-
     const sciChartDonutChart = await chartBuilder.buildChart(divElementId, {
         type: ESciChartSurfaceType.Pie2D,
         options: {
@@ -95,7 +77,6 @@ async function builderExample(divElementId) {
             ]
         }
     });
-
     // Alternative API
     const donutChart = await chartBuilder.buildPieChart(divElementId, {
         surface: {
@@ -109,7 +90,7 @@ async function builderExample(divElementId) {
             { text: "Other", value: 7, color: "green", labelStyle: { color: "white " } }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
-
-if (location.search.includes("builder=1")) builderExample("scichart-root");
+if (location.search.includes("builder=1"))
+    builderExample("scichart-root");

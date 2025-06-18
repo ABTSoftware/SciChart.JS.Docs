@@ -7,7 +7,7 @@ sidebar_position: 1
 Column Series can be created using the [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) type.
 
 :::tip
-The [JavaScript Column Chart Example](https://demo.scichart.com/javascript-column-chart) can be found in the [SciChart.Js Examples Suite > Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ColumnChart) on Github
+The [JavaScript Column Chart Example](https://demo.scichart.com/javascript/column-chart) can be found in the [SciChart.Js Examples Suite > Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ColumnChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/column-chart).
 :::
 
 <ChartFromSciChartDemo 

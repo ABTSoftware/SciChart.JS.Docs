@@ -9,7 +9,7 @@ SciChart.js provides a clean and simple API to transform pixels to data-values a
 Where Pixel Coordinates are measured from
 -----------------------------------------
 
-It is important to note when converting Pixels to Data Coordinates and vice versa that pixels are measured from the top-left inside corner of the series area of the chart known as the [viewRect](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#viewrect). So, the pixel coordinate (0,0) corresponds to the data-value at [xAxis.visibleRange.min, yAxis.visibleRange.max] and the pixel coordinate (Width, Height) corresponds to the data-value at [xAxis.visibleRange.max, yAxis.visibleRange.min].
+It is important to note when converting Pixels to Data Coordinates and vice versa that pixels are measured from the top-left inside corner of the series area of the chart known as the [viewRect:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#viewrect). So, the pixel coordinate (0,0) corresponds to the data-value at [xAxis.visibleRange.min, yAxis.visibleRange.max] and the pixel coordinate (Width, Height) corresponds to the data-value at [xAxis.visibleRange.max, yAxis.visibleRange.min].
 
 :::tip
 Learn about Axis.VisibleRange and how to get/set this property at the page: [Axis Ranging - Setting and Getting VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/index.md)
@@ -20,7 +20,7 @@ Learn about Axis.VisibleRange and how to get/set this property at the page: [Ax
 Converting between Pixels and Data Coordinates
 ----------------------------------------------
 
-To convert between pixel and data coordinates, you must first get a [CoordinateCalculator](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html) instance. This is retrieved with the following code.
+To convert between pixel and data coordinates, you must first get a [CoordinateCalculator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html) instance. This is retrieved with the following code.
 
 <CodeSnippetBlock labels={["Getting a CoordinateCalculator"]}>
     ```ts
@@ -30,15 +30,15 @@ const coordCalc = xAxis.getCurrentCoordinateCalculator(); // Type CoordinateCalc
 </CodeSnippetBlock>
 
 
-Data-values are converted to pixel coordinates via the [coordinateCalculator.getCoordinate()](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html#getcoordinate) method. Also, Coordinates in pixels are converted back to chart data-values via the [coordinateCalculator.getDataValue()](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html#getdatavalue) method. It expects a coordinate in pixels and returns the closest data value to that coordinate.
+Data-values are converted to pixel coordinates via the [coordinateCalculator.getCoordinate():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html#getcoordinate) method. Also, Coordinates in pixels are converted back to chart data-values via the [coordinateCalculator.getDataValue():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/coordinatecalculatorbase.html#getdatavalue) method. It expects a coordinate in pixels and returns the closest data value to that coordinate.
 
-All coordinates are relative to the [viewRect](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#viewrect) - the area where series are drawn inside the axis on the [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md).
+All coordinates are relative to the [viewRect:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#viewrect) - the area where series are drawn inside the axis on the [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md).
 
 You can find some examples how to do the conversions below.
 
 ### Converting NumericAxis Data to Pixels
 
-The [NumericAxis](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxistype.html#numericaxis) is a Value-Axis which uses data-values for measurement. It can be used to display numbers, or dates (stored as unix time stamps) formatted as date/time using the [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) feature.
+The [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxistype.html#numericaxis) is a Value-Axis which uses data-values for measurement. It can be used to display numbers, or dates (stored as unix time stamps) formatted as date/time using the [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) feature.
 
 To convert between pixel-coordinates relative to viewRect and data-values on a NumericAxis, use the following code.
 
@@ -58,7 +58,7 @@ const dataValue= coordCalc.getDataValue(coord);
 
 ### Converting CategoryAxis Data to/from Pixels
 
-[CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxistype.html#categoryaxis) are treated slightly differently. This axis type can also be used to display numbers, or dates (stored as unix time stamps) but we must perform an extra step to convert between data-value, index and pixel coordinate.
+[CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxistype.html#categoryaxis) are treated slightly differently. This axis type can also be used to display numbers, or dates (stored as unix time stamps) but we must perform an extra step to convert between data-value, index and pixel coordinate.
 
 A Category Axis uses the index to data not the data-value itself for measurement. Learn more about Category Axis at the page [Category Axis in SciChart.js](/docs/2d-charts/axis-api/axis-types/category-axis/index.md)
 

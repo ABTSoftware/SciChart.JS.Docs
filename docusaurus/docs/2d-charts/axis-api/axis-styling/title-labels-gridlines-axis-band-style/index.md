@@ -27,7 +27,7 @@ Styling Axis Gridlines, Labels and Titles
 
 To recreate the image above, we can use the following code. We've chosen colours deliberately so you can see what parts are styled by which lines of code!
 
-_**Note:** Gridlines support dashed line via the [majorGridLineStyle.strokeDashArray](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majorgridlinestyleproperty.strokedasharray) and_ [minorGridLineStyle.strokeDashArray](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorgridlinestyleproperty.strokedasharray) _property. For more info about stroke dash to create dotted or dashed line patterns, see_ [_Series Styling - Dash Line Patterns_](Series Styling - Dash Line Patterns.html)
+_**Note:** Gridlines support dashed line via the [majorGridLineStyle.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majorgridlinestyleproperty.strokedasharray) and_ [minorGridLineStyle.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minorgridlinestyleproperty.strokedasharray) _property. For more info about stroke dash to create dotted or dashed line patterns, see_ [_Series Styling - Dash Line Patterns_](Series Styling - Dash Line Patterns.html)
 
 _**Note:** All colors in SciChart.js are strings, which are HTML color codes. Supported values are 6-digit hex codes e.g. "#ADFF2F", 8-digit hex codes in RGBA format where the last two digits are opacity e.g. "#AAFF2F33" and rgba CSS color codes e.g. "rgba(173, 255, 47, 0.3)" as well as "Red", "White" etc..._
 

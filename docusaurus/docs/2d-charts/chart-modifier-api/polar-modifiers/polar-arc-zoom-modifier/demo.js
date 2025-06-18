@@ -55,7 +55,6 @@ export async function PolarArcZoom(divElementId) {
         fill: "#50C7E022",
         strokeThickness: 5,
         stroke: "white",
-        isAnimated: true,
         animationDuration: 2000,
         easingFunction: easing.outCubic
     }));
@@ -67,22 +66,32 @@ PolarArcZoom("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to configure the PolarArcZoomModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, easing, EPolarAxisMode, ESeriesType } = SciChart;
+    const { chartBuilder, ESciChartSurfaceType, EThemeProviderType, EAxisType, EChart2DModifierType, easing, EPolarAxisMode, ESeriesType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Angular } },
-        yAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Radial } },
+        xAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Angular
+            }
+        },
+        yAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Radial
+            }
+        },
         series: [
             {
                 type: ESeriesType.PolarLineSeries,
                 options: {
                     stroke: "#50C7E0",
                     strokeThickness: 5,
-                    dataSeries: {
-                        xValues: Array.from({ length: 10 }, (_, i) => i),
-                        yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1))
-                    }
+                },
+                xyData: {
+                    xValues: Array.from({ length: 10 }, (_, i) => i),
+                    yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1))
                 }
             }
         ],
@@ -94,7 +103,6 @@ async function builderExample(divElementId) {
                     fill: "#00ffff33",
                     strokeThickness: 5,
                     stroke: "red",
-                    isAnimated: true,
                     animationDuration: 2000,
                     easingFunction: easing.outCubic
                 }

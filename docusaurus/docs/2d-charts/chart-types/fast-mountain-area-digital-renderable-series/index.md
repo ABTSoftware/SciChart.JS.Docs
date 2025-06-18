@@ -7,7 +7,7 @@ sidebar_position: 14
 A Digital (Step) Mountain or area Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 
 :::tip
-The [JavaScript Digital Mountain Chart Example](https://demo.scichart.com/javascript-digital-mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalMountainChart) on Github
+The [JavaScript Digital Mountain Chart Example](https://demo.scichart.com/javascript/digital-mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalMountainChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/digital-mountain-chart).
 :::
 
 <ChartFromSciChartDemo

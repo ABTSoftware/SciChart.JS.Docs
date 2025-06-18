@@ -7,7 +7,7 @@ sidebar_position: 1
 Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) type.
 
 :::tip
-The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github
+The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/heatmap-chart).
 :::
 
 <ChartFromSciChartDemo
