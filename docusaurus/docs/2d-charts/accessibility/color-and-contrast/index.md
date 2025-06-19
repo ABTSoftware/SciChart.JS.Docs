@@ -1,4 +1,5 @@
 ---
+title: Color and Contrast
 sidebar_position: 3
 ---
 

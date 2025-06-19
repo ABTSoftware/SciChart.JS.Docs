@@ -19,7 +19,8 @@
     "typecheck": "tsc",
     "linkcheck": "node link-checker.js",
     "bookmark": "node link-bookmark-checker.js",
-    "status": "node count-docs.js"
+    "status": "node count-docs.js",
+    "table-of-content" : "node generate-docs-toc.js"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.2.0",
@@ -47,6 +48,7 @@
     "@docusaurus/tsconfig": "^3.8.1",
     "@docusaurus/types": "^3.8.1",
     "copy-webpack-plugin": "^13.0.0",
+    "gray-matter": "^4.0.3",
     "typescript": "~5.6.2"
   },
   "browserslist": {

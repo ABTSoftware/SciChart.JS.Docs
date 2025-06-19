@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Chart Styling - ThemeManager API
+# ✅ Chart Styling - ThemeManager API
 
 SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md), so you can truly customize the chart to fit your application.
 

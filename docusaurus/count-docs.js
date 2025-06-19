@@ -74,7 +74,7 @@ if (require.main === module) {
     filesWithCheckmark.forEach(file => console.log(`- ${path.relative(docsPath, file)}`));
     console.log(`\n`);
     console.log(`Total ${counts.total}`);
-    console.log(`Complete ${checkmarkCount}`);
+    console.log(`Complete ${filesWithCheckmark.length}`);
     
     process.exit(0);
   } catch (error) {
