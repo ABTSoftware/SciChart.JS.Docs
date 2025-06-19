@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# 🔄 Performance Tips & Tricks
+# ✅ Performance Tips & Tricks
 
 SciChart.js is a High Performance WebGL / WebAssembly chart library. Out of the box SciChart.js can achieve incredible performance vs. other JavaScript Chart Libraries on the market, capable of rendering millions of datapoints.
 
@@ -261,20 +261,22 @@ We've added a flag [SciChartSurface.freezeWhenOutOfView](https://www.scichart.c
 
 This can be used to achieve very large performance boosts by setting the flag, which can be set as a property on SciChartSurface, or via the constructor options e.g. `SciChartSurface.create(divElementId, { freezeWhenOutOfView: true });`
 
+:::tip
 Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of [freezeWhenOutOfView](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#freezewhenoutofview) where 100 charts are hosted inside a scroll view.
+:::
 
 ### 2.2. Grouping charts with SubCharts to share WebGL Drawing
 
 **Impact: Large Improvement to Rendering Performance in multi-chart applications where many chart panes are on screen, especially in some browsers (Mozilla, Safari)**
 
-The [Sub-Charts API](WhatIsTheSubChartsAPI.html) is a way to group charts into a single parent SciChartSurface. Using this API you can achieve the best of both worlds: having multiple chart panes and fewer drawing loop calls and fewer WebGL calls.
+The [Sub-Charts API](/docs/2d-charts/subcharts-api/subcharts-api-overview/index.md) is a way to group charts into a single parent SciChartSurface. Using this API you can achieve the best of both worlds: having multiple chart panes and fewer drawing loop calls and fewer WebGL calls.
 
 We've created a set of tutorials on how to create multi-pane and re-usable chart groups using the SubCharts API. You can find these below:
 
-*   [Re-usable Chart Groups with Sub-Charts](SubChartsWorkedExampleReusableChartGroups.html)
-*   [Dynamic Multi-Panel Charts with SubCharts](SubChartsWorkedExampleDynamicMultiPaneCharts.html)
-*   [Resizable Multi-Pane Charts with SubCharts](SubChartsWorkedExampleResizableMultiPanes.html)
-*   [Using SubCharts to create a Large Dashboard with 100 Charts](SubChartsWorkedExample10x10Grid.html)
+*   [Re-usable Chart Groups with Sub-Charts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts/index.md)
+*   [Dynamic Multi-Panel Charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts/index.md)
+*   [Resizable Multi-Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts/index.md)
+*   [Using SubCharts to create a Large Dashboard with 100 Charts](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard/index.md)
 
 ### 2.3 Reduce Axis Elements & Label Count
 
@@ -296,56 +298,45 @@ The function [SciChartSurface.createSingle()](https://www.scichart.com/document
 
 Approximate WebGL Context Limits per browser can be found below.
 
-**Browser**
+| Browser            | Max WebGL Contexts per Page |
+|--------------------|-----------------------------|
+| Firefox (Windows, macOS) | 300 |
+| Chrome (Windows, macOS)  | 16 |
+| Edge (Windows)           | 16 |
+| Safari (macOS)           | 16 |
+| Safari (iOS)             | 16 |
+| Chrome (Android)         | 8  |
 
-**Max WebGL Contexts per Page**
-
-Firefox (Windows, macOS)
-
-300
-
-Chrome (Windows, macOS)
-
-16
-
-Edge (Windows)
-
-16
-
-Safari (macOS)
-
-16
-
-Safari (iOS)
-
-16
-
-Chrome (Android)
-
-8
-
+:::tip
 Individual WebGL contexts per SciChartSurface will give faster drawing performance at the expense of slower initialization time & larger memory than a shared WebGL context. This is more noticeable in **FireFox** or **Safari** than Chrome which performs very well for shared WebGL contexts.
+:::
 
- 3\. Text Label Optimizations
+## 3. Text Label Optimizations
 
 ### 3.1 Native Text Labels
 
 **Impact: Large Improvement to Rendering Performance in multi-chart applications which have a lot of text labels**
 
-By default, SciChart draws axis labels and chart titles using HTML5 labels. This allows more flexibility of choosing fonts but also introduces a performance hit. This is particularly noticeable when there are many charts on the screen (as many charts = many labels).
+:::tip
+Starting from version 4 by default, SciChart draws axis labels and chart titles using Native Text. In version 3 default mode was to draw HTML5 labels.
+:::
 
-An alternative is to enable Native Text, where fast WebGL hardware accelerated labels are drawn. This will have a large performance benefit in multi-chart dashboards.
+Another options is to use HTML5 labels which allows more flexibility of choosing fonts but also introduces a performance hit. This is particularly noticeable when there are many charts on the screen (as many charts = many labels).
 
-*   [usenativetext](#i-tab-content-2d43bc38-a873-4c43-9930-59d1a6ce4721)
+With Native Text fast WebGL hardware accelerated labels are drawn. This will have a large performance benefit in multi-chart dashboards.
 
-```ts
-SciChartDefaults.useNativeText = true; // Globally enable native text for axis labels and chart titles
-sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { useNativeText: true })); // Per-axis label native text
-```
+<CodeSnippetBlock labels={["useNativeText"]}>
+    ```ts showLineNumbers
+    // Globally enable native text for axis labels and chart titles. Starting from v4 is True by default
+    SciChartDefaults.useNativeText = true;
+    // Per-axis label native text
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { useNativeText: true }));
+    ```
+</CodeSnippetBlock>
 
 Using native text gives significant performance benefits if you have multiple charts with lots of axis labels, or when you have multiple charts with chart titles. 
 
-Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of the [Native Text API](Native Text Api.html) where 100 charts are hosted inside a scroll view.
+Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of the [Native Text API](/docs/2d-charts/miscellaneous-apis/native-text-api/index.md) where 100 charts are hosted inside a scroll view.
 
 ### 3.2 Shared Label Cache
 
@@ -355,30 +346,30 @@ Previously labels were cached per axis, but it is now possible to reuse cached l
 
 You can enable this globally by setting:
 
-*   [useSharedCache](#i-tab-content-0cc2e9f0-1475-42b5-9e48-3f7bc4728dc1)
-
-```ts
-SciChartDefaults.useSharedCache = true; // Globally enable label caching
-sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { useSharedCache: true })); // Per-axis label caching
-```
+<CodeSnippetBlock labels={["useSharedCache"]}>
+    ```ts showLineNumbers
+    // Globally enable label caching
+    SciChartDefaults.useSharedCache = true;
+    // Per-axis label caching
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { useSharedCache: true }));
+    ```
+</CodeSnippetBlock>
 
 Or you can enable it for a particular axis by setting [useSharedCache](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usesharedcache) to true on the axis options, or directly on the [SciChartDefaults](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html) type.
 
 This will give significant benefit if you have multiple charts with very similar sets of labels, even if they are not on screen at the same time. Labels are retained in the cache for a minute, so switching to a different chart that has some or all of the same labels will reuse the labels, saving a few hundred ms.
 
-Using shared label cache gives significant performance benefits if you have multiple charts with very similar sets of labels, even if they are not on screen at the same time.
-
 Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of the the label cache where 100 charts are hosted inside a scroll view.
 
+:::warning
 useSharedCache is not enabled by default. If you are overriding getLabelTexture, it is important to ensure that the combination of text and label style is unique for each label texture. See the documentation for getLabelTexture for some ways to handle this.
+:::
 
 ### 3.3 Async Labels
 
 Async labels was available in earlier versions of ScIChart.js, but has been deprecated in favour of Native text labels.
 
- 
-
-4\. Miscellaneous Optimizations
+## 4. Miscellaneous Optimizations
 
 ### 4.1 Use the Fastest Browser!
 
@@ -388,7 +379,9 @@ By far, the fastest browser for WebGL, WebAssembly and JavaScript is **Google Ch
 
 Browsers such as Safari, Firefox have slower execution of JavaScript code. Please bear this in mind when comparing performance or when making recommendations to your customers!
 
+:::tip
 Use Google Chrome for the best performance with SciChart.js
+:::
 
 ### 4.2 Retina macOS Performance
 
@@ -398,18 +391,18 @@ When SciChart.js is used on a high resolution display such as Retina, the chart 
 
 Higher number of pixels means more work for the browser to display the chart. If you notice any performance degredation on your application you can disable Dpi scaling using the code below.
 
-*   [Disable DPI scaling](#i-tab-content-a8608082-d671-447b-92b2-c6f675feaeb0)
+<CodeSnippetBlock labels={["Disable DPI scaling"]}>
+    ```ts
+    import { DpiHelper} from "scichart";
 
-```ts
-import { DpiHelper} from "scichart";
-
-// Note: you will need to call this before any SciChartSurface is created
-DpiHelper.IsDpiScaleEnabled = false;
-```
+    // Note: you will need to call this before any SciChartSurface is created
+    DpiHelper.IsDpiScaleEnabled = false;
+    ```
+</CodeSnippetBlock>
 
 Also, we recommend use of Google Chrome browser as this has by far the best performance metrics, compared to Safari or Firefox, which both struggle to render large canvases.
 
-See [Related Article on Retina DPI Support and Browser Zoom](Retina Support and Browser Zoom.html) for further information. Use Google Chrome on macOS for best performance. You can also disable retina high precision in code.
+See [Related Article on Retina DPI Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom/index.md) for further information. Use Google Chrome on macOS for best performance. You can also disable retina high precision in code.
 
 ### 4.3 Dual GPU machines or Macbook Pro
 
@@ -423,7 +416,7 @@ When using a browser (Safari or Chrome) on macOS, the operating system by defaul
 
 In Chrome on macOS you can navigate to chrome://gpu in the address bar to inspect which GPU the browser is currently using.
 
-Scroll down to GL\_RENDERER. On the right you can see the current GPU e.g. 'AMD Radeon Pro 5500M' or 'Intel UHD 630'
+Scroll down to GL_RENDERER. On the right you can see the current GPU e.g. 'AMD Radeon Pro 5500M' or 'Intel UHD 630'
 
 ![](img/1.png)
 
@@ -431,17 +424,21 @@ Scroll down to GL\_RENDERER. On the right you can see the current GPU e.g. 'AMD 
 
 If you are using the integrated GPU and want to force the faster GPU on macOS, you can use an application called [gfxCardStatus](https://gfx.io/) to force switching to the faster and more powerful GPU. Restart your browser and do the test again. This will improve WebGL performance!
 
-There are applications which will allow you to [switch GPU on Windows](https://www.addictivetips.com/windows-tips/force-app-to-use-dedicated-gpu-windows/) as well. Make sure you restart your browser and do the GL\_RENDERER test again.
+There are applications which will allow you to [switch GPU on Windows](https://www.addictivetips.com/windows-tips/force-app-to-use-dedicated-gpu-windows/) as well. Make sure you restart your browser and do the GL_RENDERER test again.
 
+:::tip
 Some computers such as Macbook Pro and certain Windows Laptops have dual-GPUs. Ensure the more powerful GPU is being utilised by your browser to get the best performance from SciChart.js.
+:::
 
- 5\. Keep Up to Date!
+## 5. Keep Up to Date!
 
 We are always working on improving performance of the overall charting engine.
 
 Staying up to date helps to ensure you have the latest algorithms and optimisations for fast, efficient charting with SciChart.js.
 
+:::tip
 We improve performance and optimise SciChart.js all the time. Stay up to date to ensure you have the latest optimisations!
+:::
 
 Still Need Help?
 ----------------
