@@ -11,7 +11,7 @@ Here is how to define the [PolarZoomExtentsModifier:blue_book:](https://www.scic
 ```ts showLineNumbers file=./demo.js start=region_A_start end=region_A_end
 ```
 
-<LiveDocSnippet name="./Basic/demo" />
+<LiveDocSnippet name="./demo" />
 
 ## Zoom to a Preset Range
 If you would like the double-click to zoom to some preset range, rather than the data range, you can set `zoomExtentsRange` on the axes. In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set `zoomExtentsToInitialRange` true, which will set `zoomExtentsRange` to the `visibleRange` passed in.

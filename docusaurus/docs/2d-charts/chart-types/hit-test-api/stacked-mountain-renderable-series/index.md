@@ -96,7 +96,7 @@ export async function hitTestStackedMountainTs(divId) {
 }
 ```
 
- The [StackedMountainCollection](/docs/2d-charts/chart-types/stacked-mountain-renderable-series/index.md) in this example has three [StackedMountainRenderableSeries](https://www.scichart.com/documentation/js/current/webframe.html#Hit-Test%20API%20for%20Stacked%20Mountain%20Series.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
+ The [StackedMountainCollection](/docs/2d-charts/chart-types/stacked-mountain-renderable-series/index.md) in this example has three [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#Hit-Test%20API%20for%20Stacked%20Mountain%20Series.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
 
 This gives us this chart.
 

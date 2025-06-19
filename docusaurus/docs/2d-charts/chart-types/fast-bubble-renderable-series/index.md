@@ -30,7 +30,7 @@ To create a [Javascript Bubble Chart](https://demo.scichart.com/javascript-bubb
 In the code above:
 
 *   A Bubble Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/basepointmarker.html) with a width, height = 64. Note that this pointmarker will be scaled up or down relative to bubble size. Having a `strokeThickness` of 0 can create a better visual.
+*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/basepointmarker.html) with a width, height = 64. Note that this pointmarker will be scaled up or down relative to bubble size. Having a [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/basepointmarker.html#strokethickness) of 0 can create a better visual.
 *   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/basedataseries.html) - which stores the Xyz data to render, where X,Y is position and Z is scale factor.
 
 This results in the following output:

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # ✅ What is the SubCharts API?
 
-The SubCharts API allows to place 1..N child [SciChartSurfaces](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) within a parent chart (Charts within charts). It is possible to have multiple sub-charts within the main SciChartSurface.
+The SubCharts API allows to place 1..N child [SciChartSurfaces:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) within a parent chart (Charts within charts). It is possible to have multiple sub-charts within the main SciChartSurface.
 
 What is the Benefit of the SubCharts API?
 -----------------------------------------
@@ -22,9 +22,9 @@ SubCharts API could be applied to display separate charts simultaneously on a si
 Overview of the SubCharts API
 -----------------------------
 
-A sub-chart is represented by the [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) class, which inherits [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). Similarly to [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) it has its own Axes, Modifiers, Renderable Series and Annotations.
+A sub-chart is represented by the [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) class, which inherits [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). Similarly to [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) it has its own Axes, Modifiers, Renderable Series and Annotations.
 
-You can add a sub-chart to a SciChartSurface by calling [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface). This returns a [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) instance.
+You can add a sub-chart to a SciChartSurface by calling [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface). This returns a [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) instance.
 
 <CodeSnippetBlock labels={["SciChartSubSurface.createSubSurface()"]}>
     ```ts
@@ -32,7 +32,7 @@ SciChartSubSurface.createSubSurface(parentSurface: ISciChartSurface, options?: I
     ```
 </CodeSnippetBlock>
 
-Parent [sciChartSurface](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) must be passed, in addition [I2DSubSurfaceOptions](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html) may be passed to [createSubSurface](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface). 
+Parent [sciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) must be passed, in addition [I2DSubSurfaceOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html) may be passed to [createSubSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface). 
 
 This interface has the following properties:
 
@@ -79,7 +79,7 @@ export interface I2DSubSurfaceOptions extends I2DSurfaceOptions {
     ```
 </CodeSnippetBlock>
 
-The return value of [createSubSurface](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) is a SciChartSubSurface class. This inherits SciChartSurface but has additional properties, which can be found below.
+The return value of [createSubSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) is a SciChartSubSurface class. This inherits SciChartSurface but has additional properties, which can be found below.
 
 <CodeSnippetBlock labels={["ISciChartSubSurface interface"]}>
     ```ts showLineNumbers
@@ -170,11 +170,11 @@ Let's demonstrate a simple setup, where we define a sub-chart on a surface. For 
     ```
 </CodeSnippetBlock>
 
-In the example above we create a [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) as normal and add some series to it. Then, we call [createSubSurface](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) function, which contains a position property. The property defines a structure for specifying coordinates and sizes of a sub-chart. By default, the coordinates and size are treated as ratio values in range from 0 to 1, with a canvas viewport used as a base.
+In the example above we create a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) as normal and add some series to it. Then, we call [createSubSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) function, which contains a position property. The property defines a structure for specifying coordinates and sizes of a sub-chart. By default, the coordinates and size are treated as ratio values in range from 0 to 1, with a canvas viewport used as a base.
 
-Next, we add some series to both the parent [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and the [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html). We subscribe to [visibleRangeChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) on the parent SciChartSurface x, y axis and use that to update a [BoxAnnotation](https://www.scichart.com/documentation/js/current/typedoc/classes/boxannotation.html) in the [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html).
+Next, we add some series to both the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and the [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html). We subscribe to [visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) on the parent SciChartSurface x, y axis and use that to update a [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/boxannotation.html) in the [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html).
 
-By creating this example, we have created a 2D viewport overview using the Sub-charts API, placing a child [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) inside a parent [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html), and subscribed to interactivity on the parent chart. The Sub-chart shows all the data and where you have zoomed in on the parent chart, allowing you to get a view into your current position (zoom level and range) on the chart.
+By creating this example, we have created a 2D viewport overview using the Sub-charts API, placing a child [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html) inside a parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html), and subscribed to interactivity on the parent chart. The Sub-chart shows all the data and where you have zoomed in on the parent chart, allowing you to get a view into your current position (zoom level and range) on the chart.
 
 <LiveDocSnippet maxWidth={"100%"} name="./Basic/demo" />
 
@@ -183,7 +183,7 @@ Try zooming the example with mouse-drag, panning, mousewheel and double-click to
 SubCharts with the Builder API
 ------------------------------
 
-It is also possible to create a sub-chart via [Builder API](Intro to the Builder API.html). For this pass an array of [ISubChartDefinition](https://www.scichart.com/documentation/js/current/typedoc/interfaces/isubchartdefinition.html) via [ISciChart2DDefinition.subCharts](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property.
+It is also possible to create a sub-chart via [Builder API](Intro to the Builder API.html). For this pass an array of [ISubChartDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/isubchartdefinition.html) via [ISciChart2DDefinition.subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property.
 
 For example, the following snippet will give us the same result as Basic Example setup:
 
@@ -192,7 +192,7 @@ For example, the following snippet will give us the same result as Basic Example
     ```
 </CodeSnippetBlock>
 
-The Builder API demo of SubCharts works very similarly to the javascript-API version. A SubChart is declared via the [subCharts](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property of the chart [ISciChart2DDefinition](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html), and axis, series, interactions can be added to it as before. You can access the SubChart and any of it's created properties via the [SciChartSurface.subCharts](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#subcharts) property.
+The Builder API demo of SubCharts works very similarly to the javascript-API version. A SubChart is declared via the [subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property of the chart [ISciChart2DDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html), and axis, series, interactions can be added to it as before. You can access the SubChart and any of it's created properties via the [SciChartSurface.subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#subcharts) property.
 
 #### See Also
 

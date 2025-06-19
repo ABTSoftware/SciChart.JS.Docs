@@ -98,7 +98,10 @@ export async function PolarPanModifier(divElementId) {
             primaryPanMode: EPolarPanModifierPanMode.PolarStartAngle,
 
             secondaryPanMode: EPolarPanModifierPanMode.Cartesian,
-            secondaryExecuteCondition: (e) => e.modifierKeys.ctrl
+            
+            secondaryExecuteCondition: {
+                key: SciChart.EModifierMouseArgKey.Ctrl
+            }
         }),
     );
     // #region_A_end
@@ -125,15 +128,20 @@ async function builderExample(divElementId) {
 
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Angular } },
-        yAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Radial } },
+        xAxes: { 
+            type: EAxisType.PolarNumericAxis, 
+            options: { polarAxisMode: EPolarAxisMode.Angular } 
+        },
+        yAxes: { 
+            type: EAxisType.PolarNumericAxis, 
+            options: { polarAxisMode: EPolarAxisMode.Radial } 
+        },
         modifiers: [
             {
                 type: EChart2DModifierType.PolarPan,
                 options: {
                     growFactor: 0.002,
                     zoomSize: false,
-                    defaultActionType: EActionType.Pan
                 }
             }
         ]

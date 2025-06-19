@@ -101,3 +101,4 @@ The [PolarPointerAnnotation:blue_book:](https://www.scichart.com/documentation/j
 #### See Also
 
 * [Polar Gauge Chart](../../chart-types/polar-gauge-chart/)
+* [Polar Arc Annotation](../polar-arc-annotation/)

@@ -74,3 +74,8 @@ Below, an example combines several of these techniques:
 Resulting in:
 
 <LiveDocSnippet name="./FormatOptions/demo" />
+
+#### See Also
+
+* [Donut Chart](../donut-chart-type/)
+* [Polar Pie Chart](../polar-pie-chart/)

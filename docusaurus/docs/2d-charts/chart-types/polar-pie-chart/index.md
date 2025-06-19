@@ -16,7 +16,7 @@ It is the native way to create pie charts in SciChart.js, as opposed to using th
 
 To create a Javascript Polar Pie Chart with SciChart.js, use the following code:
 
-```ts showLineNumbers {51-54,67,71-73} file=./Basic/demo.ts start=region_A_start end=region_A_end
+```ts showLineNumbers {52-55,68} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
 <LiveDocSnippet name="./Basic/demo" />
@@ -70,7 +70,7 @@ This approach gives you:
 
 To create a pie chart in SciChart.js using the polar coordinate system:
 
-```ts showLineNumbers {51-54,67,71-73} file=./Basic/demo.ts start=region_A_start end=region_A_end
+```ts showLineNumbers {52-55,68} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 
 In the example above:
@@ -83,25 +83,19 @@ In the example above:
 - A palette provider is attached, coloring each segment differently.
 - To create a donut instead of a classic pie, simply set the polar axis’ `innerRadius` property.
 
----
-
 ## Tips & Best Practices
 
 - Use the **metadata** array to assign tooltip data, custom colors, or selection state to each segment
-- Adjust the **radial axis**’ `innerRadius` for donut/ring-style pie charts
+- Adjust the **radial axis**’ [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html#innerradius) for donut/ring-style pie charts
 - Set the **start angle** to rotate your entire pie as needed
 - Add annotations or labels for segment values or percentage displays if needed
 - Combine with other polar series (lines, scatter) for hybrid visualizations!
 
----
-
 ## Related API and Demos
 
-- [`PolarColumnRenderableSeries`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html)
-- [`MetadataPaletteProvider`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/metadatapaletteprovider.html)
+- [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html)
+- [MetadataPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/metadatapaletteprovider.html)
 - [Polar Column & Pie Demo](https://www.scichart.com/demo/react/polar-pie-chart)
 - [SciChartPieSurface for Classic Pie:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html)
-
----
 
 The **Polar Pie Chart** is a powerful hybrid, bringing all the flexibility of scientific polar charts to the familiar and insightful pie chart format!

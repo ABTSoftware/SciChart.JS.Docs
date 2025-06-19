@@ -225,7 +225,7 @@ export async function hitTestStackedColumnTs(divId: string) {
 ```
 </CodeSnippetBlock>
 
-The **StackedColumnCollection** in this example has five [StackedColumnRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
+The **StackedColumnCollection** in this example has five [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
 
 This gives us the following chart.
 
@@ -236,7 +236,7 @@ This gives us the following chart.
 The hitTestDataPoint method on Stacked Column Series
 ----------------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method is not supported for [StackedColumnRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html).
+The **IHitTestProvider.hitTestDataPoint** method is not supported for [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html).
 
 The hitTestXSlice method on Column Series
 -----------------------------------------

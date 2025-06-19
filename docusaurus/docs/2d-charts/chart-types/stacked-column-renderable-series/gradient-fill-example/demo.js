@@ -43,11 +43,8 @@ async function simpleStackedColumnChart(divElementId) {
             { color: "#882B91", offset: 0 },
             { color: "#EC0F6C", offset: 1 }
         ]),
-        stroke: "#E4F5FC",
-        strokeThickness: 1,
         opacity: 0.8,
         stackedGroupId: "StackedGroupId",
-        dataLabels
     });
     const rendSeries2 = new StackedColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues2, dataSeriesName: "Asia" }),
@@ -55,11 +52,8 @@ async function simpleStackedColumnChart(divElementId) {
             { color: "#EC0F6C", offset: 0 },
             { color: "#F48420", offset: 1 }
         ]),
-        stroke: "#E4F5FC",
-        strokeThickness: 1,
         opacity: 0.8,
         stackedGroupId: "StackedGroupId",
-        dataLabels
     });
     const rendSeries3 = new StackedColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues3, dataSeriesName: "USA" }),
@@ -67,11 +61,8 @@ async function simpleStackedColumnChart(divElementId) {
             { color: "#F48420", offset: 0 },
             { color: "#50C7E0", offset: 1 }
         ]),
-        stroke: "#E4F5FC",
-        strokeThickness: 1,
         opacity: 0.8,
         stackedGroupId: "StackedGroupId",
-        dataLabels
     });
     const rendSeries4 = new StackedColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues4, dataSeriesName: "UK" }),
@@ -79,11 +70,8 @@ async function simpleStackedColumnChart(divElementId) {
             { color: "#50C7E0", offset: 0 },
             { color: "#30BC9A", offset: 1 }
         ]),
-        stroke: "#E4F5FC",
-        strokeThickness: 1,
         opacity: 0.8,
         stackedGroupId: "StackedGroupId",
-        dataLabels
     });
     const rendSeries5 = new StackedColumnRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues5, dataSeriesName: "Latam" }),
@@ -91,11 +79,8 @@ async function simpleStackedColumnChart(divElementId) {
             { color: "#30BC9A", offset: 0 },
             { color: "#0652DD", offset: 1 }
         ]),
-        stroke: "#E4F5FC",
-        strokeThickness: 1,
         opacity: 0.8,
         stackedGroupId: "StackedGroupId",
-        dataLabels
     });
     // To add the series to the chart, put them in a StackedColumnCollection
     const stackedColumnCollection = new StackedColumnCollection(wasmContext);

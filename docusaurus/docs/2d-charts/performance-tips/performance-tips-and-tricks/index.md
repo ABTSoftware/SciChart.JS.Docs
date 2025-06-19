@@ -65,7 +65,7 @@ You can tell SciChart.js these properties in advance to save the time when creat
 </CodeSnippetBlock>
 
 :::tip
-Specify Data Distribution properties [XyDataSeries.containsNaN](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#containsnan), [dataIsSortedInX](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#dataissortedinx), [dataEvenlySpacedInX](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#dataevenlyspacedinx) when creating a DataSeries to save CPU time. Note you will need to update these flags if the data properties change.
+Specify Data Distribution properties [XyDataSeries.containsNaN:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#containsnan), [dataIsSortedInX:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#dataissortedinx), [dataEvenlySpacedInX:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixydataseriesoptions.html#dataevenlyspacedinx) when creating a DataSeries to save CPU time. Note you will need to update these flags if the data properties change.
 :::
 
 ### 1.3 Batch Updates to DataSeries
@@ -110,14 +110,14 @@ It is faster to update the DataSeries in batches aka using functions `appendRang
 </CodeSnippetBlock>
 
 :::tip
-[appendRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange), [insertRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insertrange) and [removeRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removerange) are much more performant than [append()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [insert()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insert) and [removeAt()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeat). This performance difference is more noticeable with insert & remove.
+[appendRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange), [insertRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insertrange) and [removeRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removerange) are much more performant than [append():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [insert():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insert) and [removeAt():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeat). This performance difference is more noticeable with insert & remove.
 :::
 
 ### 1.4. Initialize DataSeries with Capacity
 
 **Impact: Small Improvement to Data Manipulations in apps with frequently updating data**
 
-Internally, SciChart DataSeries use a geometric resizing algorithm which reserves more memory than needed as you call [append()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [appendRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange). Starting with a new DataSeries and calling [.append()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append) many times may result in several resizes of the underlying vector as the DataSeries grows.
+Internally, SciChart DataSeries use a geometric resizing algorithm which reserves more memory than needed as you call [append():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [appendRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange). Starting with a new DataSeries and calling [.append():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append) many times may result in several resizes of the underlying vector as the DataSeries grows.
 
 To avoid this, and reduce unnecessary allocations, if the size is known ahead of time you can initialize a DataSeries with capacity.
 
@@ -155,9 +155,9 @@ To avoid this, and reduce unnecessary allocations, if the size is known ahead of
 
 **Impact: Small Improvement to Data Manipulations in apps with frequently updating data**
 
-When you want to discard old data beyond a certain size, or scroll or sweep the chart, using [XyDataSeries.fifoCapacity](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#fifocapacity) can improve performance (certainly reduces memory usage).
+When you want to discard old data beyond a certain size, or scroll or sweep the chart, using [XyDataSeries.fifoCapacity:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#fifocapacity) can improve performance (certainly reduces memory usage).
 
-Fifo (First-in-first-out) mode pre-allocates a circulate buffer of size N internally. When a dataSeries is declared with [fifoCapacity](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#fifocapacity), then data beyond that count is automatically discarded. This limits the growth of memory and provides an efficient way to scroll or sweep charts, such as in signal monitoring or ECG (medical) applications.
+Fifo (First-in-first-out) mode pre-allocates a circulate buffer of size N internally. When a dataSeries is declared with [fifoCapacity:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#fifocapacity), then data beyond that count is automatically discarded. This limits the growth of memory and provides an efficient way to scroll or sweep charts, such as in signal monitoring or ECG (medical) applications.
 
 :::tip
 Read the article on [DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates/index.md) which showcases fifo sweeping and fifo scrolling.
@@ -167,7 +167,7 @@ Read the article on [DataSeries Realtime Updates](/docs/2d-charts/chart-types/d
 
 **Impact: Small Improvement to Data Manipulations in apps with frequently updating data**
 
-Before appending data into [XyDataSeries.appendRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange) you must buffer the data in arrays of numbers. JavaScript and TypeScript offers a built-in typed array called [Float64Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array). Using this type as a buffer for your data conveys minor performance improvements.
+Before appending data into [XyDataSeries.appendRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange) you must buffer the data in arrays of numbers. JavaScript and TypeScript offers a built-in typed array called [Float64Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array). Using this type as a buffer for your data conveys minor performance improvements.
 
 <CodeSnippetBlock labels={["Float64Array vs. Array"]}>
     ```ts
@@ -204,7 +204,7 @@ Before appending data into [XyDataSeries.appendRange()](https://www.scichart.co
 
 **Impact: Small Improvement to Data Manipulations in apps with frequently updating data**
 
-If your code requires creating lots of Arrays to buffer data before passing to [xyDataSeries.appendRange()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange), consider re-using these buffers to avoid continuously allocating new memory.
+If your code requires creating lots of Arrays to buffer data before passing to [xyDataSeries.appendRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange), consider re-using these buffers to avoid continuously allocating new memory.
 
 For example:
 
@@ -257,13 +257,11 @@ Below are some ways to improve performance signficantly when dealing with many c
 
 _New to SciChart.js 3.5.727!_
 
-We've added a flag [SciChartSurface.freezeWhenOutOfView](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurfacebase.html#freezewhenoutofview) which when set, uses the `IntersectionObserver` API to pause/resume rendering on charts which are outside the viewport e.g. outside of scroll view. This can yield large performacne gains when rendering many charts.
+We've added a flag [SciChartSurface.freezeWhenOutOfView:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurfacebase.html#freezewhenoutofview) which when set, uses the `IntersectionObserver` API to pause/resume rendering on charts which are outside the viewport e.g. outside of scroll view. This can yield large performacne gains when rendering many charts.
 
 This can be used to achieve very large performance boosts by setting the flag, which can be set as a property on SciChartSurface, or via the constructor options e.g. `SciChartSurface.create(divElementId, { freezeWhenOutOfView: true });`
 
-:::tip
-Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of [freezeWhenOutOfView](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#freezewhenoutofview) where 100 charts are hosted inside a scroll view.
-:::
+Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of [freezeWhenOutOfView:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#freezewhenoutofview) where 100 charts are hosted inside a scroll view.
 
 ### 2.2. Grouping charts with SubCharts to share WebGL Drawing
 
@@ -292,9 +290,9 @@ Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance De
 
 **Impact: Moderate Improvement to Rendering Performance on some browsers e.g. Mozilla at the expense of slower chart startup time & higher memory use**
 
-The function [SciChartSurface.create()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create) uses a single shared WebGL Rendering engine and one shared WebGL context for all chart surfaces. This allows us to have multiple charts (up to hundreds of charts) in a single webpage. It results in lower memory usage and faster initialization (chart start-up time) in a multi-chart scenario.
+The function [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create) uses a single shared WebGL Rendering engine and one shared WebGL context for all chart surfaces. This allows us to have multiple charts (up to hundreds of charts) in a single webpage. It results in lower memory usage and faster initialization (chart start-up time) in a multi-chart scenario.
 
-The function [SciChartSurface.createSingle()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#createsingle) creates one WebGL Context per SciChartSurface. This gives faster drawing performance but will quickly hit the limit of WebGL contexts in a webpage. It also requires one instance of the WebGL Rendering engine per chart, so will have higher static startup time and memory usage.
+The function [SciChartSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#createsingle) creates one WebGL Context per SciChartSurface. This gives faster drawing performance but will quickly hit the limit of WebGL contexts in a webpage. It also requires one instance of the WebGL Rendering engine per chart, so will have higher static startup time and memory usage.
 
 Approximate WebGL Context Limits per browser can be found below.
 
@@ -355,7 +353,7 @@ You can enable this globally by setting:
     ```
 </CodeSnippetBlock>
 
-Or you can enable it for a particular axis by setting [useSharedCache](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usesharedcache) to true on the axis options, or directly on the [SciChartDefaults](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html) type.
+Or you can enable it for a particular axis by setting [useSharedCache:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usesharedcache) to true on the axis options, or directly on the [SciChartDefaults:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html) type.
 
 This will give significant benefit if you have multiple charts with very similar sets of labels, even if they are not on screen at the same time. Labels are retained in the cache for a minute, so switching to a different chart that has some or all of the same labels will reuse the labels, saving a few hundred ms.
 

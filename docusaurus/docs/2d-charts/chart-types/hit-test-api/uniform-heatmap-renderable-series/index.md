@@ -160,7 +160,7 @@ export async function hitTestHeatmapTs(divId: string) {
     ```
 </CodeSnippetBlock>
 
- If to click inside the Heatmap surface it will be hit. In the browser console you will find output for the **HitTestInfo** object containing **heatmapValue**, **heatmapXIndex** and **heatmapYIndex** properties which are only for the [UniformHeatmapDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html).
+ If to click inside the Heatmap surface it will be hit. In the browser console you will find output for the **HitTestInfo** object containing **heatmapValue**, **heatmapXIndex** and **heatmapYIndex** properties which are only for the [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html).
 
 The hitTestDataPoint method on Heatmap Series
 ---------------------------------------------

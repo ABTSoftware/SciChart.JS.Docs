@@ -61,20 +61,20 @@ export async function PolarMouseWheelZoom(divElementId) {
 }
 PolarMouseWheelZoom("scichart-root");
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PolarMouseWheelZoomModifier in SciChart.js using the Builder API
     const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, EPolarAxisMode, ESeriesType, EActionType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
-            type: EAxisType.NumericAxis,
+            type: EAxisType.PolarNumericAxis,
             options: {
                 polarAxisMode: EPolarAxisMode.Angular
             }
         },
         yAxes: {
-            type: EAxisType.NumericAxis,
+            type: EAxisType.PolarNumericAxis,
             options: {
                 polarAxisMode: EPolarAxisMode.Radial
             }
@@ -101,7 +101,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 if (location.search.includes("builder=1"))
     builderExample("scichart-root");

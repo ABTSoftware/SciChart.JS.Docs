@@ -70,7 +70,7 @@ export const forbesData: Array<[number, ForbesMetadata]> = [
 ```
 </CodeSnippetBlock>
 
-This is the bit where we use this data to fill [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html).
+This is the bit where we use this data to fill [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html).
 
 ```ts
 // Filling XyDataSeries

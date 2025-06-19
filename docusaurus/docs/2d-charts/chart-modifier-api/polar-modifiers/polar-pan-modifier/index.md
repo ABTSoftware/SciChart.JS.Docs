@@ -9,7 +9,7 @@ The [PolarPanModifier:blue_book:](https://www.scichart.com/documentation/js/v4/t
 ```ts showLineNumbers file=./demo.js start=region_A_start end=region_A_end
 ```
 
-<LiveDocSnippet name="./Basic/demo" />
+<LiveDocSnippet name="./demo" />
 
 In the code above:
 

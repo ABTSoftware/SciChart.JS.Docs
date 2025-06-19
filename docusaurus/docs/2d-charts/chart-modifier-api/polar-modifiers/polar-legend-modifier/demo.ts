@@ -103,34 +103,44 @@ async function builderExample(divElementId) {
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
-        xAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Angular } },
-        yAxes: { type: EAxisType.NumericAxis, options: { polarAxisMode: EPolarAxisMode.Radial } },
-        renderableSeries: [
+        xAxes: { 
+            type: EAxisType.PolarNumericAxis, 
+            options: { 
+                polarAxisMode: EPolarAxisMode.Angular 
+            } 
+        },
+        yAxes: { 
+            type: EAxisType.PolarNumericAxis, 
+            options: { 
+                polarAxisMode: EPolarAxisMode.Radial 
+            } 
+        },
+        series: [
             {
-                type: ESeriesType.PolarColumnRenderableSeries,
+                type: ESeriesType.PolarColumnSeries,
                 options: {
-                    dataSeries: {
-                        xValues: Array.from({ length: 10 }, (_, i) => i),
-                        yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1)),
-                        dataSeriesName: "Sine"
-                    },
                     fill: "#55aaff44",
                     stroke: "#55aaff",
                     dataPointWidth: 0.6,
                     strokeThickness: 2
-                }
+                },
+                xyData: {
+                    xValues: Array.from({ length: 10 }, (_, i) => i),
+                    yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1)),
+                    dataSeriesName: "Sine"
+                },
             },
             {
-                type: ESeriesType.PolarLineRenderableSeries,
+                type: ESeriesType.PolarLineSeries,
                 options: {
-                    dataSeries: {
-                        xValues: Array.from({ length: 10 }, (_, i) => i),
-                        yValues: Array.from({ length: 10 }, (_, i) => Math.cos(i * 0.1)),
-                        dataSeriesName: "Cosine"
-                    },
                     stroke: "#ff8800",
                     strokeThickness: 4
-                }
+                },
+                xyData: {
+                    xValues: Array.from({ length: 10 }, (_, i) => i),
+                    yValues: Array.from({ length: 10 }, (_, i) => Math.cos(i * 0.1)),
+                    dataSeriesName: "Cosine"
+                },
             }
         ],
         modifiers: [

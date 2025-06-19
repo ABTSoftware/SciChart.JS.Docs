@@ -11,7 +11,6 @@ The Polar Stacked Column Chart Type is created using a [PolarStackedColumnCollec
     title="Polar Stacked Column Series Chart"
 />
 
-
 ## Create a Basic Polar Stacked Column Series
 
 To create a Javascript [Polar Stacked Column Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedcolumnrenderableseries.html) with SciChart.js, use the following code:

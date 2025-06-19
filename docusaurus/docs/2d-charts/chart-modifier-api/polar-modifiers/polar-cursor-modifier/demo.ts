@@ -96,7 +96,7 @@ async function PolarCursorModifier(divElementId) {
 PolarCursorModifier("scichart-root");
 
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PolarCursorModifier in SciChart.js using the Builder API
     const {
         chartBuilder,
@@ -146,7 +146,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 
 if (location.search.includes("builder=1")) builderExample("scichart-root");

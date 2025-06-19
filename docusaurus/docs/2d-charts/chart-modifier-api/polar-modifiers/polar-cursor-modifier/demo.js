@@ -65,7 +65,7 @@ async function PolarCursorModifier(divElementId) {
 }
 PolarCursorModifier("scichart-root");
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PolarCursorModifier in SciChart.js using the Builder API
     const { chartBuilder, EAxisType, EChart2DModifierType, EPolarAxisMode, EAngularAxisLabelPlacement, ERadialAxisLabelPlacement, ESeriesType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
@@ -106,7 +106,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 if (location.search.includes("builder=1"))
     builderExample("scichart-root");
