@@ -1,11 +1,11 @@
 ---
 id: SciChartjs-JavaScript-Charts-User-Manual
-title: SciChart.js JavaScript Charts User Manual
 sidebar_position: 1
 ---
 
 # ✅ SciChart.js JavaScript Charts User Manual
 
+:::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
 
 * [Tutorials (JavaScript APIs / npm / webpack)](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)
@@ -18,6 +18,7 @@ Are you new to SciChart? Check out our most popular pages to get started below:
 * [Styling and Themeing](/docs/2d-charts/styling-and-theming/theme-manager-api/index.md)
 * [Chart Synchronization APIs](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/index.md)
 * [3D charts Basics](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview/index.md)
+:::
 
 # What is SciChart.js?
 
@@ -46,11 +47,11 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
 <!-- generate-docs-toc.js start -->
 # Global Table of Contents
 
-- **User Manual**
-  - [Licensing SciChart.js](/docs/user-manual/licensing-scichart-js)
-  - [Minimum Browser Requirements](/docs/user-manual/minimum-browser-requirements)
-  - [Online Resources and Help](/docs/user-manual/online-resources-and-help)
-  - [SciChart.js JavaScript Charts User Manual](/docs/user-manual/scichart-js-javascript-charts-user-manual)
+- **✅User Manual**
+  - [✅ Licensing SciChart.js](/docs/user-manual/licensing-scichart-js)
+  - [✅ Minimum Browser Requirements](/docs/user-manual/minimum-browser-requirements)
+  - [✅ Online Resources and Help](/docs/user-manual/online-resources-and-help)
+  - [✅ SciChart.js JavaScript Charts User Manual](/docs/user-manual/scichart-js-javascript-charts-user-manual)
 - **Get Started: Tutorials, Examples**
   - **Tutorials (JavaScript APIs / npm / webpack)**
     - [✅ Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
