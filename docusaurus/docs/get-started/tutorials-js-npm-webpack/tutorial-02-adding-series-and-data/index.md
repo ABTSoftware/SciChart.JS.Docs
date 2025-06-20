@@ -6,7 +6,7 @@ sidebar_position: 2
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md) we explained how to setup a project with a simple chart using SciChart.js. In this tutorial, we are going to show you how to add some data and a line series to the chart.
 
-<YouTubeVideo url="https://www.youtube.com/embed/dQYnwPeacSA" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 01 - Setting up a Project with WebPack, Node and SciChart.js" />
+<YouTubeVideo url="https://www.youtube.com/embed/dQYnwPeacSA" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 02 - Adding Series and Data" />
 
 :::tip
 Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_2_Adding_Series_and_Data)
@@ -73,7 +73,7 @@ Try the code below:
 Ensure you also have the index.html set, which must contain a div with id="scichart-root" (or whatever you pass to [SciChartSurface.create](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create))
 
 <CodeSnippetBlock labels={["HTML"]}>
-  ```js {21} showLineNumbers
+  ```html {21} showLineNumbers
 <html lang="en-us">
   <head>
     <meta charset="utf-8" />

@@ -55,12 +55,19 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
 - **Get Started: Tutorials, Examples**
   - **Tutorials (JavaScript APIs / npm / webpack)**
     - [✅ Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
-    - [Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
+    - [✅ Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
+    - [Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
+    - [Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates)
+    - [Tutorial 05 - Zoom and Pan with Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-05-zoom-and-pan-with-realtime-updates)
+    - [Tutorial 06 - Adding Annotations](/docs/get-started/tutorials-js-npm-webpack/tutorial-06-adding-annotations)
+    - [Tutorial 07 - Adding Tooltips and Legends](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends)
     - [Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis)
+    - [Tutorial 09 - Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)
+    - [Tutorial 10 - Vertical Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-10-vertical-charts)
   - **Tutorials (index.min.js from CDN)**
     - [Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline)
-  - **Tutorials (SciChart React)**
+  - **Tutorials (scichart-react)**
     - [Tutorial 01 - Setting up a project with scichart-react and config object](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
     - [Tutorial 02 - Creating a Chart with scichart-react](/docs/get-started/tutorials-react/tutorial-02-creating-chart-with-scichart-react)
   - [How do I? ... Worked Examples with SciChart.js](/docs/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
