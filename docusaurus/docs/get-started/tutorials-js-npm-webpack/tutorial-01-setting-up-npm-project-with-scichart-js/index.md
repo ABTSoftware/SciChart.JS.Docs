@@ -291,12 +291,14 @@ Now visit [http://localhost:8080](http://localhost:8080) in your browser and voi
 Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
 :::
 
+:::warning
 **A Note on Licensing SciChart.**  
   
 The SciChart.js control comes with a community license which is watermarked. This can be used for commercial trial use for a reasonable time period.
 
   
 For commercial licenses, a license key can be applied following the instructions at [www.scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js).
+:::
 
 #### See Also
 
