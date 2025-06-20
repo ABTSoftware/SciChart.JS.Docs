@@ -7,6 +7,7 @@ import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
 import CenteredImageWrapper from "../components/CenteredImageWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
 import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
+import { YouTubeVideo } from "../components/YouTubeVideo";
 
 export default {
     // Re-use the default mapping
@@ -18,5 +19,6 @@ export default {
     CenteredImageWrapper,
     LiveDocSnippet,
     DemoExampleWrapper,
-    ChartFromSciChartDemo
+    ChartFromSciChartDemo,
+    YouTubeVideo
 };

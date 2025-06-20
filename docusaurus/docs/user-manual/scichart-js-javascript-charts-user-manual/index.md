@@ -134,12 +134,12 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [✅ Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
       - [✅ Hit-Test API for Scatter Series](/docs/2d-charts/chart-types/hit-test-api/xy-scatter-renderable-series)
     - **DataSeries (Data Updates) API**
-      - [Append, Insert, Update, Remove](/docs/2d-charts/chart-types/data-series-api/append-insert-update-remove)
+      - [🔄 Append, Insert, Update, Remove](/docs/2d-charts/chart-types/data-series-api/append-insert-update-remove)
       - [✅ DataSeries API Overview](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview)
-      - [Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory)
-      - [DataSeries Get Set value at Index](/docs/2d-charts/chart-types/data-series-api/get-set-value-at-index)
-      - [DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates)
-      - [DataSeries Resampling](/docs/2d-charts/chart-types/data-series-api/resampling)
+      - [🔄 Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory)
+      - [🔄 DataSeries Get Set value at Index](/docs/2d-charts/chart-types/data-series-api/get-set-value-at-index)
+      - [🔄 DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates)
+      - [🔄 DataSeries Resampling](/docs/2d-charts/chart-types/data-series-api/resampling)
     - **✅ PointMetadata API**
       - [✅ Metadata and HitTest](/docs/2d-charts/chart-types/point-metadata-api/hit-test)
       - [✅ Metadata and PaletteProviders](/docs/2d-charts/chart-types/point-metadata-api/palette-providers)

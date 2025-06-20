@@ -9,9 +9,7 @@ Creating a New SciChart.js Project
 
 In this tutorial we will create a simple line chart with SciChart.js. We'll show you how to create a new JavaScript project in [VSCode](https://code.visualstudio.com/) and adding SciChart libraries as dependencies to it.
 
-
-**Video tutorial for version 3**
-<iframe style={{ aspectRatio: 16 / 9, width: "100%" }} src="https://www.youtube.com/embed/PFYpCrZwqwU" title="SciChart.js JavaScript Chart Tutorial 01 - Setting up a Project with WebPack, Node and SciChart.js" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<YouTubeVideo url="https://www.youtube.com/embed/PFYpCrZwqwU" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 01 - Setting up a Project with WebPack, Node and SciChart.js" />
 
 :::tip
 Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
