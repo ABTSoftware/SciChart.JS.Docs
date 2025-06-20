@@ -56,9 +56,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - **Tutorials (JavaScript APIs / npm / webpack)**
     - [✅ Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
     - [✅ Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
-    - [Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
-    - [Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates)
-    - [Tutorial 05 - Zoom and Pan with Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-05-zoom-and-pan-with-realtime-updates)
+    - [✅ Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
+    - [✅ Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates)
+    - [✅ Tutorial 05 - Zoom and Pan with Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-05-zoom-and-pan-with-realtime-updates)
     - [Tutorial 06 - Adding Annotations](/docs/get-started/tutorials-js-npm-webpack/tutorial-06-adding-annotations)
     - [Tutorial 07 - Adding Tooltips and Legends](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends)
     - [Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis)
