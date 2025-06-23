@@ -2,9 +2,7 @@
 sidebar_position: 7
 ---
 
-# LineArrowAnnotation
-
-import ChartPreviewWrapper from "@site/src/components/ChartPreviewWrapper"
+# ✅ LineArrowAnnotation
 
 The [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html) class extends [LineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/lineannotation.html) and adds an optional arrowhead at each line endpoint. Use it to annotate charts with directional indicators.
 
@@ -12,10 +10,16 @@ The [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v
 
 The following code will declare 2 [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html)s and add them to the chart.
 
-```ts showLineNumbers file=./demo.js start=#region_A_start end=#region_A_end
-```
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+    ```ts {20,28} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```
+    ```ts {9,17} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
+    ```
+</CodeSnippetBlock>
 
-<ChartPreviewWrapper />
+Resulting in the following output:
+
+<LiveDocSnippet name="./demo" />
 
 In the code above:
 

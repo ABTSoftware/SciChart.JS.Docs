@@ -117,7 +117,7 @@ export async function hitTestColumnTs(divId: string) {
 
  This gives us the chart below.
 
-![](images/HitTestApi_column-chart1.png)
+![](/images/HitTestApi_column-chart1.png)
 
  If to click inside the column it will be hit. In the browser console you will find output for the **HitTestInfo** object.
 

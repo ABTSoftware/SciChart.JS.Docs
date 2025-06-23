@@ -120,7 +120,7 @@ export async function hitTestScatterTs(divId: string) {
 
  This gives us this chart.
 
-![](images/HitTestApi_scatter-chart1.png)
+![](/images/HitTestApi_scatter-chart1.png)
 
  If to click inside the point marker it will be hit. In the browser console you will find output for the **HitTestInfo** object.
 

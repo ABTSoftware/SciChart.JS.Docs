@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Memory in SciChart.js is stored in WebAssembly (Wasm) buffers via the type **SCRTDoubleVector**. It cannot be treated like a JavaScript array, however it is possible to bulk write/read to these arrays or to get/set at index.
 
-You can access values on a DataSeries by getting the internal WebAssembly native arrays via [getNativeXValues()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#getnativexvalues) and [getNativeYValues()](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#getnativeyvalues). These return **SCRTDoubleVector** - a webassembly buffer type which stores underlying data as Float64 array.
+You can access values on a DataSeries by getting the internal WebAssembly native arrays via [getNativeXValues():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#getnativexvalues) and [getNativeYValues():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#getnativeyvalues). These return **SCRTDoubleVector** - a webassembly buffer type which stores underlying data as Float64 array.
 
 ```ts
 // Accessing Values from DataSeries

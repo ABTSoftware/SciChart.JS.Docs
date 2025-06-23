@@ -122,7 +122,7 @@ We're going to start off with the code we created in the previous [Tutorial 04 
 Adding Zooming Behavior
 -----------------------
 
-From [Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior/index.md), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
+From [Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior/index.md), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
 
 However, the code we added to scroll the chart on update is going to conflict with the user mouse-zooming behaviors. Take a look below:
 
@@ -158,12 +158,12 @@ However, the code we added to scroll the chart on update is going to conflict wi
   ```
 </CodeSnippetBlock>
 
-If we want to enable user-zoom, and also scroll the chart, we need to selectively implement that scroll. To do so we can use the [sciChartSurface.zoomState](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property.
+If we want to enable user-zoom, and also scroll the chart, we need to selectively implement that scroll. To do so we can use the [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property.
 
 The sciChartSurface.zoomState Property
 --------------------------------------
 
-The [sciChartSurface.zoomState](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here](https://www.scichart.com/documentation/js/current/typedoc/enums/ezoomstate.html).
+The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ezoomstate.html).
 
 If we modified our code, we can selectively use this property to detect if the user is zooming and halt any automatic scrolling. For example, try modifying the updateDataFunc as follows:
 
@@ -187,7 +187,7 @@ In order to add [ZoomPanModifier](ZoomPanModifier.html), update the code as fol
 </CodeSnippetBlock>
 
 :::tip
-You can use [ChartModifierBase.executeCondition](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html#executecondition) to make it work with different mouse button or mouse button + Ctrl/Alt/Shift button. Like we did in the example above
+You can use [ChartModifierBase.executeCondition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html#executecondition) to make it work with different mouse button or mouse button + Ctrl/Alt/Shift button. Like we did in the example above
 ```typescript
 new ZoomPanModifier({
     executeCondition: { button: EExecuteOn.MouseRightButton, key: EModifierMouseArgKey.None }

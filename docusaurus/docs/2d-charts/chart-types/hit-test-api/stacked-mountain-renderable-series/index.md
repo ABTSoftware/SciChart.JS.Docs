@@ -100,7 +100,7 @@ export async function hitTestStackedMountainTs(divId) {
 
 This gives us this chart.
 
-![](images/HitTestApi_stacked-mountain-chart1.png)
+![](/images/HitTestApi_stacked-mountain-chart1.png)
 
 If we click inside the gray band it will be hit for the [StackedMountainRenderableSeries](/docs/2d-charts/chart-types/stacked-mountain-renderable-series/index.md) with index 1. In the browser console you will find output with an array of **HitTestInfo** results.
 

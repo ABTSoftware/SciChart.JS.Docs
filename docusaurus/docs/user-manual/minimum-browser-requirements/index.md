@@ -35,7 +35,7 @@ This compatibility % is set to increase as wasm becomes a standard across browse
 
 Minimum versions are found below:
 
-[![](images/1.png)](https://caniuse.com/#search=webassembly)
+[![](1.png)](https://caniuse.com/#search=webassembly)
 
 WebAssembly is supported on
 
@@ -59,7 +59,7 @@ According to [caniuse.com](https://caniuse.com/#search=webgl), 96.56% of web br
 
 Minimum versions can be found below
 
-[![](images/2.png)](https://caniuse.com/#search=webgl)
+[![](2.png)](https://caniuse.com/#search=webgl)
 
 WebGL 1 is supported on
 
@@ -75,7 +75,7 @@ WebGL 2 Minimum Browser Support
 
 According to [caniuse.com](https://caniuse.com/#search=webgl2), 95.1% of web browsers worldwide now support WebGL 2. SciChart achieves superior performance with WebGL 2, but will automatically drop down to WebGL 1 where this latest API is not available.
 
-[![](images/3.png)](https://caniuse.com/#search=webgl2)
+[![](3.png)](https://caniuse.com/#search=webgl2)
 
 WebGL 2 is supported on
 

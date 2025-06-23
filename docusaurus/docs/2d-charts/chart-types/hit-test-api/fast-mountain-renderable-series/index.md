@@ -112,7 +112,7 @@ export async function hitTestMountainTs(divId: string) {
 
  This gives us the chart below.
 
-![](images/HitTestApi_mountain-chart1.png)
+![](/images/HitTestApi_mountain-chart1.png)
 
  If to click inside the mountain it will be hit. In the browser console you will find output for the **HitTestInfo** object.
 

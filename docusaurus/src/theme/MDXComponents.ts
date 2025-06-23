@@ -7,6 +7,7 @@ import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
 import CenteredImageWrapper from "../components/CenteredImageWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
 import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
+import MinimizedImageAndTextHeader from "../components/MinimizedImageAndTextHeader";
 import { YouTubeVideo } from "../components/YouTubeVideo";
 
 export default {
@@ -20,5 +21,6 @@ export default {
     LiveDocSnippet,
     DemoExampleWrapper,
     ChartFromSciChartDemo,
-    YouTubeVideo
+    YouTubeVideo,
+    MinimizedImageAndTextHeader
 };

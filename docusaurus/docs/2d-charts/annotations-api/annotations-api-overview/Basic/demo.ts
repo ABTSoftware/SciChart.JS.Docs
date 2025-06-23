@@ -13,7 +13,6 @@ const {
     ECoordinateMode,
     SciChartJsNavyTheme
 } = SciChart;
-
 // or for npm import { SciChartSurface, ... } from "scichart"
 
 async function addAnnotationToChart(divElementId) {
@@ -72,7 +71,6 @@ addAnnotationToChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     const { chartBuilder, EAnnotationType, ECoordinateMode, EVerticalAnchorPoint, EHorizontalAnchorPoint } = SciChart;
-
     // or for npm import { SciChartSurface, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {

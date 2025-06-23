@@ -123,7 +123,7 @@ A sample source code is below.
 
  This gives us the chart below.
 
-![](images/HitTestApi_candlestick-chart1.png)
+![](/images/HitTestApi_candlestick-chart1.png)
 
  If we click on the candle or wicks within a distance of 10 pixels it will be hit. In the console you will find **hitTestInfo** which contains **openValue**, **highValue**, **lowValue** and **closeValue** in addition to common **HitTestInfo** properties.
 

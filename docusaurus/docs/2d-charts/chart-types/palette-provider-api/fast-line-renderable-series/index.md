@@ -62,7 +62,7 @@ class LinePaletteProvider implements IStrokePaletteProvider {
 
 This now results in gradient color changes between line segments.
 
-![](images/PaletteProvider_Line2.png)
+![](/images/PaletteProvider_Line2.png)
 
 Note: SciChart won't bisect the line at a threshold value but only changes colour between line segments in the data you already have. If you want to have a perfect transistion from one colour to another at a specific Y-value, you will need to include data-points
 

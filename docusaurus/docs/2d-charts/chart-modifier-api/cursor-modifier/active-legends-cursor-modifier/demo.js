@@ -34,8 +34,8 @@ const getCandles = async (symbol, interval, limit = 300) => {
     }
 };
 async function cursorModifierActiveLegendsOnCandles(divElementId) {
-    // #region_A_start
-    const { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, EDataSeriesType, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, parseColorToTArgb, FastLineRenderableSeries, XyMovingAverageFilter, OhlcSeriesInfo } = SciChart;
+    // #region_B_start
+    const { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, EDataSeriesType, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, parseColorToTArgb, FastLineRenderableSeries, XyMovingAverageFilter } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -92,7 +92,7 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
     }));
     // add interactivity for the example
     sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier({ excludedYAxisIds: ["VolumeAxisId"] }), new ZoomPanModifier({ excludedYAxisIds: ["VolumeAxisId"] }), new ZoomExtentsModifier());
-    // #region ExampleA
+    // #region_A_start
     // Add a CursorModifier with active legend to the chart
     const cursorModifier = new CursorModifier({
         // X,Y offset in pixels for the active legend
@@ -129,5 +129,6 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
     });
     sciChartSurface.chartModifiers.add(cursorModifier);
     // #region_A_end
+    // #region_B_end
 }
 cursorModifierActiveLegendsOnCandles("scichart-root");

@@ -229,7 +229,7 @@ The **StackedColumnCollection** in this example has five [StackedColumnRenderab
 
 This gives us the following chart.
 
-![](images/HitTestApi_stacked-column-chart1.png)
+![](/images/HitTestApi_stacked-column-chart1.png)
 
  If we click inside the column it will be hit for the corresponding renderable series in the collection. In the browser console you will find output with array of **HitTestInfo** results.
 

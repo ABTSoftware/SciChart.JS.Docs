@@ -20,7 +20,7 @@ The [JavaScript Text / Word Cloud Chart Example](https://demo.scichart.com/java
 Creating a Text Series
 ----------------------
 
-To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/FastTextRenderableSeries.html) use the following code. 
+To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.htmll) use the following code. 
 
 **Note** that it is required to set a style with `fontFamily` and `size` in the dataLabels property in order for text to be drawn. 
 
@@ -48,7 +48,9 @@ There is however an [onAfterGenerate:blue_book:](https://www.scichart.com/docume
 
 [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.html) supports pointmarkers and also [horizontalTextPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textdatalabelprovider.html#horizontaltextposition) and [verticalTextPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textdatalabelprovider.html#verticaltextposition) dataLabels options.
 
+:::warning
 Text is drawn using Native Text rendering, so to use any font other than Arial you will need ensure that font is available on your server (as fontname.ttf), or registered using **sciChartSurface.registerFont(...)** if coming from a remote url. 
+:::
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts {2-5,18,23-24,26,31,39} showLineNumbers file=./Customisation/demo.ts start=#region_A_start end=#region_A_end

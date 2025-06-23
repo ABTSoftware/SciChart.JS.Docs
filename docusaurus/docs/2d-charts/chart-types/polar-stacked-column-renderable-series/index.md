@@ -26,7 +26,7 @@ In the code above:
 
 ## Create a Basic **Radial** Polar Stacked Column Series
 
-To create a Javascript **Radial** [Polar Stacked Column Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedcolumnrenderableseries.html) with SciChart.js, use the following code:
+To create a Javascript **Radial** [Polar Stacked Column Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedcolumnrenderableseries.html) with SciChart.js, use the code from above, but replace the **xAxis** and **yAxis** config with this snippet:
 
 ```ts showLineNumbers {2-3,10-11} file=./BasicRadial/demo.js start=region_A_start end=region_A_end
 ```

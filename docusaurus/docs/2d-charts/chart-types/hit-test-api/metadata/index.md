@@ -187,7 +187,7 @@ export async function hitTestLineMetadataTs(divId: string) {
 
  This is the resulting column chart.
 
-![](images/HitTestApi_metadata1.png)
+![](/images/HitTestApi_metadata1.png)
 
  If we click on the column we get metadata displayed at the bottom of the chart. In the browser console you will find output with the metadata property which contains **Name**, **Age**, **Country** and **isSelected** fields. The **isSelected** is a common property, which is used to select/deselect data points.
 

@@ -52,7 +52,7 @@ const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElement
 
 </CodeSnippetBlock>
 
-![](images/PaletteProvider_Band1.png)
+![](/images/PaletteProvider_Band1.png)
 
 Next we create a BandPaletteProvider by implementing [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) and [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces in typescript, or extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/defaultpaletteprovider.html) in JavaScript.
 
@@ -149,4 +149,4 @@ bandSeries.paletteProvider = new BandPaletteProvider();
 
 Now we have a paletted band renderable series with fill, stroke and point markers overridden for X in range from 6 to 12.
 
-![](images/PaletteProvider_Band2.png)
+![](/images/PaletteProvider_Band2.png)

@@ -25,7 +25,7 @@ The provided modifiers include [RubberBandXyZoomModifier](/docs/2d-charts/chart
 
 ### Adding Chart Modifiers
 
-Now we are going to create and configure a couple of new modifiers and add them to the [SciChartSurface.chartModifiers](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection:
+Now we are going to create and configure a couple of new modifiers and add them to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection:
 
 <CodeSnippetBlock labels={["JS"]}>
   ```js {6-9,43-57} showLineNumbers
@@ -125,7 +125,7 @@ After re-building and running the application the chart should behave like this
 <div style={{textAlign: "center"}}>_Above: 1 Million Datapoints in 100 Series x 10k points per series, zooming and panning smoothly in our fast JavaScript Chart component!_</div> 
 
 :::tip
-You can use [ChartModifierBase.executeCondition](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html#executecondition) to make it work with different mouse button or mouse button + Ctrl/Alt/Shift button. Like we did in the example above
+You can use [ChartModifierBase.executeCondition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html#executecondition) to make it work with different mouse button or mouse button + Ctrl/Alt/Shift button. Like we did in the example above
 ```typescript
 const zoomPanModifier = new ZoomPanModifier({
     executeCondition: { button: EExecuteOn.MouseRightButton, key: EModifierMouseArgKey.None }
@@ -270,7 +270,7 @@ Next, add the following code to index.js. We could use React or Angular to handl
   ```
 </CodeSnippetBlock>
 
-Enabling or disabling a ChartModifier is as easy as setting the [ChartModifierBase.isEnabled](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isenabled) property. You could have a keyboard shortcut to switch from pan to zoom behaviour for example, or a toolbar button to create the desired behaviour.
+Enabling or disabling a ChartModifier is as easy as setting the [ChartModifierBase.isEnabled:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isenabled) property. You could have a keyboard shortcut to switch from pan to zoom behaviour for example, or a toolbar button to create the desired behaviour.
 
 ![JavaScript Chart dynamic Zooming and Panning by SciChart.js](img/2.gif)
 

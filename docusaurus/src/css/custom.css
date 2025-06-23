@@ -51,6 +51,8 @@ track it down within inspect element and change the variable from one of these c
 
   --absolute-text-color: rgb(0, 0, 0);
   --gray: #8888;
+
+  --ifm-paragraph-margin-bottom: 1rem;
 }
 
 [data-theme='dark'] {
@@ -99,4 +101,17 @@ track it down within inspect element and change the variable from one of these c
 }
 .tabs {
   gap: 4px;
+}
+
+.alert--warning {
+  background-color: rgba(250, 250, 110, 0.133) !important;
+}
+
+.alert--success {
+  background-color: rgba(136, 136, 136, 0.102) !important;
+
+  code {
+    background-color: var(--ifm-background-color) !important;
+    padding-inline: 4px;
+  }
 }

@@ -17,15 +17,15 @@ Resampling algorithms in SciChart are designed to preserve information about the
 
 Here are some before/after images with resampling applied to show the effect on the visual output with resampling applied / not applied.
 
-![](images/scichart-js-resampling-vs-no-resampling-random-walk.png)
+![](/images/scichart-js-resampling-vs-no-resampling-random-walk.png)
 
 _**Above**: Random walk data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
-![](images/scichart-js-resampling-vs-no-resampling-spikey-sinewave.png)
+![](/images/scichart-js-resampling-vs-no-resampling-spikey-sinewave.png)
 
 _**Above**: Sinewave data with random spikes with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
-![](images/scichart-js-resampling-vs-no-resampling-noisy-sine.png)
+![](/images/scichart-js-resampling-vs-no-resampling-noisy-sine.png)
 
 _**Above**: Noisy sinewave data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
@@ -37,16 +37,16 @@ The following properties affect resampling mode and precision. Defaults are incl
 
 | **Property** | **Default** | Comment |
 |--|--|--|
-| [BaseRenderableSeries.resamplingMode](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) | [Auto](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) | Locally sets resampling mode for this series. Values of [Auto](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) or [None](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) are the most useful. |
-| [BaseRenderableSeries.resamplingMode](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) | 0 | Locally sets resampling precision for this series. Default = 0. Value of 1.0 means double precision, increasing density of output series but at an approx ~20% performance decrease. Value of 2.0 means quad precision etc... |
-| [SciChartDefaults.debugDisableResampling](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#debugdisableresampling) | false | NOT RECOMMENDED UNLESS IN DEBUG MODE: Turn on/off adaptive, visually lossless resampling algorithms globally for the entire application. |
+| [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) | [Auto:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) | Locally sets resampling mode for this series. Values of [Auto:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) or [None:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) are the most useful. |
+| [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) | 0 | Locally sets resampling precision for this series. Default = 0. Value of 1.0 means double precision, increasing density of output series but at an approx ~20% performance decrease. Value of 2.0 means quad precision etc... |
+| [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#debugdisableresampling) | false | NOT RECOMMENDED UNLESS IN DEBUG MODE: Turn on/off adaptive, visually lossless resampling algorithms globally for the entire application. |
 
 In addition, the distribution of data (which can be auto-detected or specified) or the series type will dictate which resampling mode is chosen automatically - in order to maximise performance without affecting visual output.  
 
 Globally enabling or Disabling Resampling
 -----------------------------------------
 
-It is possible to globally enable or disable resampling for all series by setting the [SciChartDefaults.debugDisableResampling](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#debugdisableresampling) property.
+It is possible to globally enable or disable resampling for all series by setting the [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#debugdisableresampling) property.
 
 :::warning
 We recommend not disabling resampling unless debugging visual output of the chart. This will massively impact performance and is not necessary, as SciChart automatically chooses the correct algorithm and strategy to maintain visual output while hugely improving performance.
@@ -64,7 +64,7 @@ SciChartDefaults.debugDisableResampling = true;
 Disabling Resampling or Setting Mode per-series
 -----------------------------------------------
 
-By default [EResamplingMode.Auto](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) is applied to DataSeries. you can also disable resampling on a per-series basis by setting [BaseRenderableSeries.resamplingMode](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) = [EResamplingMode.None](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html).
+By default [EResamplingMode.Auto:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) is applied to DataSeries. you can also disable resampling on a per-series basis by setting [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingmode) = [EResamplingMode.None:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html).
 
 ```ts
 // Setting ResamplingModes
@@ -83,7 +83,7 @@ const lineSeries = new FastLineRenderableSeries(wasmContext, {
 } );
 ```
 
-Other resampling modes are also available in the [EResamplingMode](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) enumeration. We suggest leaving these to Auto or None unless directed to by SciChart.js support.
+Other resampling modes are also available in the [EResamplingMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eresamplingmode.html) enumeration. We suggest leaving these to Auto or None unless directed to by SciChart.js support.
 
 :::warning
 We recommend leaving resamplingMode as Auto unless debugging the visual output of the chart. This will massively impact performance and is not necessary, as SciChart automatically chooses the correct algorithm and strategy to maintain visual output while hugely improving performance.
@@ -129,15 +129,15 @@ When specified in the constructor options of a DataSeries, SciChart.js will not 
 ResamplingPrecision
 -------------------
 
-The [BaseRenderableSeries.resamplingPrecision](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingprecision) property may be tuned to affect the output result. In some cases where the dataset is very noisy, a higher resampling precision may provide a more visually appealing result.
+The [BaseRenderableSeries.resamplingPrecision:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#resamplingprecision) property may be tuned to affect the output result. In some cases where the dataset is very noisy, a higher resampling precision may provide a more visually appealing result.
 
 Here is an example of a very noisy dataset (random values between 0-1) with varying resampling precisions.
 
-![](images/scichart-js-resampling-vs-no-resampling-random-precision0.png)
+![](/images/scichart-js-resampling-vs-no-resampling-random-precision0.png)
 
 _**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 0)_
 
-![](images/scichart-js-resampling-vs-no-resampling-random-precision1.png)
+![](/images/scichart-js-resampling-vs-no-resampling-random-precision1.png)
 
 _**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 1)_
 

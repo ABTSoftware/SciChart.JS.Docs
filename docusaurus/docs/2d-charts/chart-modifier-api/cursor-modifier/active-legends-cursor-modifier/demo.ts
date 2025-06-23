@@ -37,7 +37,7 @@ const getCandles = async (symbol, interval, limit = 300) => {
 };
 
 async function cursorModifierActiveLegendsOnCandles(divElementId) {
-    // #region_A_start
+    // #region_B_start
     const {
         SciChartSurface,
         CategoryAxis,
@@ -55,8 +55,7 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
         XyDataSeries,
         parseColorToTArgb,
         FastLineRenderableSeries,
-        XyMovingAverageFilter,
-        OhlcSeriesInfo
+        XyMovingAverageFilter
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -139,7 +138,7 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
         new ZoomExtentsModifier()
     );
 
-    // #region ExampleA
+    // #region_A_start
     // Add a CursorModifier with active legend to the chart
     const cursorModifier = new CursorModifier({
         // X,Y offset in pixels for the active legend
@@ -178,6 +177,7 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
     });
     sciChartSurface.chartModifiers.add(cursorModifier);
     // #region_A_end
+    // #region_B_end
 }
 
 cursorModifierActiveLegendsOnCandles("scichart-root");
