@@ -68,10 +68,10 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [✅ Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline)
   - [✅ Tutorial 01 - Setting up a project with scichart-react and config object](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
-  - [How do I? ... Worked Examples with SciChart.js](/docs/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
-  - [The SciChart.js Examples Suite](/docs/get-started/scichart-js-examples-suite)
+  - [✅ How do I? ... Worked Examples with SciChart.js](/docs/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
+  - [✅ The SciChart.js Examples Suite](/docs/get-started/scichart-js-examples-suite)
 - **What's New?**
-  - [Breaking Changes in SciChart.js v4.x from v3.x](/docs/whats-new/breaking-changes-v3-v4)
+  - [✅ Breaking Changes in SciChart.js v4.x from v3.x](/docs/whats-new/breaking-changes-v3-v4)
   - [What's New in SciChart.js SDK v4.0](/docs/whats-new/sdk-4.0)
 - **2D Charts API**
   - **✅ The SciChartSurface**
