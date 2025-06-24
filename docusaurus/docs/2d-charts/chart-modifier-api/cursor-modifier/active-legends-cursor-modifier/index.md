@@ -2,11 +2,11 @@
 sidebar_position: 3
 ---
 
-# Active Legends - CursorModifier output into a legend
+# ✅ Active Legends - CursorModifier output into a legend
 
 Background reading:
 
-If you haven't already, read the article [The CursorModifier Type](CursorModifier.html) which will show you how to setup a CursorModifier with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content)
+If you haven't already, read the article [The CursorModifier Type](../cursor-modifier-overview/) which will show you how to setup a [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content).
 
 CursorModifier tooltipLegendTemplates
 -------------------------------------

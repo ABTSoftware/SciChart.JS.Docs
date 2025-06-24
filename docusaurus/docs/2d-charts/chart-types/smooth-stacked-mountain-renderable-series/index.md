@@ -41,7 +41,7 @@ This results in the following output:
 Creating 100% Stacked Mountain Charts
 -------------------------------------
 
-SciChart.js also supports a JavaScript 100% Smoothed Stacked Mountain chart, which can be enabled by setting a single flag: [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html#isonehundredpercent)**.**
+SciChart.js also supports a JavaScript 100% Smoothed Stacked Mountain chart, which can be enabled by setting a single flag: [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html#isonehundredpercent).
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts {17} showLineNumbers file=./GroupingOptions/demo.ts start=#region_A_start end=#region_A_end

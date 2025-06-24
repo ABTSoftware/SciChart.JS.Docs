@@ -4,7 +4,7 @@ async function drawExample(divElementId) {
     // #region_A_start
     const { SciChartSurface, SciChartJsNavyTheme, LineArrowAnnotation, NumericAxis, EArrowHeadPosition, EDraggingGripPoint, } = SciChart;
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
-    // theme: new SciChartJsNavyTheme(),
+        theme: new SciChartJsNavyTheme(),
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));

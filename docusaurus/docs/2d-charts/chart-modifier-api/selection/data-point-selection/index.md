@@ -136,7 +136,7 @@ Rectangle Select DataPoints
 
 Datapoints may be selected by dragging a rectangle on the chart. This option is available when **DataPointSelectionModifier.allowDragSelect** = true.
 
-Drag to Select rectangle can be customised by setting the properties **DataPointSelectionModifier.selectionStroke**, **DatapointSelectionModifier.selectionFill** and **DataPointSelectionModifier.selectionStrokeThickness** properties**.** This may also be customizable in the themes by setting **IThemeProvider.rubberBandFillBrush** and **IThemeProvider.rubberBandStrokeBrush** properties.
+Drag to Select rectangle can be customised by setting the properties **DataPointSelectionModifier.selectionStroke**, **DatapointSelectionModifier.selectionFill** and **DataPointSelectionModifier.selectionStrokeThickness** properties. This may also be customizable in the themes by setting **IThemeProvider.rubberBandFillBrush** and **IThemeProvider.rubberBandStrokeBrush** properties.
 
 Multi-select behaviour is also configurable via the getSelectionMode function.
 

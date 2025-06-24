@@ -14,7 +14,7 @@ Source code for this tutorial can be found at [SciChart.JS.Examples Github Repos
 Adding a First Chart
 --------------------
 
-Let's create a first [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) with X and Y [NumericAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html), [Line Series](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) and data to display a sine wave. To make the chart interactive we add several chart modifiers, such as: [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/index.md), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/index.md), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier/index.md), [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md).
+Let's create a first [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) with X and Y [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html), [Line Series](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) and data to display a sine wave. To make the chart interactive we add several chart modifiers, such as: [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/index.md), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/index.md), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier/index.md), [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md).
 
 <CodeSnippetBlock labels={["index.js region A", "index.html"]}>
 ```js {20-69} showLineNumbers
@@ -212,7 +212,7 @@ Our web application should now shows two charts:
 Synchronizing VisibleRanges on Axes
 -----------------------------------
 
-To make both charts show the same [VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes/index.md) on X axes, we subscribe to [AxisCore.visibleRangeChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) event and [update VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/index.md) of the second chart if has been changed for the first chart and visa versa. In the beginning of _initSciChart()_ function we declare two variables and use them to store X Axis object for each [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md). In the end of _initSciChart()_ function we synchronize visible ranges.
+To make both charts show the same [VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes/index.md) on X axes, we subscribe to [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) event and [update VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/index.md) of the second chart if has been changed for the first chart and visa versa. In the beginning of _initSciChart()_ function we declare two variables and use them to store X Axis object for each [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md). In the end of _initSciChart()_ function we synchronize visible ranges.
 
 Instead of calling `createFirstChart()` and `createSecondChart()` separately we use `Promise.all([createFirstChart(), createSecondChart()])` to create charts in parallel.
 
@@ -286,7 +286,7 @@ Both charts have an array of **ChartModifiers** set up to handle zooming, panni
 ...
 ```
 
-If you run the application now, you will notice that you have zooming behaviour and tooltips on both charts, but the mouse events still aren't linked. To link them we need to make one small change to set the [chartModifierBase.modifierGroup](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html#modifiergroup) property:
+If you run the application now, you will notice that you have zooming behaviour and tooltips on both charts, but the mouse events still aren't linked. To link them we need to make one small change to set the [chartModifierBase.modifierGroup:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html#modifiergroup) property:
 
 <CodeSnippetBlock labels={["index.js region E"]}>
 ```js

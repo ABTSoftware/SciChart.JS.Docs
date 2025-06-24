@@ -89,15 +89,13 @@ async function PolarLegendModifier(divElementId) {
 PolarLegendModifier("scichart-root");
 
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PolarLegendModifier in SciChart.js using the Builder API
     const {
         chartBuilder,
         EAxisType,
         EChart2DModifierType,
         EPolarAxisMode,
-        EAngularAxisLabelPlacement,
-        ERadialAxisLabelPlacement,
         ESeriesType
     } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
@@ -145,20 +143,15 @@ async function builderExample(divElementId) {
         ],
         modifiers: [
             {
-                type: EChart2DModifierType.PolarCursor,
+                type: EChart2DModifierType.PolarLegend,
                 options: {
-                    lineColor: "#55aaff",
-                    lineThickness: 3,
-                    axisLabelFill: "#55aaff",
-                    angularAxisLabelPlacement: EAngularAxisLabelPlacement.Center,
-                    radialAxisLabelPlacement: ERadialAxisLabelPlacement.Top,
-                    showRadialLine: true,
-                    showCircularLine: true
+                    showCheckboxes: true,
+                    showSeriesMarkers: true
                 }
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 
 if (location.search.includes("builder=1")) builderExample("scichart-root");

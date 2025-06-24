@@ -8,8 +8,12 @@ SciChart.js provides the ability to Zoom Extents the polar chart (zoom to fit da
 
 Here is how to define the [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html) in your code:
 
-```ts showLineNumbers file=./demo.js start=region_A_start end=region_A_end
-```
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+    ```ts {6} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end 
+    ```
+    ```ts {51} showLineNumbers file=./demo.ts start=region_B_start end=region_B_end
+    ```
+</CodeSnippetBlock>
 
 <LiveDocSnippet name="./demo" />
 
@@ -34,3 +38,8 @@ Besides common features which are inherited from the base [ZoomExtentsModifier:b
 | [resetInnerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html#resetinnerradius) | boolean | Whether to reset the inner radius to its initial value. |
 
 See all at [IPolarZoomExtentsModifierOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipolarzoomextentsmodifieroptions.html).
+
+#### See Also
+
+* [What is the ChartModifier API?](../../chart-modifier-api-overview/)
+* [ZoomExtentsModifier](../../zooming-and-panning/zoom-extents-modifier/)

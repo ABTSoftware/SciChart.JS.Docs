@@ -77,6 +77,9 @@ export async function PolarArcZoom(divElementId) {
     const { PolarArcZoomModifier, easing } = SciChart;
     // or for npm: import { PolarArcZoomModifier, easing } from "scichart";
 
+    // const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {})
+    // ...
+
     // Add PolarArcZoomModifier behaviour to the chart
     sciChartSurface.chartModifiers.add(
         new PolarArcZoomModifier({

@@ -1,6 +1,6 @@
 import * as SciChart from "scichart";
 async function PolarArcZoom(divElementId) {
-    const { SciChartPolarSurface, EPolarAxisMode, PolarNumericAxis, XyDataSeries, NumberRange, SciChartJsNavyTheme, TextAnnotation, ECoordinateMode, EHorizontalAnchorPoint, EVerticalAnchorPoint, PolarXyScatterRenderableSeries, } = SciChart;
+    const { SciChartPolarSurface, EPolarAxisMode, PolarNumericAxis, NumberRange, SciChartJsNavyTheme, TextAnnotation, ECoordinateMode, EHorizontalAnchorPoint, EVerticalAnchorPoint, } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -12,14 +12,6 @@ async function PolarArcZoom(divElementId) {
         polarAxisMode: EPolarAxisMode.Radial,
         visibleRange: new NumberRange(0, 1),
         drawMinorGridLines: false,
-    }));
-    sciChartSurface.renderableSeries.add(new PolarXyScatterRenderableSeries(wasmContext, {
-        stroke: "#50C7E0",
-        strokeThickness: 5,
-        dataSeries: new XyDataSeries(wasmContext, {
-            xValues: Array.from({ length: 10 }, (_, i) => i),
-            yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1))
-        })
     }));
     // Add annotations to tell the user what to do
     sciChartSurface.annotations.add(new TextAnnotation({
@@ -47,24 +39,45 @@ async function PolarArcZoom(divElementId) {
         fontSize: 17
     }));
     // #region_A_start
-    const { PolarDataPointSelectionModifier } = SciChart;
+    const { PolarDataPointSelectionModifier, DataPointSelectionPaletteProvider, PolarLineRenderableSeries, XyDataSeries, EllipsePointMarker, } = SciChart;
     // or for npm: import { PolarDataPointSelectionModifier } from "scichart";
+    // const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {})
+    // ...
+    // Add a series with point markers & a DataPointSelectionPaletteProvider to see the selection effect
+    sciChartSurface.renderableSeries.add(new PolarLineRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: Array.from({ length: 10 }, (_, i) => i),
+            yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1))
+        }),
+        stroke: "#FFAA00",
+        strokeThickness: 3,
+        pointMarker: new EllipsePointMarker(wasmContext, {
+            width: 12,
+            height: 12,
+            fill: "#000000",
+            stroke: "#FFAA00",
+            strokeThickness: 2,
+        }),
+        paletteProvider: new DataPointSelectionPaletteProvider({
+            fill: "#FFFFFF",
+            stroke: "#FFAA00", // keep the same
+        })
+    }));
     // Add PolarDataPointSelectionModifier behaviour to the chart
     sciChartSurface.chartModifiers.add(new PolarDataPointSelectionModifier({
-        enableHover: true,
-        enableSelection: true,
-        onSelectionChanged: args => {
-            console.log("1 seriesSelectionModifier constructor onSelectionChanged");
+        allowDragSelect: true,
+        allowClickSelect: true,
+        selectionStroke: "#3388FF",
+        selectionFill: "#3388FF44",
+        onSelectionChanged: (args) => {
+            console.log("seriesSelectionModifier onSelectionChanged", args);
         },
-        onHoverChanged: args => {
-            console.log("1 seriesSelectionModifier constructor onHoverChanged");
-        }
     }));
     // #region_A_end
 }
 PolarArcZoom("scichart-root");
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
     const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, easing, EPolarAxisMode } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
@@ -80,7 +93,7 @@ async function builderExample(divElementId) {
         },
         modifiers: [
             {
-                type: EChart2DModifierType.PolarArcZoom,
+                type: EChart2DModifierType.PolarArcZoom, // TODO
                 options: {
                     isAnimated: true,
                     fill: "#00ffff33",
@@ -92,7 +105,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 if (location.search.includes("builder=1"))
     builderExample("scichart-root");

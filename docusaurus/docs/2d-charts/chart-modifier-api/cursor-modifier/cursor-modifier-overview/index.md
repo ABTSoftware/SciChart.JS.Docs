@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# The CursorModifier Type
+# ✅ The CursorModifier Type
 
 SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](Common ChartModifiers Features.html) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) allows to you to:
 
@@ -16,9 +16,9 @@ SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:b
 *   Configure when the tooltip is shown (always, only on hover of a point)
 *   Configure which series react to the Tooltip (all, some, or specific series)
 
-The [](https://demo.scichart.com/javascript-line-chart)[](https://demo.scichart.com/javascript-line-chart)[Using CursorModifier Example](https://demo.scichart.com/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-line-chart)
+The [Using CursorModifier Example](https://demo.scichart.com/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript-line-chart)
 
-_**Above**: The [](https://demo.scichart.com/javascript-line-chart)[](https://demo.scichart.com/javascript-line-chart)[Using CursorModifier Example](https://demo.scichart.com/javascript-chart-cursormodifier-crosshairs)_ _from the SciChart.js Demo, showing various options of the CursorModifier in SciChart.js._
+
 
 Adding a CursorModifier to a Chart
 ----------------------------------

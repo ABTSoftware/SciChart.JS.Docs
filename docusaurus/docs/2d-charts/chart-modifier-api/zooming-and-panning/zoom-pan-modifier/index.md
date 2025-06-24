@@ -1,10 +1,10 @@
 ---
-sidebar_position: 7
+sidebar_position: 1
 ---
 
 # ✅ ZoomPanModifier
 
-SciChart.js provides an scrolling / panning behavior via the [ZoomPanModifier type:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html), available out of the box.
+SciChart.js provides an scrolling / panning behavior via the [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html), available out of the box.
 
 :::tip
 As of SciChart.js v3.2, [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html) now inherits [PinchZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html), allowing you to configure zooming, panning and touch-to-zoom interaction via a single modifier.

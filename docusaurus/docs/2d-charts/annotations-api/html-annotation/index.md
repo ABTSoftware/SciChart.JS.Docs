@@ -8,7 +8,7 @@ Here we will describe how to use the HTML-based annotations feature of SciChart.
 
 **Live Example**:
 
-<LiveDocSnippet name="./demo" />
+<LiveDocSnippet name="./demo" cssPath="./demo.css" />
 
 ## Description
 

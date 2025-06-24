@@ -143,7 +143,7 @@ To learn more about the CursorModifier, how to add configurable tooltips and how
 Add a RolloverModifier Tooltip
 ------------------------------
 
-Tooltips may be added to the [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) using the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md). This is a [ChartModifierBase](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) derived type which is attached to the [SciChartSurface.chartModifiers](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) property.
+Tooltips may be added to the [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) using the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md). This is a [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) derived type which is attached to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) property.
 
 Remove the previous CursorModifier from the chart. Now add a [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) by add this code:
 

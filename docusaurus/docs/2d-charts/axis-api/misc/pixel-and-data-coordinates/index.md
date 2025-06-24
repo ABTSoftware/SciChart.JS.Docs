@@ -64,8 +64,7 @@ A Category Axis uses the index to data not the data-value itself for measureme
 
 <CodeSnippetBlock labels={["Category Coordinate conversion"]}>
     ```ts
-import {CategoryCoordinateCalculator} from "scichart/Charting/Numerics/CoordinateCalculators/CategoryCoordinateCalculator";
-import {CategoryAxis} from "scichart/Charting/Visuals/Axis/CategoryAxis";
+import { CategoryCoordinateCalculator, CategoryAxis } from "scichart";
 
 const xAxis = new CategoryAxis(wasmContext);
 // Get the CoordinateCalculator

@@ -13,7 +13,7 @@ The [](https://demo.scichart.com/javascript-line-chart)[](https://demo.scichart.
 Using AnnotationHoverModifier
 -----------------------------
 
-To enable the hover detection we need to add the [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html)**.**
+To enable the hover detection we need to add the [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html).
 
 *   [Javascript](#i-tab-content-JS)
 *   [json-builder](#i-tab-content-jS)
@@ -287,7 +287,7 @@ async function builderExample(divElementId) {
 // Uncomment this to use the builder example //builderExample("scichart-root");
 ```
 
-2\. By passing [onHover:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationhovermodifieroptions.html#onhover) via the constructor of the [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html) or subscribing to the [annotationHoverModifier.hoverChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html#hoverchanged) event handler on an instance of [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html)**.**  This gives you a single callback with access to both the hovered and unhovered annotations, allowing you to define common hover behaviour in one place, and enabling you to update other annotations when one is hovered.
+2\. By passing [onHover:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationhovermodifieroptions.html#onhover) via the constructor of the [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html) or subscribing to the [annotationHoverModifier.hoverChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html#hoverchanged) event handler on an instance of [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html).  This gives you a single callback with access to both the hovered and unhovered annotations, allowing you to define common hover behaviour in one place, and enabling you to update other annotations when one is hovered.
 
 Hover on modifier
 

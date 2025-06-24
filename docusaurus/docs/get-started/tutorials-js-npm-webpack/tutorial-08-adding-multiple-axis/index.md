@@ -22,10 +22,10 @@ Adding a Second Y Axis
 The procedure to add a second axis to a **SciChartSurface** is pretty much the same as with one axis with one difference.
 
 :::warning
-Prior to version 4 you must assign a **unique string ID** to all axes via the [axis.id](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) property if there is more than one. However, starting from version 4 axis IDs are assigned automatically.
+Prior to version 4 you must assign a **unique string ID** to all axes via the [axis.id:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) property if there is more than one. However, starting from version 4 axis IDs are assigned automatically.
 :::
 
-To see the axis to appear to the either side of a chart, you set [axis.axisAlignment](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) to **EAxisAlignment.Left**, **EAxisAlignment.Right**, etc. [EAxisAlignment](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxisalignment.html) is an enumeration.
+To see the axis to appear to the either side of a chart, you set [axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) to **EAxisAlignment.Left**, **EAxisAlignment.Right**, etc. [EAxisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxisalignment.html) is an enumeration.
 
 Let's start by placing two Y-Axis on the left and right of the chart, and two X-Axis on the top and bottom.
 

@@ -13,7 +13,7 @@ async function drawExample(divElementId) {
     } = SciChart;
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
-        // theme: new SciChartJsNavyTheme(),
+        theme: new SciChartJsNavyTheme(),
     });
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));

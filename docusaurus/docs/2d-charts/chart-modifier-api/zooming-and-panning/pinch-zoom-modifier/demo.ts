@@ -3,15 +3,17 @@ import * as SciChart from "scichart";
 async function drawExample(divElementId) {
     // #region_A_start
     // Demonstrates how to configure chart titles SciChart.js
-    const { SciChartSurface, NumericAxis, PinchZoomModifier } = SciChart;
-
+    const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, PinchZoomModifier } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId);
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
+        theme: new SciChartJsNavyTheme()
+    });
 
     // Create an X and Y Axis with title
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { id: "xAxis1", axisTitle: "xAxis1" }));
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { id: "xAxis2", axisTitle: "xAxis2" }));
+
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { id: "yAxis1", axisTitle: "yAxis1" }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { id: "yAxis2", axisTitle: "yAxis2" }));
 
@@ -21,7 +23,6 @@ async function drawExample(divElementId) {
         excludedXAxisIds: ["xAxis2"],
         includedYAxisIds: ["yAxis1"]
     });
-
     sciChartSurface.chartModifiers.add(pinchZoomModifier);
     // #region_A_end
 }
@@ -70,4 +71,4 @@ async function builderExample(divElementId) {
     // #region_B_end
 }
 
-if (location.search.includes("builder=1")) drawExample("scichart-root");
+if (location.search.includes("builder=1")) builderExample("scichart-root");

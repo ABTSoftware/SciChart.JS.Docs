@@ -78,6 +78,9 @@ async function PolarCursorModifier(divElementId) {
     const { PolarCursorModifier, EAngularAxisLabelPlacement, ERadialAxisLabelPlacement } = SciChart;
     // or for npm: import { PolarCursorModifier, ... } from "scichart";
 
+    // const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {})
+    // ...
+
     // Add PolarCursorModifier behaviour to the chart
     sciChartSurface.chartModifiers.add(
         new PolarCursorModifier({

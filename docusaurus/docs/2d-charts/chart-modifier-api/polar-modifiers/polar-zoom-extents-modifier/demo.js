@@ -60,8 +60,6 @@ export async function PolarZoomExtents(divElementId) {
     const { PolarZoomExtentsModifier, Point } = SciChart;
     // or for npm: import { PolarZoomExtentsModifier } from "scichart";
     sciChartSurface.chartModifiers.add(
-    // needed to be able to change pan level & see effect of zoom extents
-    new PolarPanModifier(), new PolarMouseWheelZoomModifier(), 
     // Zoom Extents Modifier:
     new PolarZoomExtentsModifier({
         centerPoint: new Point(0, 0),
@@ -70,12 +68,12 @@ export async function PolarZoomExtents(divElementId) {
     }));
     // #region_A_end
     sciChartSurface.chartModifiers.add(
-    // we need these to be able to change position for zoom extents to do something
-    );
+    // needed to be able to change pan level & see effect of zoom extents
+    new PolarPanModifier(), new PolarMouseWheelZoomModifier());
 }
 PolarZoomExtents("scichart-root");
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to configure the PolarZoomExtentsModifier in SciChart.js using the Builder API
     const { chartBuilder, EAxisAlignment, EThemeProviderType, EAxisType, EChart2DModifierType, EPolarAxisMode, Point, ESeriesType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
@@ -127,7 +125,7 @@ async function builderExample(divElementId) {
             }
         ]
     });
-    // #endregion
+    // #region_B_end
 }
 if (location.search.includes("builder=1"))
     builderExample("scichart-root");
