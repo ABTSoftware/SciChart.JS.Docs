@@ -75,6 +75,7 @@ if (require.main === module) {
     console.log(`\n`);
     console.log(`Total ${counts.total}`);
     console.log(`Complete ${filesWithCheckmark.length}`);
+    console.log(`Completion ${(100*filesWithCheckmark.length/counts.total).toFixed(2)}%`);
     
     process.exit(0);
   } catch (error) {
