@@ -65,11 +65,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Tutorial 09 - Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)
     - [✅ Tutorial 10 - Vertical Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-10-vertical-charts)
   - **Tutorials (index.min.js from CDN)**
-    - [Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn)
-    - [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline)
-  - **Tutorials (scichart-react)**
-    - [Tutorial 01 - Setting up a project with scichart-react and config object](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
-    - [Tutorial 02 - Creating a Chart with scichart-react](/docs/get-started/tutorials-react/tutorial-02-creating-chart-with-scichart-react)
+    - [✅ Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn)
+    - [✅ Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline)
+  - [✅ Tutorial 01 - Setting up a project with scichart-react and config object](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
   - [How do I? ... Worked Examples with SciChart.js](/docs/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
   - [The SciChart.js Examples Suite](/docs/get-started/scichart-js-examples-suite)
 - **What's New?**
@@ -296,16 +294,16 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - **ChartModifier API**
     - **Zooming and Panning**
       - [✅ MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier)
-      - [Easy Overview charts with SciChartOverview](/docs/2d-charts/chart-modifier-api/zooming-and-panning/overview)
-      - [PinchZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/pinch-zoom-modifier)
-      - [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier)
-      - [XAxisDragModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/x-axis-drag-modifier)
-      - [YAxisDragModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/y-axis-drag-modifier)
-      - [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier)
+      - [✅ Easy Overview charts with SciChartOverview](/docs/2d-charts/chart-modifier-api/zooming-and-panning/overview)
+      - [✅ PinchZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/pinch-zoom-modifier)
+      - [✅ RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier)
+      - [✅ XAxisDragModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/x-axis-drag-modifier)
+      - [✅ YAxisDragModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/y-axis-drag-modifier)
+      - [✅ ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier)
       - [✅ ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)
     - **CursorModifier**
-      - [Active Legends - CursorModifier output into a legend](/docs/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
-      - [The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
+      - [✅ Active Legends - CursorModifier output into a legend](/docs/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
+      - [✅ The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
       - [Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
       - [Formatting CursorModifier Tooltip Items](/docs/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
       - [Interpolated Tooltip Values](/docs/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
