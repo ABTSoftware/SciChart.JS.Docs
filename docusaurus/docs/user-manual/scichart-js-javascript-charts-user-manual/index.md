@@ -52,8 +52,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - [✅ Minimum Browser Requirements](/docs/user-manual/minimum-browser-requirements)
   - [✅ Online Resources and Help](/docs/user-manual/online-resources-and-help)
   - [✅ SciChart.js JavaScript Charts User Manual](/docs/user-manual/scichart-js-javascript-charts-user-manual)
-- **Get Started: Tutorials, Examples**
-  - **Tutorials (JavaScript APIs / npm / webpack)**
+- **✅ Get Started: Tutorials, Examples**
+  - **✅ Tutorials (JavaScript APIs / npm / webpack)**
     - [✅ Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
     - [✅ Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
     - [✅ Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
@@ -64,7 +64,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis)
     - [✅ Tutorial 09 - Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)
     - [✅ Tutorial 10 - Vertical Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-10-vertical-charts)
-  - **Tutorials (index.min.js from CDN)**
+  - **✅ Tutorials (index.min.js from CDN)**
     - [✅ Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [✅ Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline)
   - [✅ Tutorial 01 - Setting up a project with scichart-react and config object](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
@@ -339,7 +339,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [⭕ Combining Polar and Cartesian Charts](/docs/2d-charts/subcharts-api/polar-and-cartesian-sub-charts)
     - [SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
     - [SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
-    - [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
+    - [✅ SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
     - [✅ What is the SubCharts API?](/docs/2d-charts/subcharts-api/subcharts-api-overview)
   - **Styling and Theming**
     - [Chart Styling - Auto Coloring](/docs/2d-charts/styling-and-theming/auto-coloring)

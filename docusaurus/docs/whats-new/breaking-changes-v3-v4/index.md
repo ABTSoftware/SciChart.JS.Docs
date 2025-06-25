@@ -261,3 +261,7 @@ DoubleRange
 ## ObservableArray method
 
 ObservableArray methods defaults delete to true in remove(), removeAt() and clear()
+
+## SciChartSubSurface.isTransparent
+
+Default behavior has changed. Before it was transparent even with `isTransparent = false` now you must set `isTransparent = true` to make it transparent.
