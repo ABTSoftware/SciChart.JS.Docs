@@ -219,14 +219,14 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Working with Data](/docs/2d-charts/builder-api/working-with-data)
   - **Axis APIs**
     - **Axis Types**
-      - [The Category Axis](/docs/2d-charts/axis-api/axis-types/category-axis)
+      - [🔄 The Category Axis](/docs/2d-charts/axis-api/axis-types/category-axis)
       - [✅ Common Axis Base Type and Options](/docs/2d-charts/axis-api/axis-types/common-axis-base-type)
-      - [The DateTimeNumericAxis](/docs/2d-charts/axis-api/axis-types/date-time-numeric-axis)
-      - [The Logarithmic Axis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis)
-      - [The Numeric Axis](/docs/2d-charts/axis-api/axis-types/numeric-axis)
+      - [✅ The DateTimeNumericAxis](/docs/2d-charts/axis-api/axis-types/date-time-numeric-axis)
+      - [✅ The Logarithmic Axis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis)
+      - [✅ The Numeric Axis](/docs/2d-charts/axis-api/axis-types/numeric-axis)
       - [✅ The Polar Category Axis](/docs/2d-charts/axis-api/axis-types/polar-category-axis)
       - [✅ The Polar Numeric Axis](/docs/2d-charts/axis-api/axis-types/polar-numeric-axis)
-      - [Text / String Axis](/docs/2d-charts/axis-api/axis-types/text-string-axis)
+      - [✅ Text / String Axis](/docs/2d-charts/axis-api/axis-types/text-string-axis)
     - **✅ Axis Ranging, Scaling**
       - [✅ Axis Ranging - AutoRange](/docs/2d-charts/axis-api/ranging-scaling/auto-range)
       - [✅ Axis Ranging - How to Listen to VisibleRange Changes](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes)
