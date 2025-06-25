@@ -337,8 +337,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Worked Example: Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
     - [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)
     - [⭕ Combining Polar and Cartesian Charts](/docs/2d-charts/subcharts-api/polar-and-cartesian-sub-charts)
-    - [SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
-    - [SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
+    - [✅ SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
+    - [✅ SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
     - [✅ SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
     - [✅ What is the SubCharts API?](/docs/2d-charts/subcharts-api/subcharts-api-overview)
   - **Styling and Theming**
