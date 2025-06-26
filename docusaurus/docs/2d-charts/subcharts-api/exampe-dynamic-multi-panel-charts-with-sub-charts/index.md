@@ -92,6 +92,8 @@ Note that [subPosition](https://www.scichart.com/documentation/js/current/typed
 
 The `AxisSynchroniser` class ensures that multiple **axes in different sub-charts stay synchronized** by maintaining a shared `visibleRange`. It initializes with an optional `initialRange` and a list of axes, subscribing them to a `visibleRangeChanged` event. The `publishChange` method updates the stored `visibleRange` and propagates the change to all registered axes, keeping them in sync. The `addAxis` method registers a new axis, ensuring it adopts the shared `visibleRange` and subscribes to changes, while `removeAxis` removes an axis and unsubscribes it from updates. This class is essential for multi-chart setups where zooming or panning in one chart should update all others.
 
+:::tip
 You can see the full source-code for this example by clicking "Edit on CodePen" button in the embedded example at the top of the page.
+:::
 
 
