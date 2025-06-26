@@ -2,9 +2,7 @@
 sidebar_position: 8
 ---
 
-# 🔄 Label Style, Alignment and Positioning
-
-TODO: update and say about positioning limitations for native labels
+# ✅ Label Style, Alignment and Positioning
 
 The LabelStyle property
 -----------------------
@@ -54,6 +52,24 @@ export type TTextStyle = {
     alignment?: ELabelAlignment;
 };
 ```
+
+Rotated and Multiline Native Text Labels
+----------------------------------------
+
+The standard axis labels supported rotation, but the positioning is poor for angles outside the 0 to 90 range. With native text labels, this is fixed. Note that rotation is a property on the labelProvider, not the axis itself.
+
+:::info
+When using angles that are not a multiple of 90, you probably want to set **hideOverlappingLabels: false** as the overlap is calculated using the bounding rectangle of the text. 
+:::
+
+Multiline labels are supported simply by using newline characters (\\n) in the label text.  lineSpacing is a property on the labelProvider.  The alignment property on labelStyle also affects the alignment for multiple lines. 
+
+:::note
+Note: for more info about [Text and MultiLine labels see this article](MultiLineLabels.html).  
+For rotation of labels [see this article](RotatingAxisLabels.html).
+:::
+
+
 
 Label Alignment & Padding
 -------------------------
