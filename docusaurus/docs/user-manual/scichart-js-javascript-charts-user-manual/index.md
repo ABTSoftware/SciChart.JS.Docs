@@ -283,13 +283,13 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Editable Annotations](/docs/2d-charts/annotations-api/editable-annotations)
     - [✅ HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation)
     - [✅ HTML Annotations](/docs/2d-charts/annotations-api/html-annotation)
-    - [⚠️ LineAnnotation](/docs/2d-charts/annotations-api/line-annotation)
+    - [✅ LineAnnotation](/docs/2d-charts/annotations-api/line-annotation)
     - [✅ LineArrowAnnotation](/docs/2d-charts/annotations-api/line-arrow-annotation)
-    - [⚠️ NativeTextAnnotation](/docs/2d-charts/annotations-api/native-text-annotation)
+    - [✅ NativeTextAnnotation](/docs/2d-charts/annotations-api/native-text-annotation)
     - [⭕ PolarArcAnnotation](/docs/2d-charts/annotations-api/polar-arc-annotation)
     - [✅ PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation)
     - [✅ Styling Annotation Selection](/docs/2d-charts/annotations-api/styling-annotation-selection)
-    - [⚠️ TextAnnotation](/docs/2d-charts/annotations-api/text-annotation)
+    - [✅ TextAnnotation](/docs/2d-charts/annotations-api/text-annotation)
     - [✅ VerticalLineAnnotation](/docs/2d-charts/annotations-api/vertical-line-annotation)
   - **ChartModifier API**
     - **Zooming and Panning**
@@ -304,9 +304,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - **CursorModifier**
       - [✅ Active Legends - CursorModifier output into a legend](/docs/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
       - [✅ The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
-      - [Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
+      - [✅ Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
       - [Formatting CursorModifier Tooltip Items](/docs/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
-      - [Interpolated Tooltip Values](/docs/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
+      - [✅ Interpolated Tooltip Values](/docs/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
     - **VerticalSliceModifier**
       - [Active Legends - VerticalSliceModifier output to a Legend](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/active-legends-vertical-slice-modifier)
       - [Customizing VerticalSliceModifier Tooltip Containers](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/customizing-vertical-slice-tooltip-container)
@@ -336,7 +336,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Worked Example: Resizable Multi Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts)
     - [Worked Example: Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
     - [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)
-    - [⭕ Combining Polar and Cartesian Charts](/docs/2d-charts/subcharts-api/polar-and-cartesian-sub-charts)
+    - [✅ Combining Polar and Cartesian Charts](/docs/2d-charts/subcharts-api/polar-and-cartesian-sub-charts)
     - [✅ SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
     - [✅ SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
     - [✅ SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
