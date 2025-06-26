@@ -13,13 +13,13 @@ Style animations allow changing series styles like color, stroke thickness, poin
 
 Style animation types per-series are as follows:
 
-*   [LineAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/lineanimation.html)
-*   [BandAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/bandanimation.html)
-*   [BubbleAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/bubbleanimation.html)
-*   [OhlcAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/ohlcanimation.html)
-*   [ColumnAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/columnanimation.html)
-*   [MountainAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/mountainanimation.html)
-*   [ScatterAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/scatteranimation.html)
+*   [LineAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/lineanimation.html)
+*   [BandAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/bandanimation.html)
+*   [BubbleAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/bubbleanimation.html)
+*   [OhlcAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/ohlcanimation.html)
+*   [ColumnAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/columnanimation.html)
+*   [MountainAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mountainanimation.html)
+*   [ScatterAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scatteranimation.html)
 
 Worked Examples
 ---------------

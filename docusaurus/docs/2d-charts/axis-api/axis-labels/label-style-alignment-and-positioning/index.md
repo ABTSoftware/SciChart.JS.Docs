@@ -7,7 +7,7 @@ sidebar_position: 8
 The LabelStyle property
 -----------------------
 
-The Axis includes a [LabelStyle](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#labelstyle) property. This may be set in the constructor options or set on the axis itself. Apply a labelStyle as follows to an axis:
+The Axis includes a [LabelStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#labelstyle) property. This may be set in the constructor options or set on the axis itself. Apply a labelStyle as follows to an axis:
 
 ```ts
 // Label Style
@@ -24,7 +24,7 @@ const axis = new NumericAxis(wasmContext, {
 });
 ```
 
-The type for LabelStyle is [TTextStyle](https://www.scichart.com/documentation/js/current/typedoc/index.html#ttextstyle). The Definition for TTextStyle is found below:
+The type for LabelStyle is [TTextStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#ttextstyle). The Definition for TTextStyle is found below:
 
 ```ts
 // TTextStyle definition
@@ -81,7 +81,7 @@ Padding refers to the space around the label. 
 *   By default, a label will not be displayed if if would overlap with the previous label, and this overlap includes padding. 
 *   By default the padding is 4 pixels left and right, 2 pixels top, and 0 bottom padding. This is because the font height includes space below the baseline of the text. 
     *   For numbers this usually results in nicely centered labels for a vertical axis, but depending on your font size and style, or if you are using text, you may want to adjust the padding to improve the vertical alignment, or to fit in labels that would otherwise be hidden.
-*   Alignment is an [ELabelAlignment](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) which can be one of the options below.  Auto is the default. 
+*   Alignment is an [ELabelAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) which can be one of the options below.  Auto is the default. 
 
 KeepLabelsWithinAxis property
 -----------------------------
@@ -107,7 +107,7 @@ xAxis.axisRenderer.keepLabelsWithinAxis= false;
 Worked Example: Alignment of labels
 -----------------------------------
 
-In the example below we show how to apply the [ELabelAlignment](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) enum to an axis. We've chosen [LogarithmicAxis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis/index.md) for this demo to get different length labels, such as "10", "100", "1000". Try editing the label alignment in the sandbox below to see how it affects the chart.
+In the example below we show how to apply the [ELabelAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) enum to an axis. We've chosen [LogarithmicAxis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis/index.md) for this demo to get different length labels, such as "10", "100", "1000". Try editing the label alignment in the sandbox below to see how it affects the chart.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts showLineNumbers file=./LabelAlignment/demo.ts start=region_A_start end=region_A_end

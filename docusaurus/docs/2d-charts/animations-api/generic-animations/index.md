@@ -231,11 +231,11 @@ drawVisibleRangeAnimationsChart("scichart");
 
 ### Animating AutoRange
 
-The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
+The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
 
 ### Animating Data and Styles
 
-This example shows another way to do [Data Animation](Dataset Animations.html).  If you need more flexibility than what the built in series animations provide, then you can use this approach to combine data and style changes, or even animate between different series types. Be aware that the built in animations are well optimised for each series type, so if you are trying to animate large amounts of data, you may get better performance using them.
+This example shows another way to do [Data Animation](/docs/2d-charts/animations-api/dataset-animations/index.md).  If you need more flexibility than what the built in series animations provide, then you can use this approach to combine data and style changes, or even animate between different series types. Be aware that the built in animations are well optimised for each series type, so if you are trying to animate large amounts of data, you may get better performance using them.
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
 ```ts

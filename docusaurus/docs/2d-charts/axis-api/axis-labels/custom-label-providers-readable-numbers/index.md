@@ -10,7 +10,7 @@ Customisation in SciChart.js can go a level deeper than built-in label formattin
 In this page we're going to show a worked example of how we can create a custom label provider to handle formatting of numbers with thousands/millions commas, or to format large numbers such as 1,000 as 1K, 1,000,000 as 1M and 1,000,000,000 as 1Bn
 :::
 
-To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
+To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
 
 Inside the **formatLabel** function, determine which formatting to apply based on properties and format the label value.
 
@@ -25,7 +25,7 @@ Large numbers are formatted as follows:
 *   1,000,000,000 = 1B
 *   1,000,000,000,000 = 1T
 
-Label prefix and postfix, decimal places are supported by passing [ILabel2DOptions](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ilabel2doptions.html) to the constructor of **CustomNumericLabelProvider**, which in turn passes to the base class constructor [NumericLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/numericlabelprovider.html).
+Label prefix and postfix, decimal places are supported by passing [ILabel2DOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ilabel2doptions.html) to the constructor of **CustomNumericLabelProvider**, which in turn passes to the base class constructor [NumericLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericlabelprovider.html).
 
 ### Method 2: Comma formatting
 

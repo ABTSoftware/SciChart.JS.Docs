@@ -6,9 +6,9 @@ sidebar_position: 2
 
 In the previous article we gave you an overview of the LabelProvider feature and how this is used to format labels on axis.
 
-You'll notice in the many axis label code samples, labels are formatted by passing in [ENumericFormat](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) to the constructor options of the axis. What's actually happening here is parameters are being passed to the [AxisCore.labelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#labelprovider).
+You'll notice in the many axis label code samples, labels are formatted by passing in [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) to the constructor options of the axis. What's actually happening here is parameters are being passed to the [AxisCore.labelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#labelprovider).
 
-[NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis/index.md) is quite versatile, it can format decimals with label prefix and postfix to any number of decimal places or significant figures. It can even format numbers as dates (assuming number is a unix stamp). You can find out all the options of the [ENumericFormat](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) enum below, or on our [TypeDoc](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html).
+[NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis/index.md) is quite versatile, it can format decimals with label prefix and postfix to any number of decimal places or significant figures. It can even format numbers as dates (assuming number is a unix stamp). You can find out all the options of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) enum below, or on our [TypeDoc:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html).
 
 
 ```ts
@@ -56,7 +56,7 @@ export enum ENumericFormat {
 Demonstrating the Different ENumericFormats
 -------------------------------------------
 
-Below we've created an example that demonstrates four of the [ENumericFormat](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) values: **Date\_DDMMYYYY**, **Engineering**, **Scientific** and **Decimal**.
+Below we've created an example that demonstrates four of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) values: **Date\_DDMMYYYY**, **Engineering**, **Scientific** and **Decimal**.
 
 Try to edit the code in the Codepen below and pan the chart to see the effect of different ENumericFormat values.
 
