@@ -33,7 +33,7 @@ Below we're going to show some options how to use different types of PointMarker
 
 This results in the following output:
 
-<LiveDocSnippet maxWidth={600} />
+<LiveDocSnippet />
 
 IsLastPointOnly mode for Pointmarkers
 -------------------------------------

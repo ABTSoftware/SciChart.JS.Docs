@@ -1,8 +1,8 @@
 import * as SciChart from "scichart";
 async function formatCursorModifier(divElementId) {
+    // #region_A_start
     const { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, ENumericFormat, CursorModifier, TextAnnotation, EHorizontalAnchorPoint, ECoordinateMode, EllipsePointMarker } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
-    // #region_A_start
     // Create a chart surface
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
@@ -88,9 +88,9 @@ async function formatCursorModifier(divElementId) {
 formatCursorModifier("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
+    // #region_B_start
     const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, ENumericFormat } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
-    // #region_B_start
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {

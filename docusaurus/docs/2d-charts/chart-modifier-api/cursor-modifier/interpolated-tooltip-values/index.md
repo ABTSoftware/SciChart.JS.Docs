@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Interpolated Tooltip Values
+# ✅ Interpolated Tooltip Values
 
 In SciChart.JS v3 we added some additional properties to the [hitTestInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/hittestinfo.html) object so you can now get full information about the points either side of the hit-test location.  This allows you to do interpolation for your tooltip values rather than just showing values at the actual data points. 
 
@@ -10,40 +10,39 @@ xValue and yValue are always the values nearest the cursor.  point2xValue and p
 
 This example uses a CursorModifier, but the same principle would apply to RolloverModifier.  The difference is that the CursorModifier tooltipDataTemplate takes an array of seriesInfo because it is one tooltip for all series, whereas RolloverModifier does one tooltip per series.
 
-Interpolated ToolTip
+<CodeSnippetBlock labels={["Interpolated ToolTip"]}>
+    ```ts {5,14-20,38} showLineNumbers
+    const interpolate = (x1: number, x2: number, y1: number, y2: number, x: number) => {
+        return y1 + ((y2 - y1) * (x - x1)) / (x2 - x1);
+    };
 
-Copy Code
+    const interpolatedTooltipDataTemplate: TCursorTooltipDataTemplate = (
+        seriesInfos: SeriesInfo[],
+        tooltipTitle: string
+    ) => {
+        const valuesWithLabels: string[] = [];
+        seriesInfos.forEach((si, index) => {
+            if (si.isHit) {
+                if (index === 0) valuesWithLabels.push("X: " + si.getXCursorFormattedValue(si.hitTestPointValues.x));
+                const xySeriesInfo = si as XySeriesInfo;
+                const yValue = interpolate (
+                    xySeriesInfo.xValue,
+                    xySeriesInfo.point2xValue,
+                    xySeriesInfo.yValue,
+                    xySeriesInfo.point2yValue,
+                    xySeriesInfo.hitTestPointValues.x
+                );
+                const seriesTitle = si.seriesName ? si.seriesName : `Series #${index + 1}`;
+                valuesWithLabels.push(seriesTitle);
+                valuesWithLabels.push(`  Nearest: ${xySeriesInfo.formattedYValue}`);
+                valuesWithLabels.push(`  Interpolated: ${xySeriesInfo.getYCursorFormattedValue(yValue)}`);
+            }
+        });
+        return valuesWithLabels;
+    };
 
-```ts
-const interpolate = (x1: number, x2: number, y1: number, y2: number, x: number) => {
-    return y1 + ((y2 - y1) \* (x - x1)) / (x2 - x1);
-};
-const interpolatedTooltipDataTemplate: TCursorTooltipDataTemplate = (
-    seriesInfos: SeriesInfo\[\],
-    tooltipTitle: string
-) => {
-    const valuesWithLabels: string\[\] = \[\];
-    seriesInfos.forEach((si, index) => {
-        if (si.isHit) {
-            if (index === 0) valuesWithLabels.push("X: " + si.getXCursorFormattedValue(si.hitTestPointValues.x));
-            const xySeriesInfo = si as XySeriesInfo;
-            const yValue = interpolate (
-                xySeriesInfo.xValue,
-                xySeriesInfo.point2xValue,
-                xySeriesInfo.yValue,
-                xySeriesInfo.point2yValue,
-                xySeriesInfo.hitTestPointValues.x
-            );
-            const seriesTitle = si.seriesName ? si.seriesName : \`Series #${index + 1}\`;
-            valuesWithLabels.push(seriesTitle);
-            valuesWithLabels.push(\`  Nearest: ${xySeriesInfo.formattedYValue}\`);
-            valuesWithLabels.push(\`  Interpolated: ${xySeriesInfo.getYCursorFormattedValue(yValue)}\`);
-        }
-    });
-    return valuesWithLabels;
-};
-// Apply this to a cursorModifier
-const cursorModifier = new CursorModifier({
+    // Apply this to a cursorModifier
+    const cursorModifier = new CursorModifier({
         crosshairStroke: "#ff6600",
         crosshairStrokeThickness: 1,
         tooltipContainerBackground: "#F48420",
@@ -51,13 +50,16 @@ const cursorModifier = new CursorModifier({
         axisLabelFill: "#F48420",
         axisLabelStroke: "#fff",
         tooltipDataTemplate: interpolatedTooltipDataTemplate 
-});
-```
+    });
+    ```
+</CodeSnippetBlock>
 
-<!--  ![](/images/interpolatedTooltip.gif) -->
+<CenteredImageWrapper
+    src="/images/interpolatedTooltip.gif"
+/>
 
 See Also
 
 [The CursorModifier Type](CursorModifier.html)
 
-[Rollover Modifier](RolloverModifier.html)
+[Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md)

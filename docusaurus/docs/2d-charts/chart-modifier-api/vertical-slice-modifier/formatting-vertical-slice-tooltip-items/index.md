@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Formatting VerticalSlice Tooltip Items
+# Formatting VerticalSlice Tooltip Items 
 
 **Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](VerticalSliceModifier.html) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
 
@@ -11,7 +11,7 @@ This article goes into further detail on customising the tooltip items (formatti
 Basic VerticalSliceModifier Tooltip Formatting Options
 ------------------------------------------------------
 
-The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) obeys similar rules to the [CursorModifier](CursorModifier.html) and [RolloverModifier](RolloverModifier.html) for customizing the tooltip content and appearance.
+The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) obeys similar rules to the [CursorModifier](CursorModifier.html) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) for customizing the tooltip content and appearance.
 
 _Tooltip and Axis Label formatting comes from the_ [_axis.labelprovider.formatCursorLabel()_:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel) _function and is axis-specific. You can read more about the_ [_Axis.LabelProvider API here_](Axis Label Formatting - LabelProvider API.html)_, including how to specify formats from Enums and override formatting programmatically._
 

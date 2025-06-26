@@ -6,7 +6,7 @@ sidebar_position: 1
 
 With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
 
-This provides a similar behaviour to the [RolloverModifier](RolloverModifier.html), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
+This provides a similar behaviour to the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
 
 The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) allows you to:
 
@@ -421,7 +421,7 @@ verticalSliceModifier.rolloverLineStroke = "Orange"; // Sets the line colour
 verticalSliceModifier.lineSelectionColor = "Red"; // Change the highlight color when selected
 ```
 
-Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](RolloverModifier.html) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
+Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
 
 **Property**
 

@@ -19,7 +19,7 @@ export default function MinimizedImageAndTextHeader(props: Props) {
                     src={imgUrl} 
                     alt="Minimized Header" 
                     style={{ 
-                        minWidth: "min(230px, 25vw)",
+                        minWidth: "min(220px, 25vw)",
                         height: "auto",
                         marginBottom: -6
                     }}

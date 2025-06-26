@@ -1,5 +1,98 @@
 import * as SciChart from "scichart";
 
+export enum EPositionMode {
+    Center = "Center",
+    Top = "Top",
+    Bottom = "Bottom",
+    RotateLeft = "RotateLeft",
+    RotateRight = "RotateRight",
+}
+
+class CustomTrianglePointMarker extends SciChart.TrianglePointMarker {
+    private positionMode: EPositionMode = EPositionMode.Center;
+
+    constructor(wasmContext: SciChart.TSciChart, options?: SciChart.IPointMarkerOptions & { positionMode?: EPositionMode }) {
+        super(wasmContext, options);
+        if (options?.positionMode) {
+            this.positionMode = options.positionMode;
+        }
+    }
+
+    drawSprite(
+        context: CanvasRenderingContext2D, 
+        spriteWidth: number, 
+        spriteHeight: number, 
+        stroke: string, 
+        strokeThickness: number, 
+        fill: string
+    ): void {
+        const centerX = context.canvas.width / 2;
+        const centerY = context.canvas.height / 2;
+        const halfHeight = spriteHeight / 2;
+        const halfWidth = spriteWidth / 2;
+        const halfStroke = strokeThickness / 2;
+
+        let point1: SciChart.Point;
+        let point2: SciChart.Point;
+        let point3: SciChart.Point;
+
+        switch (this.positionMode) {
+            case EPositionMode.Center:
+                point1 = new SciChart.Point(centerX, centerY - halfHeight + halfStroke);
+                point2 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY + halfHeight - halfStroke);
+                point3 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY + halfHeight - halfStroke);
+                break;
+
+            case EPositionMode.Top:
+                point1 = new SciChart.Point(centerX, centerY - halfHeight + halfStroke);
+                point2 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY + halfHeight - halfStroke);
+                point3 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY + halfHeight - halfStroke);
+                break;
+
+            case EPositionMode.Bottom:
+                point1 = new SciChart.Point(centerX, centerY + halfHeight - halfStroke);
+                point2 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY - halfHeight + halfStroke);
+                point3 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY - halfHeight + halfStroke);
+                break;
+
+            case EPositionMode.RotateLeft:
+                point1 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY);
+                point2 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY - halfHeight + halfStroke);
+                point3 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY + halfHeight - halfStroke);
+                break;
+
+            case EPositionMode.RotateRight:
+                point1 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY);
+                point2 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY + halfHeight - halfStroke);
+                point3 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY - halfHeight + halfStroke);
+                break;
+
+            default:
+                // Fallback to center
+                point1 = new SciChart.Point(centerX, centerY - halfHeight + halfStroke);
+                point2 = new SciChart.Point(centerX + halfWidth - halfStroke, centerY + halfHeight - halfStroke);
+                point3 = new SciChart.Point(centerX - halfWidth + halfStroke, centerY + halfHeight - halfStroke);
+                break;
+        }
+
+        // Draw the triangle
+        context.fillStyle = fill;
+        context.beginPath();
+        context.moveTo(point1.x, point1.y);
+        context.lineTo(point2.x, point2.y);
+        context.lineTo(point3.x, point3.y);
+        context.lineTo(point1.x, point1.y);
+        context.closePath();
+        context.fill();
+
+        if (strokeThickness > 0) {
+            context.strokeStyle = stroke;
+            context.lineWidth = strokeThickness;
+            context.stroke();
+        }
+    }
+}
+
 async function createScatterChartWithManyPointMarkers(divElementId) {
     // Demonstrates how to create a line chart with pointmarkers using SciChart.js
     const {
@@ -19,7 +112,7 @@ async function createScatterChartWithManyPointMarkers(divElementId) {
 
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
-    const createData = wasmContext => {
+    const createData = () => {
         // Create some dataseries
         const xValues = [];
         const yValues1 = [];
@@ -56,16 +149,15 @@ async function createScatterChartWithManyPointMarkers(divElementId) {
     const commonOptions = { width: 11, height: 11, strokeThickness: 2 };
 
     // Add a line series with EllipsePointMarker
-    sciChartSurface.renderableSeries.add(
-        new XyScatterRenderableSeries(wasmContext, {
-            pointMarker: new EllipsePointMarker(wasmContext, {
-                ...commonOptions,
-                fill: "#0077FF99",
-                stroke: "LightSteelBlue"
-            }),
-            dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues1 })
-        })
-    );
+    const triPM = new XyScatterRenderableSeries(wasmContext, {
+        pointMarker: new EllipsePointMarker(wasmContext, {
+            ...commonOptions,
+            fill: "#0077FF99",
+            stroke: "LightSteelBlue"
+        }),
+        dataSeries: new XyDataSeries(wasmContext, { xValues, yValues: yValues1 })
+    })
+    sciChartSurface.renderableSeries.add(triPM);
 
     // Add a scatter series with SquarePointMarker
     sciChartSurface.renderableSeries.add(
@@ -82,7 +174,7 @@ async function createScatterChartWithManyPointMarkers(divElementId) {
     // Add a scatter series with TrianglePointMarker
     sciChartSurface.renderableSeries.add(
         new XyScatterRenderableSeries(wasmContext, {
-            pointMarker: new TrianglePointMarker(wasmContext, {
+            pointMarker: new CustomTrianglePointMarker(wasmContext, {
                 ...commonOptions,
                 fill: "#FFDD00",
                 stroke: "#FF6600"
@@ -132,7 +224,7 @@ async function builderExample(divElementId) {
 
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
-    const createData = wasmContext => {
+    const createData = () => {
         // Create some dataseries
         const xValues = [];
         const yValues1 = [];

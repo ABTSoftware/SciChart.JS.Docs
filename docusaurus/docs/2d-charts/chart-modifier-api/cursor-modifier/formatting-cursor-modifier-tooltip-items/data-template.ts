@@ -1,14 +1,12 @@
 import * as SciChart from "scichart";
 
-async function formatCursorModifier(divElementId) {
-    // #region_A_start
+async function cursorDataTemplates(divElementId) {
     const {
         SciChartSurface,
         NumericAxis,
         FastLineRenderableSeries,
         XyDataSeries,
         SciChartJsNavyTheme,
-        ENumericFormat,
         CursorModifier,
         TextAnnotation,
         EHorizontalAnchorPoint,
@@ -17,38 +15,51 @@ async function formatCursorModifier(divElementId) {
     } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
 
+    // #region_A_start
     // Create a chart surface
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
         titleStyle: { fontSize: 16 }
     });
 
-    sciChartSurface.xAxes.add(
-        new NumericAxis(wasmContext, {
-            // label format options applied to the X-Axis
-            labelPrecision: 2,
-            labelFormat: ENumericFormat.Decimal,
-            // label format options applied to cursors & tooltips
-            cursorLabelPrecision: 4,
-            cursorLabelFormat: ENumericFormat.Decimal
-        })
-    );
-    sciChartSurface.yAxes.add(
-        new NumericAxis(wasmContext, {
-            // label format options applied to the X-Axis
-            labelPrecision: 1,
-            labelFormat: ENumericFormat.Decimal,
-            // label format options applied to cursors & tooltips
-            cursorLabelPrecision: 4,
-            cursorLabelFormat: ENumericFormat.Decimal
-        })
-    );
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // Add a CursorModifier to the chart
     const cursorModifier = new CursorModifier({
         showTooltip: true,
         showAxisLabels: true,
-        hitTestRadius: 10
+        hitTestRadius: 10,
+        // Add a custom tooltip data template
+        tooltipDataTemplate: (seriesInfos, tooltipTitle) => {
+            // each element in this array = 1 line in the tooltip
+            const lineItems = [];
+            // See SeriesInfo docs at https://scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
+            seriesInfos.forEach(si => {
+                // If hit (within hitTestRadius of point)
+                if (si.isHit) {
+                    // SeriesInfo.seriesName comes from dataSeries.dataSeriesName
+                    lineItems.push(`${si.seriesName}`);
+                    // seriesInfo.xValue, yValue are available to be formatted
+                    // Or, preformatted values are available as si.formattedXValue, si.formattedYValue
+                    lineItems.push(`X: ${si.xValue.toFixed(2)}`);
+                    lineItems.push(`Y: ${si.yValue.toFixed(2)}`);
+                    // index to the dataseries is available
+                    lineItems.push(`Index: ${si.dataSeriesIndex}`);
+                    // Which can be used to get anything from the dataseries
+                    lineItems.push(
+                        `Y-value from dataSeries: ${si.renderableSeries.dataSeries
+                            .getNativeYValues()
+                            .get(si.dataSeriesIndex)
+                            .toFixed(4)}`
+                    );
+                    // Location of the hit in pixels is available
+                    lineItems.push(`Location: ${si.xCoordinate.toFixed(0)}, ${si.yCoordinate.toFixed(0)}`);
+                }
+            });
+
+            return lineItems;
+        }
     });
     sciChartSurface.chartModifiers.add(cursorModifier);
     // #region_A_end
@@ -103,7 +114,7 @@ async function formatCursorModifier(divElementId) {
     };
     sciChartSurface.annotations.add(
         new TextAnnotation({
-            text: "CursorModifier Formatting",
+            text: "CursorModifier Custom DataTemplates",
             fontSize: 36,
             yCoordShift: 25,
             ...options
@@ -117,47 +128,57 @@ async function formatCursorModifier(divElementId) {
             ...options
         })
     );
+
+    sciChartSurface.chartModifiers.add(new SciChart.LegendModifier());
 }
 
-formatCursorModifier("scichart-root");
+cursorDataTemplates("scichart-root");
 
 async function builderExample(divElementId) {
-    // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
     // #region_B_start
-    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, ENumericFormat } = SciChart;
+    // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
+    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: {
-            type: EAxisType.NumericAxis,
-            options: {
-                // label format options applied to the X-Axis
-                labelPrecision: 2,
-                labelFormat: ENumericFormat.Decimal,
-                // label format options applied to cursors & tooltips
-                cursorLabelPrecision: 4,
-                cursorLabelFormat: ENumericFormat.Decimal
-            }
-        },
-        yAxes: {
-            type: EAxisType.NumericAxis,
-            options: {
-                // label format options applied to the X-Axis
-                labelPrecision: 2,
-                labelFormat: ENumericFormat.Decimal,
-                // label format options applied to cursors & tooltips
-                cursorLabelPrecision: 4,
-                cursorLabelFormat: ENumericFormat.Decimal
-            }
-        },
         modifiers: [
             {
                 type: EChart2DModifierType.Cursor,
                 options: {
                     showTooltip: true,
                     showAxisLabels: true,
-                    hitTestRadius: 10
+                    hitTestRadius: 10,
+                    // Add a custom tooltip data template
+                    tooltipDataTemplate: (seriesInfos, tooltipTitle) => {
+                        // each element in this array = 1 line in the tooltip
+                        const lineItems = [];
+                        // See SeriesInfo docs at https://scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
+                        seriesInfos.forEach(si => {
+                            // If hit (within hitTestRadius of point)
+                            if (si.isHit) {
+                                // SeriesInfo.seriesName comes from dataSeries.dataSeriesName
+                                lineItems.push(`${si.seriesName}`);
+                                // seriesInfo.xValue, yValue are available to be formatted
+                                // Or, preformatted values are available as si.formattedXValue, si.formattedYValue
+                                lineItems.push(`X: ${si.xValue.toFixed(2)}`);
+                                lineItems.push(`Y: ${si.yValue.toFixed(2)}`);
+                                // index to the dataseries is available
+                                lineItems.push(`Index: ${si.dataSeriesIndex}`);
+                                // Which can be used to get anything from the dataseries
+                                lineItems.push(
+                                    `Y-value from dataSeries: ${si.renderableSeries.dataSeries
+                                        .getNativeYValues()
+                                        .get(si.dataSeriesIndex)
+                                        .toFixed(4)}`
+                                );
+                                // Location of the hit in pixels is available
+                                lineItems.push(`Location: ${si.xCoordinate.toFixed(0)}, ${si.yCoordinate.toFixed(0)}`);
+                            }
+                        });
+
+                        return lineItems;
+                    }
                 }
             }
         ]

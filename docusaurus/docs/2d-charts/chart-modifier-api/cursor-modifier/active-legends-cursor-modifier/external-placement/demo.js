@@ -35,7 +35,7 @@ const getCandles = async (symbol, interval, limit = 300) => {
 };
 async function cursorModifierActiveLegendsOnCandles(divElementId) {
     // #region_B_start
-    const { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, EDataSeriesType, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, parseColorToTArgb, FastLineRenderableSeries, XyMovingAverageFilter, } = SciChart;
+    const { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, FastLineRenderableSeries, XyMovingAverageFilter, } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -91,44 +91,19 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
         opacity: 0.47
     }));
     // add interactivity for the example
-    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier({ excludedYAxisIds: ["VolumeAxisId"] }), new ZoomPanModifier({ excludedYAxisIds: ["VolumeAxisId"] }), new ZoomExtentsModifier());
+    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier({ excludedYAxisIds: ["VolumeAxisId"] }));
+    sciChartSurface.chartModifiers.add(new ZoomPanModifier({ excludedYAxisIds: ["VolumeAxisId"] }));
+    sciChartSurface.chartModifiers.add(new ZoomExtentsModifier());
     // #region_A_start
-    // Add a CursorModifier with active legend to the chart
+    // Add a CursorModifier with external placement div on the chart
+    // Expects <div id="legend-root" /> to be present in the DOM
     const cursorModifier = new CursorModifier({
-        // X,Y offset in pixels for the active legend
-        tooltipLegendOffsetX: 5,
-        tooltipLegendOffsetY: 5,
-        // Callback to format the legend
-        tooltipLegendTemplate: (seriesInfos, svgAnnotation) => {
-            let outputSvgString = "";
-            // Foreach series there will be a seriesInfo supplied by SciChart. This contains info about the series under the mouse
-            seriesInfos.forEach((seriesInfo, index) => {
-                const y = 20 + index * 20;
-                // use the series.stroke for the text color. If the series.stroke is transparent, use white
-                let textColor = seriesInfo.stroke;
-                if (textColor === undefined || parseColorToTArgb(textColor).opacity === 0) {
-                    textColor = "#ffffff";
-                }
-                // Default handling for Xy series
-                let legendText = seriesInfo.formattedYValue;
-                // Special handling for Ohlc series
-                if (seriesInfo.dataSeriesType === EDataSeriesType.Ohlc) {
-                    legendText =
-                        `Open=${seriesInfo.formattedOpenValue} High=${seriesInfo.formattedHighValue} ` +
-                            `Low=${seriesInfo.formattedLowValue} Close=${seriesInfo.formattedCloseValue}`;
-                }
-                // Output one block of text per seriesInfo on the chart. Using seriesName (from dataSeries.dataSeriesName) as a prefix
-                outputSvgString += `<text x="8" y="${y}" font-size="13" font-family="Verdana" fill="${textColor}">
-                    ${seriesInfo.seriesName}: ${legendText}
-                </text>`;
-            });
-            return `<svg width="100%" height="100%">
-                ${outputSvgString}
-            </svg>`;
-        }
+        placementDivId: "legend-root",
+        showTooltip: true,
+        tooltipContainerBackground: "#4682b433"
     });
     sciChartSurface.chartModifiers.add(cursorModifier);
     // #region_A_end
-    // #region_B_end
+    // #region_B_start
 }
 cursorModifierActiveLegendsOnCandles("scichart-root");

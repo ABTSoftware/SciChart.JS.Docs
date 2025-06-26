@@ -4,9 +4,11 @@ sidebar_position: 3
 
 # ✅ Active Legends - CursorModifier output into a legend
 
+:::tip
 Background reading:
 
-If you haven't already, read the article [The CursorModifier Type](../cursor-modifier-overview/) which will show you how to setup a [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content).
+If you haven't already, read the article [The CursorModifier](../cursor-modifier-overview/) type which will show you how to setup a [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content).
+:::
 
 CursorModifier tooltipLegendTemplates
 -------------------------------------
@@ -17,51 +19,14 @@ Perhaps the best example of this is in financial charts, which require placing a
 
 Here's a worked example below, which extends our [Candlestick Chart - Volume Bars](The Candlestick Series type.html) example with an active legend provided by [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html).
 
-*   [Javascript](#i-tab-content-JS)
-
-```ts
-// Add a CursorModifier with active legend to the chart
-const cursorModifier = new CursorModifier({
-    // X,Y offset in pixels for the active legend
-    tooltipLegendOffsetX: 5,
-    tooltipLegendOffsetY: 5,
-    // Callback to format the legend
-    tooltipLegendTemplate: (seriesInfos, svgAnnotation) => {
-        let outputSvgString = "";
-
-        // Foreach series there will be a seriesInfo supplied by SciChart. This contains info about the series under the mouse
-        seriesInfos.forEach((seriesInfo, index) => {
-            const y = 20 + index \* 20;
-            // use the series.stroke for the text color. If the series.stroke is transparent, use white
-            let textColor = seriesInfo.stroke;
-            if (textColor === undefined || parseColorToTArgb(textColor).opacity === 0) {
-                textColor = "#ffffff";
-            }
-            // Default handling for Xy series
-            let legendText = seriesInfo.formattedYValue;
-            // Special handling for Ohlc series
-            if (seriesInfo.dataSeriesType === EDataSeriesType.Ohlc) {
-                legendText =
-                    \`Open=${seriesInfo.formattedOpenValue} High=${seriesInfo.formattedHighValue} \` +
-                    \`Low=${seriesInfo.formattedLowValue} Close=${seriesInfo.formattedCloseValue}\`;
-            }
-            // Output one block of text per seriesInfo on the chart. Using seriesName (from dataSeries.dataSeriesName) as a prefix
-            outputSvgString += \`<text x="8" y="${y}" font-size="13" font-family="Verdana" fill="${textColor}"\>
-        ${seriesInfo.seriesName}: ${legendText}
-    </text>\`;
-        });
-
-        return \`<svg width="100%" height="100%"\>
-            ${outputSvgString}
-        </svg>\`;
-    }
-});
-sciChartSurface.chartModifiers.add(cursorModifier);
-```
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts {7} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
 
 This results in the following output:
 
-<LiveDocSnippet name="./ActiveLegends/demo" />
+<LiveDocSnippet name="./demo" />
 
 Using External placementDivId with the CursorModifier
 -----------------------------------------------------
@@ -72,21 +37,24 @@ Note, it does not currently work with [tooltipLegendTemplate:blue_book:](https:
 
 Try the following code in your application:
 
-*   [Javascript](#i-tab-content-JS)
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts {4} showLineNumbers file=./external-placement/demo.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
 
-```ts
-// Add a CursorModifier with external placement div on the chart
-// Expects <div id="legend-root" /> to be present in the DOM
-const cursorModifier = new CursorModifier({
-    placementDivId: "legend-root",
-    showTooltip: true,
-    tooltipContainerBackground: "#4682b433"
-});
-sciChartSurface.chartModifiers.add(cursorModifier);
-```
+<CodeSnippetBlock labels={["html"]}>
+    ```html {4} showLineNumbers file=./external-placement/demo.html
+    ```
+</CodeSnippetBlock>
 
-This results in the following output.
+<CodeSnippetBlock labels={["css"]}>
+    ```css {4} showLineNumbers file=./external-placement/demo.css
+    ```
+</CodeSnippetBlock>
 
+This results in the following output:
+
+<LiveDocSnippet name="./external-placement/demo" htmlPath="./external-placement/demo.html" cssPath="./external-placement/demo.css" />
 
 #### See Also
 

@@ -1,6 +1,7 @@
 import * as SciChart from "scichart";
 
 async function basicCursorModifier(divElementId) {
+    // #region_A_start
     const {
         SciChartSurface,
         NumericAxis,
@@ -17,7 +18,6 @@ async function basicCursorModifier(divElementId) {
     } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
 
-    // #region_A_start
     // Create a chart surface
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),

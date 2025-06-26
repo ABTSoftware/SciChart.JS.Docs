@@ -10,7 +10,7 @@ Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](
 The [JavaScript Scatter Chart Example](https://demo.scichart.com/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/scatter-chart).
 :::
 
-<ChartFromSciChartDemo 
+<ChartFromSciChartDemo  
     src="https://www.scichart.com/demo/iframe/scatter-chart" 
     title="Scatter Series Chart" 
 />
