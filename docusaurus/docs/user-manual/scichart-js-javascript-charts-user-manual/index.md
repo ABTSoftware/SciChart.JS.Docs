@@ -332,9 +332,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features)
     - [Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier)
   - **Subcharts API**
-    - [Worked Example: Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)
+    - [✅ Worked Example: Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)
     - [Worked Example: Resizable Multi Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts)
-    - [Worked Example: Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
+    - [✅ Worked Example: Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
     - [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)
     - [✅ Combining Polar and Cartesian Charts](/docs/2d-charts/subcharts-api/polar-and-cartesian-sub-charts)
     - [✅ SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
