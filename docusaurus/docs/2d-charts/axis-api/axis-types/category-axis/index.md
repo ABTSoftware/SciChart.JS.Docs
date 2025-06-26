@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# 🔄 The Category Axis
+# ✅ The Category Axis
 
 The [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) treats values a little differently. This is a special axis type which uses the X-Index not the X-Value to measure chart series.
 
@@ -24,7 +24,7 @@ Imagine you want to plot the data:
 
 A standard [NumericAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) (which is a value-axis) and the [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) would display the data differently.
 
-<LiveDocSnippet maxWidth={"100%"} name="./CategoryAxisValueAxis/demo" />
+<LiveDocSnippet maxWidth={"100%"} name="./CategoryAxisValueAxis/demo"  htmlPath="./CategoryAxisValueAxis/demo.html" cssPath="./CategoryAxisValueAxis/demo.css" />
 
 Here's the code to setup the chart.
 
