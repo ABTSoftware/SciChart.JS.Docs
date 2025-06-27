@@ -6,7 +6,7 @@ sidebar_position: 6
 
 SciChart.js provides an zooming / panning behavior when dragging the Axis via the [XAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xaxisdragmodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](../../common-features/) class, the [XAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xaxisdragmodifier.html) allows you to choose panning or scaling via the [dragMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html#dragmode) property.
+Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features) class, the [XAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xaxisdragmodifier.html) allows you to choose panning or scaling via the [dragMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html#dragmode) property.
 
 Adding a XAxisDragModifier to a Chart
 -------------------------------------
@@ -35,5 +35,5 @@ This results in the following behavior:
 
 #### See Also
 
-* [What is the ChartModifier API](../../chart-modifier-api-overview/)
-* [Common ChartModifiers Features](../../common-features/)
+* [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features)

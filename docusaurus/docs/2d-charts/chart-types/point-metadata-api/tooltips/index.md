@@ -11,8 +11,8 @@ Using the ChartModifier API you can add tooltips and cursors to a SciChartSurfac
 :::tip
 Background reading: 
 
-*   If you haven't already, read the article [DataSeries PointMetadata API](DataSeries PointMetaData Api.html) which will show you how to setup a DataSeries with point metadata (javascript objects).
-*   Also take a look at the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) and [CursorModifier](CursorModifier.html) docs to find out how to add tooltips to charts.
+*   If you haven't already, read the article [DataSeries PointMetadata API](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview) which will show you how to setup a DataSeries with point metadata (javascript objects).
+*   Also take a look at the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) and [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) docs to find out how to add tooltips to charts.
 :::
 
 Example: Metadata + RolloverModifier

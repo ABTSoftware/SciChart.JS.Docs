@@ -50,6 +50,6 @@ This results in the following output.
 
 #### See Also
 
-* [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/index.md)
-* [Vertically Stacked Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/index.md)
-* [Axis LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md)
+* [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview)
+* [Vertically Stacked Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout)
+* [Axis LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview)

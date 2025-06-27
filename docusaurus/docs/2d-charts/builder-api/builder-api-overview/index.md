@@ -22,22 +22,44 @@ To use the SciChart.js Builder API, you will need this import.
 import { chartBuilder } from "scichart";
 ```
 
-**chartBuilder** exposes all the builder methods, which can be used to build parts of, or the entire chart from a JSON definition.
+**chartBuilder** exposes all the builder methods, which can be used to build parts of, or the entire chart from a JSON definition:
 
 The top level method is **buildChart**, which takes the id of the target div, and a definition, which can be a JSON string or an object.
 
-Note that all the elements are optional. This lets you define partial definitions that you can reuse and combine.
+There are also specific function calls to [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/build2dchart.html), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/buildpiechart.html), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/build2dpolarchart.html) and [build3DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/build3dchart.html) which can be used to build on specific chart surfaces:
 
+<CodeSnippetBlock labels={["Build Surface-specific Charts"]}>
+    ```ts showLineNumbers
+    const { build2DChart, buildPieChart, build2DPolarChart, build3DChart } = chartBuilder;
+
+    // build a 2D chart
+    const simple2d = await build2DChart("chartDivId", {
+        // ...
+    });
+
+    // build a Pie chart
+    const pieChart = await buildPieChart("chartDivId", {});
+
+    // build a Polar 2D chart
+    const polar2d = await build2DPolarChart("chartDivId", {});
+
+    // build a 3D chart
+    const simple3d = await build3DChart("chartDivId", {});
+    ```
+</CodeSnippetBlock>
+
+
+Note that all the elements are optional. This lets you define partial definitions that you can reuse and combine.
 ## Worked Examples of the Builder API
 
 We've created some worked examples of the Builder API on the following pages. Also check out our [Github](https://www.github.com/abtsoftware/scichart.js.examples) and [SciChart demo](https://demo.scichart.com) where we have published some examples of the Builder API.
 
 ### Builder API Documentation Pages
 
-*   **Documentation**: [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart/index.md)
-*   **Documentation**: [Working with Data](/docs/2d-charts/builder-api/working-with-data/index.md)
-*   **Documentation**: [Complex Customisation](/docs/2d-charts/builder-api/complex-options/index.md)
-*   **Documentation**: [Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes/index.md)
+*   **Documentation**: [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
+*   **Documentation**: [Working with Data](/docs/2d-charts/builder-api/working-with-data)
+*   **Documentation**: [Complex Customisation](/docs/2d-charts/builder-api/complex-options)
+*   **Documentation**: [Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes)
 
 ### Builder API Examples
 
@@ -65,5 +87,5 @@ Once you have selected a series, the properties and types will become specific t
 
 #### See Also
 
-* [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart/index.md)
-* [Working with Data](/docs/2d-charts/builder-api/working-with-data/index.md)
+* [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
+* [Working with Data](/docs/2d-charts/builder-api/working-with-data)

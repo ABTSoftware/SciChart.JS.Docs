@@ -10,11 +10,14 @@ The onAnimate function is passed the from and to values, and a progress value, w
 
 Here are some simple examples what can be done with new API:
 
-*   [Annotations animation](#animating-annotations)
-*   [Visible range animation](#animating-visible-range)
-*   [Data and Styles animation](#animating-data-and-styles)
-*   [Combining animations](#combining-animations)
-*   [Updating the DOM with animations](#updating-the-dom-with-animations)
+- [✅ Generic Animations](#-generic-animations)
+    - [Animating Annotations](#animating-annotations)
+    - [Animating Visible Range](#animating-visible-range)
+    - [Animating AutoRange](#animating-autorange)
+    - [Animating Data and Styles](#animating-data-and-styles)
+    - [Combining Animations](#combining-animations)
+    - [Updating the DOM with animations](#updating-the-dom-with-animations)
+      - [See Also](#see-also)
 
 ### Animating Annotations
 
@@ -954,6 +957,6 @@ drawAnnotationAnimationsChart("scichart");
 #### See Also
 
 - [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview/index.md)
-- [Series Startup Animations](/series-startup-animations/index.md)
+- [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
 - [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations/index.md)
 - [Dataset Animations](/docs/2d-charts/animations-api/dataset-animations/index.md)

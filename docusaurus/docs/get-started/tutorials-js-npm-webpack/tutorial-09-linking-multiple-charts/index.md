@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # ✅ Tutorial 09 - Linking Multiple Charts
 
-In [Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis/index.md), we showed you how to add a second **YAxis**.  
+In [Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis), we showed you how to add a second **YAxis**.  
 Now we are going to show you how to create multiple charts and link them together.
 
 :::tip
@@ -14,7 +14,7 @@ Source code for this tutorial can be found at [SciChart.JS.Examples Github Repos
 Adding a First Chart
 --------------------
 
-Let's create a first [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md) with X and Y [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html), [Line Series](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) and data to display a sine wave. To make the chart interactive we add several chart modifiers, such as: [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/index.md), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/index.md), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier/index.md), [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md).
+Let's create a first [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview) with X and Y [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html), [Line Series](/docs/2d-charts/chart-types/fast-line-renderable-series) and data to display a sine wave. To make the chart interactive we add several chart modifiers, such as: [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier), [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier).
 
 <CodeSnippetBlock labels={["index.js region A", "index.html"]}>
 ```js {20-69} showLineNumbers
@@ -152,7 +152,7 @@ Now we repeat the same procedure to configure the second chart with some differe
 ```
 </CodeSnippetBlock>
 
-Other things we change: align **Y Axis** left, use [Mountain Series Type](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series/index.md) Series Type.html) instead of **Line Series,** populate data with **cosine** function instead of **sine**. 
+Other things we change: align **Y Axis** left, use [Mountain Series Type](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series) Series Type.html) instead of **Line Series,** populate data with **cosine** function instead of **sine**. 
 
 <CodeSnippetBlock labels={["index.js region B"]}>
 ```js showLineNumbers
@@ -212,7 +212,7 @@ Our web application should now shows two charts:
 Synchronizing VisibleRanges on Axes
 -----------------------------------
 
-To make both charts show the same [VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes/index.md) on X axes, we subscribe to [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) event and [update VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/index.md) of the second chart if has been changed for the first chart and visa versa. In the beginning of _initSciChart()_ function we declare two variables and use them to store X Axis object for each [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/index.md). In the end of _initSciChart()_ function we synchronize visible ranges.
+To make both charts show the same [VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes) on X axes, we subscribe to [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) event and [update VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit) of the second chart if has been changed for the first chart and visa versa. In the beginning of _initSciChart()_ function we declare two variables and use them to store X Axis object for each [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview). In the end of _initSciChart()_ function we synchronize visible ranges.
 
 Instead of calling `createFirstChart()` and `createSecondChart()` separately we use `Promise.all([createFirstChart(), createSecondChart()])` to create charts in parallel.
 
@@ -250,7 +250,7 @@ Synchronizing Chart Widths
 
 We've got two charts with synchronyzed X **VisibleRanges**. However it would be even better if they had the same width and were placed exactly under each other.
 
-To achieve it we create [SciChartVerticalGroup](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/index.md) and add both surfaces to the group.
+To achieve it we create [SciChartVerticalGroup](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts) and add both surfaces to the group.
 
 
 <CodeSnippetBlock labels={["index.js region D"]}>
@@ -297,7 +297,7 @@ If you run the application now, you will notice that you have zooming behaviour 
 ```
 </CodeSnippetBlock>
 
-Run the application again. Now we can see that [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) events are linked and the Tooltips are now synchronizing across the charts.  
+Run the application again. Now we can see that [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) events are linked and the Tooltips are now synchronizing across the charts.  
 
 ![](img/5.gif)
 

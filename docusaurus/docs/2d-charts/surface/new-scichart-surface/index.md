@@ -31,7 +31,7 @@ async function initSciChart1() {
 SciChartSurface.createSingle()
 ------------------------------
 
-[SciChartSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#createsingle) is also an asynchronous static function which places a SciChartSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md) article.
+[SciChartSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#createsingle) is also an asynchronous static function which places a SciChartSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/docs/2d-charts/performance-tips/performance-tips-and-tricks) article.
 
 
 ```ts
@@ -53,13 +53,13 @@ If you get an error when loading a SciChartSurface as follows:
 **Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm, scichart2d.data and scichart2d.js files are from the same version
 :::
 
-Please see our related article [Deploying Wasm or WebAssembly Data Files with your app](/docs/2d-charts/surface/deploying-wasm/index.md)
+Please see our related article [Deploying Wasm or WebAssembly Data Files with your app](/docs/2d-charts/surface/deploying-wasm)
 
 #### See Also
 
-* [Setting a Runtime License on a SciChartSurface](/docs/2d-charts/surface/runtime-license/index.md)
-* [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview/index.md)
+* [Setting a Runtime License on a SciChartSurface](/docs/2d-charts/surface/runtime-license)
+* [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview)
 
 #### JS Webpack npm Tutorials
 
-[Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)
+[Tutorial 01 - Setting up a npm Project with SciChart.js](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)

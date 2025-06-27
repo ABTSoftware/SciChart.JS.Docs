@@ -6,7 +6,7 @@ sidebar_position: 7
 
 SciChart.js provides an zooming / panning behavior when scrolling the mouse-wheel, or two-finger drag on touch devices via the [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](../../common-features/) class, the [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html) allows you to specify how fast the chart zooms in or out via the [growFactor property:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html#growfactor).
+Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features) class, the [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html) allows you to specify how fast the chart zooms in or out via the [growFactor property:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html#growfactor).
 
 Adding a MouseWheelZoomModifier to a Chart
 ------------------------------------------

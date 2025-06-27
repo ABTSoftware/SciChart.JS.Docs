@@ -58,25 +58,25 @@ Try adjusting the CodePen above with the code to set a fillLinearGradient and se
 ## Render a Gap in a Band Series
 
 :::tip
-It is possible to have null points or gaps in a Band Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](../common-series-apis/drawing-gaps/) article for more details.
+It is possible to have null points or gaps in a Band Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 ## Add Point Markers onto a Band Series
 
-It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Band Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](DrawingPointMarkersOnSeries.html).
+It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Band Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
 :::tip
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](../common-series-apis/drawing-point-markers/).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-There is also a dedicated [Scatter Series](../xy-scatter-renderable-series/) type and a [Bubble Series](../fast-bubble-renderable-series/) type with some more options.
+There is also a dedicated [Scatter Series](/docs/2d-charts/chart-types/xy-scatter-renderable-series) type and a [Bubble Series](/docs/2d-charts/chart-types/fast-bubble-renderable-series) type with some more options.
 :::
 
 ## Painting Band Segments with Different Colors
 
 :::tip
-It is possible to define the colour of line segments individually using the [PaletteProvider API](../palette-provider-api/)
+It is possible to define the colour of line segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/line-segment-renderable-series)
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Band Charts](../palette-provider-api/fast-band-renderable-series/) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Band Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-band-renderable-series) documentation page.
 :::
 
 ## Use Cases
@@ -117,6 +117,6 @@ _**Above**: a complex visualisation using Band Series. This image is taken from 
 
 #### See Also
 
-* [Start Here - RenderableSeries Overview](../renderable-series-api-overview/)
+* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)
 
-* [Common RenderableSeries Properties](../common-series-apis/is-visible/)
+* [Common RenderableSeries Properties](/docs/2d-charts/chart-types/common-series-apis/is-visible)

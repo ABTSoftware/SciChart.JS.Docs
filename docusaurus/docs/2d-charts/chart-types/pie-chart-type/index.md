@@ -77,5 +77,5 @@ Resulting in:
 
 #### See Also
 
-* [Donut Chart](../donut-chart-type/)
-* [Polar Pie Chart](../polar-pie-chart/)
+* [Donut Chart](/docs/2d-charts/chart-types/donut-chart-type)
+* [Polar Pie Chart](/docs/2d-charts/chart-types/polar-pie-chart)

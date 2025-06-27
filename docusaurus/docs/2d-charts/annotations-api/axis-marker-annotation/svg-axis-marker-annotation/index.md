@@ -4,9 +4,9 @@ sidebar_position: 3
 
 # ✅ SVG Axis Marker Annotation
 
-[AxisMarkerAnnotations](AxisMarkerAnnotation.html) can also be created with SVG, also using the [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#image) property. This can be done as follows.
+[AxisMarkerAnnotations](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) can also be created with SVG, also using the [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#image) property. This can be done as follows.
 
-Remember to import [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#createimageasync) and [AxisMarkerAnnotation](AxisMarkerAnnotation.html) for this to work!
+Remember to import [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#createimageasync) and [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) for this to work!
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 ```ts {11} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end

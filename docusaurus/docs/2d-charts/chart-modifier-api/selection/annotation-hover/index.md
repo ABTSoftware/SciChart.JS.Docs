@@ -342,7 +342,7 @@ To check only a specific set of annotations use the [targets:blue_book:](https:
 *   an array of annotations
 *   and array of annotation ids
 *   a function returning an array of annotations
-*   the name of a function registered with the [Builder API](Intro to the Builder API.html)
+*   the name of a function registered with the [Builder API](/docs/2d-charts/builder-api/builder-api-overview)
 
 *   [Target Selector](#i-tab-content-Typescript)
 

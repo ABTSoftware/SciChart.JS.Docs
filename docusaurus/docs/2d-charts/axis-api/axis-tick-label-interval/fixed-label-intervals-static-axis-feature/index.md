@@ -39,4 +39,4 @@ For example setting [axis.maxAutoTicks:blue_book:](https://www.scichart.com/doc
 Formatting Labels and Precision (Decimal Places)
 ------------------------------------------------
 
-When in static axis mode, the axis stil obeys formatting rules provided by the LabelProvider. Read the [NumericAxis Docs](/docs/2d-charts/axis-api/axis-types/numeric-axis/index.md) or the [LabelProvider API Docs](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) for more info on how to vary label precision.
+When in static axis mode, the axis stil obeys formatting rules provided by the LabelProvider. Read the [NumericAxis Docs](/docs/2d-charts/axis-api/axis-types/numeric-axis) or the [LabelProvider API Docs](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) for more info on how to vary label precision.

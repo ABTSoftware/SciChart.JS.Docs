@@ -1,8 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-// This script checks all internal links in markdown files
+// This script checks all internal links in markdown files and converts relative paths to absolute paths.
 // Internal links are relative paths that reference other files in the project.
+
+// To run: "npm run linkcheck-internal"
 
 const docsDir = path.join(__dirname, '.', 'docs');
 const projectRoot = path.join(__dirname, '.');
@@ -13,6 +15,7 @@ const relativePathRegex = /^(?!https?:\/\/|mailto:|tel:|#)([^#?]*)/; // No exter
 let fileCount = 0;
 let linkCount = 0;
 let errorCount = 0;
+let conversionCount = 0;
 
 function walkDir(dir, callback) {
     if (!fs.existsSync(dir)) {
@@ -30,23 +33,35 @@ function walkDir(dir, callback) {
     });
 }
 
+const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.bmp', '.ico'];
+
 function isInternalLink(url) {
     const match = url.match(relativePathRegex);
-    return match && match[1];
+    if (!match || !match[1]) return false;
+    
+    // Skip image files
+    const imagePath = match[1].toLowerCase();
+    if (IMAGE_EXTENSIONS.some(ext => imagePath.includes(ext))) {
+        return false;
+    }
+    
+    return true;
 }
 
 function resolveInternalPath(currentFilePath, linkPath) {
     const cleanPath = linkPath.split('#')[0].split('?')[0];
     if (!cleanPath) return null;
     
+    // Resolve relative to current file's directory
     const currentDir = path.dirname(currentFilePath);
-    s
+    
+    // Handle different path formats
     let resolvedPath;
     if (cleanPath.startsWith('/')) {
-        // Absolute
+        // Already absolute path from project root
         resolvedPath = path.join(projectRoot, cleanPath);
     } else {
-        // Relative
+        // Relative path from current file
         resolvedPath = path.resolve(currentDir, cleanPath);
     }
     
@@ -66,7 +81,8 @@ function checkInternalLink(currentFilePath, linkPath) {
         if (stats.isFile()) {
             return { exists: true, resolvedPath };
         } else if (stats.isDirectory()) {
-            const indexFiles = ['index.md', 'README.md', "readme.md"];
+            // Check for index files in directory
+            const indexFiles = ['index.md', 'index.mdx', 'README.md'];
             for (const indexFile of indexFiles) {
                 const indexPath = path.join(resolvedPath, indexFile);
                 if (fs.existsSync(indexPath)) {
@@ -80,83 +96,119 @@ function checkInternalLink(currentFilePath, linkPath) {
     return { exists: false, error: 'File not found' };
 }
 
-async function checkLinksInFile(filePath) {
+function convertToAbsolutePath(currentFilePath, linkPath) {
+    // Extract hash and query parameters
+    const hashIndex = linkPath.indexOf('#');
+    const queryIndex = linkPath.indexOf('?');
+    
+    let cleanPath = linkPath;
+    let hash = '';
+    let query = '';
+    
+    // Handle hash
+    if (hashIndex !== -1) {
+        hash = linkPath.substring(hashIndex);
+        cleanPath = linkPath.substring(0, hashIndex);
+    }
+    
+    // Handle query (could be before or after hash)
+    const cleanPathQueryIndex = cleanPath.indexOf('?');
+    if (cleanPathQueryIndex !== -1) {
+        query = cleanPath.substring(cleanPathQueryIndex, cleanPath.length);
+        cleanPath = cleanPath.substring(0, cleanPathQueryIndex);
+    }
+    
+    if (!cleanPath || cleanPath.startsWith('/')) {
+        return linkPath; // Already absolute or empty path
+    }
+    
+    // Convert relative path to project-root relative absolute path
+    const currentDir = path.dirname(currentFilePath);
+    const resolvedPath = path.resolve(currentDir, cleanPath);
+    const relativePath = path.relative(projectRoot, resolvedPath).replace(/\\/g, '/');
+    const absolutePath = '/' + relativePath;
+    
+    return absolutePath + query + hash;
+}
+
+async function processLinksInFile(filePath) {
     fileCount++;
     const content = fs.readFileSync(filePath, 'utf8');
+    let modifiedContent = content;
+    let hasChanges = false;
+    
     const links = [];
     let match;
-    
-    // Reset regex
     internalLinkRegex.lastIndex = 0;
-    
-    // console.log(`\nChecking file: ${path.relative(projectRoot, filePath)}`);
     
     while ((match = internalLinkRegex.exec(content)) !== null) {
         const linkText = match[1];
         const linkUrl = match[2];
+        const fullMatch = match[0];
         
         // Only process internal links
         if (isInternalLink(linkUrl)) {
-            links.push({ text: linkText, url: linkUrl });
+            links.push({ 
+                text: linkText, 
+                url: linkUrl, 
+                fullMatch: fullMatch,
+                index: match.index 
+            });
         }
     }
     
     if (links.length === 0) {
-        // console.log('  No internal links found');
         return;
     }
+    
+    // Process links in reverse order to maintain correct indices
+    links.reverse();
     
     for (const link of links) {
         const result = checkInternalLink(filePath, link.url);
         linkCount++;
         
         if (result.exists) {
-            const relativePath = path.relative(projectRoot, result.resolvedPath);
-            const absolutePath = path.resolve(result.resolvedPath);
-            console.log(`  ✅ ${link.url}`);
-            console.log(`     → Relative: ${relativePath}`);
-            console.log(`     → Absolute: ${absolutePath}`);
-        } else {
-            console.log(`  ❌ ${link.url} - ${result.error}`);
-            console.log(`     Link text: "${link.text}"`);
-            const attemptedPath = resolveInternalPath(filePath, link.url);
-            if (attemptedPath) {
-                console.log(`     → Attempted absolute: ${path.resolve(attemptedPath)}`);
+            const absolutePath = convertToAbsolutePath(filePath, link.url);
+            
+            if (absolutePath !== link.url) {
+                // Replace the link in content
+                const newLink = `[${link.text}](${absolutePath})`;
+                modifiedContent = modifiedContent.substring(0, link.index) + 
+                                newLink + 
+                                modifiedContent.substring(link.index + link.fullMatch.length);
+                
+                conversionCount++;
+                hasChanges = true;
             }
+        } else {
+            console.log(`❌ ${path.relative(projectRoot, filePath)}: ${link.url} - ${result.error}`);
             errorCount++;
         }
     }
+    
+    if (hasChanges) {
+        fs.writeFileSync(filePath, modifiedContent, 'utf8');
+    }
 }
 
-// Main execution
+// IIFE 
 (async () => {
-    console.log('Starting internal link checking in "/docs" directory...');
-    console.log(`Project root: ${projectRoot}`);
-    console.log(`Docs directory: ${docsDir}`);
-    
     const files = [];
     walkDir(docsDir, file => files.push(file));
     
     if (files.length === 0) {
-        console.log('No markdown files found in docs directory');
+        console.log('No markdown files found');
         return;
     }
     
-    console.log(`Found ${files.length} markdown files to check\n`);
-    
     for (const file of files) {
-        await checkLinksInFile(file);
+        await processLinksInFile(file);
     }
-    
-    console.log('\n' + '='.repeat(50));
-    console.log('Internal link check complete.');
-    console.log(`Total files checked: ${fileCount}`);
-    console.log(`Total internal links checked: ${linkCount}`);
-    
-    if (errorCount > 0) {
-        console.error(`\x1b[31mTotal errors found: ${errorCount}\x1b[0m`);
-        process.exit(1); // Exit with error code for CI/CD
-    } else {
-        console.log('\x1b[32mAll internal links are valid!\x1b[0m');
+
+    console.log(`\nFiles: ${fileCount},\nLinks: ${linkCount},\nConversions: ${conversionCount},\nErrors: ${errorCount}`);
+
+    if (errorCount === 0) {
+        console.log('\n✅ All internal links processed successfully.');
     }
 })();

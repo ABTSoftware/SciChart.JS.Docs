@@ -183,7 +183,7 @@ Try zooming the example with mouse-drag, panning, mousewheel and double-click to
 SubCharts with the Builder API
 ------------------------------
 
-It is also possible to create a sub-chart via [Builder API](Intro to the Builder API.html). For this pass an array of [ISubChartDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/isubchartdefinition.html) via [ISciChart2DDefinition.subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property.
+It is also possible to create a sub-chart via [Builder API](/docs/2d-charts/builder-api/builder-api-overview). For this pass an array of [ISubChartDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/isubchartdefinition.html) via [ISciChart2DDefinition.subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property.
 
 For example, the following snippet will give us the same result as Basic Example setup:
 
@@ -196,7 +196,7 @@ The Builder API demo of SubCharts works very similarly to the javascript-API ver
 
 #### See Also
 
-* [SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency/index.md)
-* [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning/index.md)
-* [SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container/index.md)
-* [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard/index.md)
+* [SubChart Sub Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
+* [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
+* [SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
+* [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)

@@ -9,7 +9,7 @@ The [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v
 
 ## Adding a PolarCursorModifier to a Chart
 
-Similarly to the [CursorModifier](../../cursor-modifier/cursor-modifier-overview/) for a Cartesian 2D chart, a [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcursormodifier.html) can be added to the `sciChartSurface.chartModifiers` collection of a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) to enable crosshair behavior. For example:
+Similarly to the [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) for a Cartesian 2D chart, a [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcursormodifier.html) can be added to the `sciChartSurface.chartModifiers` collection of a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) to enable crosshair behavior. For example:
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 ```ts {9} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
@@ -24,5 +24,5 @@ This results in the following behavior:
 
 #### See Also:
 
-* [What is the ChartModifier API?](../../chart-modifier-api-overview/)
-* [CursorModifier](../../cursor-modifier/cursor-modifier-overview/)
+* [What is the ChartModifier API?](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)

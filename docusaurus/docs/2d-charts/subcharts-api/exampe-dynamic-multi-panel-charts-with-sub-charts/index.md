@@ -4,13 +4,13 @@ sidebar_position: 11
 
 # ✅ Worked Example: Dynamic Multi-panel charts with SubCharts
 
-Sub-Charts allows you to create re-usable multi-chart components that are managed by a single [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
+Sub-Charts allows you to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
 
-For example, in telemetry monitoring applications, you might need to create a group of charts which are arranged vertically, and dynamically add/remove chart panes to the group. This can be done in several ways, for example we have tutorials how to do this in JavaScript ([Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts/index.md)). This tutorial use [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface/index.md), which creates a single [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) in a `<div>`, allowing you to add series, data, axis, modifiers and annotations to the chart.
+For example, in telemetry monitoring applications, you might need to create a group of charts which are arranged vertically, and dynamically add/remove chart panes to the group. This can be done in several ways, for example we have tutorials how to do this in JavaScript ([Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)). This tutorial use [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface), which creates a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) in a `<div>`, allowing you to add series, data, axis, modifiers and annotations to the chart.
 
-However, in some browsers like Mozilla Firefox, creating multiple charts using [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface/index.md) results in slower performance when rendering/drawing. This is because Mozilla (and even safari) are not optimised for high performance when copying WebGL content to multiple canvases.
+However, in some browsers like Mozilla Firefox, creating multiple charts using [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface) results in slower performance when rendering/drawing. This is because Mozilla (and even safari) are not optimised for high performance when copying WebGL content to multiple canvases.
 
-As a solution, SubCharts can allow you to create a single shared [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and place multiple child charts on it (nested charts within charts).
+As a solution, SubCharts can allow you to create a single shared [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and place multiple child charts on it (nested charts within charts).
 
 Dynamic Multi-Pane Charts with SubCharts Example
 ------------------------------------------------
@@ -62,7 +62,7 @@ The function also wires up **event handlers** for buttons (`addChartBtn` and `re
 ```
 </CodeSnippetBlock>
 
-The `addNewChart()` function calls [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) to dynamically add a **new sub-chart** to an existing `SciChartSurface` while ensuring that all sub-charts within the parent surface are resized to **equal heights**.
+The `addNewChart()` function calls [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) to dynamically add a **new sub-chart** to an existing `SciChartSurface` while ensuring that all sub-charts within the parent surface are resized to **equal heights**.
 
 The function then **adds numeric X and Y axes** to the new chart, with the X-axis being **synchronized** across all charts using `axisSynchronizer`. Several interactive modifiers—`ZoomPanModifier`, `MouseWheelZoomModifier`, and `ZoomExtentsModifier`—are attached, enabling **zooming, panning, and scaling** for better usability.
 
@@ -73,14 +73,14 @@ Finally, the function returns the newly created sub-chart (`sciChartSurface`) al
 ```
 </CodeSnippetBlock>
 
-The `removeChart` function is responsible for dynamically **removing the last sub-chart** from a parent `SciChartSurface`, ensuring that at least one chart remains visible. It first determines the current number of sub-charts via [SciChartSurface.subCharts.length](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#subcharts) and exits early if there is only one left.
+The `removeChart` function is responsible for dynamically **removing the last sub-chart** from a parent `SciChartSurface`, ensuring that at least one chart remains visible. It first determines the current number of sub-charts via [SciChartSurface.subCharts.length:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#subcharts) and exits early if there is only one left.
 
-If multiple charts exist, the function selects the last sub-chart and **removes its X-axis from the** `axisSynchronizer` to prevent synchronization issues. This ensures that when the chart is deleted, its axis does not affect the remaining ones. Once the axis is removed, the function **removes the sub-chart** from the `SciChartSurface` by calling [SciChartSurface.removeSubChart()](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#removesubchart), reducing the number of displayed charts by one.
+If multiple charts exist, the function selects the last sub-chart and **removes its X-axis from the** `axisSynchronizer` to prevent synchronization issues. This ensures that when the chart is deleted, its axis does not affect the remaining ones. Once the axis is removed, the function **removes the sub-chart** from the `SciChartSurface` by calling [SciChartSurface.removeSubChart():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#removesubchart), reducing the number of displayed charts by one.
 
-After removing the chart, the function **resizes and repositions the remaining sub-charts**  by calling [SciChatSubSurface.subPosition](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) to maintain an equal height distribution. It calculates the new height for each chart and updates their positions by calling . This ensures a consistent layout, where the remaining charts automatically expand to fill the available space.
+After removing the chart, the function **resizes and repositions the remaining sub-charts**  by calling [SciChatSubSurface.subPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) to maintain an equal height distribution. It calculates the new height for each chart and updates their positions by calling . This ensures a consistent layout, where the remaining charts automatically expand to fill the available space.
 
 :::info
-Note that [subPosition](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) is updated with a Rect which contains relative sizing (for more info see [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning/index.md))
+Note that [subPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) is updated with a Rect which contains relative sizing (for more info see [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning))
 :::
 
 #### Synchronizing Zooming, Panning across the SubCharts 

@@ -9,7 +9,7 @@ Coordinate Systems
 
 ### The Left Handed Coordinate System (LHS)
 
-The [SciChartSurface3D](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html) by default renders a 3D world using the Left Handed Coordinate system or LHS (as is common to WebGL). In the LHS X and Z form the horizontal plane, and Y is always up YDirection=(0,1,0). It is helpful to think of the 3D world as a 2D Chart in X-Y and Z goes ‘into the screen’.
+The [SciChartSurface3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html) by default renders a 3D world using the Left Handed Coordinate system or LHS (as is common to WebGL). In the LHS X and Z form the horizontal plane, and Y is always up YDirection=(0,1,0). It is helpful to think of the 3D world as a 2D Chart in X-Y and Z goes ‘into the screen’.
 
 ![](/images/Chart3D_LeftHandCoords.png)
 
@@ -24,9 +24,9 @@ World Coordinates is the term used to describe coordinates in the 3D World. Thes
 
 ### WorldDimensions and the Axis Cube
 
-The box in the chart is called the Axis Cube. The AxisCube size is defined by the [SciChartSurface3D.WorldDimensions](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#worlddimensions) property.
+The box in the chart is called the Axis Cube. The AxisCube size is defined by the [SciChartSurface3D.WorldDimensions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#worlddimensions) property.
 
-The WorldDimensions is a single [Vector3](https://www.scichart.com/documentation/js/current/typedoc/classes/vector3.html) with X,Y,Z size, but defines the size of a cube as follows:
+The WorldDimensions is a single [Vector3:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/vector3.html) with X,Y,Z size, but defines the size of a cube as follows:
 
 ![](/images/Chart3D_World_vs_data_coords2.png)
 
@@ -38,7 +38,7 @@ Therefore…
 *   The size of the AxisCube in the Y Direction extends from 0 to +WorldDimensions.Y
 *   The size of the AxisCube in the Z Direction extends from -WorldDimensions.Z/2 to +WorldDimensions.Z/2
 
-NOTE: By default, [SciChart3DSurface.WorldDimensions](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#worlddimensions) property is set to X=300, Y=200, Z=300.
+NOTE: By default, [SciChart3DSurface.WorldDimensions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#worlddimensions) property is set to X=300, Y=200, Z=300.
 
 ### Setting the WorldDimensions Property
 
@@ -79,7 +79,7 @@ The difference between World Coordinates, Data Coordinates is shown in the follo
 Converting from World to Data Coordinates
 -----------------------------------------
 
-The conversion between Data Coordinates and World Coordinates is done by the Axis. For example. the following code converts from Data to World Coordinates on the [SciChartSurface3D.xAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#xaxis).
+The conversion between Data Coordinates and World Coordinates is done by the Axis. For example. the following code converts from Data to World Coordinates on the [SciChartSurface3D.xAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#xaxis).
 
 <CodeSnippetBlock labels={["Coordinate calculator"]}>
 ```ts showLineNumbers

@@ -9,7 +9,7 @@ SciChart.js stores memory in WebAssembly. This allows us to achieve our incredib
 Unlike JavaScript which has built-in garbage collection, WebAssembly requires that you delete memory that you have allocated. Think of it as similar to closing a WebSocket connection if you want to close the connection and free memory.
 
 :::note
-See related articles: [Memory Usage Best Practices](/docs/2d-charts/performance-tips/memory-best-practices/index.md) which has some further info on optimising memory usage with SciChart.js, and [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging/index.md) which introduces our new tools to identify and fix memory leaks.
+See related articles: [Memory Usage Best Practices](/docs/2d-charts/performance-tips/memory-best-practices) which has some further info on optimising memory usage with SciChart.js, and [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging) which introduces our new tools to identify and fix memory leaks.
 :::
 
 Examples of how to use Delete()
@@ -78,5 +78,5 @@ To simplify your code, if you do not change DataSeries instances, you can call d
 
 ##### Miscellaneous APIs
 
-- [Memory Usage Best Practices](/docs/2d-charts/performance-tips/memory-best-practices/index.md)
-- [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging/index.md)
+- [Memory Usage Best Practices](/docs/2d-charts/performance-tips/memory-best-practices)
+- [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging)

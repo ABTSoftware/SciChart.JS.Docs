@@ -7,7 +7,7 @@ sidebar_position: 4
 :::tip
 Background reading:
 
-If you haven't already, read the article [The CursorModifier](../cursor-modifier-overview/) type which will show you how to setup a CursorModifier with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content)
+If you haven't already, read the article [The CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) type which will show you how to setup a CursorModifier with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content)
 :::
 
 Basic customisation of the cursor and tooltip appearance can be made through the following properties.

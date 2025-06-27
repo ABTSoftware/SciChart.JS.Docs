@@ -38,8 +38,8 @@ Considerations when using Vertical Charts
 
 This Flexibility of SciChart allows for some pretty interesting configurations of charts. However, here are some considerations when using a Vertical Chart.
 
-*   Tooltips, [Cursors](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md) and the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) will also be transposed (rotated 90 degrees). When applying a RolloverModifier the cursor line is usually vertical, but in a vertical chart the cursor line will be horizontal.
-*   Annotations will behave differently. For example a [HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation/index.md) will still draw horizontally but instead of setting the y1 property to place on the YAxis, now you must set x1 property to place on the XAxis.
+*   Tooltips, [Cursors](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) will also be transposed (rotated 90 degrees). When applying a RolloverModifier the cursor line is usually vertical, but in a vertical chart the cursor line will be horizontal.
+*   Annotations will behave differently. For example a [HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation) will still draw horizontally but instead of setting the y1 property to place on the YAxis, now you must set x1 property to place on the XAxis.
 
 #### See Also
 

@@ -160,7 +160,7 @@ When you want to discard old data beyond a certain size, or scroll or sweep the 
 Fifo (First-in-first-out) mode pre-allocates a circulate buffer of size N internally. When a dataSeries is declared with [fifoCapacity:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#fifocapacity), then data beyond that count is automatically discarded. This limits the growth of memory and provides an efficient way to scroll or sweep charts, such as in signal monitoring or ECG (medical) applications.
 
 :::tip
-Read the article on [DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates/index.md) which showcases fifo sweeping and fifo scrolling.
+Read the article on [DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates) which showcases fifo sweeping and fifo scrolling.
 :::
 
 ### 1.6 Float64Array vs. Array
@@ -267,14 +267,14 @@ Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance De
 
 **Impact: Large Improvement to Rendering Performance in multi-chart applications where many chart panes are on screen, especially in some browsers (Mozilla, Safari)**
 
-The [Sub-Charts API](/docs/2d-charts/subcharts-api/subcharts-api-overview/index.md) is a way to group charts into a single parent SciChartSurface. Using this API you can achieve the best of both worlds: having multiple chart panes and fewer drawing loop calls and fewer WebGL calls.
+The [Sub-Charts API](/docs/2d-charts/subcharts-api/subcharts-api-overview) is a way to group charts into a single parent SciChartSurface. Using this API you can achieve the best of both worlds: having multiple chart panes and fewer drawing loop calls and fewer WebGL calls.
 
 We've created a set of tutorials on how to create multi-pane and re-usable chart groups using the SubCharts API. You can find these below:
 
-*   [Re-usable Chart Groups with Sub-Charts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts/index.md)
-*   [Dynamic Multi-Panel Charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts/index.md)
-*   [Resizable Multi-Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts/index.md)
-*   [Using SubCharts to create a Large Dashboard with 100 Charts](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard/index.md)
+*   [Re-usable Chart Groups with Sub-Charts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts)
+*   [Dynamic Multi-Panel Charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)
+*   [Resizable Multi-Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts)
+*   [Using SubCharts to create a Large Dashboard with 100 Charts](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)
 
 ### 2.3 Reduce Axis Elements & Label Count
 
@@ -334,7 +334,7 @@ With Native Text fast WebGL hardware accelerated labels are drawn. This will hav
 
 Using native text gives significant performance benefits if you have multiple charts with lots of axis labels, or when you have multiple charts with chart titles. 
 
-Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of the [Native Text API](/docs/2d-charts/miscellaneous-apis/native-text-api/index.md) where 100 charts are hosted inside a scroll view.
+Read the blog post [Creating a React Drag & Drop Chart Dashboard Performance Demo with 100 Charts](https://www.scichart.com/blog/creating-a-react-drag-drop-chart-dashboard/) which shows the impact of the [Native Text API](/docs/2d-charts/miscellaneous-apis/native-text-api) where 100 charts are hosted inside a scroll view.
 
 ### 3.2 Shared Label Cache
 
@@ -400,7 +400,7 @@ Higher number of pixels means more work for the browser to display the chart. If
 
 Also, we recommend use of Google Chrome browser as this has by far the best performance metrics, compared to Safari or Firefox, which both struggle to render large canvases.
 
-See [Related Article on Retina DPI Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom/index.md) for further information. Use Google Chrome on macOS for best performance. You can also disable retina high precision in code.
+See [Related Article on Retina DPI Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom) for further information. Use Google Chrome on macOS for best performance. You can also disable retina high precision in code.
 
 ### 4.3 Dual GPU machines or Macbook Pro
 

@@ -72,10 +72,10 @@ This results in the following output:
 
 The above example showcases how to apply custom or complex formatting to labels in SciChart.js.
 
-Any formatting (dynamic or static) that you can think of can be applied using the [LabelProvider API](Axis Label Formatting - LabelProvider API.html).
+Any formatting (dynamic or static) that you can think of can be applied using the [LabelProvider API](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview).
 
 Custom labelproviders can then be set on individual X,Y axis of any type.
 
 ####  See Also
 
-[Axis LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md)
+* [Axis LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md)

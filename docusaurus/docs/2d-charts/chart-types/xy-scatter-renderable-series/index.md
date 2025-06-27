@@ -34,13 +34,13 @@ This results in the following:
 In the code above:
 
 *   A Scatter Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). Several types such as Ellipse, Triangle, Cross and Custom are available ([see here for more info](../common-series-apis/drawing-point-markers/))
-*   We assign a [DataSeries](../data-series-api/) - which stores the Xy data to render.
+*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). Several types such as Ellipse, Triangle, Cross and Custom are available ([see here for more info](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers))
+*   We assign a [DataSeries](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview) - which stores the Xy data to render.
 
 ## Render a Gap in a Scatter Series
 
 :::tip
-It is possible to have null points or gaps in a Scatter Series by passing a data point with a **NaN** value as the **Y** value. Or, by simply skipping a point if using a value-axis. Please refer to the [Common Series Features - Draw Gaps in Series](../common-series-apis/drawing-gaps/) article for more details.
+It is possible to have null points or gaps in a Scatter Series by passing a data point with a **NaN** value as the **Y** value. Or, by simply skipping a point if using a value-axis. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 ## Drawing Last Point only in a Scatter Series
@@ -54,21 +54,21 @@ New to SciChart.js v3.2! The PointMarker type has a property [isLastPointOnly:b
 Every data point of a Scatter Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). Several different types of PointMarker are available in SciChart.js.
 
 :::tip
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](../common-series-apis/drawing-point-markers/).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
 There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://demo.scichart.com/javascript-chart-custom-pointmarkers)
 
-Finally, there is a dedicated [Bubble Series](../fast-bubble-renderable-series/) type with some more options such as per-point sizing.
+Finally, there is a dedicated [Bubble Series](/docs/2d-charts/chart-types/fast-bubble-renderable-series) type with some more options such as per-point sizing.
 :::
 
 ## Painting Scatter Points with Different Colors
 
 :::tip
-It is possible to define the colour of PointMarkers individually using the [PaletteProvider API](../palette-provider-api/palette-provider-api-overview/).
+It is possible to define the colour of PointMarkers individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Scatter Charts](../palette-provider-api/xy-scatter-renderable-series/) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Scatter Charts](/docs/2d-charts/chart-types/palette-provider-api/xy-scatter-renderable-series) documentation page.
 :::
 
 #### See Also
 
-* [Start Here - RenderableSeries Overview](../renderable-series-api-overview/)
+* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)

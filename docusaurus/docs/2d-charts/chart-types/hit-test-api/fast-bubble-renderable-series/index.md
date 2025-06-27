@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## The hitTest method on Bubble Series
 
-The **IHitTestProvider.hitTest** method on [FastBubbleRenderableSeries](/docs/2d-charts/chart-types/fast-bubble-renderable-series/index.md) tests if the click was within the **hitTestRadius** from a bubble circumference.
+The **IHitTestProvider.hitTest** method on [FastBubbleRenderableSeries](/docs/2d-charts/chart-types/fast-bubble-renderable-series) tests if the click was within the **hitTestRadius** from a bubble circumference.
 
 ```ts
 // hitTest method on Bubble Series
@@ -134,7 +134,7 @@ export async function hitTestBubbleTs(divId: string) {
 
 ## The hitTestDataPoint method on Bubble Series
 
-The **IHitTestProvider.hitTestDataPoint** method on [FastBubbleRenderableSeries](/docs/2d-charts/chart-types/fast-bubble-renderable-series/index.md)  tests if the click was within the **hitTestRadius** from a data point.
+The **IHitTestProvider.hitTestDataPoint** method on [FastBubbleRenderableSeries](/docs/2d-charts/chart-types/fast-bubble-renderable-series)  tests if the click was within the **hitTestRadius** from a data point.
 
 ```ts
 // hitTestDataPoint method on Bubble Series
@@ -148,7 +148,7 @@ const hitTestInfo = bubbleSeries.hitTestProvider.hitTestDataPoint(premultipliedX
 
 ## The hitTestXSlice method on Bubble Series
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice method on Bubble Series
@@ -162,9 +162,9 @@ const hitTestInfo = bubbleSeries.hitTestProvider.hitTestXSlice(premultipliedX, p
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series/index.md)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series/index.md)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series/index.md)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series/index.md)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series/index.md)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series/README.md)
+* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

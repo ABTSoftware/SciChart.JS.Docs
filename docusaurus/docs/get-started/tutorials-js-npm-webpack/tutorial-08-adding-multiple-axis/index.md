@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # ✅ Tutorial 08 - Adding Multiple Axis
 
-In [Tutorial 7 - Adding Tooltips and Legends](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends/index.md), we showed you how to add tooltips and legends to a JavaScript Chart using SciChart.js. Now we are going to learn how to add a second **YAxis**.
+In [Tutorial 7 - Adding Tooltips and Legends](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends), we showed you how to add tooltips and legends to a JavaScript Chart using SciChart.js. Now we are going to learn how to add a second **YAxis**.
 
 SciChart supports unlimited axes. This unlocks different possibilities, such as **rotated (vertical)** charts.
 
@@ -150,7 +150,7 @@ This results in the chart shown below, where the thicker blue line is bound to t
 Registering Annotations on an Axis
 ----------------------------------
 
-Annotations can also be added to a multi-axis chart, and registered with a specific axis pair. Add a [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md) as follows.
+Annotations can also be added to a multi-axis chart, and registered with a specific axis pair. Add a [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation) as follows.
 
 <CodeSnippetBlock labels={["index.js region C"]}>
 ```js
@@ -170,7 +170,7 @@ Annotations can also be added to a multi-axis chart, and registered with a speci
 ```
 </CodeSnippetBlock>
 
-Now we can see a [TextAnnotation](TextAnnotation.html) in the middle of the chart, bound to the Secondary X,Y axis at `X,Y={2, 400}`
+Now we can see a [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation) in the middle of the chart, bound to the Secondary X,Y axis at `X,Y={2, 400}`
 
 ![](img/3.png)
 
@@ -197,12 +197,12 @@ Further Reading
 
 Here is related documentation for further reading:   
 
-*   [Axis Types in SciChart.js](/docs/2d-charts/axis-api/axis-api-overview/index.md)
-*   [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/index.md)
-*   [Vertically Stacked Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/index.md)
-*   [Advanced Options - Custom Layouts](/docs/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers/index.md)
+*   [Axis Types in SciChart.js](/docs/2d-charts/axis-api/axis-api-overview)
+*   [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview)
+*   [Vertically Stacked Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout)
+*   [Advanced Options - Custom Layouts](/docs/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers)
 
 #### See Also
 
-* [Tutorial 06 - Adding Annotations](/docs/get-started/tutorials-js-npm-webpack/tutorial-06-adding-annotations/index.md)
-* [Tutorial 09 - Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts/index.md)
+* [Tutorial 06 - Adding Annotations](/docs/get-started/tutorials-js-npm-webpack/tutorial-06-adding-annotations)
+* [Tutorial 09 - Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)

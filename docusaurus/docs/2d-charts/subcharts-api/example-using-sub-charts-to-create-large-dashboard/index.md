@@ -7,7 +7,7 @@ sidebar_position: 13
 SubCharts API gives an ability to create multiple charts while providing a great rendering performance. All the charts on a SubChart use a single, shared WebGL context. This means 100s of charts can be placed on screen and update very fast.
 
 :::info
-SciChart supports unlimited charts on a page at different locations in the HTML DOM via our innovative, Shared WebGL context technology. See the section on [SciChartSurface.create() vs. createSingle()](/docs/2d-charts/surface/new-scichart-surface/index.md) for more background information about WebGL context limits.
+SciChart supports unlimited charts on a page at different locations in the HTML DOM via our innovative, Shared WebGL context technology. See the section on [SciChartSurface.create() vs. createSingle()](/docs/2d-charts/surface/new-scichart-surface) for more background information about WebGL context limits.
 :::
 
 The following SubCharts method provides a higher-performance way of creating large grids of charts in similar locations.  

@@ -42,22 +42,22 @@ In the code above:
 :::tip
 A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) can be used as these are 24/7 markets.
 
-You can format the date labels on the xAxis by following the instructions on the [Axis Label Formatting](../../axis-api/axis-labels/numeric-formats/) page.
+You can format the date labels on the xAxis by following the instructions on the [Axis Label Formatting](/docs/2d-charts/axis-api/axis-labels/numeric-formats) page.
 :::
 
 ## Adding Volume Bars to an OHLC Chart
 
-The [Candlestick Chart example](https://www.scichart.com/demo/react/candlestick-chart) shows a technique to add volume bars docked to the bottom of the chart. The technique is the same for OHLC series so please see the [candlestick docs](../fast-candlestick-renderable-series/Basic/).
+The [Candlestick Chart example](https://www.scichart.com/demo/react/candlestick-chart) shows a technique to add volume bars docked to the bottom of the chart. The technique is the same for OHLC series so please see the [candlestick docs](/docs/2d-charts/chart-types/fast-candlestick-renderable-series).
 
 ## Painting Ohlc bars with Different Colors
 
 :::tip
-It is possible to define the colour of specific OHLC Bars using the [PaletteProvider API](../palette-provider-api/palette-provider-api-overview/).
+It is possible to define the colour of specific OHLC Bars using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Candlestick/Ohlc Charts](../palette-provider-api/fast-candlestick-ohlc-renderable-series/) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Candlestick/Ohlc Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-candlestick-ohlc-renderable-series) documentation page.
 :::
 
 #### See Also
 
-* [Start Here - RenderableSeries Overview](../renderable-series-api-overview/)
-* [Common RenderableSeries Properties](../common-series-apis/drawing-point-markers/)
+* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)
+* [Common RenderableSeries Properties](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers)

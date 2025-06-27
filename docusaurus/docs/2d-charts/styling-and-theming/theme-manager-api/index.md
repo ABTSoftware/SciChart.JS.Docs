@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # ✅ Chart Styling - ThemeManager API
 
-SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md), so you can truly customize the chart to fit your application.
+SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/docs/2d-charts/styling-and-theming/creating-custom-theme), so you can truly customize the chart to fit your application.
 
 You can view our themes live at the [ThemeManager example, over at the SciChart.js Examples Suite](https://demo.scichart.com/javascript-chart-themes).
 
@@ -66,5 +66,5 @@ const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-eleme
 
 #### See Also
 
-* [Chart Styling - Creating a Custom Theme](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md)
-* [Chart Styling - Style Chart Parts in Code](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code/index.md)
+* [Chart Styling - Creating a Custom Theme](/docs/2d-charts/styling-and-theming/creating-custom-theme)
+* [Chart Styling - Style Chart Parts in Code](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code)

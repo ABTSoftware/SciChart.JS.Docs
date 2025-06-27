@@ -7,7 +7,7 @@ sidebar_position: 6
 The hitTest method on Heatmap Series
 ------------------------------------
 
-The **IHitTestProvider.hitTest** method on [UniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md) tests if the click was within the Heatmap.
+The **IHitTestProvider.hitTest** method on [UniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) tests if the click was within the Heatmap.
 
 ```ts
 // hitTest method on Heatmap Series
@@ -165,7 +165,7 @@ export async function hitTestHeatmapTs(divId: string) {
 The hitTestDataPoint method on Heatmap Series
 ---------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method is not supported for [UniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md).
+The **IHitTestProvider.hitTestDataPoint** method is not supported for [UniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type).
 
 The hitTestXSlice method on Heatmap Series
 ------------------------------------------
@@ -174,10 +174,10 @@ The **IHitTestProvider.hitTestXSlice** method works identically as the **IHitTes
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series/index.md)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series/index.md)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series/index.md)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series/index.md)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series/index.md)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series/README.md)
+* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
 

@@ -70,9 +70,9 @@ const newZValues; // type number[][]
 heatmapDataSeries.setZValues(newZValues);
 ```
 
-For more details, including a live example of how to update 2D array data for heatmaps and contours, see the [Uniform Heatmap documentation - Updating Heatmaps](../uniform-heatmap-renderable-series/updating-realtime/) documentation page. The mechanism for contour plots is the same.
+For more details, including a live example of how to update 2D array data for heatmaps and contours, see the [Uniform Heatmap documentation - Updating Heatmaps](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime) documentation page. The mechanism for contour plots is the same.
 
 #### See Also
 
-* [The Uniform Heatmap Chart Type](../uniform-heatmap-renderable-series/uniform-heatmap-chart-type/)
-* [The Non-Uniform Heatmap Chart Type](../non-uniform-heatmap-renderable-series/)
+* [The Uniform Heatmap Chart Type](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type)
+* [The Non-Uniform Heatmap Chart Type](/docs/2d-charts/chart-types/non-uniform-heatmap-renderable-series)

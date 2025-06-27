@@ -65,8 +65,8 @@ When using angles that are not a multiple of 90, you probably want to set **hid
 Multiline labels are supported simply by using newline characters (\\n) in the label text.  lineSpacing is a property on the labelProvider.  The alignment property on labelStyle also affects the alignment for multiple lines. 
 
 :::note
-Note: for more info about [Text and MultiLine labels see this article](MultiLineLabels.html).  
-For rotation of labels [see this article](RotatingAxisLabels.html).
+Note: for more info about [Text and MultiLine labels see this article](/docs/2d-charts/axis-api/axis-labels/text-and-multi-line-labels).  
+For rotation of labels [see this article](/docs/2d-charts/axis-api/axis-labels/rotating-axis-labels).
 :::
 
 

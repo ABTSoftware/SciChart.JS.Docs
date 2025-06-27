@@ -4,7 +4,7 @@ sidebar_position: 63
 
 # ✅ The Bezier (Smoothed) Stacked Mountain Series Type
 
-A variation on the [Stacked Mountain Series](../stacked-mountain-renderable-series/) is the SmoothStackedMountainRenderableSeries. This uses a custom Bezier smoothing algorithm to create a smoothed line (spline line) to interpolate between datapoints.
+A variation on the [Stacked Mountain Series](/docs/2d-charts/chart-types/stacked-mountain-renderable-series) is the SmoothStackedMountainRenderableSeries. This uses a custom Bezier smoothing algorithm to create a smoothed line (spline line) to interpolate between datapoints.
 
 Smoothed Stacked Mountain Charts can be created by a combination of the [SmoothStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/smoothstackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html) types. 
 
@@ -56,4 +56,4 @@ _**Above:** a JavaScript 100% Smoothed Stacked Mountain chart when [StackedMou
 
 #### See Also
 
-*   [Stacked Mountain Series](../stacked-mountain-renderable-series/)
+*   [Stacked Mountain Series](/docs/2d-charts/chart-types/stacked-mountain-renderable-series)

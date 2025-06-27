@@ -17,7 +17,7 @@ In SciChart.js, all positioning and layout of axis are done with Layout Strategi
 | [RightAlignedOuterVerticallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html) | Y Axis | Right side | Vertical stacking behavior |
 | [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html) | X Axis | Top side | Horizontal stacking behavior |
 
-By applying these strategies to the SciChartSurface you can achieve various layouts, such as [Central Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout/index.md) or [Vertically Stacked Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/index.md).
+By applying these strategies to the SciChartSurface you can achieve various layouts, such as [Central Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout) or [Vertically Stacked Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout).
 
 However, you can also create your own layout managers for custom or complex axis layouts.
 

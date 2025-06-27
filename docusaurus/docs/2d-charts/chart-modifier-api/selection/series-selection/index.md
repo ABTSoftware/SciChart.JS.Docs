@@ -1015,7 +1015,7 @@ async function seriesSelectionStyle(divElementId) {
 seriesSelectionStyle("scichart-root");
 ```
 
-Multiple properties can be animated in SciChart.js, including stroke, fill, strokethickness, pointmarker size, type, opacity and more. For more information about how to animate between styles or datasets, see the [Animations API Documentation](Animations API.html).
+Multiple properties can be animated in SciChart.js, including stroke, fill, strokethickness, pointmarker size, type, opacity and more. For more information about how to animate between styles or datasets, see the [Animations API Documentation](/docs/2d-charts/animations-api/aminations-api-overview).
 
 Programmatically Getting/Setting Selected Series
 ------------------------------------------------
@@ -1044,6 +1044,6 @@ seriesSelectionModifier.getAllSeries = () => {
 }
 ```
 
-See Also
+#### See Also
 
-[DataPoint Selection](DataPointSelection.html)
+* [DataPoint Selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection)

@@ -92,6 +92,6 @@ For viewing massive heatmaps, SciChart.js allows tiling of heatmaps by placing m
 
 #### See Also
 
-* [Updating (Realtime) Heatmaps](../updating-realtime/)
-* [Color Maps and Legends of Heatmap](../color-maps-and-legends/)
-* [Start Here - RenderableSeries Overview](../../renderable-series-api-overview/)
+* [Updating (Realtime) Heatmaps](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime)
+* [Color Maps and Legends of Heatmap](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends)
+* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)

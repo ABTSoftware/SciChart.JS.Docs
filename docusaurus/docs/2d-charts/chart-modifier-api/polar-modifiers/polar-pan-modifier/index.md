@@ -19,4 +19,4 @@ This results in the following behavior:
 
 #### See Also:
 
-* [What is the ChartModifier API?](../../chart-modifier-api-overview/)
+* [What is the ChartModifier API?](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)

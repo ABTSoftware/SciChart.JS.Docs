@@ -89,6 +89,6 @@ Both approaches can be combined in the same chart to create sophisticated gauge 
 
 #### See Also
 
-* [Polar Pointer Annotation](../../annotations-api/polar-pointer-annotation/)
-* [Polar Arc Annotation](../../annotations-api/polar-arc-annotation/)
-* [Polar Column Series](../polar-column-renderable-series/)
+* [Polar Pointer Annotation](/docs/2d-charts/annotations-api/polar-pointer-annotation)
+* [Polar Arc Annotation](/docs/2d-charts/annotations-api/polar-arc-annotation)
+* [Polar Column Series](/docs/2d-charts/chart-types/polar-column-renderable-series)

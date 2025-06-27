@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Another feature of the SubCharts API is an ability to add custom HTML content around a sub-chart.
 
-When adding a Sub Chart to a SciChartSurface with the [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) function, you can place extra optional HTML elements into the DOM. By specifying their IDs and classes to the SubChart, they can be positioned on top of, and around the [SciChartSubSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html).
+When adding a Sub Chart to a SciChartSurface with the [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface) function, you can place extra optional HTML elements into the DOM. By specifying their IDs and classes to the SubChart, they can be positioned on top of, and around the [SciChartSubSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html).
 
 <LiveDocSnippet maxWidth={"100%"} name="./HtmlContainers/demo" htmlPath="./HtmlContainers/demo.html" cssPath="./HtmlContainers/demo.css" />
 
@@ -26,7 +26,7 @@ Here is the setup required for the example: We will start from adding HTML marku
 </CodeSnippetBlock>
 
 
-In the JavaScript, we create a SubChart as normal by calling [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface), however we also specify [I2DSubSurfaceOptions.subChartContainerId](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html#subchartcontainerid). This property accepts both string (Id) or `HtmlDivElement`. We also specify class names that will identify sections of the container.
+In the JavaScript, we create a SubChart as normal by calling [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface), however we also specify [I2DSubSurfaceOptions.subChartContainerId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html#subchartcontainerid). This property accepts both string (Id) or `HtmlDivElement`. We also specify class names that will identify sections of the container.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 ```ts {12,15-19} showLineNumbers file=./HtmlContainers/demo.ts start=region_A_start end=region_A_end
@@ -76,5 +76,5 @@ Here's the result. You can now have a draggable SubChart window in a SciChartSur
 
 #### See Also
 
-* [Creating Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts/index.md)
-* [Creating Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts/index.md)
+* [Creating Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
+* [Creating Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)

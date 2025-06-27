@@ -266,6 +266,6 @@ This code will programmatically set all points to deselected, except for points 
 
 For more information on how to manipulate PointMetadata, see the **PointMetadata API Documentation**.
 
-See Also
+#### See Also
 
-[Series Selection](SeriesSelection.html)
+* [Series Selection](/docs/2d-charts/chart-modifier-api/selection/series-selection)

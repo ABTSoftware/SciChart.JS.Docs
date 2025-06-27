@@ -90,5 +90,5 @@ The layout and sizes of the Vertically Stacked Axis now updates as follows:
 
 See Also
 
-* [Inner Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout/index.md)
-* [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/index.md)
+* [Inner Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout)
+* [Secondary and Multiple Axis](/docs/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview)

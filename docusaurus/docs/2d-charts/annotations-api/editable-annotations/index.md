@@ -65,6 +65,6 @@ It is also possible to restrict the drag direction of the box annotation by subs
 
 #### See Also
 
-* [The Annotations API Overview](../annotations-api-overview/)
-* [BoxAnnotation](../box-annotation/)
-* [LineAnnotation](../line-annotation/)
+* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation)
+* [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation)

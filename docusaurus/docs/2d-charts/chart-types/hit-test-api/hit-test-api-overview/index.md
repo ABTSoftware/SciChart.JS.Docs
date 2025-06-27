@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In SciChart.js we have **Hit-Test API** which allows access to information about the point being clicked on the canvas, such as the nearest data point index, X and Y data values, coordinate values and metadata.
 
-The Hit-Test API is a set of functions defined on the [BaseRenderableSeries class:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html), and overridden by some of the series types. This API is used internally by tooltips (see [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) and [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md)) to transform mouse clicks on screen into data-points, and determine if a mouse event occurs over a point or over a series. You can use the same API to determine if a click or touch event was over a series, and take appropriate action.
+The Hit-Test API is a set of functions defined on the [BaseRenderableSeries class:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html), and overridden by some of the series types. This API is used internally by tooltips (see [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) and [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)) to transform mouse clicks on screen into data-points, and determine if a mouse event occurs over a point or over a series. You can use the same API to determine if a click or touch event was over a series, and take appropriate action.
 
 There are three main Hit-Test methods:
 
@@ -174,11 +174,11 @@ Hit-Test methods always use the original values which is why all methods such as
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series/index.md)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series/index.md)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series/index.md)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series/index.md)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series/index.md)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series/index.md)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series/README.md)
+* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
 

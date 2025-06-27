@@ -111,10 +111,10 @@ const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElem
 
 </CodeSnippetBlock>
 
-Once the DataSeries has been created, it can be assigned to a RenderableSeries by setting the [BaseRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#dataseries) property. This is true for both the classic JavaScript API or the Builder API. More info on this in the section on [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview/index.md).
+Once the DataSeries has been created, it can be assigned to a RenderableSeries by setting the [BaseRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#dataseries) property. This is true for both the classic JavaScript API or the Builder API. More info on this in the section on [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview).
 
 :::warning
-Once you are finished with the DataSeries, don't forget to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the operating system. For more info see the related article [Best Practices when Deleting DataSeries](/docs/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
+Once you are finished with the DataSeries, don't forget to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the operating system. For more info see the related article [Best Practices when Deleting DataSeries](/docs/2d-charts/chart-types/data-series-api/deleting-memory).
 :::
 
 Setting Data Distribution Flags
@@ -208,15 +208,15 @@ All DataSeries store 64-bit double precision numeric values. However, if you wa
 DataSeries don't support dates, but you can store values as a unix timestamp and render them as a date on the axis. The process is:
 
 1.  Store Dates as Unix timestamps in the DataSeries.
-2.  Format the Date using our built-in [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md), or create your own
+2.  Format the Date using our built-in [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview), or create your own
 
-Examples can be found in the [SciChart.js examples suite](https://demo.scichart.com), or in our documentation on the [Label Formatting page](/docs/2d-charts/axis-api/axis-labels/numeric-formats/index.md).
+Examples can be found in the [SciChart.js examples suite](https://demo.scichart.com), or in our documentation on the [Label Formatting page](/docs/2d-charts/axis-api/axis-labels/numeric-formats).
 
 ### Storing Strings in DataSeries in SciChart
 
-Similarly, DataSeries don't support strings, but if you want to render strings, then it's advisable to use X values as sequential integers e.g. 0,1,2,3... and use the [LabelProvider feature](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) to format labels as strings.
+Similarly, DataSeries don't support strings, but if you want to render strings, then it's advisable to use X values as sequential integers e.g. 0,1,2,3... and use the [LabelProvider feature](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) to format labels as strings.
 
 #### See Also
 
-* [Append, Insert, Update, Remove](/docs/2d-charts/chart-types/data-series-api/append-insert-update-remove/index.md)
-* [DataSeries Get Set value at Index](/docs/2d-charts/chart-types/data-series-api/get-set-value-at-index/index.md)
+* [Append, Insert, Update, Remove](/docs/2d-charts/chart-types/data-series-api/append-insert-update-remove)
+* [DataSeries Get Set value at Index](/docs/2d-charts/chart-types/data-series-api/get-set-value-at-index)

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # ✅ Per-point Colouring for Line Series
 
-Line series can be colored per-point or per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
+Line series can be colored per-point or per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
 
 Let's start off with the PaletteProvider class:
 
@@ -68,10 +68,10 @@ Note: SciChart won't bisect the line at a threshold value but only changes colou
 
 #### See Also
 
-- [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/index.md)
-- [Per-point Colouring of Mountain Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-mountain-renderable-series/index.md)
-- [Per-Point Colouring of Band Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-band-renderable-series/index.md)
-- [Per-Point Colouring of Bubble Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-bubble-renderable-series/index.md)
-- [Per-Point Colouring of Candlestick / OHLC Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-candlestick-ohlc-renderable-series/index.md)
-- [Per-Point Colouring of Scatter Charts (or PointMarkers)](/docs/2d-charts/chart-types/palette-provider-api/xy-scatter-renderable-series/index.md)
-- [Per-Point Colouring of Column Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-column-renderable-series/index.md)
+- [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview)
+- [Per-point Colouring of Mountain Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-mountain-renderable-series)
+- [Per-Point Colouring of Band Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-band-renderable-series)
+- [Per-Point Colouring of Bubble Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-bubble-renderable-series)
+- [Per-Point Colouring of Candlestick / OHLC Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-candlestick-ohlc-renderable-series)
+- [Per-Point Colouring of Scatter Charts (or PointMarkers)](/docs/2d-charts/chart-types/palette-provider-api/xy-scatter-renderable-series)
+- [Per-Point Colouring of Column Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-column-renderable-series)

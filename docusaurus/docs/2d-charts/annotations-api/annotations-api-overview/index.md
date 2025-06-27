@@ -17,21 +17,21 @@ The following annotation types are available out of the box in SciChart:
 
 | Type | Description | Supported Chart Types |
 |------|-------------|-----------------------|
-| [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation/index.md) | Draws a **rectangle** at specific X1, X2, Y1, Y2 coordinates. | Cartesian |
-| [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation/index.md) | Draws a **line** between X1, Y1 and X2, Y2 positions. | Cartesian and Polar |
-| [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md) | Allows to place a piece of **text** at a specific location on a chart. | Cartesian and Polar |
-| [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation/index.md) | Allows to place any SVG Content at a specific location on a chart. | Cartesian and Polar |
-| [VerticalLineAnnotation](/docs/2d-charts/annotations-api/vertical-line-annotation/index.md) | Draws a vertical line at a given x position, with various labelling options | Cartesian |
-| [HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation/index.md) | Draws a horizontal line at a given y position, with various labelling options | Cartesian |
-| [LineArrowAnnotation](/docs/2d-charts/annotations-api/line-arrow-annotation/index.md) | Allows to place line arrows at a specific location on a chart | Cartesian and Polar |
-| [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview/index.md) | Allows to place a marker at a specific location on an axis | Cartesian |
-| [CustomAxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/image-axis-marker-annotation/index.md) | Uses an image instead of text for an axis marker | Cartesian |
-| [NativeTextAnnotation](/docs/2d-charts/annotations-api/native-text-annotation/index.md) | Draws text natively rather than using svg, supporting rotation, multiline, wordwrap and scaling | Cartesian and Polar |
-| [HtmlCustomAnnotation](/docs/2d-charts/annotations-api/html-annotation/index.md) | Allows to render arbitrary HTML content within a chart | Cartesian |
-| [HtmlTextAnnotation](/docs/2d-charts/annotations-api/html-annotation/index.md) | Allows to place HTML text at a specific location on a chart | Cartesian |
-| [ArcAnnotation](/docs/2d-charts/annotations-api/arc-annotation/index.md) | Allows to place arc element at a specific location on a cartesian chart. | Cartesian |
-| [PolarArcAnnotation](/docs/2d-charts/annotations-api/polar-arc-annotation/index.md) | Allows to place arc element at a specific location on a polar chart. | Polar |
-| [PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation/index.md) | Allows to place a pointer on a polar chart. Is used for gauge charts | Polar |
+| [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation) | Draws a **rectangle** at specific X1, X2, Y1, Y2 coordinates. | Cartesian |
+| [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation) | Draws a **line** between X1, Y1 and X2, Y2 positions. | Cartesian and Polar |
+| [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation) | Allows to place a piece of **text** at a specific location on a chart. | Cartesian and Polar |
+| [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation) | Allows to place any SVG Content at a specific location on a chart. | Cartesian and Polar |
+| [VerticalLineAnnotation](/docs/2d-charts/annotations-api/vertical-line-annotation) | Draws a vertical line at a given x position, with various labelling options | Cartesian |
+| [HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation) | Draws a horizontal line at a given y position, with various labelling options | Cartesian |
+| [LineArrowAnnotation](/docs/2d-charts/annotations-api/line-arrow-annotation) | Allows to place line arrows at a specific location on a chart | Cartesian and Polar |
+| [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) | Allows to place a marker at a specific location on an axis | Cartesian |
+| [CustomAxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/image-axis-marker-annotation) | Uses an image instead of text for an axis marker | Cartesian |
+| [NativeTextAnnotation](/docs/2d-charts/annotations-api/native-text-annotation) | Draws text natively rather than using svg, supporting rotation, multiline, wordwrap and scaling | Cartesian and Polar |
+| [HtmlCustomAnnotation](/docs/2d-charts/annotations-api/html-annotation) | Allows to render arbitrary HTML content within a chart | Cartesian |
+| [HtmlTextAnnotation](/docs/2d-charts/annotations-api/html-annotation) | Allows to place HTML text at a specific location on a chart | Cartesian |
+| [ArcAnnotation](/docs/2d-charts/annotations-api/arc-annotation) | Allows to place arc element at a specific location on a cartesian chart. | Cartesian |
+| [PolarArcAnnotation](/docs/2d-charts/annotations-api/polar-arc-annotation) | Allows to place arc element at a specific location on a polar chart. | Polar |
+| [PolarPointerAnnotation](/docs/2d-charts/annotations-api/polar-pointer-annotation) | Allows to place a pointer on a polar chart. Is used for gauge charts | Polar |
 
 Annotations have [surfaceTypes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html#surfacetypes) property, which defines list of compatible surface types. [ESurfaceType.SciChartSurfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartsurfacetype) stands for regular (Cartesian) chart and [ESurfaceType.SciChartPolarSurfaceType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/esurfacetype.html#scichartpolarsurfacetype) stands for Polar chart.
 
@@ -61,10 +61,10 @@ This results in the following output:
 
 Individual Annotation features are discussed in greater detail in the following pages:
 
-*   The [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation/index.md) Type
-*   The [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation/index.md) Type
-*   The [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md) Type
-*   The [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation/index.md) Type
+*   The [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation) Type
+*   The [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation) Type
+*   The [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation) Type
+*   The [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation) Type
 
 Common Annotation Properties
 ----------------------------
@@ -77,19 +77,19 @@ All annotations in SciChart.js are derived from the [AnnotationBase:blue_book:]
 | **[xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ycoordinatemode)** | Determines how coordinates x1,y2,x2,y2 are used when placing the annotation. The default is [ECoordinateMode.DataValue:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) where coordinates correspond to Data-values. [ECoordinateMode.Relative:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means coordinates are relative to the viewport. [ECoordinateMode.Pixel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) means coordinates are pixel values relative to the top-left of the viewport. |
 | **[horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#horizontalanchorpoint), [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/svgannotationbase.html#verticalanchorpointproperty)** | Used to adjust the alignment of certain annotations. ![Example](img/1.png) Above: HorizontalAnchorPoint, VerticalAnchorPoint when applied to a TextAnnotation |
 | **[isHidden:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishidden)** | Can be set to show or hide an annotation. |
-| **[hovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#hovered), [isHovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishovered), [selectedChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#selectedchanged), [isSelected:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#isselected)** | Annotations can be made interactive with selection and hover callbacks. See [Annotation Hover](/docs/2d-charts/annotations-api/annotation-hover/index.md) for details. |
+| **[hovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#hovered), [isHovered:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ishovered), [selectedChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#selectedchanged), [isSelected:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#isselected)** | Annotations can be made interactive with selection and hover callbacks. See [Annotation Hover](/docs/2d-charts/annotations-api/annotation-hover) for details. |
 | **[resizeDirections:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#resizedirections)** | Allows you to specify which direction (X, Y, Xy) an annotation may be resized in. |
 | **[dragStarted:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragstarted), [dragDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragdelta), [dragEnded:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragended)** | Callbacks may be registered when an annotation is dragged by the user. |
 | **[x1:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x1), [x2:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#x2), [y1:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y1), [y2:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#y2)** | Define the position of the annotation on the parent chart. Note that annotation position is also defined by the xCoordinateMode, yCoordinateMode properties. |
 | **[xAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xaxisid), [yAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#yaxisid)** | In a multiple-axis scenario, used to bind the annotation to a specific X or Y-Axis. <br/> **NOTE:** If the value is not supplied it will use the first axis. |
-| **[isEditable:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#iseditable)** | If true, this annotation can be selected and dragged/resized. See [Editable Annotations](/docs/2d-charts/annotations-api/editable-annotations/index.md) for more details. |
+| **[isEditable:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#iseditable)** | If true, this annotation can be selected and dragged/resized. See [Editable Annotations](/docs/2d-charts/annotations-api/editable-annotations) for more details. |
 | **[clicked:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#clicked) / [onClick:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationbaseoptions.html#onclick)** | Event fired when the annotation is clicked. Works for both editable and non-editable annotations. The event arguments contain a point which gives the coordinates of where on the annotation it was clicked, relative to the top left corner. <br/>**NOTE:** If an editable annotation is already selected, clicking on it will fire **dragStarted**, but not **clicked**. |
 
 More annotation properties and the inheritence hierachy may be viewed at the [AnnotationBase Typedoc page:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html).
 
 #### See Also
 
-* [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation/index.md)
-* [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation/index.md)
-* [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation/index.md)
-* [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md)
+* [BoxAnnotation](/docs/2d-charts/annotations-api/box-annotation)
+* [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation)
+* [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation)
+* [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation)

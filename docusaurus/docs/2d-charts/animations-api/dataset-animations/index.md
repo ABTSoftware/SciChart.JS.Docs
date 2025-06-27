@@ -6,7 +6,7 @@ sidebar_position: 4
 
 SciChart.js v2.x and above features a new API which allows you to animate between datasets on a chart. But the limitation is that the length of data vectors (length of X and Y values and animation values) must be the same.
 
-Below find an example of animating between two different datasets. Note the Animation type includes style properties and is a specific animation type for the series, as per our [Style Transition Animations documentation](/docs/2d-charts/animations-api/style-transition-animations/index.md).
+Below find an example of animating between two different datasets. Note the Animation type includes style properties and is a specific animation type for the series, as per our [Style Transition Animations documentation](/docs/2d-charts/animations-api/style-transition-animations).
 
 ## Worked Examples
 
@@ -170,11 +170,13 @@ return { wasmContext, sciChartSurface };
 
 Below is the result.
 
-![](/images/Animations_Column_Data_Animation.gif)
+<CenteredImageWrapper 
+    src="/images/Animations_Column_Data_Animation.gif"
+/>
 
 #### See Also
 
-- [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview/index.md)
-- [Series Startup Animations](/series-startup-animations/index.md)
-- [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations/index.md)
-- [Generic Animations](/docs/2d-charts/animations-api/generic-animations/index.md)
+- [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview)
+- [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
+- [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations)
+- [Generic Animations](/docs/2d-charts/animations-api/generic-animations)

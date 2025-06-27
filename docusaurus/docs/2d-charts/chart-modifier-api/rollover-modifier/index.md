@@ -6,7 +6,7 @@ sidebar_position: 5
 
 SciChart.js provides a mouse-over tooltips behavior via the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](Common ChartModifiers Features.html) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
+Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features/) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
 
 Adding a RolloverModifier to a Chart
 ------------------------------------
@@ -198,12 +198,8 @@ Getting tooltips for the nearest point only
 
 By default, RolloverModifier returns data for all series at the x-value the mouse is over, regardless of y-value.  If you want to only see information for the points that are near the cursor in both x and y, then set the [hitTestRadius:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#hittestradius) property to a non-zero value, either on the modifier instance, or in the constructor options.  This will cause it to report only on points that number of pixels away from the cursor.
 
-See Also
+### See Also
 
-[Interpolated Tooltip Values](InterpolatedTooltipValues.html)
-
-#### ChartModifier APIs
-
-[What is the ChartModifier API](What is the ChartModifier API.html)
-
-[Common ChartModifiers Features](Common ChartModifiers Features.html)
+* [Interpolated Tooltip Values](/docs/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
+* [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features/)

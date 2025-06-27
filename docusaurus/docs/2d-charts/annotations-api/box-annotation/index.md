@@ -46,5 +46,5 @@ results in the following output:
 
 #### See Also
 
-* [The Annotations API Overview](../annotations-api-overview/)
-* [The Arc Annotation](../arc-annotation/)
+* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [The Arc Annotation](/docs/2d-charts/annotations-api/arc-annotation)

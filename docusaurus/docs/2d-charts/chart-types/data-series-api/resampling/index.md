@@ -159,15 +159,15 @@ With SciChart.js resampling, we were able to render [10,000,000 (ten million) d
 We were also able to achieve 10,000,000 (10 million) candles in a Candlestick Chart, enough to draw the entire history of Bitcoin BTC/USD in a 1-minute chart!
 
 :::tip
-Read further info on how to get the best performance from SciChart.js on our [performance tips & tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md) page.
+Read further info on how to get the best performance from SciChart.js on our [performance tips & tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks) page.
 :::
 
 #### See Also
 
-- [The DataSeries API](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview/index.md)
+- [The DataSeries API](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview)
 
 - [How SciChart.js Transforms Trading Performance](https://blog.scichart.com/javascript-candlestick-charts-plotting-years-1-minute-data/)
 
 ##### Miscellaneous APIs
 
-- [performance tips & tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md)
+- [performance tips & tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks)

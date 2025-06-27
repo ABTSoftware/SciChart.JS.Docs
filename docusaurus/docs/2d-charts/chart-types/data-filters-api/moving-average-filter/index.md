@@ -84,8 +84,8 @@ We get this output.
 
 #### See Also
 
-* [What is the Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview/index.md)
-* [Scale Offset Filters](/docs/2d-charts/chart-types/data-filters-api/scale-offset-filters/index.md)
-* [Linear Trendline Filter](/docs/2d-charts/chart-types/data-filters-api/linear-trendline-filter/index.md)
-* [Ratio Filter](/docs/2d-charts/chart-types/data-filters-api/ratio-filter/index.md)
-* [Creating a Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter/index.md)
+* [What is the Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
+* [Scale Offset Filters](/docs/2d-charts/chart-types/data-filters-api/scale-offset-filters)
+* [Linear Trendline Filter](/docs/2d-charts/chart-types/data-filters-api/linear-trendline-filter)
+* [Ratio Filter](/docs/2d-charts/chart-types/data-filters-api/ratio-filter)
+* [Creating a Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter)

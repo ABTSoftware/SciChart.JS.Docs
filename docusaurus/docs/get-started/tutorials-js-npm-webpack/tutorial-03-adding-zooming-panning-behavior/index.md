@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # ✅ Tutorial 03 - Adding Zooming, Panning Behavior
 
-In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data/index.md) we explained how to add a line series with some data to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add zooming and panning behaviour to the chart.
+In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data) we explained how to add a line series with some data to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add zooming and panning behaviour to the chart.
 
 <YouTubeVideo url="https://www.youtube.com/embed/p9wRUCatMTM" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 03 - Zooming and Panning" />
 
@@ -15,13 +15,13 @@ The source code for this tutorial can be found at  [SciChart.Js.Examples Github
 Adding Zooming and Panning
 --------------------------
 
-So far in the tutorial series, we have created a new chart, added an XAxis and YAxis, added some data series, and simple zoom modifiers. Now are going to extend that and add more interaction behavior with [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md).
+So far in the tutorial series, we have created a new chart, added an XAxis and YAxis, added some data series, and simple zoom modifiers. Now are going to extend that and add more interaction behavior with [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview).
 
 ### ChartModifiers
 
-In SciChart, chart interactions are defined by [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md). In addition to the SciChart modifiers you can write custom modifiers or extends existing ones.
+In SciChart, chart interactions are defined by [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview). In addition to the SciChart modifiers you can write custom modifiers or extends existing ones.
 
-The provided modifiers include [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier/index.md), [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/index.md), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier/index.md), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/index.md) and more.
+The provided modifiers include [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier), [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier) and more.
 
 ### Adding Chart Modifiers
 
@@ -136,7 +136,7 @@ const zoomPanModifier = new ZoomPanModifier({
 Enabling and Disabling ChartModifiers
 -------------------------------------
 
-Some ChartModifiers conflict, as they need the same mouse-button to execute. If you wanted to add [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier/index.md) to a chart, but also wanted to pan on mouse-drag, you can use the [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/index.md), but you will need to enable/disable it so that only one of these is active at one time.
+Some ChartModifiers conflict, as they need the same mouse-button to execute. If you wanted to add [RubberBandXyZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier) to a chart, but also wanted to pan on mouse-drag, you can use the [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), but you will need to enable/disable it so that only one of these is active at one time.
 
 Let's extend the application to add panning behaviour, and also allow switching active modifiers.
 

@@ -18,7 +18,7 @@ Automatic Gridline, Label or Tick Spacing
 
 In SciChart.js, the difference between two Major Gridlines is defined by [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta). The difference between two minor gridlines is defined by [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta).
 
-By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](Axis Ranging - Setting and Getting VisibleRange.html) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
+By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
 
 ### Configuring Automatic Tick Spacing
 
@@ -76,6 +76,6 @@ This results in the following output:
 Dynamic Control of Gridline, Label & Tick Spacing on Zoom
 ---------------------------------------------------------
 
-The above method of setting Major/Minor Delta could be dynamic if you combine with [Listening to Axis Range Changes](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes/index.md).
+The above method of setting Major/Minor Delta could be dynamic if you combine with [Listening to Axis Range Changes](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes).
 
-However, if you want to have finer grained control over axis gridline, label or minor gridline spacing, then read [The Tick Provider API Documentation](/docs/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api/index.md).
+However, if you want to have finer grained control over axis gridline, label or minor gridline spacing, then read [The Tick Provider API Documentation](/docs/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api).

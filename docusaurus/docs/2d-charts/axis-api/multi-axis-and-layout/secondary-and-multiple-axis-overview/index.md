@@ -12,7 +12,7 @@ How to Setup a Chart with Multiple Axes
 ---------------------------------------
 
 :::warning
-[Polar Charts](/docs/2d-charts/surface/scichart-polar-surface-type/index.md) does not support multiple axes
+[Polar Charts](/docs/2d-charts/surface/scichart-polar-surface-type) does not support multiple axes
 :::
 
 *   Axis may be placed by setting the [AxisBase2D.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) property.
@@ -55,7 +55,7 @@ This code results in the following configuration of axis. Also seen in our [Mul
 Attaching Chart Series to an Axis 
 ----------------------------------
 
-Every [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview/index.md) (the chart types in SciChart.js e.g. Line, Candlestick, Column) and every [Annotation](/docs/2d-charts/annotations-api/annotations-api-overview/index.md) (Trendlines, text or markers laid over the chart) and some [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md) (zoom, pan behaviours) need to be attached to a particular axis.
+Every [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview) (the chart types in SciChart.js e.g. Line, Candlestick, Column) and every [Annotation](/docs/2d-charts/annotations-api/annotations-api-overview) (Trendlines, text or markers laid over the chart) and some [ChartModifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview) (zoom, pan behaviours) need to be attached to a particular axis.
 
 The link between series and axis is done via [AxisCore.id:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id), and [BaseRenderableSeries.xAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#xaxisid) and [BaseRenderableSeries.yAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#yaxisid) properties.
 

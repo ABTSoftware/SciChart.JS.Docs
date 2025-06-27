@@ -20,7 +20,7 @@ Explore these for some rich examples of how to use this API.
 ## Formatting a DataLabel using metaDataSelector
 
 :::tip
-Metadata allows you to assign optional javascript objects to individual x,y datapoints. To learn more about the [Metadata API, see here](/docs/2d-charts/chart-types/data-point-metadata-api/data-point-metadata-api-overview/).
+Metadata allows you to assign optional javascript objects to individual x,y datapoints. To learn more about the [Metadata API, see here](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview).
 :::
 
 DataLabels support rendering text from metadata as standard. You just need to provide a function to the [metaDataSelector:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html#metadataselector) option that tells SciChart how to turn your metaData into text.

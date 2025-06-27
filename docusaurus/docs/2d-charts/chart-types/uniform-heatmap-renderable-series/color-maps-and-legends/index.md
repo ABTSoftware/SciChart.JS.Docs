@@ -43,13 +43,13 @@ Here's a full code sample below.
 
 ### Defining the ColorMap on the HeatmapLegend control 
 
-ColorMaps obey similar rules to [Heatmap series](../uniform-heatmap-chart-type/) (see above).
+ColorMaps obey similar rules to [Heatmap series](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) (see above).
 
 ### Styling the Axis on the HeatmapLegend control
 
 yAxisOptions is type [IAxisBase2dOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iaxisbase2doptions.html). This is the same type that is passed to an Axis in SciChart.
 
-To Style the HeatmapLegend is very similar to styling an axis in SciChart. See more at the page [Axis Styling](../../../axis-api/axis-styling/).
+To Style the HeatmapLegend is very similar to styling an axis in SciChart. See more at the page [Axis Styling](/docs/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style).
 
 ## Updating ColorMaps Dynamically
 

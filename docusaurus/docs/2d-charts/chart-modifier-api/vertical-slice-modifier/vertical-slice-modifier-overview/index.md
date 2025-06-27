@@ -6,7 +6,7 @@ sidebar_position: 1
 
 With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
 
-This provides a similar behaviour to the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
+This provides a similar behaviour to the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
 
 The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) allows you to:
 
@@ -405,7 +405,7 @@ Sets the colour of the rollover line as an HTML colour code
 
 [VerticalSliceModifier.rolloverLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokedasharray)
 
-Sets the dash pattern (see [Dash Line Styling](Series Styling - Dash Line Patterns.html) for guidelines)
+Sets the dash pattern (see [Dash Line Styling](/docs/2d-charts/styling-and-theming/dash-line-patterns) for guidelines)
 
 [VerticalSliceModifier.rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokethickness)
 
@@ -421,7 +421,7 @@ verticalSliceModifier.rolloverLineStroke = "Orange"; // Sets the line colour
 verticalSliceModifier.lineSelectionColor = "Red"; // Change the highlight color when selected
 ```
 
-Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
+Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
 
 **Property**
 
@@ -455,7 +455,7 @@ series.rolloverModifierProps.tooltipLabelX = "X Value:";
 series.rolloverModifierProps.tooltipLabelY = "Y Value:";
 ```
 
-Finally, the vertical line itself is simply a [LineAnnotation](LineAnnotation.html) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
+Finally, the vertical line itself is simply a [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
 
 VerticalSliceModifier.verticalLine Styling
 
@@ -471,6 +471,6 @@ vSlice1.verticalLine.axisLabelFill = "#FF6600"; // Style axis label outline and 
 vSlice1.verticalLine.axisLabelStroke = "White";
 ```
 
-See Also
+#### See Also
 
-[Formatting VerticalSlice Tooltip Items](VerticalSliceModifier_Formatting.html)
+* [Formatting VerticalSlice Tooltip Items](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/formatting-vertical-slice-tooltip-items)

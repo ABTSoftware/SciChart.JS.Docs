@@ -4,10 +4,10 @@ sidebar_position: 5
 
 # ✅ The Category Axis
 
-The [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) treats values a little differently. This is a special axis type which uses the X-Index not the X-Value to measure chart series.
+The [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) treats values a little differently. This is a special axis type which uses the X-Index not the X-Value to measure chart series.
 
 :::info
-Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type/index.md).
+Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type).
 :::
 
 Difference between CategoryAxis and NumericAxis
@@ -22,7 +22,7 @@ Imagine you want to plot the data:
 | 10 | 5 | 4 | 3 | 
 | 20 | 4 | 3 | 2 | 
 
-A standard [NumericAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) (which is a value-axis) and the [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) would display the data differently.
+A standard [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) (which is a value-axis) and the [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) would display the data differently.
 
 <LiveDocSnippet maxWidth={"100%"} name="./CategoryAxisValueAxis/demo"  htmlPath="./CategoryAxisValueAxis/demo.html" cssPath="./CategoryAxisValueAxis/demo.css" />
 
@@ -40,9 +40,9 @@ Here's the code to setup the chart.
  
 </CodeSnippetBlock>
 
-Why is this important? **In the case where you are plotting stock market data, you want to use a** [**CategoryAxis**](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html)**.**  
+Why is this important? **In the case where you are plotting stock market data, you want to use a** [**CategoryAxis**:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html)**.**  
   
-_This is because stock market data has gaps in it (consider the stock market has data on Monday, Tuesday, Wednesday, Thursday, Friday but not weekends). The_ [_CategoryAxis_](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) _collapses the gaps and treats each datapoint as equidistant, ignoring the X-Value._
+_This is because stock market data has gaps in it (consider the stock market has data on Monday, Tuesday, Wednesday, Thursday, Friday but not weekends). The_ [_CategoryAxis_:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) _collapses the gaps and treats each datapoint as equidistant, ignoring the X-Value._
 
 Using and Configuring a CategoryAxis
 ------------------------------------
@@ -50,8 +50,8 @@ Using and Configuring a CategoryAxis
 The Category Axis won't draw without either:
 
 1.  **At least one series with some data** on the chart,
-2.  or, [CategoryAxis.defaultXStart](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxstart) and [defaultXStep](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxstep) (allows a chart without any series)
-3.  or [CategoryAxis.defaultXValues](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxvalues) (allows a chart without any series)
+2.  or, [CategoryAxis.defaultXStart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxstart) and [defaultXStep:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxstep) (allows a chart without any series)
+3.  or [CategoryAxis.defaultXValues:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#defaultxvalues) (allows a chart without any series)
 
 Because the CategoryAxis measures xValues using index, you need to have data on the chart to calculate x-coordinate from data index. However, we can still create a chart by specifying some defaults with the properties above.
 

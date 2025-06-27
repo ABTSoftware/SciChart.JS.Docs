@@ -88,6 +88,6 @@ The following properties can be set to style the [VerticalLineAnnotation:blue_bo
 
 #### See Also
 
-* [The Annotations API Overview](../annotations-api-overview/)
-* [The HorizontalLineAnnotation](../horizontal-line-annotation/)
-* [The LineAnnotation](../line-annotation/)
+* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [The HorizontalLineAnnotation](/docs/2d-charts/annotations-api/horizontal-line-annotation)
+* [The LineAnnotation](/docs/2d-charts/annotations-api/line-annotation)

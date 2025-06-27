@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # ✅ Tutorial 02 - Adding Series and Data
 
-In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md) we explained how to setup a project with a simple chart using SciChart.js. In this tutorial, we are going to show you how to add some data and a line series to the chart.
+In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) we explained how to setup a project with a simple chart using SciChart.js. In this tutorial, we are going to show you how to add some data and a line series to the chart.
 
 <YouTubeVideo url="https://www.youtube.com/embed/dQYnwPeacSA" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 02 - Adding Series and Data" />
 
@@ -15,15 +15,15 @@ Source code for this tutorial can be found at [SciChart.Js.Examples Github Repos
 Adding Series to the Chart
 --------------------------
 
-In SciChart, there are special classes called [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview/index.md) that are responsible for drawing different chart types, such as lines ([FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md)), columns ([FastColumnsRenderableSeries](/docs/2d-charts/chart-types/fast-column-renderable-series/column-series-type/index.md)), candlestick series ([FastCandlestickRenderableSeries](/docs/2d-charts/chart-types/fast-candlestick-renderable-series/index.md)), filled area ([FastMountainRenderableSeries](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series/index.md)), heat maps ([FastUniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md)) etc...
+In SciChart, there are special classes called [RenderableSeries](/docs/2d-charts/chart-types/renderable-series-api-overview) that are responsible for drawing different chart types, such as lines ([FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series)), columns ([FastColumnsRenderableSeries](/docs/2d-charts/chart-types/fast-column-renderable-series/column-series-type)), candlestick series ([FastCandlestickRenderableSeries](/docs/2d-charts/chart-types/fast-candlestick-renderable-series)), filled area ([FastMountainRenderableSeries](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series)), heat maps ([FastUniformHeatmapRenderableSeries](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type)) etc...
 
 ### Adding a Line Plot to the Chart
 
 In this tutorial, we are going to add some Line series onto the chart.
 
-First, we create a [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md).
+First, we create a [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series).
 
-Next, we create a [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
+Next, we create a [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
 
 Try the code below:
 
@@ -164,7 +164,7 @@ Modify the code in index.js to the following:
 
 This code adds 100 series in a loop, each with 10,000 data-points using the [XyDataSeries.append:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append) method. The mathematical function in there is just to create a nice looking waveform.
 
-We create a [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md) for each trip around the outer loop and this time use the constructor parameters to set the [dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#dataseries), [stroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#stroke) and [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#strokethickness) properties.
+We create a [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series) for each trip around the outer loop and this time use the constructor parameters to set the [dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#dataseries), [stroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#stroke) and [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#strokethickness) properties.
 
 This is the result below:
 
@@ -172,7 +172,7 @@ This is the result below:
 
 There you go! One million data-points in a JavaScript Chart using SciChart.js!
 
-Join us for [Tutorial 3](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior/index.md) where we will be adding zooming and panning behaviour to the chart.
+Join us for [Tutorial 3](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior) where we will be adding zooming and panning behaviour to the chart.
 
 :::warning
 **A Note on Licensing SciChart.**  

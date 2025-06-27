@@ -4,14 +4,14 @@ sidebar_position: 12
 
 # ✅ Worked Example: Resizable Multi Pane Charts with SubCharts
 
-In the previous worked example, we showed you how to [create Dynamic Multi-Panel Charts with the SubCharts API](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts/index.md). By following this tutorial, we showed you how to have a single [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance with 1...N Sub-Charts, each acting as a linked panel in a vertical chart group. All zooming, panning operations are linked, and you can dynamically add and remove chart panes programmatically, or by clicking a button.
+In the previous worked example, we showed you how to [create Dynamic Multi-Panel Charts with the SubCharts API](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts). By following this tutorial, we showed you how to have a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance with 1...N Sub-Charts, each acting as a linked panel in a vertical chart group. All zooming, panning operations are linked, and you can dynamically add and remove chart panes programmatically, or by clicking a button.
 
 In this worked example, we're going to extend the multi-panel subchart group by adding Grid-Splitters, allowing you to dynamically resize chart panes in the group. In addition, we will add a Close button and Maximise button to allow you to manipulate the chart group.
 
 Resizable Chart Panels with SubCharts
 -------------------------------------
 
-Let's extend the [previous example](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts/index.md) to allow resizing of dynamic chart panes using the SubCharts API.
+Let's extend the [previous example](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts) to allow resizing of dynamic chart panes using the SubCharts API.
 
 Here's the full working example below as an embedded CodePen.
 
@@ -46,7 +46,7 @@ The Chart Initialization code has been updated in order to add grid splitter and
 ```
 </CodeSnippetBlock>
 
-This works as before, creating a single parent [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) to occupy the `<div>` with `Id="scichart-root"`. To populate the chart with two chart-panes, `addNewChart()` is called twice. Functions to `addChart()` and `removeChart()` are returned from `createDynamicPanelChart()` to allow you to further customize the chart group programmatically after creation.
+This works as before, creating a single parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) to occupy the `<div>` with `Id="scichart-root"`. To populate the chart with two chart-panes, `addNewChart()` is called twice. Functions to `addChart()` and `removeChart()` are returned from `createDynamicPanelChart()` to allow you to further customize the chart group programmatically after creation.
 
 
 ### Updated addNewChart() Code
@@ -58,7 +58,7 @@ So how does `addNewChart()` work? This function has been extended to handle crea
 ```
 </CodeSnippetBlock>
 
-Similar to before, we call [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) to add a SubChart to the parent surface. This needs to be added at a specific position, and later in `addNewChart()` we call `updateChartPositions()` and `updateSplitterPositions()` to reposition everything.
+Similar to before, we call [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) to add a SubChart to the parent surface. This needs to be added at a specific position, and later in `addNewChart()` we call `updateChartPositions()` and `updateSplitterPositions()` to reposition everything.
 
 The helper function `createSplitter()` is called to add a grid splitter into the DOM. `setupSplitterEvents()` subscribes to pointer-down, pointer-move and pointer-up so that you can capture drag events by the user.
 

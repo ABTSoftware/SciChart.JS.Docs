@@ -4,9 +4,9 @@ sidebar_position: 10
 
 # ✅ Worked Example: Re-usable Chart Groups with SubCharts
 
-SubCharts give a way to create re-usable multi-chart components that are managed by a single [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
+SubCharts give a way to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
 
-For example, if in your application you are repeatedly creating groups of charts that share a single common X-Axis, and must zoom and pan together, one way you could do this is by creating three separate [SciChartSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instances (see the tutorial on [Linking Multiple Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/index.md).
+For example, if in your application you are repeatedly creating groups of charts that share a single common X-Axis, and must zoom and pan together, one way you could do this is by creating three separate [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instances (see the tutorial on [Linking Multiple Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts).
 
 Alternatively, you could create your multi-chart control using SubCharts and manage that with a single SciChartSurface. This will provide cleaner, neater code, plus also give you a performance boost, as SubCharts are faster than standard charts in multi-chart scenarios.
 
@@ -25,7 +25,7 @@ Let's begin.
 
 The layout is pretty simple. We want the top chart to occupy 100% of the width of the chart panel, and the bottom charts to occupy 50% of the width each. The top and bottom charts should both by 50% of the height.
 
-To do this we will use [SciChartSubSurface.createSubSurface()](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) and pass the position property as a rectangle with relative coordinates (see the [SubCharts API](/docs/2d-charts/subcharts-api/subcharts-api-overview/index.md) and [SubChart positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning/index.md) pages for more details).
+To do this we will use [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html) and pass the position property as a rectangle with relative coordinates (see the [SubCharts API](/docs/2d-charts/subcharts-api/subcharts-api-overview) and [SubChart positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning) pages for more details).
 
 Here's the code to do this.
 

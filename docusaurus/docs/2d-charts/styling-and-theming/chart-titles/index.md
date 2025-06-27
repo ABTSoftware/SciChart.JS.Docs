@@ -114,7 +114,7 @@ const { EMultiLineAlignment } = SciChart;
 WebGL Native Text Titles
 ------------------------
 
-It is possible to enable the Native Text Rendering for the Chart Title. This can improve the rendering performance and allows using custom fonts, but have some differences and limitations compared to the non-native text rendering (e.g. native text doesn't support fontWeight and fontStyle). Find more info about the [Native Text API here](Native Text Api.html).
+It is possible to enable the Native Text Rendering for the Chart Title. This can improve the rendering performance and allows using custom fonts, but have some differences and limitations compared to the non-native text rendering (e.g. native text doesn't support fontWeight and fontStyle). Find more info about the [Native Text API here](/docs/2d-charts/miscellaneous-apis/native-text-api).
 
 The Native Text Rendering for a chart title is set by **TChartTitleStyle.useNativeText** flag or uses the default value defined in [SciChartDefaults.useNativeText:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usenativetext).
 

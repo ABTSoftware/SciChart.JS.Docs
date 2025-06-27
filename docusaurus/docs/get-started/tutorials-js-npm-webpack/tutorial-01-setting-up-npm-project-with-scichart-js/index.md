@@ -302,4 +302,4 @@ For commercial licenses, a license key can be applied following the instructions
 
 #### See Also
 
-* [Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data/index.md)
+* [Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)

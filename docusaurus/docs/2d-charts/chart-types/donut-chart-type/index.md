@@ -38,4 +38,4 @@ This results in the following output:
 Styling Donut Chart Segments & Formatting Labels
 ------------------------------------------------
 
-Detailed documentation on how to style pie / donut chart segments and format labels can be found at the [Pie Chart Documentation page](../pie-chart-type).
+Detailed documentation on how to style pie / donut chart segments and format labels can be found at the [Pie Chart Documentation page](/docs/2d-charts/chart-types/pie-chart-type).

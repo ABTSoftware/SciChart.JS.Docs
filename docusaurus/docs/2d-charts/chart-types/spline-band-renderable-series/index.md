@@ -55,30 +55,30 @@ Render a Gap in a Spline Band Series
 ------------------------------------
 
 :::tip
-It is possible to have null points or gaps in a Spline Band Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](../common-series-apis/drawing-gaps/) article for more details.
+It is possible to have null points or gaps in a Spline Band Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 Add Point Markers onto a Spline Band Series
 -------------------------------------------
 
-Every data point of a Spline Band Series can be marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). To add Point Markers to the Spline Mountain Series, see the [PointMarkers API Documentation](../common-series-apis/drawing-point-markers/).
+Every data point of a Spline Band Series can be marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). To add Point Markers to the Spline Mountain Series, see the [PointMarkers API Documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
 :::tip
 _**Note:** PointMarkers are only applied to the original data-points, not the spline interpolated points which are for display purposes only._
 
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](../common-series-apis/drawing-point-markers/).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 :::
 
-There is also a dedicated [Scatter Series type](../xy-scatter-renderable-series/) and a [Bubble Series type](../fast-bubble-renderable-series/) with some more options.
+There is also a dedicated [Scatter Series type](/docs/2d-charts/chart-types/xy-scatter-renderable-series) and a [Bubble Series type](/docs/2d-charts/chart-types/fast-bubble-renderable-series) with some more options.
 
 Painting Spline Band Segments with Different Colors
 ---------------------------------------------------
 
-It is possible to define the colour of line and band segments individually using the [PaletteProvider API](../palette-provider-api/palette-provider-api-overview/).
+It is possible to define the colour of line and band segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Band Charts](../palette-provider-api/fast-band-renderable-series/) documentation page. The same technique applies to spline line charts.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Band Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-band-renderable-series) documentation page. The same technique applies to spline line charts.
 
 #### See Also
 
-*   [Fast Band Series](../fast-band-renderable-series/)
-*   [Spline Line Series](../spline-line-renderable-series/)
+*   [Fast Band Series](/docs/2d-charts/chart-types/fast-band-renderable-series)
+*   [Spline Line Series](/docs/2d-charts/chart-types/spline-line-renderable-series)
