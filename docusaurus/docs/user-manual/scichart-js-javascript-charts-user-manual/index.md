@@ -210,13 +210,14 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ The Scatter Series Type](/docs/2d-charts/chart-types/xy-scatter-renderable-series)
   - **Builder (JSON Chart Definition) API**
     - [✅ Intro to the Builder API](/docs/2d-charts/builder-api/builder-api-overview)
-    - [Serialization and Deserialization of Charts](/docs/2d-charts/builder-api/charts-serialization-deserialization)
-    - [Complex Options](/docs/2d-charts/builder-api/complex-options)
-    - [Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes)
-    - [Creating a Pie Chart](/docs/2d-charts/builder-api/pie-chart)
+    - [✅ Serialization and Deserialization of Charts](/docs/2d-charts/builder-api/charts-serialization-deserialization)
+    - [✅ Complex Options](/docs/2d-charts/builder-api/complex-options)
+    - [✅ Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes)
+    - [✅ Creating a 3D Chart](/docs/2d-charts/builder-api/default-3d-chart)
+    - [✅ Creating a Pie Chart](/docs/2d-charts/builder-api/pie-chart)
     - [✅ Creating a Polar Chart](/docs/2d-charts/builder-api/polar-chart)
-    - [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
-    - [Working with Data](/docs/2d-charts/builder-api/working-with-data)
+    - [✅ Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
+    - [✅ Working with Data](/docs/2d-charts/builder-api/working-with-data)
   - **Axis APIs**
     - **Axis Types**
       - [✅ The Category Axis](/docs/2d-charts/axis-api/axis-types/category-axis)
@@ -378,10 +379,10 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ SciChart3DSurface.create() vs. createSingle()](/docs/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)
     - [✅ The SciChartSurface Camera](/docs/3d-charts/scichart-3d-basics/scichart-surface-camera)
   - **Axis3D APIs**
-    - [Axis3D APIs Overview](/docs/3d-charts/axis-3d-api/axis-3d-api-overview)
+    - [✅ Axis3D APIs Overview](/docs/3d-charts/axis-3d-api/axis-3d-api-overview)
     - [Axis3D Gridline and Label Spacing (Interval)](/docs/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval)
     - [Axis3D Text (Label) Formatting](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting)
-    - [Numeric and Date Axis in SciChart3D](/docs/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d)
+    - [✅ Numeric and Date Axis in SciChart3D](/docs/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d)
   - **3D Chart Types**
     - [The Bubble 3D Chart Type](/docs/3d-charts/chart-types/bubble-3d-chart)
     - [The Column 3D Chart Type](/docs/3d-charts/chart-types/column-3d-chart)
