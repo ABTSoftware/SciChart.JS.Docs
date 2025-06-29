@@ -358,14 +358,14 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Synchronizing Multiple Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts)
     - [Synchronizing Vertical Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-vertical-charts)
   - **Accessibility**
-    - [Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast)
+    - [✅ Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast)
     - [✅ Creating Accessible Charts](/docs/2d-charts/accessibility/creating-accessible-charts)
-    - [Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility)
-    - [Voice Over](/docs/2d-charts/accessibility/voice-over)
+    - [✅ Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility)
+    - [✅ Voice Over](/docs/2d-charts/accessibility/voice-over)
   - **Miscellaneous APIs**
-    - [Batching updates or Temporary Suspending Drawing](/docs/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing)
-    - [Glow and DropShadow Shader Effects](/docs/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects)
-    - [Native Text Api](/docs/2d-charts/miscellaneous-apis/native-text-api)
+    - [✅ Batching updates or Temporary Suspending Drawing](/docs/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing)
+    - [✅ Glow and DropShadow Shader Effects](/docs/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects)
+    - [✅ Native Text Api](/docs/2d-charts/miscellaneous-apis/native-text-api)
     - [✅ Ordered Rendering](/docs/2d-charts/miscellaneous-apis/ordered-rendering)
     - [✅ Retina Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom)
   - **Performance Tips**
@@ -380,8 +380,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ The SciChartSurface Camera](/docs/3d-charts/scichart-3d-basics/scichart-surface-camera)
   - **Axis3D APIs**
     - [✅ Axis3D APIs Overview](/docs/3d-charts/axis-3d-api/axis-3d-api-overview)
-    - [Axis3D Gridline and Label Spacing (Interval)](/docs/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval)
-    - [Axis3D Text (Label) Formatting](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting)
+    - [✅ Axis3D Gridline and Label Spacing (Interval)](/docs/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval)
+    - [✅ Axis3D Text (Label) Formatting](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting)
     - [✅ Numeric and Date Axis in SciChart3D](/docs/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d)
   - **3D Chart Types**
     - [The Bubble 3D Chart Type](/docs/3d-charts/chart-types/bubble-3d-chart)
