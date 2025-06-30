@@ -71,7 +71,7 @@ There are two factory functions to create a chart: [SciChartSurface.create():bl
 Therefore,
 
 *   Charts created with **create()** have lower memory usage but marginally slower drawing performance.
-*   Charts created with **createSingle()** have higher memory usage but faster drawing performance. They are also subject to WebGL context limits [specified here](Performance Tips.html).
+*   Charts created with **createSingle()** have higher memory usage but faster drawing performance. They are also subject to WebGL context limits [specified here](/docs/2d-charts/performance-tips/performance-tips-and-tricks).
 
 ### Completely Releasing Memory back to the OS
 

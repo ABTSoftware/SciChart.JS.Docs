@@ -55,7 +55,7 @@ Applying Color Palettes (Heightmaps) to Surfaces
 
 [yValues:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformgriddataseries3d.html#setyvalues) in the UniformGridDataSeries3D are a 2-dimensional array of type `number[][]`. These are mapped to heights in the 3D world, and are also mapped to colors using the [SurfaceMeshRenderableSeries3D.meshColorPalette:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/surfacemeshrenderableseries3d.html#meshcolorpalette) property.
 
-The mapping is similar to the method used by the [2D Heatmap Series](Uniform-Heatmap-Colormaps.html). Let's explain by digging into a simple example below.
+The mapping is similar to the method used by the [2D Heatmap Series](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type). Let's explain by digging into a simple example below.
 
 <CodeSnippetBlock labels={["TS", "HTML", "CSS"]}>
 ```ts {14,19} showLineNumbers file=./ColorPalettes/demo.ts start=region_A_start end=region_A_end
