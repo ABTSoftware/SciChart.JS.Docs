@@ -373,22 +373,22 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging)
     - [✅ Performance Tips & Tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks)
 - **3D Charts API**
-  - **SciChart3D Basics**
+  - **✅ SciChart3D Basics**
     - [✅ Coordinates in 3D Space](/docs/3d-charts/scichart-3d-basics/coordinates-in-3d-space)
     - [✅ Creating your first SciChart3DSurface](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview)
     - [✅ SciChart3DSurface.create() vs. createSingle()](/docs/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)
     - [✅ The SciChartSurface Camera](/docs/3d-charts/scichart-3d-basics/scichart-surface-camera)
-  - **Axis3D APIs**
+  - **✅ Axis3D APIs**
     - [✅ Axis3D APIs Overview](/docs/3d-charts/axis-3d-api/axis-3d-api-overview)
     - [✅ Axis3D Gridline and Label Spacing (Interval)](/docs/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval)
     - [✅ Axis3D Text (Label) Formatting](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting)
     - [✅ Numeric and Date Axis in SciChart3D](/docs/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d)
-  - **3D Chart Types**
-    - [The Bubble 3D Chart Type](/docs/3d-charts/chart-types/bubble-3d-chart)
-    - [The Column 3D Chart Type](/docs/3d-charts/chart-types/column-3d-chart)
-    - [The Lines 3D Chart Type](/docs/3d-charts/chart-types/lines-3d-chart)
+  - **✅ 3D Chart Types**
+    - [✅ The Bubble 3D Chart Type](/docs/3d-charts/chart-types/bubble-3d-chart)
+    - [✅ The Column 3D Chart Type](/docs/3d-charts/chart-types/column-3d-chart)
+    - [✅ The Lines 3D Chart Type](/docs/3d-charts/chart-types/lines-3d-chart)
     - [✅ The Scatter 3D Chart Type](/docs/3d-charts/chart-types/scatter-3d-chart)
-    - [The SurfaceMesh 3D Chart Type](/docs/3d-charts/chart-types/surface-mesh-3d)
+    - [✅ The SurfaceMesh 3D Chart Type](/docs/3d-charts/chart-types/surface-mesh-3d)
   - **ChartModifier 3D API**
     - **Zooming and Panning**
       - [Mouse Wheel Zoom Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/mouse-wheel-zoom-modifier-3d)
