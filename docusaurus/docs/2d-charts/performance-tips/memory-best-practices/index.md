@@ -46,7 +46,7 @@ React, Vue and Angular all have component unmount or onDestroy callbacks. In our
 
 ### Deleting DataSeries memory
 
-If you remove or re-assign a DataSeries from a chart (use case: adding or removing chart series), don't forget to call [series.delete()](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the browser.
+If you remove or re-assign a DataSeries from a chart (use case: adding or removing chart series), don't forget to call [series.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the browser.
 
 For some examples of how to do this, see the article [Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
 

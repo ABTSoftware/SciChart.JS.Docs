@@ -6,7 +6,7 @@ sidebar_position: 5
 
 SciChart.js provides a mouse-over tooltips behavior via the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
+Besides common features which are inherited from the [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
 
 Adding a RolloverModifier to a Chart
 ------------------------------------

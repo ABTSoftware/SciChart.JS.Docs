@@ -4,12 +4,12 @@ sidebar_position: 2
 
 # ✅ Tooltip Modifier 3D
 
-Tooltips in SciChart.js 3D are performed by the [TooltipModifier3D](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier3d.html). This is a [ChartModifierBase3D](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase3d.html) derived type which executes on touch over the data point and shows tooltips for the data-points under the mouse.
+Tooltips in SciChart.js 3D are performed by the [TooltipModifier3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier3d.html). This is a [ChartModifierBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase3d.html) derived type which executes on touch over the data point and shows tooltips for the data-points under the mouse.
 
 Declaring a TooltipModifier3D
 -----------------------------
 
-Declaring a [TooltipModifier3D](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier3d.html) is as simple as adding one to the [SciChart3DSurface.chartModifiers](https://www.scichart.com/documentation/js/current/typedoc/classes/orbitmodifier3d.html) property. This can be done as a single modifier, or as part of a group.
+Declaring a [TooltipModifier3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier3d.html) is as simple as adding one to the [SciChart3DSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/orbitmodifier3d.html) property. This can be done as a single modifier, or as part of a group.
 
 <CodeSnippetBlock labels={["TS", "HTML", "CSS"]}>
 ```ts {} showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
@@ -44,7 +44,7 @@ For further customisation of the tooltip content & container, read on.
 
 ### Tooltip Text Formatting
 
-Tooltips obey formatting rules on the Axis. These can be defined by setting [axis.labelProvider.cursorPrecision](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html), [cursorNumericFormat](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#cursornumericformat) or overriding [formatCursorLabel](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel). For more information on text formatting, see the [LabelProvider documentation](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting/index.md).
+Tooltips obey formatting rules on the Axis. These can be defined by setting [axis.labelProvider.cursorPrecision:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html), [cursorNumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#cursornumericformat) or overriding [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel). For more information on text formatting, see the [LabelProvider documentation](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting/index.md).
 
 ### Modifying the Tooltip Content
 

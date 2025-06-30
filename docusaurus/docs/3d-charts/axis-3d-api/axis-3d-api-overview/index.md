@@ -4,9 +4,9 @@ sidebar_position: 1
 
 # ✅ Axis3D APIs Overview
 
-SciChart.js 3D shares the same [AxisCore](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) as SciChart.js 2D. Many features such as **Text Formatting**, **Autorange** (zooming to fit) and **Styling** **are** **shared**. For your convenience, some of the documentation has been duplicated here, with some referring to other sections of the user manual.
+SciChart.js 3D shares the same [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) as SciChart.js 2D. Many features such as **Text Formatting**, **Autorange** (zooming to fit) and **Styling** **are** **shared**. For your convenience, some of the documentation has been duplicated here, with some referring to other sections of the user manual.
 
-The Axis Types in SciChart all inherit from [AxisCore](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) and 3D axis inherit [AxisBase3D](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html). Below you can find an inheritance diagram. In the next section we're going to go over the main properties, types and what you can do with SciChart.js 3D Axis.
+The Axis Types in SciChart all inherit from [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) and 3D axis inherit [AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html). Below you can find an inheritance diagram. In the next section we're going to go over the main properties, types and what you can do with SciChart.js 3D Axis.
 
 ```mermaid
 classDiagram
@@ -22,24 +22,24 @@ classDiagram
 
 ### The AxisCore Type
 
-[AxisCore](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) properties and methods can be seen at the [TypeDoc documentation](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html). 
+[AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) properties and methods can be seen at the [TypeDoc documentation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html). 
 
-Some important properties to note: [autoRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autorange), [textFormatting](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#textformatting), [majorGridLineStyle](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majorgridlinestyle) and properties like [drawLabels](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#drawlabels), [drawMajorGridLines](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#drawmajorgridlines) etc...  We're going to explain more on how to use these later.
+Some important properties to note: [autoRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autorange), [textFormatting:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#textformatting), [majorGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majorgridlinestyle) and properties like [drawLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#drawlabels), [drawMajorGridLines:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#drawmajorgridlines) etc...  We're going to explain more on how to use these later.
 
 ### The AxisBase3D Type
 
-[AxisBase3D](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html) inherits AxisCore and has some additional properties specific to 3D charts. These include:
+[AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html) inherits AxisCore and has some additional properties specific to 3D charts. These include:
 
-*   [axisPlaneBackgroundFill](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#axisplanebackgroundfill)
-*   [backgroundColor](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#backgroundcolor)
-*   [labelDepthTestEnabled](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#labeldepthtestenabled)
-*   [negativeSideClipping](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#negativesideclipping)
-*   [planeBorderColor](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#planebordercolor)
-*   [planeBorderThickness](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#planeborderthickness)
-*   [positiveSideClipping](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#positivesideclipping)
-*   [tickLabelAlignment](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#ticklabelalignment)
-*   [tickLabelsOffset](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#ticklabelsoffset)
-*   [titleOffset](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#titleoffset)
+*   [axisPlaneBackgroundFill:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#axisplanebackgroundfill)
+*   [backgroundColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#backgroundcolor)
+*   [labelDepthTestEnabled:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#labeldepthtestenabled)
+*   [negativeSideClipping:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#negativesideclipping)
+*   [planeBorderColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#planebordercolor)
+*   [planeBorderThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#planeborderthickness)
+*   [positiveSideClipping:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#positivesideclipping)
+*   [tickLabelAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#ticklabelalignment)
+*   [tickLabelsOffset:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#ticklabelsoffset)
+*   [titleOffset:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#titleoffset)
 
 Basic Examples of how to declare an Axis
 ----------------------------------------
@@ -61,13 +61,13 @@ Specific example code for formatting 3D Axis text labels can be found in the art
 
 ### Axis 3D AutoRanging & Setting VisibleRange
 
-[AxisBase3D](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html) derived Types also have auto-ranging behaviour as per the 2D axis types. The [axis.autoRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autorange) property defines how the axis will autorange when data is changed.
+[AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html) derived Types also have auto-ranging behaviour as per the 2D axis types. The [axis.autoRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autorange) property defines how the axis will autorange when data is changed.
 
-The [axis.visibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#visiblerange) property allows you to set or get the min, max on the axis.
+The [axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#visiblerange) property allows you to set or get the min, max on the axis.
 
-[axis.growBy](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#growby) allows you to set padding on the visibleRange.
+[axis.growBy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#growby) allows you to set padding on the visibleRange.
 
-[axis.visibleRangeChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#visiblerangechanged) is an event or callback which fires when the range is updated.
+[axis.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#visiblerangechanged) is an event or callback which fires when the range is updated.
 
 For more info see:
 

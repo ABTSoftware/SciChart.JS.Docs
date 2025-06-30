@@ -6,8 +6,8 @@ sidebar_position: 4
 
 Axis 3D Gridline and Label Spacing obeys the same rules as SciChart 2D. Here are the key principles.
 
-*   Each axis has a [axisCore.MajorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta) and [axisCore.MinorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta), which specify the interval of major gridlines / labels and minor gridlines respectively. These are normally calculated automatically. They can be set manually along with [axis.autoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autoticks) = false to achieve user-defined intervals.
-*   You can also set hints such as [axis.maxAutoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#maxautoticks) or [axis.minorsPerMajor](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#minorspermajor) to adjust the number of gridlines using the automatic built-in intervals.
+*   Each axis has a [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta) and [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta), which specify the interval of major gridlines / labels and minor gridlines respectively. These are normally calculated automatically. They can be set manually along with [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autoticks) = false to achieve user-defined intervals.
+*   You can also set hints such as [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#maxautoticks) or [axis.minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#minorspermajor) to adjust the number of gridlines using the automatic built-in intervals.
 *   Or, if you want fine-grained control over gridline spacing and to apply custom or dynamic rules, you can create a [TickProvider plugin](AxisTicks-GridLineAndLabelSpacingProgrammatically.html) to do it
 
 :::tip
@@ -21,7 +21,7 @@ Here is a code sample that demonstrates the three ways to space gridlines.
 
 ### Automatic Spacing
 
-Automatic gridline and label spacing (default) can be adjusted by setting the [axis.maxAutoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#maxautoticks) and [axis.minorsPerMajor](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#minorspermajor) properties.
+Automatic gridline and label spacing (default) can be adjusted by setting the [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#maxautoticks) and [axis.minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#minorspermajor) properties.
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts showLineNumbers file=./GridlineLabelSpacing/demo.ts start=region_A_start end=region_A_end
@@ -30,7 +30,7 @@ Automatic gridline and label spacing (default) can be adjusted by setting the [
 
 ### Manual Spacing
 
-To manually specify gridline and label intervals, set [axis.autoTicks](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autoticks) = false then set [axisCore.MajorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta) and [axisCore.MinorDelta](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta).
+To manually specify gridline and label intervals, set [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autoticks) = false then set [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta) and [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta).
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts showLineNumbers file=./GridlineLabelSpacing/demo.ts start=region_B_start end=region_B_end

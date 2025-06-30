@@ -11,7 +11,7 @@ Using this API you can create behaviours which you can attach to a chart to perf
 The ChartModifierBase2D Type
 ----------------------------
 
-The [ChartModifierBase2D](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html) provides a base class for all of the ChartModifiers within SciChart. All of our built-in modifiers such as [ZoomPanModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html), [RolloverModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), [TooltipModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier.html), [YAxisDragModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html) inherit ChartModifierBase2D.
+The [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html) provides a base class for all of the ChartModifiers within SciChart. All of our built-in modifiers such as [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html), [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), [TooltipModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier.html), [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html) inherit ChartModifierBase2D.
 
 You can create your own ChartModifiers by inheriting this class. For example, this code sample shows how to declare a custom ChartModifier class in JavaScript ES6 or TypeScript.
 

@@ -40,7 +40,7 @@ In order to show a legend add the **LegendModifier** to the chart.
 Showing visibility checkboxes
 -----------------------------
 
-In order to show visibility checkboxes pass [showCheckboxes](https://www.scichart.com/documentation/js/current/typedoc/classes/legendmodifier.html#showcheckboxes) option into the **LegendModifier** constructor.
+In order to show visibility checkboxes pass [showCheckboxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/legendmodifier.html#showcheckboxes) option into the **LegendModifier** constructor.
 
 ```ts {3} showLineNumbers
 sciChartSurface.chartModifiers.add(
