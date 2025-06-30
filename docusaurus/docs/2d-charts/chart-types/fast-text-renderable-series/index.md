@@ -20,7 +20,7 @@ The [JavaScript Text / Word Cloud Chart Example](https://demo.scichart.com/java
 Creating a Text Series
 ----------------------
 
-To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.htmll) use the following code. 
+To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.html) use the following code. 
 
 **Note** that it is required to set a style with `fontFamily` and `size` in the dataLabels property in order for text to be drawn. 
 

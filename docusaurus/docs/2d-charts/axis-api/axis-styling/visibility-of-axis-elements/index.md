@@ -32,7 +32,6 @@ Here's a code sample below:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./DynamicAxisVisibility/demo.ts start=region_A_start end=region_A_end
-
     ```
 </CodeSnippetBlock>
 

@@ -58,8 +58,7 @@ This example uses a CursorModifier, but the same principle would apply to Rollov
     src="/images/interpolatedTooltip.gif"
 />
 
-See Also
+#### See Also
 
-[The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
-
-[Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier)
+* [The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
+* [Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier)

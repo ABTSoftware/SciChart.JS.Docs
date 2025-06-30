@@ -82,7 +82,7 @@ async function checkLinksInFile(filePath) {
             console.log(`  ⏱️  Timeout: ${url}`);
             errorCount++;
         } else {
-            console.log(`✅ ${status}: ${url}`);
+            // console.log(`✅ ${status}: ${url}`);
         }
         linkCount++;
     }

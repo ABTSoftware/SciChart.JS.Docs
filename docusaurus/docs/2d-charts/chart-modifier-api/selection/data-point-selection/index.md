@@ -2,14 +2,14 @@
 sidebar_position: 2
 ---
 
-# DataPoint Selection
+# ✅ DataPoint Selection
 
-SciChart now features a native ChartModifier called the **DataPointSelectionModifier** which allows individual data-points to be selected via the mouse, or programmatically.
+SciChart now features a native ChartModifier called the [DataPointSelectionModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html) which allows individual data-points to be selected via the mouse, or programmatically.
 
-The **DataPointSelectionModifier** allows you to do two things:
+The [DataPointSelectionModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html) allows you to do two things:
 
-1.  Be notified via the **onSelectionChanged event** when the user selects one or more points.
-2.  Change the rendering of the selected points using a **PaletteProvider**
+1.  Be notified via the `onSelectionChanged` event when the user selects one or more points.
+2.  Change the rendering of the selected points using a [PaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionpaletteprovider.html) to change the fill/stroke of the point-marker when selected.
 
 Enabling the DataPointSelectionModifier
 ---------------------------------------
@@ -22,98 +22,61 @@ To enable Data-point selection, you must do the following:
 
 **Find an example below**
 
-DataPointSelectionModifier
+<CodeSnippetBlock labels={["DataPointSelectionModifier"]}>
+    ```ts {34,38} showLineNumbers file=./example1.ts
+    ```
+</CodeSnippetBlock>
 
-Copy Code
-
-```ts
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {EllipsePointMarker} from "scichart/Charting/Visuals/PointMarkers/EllipsePointMarker";
-import {XyDataSeries} from "scichart/Charting/Model/XyDataSeries";
-import {DataPointSelectionModifier } from "scichart/Charting/ChartModifiers/DataPointSelectionModifier";
-import {DataPointSelectionPaletteProvider} from "scichart/Charting/Model/DataPointSelectionPaletteProvider";
-import {FastLineRenderableSeries} from "scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries";
-import {NumberRange} from "scichart/Core/NumberRange";
-export async function datapointSelectionExample1() {
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-div-id");
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));
-    // Create a chart with line series with a point-marker
-    sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
-        stroke: "SteelBlue",
-        strokeThickness: 3,
-        pointMarker: new EllipsePointMarker(wasmContext, {
-            width: 10,
-            height: 10,
-            strokeThickness: 2,
-            stroke: "SteelBlue",
-            fill: "LightSteelBlue"}),
-        dataSeries: new XyDataSeries(wasmContext, {
-            xValues: \[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\],
-            yValues: \[4.3, 5.3, 6, 6.3, 6, 5.2, 4.5, 4.6, 5, 6, 7, 8\]
-        }),
-        // Adding the DataPointSelectionPaletteProvider will change the fill/stroke of the pointmarker on selection
-        paletteProvider: new DataPointSelectionPaletteProvider({ fill: "white", stroke: "white" })
-    }));
-    // Add the DatapointSelectionModifier to the chart
-    sciChartSurface.chartModifiers.add(new DataPointSelectionModifier());
-}
-```
-
-![](/images/datapointselectionmodifier-1.gif)
+<CenteredImageWrapper
+    src="/images/datapointselectionmodifier-1.gif"
+    alt="DataPoint Selection Modifier Example"  
+/>
 
 Getting Notifications on Datapoint Selection
 --------------------------------------------
 
-The **DataPointSelectionModifier** has an event, **selectionChanged**, which allows you to subscribe to a callback when points are selected or deselected. The **onSelectionChanged** function may also be passed into the **constructor options**.
+The [DataPointSelectionModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html) has an event, [selectionChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#selectionchanged), which allows you to subscribe to a callback when points are selected or deselected. The [onSelectionChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#onselectionchanged) function may also be passed into the **constructor options**.
 
 Here are two ways you can be notified when datapoint selection changes in SciChart.
 
-DataPointSelectionModifier
-
-Copy Code
-
-```ts
+```ts {5,12} showLineNumbers
 import { DataPointSelectionModifier } from "scichart/Charting/ChartModifiers/DataPointSelectionModifier";
 
 // Option 1, pass onSelectionChanged callback when creating the DataPointSelectionModifier
 sciChartSurface.chartModifiers.add(new DataPointSelectionModifier({
     onSelectionChanged: (args) => {
-        console.log(\`${args.selectedDataPoints.length} datapoints selected!\`);
+        console.log(`${args.selectedDataPoints.length} datapoints selected!`);
     }
 }));
 
 // Option 2, multiple subscribers can listen to the selectionChanged event as well
 const dataPointSelectionModifier = new DataPointSelectionModifier();
 dataPointSelectionModifier.selectionChanged.subscribe((args) => {
-        console.log(\`${args.selectedDataPoints.length} datapoints selected!\`);
+    console.log(`${args.selectedDataPoints.length} datapoints selected!`);
 });
 ```
 
+:::tip
 For more info about the arguments to the selectionChanged event or onSelectionChanged callback, please see the following items in our TypeDoc documentation.
 
-*   **DataPointSelectionModifier.selectChanged** event
-*   **DataPointSelectionChangedArgs** type
-*   **DataPointInfo** type
+*   [DataPointSelectionModifier.selectChanged](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#selectchanged) event
+*   [DataPointSelectionChangedArgs](https://www.scichart.com/documentation/js/current/typedoc/types/datapointselectionchangedargs.html) type
+*   [DataPointInfo](https://www.scichart.com/documentation/js/current/typedoc/types/datapointinfo.html) type
+:::
 
 Multi-select, Invert-selection and Replace-selection
 ----------------------------------------------------
 
-The **DataPointSelectionModifier** supports multi-selection by holding the **CTRL** key while clicking on datapoints. This option is available when **DataPointSelectionModifier.allowClickSelect** = true.
+The **DataPointSelectionModifier** supports multi-selection by holding the **CTRL** key while clicking on datapoints. This option is available when `DataPointSelectionModifier.allowClickSelect = true`.
 
 Holding the **SHIFT** key inverts a selection. Use this to deselect a single point on the chart.
 
 Without CTRL or SHIFT pressed, the default behaviour is to replace a selection, e.g. a new point clicked will replace a previously clicked point.
 
-To customize this behaviour you can pass a **getSelectionMode** function into the constructor options of DataPointSelectionModifier, or, override the getSelectionMode function. For example:
-
-Example Title
-
-Copy Code
+To customize this behaviour you can pass a [getSelectionMode](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#getselectionmode) function into the constructor options of **DataPointSelectionModifier**, or, override the getSelectionMode function. For example:
 
 ```ts
-import {DataPointSelectionModifier, ESelectionMode, TModifierKeys} from "scichart/Charting/ChartModifiers/DataPointSelectionModifier";
+import { DataPointSelectionModifier, ESelectionMode, TModifierKeys } from "scichart";
 
 const dataPointSelectionModifier = new DataPointSelectionModifier({
     // Override getSelectionMode behaviour
@@ -134,24 +97,23 @@ const dataPointSelectionModifier = new DataPointSelectionModifier({
 Rectangle Select DataPoints
 ---------------------------
 
-Datapoints may be selected by dragging a rectangle on the chart. This option is available when **DataPointSelectionModifier.allowDragSelect** = true.
+Datapoints may be selected by dragging a rectangle on the chart. This option is available when `DataPointSelectionModifier.allowDragSelect = true`.
 
 Drag to Select rectangle can be customised by setting the properties **DataPointSelectionModifier.selectionStroke**, **DatapointSelectionModifier.selectionFill** and **DataPointSelectionModifier.selectionStrokeThickness** properties. This may also be customizable in the themes by setting **IThemeProvider.rubberBandFillBrush** and **IThemeProvider.rubberBandStrokeBrush** properties.
 
 Multi-select behaviour is also configurable via the getSelectionMode function.
 
-![](/images/datapointselectionmodifier-2.gif)
+<CenteredImageWrapper
+    src="/images/datapointselectionmodifier-2.gif"
+    alt="DataPoint Selection Modifier Rectangle Select Example"
+/>
 
 Customizing the Visual of Datapoint Selection
 ---------------------------------------------
 
-By default there is no visual feedback that a datapoint is selected or deselected. To add this behaviour, you can add a **PaletteProvider** to each series you want to show visual feedback. We've created one out of the box for you to simplify this process.
+By default there is no visual feedback that a datapoint is selected or deselected. To add this behaviour, you can add a [PaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionpaletteprovider.html) to each series you want to show visual feedback. We've created one out of the box for you to simplify this process.
 
-DataPointSelectionModifier
-
-Copy Code
-
-```ts
+```ts {17} showLineNumbers
 // Create a chart with line series with a point-marker
 sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
     stroke: "SteelBlue",
@@ -161,100 +123,97 @@ sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
         height: 10,
         strokeThickness: 2,
         stroke: "SteelBlue",
-        fill: "LightSteelBlue"}),
+        fill: "LightSteelBlue"
+    }),
     dataSeries: new XyDataSeries(wasmContext, {
-        xValues: \[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\],
-        yValues: \[4.3, 5.3, 6, 6.3, 6, 5.2, 4.5, 4.6, 5, 6, 7, 8\]
+        xValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+        yValues: [4.3, 5.3, 6, 6.3, 6, 5.2, 4.5, 4.6, 5, 6, 7, 8]
     }),
     // Adding the DataPointSelectionPaletteProvider will change the fill/stroke of the pointmarker on selection
     paletteProvider: new DataPointSelectionPaletteProvider({ fill: "white", stroke: "white" })
 }));
 ```
 
-The **DataPointSelectionPaletteProvider** checks for **IPointMetadata.isSelected** to return a fill/stroke for point-markers that are selected. Our implementation looks like this. You can either use our default implementation or create your own based on this.
+The [DataPointSelectionPaletteProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionpaletteprovider.html) checks for **IPointMetadata.isSelected** to return a fill/stroke for point-markers that are selected. Our implementation looks like this. You can either use our default implementation or create your own based on this.
 
-DataPointSelectionPaletteProvider
+<CodeSnippetBlock labels={["DataPointSelectionPaletteProvider"]}>
+    ```ts 
+    import { TPalletProviderDefinition } from "../../Builder/buildSeries";
+    import { EPaletteProviderType } from "../../types/PaletteProviderType";
+    import { parseArgbToHtmlColor, parseColorToUIntArgb } from "../../utils/parseColor";
+    import { IRenderableSeries } from "../Visuals/RenderableSeries/IRenderableSeries";
+    import {
+        EFillPaletteMode,
+        EStrokePaletteMode,
+        IFillPaletteProvider,
+        IPointMarkerPaletteProvider,
+        IStrokePaletteProvider,
+        TPointMarkerArgb
+    } from "./IPaletteProvider";
+    import { IPointMetadata } from "./IPointMetadata";
 
-Copy Code
-
-```ts
-import { TPalletProviderDefinition } from "../../Builder/buildSeries";
-import { EPaletteProviderType } from "../../types/PaletteProviderType";
-import { parseArgbToHtmlColor, parseColorToUIntArgb } from "../../utils/parseColor";
-import { IRenderableSeries } from "../Visuals/RenderableSeries/IRenderableSeries";
-import {
-    EFillPaletteMode,
-    EStrokePaletteMode,
-    IFillPaletteProvider,
-    IPointMarkerPaletteProvider,
-    IStrokePaletteProvider,
-    TPointMarkerArgb
-} from "./IPaletteProvider";
-import { IPointMetadata } from "./IPointMetadata";
-
-export interface ISelectedPointOptions {
-    /\*\*
-     \* The fill of the point-marker as an HTML color code
-     \*/
-    fill?: string;
-    /\*\*
-     \* The stroke of the point-marker as an HTML color code
-     \*/
-    stroke?: string;
-}
-
-export class DataPointSelectionPaletteProvider implements IPointMarkerPaletteProvider {
-    public selectedPointMarker: TPointMarkerArgb;
-    public selectedStroke: number;
-    public selectedFill: number;
-    public strokePaletteMode: EStrokePaletteMode = EStrokePaletteMode.SOLID;
-    public fillPaletteMode: EFillPaletteMode = EFillPaletteMode.SOLID;
-    constructor(options: ISelectedPointOptions) {
-        if (options?.stroke) {
-            this.selectedStroke = parseColorToUIntArgb(options?.stroke);
-        }
-        if (options?.fill) {
-            this.selectedFill = parseColorToUIntArgb(options?.fill);
-        }
-        this.selectedPointMarker = { stroke: this.selectedStroke, fill: this.selectedFill };
+    export interface ISelectedPointOptions {
+        /**
+        * The fill of the point-marker as an HTML color code
+        */
+        fill?: string;
+        /**
+        * The stroke of the point-marker as an HTML color code
+        */
+        stroke?: string;
     }
-    public onAttached(parentSeries: IRenderableSeries): void {}
-    public onDetached(): void {}
-    public overridePointMarkerArgb(
-        xValue: number,
-        yValue: number,
-        index: number,
-        opacity?: number,
-        metadata?: IPointMetadata
-    ): TPointMarkerArgb {
-        if (metadata?.isSelected) {
-            return this.selectedPointMarker;
-        }
-        return undefined;
-    }
-}
-```
 
-For more information on how to style data-points, see the **PaletteProvider Documentation**.
+    export class DataPointSelectionPaletteProvider implements IPointMarkerPaletteProvider {
+        public selectedPointMarker: TPointMarkerArgb;
+        public selectedStroke: number;
+        public selectedFill: number;
+        public strokePaletteMode: EStrokePaletteMode = EStrokePaletteMode.SOLID;
+        public fillPaletteMode: EFillPaletteMode = EFillPaletteMode.SOLID;
+        constructor(options: ISelectedPointOptions) {
+            if (options?.stroke) {
+                this.selectedStroke = parseColorToUIntArgb(options?.stroke);
+            }
+            if (options?.fill) {
+                this.selectedFill = parseColorToUIntArgb(options?.fill);
+            }
+            this.selectedPointMarker = { stroke: this.selectedStroke, fill: this.selectedFill };
+        }
+        public onAttached(parentSeries: IRenderableSeries): void {}
+        public onDetached(): void {}
+        public overridePointMarkerArgb(
+            xValue: number,
+            yValue: number,
+            index: number,
+            opacity?: number,
+            metadata?: IPointMetadata
+        ): TPointMarkerArgb {
+            if (metadata?.isSelected) {
+                return this.selectedPointMarker;
+            }
+            return undefined;
+        }
+    }
+    ```
+</CodeSnippetBlock>
+
+For more information on how to style data-points, see the [PaletteProvider Documentation](../../../chart-types/palette-provider-api/palette-provider-api-overview/).
 
 Programmatically Selecting Points
 ---------------------------------
 
 If you want to select or deselect datapoints in code, you can do this through the **IPointMetadata.isSelected** property. After setting this property don't forget to call **sciChartSurface.invalidateElement()** to force a redraw of the chart!
 
-DataPointSelectionPaletteProvider
-
-Copy Code
-
-```ts
+```ts showLineNumbers
 // Create a DataSeries with x,y values and metadata
 const dataSeries = new XyDataSeries(wasmContext, {
-    xValues: \[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12\],
-    yValues: \[4.3, 5.3, 6, 6.3, 6, 5.2, 4.5, 4.6, 5, 6, 7, 8\],
-    metadata: \[{ isSelected: false }, { isSelected: false }, { isSelected: false },
+    xValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    yValues: [4.3, 5.3, 6, 6.3, 6, 5.2, 4.5, 4.6, 5, 6, 7, 8],
+    metadata: [
         { isSelected: false }, { isSelected: false }, { isSelected: false },
         { isSelected: false }, { isSelected: false }, { isSelected: false },
-        { isSelected: false }, { isSelected: false }, { isSelected: false }\]
+        { isSelected: false }, { isSelected: false }, { isSelected: false },
+        { isSelected: false }, { isSelected: false }, { isSelected: false }
+    ]
 });
 
 // Now set isSelected programmatically on some datapoints
@@ -264,7 +223,9 @@ dataSeries.getMetadataAt(4).isSelected = true;
 
 This code will programmatically set all points to deselected, except for points at index 3 and 4.
 
-For more information on how to manipulate PointMetadata, see the **PointMetadata API Documentation**.
+:::tip
+For more information on how to manipulate PointMetadata, see the [PointMetadata API Documentation](../../../chart-types/point-metadata-api/point-metadata-api-overview/).
+:::
 
 #### See Also
 

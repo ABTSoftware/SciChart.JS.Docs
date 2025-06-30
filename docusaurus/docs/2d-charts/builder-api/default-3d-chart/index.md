@@ -6,16 +6,16 @@ sidebar_position: 3
 
 SciChart provides a powerful API for creating various types of charts, including **3D Charts**.
 
-The [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/buildchart.html) function can be used to build both 2D Charts, Pie Charts, 2D Polar Charts & **3D Charts**, so the returned object type will differ depending on the chart type.
+The [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder.buildchart) function can be used to build both 2D Charts, Pie Charts, 2D Polar Charts & **3D Charts**, so the returned object type will differ depending on the chart type.
 
-## Using [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/buildchart.html) to create a Pie Chart
+## Using [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder.buildchart) to create a Pie Chart
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {3,14,15} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock> 
 
-## Using [build3DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/build3dchart.html) to explicitly create a 3D Chart.
+## Using [build3DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder.build3dchart) to explicitly create a 3D Chart.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {3,13} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

@@ -17,7 +17,7 @@ For example:
 
 This works for **Themes**, **PointMarkers**, **Effects**, **Animations**, **PaletteProviders** and **LabelProviders**.
 
-Alternatively you can take the same approach as for option 3 of creating data and call [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/modules/_scichart_builder_chartbuilder.html#buildchart) or [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/modules/_scichart_builder_chartbuilder.html#build2dchart) with a partial definition, to get your wasmContext, then create an instance of the necessary class, then call buildSeries and pass it in. This is useful if you want to keep a reference to the object to be able to update it later.
+Alternatively you can take the same approach as for option 3 of creating data and call [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder.buildchart) or [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder.build2dchart) with a partial definition, to get your wasmContext, then create an instance of the necessary class, then call buildSeries and pass it in. This is useful if you want to keep a reference to the object to be able to update it later.
 
 
 <CodeSnippetBlock labels={["Building with complex options"]}>

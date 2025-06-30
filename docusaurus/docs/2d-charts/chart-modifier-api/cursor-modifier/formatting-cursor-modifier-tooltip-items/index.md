@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Formatting CursorModifier Tooltip Items
+# ✅ Formatting CursorModifier Tooltip Items
 
 :::tip
 Background reading:
