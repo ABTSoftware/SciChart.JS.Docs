@@ -2,6 +2,28 @@
 sidebar_position: 3
 ---
 
-# Mouse Wheel Zoom Modifier 3D
+# ✅ Mouse Wheel Zoom Modifier 3D
 
-TODO
+Zooming and Panning a Chart in SciChart.js is achieved by moving the [SciChart3DSurface.camera](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#camera) to a new location.
+
+The article ["The SciChart3DSurface Camera"](/docs/3d-charts/scichart-3d-basics/scichart-surface-camera/index.md) goes into detail how this camera class works and how to manipulate it programatically to achieve various views.
+
+If you want to add simple zooming in/out of the camera to the chart then you can do so using our ChartModifiers API. The [MouseWheelZoomModifier3D](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier3d.html) performs movement of the camera by adjusting the radius property,  giving the appearance of the chart zooming.
+
+Declaring an MouseWheelZoomModifier3D
+-------------------------------------
+
+Declaring a [MouseWheelZoomModifier3D](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier3d.html) is as simple as adding one to the [SciChart3DSurface.chartModifiers](https://www.scichart.com/documentation/js/current/typedoc/classes/orbitmodifier3d.html) property. This can be done as a single modifier, or as part of a group.
+
+<CodeSnippetBlock labels={["TS", "HTML", "CSS"]}>
+```ts {} showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
+```
+```html showLineNumbers file=./Basic/demo.html
+```
+```css showLineNumbers file=./Basic/demo.css
+```
+</CodeSnippetBlock>
+
+This results in the following behaviour added to the chart.
+
+<LiveDocSnippet maxWidth={"100%"} name="./Basic/demo" htmlPath="./Basic/demo.html" cssPath="./Basic/demo.css" />

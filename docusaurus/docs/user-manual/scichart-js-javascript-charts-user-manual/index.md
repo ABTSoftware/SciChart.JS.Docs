@@ -372,7 +372,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Memory Best Practices](/docs/2d-charts/performance-tips/memory-best-practices)
     - [✅ Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging)
     - [✅ Performance Tips & Tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks)
-- **3D Charts API**
+- **✅ 3D Charts API**
   - **✅ SciChart3D Basics**
     - [✅ Coordinates in 3D Space](/docs/3d-charts/scichart-3d-basics/coordinates-in-3d-space)
     - [✅ Creating your first SciChart3DSurface](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview)
@@ -389,13 +389,13 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ The Lines 3D Chart Type](/docs/3d-charts/chart-types/lines-3d-chart)
     - [✅ The Scatter 3D Chart Type](/docs/3d-charts/chart-types/scatter-3d-chart)
     - [✅ The SurfaceMesh 3D Chart Type](/docs/3d-charts/chart-types/surface-mesh-3d)
-  - **ChartModifier 3D API**
-    - **Zooming and Panning**
-      - [Mouse Wheel Zoom Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/mouse-wheel-zoom-modifier-3d)
-      - [Orbit Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/orbit-modifier-3d)
-      - [Pinch Zoom Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/pinch-zoom-modifier-3d)
-      - [Reset Camera Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/reset-camera-modifier-3d)
-    - [Tooltip Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/tooltip-modifier-3d)
+  - **✅ ChartModifier 3D API**
+    - **✅ Zooming and Panning**
+      - [✅ Mouse Wheel Zoom Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/mouse-wheel-zoom-modifier-3d)
+      - [✅ Orbit Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/orbit-modifier-3d)
+      - [✅ Pinch Zoom Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/pinch-zoom-modifier-3d)
+      - [✅ Reset Camera Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/zooming-and-panning/reset-camera-modifier-3d)
+    - [✅ Tooltip Modifier 3D](/docs/3d-charts/chart-modifier-3d-api/tooltip-modifier-3d)
 - [API Documentation](/docs/typedoc)
 
 <!-- generate-docs-toc.js end -->
