@@ -208,7 +208,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [🔄 The Triangle Series Type](/docs/2d-charts/chart-types/triangle-renderable-series)
     - [✅ The Contours Series Type](/docs/2d-charts/chart-types/uniform-contours-renderable-series)
     - [✅ The Scatter Series Type](/docs/2d-charts/chart-types/xy-scatter-renderable-series)
-  - **Builder (JSON Chart Definition) API**
+  - **✅ Builder (JSON Chart Definition) API**
     - [✅ Intro to the Builder API](/docs/2d-charts/builder-api/builder-api-overview)
     - [✅ Serialization and Deserialization of Charts](/docs/2d-charts/builder-api/charts-serialization-deserialization)
     - [✅ Complex Options](/docs/2d-charts/builder-api/complex-options)
@@ -219,7 +219,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
     - [✅ Working with Data](/docs/2d-charts/builder-api/working-with-data)
   - **Axis APIs**
-    - **Axis Types**
+    - **✅ Axis Types**
       - [✅ The Category Axis](/docs/2d-charts/axis-api/axis-types/category-axis)
       - [✅ Common Axis Base Type and Options](/docs/2d-charts/axis-api/axis-types/common-axis-base-type)
       - [✅ The DateTimeNumericAxis](/docs/2d-charts/axis-api/axis-types/date-time-numeric-axis)
@@ -232,7 +232,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [✅ Axis Ranging - AutoRange](/docs/2d-charts/axis-api/ranging-scaling/auto-range)
       - [✅ Axis Ranging - How to Listen to VisibleRange Changes](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes)
       - [✅ Axis Ranging - Set Range and Zoom to Fit](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit)
-    - **Axis Labels**
+    - **✅ Axis Labels**
       - [✅ Custom LabelProviders: Dynamic Dates on Zoom](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-dynamic-dates-on-zoom)
       - [✅ Custom LabelProviders: Readable Numbers](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-readable-numbers)
       - [✅ Image Labels](/docs/2d-charts/axis-api/axis-labels/image-labels)
@@ -265,7 +265,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [✅ Axis APIs - Convert Pixel to Data Coordinates](/docs/2d-charts/axis-api/misc/pixel-and-data-coordinates)
       - [⭕ Axis APIs - Convert Polar Pixel to Data Coordinates](/docs/2d-charts/axis-api/misc/polar-pixel-and-data-coordinates)
     - [✅ Axis API Overview](/docs/2d-charts/axis-api/axis-api-overview)
-  - **Animations API**
+  - **✅ Animations API**
     - [✅ Animations API Overview](/docs/2d-charts/animations-api/aminations-api-overview)
     - [✅ Dataset Animations](/docs/2d-charts/animations-api/dataset-animations)
     - [✅ Generic Animations](/docs/2d-charts/animations-api/generic-animations)
@@ -292,8 +292,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Styling Annotation Selection](/docs/2d-charts/annotations-api/styling-annotation-selection)
     - [✅ TextAnnotation](/docs/2d-charts/annotations-api/text-annotation)
     - [✅ VerticalLineAnnotation](/docs/2d-charts/annotations-api/vertical-line-annotation)
-  - **ChartModifier API**
-    - **Zooming and Panning**
+  - **✅ ChartModifier API**
+    - **✅ Zooming and Panning**
       - [✅ MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier)
       - [✅ Easy Overview charts with SciChartOverview](/docs/2d-charts/chart-modifier-api/zooming-and-panning/overview)
       - [✅ PinchZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/pinch-zoom-modifier)
@@ -302,18 +302,18 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [✅ YAxisDragModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/y-axis-drag-modifier)
       - [✅ ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier)
       - [✅ ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)
-    - **CursorModifier**
+    - **✅ CursorModifier**
       - [✅ Active Legends - CursorModifier output into a legend](/docs/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
       - [✅ The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview)
       - [✅ Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
-      - [Formatting CursorModifier Tooltip Items](/docs/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
+      - [✅ Formatting CursorModifier Tooltip Items](/docs/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
       - [✅ Interpolated Tooltip Values](/docs/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
-    - **VerticalSliceModifier**
-      - [Active Legends - VerticalSliceModifier output to a Legend](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/active-legends-vertical-slice-modifier)
-      - [Customizing VerticalSliceModifier Tooltip Containers](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/customizing-vertical-slice-tooltip-container)
-      - [Formatting VerticalSlice Tooltip Items](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/formatting-vertical-slice-tooltip-items)
-      - [The VerticalSliceModifier Type](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview)
-    - **Polar Chart Modifiers**
+    - **✅ VerticalSliceModifier**
+      - [✅ Active Legends - VerticalSliceModifier output to a Legend](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/active-legends-vertical-slice-modifier)
+      - [✅ Customizing VerticalSliceModifier Tooltip Containers](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/customizing-vertical-slice-tooltip-container)
+      - [✅ Formatting VerticalSlice Tooltip Items](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/formatting-vertical-slice-tooltip-items)
+      - [✅ The VerticalSliceModifier Type](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview)
+    - **✅ Polar Chart Modifiers**
       - [✅ PolarArcZoomModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-arc-zoom-modifier)
       - [✅ PolarCursorModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-cursor-modifier)
       - [✅ PolarDataPointSelectionModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-data-point-selection-modifier)
@@ -321,17 +321,17 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [✅ PolarMouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-mouse-wheel-zoom-modifier)
       - [✅ PolarPanModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-pan-modifier)
       - [✅ PolarZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/polar-modifiers/polar-zoom-extents-modifier)
-    - [Legend Modifier](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)
-    - **Selection**
-      - [Annotation Hover](/docs/2d-charts/chart-modifier-api/selection/annotation-hover)
-      - [DataPoint Selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection)
-      - [Series Selection](/docs/2d-charts/chart-modifier-api/selection/series-selection)
-    - **Custom Modifiers**
-      - [Custom Chart Modifier API](/docs/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview)
-      - [Detecting Clicks On Chart Parts with a Custom Modifier](/docs/2d-charts/chart-modifier-api/custom-modifiers/detecting-clicks-on-chart-parts)
+    - [✅ Legend Modifier](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)
+    - **✅ Selection**
+      - [✅ Annotation Hover](/docs/2d-charts/chart-modifier-api/selection/annotation-hover)
+      - [✅ DataPoint Selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection)
+      - [✅ Series Selection](/docs/2d-charts/chart-modifier-api/selection/series-selection)
+    - **✅ Custom Modifiers**
+      - [✅ Custom Chart Modifier API](/docs/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview)
+      - [✅ Detecting Clicks On Chart Parts with a Custom Modifier](/docs/2d-charts/chart-modifier-api/custom-modifiers/detecting-clicks-on-chart-parts)
     - [✅ What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
     - [✅ Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features)
-    - [Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier)
+    - [✅ Rollover Modifier](/docs/2d-charts/chart-modifier-api/rollover-modifier)
   - **✅ Subcharts API**
     - [✅ Worked Example: Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)
     - [✅ Worked Example: Resizable Multi Pane Charts with SubCharts](/docs/2d-charts/subcharts-api/example-resizable-multi-pane-charts-with-sub-charts)
@@ -354,23 +354,23 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [✅ Chart Styling - Style Chart Parts in Code](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code)
     - [✅ Chart Styling - ThemeManager API](/docs/2d-charts/styling-and-theming/theme-manager-api)
     - [✅ Chart Styling - Theming of Wait Loader](/docs/2d-charts/styling-and-theming/theming-of-wait-loader)
-  - **Chart Synchronization APIs**
+  - **✅ Chart Synchronization APIs**
     - [✅ Synchronizing Multiple Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts)
-    - [Synchronizing Vertical Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-vertical-charts)
-  - **Accessibility**
+    - [✅ Synchronizing Vertical Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-vertical-charts)
+  - **✅ Accessibility**
     - [✅ Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast)
     - [✅ Creating Accessible Charts](/docs/2d-charts/accessibility/creating-accessible-charts)
     - [✅ Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility)
     - [✅ Voice Over](/docs/2d-charts/accessibility/voice-over)
-  - **Miscellaneous APIs**
+  - **✅ Miscellaneous APIs**
     - [✅ Batching updates or Temporary Suspending Drawing](/docs/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing)
     - [✅ Glow and DropShadow Shader Effects](/docs/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects)
     - [✅ Native Text Api](/docs/2d-charts/miscellaneous-apis/native-text-api)
     - [✅ Ordered Rendering](/docs/2d-charts/miscellaneous-apis/ordered-rendering)
     - [✅ Retina Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom)
-  - **Performance Tips**
-    - [Memory Best Practices](/docs/2d-charts/performance-tips/memory-best-practices)
-    - [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging)
+  - **✅ Performance Tips**
+    - [✅ Memory Best Practices](/docs/2d-charts/performance-tips/memory-best-practices)
+    - [✅ Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging)
     - [✅ Performance Tips & Tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks)
 - **3D Charts API**
   - **SciChart3D Basics**
@@ -387,7 +387,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The Bubble 3D Chart Type](/docs/3d-charts/chart-types/bubble-3d-chart)
     - [The Column 3D Chart Type](/docs/3d-charts/chart-types/column-3d-chart)
     - [The Lines 3D Chart Type](/docs/3d-charts/chart-types/lines-3d-chart)
-    - [The Scatter 3D Chart Type](/docs/3d-charts/chart-types/scatter-3d-chart)
+    - [✅ The Scatter 3D Chart Type](/docs/3d-charts/chart-types/scatter-3d-chart)
     - [The SurfaceMesh 3D Chart Type](/docs/3d-charts/chart-types/surface-mesh-3d)
   - **ChartModifier 3D API**
     - **Zooming and Panning**
