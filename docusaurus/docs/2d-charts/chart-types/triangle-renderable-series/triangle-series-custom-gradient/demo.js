@@ -1,4 +1,16 @@
-import { NumberRange, SciChartSurface, NumericAxis, SciChartJsNavyTheme, TriangleRenderableSeries, ETriangleSeriesDrawMode, ZoomPanModifier, ZoomExtentsModifier, XyxyDataSeries, GradientParams, Point } from "scichart";
+import {
+    NumberRange,
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    TriangleRenderableSeries,
+    ETriangleSeriesDrawMode,
+    ZoomPanModifier,
+    ZoomExtentsModifier,
+    XyxyDataSeries,
+    GradientParams,
+    Point
+} from "scichart";
 async function gradientTriangleSeriesChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()

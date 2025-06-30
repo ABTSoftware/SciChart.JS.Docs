@@ -12,12 +12,35 @@ Here is a simple Line Segment Series made using [XyDataSeries:blue_book:](https:
 ```
 
 ## Properties
-
-    [ILineSegmentRenderableSeriesOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ilinesegmentrenderableseriesoptions.html) 
     
-    - dataSeries
-    - strokeThickness
-    - paletteProvider
+    - dataSeries: we can use [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) and [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html). The main difference is that when using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) we can use custom paletteProvider like ```LineSegmentPaletteProvider``` and that enables different colors on start and end of the line
+    - strokeThickness: defines thickness of the stroke
+    - paletteProvider: here is example of custom paletteProvider that is available when using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html):
+
+```ts
+class LineSegmentPaletteProvider implements IStrokePaletteProvider {
+    public readonly strokePaletteMode = EStrokePaletteMode.GRADIENT;
+    private readonly palettedStart = parseColorToUIntArgb("red");
+    private readonly palettedEnd = parseColorToUIntArgb("blue");
+
+    public onAttached(parentSeries: IRenderableSeries): void {}
+
+    public onDetached(): void {}
+
+    public overrideStrokeArgb(xValue: number, yValue: number, index: number): number {
+        return index % 2 === 0 ? this.palettedStart : this.palettedEnd;
+    }
+
+    public toJSON(): TPaletteProviderDefinition {
+        return { type: EPaletteProviderType.Custom, customType: "MyPaletteProvider" };
+    }
+}
+```
+
+:::tip
+When using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) with [LineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linesegmentrenderableseries.html) we can use custom paletteProvider that enables different colors on start and end of the line.
+:::
+
 
 ## Examples
 

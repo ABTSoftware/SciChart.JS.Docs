@@ -67,7 +67,7 @@ async function basicLineSegment(divElementId) {
     const lineSegmentPoints = [
         [
             [4, 3], // line start, on chart represented as red
-            [2, 1] // line end, on chart represented as blue
+            [2, 1]  // line end, on chart represented as blue
         ],
         [
             [4, 4],

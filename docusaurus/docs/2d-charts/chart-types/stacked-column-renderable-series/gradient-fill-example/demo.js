@@ -23,11 +23,11 @@ async function simpleStackedColumnChart(divElementId) {
     // region_A_start
     // Data for the example
     const xValues = [1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003];
-    const yValues1 = [10, 13, 7, 16, 4, 6, 20, 14, 16, 10, 24, 11];
-    const yValues2 = [12, 17, 21, 15, 19, 18, 13, 21, 22, 20, 5, 10];
-    const yValues3 = [7, 30, 27, 24, 21, 15, 17, 26, 22, 28, 21, 22];
-    const yValues4 = [16, 10, 9, 8, 22, 14, 12, 27, 25, 23, 17, 17];
-    const yValues5 = [7, 24, 21, 11, 19, 17, 14, 27, 26, 22, 28, 16];
+    const yValues1 = [10, 13, 7, 16, 4, 6, 5, 14, 16, 10, 24, 11];
+    const yValues2 = [12, 17, 21, 15, 19, 18, 6, 21, 22, 20, 5, 10];
+    const yValues3 = [7, 30, 27, 24, 21, 15, 7, 26, 22, 28, 21, 22];
+    const yValues4 = [16, 10, 9, 8, 22, 14, 8, 27, 25, 23, 17, 17];
+    const yValues5 = [7, 24, 21, 11, 19, 17, 9, 27, 26, 22, 28, 16];
     const dataLabels = {
         color: "#FFfFFF",
         style: { fontSize: 12, fontFamily: "Arial", padding: new Thickness(0, 0, 4, 0) },

@@ -4,14 +4,10 @@ import {
     NumericAxis,
     SciChartJsNavyTheme,
     TriangleRenderableSeries,
-    XyDataSeries,
     ETriangleSeriesDrawMode,
     ZoomPanModifier,
     ZoomExtentsModifier,
-    EFillPaletteMode,
-    parseColorToUIntArgb,
     XyxyDataSeries,
-    applyOpacityToHtmlColor,
     GradientParams,
     Point
 } from "scichart";
