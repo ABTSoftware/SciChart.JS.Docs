@@ -16,8 +16,8 @@ The [ChartModifierBase2D](https://www.scichart.com/documentation/js/current/type
 You can create your own ChartModifiers by inheriting this class. For example, this code sample shows how to declare a custom ChartModifier class in JavaScript ES6 or TypeScript.
 
 <CodeSnippetBlock labels={["TypeScript", "JavaScript"]}>
-    ```ts {3} showLineNumbers file=./SimpleChartModifierTS.ts
+    ```ts {3} showLineNumbers file=./SimpleChartModifierTs.ts
     ```
-    ```js {2} showLineNumbers file=./SimpleChartModifierTS.js
+    ```js {2} showLineNumbers file=./SimpleChartModifierTs.js
     ```
 </CodeSnippetBlock>
