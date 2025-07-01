@@ -59,9 +59,9 @@ dataPointSelectionModifier.selectionChanged.subscribe((args) => {
 :::tip
 For more info about the arguments to the selectionChanged event or onSelectionChanged callback, please see the following items in our TypeDoc documentation.
 
-*   [DataPointSelectionModifier.selectChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#selectchanged) event
-*   [DataPointSelectionChangedArgs:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/types/datapointselectionchangedargs.html) type
-*   [DataPointInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/types/datapointinfo.html) type
+*   [DataPointSelectionModifier.selectionChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html#selectionchanged) event
+*   [DataPointSelectionChangedArgs:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionchangedargs.html) type
+*   [DataPointInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointinfo.html) type
 :::
 
 Multi-select, Invert-selection and Replace-selection

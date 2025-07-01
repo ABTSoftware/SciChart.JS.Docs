@@ -16,7 +16,7 @@ Let’s add a series. A definition must have a type property which is an [ESerie
 
 This is all we need for a working SciChart chart with our BuilderAPI.
 
-Notice that the return type of the **chartBuilder.buildChart()** function call is a Promise, which returns [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/sichartsurface.html) and **wasmContext** just like a call to **SciChartSurface.create()**, except it will already be populated with series, default axes and data provided in the builder options.
+Notice that the return type of the **chartBuilder.buildChart()** function call is a Promise, which returns [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and **wasmContext** just like a call to **SciChartSurface.create()**, except it will already be populated with series, default axes and data provided in the builder options.
 
 Run the code sample above and you will get this output:
 

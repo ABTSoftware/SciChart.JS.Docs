@@ -38,7 +38,7 @@ This results in the following behavior when double-clicking the chart:
 Zoom to a Preset Range
 ----------------------
 
-If you would like the double-click to zoom to some preset range, rather than the data range, you can set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxes.html#zoomextentsrange) on the axes.  In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxes.html#zoomextentstoinitialrange) true, which will set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxes.html#zoomextentsrange) to the visibleRange passed in.
+If you would like the double-click to zoom to some preset range, rather than the data range, you can set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#zoomextentsrange) on the axes.  In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#zoomextentstoinitialrange) true, which will set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#zoomextentsrange) to the visibleRange passed in.
 
 If you just want to have some space around your data, set [growBy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#growby) instead.
 

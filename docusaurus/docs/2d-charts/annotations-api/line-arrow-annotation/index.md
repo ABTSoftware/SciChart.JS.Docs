@@ -11,9 +11,9 @@ The [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v
 The following code will declare 2 [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html)s and add them to the chart.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
-    ```ts {20,28} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {17,39} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
-    ```ts {9,17} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
+    ```ts {15,41} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
     ```
 </CodeSnippetBlock>
 

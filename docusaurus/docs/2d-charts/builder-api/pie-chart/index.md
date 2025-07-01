@@ -15,7 +15,7 @@ The [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/ty
     ```
 </CodeSnippetBlock> 
 
-## Using [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/buildpiechart.html) to explicitly create a Pie Chart:
+## Using [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#buildpiechart) to explicitly create a Pie Chart:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {3} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

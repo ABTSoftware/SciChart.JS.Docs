@@ -37,10 +37,10 @@ This is good for multiple series which share x data, but is not as convenient if
 
 Once the chart is created, you can use the `wasmContext` that is returned to create a `dataSeries` in the normal way.
 
-Here we’re using [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartbuilder.html#build2dchart) rather than [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartbuilder.html#buildchart) so that we don’t have to cast the result.
+Here we’re using [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder#build2dchart) rather than [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder#buildchart) so that we don’t have to cast the result.
 
 :::tip
-Note that [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartbuilder.html#build2dchart) (and [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartbuilder.html#buildchart)) returns a `Promise` so we need to resolve it to use the result, e.g. use `async/await` syntax or `Promise chaining`.
+Note that [build2DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder#build2dchart) (and [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder#buildchart)) returns a `Promise` so we need to resolve it to use the result, e.g. use `async/await` syntax or `Promise chaining`.
 :::
 
 <CodeSnippetBlock labels={["JS"]}>
@@ -88,7 +88,7 @@ xyData: {
 
 2.You need to set an array of metadata with values specific to each data point. As long as your metadata object is pure data, just set the array on the metadata property.
 
-3.Your metadata object contains functions. Now you need to supply a type name of a registered [IMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/imetadataGenerator.html). This interface can return a single object which will be used to populate each data point, or as [I1DMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i1dmetadatagenerator.html) (or [I2DMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dmetadatagenerator.html) for heatmap data) it can return an array which should be the same size as your data. In this case you will probably want to set the data property, which will be passed into the function you register to create your metadataGenerator. In this case, the output of the toJSON method on the metadataGenerator should match the format of data passed in. As before, don’t forget to define and register these things on the client. Hopefully now the type signature of the metadata option makes some sense.
+3.Your metadata object contains functions. Now you need to supply a type name of a registered [IMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/imetadatagenerator.html). This interface can return a single object which will be used to populate each data point, or as [I1DMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i1dmetadatagenerator.html) (or [I2DMetadataGenerator:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dmetadatagenerator.html) for heatmap data) it can return an array which should be the same size as your data. In this case you will probably want to set the data property, which will be passed into the function you register to create your metadataGenerator. In this case, the output of the toJSON method on the metadataGenerator should match the format of data passed in. As before, don’t forget to define and register these things on the client. Hopefully now the type signature of the metadata option makes some sense.
 
 ```ts showLineNumbers
 metadata?: 

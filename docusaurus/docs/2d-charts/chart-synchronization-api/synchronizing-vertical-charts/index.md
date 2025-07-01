@@ -64,7 +64,7 @@ After that, some code to initialize the two charts can look like this:
 
 This code initializes a SciChartSurface, creates xAxis and yAxis in the configuration to allow a vertical chart, and adds some data and a line series.
 
-The function [createSciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/modules.html#createscichartsurface) creates a single chart, so this is called twice passing in a different `<div>` ID in order to create the two vertical charts.
+The function `createSciChartSurface` creates a single chart, so this is called twice passing in a different `<div>` ID in order to create the two vertical charts.
 
 Synchronizing Zooming, Panning and Tooltips on Vertical Charts
 --------------------------------------------------------------

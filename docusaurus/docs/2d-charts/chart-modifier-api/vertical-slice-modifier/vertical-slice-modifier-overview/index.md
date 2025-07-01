@@ -90,7 +90,7 @@ Properties of the tooltip can be controlled on a per-series basis as per the [R
 |--------------|-----------------|
 | [series.rolloverModifierProps.tooltipTextColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptextcolor) | The text foreground color of the tooltip, on a per-series basis |
 | [series.rolloverModifierProps.tooltipColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltipcolor) | The tooltip container color on a per-series basis |
-| [series.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/curre§§nt/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) | Prefix label in the tooltip for X values. Defaults to 'X: ' |
+| [series.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) | Prefix label in the tooltip for X values. Defaults to 'X: ' |
 | [series.rolloverModifierProps.tooltipLabelY:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabely) | Prefix label in the tooltip for Y values. Defaults to 'Y: ' |
 
 

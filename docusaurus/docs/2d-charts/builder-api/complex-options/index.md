@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # ✅ Complex Options
 
-Many things in SciChart.js are customised by providing a particular subclass, eg `PointMarkers`. The type signature in the options in these cases will be something like [IPointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarker.html) | [TPointMarkerDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/tpointmarkerdefinition.html).
+Many things in SciChart.js are customised by providing a particular subclass, eg `PointMarkers`. The type signature in the options in these cases will be something like [IPointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarker.html) | [TPointMarkerDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tpointmarkerdefinition).
 
 Many of these classes require a `wasmContext` in the constructor, which you won’t have if you are trying to pass everything in a single definition, so instead use the Definition style, which as usual is `{ type, options }`.
 

@@ -15,7 +15,7 @@ The [buildChart:blue_book:](https://www.scichart.com/documentation/js/current/ty
     ```
 </CodeSnippetBlock>
 
-## Using [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/functions/build2DPolarChart.html) to explicitly create a Polar Chart:
+## Using [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#build2dpolarchart) to explicitly create a Polar Chart:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {11} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

@@ -75,7 +75,7 @@ Update your code sample as follows:
 
 This example also shows a variation in the column type to use [CylinderPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cylinderpointmarker3d.html) which must be imported.
 
-Metadata are simply javascript objects attached to the [XyzDataSeries3D](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries3d.html) in SciChart. The property [metadata.vertexColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata3d.html#vertexcolor) is used to determine column 3D datapoint colour.
+Metadata are simply javascript objects attached to the [XyzDataSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries3d.html) in SciChart. The property [metadata.vertexColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata3d.html#vertexcolor) is used to determine column 3D datapoint colour.
 
 Finally, when specifying metadata colors, the property [ColumnRenderableSeries3D.useMetadataColors:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/columnrenderableseries3d.html#usemetadatacolors) must be set to true.
 
