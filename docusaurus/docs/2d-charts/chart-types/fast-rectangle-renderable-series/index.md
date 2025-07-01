@@ -71,7 +71,7 @@ Rectangle Series could be used for displaying:
 
 ## Examples
 
-### Basic demo
+### Rectangle Series Basic Example
 
 In this example we have created the rectangle series using `columnXMode: EColumnMode.StartEnd`, which allows you to specify both the start and end X positions for each rectangle and `columnYMode: EColumnYMode.TopBottom`, which allows you to specify both the start and end Y positions for each rectangle.
 
@@ -80,7 +80,7 @@ In this example we have created the rectangle series using `columnXMode: EColumn
 ```ts {13,14} showLineNumbers file=./basic/demo.ts start=region_A_start end=region_A_end
 
 ```
-### Custom Texture Support
+### Rectangle Series Custom Texture Example
 
 In this example we have added a custom texture to the rectangle series using the `customTextureOptions` property. This allows you to fill each rectangle with a pattern or image instead of a solid color.
 
@@ -90,7 +90,7 @@ In this example we have added a custom texture to the rectangle series using the
 
 ```
 
-### Custom Label
+### Rectangle Series Custom Label Example
 
 This example shows how to add a custom label to each rectangle in the series using the `dataLabelProvider` property. By providing a custom `dataLabelProvider`, you can display any text or value for each rectangle, such as category names or formatted values.
 
@@ -100,7 +100,7 @@ This example shows how to add a custom label to each rectangle in the series usi
 
 ```
 
-### Animated
+### Rectangle Series Animated Example
 
 This example demonstrates how to animate the rectangle series using the [GenericAnimation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/genericanimation.html).
 

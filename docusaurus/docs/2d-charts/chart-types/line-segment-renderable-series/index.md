@@ -44,7 +44,7 @@ When using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v
 
 ## Examples
 
-### Basic example
+### Line Segment Example with XyDataSeries
 
 This example is using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) to create a simple line segment series.
 
@@ -53,7 +53,7 @@ This example is using [XyDataSeries:blue_book:](https://www.scichart.com/documen
 ```ts {23} showLineNumbers file=./basic-example/demo.ts start=region_A_start end=region_A_end
 ```
 
-### Example with XyxyDataSeries
+### Line Segment Example with XyxyDataSeries
 
 This example is using XyxyDataSeries
 
@@ -62,7 +62,7 @@ This example is using XyxyDataSeries
 ```ts {13} showLineNumbers file=./xyxy-example/demo.ts start=region_A_start end=region_A_end
 ```
 
-### Gradient field
+### Gradient Field Example
 
 <LiveDocSnippet name="./gradient-field/demo" />
 
