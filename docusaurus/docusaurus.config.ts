@@ -70,10 +70,9 @@ const config: Config = {
             },
             items: [
                 {
-                    type: "docSidebar",
-                    sidebarId: "tutorialSidebar",
-                    position: "left",
-                    label: "Home"
+                    to: "/docs/intro",
+                    label: "Home",
+                    position: "left"
                 },
                 {
                     to: "/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
