@@ -35,10 +35,13 @@ class CustomAxisLayoutStrategy extends BottomAlignedOuterHorizontallyStackedAxis
         const [firstAxis, ...stackedAxes] = axes;
         // measure stacked axes and max height (stackedAreaSize) required by them
         super.measureAxes(sciChartSurface, chartLayoutState, stackedAxes);
-        const stackedAreaSize = chartLayoutState.bottomOuterAreaSize;
 
         // measure first axis with the regular logic
-        this.defaultBottomOuterAxisLayoutStrategy.measureAxes(sciChartSurface, chartLayoutState, [firstAxis]);
+        const stackedAreaSize = this.defaultBottomOuterAxisLayoutStrategy.measureAxes(
+            sciChartSurface,
+            chartLayoutState,
+            [firstAxis]
+        );
 
         // calculate height required by the first axis and then the total height
         const firstAxisSize = getHorizontalAxisRequiredSize(firstAxis.axisLayoutState);
