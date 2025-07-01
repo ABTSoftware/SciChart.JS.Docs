@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# 🔄 Deleting DataSeries Memory
+# ✅ Deleting DataSeries Memory
 
 SciChart.js stores memory in WebAssembly. This allows us to achieve our incredible performance, and also provide a unfied experience across SciChart platforms (Windows, iOS, Android and JavaScript).
 

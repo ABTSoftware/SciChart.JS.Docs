@@ -2,7 +2,7 @@
 sidebar_position: 34
 ---
 
-# 🔄 The Treemap Chart Type
+# ✅ The Treemap Chart Type
 
 Treemap Charts can be within with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
 
