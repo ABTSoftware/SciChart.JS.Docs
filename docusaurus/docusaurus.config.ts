@@ -7,6 +7,8 @@ import { baseUrl } from "./config";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/dev/docusaurus";
+
 const config: Config = {
     title: "SciChart JS Docs",
     tagline: "The Ultimate JavaScript Chart Library",
@@ -46,24 +48,10 @@ const config: Config = {
                     sidebarPath: "./sidebars.ts",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/dev/docusaurus/",
+                    editUrl: gitHubUrl,
                     remarkPlugins: [remarkCodeSnippets]
                 },
-                blog: {
-                    showReadingTime: true,
-                    feedOptions: {
-                        type: ["rss", "atom"],
-                        xslt: true
-                    },
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
-                    // editUrl: "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-                    // Useful options to enforce blogging best practices
-                    onInlineTags: "warn",
-                    onInlineAuthors: "warn",
-                    onUntruncatedBlogPosts: "warn"
-                },
+                blog: false,
                 theme: {
                     customCss: "./src/css/custom.css"
                 }
@@ -85,11 +73,26 @@ const config: Config = {
                     type: "docSidebar",
                     sidebarId: "tutorialSidebar",
                     position: "left",
-                    label: "Tutorial"
+                    label: "Home"
                 },
-                { to: "/blog", label: "Blog", position: "left" },
                 {
-                    href: "https://github.com/facebook/docusaurus",
+                    to: "/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
+                    label: "Tutorials",
+                    position: "left"
+                },
+                { to: "/docs/2d-charts/surface/scichart-surface-type-overview", label: "2D Docs", position: "left" },
+                {
+                    to: "/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview",
+                    label: "3D Docs",
+                    position: "left"
+                },
+                {
+                    href: "https://www.scichart.com/documentation/js/v4/typedoc/index.html",
+                    label: "API Docs",
+                    position: "left"
+                },
+                {
+                    href: gitHubUrl,
                     label: "GitHub",
                     position: "right"
                 }
@@ -102,25 +105,25 @@ const config: Config = {
                     title: "Docs",
                     items: [
                         {
-                            label: "Tutorial",
-                            to: "/docs/contributing"
-                        }
+                            label: "Home",
+                            to: "/docs/intro"
+                        },
+                        {
+                            label: "API Documentation",
+                            href: "https://www.scichart.com/documentation/js/v4/typedoc/index.html"
+                        },
                     ]
                 },
                 {
                     title: "Community",
                     items: [
                         {
+                            label: "SciChart Forum",
+                            href: "https://www.scichart.com/questions"
+                        },
+                        {
                             label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/docusaurus"
-                        },
-                        {
-                            label: "Discord",
-                            href: "https://discordapp.com/invite/docusaurus"
-                        },
-                        {
-                            label: "X",
-                            href: "https://x.com/docusaurus"
+                            href: "https://stackoverflow.com/questions/tagged/scichart"
                         }
                     ]
                 },
@@ -128,21 +131,21 @@ const config: Config = {
                     title: "More",
                     items: [
                         {
-                            label: "Blog",
-                            to: "/blog"
+                            label: "SciChart website",
+                            href: "https://www.scichart.com"
                         },
                         {
-                            label: "GitHub",
-                            href: "https://github.com/facebook/docusaurus"
+                            label: "SciChart GitHub",
+                            href: "https://github.com/ABTSoftware"
                         }
                     ]
                 }
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`
+            copyright: `Copyright © ${new Date().getFullYear()} SciChart. Built with Docusaurus.`
         },
         prism: {
             theme: prismThemes.vsLight,
-            darkTheme: prismThemes.vsDark,
+            darkTheme: prismThemes.vsDark
         }
     } satisfies Preset.ThemeConfig,
 
@@ -158,7 +161,7 @@ const config: Config = {
                                 {
                                     test: /\.wasm$/,
                                     type: "asset/resource" // simply copies the file without processing
-                                },
+                                }
                             ],
                             noParse: /\.wasm$/ // optional: avoid parsing entirely
                         }

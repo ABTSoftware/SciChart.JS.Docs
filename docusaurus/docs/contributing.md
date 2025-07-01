@@ -1,6 +1,6 @@
 ---
 title: "Contributing Guide"
-sidebar_position: 0  # Lower numbers appear first
+sidebar_position: 10  # Lower numbers appear first
 ---
 
 # SciChart.js Docs Contributing Guide
@@ -122,7 +122,9 @@ classDiagram
 
 **Insert Live CodePen snippet**
 
-<LiveDocSnippet maxWidth={"100%"} name="./docusaurus-examples/demo" />
+```
+<LiveDocSnippet maxWidth={"100%"} name="./Basic/demo" htmlPath="./Basic/demo.html" cssPath="./Basic/demo.css" />
+```
 
 The variant with div element with id="result" useful to output something.
 
@@ -140,10 +142,10 @@ The variant with div element with id="result" useful to output something.
 **Code block**
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
-    ```ts showLineNumbers file=./docusaurus-examples/demo.ts start=region_A_start end=region_A_end
+    ```ts showLineNumbers file=./2d-charts/annotations-api/line-annotation/Basic/demo.ts start=region_A_start end=region_A_end
 
     ```
-    ```ts showLineNumbers file=./docusaurus-examples/demo.ts start=region_B_start end=region_B_end
+    ```ts showLineNumbers file=./2d-charts/annotations-api/line-annotation/Basic/demo.ts start=region_B_start end=region_B_end
 
     ```
 

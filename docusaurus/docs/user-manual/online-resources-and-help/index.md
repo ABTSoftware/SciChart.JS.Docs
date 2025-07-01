@@ -23,7 +23,7 @@ There are several online reosurces to help you get the best out of SciChart Andr
 
 1.  Getting started guide at [www.scichart.com/getting-started-with-scichart-js](https://www.scichart.com/getting-started/scichart-javascript) 
 2.  SciChart.js forums at [www.scichart.com/questions-js](https://www.scichart.com/questions/categories/js)
-3.  API Documentation at [www.scichart.com/javascript-chart-documentation](/docs/user-manual/scichart-js-javascript-charts-user-manual)
+3.  API Documentation at [https://www.scichart.com/documentation/js/v4/typedoc/index.html](https://www.scichart.com/documentation/js/v4/typedoc/index.html)
 4.  Support tickets (licensed customers only) at [https://support.scichart.com](https://support.scichart.com)    
 5.  The SciChart.js Online Demo at [https://scichart.com/demo](https://scichart.com/demo)
 6.  Source code for Online Demo at [https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples)

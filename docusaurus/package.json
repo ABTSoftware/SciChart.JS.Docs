@@ -21,7 +21,7 @@
     "linkcheck-internal": "node link-checker-internal.js",
     "bookmark": "node link-bookmark-checker.js",
     "status": "node count-docs.js",
-    "table-of-content" : "node generate-docs-toc.js"
+    "table-of-content": "node generate-docs-toc.js"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.2.0",

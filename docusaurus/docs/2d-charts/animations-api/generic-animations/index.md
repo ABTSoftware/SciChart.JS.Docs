@@ -10,14 +10,12 @@ The onAnimate function is passed the from and to values, and a progress value, w
 
 Here are some simple examples what can be done with new API:
 
-- [✅ Generic Animations](#-generic-animations)
-    - [Animating Annotations](#animating-annotations)
-    - [Animating Visible Range](#animating-visible-range)
-    - [Animating AutoRange](#animating-autorange)
-    - [Animating Data and Styles](#animating-data-and-styles)
-    - [Combining Animations](#combining-animations)
-    - [Updating the DOM with animations](#updating-the-dom-with-animations)
-      - [See Also](#see-also)
+- [Animating Annotations](#animating-annotations)
+- [Animating Visible Range](#animating-visible-range)
+- [Animating AutoRange](#animating-autorange)
+- [Animating Data and Styles](#animating-data-and-styles)
+- [Combining Animations](#combining-animations)
+- [Updating the DOM with animations](#updating-the-dom-with-animations)
 
 ### Animating Annotations
 

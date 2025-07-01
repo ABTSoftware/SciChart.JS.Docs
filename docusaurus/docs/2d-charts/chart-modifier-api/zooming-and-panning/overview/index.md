@@ -105,7 +105,7 @@ At this point we should get a working example of the Overview control.
 />
 
 :::tip
-By default the overview will clone the original renderable series on the associated chart to the overview, but both series share the same dataSeries, so data updates will apply to both charts. Check [Optional Parameters for creating SciChartOverview](#OptionalParameters) section for info on how to override this behavior.
+By default the overview will clone the original renderable series on the associated chart to the overview, but both series share the same dataSeries, so data updates will apply to both charts. Check [Optional Parameters for creating SciChartOverview](#optional-parameters-for-creating-scichartoverview) section for info on how to override this behavior.
 :::
 
 Adding Zoom / Pan Modifiers to demonstrate the overview

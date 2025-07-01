@@ -97,12 +97,12 @@ function renderMarkdownToc(items, depth = 0) {
 }
 
 function saveMarkdownToc(items) {
-    const output = `# Global Table of Contents\n\n${renderMarkdownToc(items)}\n`;
+    const output = renderMarkdownToc(items);
     const outputPath = path.join(
         __dirname,
         "docs",
         "user-manual",
-        "scichart-js-javascript-charts-user-manual",
+        "toc",
         "index.md"
     );
     const newContent = `<!-- generate-docs-toc.js start -->
