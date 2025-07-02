@@ -248,6 +248,14 @@ LayoutMangerType
 
 class **LayoutMangerType** typo fixed to **LayoutManagerType**
 
+AxisLayoutStrategy.measureAxes
+----------------
+
+The method signature has changed.  
+The method now should return the required size instead of updating `chartLayoutState`.  
+Refer to [the example of a custom strategy](/docs/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers/index.md). 
+
+
 AxisBase3D.labelStyle.foreground
 --------------------------------
 
