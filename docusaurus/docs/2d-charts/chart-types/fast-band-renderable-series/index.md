@@ -74,7 +74,7 @@ There is also a dedicated [Scatter Series](/docs/2d-charts/chart-types/xy-scat
 ## Painting Band Segments with Different Colors
 
 :::tip
-It is possible to define the colour of line segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/line-segment-renderable-series)
+It is possible to define the colour of line segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/fast-line-segment-renderable-series/index.md)
 
 For more info on how to do this, see the [PaletteProvider - Per-point colouring of Band Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-band-renderable-series) documentation page.
 :::

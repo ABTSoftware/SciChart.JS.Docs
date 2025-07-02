@@ -59,5 +59,5 @@ There is also a dedicated [Scatter Series](/docs/2d-charts/chart-types/xy-scat
 :::tip
 It is possible to define the colour of line segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Line Charts](/docs/2d-charts/chart-types/palette-provider-api/line-segment-renderable-series) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Line Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-line-segment-renderable-series/index.md) documentation page.
 :::

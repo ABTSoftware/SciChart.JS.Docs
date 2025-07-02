@@ -51,7 +51,7 @@ export default function CodePenEmbed(props: TProps) {
               "A documentation snippet for SciChart.JS from scichart.com/javascript-chart-documentation. Find out more about SciChart at scichart.com/javascript-chart-features",
             head: "<meta name='viewport' content='width=device-width, initial-scale=1'>",
             scripts: [
-              "https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/index.min.js",
+              "https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.770/index.min.js",
             ],
             tags: ["scichart", "documentation"],
             title: "SciChart.js documentation snippet",

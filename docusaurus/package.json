@@ -41,7 +41,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "remark-code-snippets": "^1.1.0",
-    "scichart": "^4.0.0-beta.734",
+    "scichart": "^4.0.0-beta.770",
     "url": "^0.11.4"
   },
   "devDependencies": {

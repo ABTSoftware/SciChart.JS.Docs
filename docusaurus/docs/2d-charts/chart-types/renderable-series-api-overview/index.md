@@ -30,9 +30,9 @@ SciChart.js supports a number of 2D & 3D Chart types. These include:
 | [100% Stacked Mountain Series](/docs/2d-charts/chart-types/stacked-mountain-renderable-series) | [Band (High-Low Fill) Series](/docs/2d-charts/chart-types/fast-band-renderable-series) |
 | [Smooth Stacked Mountain Series](/docs/2d-charts/chart-types/smooth-stacked-mountain-renderable-series) | [Digital (Step) Band (High-Low Fill) Series](/docs/2d-charts/chart-types/fast-band-digital-renderable-series) |
 | [Scatter Series](/docs/2d-charts/chart-types/xy-scatter-renderable-series) | [Text Series](/docs/2d-charts/chart-types/fast-text-renderable-series) |
-| [Bubble Series](/docs/2d-charts/chart-types/fast-bubble-renderable-series) | [Triangle series](/docs/2d-charts/chart-types/triangle-renderable-series) |
+| [Bubble Series](/docs/2d-charts/chart-types/fast-bubble-renderable-series) | [Triangle series](/docs/2d-charts/chart-types/fast-triangle-renderable-series/index.md) |
 | [Rectangle series](/docs/2d-charts/chart-types/fast-rectangle-renderable-series) | [Treemap chart](/docs/2d-charts/chart-types/tree-map-type) |
-| [Box plot series](/docs/2d-charts/chart-types/fast-box-plot-renderable-series) | [Line Segment Series](/docs/2d-charts/chart-types/line-segment-renderable-series) |
+| [Box plot series](/docs/2d-charts/chart-types/fast-box-plot-renderable-series) | [Line Segment Series](/docs/2d-charts/chart-types/fast-line-segment-renderable-series/index.md) |
 | [Polar Partial Chart](/docs/2d-charts/chart-types/polar-partial-chart-type) | [Polar Line Series](/docs/2d-charts/chart-types/polar-line-renderable-series) |
 | [Polar Band Series](/docs/2d-charts/chart-types/polar-band-renderable-series) | [Polar Column (Area) Series](/docs/2d-charts/chart-types/polar-column-renderable-series) |
 | [Polar Heatmap Series](/docs/2d-charts/chart-types/polar-uniform-heatmap-renderable-series) | [Polar Mountain Series](/docs/2d-charts/chart-types/polar-mountain-renderable-series) |
