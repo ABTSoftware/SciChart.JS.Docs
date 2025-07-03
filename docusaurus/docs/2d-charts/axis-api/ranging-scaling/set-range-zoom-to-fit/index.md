@@ -32,7 +32,7 @@ To programmatically range an axis, set the [AxisCore.visibleRange:blue_book:](h
 
 This results in the following output: 
 
-<LiveDocSnippet maxWidth={600} name="./SetGetVisibleRange/demo" htmlPath="./SetGetVisibleRange/demo.html" cssPath="./SetGetVisibleRange/demo.css" />
+<LiveDocSnippet name="./SetGetVisibleRange/demo" htmlPath="./SetGetVisibleRange/demo.html" cssPath="./SetGetVisibleRange/demo.css" />
 
 Click the button above to update yAxis.visibleRange. View the codepen in full to see how this works.
 
@@ -65,7 +65,7 @@ Try this example below:
 
 This results in the following output:
 
-<LiveDocSnippet maxWidth={600} name="./ZoomExtents/demo" htmlPath="./ZoomExtents/demo.html" cssPath="./ZoomExtents/demo.css" />
+<LiveDocSnippet name="./ZoomExtents/demo" htmlPath="./ZoomExtents/demo.html" cssPath="./ZoomExtents/demo.css" />
 
 What if you want to allow the user to zoom to fit using the mouse? All the zooming, panning operations via mouse or touch are handled by ChartModifiers in SciChart.js. See the [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier) for information.
 

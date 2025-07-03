@@ -42,7 +42,11 @@ The order may differ depending on some configuration specifics.
 Series render order depends on the insertion order into [renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
 While it also may change when series are hovered or selected (this feature can be enabled with [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesselectionmodifier.html)).
 
-<DemoExampleWrapper src="chart-series-selection" label="Series Selection Example" />
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/chart-series-selection"
+    title="Series Selection Example"
+/>
+
 #### Annotations Render Order
 
 Annotations expose [annotationLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#annotationlayer) property,  
@@ -53,7 +57,10 @@ which allows them to be placed behind grid-lines/series or above them.
 Dom Annotations have limited support of the layering options due to their rendering specifics.
 :::
 
-<DemoExampleWrapper src="annotation-layers" label="Example of Annotations on different Layers" />
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/annotation-layers"
+    title="Annotation Layers Example"
+/>
 
 #### Native Text Render Order
 

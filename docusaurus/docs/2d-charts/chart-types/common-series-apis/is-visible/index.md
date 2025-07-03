@@ -19,7 +19,7 @@ You can listen to isVisible changes via the [BaseRenderableSeries.isVisibleChan
 
 This can be used to get feedback about the current visibility state of a series, as in the following demo:
 
-<LiveDocSnippet maxWidth={600} />
+<LiveDocSnippet />
 
 :::tip
 See the onIsVisibleChanged parameter in [IBaseRenderableSeriesOptions.onIsVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaserenderableseriesoptions.html#onisvisiblechanged) for type information.

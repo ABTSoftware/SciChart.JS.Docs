@@ -6,6 +6,11 @@ sidebar_position: 100
 
 The [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) creates lines in a polar coordinate system, connecting data points with either straight line segments or interpolated arcs. This chart type is ideal for visualizing cyclical data, radar charts, or any data that benefits from a circular representation.
 
+:::tip
+The [JavaScript Polar Line Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-line-chart) can be found in the [SciChart.Js Examples Suite > Polar Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarLineChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-line-chart).
+:::
+
+
 <ChartFromSciChartDemo 
     src="http://stagingdemo2.scichart.com/demo/iframe/polar-line-chart"
     title="Polar Line Series Chart"
@@ -46,10 +51,3 @@ By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/docume
 ```
 
 <LiveDocSnippet name="./PaletteProvider/demo" />
-
-In the code above:
-- We create a `ThresholdLinePaletteProvider` class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html)
-- The [strokePaletteMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#strokepalettemode) is set to [SOLID:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#solid) since we want abrupt color changes based on a condition, not a [GRADIENT:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#gradient)
-- We override [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) to return another stroke color when our rule is met: `Math.floor(xValue / 3) % 2 === 0`
-- When the method returns `undefined`, the default stroke color is used; otherwise, the custom color is applied
-- The [interpolateLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html#interpolateline) is set to `true` to create smooth curved segments that follow the polar coordinate system

@@ -13,4 +13,4 @@ The Polar Sunburst Chart Type is created using [PolarColumnRenderableSeries:blue
 
 ## Create a Basic Polar Sunburst Chart
 
-<LiveDocSnippet name="./Basic/demo" />
+<LiveDocSnippet name="./Basic/demo" /> 

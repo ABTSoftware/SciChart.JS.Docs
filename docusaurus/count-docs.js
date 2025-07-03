@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
+
 function analyzeDocs(dir) {
   const docPatterns = [
     'index.md',
@@ -19,8 +20,10 @@ function analyzeDocs(dir) {
       total: 0
     },
     filesWithCheckmark: [],
+    filesWithoutCheckmark: [], // New array for files not done
     checkmarkCount: 0
   };
+
 
   function walkDirectory(currentPath) {
     const items = fs.readdirSync(currentPath);
@@ -28,6 +31,7 @@ function analyzeDocs(dir) {
     items.forEach(item => {
       const fullPath = path.join(currentPath, item);
       const stat = fs.statSync(fullPath);
+
 
       if (stat.isDirectory()) {
         walkDirectory(fullPath);
@@ -37,20 +41,23 @@ function analyzeDocs(dir) {
           results.counts[lowerName]++;
           results.counts.total++;
           
-          // Check for ✅ symbol
           const content = fs.readFileSync(fullPath, 'utf8');
           if (content.includes('✅')) {
             results.filesWithCheckmark.push(fullPath);
             results.checkmarkCount += (content.match(/✅/g) || []).length;
+          } else {
+            results.filesWithoutCheckmark.push(fullPath); // Collect files without checkmark
           }
         }
       }
     });
   }
 
+
   walkDirectory(dir);
   return results;
 }
+
 
 // Main execution
 if (require.main === module) {
@@ -60,7 +67,8 @@ if (require.main === module) {
       throw new Error('"docs" directory not found');
     }
 
-    const { counts, filesWithCheckmark, checkmarkCount } = analyzeDocs(docsPath);
+
+    const { counts, filesWithCheckmark, filesWithoutCheckmark } = analyzeDocs(docsPath);
     
     console.log('Documentation File Count:');
     console.table({
@@ -73,9 +81,13 @@ if (require.main === module) {
     console.log(`Files containing ✅ (${filesWithCheckmark.length}):`);
     filesWithCheckmark.forEach(file => console.log(`- ${path.relative(docsPath, file)}`));
     console.log(`\n`);
+    console.log(`Files NOT DONE (${filesWithoutCheckmark.length}):`);
+    filesWithoutCheckmark.forEach(file => console.log(`❌ ${path.relative(docsPath, file)}`));
+    console.log(`\n`);
     console.log(`Total ${counts.total}`);
     console.log(`Complete ${filesWithCheckmark.length}`);
-    console.log(`Completion ${(100*filesWithCheckmark.length/counts.total).toFixed(2)}%`);
+    const percentage = counts.total > 0 ? (100 * filesWithCheckmark.length / counts.total).toFixed(2) : "0.00";
+    console.log(`Completion ${percentage}%`);
     
     process.exit(0);
   } catch (error) {

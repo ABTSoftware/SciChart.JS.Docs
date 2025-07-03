@@ -1,6 +1,6 @@
 import * as SciChart from "scichart";
 export async function polarColumnChart(divElementId) {
-    const { SciChartPolarSurface, PolarNumericAxis, SciChartJsNavyTheme, PolarColumnRenderableSeries, EPolarAxisMode, EAxisAlignment, NumberRange, XyDataSeries, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, NativeTextAnnotation, EllipsePointMarker, EMultiLineAlignment, DpiHelper, EColumnMode, } = SciChart;
+    const { SciChartPolarSurface, PolarNumericAxis, SciChartJsNavyTheme, PolarColumnRenderableSeries, EPolarAxisMode, EAxisAlignment, NumberRange, XyDataSeries, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, NativeTextAnnotation, EMultiLineAlignment, DpiHelper, } = SciChart;
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
     });
@@ -16,11 +16,6 @@ export async function polarColumnChart(divElementId) {
         axisAlignment: EAxisAlignment.Right,
         visibleRange: new NumberRange(0, 6),
         innerRadius: 0.1,
-        labelStyle: {
-            fontSize: 25,
-            fontFamily: "notoserif",
-            color: "#5FFFFF",
-        }
     });
     sciChartSurface.yAxes.add(radialYAxis);
     // #region_A_start

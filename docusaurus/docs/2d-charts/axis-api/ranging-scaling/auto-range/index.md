@@ -23,7 +23,7 @@ Note: Specifying [axis.visibleRange:blue_book:](https://www.scichart.com/docume
 
 </CodeSnippetBlock>
 
-<LiveDocSnippet maxWidth={600} name="./Once/demo" />
+<LiveDocSnippet name="./Once/demo" />
 
 AutoRange Always
 ----------------
@@ -44,7 +44,7 @@ To combine AutoRanging and user-zooming you need to use **ZoomState** - a specia
 
 </CodeSnippetBlock>
 
-<LiveDocSnippet maxWidth={600} name="./Always/demo" />
+<LiveDocSnippet name="./Always/demo" />
 
 AutoRange Never
 ---------------
@@ -61,7 +61,7 @@ The **axis will never autorange**. With this option, you would need to set the V
 
 </CodeSnippetBlock>
 
-<LiveDocSnippet maxWidth={600} name="./Never/demo" />
+<LiveDocSnippet name="./Never/demo" />
 
 Adding Padding or Spacing with GrowBy
 -------------------------------------
@@ -78,7 +78,7 @@ Also, it is possible to **add spacing** or padding to the visibleRange when the
 
 </CodeSnippetBlock>
 
-<LiveDocSnippet maxWidth={600} name="./GrowBy/demo" />
+<LiveDocSnippet name="./GrowBy/demo" />
 
 Programmatically Ranging an Axis
 -------------------------------

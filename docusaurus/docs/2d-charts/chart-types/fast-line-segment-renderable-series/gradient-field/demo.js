@@ -44,7 +44,7 @@ async function gradientField(divElementId) {
         zoomExtentsToInitialRange: true
     });
     sciChartSurface.yAxes.add(yAxis);
-    // FastLineSegmentRenderableSeries with palette provider having SOLID palette mode the first color is used
+    // For FastLineSegmentRenderableSeries with palette provider having SOLID palette mode the first color is used
     // However for LineRendereableSeries with the same palette provider and SOLID palette the second color is used
     const lineSegmentSeries = new FastLineSegmentRenderableSeries(wasmContext, {
         strokeThickness: 4,

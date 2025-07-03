@@ -31,7 +31,7 @@ The position properties are where the text should be relative to the data point,
 </CodeSnippetBlock>
 
 
-<ChartPreviewWrapper maxWidth={600} />
+<LiveDocSnippet />
 
 ## Positioning Rules for Data Labels
 

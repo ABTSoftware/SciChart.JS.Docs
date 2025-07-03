@@ -7,6 +7,10 @@ sidebar_position: 100
 The [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) creates columns in a polar coordinate system, displaying data as vertical bars positioned at specific angles and radial distances from the center, or as angular bars drawn around the center.
 This chart type is ideal for visualizing cyclic data or data with angular relationships.
 
+:::tip
+The [JavaScript Polar Column Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-column-chart) can be found in the [SciChart.Js Examples Suite > Polar Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarColumnChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-column-chart).
+:::
+
 <ChartFromSciChartDemo 
     src="http://stagingdemo2.scichart.com/demo/iframe/polar-column-chart"
     title="Polar Column Series Chart"
@@ -76,3 +80,7 @@ In the code above:
 - [Start:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#start), [Mid:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#mid) - work with [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html)
 - [StartEnd:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#startend), [StartWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#startwidth), and [MidWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html#midwidth) - require [XyxDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxdataseries.html) or [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html)
 :::
+
+### PaletteProvider for Polar Column Series
+
+By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Column Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Column Series](/docs/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series).

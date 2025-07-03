@@ -23,7 +23,10 @@ Each RenderableSeries as a [dataLabelProvider:blue_book:](https://www.scichart.
 
 These defines whether text labels are rendered for data-points, and the style and positioning of these text labels.
 
-<DemoExampleWrapper src="javascript-datalabels" label="Data Labels Example" />
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/datalabels"
+    title="Data Labels Example"
+/>
 
 ## Adding Data Labels
 
@@ -41,7 +44,7 @@ You an configure data labels for almost any series by setting a valid style on t
 
 This results in the following output:
 
-<LiveDocSnippet maxWidth={600} />
+<LiveDocSnippet />
 
 ## Standard Label Formatting
 
@@ -59,6 +62,6 @@ Datalabels supports the same numeric format and precision options as axis labels
 
 The precision is now increased to 4 decimal places
 
-<LiveDocSnippet maxWidth={600} name="demoLabelFormatting" />
+<LiveDocSnippet name="demoLabelFormatting" />
 
 Data Labels formatting uses similar code to the [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) for axis labels. This means that labels can be formatted as dates, exponents or scientific notation.

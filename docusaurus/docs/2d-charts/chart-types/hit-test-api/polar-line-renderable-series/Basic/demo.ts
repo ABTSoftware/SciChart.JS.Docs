@@ -39,6 +39,7 @@ export async function polarLineChart(divElementId) {
     });
     sciChartSurface.yAxes.add(radialYAxis);
 
+    // #region_A_start
     // add a couple of polar lines to the chart
     const polarLine1 = new PolarLineRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
@@ -48,7 +49,6 @@ export async function polarLineChart(divElementId) {
         }),
         stroke: "teal",
         strokeThickness: 3,
-        interpolateLine: true,
     });
     const polarLine2 = new PolarLineRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
@@ -67,7 +67,9 @@ export async function polarLineChart(divElementId) {
         }),
     });
     sciChartSurface.renderableSeries.add(polarLine1, polarLine2);
+    // #region_A_end
 
+    // #region_B_start
     const SUCCESSFUL_HIT_SVG = `<svg width="8" height="8"><circle cx="50%" cy="50%" r="4" fill="#33AA33" stroke="#000000" stroke-width="0.7"/></svg>`;
     const NO_HIT_SVG = `<svg width="4" height="4"><circle cx="50%" cy="50%" r="2" fill="#FF0000"/></svg>`;
     const HIT_TEST_RADIUS = 10; // Radius for hit testing
@@ -132,6 +134,7 @@ export async function polarLineChart(divElementId) {
             }
         });
     });
+    // #region_B_end
 
     return { sciChartSurface, wasmContext };
 }

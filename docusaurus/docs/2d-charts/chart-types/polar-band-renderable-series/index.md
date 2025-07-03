@@ -6,6 +6,10 @@ sidebar_position: 100
 
 The [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) creates a band or area between two polar curves, displaying the relationship between two sets of yValues on a polar coordinate system.
 
+:::tip
+The [JavaScript Polar Band Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-band-chart) can be found in the [SciChart.Js Examples Suite > Polar Band Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarBandChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-band-chart).
+:::
+
 <ChartFromSciChartDemo 
     src="http://stagingdemo2.scichart.com/demo/iframe/polar-band-chart"
     title="Polar Band Series Chart"
@@ -56,17 +60,4 @@ In the code above:
 
 ### PaletteProvider for Polar Band Series
 
-By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Band Series, to achieve dynamic coloring based on data values. This is useful if you want to set the color of the band based on `xValue`, `yValue` or `index`.
-
-Here is how to do this:
-
-```ts showLineNumbers {9-15,17-23,36} file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
-```
-
-<LiveDocSnippet name="./PaletteProvider/demo" />
-
-In the code above:
-- We create a class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) to override [overrideFillArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridefillargb) and [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) methods by `xValue`, more specifically, the orange fill & stroke when this custom rule is met:
-```ts
-((xValue > 3 && xValue <= 6) || (xValue > 9 && xValue <= 12))
-```
+By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Band Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Band Series](/docs/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series).

@@ -135,7 +135,7 @@ The variant with div element with id="result" useful to output something.
 600 px width
 
 ```
-<LiveDocSnippet maxWidth={600} name="demoGapDifferentStyle" />
+<LiveDocSnippet name="demoGapDifferentStyle" />
 ```
 
 

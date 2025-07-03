@@ -20,7 +20,7 @@ Using AnnotationHoverModifier
 
 To enable the hover detection we need to add the [AnnotationHoverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationhovermodifier.html).
 
-<CodeSnippetBlock labels={["TS", "JSON Builder"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts {21} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {32} showLineNumbers file=./demo.js start=#region_D_start end=#region_D_end

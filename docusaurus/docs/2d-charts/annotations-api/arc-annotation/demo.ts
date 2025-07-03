@@ -8,6 +8,7 @@ async function initSciChart(divElementId) {
         NumericAxis,
         ArcAnnotation,
         SciChartJsNavyTheme,
+        ECoordinateMode
     } = SciChart;
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -43,10 +44,25 @@ async function initSciChart(divElementId) {
         stroke: "#FF6347",
         strokeThickness: 5,
         selectionBoxStroke: "rgba(255, 255, 255, 0.5)",
-    })
+    });
+
+    const absoluteArc = new ArcAnnotation({
+        isEditable: true,
+        isLineMode: true,
+        x1: 30,
+        y1: 50,
+        x2: 70,
+        y2: 50,
+        height: -1.5, // Negative height curves the arc downwards
+        stroke: "#FF6347",
+        strokeThickness: 5,
+        selectionBoxStroke: "rgba(255, 255, 255, 0.5)",
+        xCoordinateMode: ECoordinateMode.Pixel,
+        yCoordinateMode: ECoordinateMode.Pixel,
+    });
 
     // Add ArcAnnotations to the chart
-    sciChartSurface.annotations.add(filledArc, arcLine);
+    sciChartSurface.annotations.add(filledArc, arcLine, absoluteArc);
     // #region_A_end
 
     const annotation1 = new SciChart.NativeTextAnnotation({

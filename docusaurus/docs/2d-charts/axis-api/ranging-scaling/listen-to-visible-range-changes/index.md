@@ -21,7 +21,7 @@ It is possible to subscribe to listening to the [AxisCore.visibleRange:blue_boo
 
 This results in the following output:
 
-<LiveDocSnippet maxWidth={600} name="./VisibleRangeChanged/demo" cssPath="./VisibleRangeChanged/demo.css" />
+<LiveDocSnippet name="./VisibleRangeChanged/demo" cssPath="./VisibleRangeChanged/demo.css" />
 
 The most typical use for this callback is to perform some kind of operation when the [AxisCore.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) changes, such as updating UI.
 

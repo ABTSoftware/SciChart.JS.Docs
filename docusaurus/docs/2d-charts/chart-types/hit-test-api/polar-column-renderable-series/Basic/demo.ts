@@ -15,10 +15,8 @@ export async function polarColumnChart(divElementId) {
         EVerticalAnchorPoint,
         ECoordinateMode,
         NativeTextAnnotation,
-        EllipsePointMarker,
         EMultiLineAlignment,
         DpiHelper,
-        EColumnMode,
     } = SciChart;
 
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
@@ -38,11 +36,6 @@ export async function polarColumnChart(divElementId) {
         axisAlignment: EAxisAlignment.Right,
         visibleRange: new NumberRange(0, 6),
         innerRadius: 0.1,
-        labelStyle: {
-            fontSize: 25,
-            fontFamily: "notoserif",
-            color: "#5FFFFF",
-        }
     });
     sciChartSurface.yAxes.add(radialYAxis);
 

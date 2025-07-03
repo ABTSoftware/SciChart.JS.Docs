@@ -2,16 +2,18 @@ export default function ChartFromSciChartDemo({
     src,
     title,
     width = "100%",
-    description
+    description,
+    aspectRatio = 3 / 2
 }: {
     src: string;
     title: string;
     width?: string | number;
     description: string
+    aspectRatio?: number;
 }) {
     return (
-        <div>
-            <iframe src={src} style={{ width, aspectRatio: 3 / 2 }} frameBorder="0"></iframe>
+        <div style={{ width: '100%' }}>
+            <iframe src={src} style={{ width, aspectRatio }} frameBorder="0"></iframe>
 
             <div style={{ textAlign: "center" }}>
                 Above: The JavaScript <a href={src} target="_blank">{title}</a> example

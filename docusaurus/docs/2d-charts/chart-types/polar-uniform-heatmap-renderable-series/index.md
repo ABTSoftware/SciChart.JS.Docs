@@ -6,6 +6,10 @@ sidebar_position: 100
 
 The [PolarUniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaruniformheatmaprenderableseries.html) displays "heat" values as colored cells in a polar (circular) coordinate system—perfect for visualizing intensity, density, or other matrix-like data in a circular form. Each cell is mapped from a two-dimensional array of z-values, with color gradients representing the data's magnitude.
 
+:::tip
+The [JavaScript Polar Uniform Heatmap Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-uniform-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Polar Uniform Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarUniformHeatmapChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-uniform-heatmap-chart).
+:::
+
 <ChartFromSciChartDemo 
     src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
@@ -51,7 +55,7 @@ With these CSS properties:
 ```css showLineNumbers {10-16} file=./LegendHeatmap/demo.css
 ```
 
-<LiveDocSnippet name="./LegendHeatmap/demo" />
+<LiveDocSnippet name="./LegendHeatmap/demo" htmlPath="./LegendHeatmap/demo.html" cssPath="./LegendHeatmap/demo.css" />
 
 In the code above:
 - The [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/heatmaplegend.html) component creates an interactive vertical legend, visually linking the z-value color range.

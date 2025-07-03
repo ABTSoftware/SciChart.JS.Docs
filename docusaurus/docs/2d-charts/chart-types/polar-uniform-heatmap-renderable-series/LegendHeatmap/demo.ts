@@ -77,7 +77,7 @@ export async function polarUniformHeatmapChart(divElementId, legendElementId) {
     const { heatmapLegend } = await HeatmapLegend.create(legendElementId, { 
         theme: {
             ...new SciChartJsNavyTheme(),
-            sciChartBackground: "darkblue",
+            sciChartBackground: "transparent",
             loadingAnimationBackground: "indigo"
         },
         yAxisOptions: {
