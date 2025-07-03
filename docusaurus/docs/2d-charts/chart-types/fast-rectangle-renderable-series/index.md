@@ -24,6 +24,9 @@ Rectangle Series could be used for displaying:
 - Linear gauges
 - Bar chart race
 
+:::info
+[Resampling](/docs/2d-charts/chart-types/data-series-api/resampling/index.md) is OFF by default for Rectangle Series.  If you are using it with XyDataSeries, with non-overlapping data that is sorted in X, and you have enough data to potentially benefit from resampling, you can turn it on by passing ```resamplingMode: EResamplingMode.Auto```
+:::
 
 ## Properties
 
