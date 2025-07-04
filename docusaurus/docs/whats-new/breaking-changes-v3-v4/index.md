@@ -205,7 +205,7 @@ subChart.padding = Thickness.fromNumber(20);
 SciChartSubSurface.subPosition
 ------------------------------
 
-In prior versions, the position constructor option and the subPosition property on SciChartSubSurface could be set to Rect, or to `{x, y, width, height }`, which was then converted to Rect internally.
+In prior versions, the position constructor option and the [subPosition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartsubsurface.html#subposition) property on SciChartSubSurface could be set to Rect, or to `{x, y, width, height }`, which was then converted to Rect internally.
 
 Now they could be set one of 3 formats:
 
@@ -225,6 +225,16 @@ const y = (subSurface.subPosition as TXywhCoordinates).y
 ```
 
 You can only read values out if they are on the structure you used to set subPosition.  You can still set using Rect which includes everything from both `TXywhCoordinates: {x, y, width, height}` and `TLtrbCoordinates: {left, top, right, bottom}`, and then read out values in either format.
+
+SciChartSubSurface.coordinateMode
+------------------------------
+The type for coordinate mode has been changed from `EECoordinateMode` to `ESubSurfacePositionCoordinateMode`.  
+Also it is now possible to set it separately for each corresponding coordinate of `subPosition` property. (Refer to [TSubSurfaceCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tsubsurfacecoordinatemode))
+Example:
+```ts
+// treat coordinates corresponding to horizontal position as pixel values, while the vertical coordinates as relative values
+subSurface.coordinateMode = [ESubSurfacePositionCoordinateMode.Pixel, ESubSurfacePositionCoordinateMode.Relative]
+```
 
 IThemeProvider.annotationsGripsBackroundBrush
 ---------------------------------------------
