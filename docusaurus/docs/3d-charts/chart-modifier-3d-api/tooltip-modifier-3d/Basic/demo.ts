@@ -15,7 +15,7 @@ import {
     EDrawMeshAs,
     TooltipModifier3D,
     EMeshPaletteMode
-  }  from 'scichart';
+  }  from "scichart";
 
 async function tooltips3D(divElementId) {
   // Create a SciChart3DSurface in the host <div id=".." />

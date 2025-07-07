@@ -11,7 +11,7 @@
     uintArgbColorLerp,
     parseColorToUIntArgb,
     parseArgbToHtmlColor
-  } from 'scichart';
+  } from "scichart";
 
 const generateData = (index) => {
   const gaussianRandom = (mean, stdev) => {

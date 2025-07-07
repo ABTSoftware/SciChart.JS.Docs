@@ -135,7 +135,9 @@ export async function hitTestTs(divId: string) {
 
 If we run the example we get this chart. 
 
- ![](/images/HitTestApi_line-chart-hittest-datapoint1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_line-chart-hittest-datapoint1.png"
+/>
 
 Clicking near a data point results is **isHit=true**.  In the browser console you will find output for the **HitTestInfo** object.
 

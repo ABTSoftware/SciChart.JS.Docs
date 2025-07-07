@@ -180,6 +180,9 @@ import { ISciChartSurfaceBase } from "scichart/Charting/Visuals/SciChartSurfaceB
 // After
 import { SciChartSubSurface } from "scichart/Charting/Visuals/SciChartSubSurface";
 import { ISciChartSurfaceBase } from "scichart/Charting/Visuals/ISciChartSurfaceBase";
+
+// Better yet, just import it from "scichart" as this is now an alias for the main entry point
+import { SciChartSubSurface, ISciChartSurfaceBase } from "scichart";
 ```
 
 SciChartSubSurface.subChartPadding

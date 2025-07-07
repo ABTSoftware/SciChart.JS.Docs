@@ -15,7 +15,9 @@ Default Wait Loader Styling
 
 The Wait Loader picks up its styling from the theme. Since the default theme is **SciChartJSDarkv2Theme** the wait loader will have a dark background with light foreground.
 
-![](/images/Styling_WaitLoaderTheme_Default.png)
+<CenteredImageWrapper
+    src="/images/Styling_WaitLoaderTheme_Default.png"
+/>
 
 Setting Wait Loader Foreground/Background Color
 -----------------------------------------------
@@ -25,9 +27,11 @@ You can customize the wait loader foreground and background. To do this, set the
 ```ts
 // Wait loader styling
 
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {SciChartJSDarkv2Theme} from "scichart/Charting/Themes/SciChartJSDarkv2Theme";
+import {
+    SciChartSurface,
+    NumericAxis,
+    SciChartJSDarkv2Theme
+} from "scichart";
 
 // Create a theme based on another theme
 const theme = {... new SciChartJSDarkv2Theme()};
@@ -39,7 +43,9 @@ theme.loadingAnimationBackground = "#33ff33"; // Green
 const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId,{ theme });
 ```
 
-![](/images/Styling_WaitLoaderTheme_CustomColours.png)
+<CenteredImageWrapper
+    src="/images/Styling_WaitLoaderTheme_CustomColours.png"
+/>
 
 Disabling the Wait Loader entirely
 ----------------------------------
@@ -173,7 +179,9 @@ export class CustomChartLoader implements ISciChartLoader {
 
 This results in the following output.
 
-![](/images/styling_custom_waitloader.gif)
+<CenteredImageWrapper
+    src="/images/styling_custom_waitloader.gif"
+/>
 
 :::tip
 The wait loader accepts HTML into the DOM. You could make stunning wait screens to match your app using Videos, Gifs, Webp /images or animated SVG with a little creativity and input from a UX Designer

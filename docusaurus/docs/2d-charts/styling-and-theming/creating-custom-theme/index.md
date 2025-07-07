@@ -146,7 +146,9 @@ export async function createCustomThemeTs(divId: string) {
 
 Results in this output:
 
-![](/images/Styling_CustomTheme.png)
+<CenteredImageWrapper
+    src="/images/Styling_CustomTheme.png"
+/>
 
 :::note
 All colors in SciChart.js are strings, which are HTML color codes. Supported values are 6-digit hex codes e.g. "#ADFF2F", 8-digit hex codes in RGBA format where the last two digits are opacity e.g. "#AAFF2F33" and rgba CSS color codes e.g. "rgba(173, 255, 47, 0.3)"_
@@ -164,11 +166,13 @@ If you want to create a custom theme built on one of the default themes supplied
 ```ts
 // Inheriting Themes
 
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {SciChartJSLightTheme} from "scichart/Charting/Themes/SciChartJSLightTheme";
-export async function inheritThemeGradientBackground(divId) {
+import {
+    SciChartSurface,
+    NumericAxis,
+    SciChartJSLightTheme 
+} from "scichart";
 
+export async function inheritThemeGradientBackground(divId) {
     // Create a theme and inherit / override some properties
     const theme = {... new SciChartJSLightTheme()};
     // Override axis text label
@@ -187,7 +191,9 @@ export async function inheritThemeGradientBackground(divId) {
 
 This results in the following custom theme, based off one of our themes:
 
-![](/images/Styling_InheritTheme.png)
+    src="
+        src="/images/Styling_InheritTheme.png"
+    />
 
 #### See Also
 

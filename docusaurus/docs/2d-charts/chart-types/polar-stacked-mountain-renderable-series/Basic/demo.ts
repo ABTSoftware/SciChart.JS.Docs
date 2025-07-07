@@ -21,22 +21,20 @@ export async function polarStackedMountainChart(divElementId) {
 
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular, // Angular == "goes around the center, drawn by arcs"
-        visibleRange: new NumberRange(0, 6), // to keep mountain #1 and #10 from touching
+        visibleRange: new NumberRange(0, 6),
         flippedCoordinates: true, // go clockwise
     });
     sciChartSurface.xAxes.add(angularXAxis);
 
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial, // Radial == "goes from center out, drawn by straight lines"
-        visibleRange: new NumberRange(0, 10), // to keep mountain #1 and #10 from touching
+        visibleRange: new NumberRange(0, 10),
         drawLabels: false, // hide radial labels
     });
     sciChartSurface.yAxes.add(radialYAxis);
     
     // Create the collection the stacked mountains will be added to
-    const polarCollection = new PolarStackedMountainCollection(wasmContext, {
-        isOneHundredPercent: false // set to true to make mountains stack to 100%
-    });
+    const polarCollection = new PolarStackedMountainCollection(wasmContext);
 
     const xValues = [0, 1, 2, 3, 4, 5]; // x values for the mountains
     const yValues1 = Array.from({ length: 6 }, (_, i) => Math.random() * 6 + 2);
@@ -75,19 +73,16 @@ export async function polarStackedMountainChart(divElementId) {
 polarStackedMountainChart("scichart-root");
 
 async function builderExample(divElementId) {
-    // #region ExampleB
+    // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
     const { 
         chartBuilder,
+        SciChartJsNavyTheme,
         EAxisType,
         ESeriesType,
         EPolarAxisMode,
         EAxisAlignment,
-        EPolarLabelMode,
         NumberRange,
-        GradientParams,
-        Point,
-        SciChartJsNavyTheme
     } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
@@ -99,16 +94,7 @@ async function builderExample(divElementId) {
                 options: {
                     polarAxisMode: EPolarAxisMode.Angular,
                     axisAlignment: EAxisAlignment.Top,
-                    visibleRange: new NumberRange(0, 6), // to keep mountain #1 and #10 from touching
-                    flippedCoordinates: true, // go clockwise
-                    useNativeText: true,
-                    drawMajorGridLines: true,
-                    drawMajorTickLines: false,
-                    drawMinorTickLines: false,
-                    drawMinorGridLines: false,
-                    autoTicks: false,
-                    majorDelta: 1,
-                    polarLabelMode: EPolarLabelMode.Parallel
+                    visibleRange: new NumberRange(0, 6),
                 }
             }
         ],
@@ -118,17 +104,7 @@ async function builderExample(divElementId) {
                 options: {
                     axisAlignment: EAxisAlignment.Right,
                     polarAxisMode: EPolarAxisMode.Radial,
-                    visibleRange: new NumberRange(0, 10), // to keep mountain #1 and #10 from touching
-                    useNativeText: true,
-                    autoTicks: false,
-                    majorDelta: 1,
-                    drawMajorGridLines: true,
-                    drawMajorTickLines: false,
-                    labelPrecision: 0,
-                    innerRadius: 0.1,
-                    startAngle: Math.PI / 2,
-                    drawLabels: false,
-                    majorGridLineStyle: { strokeThickness: 1, color: "#666666" }
+                    visibleRange: new NumberRange(0, 10),
                 }
             }
         ],
@@ -136,32 +112,32 @@ async function builderExample(divElementId) {
             {
                 type: ESeriesType.PolarMountainSeries,
                 xyData: {
-                    xValues: [0, 1, 2, 3, 4, 5],
-                    yValues: [9, 10, 7, 5, 8, 6]
+                    xValues: [0, 1, 2, 3, 4, 5, 0], // +1 to close the loop
+                    yValues: [2, 3, 5, 4, 6, 5, 2] // connect first and last points
                 },
                 options: {
-                    stroke: "#FFC72C", // Golden State Warriors gold
-                    fill: "#1D428A" + "80", // Golden State Warriors blue with 50% opacity
-                    strokeThickness: 4,
+                    fill: "#FF3344AA",
+                    stroke: "white",
+                    strokeThickness: 3,
                 }
             },
             {
                 type: ESeriesType.PolarMountainSeries,
                 xyData: {
-                    xValues: [0, 1, 2, 3, 4, 5],
-                    yValues: [6, 8, 5, 4, 7, 3]
+                    xValues: [0, 1, 2, 3, 4, 5, 0], // +1 to close the loop
+                    yValues: [1, 1.5, 2, 2.5, 3, 2.5, 1] // connect first and last points
                 },
                 options: {
-                    stroke: "#FF5733", // Another color for the second mountain
-                    fill: "#C70039" + "80", // Another color with 50% opacity
-                    strokeThickness: 4,
+                    fill: "#5588FFAA",
+                    stroke: "white",
+                    strokeThickness: 3,
                 }
             }
         ]
     });
 
     return { sciChartSurface, wasmContext };
-    // #endregion
+    // #region_B_end
 }
 
 if (location.search.includes("builder=1")) builderExample("scichart-root");

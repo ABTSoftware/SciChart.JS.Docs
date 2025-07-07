@@ -10,7 +10,7 @@ import {
     ResetCamera3DModifier,
     XyzDataSeries3D,
     parseColorToUIntArgb,
-  } from 'scichart';
+  } from "scichart";
 
 async function columnRenderableSeries3D(divElementId) {
   // #region_A_start

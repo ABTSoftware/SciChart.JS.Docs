@@ -10,7 +10,9 @@ In SciChart.js v1.3 and above, we have introduced a property to let you style da
 We have an example in our SciChart.js Examples Suite which shows how to do this - the [Dashed Line Chart example](https://demo.scichart.com/javascript-dashed-line-chart).
 :::
 
-![](/images/Styling_DashedLineStylingExampleJavascript.png)
+<CenteredImageWrapper
+    src="/images/Styling_DashedLineStylingExampleJavascript.png"
+/>
 
 _**Above:**_ [_The Dashed Line Styling example_](https://demo.scichart.com/javascript-dashed-line-chart) _in the SciChart.js demo_
 
@@ -33,21 +35,29 @@ const series = new FastLineRenderableSeries(wasmContext, {
 
 Results in the following output:
 
-![](/images/Styling_DashedLine_10_3.png)
+<CenteredImageWrapper
+    src="/images/Styling_DashedLine_10_3.png"
+/>
 
 The dash pattern can be configured to provide dots, dashes and more. For example:
 
 #### strokeDashArray: \[2,2\]
 
-![](/images/Styling_DashedLine_2_2.png)
+<CenteredImageWrapper
+    src="/images/Styling_DashedLine_2_2.png"
+/>
 
 #### strokeDashArray: \[5,5\]
 
-![](/images/Styling_DashedLine_5_5.png)
+<CenteredImageWrapper
+    src="/images/Styling_DashedLine_5_5.png"
+/>
 
 #### strokeDashArray: \[10,25\]
 
-![](/images/Styling_DashedLine_10_25.png)
+<CenteredImageWrapper
+    src="/images/Styling_DashedLine_10_25.png"
+/>
 
 Which Series support StrokeDashArray?
 -------------------------------------

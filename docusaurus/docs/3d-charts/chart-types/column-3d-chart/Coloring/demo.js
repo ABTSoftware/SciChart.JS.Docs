@@ -1,4 +1,4 @@
-import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, ColumnRenderableSeries3D, CylinderPointMarker3D, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, XyzDataSeries3D, parseColorToUIntArgb, } from 'scichart';
+import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, ColumnRenderableSeries3D, CylinderPointMarker3D, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, XyzDataSeries3D, parseColorToUIntArgb, } from "scichart";
 async function columnRenderableSeries3D(divElementId) {
     // #region_A_start
     // Create a SciChart3DSurface in the host <div id=".." />

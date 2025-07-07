@@ -11,9 +11,13 @@ Coordinate Systems
 
 The [SciChartSurface3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html) by default renders a 3D world using the Left Handed Coordinate system or LHS (as is common to WebGL). In the LHS X and Z form the horizontal plane, and Y is always up YDirection=(0,1,0). It is helpful to think of the 3D world as a 2D Chart in X-Y and Z goes ‘into the screen’.
 
-![](/images/Chart3D_LeftHandCoords.png)
+<CenteredImageWrapper
+    src="/images/Chart3D_LeftHandCoords.png"
+/>
 
-![](/images/chart3d_xyz_axis.png)
+<CenteredImageWrapper
+    src="/images/chart3d_xyz_axis.png"
+/>
 
 **Left handed coordinate system. X-Z is a horizontal plane, Y is up.**
 
@@ -28,7 +32,9 @@ The box in the chart is called the Axis Cube. The AxisCube size is defined by th
 
 The WorldDimensions is a single [Vector3:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/vector3.html) with X,Y,Z size, but defines the size of a cube as follows:
 
-![](/images/Chart3D_World_vs_data_coords2.png)
+<CenteredImageWrapper
+    src="/images/Chart3D_World_vs_data_coords2.png"
+/>
 
 **How WorldDimensions Relates to the AxisCube in SciChart3D**
 
@@ -70,7 +76,9 @@ Data Coordinates are measured on an Axis, for example, the YAxis (which is UP) m
 
 The difference between World Coordinates, Data Coordinates is shown in the following diagram:
 
-![](/images/Chart3D_World_vs_data_coords.png)
+<CenteredImageWrapper
+    src="/images/Chart3D_World_vs_data_coords.png"
+/>
 
 **How WorldDimensions Relates to the AxisCube in SciChart3D**
 

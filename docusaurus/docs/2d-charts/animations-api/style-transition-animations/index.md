@@ -70,7 +70,9 @@ sciChartSurface.zoomExtents();
 
 This results in animating the pointmarker size, stroke and fill on a scatter series:
 
-![](/images/Animations_PointmarkerStyleAnimation.gif)
+<CenteredImageWrapper
+    src="/images/Animations_PointmarkerStyleAnimation.gif"
+/>
 
 #### See Also
 * [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview/index.md)

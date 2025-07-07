@@ -22,7 +22,7 @@ const hitTestInfo = stackedMountainRS.hitTestProvider.hitTest(premultipliedX, pr
 This is the full example of the **hitTest** method on Stacked Mountain Series.
 
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, HitTestInfo, StackedMountainRenderableSeries, StackedMountainCollection} from 'scichart';
+import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, HitTestInfo, StackedMountainRenderableSeries, StackedMountainCollection} from "scichart";
 
 export async function hitTestStackedMountainTs(divId) {
     const xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
@@ -100,7 +100,9 @@ export async function hitTestStackedMountainTs(divId) {
 
 This gives us this chart.
 
-![](/images/HitTestApi_stacked-mountain-chart1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_stacked-mountain-chart1.png"
+/>
 
 If we click inside the gray band it will be hit for the [StackedMountainRenderableSeries](/docs/2d-charts/chart-types/stacked-mountain-renderable-series) with index 1. In the browser console you will find output with an array of **HitTestInfo** results.
 

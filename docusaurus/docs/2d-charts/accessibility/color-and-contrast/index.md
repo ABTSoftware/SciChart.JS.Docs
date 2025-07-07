@@ -18,8 +18,7 @@ In this example we will show how to set a desired theme depending on user theme 
 ```ts
 // Setting a Theme
 
-import { SciChartJSDarkTheme } from 'scichart/Charting/Themes/SciChartJSDarkTheme';
-import { SciChartJSLightTheme } from 'scichart/Charting/Themes/SciChartJSLightTheme';
+import { SciChartJSDarkTheme, SciChartJSLightTheme } from "scichart";
 // ...
 const isDarkThemeSelected = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
 const newColorScheme = isDarkThemeSelected

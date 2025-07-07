@@ -23,8 +23,10 @@ import {
     IStrokePaletteProvider,
     IPointMetadata, 
     parseColorToUIntArgb,
-    SciChartJsNavyTheme
+    SciChartJsNavyTheme,
 } from "scichart";
+import { sunburstData } from "./data";
+import { TElement, TLevelDataEntry, TLevelDataForChart } from "./types";
 
 class SunburstMetadata implements IPointMetadata {
     public static create(title: string, start: number, end: number, level: number, id: number[], backgroundColor: string) {
@@ -55,7 +57,7 @@ class SunburstMetadata implements IPointMetadata {
     private constructor() {}
 }
 
-export class SunburstPaletteProvider implements IStrokePaletteProvider, IFillPaletteProvider {
+class SunburstPaletteProvider implements IStrokePaletteProvider, IFillPaletteProvider {
     public readonly strokePaletteMode = EStrokePaletteMode.SOLID;
     public readonly fillPaletteMode = EFillPaletteMode.SOLID;
 
@@ -88,177 +90,6 @@ export class SunburstPaletteProvider implements IStrokePaletteProvider, IFillPal
     }
 }
 
-type TElement = {
-    name: string;
-    value: number;
-    backgroundColor: string;
-    children?: TElement[];
-};
-
-export const sunburstData: TElement = {
-    name: "TechCorp",
-    value: 457,
-    backgroundColor: "#FFFFFF",
-    children: [
-        {
-            name: "Engineering",
-            value: 180,
-            backgroundColor: "#1f5ee8",
-            children: [
-                {
-                    name: "Frontend",
-                    value: 65,
-                    backgroundColor: "#60a5fa",
-                    children: [
-                        {
-                            name: "React",
-                            value: 35,
-                            backgroundColor: "#93c5fd"
-                        },
-                        {
-                            name: "Mobile",
-                            value: 30,
-                            backgroundColor: "#bfdbfe"
-                        }
-                    ]
-                },
-                {
-                    name: "Backend",
-                    value: 85,
-                    backgroundColor: "#2f6cf8",
-                    children: [
-                        {
-                            name: "API Services",
-                            value: 45,
-                            backgroundColor: "#60a5fa"
-                        },
-                        {
-                            name: "Infra",
-                            value: 40,
-                            backgroundColor: "#93c5fd"
-                        }
-                    ]
-                },
-                {
-                    name: "DevOps",
-                    value: 30,
-                    backgroundColor: "#fb5c66",
-                }
-            ]
-        },
-        {
-            name: "Product",
-            value: 95,
-            backgroundColor: "#059669",
-            children: [
-                {
-                    name: "Management",
-                    value: 40,
-                    backgroundColor: "#10b981"
-                },
-                {
-                    name: "UX Design",
-                    value: 35,
-                    backgroundColor: "#34d399",
-                    children: [
-                        {
-                            name: "Research",
-                            value: 20,
-                            backgroundColor: "#a7f3d0"
-                        },
-                        {
-                            name: "UI",
-                            value: 15,
-                            backgroundColor: "#d1fae5"
-                        }
-                    ]
-                },
-                {
-                    name: "QA",
-                    value: 20,
-                    backgroundColor: "#6ee7b7"
-                }
-            ]
-        },
-        {
-            name: "Sales & Marketing",
-            value: 120,
-            backgroundColor: "#f59e0b",
-            children: [
-                {
-                    name: "Sales",
-                    value: 70,
-                    backgroundColor: "#fbbf24",
-                    children: [
-                        {
-                            name: "Enterprise",
-                            value: 45,
-                            backgroundColor: "#fcd34d"
-                        },
-                        {
-                            name: "SMB",
-                            value: 25,
-                            backgroundColor: "#fde68a"
-                        }
-                    ]
-                },
-                {
-                    name: "Marketing",
-                    value: 50,
-                    backgroundColor: "#d97706",
-                    children: [
-                        {
-                            name: "Digital",
-                            value: 30,
-                            backgroundColor: "#f97316"
-                        },
-                        {
-                            name: "Content",
-                            value: 20,
-                            backgroundColor: "#fb923c"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            name: "Operations",
-            value: 62,     
-            backgroundColor: "rgba(139, 92, 246, 1)",
-            children: [
-                {
-                    name: "Finance",
-                    value: 25,
-                    backgroundColor: "rgba(139, 92, 246, 0.8)"
-                },
-                {
-                    name: "HR",
-                    value: 20,
-                    backgroundColor: "rgba(139, 92, 246, 0.6)"
-                },
-                {
-                    name: "Legal",
-                    value: 17,
-                    backgroundColor: "rgba(139, 92, 246, 0.4)"
-                }
-            ]
-        }
-    ]
-};
-
-type TLevelDataEntry = {
-    id: number[];
-    start: number;
-    end: number;
-    name: string;
-    backgroundColor: string;
-};
-
-export type TLevelDataForChart = {
-    data: number[][];
-    metadata: SunburstMetadata[];
-};
-
 const getDataByLevelInternal = (
     curId: number[],
     curLevel: number,
@@ -285,7 +116,7 @@ const getDataByLevelInternal = (
     return res;
 };
 
-export const getElementById = (id: number[]): TElement | undefined => {
+const getElementById = (id: number[]): TElement | undefined => {
     let el: TElement = {
         name: "root",
         value: -1,
@@ -300,7 +131,7 @@ export const getElementById = (id: number[]): TElement | undefined => {
     return el;
 };
 
-export const getDataById = (id: number[]): TLevelDataForChart[] => {
+const getDataById = (id: number[]): TLevelDataForChart[] => {
     const element = getElementById(id);
     if (!element) {
         return [];
@@ -327,7 +158,6 @@ export const getDataById = (id: number[]): TLevelDataForChart[] => {
 
     return res;
 };
-
 
 const drawSeriesFn = (
     wasmContext: TSciChart,
@@ -546,23 +376,7 @@ export const drawExample = async (rootElement: string | HTMLDivElement) => {
     );
 
     sciChartSurface.chartModifiers.add(
-        dataPointSelectionModifier,
-        // new PolarCursorModifier({
-        //     showTooltip: true,
-        //     showCircularLine: false,
-        //     showRadialLine: false,
-        //     tooltipDataTemplate: (seriesInfos: SeriesInfo[], tooltipTitle: string) => {
-        //         const res: string[] = [];
-        //         seriesInfos.forEach(si => {
-        //             if (si.isHit) {
-        //                 const md = si.pointMetadata as SunburstMetadata;
-        //                 res.push(`Name: ${md.title}`);
-        //                 res.push(`Value: ${md.value}`);
-        //             }
-        //         });
-        //         return res;
-        //     }
-        // })
+        dataPointSelectionModifier
     );
 
     return { sciChartSurface, wasmContext };

@@ -13,7 +13,7 @@ import  {
     GradientColorPalette,
     EMeshPaletteMode,
     NumberRange
-  } from 'scichart';
+  } from "scichart";
 
 async function surfaceMesh3DChart(divElementId) {
   // Demonstrates how to create a 3D surface mesh chart with X,Y,Z axis in SciChart.js

@@ -4,7 +4,7 @@ import {
     Vector3,
     SciChartJsNavyTheme,
     ResetCamera3DModifier
-  } from 'scichart'
+  } from "scichart"
 
 async function resetCameraModifier3D(divElementId) {
   // Create a SciChart3DSurface in the host <div id=".." />

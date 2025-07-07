@@ -1,4 +1,4 @@
-import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, PointLineRenderableSeries3D, XyzDataSeries3D, EllipsePointMarker3D, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, parseColorToUIntArgb, uintArgbColorLerp } from 'scichart';
+import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, PointLineRenderableSeries3D, XyzDataSeries3D, EllipsePointMarker3D, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, parseColorToUIntArgb, uintArgbColorLerp } from "scichart";
 const generateData = (index) => {
     const gaussianRandom = (mean, stdev) => {
         const u = 1 - Math.random(); // Converting [0,1) to (0,1]

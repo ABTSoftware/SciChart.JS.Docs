@@ -23,7 +23,7 @@ This is the full example of the **hitTest** method on Scatter Series.
 
 <CodeSnippetBlock labels={["JS","TS"]}>
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, EllipsePointMarker, XyScatterRenderableSeries, XyDataSeries} from 'scichart';
+import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, EllipsePointMarker, XyScatterRenderableSeries, XyDataSeries} from "scichart";
 
 export async function hitTestScatterTs(divId) {
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId);
@@ -70,7 +70,7 @@ export async function hitTestScatterTs(divId) {
 }
 ```
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, EllipsePointMarker, XyScatterRenderableSeries, XyDataSeries} from 'scichart';
+import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, EllipsePointMarker, XyScatterRenderableSeries, XyDataSeries} from "scichart";
 
 export async function hitTestScatterTs(divId: string) {
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId);
@@ -120,7 +120,9 @@ export async function hitTestScatterTs(divId: string) {
 
  This gives us this chart.
 
-![](/images/HitTestApi_scatter-chart1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_scatter-chart1.png"
+/>
 
  If to click inside the point marker it will be hit. In the browser console you will find output for the **HitTestInfo** object.
 

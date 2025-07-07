@@ -40,7 +40,7 @@ The [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentati
 Here are two ways you can be notified when datapoint selection changes in SciChart.
 
 ```ts {5,12} showLineNumbers
-import { DataPointSelectionModifier } from "scichart/Charting/ChartModifiers/DataPointSelectionModifier";
+import { DataPointSelectionModifier } from "scichart";
 
 // Option 1, pass onSelectionChanged callback when creating the DataPointSelectionModifier
 sciChartSurface.chartModifiers.add(new DataPointSelectionModifier({

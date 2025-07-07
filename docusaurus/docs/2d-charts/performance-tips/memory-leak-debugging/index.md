@@ -23,7 +23,9 @@ MemoryUsageHelper.isMemoryUsageDebugEnabled = true;
 
 After enabling memory usage helper you should see a message in the console output like this:
 
-![](/images/MemoryDebugging_Warning.png)
+<CenteredImageWrapper
+    src="/images/MemoryDebugging_Warning.png"
+/>
 
 :::info
 Note this will only work in development mode: the environment variable process.env.NODE\_ENV must not equal "prod" or "production"
@@ -50,7 +52,9 @@ MemoryUsageHelper.objectRegistry.log();
 
 This will output several collections and their contents to the JS console. From the output we can define a lifecycle state of an object and it's type.
 
-![](/images/MemoryDebugging_LogOutput.png)
+    src="
+        src="/images/MemoryDebugging_LogOutput.png"
+    />
 
 *   **undeletedObjectsMap** - objects that were created but .delete() was not called.
 *   **uncollectedObjectsMap** = objects that are not yet garbage collected by the JavaScript Garbage Collector

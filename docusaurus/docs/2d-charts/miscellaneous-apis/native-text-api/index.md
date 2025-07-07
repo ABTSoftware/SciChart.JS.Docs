@@ -118,7 +118,9 @@ Call getTextBounds from scichart/Charting/Visuals/Helpers/NativeObject, to get a
 
 Call font.CalculateStringBounds which populates the TSRTextBounds with the size of your desired text.  The image below shows how the properties on textBounds relate to the text.  Text is anchored at the left on the baseline.  The origin is top, left (for consistency with canvas coordinates) so to have the text anchored at the top, you need to add  textBounds.GetLineBounds(0).m\_fHeight to your y coordinate.
 
-![](/images/textBounds.png)
+<CenteredImageWrapper
+    src="/images/textBounds.png"
+/>
 
 For multi line text, m\_fHeight is the height of the entire text block, but text is still anchored at the baseline of the first line.
 
@@ -137,14 +139,15 @@ To get a rotation vector use the following code:
 ```ts
 // Rotation vector
 
-import { getVector4 } from "scichart/Charting/Visuals/Helpers/NativeObject"
+import { getVector4 } from "scichart"
+
 const rotationVector = getVector4(
-            webAssemblyContext2D,
-            rotationCenterX,
-            rotationCenterY,
-            rotationInRadians,
-            0
-        );
+    webAssemblyContext2D,
+    rotationCenterX,
+    rotationCenterY,
+    rotationInRadians,
+    0
+);
 ```
 
 Like textBounds this returns a single shared instance so you do not need to delete it.

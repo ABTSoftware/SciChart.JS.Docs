@@ -31,7 +31,7 @@ However, if you wanted to disable automatic scaling with DPI then you can use th
 
 <CodeSnippetBlock labels={["Disable DPI scaling"]}>
     ```ts
-import { DpiHelper} from "scichart/Charting/Visuals/TextureManager/DpiHelper";
+import { DpiHelper} from "scichart";
 
 // Note: you will need to call this before any SciChartSurface is created
 DpiHelper.IsDpiScaleEnabled = false;

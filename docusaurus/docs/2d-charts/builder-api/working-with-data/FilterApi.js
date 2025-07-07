@@ -1,4 +1,4 @@
-import * as SciChart from 'scichart';
+import * as SciChart from "scichart";
 export async function drawChartWithFilterUsingBuilderApi(divElementId) {
     // #region_A_start
     const { chartBuilder, ESeriesType, EDataFilterType } = SciChart;

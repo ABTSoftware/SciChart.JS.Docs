@@ -15,8 +15,7 @@ SciChart had a dark theme before dark-mode was cool :) Here's our default them
 
 <CodeSnippetBlock labels={["Applying dark theme"]}>
     ```ts
-import { SciChartSurface } from "scichart";
-import { SciChartJSDarkv2Theme } from "scichart/Charting/Themes/SciChartJSDarkv2Theme";
+import { SciChartSurface, SciChartJSDarkv2Theme } from "scichart";
 
 // For best results & applying to the loader animation, apply theme before chart creation
 const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { theme: new SciChartJSDarkv2Theme() });
@@ -35,8 +34,8 @@ For applications with a white or lighter background color, we also ship a light 
 
 <CodeSnippetBlock labels={["Applying light Theme"]}>
     ```ts
-import { SciChartSurface } from "scichart";
-import { SciChartJSLightTheme} from "scichart/Charting/Themes/SciChartJSLightTheme";
+import { SciChartSurface, SciChartJSLightTheme } from "scichart";
+
 // For best results & applying to the loader animation, apply theme before chart creation
 const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { theme: new SciChartJSLightTheme() });
 // Changing theme after creation
@@ -53,8 +52,8 @@ In SciChart.js v3, we've added a new Navy theme. This looks great on both a ligh
 
 <CodeSnippetBlock labels={["Applying Navy Theme"]}>
     ```ts
-import { SciChartSurface } from "scichart";
-import { SciChartJsNavyTheme } from "scichart/Charting/Themes/SciChartJsNavyTheme";
+import { SciChartSurface, SciChartJsNavyTheme } from "scichart";
+
 // For best results & applying to the loader animation, apply theme before chart creation
 const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { theme: new SciChartJsNavyTheme() });
 // Changing theme after creation

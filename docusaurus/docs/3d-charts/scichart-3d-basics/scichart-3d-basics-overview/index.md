@@ -58,7 +58,7 @@ import {
     MouseWheelZoomModifier3D,
     OrbitModifier3D,
     ResetCamera3DModifier
-} from 'scichart';
+} from "scichart";
 ```
 </CodeSnippetBlock>
 

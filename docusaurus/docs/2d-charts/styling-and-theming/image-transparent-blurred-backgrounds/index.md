@@ -27,9 +27,12 @@ To use this, simply set sciChartSurface.background = Transparent, or have Trans
 </div>
 
 // Js
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {SciChartJSLightTheme} from "scichart/Charting/Themes/SciChartJSLightTheme";
+import {
+    SciChartSurface,
+    NumericAxis,
+    SciChartJSLightTheme
+} from "scichart";
+
 // Where divId is the ID of the div you wish to place SciChart
 export async function transparentBackground(divId) {
     const theme = {... new SciChartJSLightTheme()};
@@ -48,7 +51,9 @@ export async function transparentBackground(divId) {
 
 This results in the following output:
 
-![](/images/Styling_TransparentBackground.png)
+<CenteredImageWrapper
+    src="/images/Styling_TransparentBackground.png"
+/>
 
 Image Backgrounds in Charts
 ---------------------------
@@ -65,9 +70,11 @@ As Transparent Backgrounds are now supported, so are image backgrounds. You can 
 </div>
 
 // JS
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {SciChartJSLightTheme} from "scichart/Charting/Themes/SciChartJSLightTheme";
+import {
+    SciChartSurface,
+    NumericAxis,
+    SciChartJSLightTheme
+} from "scichart";
 // Where divId is the ID of the div you wish to place SciChart
 export async function imageBackground(divId) {
     // Ensure background transparent to show the image through
@@ -81,7 +88,9 @@ export async function imageBackground(divId) {
 }
 ```
 
-![](/images/Styling_ImageBackgrounds.png)
+<CenteredImageWrapper
+    src="/images/Styling_ImageBackgrounds.png"
+/>
 
 Blurred / Glass Effect Backgrounds in Charts
 --------------------------------------------
@@ -100,9 +109,12 @@ Try modifying the code above as follows:
 </div>
 
 // JS
-import {SciChartSurface} from "scichart/Charting/Visuals/SciChartSurface";
-import {NumericAxis} from "scichart/Charting/Visuals/Axis/NumericAxis";
-import {SciChartJSLightTheme} from "scichart/Charting/Themes/SciChartJSLightTheme";
+import {
+    SciChartSurface
+    NumericAxis
+    SciChartJSLightTheme
+} from "scichart";
+
 // Where divId is the ID of the div you wish to place SciChart
 export async function blurredBackground(divId) {
     // Ensure background almost transparent to show the image through
@@ -118,7 +130,9 @@ export async function blurredBackground(divId) {
 
 This results in the following output:
 
-![](/images/Styling_BlurredBackground.png)
+<CenteredImageWrapper
+    src="/images/Styling_BlurredBackground.png"
+/>
 
 Conclusion
 ----------

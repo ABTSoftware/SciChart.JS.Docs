@@ -1,4 +1,4 @@
-import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, TooltipModifier3D, EDrawMeshAs, UniformGridDataSeries3D, SurfaceMeshRenderableSeries3D, GradientColorPalette, EMeshPaletteMode, NumberRange } from 'scichart';
+import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, MouseWheelZoomModifier3D, OrbitModifier3D, ResetCamera3DModifier, TooltipModifier3D, EDrawMeshAs, UniformGridDataSeries3D, SurfaceMeshRenderableSeries3D, GradientColorPalette, EMeshPaletteMode, NumberRange } from "scichart";
 async function surfaceMesh3DChart(divElementId) {
     // Demonstrates how to create a 3D surface mesh chart with X,Y,Z axis in SciChart.js
     // Create a SciChart3DSurface in the host <div id=".." />

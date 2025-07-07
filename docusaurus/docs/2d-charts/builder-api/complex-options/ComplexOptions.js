@@ -1,13 +1,4 @@
-import { chartBuilder } from "scichart/Builder/chartBuilder";
-import { ESeriesType } from "scichart/types/SeriesType";
-import { EChart2DModifierType } from "scichart/types/ChartModifierType";
-import { EPointMarkerType } from "scichart/types/PointMarkerType";
-import { EBaseType } from "scichart/types/BaseType";
-import { EFillPaletteMode, EStrokePaletteMode } from "scichart/Charting/Model/IPaletteProvider";
-import { parseColorToUIntArgb } from "scichart/utils/parseColor";
-import { EPaletteProviderType } from "scichart/types/PaletteProviderType";
-import { XyDataSeries } from "scichart/Charting/Model/XyDataSeries";
-import { EllipsePointMarker } from "scichart/Charting/Visuals/PointMarkers/EllipsePointMarker";
+import { chartBuilder, ESeriesType, EChart2DModifierType, EPointMarkerType, EBaseType, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, EPaletteProviderType, XyDataSeries, EllipsePointMarker } from "scichart";
 export async function drawWithComplexOptionsUsingBuilderApi(divElementId) {
     // #region_A_start
     return chartBuilder.buildChart(divElementId, {

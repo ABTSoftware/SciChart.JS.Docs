@@ -1,16 +1,21 @@
-import { chartBuilder } from "scichart/Builder/chartBuilder";
-import { ESeriesType } from "scichart/types/SeriesType";
-import { EChart2DModifierType } from "scichart/types/ChartModifierType";
-import { EPointMarkerType } from "scichart/types/PointMarkerType";
-import { EBaseType } from "scichart/types/BaseType";
-import { SelectionChangedArgs } from "scichart/Charting/Visuals/RenderableSeries/SelectionChangedArgs";
-import { EFillPaletteMode, EStrokePaletteMode, IFillPaletteProvider, IStrokePaletteProvider } from "scichart/Charting/Model/IPaletteProvider";
-import { parseColorToUIntArgb } from "scichart/utils/parseColor";
-import { IRenderableSeries } from "scichart/Charting/Visuals/RenderableSeries/IRenderableSeries";
-import { EPaletteProviderType } from "scichart/types/PaletteProviderType";
-import { XyDataSeries } from "scichart/Charting/Model/XyDataSeries";
-import { TPaletteProviderDefinition } from "scichart/Builder/buildSeries";
-import { EllipsePointMarker } from "scichart/Charting/Visuals/PointMarkers/EllipsePointMarker";
+import { 
+    chartBuilder,
+    ESeriesType,
+    EChart2DModifierType,
+    EPointMarkerType,
+    EBaseType,
+    SelectionChangedArgs,
+    EFillPaletteMode, 
+    EStrokePaletteMode, 
+    IFillPaletteProvider, 
+    IStrokePaletteProvider,
+    parseColorToUIntArgb,
+    IRenderableSeries,
+    EPaletteProviderType,
+    XyDataSeries,
+    TPaletteProviderDefinition,
+    EllipsePointMarker 
+} from "scichart";
 
 export async function drawWithComplexOptionsUsingBuilderApi(divElementId: string) {
     // #region_A_start

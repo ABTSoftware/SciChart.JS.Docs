@@ -13,7 +13,9 @@ SciChartSurface Padding
 
 The SciChartSurface.padding property can be used to apply a top, right, bottom, left padding to the chart. This defines the spacing around the viewport area and to the chart edge (which includes series, gridlines and axis).
 
-![](/images/SciChartSurface_Padding.png)
+<CenteredImageWrapper
+    src="/images/SciChartSurface_Padding.png"
+/>
 
 To set the padding, use this code:
 
@@ -45,7 +47,9 @@ sciChartSurface.padding = Thickness.fromNumber(0);
 
 This results in the following:
 
-![](/images/SciChartSurface_Padding_Zero.png)
+<CenteredImageWrapper
+    src="/images/SciChartSurface_Padding_Zero.png"
+/>
 
 Axis Label Padding
 ------------------
@@ -76,7 +80,9 @@ sciChartSurface.yAxes.add(rightYAxis);
 
 This results in the following:
 
-![](/images/Axis_LabelPadding.png)
+<CenteredImageWrapper
+    src="/images/Axis_LabelPadding.png"
+/>
 
 Axis Title Padding
 ------------------
@@ -112,4 +118,6 @@ sciChartSurface.yAxes.add(rightYAxis);
 
 This results in the following:
 
-![](/images/Axis_AxisTitlePadding.png)
+<CenteredImageWrapper
+    src="/images/Axis_AxisTitlePadding.png"
+/>

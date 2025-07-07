@@ -27,7 +27,10 @@ const rendSeries = new FastBandRenderableSeries(wasmContext, {
 // Alternatively
 rendSeries.enqueueAnimation(new SweepAnimation({ duration: 1000 }));
 ```
-![](/images/SweepAnimationBandSeries.gif)
+
+<CenteredImageWrapper
+    src="/images/SweepAnimationBandSeries.gif"
+/>
 
 ### Fade Startup Animation
 
@@ -46,7 +49,9 @@ const rendSeries = new FastBandRenderableSeries(wasmContext, {
 rendSeries.enqueueAnimation(new FadeAnimation({ duration: 1000 }));
 ```
 
-![](/images/FadeAnimation_RenderableSeries.gif)
+<CenteredImageWrapper
+    src="/images/FadeAnimation_RenderableSeries.gif"
+/>
 
 Note: The Sweep, Scale and Wave animations also support fade/opacity by setting the Animation.fadeEffect property to true.
 
@@ -67,7 +72,9 @@ const rendSeries = new FastBandRenderableSeries(wasmContext, {
 rendSeries.enqueueAnimation(new ScaleAnimation({ duration: 1000 }));
 ```
 
-![](/images/ScaleAnimation_RenderableSeries.gif)
+<CenteredImageWrapper
+    src="/images/ScaleAnimation_RenderableSeries.gif"
+/>
 
 ### Wave Startup Animation
 
@@ -86,8 +93,9 @@ const rendSeries = new FastBandRenderableSeries(wasmContext, {
 rendSeries.enqueueAnimation(new WaveAnimation({ duration: 1000 }));
 ```
 
-![](/images/WaveAnimation_RenderableSeries.gif)
-
+<CenteredImageWrapper
+    src="/images/WaveAnimation_RenderableSeries.gif"
+/>
 
 #### See Also
 * [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview/index.md)

@@ -125,8 +125,8 @@ class ExampleMountainPaletteProvider implements IStrokePaletteProvider, IFillPal
 
 Once you have created your custom type and implemented `toJSON()`, next you will need to register the type with the builder API to be able to use it.
 
-```ts showLineNumbers
-import { chartBuilder } from "scichart/Builder/chartBuilder";
+```ts showLineNumber
+import { chartBuilder } from "scichart";
 
 // Register it for use by the builder api
 chartBuilder.registerType(
@@ -139,7 +139,7 @@ chartBuilder.registerType(
 Now the usage of the custom type can be done as follows. It will appear to the Builder API as just another type like those already existing in SciChart.
 
 ```ts showLineNumbers
-import { chartBuilder } from "scichart/Builder/chartBuilder";
+import { chartBuilder } from "scichart";
 
 // Build the surface
 const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {

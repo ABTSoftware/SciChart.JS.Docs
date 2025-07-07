@@ -1,4 +1,4 @@
-import { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, generateGuid } from 'scichart';
+import { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, generateGuid } from "scichart";
 const xValues = [];
 const yValues = [];
 for (let i = 0; i < 100; i++) {

@@ -203,7 +203,9 @@ const announcePointOnDataSeries = debounce(announceWithSpeechSynthesis);
 
 Now upon clicking on a point of the line series we should get its coordinates announced with speech synthesis and logged to the console.
 
-![](/images/Accessibility_VoiceOverDataPoints.jpg)
+<CenteredImageWrapper
+    src="/images/Accessibility_VoiceOverDataPoints.jpg"
+/>
 
  VoiceOver for Axes
 -------------------
@@ -273,7 +275,7 @@ const isPointWithinAxis = (point, axis) => {
 };
 ```
 ```ts
-import { AxisBase2D } from "scichart/Charting/Visuals/Axis/AxisBase2D";
+import { AxisBase2D } from "scichart";
 // ...
 const announceAxis = debounce((axis: AxisBase2D) => {
     const from = axis.labelProvider.formatLabel(axis.visibleRange.min);
@@ -292,7 +294,9 @@ const isPointWithinAxis = (point: Point, axis: AxisBase2D) => {
 
  This example should result in **VoiceOver** describing axis title and its visible range upon clicking.
 
-![](/images/Accessibility_VoiceOverAxes.jpg)
+<CenteredImageWrapper
+    src="/images/Accessibility_VoiceOverAxes.jpg"
+/>
 
 VoiceOver for visible range updates
 -----------------------------------
@@ -337,7 +341,9 @@ sciChartSurface.chartModifiers.add(
 
  Now when using the chart modifiers you should be able to observe them getting logged to the console.
 
-![](/images/Accessibility_VoiceOverVisisbleRange.jpg)
+<CenteredImageWrapper
+    src="/images/Accessibility_VoiceOverVisisbleRange.jpg"
+/>
 
 #### See Also
 

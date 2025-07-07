@@ -59,7 +59,9 @@ export async function scatterDataAnimation(divId) {
 }
 ```
 
-![](/images/Animations-scatter-data-animation.gif)
+<CenteredImageWrapper
+    src="/images/Animations-scatter-data-animation.gif"
+/>
 
 ### Combining Style and Data Animations
 
@@ -126,7 +128,9 @@ export async function scatterDataAnimationWithStyle(divId) {
 }
 ```
 
-![](/images/Animations-scatter-data-and-style-animation.gif)
+<CenteredImageWrapper
+    src="/images/Animations-scatter-data-and-style-animation.gif"
+/>
 
 ### Animating Data in a Column Series
 
@@ -176,7 +180,7 @@ Below is the result.
 
 #### See Also
 
-- [The Animations API](/docs/2d-charts/animations-api/aminations-api-overview)
+- [The Animations API](/docs/2d-charts/animations-api/animations-api-overview)
 - [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
 - [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations)
 - [Generic Animations](/docs/2d-charts/animations-api/generic-animations)

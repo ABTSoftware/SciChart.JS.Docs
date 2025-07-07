@@ -63,7 +63,9 @@ export async function autoColoring(divId) {
 }
 ```
 
-![](/images/AutoColoring.png)
+<CenteredImageWrapper
+    src="/images/AutoColoring.png"
+/>
 
 Overriding Auto Coloring
 ------------------------
@@ -84,7 +86,9 @@ if (i === 4) {
 
  we get this
 
-![](/images/AutoColorAdjust.png)
+<CenteredImageWrapper
+    src="/images/AutoColorAdjust.png"
+/>
 
 Using adjustAutoColor like this sets the color property so it no longer auto-colors.  If instead you return AUTO\_COLOR + "black", then it will use black for the current render, but could be updated by subsequent auto-coloring. 
 
@@ -105,6 +109,8 @@ setTimeout(() => {
 
  Then all the series will be re-coloured using the full range of the palette.  Note the black fill has not changed.
 
-![](/images/AutoColorRemove.png)
+<CenteredImageWrapper
+    src="/images/AutoColorRemove.png"
+/>
 
 SciChartSurface has an [autoColorMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#autocolormode) property which is an [EAutoColorMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eautocolormode.html).  This defaults to OnAddRemoveSeries but can also be Never, Once or Always.  With a fairly large number of series, Auto Coloring can potentially have a performance impact.

@@ -1,9 +1,11 @@
-import { chartBuilder } from "scichart/Builder/chartBuilder";
-import { EThemeProviderType } from "scichart/types/ThemeProviderType";
-import { ESeriesType } from "scichart/types/SeriesType";
-import { EAxisType } from "scichart/types/AxisType";
-import { EChart2DModifierType } from "scichart/types/ChartModifierType";
-import { NumberRange } from "scichart/Core/NumberRange";
+import { 
+    chartBuilder,
+    EThemeProviderType,
+    ESeriesType,
+    EAxisType,
+    EChart2DModifierType,
+    NumberRange 
+} from "scichart";
 
 export async function drawSimpleChartUsingBuilderApi(divElementId) {
     // #region_A_start

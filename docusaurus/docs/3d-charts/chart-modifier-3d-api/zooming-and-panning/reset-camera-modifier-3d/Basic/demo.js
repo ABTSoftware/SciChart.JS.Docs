@@ -1,4 +1,4 @@
-import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, ResetCamera3DModifier } from 'scichart';
+import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, ResetCamera3DModifier } from "scichart";
 async function resetCameraModifier3D(divElementId) {
     // Create a SciChart3DSurface in the host <div id=".." />
     const { wasmContext, sciChart3DSurface } = await SciChart3DSurface.create(divElementId, {

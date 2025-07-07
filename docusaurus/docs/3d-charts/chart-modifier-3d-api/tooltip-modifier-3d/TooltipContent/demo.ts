@@ -11,7 +11,7 @@ import {
     uintArgbColorLerp,
     parseColorToUIntArgb,
     parseArgbToHtmlColor
-  } from 'scichart'
+  } from "scichart"
 
 type TMyMetadata = { vertexColor: number, customString: string };
 

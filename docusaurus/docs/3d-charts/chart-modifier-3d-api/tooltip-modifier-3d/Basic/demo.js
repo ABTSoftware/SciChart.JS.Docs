@@ -1,4 +1,4 @@
-import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, EAutoRange, NumberRange, SpherePointMarker3D, ScatterRenderableSeries3D, XyzDataSeries3D, SurfaceMeshRenderableSeries3D, UniformGridDataSeries3D, GradientColorPalette, PointLineRenderableSeries3D, EDrawMeshAs, TooltipModifier3D, EMeshPaletteMode } from 'scichart';
+import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, EAutoRange, NumberRange, SpherePointMarker3D, ScatterRenderableSeries3D, XyzDataSeries3D, SurfaceMeshRenderableSeries3D, UniformGridDataSeries3D, GradientColorPalette, PointLineRenderableSeries3D, EDrawMeshAs, TooltipModifier3D, EMeshPaletteMode } from "scichart";
 async function tooltips3D(divElementId) {
     // Create a SciChart3DSurface in the host <div id=".." />
     const { wasmContext, sciChart3DSurface } = await SciChart3DSurface.create(divElementId, {

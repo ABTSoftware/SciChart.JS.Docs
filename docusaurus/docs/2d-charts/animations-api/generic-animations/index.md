@@ -10,12 +10,14 @@ The onAnimate function is passed the from and to values, and a progress value, w
 
 Here are some simple examples what can be done with new API:
 
-- [Animating Annotations](#animating-annotations)
-- [Animating Visible Range](#animating-visible-range)
-- [Animating AutoRange](#animating-autorange)
-- [Animating Data and Styles](#animating-data-and-styles)
-- [Combining Animations](#combining-animations)
-- [Updating the DOM with animations](#updating-the-dom-with-animations)
+- [✅ Generic Animations](#-generic-animations)
+    - [Animating Annotations](#animating-annotations)
+    - [Animating Visible Range](#animating-visible-range)
+    - [Animating AutoRange](#animating-autorange)
+    - [Animating Data and Styles](#animating-data-and-styles)
+    - [Combining Animations](#combining-animations)
+    - [Updating the DOM with animations](#updating-the-dom-with-animations)
+      - [See Also](#see-also)
 
 ### Animating Annotations
 
@@ -94,7 +96,9 @@ drawAnnotationAnimationsChart("scichart");
 
 
 
-![](/images/GenericAnimations_line-annotation-moving-animation.gif)
+<CenteredImageWrapper
+    src="/images/GenericAnimations_line-annotation-moving-animation.gif"
+/>
 
 ### Animating Visible Range
 
@@ -228,7 +232,9 @@ drawVisibleRangeAnimationsChart("scichart");
 </CodeSnippetBlock>
 
 
- ![](/images/GenericAnimations_visibleRange.gif)
+<CenteredImageWrapper
+    src="/images/GenericAnimations_visibleRange.gif"
+/>
 
 ### Animating AutoRange
 
@@ -386,7 +392,9 @@ drawDataPointAnimationsChart("scichart");
 
 </CodeSnippetBlock>
 
-![](/images/GenericAnimations_data.gif)
+<CenteredImageWrapper
+    src="/images/GenericAnimations_data.gif"
+/>
 
 ### Combining Animations
 
@@ -660,8 +668,9 @@ drawAnnotationAnimationsChart("scichart");
 
 </CodeSnippetBlock>
 
-
- ![](/images/GenericAnimations_combining.gif)
+<CenteredImageWrapper
+    src="/images/GenericAnimations_combining.gif"
+/>
 
 ### Updating the DOM with animations
 
@@ -945,12 +954,11 @@ async function drawAnnotationAnimationsChart(divId: string) {
 }
 drawAnnotationAnimationsChart("scichart");
 ```
-
 </CodeSnippetBlock>
 
-
-
-![](/images/GenericAnimations_manipulating.gif)
+<CenteredImageWrapper
+    src="/images/GenericAnimations_manipulating.gif"
+/>
 
 #### See Also
 

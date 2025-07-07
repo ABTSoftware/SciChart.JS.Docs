@@ -14,12 +14,14 @@ To calculate a moving average and apply to a chart, use the following code.
 
 <CodeSnippetBlock labels={["Moving average"]}>
     ```ts showLineNumbers
-    import { SciChartSurface } from 'scichart/Charting/Visuals/SciChartSurface';
-    import { NumericAxis } from 'scichart/Charting/Visuals/Axis/NumericAxis';
-    import { XyDataSeries } from 'scichart/Charting/Model/XyDataSeries';
-    import { FastLineRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries';
-    import { NumberRange } from 'scichart/Core/NumberRange';
-    import { XyMovingAverageFilter } from 'scichart/Charting/Model/Filters/XyMovingAverageFilter';
+    import { 
+        SciChartSurface,
+        NumericAxis,
+        XyDataSeries,
+        FastLineRenderableSeries,
+        NumberRange,
+        XyMovingAverageFilter 
+    } from "scichart";
     ...
     const { sciChartSurface, wasmContext } = await SciChartSurface.create('scichart-div-id-4');
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));

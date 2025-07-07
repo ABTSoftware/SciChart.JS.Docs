@@ -1,4 +1,4 @@
-import * as SciChart from 'scichart';
+import * as SciChart from "scichart";
 const xValues = [];
 const yValues = [];
 for (let i = 0; i < 100; i++) {

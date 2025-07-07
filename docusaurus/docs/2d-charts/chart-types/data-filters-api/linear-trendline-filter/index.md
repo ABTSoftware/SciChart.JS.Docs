@@ -14,13 +14,15 @@ To calculate a Linear Trendline use the following code.
 
 <CodeSnippetBlock labels={["Linear Trendline"]}>
     ```ts showLineNumbers
-    import { SciChartSurface } from 'scichart/Charting/Visuals/SciChartSurface';
-    import { NumericAxis } from 'scichart/Charting/Visuals/Axis/NumericAxis';
-    import { XyDataSeries } from 'scichart/Charting/Model/XyDataSeries';
-    import { FastLineRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries';
-    import { XyScatterRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/XyScatterRenderableSeries';
-    import { NumberRange } from 'scichart/Core/NumberRange';
-    import { XyLinearTrendFilter } from 'scichart/Charting/Model/Filters/XyLinearTrendFilter';
+    import {
+        SciChartSurface,
+        NumericAxis,
+        XyDataSeries,
+        FastLineRenderableSeries,
+        XyScatterRenderableSeries,
+        NumberRange,
+        XyLinearTrendFilter 
+    } from "scichart";
     ...
     const { sciChartSurface, wasmContext } = await SciChartSurface.create('scichart-div-id-2');
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));
@@ -53,8 +55,8 @@ For example you could display them using an annotation like this:
 
 <CodeSnippetBlock labels={["Trendline properties"]}>
     ```ts showLineNumbers
-    import { TextAnnotation } from "scichart/Charting/Visuals/Annotations/TextAnnotation";
-    import { EHorizontalAnchorPoint, EVerticalAnchorPoint } from "scichart/types/AnchorPoint";
+    import { TextAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint } from "scichart";
+
     const textAnnotation = new TextAnnotation({
         x1: 1,
         y1: 5,
@@ -77,11 +79,13 @@ This example takes a OHLC Series as input and plots separate trendlines for the 
 
 <CodeSnippetBlock labels={["Trendline properties"]}>
     ```ts showLineNumbers
-    import { OhlcDataSeries } from 'scichart/Charting/Model/OhlcDataSeries';
-    import { FastLineRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries';
-    import { FastCandlestickRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastCandlestickRenderableSeries';
-    import { XyLinearTrendFilter } from 'scichart/Charting/Model/Filters/XyLinearTrendFilter';
-    import { EDataSeriesField } from "scichart/Charting/Model/Filters/XyFilterBase";
+    import { 
+        OhlcDataSeries,
+        FastLineRenderableSeries,
+        FastCandlestickRenderableSeries,
+        XyLinearTrendFilter,
+        EDataSeriesField 
+    } from "scichart";
     ...
     // Original Data
     const dataSeries = new OhlcDataSeries(wasmContext, {

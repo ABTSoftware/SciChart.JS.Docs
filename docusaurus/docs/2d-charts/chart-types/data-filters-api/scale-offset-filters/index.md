@@ -18,12 +18,14 @@ To create an **XyScaleOffsetFilter** and apply it to your chart, use the followi
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers
-    import { SciChartSurface } from 'scichart/Charting/Visuals/SciChartSurface';
-    import { NumericAxis } from 'scichart/Charting/Visuals/Axis/NumericAxis';
-    import { XyDataSeries } from 'scichart/Charting/Model/XyDataSeries';
-    import { FastLineRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries';
-    import { NumberRange } from 'scichart/Core/NumberRange';
-    import { XyScaleOffsetFilter } from 'scichart/Charting/Model/Filters/XyScaleOffsetFilter';
+    import {
+        SciChartSurface,
+        NumericAxis,
+        XyDataSeries,
+        FastLineRenderableSeries,
+        NumberRange,
+        XyScaleOffsetFilter 
+    } from "scichart";
     ...
     const { sciChartSurface, wasmContext } = await SciChartSurface.create('scichart-div-id');
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));

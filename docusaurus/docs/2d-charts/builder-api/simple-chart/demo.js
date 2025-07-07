@@ -1,5 +1,4 @@
-import { EThemeProviderType } from "scichart/types/ThemeProviderType";
-import { NumberRange } from "scichart/Core/NumberRange";
+import { EThemeProviderType, NumberRange } from "scichart";
 import * as SciChart from "scichart";
 export async function drawSimpleChartUsingBuilderApi(divElementId) {
     // #region_A_start

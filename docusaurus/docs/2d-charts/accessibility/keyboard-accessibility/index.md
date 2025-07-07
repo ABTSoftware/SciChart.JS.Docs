@@ -15,7 +15,12 @@ Here is the definition of the **KeyboardZoomPanModifier**:
 
 <CodeSnippetBlock labels={["JS","TS"]}>
 ```ts 
-import { ChartModifierBase2D, EClipMode, Point, EXyDirection} from "scichart/Charting/ChartModifiers/ChartModifierBase2D";
+import { 
+    ChartModifierBase2D, 
+    EClipMode, 
+    Point, 
+    EXyDirection
+} from "scichart";
 
 // ...
 const DEFAULT_SCROLL_DELTA = 100;
@@ -125,9 +130,7 @@ class KeyboardZoomPanModifier extends ChartModifierBase2D {
 }
 ```
 ```ts
-import { ChartModifierBase2D, IChartModifierBaseOptions } from "scichart/Charting/ChartModifiers/ChartModifierBase2D";
-
-import { ChartModifierBase2D, IChartModifierBaseOptions, EClipMode, Point, EXyDirection} from "scichart/Charting/ChartModifiers/ChartModifierBase2D";
+import { ChartModifierBase2D, IChartModifierBaseOptions, EClipMode, Point, EXyDirection} from "scichart";
 
 // ...
 const DEFAULT_SCROLL_DELTA = 100;

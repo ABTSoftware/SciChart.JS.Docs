@@ -33,7 +33,9 @@ This is the full example of the **hitTest** method on Band Series.
 
 <LiveDocSnippet maxWidth={"100%"} name="demo" htmlType="WithResult" />
 
-![](/images/HitTestApi_band-chart1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_band-chart1.png"
+/>
 
 If we click inside the band it will be hit. In the browser console you will find output for the **HitTestInfo** object containing **y1Value** and **y1Coord** properties specific for the series.
 

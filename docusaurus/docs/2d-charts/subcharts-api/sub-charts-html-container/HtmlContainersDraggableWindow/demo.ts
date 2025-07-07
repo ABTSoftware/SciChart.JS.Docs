@@ -9,7 +9,7 @@ import {
     ECoordinateMode,
     generateGuid,
     I2DSubSurfaceOptions
-} from 'scichart';
+} from "scichart";
 
 const xValues = [];
 const yValues = [];

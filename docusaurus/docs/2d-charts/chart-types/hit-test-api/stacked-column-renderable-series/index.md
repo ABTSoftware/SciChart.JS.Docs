@@ -26,7 +26,7 @@ This is the full example of the **hitTest** method on Stacked Column Series.
 
 <CodeSnippetBlock labels={["JS","TS"]}>
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, StackedColumnRenderableSeries, StackedColumnCollection, HitTestInfo } from 'scichart';
+import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, StackedColumnRenderableSeries, StackedColumnCollection, HitTestInfo } from "scichart";
 
 export async function hitTestStackedColumnTs(divId) {
     const xValues = [1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003];
@@ -125,7 +125,7 @@ export async function hitTestStackedColumnTs(divId) {
 }
 ```
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, StackedColumnRenderableSeries, StackedColumnCollection, HitTestInfo } from 'scichart';
+import { SciChartSurface, NumericAxis, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, NumberRange, XyDataSeries, StackedColumnRenderableSeries, StackedColumnCollection, HitTestInfo } from "scichart";
 
 export async function hitTestStackedColumnTs(divId: string) {
     const xValues = [1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003];
@@ -229,7 +229,9 @@ The **StackedColumnCollection** in this example has five [StackedColumnRenderab
 
 This gives us the following chart.
 
-![](/images/HitTestApi_stacked-column-chart1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_stacked-column-chart1.png"
+/>
 
  If we click inside the column it will be hit for the corresponding renderable series in the collection. In the browser console you will find output with array of **HitTestInfo** results.
 

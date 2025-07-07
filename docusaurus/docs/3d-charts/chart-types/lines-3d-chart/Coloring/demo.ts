@@ -12,7 +12,7 @@ import {
     NumberRange,
     parseColorToUIntArgb,
     uintArgbColorLerp
-  } from 'scichart';
+  } from "scichart";
 
 const generateData = (index) => {
   const gaussianRandom = (mean, stdev) => {

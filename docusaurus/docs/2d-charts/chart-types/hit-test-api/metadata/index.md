@@ -21,7 +21,7 @@ export class ForbesMetadata {
 }
 ```
 ```ts showLineNumbers
-import { IPointMetadata } from 'scichart';
+import { IPointMetadata } from "scichart";
 export class ForbesMetadata implements IPointMetadata {
     public isSelected: boolean = false;
     public name: string;
@@ -82,7 +82,7 @@ forbesData.forEach((data, i) => dataSeries.append(i + 1, data[0], data[1]));
 
 <CodeSnippetBlock labels={["JS","TS"]}>
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, XyDataSeries, FastColumnRenderableSeries } from 'scichart';
+import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, XyDataSeries, FastColumnRenderableSeries } from "scichart";
 import { forbesData } from './metadata.js';
 
 export async function hitTestLineMetadata(divId) {
@@ -133,7 +133,7 @@ export async function hitTestLineMetadata(divId) {
 }
 ```
 ```ts showLineNumbers
-import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, XyDataSeries, FastColumnRenderableSeries } from 'scichart';
+import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, XyDataSeries, FastColumnRenderableSeries } from "scichart";
 import { forbesData } from './metadata.js';
 
 export async function hitTestLineMetadataTs(divId: string) {
@@ -187,7 +187,9 @@ export async function hitTestLineMetadataTs(divId: string) {
 
  This is the resulting column chart.
 
-![](/images/HitTestApi_metadata1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_metadata1.png"
+/>
 
  If we click on the column we get metadata displayed at the bottom of the chart. In the browser console you will find output with the metadata property which contains **Name**, **Age**, **Country** and **isSelected** fields. The **isSelected** is a common property, which is used to select/deselect data points.
 

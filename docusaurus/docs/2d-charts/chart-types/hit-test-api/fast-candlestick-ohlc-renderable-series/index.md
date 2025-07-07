@@ -18,7 +18,7 @@ A sample source code is below.
 
 <CodeSnippetBlock labels={["JS","TS"]}>
     ```ts showLineNumbers
-    import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, FastCandlestickRenderableSeries, OhlcDataSeries  } from 'scichart';
+    import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, FastCandlestickRenderableSeries, OhlcDataSeries  } from "scichart";
 
     export async function hitTestCandlestickTs(divId) {
         const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId);
@@ -69,7 +69,7 @@ A sample source code is below.
     }
     ```
     ```ts showLineNumbers
-    import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, FastCandlestickRenderableSeries, OhlcDataSeries  } from 'scichart';
+    import { SciChartSurface, NumericAxis, NumberRange, DpiHelper, CustomAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, FastCandlestickRenderableSeries, OhlcDataSeries  } from "scichart";
 
     export async function hitTestCandlestickTs(divId: string) {
         const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId);
@@ -123,7 +123,9 @@ A sample source code is below.
 
  This gives us the chart below.
 
-![](/images/HitTestApi_candlestick-chart1.png)
+<CenteredImageWrapper
+    src="/images/HitTestApi_candlestick-chart1.png"
+/>
 
  If we click on the candle or wicks within a distance of 10 pixels it will be hit. In the console you will find **hitTestInfo** which contains **openValue**, **highValue**, **lowValue** and **closeValue** in addition to common **HitTestInfo** properties.
 

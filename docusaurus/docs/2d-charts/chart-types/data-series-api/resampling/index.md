@@ -17,15 +17,21 @@ Resampling algorithms in SciChart are designed to preserve information about the
 
 Here are some before/after images with resampling applied to show the effect on the visual output with resampling applied / not applied.
 
-![](/images/scichart-js-resampling-vs-no-resampling-random-walk.png)
+<CenteredImageWrapper
+   src="/images/scichart-js-resampling-vs-no-resampling-random-walk.png"
+/>
 
 _**Above**: Random walk data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
-![](/images/scichart-js-resampling-vs-no-resampling-spikey-sinewave.png)
+<CenteredImageWrapper
+   src="/images/scichart-js-resampling-vs-no-resampling-spikey-sinewave.png"
+/>
 
 _**Above**: Sinewave data with random spikes with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
-![](/images/scichart-js-resampling-vs-no-resampling-noisy-sine.png)
+<CenteredImageWrapper
+   src="/images/scichart-js-resampling-vs-no-resampling-noisy-sine.png"
+/>
 
 _**Above**: Noisy sinewave data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
@@ -133,11 +139,15 @@ The [BaseRenderableSeries.resamplingPrecision:blue_book:](https://www.scichart.
 
 Here is an example of a very noisy dataset (random values between 0-1) with varying resampling precisions.
 
-![](/images/scichart-js-resampling-vs-no-resampling-random-precision0.png)
+<CenteredImageWrapper
+   src="/images/scichart-js-resampling-vs-no-resampling-random-precision0.png"
+/>
 
 _**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 0)_
 
-![](/images/scichart-js-resampling-vs-no-resampling-random-precision1.png)
+<CenteredImageWrapper
+   src="/images/scichart-js-resampling-vs-no-resampling-random-precision1.png"
+/>
 
 _**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 1)_
 
