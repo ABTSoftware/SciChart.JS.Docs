@@ -25,3 +25,5 @@ TODO
 "annotationHelpers.convertPolarToCartesian"
 
 -  when you do this, these transforms use radians and angles, for data values, use coordinateTransform first
+-  
+<LiveDocSnippet maxWidth={"100%"} name="./demo" />

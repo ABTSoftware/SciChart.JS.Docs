@@ -224,7 +224,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [⭕ Axis APIs - Convert Polar Pixel to Data Coordinates](/docs/2d-charts/axis-api/misc/polar-pixel-and-data-coordinates)
     - [✅ Axis API Overview](/docs/2d-charts/axis-api/axis-api-overview)
   - **✅ Animations API**
-    - [✅ Animations API Overview](/docs/2d-charts/animations-api/aminations-api-overview)
+    - [✅ Animations API Overview](/docs/2d-charts/animations-api/animations-api-overview)
     - [✅ Dataset Animations](/docs/2d-charts/animations-api/dataset-animations)
     - [✅ Generic Animations](/docs/2d-charts/animations-api/generic-animations)
     - [✅ Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)

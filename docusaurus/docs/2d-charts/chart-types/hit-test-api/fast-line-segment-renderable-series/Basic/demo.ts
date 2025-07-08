@@ -56,12 +56,12 @@ export async function lineSegmentHitTest(divElementId) {
     sciChartSurface.yAxes.add(yAxis);
 
     // #region_A_start
-    // add a couple of polar scatters to the chart
+    // add a couple of line segments to the chart
     const lineSegment1 = new FastLineSegmentRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: [0.5, 1, 2, 3, 5, 4, 6, 7, 8, 9],
             yValues: [4.5, 3.2, 5.1, 2.8, 4.0, 3.5, 4.8, 3.0, 2.3, 7.1],
-            dataSeriesName: "Teal Scatter"
+            dataSeriesName: "Teal&Orange Segments"
         }),
         strokeThickness: 5,
         paletteProvider: new LineSegmentPaletteProvider(),

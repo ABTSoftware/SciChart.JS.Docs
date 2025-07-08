@@ -21,7 +21,7 @@ Explore these for some rich examples of how to use this API.
 
 Each RenderableSeries as a [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#datalabelprovider) property. Many also accept Data Label configuration via [constructor options:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaserenderableseriesoptions.html#datalabelprovider).
 
-These defines whether text labels are rendered for data-points, and the style and positioning of these text labels.
+This defines whether text labels are rendered for data-points, and the style and positioning of these text labels.
 
 <ChartFromSciChartDemo
     src="https://www.scichart.com/demo/iframe/datalabels"

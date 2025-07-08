@@ -8,6 +8,7 @@ import CenteredImageWrapper from "../components/CenteredImageWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
 import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
 import MinimizedImageAndTextHeader from "../components/MinimizedImageAndTextHeader";
+import StatusEmoji from "../components/StatusEmoji";
 import { YouTubeVideo } from "../components/YouTubeVideo";
 
 export default {
@@ -22,5 +23,6 @@ export default {
     DemoExampleWrapper,
     ChartFromSciChartDemo,
     YouTubeVideo,
-    MinimizedImageAndTextHeader
+    MinimizedImageAndTextHeader,
+    StatusEmoji
 };
