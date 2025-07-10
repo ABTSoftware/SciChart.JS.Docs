@@ -91,6 +91,11 @@ const config: Config = {
                     position: "left"
                 },
                 {
+                    href: "https://www.scichart.com/documentation/js/current/webframe.html",
+                    label: "Version 3 Docs",
+                    position: "right"
+                },
+                {
                     href: gitHubUrl,
                     label: "GitHub",
                     position: "right"
@@ -110,7 +115,7 @@ const config: Config = {
                         {
                             label: "API Documentation",
                             href: "https://www.scichart.com/documentation/js/v4/typedoc/index.html"
-                        },
+                        }
                     ]
                 },
                 {
