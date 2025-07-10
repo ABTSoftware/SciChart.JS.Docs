@@ -7,15 +7,19 @@ sidebar_position: 10  # Lower numbers appear first
 
 ## Mark document status
 
-Use this symbols to mark the status of menu items. This will help us to track the progress.
+This are documentations statuses
 
-⭕ - new documentation to write
+If no icon - document is up to date, most of the documents will have this status.
 
-⚠️ - existing doc to update
+⚠️ - existing document needs update, this icon means that the document is not up to date and requires correction
 
-🔄 - in progress
+🆕 - for newly added items we can use this icon, to make it obvious. Or we can use text alternative `[NEW]`
 
-✅ - done
+🔄 - this icon is not used any more.
+
+⭕ - this icon is not used any more.
+
+✅ - this icon is not used any more.
 
 ## Use TypeScript
 

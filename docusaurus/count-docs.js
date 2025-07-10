@@ -19,9 +19,8 @@ function analyzeDocs(dir) {
       'readme.mdx': 0,
       total: 0
     },
-    filesWithCheckmark: [],
-    filesWithoutCheckmark: [], // New array for files not done
-    checkmarkCount: 0
+    filesToUpdate: [],
+    filesComplete: []
   };
 
 
@@ -42,11 +41,10 @@ function analyzeDocs(dir) {
           results.counts.total++;
           
           const content = fs.readFileSync(fullPath, 'utf8');
-          if (content.includes('✅')) {
-            results.filesWithCheckmark.push(fullPath);
-            results.checkmarkCount += (content.match(/✅/g) || []).length;
+          if (content.includes('⚠️')) {
+            results.filesToUpdate.push(fullPath);
           } else {
-            results.filesWithoutCheckmark.push(fullPath); // Collect files without checkmark
+            results.filesComplete.push(fullPath);
           }
         }
       }
@@ -68,7 +66,7 @@ if (require.main === module) {
     }
 
 
-    const { counts, filesWithCheckmark, filesWithoutCheckmark } = analyzeDocs(docsPath);
+    const { counts, filesToUpdate, filesComplete } = analyzeDocs(docsPath);
     
     console.log('Documentation File Count:');
     console.table({
@@ -78,15 +76,13 @@ if (require.main === module) {
       'readme.mdx': counts['readme.mdx']
     });
     console.log(`\n`);
-    console.log(`Files containing ✅ (${filesWithCheckmark.length}):`);
-    filesWithCheckmark.forEach(file => console.log(`- ${path.relative(docsPath, file)}`));
-    console.log(`\n`);
-    console.log(`Files NOT DONE (${filesWithoutCheckmark.length}):`);
-    filesWithoutCheckmark.forEach(file => console.log(`❌ ${path.relative(docsPath, file)}`));
+    console.log(`These documents require update:`);
+    filesToUpdate.forEach(file => console.log(`- ${path.relative(docsPath, file)}`));
     console.log(`\n`);
     console.log(`Total ${counts.total}`);
-    console.log(`Complete ${filesWithCheckmark.length}`);
-    const percentage = counts.total > 0 ? (100 * filesWithCheckmark.length / counts.total).toFixed(2) : "0.00";
+    console.log(`Docs complete ${filesComplete.length}`);
+    console.log(`Docs to update ${filesToUpdate.length}`);
+    const percentage = counts.total > 0 ? (100 * filesComplete.length / counts.total).toFixed(2) : "0.00";
     console.log(`Completion ${percentage}%`);
     
     process.exit(0);
