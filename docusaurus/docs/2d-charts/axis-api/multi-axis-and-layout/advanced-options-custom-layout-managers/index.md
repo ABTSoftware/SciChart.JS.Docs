@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Advanced Options - Custom Layout Managers
+# Advanced Options - Custom Layout Managers
 
 In SciChart.js, all positioning and layout of axis are done with Layout Strategies. A list of default built-in strategies can be found below.
 

@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Licensing SciChart.js
+# Licensing SciChart.js
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:

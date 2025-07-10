@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Polar Data Point Labels
+# Polar Data Point Labels
 
 :::tip
 Before reading this article, we recommend you read the [DataLabels API Overview](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview) to understand the basics of how DataLabels work.

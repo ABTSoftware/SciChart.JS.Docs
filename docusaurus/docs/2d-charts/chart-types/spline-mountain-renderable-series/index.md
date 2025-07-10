@@ -2,7 +2,7 @@
 sidebar_position: 61
 ---
 
-# ✅ The Spline (Smoothed) Mountain Series Type
+# The Spline (Smoothed) Mountain Series Type
 
 Spline Mountain or Smoothed Area Series can be created using the [SplineMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinemountainrenderableseries.html) type.
 

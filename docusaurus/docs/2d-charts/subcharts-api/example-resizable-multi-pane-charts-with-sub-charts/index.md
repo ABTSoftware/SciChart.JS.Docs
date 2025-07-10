@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# ✅ Worked Example: Resizable Multi Pane Charts with SubCharts
+# Worked Example: Resizable Multi Pane Charts with SubCharts
 
 In the previous worked example, we showed you how to [create Dynamic Multi-Panel Charts with the SubCharts API](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts). By following this tutorial, we showed you how to have a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance with 1...N Sub-Charts, each acting as a linked panel in a vertical chart group. All zooming, panning operations are linked, and you can dynamically add and remove chart panes programmatically, or by clicking a button.
 

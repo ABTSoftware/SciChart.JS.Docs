@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Moving Average Filter
+# Moving Average Filter
 
 The XyMovingAverageFilter performs a simple moving average with a specified period length, resulting in a smoothed waveform derived from your data.
 

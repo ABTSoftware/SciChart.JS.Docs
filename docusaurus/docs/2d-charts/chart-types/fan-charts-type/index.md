@@ -2,7 +2,7 @@
 sidebar_position: 26
 ---
 
-# ✅ The Fan Charts Type
+# The Fan Charts Type
 
 Fan Charts are provided by using multiple [Band Series](/docs/2d-charts/chart-types/fast-band-renderable-series) on the same chart.
 

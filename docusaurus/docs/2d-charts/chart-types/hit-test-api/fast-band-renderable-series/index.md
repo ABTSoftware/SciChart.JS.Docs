@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Hit-Test API for Band Series
+# Hit-Test API for Band Series
 
 The hitTest method on Band Series
 ---------------------------------

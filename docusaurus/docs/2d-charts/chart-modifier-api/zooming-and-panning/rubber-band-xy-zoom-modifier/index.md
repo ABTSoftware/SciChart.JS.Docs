@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ RubberBandXyZoomModifier
+# RubberBandXyZoomModifier
 
 SciChart.js provides the ability to Drag an area to zoom the chart (known as Rubber-band zoom) using the [RubberBandXyZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rubberbandxyzoommodifier.html), available out of the box.
 

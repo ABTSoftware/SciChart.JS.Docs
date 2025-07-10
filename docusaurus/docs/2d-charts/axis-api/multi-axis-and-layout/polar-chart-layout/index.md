@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ Polar Chart Layout
+# Polar Chart Layout
 
 Polar charts - charts created with [SciChartPolarSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html#create), have a different axis layout compared to Cartesian charts. In polar charts, the axes are arranged in a circular manner, which allows for `radial` and `angular` measurements.
 

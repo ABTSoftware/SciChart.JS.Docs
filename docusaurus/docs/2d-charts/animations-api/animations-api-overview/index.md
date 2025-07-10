@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Animations API Overview
+# Animations API Overview
 
 Animations API Fundamentals
 ---------------------------

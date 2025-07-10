@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The Column Series Type
+# The Column Series Type
 
 Column Series can be created using the [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) type.
 

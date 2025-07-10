@@ -2,7 +2,7 @@
 sidebar_position: 25
 ---
 
-# ✅ The Bubble Series Type
+# The Bubble Series Type
 
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 

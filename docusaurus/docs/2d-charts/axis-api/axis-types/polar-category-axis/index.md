@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ The Polar Category Axis
+# The Polar Category Axis
 
 The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) brings category (discrete, label-based, or index-based) data to polar charts—enabling radar, spider, and circular bar charts where each sector represents a category or qualitative dimension.
 

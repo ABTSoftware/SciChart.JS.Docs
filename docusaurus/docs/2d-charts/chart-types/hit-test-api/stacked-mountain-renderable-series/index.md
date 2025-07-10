@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# ✅ Hit-Test API for Stacked Mountain Series
+# Hit-Test API for Stacked Mountain Series
 
 The hitTest method on Stacked Mountain Series
 ---------------------------------------------

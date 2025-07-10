@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Common ChartModifiers Features
+# Common ChartModifiers Features
 
 All the ChartModifiers provided by SciChart.js implement the [IChartModifierBase interface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ichartmodifierbase.html) and derive from the [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) class. These provide a powerful API which gives the full access to internals of a chart, axes, series, annotations, mouse, touch events and more.
 

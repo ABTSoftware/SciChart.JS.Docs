@@ -2,7 +2,7 @@
 sidebar_position: 60
 ---
 
-# ✅ The Spline (Smoothed) Line Series Type
+# The Spline (Smoothed) Line Series Type
 
 Spline Line or Smoothed Series can be created using the [SplineLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinelinerenderableseries.html) type.
 

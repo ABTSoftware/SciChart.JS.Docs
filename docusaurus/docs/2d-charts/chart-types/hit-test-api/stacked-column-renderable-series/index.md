@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ Hit-Test API for Stacked Column Series
+# Hit-Test API for Stacked Column Series
 
 The hitTest method on Stacked Column Series
 -------------------------------------------

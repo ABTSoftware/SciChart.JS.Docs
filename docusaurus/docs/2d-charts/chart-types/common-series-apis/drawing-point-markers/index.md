@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Drawing PointMarkers on Series (Scatter markers)
+# Drawing PointMarkers on Series (Scatter markers)
 
 Every data point of a Scatter, Line, Bubble, Mountain, Spline, Error or Column Series may be marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). So, not just limited to scatter series, you can apply a pointmarker to line series, or error bars to display a repeated marker at the X,Y point.
 

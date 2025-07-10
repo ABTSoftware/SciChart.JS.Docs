@@ -2,7 +2,7 @@
 sidebar_position: 105
 ---
 
-# ✅ The Polar Radar Chart Type
+# The Polar Radar Chart Type
 
 The Radar chart (or Spider chart) type displays data in a circular layout, where each axis represents a different variable, most often a category. The axes are connected drawn to form a polygon, allowing for easy comparison of multiple variables.
 

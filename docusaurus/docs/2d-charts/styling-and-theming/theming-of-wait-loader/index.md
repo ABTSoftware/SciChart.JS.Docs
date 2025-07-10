@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Chart Styling - Theming of Wait Loader
+# Chart Styling - Theming of Wait Loader
 
 When SciChart.js starts up, a short wait-loader is shown as your server downloads Wasm (webassembly) files and asynchronously initializes our high performance WebGL Graphics engine.
 

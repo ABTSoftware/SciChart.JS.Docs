@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ LineAnnotation
+# LineAnnotation
 
 <MinimizedImageAndTextHeader 
     imgSrc="/images/Annotations_LineAnnotation.png"

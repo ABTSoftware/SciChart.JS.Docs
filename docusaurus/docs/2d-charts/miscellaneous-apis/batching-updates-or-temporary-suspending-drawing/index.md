@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Batching updates or Temporary Suspending Drawing
+# Batching updates or Temporary Suspending Drawing
 
 In SciChart.js, every update that you make to the chart will potentially trigger a redraw. For example:
 

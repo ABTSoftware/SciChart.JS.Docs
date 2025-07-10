@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Custom LabelProviders: Dynamic Dates on Zoom
+# Custom LabelProviders: Dynamic Dates on Zoom
 
 :::tip
 Customisation in SciChart.js can go a level deeper than built-in label formatting by creating a custom labelprovider class.

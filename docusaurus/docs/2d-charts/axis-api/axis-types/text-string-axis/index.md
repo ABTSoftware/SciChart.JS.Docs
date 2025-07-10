@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Text / String Axis
+# Text / String Axis
 
 There is no specific Text / String Axis in SciChart.js, however, with a combination of [the LabelProvider API](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) and the [NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis), it's possible to create one.
 

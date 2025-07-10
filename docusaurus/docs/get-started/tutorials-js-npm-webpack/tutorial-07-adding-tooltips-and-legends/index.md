@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Tutorial 07 - Adding Tooltips and Legends
+# Tutorial 07 - Adding Tooltips and Legends
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends) we explained how to add annotations to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add tooltips and legends.
 

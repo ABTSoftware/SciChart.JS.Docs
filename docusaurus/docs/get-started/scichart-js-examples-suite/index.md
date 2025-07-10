@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ The SciChart.js Examples Suite
+# The SciChart.js Examples Suite
 
 Are you new to SciChart? Check out our most popular pages to get started below:
 

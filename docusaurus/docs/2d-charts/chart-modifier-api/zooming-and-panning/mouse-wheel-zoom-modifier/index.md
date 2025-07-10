@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ MouseWheelZoomModifier
+# MouseWheelZoomModifier
 
 SciChart.js provides an zooming / panning behavior when scrolling the mouse-wheel, or two-finger drag on touch devices via the [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/mousewheelzoommodifier.html), available out of the box.
 

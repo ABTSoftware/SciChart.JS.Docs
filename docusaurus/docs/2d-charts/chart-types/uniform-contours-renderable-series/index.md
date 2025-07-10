@@ -2,7 +2,7 @@
 sidebar_position: 18
 ---
 
-# ✅ The Contours Series Type
+# The Contours Series Type
 
 Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type.
 

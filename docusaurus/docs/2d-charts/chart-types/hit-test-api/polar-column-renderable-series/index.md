@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ Hit-Test API for Polar Column Series 
+# Hit-Test API for Polar Column Series 
 
 The IHitTestProvider.hitTest method on [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) tests if the click was within the Column's body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

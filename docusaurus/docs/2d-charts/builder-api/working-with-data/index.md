@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Working with Data
+# Working with Data
 
 Creating or Updating Data on Builder API Created charts
 -------------------------------------------------------

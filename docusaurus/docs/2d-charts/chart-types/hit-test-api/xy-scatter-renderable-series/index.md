@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# ✅ Hit-Test API for Scatter Series
+# Hit-Test API for Scatter Series
 
 The hitTest method on Scatter Series
 ------------------------------------

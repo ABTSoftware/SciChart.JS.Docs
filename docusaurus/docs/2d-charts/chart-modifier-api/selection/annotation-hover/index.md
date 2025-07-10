@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Annotation Hover
+# Annotation Hover
 
 Annotations Hover API is an opt-in functionality that allows detecting hover events on chart annotations and adding event handlers.
 

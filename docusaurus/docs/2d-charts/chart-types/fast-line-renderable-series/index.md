@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ The Line Series Type
+# The Line Series Type
 
 Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
 

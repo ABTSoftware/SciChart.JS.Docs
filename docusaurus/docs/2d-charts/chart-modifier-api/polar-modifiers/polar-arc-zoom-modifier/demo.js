@@ -58,7 +58,7 @@ export async function PolarArcZoom(divElementId) {
         strokeThickness: 5,
         stroke: "white",
         animationDuration: 2000,
-        easingFunction: easing.outCubic
+        easingFunction: easing.outCubic,
     }));
     // #region_A_end
     sciChartSurface.chartModifiers.add(new PolarZoomExtentsModifier() // optional - double click to reset

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Voice Over
+# Voice Over
 
 To achieve voice over the chart elements, data, and some actions, we can use the [Hit Test API](/docs/2d-charts/chart-types/hit-test-api/hit-test-api-overview/index.md) and event subscription.
 

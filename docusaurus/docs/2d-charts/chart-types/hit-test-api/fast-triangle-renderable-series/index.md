@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# ✅ Hit-Test API for Triangle Series
+# Hit-Test API for Triangle Series
 
 The IHitTestProvider.hitTest method on [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasttrianglerenderableseries.html) tests if the click was within the Triangle's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

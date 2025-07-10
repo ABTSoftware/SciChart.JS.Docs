@@ -2,7 +2,7 @@
 sidebar_position: 14
 ---
 
-# ✅ The Digital (Step) Mountain Series Type
+# The Digital (Step) Mountain Series Type
 
 A Digital (Step) Mountain or area Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 

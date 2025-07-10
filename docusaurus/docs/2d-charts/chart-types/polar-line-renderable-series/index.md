@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The Polar Line Chart Type
+# The Polar Line Chart Type
 
 The [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) creates lines in a polar coordinate system, connecting data points with either straight line segments or interpolated arcs. This chart type is ideal for visualizing cyclical data, radar charts, or any data that benefits from a circular representation.
 

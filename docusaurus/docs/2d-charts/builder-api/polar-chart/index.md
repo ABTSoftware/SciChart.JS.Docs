@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Creating a Polar Chart
+# Creating a Polar Chart
 
 SciChart provides a powerful API for creating various types of charts, including **Polar Charts**.
 

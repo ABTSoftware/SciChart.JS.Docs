@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Secondary and Multiple Axes
+# Secondary and Multiple Axes
 
 SciChart.js supports **unlimited, multiple X or Y axis** which can be aligned to the Right, Left, Top, Bottom sides of a chart.
 

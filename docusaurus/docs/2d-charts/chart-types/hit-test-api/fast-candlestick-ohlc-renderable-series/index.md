@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ Hit-Test API for Candlestick and OHLC Series
+# Hit-Test API for Candlestick and OHLC Series
 
 The hitTest method on Candlestick or OHLC Series
 ------------------------------------------------

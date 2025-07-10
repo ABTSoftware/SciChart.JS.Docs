@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ Tutorial 10 - Vertical Charts
+# Tutorial 10 - Vertical Charts
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts) we explained how to link multiple charts using SciChart.js. In this tutorial, we are going to show you how to add a **Vertical Chart**.
 

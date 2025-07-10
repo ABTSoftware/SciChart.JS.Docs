@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ CustomAnnotation
+# CustomAnnotation
 
 <MinimizedImageAndTextHeader 
     imgSrc="images/Annotations_CustomAnnotation.png"

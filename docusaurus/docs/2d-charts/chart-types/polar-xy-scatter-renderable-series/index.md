@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The Polar Scatter Chart Type
+# The Polar Scatter Chart Type
 
 The [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) visualizes discrete points in a polar (circular) coordinate system, using customizable point markers. Each `(x, y)` data point is mapped as an "angle" (theta, usually in degrees or radians) and a "radius" (distance from center), making this chart type ideal for:
 

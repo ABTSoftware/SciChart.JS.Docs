@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Image AxisMarkerAnnotation
+# Image AxisMarkerAnnotation
 
 SciChart.js allows to create **custom axis marker annotations** on axes. This is done by creating [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) and passing an **image** option into the constructor.
 

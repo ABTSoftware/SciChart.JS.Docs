@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ YAxisDragModifier
+# YAxisDragModifier
 
 SciChart.js provides an zooming / panning behavior when dragging the Axis via the [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html), available out of the box.
 

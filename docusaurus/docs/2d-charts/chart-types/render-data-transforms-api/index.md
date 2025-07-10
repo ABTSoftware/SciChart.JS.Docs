@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# ✅ RenderDataTransforms API
+# RenderDataTransforms API
 
 **RenderDataTransforms** allow you to transform your data immediately before it is drawn. 
 

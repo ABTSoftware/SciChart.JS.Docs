@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The Scatter 3D Chart Type
+# The Scatter 3D Chart Type
 
 :::info
 Examples for the Scatter 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaged from SciChart.Js.Examples Github Repository

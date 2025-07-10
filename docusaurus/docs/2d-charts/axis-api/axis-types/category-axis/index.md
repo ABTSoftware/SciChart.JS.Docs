@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ The Category Axis
+# The Category Axis
 
 The [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) treats values a little differently. This is a special axis type which uses the X-Index not the X-Value to measure chart series.
 

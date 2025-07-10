@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ SubChart Sub Surface Transparency
+# SubChart Sub Surface Transparency
 
 The SubCharts API allows you to place nested charts (charts within charts). In the previous example [What is the SubCharts API](/docs/2d-charts/subcharts-api/subcharts-api-overview) we covered how to add SubCharts to a SciChartSurface, and also how to position them in [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning).
 

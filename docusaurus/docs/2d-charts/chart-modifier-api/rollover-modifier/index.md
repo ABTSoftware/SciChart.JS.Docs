@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Rollover Modifier
+# Rollover Modifier
 
 SciChart.js provides a mouse-over tooltips behavior via the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), available out of the box.
 

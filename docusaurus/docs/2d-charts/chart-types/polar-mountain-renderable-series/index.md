@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The Polar Mountain Chart Type
+# The Polar Mountain Chart Type
 
 The [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) is a type of renderable series that displays data in a polar mountain format.
 

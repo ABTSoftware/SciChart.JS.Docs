@@ -2,7 +2,7 @@
 sidebar_position: 64
 ---
 
-# ✅ The Text Series Type
+# The Text Series Type
 
 There are several ways to add text to a SciChart.js chart. These include the TextAnnotation, series DataLabels and also the FastTextRenderableSeries (Text Series).
 

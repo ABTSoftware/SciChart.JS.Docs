@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ CSS Classes, Ids
+# CSS Classes, Ids
 
 SciChart.js adds ids and classes to all DOM elements, such as the parent chart root div, canvas and svg, which makes styling of these chart elements easier.
 

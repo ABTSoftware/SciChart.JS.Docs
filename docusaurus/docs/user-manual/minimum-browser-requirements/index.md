@@ -3,7 +3,7 @@ id: Minimum-Browser-Requirements
 sidebar_position: 2
 ---
 
-# ✅ Minimum Browser Requirements
+# Minimum Browser Requirements
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:

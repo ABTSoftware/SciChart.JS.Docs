@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ Editable Annotations
+# Editable Annotations
 
 The annotations API allows you to mark any annotation as editable by setting isEditable true.  Editable annotations can be selected and dragged, and some can be resized.  This page describes how you can respond to a user's interaction with an annotation, and how to **customise the style of the selected view** of the annotation.
 

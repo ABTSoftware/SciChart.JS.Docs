@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ Worked Example: Re-usable Chart Groups with SubCharts
+# Worked Example: Re-usable Chart Groups with SubCharts
 
 SubCharts give a way to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
 

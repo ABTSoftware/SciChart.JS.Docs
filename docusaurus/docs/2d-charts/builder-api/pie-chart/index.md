@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Creating a Pie Chart
+# Creating a Pie Chart
 
 SciChart provides a powerful API for creating various types of charts, including **Pie Charts**.
 

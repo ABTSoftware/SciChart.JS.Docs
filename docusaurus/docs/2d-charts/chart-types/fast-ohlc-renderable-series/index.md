@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ The OHLC Series Type
+# The OHLC Series Type
 
 Ohlc Series or JavaScript Stock Charts can be created using the **FastOhlcRenderableSeries** type.
 

@@ -2,7 +2,7 @@
 sidebar_position: 40
 ---
 
-# ✅ The Stacked Column Series Type
+# The Stacked Column Series Type
 
 Stacked Column Charts can be created by a combination of the [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html)  and [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html)  type. StackedColumnRenderableSeries share many properties with the added feature that columns automatically stack vertically or side by side.
 

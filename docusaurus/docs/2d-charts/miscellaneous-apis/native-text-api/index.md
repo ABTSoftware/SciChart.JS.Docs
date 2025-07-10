@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Native Text Api
+# Native Text Api
 
 The Native Text api is new in SciChart v3.  It uses industry standard font libraries compiled into webassembly to render text directly using webGL, supporting all types of fonts including right to left text, shaped fonts such as Arabic and Chinese.  This first version of the api is not complete and we welcome your feedback to shape it going forward.
 

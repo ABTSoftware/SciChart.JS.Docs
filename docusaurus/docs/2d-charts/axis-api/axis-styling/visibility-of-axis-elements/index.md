@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Visibility of Axis Elements
+# Visibility of Axis Elements
 
 In SciChart.js all the elements of an axis may be hidden or shown invidually, with the following code:
 

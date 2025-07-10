@@ -2,7 +2,7 @@
 sidebar_position: 22
 ---
 
-# ✅ The Error Bars Chart Type
+# The Error Bars Chart Type
 
 Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasterrorbarsrenderableseries.html) type.
 

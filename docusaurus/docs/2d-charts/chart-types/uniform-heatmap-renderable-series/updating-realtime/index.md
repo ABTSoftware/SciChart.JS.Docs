@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Updating (Realtime) Heatmaps
+# Updating (Realtime) Heatmaps
 
 The heatmap is supposed to be fully dynamic, enabling real-time graphics. The [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) however does not support append, insert, update, remove functions like other DataSeries do.
 

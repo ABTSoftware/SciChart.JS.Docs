@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ PointMetadata API
+# PointMetadata API
 
 The PointMetadata API in SciChart.js allows you to:
 

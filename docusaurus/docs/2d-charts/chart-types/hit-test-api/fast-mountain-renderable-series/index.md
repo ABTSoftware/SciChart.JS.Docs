@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Hit-Test API for Mountain Series
+# Hit-Test API for Mountain Series
 
 The hitTest method on Mountain Series
 -------------------------------------

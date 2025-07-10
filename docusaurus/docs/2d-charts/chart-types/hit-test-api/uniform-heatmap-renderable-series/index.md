@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Hit-Test API for Heatmap Series
+# Hit-Test API for Heatmap Series
 
 The hitTest method on Heatmap Series
 ------------------------------------

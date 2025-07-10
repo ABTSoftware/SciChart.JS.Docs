@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# ✅ Per-Point Coloring for Line Segment Series
+# Per-Point Coloring for Line Segment Series
 
 Line Segment series can be colored per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineSegmentRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
 

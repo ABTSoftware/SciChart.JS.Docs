@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ PolarZoomExtentsModifier
+# PolarZoomExtentsModifier
 
 SciChart.js provides the ability to Zoom Extents the polar chart (zoom to fit data) by double-clicking the chart area with the [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html), available out of the box.
 

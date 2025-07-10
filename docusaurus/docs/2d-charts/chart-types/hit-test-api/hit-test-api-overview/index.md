@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Hit-Test API overview
+# Hit-Test API overview
 
 In SciChart.js we have **Hit-Test API** which allows access to information about the point being clicked on the canvas, such as the nearest data point index, X and Y data values, coordinate values and metadata.
 

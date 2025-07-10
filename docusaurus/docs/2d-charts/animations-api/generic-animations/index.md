@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Generic Animations
+# Generic Animations
 
 SciChart.js v2.x and above features a new GenericAnimation API which allows you to animate almost everything in the chart and even things outside of the chart, because you have complete control of the onAnimate function. Normally, Generic Animations run at the same time, and for the duration you specify, but by using the onComplete function, you can make one animation start when another ends or create repeating loops.
 

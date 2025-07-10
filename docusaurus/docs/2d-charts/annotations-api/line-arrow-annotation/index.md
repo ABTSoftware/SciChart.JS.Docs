@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ LineArrowAnnotation
+# LineArrowAnnotation
 
 The [LineArrowAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/linearrowannotation.html) class extends [LineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/lineannotation.html) and adds an optional arrowhead at each line endpoint. Use it to annotate charts with directional indicators.
 

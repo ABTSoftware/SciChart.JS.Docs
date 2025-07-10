@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Append, Insert, Update, Remove
+# Append, Insert, Update, Remove
 
 SciChart.js is designed to be a highly dynamic chart library for frequently updating data. Once you have created a chart with a RenderableSeries / DataSeries pair, you can manipulate the data in any way and the chart will redraw / update.
 

@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# ✅ The Scatter Series Type
+# The Scatter Series Type
 
 Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) type.
 

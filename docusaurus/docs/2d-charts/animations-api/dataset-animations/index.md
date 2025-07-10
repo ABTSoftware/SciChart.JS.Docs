@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Dataset Animations
+# Dataset Animations
 
 SciChart.js v2.x and above features a new API which allows you to animate between datasets on a chart. But the limitation is that the length of data vectors (length of X and Y values and animation values) must be the same.
 

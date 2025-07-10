@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Tutorial 01 - Including SciChart.js in an HTML Page using CDN
+# Tutorial 01 - Including SciChart.js in an HTML Page using CDN
 
 This set of tutorials will be limited to how to use SciChart.js by including index.min.js in a vanilla JS application (without npm and webpack).
 

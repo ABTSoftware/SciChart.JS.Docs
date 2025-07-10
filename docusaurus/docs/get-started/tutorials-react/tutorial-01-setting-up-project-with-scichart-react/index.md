@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Tutorial 01 - Setting up a project with scichart-react and config object
+# Tutorial 01 - Setting up a project with scichart-react and config object
 
 In this tutorial we will show you how to setup a new npm project with [scichart.js](https://www.npmjs.com/package/scichart) and [scichart-react](https://www.npmjs.com/package/scichart-react).
 

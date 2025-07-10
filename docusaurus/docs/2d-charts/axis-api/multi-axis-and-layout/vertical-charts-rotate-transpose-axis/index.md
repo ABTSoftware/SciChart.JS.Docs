@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Vertical Charts (Rotate, Transpose Axis)
+# Vertical Charts (Rotate, Transpose Axis)
 
 It is possible to create Vertical (Rotated) Charts with SciChart. This transposes the entire chart, swapping X-Axis for Y and renders series top to bottom intead of left to right. Tooltips and markers also are transposed to the final effect is like a vertical chart.
 

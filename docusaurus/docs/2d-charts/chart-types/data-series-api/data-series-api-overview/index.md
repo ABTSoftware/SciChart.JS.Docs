@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ DataSeries API Overview
+# DataSeries API Overview
 
 What can you do with the DataSeries in SciChart?
 ------------------------------------------------

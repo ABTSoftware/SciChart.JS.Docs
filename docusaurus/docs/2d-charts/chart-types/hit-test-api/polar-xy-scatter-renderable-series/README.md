@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ Hit-Test API for Polar XY Scatter Series
+# Hit-Test API for Polar XY Scatter Series
 
 The IHitTestProvider.hitTest method on [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) tests if the click was within the Scatter series' Point-Marker body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

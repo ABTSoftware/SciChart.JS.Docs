@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Memory Best Practices
+# Memory Best Practices
 
 Related to [Performance Tips](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md), this article covers Memory Best Practices in SciChart.js.
 

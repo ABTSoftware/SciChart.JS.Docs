@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Retina Support and Browser Zoom
+# Retina Support and Browser Zoom
 
 SciChart.js supports sharp graphics on high resolution Retina displays, as well as Browser Zoom functionality.
 

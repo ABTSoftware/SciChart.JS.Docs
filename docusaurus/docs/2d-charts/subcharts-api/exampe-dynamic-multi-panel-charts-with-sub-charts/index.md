@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# ✅ Worked Example: Dynamic Multi-panel charts with SubCharts
+# Worked Example: Dynamic Multi-panel charts with SubCharts
 
 Sub-Charts allows you to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Numeric and Date Axis in SciChart3D
+# Numeric and Date Axis in SciChart3D
 
 SciChart.js 3D features several axis types. All inherit from [AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html). The Axis are the logical representation of the XZ, ZY, YX planes in the Axis Cube.
 

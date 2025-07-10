@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Creating your first SciChart3DSurface
+# Creating your first SciChart3DSurface
 
 The root 3D chart view is called the [SciChart3DSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html). This is the JavaScript chart control you will be adding to your applications wherever you need a 3D chart. You can add more than one [SciChart3DSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html) to an HTML page, you can configure them independently.
 

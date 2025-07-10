@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ Tutorial 08 - Adding Multiple Axis
+# Tutorial 08 - Adding Multiple Axis
 
 In [Tutorial 7 - Adding Tooltips and Legends](/docs/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends), we showed you how to add tooltips and legends to a JavaScript Chart using SciChart.js. Now we are going to learn how to add a second **YAxis**.
 

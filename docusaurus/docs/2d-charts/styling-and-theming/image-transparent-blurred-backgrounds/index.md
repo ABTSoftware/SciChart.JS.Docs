@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Chart Styling - Image, Transparent or Blurred Backgrounds
+# Chart Styling - Image, Transparent or Blurred Backgrounds
 
 New to SciChart.js v2.x and above, we now support transparent backgrounds, blurred backgrounds or image backgrounds behind charts.
 

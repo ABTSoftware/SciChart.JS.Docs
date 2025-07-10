@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Series Styling - Dash Line Patterns
+# Series Styling - Dash Line Patterns
 
 In SciChart.js v1.3 and above, we have introduced a property to let you style dashed or dotted lines on certain series.
 

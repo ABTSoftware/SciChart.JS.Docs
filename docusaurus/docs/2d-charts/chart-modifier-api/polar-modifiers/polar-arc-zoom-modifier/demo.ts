@@ -88,7 +88,7 @@ export async function PolarArcZoom(divElementId) {
             strokeThickness: 5,
             stroke: "white",
             animationDuration: 2000,
-            easingFunction: easing.outCubic
+            easingFunction: easing.outCubic,
         }),
     );
     // #region_A_end

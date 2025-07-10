@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Easy Overview charts with SciChartOverview
+# Easy Overview charts with SciChartOverview
 
 The [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html) Control is a component which can be used for navigating a 2D chart. It behaves like a minimap of the chart. The SciChartOverview is a separate chart which uses the original chart for configuration and displays the full range of it's data.
 

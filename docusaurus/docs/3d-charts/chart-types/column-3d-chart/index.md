@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ The Column 3D Chart Type
+# The Column 3D Chart Type
 
 JavaScript 3D Column Charts can be created using the [ColumnRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/columnrenderableseries3d.html) type. This chart type draws columns or bars from X,Y,Z data in the 3D world, with a pointmarker denoting the shape of the column. Column 3D Charts can be static or dynamic, and updated in real-time if required.
 

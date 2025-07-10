@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Getting Labels from Metadata
+# Getting Labels from Metadata
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
 

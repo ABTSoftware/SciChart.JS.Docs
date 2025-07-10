@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Creating a Simple Chart
+# Creating a Simple Chart
 
 Creating a Series with the Builder API
 --------------------------------------

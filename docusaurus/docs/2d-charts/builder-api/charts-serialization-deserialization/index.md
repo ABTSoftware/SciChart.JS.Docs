@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ Serialization and Deserialization of Charts
+# Serialization and Deserialization of Charts
 
 Pretty much everything in SciChart now has a `toJSON()` method that will return the definition form of that object, usually as `{ type, options }`. When you call **JSON.stringify()** on an object, `toJSON()` will be called automatically.
 

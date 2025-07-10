@@ -2,7 +2,7 @@
 sidebar_position: 30
 ---
 
-# ✅ The Rectangle Series Type
+# The Rectangle Series Type
 
 The Rectangle Series Type in SciChart.js provides a highly configurable and performant way to visualize rectangular data, supporting a variety of charting scenarios where rectangles, bars, or ranges are required. Its flexible data and rendering options make it suitable for both simple and advanced data visualization needs.
 

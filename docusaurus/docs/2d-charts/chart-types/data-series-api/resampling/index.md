@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ DataSeries Resampling
+# DataSeries Resampling
 
 :::tip
 **New to SciChart.js v2.1!** Resampling in SciChart.js enables [_tens of millions of data-points_](https://blog.scichart.com/surpassing-limits-javascript-bigdata-webassembly/) to be displayed in a JavaScript chart, or insane levels of high performance such as ten million candlesticks, enough for the entire history of Bitcoin to be displayed in a 1-minute chart.

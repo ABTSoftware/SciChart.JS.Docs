@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Data Label Coloring
+# Data Label Coloring
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
 

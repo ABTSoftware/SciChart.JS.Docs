@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Per-Point Colouring of Band Segments
+# Per-Point Colouring of Band Segments
 
 ## Colour Band Series Segments with PaletteProvider
 

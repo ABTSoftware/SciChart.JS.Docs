@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Scale Offset Filters
+# Scale Offset Filters
 
 The ScaleOffsetFilter Applies a scale (multiplier) and an offset (addition) to each field value in a Data Series. There is a specific filter for each type of dataseries:
 

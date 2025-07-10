@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Axis Ranging - How to Listen to VisibleRange Changes
+# Axis Ranging - How to Listen to VisibleRange Changes
 
 How to listen to VisibleRange changes
 -------------------------------------

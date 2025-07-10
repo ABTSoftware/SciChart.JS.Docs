@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Metadata and PaletteProviders
+# Metadata and PaletteProviders
 
 Using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) you can control the colour of data-points, line segments or columns / bars based on a programmatic rule, e.g. if Y>5 or index < 100.
 

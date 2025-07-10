@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Performance Tips & Tricks
+# Performance Tips & Tricks
 
 SciChart.js is a High Performance WebGL / WebAssembly chart library. Out of the box SciChart.js can achieve incredible performance vs. other JavaScript Chart Libraries on the market, capable of rendering millions of datapoints.
 

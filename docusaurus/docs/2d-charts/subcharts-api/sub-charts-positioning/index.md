@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ SubCharts Positioning
+# SubCharts Positioning
 
 There are several modes that can be used to position a sub-surface, they are defined in the [ECoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) enum.
 

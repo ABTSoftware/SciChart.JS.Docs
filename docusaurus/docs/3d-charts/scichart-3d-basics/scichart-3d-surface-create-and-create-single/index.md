@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ SciChart3DSurface.create() vs. createSingle()
+# SciChart3DSurface.create() vs. createSingle()
 
 Instantiating a new [SciChart3DSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html) chart is accomplished with the [SciChart3DSurface.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#create) function. We have some variations on this function which can be used in different scenarios. We'll go through these as well as WebAssembly (wasm) file loading below.
 

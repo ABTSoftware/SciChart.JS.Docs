@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Style Transition Animations
+# Style Transition Animations
 
 SciChart.js v2.x and above features a new API which allows you to animate style properties on different series types. This is useful if you want to provide feedback on mouse-click such as [data-point selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection/index.md) or [series selection](/docs/2d-charts/chart-modifier-api/selection/series-selection/index.md).
 

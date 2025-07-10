@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ DataSeries Get Set value at Index
+# DataSeries Get Set value at Index
 
 Memory in SciChart.js is stored in WebAssembly (Wasm) buffers via the type **SCRTDoubleVector**. It cannot be treated like a JavaScript array, however it is possible to bulk write/read to these arrays or to get/set at index.
 

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ The TickProvider API
+# The TickProvider API
 
 If you want to have absolute control over the gridlines, labels and minor gridline spacing in SciChart.js, you can use the **TickProvider API**.
 

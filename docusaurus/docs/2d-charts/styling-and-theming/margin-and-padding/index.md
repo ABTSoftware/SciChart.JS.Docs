@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Chart Styling - Margin and Padding
+# Chart Styling - Margin and Padding
 
 In SciChart.js v1.2 and above, we have introduced some properties that let you define the margin/padding inside the SciChartSurface, as well as certain chart parts such as Axis Labels and Axis Titles.
 

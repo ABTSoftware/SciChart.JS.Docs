@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Deploying Wasm (WebAssembly) with your app
+# Deploying Wasm (WebAssembly) with your app
 
 
 If you receive an error message when running your app, you may not have deployed the Wasm (WebAssembly) or data files correctly. Below are some steps on how to resolve that.

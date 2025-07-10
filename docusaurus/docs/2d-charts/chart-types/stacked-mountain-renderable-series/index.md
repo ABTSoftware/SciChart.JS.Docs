@@ -2,7 +2,7 @@
 sidebar_position: 41
 ---
 
-# ✅ The Stacked Mountain Series Type
+# The Stacked Mountain Series Type
 
 Stacked Mountain Charts can be created by a combination of the [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html) types. [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountainrenderableseries.html) share many properties with the added feature that columns automatically stack vertically or side by side.
 

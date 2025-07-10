@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Annotations API Overview
+# Annotations API Overview
 
 SciChart.js features a rich Annotations API, that allows you to place annotations (boxes, markers, text labels and custom shapes) over a chart: 
 

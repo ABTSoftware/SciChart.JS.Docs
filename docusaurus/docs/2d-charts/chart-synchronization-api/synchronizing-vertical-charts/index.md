@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Synchronizing Vertical Charts
+# Synchronizing Vertical Charts
 
 In SciChart.js v3.4, you can now synchronize Vertical Charts, enabling grouped zooming, panning, cursors and tooltips as well as synchronized axis sizes when charts are arranged vertically.
 

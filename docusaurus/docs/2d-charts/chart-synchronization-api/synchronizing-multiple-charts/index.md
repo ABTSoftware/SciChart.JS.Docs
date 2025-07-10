@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Synchronizing Multiple Charts
+# Synchronizing Multiple Charts
 
 SciChart.js features a rich set of APIs to synchronize multiple charts. With these APIs you can create dynamic dashboards and chart groups, for example:
 

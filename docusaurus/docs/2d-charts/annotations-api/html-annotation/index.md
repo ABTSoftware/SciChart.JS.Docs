@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ HTML Annotations
+# HTML Annotations
 
 Here we will describe how to use the HTML-based annotations feature of SciChart.JS and its advantages.
 

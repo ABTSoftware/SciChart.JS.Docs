@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ The DateTimeNumericAxis
+# The DateTimeNumericAxis
 
 The [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) is a Value axis (subclass of [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html)) and has some extra formatting options and features for handling date formatting.
 

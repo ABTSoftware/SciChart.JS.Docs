@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# ✅ The Mountain (Area) Series Type
+# The Mountain (Area) Series Type
 
 Mountain (or Area) Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 

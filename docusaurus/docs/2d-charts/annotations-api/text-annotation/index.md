@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ TextAnnotation
+# TextAnnotation
 
 <MinimizedImageAndTextHeader 
     imgSrc="/images/Annotations_TextAnnotation.png"

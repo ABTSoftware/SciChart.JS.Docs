@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Online Resources and Help
+# Online Resources and Help
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:

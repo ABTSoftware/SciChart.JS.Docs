@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Setting a Runtime License on a SciChartSurface
+# Setting a Runtime License on a SciChartSurface
 
 Another static method which allows you to license SciChart (apply a trial or paid production or test license) is SciChartSurface.setRuntimeLicenseKey()
 

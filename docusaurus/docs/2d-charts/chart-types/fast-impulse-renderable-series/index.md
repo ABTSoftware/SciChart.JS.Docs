@@ -2,7 +2,7 @@
 sidebar_position: 21
 ---
 
-# ✅ The Lollipop (Impulse or Stem) Chart Type
+# The Lollipop (Impulse or Stem) Chart Type
 
 Lollipop Charts, otherwise known as Impulse or Stem charts, can be created using the [FastImpulseRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html) type.
 

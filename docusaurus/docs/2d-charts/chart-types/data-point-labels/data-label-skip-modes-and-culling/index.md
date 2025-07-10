@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ DataLabel SkipModes and Culling
+# DataLabel SkipModes and Culling
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
 

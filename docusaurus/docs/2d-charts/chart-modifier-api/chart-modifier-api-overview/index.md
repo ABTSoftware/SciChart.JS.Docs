@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ What is the ChartModifier API
+# What is the ChartModifier API
 
 Within the SciChart.js JavaScript Chart SDK, ChartModifiers are the classes which can be added to a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) to give it a **certain** **behavior**. For instance, all **zooming, panning operations**, **tooltips**, **legends** and even **selection** of points or lines are handled by [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) derived classes in the SciChart codebase.
 

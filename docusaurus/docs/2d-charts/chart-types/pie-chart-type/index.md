@@ -2,7 +2,7 @@
 sidebar_position: 50
 ---
 
-# ✅ The Pie Chart Type
+# The Pie Chart Type
 
 In SciChart.js, the [JavaScript Pie Chart](https://demo.scichart.com/javascript-pie-chart) type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpiesurface.html) type.
 

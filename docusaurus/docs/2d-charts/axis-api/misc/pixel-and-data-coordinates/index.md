@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Axis APIs - Convert Pixel to Data Coordinates
+# Axis APIs - Convert Pixel to Data Coordinates
 
 SciChart.js provides a clean and simple API to transform pixels to data-values and vice versa via the CoordinateCalculator API.
 

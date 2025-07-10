@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ ZoomExtentsModifier 
+# ZoomExtentsModifier 
 
 SciChart.js provides the ability to Zoom Extents the entire chart (zoom to fit data) by double-clicking the chart area with the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html), available out of the box.
 

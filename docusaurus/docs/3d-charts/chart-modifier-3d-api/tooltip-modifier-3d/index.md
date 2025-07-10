@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Tooltip Modifier 3D
+# Tooltip Modifier 3D
 
 Tooltips in SciChart.js 3D are performed by the [TooltipModifier3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/tooltipmodifier3d.html). This is a [ChartModifierBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase3d.html) derived type which executes on touch over the data point and shows tooltips for the data-points under the mouse.
 

@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The Polar Band Series Type
+# The Polar Band Series Type
 
 The [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) creates a band or area between two polar curves, displaying the relationship between two sets of yValues on a polar coordinate system.
 

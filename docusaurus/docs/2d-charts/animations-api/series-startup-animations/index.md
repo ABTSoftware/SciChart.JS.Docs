@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Series Startup Animations
+# Series Startup Animations
 
 There are several series startup Animation Types provided out of the box in SciChart.js. These are:
 

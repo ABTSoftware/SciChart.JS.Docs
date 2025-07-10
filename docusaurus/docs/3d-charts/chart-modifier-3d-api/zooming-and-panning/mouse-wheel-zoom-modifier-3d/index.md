@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Mouse Wheel Zoom Modifier 3D
+# Mouse Wheel Zoom Modifier 3D
 
 Zooming and Panning a Chart in SciChart.js is achieved by moving the [SciChart3DSurface.camera:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#camera) to a new location.
 

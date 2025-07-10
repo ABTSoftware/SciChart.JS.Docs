@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ The Polar Numeric Axis
+# The Polar Numeric Axis
 
 The [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarnumericaxis.html) is a specialized axis type for polar charts (radar, spider, and polar area plots) in SciChart.js.  
 Polar axes map values either around a circle (**Angular**, or "theta") or outward from the center (**Radial**, or "r"). Their unique properties make them essential for any circular, gauge, or radar visualization.
@@ -43,7 +43,7 @@ Here is how to configure both **angular** and **radial** axes in a polar chart:
 ## Tips
 
 :::tip
-Always pair an **Angular** and **Radial** axis—never two of the same type.
+Always pair an **Angular** and **Radial**. You can have multiple axes in a polar chart, but make sure you have one of each first.
 :::
 
 :::tip

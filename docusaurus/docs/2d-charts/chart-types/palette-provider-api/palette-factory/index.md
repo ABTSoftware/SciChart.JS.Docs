@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The PaletteFactory Helper Class
+# The PaletteFactory Helper Class
 
 We've created a helper class called [PaletteFactory:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/palettefactory.html) to create some commonly used PaletteProviders. These work with all series types in SciChart.js that support the PaletteProvider API.
 

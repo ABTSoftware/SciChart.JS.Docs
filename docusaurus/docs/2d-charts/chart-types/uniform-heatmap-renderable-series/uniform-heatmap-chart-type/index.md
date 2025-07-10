@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The Uniform Heatmap Chart Type
+# The Uniform Heatmap Chart Type
 
 Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) type.
 

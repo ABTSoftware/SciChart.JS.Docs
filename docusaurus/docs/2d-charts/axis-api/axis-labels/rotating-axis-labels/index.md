@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Rotating Axis Labels
+# Rotating Axis Labels
 
 SciChart.js supports rotation of labels for all 2D axis types and [LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview). This lets you display longer labels, or pack more labels onto an x axis.
 

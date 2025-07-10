@@ -2,7 +2,7 @@
 sidebar_position: 0
 ---
 
-# ✅ The SciChartSurface Type
+# The SciChartSurface Type
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:

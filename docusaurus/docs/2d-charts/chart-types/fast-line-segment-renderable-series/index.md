@@ -2,7 +2,7 @@
 sidebar_position: 32
 ---
 
-# ✅ The Line Segment Series Type
+# The Line Segment Series Type
 
 Line segment is a part of a straight line that is bounded by two distinct endpoints. [FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinesegmentrenderableseries.html) defines a line-series or line chart type in the SciChart's High Performance Real-time JavaScript Charts
 

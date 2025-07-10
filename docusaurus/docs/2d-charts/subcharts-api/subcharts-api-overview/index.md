@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ What is the SubCharts API?
+# What is the SubCharts API?
 
 The SubCharts API allows to place 1..N child [SciChartSurfaces:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) within a parent chart (Charts within charts). It is possible to have multiple sub-charts within the main SciChartSurface.
 

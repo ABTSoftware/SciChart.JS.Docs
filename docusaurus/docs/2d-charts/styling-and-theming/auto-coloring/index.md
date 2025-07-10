@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# ✅ Chart Styling - Auto Coloring
+# Chart Styling - Auto Coloring
 
 One of the challenges when creating a chart with multiple series is picking colours for each series, especially when you are trying to keep to a color scheme.  We faced this problem during the recent rethemeing of our demos to match the new website theme.  The solution was to create a way to let SciChart automatically pick colours based off a palette.
 

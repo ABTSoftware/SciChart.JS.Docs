@@ -2,7 +2,7 @@
 sidebar_position: 21
 ---
 
-# ✅ Styling Annotation Selection
+# Styling Annotation Selection
 
 The Annotations API allows to customize the interaction adorners style of an editable annotation. This includes:
 

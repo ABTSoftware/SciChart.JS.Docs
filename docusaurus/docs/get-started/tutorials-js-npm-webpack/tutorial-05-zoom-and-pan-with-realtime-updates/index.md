@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Tutorial 05 - Zoom and Pan with Realtime Updates
+# Tutorial 05 - Zoom and Pan with Realtime Updates
 
 In [Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates), we showed you how to dynamically update DataSeries to enable Real-time updates in SciChart.js. In this tutorial, were going to show you how to allow zooming and panning while scrolling data.
 

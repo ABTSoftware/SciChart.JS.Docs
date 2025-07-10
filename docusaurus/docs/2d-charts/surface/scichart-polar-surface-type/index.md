@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The SciChartPolarSurface Type
+# The SciChartPolarSurface Type
 
 The root polar chart view is called the [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html). This is the JavaScript chart control you will be adding to your applications wherever you need a **Polar Chart**. You can add more than one SciChartPolarSurface to an HTML page and combine them with [Cartesian SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview), you can configure them independently, and you can link them together.
 

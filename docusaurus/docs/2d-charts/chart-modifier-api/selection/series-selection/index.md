@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Series Selection
+# Series Selection
 
 SciChart now features a native ChartModifier called the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesselectionmodifier.html) which allows you to click-select series via the mouse, or programmatically. The [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesselectionmodifier.html) allows you to do the following things:
 

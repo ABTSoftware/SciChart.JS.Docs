@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Title, Labels, Gridlines and Axis Band Style
+# Title, Labels, Gridlines and Axis Band Style
 
 An Axis is responsible for drawing its labels, title but also the gridlines facing away from it. Gridlines are subdivided into four categories:
 

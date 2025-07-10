@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Data Filters API
+# Data Filters API
 
 The Filters and Transforms API was added to SciChart.js v2.x as a way to create derived data, filters, indicators or perform functions on your data easily and simply.
 

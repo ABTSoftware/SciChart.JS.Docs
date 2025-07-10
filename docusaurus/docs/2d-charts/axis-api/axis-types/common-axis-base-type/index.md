@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Common Axis Base Type and Options
+# Common Axis Base Type and Options
 
 Common Axis Base Type and Options
 

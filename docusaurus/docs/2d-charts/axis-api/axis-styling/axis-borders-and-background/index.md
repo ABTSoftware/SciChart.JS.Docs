@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Axis Borders and Background
+# Axis Borders and Background
 
 In SciChart.js we have properties to let you style the axis border and background. This is the line between the axis and the main SciChartSurface and the background area of the axis itself.
 

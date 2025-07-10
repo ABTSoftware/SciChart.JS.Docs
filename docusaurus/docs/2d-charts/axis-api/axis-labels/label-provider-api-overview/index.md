@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Axis LabelProvider API Overview
+# Axis LabelProvider API Overview
 
 All Axis Types include the [AxisCore.labelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#labelprovider) property, which formats axis and cursor labels. Built in to SciChart.js are a number of labelProvider types, and you can even create your own.
 

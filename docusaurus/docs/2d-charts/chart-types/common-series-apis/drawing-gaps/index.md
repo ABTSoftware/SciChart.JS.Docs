@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Drawing Gaps in Series (null data)
+# Drawing Gaps in Series (null data)
 
 It is possible to have null points or gaps in multiple series types by passing a data point with Y = NaN (Not a Number). The following chart (series) types support NaN gaps.
 

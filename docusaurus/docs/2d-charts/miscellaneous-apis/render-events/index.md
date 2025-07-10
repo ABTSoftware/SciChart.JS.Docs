@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Render Events
+# Render Events
 
 A surface instance exposes several [EventHandlers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/eventhandler.html) that correspond to different stages in the chart rendering cycle.
 

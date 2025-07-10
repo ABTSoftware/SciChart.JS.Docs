@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# ✅ Hit-Test API for Line Segment Series
+# Hit-Test API for Line Segment Series
 
 The IHitTestProvider.hitTest method on [FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinesegmentrenderableseries.html) tests if the click was within the Line's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

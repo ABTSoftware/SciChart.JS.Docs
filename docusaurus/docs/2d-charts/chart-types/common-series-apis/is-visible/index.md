@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Series isVisible and isVisibleChanged API
+# Series isVisible and isVisibleChanged API
 
 Each RenderableSeries has an [isVisible:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisible) property. This defines whether the series is included in rendering or not.
 

@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Memory Leak Debugging
+# Memory Leak Debugging
 
 In SciChart.js v3.2 we've introduced a set of Memory Leak debugging tools. Read this guide to find out how to enable Memory Leak Debugging in your app in Dev mode. 
 

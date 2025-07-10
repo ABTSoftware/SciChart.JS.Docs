@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ The SciChartSurface Camera
+# The SciChartSurface Camera
 
 The property [SciChart3DSurface.Camera:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#camera) defines an [ICameraController:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icameracontroller.html) instance. By default this interface is implemented in [CameraController:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html) class.
 

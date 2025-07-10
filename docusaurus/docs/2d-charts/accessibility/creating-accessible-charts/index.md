@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Creating Accessible Charts
+# Creating Accessible Charts
 
 This is a description of available accessibility features which could be provided by the SciChart. Here we tried to demonstrate how to configure the chart using existing APIs to support some of these features.
 

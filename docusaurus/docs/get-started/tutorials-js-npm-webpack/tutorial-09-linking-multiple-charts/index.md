@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# ✅ Tutorial 09 - Linking Multiple Charts
+# Tutorial 09 - Linking Multiple Charts
 
 In [Tutorial 08 - Adding Multiple Axis](/docs/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis), we showed you how to add a second **YAxis**.  
 Now we are going to show you how to create multiple charts and link them together.

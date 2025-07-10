@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Custom LabelProviders: Readable Numbers
+# Custom LabelProviders: Readable Numbers
 
 :::tip
 Customisation in SciChart.js can go a level deeper than built-in label formatting by creating a custom labelprovider class.

@@ -2,7 +2,7 @@
 sidebar_position: 24
 ---
 
-# ✅ The Digital (Step) Band Series Type
+# The Digital (Step) Band Series Type
 
 A Digital Band Series, or High-Low Fill between two Digital or Step lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 

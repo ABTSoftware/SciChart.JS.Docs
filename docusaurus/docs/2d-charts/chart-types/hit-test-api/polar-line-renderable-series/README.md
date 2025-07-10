@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ Hit-Test API for Polar Line Series 
+# Hit-Test API for Polar Line Series 
 
 The IHitTestProvider.hitTest method on [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) tests if the click was within the Line's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

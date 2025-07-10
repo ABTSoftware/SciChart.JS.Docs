@@ -2,7 +2,7 @@
 sidebar_position: 8
 ---
 
-# ✅ Label Style, Alignment and Positioning
+# Label Style, Alignment and Positioning
 
 The LabelStyle property
 -----------------------

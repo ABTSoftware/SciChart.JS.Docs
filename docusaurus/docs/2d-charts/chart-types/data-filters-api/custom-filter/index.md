@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Creating a Custom Filter
+# Creating a Custom Filter
 
 As well as several filters out of the box, such as Moving Average, Linear Trendline, Scale & Offset and Ratio filter, you can also create custom filters or data transforms in SciChart.js
 

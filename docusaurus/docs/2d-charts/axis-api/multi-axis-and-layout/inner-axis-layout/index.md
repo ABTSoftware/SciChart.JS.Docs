@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Inner Axis Layout
+# Inner Axis Layout
 
 SciChart allows you to customize how axes are placed around and within the surface.  Axes can be placed:
 

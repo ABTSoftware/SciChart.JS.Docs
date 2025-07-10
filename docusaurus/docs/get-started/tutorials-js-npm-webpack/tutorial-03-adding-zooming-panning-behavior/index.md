@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Tutorial 03 - Adding Zooming, Panning Behavior
+# Tutorial 03 - Adding Zooming, Panning Behavior
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data) we explained how to add a line series with some data to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add zooming and panning behaviour to the chart.
 

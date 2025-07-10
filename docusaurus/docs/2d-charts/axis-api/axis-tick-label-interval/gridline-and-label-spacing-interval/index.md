@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Gridline and Label Spacing (Interval)
+# Gridline and Label Spacing (Interval)
 
 Axis Ticks, Labels and Grid Lines
 ---------------------------------

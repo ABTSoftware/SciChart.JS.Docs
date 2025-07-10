@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Detecting Clicks On Chart Parts with a Custom Modifier
+# Detecting Clicks On Chart Parts with a Custom Modifier
 
 One of the uses of the custom ChartModifier API is to allow you to create custom behaviours and add them onto a SciChartSurface. These behaviours can be simple or complex, and perform zooming, panning operations or more.
 

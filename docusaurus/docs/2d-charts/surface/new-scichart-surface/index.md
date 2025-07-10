@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Creating a new SciChartSurface and loading Wasm
+# Creating a new SciChartSurface and loading Wasm
 
 Instantiating a new SciChartSurface (a new Chart) is accomplished with the [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create) function. We have some variations on this function which can be used in different scenarios. We'll go through these as well as WebAssembly (wasm) file loading below.
 

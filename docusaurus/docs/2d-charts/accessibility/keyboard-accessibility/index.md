@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Keyboard Accessibility
+# Keyboard Accessibility
 
 A chart behavior is easily extendable with the use of Chart Modifiers. So they can be used to add a keyboard accessibility to the chart. See also [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md), [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features/index.md).
 

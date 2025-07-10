@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Custom DataLabel Formatting with getText()
+# Custom DataLabel Formatting with getText()
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
 

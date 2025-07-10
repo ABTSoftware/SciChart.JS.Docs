@@ -2,7 +2,7 @@
 sidebar_position: 13
 ---
 
-# ✅ Worked Example: Using SubCharts to create a Large Dashboard
+# Worked Example: Using SubCharts to create a Large Dashboard
 
 SubCharts API gives an ability to create multiple charts while providing a great rendering performance. All the charts on a SubChart use a single, shared WebGL context. This means 100s of charts can be placed on screen and update very fast.
 

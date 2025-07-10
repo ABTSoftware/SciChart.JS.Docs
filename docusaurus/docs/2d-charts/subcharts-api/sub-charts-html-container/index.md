@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ SubCharts Html Container
+# SubCharts Html Container
 
 Another feature of the SubCharts API is an ability to add custom HTML content around a sub-chart.
 

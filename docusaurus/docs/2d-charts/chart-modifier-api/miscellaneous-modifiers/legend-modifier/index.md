@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Legend Modifier
+# Legend Modifier
 
 **SciChart.js** features a rich, customisable legend API which is based on our powerful [ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview). To add a Legend to a chart use **LegendModifier**.
 

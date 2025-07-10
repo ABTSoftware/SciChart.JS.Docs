@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ RenderableSeries Overview
+# RenderableSeries Overview
 
 The RenderableSeries in SciChart are visual representations of **X,Y Numeric** or **Date** data. Other libraries call them 'Chart Types'.
 

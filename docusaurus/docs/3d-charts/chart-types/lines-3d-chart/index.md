@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ The Lines 3D Chart Type
+# The Lines 3D Chart Type
 
 :::tip
 Examples for the Lines 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaded from SciChart.Js.Examples Github Repository

@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Vertically Stacked Axis Layout
+# Vertically Stacked Axis Layout
 
 The Stacked Axis feature in SciChart allows you to specify the layout of the axis panel. Normally when you have multiple YAxis, they are stacked horizontally. However, you can switch this to stack vertically. Custom and complex layouts are possible allowing for all kinds of chart scenarios.
 

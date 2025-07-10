@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Horizontally Stacked Axis Layout
+# Horizontally Stacked Axis Layout
 
 The Stacked Axis feature in SciChart allows you to specify the layout of the axis panel. Normally when you have multiple XAxis, they are stacked vertically. However, you can switch this to stack horizontally. Custom and complex layouts are possible allowing for all kinds of chart scenarios.
 

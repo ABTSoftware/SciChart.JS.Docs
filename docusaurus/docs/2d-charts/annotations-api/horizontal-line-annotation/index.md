@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ HorizontalLineAnnotation
+# HorizontalLineAnnotation
 
 The HorizontalLineAnnotation allows to draw a **horizontal line** between X1, X2 coordinates at Y1.
 

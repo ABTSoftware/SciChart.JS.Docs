@@ -2,7 +2,7 @@
 sidebar_position: 12
 ---
 
-# ✅ Hit-Test API for Rectangle Series
+# Hit-Test API for Rectangle Series
 
 The IHitTestProvider.hitTest method on [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) tests if the click was within the Rectangle's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
 

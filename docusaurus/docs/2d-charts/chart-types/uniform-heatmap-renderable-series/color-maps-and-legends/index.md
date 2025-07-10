@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Heatmap ColorMaps and Legends
+# Heatmap ColorMaps and Legends
 
 ## Converting Data-Values to Colors (Defining a Color Map)
 

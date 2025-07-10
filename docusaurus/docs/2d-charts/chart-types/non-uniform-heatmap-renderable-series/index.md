@@ -2,7 +2,7 @@
 sidebar_position: 17
 ---
 
-# ✅ The Non-Uniform Heatmap Chart Type
+# The Non-Uniform Heatmap Chart Type
 
 A complementary type to the Uniform Heatmap is the Non-Uniform Heatmap, new to SciChart.js v2.3.
 

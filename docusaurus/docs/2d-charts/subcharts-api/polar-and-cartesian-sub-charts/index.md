@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Combining Polar and Cartesian Charts
+# Combining Polar and Cartesian Charts
 
 It is possible to combine both Polar and Cartesian chart. You will find the example below.
 

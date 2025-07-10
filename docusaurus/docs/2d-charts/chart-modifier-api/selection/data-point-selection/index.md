@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ DataPoint Selection
+# DataPoint Selection
 
 SciChart now features a native ChartModifier called the [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datapointselectionmodifier.html) which allows individual data-points to be selected via the mouse, or programmatically.
 

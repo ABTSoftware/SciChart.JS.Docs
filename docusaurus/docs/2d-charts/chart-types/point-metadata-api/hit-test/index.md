@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Metadata and HitTest
+# Metadata and HitTest
 
 The Hi-Test API is a low level API used to extract information about chart series under the mouse. Our own in-house RolloverModifier and CursorModifier are based on this API. You can use it too to create Drill-downs and custom data-inspections.
 

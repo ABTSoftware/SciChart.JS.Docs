@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ BoxAnnotation
+# BoxAnnotation
 
 <MinimizedImageAndTextHeader 
     imgSrc="/images/Annotations_BoxAnnotation.PNG"

@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Color and Contrast
+# Color and Contrast
 
 Since colors and theming are most likely to be custom for each customer, we don't provide out of the box light and dark theme handling (nor special theme for High Contrast).
 

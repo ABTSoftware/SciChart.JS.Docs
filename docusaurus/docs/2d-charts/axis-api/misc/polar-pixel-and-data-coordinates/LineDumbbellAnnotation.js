@@ -1,5 +1,3 @@
-import * as SciChart from "scichart";
-
 import { deleteSafe, Guard, DpiHelper, LineAnnotation } from "scichart";
 import { BrushCache, createBrushInCache, getWebGlBrushFromCache } from "scichart/Charting/Drawing/BrushCache";
 import { createPenInCache, getWebGlPenFromCache, Pen2DCache } from "scichart/Charting/Drawing/Pen2DCache";

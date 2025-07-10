@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Per-Point Colouring of Bubble Charts
+# Per-Point Colouring of Bubble Charts
 
 Colouring Bubble Points Individually with PaletteProvider
 ---------------------------------------------------------

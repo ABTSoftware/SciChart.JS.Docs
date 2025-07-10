@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Tutorial 02 - Adding Series and Data
+# Tutorial 02 - Adding Series and Data
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) we explained how to setup a project with a simple chart using SciChart.js. In this tutorial, we are going to show you how to add some data and a line series to the chart.
 

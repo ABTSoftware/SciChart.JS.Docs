@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ The Polar Stacked Mountain Chart Type
+# The Polar Stacked Mountain Chart Type
 
 The Polar Stacked Mountain Chart Type is created using a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountaincollection.html) to manage multiple series of [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html), which represent the individual stacked mountains in the chart.
 

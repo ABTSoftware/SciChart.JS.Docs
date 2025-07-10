@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The VerticalSliceModifier Type
+# The VerticalSliceModifier Type
 
 With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
 

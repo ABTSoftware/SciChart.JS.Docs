@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Axis Ranging - AutoRange
+# Axis Ranging - AutoRange
 
 At the outset, the [Axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) is adjusted to be equal to the data range of an axis. However, an axis won't adjust its VisibleRange automatically when data changes, unless it is configured to do this. The default behavior can be changed using different [AutoRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#autorange) modes.
 

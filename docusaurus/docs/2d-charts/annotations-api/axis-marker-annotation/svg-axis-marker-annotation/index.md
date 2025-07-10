@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ SVG Axis Marker Annotation
+# SVG Axis Marker Annotation
 
 [AxisMarkerAnnotations](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) can also be created with SVG, also using the [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#image) property. This can be done as follows.
 

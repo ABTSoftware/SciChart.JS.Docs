@@ -2,7 +2,7 @@
 sidebar_position: 20
 ---
 
-# ✅ Hit-Test API for Polar Mountain Series 
+# Hit-Test API for Polar Mountain Series 
 
 The Hit-Test API for [Polar Mountain Renderable Series](/docs/2d-charts/chart-types/polar-mountain-renderable-series) is NOT supported in SciChart.js v4.0, not because it is not possible, but because we are want feedback from our users on whether this is a feature they would like to see and if it is worth the effort to implement.
 

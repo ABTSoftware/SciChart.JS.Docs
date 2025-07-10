@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Custom Subtypes
+# Custom Subtypes
 
 From time to time, you may need to create custom subtypes in order to fully access the powerful, customisable API that SciChart.js has to offer.
 

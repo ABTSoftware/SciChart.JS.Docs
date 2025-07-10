@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Chart Styling - Style Chart Parts in Code
+# Chart Styling - Style Chart Parts in Code
 
 In addition to our [ThemeManager with light and dark themes](/docs/2d-charts/styling-and-theming/theme-manager-api/index.md), the ability to [create a custom theme](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md), you can also style chart parts in code.
 

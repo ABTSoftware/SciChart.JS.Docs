@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Tutorial 02 - Including index.min.js and WebAssembly Files offline
+# Tutorial 02 - Including index.min.js and WebAssembly Files offline
 
 This set of tutorials will be limited to how to use SciChart.js by including index.min.js in a vanilla JS application (without npm and webpack).
 

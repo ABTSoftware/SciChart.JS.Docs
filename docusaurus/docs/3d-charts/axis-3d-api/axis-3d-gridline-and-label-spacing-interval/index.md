@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Axis3D Gridline and Label Spacing (Interval)   
+# Axis3D Gridline and Label Spacing (Interval)   
 
 Axis 3D Gridline and Label Spacing obeys the same rules as SciChart 2D. Here are the key principles.
 

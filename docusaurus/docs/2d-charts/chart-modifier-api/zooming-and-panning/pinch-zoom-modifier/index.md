@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ PinchZoomModifier
+# PinchZoomModifier
 
 SciChart.js provides Pinch zooming on touch devices via the [PinchZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html) type.
 

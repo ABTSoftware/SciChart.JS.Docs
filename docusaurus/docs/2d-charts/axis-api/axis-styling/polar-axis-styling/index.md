@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Polar Axis Styling
+# Polar Axis Styling
 
 Polar axes in SciChart.js are specialized axes designed for polar charts, which are circular in nature. They can be used to create various types of polar charts, such as radial bar charts, polar line charts, and more. 
 

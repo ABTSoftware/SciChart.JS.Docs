@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# ✅ Polar Chart Styling
+# Polar Chart Styling
 
 Polar charts in SciChart.js are specialized charts designed for polar data visualization, which are circular in nature. They can be used to create various types of charts, such as radial bar, windrose, line, band, mountain, spider, scatter, heatmaps and more.
 

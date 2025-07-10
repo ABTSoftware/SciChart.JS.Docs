@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Tutorial 01 - Setting up a npm Project with SciChart.js
+# Tutorial 01 - Setting up a npm Project with SciChart.js
 
 Creating a New SciChart.js Project
 ----------------------------------

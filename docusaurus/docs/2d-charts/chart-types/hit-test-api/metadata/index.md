@@ -2,7 +2,7 @@
 sidebar_position: 100
 ---
 
-# ✅ Hit-Test API and Metadata
+# Hit-Test API and Metadata
 
 Calling any of Hit-Test methods produces a **HitTestInfo** object as a result. The **HitTestInfo** object has **metadata** property. It contains the point metadata from associated data series, which is useful for displaying any additional information for the data point.
 

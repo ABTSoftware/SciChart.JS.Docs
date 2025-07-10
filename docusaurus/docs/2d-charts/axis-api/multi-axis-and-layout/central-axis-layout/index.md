@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Central Axis Layout
+# Central Axis Layout
 
 Placing Axis in the center the chart, like an oscilloscope or spectrum analyzer is possible with SciChart.js.
 

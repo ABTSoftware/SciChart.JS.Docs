@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Hit-Test API for Bubble Series
+# Hit-Test API for Bubble Series
 
 ## The hitTest method on Bubble Series
 

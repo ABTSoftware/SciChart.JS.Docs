@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Intro to the Builder API
+# Intro to the Builder API
 
 The **Builder API** is a new API to SciChart.js v2. In addition to programmatically creating charts with JavaScript or TypeScript code, you can now create charts with a JSON-object API, either with objects in code with discovererable intellisense, or with JSON passed from server to client.
 

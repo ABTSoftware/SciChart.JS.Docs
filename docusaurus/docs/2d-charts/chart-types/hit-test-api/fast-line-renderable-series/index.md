@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Hit-Test API for Line Series
+# Hit-Test API for Line Series
 
 The hitTest method on Line Series
 ---------------------------------

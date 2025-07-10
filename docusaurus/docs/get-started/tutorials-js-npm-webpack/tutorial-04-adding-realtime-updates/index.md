@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ Tutorial 04 - Adding Realtime Updates
+# Tutorial 04 - Adding Realtime Updates
 
 In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior) we explained how to add zooming and panning behavior to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add realtime updates.
 

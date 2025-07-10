@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# ✅ NativeTextAnnotation
+# NativeTextAnnotation
 
 [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nativetextannotation.html) works almost exactly like the normal [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html) but instead of using SVG, it draws using the native text api that is new in SciChart.JS v3 or greater. This allows for some significant benefits:
 

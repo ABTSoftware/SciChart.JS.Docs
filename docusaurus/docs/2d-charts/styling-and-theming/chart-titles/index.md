@@ -2,7 +2,7 @@
 sidebar_position: 10
 ---
 
-# ✅ Chart Styling - Chart Titles
+# Chart Styling - Chart Titles
 
 New to SciChart.js v3.1, we've added a Chart Title property allowing for multi-line titles on the top, left, right, bottom of the chart and with various alignment options.
 

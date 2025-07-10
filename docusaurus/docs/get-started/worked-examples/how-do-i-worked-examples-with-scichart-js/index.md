@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ How do I? ... Worked Examples with SciChart.js
+# How do I? ... Worked Examples with SciChart.js
 
 SciChart.js is more than just a javascript chart library. Our API is designed to be flexible, powerful and deeply customisable, enabling real-world applications with interactive & visual charts.
 

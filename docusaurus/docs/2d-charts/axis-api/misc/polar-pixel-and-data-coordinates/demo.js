@@ -1,5 +1,4 @@
-import { PolarNumericAxis, SciChartSurface, NumberRange, EDraggingGripPoint, EAxisAlignment, EPolarAxisMode, LineArrowAnnotation, Thickness, XyDataSeries, NumericAxis, ESciChartSurfaceType, LineAnnotation, Rect, SciChartPolarSubSurface, SciChartSubSurface, RadianLabelProvider, SplineMountainRenderableSeries, SciChartJsNavyTheme, EAutoRange, CategoryAxis } from "scichart";
-// import { LineDumbbellAnnotation } from "./LineDumbbellAnnotation";
+import { PolarNumericAxis, SciChartSurface, NumberRange, EDraggingGripPoint, EAxisAlignment, EPolarAxisMode, LineArrowAnnotation, Thickness, XyDataSeries, NumericAxis, ESciChartSurfaceType, LineAnnotation, Rect, SciChartPolarSubSurface, SciChartSubSurface, RadianLabelProvider, SplineMountainRenderableSeries, SciChartJsNavyTheme, EAutoRange, } from "scichart";
 function calculateDiameterProjection(x, y) {
     return {
         x2: x % Math.PI < Math.PI ? Math.PI / 2 : (Math.PI * 3) / 2,
@@ -31,7 +30,6 @@ async function drawExample(rootElement) {
         polarAxisMode: EPolarAxisMode.Angular,
         axisAlignment: EAxisAlignment.Top,
         visibleRange: new NumberRange(0, Math.PI * 2),
-        drawMinorGridLines: false,
         drawMajorTickLines: false,
         drawMinorTickLines: false,
         autoTicks: false,
@@ -119,7 +117,13 @@ async function drawExample(rootElement) {
         stroke: "gray",
         strokeThickness: 2
     });
-    polarSub.annotations.add(vector1ToSumLine, vector2ToSumLine, vector1ToDiameter, vector1, vector2ToDiameter, vector2, vectorSumToDiameter, vectorSum);
+    polarSub.annotations.add(vector1ToSumLine, vector2ToSumLine, 
+    // vector1ToDiameter,
+    vector1, 
+    // vector2ToDiameter,
+    vector2, 
+    // vectorSumToDiameter,
+    vectorSum);
     function updateAnnotations(relativeCoords) {
         if (!vector1 || !vector2) {
             return;
@@ -172,108 +176,84 @@ async function drawExample(rootElement) {
         padding: new Thickness(5, 0, 5, 0),
         position: new Rect(0.5, 0, 0.5, 1), // right half of the screen
     });
-    // Define constants for the sweeping effect
-    const CARTESIAN_POINTS_LOOP = 100; // Number of points to show at once
-    const CARTESIAN_STEP = 2; // How many points to add each update
-    const CARTESIAN_TIMER_TIMEOUT_MS = 50; // Update interval
-    const X_RANGE = Math.PI * 4; // Fixed x-axis range
-    // Create a CategoryAxis for the x-axis to enable proper sweeping
-    const xAxis = new CategoryAxis(wasmContext, {
-        visibleRange: new NumberRange(0, CARTESIAN_POINTS_LOOP),
-        isVisible: false,
-        autoRange: EAutoRange.Never
+    // add cartesian x / y axes
+    const xAxis = new NumericAxis(wasmContext, {
+        labelStyle: { color: "white" },
+        autoTicks: false,
+        majorDelta: Math.PI / 4,
+        minorDelta: 100,
+        labelProvider: new RadianLabelProvider(),
+        growBy: new NumberRange(0.2, 0),
+        autoRange: EAutoRange.Always,
+        flippedCoordinates: true,
     });
     cartesianSub.xAxes.add(xAxis);
     const yAxis = new NumericAxis(wasmContext, {
-        axisAlignment: EAxisAlignment.Left,
+        axisAlignment: EAxisAlignment.Right,
         isInnerAxis: true,
-        autoRange: EAutoRange.Always,
+        visibleRange: new NumberRange(-2.5, 2.5),
+        autoTicks: false,
+        majorDelta: 0.5,
         labelStyle: { color: "white" }
     });
     cartesianSub.yAxes.add(yAxis);
-    // Create data series with fifoSweeping enabled
-    const createSweepingSeries = () => new XyDataSeries(wasmContext, {
-        fifoCapacity: CARTESIAN_POINTS_LOOP,
-        fifoSweeping: true,
-        fifoSweepingGap: CARTESIAN_STEP,
-        containsNaN: false
-    });
-    // Create the mountain series with sweeping data series
-    const vector1Mountain = new SplineMountainRenderableSeries(wasmContext, {
-        dataSeries: createSweepingSeries(),
+    // add the 3 cartesian projections of the polar vectors
+    const Vector1Mountain = new SplineMountainRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [],
+            yValues: [],
+            fifoCapacity: 150
+        }),
         fill: "#BB000033",
         stroke: "#BB0000",
         strokeThickness: 3
     });
-    const vector2Mountain = new SplineMountainRenderableSeries(wasmContext, {
-        dataSeries: createSweepingSeries(),
+    const Vector2Mountain = new SplineMountainRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [],
+            yValues: [],
+            fifoCapacity: 150
+        }),
         fill: "#00FF0033",
         stroke: "#00FF00",
         strokeThickness: 3
     });
-    const vectorSumMountain = new SplineMountainRenderableSeries(wasmContext, {
-        dataSeries: createSweepingSeries(),
+    const VectorSumMountain = new SplineMountainRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: [],
+            yValues: [],
+            fifoCapacity: 150
+        }),
         fill: "#DDDDDD33",
         stroke: "#AAAAAA",
         strokeThickness: 3
     });
-    cartesianSub.renderableSeries.add(vectorSumMountain, vector1Mountain, vector2Mountain);
-    // Animation variables
-    let currentX = 0;
-    let animationFrameId;
-    let lastUpdateTime = 0;
-    const updateCartesianData = (timestamp) => {
-        // Throttle updates to prevent stack overflow
-        if (timestamp - lastUpdateTime < CARTESIAN_TIMER_TIMEOUT_MS) {
-            animationFrameId = requestAnimationFrame(updateCartesianData);
-            return;
-        }
-        lastUpdateTime = timestamp;
-        const xValues = [];
-        const yValues1 = [];
-        const yValues2 = [];
-        const yValuesSum = [];
-        // Generate new points
-        for (let i = 0; i < CARTESIAN_STEP; i++, currentX++) {
-            const normalizedX = (currentX / CARTESIAN_POINTS_LOOP) * X_RANGE;
-            xValues.push(currentX);
-            yValues1.push(Math.sin(normalizedX + 0.25));
-            yValues2.push(Math.sin(normalizedX + 2.3));
-            yValuesSum.push(Math.sin(normalizedX + 1.1) * 2);
-        }
-        // Append new data
-        vector1Mountain.dataSeries.appendRange(xValues, yValues1);
-        vector2Mountain.dataSeries.appendRange(xValues, yValues2);
-        vectorSumMountain.dataSeries.appendRange(xValues, yValuesSum);
-        animationFrameId = requestAnimationFrame(updateCartesianData);
-    };
-    const startAnimation = () => {
-        if (!animationFrameId) {
-            lastUpdateTime = performance.now();
-            animationFrameId = requestAnimationFrame(updateCartesianData);
-        }
-    };
-    const stopAnimation = () => {
-        if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = 0;
-        }
-    };
-    // Start the animation automatically
-    startAnimation();
-    // Make sure to clean up when the surface is disposed
-    sciChartSurface.addDeletable({
-        delete: () => {
-            stopAnimation();
-        }
-    });
-    return {
-        sciChartSurface,
-        wasmContext,
-        controls: {
-            startAnimation,
-            stopAnimation
-        }
-    };
+    cartesianSub.renderableSeries.add(VectorSumMountain, Vector1Mountain, Vector2Mountain);
+    function updateCartesianProjection() {
+        // calculate with the height and angle, the projection of the vectors from 0-2
+        const vector1Projection = calculateDiameterProjection(vector1.x2, vector1.y2);
+        const vector2Projection = calculateDiameterProjection(vector2.x2, vector2.y2);
+        const vectorSumProjection = calculateDiameterProjection(vectorSum.x2, vectorSum.y2);
+        const pastX = Vector1Mountain.dataSeries.getNativeXValues().get(Vector1Mountain.dataSeries.count() - 1);
+        const newX = pastX + Math.PI / 180;
+        // Update the data series of the mountains
+        Vector1Mountain.dataSeries.append(newX, vector1Projection.y2);
+        Vector2Mountain.dataSeries.append(newX, vector2Projection.y2);
+        VectorSumMountain.dataSeries.append(newX, vectorSumProjection.y2);
+    }
+    function rotateVectors() {
+        // Rotate the vectors by a small angle
+        const angleIncrement = Math.PI / 180; // 1 degree in radians
+        vector1.x2 += angleIncrement;
+        vector2.x2 += angleIncrement;
+        vector1.dragDelta.raiseEvent();
+    }
+    function animate() {
+        updateCartesianProjection();
+        rotateVectors();
+        setTimeout(animate, 16, 67);
+    }
+    animate();
+    return { sciChartSurface, wasmContext };
 }
 drawExample("scichart-root");

@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ DataLabels API Overview
+# DataLabels API Overview
 
 DataLabels allow per data-point text labels to be drawn on series, or arbitrary text labels at x,y positions on the chart.
 

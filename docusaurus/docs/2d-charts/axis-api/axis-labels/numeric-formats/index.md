@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Axis Labels - The ENumericFormat Enum
+# Axis Labels - The ENumericFormat Enum
 
 In the previous article we gave you an overview of the LabelProvider feature and how this is used to format labels on axis.
 

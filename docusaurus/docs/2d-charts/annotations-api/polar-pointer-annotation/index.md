@@ -2,7 +2,7 @@
 sidebar_position: 16
 ---
 
-# ✅ PolarPointerAnnotation
+# PolarPointerAnnotation
 
 The [PolarPointerAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarpointerannotation.html) creates a customizable SVG pointer for polar charts, ideal for gauges or radial indicators. It consists of 3 customizable elements: a pointer stick, center circle (optional), and arrowhead (also optional).
 

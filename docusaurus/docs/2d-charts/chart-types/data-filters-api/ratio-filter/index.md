@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Ratio Filter
+# Ratio Filter
 
 The XyRatioFilter returns a series where each point is the ratio of the original series and the given divisor DataSeries.
 

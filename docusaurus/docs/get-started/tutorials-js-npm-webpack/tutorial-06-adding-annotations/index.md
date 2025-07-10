@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Tutorial 06 - Adding Annotations
+# Tutorial 06 - Adding Annotations
 
 In [Tutorial 5 - Zoom and Pan with Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-05-zoom-and-pan-with-realtime-updates), we showed you how to do zooming and panning having realtime updates. In this tutorial, were going to show you how to add annotations.
 

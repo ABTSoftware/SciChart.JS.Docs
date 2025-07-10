@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ VerticalLineAnnotation
+# VerticalLineAnnotation
 
 The [VerticalLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticallineannotation.html) allows to draw a **vertical line** between Y1, Y2 coordinates at X1.
 

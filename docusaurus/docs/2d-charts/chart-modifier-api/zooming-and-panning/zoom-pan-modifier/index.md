@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ ZoomPanModifier
+# ZoomPanModifier
 
 SciChart.js provides an scrolling / panning behavior via the [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html), available out of the box.
 

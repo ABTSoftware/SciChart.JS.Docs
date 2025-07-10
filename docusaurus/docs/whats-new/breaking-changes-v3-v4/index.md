@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Breaking Changes in SciChart.js v4.x from v3.x
+# Breaking Changes in SciChart.js v4.x from v3.x
 
 SciChart.js v4 is a very big release with many new features and many fixes and improvements that have required some breaking changes to the api from v3.  Many of these are typo fixes or improved ways of doing the same thing.  Below you will find migration guides for all the issues you might hit.
 

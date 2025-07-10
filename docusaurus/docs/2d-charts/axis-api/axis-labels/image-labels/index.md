@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# ✅ Image Labels
+# Image Labels
 
 In additional to all the label formatting options by SciChart.js, it is possible to go further and override the [LabelProvider.getLabelTexture():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#getlabeltexture) function which converts the label text that is produced by [LabelProvider.formatLabel():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) into a texture that can be drawn by WebGL. This gives you total control over the appearance of your labels so that you can use images, complex text, or a combination.
 

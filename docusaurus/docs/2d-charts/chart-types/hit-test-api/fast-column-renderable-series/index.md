@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Hit-Test API for Column Series
+# Hit-Test API for Column Series
 
 The hitTest method on Column Series
 -----------------------------------

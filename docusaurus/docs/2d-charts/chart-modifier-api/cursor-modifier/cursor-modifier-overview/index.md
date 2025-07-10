@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ The CursorModifier Type
+# The CursorModifier Type
 
 SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features/) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) allows to you to:
 

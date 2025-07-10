@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ PaletteProvider API Overview
+# PaletteProvider API Overview
 
 SciChart.js features the ability to change color of series on a point-by-point basis, using the PaletteProvider feature.
 
@@ -71,7 +71,7 @@ The following articles in this section show you how to do this for each series t
 * [Per-Point Coloring for Polar Band Series](/docs/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series)
 * [Per-Point Coloring for Polar Column Series](/docs/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series)
 * [Per-Point Coloring for Polar Line Series](/docs/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series)
-* [Per-Point Coloring for Polar Mountain Series](/docs/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)
-* [Per-Point Coloring for Polar Stacked Column Series](/docs/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series)
-* [Per-Point Coloring for Polar Stacked Mountain Series](/docs/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series)
+<!-- * [Per-Point Coloring for Polar Mountain Series](/docs/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)-->
+<!-- * [Per-Point Coloring for Polar Stacked Column Series](/docs/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series) -->
+<!-- * [Per-Point Coloring for Polar Stacked Mountain Series](/docs/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series) -->
 * [Per-Point Coloring for Polar Scatter Series](/docs/2d-charts/chart-types/palette-provider-api/polar-xy-scatter-renderable-series)

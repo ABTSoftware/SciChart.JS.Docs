@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Creating a 3D Chart
+# Creating a 3D Chart
 
 SciChart provides a powerful API for creating various types of charts, including **3D Charts**.
 

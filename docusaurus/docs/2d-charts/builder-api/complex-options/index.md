@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Complex Options
+# Complex Options
 
 Many things in SciChart.js are customised by providing a particular subclass, eg `PointMarkers`. The type signature in the options in these cases will be something like [IPointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarker.html) | [TPointMarkerDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tpointmarkerdefinition).
 

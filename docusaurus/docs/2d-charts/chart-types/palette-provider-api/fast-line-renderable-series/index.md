@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# ✅ Per-point Colouring for Line Series
+# Per-point Colouring for Line Series
 
 Line series can be colored per-point or per line-segment using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#paletteprovider) property.
 
@@ -10,7 +10,6 @@ Let's start off with the PaletteProvider class:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
-
     ```
 </CodeSnippetBlock>
 
@@ -18,10 +17,8 @@ Next, we can apply the PaletteProvider to the line series. This can be done both
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_B_start end=region_B_end
-
     ```
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_C_start end=region_C_end
-
     ```
 
 </CodeSnippetBlock>

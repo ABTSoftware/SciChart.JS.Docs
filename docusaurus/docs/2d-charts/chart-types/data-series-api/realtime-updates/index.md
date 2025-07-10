@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# ✅ DataSeries Realtime Updates
+# DataSeries Realtime Updates
 
 As previously covered any modification to the DataSeries e.g. via calling [append():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [insert():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insert), [update():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#update), [remove():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeat) or [clear():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#clear) will trigger a redraw on the chart.
 

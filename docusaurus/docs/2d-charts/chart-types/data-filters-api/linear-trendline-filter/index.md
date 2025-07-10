@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Linear Trendline Filter
+# Linear Trendline Filter
 
 The Linear Trend filter calculates a straight line best-fit for your DataSeries. This can then be plotted as a line series on the chart.
 

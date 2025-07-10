@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Axis3D Text (Label) Formatting
+# Axis3D Text (Label) Formatting
 
 Axis 3D Label Formatting obeys the same rules as SciChart 2D.
 

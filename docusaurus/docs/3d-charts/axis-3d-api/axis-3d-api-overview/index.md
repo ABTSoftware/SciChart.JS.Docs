@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Axis3D APIs Overview
+# Axis3D APIs Overview
 
 SciChart.js 3D shares the same [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) as SciChart.js 2D. Many features such as **Text Formatting**, **Autorange** (zooming to fit) and **Styling** **are** **shared**. For your convenience, some of the documentation has been duplicated here, with some referring to other sections of the user manual.
 

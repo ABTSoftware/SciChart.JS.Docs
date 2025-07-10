@@ -3,7 +3,7 @@ id: table-of-contents
 sidebar_position: 1
 ---
 
-# ✅ Table of Contents
+# Table of Contents
 
 The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html).
 

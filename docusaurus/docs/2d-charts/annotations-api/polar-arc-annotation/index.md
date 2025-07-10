@@ -2,7 +2,7 @@
 sidebar_position: 15
 ---
 
-# ✅ PolarArcAnnotation
+# PolarArcAnnotation
 
 The [PolarArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararcannotation.html) is used to draw a filled sector or an arc line on a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html). It is defined by a center point, inner and outer radii, and start and end angles. This annotation is ideal for highlighting specific angular or radial regions in polar charts.
 

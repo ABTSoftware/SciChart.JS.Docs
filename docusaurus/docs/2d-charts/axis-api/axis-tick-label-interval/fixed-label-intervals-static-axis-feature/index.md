@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# ✅ Fixed Label Intervals - Static Axis Feature
+# Fixed Label Intervals - Static Axis Feature
 
 Sometimes you want to have a fixed number of labels and major gridlines displayed on a chart, at specific values.
 

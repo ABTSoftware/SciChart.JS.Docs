@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# ✅ Interpolated Tooltip Values
+# Interpolated Tooltip Values
 
 In SciChart.JS v3 we added some additional properties to the [hitTestInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/hittestinfo.html) object so you can now get full information about the points either side of the hit-test location.  This allows you to do interpolation for your tooltip values rather than just showing values at the actual data points. 
 

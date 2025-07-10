@@ -2,7 +2,7 @@
 sidebar_position: 19
 ---
 
-# ✅ The Candlestick Series type
+# The Candlestick Series type
 
 Candlestick Series or JavaScript Stock Charts can be created using the [FastCandlestickRenderableSeries type:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html).
 

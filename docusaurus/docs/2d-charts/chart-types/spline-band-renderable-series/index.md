@@ -2,7 +2,7 @@
 sidebar_position: 62
 ---
 
-# ✅ The Spline (Smoothed) Band Series Type
+# The Spline (Smoothed) Band Series Type
 
 Spline Band or Smoothed High/Low Fill Series can be created using the [SplineBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinebandrenderableseries.html) type.
 

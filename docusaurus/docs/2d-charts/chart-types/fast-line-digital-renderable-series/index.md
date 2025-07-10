@@ -2,7 +2,7 @@
 sidebar_position: 11
 ---
 
-# ✅ The Digital (Step) Line Series
+# The Digital (Step) Line Series
 
 Digital, or Step Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type, and setting the [isDigitalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#isdigitalline) flag to `true`.
 

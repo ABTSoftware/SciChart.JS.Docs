@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ AxisMarkerAnnotation
+# AxisMarkerAnnotation
 
 The [AxisMarkerAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html) allows you to add a label on to the Axis at a specific X or Y value.
 

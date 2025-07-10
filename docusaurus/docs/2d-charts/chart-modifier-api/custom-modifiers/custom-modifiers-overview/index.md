@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# ✅ Custom Chart Modifier API
+# Custom Chart Modifier API
 
 The ChartModifierBase API is one of the most powerful APIs in the SciChart library.
 

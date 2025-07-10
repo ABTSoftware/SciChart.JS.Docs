@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# ✅ Text and Multi-Line Labels
+# Text and Multi-Line Labels
 
 Text Labels and Multi-Line can be achieved in SciChart.js using the TextLabelProvider type.
 

@@ -2,7 +2,7 @@
 sidebar_position: 31
 ---
 
-# ✅ The Triangle Series Type
+# The Triangle Series Type
 
 The FastTriangleRenderableSeries is designed to plot data points as triangles, often used for custom scatter plots, mesh visualizations, or highlighting specific data points with a triangle marker. It supports full customization, including stroke, fill, and point marker options.
 
