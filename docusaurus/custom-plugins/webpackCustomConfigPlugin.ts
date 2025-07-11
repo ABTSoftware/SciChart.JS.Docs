@@ -1,4 +1,5 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require("path");
 
 /** @type {import('@docusaurus/types').PluginModule} */
 export default function () {
@@ -14,7 +15,10 @@ export default function () {
                             { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
                             {
                                 from: "docs/**/*.@(ts|html|js|css)",
-                                to: "[path][name][ext]",
+                                to({ context, absoluteFilename }) {
+                                    const relativePath = path.relative(path.join(context, "docs"), absoluteFilename);
+                                    return relativePath;
+                                },
                                 noErrorOnMissing: false
                             }
                         ]
