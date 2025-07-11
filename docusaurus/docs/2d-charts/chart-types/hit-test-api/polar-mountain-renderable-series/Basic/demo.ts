@@ -36,10 +36,12 @@ export async function polarMountainChart(divElementId) {
         polarAxisMode: EPolarAxisMode.Radial,
         axisAlignment: EAxisAlignment.Right,
         visibleRange: new NumberRange(0, 6),
-        innerRadius: 0.1,
+        // innerRadius: 0.1,
+        // overrideOffset: 50
     });
     sciChartSurface.yAxes.add(radialYAxis);
 
+    // #region_A_start
     // add a couple of polar mountains to the chart
     const polarMountain1 = new PolarMountainRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
@@ -67,6 +69,7 @@ export async function polarMountainChart(divElementId) {
         }),
     });
     sciChartSurface.renderableSeries.add(polarMountain1, polarMountain2);
+    // #region_A_end
 
     const SUCCESSFUL_HIT_SVG = `<svg width="8" height="8"><circle cx="50%" cy="50%" r="4" fill="#33AA33" stroke="#000000" stroke-width="0.7"/></svg>`;
     const NO_HIT_SVG = `<svg width="4" height="4"><circle cx="50%" cy="50%" r="2" fill="#FF0000"/></svg>`;
@@ -95,6 +98,7 @@ export async function polarMountainChart(divElementId) {
     });
     sciChartSurface.annotations.add(dotAnnotation, textAnnotation);
 
+    // #region_B_start
     // Add an event listener for mouse down events
     sciChartSurface.domCanvas2D.addEventListener("mousedown", (mouseEvent: MouseEvent) => {
         // Use our DpiHelper class to multiply coordinates, else screens with non-100% scaling will not work very well
@@ -132,6 +136,7 @@ export async function polarMountainChart(divElementId) {
             }
         });
     });
+    // #region_B_end
 
     return { sciChartSurface, wasmContext };
 }
