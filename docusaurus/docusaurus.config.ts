@@ -57,6 +57,7 @@ const config: Config = {
             "classic",
             {
                 docs: {
+                    routeBasePath: '/',
                     sidebarPath: "./sidebars.ts",
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
@@ -82,18 +83,18 @@ const config: Config = {
             },
             items: [
                 {
-                    to: "/docs/intro",
+                    to: "/intro",
                     label: "Home",
                     position: "left"
                 },
                 {
-                    to: "/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
+                    to: "/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
                     label: "Tutorials",
                     position: "left"
                 },
-                { to: "/docs/2d-charts/surface/scichart-surface-type-overview", label: "2D Docs", position: "left" },
+                { to: "/2d-charts/surface/scichart-surface-type-overview", label: "2D Docs", position: "left" },
                 {
-                    to: "/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview",
+                    to: "/3d-charts/scichart-3d-basics/scichart-3d-basics-overview",
                     label: "3D Docs",
                     position: "left"
                 },
@@ -122,7 +123,7 @@ const config: Config = {
                     items: [
                         {
                             label: "Home",
-                            to: "/docs/intro"
+                            to: "/intro"
                         },
                         {
                             label: "API Documentation",

@@ -51,9 +51,9 @@ The following sections go into further details for specific axis types, as well 
 
 | Axis Type | Description |
 |-----------|-------------|
-| **[NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis)** | Value Axis / Numeric Types |
-| **[PolarNumericAxis](/docs/2d-charts/axis-api/axis-types/polar-numeric-axis)** | Value Axis / Numeric Types for [Polar Charts](/docs/2d-charts/surface/scichart-polar-surface-type) |
-| **[DateTimeNumericAxis](/docs/2d-charts/axis-api/axis-types/date-time-numeric-axis)** | Value Axis with additional features for Dates and Time formatting |
-| **[CategoryAxis](/docs/2d-charts/axis-api/axis-types/category-axis)** | Category Axis - measures using index - Numeric Types or Dates |
-| **[PolarCategoryAxis](/docs/2d-charts/axis-api/axis-types/polar-category-axis)** | Category Axis for [Polar Charts](/docs/2d-charts/surface/scichart-polar-surface-type) - measures using index - Numeric Types or Dates |
-| **[LogarithmicAxis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis)** | Logarithmic Axis supporting Base2, BaseE, Base10 with or without scientific notation |
+| **[NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis)** | Value Axis / Numeric Types |
+| **[PolarNumericAxis](/2d-charts/axis-api/axis-types/polar-numeric-axis)** | Value Axis / Numeric Types for [Polar Charts](/2d-charts/surface/scichart-polar-surface-type) |
+| **[DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis)** | Value Axis with additional features for Dates and Time formatting |
+| **[CategoryAxis](/2d-charts/axis-api/axis-types/category-axis)** | Category Axis - measures using index - Numeric Types or Dates |
+| **[PolarCategoryAxis](/2d-charts/axis-api/axis-types/polar-category-axis)** | Category Axis for [Polar Charts](/2d-charts/surface/scichart-polar-surface-type) - measures using index - Numeric Types or Dates |
+| **[LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis)** | Logarithmic Axis supporting Base2, BaseE, Base10 with or without scientific notation |

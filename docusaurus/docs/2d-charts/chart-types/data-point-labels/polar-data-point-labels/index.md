@@ -5,7 +5,7 @@ sidebar_position: 7
 # Polar Data Point Labels
 
 :::tip
-Before reading this article, we recommend you read the [DataLabels API Overview](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview) to understand the basics of how DataLabels work.
+Before reading this article, we recommend you read the [DataLabels API Overview](/2d-charts/chart-types/data-point-labels/data-labels-api-overview) to understand the basics of how DataLabels work.
 :::
 
 Polar Data Labels allow per data-point text labels to be drawn on series, or arbitrary text labels at `x`, `y` positions on the chart, which for polar charts are conceptually "radius" and "angle". 
@@ -29,5 +29,5 @@ This results in the following output:
 
 #### See Also
 
-- [DataLabels API Overview](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
+- [DataLabels API Overview](/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
 - [Polar Data Labels Example](http://stagingdemo2.scichart.com/demo/iframe/polar-line-chart)

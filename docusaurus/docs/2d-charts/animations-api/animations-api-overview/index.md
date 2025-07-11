@@ -7,9 +7,9 @@ sidebar_position: 1
 Animations API Fundamentals
 ---------------------------
 
-In SciChart.js you can use the Animations API to animate [RenderableSeries (Chart Types)](/docs/2d-charts/chart-types/renderable-series-api-overview). The Animations API allows you to define a number of different transforms you your chart series during the render pass.
+In SciChart.js you can use the Animations API to animate [RenderableSeries (Chart Types)](/2d-charts/chart-types/renderable-series-api-overview). The Animations API allows you to define a number of different transforms you your chart series during the render pass.
 
-Additionally there are [Generic Animations](/docs/2d-charts/animations-api/generic-animations), which are run on the SciChartSurface rather than a particular series, and can be coded to animate almost anything, such as annotations, data, and even things outside the chart.
+Additionally there are [Generic Animations](/2d-charts/animations-api/generic-animations), which are run on the SciChartSurface rather than a particular series, and can be coded to animate almost anything, such as annotations, data, and even things outside the chart.
 
 The reset of this page introduces Series Animations.
 
@@ -36,9 +36,9 @@ Types of Animation in SciChart.js
 
 There are three types of series animations in the SciChart.js library:
 
-*   **[A start-up animation](/docs/2d-charts/animations-api/series-startup-animations)**, which runs on start (when a series is shown)
-*   **[A style animation](/docs/2d-charts/animations-api/style-transition-animations)**, which animates style properties like stroke, strokeThickness and fill
-*   **[A dataset animation](/docs/2d-charts/animations-api/dataset-animations)**, which animates changing data.
+*   **[A start-up animation](/2d-charts/animations-api/series-startup-animations)**, which runs on start (when a series is shown)
+*   **[A style animation](/2d-charts/animations-api/style-transition-animations)**, which animates style properties like stroke, strokeThickness and fill
+*   **[A dataset animation](/2d-charts/animations-api/dataset-animations)**, which animates changing data.
 
 Articles above cover these animation types and give you examples of how to use them.
 
@@ -90,7 +90,7 @@ See the articles in the **See Also** section below for examples of how to use th
 
 #### See Also
 
-* [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations)
-* [Dataset Animations](/docs/2d-charts/animations-api/dataset-animations)
-* [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
-* [Generic Animations](/docs/2d-charts/animations-api/generic-animations)
+* [Style Transition Animations](/2d-charts/animations-api/style-transition-animations)
+* [Dataset Animations](/2d-charts/animations-api/dataset-animations)
+* [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+* [Generic Animations](/2d-charts/animations-api/generic-animations)

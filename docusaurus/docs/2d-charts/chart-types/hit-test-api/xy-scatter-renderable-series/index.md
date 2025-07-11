@@ -7,7 +7,7 @@ sidebar_position: 9
 The hitTest method on Scatter Series
 ------------------------------------
 
-The **IHitTestProvider.hitTest** method on [XyScatterRenderableSeries](/docs/2d-charts/chart-types/polar-xy-scatter-renderable-series) tests if the click was within the hitTestRadius from the rectangle bounding a point marker.
+The **IHitTestProvider.hitTest** method on [XyScatterRenderableSeries](/2d-charts/chart-types/polar-xy-scatter-renderable-series) tests if the click was within the hitTestRadius from the rectangle bounding a point marker.
 
 ```ts
 // hitTest method on Scatter Series
@@ -129,7 +129,7 @@ export async function hitTestScatterTs(divId: string) {
 The hitTestDataPoint method on Scatter Series
 ---------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method on [XyScatterRenderableSeries](/docs/2d-charts/chart-types/polar-xy-scatter-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
+The **IHitTestProvider.hitTestDataPoint** method on [XyScatterRenderableSeries](/2d-charts/chart-types/polar-xy-scatter-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
 
 ```ts
 // hitTestDataPoint method on Scatter Series
@@ -144,7 +144,7 @@ const hitTestInfo = scatterSeries.hitTestProvider.hitTestDataPoint(premultiplied
 The hitTestXSlice method on Scatter Series
 ------------------------------------------
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice method on Scatter Series
@@ -158,9 +158,9 @@ const hitTestInfo = scatterSeries.hitTestProvider.hitTestXSlice(premultipliedX, 
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Line Series](/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

@@ -8,13 +8,13 @@ This set of tutorials will be limited to how to use SciChart.js by including ind
 
 We recommend going through the following tutorials which explain the API first.                        
 
-*   [Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
-*   [Adding Zooing and Panning behaviour](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
+*   [Adding Series and Data](/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
+*   [Adding Zooing and Panning behaviour](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
 
 How to add SciChart.Browser.js to your project
 ----------------------------------------------
 
-If you haven't seen our tutorial on how to add SciChart.js to a plain HTML page, then please first read [Tutorial 01 - Including SciChart.js in an HTML page](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn).
+If you haven't seen our tutorial on how to add SciChart.js to a plain HTML page, then please first read [Tutorial 01 - Including SciChart.js in an HTML page](/get-started/tutorials-cdn/tutorial-01-using-cdn).
 
 This shows you how to reference the browser bundle script, initialize WebAssembly files and create your first basic chart.
 
@@ -27,7 +27,7 @@ Source code for this tutorial can be found at [SciChart.Js.Examples Github Repos
 
 In this tutorial, we are going to add some Line series onto the chart and to use downloaded js and wasm files to load SciChart.js offline (without internet access).
 
-First, we will add a [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
+First, we will add a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
 
 Next, we create an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the FastLineRenderableSeries.
 

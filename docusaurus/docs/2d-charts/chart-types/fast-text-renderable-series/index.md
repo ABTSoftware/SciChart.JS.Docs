@@ -63,4 +63,4 @@ This results in the following output:
 
 #### See Also
 
-* [Adding DataLabels to a Chart Series](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
+* [Adding DataLabels to a Chart Series](/2d-charts/chart-types/data-point-labels/data-labels-api-overview)

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
 
-This provides a similar behaviour to the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
+This provides a similar behaviour to the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
 
 The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) allows you to:
 
@@ -73,7 +73,7 @@ The line colour, dash pattern, strokethickness and selection color of the [Vert
 | **Property** | **Description** |
 |--------------|-----------------|
 | [VerticalSliceModifier.rolloverLineStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestroke) | Sets the colour of the rollover line as an HTML colour code |
-| [VerticalSliceModifier.rolloverLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokedasharray) | Sets the dash pattern (see [Dash Line Styling](/docs/2d-charts/styling-and-theming/dash-line-patterns) for guidelines) |
+| [VerticalSliceModifier.rolloverLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokedasharray) | Sets the dash pattern (see [Dash Line Styling](/2d-charts/styling-and-theming/dash-line-patterns) for guidelines) |
 | [VerticalSliceModifier.rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokethickness) | Sets the rollover line thickness |
 
 <CodeSnippetBlock labels={["VerticalSliceModifier styling"]}>
@@ -84,7 +84,7 @@ The line colour, dash pattern, strokethickness and selection color of the [Vert
     ```
 </CodeSnippetBlock>
 
-Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
+Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
 
 | **Property** | **Description** |
 |--------------|-----------------|
@@ -104,7 +104,7 @@ Properties of the tooltip can be controlled on a per-series basis as per the [R
     ```
 </CodeSnippetBlock>
 
-Finally, the vertical line itself is simply a [LineAnnotation](/docs/2d-charts/annotations-api/line-annotation) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
+Finally, the vertical line itself is simply a [LineAnnotation](/2d-charts/annotations-api/line-annotation) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
 
 <CodeSnippetBlock labels={["VerticalSliceModifier.verticalLine Styling"]}>
     ```ts
@@ -120,4 +120,4 @@ Finally, the vertical line itself is simply a [LineAnnotation](/docs/2d-charts
 
 #### See Also
 
-* [Formatting VerticalSlice Tooltip Items](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/formatting-vertical-slice-tooltip-items)
+* [Formatting VerticalSlice Tooltip Items](/2d-charts/chart-modifier-api/vertical-slice-modifier/formatting-vertical-slice-tooltip-items)

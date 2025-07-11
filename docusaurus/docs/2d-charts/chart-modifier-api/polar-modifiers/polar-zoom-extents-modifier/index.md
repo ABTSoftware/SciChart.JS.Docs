@@ -41,5 +41,5 @@ See all at [IPolarZoomExtentsModifierOptions:blue_book:](https://www.scichart.co
 
 #### See Also
 
-* [What is the ChartModifier API?](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier)
+* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [ZoomExtentsModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier)

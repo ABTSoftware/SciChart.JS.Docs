@@ -195,10 +195,10 @@ export async function hitTestLineMetadataTs(divId: string) {
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Line Series](/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

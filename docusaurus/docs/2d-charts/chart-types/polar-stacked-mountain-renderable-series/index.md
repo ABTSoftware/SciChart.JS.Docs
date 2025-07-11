@@ -38,5 +38,5 @@ This results in the following output:
 
 #### See Also
 
-* [Polar Mountain Series](/docs/2d-charts/chart-types/polar-mountain-renderable-series)
-* [Stacked Mountain Series](/docs/2d-charts/chart-types/stacked-mountain-renderable-series)
+* [Polar Mountain Series](/2d-charts/chart-types/polar-mountain-renderable-series)
+* [Stacked Mountain Series](/2d-charts/chart-types/stacked-mountain-renderable-series)

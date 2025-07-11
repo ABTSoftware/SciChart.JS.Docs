@@ -8,7 +8,7 @@ In the previous article we gave you an overview of the LabelProvider feature and
 
 You'll notice in the many axis label code samples, labels are formatted by passing in [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) to the constructor options of the axis. What's actually happening here is parameters are being passed to the [AxisCore.labelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#labelprovider).
 
-[NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis/index.md) is quite versatile, it can format decimals with label prefix and postfix to any number of decimal places or significant figures. It can even format numbers as dates (assuming number is a unix stamp). You can find out all the options of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) enum below, or on our [TypeDoc:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html).
+[NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis/index.md) is quite versatile, it can format decimals with label prefix and postfix to any number of decimal places or significant figures. It can even format numbers as dates (assuming number is a unix stamp). You can find out all the options of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) enum below, or on our [TypeDoc:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html).
 
 
 ```ts
@@ -80,5 +80,5 @@ This results in the following output:
 
 
 :::info
-Further enhancement of the NumericAxis labels including custom formatting, string formatting or dynamic formatting can be achieved with the [LabelProvider API](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md).
+Further enhancement of the NumericAxis labels including custom formatting, string formatting or dynamic formatting can be achieved with the [LabelProvider API](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md).
 :::

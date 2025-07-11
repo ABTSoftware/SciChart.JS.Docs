@@ -60,4 +60,4 @@ This results in the following output:
 
 #### See Also
 
-* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [The Annotations API Overview](/2d-charts/annotations-api/annotations-api-overview)

@@ -53,5 +53,5 @@ By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/docume
 <LiveDocSnippet name="./PaletteProvider/demo" />
 
 :::tip
-Learn more about the [Palette Provider API - Polar Line Series](/docs/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series).
+Learn more about the [Palette Provider API - Polar Line Series](/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series).
 :::

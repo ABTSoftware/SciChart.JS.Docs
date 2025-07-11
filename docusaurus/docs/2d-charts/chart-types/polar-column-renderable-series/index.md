@@ -83,4 +83,4 @@ In the code above:
 
 ### PaletteProvider for Polar Column Series
 
-By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Column Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Column Series](/docs/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series).
+By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Column Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Column Series](/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series).

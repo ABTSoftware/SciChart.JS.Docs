@@ -203,6 +203,6 @@ See also our documentation below on styling & themeing, including colouring char
 
 #### See Also
 
-* [Chart Styling - Creating a Custom Theme](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md)
-* [Chart Styling - Image, Transparent or Blurred Backgrounds](/docs/2d-charts/styling-and-theming/image-transparent-blurred-backgrounds/index.md)
-* [Chart Styling - Style Chart Parts in Code](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code/index.md)
+* [Chart Styling - Creating a Custom Theme](/2d-charts/styling-and-theming/creating-custom-theme/index.md)
+* [Chart Styling - Image, Transparent or Blurred Backgrounds](/2d-charts/styling-and-theming/image-transparent-blurred-backgrounds/index.md)
+* [Chart Styling - Style Chart Parts in Code](/2d-charts/styling-and-theming/style-chart-parts-in-code/index.md)

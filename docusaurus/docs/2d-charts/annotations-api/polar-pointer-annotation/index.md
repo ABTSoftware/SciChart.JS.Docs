@@ -103,10 +103,10 @@ This produces the following output:
 <LiveDocSnippet name="./Custom/demo" />
 
 :::tip
-The [PolarPointerAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarpointerannotation.html) plays a crucial role within a [Gauge Chart](/docs/2d-charts/chart-types/polar-gauge-chart)
+The [PolarPointerAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarpointerannotation.html) plays a crucial role within a [Gauge Chart](/2d-charts/chart-types/polar-gauge-chart)
 :::
 
 #### See Also
 
-* [Polar Gauge Chart](/docs/2d-charts/chart-types/polar-gauge-chart)
-* [Polar Arc Annotation](/docs/2d-charts/annotations-api/polar-arc-annotation)
+* [Polar Gauge Chart](/2d-charts/chart-types/polar-gauge-chart)
+* [Polar Arc Annotation](/2d-charts/annotations-api/polar-arc-annotation)

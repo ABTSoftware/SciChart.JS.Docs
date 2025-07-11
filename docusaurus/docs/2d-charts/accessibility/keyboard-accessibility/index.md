@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Keyboard Accessibility
 
-A chart behavior is easily extendable with the use of Chart Modifiers. So they can be used to add a keyboard accessibility to the chart. See also [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md), [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features/index.md).
+A chart behavior is easily extendable with the use of Chart Modifiers. So they can be used to add a keyboard accessibility to the chart. See also [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview/index.md), [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features/index.md).
 
 Custom Keyboard Interaction Modifier
 ------------------------------------
@@ -285,7 +285,7 @@ public onDetach() {
 Depending on the key pressed it will call **KeyboardZoomPanModifier.scroll** or **KeyboardZoomPanModifier.performZoom** to updated the visible ranges.
 
 :::tip
-**KeyboardZoomPanModifier.scroll** uses the **SuspendUpdates API** for more info check [Batching updates or Temporary Suspending Drawing](/docs/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing/index.md).
+**KeyboardZoomPanModifier.scroll** uses the **SuspendUpdates API** for more info check [Batching updates or Temporary Suspending Drawing](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing/index.md).
 :::
 
 Finally, the usage of the modifier simply looks like:
@@ -301,6 +301,6 @@ sciChartSurface.domChartRoot.focus();
 
 #### See Also
 
-- [Voice Over](/docs/2d-charts/accessibility/voice-over/index.md)
-- [Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast/index.md)
+- [Voice Over](/2d-charts/accessibility/voice-over/index.md)
+- [Color and Contrast](/2d-charts/accessibility/color-and-contrast/index.md)
 

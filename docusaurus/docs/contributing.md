@@ -96,7 +96,7 @@ The order may differ depending on some configuration specifics.
 
 **Quotation Example**
 
-> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://scichart.com/demo/react).
 
 
 **Mermaid class diagram example**

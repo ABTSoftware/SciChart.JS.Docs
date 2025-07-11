@@ -9,7 +9,7 @@ We've created a helper class called [PaletteFactory:blue_book:](https://www.sci
 PaletteFactory.createYGradient
 ------------------------------
 
-The function [PaletteFactory.createYGradient:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/palettefactory.html#createygradient) generates a [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) for use in renderable series which applies a gradient fill dependent on Y-value.
+The function [PaletteFactory.createYGradient:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/palettefactory.html#createygradient) generates a [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) for use in renderable series which applies a gradient fill dependent on Y-value.
 
 Below find an example of usage:
 
@@ -25,7 +25,7 @@ Here's an example output & codepen you can edit to try this out: 
 
 <LiveDocSnippet maxWidth={"100%"} name="./CreateYGradient/demo" />
 
-To separately control the output of the generated [PaletteProvider](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview), check the [IGradientPaletteOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/igradientpaletteoptions.html) parameter passed in. Using this, you can enable fill, stroke, pointmarkers and opacity for different elements of the series.
+To separately control the output of the generated [PaletteProvider](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview), check the [IGradientPaletteOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/igradientpaletteoptions.html) parameter passed in. Using this, you can enable fill, stroke, pointmarkers and opacity for different elements of the series.
 
 PaletteFactory.createGradient
 -----------------------------

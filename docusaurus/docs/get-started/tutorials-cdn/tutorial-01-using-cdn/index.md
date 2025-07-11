@@ -8,9 +8,9 @@ This set of tutorials will be limited to how to use SciChart.js by including ind
 
 We recommend going through the following tutorials which explain the API first.                        
 
-*   [Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
-*   [Adding Zooming and Panning behaviour](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
-*   [Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates)
+*   [Adding Series and Data](/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
+*   [Adding Zooming and Panning behaviour](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior)
+*   [Adding Realtime Updates](/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates)
 
 :::tip
 Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_1_Setting_up_html_page_with_SciChart_CDN)
@@ -191,7 +191,7 @@ const { SciChartSurface, NumericAxis ..} = SciChart;
 How the Wasm Files get Initialized
 ----------------------------------
 
-If you've watched our [Tutorial 01 - Setting up an npm project with WebPack](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js), you will have read about wasm (WebAssembly) files which must be served to load the chart.
+If you've watched our [Tutorial 01 - Setting up an npm project with WebPack](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js), you will have read about wasm (WebAssembly) files which must be served to load the chart.
 
 SciChart.js when served from CDN automatically defaults to load the wasm from CDN as well. 
 
@@ -215,9 +215,9 @@ This code doesn't actually need to be called when using `index.min.js`, however 
 It's important to note when initializing SciChart.js from CDN that the wasm files will also be loaded from CDN. **So your application will require an internet connection to work**.
 
 :::tip
-If you want to host the index.min.js and wasm files locally, then they must be downloaded and included in your app. Read [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline) to find out how.
+If you want to host the index.min.js and wasm files locally, then they must be downloaded and included in your app. Read [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline) to find out how.
 
-Further details on [Wasm file deployment can also be found here](/docs/2d-charts/surface/deploying-wasm).
+Further details on [Wasm file deployment can also be found here](/2d-charts/surface/deploying-wasm).
 :::
 
 Further Notes

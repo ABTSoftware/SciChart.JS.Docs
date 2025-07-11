@@ -35,10 +35,10 @@ If you get an error when loading a SciChartSurface as follows:
 **Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm and scichart2d.js files are from the same version
 :::
 
-Please see our related article [Deploying Wasm or WebAssembly Data Files with your app](/docs/2d-charts/surface/deploying-wasm)
+Please see our related article [Deploying Wasm or WebAssembly Data Files with your app](/2d-charts/surface/deploying-wasm)
 
 #### See Also
 
-* [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview)
-* [Creating a new SciChartSurface and loading Wasm](/docs/2d-charts/surface/new-scichart-surface)
-* [Deploying Wasm (WebAssembly) and Data Files with your app](/docs/2d-charts/surface/deploying-wasm)
+* [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)
+* [Creating a new SciChartSurface and loading Wasm](/2d-charts/surface/new-scichart-surface)
+* [Deploying Wasm (WebAssembly) and Data Files with your app](/2d-charts/surface/deploying-wasm)

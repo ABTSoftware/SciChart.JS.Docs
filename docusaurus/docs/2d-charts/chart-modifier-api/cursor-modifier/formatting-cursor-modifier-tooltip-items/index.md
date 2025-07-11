@@ -7,13 +7,13 @@ sidebar_position: 2
 :::tip
 Background reading:
 
-If you haven't already, read the article [The CursorModifier Type](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) which will show you how to setup a **CursorModifier** with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content)
+If you haven't already, read the article [The CursorModifier Type](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) which will show you how to setup a **CursorModifier** with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content)
 :::
 
 Basic CursorModifier Tooltip Formatting Options
 -----------------------------------------------
 
-Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview), including how to specify formats from Enums and override formatting programmatically.
+Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/2d-charts/axis-api/axis-labels/label-provider-api-overview), including how to specify formats from Enums and override formatting programmatically.
 
 Below we're going to show you how to apply cursor formatting to enable four-decimal places on tooltips.
 
@@ -28,7 +28,7 @@ Here's a **Codepen** which shows the effect of these properties on the axis on c
 
 <LiveDocSnippet name="./demo" />
 
-For further customisation on a per-axis basis, consider using the [LabelProvider feature](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-readable-numbers) to create a custom labelprovider, and override formatCursorLabel.
+For further customisation on a per-axis basis, consider using the [LabelProvider feature](/2d-charts/axis-api/axis-labels/custom-label-providers-readable-numbers) to create a custom labelprovider, and override formatCursorLabel.
 
 Tooltip DataTemplates
 ---------------------
@@ -72,9 +72,9 @@ In the above example we access properties of [XySeriesInfo:blue_book:](https://
 
 You can also access metadata to store any custom object in your X,Y data, then read that data out in tooltips.
 
-For a worked example see [PointMetadata API - Metadata and Tooltips](/docs/2d-charts/chart-types/point-metadata-api/tooltips).
+For a worked example see [PointMetadata API - Metadata and Tooltips](/2d-charts/chart-types/point-metadata-api/tooltips).
 
 #### See Also
 
-* [Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
-* [Active Legends - CursorModifier output into a legend](/docs/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
+* [Customizing the CursorModifier Tooltip Container Appearance](/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
+* [Active Legends - CursorModifier output into a legend](/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)

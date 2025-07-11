@@ -7,7 +7,7 @@ sidebar_position: 3
 The [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) is a Value axis (subclass of [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html)) and has some extra formatting options and features for handling date formatting.
 
 :::info
-Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type).
+Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type).
 :::
 
 Create and Configure a DateTimeNumericAxis
@@ -62,7 +62,7 @@ The properties on SmartDateLabelProvider can be found in the [TypeDoc API docum
 
 There isn't much option at the moment for customising the [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) label formatting when using the default [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/smartdatelabelprovider.html), however, it is possible to substitute the simpler [DateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datelabelprovider.html) which doesn't have dynamic updating labels on zoom, and to specify your own formats.
 
-It is also possible to create a custom labelprovider class and have complete control over axis label output. More on that in the [Custom Label Providers documentation page](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-dynamic-dates-on-zoom).
+It is also possible to create a custom labelprovider class and have complete control over axis label output. More on that in the [Custom Label Providers documentation page](/2d-charts/axis-api/axis-labels/custom-label-providers-dynamic-dates-on-zoom).
 
 Here's a quick example:
 
@@ -85,5 +85,5 @@ This results in the following output:
 <LiveDocSnippet maxWidth={"100%"} name="./DateTimeNumericAxisLabelFormatting/demo" />
 
 :::info
-Other options are available, such as implementing a [custom LabelProvider](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-dynamic-dates-on-zoom). Overriding [LabelProvider.formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatlabel) and formatCursorLabel allows for complete control over axis labels.
+Other options are available, such as implementing a [custom LabelProvider](/2d-charts/axis-api/axis-labels/custom-label-providers-dynamic-dates-on-zoom). Overriding [LabelProvider.formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatlabel) and formatCursorLabel allows for complete control over axis labels.
 :::

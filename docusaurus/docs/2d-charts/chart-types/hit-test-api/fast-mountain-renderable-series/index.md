@@ -7,7 +7,7 @@ sidebar_position: 7
 The hitTest method on Mountain Series
 -------------------------------------
 
-The **IHitTestProvider.hitTest** method on [FastMountainRenderableSeries](/docs/2d-charts/chart-types/hit-test-api/fast-mountain-renderable-series) tests if the click was within the mountain body.
+The **IHitTestProvider.hitTest** method on [FastMountainRenderableSeries](/2d-charts/chart-types/hit-test-api/fast-mountain-renderable-series) tests if the click was within the mountain body.
 
 ```ts
 // hitTest method on Mountain Series
@@ -121,7 +121,7 @@ export async function hitTestMountainTs(divId: string) {
 The hitTestDataPoint method on Mountain Series
 ----------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method on [FastMountainRenderableSeries](/docs/2d-charts/chart-types/fast-mountain-area-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
+The **IHitTestProvider.hitTestDataPoint** method on [FastMountainRenderableSeries](/2d-charts/chart-types/fast-mountain-area-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
 
 ```ts
 // hitTestDataPoint method on Mountain Series
@@ -136,7 +136,7 @@ const hitTestInfo = mountainSeries.hitTestProvider.hitTestDataPoint(premultiplie
 The hitTestXSlice method on Mountain Series
 -------------------------------------------
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice method on Mountain Series
@@ -150,10 +150,10 @@ const hitTestInfo = mountainSeries.hitTestProvider.hitTestXSlice(premultipliedX,
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Line Series](/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

@@ -36,28 +36,28 @@ In the code above:
 *   A Line Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
 *   We set the stroke, strokeThickness properties
 *   We set the [isDigitalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#isdigitalline) property to `true` to enable a digital (step) line mode.
-*   We assign a [DataSeries](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview) - which stores the Xy data to render.
+*   We assign a [DataSeries](/2d-charts/chart-types/data-series-api/data-series-api-overview) - which stores the Xy data to render.
 
 ## Render a Gap in a Digital (Step) Line Series
 
 :::tip
-It is possible to have null points or gaps in a Digital Line Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
+It is possible to have null points or gaps in a Digital Line Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 ## Add Point Markers onto a Digital (Step) Line Series
 
-It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Digital Line via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
+It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Digital Line via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
 :::tip
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-There is also a dedicated [Scatter Series](/docs/2d-charts/chart-types/xy-scatter-renderable-series) type and a [Bubble Series](/docs/2d-charts/chart-types/fast-bubble-renderable-series) type with some more options.
+There is also a dedicated [Scatter Series](/2d-charts/chart-types/xy-scatter-renderable-series) type and a [Bubble Series](/2d-charts/chart-types/fast-bubble-renderable-series) type with some more options.
 :::
 
 ## Painting Digital Line Segments with Different Colors
 
 :::tip
-It is possible to define the colour of line segments individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+It is possible to define the colour of line segments individually using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Line Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-line-segment-renderable-series/index.md) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Line Charts](/2d-charts/chart-types/palette-provider-api/fast-line-segment-renderable-series/index.md) documentation page.
 :::

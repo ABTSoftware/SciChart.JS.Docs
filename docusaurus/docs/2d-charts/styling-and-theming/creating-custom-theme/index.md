@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Chart Styling - Creating a Custom Theme
 
-As well as the built-in [Light and Dark theme](/docs/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#applytheme) function.
+As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#applytheme) function.
 
 For example, the following code:
 
@@ -197,8 +197,8 @@ This results in the following custom theme, based off one of our themes:
 
 #### See Also
 
-* [Chart Styling - Creating a Custom Theme](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md)
-* [Chart Styling - Style Chart Parts in Code](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code/index.md)
-* [Chart Styling - ThemeManager API](/docs/2d-charts/styling-and-theming/theme-manager-api/index.md)
-* [Chart Styling - Image, Transparent or Blurred Backgrounds](/docs/2d-charts/styling-and-theming/image-transparent-blurred-backgrounds/index.md)
-* [Chart Styling - Theming of Wait Loader](/docs/2d-charts/styling-and-theming/theming-of-wait-loader/index.md)
+* [Chart Styling - Creating a Custom Theme](/2d-charts/styling-and-theming/creating-custom-theme/index.md)
+* [Chart Styling - Style Chart Parts in Code](/2d-charts/styling-and-theming/style-chart-parts-in-code/index.md)
+* [Chart Styling - ThemeManager API](/2d-charts/styling-and-theming/theme-manager-api/index.md)
+* [Chart Styling - Image, Transparent or Blurred Backgrounds](/2d-charts/styling-and-theming/image-transparent-blurred-backgrounds/index.md)
+* [Chart Styling - Theming of Wait Loader](/2d-charts/styling-and-theming/theming-of-wait-loader/index.md)

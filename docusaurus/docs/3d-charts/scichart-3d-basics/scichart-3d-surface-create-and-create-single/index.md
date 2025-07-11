@@ -32,7 +32,7 @@ async function initSciChart1() {
 SciChart3DSurface.createSingle()
 --------------------------------
 
-[SciChart3DSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#createsingle) is also an asynchronous static function which places a SciChart3DSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/docs/2d-charts/performance-tips/performance-tips-and-tricks) article.
+[SciChart3DSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#createsingle) is also an asynchronous static function which places a SciChart3DSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/2d-charts/performance-tips/performance-tips-and-tricks) article.
 
 <CodeSnippetBlock labels={["SciChart3DSurface.createSingle()"]}>
 ```ts showLineNumbers
@@ -56,4 +56,4 @@ If you get an error when loading a SciChart3DSurface as follows:
 Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart3d.wasm and scichart3d.js files are from the same version
 :::
 
-If so, find out how to resolve this at the page [Deploying Wasm and Data files](/docs/2d-charts/surface/deploying-wasm/index.md).
+If so, find out how to resolve this at the page [Deploying Wasm and Data files](/2d-charts/surface/deploying-wasm/index.md).

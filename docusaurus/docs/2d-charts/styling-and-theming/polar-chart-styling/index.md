@@ -56,4 +56,4 @@ This results in the following output:
 
 #### See Also
 
-* [Polar Chart Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)
+* [Polar Chart Layout](/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)

@@ -16,7 +16,7 @@ sidebar_position: 9
 There are also some limitations compared to svg text:
 :::
 
-*   Font style and font weight are not supported. Fonts other than Arial must be `ttf` and either be hosted on your server or registered if coming from the internet. See [Native Text Font Loading](/docs/2d-charts/miscellaneous-apis/native-text-api)
+*   Font style and font weight are not supported. Fonts other than Arial must be `ttf` and either be hosted on your server or registered if coming from the internet. See [Native Text Font Loading](/2d-charts/miscellaneous-apis/native-text-api)
 
 ## Creating many variants of [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nativetextannotation.html):
 
@@ -49,5 +49,5 @@ This results in the following:
 
 #### See Also
 
-* [Native Text Api](/docs/2d-charts/miscellaneous-apis/native-text-api)
-* [Adding DataLabels to a Chart Series](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
+* [Native Text Api](/2d-charts/miscellaneous-apis/native-text-api)
+* [Adding DataLabels to a Chart Series](/2d-charts/chart-types/data-point-labels/data-labels-api-overview)

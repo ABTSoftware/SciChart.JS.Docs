@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Legend Modifier
 
-**SciChart.js** features a rich, customisable legend API which is based on our powerful [ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview). To add a Legend to a chart use **LegendModifier**.
+**SciChart.js** features a rich, customisable legend API which is based on our powerful [ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview). To add a Legend to a chart use **LegendModifier**.
 
 SciChart legends support the following:
 
@@ -59,7 +59,7 @@ Now check/uncheck the checkboxes to show/hide renderable series. 
     alt="Legend Modifier with Checkboxes Example"
 />
 
-Note: the Checkbox is bound to [BaseRenderableSeries.isVisible:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisible). You can subscribe to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisiblechanged) by following steps in this [documentation page](/docs/2d-charts/chart-types/common-series-apis/is-visible).
+Note: the Checkbox is bound to [BaseRenderableSeries.isVisible:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisible). You can subscribe to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisiblechanged) by following steps in this [documentation page](/2d-charts/chart-types/common-series-apis/is-visible).
 
 Subscribing to Checkbox Checked Changed
 ---------------------------------------
@@ -134,7 +134,7 @@ The full example code.
 
 #### See Also
 
-* [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features/)
-* [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)
-* [Common RenderableSeries Properties](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers)
+* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features/)
+* [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview)
+* [Common RenderableSeries Properties](/2d-charts/chart-types/common-series-apis/drawing-point-markers)

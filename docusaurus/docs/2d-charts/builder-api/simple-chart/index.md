@@ -48,5 +48,5 @@ Chart Modifiers, like pretty much everything, are `{ type, options }`. Note that
 
 #### See Also
 
-* [Intro to the Builder API](/docs/2d-charts/builder-api/builder-api-overview)
-* [Working with Data](/docs/2d-charts/builder-api/working-with-data)
+* [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview)
+* [Working with Data](/2d-charts/builder-api/working-with-data)

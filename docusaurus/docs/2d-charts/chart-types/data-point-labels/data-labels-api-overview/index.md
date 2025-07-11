@@ -64,4 +64,4 @@ The precision is now increased to 4 decimal places
 
 <LiveDocSnippet name="demoLabelFormatting" />
 
-Data Labels formatting uses similar code to the [LabelProvider](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) for axis labels. This means that labels can be formatted as dates, exponents or scientific notation.
+Data Labels formatting uses similar code to the [LabelProvider](/2d-charts/axis-api/axis-labels/label-provider-api-overview) for axis labels. This means that labels can be formatted as dates, exponents or scientific notation.

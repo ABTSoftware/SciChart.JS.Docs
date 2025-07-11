@@ -7,7 +7,7 @@ sidebar_position: 10
 The hitTest method on Stacked Column Series
 -------------------------------------------
 
-The **IHitTestProvider.hitTest** method on [StackedColumnRenderableSeries](/docs/2d-charts/chart-types/stacked-column-renderable-series) tests if the click was within a stacked column.
+The **IHitTestProvider.hitTest** method on [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series) tests if the click was within a stacked column.
 
 ```ts
 // hitTest method on Stacked Column Series
@@ -243,7 +243,7 @@ The **IHitTestProvider.hitTestDataPoint** method is not supported for [StackedC
 The hitTestXSlice method on Column Series
 -----------------------------------------
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice on Stacked Column Series
@@ -260,10 +260,10 @@ const hitTestInfo = stackedColumnRenderableSeries.hitTestProvider.hitTestXSlice(
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Line Series](/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

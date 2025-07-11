@@ -4,14 +4,14 @@ sidebar_position: 12
 
 # Worked Example: Resizable Multi Pane Charts with SubCharts
 
-In the previous worked example, we showed you how to [create Dynamic Multi-Panel Charts with the SubCharts API](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts). By following this tutorial, we showed you how to have a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance with 1...N Sub-Charts, each acting as a linked panel in a vertical chart group. All zooming, panning operations are linked, and you can dynamically add and remove chart panes programmatically, or by clicking a button.
+In the previous worked example, we showed you how to [create Dynamic Multi-Panel Charts with the SubCharts API](/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts). By following this tutorial, we showed you how to have a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance with 1...N Sub-Charts, each acting as a linked panel in a vertical chart group. All zooming, panning operations are linked, and you can dynamically add and remove chart panes programmatically, or by clicking a button.
 
 In this worked example, we're going to extend the multi-panel subchart group by adding Grid-Splitters, allowing you to dynamically resize chart panes in the group. In addition, we will add a Close button and Maximise button to allow you to manipulate the chart group.
 
 Resizable Chart Panels with SubCharts
 -------------------------------------
 
-Let's extend the [previous example](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts) to allow resizing of dynamic chart panes using the SubCharts API.
+Let's extend the [previous example](/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts) to allow resizing of dynamic chart panes using the SubCharts API.
 
 Here's the full working example below as an embedded CodePen.
 

@@ -20,9 +20,9 @@ Before comparing render events, it's important to understand the following:
 
 For more information, check out these pages:
 
-- [SciChartSurface.create() vs. createSingle()](/docs/2d-charts/surface/new-scichart-surface)
-- [SciChart3DSurface.create() vs. createSingle()](/docs/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)
-- [SubCharts API](/docs/2d-charts/subcharts-api/subcharts-api-overview)  
+- [SciChartSurface.create() vs. createSingle()](/2d-charts/surface/new-scichart-surface)
+- [SciChart3DSurface.create() vs. createSingle()](/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)
+- [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview)  
   :::
 
 Below is a list of render process event handlers, in the order they occur:

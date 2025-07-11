@@ -153,14 +153,14 @@ For example:
 
 ### Worked Example - Advanced Custom Filters
 
-You can find an example of an Advanced Custom Filter in the [SciChart.js Examples Suite](/docs/get-started/scichart-js-examples-suite).
+You can find an example of an Advanced Custom Filter in the [SciChart.js Examples Suite](/get-started/scichart-js-examples-suite).
 
 Please see the [Realtime Aggregation using Advanced Custom Filter Example](http://demo.scichart.com/javascript-custom-filters) for more details.
 
 #### See Also
 
-* [What is the Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
-* [Scale Offset Filters](/docs/2d-charts/chart-types/data-filters-api/scale-offset-filters)
-* [Linear Trendline Filter](/docs/2d-charts/chart-types/data-filters-api/linear-trendline-filter)
-* [Ratio Filter](/docs/2d-charts/chart-types/data-filters-api/ratio-filter)
-* [Moving Average Filter](/docs/2d-charts/chart-types/data-filters-api/moving-average-filter)
+* [What is the Filters API](/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
+* [Scale Offset Filters](/2d-charts/chart-types/data-filters-api/scale-offset-filters)
+* [Linear Trendline Filter](/2d-charts/chart-types/data-filters-api/linear-trendline-filter)
+* [Ratio Filter](/2d-charts/chart-types/data-filters-api/ratio-filter)
+* [Moving Average Filter](/2d-charts/chart-types/data-filters-api/moving-average-filter)

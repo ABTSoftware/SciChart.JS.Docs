@@ -8,6 +8,6 @@ This is a description of available accessibility features which could be provide
 
 The list of accessibility features:
 
-1.  [Voice Over](/docs/2d-charts/accessibility/voice-over)
-2.  [Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast)
-3.  [Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility)
+1.  [Voice Over](/2d-charts/accessibility/voice-over)
+2.  [Color and Contrast](/2d-charts/accessibility/color-and-contrast)
+3.  [Keyboard Accessibility](/2d-charts/accessibility/keyboard-accessibility)

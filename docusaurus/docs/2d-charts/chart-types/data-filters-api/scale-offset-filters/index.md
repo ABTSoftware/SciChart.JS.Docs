@@ -50,7 +50,7 @@ This produces the following chart where the orange filtered data is twice as ste
 
 With the Filters API in SciChart.js, if you update the original data, or any of the parameters of the filter, the chart will automatically redraw.
 
-Note that ScaleOffsetFilter only changes data in the Y direction. If you want to shift data in X, create a [Complex Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter). The other ScaleOffsetFilters apply the same transformation to every non-x field. If you want to apply different filters to different fields, create a [Complex Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter).
+Note that ScaleOffsetFilter only changes data in the Y direction. If you want to shift data in X, create a [Complex Custom Filter](/2d-charts/chart-types/data-filters-api/custom-filter). The other ScaleOffsetFilters apply the same transformation to every non-x field. If you want to apply different filters to different fields, create a [Complex Custom Filter](/2d-charts/chart-types/data-filters-api/custom-filter).
 
 Specifying the Input Field
 --------------------------
@@ -64,8 +64,8 @@ You can use a ScaleOffset filter to show the percentage change in a series, whic
 
 #### See Also
 
-* [What is the Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
-* [Linear Trendline Filter](/docs/2d-charts/chart-types/data-filters-api/linear-trendline-filter)
-* [Creating a Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter)
-* [Ratio Filter](/docs/2d-charts/chart-types/data-filters-api/ratio-filter)
-* [Moving Average Filter](/docs/2d-charts/chart-types/data-filters-api/moving-average-filter)
+* [What is the Filters API](/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
+* [Linear Trendline Filter](/2d-charts/chart-types/data-filters-api/linear-trendline-filter)
+* [Creating a Custom Filter](/2d-charts/chart-types/data-filters-api/custom-filter)
+* [Ratio Filter](/2d-charts/chart-types/data-filters-api/ratio-filter)
+* [Moving Average Filter](/2d-charts/chart-types/data-filters-api/moving-average-filter)

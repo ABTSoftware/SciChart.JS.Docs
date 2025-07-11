@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # Tutorial 10 - Vertical Charts
 
-In the [previous tutorial](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts) we explained how to link multiple charts using SciChart.js. In this tutorial, we are going to show you how to add a **Vertical Chart**.
+In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts) we explained how to link multiple charts using SciChart.js. In this tutorial, we are going to show you how to add a **Vertical Chart**.
 
 :::tip
 Source code for this tutorial can be found at [SciChart.JS.Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_10_Vertical_Charts) Github Repository
@@ -13,7 +13,7 @@ Source code for this tutorial can be found at [SciChart.JS.Examples](https://gi
 Adding a Chart
 --------------
 
-First let's create a simple [Line Chart](/docs/2d-charts/chart-types/fast-line-renderable-series). In this example we generate a data set for sine wave and add [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview) with two [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) and [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) to produce the **Line Chart**.
+First let's create a simple [Line Chart](/2d-charts/chart-types/fast-line-renderable-series). In this example we generate a data set for sine wave and add [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview) with two [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) and [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) to produce the **Line Chart**.
 
 <CodeSnippetBlock labels={["index.js", "index.html"]}>
 ```js showLineNumbers
@@ -101,7 +101,7 @@ In fact, just setting [xAxis.axisAlignment:blue_book:](https://www.scichart.com/
 
 Moreover if the axes orientation needs to be inverted there is [axis.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#flippedcoordinates) property on [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) class. 
 
-In order to make the chart interactive we add chart modifiers such as [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier), [MouseWheelZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier).
+In order to make the chart interactive we add chart modifiers such as [ZoomPanModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier), [MouseWheelZoomModifier](/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier).
 
 <CodeSnippetBlock labels={["Part2 index.js", "Part2 index.html"]}>
 ```js {7-11,33,42,44,57-60} showLineNumbers
@@ -201,6 +201,6 @@ Further Reading
 
 Here is related documentation for further reading:   
 
-*   [Axis Types in SciChart.js](/docs/2d-charts/axis-api/axis-types/common-axis-base-type)
-*   [Axis Docs - Create a Vertical Chart](/docs/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis)
-*   [Synchronizing Vertical Charts](/docs/2d-charts/chart-synchronization-api/synchronizing-vertical-charts)
+*   [Axis Types in SciChart.js](/2d-charts/axis-api/axis-types/common-axis-base-type)
+*   [Axis Docs - Create a Vertical Chart](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis)
+*   [Synchronizing Vertical Charts](/2d-charts/chart-synchronization-api/synchronizing-vertical-charts)

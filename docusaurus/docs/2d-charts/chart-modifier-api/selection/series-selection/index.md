@@ -126,7 +126,7 @@ This now results in the following animated style-transition behaviour when hove
 <LiveDocSnippet name="./TriStateSelectionVisualsAnimation/demo" />
 
 :::tip
-Multiple properties can be animated in SciChart.js, including stroke, fill, strokethickness, pointmarker size, type, opacity and more. For more information about how to animate between styles or datasets, see the [Animations API Documentation](/docs/2d-charts/animations-api/animations-api-overview).
+Multiple properties can be animated in SciChart.js, including stroke, fill, strokethickness, pointmarker size, type, opacity and more. For more information about how to animate between styles or datasets, see the [Animations API Documentation](/2d-charts/animations-api/animations-api-overview).
 :::
 
 Programmatically Getting/Setting Selected Series
@@ -156,5 +156,5 @@ Find a short example below:
 
 #### See Also
 
-* [DataPoint Selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection)
-* [Annotation Hover](/docs/2d-charts/chart-modifier-api/selection/annotation-hover)
+* [DataPoint Selection](/2d-charts/chart-modifier-api/selection/data-point-selection)
+* [Annotation Hover](/2d-charts/chart-modifier-api/selection/annotation-hover)

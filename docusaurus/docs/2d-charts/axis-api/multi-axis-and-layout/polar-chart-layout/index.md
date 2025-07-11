@@ -11,7 +11,7 @@ The easiest way of thinking about polar axes is this:
 - **Angular Axis**: Measures the angle around the center of the chart, **like a circle**, and is typically used in the same logic an `X Axis` is used in 2D Cartesian charts.
 
 :::note
-This is just a suggestion, and in the same way you can have [Vertical Charts](/docs/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/) on Cartesian surfaces, (where the traditional X and Y axes are interchanged).
+This is just a suggestion, and in the same way you can have [Vertical Charts](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/) on Cartesian surfaces, (where the traditional X and Y axes are interchanged).
 :::
 
 ### Regular vs Vertical Polar Charts

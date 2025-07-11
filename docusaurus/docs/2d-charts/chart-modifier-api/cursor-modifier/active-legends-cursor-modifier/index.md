@@ -7,7 +7,7 @@ sidebar_position: 3
 :::tip
 Background reading:
 
-If you haven't already, read the article [The CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) type which will show you how to setup a [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content).
+If you haven't already, read the article [The CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) type which will show you how to setup a [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) with default options for tooltips. This article goes into further detail on customising the tooltip items (formatting, text content).
 :::
 
 CursorModifier tooltipLegendTemplates
@@ -17,7 +17,7 @@ The [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/curre
 
 Perhaps the best example of this is in financial charts, which require placing a legend in the top left of the chart to show the current hovered candle or series.
 
-Here's a worked example below, which extends our [Candlestick Chart - Volume Bars](/docs/2d-charts/chart-types/fast-candlestick-renderable-series) example with an active legend provided by [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html).
+Here's a worked example below, which extends our [Candlestick Chart - Volume Bars](/2d-charts/chart-types/fast-candlestick-renderable-series) example with an active legend provided by [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html).
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {7} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -58,5 +58,5 @@ This results in the following output:
 
 #### See Also
 
-* [Formatting CursorModifier Tooltip Items](/docs/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
-* [Customizing the CursorModifier Tooltip Container Appearance](/docs/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)
+* [Formatting CursorModifier Tooltip Items](/2d-charts/chart-modifier-api/cursor-modifier/formatting-cursor-modifier-tooltip-items)
+* [Customizing the CursorModifier Tooltip Container Appearance](/2d-charts/chart-modifier-api/cursor-modifier/customizing-cursor-modifier-tooltip-container-appearance)

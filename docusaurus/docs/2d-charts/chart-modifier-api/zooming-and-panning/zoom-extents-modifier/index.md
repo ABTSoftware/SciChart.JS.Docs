@@ -6,7 +6,7 @@ sidebar_position: 4
 
 SciChart.js provides the ability to Zoom Extents the entire chart (zoom to fit data) by double-clicking the chart area with the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features) class, the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html) allows animated zooming via the [isAnimated:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#isanimated), [animationDuration:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#animationduration) and [easingFunction:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#easingfunction) properties.
+Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features) class, the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html) allows animated zooming via the [isAnimated:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#isanimated), [animationDuration:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#animationduration) and [easingFunction:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoomextentsmodifier.html#easingfunction) properties.
 
 Adding a ZoomExtentsModifier to a Chart
 ---------------------------------------
@@ -44,5 +44,5 @@ If you just want to have some space around your data, set [growBy:blue_book:](ht
 
 #### See Also
 
-* [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features)
+* [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features)

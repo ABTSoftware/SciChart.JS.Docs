@@ -4,18 +4,18 @@ sidebar_position: 6
 
 # Text / String Axis
 
-There is no specific Text / String Axis in SciChart.js, however, with a combination of [the LabelProvider API](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) and the [NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis), it's possible to create one.
+There is no specific Text / String Axis in SciChart.js, however, with a combination of [the LabelProvider API](/2d-charts/axis-api/axis-labels/label-provider-api-overview) and the [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis), it's possible to create one.
 
 Use this technique if you want to use strings instead of numbers for the axis labels.
 
 :::info
-Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type).
+Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type).
 :::
 
 Create and Configure a Text Axis
 --------------------------------
 
-To create a string axis in SciChart.js, we're going to use a [TextLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on an ordinary [NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis). This allows you to transform numbers [0, 1, 2, 3, 4] into string labels.
+To create a string axis in SciChart.js, we're going to use a [TextLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on an ordinary [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis). This allows you to transform numbers [0, 1, 2, 3, 4] into string labels.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 
@@ -88,7 +88,7 @@ When using multiline, the [TextLabelProvider.lineSpacing:blue_book:](https://ww
 ### Further notes on Label Culling & Spacing
 
 :::note
-The TextLabelProvider obeys other rules of axis tick spacing and label culling. Take a look at the section on [Gridline and Label Spacing (Interval)](/docs/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval) for some more information how this works.
+The TextLabelProvider obeys other rules of axis tick spacing and label culling. Take a look at the section on [Gridline and Label Spacing (Interval)](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval) for some more information how this works.
 
 Finally, the property [axis.axisRenderer.hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisrenderer.html#hideoverlappinglabels) may be set to false if you wish to disable culling of labels which overlap. This property may also be set via the axis constructor option [hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iaxisbase2doptions.html#hideoverlappinglabels).
 :::

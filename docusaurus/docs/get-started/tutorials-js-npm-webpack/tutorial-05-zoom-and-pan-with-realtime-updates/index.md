@@ -4,9 +4,9 @@ sidebar_position: 5
 
 # Tutorial 05 - Zoom and Pan with Realtime Updates
 
-In [Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates), we showed you how to dynamically update DataSeries to enable Real-time updates in SciChart.js. In this tutorial, were going to show you how to allow zooming and panning while scrolling data.
+In [Tutorial 04 - Adding Realtime Updates](/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates), we showed you how to dynamically update DataSeries to enable Real-time updates in SciChart.js. In this tutorial, were going to show you how to allow zooming and panning while scrolling data.
 
-If you haven't read it already, also check out [Tutorial 03 - Adding Zooming Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior) as we will assume you have the knowledge to add zoom and pan behaviors to a SciChart.js JavaScript chart.
+If you haven't read it already, also check out [Tutorial 03 - Adding Zooming Panning Behavior](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior) as we will assume you have the knowledge to add zoom and pan behaviors to a SciChart.js JavaScript chart.
 
 :::tip
 The source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_5_Zoom_and_Pan_With_Realtime_Updates)
@@ -17,7 +17,7 @@ The source code for this tutorial can be found at [SciChart.JS.Examples Github 
 Creating the Base Application
 -----------------------------
 
-We're going to start off with the code we created in the previous [Tutorial 04 - Adding Realtime Updates](/docs/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates). If you haven't already started that tutorial, please run through it first so you can understand the concepts.
+We're going to start off with the code we created in the previous [Tutorial 04 - Adding Realtime Updates](/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates). If you haven't already started that tutorial, please run through it first so you can understand the concepts.
 
 **Start with this code to begin with**. This will create a real-time chart with scrolling data, **but no zooming or panning yet.**
 
@@ -122,7 +122,7 @@ We're going to start off with the code we created in the previous [Tutorial 04 
 Adding Zooming Behavior
 -----------------------
 
-From [Tutorial 03 - Adding Zooming, Panning Behavior](/docs/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
+From [Tutorial 03 - Adding Zooming, Panning Behavior](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
 
 However, the code we added to scroll the chart on update is going to conflict with the user mouse-zooming behaviors. Take a look below:
 
@@ -179,7 +179,7 @@ Now run the application again, click left mouse button and move it to select a
 Adding Panning Behavior to a Realtime Chart
 -------------------------------------------
 
-In order to add [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), update the code as follows. Don't forget to include the same ZoomState logic as we had before.
+In order to add [ZoomPanModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), update the code as follows. Don't forget to include the same ZoomState logic as we had before.
 
 <CodeSnippetBlock labels={["Part2/index.js"]}>
     ```js {3,12-17} showLineNumbers file=./Part2/index.js start=region_A_start end=region_A_end

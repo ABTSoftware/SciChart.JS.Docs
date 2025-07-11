@@ -8,7 +8,7 @@ Axis 3D Label Formatting obeys the same rules as SciChart 2D.
 
 Each axis has a [labelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#labelprovider) property, which allows you to attach pre-built classes to format numbers, dates, as well as create your own.
 
-Background reading: Read the [Axis LabelProvider API Overview](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) to learn more about this powerful API
+Background reading: Read the [Axis LabelProvider API Overview](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) to learn more about this powerful API
 
 Simple examples of formatting Labels
 ------------------------------------
@@ -53,7 +53,7 @@ Custom Label Formatting Rules
 
 Using the labelProvider API, more complex rules can be created to format axis labels in SciChart.js 3D.
 
-Below we've adapted the example from [2D Charts - Custom LabelProviders: Readable Numbers](/docs/2d-charts/axis-api/axis-labels/custom-label-providers-readable-numbers/index.md) to apply it to a 3D axis.
+Below we've adapted the example from [2D Charts - Custom LabelProviders: Readable Numbers](/2d-charts/axis-api/axis-labels/custom-label-providers-readable-numbers/index.md) to apply it to a 3D axis.
 
 First, delcare the custom LabelProvider class by inheriting one of the available base types in SciChart.js.
 

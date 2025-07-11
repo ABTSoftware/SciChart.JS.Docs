@@ -56,10 +56,10 @@ We've created some worked examples of the Builder API on the following pages. Al
 
 ### Builder API Documentation Pages
 
-*   **Documentation**: [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
-*   **Documentation**: [Working with Data](/docs/2d-charts/builder-api/working-with-data)
-*   **Documentation**: [Complex Customisation](/docs/2d-charts/builder-api/complex-options)
-*   **Documentation**: [Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes)
+*   **Documentation**: [Creating a Simple Chart](/2d-charts/builder-api/simple-chart)
+*   **Documentation**: [Working with Data](/2d-charts/builder-api/working-with-data)
+*   **Documentation**: [Complex Customisation](/2d-charts/builder-api/complex-options)
+*   **Documentation**: [Custom Subtypes](/2d-charts/builder-api/custom-subtypes)
 
 ### Builder API Examples
 
@@ -87,5 +87,5 @@ Once you have selected a series, the properties and types will become specific t
 
 #### See Also
 
-* [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
-* [Working with Data](/docs/2d-charts/builder-api/working-with-data)
+* [Creating a Simple Chart](/2d-charts/builder-api/simple-chart)
+* [Working with Data](/2d-charts/builder-api/working-with-data)

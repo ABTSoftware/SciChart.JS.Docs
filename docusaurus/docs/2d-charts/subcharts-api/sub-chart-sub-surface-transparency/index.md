@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # SubChart Sub Surface Transparency
 
-The SubCharts API allows you to place nested charts (charts within charts). In the previous example [What is the SubCharts API](/docs/2d-charts/subcharts-api/subcharts-api-overview) we covered how to add SubCharts to a SciChartSurface, and also how to position them in [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning).
+The SubCharts API allows you to place nested charts (charts within charts). In the previous example [What is the SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview) we covered how to add SubCharts to a SciChartSurface, and also how to position them in [SubCharts Positioning](/2d-charts/subcharts-api/sub-charts-positioning).
 
 In this example we're going to show the difference between [SciChartSubSurface.isTransparent:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#istransparent) true and false.
 
@@ -23,6 +23,6 @@ The example shows that the Line Series on the parent chart will be visible under
 
 #### See Also
 
-* [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning)
-* [SubCharts Html Container](/docs/2d-charts/subcharts-api/sub-charts-html-container)
-* [Worked Example: Using SubCharts to create a Large Dashboard](/docs/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)
+* [SubCharts Positioning](/2d-charts/subcharts-api/sub-charts-positioning)
+* [SubCharts Html Container](/2d-charts/subcharts-api/sub-charts-html-container)
+* [Worked Example: Using SubCharts to create a Large Dashboard](/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard)

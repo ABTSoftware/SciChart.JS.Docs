@@ -6,7 +6,7 @@ sidebar_position: 4
 
 ## Colour Band Series Segments with PaletteProvider
 
-Let's create a [FastBandRenderableSeries](/docs/2d-charts/chart-types/fast-band-renderable-series).
+Let's create a [FastBandRenderableSeries](/2d-charts/chart-types/fast-band-renderable-series).
 
 <CodeSnippetBlock labels={["TS"]}>
 

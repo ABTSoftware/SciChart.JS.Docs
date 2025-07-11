@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Style Transition Animations
 
-SciChart.js v2.x and above features a new API which allows you to animate style properties on different series types. This is useful if you want to provide feedback on mouse-click such as [data-point selection](/docs/2d-charts/chart-modifier-api/selection/data-point-selection/index.md) or [series selection](/docs/2d-charts/chart-modifier-api/selection/series-selection/index.md).
+SciChart.js v2.x and above features a new API which allows you to animate style properties on different series types. This is useful if you want to provide feedback on mouse-click such as [data-point selection](/2d-charts/chart-modifier-api/selection/data-point-selection/index.md) or [series selection](/2d-charts/chart-modifier-api/selection/series-selection/index.md).
 
 Style Animation Types
 ---------------------
@@ -75,7 +75,7 @@ This results in animating the pointmarker size, stroke and fill on a scatter ser
 />
 
 #### See Also
-* [The Animations API](/docs/2d-charts/animations-api/animations-api-overview/index.md)
-* [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
-* [Dataset Animations](/docs/2d-charts/animations-api/dataset-animations/index.md)
-* [Generic Animations](/docs/2d-charts/animations-api/generic-animations/index.md)
+* [The Animations API](/2d-charts/animations-api/animations-api-overview/index.md)
+* [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+* [Dataset Animations](/2d-charts/animations-api/dataset-animations/index.md)
+* [Generic Animations](/2d-charts/animations-api/generic-animations/index.md)

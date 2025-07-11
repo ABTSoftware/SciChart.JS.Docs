@@ -6,16 +6,16 @@ sidebar_position: 5
 
 Are you new to SciChart? Check out our most popular pages to get started below:
 
-*   [SciChart.js Vanilla JavaScript Tutorials](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) 
-*   [The SciChartSurface Type](/docs/2d-charts/surface/scichart-surface-type-overview)
-*   [Series or Chart Types](/docs/2d-charts/chart-types/renderable-series-api-overview)
-*   [Axis Types and Configuration](/docs/2d-charts/axis-api/axis-api-overview)
-*   [Zooming & Panning](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)
-*   [Tooltips](/docs/2d-charts/chart-modifier-api/rollover-modifier)
-*   [Annotations and Markers](/docs/2d-charts/annotations-api/annotations-api-overview)
-*   [Styling and Themeing](/docs/2d-charts/styling-and-theming/theme-manager-api)
-*   [Chart Synchronization APIs](/docs/2d-charts/chart-synchronization-api/synchronizing-multiple-charts)
-*   [3D charts Basics](/docs/3d-charts/scichart-3d-basics/scichart-3d-basics-overview) 
+*   [SciChart.js Vanilla JavaScript Tutorials](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) 
+*   [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)
+*   [Series or Chart Types](/2d-charts/chart-types/renderable-series-api-overview)
+*   [Axis Types and Configuration](/2d-charts/axis-api/axis-api-overview)
+*   [Zooming & Panning](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)
+*   [Tooltips](/2d-charts/chart-modifier-api/rollover-modifier)
+*   [Annotations and Markers](/2d-charts/annotations-api/annotations-api-overview)
+*   [Styling and Themeing](/2d-charts/styling-and-theming/theme-manager-api)
+*   [Chart Synchronization APIs](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts)
+*   [3D charts Basics](/3d-charts/scichart-3d-basics/scichart-3d-basics-overview) 
 
 To make it easier to start using SciChart.js in your project, we prepared a bunch of examples demonstrating different features and their usage. These are called “SciChart.js Examples Suite” or SciChart demo.
 

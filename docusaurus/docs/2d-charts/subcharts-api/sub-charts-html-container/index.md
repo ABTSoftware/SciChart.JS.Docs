@@ -76,5 +76,5 @@ Here's the result. You can now have a draggable SubChart window in a SciChartSur
 
 #### See Also
 
-* [Creating Re-usable Chart Groups with SubCharts](/docs/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
-* [Creating Dynamic Multi-panel charts with SubCharts](/docs/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)
+* [Creating Re-usable Chart Groups with SubCharts](/2d-charts/subcharts-api/example-reusable-chart-groups-with-sub-charts)
+* [Creating Dynamic Multi-panel charts with SubCharts](/2d-charts/subcharts-api/exampe-dynamic-multi-panel-charts-with-sub-charts)

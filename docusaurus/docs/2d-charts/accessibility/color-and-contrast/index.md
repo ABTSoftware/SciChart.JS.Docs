@@ -57,9 +57,9 @@ window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", han
 Custom Themes
 -------------
 
-Refer to [Chart Styling - Creating a Custom Theme](/docs/2d-charts/styling-and-theming/creating-custom-theme/index.md).
+Refer to [Chart Styling - Creating a Custom Theme](/2d-charts/styling-and-theming/creating-custom-theme/index.md).
 
 #### See Also
 
-- [Voice Over](/docs/2d-charts/accessibility/voice-over/index.md)
-- [Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility/index.md)
+- [Voice Over](/2d-charts/accessibility/voice-over/index.md)
+- [Keyboard Accessibility](/2d-charts/accessibility/keyboard-accessibility/index.md)

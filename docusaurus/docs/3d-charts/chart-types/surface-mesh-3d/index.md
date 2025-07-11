@@ -20,7 +20,7 @@ Examples for the Surface Mesh 3D Chart can be found in the SciChart.js Demo app 
 <ChartFromSciChartDemo src="https://demo.scichart.com/iframe/javascript-3d-surface-mesh-chart" title="3D Surface Mesh" description="" />
 
 :::tip
-Background reading: it may be helpful to read the [2D Heatmap documentation](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md). Heatmaps share a lot of similarities with 3D Surface Mesh charts as both use 2-dimensional `number[][]` arrays, and both use colorMaps to map cell values to cell color.
+Background reading: it may be helpful to read the [2D Heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md). Heatmaps share a lot of similarities with 3D Surface Mesh charts as both use 2-dimensional `number[][]` arrays, and both use colorMaps to map cell values to cell color.
 :::
 
 Declaring a Surface Mesh with Uniform Data
@@ -55,7 +55,7 @@ Applying Color Palettes (Heightmaps) to Surfaces
 
 [yValues:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformgriddataseries3d.html#setyvalues) in the UniformGridDataSeries3D are a 2-dimensional array of type `number[][]`. These are mapped to heights in the 3D world, and are also mapped to colors using the [SurfaceMeshRenderableSeries3D.meshColorPalette:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/surfacemeshrenderableseries3d.html#meshcolorpalette) property.
 
-The mapping is similar to the method used by the [2D Heatmap Series](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type). Let's explain by digging into a simple example below.
+The mapping is similar to the method used by the [2D Heatmap Series](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type). Let's explain by digging into a simple example below.
 
 <CodeSnippetBlock labels={["TS", "HTML", "CSS"]}>
 ```ts {14,19} showLineNumbers file=./ColorPalettes/demo.ts start=region_A_start end=region_A_end

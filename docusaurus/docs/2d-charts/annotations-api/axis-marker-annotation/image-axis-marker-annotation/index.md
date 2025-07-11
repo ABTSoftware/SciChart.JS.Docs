@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Image AxisMarkerAnnotation
 
-SciChart.js allows to create **custom axis marker annotations** on axes. This is done by creating [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) and passing an **image** option into the constructor.
+SciChart.js allows to create **custom axis marker annotations** on axes. This is done by creating [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) and passing an **image** option into the constructor.
 
 ```ts
 const htmlImageElement = await createImageAsync(imageUrl);  
@@ -35,8 +35,8 @@ On the chart we can see a cloud-shaped custom axis label annotation. The annotat
 
 #### See Also
 
-* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [The Annotations API Overview](/2d-charts/annotations-api/annotations-api-overview)
 
-* [AxisMarkerAnnotation](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview)
+* [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview)
 
-* [CustomAnnotation](/docs/2d-charts/annotations-api/custom-annotation)
+* [CustomAnnotation](/2d-charts/annotations-api/custom-annotation)

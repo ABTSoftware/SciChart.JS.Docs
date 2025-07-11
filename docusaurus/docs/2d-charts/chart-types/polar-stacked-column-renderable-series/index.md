@@ -53,5 +53,5 @@ In the code above:
 
 #### See Also
 
-* [Stacked Column Chart](/docs/2d-charts/chart-types/stacked-column-renderable-series)
-* [Polar Column Chart](/docs/2d-charts/chart-types/polar-column-renderable-series)
+* [Stacked Column Chart](/2d-charts/chart-types/stacked-column-renderable-series)
+* [Polar Column Chart](/2d-charts/chart-types/polar-column-renderable-series)

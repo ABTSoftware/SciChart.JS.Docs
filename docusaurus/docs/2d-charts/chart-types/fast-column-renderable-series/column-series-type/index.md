@@ -40,24 +40,24 @@ In the code above:
 
 ## Render a Gap in a Column Series
 
-It is possible to have null points or gaps in a Column Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
+It is possible to have null points or gaps in a Column Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 
 ## Add Point Markers onto a Column Series
 
-It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Column Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
+It is possible to put scatter point markers of varying type (Ellipse, Square, Triangle, Cross, Custom) onto a Column Series via the PointMarker API. To learn more, see the documentation page [Drawing PointMarkers on Series](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-There is also a dedicated [Scatter Series type](/docs/2d-charts/chart-types/xy-scatter-renderable-series) and a [Bubble Series type](/docs/2d-charts/chart-types/fast-bubble-renderable-series) with some more options.
+There is also a dedicated [Scatter Series type](/2d-charts/chart-types/xy-scatter-renderable-series) and a [Bubble Series type](/2d-charts/chart-types/fast-bubble-renderable-series) with some more options.
 
 ## Painting Columns with Different Colors
 
-It is possible to define the colour of column stroke & fill individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+It is possible to define the colour of column stroke & fill individually using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Column Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-column-renderable-series) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Column Charts](/2d-charts/chart-types/palette-provider-api/fast-column-renderable-series) documentation page.
 
 #### See Also
 
-* [DataPointWidthMode](/docs/2d-charts/chart-types/fast-column-renderable-series/data-point-width-mode)
-* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)
-* [Common RenderableSeries Properties](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers)
+* [DataPointWidthMode](/2d-charts/chart-types/fast-column-renderable-series/data-point-width-mode)
+* [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview)
+* [Common RenderableSeries Properties](/2d-charts/chart-types/common-series-apis/drawing-point-markers)

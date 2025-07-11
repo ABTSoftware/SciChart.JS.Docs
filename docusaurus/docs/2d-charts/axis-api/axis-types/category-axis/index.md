@@ -7,7 +7,7 @@ sidebar_position: 5
 The [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) treats values a little differently. This is a special axis type which uses the X-Index not the X-Value to measure chart series.
 
 :::info
-Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type).
+Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type).
 :::
 
 Difference between CategoryAxis and NumericAxis

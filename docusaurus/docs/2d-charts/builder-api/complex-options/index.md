@@ -28,7 +28,7 @@ Alternatively you can take the same approach as for option 3 of creating data an
 Function Options
 ----------------
 
-Some options properties are actually functions, such as the templating functions on [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier), or the callbacks on [SeriesSelectionModifier](/docs/2d-charts/chart-modifier-api/selection/series-selection). These have a signature which is essentially `function | string` eg
+Some options properties are actually functions, such as the templating functions on [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier), or the callbacks on [SeriesSelectionModifier](/2d-charts/chart-modifier-api/selection/series-selection). These have a signature which is essentially `function | string` eg
 
 ```ts
 onSelectionChanged?: ((args: SelectionChangedArgs) => void) | string;
@@ -51,6 +51,6 @@ Specific to the builder api, there is an **onCreated** option in the [ISciChart
 
 #### See Also
 
-* [Intro to the Builder API](/docs/2d-charts/builder-api/builder-api-overview)
-* [Working with Data](/docs/2d-charts/builder-api/working-with-data)
-* [Custom Subtypes](/docs/2d-charts/builder-api/custom-subtypes)
+* [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview)
+* [Working with Data](/2d-charts/builder-api/working-with-data)
+* [Custom Subtypes](/2d-charts/builder-api/custom-subtypes)

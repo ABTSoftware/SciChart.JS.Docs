@@ -24,5 +24,5 @@ This gives us a parent chart and two sub-charts each taking 1/4 of the parent ch
 If you do mouse wheel or double click on a sub-chart you will see that they are fully interactive. This is thank to [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/mousewheelzoommodifier.html), [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html), [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmousewheelzoommodifier.html) and [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html) chart modifiers.
 
 :::tip
-If you need information on positioning or transparency please refer these documents [SubChart Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning) and [SubChart Surface Transparency](/docs/2d-charts/subcharts-api/sub-chart-sub-surface-transparency).
+If you need information on positioning or transparency please refer these documents [SubChart Positioning](/2d-charts/subcharts-api/sub-charts-positioning) and [SubChart Surface Transparency](/2d-charts/subcharts-api/sub-chart-sub-surface-transparency).
 :::

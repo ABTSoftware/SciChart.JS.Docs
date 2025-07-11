@@ -36,7 +36,7 @@ This results in the following output:
 
 <LiveDocSnippet name="./Basic/demo" />
 
-**Above:** The Non-Uniform Heatmap allows you to have uneven sizes for columns & rows in a javascript heatmap. In the case where you have equal cell sizes, use the [Uniform Heatmap](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) for faster performance.
+**Above:** The Non-Uniform Heatmap allows you to have uneven sizes for columns & rows in a javascript heatmap. In the case where you have equal cell sizes, use the [Uniform Heatmap](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) for faster performance.
 
 In the code above:
 
@@ -48,19 +48,19 @@ In the code above:
 
 ### Updating Heatmap Values
 
-The [Uniform Heatmap documentation - Updating Heatmaps](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime) shows how you can update a heatmap dynamically, by using the [setZValues():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmapdataseries.html#setzvalues) function. The mechanism for the Non-uniform heatmap is the same.
+The [Uniform Heatmap documentation - Updating Heatmaps](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime) shows how you can update a heatmap dynamically, by using the [setZValues():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmapdataseries.html#setzvalues) function. The mechanism for the Non-uniform heatmap is the same.
 
 ### Heatmap Color Maps 
 
-The [Uniform Heatmap documentation - ColorMaps and Legends](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can modify a heatmaps color mapping, which maps zValues to cell colors, by using the [colorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html#colormap) property. The mechanism for the Non-uniform heatmap is the same.
+The [Uniform Heatmap documentation - ColorMaps and Legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can modify a heatmaps color mapping, which maps zValues to cell colors, by using the [colorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html#colormap) property. The mechanism for the Non-uniform heatmap is the same.
 
 ### Adding Text in Cell to a Non-Uniform Heatmap
 
-The [Uniform Heatmap documentation](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can add text-in cell to a heatmap via the [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html#dataLabelProvider) property. The mechanism for the Non-uniform heatmap is the same.
+The [Uniform Heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can add text-in cell to a heatmap via the [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html#dataLabelProvider) property. The mechanism for the Non-uniform heatmap is the same.
 
 ### Adding a Heatmap Legend to a Non-Uniform Heatmap
 
-The [Uniform Heatmap documentation - ColorMaps and Legends](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can a [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html) with colorMap to the heatmap chart. The mechanism for the Non-uniform heatmap is the same. 
+The [Uniform Heatmap documentation - ColorMaps and Legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type) shows how you can a [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html) with colorMap to the heatmap chart. The mechanism for the Non-uniform heatmap is the same. 
 
 ## Defining the x,y cell positions
 
@@ -98,4 +98,4 @@ const dataSeries = new NonUniformHeatmapDataSeries(wasmContext, {
 
 #### See Also
 
-* [The Uniform Heatmap Chart Type](/docs/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type)
+* [The Uniform Heatmap Chart Type](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type)

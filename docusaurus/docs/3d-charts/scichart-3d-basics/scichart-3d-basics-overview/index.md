@@ -98,7 +98,7 @@ At this point you may get an error in the console depending on your environment:
 Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart3d.wasm and scichart3d.js files are from the same version
 :::
 
-If so, find out how to resolve this at the page [Deploying Wasm and Data files](/docs/2d-charts/surface/deploying-wasm/index.md).
+If so, find out how to resolve this at the page [Deploying Wasm and Data files](/2d-charts/surface/deploying-wasm/index.md).
 
 ### Adding Optional Zoom & Pan Behaviour
 

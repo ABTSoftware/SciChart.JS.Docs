@@ -4,14 +4,14 @@ sidebar_position: 2
 
 # Metadata and PaletteProviders
 
-Using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) you can control the colour of data-points, line segments or columns / bars based on a programmatic rule, e.g. if Y>5 or index < 100.
+Using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) you can control the colour of data-points, line segments or columns / bars based on a programmatic rule, e.g. if Y>5 or index < 100.
 
 By combining this with Metadata now you can control the point colour based on any javascript object. Useful if you want to host additional data in your chart such as validity of data or alarm/alert values alongside x-y points.
 
 Background reading: 
 
-*   If you haven't already, read the article [DataSeries PointMetadata API](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview) which will show you how to setup a DataSeries with point metadata (javascript objects).
-*   Also take a look at the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) docs to find out how to programmatically change series-color on a per-point basis.
+*   If you haven't already, read the article [DataSeries PointMetadata API](/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview) which will show you how to setup a DataSeries with point metadata (javascript objects).
+*   Also take a look at the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) docs to find out how to programmatically change series-color on a per-point basis.
 
 Example: Metadata + PaletteProviders
 ------------------------------------
@@ -45,4 +45,4 @@ This results in the following output:
 
 <LiveDocSnippet maxWidth={"100%"} name="./MetadataPaletteProviders/demo" />
 
-To learn more about the PaletteProvider API, see the [documentation pages here](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+To learn more about the PaletteProvider API, see the [documentation pages here](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).

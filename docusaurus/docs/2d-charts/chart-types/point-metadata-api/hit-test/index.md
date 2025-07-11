@@ -10,8 +10,8 @@ This article purpose is to keep it brief and show you how to store and retrieve 
 
 Background reading: 
 
-*   If you haven't already, read the article [DataSeries PointMetadata API](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview) which will show you how to setup a DataSeries with point metadata (javascript objects).
-*   Also take a look at the [Hit-Test API](/docs/2d-charts/chart-types/hit-test-api/hit-test-api-overview) docs to describe how to perform chart hit-testing (inspection on click, hover)
+*   If you haven't already, read the article [DataSeries PointMetadata API](/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview) which will show you how to setup a DataSeries with point metadata (javascript objects).
+*   Also take a look at the [Hit-Test API](/2d-charts/chart-types/hit-test-api/hit-test-api-overview) docs to describe how to perform chart hit-testing (inspection on click, hover)
 
 Example: Metadata + HitTest
 ---------------------------

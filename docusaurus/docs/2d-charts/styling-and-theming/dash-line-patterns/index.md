@@ -76,6 +76,6 @@ Chart Parts which support StrokeDashArray
 
 The strokeDashArray property also exists on AxisBase2D.majorGridLineStyle, AxisBase2D.minorGridLineStyle, allowing you to apply stroke dash / dot styling to axis gridlines.
 
-For more information, see the related article [Axis Styling - Title, Labels, Gridlines and Axis Bands](/docs/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style/index.md).
+For more information, see the related article [Axis Styling - Title, Labels, Gridlines and Axis Bands](/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style/index.md).
 
 ![Custom styling or themeing of JavaScript chart parts](/images/Axis_styling.png)

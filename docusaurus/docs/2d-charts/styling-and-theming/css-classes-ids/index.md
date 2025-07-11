@@ -37,13 +37,13 @@ Each DOM element which might need styling has class attribute which uses [BEM a
 
 Right now we have following classes:
 
-*   [Legend](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/index.md): Id=**scichart__legend**
+*   [Legend](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/index.md): Id=**scichart__legend**
     
-*   [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md) Tooltip: **scichart__cursor-tooltip**
+*   [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/index.md) Tooltip: **scichart__cursor-tooltip**
     
-*   [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier/index.md) Tooltip: **scichart__rollover-tooltip**
+*   [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/index.md) Tooltip: **scichart__rollover-tooltip**
     
-*   [TextAnnotation](/docs/2d-charts/annotations-api/text-annotation/index.md): **scichart__text-annotation**
+*   [TextAnnotation](/2d-charts/annotations-api/text-annotation/index.md): **scichart__text-annotation**
     
 
 Classes may consist of three parts, for example **scichart__legend__blue**, where **scichart** is block, **legend** is element and **blue** is modificator.

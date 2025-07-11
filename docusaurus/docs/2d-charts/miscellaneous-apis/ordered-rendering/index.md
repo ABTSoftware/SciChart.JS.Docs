@@ -12,7 +12,7 @@ It is analogous to the definition of "z-index".
 Here we will describe some details on how series, annotations, labels, grid lines, sub-charts are handling render order.
 This topic may require familiarity with the following points:
 
-- SciChart has different [target canvases](/docs/2d-charts/annotations-api/html-annotation/#general-annotation-layer-types-overview) where the elements are rendered.
+- SciChart has different [target canvases](/2d-charts/annotations-api/html-annotation/#general-annotation-layer-types-overview) where the elements are rendered.
 - [SubCharts API:blue_book:](https://www.scichart.com/documentation/js/current/WhatIsTheSubChartsAPI.html) allows putting multiple surfaces on a chart
 - [Native Text API:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#Native%20Text%20Api.html) vs **Texture Text Rendering** (TODO add some info about this topic separately)
 

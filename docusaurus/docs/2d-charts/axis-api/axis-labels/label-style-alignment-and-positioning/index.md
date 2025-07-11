@@ -65,8 +65,8 @@ When using angles that are not a multiple of 90, you probably want to set **hid
 Multiline labels are supported simply by using newline characters (\\n) in the label text.  lineSpacing is a property on the labelProvider.  The alignment property on labelStyle also affects the alignment for multiple lines. 
 
 :::note
-Note: for more info about [Text and MultiLine labels see this article](/docs/2d-charts/axis-api/axis-labels/text-and-multi-line-labels).  
-For rotation of labels [see this article](/docs/2d-charts/axis-api/axis-labels/rotating-axis-labels).
+Note: for more info about [Text and MultiLine labels see this article](/2d-charts/axis-api/axis-labels/text-and-multi-line-labels).  
+For rotation of labels [see this article](/2d-charts/axis-api/axis-labels/rotating-axis-labels).
 :::
 
 
@@ -107,7 +107,7 @@ xAxis.axisRenderer.keepLabelsWithinAxis= false;
 Worked Example: Alignment of labels
 -----------------------------------
 
-In the example below we show how to apply the [ELabelAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) enum to an axis. We've chosen [LogarithmicAxis](/docs/2d-charts/axis-api/axis-types/logarithmic-axis/index.md) for this demo to get different length labels, such as "10", "100", "1000". Try editing the label alignment in the sandbox below to see how it affects the chart.
+In the example below we show how to apply the [ELabelAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/elabelalignment.html) enum to an axis. We've chosen [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/index.md) for this demo to get different length labels, such as "10", "100", "1000". Try editing the label alignment in the sandbox below to see how it affects the chart.
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts showLineNumbers file=./LabelAlignment/demo.ts start=region_A_start end=region_A_end

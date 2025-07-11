@@ -6,9 +6,9 @@ sidebar_position: 11
 
 Sub-Charts allows you to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
 
-For example, in telemetry monitoring applications, you might need to create a group of charts which are arranged vertically, and dynamically add/remove chart panes to the group. This can be done in several ways, for example we have tutorials how to do this in JavaScript ([Linking Multiple Charts](/docs/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)). This tutorial use [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface), which creates a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) in a `<div>`, allowing you to add series, data, axis, modifiers and annotations to the chart.
+For example, in telemetry monitoring applications, you might need to create a group of charts which are arranged vertically, and dynamically add/remove chart panes to the group. This can be done in several ways, for example we have tutorials how to do this in JavaScript ([Linking Multiple Charts](/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts)). This tutorial use [SciChartSurface.create()](/2d-charts/surface/new-scichart-surface), which creates a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) in a `<div>`, allowing you to add series, data, axis, modifiers and annotations to the chart.
 
-However, in some browsers like Mozilla Firefox, creating multiple charts using [SciChartSurface.create()](/docs/2d-charts/surface/new-scichart-surface) results in slower performance when rendering/drawing. This is because Mozilla (and even safari) are not optimised for high performance when copying WebGL content to multiple canvases.
+However, in some browsers like Mozilla Firefox, creating multiple charts using [SciChartSurface.create()](/2d-charts/surface/new-scichart-surface) results in slower performance when rendering/drawing. This is because Mozilla (and even safari) are not optimised for high performance when copying WebGL content to multiple canvases.
 
 As a solution, SubCharts can allow you to create a single shared [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) and place multiple child charts on it (nested charts within charts).
 
@@ -80,7 +80,7 @@ If multiple charts exist, the function selects the last sub-chart and **removes 
 After removing the chart, the function **resizes and repositions the remaining sub-charts**  by calling [SciChatSubSurface.subPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) to maintain an equal height distribution. It calculates the new height for each chart and updates their positions by calling . This ensures a consistent layout, where the remaining charts automatically expand to fill the available space.
 
 :::info
-Note that [subPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) is updated with a Rect which contains relative sizing (for more info see [SubCharts Positioning](/docs/2d-charts/subcharts-api/sub-charts-positioning))
+Note that [subPosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#subposition) is updated with a Rect which contains relative sizing (for more info see [SubCharts Positioning](/2d-charts/subcharts-api/sub-charts-positioning))
 :::
 
 #### Synchronizing Zooming, Panning across the SubCharts 

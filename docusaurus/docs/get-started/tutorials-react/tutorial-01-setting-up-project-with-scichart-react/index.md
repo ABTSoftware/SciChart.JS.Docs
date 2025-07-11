@@ -10,7 +10,7 @@ React requires a little setup so we'd like to do this boilerplate once, which wi
 
 We'll show you how to create a new JavaScript project and adding **scichart** and **scichart-react** libraries as dependencies to it. Then how to use webpack to initialize the application and show an empty chart.
 
-Finally, we'll show how to show a static chart using the **config** property which uses the [JSON Builder API](/docs/2d-charts/builder-api/builder-api-overview) to provide a chart definition.
+Finally, we'll show how to show a static chart using the **config** property which uses the [JSON Builder API](/2d-charts/builder-api/builder-api-overview) to provide a chart definition.
 
 :::tip
 Source code for this tutorial [can be found in SciChart.JS.Examples repo](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/BoilerPlates/scichart-react)
@@ -171,7 +171,7 @@ module.exports = {
 Note in particular the use of **CopyPlugin** (from **copy-webpack-plugin**) which copies `scichart2d.wasm` and `scichart3d.wasm` (optional for 3D charts) to the output directory.
 
 :::tip
-Other methods of loading wasm and more detail is provided in the page [Deploying Wasm (WebAssembly) files with your app](/docs/2d-charts/surface/deploying-wasm). It's even possible to load wasm from our CDN and skip this step entirely for the purpose of learning.
+Other methods of loading wasm and more detail is provided in the page [Deploying Wasm (WebAssembly) files with your app](/2d-charts/surface/deploying-wasm). It's even possible to load wasm from our CDN and skip this step entirely for the purpose of learning.
 :::
 
 Creating the code
@@ -344,7 +344,7 @@ export default App;
 ```
 </CodeSnippetBlock>
 
-The `<SciChartReact />` component renders a single scichart chart. **config** is a prop which requires a JSON object matching the [Builder API schema](/docs/2d-charts/builder-api/builder-api-overview) which can define your chart. Check the `chartConfig` in the code above.
+The `<SciChartReact />` component renders a single scichart chart. **config** is a prop which requires a JSON object matching the [Builder API schema](/2d-charts/builder-api/builder-api-overview) which can define your chart. Check the `chartConfig` in the code above.
 
 :::tip
 Another option to create chart using standard API (not the Builder API) is to use `onInit` property.
@@ -352,7 +352,7 @@ Another option to create chart using standard API (not the Builder API) is to us
 
 ### Breaking down App.jsx
 
-This example demonstrates how to build a basic chart using **SciChart.js** with React and the `<SciChartReact />` component. SciChart.js is a powerful charting library for high-performance data visualization, and this code shows one way to initialize a chart using a **configuration object** with the [Builder API](/docs/2d-charts/builder-api/builder-api-overview) in SciChart.
+This example demonstrates how to build a basic chart using **SciChart.js** with React and the `<SciChartReact />` component. SciChart.js is a powerful charting library for high-performance data visualization, and this code shows one way to initialize a chart using a **configuration object** with the [Builder API](/2d-charts/builder-api/builder-api-overview) in SciChart.
 
 The `<SciChartReact />` component from the SciChart library acts as a React wrapper for the SciChartSurface. It allows you to create charts using a configuration object: A declarative, JSON-like way to define the chart, or, an **initialization function**: A programmatic way to define the chart.
 
@@ -366,7 +366,7 @@ Using a `chartConfig` object is simple and quick, and ideal for creating static
 
 We define a single series of [ESeriesType.LineSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eseriestype.html#lineseries) and pass some xyData with predefined xValues and yValues. Options to the series include `stroke`, `strokeThickness`, `pointMarker` (whch renders an Ellipse at each datapoint) and a [SweepAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/sweepanimation.html) which animates the chart on startup.
 
-Finally, we add modifiers - or [Chart Modifiers](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview) - behaviours which modify the chart such as [zoomEChart2DModifierType.MouseWheelZoom:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#mousewheel), [ZoomPan:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#zoompan), and [ZoomExtents:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#zoomextents). Further modifiers are possible which allow you to add tooltips, legends, selection and more.
+Finally, we add modifiers - or [Chart Modifiers](/2d-charts/chart-modifier-api/chart-modifier-api-overview) - behaviours which modify the chart such as [zoomEChart2DModifierType.MouseWheelZoom:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#mousewheel), [ZoomPan:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#zoompan), and [ZoomExtents:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/echart2dmodifiertype.html#zoomextents). Further modifiers are possible which allow you to add tooltips, legends, selection and more.
 
 This config object hydrates the chart and presents you with a static chart that you can interact with. Further modification of the chart is possible by adding an `onInit` callback to `<SciChartReact />` which allows you to access the hydrated SciChartSurface instance.
 
@@ -386,5 +386,5 @@ It's advisable to check out the [SciChart.Js.Examples](https://github.com/ABTSo
 :::warning
 **A note about SciChartSurface.delete():**
 
-`<SciChartReact />` automatically calls [sciChartSurface.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#delete), ensuring that all wasm memory is disposed on component unmount. This cascades and calls [dataSeries.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#delete) on all data currently in the chart. If you dynamically add/remove series however you will need to delete these as you go along. For more info see the article on [Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory).
+`<SciChartReact />` automatically calls [sciChartSurface.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#delete), ensuring that all wasm memory is disposed on component unmount. This cascades and calls [dataSeries.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#delete) on all data currently in the chart. If you dynamically add/remove series however you will need to delete these as you go along. For more info see the article on [Deleting DataSeries Memory](/2d-charts/chart-types/data-series-api/deleting-memory).
 :::

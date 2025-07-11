@@ -60,4 +60,4 @@ In the code above:
 
 ### PaletteProvider for Polar Band Series
 
-By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Band Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Band Series](/docs/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series).
+By extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) you can create a custom palette for your Polar Band Series, to achieve dynamic coloring based on data values. See more about this topic here [Palette Provider API - Polar Band Series](/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series).

@@ -43,5 +43,5 @@ This results in the following output. Values above the threshold are coloured 
 
 #### See Also
 
-- [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview)
-- [Per-point Colouring of Line Segments](/docs/2d-charts/chart-types/palette-provider-api/fast-line-renderable-series)
+- [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview)
+- [Per-point Colouring of Line Segments](/2d-charts/chart-types/palette-provider-api/fast-line-renderable-series)

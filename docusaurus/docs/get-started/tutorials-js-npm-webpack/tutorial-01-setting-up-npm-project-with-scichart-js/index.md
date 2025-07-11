@@ -174,7 +174,7 @@ We're going to create a simple Index.js / Index.html. Create and add these two f
 
 SciChart.js simply needs a Div in your application to host the chart. We've added one above and given it the `id=scichart-root`.
 
-Next we're going to add index.js, where we initialize and create a [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/).
+Next we're going to add index.js, where we initialize and create a [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/).
 
 **index.js**
 
@@ -226,9 +226,9 @@ The SciChart.js API is pretty simple. In the code sample above we declare an ins
   );
 ```
 
-This function returns a [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview/) instance and a wasmContext (WebAssembly Context). You will need this context for all chart parts related to this chart.
+This function returns a [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/) instance and a wasmContext (WebAssembly Context). You will need this context for all chart parts related to this chart.
 
-Next, we add a single X,Y Axis. We do this by creating a new [NumericAxis](/docs/2d-charts/axis-api/axis-types/numeric-axis/), and adding it to the [SciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#xaxes) and [SciChartSurface.yAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#yaxes) collections.
+Next, we add a single X,Y Axis. We do this by creating a new [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis/), and adding it to the [SciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#xaxes) and [SciChartSurface.yAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#yaxes) collections.
 
 **Declaring a SciChartSurface**
 
@@ -302,4 +302,4 @@ For commercial licenses, a license key can be applied following the instructions
 
 #### See Also
 
-* [Tutorial 02 - Adding Series and Data](/docs/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
+* [Tutorial 02 - Adding Series and Data](/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)

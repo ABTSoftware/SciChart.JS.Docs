@@ -10,7 +10,7 @@ Customisation in SciChart.js can go a level deeper than built-in label formattin
 In this page we're going to show a worked example of how we can create a custom label provider to handle formatting of numbers with thousands/millions commas, or to format large numbers such as 1,000 as 1K, 1,000,000 as 1M and 1,000,000,000 as 1Bn
 :::
 
-To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
+To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
 
 Inside the **formatLabel** function, determine which formatting to apply based on properties and format the label value.
 
@@ -72,10 +72,10 @@ This results in the following output:
 
 The above example showcases how to apply custom or complex formatting to labels in SciChart.js.
 
-Any formatting (dynamic or static) that you can think of can be applied using the [LabelProvider API](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview).
+Any formatting (dynamic or static) that you can think of can be applied using the [LabelProvider API](/2d-charts/axis-api/axis-labels/label-provider-api-overview).
 
 Custom labelproviders can then be set on individual X,Y axis of any type.
 
 ####  See Also
 
-* [Axis LabelProviders](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md)
+* [Axis LabelProviders](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md)

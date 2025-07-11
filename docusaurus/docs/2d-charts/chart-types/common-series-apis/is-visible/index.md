@@ -6,7 +6,7 @@ sidebar_position: 2
 
 Each RenderableSeries has an [isVisible:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisible) property. This defines whether the series is included in rendering or not.
 
-isVisible can be set programmatically, or is also set by SciChart.js when checking or unchecking a Legend row checkbox (see [LegendModifier API](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)).
+isVisible can be set programmatically, or is also set by SciChart.js when checking or unchecking a Legend row checkbox (see [LegendModifier API](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)).
 
 You can listen to isVisible changes via the [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisiblechanged) event. Listen to the event (get a callback) using the following code:
 

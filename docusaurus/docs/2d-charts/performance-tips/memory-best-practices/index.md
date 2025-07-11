@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Memory Best Practices
 
-Related to [Performance Tips](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md), this article covers Memory Best Practices in SciChart.js.
+Related to [Performance Tips](/2d-charts/performance-tips/performance-tips-and-tricks/index.md), this article covers Memory Best Practices in SciChart.js.
 
 Wasm Memory vs. JavaScript Memory Model
 ---------------------------------------
@@ -14,7 +14,7 @@ SciChart.js uses WebAssembly, also known as Wasm, to achieve high performance 2D
 A key difference between Wasm and JavaScript is that JS has a garbage collector and Wasm does not. Any type created in WebAssembly must be expliclty deleted to reclaim memory. Below we have some guidelines on how to do that, and what to do to detect problems.
 
 :::tip
-Failure to call .delete() on a WebAssembly type can result in a memory leak. But don't worry, we have [memory debugging tools](/docs/2d-charts/performance-tips/memory-best-practices/index.md) to help track that.
+Failure to call .delete() on a WebAssembly type can result in a memory leak. But don't worry, we have [memory debugging tools](/2d-charts/performance-tips/memory-best-practices/index.md) to help track that.
 :::
 
 ### Deletable Entities in SciChart.js
@@ -41,22 +41,22 @@ Best Practices to call .delete()
 Deleting a ScIChartSurface by calling [sciChartSurface.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#delete) once on component unmount will cascade down to all child objects such as DataSeries, Annotations and RenderableSeries.
 
 :::tip
-React, Vue and Angular all have component unmount or onDestroy callbacks. In our React, Vue and Angular boilerplates at [scichart.com/getting-started-scichart-js](https://www.scichart.com/getting-started/scichart-javascript/) we show you how to do this. We've also created a [Tutorial for Creating a Reusable React Component](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react/index.md) showing you how to correctly delete the chart on unmount.
+React, Vue and Angular all have component unmount or onDestroy callbacks. In our React, Vue and Angular boilerplates at [scichart.com/getting-started-scichart-js](https://www.scichart.com/getting-started/scichart-javascript/) we show you how to do this. We've also created a [Tutorial for Creating a Reusable React Component](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react/index.md) showing you how to correctly delete the chart on unmount.
 :::
 
 ### Deleting DataSeries memory
 
 If you remove or re-assign a DataSeries from a chart (use case: adding or removing chart series), don't forget to call [series.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the browser.
 
-For some examples of how to do this, see the article [Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
+For some examples of how to do this, see the article [Deleting DataSeries Memory](/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
 
 ### Deleting RendeableSeries, Annotations or Modifiers
 
-RenderableSeries, Annotations and Axis must also be deleted in the case where you remove, or reassign series on a chart. Some code examples of how to do this can also be seen in the page [Deleting DataSeries Memory](/docs/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
+RenderableSeries, Annotations and Axis must also be deleted in the case where you remove, or reassign series on a chart. Some code examples of how to do this can also be seen in the page [Deleting DataSeries Memory](/2d-charts/chart-types/data-series-api/deleting-memory/index.md).
 
 ### Detecting Leaks by forgetting to call .delete()
 
-Suspect a memory leak? If you forget to call .delete(), don't worry! We have a set of tools to detect memory leaks and inform you of which objects need to be properly cleaned up. See the article [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging/index.md) for more info.
+Suspect a memory leak? If you forget to call .delete(), don't worry! We have a set of tools to detect memory leaks and inform you of which objects need to be properly cleaned up. See the article [Memory Leak Debugging](/2d-charts/performance-tips/memory-leak-debugging/index.md) for more info.
 
 Other Memory Optimisations / Footnotes
 --------------------------------------
@@ -71,7 +71,7 @@ There are two factory functions to create a chart: [SciChartSurface.create():bl
 Therefore,
 
 *   Charts created with **create()** have lower memory usage but marginally slower drawing performance.
-*   Charts created with **createSingle()** have higher memory usage but faster drawing performance. They are also subject to WebGL context limits [specified here](/docs/2d-charts/performance-tips/performance-tips-and-tricks).
+*   Charts created with **createSingle()** have higher memory usage but faster drawing performance. They are also subject to WebGL context limits [specified here](/2d-charts/performance-tips/performance-tips-and-tricks).
 
 ### Completely Releasing Memory back to the OS
 
@@ -114,8 +114,8 @@ SciChartDefaults.wasmBufferSizesKb = 1024;
 
 ### Debugging Memory Leaks when using SciChart.js
 
-We've created a set of tools and a guide on how to debug and eliminate memory leaks in your application when using SciChart.js. Find out more at [Memory Leak Debugging](/docs/2d-charts/performance-tips/memory-leak-debugging/index.md).
+We've created a set of tools and a guide on how to debug and eliminate memory leaks in your application when using SciChart.js. Find out more at [Memory Leak Debugging](/2d-charts/performance-tips/memory-leak-debugging/index.md).
 
 ### Best Practies when using SciChart.js in React Components
 
-Additional guidelines on the best practices including memory cleanup when using SciChart.js in React Components can be found at the page [Tutorial - Creating a Reusable React Component](/docs/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react/index.md).
+Additional guidelines on the best practices including memory cleanup when using SciChart.js in React Components can be found at the page [Tutorial - Creating a Reusable React Component](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react/index.md).

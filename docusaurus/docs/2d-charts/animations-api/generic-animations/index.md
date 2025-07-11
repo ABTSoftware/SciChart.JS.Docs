@@ -12,7 +12,7 @@ Here you will find some simple examples what can be done with the Generic Animat
 
 ### Animating Annotations
 
-All SciChart [annotations](/docs/2d-charts/annotations-api/annotations-api-overview/index.md) can be animated with Generic Animations API.  
+All SciChart [annotations](/2d-charts/annotations-api/annotations-api-overview/index.md) can be animated with Generic Animations API.  
 This example demonstrates moving a line annotation from one set of coords to another. Any editable property of the annotation can be updated. The key is the use of the arrow function to specify onAnimate, which captures the local context and allows us to update the annotation created earlier.
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
@@ -233,7 +233,7 @@ The method above is used internally within SciChart to support animating during 
 
 ### Animating Data and Styles
 
-This example shows another way to do [Data Animation](/docs/2d-charts/animations-api/dataset-animations/index.md).  If you need more flexibility than what the built in series animations provide, then you can use this approach to combine data and style changes, or even animate between different series types. Be aware that the built in animations are well optimised for each series type, so if you are trying to animate large amounts of data, you may get better performance using them.
+This example shows another way to do [Data Animation](/2d-charts/animations-api/dataset-animations/index.md).  If you need more flexibility than what the built in series animations provide, then you can use this approach to combine data and style changes, or even animate between different series types. Be aware that the built in animations are well optimised for each series type, so if you are trying to animate large amounts of data, you may get better performance using them.
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
 ```ts
@@ -953,7 +953,7 @@ drawAnnotationAnimationsChart("scichart");
 
 #### See Also
 
-- [The Animations API](/docs/2d-charts/animations-api/animations-api-overview/index.md)
-- [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
-- [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations/index.md)
-- [Dataset Animations](/docs/2d-charts/animations-api/dataset-animations/index.md)
+- [The Animations API](/2d-charts/animations-api/animations-api-overview/index.md)
+- [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+- [Style Transition Animations](/2d-charts/animations-api/style-transition-animations/index.md)
+- [Dataset Animations](/2d-charts/animations-api/dataset-animations/index.md)

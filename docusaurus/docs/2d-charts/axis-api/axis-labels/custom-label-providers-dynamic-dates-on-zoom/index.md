@@ -10,7 +10,7 @@ Customisation in SciChart.js can go a level deeper than built-in label formattin
 In this page we're going to show a worked example of how we can create a custom label provider to handle dynamic date formatting on zoom.
 :::
 
-To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
+To create a custom labelprovider to handle dynamic dates, first a class which inherits one of the [LabelProvider classes listed here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) and override [formatLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatlabel) or [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#formatcursorlabel).
 
 Inside the **formatLabel** function, **parentAxis.visibleRange** can be accessed to determine the visibleRange or zoom level of the axis.
 

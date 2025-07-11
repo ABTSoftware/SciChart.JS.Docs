@@ -109,7 +109,7 @@ Results in this:
 />
 
 :::tip
-Learn more about Dashed Line Styling at this [documentation page](/docs/2d-charts/styling-and-theming/style-chart-parts-in-code).
+Learn more about Dashed Line Styling at this [documentation page](/2d-charts/styling-and-theming/style-chart-parts-in-code).
 :::
 
 ### Drawing a Line and PointMarker through Error Bars

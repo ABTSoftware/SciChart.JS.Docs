@@ -17,7 +17,7 @@ You can see several datalabel examples on the SciChart.js demo:
 
 Explore these for some rich examples of how to use this API.
 
-In the article [DataLabels API Overview](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview) we showed you how to apply simple formatting rules to change the number of decimal places on Data Labels. What if you needed more complex Data Label formatting rules? Enter custom label formatting.
+In the article [DataLabels API Overview](/2d-charts/chart-types/data-point-labels/data-labels-api-overview) we showed you how to apply simple formatting rules to change the number of decimal places on Data Labels. What if you needed more complex Data Label formatting rules? Enter custom label formatting.
 
 Custom Label Formatting
 -----------------------

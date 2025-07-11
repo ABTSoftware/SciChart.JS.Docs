@@ -196,7 +196,7 @@ The [DataPointSelectionPaletteProvider:blue_book:](https://www.scichart.com/docu
     ```
 </CodeSnippetBlock>
 
-For more information on how to style data-points, see the [PaletteProvider Documentation](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+For more information on how to style data-points, see the [PaletteProvider Documentation](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
 Programmatically Selecting Points
 ---------------------------------
@@ -224,9 +224,9 @@ dataSeries.getMetadataAt(4).isSelected = true;
 This code will programmatically set all points to deselected, except for points at index 3 and 4.
 
 :::tip
-For more information on how to manipulate PointMetadata, see the [PointMetadata API Documentation](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview).
+For more information on how to manipulate PointMetadata, see the [PointMetadata API Documentation](/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview).
 :::
 
 #### See Also
 
-* [Series Selection](/docs/2d-charts/chart-modifier-api/selection/series-selection)
+* [Series Selection](/2d-charts/chart-modifier-api/selection/series-selection)

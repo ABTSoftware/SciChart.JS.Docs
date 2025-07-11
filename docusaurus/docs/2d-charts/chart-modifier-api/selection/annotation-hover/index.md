@@ -78,7 +78,7 @@ To check only a specific set of annotations use the [targets:blue_book:](https:
 *   an array of annotations
 *   and array of annotation ids
 *   a function returning an array of annotations
-*   the name of a function registered with the [Builder API](/docs/2d-charts/builder-api/builder-api-overview)
+*   the name of a function registered with the [Builder API](/2d-charts/builder-api/builder-api-overview)
 
 <CodeSnippetBlock labels={["Target Selector"]}>
     ```ts showLineNumbers file=./demo-targets.ts start=#region_A_start end=#region_A_end

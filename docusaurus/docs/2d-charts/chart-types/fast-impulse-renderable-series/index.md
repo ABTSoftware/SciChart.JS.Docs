@@ -52,19 +52,19 @@ const impulseSeries = new FastImpulseRenderableSeries(wasmContext, {
 ```
 
 :::tip
-Different pointmarkers are supported including Ellipse, Box, Triangle, Cross or custom markers. See the [Scatter Chart documentation](/docs/2d-charts/chart-types/xy-scatter-renderable-series) for more information on supported pointmarkers.
+Different pointmarkers are supported including Ellipse, Box, Triangle, Cross or custom markers. See the [Scatter Chart documentation](/2d-charts/chart-types/xy-scatter-renderable-series) for more information on supported pointmarkers.
 :::
 
 ## Render a Gap in an Impulse Series
 
 :::tip
-It is possible to have null points or gaps in a Impulse Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
+It is possible to have null points or gaps in a Impulse Series by passing a data point with a **NaN** value as the **Y** value. Please refer to the [Common Series Features - Draw Gaps in Series](/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 ## Painting Impulse Series Points with Different Colors
 
 :::tip
-It is possible to define the colour individual datapoints differently using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+It is possible to define the colour individual datapoints differently using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Impulse Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-impulse-renderable-series) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Impulse Charts](/2d-charts/chart-types/palette-provider-api/fast-impulse-renderable-series) documentation page.
 :::

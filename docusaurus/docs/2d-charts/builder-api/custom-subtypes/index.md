@@ -6,7 +6,7 @@ sidebar_position: 7
 
 From time to time, you may need to create custom subtypes in order to fully access the powerful, customisable API that SciChart.js has to offer.
 
-The [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) is one example where you may have to provide your own implementation of an interface to a SciChart series. If you want your custom paletteProvider to be serialised and deserialised, you need to implement **toJSON** on it.
+The [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview) is one example where you may have to provide your own implementation of an interface to a SciChart series. If you want your custom paletteProvider to be serialised and deserialised, you need to implement **toJSON** on it.
 
 Here is an example below:
 

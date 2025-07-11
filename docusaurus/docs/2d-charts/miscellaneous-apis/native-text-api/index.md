@@ -160,12 +160,12 @@ You can adjust the size of text by calling font.SetScale, which will multiply th
 
 ##### Axis Labels
 
-[Performance Considerations - Native Text Axis Labels](/docs/2d-charts/axis-api/axis-labels/performance-considerations-native-text-axis-abels/index.md)
+[Performance Considerations - Native Text Axis Labels](/2d-charts/axis-api/axis-labels/performance-considerations-native-text-axis-abels/index.md)
 
 ##### Annotations API
 
-[NativeTextAnnotation](/docs/2d-charts/annotations-api/native-text-annotation/index.md)
+[NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation/index.md)
 
 ##### DataLabels API
 
-[Adding DataLabels to a Chart Series](/docs/2d-charts/chart-types/data-point-labels/data-labels-api-overview/index.md)
+[Adding DataLabels to a Chart Series](/2d-charts/chart-types/data-point-labels/data-labels-api-overview/index.md)

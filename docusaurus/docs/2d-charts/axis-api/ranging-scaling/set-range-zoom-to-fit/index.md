@@ -36,11 +36,11 @@ This results in the following output: 
 
 Click the button above to update yAxis.visibleRange. View the codepen in full to see how this works.
 
-Note the [CategoryAxis](/docs/2d-charts/axis-api/axis-types/category-axis) is treated as a special case. Although it has the same property [CategoryAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#visiblerange) of type [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html), it expects values to be indices, not data-values.
+Note the [CategoryAxis](/2d-charts/axis-api/axis-types/category-axis) is treated as a special case. Although it has the same property [CategoryAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html#visiblerange) of type [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html), it expects values to be indices, not data-values.
 
 The reason for this is that this axis type works with with **data indexes, not actual data values.** So a **NumberRange** should be applied instead, with lower data index as Min and Upper data index as Max.
 
-To learn more about **how to convert values** from Data-values to Indexes and back in a CategoryAxis, please refer to the [Convert Pixels to Data Coordinates](/docs/2d-charts/axis-api/misc/pixel-and-data-coordinates) article.
+To learn more about **how to convert values** from Data-values to Indexes and back in a CategoryAxis, please refer to the [Convert Pixels to Data Coordinates](/2d-charts/axis-api/misc/pixel-and-data-coordinates) article.
 
 Zooming to fit all the Data
 ---------------------------
@@ -48,8 +48,8 @@ Zooming to fit all the Data
 Sometimes it is required to make an axis to **show the full extent of the data** associated with it. There are several ways to achieve this in code:
 
 1.  Set the [visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange) equal to [axis.getMaximumRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#getmaximumrange)
-2.  Configure the axis to auto adjust correspondingly to data changes. See the article [AxisRanging - AutoRange](/docs/2d-charts/axis-api/ranging-scaling/auto-range).
-3.  Call the functions from [SciChartSurface](/docs/2d-charts/surface/scichart-surface-type-overview) such as [ZoomExtents():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextents), [ZoomExtentsY():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsy) and [ZoomExtentsX():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsx) to force a zoom to fit operation once.
+2.  Configure the axis to auto adjust correspondingly to data changes. See the article [AxisRanging - AutoRange](/2d-charts/axis-api/ranging-scaling/auto-range).
+3.  Call the functions from [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview) such as [ZoomExtents():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextents), [ZoomExtentsY():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsy) and [ZoomExtentsX():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextentsx) to force a zoom to fit operation once.
 
 Try this example below:
 
@@ -67,9 +67,9 @@ This results in the following output:
 
 <LiveDocSnippet name="./ZoomExtents/demo" htmlPath="./ZoomExtents/demo.html" cssPath="./ZoomExtents/demo.css" />
 
-What if you want to allow the user to zoom to fit using the mouse? All the zooming, panning operations via mouse or touch are handled by ChartModifiers in SciChart.js. See the [ZoomPanModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier) for information.
+What if you want to allow the user to zoom to fit using the mouse? All the zooming, panning operations via mouse or touch are handled by ChartModifiers in SciChart.js. See the [ZoomPanModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier), [ZoomExtentsModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier) for information.
 
 #### See Also
 
-* [Axis Ranging - AutoRange](/docs/2d-charts/axis-api/ranging-scaling/auto-range)
-* [Axis Ranging - How to Listen to VisibleRange Changes](/docs/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes)
+* [Axis Ranging - AutoRange](/2d-charts/axis-api/ranging-scaling/auto-range)
+* [Axis Ranging - How to Listen to VisibleRange Changes](/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes)

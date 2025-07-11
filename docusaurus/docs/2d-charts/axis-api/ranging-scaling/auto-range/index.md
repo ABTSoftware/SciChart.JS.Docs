@@ -83,4 +83,4 @@ Also, it is possible to **add spacing** or padding to the visibleRange when the
 Programmatically Ranging an Axis
 -------------------------------
 
-See the section on [Setting and Getting VisibleRange](/docs/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit) for more details.
+See the section on [Setting and Getting VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit) for more details.

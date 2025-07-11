@@ -110,8 +110,8 @@ This example takes a OHLC Series as input and plots separate trendlines for the 
 
 #### See Also
 
-* [What is the Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
-* [Scale Offset Filters](/docs/2d-charts/chart-types/data-filters-api/scale-offset-filters)
-* [Creating a Custom Filter](/docs/2d-charts/chart-types/data-filters-api/custom-filter)
-* [Ratio Filter](/docs/2d-charts/chart-types/data-filters-api/ratio-filter)
-* [Moving Average Filter](/docs/2d-charts/chart-types/data-filters-api/moving-average-filter)
+* [What is the Filters API](/2d-charts/chart-types/data-filters-api/data-filters-api-overview)
+* [Scale Offset Filters](/2d-charts/chart-types/data-filters-api/scale-offset-filters)
+* [Creating a Custom Filter](/2d-charts/chart-types/data-filters-api/custom-filter)
+* [Ratio Filter](/2d-charts/chart-types/data-filters-api/ratio-filter)
+* [Moving Average Filter](/2d-charts/chart-types/data-filters-api/moving-average-filter)

@@ -49,7 +49,7 @@ The Bubble chart sizes are scaled using the zValue on the [XyzDataSeries:blue_b
 
 You can scale up/down the entire bubble series by setting the [FastBubbleRenderableSeries.zMultiplier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html#zmultiplier) property. Default value=1.
 
-You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview) pages for more info about data updates.
+You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](/2d-charts/chart-types/data-series-api/data-series-api-overview) pages for more info about data updates.
 :::
 
 Bubble sizes can be scaled using the DataSeries zValue, or the zMultiplier property (see above). What if you wanted to scale a bubble series depending on the zoom level of the viewport? Here's a quick worked example:
@@ -66,7 +66,7 @@ This results in the following output:
 ## Render a Gap in a Bubble Series
 
 :::tip
-It is possible to have null points or gaps in a Bubble Series by passing a data point with a **NaN** value as the **Y** value. Or, by simply skipping a point if using a value-axis. Please refer to the [Common Series Features - Draw Gaps in Series](/docs/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
+It is possible to have null points or gaps in a Bubble Series by passing a data point with a **NaN** value as the **Y** value. Or, by simply skipping a point if using a value-axis. Please refer to the [Common Series Features - Draw Gaps in Series](/2d-charts/chart-types/common-series-apis/drawing-gaps) article for more details.
 :::
 
 ## Different Point-Markers on a Bubble Series
@@ -83,7 +83,7 @@ Every data point of a Bubble Series is marked with a [PointMarker:blue_book:](
 Any of these can be used to create a bubble chart.
 
 :::tip
-To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/docs/2d-charts/chart-types/common-series-apis/drawing-point-markers).
+To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
 There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://demo.scichart.com/javascript-chart-custom-pointmarkers)
 :::
@@ -91,7 +91,7 @@ There is also a TypeScript example of custom pointmarkers in the [SciChart.js D
 ## Painting Bubbles with Different Colors
 
 :::tip
-It is possible to define the colour of PointMarkers individually using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+It is possible to define the colour of PointMarkers individually using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Scatter Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-bubble-renderable-series) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Scatter Charts](/2d-charts/chart-types/palette-provider-api/fast-bubble-renderable-series) documentation page.
 :::

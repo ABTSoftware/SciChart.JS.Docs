@@ -7,7 +7,7 @@ sidebar_position: 3
 In SciChart.js v3.2 we've introduced a set of Memory Leak debugging tools. Read this guide to find out how to enable Memory Leak Debugging in your app in Dev mode. 
 
 :::info
-Read the section in [Memory Best Practices - Deletable Entities](/docs/2d-charts/performance-tips/memory-best-practices/index.md#deletable-entities-in-scichartjs) for background info on which types need to be explictly deleted in SciChart.js and how failure to do this can cause a memory leak.
+Read the section in [Memory Best Practices - Deletable Entities](/2d-charts/performance-tips/memory-best-practices/index.md#deletable-entities-in-scichartjs) for background info on which types need to be explictly deleted in SciChart.js and how failure to do this can cause a memory leak.
 :::
 
 Enabling Memory Debugging tools
@@ -83,5 +83,5 @@ MemoryUsageHelper.unregister("identifier");
 
 #### See Also
 
-- [Performance Tips & Tricks](/docs/2d-charts/performance-tips/performance-tips-and-tricks/index.md)
-- [Memory Best Practices](/docs/2d-charts/performance-tips/memory-best-practices/index.md)
+- [Performance Tips & Tricks](/2d-charts/performance-tips/performance-tips-and-tricks/index.md)
+- [Memory Best Practices](/2d-charts/performance-tips/memory-best-practices/index.md)

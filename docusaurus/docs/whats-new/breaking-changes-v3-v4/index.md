@@ -21,7 +21,7 @@ SciChartDefaults.useNativeText now defaults true
 |                     | Native Text                                                                 | Canvas Text                                                                 |
 |---------------------|-----------------------------------------------------------------------------|-----------------------------------------------------------------------------|
 | **Speed**           | Fast, especially on realtime charts or when zooming/panning, requiring changing labels | Slow to create new labels, but caching means redrawing of static labels is ok. |
-| **Font support**    | Default font Arial. Using other fonts requires hosting them yourself. See [native font loading](/docs/2d-charts/miscellaneous-apis/native-text-api). | Default font Arial. Any font supported by the browser can be used. |
+| **Font support**    | Default font Arial. Using other fonts requires hosting them yourself. See [native font loading](/2d-charts/miscellaneous-apis/native-text-api). | Default font Arial. Any font supported by the browser can be used. |
 | **fontWeight and fontStyle** | Not supported | Supported |
 | **Customisation**   | Only text can be rendered | Can override `getLabelTexture` to use images as labels. |
 | **Other features**  | Size, color, rotation, multiline all supported by both | Size, color, rotation, multiline all supported by both |
@@ -266,7 +266,7 @@ AxisLayoutStrategy.measureAxes
 
 The method signature has changed.  
 The method now should return the required size instead of updating `chartLayoutState`.  
-Refer to [the example of a custom strategy](/docs/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers/index.md). 
+Refer to [the example of a custom strategy](/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers/index.md). 
 
 
 AxisBase3D.labelStyle.foreground

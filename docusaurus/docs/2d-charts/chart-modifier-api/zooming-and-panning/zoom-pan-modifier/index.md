@@ -12,7 +12,7 @@ As of SciChart.js v3.2, [ZoomPanModifier:blue_book:](https://www.scichart.com/do
 All the properties for the [PinchZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html) may be set to control vertical/horizontal zooming, include/exclude axis from pinch zooming etc..
 :::
 
-Besides common features which are inherited from the [ChartModifierBase](/docs/2d-charts/chart-modifier-api/common-features) class, the [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html) allows to **restrict scrolling** to the horizontal or vertical direction only, via the [xyDirection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html#xydirection) property.
+Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features) class, the [ZoomPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html) allows to **restrict scrolling** to the horizontal or vertical direction only, via the [xyDirection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/zoompanmodifier.html#xydirection) property.
 
 Adding a ZoomPanModifier to a Chart
 -----------------------------------
@@ -79,5 +79,5 @@ If you want to enable pinch zooming in only one direction,  e.g. horizontal onl
 
 #### See Also
 
-* [What is the ChartModifier API](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [Common ChartModifiers Features](/docs/2d-charts/chart-modifier-api/common-features)
+* [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features)

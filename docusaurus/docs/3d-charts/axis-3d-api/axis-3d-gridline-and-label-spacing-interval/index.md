@@ -8,10 +8,10 @@ Axis 3D Gridline and Label Spacing obeys the same rules as SciChart 2D. Here are
 
 *   Each axis has a [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#majordelta) and [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#minordelta), which specify the interval of major gridlines / labels and minor gridlines respectively. These are normally calculated automatically. They can be set manually along with [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#autoticks) = false to achieve user-defined intervals.
 *   You can also set hints such as [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#maxautoticks) or [axis.minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html#minorspermajor) to adjust the number of gridlines using the automatic built-in intervals.
-*   Or, if you want fine-grained control over gridline spacing and to apply custom or dynamic rules, you can create a [TickProvider plugin](/docs/2d-charts/axis-api/axis-labels/label-provider-api-overview) to do it
+*   Or, if you want fine-grained control over gridline spacing and to apply custom or dynamic rules, you can create a [TickProvider plugin](/2d-charts/axis-api/axis-labels/label-provider-api-overview) to do it
 
 :::tip
-Background reading: Read the [Axis Ticks - Gridline and Label Spacing](/docs/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/index.md) and the advanced article [Axis Ticks - Programmatic Gridline Spacing](/docs/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api/index.md) to learn more about this powerful API.
+Background reading: Read the [Axis Ticks - Gridline and Label Spacing](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/index.md) and the advanced article [Axis Ticks - Programmatic Gridline Spacing](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api/index.md) to learn more about this powerful API.
 :::
 
 Simple Example of spacing Gridlines

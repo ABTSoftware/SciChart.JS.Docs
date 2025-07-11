@@ -96,7 +96,7 @@ export async function hitTestStackedMountainTs(divId) {
 }
 ```
 
- The [StackedMountainCollection](/docs/2d-charts/chart-types/stacked-mountain-renderable-series) in this example has three [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#Hit-Test%20API%20for%20Stacked%20Mountain%20Series.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
+ The [StackedMountainCollection](/2d-charts/chart-types/stacked-mountain-renderable-series) in this example has three [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/webframe.html#Hit-Test%20API%20for%20Stacked%20Mountain%20Series.html). Therefore, we use **reduce** function to iterate over each renderable series and to accumulate the result.
 
 This gives us this chart.
 
@@ -104,17 +104,17 @@ This gives us this chart.
     src="/images/HitTestApi_stacked-mountain-chart1.png"
 />
 
-If we click inside the gray band it will be hit for the [StackedMountainRenderableSeries](/docs/2d-charts/chart-types/stacked-mountain-renderable-series) with index 1. In the browser console you will find output with an array of **HitTestInfo** results.
+If we click inside the gray band it will be hit for the [StackedMountainRenderableSeries](/2d-charts/chart-types/stacked-mountain-renderable-series) with index 1. In the browser console you will find output with an array of **HitTestInfo** results.
 
 The hitTestDataPoint method on Stacked Mountain Series
 ------------------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method is not supported for [StackedMountainRenderableSeries](/docs/2d-charts/chart-types/stacked-mountain-renderable-series).
+The **IHitTestProvider.hitTestDataPoint** method is not supported for [StackedMountainRenderableSeries](/2d-charts/chart-types/stacked-mountain-renderable-series).
 
 The hitTestXSlice method on Stacked Mountain Series
 ---------------------------------------------------
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice on Stacked Mountain Series
@@ -128,10 +128,10 @@ const hitTestInfo = stackedMountainRS.hitTestProvider.hitTestXSlice(premultiplie
 
 #### See Also
 
-* [Hit-Test API for Line Series](/docs/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
-* [Hit-Test API for Band Series](/docs/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Line Series](/2d-charts/chart-types/hit-test-api/fast-line-renderable-series)
+* [Hit-Test API for Band Series](/2d-charts/chart-types/hit-test-api/fast-band-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

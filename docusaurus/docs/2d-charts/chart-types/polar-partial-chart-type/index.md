@@ -27,7 +27,7 @@ The example above is extreme, but partial polar charts refers to all plots that 
 
 ### 1. Gauge Charts
 > Many Gauge charts have sweeping arcs in between `180` and `270` degrees.
-> Check this out for more info: [Gauge Chart Documentation](/docs/2d-charts/chart-types/polar-gauge-chart)
+> Check this out for more info: [Gauge Chart Documentation](/2d-charts/chart-types/polar-gauge-chart)
 
 <ChartFromSciChartDemo
     src="http://stagingdemo2.scichart.com/demo/iframe/polar-gauge-chart"
@@ -64,6 +64,6 @@ The example above is extreme, but partial polar charts refers to all plots that 
 
 :::tip
 For more information about polar chart layout, styling and axes, check out these documentation pages:
-- [Polar Chart Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)
-- [Polar Axis Styling](/docs/2d-charts/axis-api/axis-styling/polar-axis-styling)
+- [Polar Chart Layout](/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)
+- [Polar Axis Styling](/2d-charts/axis-api/axis-styling/polar-axis-styling)
 :::

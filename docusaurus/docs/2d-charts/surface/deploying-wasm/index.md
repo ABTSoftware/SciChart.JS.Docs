@@ -17,9 +17,9 @@ In our tutorials and boilerplate examples we show you how to package the Wasm & 
 
 | JS Project Framework             | Boilerplate Project or Setup Instructions |
 |----------------------------------|-------------------------------------------|
-| npm / webpack                    | [Tutorial - Setting up a project with Webpack](/docs/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) |
-| Vanilla Javascript CDN (no npm, webpack) | [Tutorial - Including index.min.js and wasm files using CDN](/docs/get-started/tutorials-cdn/tutorial-01-using-cdn) |
-| Vanilla Javascript offline (no npm, webpack) | [Tutorial - Including index.min.js and wasm files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline) |
+| npm / webpack                    | [Tutorial - Setting up a project with Webpack](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js) |
+| Vanilla Javascript CDN (no npm, webpack) | [Tutorial - Including index.min.js and wasm files using CDN](/get-started/tutorials-cdn/tutorial-01-using-cdn) |
+| Vanilla Javascript offline (no npm, webpack) | [Tutorial - Including index.min.js and wasm files offline](/get-started/tutorials-cdn/tutorial-02-offline) |
 | npm / webpack / react            | [code sample](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox/demo-react-scichart) |
 | vue.js                           | [code sample](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox/demo-vue-scichart) |
 | nextjs                           | [code sample](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox/demo-nextjs) |
@@ -67,7 +67,7 @@ Loading Wasm files offline
 
 If your application must load wasm files offline (does not have an internet connection), you can download the files and serve them and use [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#configure) to fetch the local file.
 
-To find out how to do this, see [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/docs/get-started/tutorials-cdn/tutorial-02-offline).
+To find out how to do this, see [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline).
 
 Loading Wasm for 3D Charts
 --------------------------

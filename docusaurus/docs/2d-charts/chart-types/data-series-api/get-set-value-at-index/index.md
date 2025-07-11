@@ -31,4 +31,4 @@ point by point access to the DataSeries native values is slow when you're dealin
 Examples of Dynamic Updates
 ---------------------------
 
-There are a number of worked examples of how to apply dynamic updates to the chart over at the page [DataSeries Realtime Updates](/docs/2d-charts/chart-types/data-series-api/realtime-updates).
+There are a number of worked examples of how to apply dynamic updates to the chart over at the page [DataSeries Realtime Updates](/2d-charts/chart-types/data-series-api/realtime-updates).

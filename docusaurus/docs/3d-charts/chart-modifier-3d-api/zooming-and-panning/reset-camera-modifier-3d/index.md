@@ -6,7 +6,7 @@ sidebar_position: 4
 
 Zooming and Panning a Chart in SciChart.js is achieved by moving the [SciChart3DSurface.camera:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html#camera) to a new location.
 
-The article ["The SciChart3DSurface Camera"](/docs/3d-charts/scichart-3d-basics/scichart-surface-camera/index.md) goes into detail how this camera class works and how to manipulate it programatically to achieve various views.
+The article ["The SciChart3DSurface Camera"](/3d-charts/scichart-3d-basics/scichart-surface-camera/index.md) goes into detail how this camera class works and how to manipulate it programatically to achieve various views.
 
 If you add any zooming or panning to the chart you might want to reset the viewport to it's original state. You can do this with the [ResetCamera3DModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/resetcamera3dmodifier.html).
 

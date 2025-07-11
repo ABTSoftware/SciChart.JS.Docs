@@ -44,7 +44,7 @@ For further customisation of the tooltip content & container, read on.
 
 ### Tooltip Text Formatting
 
-Tooltips obey formatting rules on the Axis. These can be defined by setting [axis.labelProvider.cursorPrecision:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html), [cursorNumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#cursornumericformat) or overriding [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel). For more information on text formatting, see the [LabelProvider documentation](/docs/3d-charts/axis-3d-api/axis-3d-text-label-formatting/index.md).
+Tooltips obey formatting rules on the Axis. These can be defined by setting [axis.labelProvider.cursorPrecision:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html), [cursorNumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#cursornumericformat) or overriding [formatCursorLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelprovider.html#formatcursorlabel). For more information on text formatting, see the [LabelProvider documentation](/3d-charts/axis-3d-api/axis-3d-text-label-formatting/index.md).
 
 ### Modifying the Tooltip Content
 

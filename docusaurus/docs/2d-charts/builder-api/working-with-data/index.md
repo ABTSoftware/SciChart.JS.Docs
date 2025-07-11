@@ -31,7 +31,7 @@ For example:
     ```
 </CodeSnippetBlock>
 
-This is good for multiple series which share x data, but is not as convenient if you want to be able to update the data later. For this you need to use our [DataSeries API](/docs/2d-charts/chart-types/data-series-api/data-series-api-overview).
+This is good for multiple series which share x data, but is not as convenient if you want to be able to update the data later. For this you need to use our [DataSeries API](/2d-charts/chart-types/data-series-api/data-series-api-overview).
 
 ### 3. Create a DataSeries and Manually Assign it
 
@@ -55,7 +55,7 @@ Note that Charts, Series and DataSeries created when using the Builder API can b
 Using the Filters API with the Builder API
 ------------------------------------------
 
-SciChart.js v2.x features a new [Filters API](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview), which allows you to apply dynamic data transforms to data series which update as your underlying data updates.
+SciChart.js v2.x features a new [Filters API](/2d-charts/chart-types/data-filters-api/data-filters-api-overview), which allows you to apply dynamic data transforms to data series which update as your underlying data updates.
 
 Here is an example of adding a `Filter` or `DataTransform` to a SciChartSurface when using the Builder API:
 
@@ -64,12 +64,12 @@ Here is an example of adding a `Filter` or `DataTransform` to a SciChartSurface 
     ```
 </CodeSnippetBlock>
 
-For more details regarding the Filters API, check the [Filter API Documentation](/docs/2d-charts/chart-types/data-filters-api/data-filters-api-overview).
+For more details regarding the Filters API, check the [Filter API Documentation](/2d-charts/chart-types/data-filters-api/data-filters-api-overview).
 
 Using PointMetadata with the Builder API
 ----------------------------------------
 
-SciChart.js v2.x features a new [PointMetadata API](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview), which allows you to tag any X, Y datapoint with a custom object confirming to the [IPointMetadata:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata.html) interface.
+SciChart.js v2.x features a new [PointMetadata API](/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview), which allows you to tag any X, Y datapoint with a custom object confirming to the [IPointMetadata:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmetadata.html) interface.
 
 This lets you tag datapoints with objects, mark them as selected or deselected, or include further information to display in tooltips, on hit-test or selection etc...
 
@@ -97,18 +97,18 @@ metadata?:
     | { type: string; data?: any };
 ```
 
-For more information regarding the PointMetadata API, check the [PointMetadata API Documentation](/docs/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview).
+For more information regarding the PointMetadata API, check the [PointMetadata API Documentation](/2d-charts/chart-types/point-metadata-api/point-metadata-api-overview).
 
 #### See Also
 
-* [Intro to the Builder API](/docs/2d-charts/builder-api/builder-api-overview)
+* [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview)
 
-* [Creating a Simple Chart](/docs/2d-charts/builder-api/simple-chart)
+* [Creating a Simple Chart](/2d-charts/builder-api/simple-chart)
 
-* [Creating a Pie Chart](/docs/2d-charts/builder-api/pie-chart)
+* [Creating a Pie Chart](/2d-charts/builder-api/pie-chart)
 
-* [Creating a Polar Chart](/docs/2d-charts/builder-api/polar-chart)
+* [Creating a Polar Chart](/2d-charts/builder-api/polar-chart)
 
-* [Creating a 3D Chart](/docs/2d-charts/builder-api/default-3d-chart)
+* [Creating a 3D Chart](/2d-charts/builder-api/default-3d-chart)
 
-* [Complex Options](/docs/2d-charts/builder-api/complex-options)
+* [Complex Options](/2d-charts/builder-api/complex-options)

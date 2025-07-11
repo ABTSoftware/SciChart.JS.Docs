@@ -7,7 +7,7 @@ sidebar_position: 3
 The hitTest method on Line Series
 ---------------------------------
 
-The **IHitTestProvider.hitTest** method on [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series) tests if the click was within the **hitTestRadius** from the line. The algorithm differs for sorted and unsorted data.
+The **IHitTestProvider.hitTest** method on [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series) tests if the click was within the **hitTestRadius** from the line. The algorithm differs for sorted and unsorted data.
 
 ```ts
 // hitTest method on LineSeries
@@ -28,7 +28,7 @@ For **unsorted data**:
 The hitTestDataPoint method on Line Series
 ------------------------------------------
 
-The **IHitTestProvider.hitTestDataPoint** method on [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
+The **IHitTestProvider.hitTestDataPoint** method on [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series) tests if the click was within the **hitTestRadius** from a data point.
 
 ```ts
 // hitTestDataPoint method on Line Series
@@ -144,7 +144,7 @@ Clicking near a data point results is **isHit=true**.  In the browser console 
  The hitTestXSlice method on Line Series
 ----------------------------------------
 
-The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/docs/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/docs/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
+The **IHitTestProvider.hitTestXSlice** method is used for [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) to get information about the nearest point.
 
 ```ts
 // hitTestXSlice method on Line Series
@@ -158,8 +158,8 @@ const hitTestInfo = lineSeries.hitTestProvider.hitTestXSlice(premultipliedX, pre
 
 #### See Also
 
-* [Hit-Test API for Bubble Series](/docs/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
-* [Hit-Test API for Column Series](/docs/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
-* [Hit-Test API for Heatmap Series](/docs/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
-* [Hit-Test API for Rectangle Series](/docs/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
-* [Hit-Test API for Polar Line Series](/docs/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)
+* [Hit-Test API for Bubble Series](/2d-charts/chart-types/hit-test-api/fast-bubble-renderable-series)
+* [Hit-Test API for Column Series](/2d-charts/chart-types/hit-test-api/fast-column-renderable-series)
+* [Hit-Test API for Heatmap Series](/2d-charts/chart-types/hit-test-api/uniform-heatmap-renderable-series)
+* [Hit-Test API for Rectangle Series](/2d-charts/chart-types/hit-test-api/fast-rectangle-renderable-series)
+* [Hit-Test API for Polar Line Series](/2d-charts/chart-types/hit-test-api/polar-line-renderable-series)

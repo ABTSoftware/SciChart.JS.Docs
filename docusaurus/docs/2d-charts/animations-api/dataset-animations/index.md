@@ -6,7 +6,7 @@ sidebar_position: 4
 
 SciChart.js v2.x and above features a new API which allows you to animate between datasets on a chart. But the limitation is that the length of data vectors (length of X and Y values and animation values) must be the same.
 
-Below find an example of animating between two different datasets. Note the Animation type includes style properties and is a specific animation type for the series, as per our [Style Transition Animations documentation](/docs/2d-charts/animations-api/style-transition-animations).
+Below find an example of animating between two different datasets. Note the Animation type includes style properties and is a specific animation type for the series, as per our [Style Transition Animations documentation](/2d-charts/animations-api/style-transition-animations).
 
 ## Worked Examples
 
@@ -180,7 +180,7 @@ Below is the result.
 
 #### See Also
 
-- [The Animations API](/docs/2d-charts/animations-api/animations-api-overview)
-- [Series Startup Animations](/docs/2d-charts/animations-api/series-startup-animations)
-- [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations)
-- [Generic Animations](/docs/2d-charts/animations-api/generic-animations)
+- [The Animations API](/2d-charts/animations-api/animations-api-overview)
+- [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+- [Style Transition Animations](/2d-charts/animations-api/style-transition-animations)
+- [Generic Animations](/2d-charts/animations-api/generic-animations)

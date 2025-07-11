@@ -5,7 +5,7 @@ sidebar_position: 4
 # Customizing VerticalSliceModifier Tooltip Containers
 
 :::tip
-**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/docs/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
+**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
 :::
 
 This article goes into further detail on customising the tooltip items (formatting, text content)

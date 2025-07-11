@@ -45,5 +45,5 @@ To draw a full sector that extends to the baseline (like a slice of a pie), set 
 
 #### See Also
 
-* [PolarArcAnnotation](/docs/2d-charts/annotations-api/polar-arc-annotation) - The equivalent annotation for Polar Surfaces.
-* [The Annotations API Overview](/docs/2d-charts/annotations-api/annotations-api-overview)
+* [PolarArcAnnotation](/2d-charts/annotations-api/polar-arc-annotation) - The equivalent annotation for Polar Surfaces.
+* [The Annotations API Overview](/2d-charts/annotations-api/annotations-api-overview)

@@ -19,5 +19,5 @@ This results in the following behavior:
 
 #### See Also:
 
-* [What is the ChartModifier API?](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [LegendModifier](/docs/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)
+* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [LegendModifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)

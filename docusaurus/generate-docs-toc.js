@@ -3,7 +3,7 @@ const path = require("path");
 const matter = require("gray-matter");
 
 const DOCS_DIR = path.join(__dirname, "docs");
-const BASE_ROUTE = "/docs";
+const BASE_ROUTE = "";
 const TARGET_FILENAMES = ["index.md", "index.mdx", "readme.md", "readme.mdx"];
 const CATEGORY_FILE = "_category_.json";
 
@@ -59,19 +59,26 @@ function walkDir(dir) {
 
         if (entry.isFile() && TARGET_FILENAMES.includes(entry.name.toLowerCase())) {
             const { title, position, permalink } = getFileMetadata(fullPath);
-            items.push({
+            const ttt = {
                 type: "file",
                 title,
                 position,
                 permalink
-            });
+            };
+            // console.log(ttt);
+            items.push(ttt);
         }
+    }
+
+    const positionFn = (el) => {
+        const ee = el.children.length == 1 ? el.children[0] : el;
+        return isNaN(ee.position) ? Infinity : ee.position;
     }
 
     // Sort by sidebar_position or fallback to title
     return items.sort((a, b) => {
-        const aPos = a.position ?? Infinity;
-        const bPos = b.position ?? Infinity;
+        let aPos = positionFn(a);
+        let bPos = positionFn(b);
         if (aPos !== bPos) return aPos - bPos;
         return (a.title || "").localeCompare(b.title || "");
     });
@@ -98,13 +105,7 @@ function renderMarkdownToc(items, depth = 0) {
 
 function saveMarkdownToc(items) {
     const output = renderMarkdownToc(items);
-    const outputPath = path.join(
-        __dirname,
-        "docs",
-        "user-manual",
-        "toc",
-        "index.md"
-    );
+    const outputPath = path.join(__dirname, "docs", "user-manual", "toc", "index.md");
     const newContent = `<!-- generate-docs-toc.js start -->
 ${output}
 <!-- generate-docs-toc.js end -->`;

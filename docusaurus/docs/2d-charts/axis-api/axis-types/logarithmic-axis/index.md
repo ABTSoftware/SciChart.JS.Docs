@@ -7,7 +7,7 @@ sidebar_position: 4
 The [LogarithicAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) is a Value axis similar to the normal NumericAxis, but where the tick values increase exponentially. Plotting data on such an axis is equivalent to plotting the log of that data. You can set the logarithmic base using the logBase property. eg logBase: 10 (the default) will result in ticks like 1, 10, 100, 1000. logBase 2 will result in ticks like 2, 4, 8, 16, 32.
 
 :::info
-Learn more about the [commonalities between axis here](/docs/2d-charts/axis-api/axis-types/common-axis-base-type).
+Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type).
 :::
 
 Create and Configure a LogarithmicAxis
@@ -49,7 +49,7 @@ const logAxis = new LogarithmicAxis(wasmContext, {
 
 ### Plotting Negative Numbers
 
-LogarithmicAxis cannot show both positive and negative numbers on the same axis, so if your data is negative you need to set isNegative on the axis.  If you need to show positive and negative log data, you need to split it into positive and negative sets and plot them on seperate [vertically stacked axes](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout).
+LogarithmicAxis cannot show both positive and negative numbers on the same axis, so if your data is negative you need to set isNegative on the axis.  If you need to show positive and negative log data, you need to split it into positive and negative sets and plot them on seperate [vertically stacked axes](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout).
 
 ### Minor Tick Mode
 
@@ -82,11 +82,11 @@ Here's a worked example that combines some of the techniques above.
  
 </CodeSnippetBlock>
 
-This produces something like this.  If you want even more control over the tick values and gridlines see [Axis Ticks](/docs/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval).
+This produces something like this.  If you want even more control over the tick values and gridlines see [Axis Ticks](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval).
 
 <LiveDocSnippet maxWidth={"100%"} name="./LogarithmicAxisConfiguration/demo" />
 
 #### See Also
 
-- [Gridline and Label Spacing (Interval)](/docs/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval)
-- [Vertically Stacked Axis Layout](/docs/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout)
+- [Gridline and Label Spacing (Interval)](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval)
+- [Vertically Stacked Axis Layout](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout)

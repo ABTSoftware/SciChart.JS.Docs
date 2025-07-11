@@ -43,7 +43,7 @@ In the example above:
 
 A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datetimenumericaxis.html) can be used as these are 24/7 markets.
 
-You can format the date labels on the XAxis by following the instructions on the [Axis Label Formatting](/docs/2d-charts/axis-api/axis-labels/numeric-formats) page.
+You can format the date labels on the XAxis by following the instructions on the [Axis Label Formatting](/2d-charts/axis-api/axis-labels/numeric-formats) page.
 
 ## Adding Volume Bars to a Candlestick Chart
 
@@ -64,13 +64,13 @@ Here's how the example looks now:
 ## Painting Candles with Different Colors
 
 :::tip
-It is possible to define the colour of specific OHLC Bars using the [PaletteProvider API](/docs/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
+It is possible to define the colour of specific OHLC Bars using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview).
 
-For more info on how to do this, see the [PaletteProvider - Per-point colouring of Candlestick/Ohlc Charts](/docs/2d-charts/chart-types/palette-provider-api/fast-candlestick-ohlc-renderable-series) documentation page.
+For more info on how to do this, see the [PaletteProvider - Per-point colouring of Candlestick/Ohlc Charts](/2d-charts/chart-types/palette-provider-api/fast-candlestick-ohlc-renderable-series) documentation page.
 :::
 
 #### See Also
 
-* [Start Here - RenderableSeries Overview](/docs/2d-charts/chart-types/renderable-series-api-overview)
+* [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview)
 
-* [Common RenderableSeries Properties](/docs/2d-charts/chart-types/common-series-apis/is-visible)
+* [Common RenderableSeries Properties](/2d-charts/chart-types/common-series-apis/is-visible)

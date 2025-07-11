@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Voice Over
 
-To achieve voice over the chart elements, data, and some actions, we can use the [Hit Test API](/docs/2d-charts/chart-types/hit-test-api/hit-test-api-overview/index.md) and event subscription.
+To achieve voice over the chart elements, data, and some actions, we can use the [Hit Test API](/2d-charts/chart-types/hit-test-api/hit-test-api-overview/index.md) and event subscription.
 
 Possible use-cases:
 
@@ -18,7 +18,7 @@ Possible use-cases:
 Adding VoiceOver to Data Series using HitTest API
 -------------------------------------------------
 
-This example demonstrates how to add VoiceOver to announce points on [FastLineRenderableSeries](/docs/2d-charts/chart-types/fast-line-renderable-series/index.md). Voice over functionality is provided by [SpeechSynthesisUtterance API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+This example demonstrates how to add VoiceOver to announce points on [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/index.md). Voice over functionality is provided by [SpeechSynthesisUtterance API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
 
 1. We will start from a basic chart definition:
 
@@ -137,7 +137,7 @@ const hitTestDataPoints = (point: Point) => {
 </CodeSnippetBlock>
 
 
-Notice that coordinates passed to the Hit Test method are multiplied by **DpiHelper.PIXEL_RATIO** to be scaled accordingly to display and browser configurations. See also [Retina Support and Browser Zoom](/docs/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom/index.md), [Hit Test API](/docs/2d-charts/chart-types/hit-test-api/hit-test-api-overview/index.md) Documentation.
+Notice that coordinates passed to the Hit Test method are multiplied by **DpiHelper.PIXEL_RATIO** to be scaled accordingly to display and browser configurations. See also [Retina Support and Browser Zoom](/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom/index.md), [Hit Test API](/2d-charts/chart-types/hit-test-api/hit-test-api-overview/index.md) Documentation.
 
 4. Now let's define the **voiceOverDataPoint** function which will format the coordinates and announce them using **VoiceOver**:
 
@@ -347,5 +347,5 @@ sciChartSurface.chartModifiers.add(
 
 #### See Also
 
-- [Color and Contrast](/docs/2d-charts/accessibility/color-and-contrast/index.md)
-- [Keyboard Accessibility](/docs/2d-charts/accessibility/keyboard-accessibility/index.md)
+- [Color and Contrast](/2d-charts/accessibility/color-and-contrast/index.md)
+- [Keyboard Accessibility](/2d-charts/accessibility/keyboard-accessibility/index.md)

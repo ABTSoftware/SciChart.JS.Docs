@@ -45,4 +45,4 @@ The following properties can be set to style the [AxisMarkerAnnotation:blue_boo
 
 #### See Also
 
-* [The Annotations API Overview](/docs/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview)
+* [The Annotations API Overview](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview)

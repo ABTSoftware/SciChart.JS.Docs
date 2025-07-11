@@ -98,7 +98,7 @@ rendSeries.enqueueAnimation(new WaveAnimation({ duration: 1000 }));
 />
 
 #### See Also
-* [The Animations API](/docs/2d-charts/animations-api/animations-api-overview/index.md)
-* [Style Transition Animations](/docs/2d-charts/animations-api/style-transition-animations/index.md)
-* [Dataset Animations](/docs/2d-charts/animations-api/dataset-animations/index.md)
-* [Generic Animations](/docs/2d-charts/animations-api/generic-animations/index.md)
+* [The Animations API](/2d-charts/animations-api/animations-api-overview/index.md)
+* [Style Transition Animations](/2d-charts/animations-api/style-transition-animations/index.md)
+* [Dataset Animations](/2d-charts/animations-api/dataset-animations/index.md)
+* [Generic Animations](/2d-charts/animations-api/generic-animations/index.md)

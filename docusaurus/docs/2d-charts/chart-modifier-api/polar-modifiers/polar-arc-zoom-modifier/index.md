@@ -8,7 +8,7 @@ The [PolarArcZoomModifier:blue_book:](https://www.scichart.com/documentation/js/
 
 ## Adding a PolarArcZoomModifier to a Chart
 
-A [PolarArcZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararczoommodifier.html) can be added to the `sciChartSurface.chartModifiers` collection to enable zoom to fit behavior using a user-drawn arc selection. It is the polar counterpart of the [XyRubberBandZoomModifier](/docs/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier) - used on the Cartesian 2D charts.
+A [PolarArcZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararczoommodifier.html) can be added to the `sciChartSurface.chartModifiers` collection to enable zoom to fit behavior using a user-drawn arc selection. It is the polar counterpart of the [XyRubberBandZoomModifier](/2d-charts/chart-modifier-api/zooming-and-panning/rubber-band-xy-zoom-modifier) - used on the Cartesian 2D charts.
 
 For example:
 
@@ -25,5 +25,5 @@ This results in the following behavior:
 
 #### See Also:
 
-* [What is the ChartModifier API?](/docs/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
 * [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html)
