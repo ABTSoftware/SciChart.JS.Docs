@@ -40,6 +40,18 @@ const config: Config = {
         locales: ["en"]
     },
 
+    scripts: [{
+        src: 'https://chat.scichart.com/chatbot.js',
+        async: true,
+        content: `
+            window.chatbotConfig = {
+                buttonText: 'Ask SciChart AI',
+                theme: 'light',
+                serviceBaseUrl: 'https://chat.scichart.com/'
+            };
+        `,
+    }],
+
     presets: [
         [
             "classic",
