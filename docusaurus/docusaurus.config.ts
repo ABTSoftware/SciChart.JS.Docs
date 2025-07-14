@@ -69,7 +69,7 @@ const config: Config = {
 
     themeConfig: {
         // Replace with your project's social card
-        image: "images/SciChartLogo.jpg",
+        image: "images/SciChartLogo.png",
         navbar: {
             title: "SciChart JS Docs",
             logo: {
