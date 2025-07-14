@@ -7,7 +7,7 @@ import { baseUrl } from "./config";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
-const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/dev/docusaurus";
+const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/master/docusaurus";
 
 const config: Config = {
     title: "SciChart JS Docs",
@@ -19,15 +19,15 @@ const config: Config = {
     themes: ["@docusaurus/theme-mermaid"],
 
     // Set the production url of your site here
-    url: "http://stagingdemo2.scichart.com",
+    url: "http://scichart.com",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: baseUrl,
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
-    organizationName: "facebook", // Usually your GitHub org/user name.
-    projectName: "docusaurus", // Usually your repo name.
+    organizationName: "scichart", // Usually your GitHub org/user name.
+    projectName: "scichart.js", // Usually your repo name.
 
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
