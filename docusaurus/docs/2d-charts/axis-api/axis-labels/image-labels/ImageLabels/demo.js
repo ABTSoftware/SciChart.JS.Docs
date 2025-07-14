@@ -35,21 +35,21 @@ async function imageLabels(divElementId) {
     // SciChart utility function to create HtmlImage elements from urls
     // Note: createImageAsync / createImagesArrayAsync() also accept imported images if using WebPack
     const images = await createImagesArrayAsync([
-        "https://demo.scichart.com/images/apple.png",
-        "https://demo.scichart.com/images/samsung.png",
-        "https://demo.scichart.com/images/xiaomi.png",
-        "https://demo.scichart.com/images/huawei.png",
-        "https://demo.scichart.com/images/oppo.png",
-        "https://demo.scichart.com/images/vivo.png",
-        "https://demo.scichart.com/images/realme.png",
-        "https://demo.scichart.com/images/motorola.png",
-        "https://demo.scichart.com/images/question.png",
-        "https://demo.scichart.com/images/lg.png",
-        "https://demo.scichart.com/images/oneplus.png",
-        "https://demo.scichart.com/images/tecno.png",
-        "https://demo.scichart.com/images/infinix.png",
-        "https://demo.scichart.com/images/google.png",
-        "https://demo.scichart.com/images/nokia.png"
+        "https://scichart.com/demo/images/apple.png",
+        "https://scichart.com/demo/images/samsung.png",
+        "https://scichart.com/demo/images/xiaomi.png",
+        "https://scichart.com/demo/images/huawei.png",
+        "https://scichart.com/demo/images/oppo.png",
+        "https://scichart.com/demo/images/vivo.png",
+        "https://scichart.com/demo/images/realme.png",
+        "https://scichart.com/demo/images/motorola.png",
+        "https://scichart.com/demo/images/question.png",
+        "https://scichart.com/demo/images/lg.png",
+        "https://scichart.com/demo/images/oneplus.png",
+        "https://scichart.com/demo/images/tecno.png",
+        "https://scichart.com/demo/images/infinix.png",
+        "https://scichart.com/demo/images/google.png",
+        "https://scichart.com/demo/images/nokia.png"
     ]);
     // Override labelProvider.getLabelTexture() to return an image
     const getLabelTexture = (labelText, textureManager, labelStyle) => {

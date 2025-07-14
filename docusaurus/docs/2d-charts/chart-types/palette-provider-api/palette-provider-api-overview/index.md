@@ -28,7 +28,7 @@ What is the PaletteProvider API?
 The PaletteProvider API allows you to achieve per data-point colouring or styling. Here is a quick example below. The following pages have further worked examples for each series type.
 
 <ChartFromSciChartDemo 
-    src="https://demo.scichart.com/iframe/chart-color-points-individually-with-paletteprovider" 
+    src="https://scichart.com/demo/iframe/chart-color-points-individually-with-paletteprovider" 
     title="Coloring Series per-point using PaletteProvider" 
     description="showing how to color data-points based on a rule." 
 />

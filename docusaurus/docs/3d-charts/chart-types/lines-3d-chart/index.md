@@ -7,13 +7,13 @@ sidebar_position: 4
 :::tip
 Examples for the Lines 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaded from SciChart.Js.Examples Github Repository
 
-*   [SciChart.js Demo app](https://demo.scichart.com/javascript-3d-point-line-chart)
+*   [SciChart.js Demo app](https://scichart.com/demo/javascript-3d-point-line-chart)
 *   [All examples on Github](https://github.com/abtsoftware/scichart.js.examples)
 :::
 
 3D Line Charts are provided by the [PointLineRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pointlinerenderableseries3d.html) type. This draws line segments from X,Y,Z data in the 3D world, with an optional point-marker. Charts can be static or dynamic, and updated in real-time if required.
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/javascript-3d-point-line-chart" title="3D Point Lines Chart" description="showing how to draw a Waterfall chart in 3D using SciChart.js" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-3d-point-line-chart" title="3D Point Lines Chart" description="showing how to draw a Waterfall chart in 3D using SciChart.js" />
 
 The [PointLineRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pointlinerenderableseries3d.html) requires X,Y,Z data to render, stored in an [XyzDataSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries3d.html). This series supports an optional pointmarker of multiple types, including:
 

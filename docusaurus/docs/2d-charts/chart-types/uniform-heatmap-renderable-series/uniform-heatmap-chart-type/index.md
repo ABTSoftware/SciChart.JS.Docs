@@ -7,7 +7,7 @@ sidebar_position: 1
 Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) type.
 
 :::tip
-The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/heatmap-chart).
+The [JavaScript Heatmap Chart Example](https://scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/heatmap-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -19,7 +19,7 @@ The [JavaScript Heatmap Chart Example](https://demo.scichart.com/javascript/hea
 
 Uniform heatmaps are extremely fast, lightweight series types for rendering two dimensional data as a heatmap or spectrogram. The [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
 
-To create a [Javascript Heatmap Chart](https://demo.scichart.com/javascript-heatmap-chart) with SciChart.js, use the following code:
+To create a [Javascript Heatmap Chart](https://scichart.com/demo/javascript-heatmap-chart) with SciChart.js, use the following code:
 
 ### Creating the Imports
 

@@ -8,12 +8,12 @@ DataLabels allow per data-point text labels to be drawn on series, or arbitrary 
 
 You can see several datalabel examples on the SciChart.js demo:
 
-- [The Line Chart example](https://demo.scichart.com/javascript-line-chart)
-- [The Column Chart example](https://demo.scichart.com/javascript-column-chart)
-- [The PaletteProvider example](https://demo.scichart.com/javascript-chart-color-points-individually-with-paletteprovider)
-- [The DataLabels demo](https://demo.scichart.com/javascript-datalabels)
-- [The Stacked Column Chart demo](https://demo.scichart.com/javascript/stacked-column-chart)
-- [The Population Pyramid demo](https://demo.scichart.com/javascript/population-pyramid)
+- [The Line Chart example](https://scichart.com/demo/javascript-line-chart)
+- [The Column Chart example](https://scichart.com/demo/javascript-column-chart)
+- [The PaletteProvider example](https://scichart.com/demo/javascript-chart-color-points-individually-with-paletteprovider)
+- [The DataLabels demo](https://scichart.com/demo/javascript-datalabels)
+- [The Stacked Column Chart demo](https://scichart.com/demo/javascript/stacked-column-chart)
+- [The Population Pyramid demo](https://scichart.com/demo/javascript/population-pyramid)
 
 Explore these for some rich examples of how to use this API.
 

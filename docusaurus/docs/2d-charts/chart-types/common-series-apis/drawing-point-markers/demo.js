@@ -195,7 +195,7 @@ async function builderExample(divElementId) {
                     pointMarker: {
                         type: EPointMarkerType.Sprite,
                         options: {
-                            image: await createImageAsync("https://demo.scichart.com/images/CustomMarkerImage.png")
+                            image: await createImageAsync("https://scichart.com/demo/images/CustomMarkerImage.png")
                         }
                     }
                 }

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/2d-charts/styling-and-theming/creating-custom-theme), so you can truly customize the chart to fit your application.
 
-You can view our themes live at the [ThemeManager example, over at the SciChart.js Examples Suite](https://demo.scichart.com/javascript-chart-themes).
+You can view our themes live at the [ThemeManager example, over at the SciChart.js Examples Suite](https://scichart.com/demo/javascript-chart-themes).
 
 SciChart Dark Theme
 -------------------

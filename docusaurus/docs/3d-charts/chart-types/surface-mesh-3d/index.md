@@ -7,7 +7,7 @@ sidebar_position: 3
 :::tip
 Examples for the Surface Mesh 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaded from SciChart.Js.Examples Github Repository
 
-*   [SciChart.js Demo app](https://demo.scichart.com/javascript-3d-surface-mesh-chart)
+*   [SciChart.js Demo app](https://scichart.com/demo/javascript-3d-surface-mesh-chart)
 *   [All examples on Github](https://github.com/abtsoftware/scichart.js.examples)
 :::
 
@@ -17,7 +17,7 @@ Examples for the Surface Mesh 3D Chart can be found in the SciChart.js Demo app 
 *   Texturing of surfaces or terrains or height maps
 *   Contour mapping or wireframe on terrain or height maps
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/javascript-3d-surface-mesh-chart" title="3D Surface Mesh" description="" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-3d-surface-mesh-chart" title="3D Surface Mesh" description="" />
 
 :::tip
 Background reading: it may be helpful to read the [2D Heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md). Heatmaps share a lot of similarities with 3D Surface Mesh charts as both use 2-dimensional `number[][]` arrays, and both use colorMaps to map cell values to cell color.
@@ -79,7 +79,7 @@ What this means:
 Overlaying a Heightmap Legend on the Surface
 --------------------------------------------
 
-Adding a Legend to a 3D Surface Mesh can be done with the HeatmapLegend control. See the [Surface Mesh Demo](https://demo.scichart.com/javascript-3d-surface-mesh-chart) at demo.scichart.com for a code sample showing how.
+Adding a Legend to a 3D Surface Mesh can be done with the HeatmapLegend control. See the [Surface Mesh Demo](https://scichart.com/demo/javascript-3d-surface-mesh-chart) at demo.scichart.com for a code sample showing how.
 
 Configuring the Wireframe on the Surface
 ----------------------------------------

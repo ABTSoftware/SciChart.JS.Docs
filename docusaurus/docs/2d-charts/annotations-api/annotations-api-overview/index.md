@@ -6,7 +6,7 @@ sidebar_position: 1
 
 SciChart.js features a rich Annotations API, that allows you to place annotations (boxes, markers, text labels and custom shapes) over a chart: 
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/chart-annotations" title="Chart Annotations" description="" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/chart-annotations" title="Chart Annotations" description="" />
 
 Annotations can provide **interactive** event/news bullets, horizontal/vertical lines (thresholds), text/callouts as well as measurements such as Peak-to-peak or cycle duration. Annotations can be edited by click & drag, added by touching a screen, or, simply created programmatically. SciChart provides a number of built-in annotations, but you can also create your own.
 

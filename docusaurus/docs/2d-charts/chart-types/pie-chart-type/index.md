@@ -4,10 +4,10 @@ sidebar_position: 50
 
 # The Pie Chart Type
 
-In SciChart.js, the [JavaScript Pie Chart](https://demo.scichart.com/javascript-pie-chart) type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpiesurface.html) type.
+In SciChart.js, the [JavaScript Pie Chart](https://scichart.com/demo/javascript-pie-chart) type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpiesurface.html) type.
 
 :::tip
-The [JavaScript Pie Chart Example](https://demo.scichart.com/javascript-pie-chart) can be found in the [SciChart.Js Examples Suite > Pie Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/PieChart) on Github
+The [JavaScript Pie Chart Example](https://scichart.com/demo/javascript-pie-chart) can be found in the [SciChart.Js Examples Suite > Pie Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/PieChart) on Github
 :::
 
 <ChartFromSciChartDemo 

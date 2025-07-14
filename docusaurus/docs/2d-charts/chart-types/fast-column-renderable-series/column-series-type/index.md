@@ -7,7 +7,7 @@ sidebar_position: 1
 Column Series can be created using the [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) type.
 
 :::tip
-The [JavaScript Column Chart Example](https://demo.scichart.com/javascript/column-chart) can be found in the [SciChart.Js Examples Suite > Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ColumnChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/column-chart).
+The [JavaScript Column Chart Example](https://scichart.com/demo/javascript/column-chart) can be found in the [SciChart.Js Examples Suite > Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ColumnChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/column-chart).
 :::
 
 <ChartFromSciChartDemo 
@@ -17,7 +17,7 @@ The [JavaScript Column Chart Example](https://demo.scichart.com/javascript/colu
 
 ## Create a Column Series
 
-To create a [Javascript Column Chart](https://demo.scichart.com/javascript-column-chart) with SciChart.js, use the following code:
+To create a [Javascript Column Chart](https://scichart.com/demo/javascript-column-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts {21,27,30} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end

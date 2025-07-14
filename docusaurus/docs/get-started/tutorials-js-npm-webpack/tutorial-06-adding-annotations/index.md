@@ -209,9 +209,9 @@ View our Annotations Demos online
 
 You can find out more about the Annotations API in the relevant section of the documentation: [The Annotations API Overview](/2d-charts/annotations-api/annotations-api-overview).
 
-Also, there is a couple of examples showcasing annotations in our Examples Suite. See the [JavaScript Chart Annotations example](https://demo.scichart.com/react/chart-annotations) for more details.
+Also, there is a couple of examples showcasing annotations in our Examples Suite. See the [JavaScript Chart Annotations example](https://scichart.com/demo/react/chart-annotations) for more details.
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/chart-annotations" title="Chart Annotations" description="showing how create various kinds of annotations and animate them in javascript charts." />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/chart-annotations" title="Chart Annotations" description="showing how create various kinds of annotations and animate them in javascript charts." />
 
 In this example we show how to create multiple annotation types, including liners, text, watermarks, stretched boxes, images, vectors (SVG) and horizontal/vertical lines.
 

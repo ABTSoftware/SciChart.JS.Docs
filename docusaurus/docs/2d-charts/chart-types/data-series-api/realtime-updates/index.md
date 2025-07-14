@@ -105,4 +105,4 @@ Note: Sweeping requires a few special conditions. **fifoCapacity** must be set a
 
 You can use **NumericAxis** but you must modulate your data. X must range from 0...fifoCapacity. In the example above we set **xValue\[i\] = i % fifoCapacity**
 
-See a worked example at the [ECG/Vital Signs monitor demo](https://demo.scichart.com/javascript-vital-signs-ecg-medical-chart-example).
+See a worked example at the [ECG/Vital Signs monitor demo](https://scichart.com/demo/javascript-vital-signs-ecg-medical-chart-example).

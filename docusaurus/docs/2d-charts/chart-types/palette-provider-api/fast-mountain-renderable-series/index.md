@@ -32,7 +32,7 @@ Next, we can apply the PaletteProvider to the series. This can be done both with
 </CodeSnippetBlock>
  
 
-The code above results in a [JavaScript Mountain Chart](https://demo.scichart.com/javascript-mountain-chart) with the following output. XValues > 200 are colored red, and XValues < 200 are the default series colors.
+The code above results in a [JavaScript Mountain Chart](https://scichart.com/demo/javascript-mountain-chart) with the following output. XValues > 200 are colored red, and XValues < 200 are the default series colors.
 
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
 

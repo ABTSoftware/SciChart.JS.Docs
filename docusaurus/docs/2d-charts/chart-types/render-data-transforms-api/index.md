@@ -51,7 +51,7 @@ If your transform changes the yRange of your data and you want this accounted fo
 Worked Example: Splitting Data to Multiple DrawingProviders
 -----------------------------------------------------------
 
-This is a simplified version of the [Multi Style Series](https://demo.scichart.com/react/multi-style-series) demo.  Below is the transform which takes xy data and returns an [xyyPointSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixyypointseries.html) with the unselected points in the yValues and selected points in the y1Values. 
+This is a simplified version of the [Multi Style Series](https://scichart.com/demo/react/multi-style-series) demo.  Below is the transform which takes xy data and returns an [xyyPointSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ixyypointseries.html) with the unselected points in the yValues and selected points in the y1Values. 
 
 <CodeSnippetBlock labels={["TYPEscript"]}>
     ```ts showLineNumbers file=./SimpleSplit/demo.ts start=region_A_start end=region_A_end
@@ -76,7 +76,7 @@ The output looks like this
 Worked Example: Splitting lines for Threshold Coloring
 ------------------------------------------------------
 
-The [Coloring Series per-point using PaletteProvider demo](https://demo.scichart.com/react/chart-color-points-individually-with-paletteprovider) shows a simple way to change the color of line segments if they are above or below a threshold.  However, per point coloring applies to individual line segments.  If you have less data or longer line segments and want the coloring to be split exactly on the threshold, then you need to add points into your data at the intersections.  RenderDataTransforms allow you to do this without affecting the drawing of pointMarkers. 
+The [Coloring Series per-point using PaletteProvider demo](https://scichart.com/demo/react/chart-color-points-individually-with-paletteprovider) shows a simple way to change the color of line segments if they are above or below a threshold.  However, per point coloring applies to individual line segments.  If you have less data or longer line segments and want the coloring to be split exactly on the threshold, then you need to add points into your data at the intersections.  RenderDataTransforms allow you to do this without affecting the drawing of pointMarkers. 
 
 Here is a transform which does this for a set of y thresholds.  The algorithm needs to handle the fact that a line could cross multiple thresholds, and that an intersection could be on an existing point.  Note that we use an ObservableArray for the thresholds so we can set requiresTransform if the thresholds change.
 

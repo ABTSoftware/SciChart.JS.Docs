@@ -7,14 +7,14 @@ sidebar_position: 5
 In SciChart.js v1.3 and above, we have introduced a property to let you style dashed or dotted lines on certain series.
 
 :::tip
-We have an example in our SciChart.js Examples Suite which shows how to do this - the [Dashed Line Chart example](https://demo.scichart.com/javascript-dashed-line-chart).
+We have an example in our SciChart.js Examples Suite which shows how to do this - the [Dashed Line Chart example](https://scichart.com/demo/javascript-dashed-line-chart).
 :::
 
 <CenteredImageWrapper
     src="/images/Styling_DashedLineStylingExampleJavascript.png"
 />
 
-_**Above:**_ [_The Dashed Line Styling example_](https://demo.scichart.com/javascript-dashed-line-chart) _in the SciChart.js demo_
+_**Above:**_ [_The Dashed Line Styling example_](https://scichart.com/demo/javascript-dashed-line-chart) _in the SciChart.js demo_
 
 How to set a Stroke Dash
 ------------------------

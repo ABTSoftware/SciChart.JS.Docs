@@ -52,7 +52,7 @@ There are also specific function calls to [build2DChart:blue_book:](https://www.
 Note that all the elements are optional. This lets you define partial definitions that you can reuse and combine.
 ## Worked Examples of the Builder API
 
-We've created some worked examples of the Builder API on the following pages. Also check out our [Github](https://www.github.com/abtsoftware/scichart.js.examples) and [SciChart demo](https://demo.scichart.com) where we have published some examples of the Builder API.
+We've created some worked examples of the Builder API on the following pages. Also check out our [Github](https://www.github.com/abtsoftware/scichart.js.examples) and [SciChart demo](https://scichart.com/demo) where we have published some examples of the Builder API.
 
 ### Builder API Documentation Pages
 
@@ -63,11 +63,11 @@ We've created some worked examples of the Builder API on the following pages. Al
 
 ### Builder API Examples
 
-*   **Example**: [Simple Chart using Builder API](https://demo.scichart.com/javascript-builder-simple)
-*   **Example**: [Full Chart using Builder API](https://demo.scichart.com/javascript-builder-full)
-*   **Example**: [Chart from JSON](https://demo.scichart.com/javascript-chart-from-json)
-*   **Example**: [Reusable Templates with Shared Data](https://demo.scichart.com/javascript-shared-data)
-*   **Example**: [Custom Subtypes with Builder API](https://demo.scichart.com/javascript-custom-types)
+*   **Example**: [Simple Chart using Builder API](https://scichart.com/demo/javascript-builder-simple)
+*   **Example**: [Full Chart using Builder API](https://scichart.com/demo/javascript-builder-full)
+*   **Example**: [Chart from JSON](https://scichart.com/demo/javascript-chart-from-json)
+*   **Example**: [Reusable Templates with Shared Data](https://scichart.com/demo/javascript-shared-data)
+*   **Example**: [Custom Subtypes with Builder API](https://scichart.com/demo/javascript-custom-types)
 
 ## TypeScript Intellisense
 

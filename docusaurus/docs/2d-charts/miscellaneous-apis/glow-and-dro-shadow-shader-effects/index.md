@@ -34,7 +34,7 @@ sciChartSurface.renderableSeries.add(
 );
 ```
 
-This results in the following (visible in the [Vital Signs monitor](https://demo.scichart.com/javascript-vital-signs-ecg-medical-chart-example) example).
+This results in the following (visible in the [Vital Signs monitor](https://scichart.com/demo/javascript-vital-signs-ecg-medical-chart-example) example).
 
 ![WebGL Shader effects applied to JavaScript Charts to achieve glow and dropshadow](/images/RenderableSeries_GlowEffect_VitalSigns.png)
 

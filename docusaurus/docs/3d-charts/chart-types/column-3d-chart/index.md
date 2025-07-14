@@ -7,10 +7,10 @@ sidebar_position: 5
 JavaScript 3D Column Charts can be created using the [ColumnRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/columnrenderableseries3d.html) type. This chart type draws columns or bars from X,Y,Z data in the 3D world, with a pointmarker denoting the shape of the column. Column 3D Charts can be static or dynamic, and updated in real-time if required.
 
 :::tip
-The [JavaScript / React 3D Column Chart Example](https://demo.scichart.com/react/3d-column-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/)
+The [JavaScript / React 3D Column Chart Example](https://scichart.com/demo/react/3d-column-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/)
 :::
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/3d-column-chart" title="3D Column Chart" description="showing a variety of line options in SciChart.js." />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/3d-column-chart" title="3D Column Chart" description="showing a variety of line options in SciChart.js." />
 
 
 Create a 3D Column Chart

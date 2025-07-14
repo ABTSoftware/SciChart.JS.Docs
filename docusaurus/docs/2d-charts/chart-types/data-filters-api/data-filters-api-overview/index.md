@@ -16,7 +16,7 @@ SciChart comes with a number of filters built-in. The Filters API can be used ea
 
 The Filters API is also extremely configurable and allow you to create custom filters - the possibilities of this API really are endless!
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/trend-ma-ratio" title="Trendline, Moving Average and Ratio Filters example" description="" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/trend-ma-ratio" title="Trendline, Moving Average and Ratio Filters example" description="" />
 
 
 

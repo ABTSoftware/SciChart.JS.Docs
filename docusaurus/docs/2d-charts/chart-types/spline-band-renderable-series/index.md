@@ -7,7 +7,7 @@ sidebar_position: 62
 Spline Band or Smoothed High/Low Fill Series can be created using the [SplineBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinebandrenderableseries.html) type.
 
 :::tip
-The [JavaScript Spline Band Chart Example](https://demo.scichart.com/javascript/spline-band-chart) can be found in the [SciChart.Js Examples Suite > Spline Band Series](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/spline-band-chart)
+The [JavaScript Spline Band Chart Example](https://scichart.com/demo/javascript/spline-band-chart) can be found in the [SciChart.Js Examples Suite > Spline Band Series](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/spline-band-chart)
 :::
 
 <ChartFromSciChartDemo 

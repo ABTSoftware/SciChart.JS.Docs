@@ -7,7 +7,7 @@ sidebar_position: 23
 A Band Series, or High-Low Fill between two lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
-The [JavaScript Band Chart Example](https://demo.scichart.com/javascript-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BandSeriesChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/band-chart).
+The [JavaScript Band Chart Example](https://scichart.com/demo/javascript-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BandSeriesChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/band-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -17,7 +17,7 @@ The [JavaScript Band Chart Example](https://demo.scichart.com/javascript-band-ch
 
 ## Create a Band Series 
 
-To create a [Javascript Band Chart](https://demo.scichart.com/javascript-band-chart) with SciChart.js, use the following code:
+To create a [Javascript Band Chart](https://scichart.com/demo/javascript-band-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts {26-37} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

@@ -13,7 +13,7 @@ Alternatively, you could create your multi-chart control using SubCharts and man
 Creating Re-usable Chart Groups with SubCharts
 ----------------------------------------------
 
-Take the example from the [SciChart Demo - Realtime Audio Analyzer](https://demo.scichart.com/react/audio-analyzer-fft-example). This has three charts arranged in two rows, where the bottom row has two columns. The chart types are Line, Mountain and Heatmap.
+Take the example from the [SciChart Demo - Realtime Audio Analyzer](https://scichart.com/demo/react/audio-analyzer-fft-example). This has three charts arranged in two rows, where the bottom row has two columns. The chart types are Line, Mountain and Heatmap.
 
 ![](img/1.png)
 

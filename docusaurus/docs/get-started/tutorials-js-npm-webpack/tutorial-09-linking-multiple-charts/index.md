@@ -507,12 +507,12 @@ initSciChart();
 Further Reading
 ---------------
 
-[demo.scichart.com](https://demo.scichart.com/react) contains a couple of examples that show chart synchronization techniques.
+[demo.scichart.com](https://scichart.com/demo/react) contains a couple of examples that show chart synchronization techniques.
 
-For instance, take a look at the [Sync Multi Chart demo](https://demo.scichart.com/react/sync-multi-chart) which shows how to dynamically add/remove chart panes to a synchronization group.
+For instance, take a look at the [Sync Multi Chart demo](https://scichart.com/demo/react/sync-multi-chart) which shows how to dynamically add/remove chart panes to a synchronization group.
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/sync-multi-chart" title="Sync Multi Chart" description="" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/sync-multi-chart" title="Sync Multi Chart" description="" />
 
-The [Server Traffic Dashboard](https://demo.scichart.com/react/server-traffic-dashboard) also has complex example of synchronizing zoom and tooltips between charts of different sizes in a more complex layout.
+The [Server Traffic Dashboard](https://scichart.com/demo/react/server-traffic-dashboard) also has complex example of synchronizing zoom and tooltips between charts of different sizes in a more complex layout.
 
-<ChartFromSciChartDemo src="https://demo.scichart.com/iframe/server-traffic-dashboard" title="Server Traffic Dashboard" description="" />
+<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/server-traffic-dashboard" title="Server Traffic Dashboard" description="" />

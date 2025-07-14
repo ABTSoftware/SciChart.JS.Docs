@@ -7,7 +7,7 @@ sidebar_position: 26
 Fan Charts are provided by using multiple [Band Series](/2d-charts/chart-types/fast-band-renderable-series) on the same chart.
 
 :::tip
-The [JavaScript Fan Chart Example](https://demo.scichart.com/javascript-fan-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/)
+The [JavaScript Fan Chart Example](https://scichart.com/demo/javascript-fan-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/)
 :::
 
 <ChartFromSciChartDemo

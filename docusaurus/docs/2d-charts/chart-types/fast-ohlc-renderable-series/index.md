@@ -7,7 +7,7 @@ sidebar_position: 20
 Ohlc Series or JavaScript Stock Charts can be created using the **FastOhlcRenderableSeries** type.
 
 :::tip
-The [JavaScript Ohlc Chart Example](https://demo.scichart.com/javascript/candlestick-chart) can be found in the [SciChart.Js Examples Suite > OHLC Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/OhlcChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/ohlc-chart).
+The [JavaScript Ohlc Chart Example](https://scichart.com/demo/javascript/candlestick-chart) can be found in the [SciChart.Js Examples Suite > OHLC Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/OhlcChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/ohlc-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -18,7 +18,7 @@ The [JavaScript Ohlc Chart Example](https://demo.scichart.com/javascript/candle
 
 ## Create an Ohlc Series
 
-To create a [Javascript Ohlc Chart](https://demo.scichart.com/javascript-ohlc-chart) with SciChart.js, use the following code:
+To create a [Javascript Ohlc Chart](https://scichart.com/demo/javascript-ohlc-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
     ```ts {19-23,26,35-41} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

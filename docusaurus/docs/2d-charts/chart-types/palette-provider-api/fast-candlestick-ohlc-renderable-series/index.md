@@ -35,7 +35,7 @@ The code above results in the following output. 
 
 When the open - close is greater than a 1% range, the candle fill is coloured white.
 
-Using this or similar logic you can add an extra-dimension of data to [JavaScript Candlestick charts](https://demo.scichart.com/javascript-candlestick-chart).
+Using this or similar logic you can add an extra-dimension of data to [JavaScript Candlestick charts](https://scichart.com/demo/javascript-candlestick-chart).
 
 Applying PaletteProviders to OHLC Series
 ----------------------------------------

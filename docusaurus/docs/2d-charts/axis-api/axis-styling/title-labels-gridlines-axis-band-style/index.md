@@ -55,4 +55,4 @@ Finally, when using Axis NativeText for performance reasons, there are other con
 
 #### See Also
 
-* [Styling a JavaScript Chart in code](https://demo.scichart.com/javascript-chart-styling-theming-in-code)
+* [Styling a JavaScript Chart in code](https://scichart.com/demo/javascript-chart-styling-theming-in-code)

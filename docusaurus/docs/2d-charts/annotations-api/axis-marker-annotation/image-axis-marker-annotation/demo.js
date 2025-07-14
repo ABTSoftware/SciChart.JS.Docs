@@ -8,7 +8,7 @@ async function addAnnotationToChart(divElementId) {
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
-    const imageUrl = "https://demo.scichart.com/images/CustomMarkerImage.png";
+    const imageUrl = "https://scichart.com/demo/images/CustomMarkerImage.png";
     const htmlImageElement = await createImageAsync(imageUrl);
     // An AxisMarkerAnnotation at Y=5.2 showing an image
     sciChartSurface.annotations.add(new AxisMarkerAnnotation({

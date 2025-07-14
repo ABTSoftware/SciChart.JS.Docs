@@ -7,7 +7,7 @@ sidebar_position: 10
 Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
 
 :::tip
-The [JavaScript Line Chart Example](https://demo.scichart.com/javascript/line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [demo.scichart.com](https://demo.scichart.com/javascript/line-chart).
+The [JavaScript Line Chart Example](https://scichart.com/demo/javascript/line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/line-chart).
 :::
 
 <ChartFromSciChartDemo 
@@ -17,7 +17,7 @@ The [JavaScript Line Chart Example](https://demo.scichart.com/javascript/line-c
 
 ## Create a Line Series
 
-To create a [Javascript Line Chart](https://demo.scichart.com/javascript-line-chart) with SciChart.js, use the following code:
+To create a [Javascript Line Chart](https://scichart.com/demo/javascript-line-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
 ```ts {27-34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
