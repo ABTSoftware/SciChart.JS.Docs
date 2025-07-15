@@ -1,6 +1,159 @@
-import { PolarColumnRenderableSeries, PolarNumericAxis, SciChartPolarSurface, EPolarAxisMode, NumberRange, EAxisAlignment, EPolarLabelMode, PolarDataPointSelectionModifier, EColumnMode, XyxDataSeries, EMultiLineAlignment, EColumnDataLabelPosition, EDataPointWidthMode, GenericAnimation, easing, DoubleAnimator, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme, } from "scichart";
-import { sunburstData } from "./data";
-export class SunburstMetadata {
+import { PolarColumnRenderableSeries, PolarNumericAxis, SciChartPolarSurface, EPolarAxisMode, NumberRange, EAxisAlignment, EPolarLabelMode, PolarDataPointSelectionModifier, EColumnMode, XyxDataSeries, EMultiLineAlignment, EColumnDataLabelPosition, EDataPointWidthMode, GenericAnimation, easing, DoubleAnimator, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme } from "scichart";
+// #region_types_end
+// #region_data_start
+const sunburstData = {
+    name: "TechCorp",
+    value: 457,
+    backgroundColor: "#FFFFFF",
+    children: [
+        {
+            name: "Engineering",
+            value: 180,
+            backgroundColor: "#1f5ee8",
+            children: [
+                {
+                    name: "Frontend",
+                    value: 65,
+                    backgroundColor: "#60a5fa",
+                    children: [
+                        {
+                            name: "React",
+                            value: 35,
+                            backgroundColor: "#93c5fd"
+                        },
+                        {
+                            name: "Mobile",
+                            value: 30,
+                            backgroundColor: "#bfdbfe"
+                        }
+                    ]
+                },
+                {
+                    name: "Backend",
+                    value: 85,
+                    backgroundColor: "#2f6cf8",
+                    children: [
+                        {
+                            name: "API Services",
+                            value: 45,
+                            backgroundColor: "#60a5fa"
+                        },
+                        {
+                            name: "Infra",
+                            value: 40,
+                            backgroundColor: "#93c5fd"
+                        }
+                    ]
+                },
+                {
+                    name: "DevOps",
+                    value: 30,
+                    backgroundColor: "#fb5c66"
+                }
+            ]
+        },
+        {
+            name: "Product",
+            value: 95,
+            backgroundColor: "#059669",
+            children: [
+                {
+                    name: "Management",
+                    value: 40,
+                    backgroundColor: "#10b981"
+                },
+                {
+                    name: "UX Design",
+                    value: 35,
+                    backgroundColor: "#34d399",
+                    children: [
+                        {
+                            name: "Research",
+                            value: 20,
+                            backgroundColor: "#a7f3d0"
+                        },
+                        {
+                            name: "UI",
+                            value: 15,
+                            backgroundColor: "#d1fae5"
+                        }
+                    ]
+                },
+                {
+                    name: "QA",
+                    value: 20,
+                    backgroundColor: "#6ee7b7"
+                }
+            ]
+        },
+        {
+            name: "Sales & Marketing",
+            value: 120,
+            backgroundColor: "#f59e0b",
+            children: [
+                {
+                    name: "Sales",
+                    value: 70,
+                    backgroundColor: "#fbbf24",
+                    children: [
+                        {
+                            name: "Enterprise",
+                            value: 45,
+                            backgroundColor: "#fcd34d"
+                        },
+                        {
+                            name: "SMB",
+                            value: 25,
+                            backgroundColor: "#fde68a"
+                        }
+                    ]
+                },
+                {
+                    name: "Marketing",
+                    value: 50,
+                    backgroundColor: "#d97706",
+                    children: [
+                        {
+                            name: "Digital",
+                            value: 30,
+                            backgroundColor: "#f97316"
+                        },
+                        {
+                            name: "Content",
+                            value: 20,
+                            backgroundColor: "#fb923c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Operations",
+            value: 62,
+            backgroundColor: "rgba(139, 92, 246, 1)",
+            children: [
+                {
+                    name: "Finance",
+                    value: 25,
+                    backgroundColor: "rgba(139, 92, 246, 0.8)"
+                },
+                {
+                    name: "HR",
+                    value: 20,
+                    backgroundColor: "rgba(139, 92, 246, 0.6)"
+                },
+                {
+                    name: "Legal",
+                    value: 17,
+                    backgroundColor: "rgba(139, 92, 246, 0.4)"
+                }
+            ]
+        }
+    ]
+};
+// #region_data_end
+// #region_metadata_start
+class SunburstMetadata {
     static create(title, start, end, level, id, backgroundColor) {
         const md = new SunburstMetadata();
         md.title = title;
@@ -25,6 +178,8 @@ export class SunburstMetadata {
     }
     constructor() { }
 }
+// #region_metadata_end
+// #region_palette_start
 class SunburstPaletteProvider {
     strokePaletteMode = EStrokePaletteMode.SOLID;
     fillPaletteMode = EFillPaletteMode.SOLID;
@@ -42,6 +197,8 @@ class SunburstPaletteProvider {
         return undefined;
     }
 }
+// #region_palette_end
+// #region_helpers_start
 const getDataByLevelInternal = (curId, curLevel, curElement, startX, res) => {
     if (!res[curLevel]) {
         res.push([]);
@@ -237,7 +394,9 @@ const drawSeriesFn = (wasmContext, xAxis, yAxis, sciChartSurface, polarLabelMode
         subscribeFn();
     }
 };
-export const drawExample = async (rootElement) => {
+// #region_helpers_end
+// #region_main_start
+const drawExample = async (rootElement) => {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(rootElement, {
         theme: new SciChartJsNavyTheme()
     });
@@ -260,7 +419,7 @@ export const drawExample = async (rootElement) => {
         visibleRange: new NumberRange(0, 6),
         flippedCoordinates: false,
         startAngle,
-        totalAngle,
+        totalAngle
     });
     sciChartSurface.yAxes.add(yAxis);
     const dataPointSelectionModifier = new PolarDataPointSelectionModifier({
@@ -273,4 +432,5 @@ export const drawExample = async (rootElement) => {
     sciChartSurface.chartModifiers.add(dataPointSelectionModifier);
     return { sciChartSurface, wasmContext };
 };
+// #region_main_end
 drawExample("scichart-root");
