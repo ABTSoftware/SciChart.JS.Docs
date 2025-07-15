@@ -1,6 +1,6 @@
 import { PolarColumnRenderableSeries, PolarNumericAxis, SciChartPolarSurface, EPolarAxisMode, NumberRange, EAxisAlignment, EPolarLabelMode, PolarDataPointSelectionModifier, EColumnMode, XyxDataSeries, EMultiLineAlignment, EColumnDataLabelPosition, EDataPointWidthMode, GenericAnimation, easing, DoubleAnimator, EFillPaletteMode, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme, } from "scichart";
 import { sunburstData } from "./data";
-class SunburstMetadata {
+export class SunburstMetadata {
     static create(title, start, end, level, id, backgroundColor) {
         const md = new SunburstMetadata();
         md.title = title;

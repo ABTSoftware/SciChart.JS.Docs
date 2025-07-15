@@ -1,4 +1,4 @@
-import { EAxisAlignment, EColor, ECoordinateMode, EllipsePointMarker, EPolarAxisMode, FastLineRenderableSeries, MouseWheelZoomModifier, NumericAxis, PolarLineRenderableSeries, PolarMouseWheelZoomModifier, PolarNumericAxis, PolarZoomExtentsModifier, Rect, SciChartPolarSubSurface, SciChartSubSurface, SciChartSurface, XyDataSeries, ZoomExtentsModifier } from "scichart";
+import { EAxisAlignment, EColor, ESubSurfacePositionCoordinateMode, EllipsePointMarker, EPolarAxisMode, FastLineRenderableSeries, MouseWheelZoomModifier, NumericAxis, PolarLineRenderableSeries, PolarMouseWheelZoomModifier, PolarNumericAxis, PolarZoomExtentsModifier, Rect, SciChartPolarSubSurface, SciChartSubSurface, SciChartSurface, XyDataSeries, ZoomExtentsModifier } from "scichart";
 async function polarAndCartesianSubCharts(divElementId) {
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         title: "Cartesian Root Chart"
@@ -10,7 +10,7 @@ async function polarAndCartesianSubCharts(divElementId) {
     const cartesianSubChartOptions = {
         isTransparent: false,
         id: "subChart-1",
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         position: new Rect(0, 0.5, 0.5, 0.5),
         title: "Sub Chart 1"
     };
@@ -29,7 +29,7 @@ async function polarAndCartesianSubCharts(divElementId) {
     const polarSubChartOptions = {
         isTransparent: false,
         id: "subChart-2",
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         position: new Rect(0.5, 0.5, 0.5, 0.5),
         title: "Sub Chart 2"
     };

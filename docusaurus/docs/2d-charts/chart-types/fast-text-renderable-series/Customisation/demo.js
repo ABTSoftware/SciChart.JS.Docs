@@ -1,8 +1,6 @@
-import * as SciChart from "scichart";
+import { SciChartSurface, NumericAxis, FastTextRenderableSeries, XyTextDataSeries, SciChartJsNavyTheme, NumberRange, EHorizontalTextPosition, EVerticalTextPosition, parseColorToUIntArgb, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier } from "scichart";
 async function customTextChart(divElementId) {
     // Demonstrates how to create a text chart with SciChart.js
-    const { SciChartSurface, NumericAxis, FastTextRenderableSeries, XyTextDataSeries, SciChartJsNavyTheme, NumberRange, EHorizontalTextPosition, EVerticalTextPosition, parseColorToUIntArgb } = SciChart;
-    // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -42,12 +40,13 @@ async function customTextChart(divElementId) {
             return state.color;
         }
     };
-    textSeries.dataLabelProvider.onAfterGenerate = (dataLabels) => {
+    textSeries.dataLabelProvider.onAfterGenerate = dataLabels => {
         for (let i = 0; i < dataLabels.length; i++) {
             const label = dataLabels[i];
             if (i < dataLabels.length - 1) {
                 // Shift this label down if it would overlap the next one
                 if (label.rect.right > dataLabels[i + 1].rect.left) {
+                    // @ts-ignore
                     label.position.y += label.rect.height;
                 }
             }
@@ -57,7 +56,6 @@ async function customTextChart(divElementId) {
     sciChartSurface.renderableSeries.add(textSeries);
     // #region_A_end
     // Optional: add zooming, panning for the example
-    const { MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier } = SciChart;
     sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier(), new ZoomPanModifier(), new ZoomExtentsModifier());
 }
 customTextChart("scichart-root");

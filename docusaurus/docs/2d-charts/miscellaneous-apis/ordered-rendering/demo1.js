@@ -1,5 +1,5 @@
 import * as SciChart from "scichart";
-const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, XyDataSeries, SplineLineRenderableSeries, BoxAnnotation, ZoomPanModifier, MouseWheelZoomModifier, NativeTextAnnotation, ECoordinateMode, Thickness } = SciChart;
+const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, ZoomPanModifier, MouseWheelZoomModifier, NativeTextAnnotation, ECoordinateMode, Thickness } = SciChart;
 async function drawHtmlAnnotationsExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -18,7 +18,6 @@ async function drawHtmlAnnotationsExample(divElementId) {
         fontSize: 32,
         background: "blue",
         text: "textAnnotation1",
-        drawImmediate: true,
         renderOrder: 3
     });
     const textAnnotation2 = new NativeTextAnnotation({
@@ -30,7 +29,6 @@ async function drawHtmlAnnotationsExample(divElementId) {
         isEditable: true,
         fontSize: 32,
         background: "red",
-        drawImmediate: true,
         text: "textAnnotation2"
     });
     sciChartSurface.annotations.add(textAnnotation1, textAnnotation2);

@@ -28,7 +28,7 @@ import {
 import { sunburstData } from "./data";
 import { TElement, TLevelDataEntry, TLevelDataForChart } from "./types";
 
-class SunburstMetadata implements IPointMetadata {
+export class SunburstMetadata implements IPointMetadata {
     public static create(title: string, start: number, end: number, level: number, id: number[], backgroundColor: string) {
         const md = new SunburstMetadata();
         md.title = title;

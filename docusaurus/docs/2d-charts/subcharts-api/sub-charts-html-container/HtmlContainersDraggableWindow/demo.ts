@@ -6,7 +6,7 @@ import {
     XyDataSeries,
     SciChartJsNavyTheme,
     Rect,
-    ECoordinateMode,
+    ESubSurfacePositionCoordinateMode,
     generateGuid,
     I2DSubSurfaceOptions
 } from "scichart";
@@ -128,7 +128,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(0.1, 0.1, 0.4, 0.4),
         isTransparent: false,
         isVisible: true,
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         title: "Draggable Sub-Chart Window"
     });
 

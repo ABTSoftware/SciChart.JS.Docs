@@ -1,3 +1,5 @@
+import { SunburstMetadata } from "./demo";
+
 export type TLevelDataEntry = {
     id: number[];
     start: number;

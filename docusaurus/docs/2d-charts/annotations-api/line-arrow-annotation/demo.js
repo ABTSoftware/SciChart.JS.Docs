@@ -67,7 +67,6 @@ async function drawExample(divElementId) {
         fontSize: 22,
         lineSpacing: 10,
         textColor: "gray",
-        drawImmediate: true,
         renderOrder: 1
     }));
     // need to fix the visible range since annotations alone do not set the visible range depending on their x and y range

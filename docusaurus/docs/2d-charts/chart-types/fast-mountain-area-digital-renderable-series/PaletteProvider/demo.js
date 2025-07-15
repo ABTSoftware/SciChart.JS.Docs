@@ -4,6 +4,9 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 // or, for npm, import { DefaultPaletteProvider, ... } from "scichart"
 // Custom PaletteProvider for line series which colours datapoints above a threshold
 class MountainPaletteProvider extends DefaultPaletteProvider {
+    threshold;
+    stroke;
+    fillColor;
     constructor(threshold) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;

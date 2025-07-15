@@ -38,6 +38,8 @@ const { DefaultPaletteProvider, parseColorToUIntArgb } = SciChart;
 
 // Create a class which inherits DefaultPaletteProvider
 class CandlePaletteProvider extends DefaultPaletteProvider {
+    public highlightColor: number;
+
     constructor() {
         super();
         this.highlightColor = parseColorToUIntArgb("#FEFEFE");

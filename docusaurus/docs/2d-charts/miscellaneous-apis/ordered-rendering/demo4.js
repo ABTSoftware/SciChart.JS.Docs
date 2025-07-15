@@ -1,4 +1,4 @@
-import { buildSubCharts, EAutoRange, EAxisType, ECoordinateMode, ESeriesType, MouseWheelZoomModifier, NumericAxis, SciChartJsNavyTheme, SciChartSubSurface, SciChartSurface, ZoomPanModifier } from "scichart";
+import { buildSubCharts, EAutoRange, EAxisType, ESubSurfacePositionCoordinateMode, ESeriesType, MouseWheelZoomModifier, NumericAxis, SciChartJsNavyTheme, SciChartSubSurface, SciChartSurface, ZoomPanModifier } from "scichart";
 async function drawHtmlAnnotationsExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -17,7 +17,7 @@ async function drawHtmlAnnotationsExample(divElementId) {
             },
             surface: {
                 position: { x: 100, y: 100, width: 200, height: 200 },
-                coordinateMode: ECoordinateMode.Pixel,
+                coordinateMode: ESubSurfacePositionCoordinateMode.Pixel,
                 isTransparent: true
             },
             series: [
@@ -38,7 +38,7 @@ async function drawHtmlAnnotationsExample(divElementId) {
         {
             surface: {
                 position: { x: 150, y: 150, width: 200, height: 200 },
-                coordinateMode: ECoordinateMode.Pixel,
+                coordinateMode: ESubSurfacePositionCoordinateMode.Pixel,
                 isTransparent: true
             },
             series: [

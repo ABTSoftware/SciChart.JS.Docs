@@ -23,6 +23,7 @@ async function simpleSubChart(divElementId) {
         SciChartJsNavyTheme,
         Rect,
         ECoordinateMode,
+        ESubSurfacePositionCoordinateMode,
         ZoomPanModifier,
         ZoomExtentsModifier,
         MouseWheelZoomModifier,
@@ -80,7 +81,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(45, 0.2, 5, 0.2),
         isTransparent: true,
         isVisible: true,
-        coordinateMode: ECoordinateMode.DataValue,
+        coordinateMode: ESubSurfacePositionCoordinateMode.DataValue,
         // However all properties from I2DSurfaceOptions are available
         viewportBorder: { border: 3, color: "#77777777" },
         background: "#333",
@@ -129,8 +130,7 @@ async function builderExample(divElementId) {
         EAxisType,
         EThemeProviderType,
         Rect,
-        ECoordinateMode,
-        EAnnotationType,
+        ESubSurfacePositionCoordinateMode,
         NumberRange,
         EChart2DModifierType
     } = SciChart;
@@ -168,7 +168,7 @@ async function builderExample(divElementId) {
                     position: new Rect(47, -0.2, 10, 0.2),
                     isTransparent: true,
                     isVisible: true,
-                    coordinateMode: ECoordinateMode.DataValue,
+                    coordinateMode: ESubSurfacePositionCoordinateMode.DataValue,
                     // However all properties from I2DSurfaceOptions are available
                     viewportBorder: { border: 3, color: "#77777777" },
                     background: "#333",

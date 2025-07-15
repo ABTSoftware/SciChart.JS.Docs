@@ -9,9 +9,7 @@ const {
     BoxAnnotation,
     ZoomPanModifier,
     MouseWheelZoomModifier,
-    NativeTextAnnotation,
-    ECoordinateMode,
-    Thickness
+    ECoordinateMode
 } = SciChart;
 
 async function drawHtmlAnnotationsExample(divElementId: string | HTMLDivElement) {

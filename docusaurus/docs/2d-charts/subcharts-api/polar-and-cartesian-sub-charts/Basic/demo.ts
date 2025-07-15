@@ -1,7 +1,7 @@
 import {
     EAxisAlignment,
     EColor,
-    ECoordinateMode,
+    ESubSurfacePositionCoordinateMode,
     EllipsePointMarker,
     EPolarAxisMode,
     FastLineRenderableSeries,
@@ -32,7 +32,7 @@ async function polarAndCartesianSubCharts(divElementId: string) {
     const cartesianSubChartOptions: I2DSubSurfaceOptions = {
         isTransparent: false,
         id: "subChart-1",
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         position: new Rect(0, 0.5, 0.5, 0.5),
         title: "Sub Chart 1"
     };
@@ -54,7 +54,7 @@ async function polarAndCartesianSubCharts(divElementId: string) {
     const polarSubChartOptions: I2DSubSurfaceOptions = {
         isTransparent: false,
         id: "subChart-2",
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         position: new Rect(0.5, 0.5, 0.5, 0.5),
         title: "Sub Chart 2"
     };

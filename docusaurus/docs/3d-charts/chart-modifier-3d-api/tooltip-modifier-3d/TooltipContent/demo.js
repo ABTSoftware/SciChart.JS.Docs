@@ -1,5 +1,5 @@
 import { SciChart3DSurface, NumericAxis3D, Vector3, SciChartJsNavyTheme, NumberRange, XyzDataSeries3D, PointLineRenderableSeries3D, TooltipModifier3D, EllipsePointMarker3D, uintArgbColorLerp, parseColorToUIntArgb } from "scichart";
-const generateData = (index) => {
+const generateData = index => {
     const gaussianRandom = (mean, stdev) => {
         const u = 1 - Math.random(); // Converting [0,1) to (0,1]
         const v = Math.random();
@@ -24,7 +24,7 @@ async function tooltips3DCustomisation(divElementId) {
         worldDimensions: new Vector3(300, 200, 300),
         cameraOptions: {
             position: new Vector3(-300, 300, 300),
-            target: new Vector3(0, 50, 0),
+            target: new Vector3(0, 50, 0)
         }
     });
     const growBy = new NumberRange(0.2, 0.2);
@@ -54,7 +54,13 @@ async function tooltips3DCustomisation(divElementId) {
         return { vertexColor: color, customString: `Custom string ${i}` };
     });
     sciChart3DSurface.renderableSeries.add(new PointLineRenderableSeries3D(wasmContext, {
-        dataSeries: new XyzDataSeries3D(wasmContext, { xValues: dataset1.xValues, yValues: dataset1.yValues, zValues: dataset1.zValues, metadata, dataSeriesName: "Series B" }),
+        dataSeries: new XyzDataSeries3D(wasmContext, {
+            xValues: dataset1.xValues,
+            yValues: dataset1.yValues,
+            zValues: dataset1.zValues,
+            metadata,
+            dataSeriesName: "Series B"
+        }),
         opacity: 0.9,
         stroke: "#50C7E0",
         strokeThickness: 3,
@@ -62,7 +68,12 @@ async function tooltips3DCustomisation(divElementId) {
     }));
     const dataset2 = generateData(3);
     sciChart3DSurface.renderableSeries.add(new PointLineRenderableSeries3D(wasmContext, {
-        dataSeries: new XyzDataSeries3D(wasmContext, { xValues: dataset2.xValues, yValues: dataset2.yValues, zValues: dataset2.zValues, dataSeriesName: "Series C" }),
+        dataSeries: new XyzDataSeries3D(wasmContext, {
+            xValues: dataset2.xValues,
+            yValues: dataset2.yValues,
+            zValues: dataset2.zValues,
+            dataSeriesName: "Series C"
+        }),
         opacity: 0.9,
         stroke: "#F48420",
         strokeThickness: 3,
@@ -95,7 +106,6 @@ async function tooltips3DCustomisation(divElementId) {
             valuesWithLabels.push(` ${parentSurface.zAxis.axisTitle}: ${seriesInfo.zValue.toFixed(2)}`);
             // access the metadata (if exists)". Any JS object on the data-points can be accessed
             // in tooltips
-            // @ts-ignore
             const md = seriesInfo.pointMetadata;
             if (md) {
                 valuesWithLabels.push(` Metadata: "${md.customString}"`);
@@ -105,5 +115,4 @@ async function tooltips3DCustomisation(divElementId) {
     };
     // #region_A_end
 }
-;
 tooltips3DCustomisation("scichart-root");

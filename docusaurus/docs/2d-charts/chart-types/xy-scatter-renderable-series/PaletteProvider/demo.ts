@@ -7,7 +7,11 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 
 // Custom PaletteProvider for scatter points which colours datapoints above a threshold
 class ScatterPaletteProvider extends DefaultPaletteProvider {
-    constructor(stroke, fill, rule) {
+    public rule: (y: number) => boolean;
+    public overrideStroke: number;
+    public overrideFill: number;
+
+    constructor(stroke: string, fill: string, rule: (y: number) => boolean) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;
         this.rule = rule;

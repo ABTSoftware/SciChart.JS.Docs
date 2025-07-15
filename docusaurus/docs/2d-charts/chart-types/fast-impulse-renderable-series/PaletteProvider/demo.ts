@@ -7,7 +7,10 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 
 // Custom PaletteProvider for impulse series which colours data-points above a threshold
 class LineAndPointMarkerPaletteProvider extends DefaultPaletteProvider {
-    constructor(stroke, rule) {
+    public rule: (y: number) => boolean;
+    public stroke: number;
+
+    constructor(stroke: string, rule: (y: number) => boolean) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;
         this.rule = rule;

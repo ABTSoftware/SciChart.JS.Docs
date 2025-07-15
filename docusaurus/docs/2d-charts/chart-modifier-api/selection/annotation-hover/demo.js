@@ -1,6 +1,4 @@
-import * as SciChart from "scichart";
-/** @import {BoxAnnotation} from "scichart" */
-const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, BoxAnnotation, ECoordinateMode, AnnotationHoverModifier, EHoverMode } = SciChart;
+import { SciChartSurface, SciChartJsNavyTheme, NumericAxis, BoxAnnotation, ECoordinateMode, AnnotationHoverModifier, EHoverMode, chartBuilder, EChart2DModifierType, EAnnotationType } from "scichart";
 async function annotationHover(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -36,13 +34,15 @@ async function annotationHover(divElementId) {
         notifyPositionUpdate: true,
         onHover: args => {
             const { mouseArgs, includedEntities, hoveredEntities, unhoveredEntities } = args;
-            const hoveredAnnotations = /** @type {BoxAnnotation[]} */ (hoveredEntities);
-            const unhoveredAnnotations = /** @type {BoxAnnotation[]} */ (unhoveredEntities);
-            hoveredAnnotations.forEach(annotation => {
+            const hoveredAnnotations = /** @type {BoxAnnotation[]} */ hoveredEntities;
+            const unhoveredAnnotations = /** @type {BoxAnnotation[]} */ unhoveredEntities;
+            hoveredAnnotations.forEach(a => {
+                const annotation = a;
                 annotation.fill = "#34eb8c";
                 annotation.strokeThickness = 3;
             });
-            unhoveredAnnotations.forEach(annotation => {
+            unhoveredAnnotations.forEach(a => {
+                const annotation = a;
                 annotation.fill = "#3d34eb";
                 annotation.strokeThickness = 1;
             });
@@ -65,7 +65,6 @@ async function annotationHover(divElementId) {
     return { sciChartSurface };
 }
 annotationHover("scichart-root");
-const { chartBuilder, EChart2DModifierType, EAnnotationType } = SciChart;
 async function builderExample(divElementId) {
     // #region_D_start
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
@@ -108,8 +107,8 @@ async function builderExample(divElementId) {
                     notifyPositionUpdate: true,
                     onHover: args => {
                         const { mouseArgs, includedEntities, hoveredEntities, unhoveredEntities } = args;
-                        const hoveredAnnotations = /** @type {BoxAnnotation[]} */ (hoveredEntities);
-                        const unhoveredAnnotations = /** @type {BoxAnnotation[]} */ (unhoveredEntities);
+                        const hoveredAnnotations = hoveredEntities;
+                        const unhoveredAnnotations = unhoveredEntities;
                         hoveredAnnotations.forEach(annotation => {
                             annotation.fill = "#34eb8c";
                             annotation.strokeThickness = 3;
