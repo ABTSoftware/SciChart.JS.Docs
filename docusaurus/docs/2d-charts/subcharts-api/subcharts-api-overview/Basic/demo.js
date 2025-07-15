@@ -12,7 +12,7 @@ for (let i = 0; i < 100; i++) {
 async function simpleSubChart(divElementId) {
     // #region_A_start
     // Demonstrates how to use the Sub-Charts API to create child charts in a parent chart
-    const { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, BoxAnnotation, NumberRange } = SciChart;
+    const { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, ESubSurfacePositionCoordinateMode, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, BoxAnnotation, NumberRange } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     // Function to add series to chart. This will be re-used for the parent and sub-charts
     const addSeries = (sciChartSurface, stroke, x, y) => {
@@ -51,7 +51,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(0.02, 0.02, 0.4, 0.4),
         isTransparent: false,
         isVisible: true,
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         // However all properties from I2DSurfaceOptions are available
         viewportBorder: { border: 3, color: "#77777777" },
         background: "#333",
@@ -136,7 +136,7 @@ async function builderExample(divElementId) {
                     position: new Rect(0.02, 0.02, 0.4, 0.4),
                     isTransparent: false,
                     isVisible: true,
-                    coordinateMode: ECoordinateMode.Relative,
+                    coordinateMode: SciChart.ESubSurfacePositionCoordinateMode.Relative,
                     // However all properties from I2DSurfaceOptions are available
                     viewportBorder: { border: 3, color: "#77777777" },
                     background: "#333",

@@ -1,6 +1,4 @@
-import * as SciChart from "scichart";
-/** @import {BoxAnnotation} from "scichart" */
-const { ECoordinateMode, TextAnnotation, BoxAnnotation, EHoverMode, NumericAxis, SciChartJsNavyTheme, SciChartSurface, AnnotationHoverModifier } = SciChart;
+import { ECoordinateMode, TextAnnotation, BoxAnnotation, EHoverMode, NumericAxis, SciChartJsNavyTheme, SciChartSurface, AnnotationHoverModifier } from "scichart";
 async function annotationHoverTargets(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -59,7 +57,7 @@ async function annotationHoverTargets(divElementId) {
     annotationHoverModifier.hoverChanged.subscribe(args => {
         const { includedEntities } = args;
         // annotations returned by the targetsSelector
-        const includedAnnotations = /** @type {BoxAnnotation[]} */ (includedEntities);
+        const includedAnnotations = includedEntities;
         includedAnnotations.forEach((annotation, index) => {
             if (annotation.isHovered) {
                 annotation.stroke = "#87ceeb";

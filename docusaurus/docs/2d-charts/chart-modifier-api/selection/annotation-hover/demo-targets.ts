@@ -1,8 +1,4 @@
-import * as SciChart from "scichart";
-
-/** @import {BoxAnnotation} from "scichart" */
-
-const {
+import {
     ECoordinateMode,
     TextAnnotation,
     BoxAnnotation,
@@ -11,7 +7,7 @@ const {
     SciChartJsNavyTheme,
     SciChartSurface,
     AnnotationHoverModifier
-} = SciChart;
+} from "scichart";
 
 async function annotationHoverTargets(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -81,7 +77,7 @@ async function annotationHoverTargets(divElementId) {
         const { includedEntities } = args;
 
         // annotations returned by the targetsSelector
-        const includedAnnotations = /** @type {BoxAnnotation[]} */ (includedEntities);
+        const includedAnnotations = includedEntities as BoxAnnotation[];
 
         includedAnnotations.forEach((annotation, index) => {
             if (annotation.isHovered) {

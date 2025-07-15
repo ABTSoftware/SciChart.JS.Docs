@@ -7,7 +7,11 @@ const { DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb } = Sci
 
 // Custom PaletteProvider for line series which colours datapoints above a threshold
 class MountainPaletteProvider extends DefaultPaletteProvider {
-    constructor(threshold) {
+    public threshold: number;
+    public stroke: number;
+    public fillColor: number;
+
+    constructor(threshold: number) {
         super();
         this.strokePaletteMode = EStrokePaletteMode.SOLID;
         this.threshold = threshold;

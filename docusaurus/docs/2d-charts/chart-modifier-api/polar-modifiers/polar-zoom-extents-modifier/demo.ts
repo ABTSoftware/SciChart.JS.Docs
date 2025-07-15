@@ -31,14 +31,14 @@ export async function PolarZoomExtents(divElementId) {
             drawMajorTickLines: false,
             drawMinorTickLines: false,
             autoTicks: false,
-            majorDelta: 1,
+            majorDelta: 1
         })
     );
     sciChartSurface.yAxes.add(
         new PolarNumericAxis(wasmContext, {
             polarAxisMode: EPolarAxisMode.Angular,
             axisAlignment: EAxisAlignment.Bottom,
-            startAngleDegrees: 90,
+            startAngleDegrees: 90
         })
     );
 
@@ -93,7 +93,7 @@ export async function PolarZoomExtents(divElementId) {
         new PolarZoomExtentsModifier({
             centerPoint: new Point(0, 0),
             animationDuration: 1000,
-            innerRadius: 0.2,
+            innerRadius: 0.2
         })
     );
     // #region_A_end
@@ -101,7 +101,7 @@ export async function PolarZoomExtents(divElementId) {
     sciChartSurface.chartModifiers.add(
         // needed to be able to change pan level & see effect of zoom extents
         new PolarPanModifier(),
-        new PolarMouseWheelZoomModifier(),
+        new PolarMouseWheelZoomModifier()
     );
 }
 
@@ -110,12 +110,12 @@ PolarZoomExtents("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarZoomExtentsModifier in SciChart.js using the Builder API
-    const { 
-        chartBuilder, 
-        EAxisAlignment, 
-        EThemeProviderType, 
-        EAxisType, 
-        EChart2DModifierType, 
+    const {
+        chartBuilder,
+        EAxisAlignment,
+        EThemeProviderType,
+        EAxisType,
+        EChart2DModifierType,
         EPolarAxisMode,
         Point,
         ESeriesType
@@ -126,7 +126,7 @@ async function builderExample(divElementId) {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {
-                type: EAxisType.NumericAxis,
+                type: EAxisType.PolarNumericAxis,
                 options: {
                     polarAxisMode: EPolarAxisMode.Radial,
                     axisAlignment: EAxisAlignment.Left,
@@ -137,7 +137,7 @@ async function builderExample(divElementId) {
         ],
         yAxes: [
             {
-                type: EAxisType.NumericAxis,
+                type: EAxisType.PolarNumericAxis,
                 options: {
                     polarAxisMode: EPolarAxisMode.Angular,
                     axisAlignment: EAxisAlignment.Bottom,
@@ -150,7 +150,7 @@ async function builderExample(divElementId) {
             options: {
                 stroke: "#50C7E0",
                 fill: "#50C7E044",
-                strokeThickness: 2,
+                strokeThickness: 2
             },
             xyData: {
                 xValues: Array.from({ length: 5 }, (_, i) => i),

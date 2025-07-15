@@ -65,11 +65,17 @@ export const sunburstData: TElement = {
 
 The code is a bit complex, here is the whole bit in case you want to try this yourself:
 
-<CodeSnippetBlock labels={["demo.ts", "data.ts", "types.ts"]}>
-```ts showLineNumbers file=./Basic/demo.ts
+<CodeSnippetBlock labels={["main", "SunburstMetadata", "PaletteProvider", "helpers", "data", "types"]}>
+```ts showLineNumbers file=./Basic/demo.ts start=region_main_start end=region_main_end
 ```
-```ts showLineNumbers file=./Basic/data.ts
+```ts showLineNumbers file=./Basic/demo.ts start=region_metadata_start end=region_metadata_end
 ```
-```ts showLineNumbers file=./Basic/types.ts
+```ts showLineNumbers file=./Basic/demo.ts start=region_palette_start end=region_palette_end
+```
+```ts showLineNumbers file=./Basic/demo.ts start=region_helpers_start end=region_helpers_end
+```
+```ts showLineNumbers file=./Basic/demo.ts start=region_data_start end=region_data_end
+```
+```ts showLineNumbers file=./Basic/demo.ts start=region_types_start end=region_types_end
 ```
 </CodeSnippetBlock>

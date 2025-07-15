@@ -1,4 +1,4 @@
-import { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, generateGuid } from "scichart";
+import { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ESubSurfacePositionCoordinateMode, generateGuid } from "scichart";
 const xValues = [];
 const yValues = [];
 for (let i = 0; i < 100; i++) {
@@ -94,7 +94,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(0.1, 0.1, 0.4, 0.4),
         isTransparent: false,
         isVisible: true,
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         title: "Draggable Sub-Chart Window"
     });
     // Add x,y axis to the subchart

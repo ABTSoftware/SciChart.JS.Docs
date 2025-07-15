@@ -92,7 +92,6 @@ async function drawExample(divElementId) {
             fontSize: 22,
             lineSpacing: 10,
             textColor: "gray",
-            drawImmediate: true,
             renderOrder: 1
         }),
     )

@@ -77,6 +77,6 @@ export async function datapointSelectionExample2() {
         allowDragSelect: true
     }));
 
-    sciChartSurface.chartModifiers.get(0).selectionFill = "Red";
-    sciChartSurface.chartModifiers.get(0).selectionStroke = "Blue";
+    (sciChartSurface.chartModifiers.get(0) as DataPointSelectionModifier).selectionFill = "Red";
+    (sciChartSurface.chartModifiers.get(0) as DataPointSelectionModifier).selectionStroke = "Blue";
 }

@@ -12,7 +12,7 @@ for (let i = 0; i < 100; i++) {
 async function simpleSubChart(divElementId) {
     // #region_A_start
     // Demonstrates how to use the Sub-Charts API to create child charts in a parent chart
-    const { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, EXyDirection, NumberRange, EAxisAlignment, GenericAnimation } = SciChart;
+    const { SciChartSurface, SciChartSubSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, Rect, ECoordinateMode, ESubSurfacePositionCoordinateMode, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, NumberRange } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     // Function to add series to chart. This will be re-used for the parent and sub-charts
     const addSeries = (sciChartSurface, stroke, x, y) => {
@@ -51,7 +51,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(0.1, 0.1, 0.1, 0.2),
         isTransparent: true,
         isVisible: true,
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         // However all properties from I2DSurfaceOptions are available
         viewportBorder: { border: 3, color: "#77777777" },
         background: "#333",
@@ -85,7 +85,7 @@ simpleSubChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EAxisType, EThemeProviderType, Rect, ECoordinateMode, EAxisAlignment, NumberRange, EChart2DModifierType } = SciChart;
+    const { chartBuilder, ESeriesType, EAxisType, EThemeProviderType, Rect, ESubSurfacePositionCoordinateMode, EChart2DModifierType } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
@@ -118,7 +118,7 @@ async function builderExample(divElementId) {
                     position: new Rect(0.1, 0.11, 0.1, 0.2),
                     isTransparent: true,
                     isVisible: true,
-                    coordinateMode: ECoordinateMode.Relative,
+                    coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
                     // However all properties from I2DSurfaceOptions are available
                     viewportBorder: { border: 3, color: "#77777777" },
                     background: "#333",

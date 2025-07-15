@@ -2,9 +2,9 @@ import {
     PolarColumnRenderableSeries,
     PolarNumericAxis,
     SciChartPolarSurface,
-    EPolarAxisMode, 
-    NumberRange, 
-    EAxisAlignment, 
+    EPolarAxisMode,
+    NumberRange,
+    EAxisAlignment,
     EPolarLabelMode,
     PolarDataPointSelectionModifier,
     TSciChart,
@@ -16,20 +16,201 @@ import {
     GenericAnimation,
     easing,
     DoubleAnimator,
-    IRenderableSeries, 
+    IRenderableSeries,
     EFillPaletteMode,
     EStrokePaletteMode,
     IFillPaletteProvider,
     IStrokePaletteProvider,
-    IPointMetadata, 
+    IPointMetadata,
     parseColorToUIntArgb,
-    SciChartJsNavyTheme,
+    SciChartJsNavyTheme
 } from "scichart";
-import { sunburstData } from "./data";
-import { TElement, TLevelDataEntry, TLevelDataForChart } from "./types";
 
+// #region_types_start
+type TLevelDataEntry = {
+    id: number[];
+    start: number;
+    end: number;
+    name: string;
+    backgroundColor: string;
+};
+
+type TElement = {
+    name: string;
+    value: number;
+    backgroundColor: string;
+    children?: TElement[];
+};
+
+type TLevelDataForChart = {
+    data: number[][];
+    metadata: SunburstMetadata[];
+};
+// #region_types_end
+
+// #region_data_start
+const sunburstData: TElement = {
+    name: "TechCorp",
+    value: 457,
+    backgroundColor: "#FFFFFF",
+    children: [
+        {
+            name: "Engineering",
+            value: 180,
+            backgroundColor: "#1f5ee8",
+            children: [
+                {
+                    name: "Frontend",
+                    value: 65,
+                    backgroundColor: "#60a5fa",
+                    children: [
+                        {
+                            name: "React",
+                            value: 35,
+                            backgroundColor: "#93c5fd"
+                        },
+                        {
+                            name: "Mobile",
+                            value: 30,
+                            backgroundColor: "#bfdbfe"
+                        }
+                    ]
+                },
+                {
+                    name: "Backend",
+                    value: 85,
+                    backgroundColor: "#2f6cf8",
+                    children: [
+                        {
+                            name: "API Services",
+                            value: 45,
+                            backgroundColor: "#60a5fa"
+                        },
+                        {
+                            name: "Infra",
+                            value: 40,
+                            backgroundColor: "#93c5fd"
+                        }
+                    ]
+                },
+                {
+                    name: "DevOps",
+                    value: 30,
+                    backgroundColor: "#fb5c66"
+                }
+            ]
+        },
+        {
+            name: "Product",
+            value: 95,
+            backgroundColor: "#059669",
+            children: [
+                {
+                    name: "Management",
+                    value: 40,
+                    backgroundColor: "#10b981"
+                },
+                {
+                    name: "UX Design",
+                    value: 35,
+                    backgroundColor: "#34d399",
+                    children: [
+                        {
+                            name: "Research",
+                            value: 20,
+                            backgroundColor: "#a7f3d0"
+                        },
+                        {
+                            name: "UI",
+                            value: 15,
+                            backgroundColor: "#d1fae5"
+                        }
+                    ]
+                },
+                {
+                    name: "QA",
+                    value: 20,
+                    backgroundColor: "#6ee7b7"
+                }
+            ]
+        },
+        {
+            name: "Sales & Marketing",
+            value: 120,
+            backgroundColor: "#f59e0b",
+            children: [
+                {
+                    name: "Sales",
+                    value: 70,
+                    backgroundColor: "#fbbf24",
+                    children: [
+                        {
+                            name: "Enterprise",
+                            value: 45,
+                            backgroundColor: "#fcd34d"
+                        },
+                        {
+                            name: "SMB",
+                            value: 25,
+                            backgroundColor: "#fde68a"
+                        }
+                    ]
+                },
+                {
+                    name: "Marketing",
+                    value: 50,
+                    backgroundColor: "#d97706",
+                    children: [
+                        {
+                            name: "Digital",
+                            value: 30,
+                            backgroundColor: "#f97316"
+                        },
+                        {
+                            name: "Content",
+                            value: 20,
+                            backgroundColor: "#fb923c"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            name: "Operations",
+            value: 62,
+            backgroundColor: "rgba(139, 92, 246, 1)",
+            children: [
+                {
+                    name: "Finance",
+                    value: 25,
+                    backgroundColor: "rgba(139, 92, 246, 0.8)"
+                },
+                {
+                    name: "HR",
+                    value: 20,
+                    backgroundColor: "rgba(139, 92, 246, 0.6)"
+                },
+                {
+                    name: "Legal",
+                    value: 17,
+                    backgroundColor: "rgba(139, 92, 246, 0.4)"
+                }
+            ]
+        }
+    ]
+};
+// #region_data_end
+
+// #region_metadata_start
 class SunburstMetadata implements IPointMetadata {
-    public static create(title: string, start: number, end: number, level: number, id: number[], backgroundColor: string) {
+    public static create(
+        title: string,
+        start: number,
+        end: number,
+        level: number,
+        id: number[],
+        backgroundColor: string
+    ) {
         const md = new SunburstMetadata();
         md.title = title;
         md.start = start;
@@ -56,7 +237,9 @@ class SunburstMetadata implements IPointMetadata {
 
     private constructor() {}
 }
+// #region_metadata_end
 
+// #region_palette_start
 class SunburstPaletteProvider implements IStrokePaletteProvider, IFillPaletteProvider {
     public readonly strokePaletteMode = EStrokePaletteMode.SOLID;
     public readonly fillPaletteMode = EFillPaletteMode.SOLID;
@@ -89,7 +272,9 @@ class SunburstPaletteProvider implements IStrokePaletteProvider, IFillPalettePro
         return undefined;
     }
 }
+// #region_palette_end
 
+// #region_helpers_start
 const getDataByLevelInternal = (
     curId: number[],
     curLevel: number,
@@ -170,7 +355,7 @@ const drawSeriesFn = (
     selectedElStartX: number,
     prevNodeId: number[]
 ) => {
-    const startAngleDefault = - Math.PI / 2;
+    const startAngleDefault = -Math.PI / 2;
 
     const clearSeriesFn = () => {
         dataPointSelectionModifier.selectionChanged.unsubscribeAll();
@@ -324,8 +509,10 @@ const drawSeriesFn = (
         subscribeFn();
     }
 };
+// #region_helpers_end
 
-export const drawExample = async (rootElement: string | HTMLDivElement) => {
+// #region_main_start
+const drawExample = async (rootElement: string | HTMLDivElement) => {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(rootElement, {
         theme: new SciChartJsNavyTheme()
     });
@@ -351,10 +538,9 @@ export const drawExample = async (rootElement: string | HTMLDivElement) => {
         visibleRange: new NumberRange(0, 6),
         flippedCoordinates: false,
         startAngle,
-        totalAngle,
+        totalAngle
     });
     sciChartSurface.yAxes.add(yAxis);
-
 
     const dataPointSelectionModifier = new PolarDataPointSelectionModifier({
         allowClickSelect: true,
@@ -364,22 +550,22 @@ export const drawExample = async (rootElement: string | HTMLDivElement) => {
     });
 
     drawSeriesFn(
-        wasmContext, 
-        xAxis, 
-        yAxis, 
-        sciChartSurface, 
-        EPolarLabelMode.Parallel, 
-        dataPointSelectionModifier, 
-        [0], 
-        0, 
+        wasmContext,
+        xAxis,
+        yAxis,
+        sciChartSurface,
+        EPolarLabelMode.Parallel,
+        dataPointSelectionModifier,
+        [0],
+        0,
         [0]
     );
 
-    sciChartSurface.chartModifiers.add(
-        dataPointSelectionModifier
-    );
+    sciChartSurface.chartModifiers.add(dataPointSelectionModifier);
 
     return { sciChartSurface, wasmContext };
 };
+
+// #region_main_end
 
 drawExample("scichart-root");

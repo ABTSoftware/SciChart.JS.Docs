@@ -17,12 +17,7 @@ async function simpleSubChart(divElementId) {
         XyDataSeries,
         SciChartJsNavyTheme,
         Rect,
-        ECoordinateMode,
-        ZoomPanModifier,
-        ZoomExtentsModifier,
-        MouseWheelZoomModifier,
-        BoxAnnotation,
-        NumberRange
+        ESubSurfacePositionCoordinateMode
     } = SciChart;
 
     // or, for npm, import { SciChartSurface, ... } from "scichart"
@@ -42,7 +37,7 @@ async function simpleSubChart(divElementId) {
         position: new Rect(0.1, 0.1, 0.6, 0.4),
         isTransparent: false,
         isVisible: true,
-        coordinateMode: ECoordinateMode.Relative,
+        coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
         title: "SubChart with HTML Elements",
         titleStyle: { fontSize: 16, color: "#eeeeee77" },
         // Specify the subChartContainer for extra HTML elements
@@ -79,7 +74,7 @@ simpleSubChart("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EAxisType, EThemeProviderType, Rect, ECoordinateMode } = SciChart;
+    const { chartBuilder, ESeriesType, EAxisType, EThemeProviderType, Rect, ESubSurfacePositionCoordinateMode } = SciChart;
 
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
@@ -96,7 +91,7 @@ async function builderExample(divElementId) {
                     position: new Rect(0.1, 0.1, 0.6, 0.4),
                     isTransparent: false,
                     isVisible: true,
-                    coordinateMode: ECoordinateMode.Relative,
+                    coordinateMode: ESubSurfacePositionCoordinateMode.Relative,
                     title: "SubChart with HTML Elements",
                     titleStyle: { fontSize: 16, color: "#eeeeee77" },
                     // Specify the subChartContainer for extra HTML elements

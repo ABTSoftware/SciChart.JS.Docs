@@ -1,5 +1,5 @@
 import * as SciChart from "scichart";
-const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, XyDataSeries, SplineLineRenderableSeries, BoxAnnotation, ZoomPanModifier, MouseWheelZoomModifier, NativeTextAnnotation, ECoordinateMode, Thickness } = SciChart;
+const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, XyDataSeries, SplineLineRenderableSeries, BoxAnnotation, ZoomPanModifier, MouseWheelZoomModifier, ECoordinateMode } = SciChart;
 async function drawHtmlAnnotationsExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()

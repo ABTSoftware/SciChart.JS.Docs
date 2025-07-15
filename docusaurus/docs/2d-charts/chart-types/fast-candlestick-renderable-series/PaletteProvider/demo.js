@@ -36,6 +36,7 @@ const getCandles = async (symbol, interval, limit = 300) => {
 const { DefaultPaletteProvider, parseColorToUIntArgb } = SciChart;
 // Create a class which inherits DefaultPaletteProvider
 class CandlePaletteProvider extends DefaultPaletteProvider {
+    highlightColor;
     constructor() {
         super();
         this.highlightColor = parseColorToUIntArgb("#FEFEFE");

@@ -3,16 +3,15 @@ import {
     EAutoRange,
     EAxisType,
     ECoordinateMode,
+    ESubSurfacePositionCoordinateMode,
     ESeriesType,
     ISubChartDefinition,
     MouseWheelZoomModifier,
-    NativeTextAnnotation,
     NumericAxis,
     SciChartJsNavyTheme,
     SciChartSubSurface,
     SciChartSurface,
     SplineMountainRenderableSeries,
-    Thickness,
     ZoomPanModifier
 } from "scichart";
 
@@ -38,7 +37,7 @@ async function drawHtmlAnnotationsExample(divElementId: string | HTMLDivElement)
                 },
                 surface: {
                     position: { x: 100, y: 100, width: 200, height: 200 },
-                    coordinateMode: ECoordinateMode.Pixel,
+                    coordinateMode: ESubSurfacePositionCoordinateMode.Pixel,
                     isTransparent: true
                 },
                 series: [
@@ -59,7 +58,7 @@ async function drawHtmlAnnotationsExample(divElementId: string | HTMLDivElement)
             {
                 surface: {
                     position: { x: 150, y: 150, width: 200, height: 200 },
-                    coordinateMode: ECoordinateMode.Pixel,
+                    coordinateMode: ESubSurfacePositionCoordinateMode.Pixel,
                     isTransparent: true
                 },
                 series: [

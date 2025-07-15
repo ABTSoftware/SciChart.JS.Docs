@@ -1,18 +1,15 @@
-import * as SciChart from "scichart";
-
-/**@import {NativeTextAnnotation} from "scichart" */
-
-// #region_A_start
-const {
+import {
     SciChartSurface,
     NumericAxis,
-    NumberRange,
     EWrapTo,
     NativeTextAnnotation,
     GenericAnimation,
-    SciChartJsNavyTheme
-} = SciChart;
-// or for npm import { SciChartSurface, ... } from "scichart"
+    SciChartJsNavyTheme,
+    chartBuilder,
+    EAnnotationType
+} from "scichart";
+
+// #region_A_start
 
 async function addAnnotationToChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -107,9 +104,6 @@ addAnnotationToChart("scichart-root");
 // #region_A_end
 
 async function builderExample(divElementId) {
-    const { chartBuilder, EAnnotationType } = SciChart;
-    // or for npm import { SciChartSurface, ... } from "scichart"
-
     // #region_B_start
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         annotations: [
@@ -179,9 +173,8 @@ async function builderExample(divElementId) {
     console.log("Native font was loaded? " + result);
 
     // Scaling the last NativeTextAnnotation
-    const scaleAnnotation = /** @type {NativeTextAnnotation} */ (
-        sciChartSurface.annotations.getById("scaleAnnotation")
-    );
+    const scaleAnnotation = sciChartSurface.annotations.getById("scaleAnnotation") as NativeTextAnnotation;
+
     const scaleAnimation = new GenericAnimation({
         from: 0,
         to: 1,

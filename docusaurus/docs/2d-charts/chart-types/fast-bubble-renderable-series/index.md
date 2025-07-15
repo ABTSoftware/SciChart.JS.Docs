@@ -7,11 +7,11 @@ sidebar_position: 25
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
-The [JavaScript Bubble Chart Example](https://scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/bubble-chart).
+The [JavaScript Bubble Chart Example](https://scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/bubble-chart).
 :::
 
 <ChartFromSciChartDemo
-    src="http://demo.scichart.com/iframe/bubble-chart"
+    src="https://scichart.com/demo/iframe/bubble-chart"
     title="Bubble Series Chart"
 />
 

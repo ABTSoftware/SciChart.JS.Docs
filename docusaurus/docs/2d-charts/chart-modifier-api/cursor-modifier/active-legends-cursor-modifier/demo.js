@@ -1,4 +1,4 @@
-import * as SciChart from "scichart";
+import { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, EDataSeriesType, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, parseColorToTArgb, FastLineRenderableSeries, XyMovingAverageFilter } from "scichart";
 // Helper class to fetch candlestick data from Binance via Rest API
 const getCandles = async (symbol, interval, limit = 300) => {
     let url = `https://api.binance.com/api/v3/klines?symbol=${symbol}&interval=${interval}`;
@@ -35,7 +35,6 @@ const getCandles = async (symbol, interval, limit = 300) => {
 };
 async function cursorModifierActiveLegendsOnCandles(divElementId) {
     // #region_B_start
-    const { SciChartSurface, CategoryAxis, NumericAxis, FastCandlestickRenderableSeries, OhlcDataSeries, SciChartJsNavyTheme, MouseWheelZoomModifier, ZoomPanModifier, ZoomExtentsModifier, EDataSeriesType, FastColumnRenderableSeries, CursorModifier, NumberRange, XyDataSeries, parseColorToTArgb, FastLineRenderableSeries, XyMovingAverageFilter, } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -99,7 +98,8 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
         tooltipLegendOffsetX: 5,
         tooltipLegendOffsetY: 5,
         // Callback to format the legend
-        tooltipLegendTemplate: (seriesInfos, svgAnnotation) => {
+        tooltipLegendTemplate: (si, svgAnnotation) => {
+            const seriesInfos = si;
             let outputSvgString = "";
             // Foreach series there will be a seriesInfo supplied by SciChart. This contains info about the series under the mouse
             seriesInfos.forEach((seriesInfo, index) => {

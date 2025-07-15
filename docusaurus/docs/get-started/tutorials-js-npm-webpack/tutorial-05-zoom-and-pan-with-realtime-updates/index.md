@@ -202,7 +202,7 @@ Now run the application again, left click the chart and move the mouse. As a r
 Further Examples - the Realtime Ticking Stock Chart demo
 --------------------------------------------------------
 
-In the [SciChart.js Examples Suite - viewable at demo.scichart.com](https://scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://scichart.com/demo/react/realtime-ticking-stock-charts).
+In the [SciChart.js Examples Suite - viewable at scichart.com/demo](https://scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://scichart.com/demo/react/realtime-ticking-stock-charts).
 
 <ChartFromSciChartDemo src="https://scichart.com/demo/iframe/realtime-ticking-stock-charts" title="Realtime Ticking Stock Charts" description="showing how to combine zooming, panning with a realtime updated chart." />
 

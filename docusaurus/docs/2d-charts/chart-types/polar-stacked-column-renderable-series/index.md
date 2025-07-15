@@ -5,7 +5,7 @@ sidebar_position: 100
 # The Polar Stacked Column Chart Type
 
 :::tip
-The [JavaScript Polar Stacked Column Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-stacked-column-chart) can be found in the [SciChart.Js Examples Suite > Polar Windrose Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarWindroseColumnChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-windrose-column-chart).
+The [JavaScript Polar Stacked Column Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-stacked-column-chart) can be found in the [SciChart.Js Examples Suite > Polar Windrose Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarWindroseColumnChart) on Github, or our live demo at [scichart.com/demo](http://stagingdemo2.scichart.com/demo/react/polar-windrose-column-chart).
 :::
 
 <ChartFromSciChartDemo 

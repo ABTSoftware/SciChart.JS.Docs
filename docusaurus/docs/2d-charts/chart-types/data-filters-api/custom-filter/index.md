@@ -155,7 +155,7 @@ For example:
 
 You can find an example of an Advanced Custom Filter in the [SciChart.js Examples Suite](/get-started/scichart-js-examples-suite).
 
-Please see the [Realtime Aggregation using Advanced Custom Filter Example](http://demo.scichart.com/javascript-custom-filters) for more details.
+Please see the [Realtime Aggregation using Advanced Custom Filter Example](https://scichart.com/demo/javascript-custom-filters) for more details.
 
 #### See Also
 

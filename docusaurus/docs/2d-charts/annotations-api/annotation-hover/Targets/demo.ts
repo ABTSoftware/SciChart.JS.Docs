@@ -1,21 +1,13 @@
-import * as SciChart from "scichart";
-
-/** @import {BoxAnnotation} from "scichart" */
-
-const {
-    EChart2DModifierType,
-    EAnnotationType,
+import {
     ECoordinateMode,
     TextAnnotation,
-    AnnotationHoverEventArgs,
     BoxAnnotation,
     EHoverMode,
     NumericAxis,
     SciChartJsNavyTheme,
     SciChartSurface,
-    chartBuilder,
     AnnotationHoverModifier
-} = SciChart;
+} from "scichart";
 
 async function annotationHoverTargets(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -71,7 +63,7 @@ async function annotationHoverTargets(divElementId) {
     sciChartSurface.annotations.add(nonHoverableAnnotation, textAnnotation);
 
     // #region_A_start
-    const targetsSelector = (modifier) => hoverableAnnotations;
+    const targetsSelector = modifier => hoverableAnnotations;
 
     const annotationHoverModifier = new AnnotationHoverModifier({
         targets: targetsSelector,
@@ -85,7 +77,7 @@ async function annotationHoverTargets(divElementId) {
         const { includedEntities } = args;
 
         // annotations returned by the targetsSelector
-        const includedAnnotations = /** @type {BoxAnnotation[]} */ (includedEntities);
+        const includedAnnotations = includedEntities as BoxAnnotation[];
 
         includedAnnotations.forEach((annotation, index) => {
             if (annotation.isHovered) {

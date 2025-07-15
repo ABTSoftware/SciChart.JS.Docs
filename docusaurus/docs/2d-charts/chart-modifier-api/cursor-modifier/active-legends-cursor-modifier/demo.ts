@@ -1,6 +1,26 @@
-import * as SciChart from "scichart";
-
-import { OhlcSeriesInfo, BaseDataSeries } from "scichart"
+import {
+    OhlcSeriesInfo,
+    BaseDataSeries,
+    SciChartSurface,
+    CategoryAxis,
+    NumericAxis,
+    FastCandlestickRenderableSeries,
+    OhlcDataSeries,
+    SciChartJsNavyTheme,
+    MouseWheelZoomModifier,
+    ZoomPanModifier,
+    ZoomExtentsModifier,
+    EDataSeriesType,
+    FastColumnRenderableSeries,
+    CursorModifier,
+    NumberRange,
+    XyDataSeries,
+    parseColorToTArgb,
+    FastLineRenderableSeries,
+    XyMovingAverageFilter,
+    SeriesInfo,
+    CursorTooltipSvgAnnotation
+} from "scichart";
 
 // Helper class to fetch candlestick data from Binance via Rest API
 const getCandles = async (symbol, interval, limit = 300) => {
@@ -38,25 +58,6 @@ const getCandles = async (symbol, interval, limit = 300) => {
 
 async function cursorModifierActiveLegendsOnCandles(divElementId) {
     // #region_B_start
-    const {
-        SciChartSurface,
-        CategoryAxis,
-        NumericAxis,
-        FastCandlestickRenderableSeries,
-        OhlcDataSeries,
-        SciChartJsNavyTheme,
-        MouseWheelZoomModifier,
-        ZoomPanModifier,
-        ZoomExtentsModifier,
-        EDataSeriesType,
-        FastColumnRenderableSeries,
-        CursorModifier,
-        NumberRange,
-        XyDataSeries,
-        parseColorToTArgb,
-        FastLineRenderableSeries,
-        XyMovingAverageFilter,
-    } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -145,7 +146,8 @@ async function cursorModifierActiveLegendsOnCandles(divElementId) {
         tooltipLegendOffsetX: 5,
         tooltipLegendOffsetY: 5,
         // Callback to format the legend
-        tooltipLegendTemplate: (seriesInfos: OhlcSeriesInfo[], svgAnnotation) => {
+        tooltipLegendTemplate: (si: SeriesInfo[], svgAnnotation: CursorTooltipSvgAnnotation) => {
+            const seriesInfos = si as OhlcSeriesInfo[];
             let outputSvgString = "";
 
             // Foreach series there will be a seriesInfo supplied by SciChart. This contains info about the series under the mouse

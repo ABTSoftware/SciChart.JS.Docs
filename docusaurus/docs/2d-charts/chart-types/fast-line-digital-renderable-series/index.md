@@ -7,7 +7,7 @@ sidebar_position: 11
 Digital, or Step Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type, and setting the [isDigitalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#isdigitalline) flag to `true`.
 
 :::tip
-The [JavaScript Digital Line Chart Example](https://scichart.com/demo/javascript/digital-line-chart) can be found in the [SciChart.Js Examples Suite > Digital Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalLineChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/digital-line-chart).
+The [JavaScript Digital Line Chart Example](https://scichart.com/demo/javascript/digital-line-chart) can be found in the [SciChart.Js Examples Suite > Digital Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalLineChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/digital-line-chart).
 :::
 
 <ChartFromSciChartDemo 

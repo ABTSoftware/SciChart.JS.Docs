@@ -4,9 +4,6 @@ const {
     SciChartSurface,
     SciChartJsNavyTheme,
     NumericAxis,
-    XyDataSeries,
-    SplineLineRenderableSeries,
-    BoxAnnotation,
     ZoomPanModifier,
     MouseWheelZoomModifier,
     NativeTextAnnotation,
@@ -33,7 +30,6 @@ async function drawHtmlAnnotationsExample(divElementId: string | HTMLDivElement)
         fontSize: 32,
         background: "blue",
         text: "textAnnotation1",
-        drawImmediate: true,
         renderOrder: 3
     });
     const textAnnotation2 = new NativeTextAnnotation({
@@ -45,7 +41,6 @@ async function drawHtmlAnnotationsExample(divElementId: string | HTMLDivElement)
         isEditable: true,
         fontSize: 32,
         background: "red",
-        drawImmediate: true,
         text: "textAnnotation2"
     });
 

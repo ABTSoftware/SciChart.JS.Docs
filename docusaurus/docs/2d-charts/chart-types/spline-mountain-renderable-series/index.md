@@ -7,7 +7,7 @@ sidebar_position: 61
 Spline Mountain or Smoothed Area Series can be created using the [SplineMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinemountainrenderableseries.html) type.
 
 :::tip
-The [JavaScript Spline Mountain Chart Example](https://scichart.com/demo/javascript-spline-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/spline-mountain-chart)
+The [JavaScript Spline Mountain Chart Example](https://scichart.com/demo/javascript-spline-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/spline-mountain-chart)
 :::
 
 <ChartFromSciChartDemo 
