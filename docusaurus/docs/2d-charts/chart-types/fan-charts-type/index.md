@@ -11,7 +11,7 @@ The [JavaScript Fan Chart Example](https://scichart.com/demo/javascript-fan-cha
 :::
 
 <ChartFromSciChartDemo
-    src="http://demo.scichart.com/iframe/fan-chart"
+    src="https://scichart.com/demo/iframe/fan-chart"
     title="Fan Chart"
 />
 

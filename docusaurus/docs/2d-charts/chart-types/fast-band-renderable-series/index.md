@@ -11,7 +11,7 @@ The [JavaScript Band Chart Example](https://scichart.com/demo/javascript-band-ch
 :::
 
 <ChartFromSciChartDemo
-    src="http://demo.scichart.com/iframe/javascript-band-chart"
+    src="https://scichart.com/demo/iframe/javascript-band-chart"
     title="Band Series Chart"
 />
 

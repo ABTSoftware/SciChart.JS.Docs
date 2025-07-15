@@ -11,7 +11,7 @@ The [JavaScript Stacked Mountain Chart Example](https://scichart.com/demo/javas
 ::: 
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/stacked-mountain-chart"
+    src="https://scichart.com/demo/iframe/stacked-mountain-chart"
     title="Stacked Mountain Chart"
 />
 

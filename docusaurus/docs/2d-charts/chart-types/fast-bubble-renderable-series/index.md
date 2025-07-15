@@ -11,7 +11,7 @@ The [JavaScript Bubble Chart Example](https://scichart.com/demo/javascript-bubb
 :::
 
 <ChartFromSciChartDemo
-    src="http://demo.scichart.com/iframe/bubble-chart"
+    src="https://scichart.com/demo/iframe/bubble-chart"
     title="Bubble Series Chart"
 />
 

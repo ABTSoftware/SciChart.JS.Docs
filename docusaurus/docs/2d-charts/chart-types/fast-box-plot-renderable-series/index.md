@@ -48,7 +48,7 @@ The [JavaScript Box Plot Chart Example](http://stagingdemo2.scichart.com/demo/i
 :::
 
 <ChartFromSciChartDemo
-    src="http://stagingdemo2.scichart.com/demo/iframe/box-plot-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/box-plot-chart"
     title="Box Plot Series Chart"
 />
 

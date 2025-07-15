@@ -11,7 +11,7 @@ The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/
 :::
 
 <ChartFromSciChartDemo
-    src="http://demo.scichart.com/iframe/digital-band-chart"
+    src="https://scichart.com/demo/iframe/digital-band-chart"
     title="Digital Band Chart"
 />
 
