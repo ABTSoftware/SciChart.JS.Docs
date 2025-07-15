@@ -507,7 +507,7 @@ initSciChart();
 Further Reading
 ---------------
 
-[demo.scichart.com](https://scichart.com/demo/react) contains a couple of examples that show chart synchronization techniques.
+[scichart.com/demo](https://scichart.com/demo/react) contains a couple of examples that show chart synchronization techniques.
 
 For instance, take a look at the [Sync Multi Chart demo](https://scichart.com/demo/react/sync-multi-chart) which shows how to dynamically add/remove chart panes to a synchronization group.
 

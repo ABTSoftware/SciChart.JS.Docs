@@ -7,7 +7,7 @@ sidebar_position: 24
 A Digital Band Series, or High-Low Fill between two Digital or Step lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
-The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/digital-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalBandSeriesChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/digital-band-chart).
+The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/digital-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalBandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/digital-band-chart).
 :::
 
 <ChartFromSciChartDemo

@@ -69,16 +69,16 @@ One of the most powerful features of the Filters API is the ability to create cu
 
 To create an Advanced Custom Filter we simply override the **FilterBase** of the type of series we want ie (**XyFilterBase**, **XyyFilterBase**, **XyzFilterBase**, **OhlcFilterBase**). We must then override a few methods to perform the filtering.
 
-The base class handles the field mapping in the **getOriginalYValues** method (and **getOriginalY1Values** for Xyy, and similar for the other types). See the **CustomFilter** page for more information or the online demo [Realtime Aggregation using Advanced Custom Filter](http://demo.scichart.com/javascript-custom-filters).
+The base class handles the field mapping in the **getOriginalYValues** method (and **getOriginalY1Values** for Xyy, and similar for the other types). See the **CustomFilter** page for more information or the online demo [Realtime Aggregation using Advanced Custom Filter](https://scichart.com/demo/javascript-custom-filters).
 
 Filters API Demos
 -----------------
 
 Several demos are included in our JavaScript Chart Examples Suite. Please find them below:
 
-*   [Percentage Change using XyScaleOffsetFilter Example](http://demo.scichart.com/javascript-percentage-change)
-*   [Ratio Filter with Chained Trend and Moving Average Example](http://demo.scichart.com/javascript-trend-ma-ratio)
-*   [Realtime Aggregation using Advanced Custom Filter Example](http://demo.scichart.com/javascript-custom-filters)
+*   [Percentage Change using XyScaleOffsetFilter Example](https://scichart.com/demo/javascript-percentage-change)
+*   [Ratio Filter with Chained Trend and Moving Average Example](https://scichart.com/demo/javascript-trend-ma-ratio)
+*   [Realtime Aggregation using Advanced Custom Filter Example](https://scichart.com/demo/javascript-custom-filters)
 
 #### See Also
 

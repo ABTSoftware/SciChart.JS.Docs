@@ -79,7 +79,7 @@ What this means:
 Overlaying a Heightmap Legend on the Surface
 --------------------------------------------
 
-Adding a Legend to a 3D Surface Mesh can be done with the HeatmapLegend control. See the [Surface Mesh Demo](https://scichart.com/demo/javascript-3d-surface-mesh-chart) at demo.scichart.com for a code sample showing how.
+Adding a Legend to a 3D Surface Mesh can be done with the HeatmapLegend control. See the [Surface Mesh Demo](https://scichart.com/demo/javascript-3d-surface-mesh-chart) at scichart.com/demo for a code sample showing how.
 
 Configuring the Wireframe on the Surface
 ----------------------------------------

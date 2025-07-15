@@ -7,7 +7,7 @@ sidebar_position: 23
 A Band Series, or High-Low Fill between two lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
-The [JavaScript Band Chart Example](https://scichart.com/demo/javascript-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BandSeriesChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/band-chart).
+The [JavaScript Band Chart Example](https://scichart.com/demo/javascript-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/band-chart).
 :::
 
 <ChartFromSciChartDemo

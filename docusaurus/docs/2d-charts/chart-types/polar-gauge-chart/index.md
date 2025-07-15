@@ -7,7 +7,7 @@ sidebar_position: 99
 The Polar Gauge Chart is used to visualize data in a polar coordinate system as a circular gauge or meter, where values are represented by angular position and radial distance. This chart type is ideal for displaying progress indicators, performance metrics, or any data that benefits from a circular visualization.
 
 :::tip
-The [JavaScript Polar Gauge Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-gauge-chart) can be found in the [SciChart.Js Examples Suite > Polar Gauge Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarGaugeChart) on Github, or our live demo at [demo.scichart.com](http://stagingdemo2.scichart.com/demo/react/polar-gauge-chart).
+The [JavaScript Polar Gauge Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-gauge-chart) can be found in the [SciChart.Js Examples Suite > Polar Gauge Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarGaugeChart) on Github, or our live demo at [scichart.com/demo](http://stagingdemo2.scichart.com/demo/react/polar-gauge-chart).
 :::
 
 <ChartFromSciChartDemo 

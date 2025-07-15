@@ -7,7 +7,7 @@ sidebar_position: 51
 In SciChart.js, the JavaScript Donut Chart type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpiesurface.html) type.
 
 :::tip
-The [JavaScript Donut Chart Example](https://scichart.com/demo/javascript/donut-chart) can be found in the [SciChart.Js Examples Suite > Pie Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DonutChart) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo/javascript/donut-chart).
+The [JavaScript Donut Chart Example](https://scichart.com/demo/javascript/donut-chart) can be found in the [SciChart.Js Examples Suite > Pie Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DonutChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/donut-chart).
 :::
 
 <ChartFromSciChartDemo 

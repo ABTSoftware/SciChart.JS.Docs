@@ -11,7 +11,7 @@ SciChart.js features a rich set of APIs to synchronize multiple charts. With the
 *   Sync tooltips, zooming or panning across chart groups
 *   Dynamically add or remove chart panes to groups
 
-The [JavaScript Sync Multi Chart Example](https://scichart.com/demo/javascript/sync-multi-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [demo.scichart.com](https://scichart.com/demo)
+The [JavaScript Sync Multi Chart Example](https://scichart.com/demo/javascript/sync-multi-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo)
 
 How to create a Chart Group
 ---------------------------
