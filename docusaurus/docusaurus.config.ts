@@ -12,7 +12,7 @@ const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/master/d
 const config: Config = {
     title: "SciChart JS Docs",
     tagline: "The Ultimate JavaScript Chart Library",
-    favicon: "img/favicon.ico",
+    favicon: "img/cropped-favicon-32x32.png",
     markdown: {
         mermaid: true
     },
