@@ -63,6 +63,8 @@ DataLabelProvider.getPosition()
 
 This allows for data driven rotation values to be calcualted for each data label.  This applies to all child classes of DataLabelProvider and HeatMapDataLabelProvider.
 
+If you do not need label rotation, just return new Point(0,0) for rotationCenter and 0 for rotationAngle.
+
 ChartModifierBase.executeOn
 ---------------------------
 
@@ -143,6 +145,8 @@ sciChartSurface.chartModifiers.add(
  In addition **BaseRenderableSeries.xAxisId**, **BaseRenderableSeries.yAxisId**, **ChartModifierBase2D.xAxisId**, **ChartModifierBase2D.yAxisId**, **AnnotationBase.xAxisId**, **AnnotationBase.yAxisId** now defaults to undefined. If the xAxisId or yAxisId is not set the default X and Y axes will be used. The default axis is the first one that has been attached to the SciChartSurface or undefined if there are no axes. Get these using `SciChartSurface.getDefaultXAxis()` and `SciChartSurface.getDefaultYAxis()`.
 
 RenderableSeries have xAxis and yAxis properties which return the instance of the axes they are linked to.  These links are resolved when the series is attached to the surface, and at the start of each render.
+
+In rare cases, such as copying series or annotations between charts, existing code may fail at runtime because the copied item carries an auto generated axisId that does not exist on the target chart.  In this case you should explicitly reassign the axisId, or set the axis property to undefined which will cause it to be auto-assigned.
 
 HitTestInfo.dataSeriesName
 --------------------------
@@ -279,9 +283,9 @@ DoubleRange
 
 **DoubleRange on TSciChart** renamed to **SCRTDoubleRange**.  This is used by webAssemblyContext.NumberUtil.MinMax and similar methods
 
-## ObservableArray method
+## Delete on clear or remove is now true by default
 
-ObservableArray methods defaults delete to true in remove(), removeAt() and clear()
+ObservableArray methods (eg scichartSurface.renderableSeries, scichartsurface.annotations etc) defaults delete to true in remove(), removeAt() and clear().  If you want to remove a series or annotation from the chart but be able to re-add it later, you must pass false to the remove/clear method.  You are then responsible for calling delete on the item yourself if it is not attached to the chart when the chart is deleted.
 
 ## SciChartSubSurface.isTransparent
 

@@ -11,10 +11,6 @@ SciChart.js supports **unlimited, multiple X or Y axis** which can be aligned t
 How to Setup a Chart with Multiple Axes
 ---------------------------------------
 
-:::warning
-[Polar Charts](/2d-charts/surface/scichart-polar-surface-type) does not support multiple axes
-:::
-
 *   Axis may be placed by setting the [AxisBase2D.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) property.
 *   [Axis.Id:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) identifies an axis in multi-axis scenarios
 *   Series, Annotations and some Modifiers have **yAxisId**, **yAxisId** properties. These are used to assign chart items to an axis in multi-axis scenarios.
