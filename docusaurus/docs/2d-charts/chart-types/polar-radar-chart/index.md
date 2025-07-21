@@ -9,7 +9,7 @@ The Radar chart (or Spider chart) type displays data in a circular layout, where
 The data is usually plotted using the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html) or [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) classes, which are specialized for polar coordinates.
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demoiframe/polar-radar-chart"
+    src="https://stagingdemo2.scichart.com/demoiframe/polar-radar-chart"
     title="Polar Radar Chart"
 />
 

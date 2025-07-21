@@ -23,7 +23,7 @@ Next, we can apply the PaletteProvider to the series. This can be done both with
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
 
 :::tip
-For a more detailed example of [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html), see the [Javascript Treemap Chart Example](http://stagingdemo2.scichart.com/demo/iframe/treemap-chart). Each rectangle is coloured based on its value, the larger the value, the darker the green, while negative values are coloured red in the same fashion.
+For a more detailed example of [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html), see the [Javascript Treemap Chart Example](https://stagingdemo2.scichart.com/demo/iframe/treemap-chart). Each rectangle is coloured based on its value, the larger the value, the darker the green, while negative values are coloured red in the same fashion.
 :::
 
 #### See Also

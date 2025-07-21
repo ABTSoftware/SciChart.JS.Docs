@@ -5,11 +5,11 @@ sidebar_position: 98
 # The Partial Polar Chart Type
 
 :::tip
-The [JavaScript Partial Polar Chart Example](http://stagingdemo2.scichart.com/demo/iframe/polar-partial-arc) can be found in the [SciChart.Js Examples Suite > Polar Partial Arc](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarPartialArc) on Github, or our live demo at [scichart.com/demo](http://stagingdemo2.scichart.com/demo).
+The [JavaScript Partial Polar Chart Example](https://stagingdemo2.scichart.com/demo/iframe/polar-partial-arc) can be found in the [SciChart.Js Examples Suite > Polar Partial Arc](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarPartialArc) on Github, or our live demo at [scichart.com/demo](https://stagingdemo2.scichart.com/demo).
 :::
 
 <ChartFromSciChartDemo
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-partial-arc"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-partial-arc"
     title="Partial Polar Series Chart"
 />
 
@@ -30,7 +30,7 @@ The example above is extreme, but partial polar charts refers to all plots that 
 > Check this out for more info: [Gauge Chart Documentation](/2d-charts/chart-types/polar-gauge-chart)
 
 <ChartFromSciChartDemo
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-gauge-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-gauge-chart"
     title="Partial Polar Gauge Chart"
 />
 
@@ -40,14 +40,14 @@ The example above is extreme, but partial polar charts refers to all plots that 
 
 <div style={{display: 'flex', gap: 10, width: '100%'}}>
     <ChartFromSciChartDemo
-        src="http://stagingdemo2.scichart.com/demo/iframe/polar-radial-column-chart"
+        src="https://stagingdemo2.scichart.com/demo/iframe/polar-radial-column-chart"
         title="Polar Radial Column Chart"
         aspectRatio={1}
         width="100%"
     />
 
     <ChartFromSciChartDemo
-        src="http://stagingdemo2.scichart.com/demo/iframe/polar-stacked-radial-column-chart"
+        src="https://stagingdemo2.scichart.com/demo/iframe/polar-stacked-radial-column-chart"
         title="Polar Stacked Radial Column Chart"
         aspectRatio={1}
         width="100%"
@@ -58,7 +58,7 @@ The example above is extreme, but partial polar charts refers to all plots that 
 > A polar uniform heatmap chart can also be created by setting the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalangle) property of the **Angular** axis to a value less than `2 * Math.PI` (or `360` degrees).
 
 <ChartFromSciChartDemo
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Chart"
 />
 

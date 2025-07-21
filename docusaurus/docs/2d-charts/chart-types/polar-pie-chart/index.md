@@ -8,7 +8,7 @@ The Polar Pie Chart type is achieved using SciChart's `PolarColumnRenderableSeri
 It is the native way to create pie charts in SciChart.js, as opposed to using the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html)
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart"
     title="Polar Pie Chart"
 />
 
@@ -41,10 +41,10 @@ This approach gives you:
 
 > **Note:** This is the “native” way to build pie charts in the polar coordinate system. For classic SVG-based pies, see [`SciChartPieSurface`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html).
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="https://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart" width="100%" height="600px" frameborder="0"></iframe>
 
 <div style={{textAlign: "center"}}>
-    Above: The JavaScript [Polar Pie Chart](http://stagingdemo2.scichart.com/demo/react/polar-pie-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
+    Above: The JavaScript [Polar Pie Chart](https://stagingdemo2.scichart.com/demo/react/polar-pie-chart) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
 </div>
 
 ## Features & Advantages

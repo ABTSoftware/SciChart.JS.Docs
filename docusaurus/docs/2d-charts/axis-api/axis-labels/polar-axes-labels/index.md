@@ -6,10 +6,10 @@ sidebar_position: 10
 
 The [Polar Axis Labels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#polarlabelmode) API in SciChart.js provides functionality for customizing the appearance and behavior of labels on polar axes. This includes options for angular and radial axes, allowing developers to control label visibility, alignment, and formatting.
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-label-modes" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="https://stagingdemo2.scichart.com/demo/iframe/polar-label-modes" width="100%" height="600px" frameborder="0"></iframe>
 
 <div style={{textAlign: "center"}}>
-Above: The JavaScript [Polar Column Chart](http://stagingdemo2.scichart.com/demo/react/polar-label-modes) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
+Above: The JavaScript [Polar Column Chart](https://stagingdemo2.scichart.com/demo/react/polar-label-modes) example from the [SciChart.js Demo](https://www.scichart.com/demo/react).
 </div>
 
 ## Key Properties

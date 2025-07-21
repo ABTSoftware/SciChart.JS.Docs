@@ -19,8 +19,8 @@ This is just a suggestion, and in the same way you can have [Vertical Charts](/2
 Notice the following 2 examples, where the first one is a regular, horizontal polar chart, using the `Angular` axis as an x-axis, representing the separate columns of the chart and the `Radial` axis as a y-axis representing the height of each column in the chart, while the second chart is a vertical polar chart, where the roles are reversed.
 
 <div style={{ display: 'flex', width: '100%', aspectRatio: '2' }}>
-    <iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-column-chart" title="Polar Column Chart Example" style={{ flex: 1, height: 500 }}></iframe>
-    <iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-radial-column-chart" title="Polar Radial Column Chart Example" style={{ flex: 1, height: 500 }}></iframe>
+    <iframe src="https://stagingdemo2.scichart.com/demo/iframe/polar-column-chart" title="Polar Column Chart Example" style={{ flex: 1, height: 500 }}></iframe>
+    <iframe src="https://stagingdemo2.scichart.com/demo/iframe/polar-radial-column-chart" title="Polar Radial Column Chart Example" style={{ flex: 1, height: 500 }}></iframe>
 </div>
 
 ### Creating the 2 axes of a Polar surface in SciChart.js can be done like so:

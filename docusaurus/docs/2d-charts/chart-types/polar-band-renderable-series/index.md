@@ -7,11 +7,11 @@ sidebar_position: 100
 The [PolarBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html) creates a band or area between two polar curves, displaying the relationship between two sets of yValues on a polar coordinate system.
 
 :::tip
-The [JavaScript Polar Band Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-band-chart) can be found in the [SciChart.Js Examples Suite > Polar Band Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarBandChart) on Github, or our live demo at [scichart.com/demo](http://stagingdemo2.scichart.com/demo/react/polar-band-chart).
+The [JavaScript Polar Band Chart](https://stagingdemo2.scichart.com/demo/javascript/polar-band-chart) can be found in the [SciChart.Js Examples Suite > Polar Band Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarBandChart) on Github, or our live demo at [scichart.com/demo](https://stagingdemo2.scichart.com/demo/react/polar-band-chart).
 :::
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-band-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-band-chart"
     title="Polar Band Series Chart"
 />
 
