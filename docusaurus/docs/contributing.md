@@ -120,7 +120,7 @@ classDiagram
 **Insert Chart iFrame from scichart.com/demo**
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
 />
 

@@ -39,6 +39,6 @@ The number of string elements inside the [labels:blue_book:](https://www.scichar
 
 ## See the [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) in Action:
 
-- http://stagingdemo2.scichart.com/demo/react/polar-column-category-chart
-- http://stagingdemo2.scichart.com/demo/react/polar-stacked-radial-column-chart
-- http://stagingdemo2.scichart.com/demo/react/polar-line-temperature-average
+- https://stagingdemo2.scichart.com/demo/react/polar-column-category-chart
+- https://stagingdemo2.scichart.com/demo/react/polar-stacked-radial-column-chart
+- https://stagingdemo2.scichart.com/demo/react/polar-line-temperature-average

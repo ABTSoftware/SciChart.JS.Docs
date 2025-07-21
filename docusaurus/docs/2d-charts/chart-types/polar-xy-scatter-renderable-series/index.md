@@ -11,7 +11,7 @@ The [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documen
 - Medical/engineering polar data, and more
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-scatter-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-scatter-chart"
     title="Polar Xy Scatter Series Chart"
 />
 

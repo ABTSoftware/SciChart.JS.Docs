@@ -7,11 +7,11 @@ sidebar_position: 100
 The [PolarUniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaruniformheatmaprenderableseries.html) displays "heat" values as colored cells in a polar (circular) coordinate system—perfect for visualizing intensity, density, or other matrix-like data in a circular form. Each cell is mapped from a two-dimensional array of z-values, with color gradients representing the data's magnitude.
 
 :::tip
-The [JavaScript Polar Uniform Heatmap Chart](http://stagingdemo2.scichart.com/demo/javascript/polar-uniform-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Polar Uniform Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarUniformHeatmapChart) on Github, or our live demo at [scichart.com/demo](http://stagingdemo2.scichart.com/demo/react/polar-uniform-heatmap-chart).
+The [JavaScript Polar Uniform Heatmap Chart](https://stagingdemo2.scichart.com/demo/javascript/polar-uniform-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Polar Uniform Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarUniformHeatmapChart) on Github, or our live demo at [scichart.com/demo](https://stagingdemo2.scichart.com/demo/react/polar-uniform-heatmap-chart).
 :::
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
 />
 
@@ -66,10 +66,10 @@ In the code above:
 
 ### Medical Imaging (Ultrasound Heatmap)
 
-<iframe src="http://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-ultrasound" width="100%" height="600px" frameborder="0"></iframe>
+<iframe src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-ultrasound" width="100%" height="600px" frameborder="0"></iframe>
 
 :::tip
-For the full code walkthrough and live demo, see the **[Polar Ultrasound Heatmap Example](http://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap)**
+For the full code walkthrough and live demo, see the **[Polar Ultrasound Heatmap Example](https://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap)**
 :::
 
 
@@ -87,7 +87,7 @@ For the full code walkthrough and live demo, see the **[Polar Ultrasound Heatmap
 
 Polar heatmaps are widely used in:
 - Physics and engineering for field visualization
-- Medical imaging (e.g. **ultrasound**, see [Polar Ultrasound Demo](http://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap))
+- Medical imaging (e.g. **ultrasound**, see [Polar Ultrasound Demo](https://stagingdemo2.scichart.com/demo/react/polar-ultrasound-heatmap))
 - Environmental mapping
 - Radar and sonar data
 

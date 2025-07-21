@@ -30,4 +30,4 @@ This results in the following output:
 #### See Also
 
 - [DataLabels API Overview](/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
-- [Polar Data Labels Example](http://stagingdemo2.scichart.com/demo/iframe/polar-line-chart)
+- [Polar Data Labels Example](https://stagingdemo2.scichart.com/demo/iframe/polar-line-chart)

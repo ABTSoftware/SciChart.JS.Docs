@@ -222,7 +222,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Polar Axis Styling](/2d-charts/axis-api/axis-styling/polar-axis-styling)
     - **Misc**
       - [Axis APIs - Convert Pixel to Data Coordinates](/2d-charts/axis-api/misc/pixel-and-data-coordinates)
-      - [⚠️ Axis APIs - Convert Polar Pixel to Data Coordinates](/2d-charts/axis-api/misc/polar-pixel-and-data-coordinates)
+      - [Axis APIs – Convert Polar Pixel to Data Coordinates](/2d-charts/axis-api/misc/polar-pixel-and-data-coordinates)
   - **Animations API**
     - [Animations API Overview](/2d-charts/animations-api/animations-api-overview)
     - [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)

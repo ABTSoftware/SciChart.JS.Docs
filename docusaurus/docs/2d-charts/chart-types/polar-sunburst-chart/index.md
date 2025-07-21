@@ -9,7 +9,7 @@ The **Polar Sunburst Chart** is a powerful way to visualize hierarchical data in
 Each layer in the hierarchy becomes a new radial level, with children elements subdividing the angular range of their parents. Selection and drill-down functionality are built in, allowing users to click to zoom in or back out of the tree.
 
 <ChartFromSciChartDemo 
-    src="http://stagingdemo2.scichart.com/demo/iframe/polar-sunburst-chart"
+    src="https://stagingdemo2.scichart.com/demo/iframe/polar-sunburst-chart"
     title="Polar Sunburst Chart"
 />
 
