@@ -71,7 +71,7 @@ const config: Config = {
         // Replace with your project's social card
         image: "images/SciChartLogo.png",
         navbar: {
-            title: "SciChart JS Docs",
+            title: "SciChart.js Docs v4",
             logo: {
                 alt: "SciChart LOGO",
                 src: "img/logo.svg"
@@ -100,7 +100,7 @@ const config: Config = {
                 },
                 {
                     href: "https://www.scichart.com/documentation/js/current/webframe.html",
-                    label: "Version 3 Docs",
+                    label: "Docs v3",
                     position: "right"
                 },
                 {
