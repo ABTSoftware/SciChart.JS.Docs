@@ -10,6 +10,7 @@ sidebar_position: 0
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
 
+* [Table of Content](/user-manual/toc/index.md)
 * [Tutorials (JavaScript APIs / npm / webpack)](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/index.md)
 * [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview/index.md)        
 * [Series or Chart Types](/2d-charts/chart-types/renderable-series-api-overview/index.md)
