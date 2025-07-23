@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Virtualized data example JS RxJS from CDN without NPM
 
 A customer asked how to create this https://scichart.com/demo/react/chart-with-virtualized-data example in JavaScript.

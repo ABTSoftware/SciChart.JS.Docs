@@ -30,8 +30,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline)
   - **Worked Examples**
-    - [Virtualized data example JS RxJS from CDN without NPM](/get-started/worked-examples/20250722-javascript-cdn-rxjs-virtualized-data-example)
     - [How do I? ... Worked Examples with SciChart.js](/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
+    - [Virtualized data example JS RxJS from CDN without NPM](/get-started/worked-examples/javascript-cdn-rxjs-virtualized-data-example)
   - [The SciChart.js Examples Suite](/get-started/scichart-js-examples-suite)
 - **What's New?**
   - [What's New in SciChart.js SDK v4.0](/whats-new/sdk-4.0)
