@@ -109,7 +109,7 @@ interface ISciChartSubSurface extends ISciChartSurface {
     isTransparent: boolean;
 
     /**
-     * Gets or sets the {@link ECoordinateMode} used when calculating the actual position based on the {@link subPosition}
+     * Gets or sets the {@link TSubSurfaceCoordinateMode} used when calculating the actual position based on the {@link subPosition}
      */
     coordinateMode: TSubSurfaceCoordinateMode;
     /**
@@ -193,6 +193,27 @@ For example, the following snippet will give us the same result as Basic Example
 </CodeSnippetBlock>
 
 The Builder API demo of SubCharts works very similarly to the javascript-API version. A SubChart is declared via the [subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html#subcharts) property of the chart [ISciChart2DDefinition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iscichart2ddefinition.html), and axis, series, interactions can be added to it as before. You can access the SubChart and any of it's created properties via the [SciChartSurface.subCharts:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#subcharts) property.
+
+Other ways to set SubChart position
+-----------------------------------
+The [subPosition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartsubsurface.html#subposition) property supports 3 formats of coordinates:
+
+*   `TXywhCoordinates: {x, y, width, height}`
+*   `TLtrbCoordinates: {left, top, right, bottom}`
+*   `TEdgeCoordinates: {x1, y1, x2, y2}`
+
+:::tip
+Each of the coordinates could be assigned to use different coordinate modes.
+:::
+
+<CodeSnippetBlock>
+    ```ts showLineNumbers file=./CoordinateFormats/demo.ts start=region_A_start end=region_A_end
+    ```
+    ```ts showLineNumbers file=./CoordinateFormats/demo.js start=region_A_start end=region_A_end
+    ```
+</CodeSnippetBlock>
+
+<LiveDocSnippet maxWidth={"100%"} name="./CoordinateFormats/demo" />
 
 #### See Also
 

@@ -1,9 +1,11 @@
 ---
-title: "SciChart.js"
+title: SciChart.js Docs v4
+description: SciChart.js Documentation version 4
+keywords: [scichart.js, scichart, js, javascript, documentation, docs, version 4, v4]
 sidebar_position: 0
 ---
 
-# SciChart.js JavaScript Charts User Manual
+# SciChart.js Documentation version 4
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
