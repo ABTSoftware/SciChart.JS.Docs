@@ -38,7 +38,7 @@ Some of [IPolarColumnRenderableSeriesOptions:blue_book:](https://www.scichart.co
 ```ts showLineNumbers {20,28,36,44} file=./BasicAngular/demo.ts start=region_A_start end=region_A_end
 ```
 
-<LiveDocSnippet name="./Basic/demo" />
+<LiveDocSnippet name="./BasicAngular/demo" />
 
 In the code above:
 

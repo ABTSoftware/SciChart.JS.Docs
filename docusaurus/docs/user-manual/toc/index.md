@@ -15,7 +15,6 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - [Licensing SciChart.js](/user-manual/licensing-scichart-js)
 - **Get Started: Tutorials, Examples**
   - [Tutorial 01 - Setting up a project with scichart-react and config object](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
-  - [How do I? ... Worked Examples with SciChart.js](/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
   - **Tutorials (JavaScript APIs / npm / webpack)**
     - [Tutorial 01 - Setting up a npm Project with SciChart.js](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
     - [Tutorial 02 - Adding Series and Data](/get-started/tutorials-js-npm-webpack/tutorial-02-adding-series-and-data)
@@ -30,6 +29,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - **Tutorials (index.min.js from CDN)**
     - [Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline)
+  - **Worked Examples**
+    - [How do I? ... Worked Examples with SciChart.js](/get-started/worked-examples/how-do-i-worked-examples-with-scichart-js)
+    - [Virtualized data example JS RxJS from CDN without NPM](/get-started/worked-examples/example-20250722)
   - [The SciChart.js Examples Suite](/get-started/scichart-js-examples-suite)
 - **What's New?**
   - [What's New in SciChart.js SDK v4.0](/whats-new/sdk-4.0)
