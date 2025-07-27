@@ -28,7 +28,7 @@ To take full control of the label text, override the [dataLabelProvider.getText
 
 This example outputs both X and Y Values. DataLabels are rendered using the new native text system, so they support multiline using \\n for newlines. The dataLabels style option has **multiLineAlignment** and **lineSpacing** properties for controlling multiline text.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
 
     ```

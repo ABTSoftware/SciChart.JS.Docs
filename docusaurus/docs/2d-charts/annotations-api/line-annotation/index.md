@@ -17,7 +17,7 @@ Declaring a LineAnnotation in code
 
 The following code will declare a number of [LineAnnotations:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/lineannotation.html) and add them to the chart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {26,34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {16,27} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
@@ -33,7 +33,7 @@ Aligning a LineAnnotation with x/yCoordinateModes
 
 To position a [LineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/lineannotation.html) so that it stretches horizontally or vertically across the viewport, use x/yCoordinateMode. e.g. the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {13,17,32,36} showLineNumbers file=./CoordinateMode/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {19,22,40,43} showLineNumbers file=./CoordinateMode/demo.ts start=#region_B_start end=#region_B_end
@@ -49,7 +49,7 @@ Polar Charts with LineAnnotation
 
 To add a [LineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/lineannotation.html) to a Polar chart, use the same exact code, just change the surface and axes types. The LineAnnotation will be positioned in polar coordinates.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {13,17,32,36} showLineNumbers file=./Polar/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {19,22,40,43} showLineNumbers file=./Polar/demo.ts start=#region_B_start end=#region_B_end

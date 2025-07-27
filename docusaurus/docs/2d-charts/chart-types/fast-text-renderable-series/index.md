@@ -26,7 +26,7 @@ To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scich
 
 FastTextRenderableSeries uses the special [XyTextDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xytextdataseries.html) which allows you to supply text values directly on the dataSeries, rather than having to use metadata. 
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {19,21-23,28-29,31} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,11-13,18-19,21} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

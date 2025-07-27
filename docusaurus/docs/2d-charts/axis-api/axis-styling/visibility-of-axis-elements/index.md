@@ -6,7 +6,7 @@ sidebar_position: 3
 
 In SciChart.js all the elements of an axis may be hidden or shown invidually, with the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./AxisVisibility/demo.ts start=region_A_start end=region_A_end
 
     ```

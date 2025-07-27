@@ -61,7 +61,7 @@ Below we've created an example that demonstrates four of the [ENumericFormat:bl
 Try to edit the code in the Codepen below and pan the chart to see the effect of different ENumericFormat values.
 
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./ENumericFormats/demo.ts start=region_A_start end=region_A_end
  

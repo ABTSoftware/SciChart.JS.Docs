@@ -28,7 +28,7 @@ Here is the setup required for the example: We will start from adding HTML marku
 
 In the JavaScript, we create a SubChart as normal by calling [SciChartSubSurface.createSubSurface():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsubsurface.html#createsubsurface), however we also specify [I2DSubSurfaceOptions.subChartContainerId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html#subchartcontainerid). This property accepts both string (Id) or `HtmlDivElement`. We also specify class names that will identify sections of the container.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {12,15-19} showLineNumbers file=./HtmlContainers/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts {19} showLineNumbers file=./HtmlContainers/demo.ts start=region_B_start end=region_B_end

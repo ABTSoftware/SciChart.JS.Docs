@@ -19,7 +19,7 @@ Metadata is optional and can be set when a dataseries is first created, or whene
 
 See the example below for how to create metadata when constructing an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) and how to consume it in a [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier).
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)", "MyMetadata class"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)", "MyMetadata class"]}>
     ```ts showLineNumbers file=./AddingMetadata/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -49,7 +49,7 @@ Metadata Templates
 
 If you just need to set the same metadata on every point, you can supply a single metadata object and it will be used as a template and be cloned onto each datapoint. For example:
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./MetadataTemplates/demo.js start=region_A_start end=region_A_end
 
     ```
@@ -76,7 +76,7 @@ If you want to set complex metadata using the [Builder Api](/2d-charts/builder-
 
 Before this class can be used with the builder api it must be registered. Then, it can be used like this:
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./MetadataGenerators/demo.js start=region_B_start end=region_B_end
 
     ```

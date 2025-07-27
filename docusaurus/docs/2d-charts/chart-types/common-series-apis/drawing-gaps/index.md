@@ -26,7 +26,7 @@ Note Line-based series such as Line, Mountain, Band and Spline may also be drawn
 
 Here's an example below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -50,7 +50,7 @@ Sometimes it is asked 'can we have a different line-color, or dashed line style 
 
 Not using the above API, but a workaround can be achieved by simply using two series, e.g. with the following data.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./demoGapDifferentStyle.ts start=region_A_start end=region_A_end
 
     ```

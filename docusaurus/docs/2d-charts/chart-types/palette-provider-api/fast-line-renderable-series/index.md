@@ -15,7 +15,7 @@ Let's start off with the PaletteProvider class:
 
 Next, we can apply the PaletteProvider to the line series. This can be done both with the programmatic API and the Builder API:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_B_start end=region_B_end
     ```
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_C_start end=region_C_end

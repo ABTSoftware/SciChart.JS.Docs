@@ -12,7 +12,7 @@ Note [ECoordinateMode.DataValue:blue_book:](https://www.scichart.com/documentat
 
 Let's create a basic example to demonstrate this:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {68} showLineNumbers file=./Positioning/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts showLineNumbers file=./Positioning/demo.ts start=region_B_start end=region_B_end
@@ -32,7 +32,7 @@ Since positioning with [ECoordinateMode.DataValue:blue_book:](https://www.scich
 
 To do this we can pass [I2DSubSurfaceOptions.parentXAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html#parentxaxisid) / [I2DSubSurfaceOptions.parentYAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsubsurfaceoptions.html#parentyaxisid) via options or use [SciChartSubSurface.parentXAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#parentxaxisid) / [SciChartSubSurface.parentYAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsubsurface.html#parentyaxisid) properties.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {86-87} showLineNumbers file=./PositioningMultiAxis/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts showLineNumbers file=./PositioningMultiAxis/demo.ts start=region_B_start end=region_B_end
@@ -50,7 +50,7 @@ SciChart allows to change a sub-surface position dynamically using the [SciChar
 
 Let's demonstrate this by updating the coordinate mode and subPosition of the sub-chart from previous section
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {88} showLineNumbers file=./SubPosition/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts showLineNumbers file=./SubPosition/demo.ts start=region_B_start end=region_B_end

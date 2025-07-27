@@ -47,7 +47,7 @@ Finally, we create the UniformHeatmapRenderableSeries type, which has both a U
 
 Here's a full example below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {3-11,15-27} showLineNumbers file=./demo.ts start=#region_C_start end=#region_C_end
 ```
 ```ts {8,10-18,24-34} showLineNumbers file=./demo.ts start=#region_D_start end=#region_D_end

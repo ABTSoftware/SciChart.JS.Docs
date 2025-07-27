@@ -26,7 +26,7 @@ Here we can provide some dynamic formatting of labels depending on the zoom leve
 
 Next, apply the custom LabelProvider to an axis as follows:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./LabelProviderClass/demo.ts start=region_B_start end=region_B_end
  

@@ -15,7 +15,7 @@ Declaring a AxisMarkerAnnotation in code
 
 The following code will declare an [AxisMarkerAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html) add it to the chart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {14,24} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {7,18} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

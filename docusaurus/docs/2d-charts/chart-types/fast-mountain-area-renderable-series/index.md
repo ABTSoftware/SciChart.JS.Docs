@@ -19,7 +19,7 @@ The [JavaScript Mountain Chart Example](https://scichart.com/demo/javascript/mo
 
 To create a [Javascript Mountain Chart](https://scichart.com/demo/javascript-mountain-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)", "JS", "jS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)", "JS", "JS"]}>
     ```ts {31} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

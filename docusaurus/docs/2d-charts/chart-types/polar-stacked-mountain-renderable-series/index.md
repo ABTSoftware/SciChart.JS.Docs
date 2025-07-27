@@ -20,7 +20,7 @@ The [JavaScript Polar Stacked Mountain Chart](https://stagingdemo2.scichart.com/
 To create a Javascript [Polar Stacked Mountain Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html) with SciChart.js, use the following code:
 
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts showLineNumbers {33,39,49,60} file=./Basic/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts showLineNumbers {13,37,49} file=./Basic/demo.ts start=region_B_start end=region_B_end

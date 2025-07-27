@@ -13,7 +13,7 @@ This is the **default setting**. The axis will attempt to autorange once to fit
 
 Note: Specifying [axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) at startup will set that as the first default range. AutoRange.Once is ignored when a visibleRange is set
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Once/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -34,7 +34,7 @@ Please be aware that this **setting will override any other ranging**, including
 
 To combine AutoRanging and user-zooming you need to use **ZoomState** - a special technique we will talk about later.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Always/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -51,7 +51,7 @@ AutoRange Never
 
 The **axis will never autorange**. With this option, you would need to set the VisibleRange manually. The **VisibleRange** **won't adjust** to any data changes.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Never/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -68,7 +68,7 @@ Adding Padding or Spacing with GrowBy
 
 Also, it is possible to **add spacing** or padding to the visibleRange when the chart autoranges via the [GrowBy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#growby) property. It allows to specify two fractions which will be always applied to the Min, Max values of visibleRange :
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./GrowBy/demo.ts start=region_A_start end=region_A_end
 
     ```

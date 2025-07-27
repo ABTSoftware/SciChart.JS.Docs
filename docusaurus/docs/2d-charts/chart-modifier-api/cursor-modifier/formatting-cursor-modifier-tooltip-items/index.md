@@ -17,7 +17,7 @@ Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCurs
 
 Below we're going to show you how to apply cursor formatting to enable four-decimal places on tooltips.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28-29,38-39,44} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {13-14,24-25,30} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
@@ -54,7 +54,7 @@ The input/output parameters are:
 
 Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html) and output to tooltips.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {16,43} showLineNumbers file=./data-template.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,15} showLineNumbers file=./data-template.ts start=#region_B_start end=#region_B_end

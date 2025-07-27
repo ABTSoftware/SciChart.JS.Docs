@@ -9,7 +9,7 @@ How to listen to VisibleRange changes
 
 It is possible to subscribe to listening to the [AxisCore.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) changes using the [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerangechanged) event.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./VisibleRangeChanged/demo.ts start=region_A_start end=region_A_end
 
     ```

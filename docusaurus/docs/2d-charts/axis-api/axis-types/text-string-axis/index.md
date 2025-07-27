@@ -17,7 +17,7 @@ Create and Configure a Text Axis
 
 To create a string axis in SciChart.js, we're going to use a [TextLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on an ordinary [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis). This allows you to transform numbers [0, 1, 2, 3, 4] into string labels.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./TextAxis/demo.ts start=region_A_start end=region_A_end
  
@@ -38,7 +38,7 @@ Controlling the Order of Labels
 
 If you want to control the order of labels with data, pass the labels as an object, using numbers as fields:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./TextAxis-LabelOrder/demo.ts start=region_A_start end=region_A_end
  
@@ -61,7 +61,7 @@ Multiline Text Labels
 
 You can ensure the lines appear exactly as you want by passing them as an array. Note that this can be used in conjunction with word wrap using maxLength. A label given as text will be split according to the maxLength, but one passed as an array will be displayed exactly as given, as shown in the following example:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./TextAxis-Multiline/demo.ts start=region_A_start end=region_A_end
  

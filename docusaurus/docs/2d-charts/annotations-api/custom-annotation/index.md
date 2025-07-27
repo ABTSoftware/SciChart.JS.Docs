@@ -17,7 +17,7 @@ Declaring a CustomAnnotation in code
 
 The following code will declare a a [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) with a Rocket icon rendered in SVG. This is added to the chart at specific X and Y locations.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {31,34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {17,23} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

@@ -10,7 +10,7 @@ It is possible to create Vertical (Rotated) Charts with SciChart. This transpo
 
 To achieve this, simply set [axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) to Left or Right for X Axis and Top or Bottom for Y Axis. And that's it - SciChart takes care of the rest:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./VerticalCharts/demo.ts start=region_A_start end=region_A_end
 
     ```

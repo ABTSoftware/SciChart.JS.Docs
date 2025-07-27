@@ -24,7 +24,7 @@ To create a Pie Chart, you have to create a number of [PieSegment:blue_book:](h
 
 Each [PieSegment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html) has properties for **value**, **text** and **color**, or alternatively **colorLinearGradient** if you wish to specify a gradient fill. The property **isSelected** denotes whether the [PieSegment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html) is in the selected state or not.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {15,29,38,46,55,63} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {5-6,9-13,18,20-24} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

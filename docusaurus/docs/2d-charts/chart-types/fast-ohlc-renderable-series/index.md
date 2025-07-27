@@ -20,7 +20,7 @@ The [JavaScript Ohlc Chart Example](https://scichart.com/demo/javascript/candle
 
 To create a [Javascript Ohlc Chart](https://scichart.com/demo/javascript-ohlc-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {19-23,26,35-41} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {6-10,17-32} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

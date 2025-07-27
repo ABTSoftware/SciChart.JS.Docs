@@ -21,7 +21,7 @@ Several different types of PointMarker are available in SciChart.js:
 
 Below we're going to show some options how to use different types of PointMarker in SciChart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
 
     ```

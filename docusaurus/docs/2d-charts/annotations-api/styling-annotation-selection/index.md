@@ -84,7 +84,7 @@ Here we will demonstrate how to apply custom styles for the adorners. So in this
 
 Modify the code as follow:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {11-16} showLineNumbers file=./demo1.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {18-23} showLineNumbers file=./demo1.ts start=#region_B_start end=#region_B_end
@@ -100,7 +100,7 @@ Modifying Dragging Grip Points
 
 By default, an annotation uses all of the predefined grip points for interactions (corners and body), but this can be changed to allow dragging and resizing only using specific ones. For this we will use the [IAnnotationBaseOptions.dragPoints:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotationbaseoptions.html#dragpoints) (or [AnnotationBase.dragPoints:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragpoints)) property.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {18} showLineNumbers file=./demo2.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {25} showLineNumbers file=./demo2.ts start=#region_B_start end=#region_B_end

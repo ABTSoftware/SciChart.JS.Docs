@@ -8,7 +8,7 @@ SciChart.js supports rotation of labels for all 2D axis types and [LabelProvid
 
 To use rotated labels on a chart, or vertical labels, use this code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./RotatingLabels/demo.ts start=region_A_start end=region_A_end
  
     ```
