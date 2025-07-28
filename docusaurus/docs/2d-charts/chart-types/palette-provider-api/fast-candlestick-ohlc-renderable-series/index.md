@@ -19,7 +19,7 @@ First let's create the PaletteProvider class.
 Next, apply the PaletteProvider to the Candlestick series. 
 
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_B_start end=region_B_end
  
     ```

@@ -19,7 +19,7 @@ The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/
 
 To create a [Javascript Digital Band Chart](https://scichart.com/demo/javascript-digital-band-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {30,42} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

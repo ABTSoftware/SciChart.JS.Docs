@@ -21,7 +21,7 @@ SciChart's Contour series is an extremely fast, lightweight chart types for rend
 
 To create a [Javascript Contours Chart](https://scichart.com/demo/javascript-heatmap-chart-with-contours) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {20-22,26,29,40-45} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {5-7,16-30} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

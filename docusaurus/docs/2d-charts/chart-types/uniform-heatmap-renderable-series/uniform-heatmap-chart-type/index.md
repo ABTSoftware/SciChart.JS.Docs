@@ -47,7 +47,7 @@ Finally, we create the UniformHeatmapRenderableSeries type, which has both a U
 
 Here's a full example below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {3-11,15-27} showLineNumbers file=./demo.ts start=#region_C_start end=#region_C_end
 ```
 ```ts {8,10-18,24-34} showLineNumbers file=./demo.ts start=#region_D_start end=#region_D_end
@@ -89,6 +89,63 @@ const heatmapSeries = new UniformHeatmapRenderableSeries(wasmContext, {
 In SciChart.js the maximum heatmap size (NxM size of the 2-dimensional array) is determined by [WebGL gl.MAX\_TEXTURE\_SIZE](https://stackoverflow.com/a/46109824). This will be a different value depending on the GPU hardware, the browser and operating system. On a Windows PC Running in Chrome `gl.MAX_TEXTURE_SIZE is 16,384 x 16,384` but could be as low as `2048 x 2048` on other devices.
 
 For viewing massive heatmaps, SciChart.js allows tiling of heatmaps by placing multiple UniformHeatmapRenderableSeries onto the same SciChartSurface. Each heatmap can be positioned using `xStart`, `xStep`, `yStart`, `yStep` constructor parameters. This allows you to render very large datasets in browser and is how one of our users achieved this output: medical imaging using SciChart's heatmap feature.
+
+## How to insert gaps (transparent cells) in heatmap using NaN
+
+In order to insert gaps we need to add `NaN` values into `zValues` array and to set flag `dataSeries.hasNaNs = true`.
+
+```typescript {26,37} showLineNumbers
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId2);
+    sciChartSurface.xAxes.add(
+        new NumericAxis(wasmContext, {
+            axisTitle: "Heatmap X"
+        })
+    );
+    sciChartSurface.yAxes.add(
+        new NumericAxis(wasmContext, {
+            axisTitle: "Heatmap Y",
+            axisAlignment: EAxisAlignment.Left
+        })
+    );
+
+    const gradientStops = [
+        { offset: 0, color: "yellow" },
+        { offset: 0.5, color: "green" },
+        { offset: 1, color: "red" }
+    ];
+    const colorMap = new HeatmapColorMap({
+        minimum: 1,
+        maximum: 3,
+        gradientStops
+    });
+
+    const zValues = [
+        [NaN, NaN, 1, 2],
+        [2, 1, 2, 3]
+    ];
+
+    const dataSeries = new UniformHeatmapDataSeries(wasmContext, {
+        xStart: 0,
+        xStep: 1,
+        yStart: 3,
+        yStep: 3,
+        zValues
+    });
+    dataSeries.hasNaNs = true;
+
+    const heatmapSeries = new UniformHeatmapRenderableSeries(wasmContext, {
+        opacity: 0.5,
+        dataSeries,
+        colorMap
+    });
+
+    sciChartSurface.renderableSeries.add(heatmapSeries);
+    return { sciChartSurface, wasmContext };
+```
+
+This is the result
+
+![](img/nan.png)
 
 #### See Also
 

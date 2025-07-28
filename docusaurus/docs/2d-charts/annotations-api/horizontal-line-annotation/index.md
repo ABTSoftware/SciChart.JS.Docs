@@ -15,7 +15,7 @@ Declaring a HorizontalLineAnnotation in code
 
 The following code will declare a [HorizontalLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/horizontallineannotation.html) and add it to the chart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {14,25} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {7,20} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
@@ -35,7 +35,7 @@ Valid settings are `Axis`, `Bottom`, `BottomLeft`, `BottomRight`, `Top`, `TopLe
 
 For example, setting **labelPlacement** to `ELabelPlacement.TopLeft`:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {5,16} showLineNumbers file=./LabelPlacement/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,22} showLineNumbers file=./LabelPlacement/demo.ts start=#region_B_start end=#region_B_end
@@ -57,7 +57,7 @@ HorizontalAlignment Stretch and Partially Drawn Lines
 
 For example, the two options are shown below in code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {19,28-29} showLineNumbers file=./AnnotationStretch/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {13,24-25} showLineNumbers file=./AnnotationStretch/demo.ts start=#region_B_start end=#region_B_end

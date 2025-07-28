@@ -31,7 +31,7 @@ By inheriting [DefaultPaletteProvider:blue_book:](https://www.scichart.com/docu
 
 Next, we can apply the PaletteProvider and metadata to a chart like this.
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./MetadataPaletteProviders/demo.js start=region_B_start end=region_B_end
 
     ```

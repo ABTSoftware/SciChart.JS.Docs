@@ -35,7 +35,7 @@ To recreate the image above, we can use the following code. We've chosen colours
 In SciChart.js version 4 the default behavior has been changed to use [Native Text](/2d-charts/axis-api/axis-labels/performance-considerations-native-text-axis-abels) for axis labels as it is more performant. However, the Native Text does not support bold and italic. If you need to apply this kind of styling for the axis labels set `useNativeText: false` in the constructor options.
 :::
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
 
     ```

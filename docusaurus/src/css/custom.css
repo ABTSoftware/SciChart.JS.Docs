@@ -45,14 +45,16 @@ track it down within inspect element and change the variable from one of these c
   --aa-muted-color-rgb: rgb(17, 51, 204) !important;
   --aa-primary-color-rgb: rgb(17, 51, 204);
   --ifm-color-success-dark: rgb(17, 51, 204);
-  --ifm-background-color: rgb(244, 244, 244);
+  --ifm-background-color: rgb(255, 255, 255);
   --ifm-color-success-contrast-background: #1133cc11;
   --code-section-background: rgb(255, 255, 255);
-
+  --ifm-navbar-link-color: #f5f5f5; /* always white */
+  --ifm-navbar-link-hover-color:rgb(136, 187, 255); /* always light blue */
+  --ifm-paragraph-margin-bottom: 1rem;
+  
   --absolute-text-color: rgb(0, 0, 0);
   --gray: #8888;
-
-  --ifm-paragraph-margin-bottom: 1rem;
+  --bg-secondary: #f5f5f5;
 }
 
 [data-theme='dark'] {
@@ -61,14 +63,16 @@ track it down within inspect element and change the variable from one of these c
   --ifm-alert-background-color-highlight: rgba(136, 136, 136, 0.102);
 
   /* Dark Mode */
-  --aa-primary-color-rgb: rgb(136, 187, 255);
-  --ifm-color-primary: rgb(136, 187, 255);
-  --aa-muted-color-rgb: rgb(136, 187, 255) !important;
-  --ifm-color-success-dark: rgb(136, 187, 255);
-  --ifm-background-color: rgb(24, 24, 24) !important;
+  --aa-primary-color-rgb: rgb(146, 197, 255); 
+  --ifm-color-primary: rgb(146, 197, 255);
+  --aa-muted-color-rgb: rgb(146, 197, 255) !important;
+  --ifm-color-success-dark: rgb(146, 197, 255);
+  --ifm-background-color: rgb(41, 41, 41) !important;
   --ifm-color-success-contrast-background: #88bbff11;
   --docusaurus-highlighted-code-line-bg: #66FF6610;
+
   --code-section-background: rgb(30, 30, 30);
+  --bg-secondary: rgb(30, 30, 30);
   
   --absolute-text-color: rgb(255, 255, 255);
 }
@@ -76,21 +80,30 @@ track it down within inspect element and change the variable from one of these c
 .navbar {
   box-shadow: none !important;
   border-bottom: 1px solid #8882;
-  background-color: var(--ifm-background-color);
+  /* background-color: var(--ifm-background-color); */
+  background: #050a30;
+
+  .clean-btn {
+    color: #f5f5f5 !important;
+  }
+}
+
+.footer {
+  background: #050a30;
 }
 
 /* Other components that needed tweaking */
 .tabs__item {
   margin-top: 0 !important;
   padding: 6px 12px !important;  
-  border: 2px solid var(--code-section-background) !important;
+  border: 2px solid var(--bg-secondary) !important;
   border-bottom: 0 !important;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   color: var(--gray) !important;
 }
 .tabs__item--active {
-  background: var(--code-section-background) !important;
+  background: var(--bg-secondary) !important;
   color: var(--absolute-text-color) !important;
 }
 .tabs-container .margin-top--md {
@@ -114,4 +127,52 @@ track it down within inspect element and change the variable from one of these c
     background-color: var(--ifm-background-color) !important;
     padding-inline: 4px;
   }
+}
+
+/* Custom css for making the page look more SciChart-esque */
+.docMainContainer_TBSr {
+  background: linear-gradient(90deg, #12003e 0%, #2e0066 15%, #60008f 50%, #9c3874 85%, rgb(95,136,219) 100%) 0 0 / 100% 400px no-repeat, var(--bg-secondary) !important;
+
+  > .container {
+    padding: 0 1rem !important;
+
+    > .row {
+      box-shadow: 0 0 3px rgba(0,0,0,0.1); 
+      background: var(--ifm-background-color) !important;
+      padding: 20px 0 !important;
+      margin-block: 0 !important;
+    }
+  }
+}
+
+@media (min-width: 997px) { /* screens that are wider than 997px */
+  .docMainContainer_TBSr {
+    padding: 1.5rem !important;
+
+    > .container > .row {
+      border-radius: 8px;
+    }
+  }
+}
+
+.docSidebarContainer_YfHR {
+  border: none !important;
+}
+
+.codeBlockContainer_Ckt0 {
+  box-shadow: 0.5px 1px 1px 0.5px rgba(30, 30, 30, 0.1) !important;
+  border-top-left-radius: 0 !important;
+
+  pre code {
+    border-top-left-radius: 0 !important;
+    background-color: var(--bg-secondary) !important;
+  
+    .codeLineNumber_Tfdd {
+      background: transparent;
+    }
+  }
+}
+
+.menu_SIkG {
+  padding: 0.5rem !important;
 }

@@ -14,7 +14,7 @@ First, let's create a [PaletteProvider:blue_book:](https://www.scichart.com/docu
 
 Next, we can apply the PaletteProvider to the series. This can be done both with the programmatic API and the Builder API:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {11} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
     ```
     ```ts {17-21,61-67} showLineNumbers file=./demo.ts start=#region_C_start end=#region_C_end

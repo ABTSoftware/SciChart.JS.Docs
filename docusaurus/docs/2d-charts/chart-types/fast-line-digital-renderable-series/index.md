@@ -19,7 +19,7 @@ The [JavaScript Digital Line Chart Example](https://scichart.com/demo/javascrip
 
 To create a [JavaScript Digital Line Chart](https://scichart.com/demo/javascript-digital-line-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {32} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

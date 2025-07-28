@@ -26,7 +26,7 @@ It is important that overridePointMarkerArgb returns an object containing both 
 
 Next, we can apply the PaletteProvider to a Bubble Series. This can be done both with the programmatic API and the Builder API:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_B_start end=region_B_end
 
     ```

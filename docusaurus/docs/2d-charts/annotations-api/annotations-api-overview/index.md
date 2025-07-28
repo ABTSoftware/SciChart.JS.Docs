@@ -46,7 +46,7 @@ Adding an Annotation to a Chart
 
 The [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) stores all its annotations in the [SciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#annotations) collection. The following code can be used to add an annotation to a chart:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {23} showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
 
     ```

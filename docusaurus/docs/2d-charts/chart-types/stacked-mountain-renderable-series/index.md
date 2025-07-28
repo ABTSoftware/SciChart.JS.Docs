@@ -20,7 +20,7 @@ Create a Stacked Mountain Series
 
 To create a [JavaScript Stacked Mountain Series](https://scichart.com/demo/javascript/stacked-mountain-chart), use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28,36,44,52,60,69-70,73} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {18,21,26,31,36,41} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

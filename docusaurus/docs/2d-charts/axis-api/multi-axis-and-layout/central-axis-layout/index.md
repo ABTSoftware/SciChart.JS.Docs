@@ -10,7 +10,7 @@ To do this, use the [CentralAxesLayoutManager](https://scichart.com/documentati
 
 Here's a code sample:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -35,7 +35,7 @@ The following code places an YAxis inside the chart at X=3 and an XAxis inside t
 Options available in the [EInnerAxisPlacementCoordinateMode](https://scichart.com/documentation/js/current/typedoc/enums/einneraxisplacementcoordinatemode.html) enum include: DataValue, Pixel, or Relative, which allows placement of an axis at a fraction of the viewport from 0..1.
 :::
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Configuration/demo.ts start=region_A_start end=region_A_end
 
     ```

@@ -18,7 +18,7 @@ In this section we will show how to generate a 10x10 grid of sub-charts to demon
 <!-- <LiveDocSnippet maxWidth={"100%"} name="./Dashboard10x10/demo" /> -->
 ![](img/1.png)
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {11,36} showLineNumbers file=./Dashboard10x10/demo.ts start=region_ExampleA_start end=region_ExampleA_end
 ```
 ```ts {6,28,29} showLineNumbers file=./Dashboard10x10/demo.ts start=region_ExampleC_start end=region_ExampleC_end

@@ -8,7 +8,7 @@ sidebar_position: 3
 
 Remember to import [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#createimageasync) and [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) for this to work!
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {11} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
 ```
 ```ts {7,18} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

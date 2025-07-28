@@ -8,7 +8,7 @@ SciChart.js provides the ability to Zoom Extents the polar chart (zoom to fit da
 
 Here is how to define the [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html) in your code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {6} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end 
     ```
     ```ts {51} showLineNumbers file=./demo.ts start=region_B_start end=region_B_end

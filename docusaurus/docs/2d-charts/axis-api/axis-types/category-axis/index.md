@@ -28,7 +28,7 @@ A standard [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/c
 
 Here's the code to setup the chart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./CategoryAxisValueAxis/demo.ts start=region_A_start end=region_A_end
  
@@ -60,7 +60,7 @@ Creating a CategoryAxis (without Data) using Defaults
 
 The first example we're going to show uses the default properties on the CategoryAxis to display a chart without data.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./CategoryAxisWithDefaults/demo.ts start=region_A_start end=region_A_end
  

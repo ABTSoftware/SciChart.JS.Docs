@@ -24,7 +24,7 @@ To create a Donut Chart, you have to create a number of [PieSegment:blue_book:]
 
 Each  [PieSegment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html) has properties for [value:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html#value), [text:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html#text) and [color:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html#color), or alternatively [colorLinearGradient:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html#colorlineargradient) if you wish to specify a gradient fill. The property [isSelected:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html#isselected) denotes whether the [PieSegment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/piesegment.html) is in the selected state or not.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {16,18,19,31,40,48,57,66} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {6,10,11,22,25,26} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

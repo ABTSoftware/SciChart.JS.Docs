@@ -20,7 +20,7 @@ Create a Spline Band Series
 
 To create a [Javascript Spline Band Chart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinebandrenderableseries.html) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28,30-33,35} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {18,25-28,30} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

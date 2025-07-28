@@ -29,7 +29,7 @@ To do this we will use [SciChartSubSurface.createSubSurface():blue_book:](https:
 
 Here's the code to do this.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts showLineNumbers file=./Panel1x2/demo.ts start=region_A_start end=region_A_end
 ```
 ```ts showLineNumbers file=./Panel1x2/demo.ts start=region_B_start end=region_B_end

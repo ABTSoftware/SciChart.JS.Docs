@@ -56,7 +56,7 @@ Another property of interactable annotation is the dimension where it can be mov
 
 It is also possible to restrict the drag direction of the box annotation by subscribing to the [dragDelta:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#dragdelta) event callback. Find an example below.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {10,13-16} showLineNumbers file=./ResizeDirections/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {16} showLineNumbers file=./ResizeDirections/demo.ts start=#region_B_start end=#region_B_end

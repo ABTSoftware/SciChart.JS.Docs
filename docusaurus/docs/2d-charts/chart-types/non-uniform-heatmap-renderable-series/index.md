@@ -25,7 +25,7 @@ The cell sizes are specified either by an array of X,Y cell coordinates or a map
 
 For example, you can create a Non-uniform Heatmap with the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {29,31-36,40-52,56} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {8,10-22,28-32} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

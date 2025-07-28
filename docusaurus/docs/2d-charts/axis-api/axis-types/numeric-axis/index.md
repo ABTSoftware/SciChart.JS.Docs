@@ -17,7 +17,7 @@ There are lots of options that can be passed to the constructor of a NumericAxis
 
 To create and configure a NumericAxis, use the following code: 
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./NumericAxis/demo.ts start=region_A_start end=region_A_end
  

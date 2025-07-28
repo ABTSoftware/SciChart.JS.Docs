@@ -140,7 +140,7 @@ First, create the TickProvider class and implement getMajorTicks/getMinorTicks:
 
 Then, apply the TickProvider to an axis like this:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./TickProvider/demo.ts start=region_B_start end=region_B_end
 
     ```

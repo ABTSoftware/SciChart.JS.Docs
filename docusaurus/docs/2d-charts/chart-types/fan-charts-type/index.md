@@ -19,7 +19,7 @@ The [JavaScript Fan Chart Example](https://scichart.com/demo/javascript-fan-cha
 
 There is no Fan Chart type out of the box in SciChart.js, but it is easy to create one using multiple Band series. Start with the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {25-30,37-38,49-50,61-62} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     

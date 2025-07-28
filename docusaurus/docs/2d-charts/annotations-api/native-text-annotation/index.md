@@ -20,7 +20,7 @@ There are also some limitations compared to svg text:
 
 ## Creating many variants of [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nativetextannotation.html):
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {21,30-33,42,52,65,69} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {17,30,39,43} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
@@ -36,7 +36,7 @@ Polar Charts with NativeTextAnnotation
 
 To add a [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nativetextannotation.html) to a Polar chart, use the same exact code, just change the surface and axes types. The NativeTextAnnotation will be positioned in polar coordinates.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {15,30} showLineNumbers file=./Polar/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {11,14} showLineNumbers file=./Polar/demo.ts start=#region_B_start end=#region_B_end

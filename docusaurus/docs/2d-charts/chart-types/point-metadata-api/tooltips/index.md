@@ -20,7 +20,7 @@ Example: Metadata + RolloverModifier
 
 Maybe you want certain property from Metadata to appear in tooltips. If so, you can use some code like this:
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./RolloverModifier/demo.js start=region_A_start end=region_A_end
 
     ```
@@ -41,7 +41,7 @@ The CursorModifier is very similar, however a different template is used to conv
 
 Modify the above code like this to make metadata work with the CursorModifier.
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./CursorModifier/demo.js start=region_A_start end=region_A_end
 
     ```
