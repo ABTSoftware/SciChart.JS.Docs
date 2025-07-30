@@ -13,6 +13,9 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - [Minimum Browser Requirements](/user-manual/minimum-browser-requirements)
   - [Online Resources and Help](/user-manual/online-resources-and-help)
   - [Licensing SciChart.js](/user-manual/licensing-scichart-js)
+  - **Language Support**
+    - [SciChart 是否支持中文](/user-manual/language-support/chinese)
+    - [SciChartは日本語をサポートしていますか？](/user-manual/language-support/japanese)
 - **Get Started: Tutorials, Examples**
   - [Tutorial 01 - Setting up a project with scichart-react and config object](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
   - **Tutorials (JavaScript APIs / npm / webpack)**
