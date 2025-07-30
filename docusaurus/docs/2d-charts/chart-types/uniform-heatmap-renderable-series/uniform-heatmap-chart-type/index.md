@@ -92,9 +92,15 @@ For viewing massive heatmaps, SciChart.js allows tiling of heatmaps by placing m
 
 ## How to insert gaps (transparent cells) in heatmap using NaN
 
-In order to insert gaps we need to add `NaN` values into `zValues` array and to set flag `dataSeries.hasNaNs = true`.
+This section describes how to insert transparent cells (gaps, not a number, NaNs, null cells, empty cells) into [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmaprenderableseries.html). In order to insert gaps we need to add `NaN` values into `zValues` array and to set flag `dataSeries.hasNaNs = true`. 
 
-```typescript {26,37} showLineNumbers
+For [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmapdataseries.html) this can be done by passing [zValue options:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iuniformheatmapseriesoptions.html#zvalues) in the constructor.
+
+:::info
+A similar approach works for [Non-Uniform Heatmap Chart Type](/2d-charts/chart-types/non-uniform-heatmap-renderable-series/index.md).
+:::
+
+```typescript {25-28,35,37} showLineNumbers
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId2);
     sciChartSurface.xAxes.add(
         new NumericAxis(wasmContext, {
