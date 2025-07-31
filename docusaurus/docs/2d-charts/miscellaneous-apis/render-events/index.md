@@ -25,12 +25,18 @@ For more information, check out these pages:
 - [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview)  
   :::
 
+## Lifecycle EventHandlers List
 Below is a list of render process event handlers, in the order they occur:
+
+- [**redrawRequested** :blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#redrawrequested)  
+  Triggered on the main surface when an initial invalidate call happens. Further invalidate calls will not trigger the event till the chart is rendered.  
+  This event is **only** called on the main surface and does **not** apply to sub-charts.  
 
 - [**preRenderAll** :blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#prerenderall)  
   Triggered on the main surface before the render loop begins.  
   Use it to apply custom configurations, such as styling or visible range changes.  
-  This event is **only** called on the main surface and does **not** apply to sub-charts.
+  This event is **only** called on the main surface and does **not** apply to sub-charts.  
+  Also it is currently **not** applicable to 3D charts.
 
 - [**preRender** :blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#prerender)  
   Triggered on a surface or sub-surface before rendering.  
