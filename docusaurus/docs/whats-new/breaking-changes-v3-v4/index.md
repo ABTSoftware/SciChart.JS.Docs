@@ -155,6 +155,54 @@ HitTestInfo.dataSeriesName
 
 Legends also now use seriesName, so you can distinguish between series that use the same dataSeries.
 
+SuspendUpdates API. UpdateSuspender class
+-----------------------------------------
+
+The SuspendUpdates API has been significantly improved and there have been some fixes implemented.
+The underlying UpdateSuspender class has been changed significantly.
+
+**Before:**
+```ts
+// <= v3.5
+// Method 1: use try/finally statement
+const suspender = surface.suspendUpdates(); // This locks the surface and prevents further drawing
+try {
+    dataSeries.append(x1, y1); // Multiple changes would normally trigger a redraw
+    dataSeries.append(x2, y2);
+    dataSeries.append(x3, y4);
+    surface.xAxes.add(xAxis);
+    surface.yAxes.add(yAxis);
+} finally {
+    suspender.resume(); // Resume updates and perform a single redraw here
+}
+
+// Method 2: or use UpdateSuspender.using() which does the same thing
+UpdateSuspender.using(surface, () => {
+    dataSeries.append(x1, y1);
+    dataSeries.append(x2, y2);
+    dataSeries.append(x3, y4);
+    surface.xAxes.add(xAxis);
+    surface.yAxes.add(yAxis);
+});
+```
+
+In v4 these optimizations are done implicitly. 
+However if you want to prevent a redraw request you can do it similarly:
+
+```ts
+// >= v4.0
+surface.suspendUpdates();
+
+dataSeries.append(x1, y1);
+dataSeries.append(x2, y2);
+dataSeries.append(x3, y3);
+
+// redraw will not be triggered
+surface.resumeUpdates({ invalidateOnResume: false });
+```
+
+For more information refer to the [Batching Updates or Temporary Suspending Drawing](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing/index.md) page.
+
 sciChartSurface.addSubChart
 ---------------------------
 
