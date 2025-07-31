@@ -80,6 +80,18 @@ sciChartSurface.chartModifiers.add(new ZoomPanModifier({ executeOn: EExecuteOn.M
 sciChartSurface.chartModifiers.add(new ZoomPanModifier({ executeCondition: { button: EExecuteOn.MouseRightButton } }) );
 ```
 
+If you have a custom modifier, this is how to evaluate the execute condition:
+```ts
+if (this.checkExecuteCondition(args, this.executeCondition)) {
+    // Do something
+}
+```
+
+ChartModifierBase also now has secondaryExecuteCondition which you can use to trigger alternate behaviour on a different condition, such as left click / right click.  You can get the status of both conditions in one go like this
+```ts
+const { isPrimary, isSecondary } = this.checkExecuteConditions(args);
+```
+
 IXAxisDragModifierOptions.excludedAxisIds and IYAxisDragModifierOptions.excludedAxisIds
 ---------------------------------------------------------------------------------------
 
