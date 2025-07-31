@@ -70,6 +70,8 @@ ChartModifierBase.executeOn
 
 **ChartModifierBase.executeOn** has been replaced by **ChartModifierBase.executeCondition** which takes `{ button?: EExecuteOn, key?: EModifierMouseArgKey }`. This provides a general way of specifying when you want a modifier to activate based on both mouse button and ctrl/alt/shift keys.
 
+An undefined executeCondition will never be matched.  An empty executeCondition, ie {} will always be matched as undefined button or key within the condition are considered a wildcard and always match.
+
 **ChartModifierBase.executeOn migration**
 
 ```ts
