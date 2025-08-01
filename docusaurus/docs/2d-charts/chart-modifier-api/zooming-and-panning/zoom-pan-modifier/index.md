@@ -19,7 +19,7 @@ Adding a ZoomPanModifier to a Chart
 
 A ZoomPanModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable panning behavior. For example:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {5} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {11} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

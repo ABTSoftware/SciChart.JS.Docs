@@ -48,7 +48,7 @@ The input/output parameters are:
 Let's create a simple example which shows you how to customize the tooltip container.
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {1,12,29} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

@@ -23,7 +23,7 @@ Adding a CursorModifier to a Chart
 
 A CursorModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and axis labels.
  
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {38,55} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

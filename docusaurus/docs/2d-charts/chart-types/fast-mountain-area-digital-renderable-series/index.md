@@ -19,7 +19,7 @@ The [JavaScript Digital Mountain Chart Example](https://scichart.com/demo/javas
 
 To create a [Javascript Digital Mountain Chart](https://scichart.com/demo/javascript-digital-mountain-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {32,48} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

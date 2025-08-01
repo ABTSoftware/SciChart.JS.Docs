@@ -21,7 +21,7 @@ Typically if you create a chart with several X-Axis, they are stacked on the top
 
 The following code with 4 XAxis on the bottom results in this output:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Step1/demo.ts start=region_A_start end=region_A_end
 
     ```

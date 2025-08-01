@@ -19,7 +19,7 @@ The [JavaScript Band Chart Example](https://scichart.com/demo/javascript-band-ch
 
 To create a [Javascript Band Chart](https://scichart.com/demo/javascript-band-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {26-37} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 
@@ -43,7 +43,7 @@ To use this, you need to set the [FastBandRenderableSeries.fillLinearGradient:b
 
 Here's a code example:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {7-10,12-15} showLineNumbers file=./GradientFill/demo.ts start=#region_A_start end=#region_A_end
     ```
 
@@ -87,7 +87,7 @@ The Band Series Chart can be used to display a mountain or area with a horizonta
 
 For instance, the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {6,11,19-20} showLineNumbers file=./Threshold/demo.ts start=#region_A_start end=#region_A_end
     ```
 

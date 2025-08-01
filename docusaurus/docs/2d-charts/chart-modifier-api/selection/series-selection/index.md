@@ -12,7 +12,7 @@ SciChart now features a native ChartModifier called the [SeriesSelectionModifie
 
 Find an example below:
 
-<CodeSnippetBlock labels={["JS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["JS", "Builder API (JSON Config)"]}>
     ```ts {57} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

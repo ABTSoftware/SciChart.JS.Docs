@@ -19,7 +19,7 @@ The [JavaScript Column Chart Example](https://scichart.com/demo/javascript/colu
 
 To create a [Javascript Column Chart](https://scichart.com/demo/javascript-column-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {21,27,30} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,15} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

@@ -19,7 +19,7 @@ The [JavaScript Error Bars Chart Example](https://scichart.com/demo/javascript-e
 
 To create a [Javascript Error Bars Chart](https://scichart.com/demo/javascript-error-bars-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {23,26-28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

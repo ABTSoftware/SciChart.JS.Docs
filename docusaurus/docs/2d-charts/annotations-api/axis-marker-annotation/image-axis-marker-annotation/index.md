@@ -18,7 +18,7 @@ const customAxisMarkerAnnotation = new AxisMarkerAnnotation({
 
 The full example code is below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {19-20,27} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {4-5,14} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

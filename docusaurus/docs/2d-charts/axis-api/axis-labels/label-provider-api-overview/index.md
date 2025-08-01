@@ -77,7 +77,7 @@ Setting LabelProvider properties
 
 LabelProvider properties can be set either on the labelProvider itself, or, in many cases can be set via the axis constructor options. The following code is equivalent:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./Properties/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -98,7 +98,7 @@ Say you wanted further customisation in the axis labels than what [axis.labelPr
 
 Take a look at the code sample below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./FormatLabel/demo.ts start=region_A_start end=region_A_end
 
     ```

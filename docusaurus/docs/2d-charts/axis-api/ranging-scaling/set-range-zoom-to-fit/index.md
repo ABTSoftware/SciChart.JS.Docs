@@ -20,7 +20,7 @@ Setting Axis.VisibleRange Programmatically
 
 To programmatically range an axis, set the [AxisCore.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) property with a [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html) type.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./SetGetVisibleRange/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -53,7 +53,7 @@ Sometimes it is required to make an axis to **show the full extent of the da
 
 Try this example below:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./ZoomExtents/demo.ts start=region_A_start end=region_A_end
 
     ```

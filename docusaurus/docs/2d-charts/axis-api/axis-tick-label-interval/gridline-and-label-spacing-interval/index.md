@@ -32,7 +32,7 @@ With a configuration like the above, SciChart.js will calculate tick spacing on 
 
 Note: [axis.maxAutoTicks:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#maxautoticks) is a hint. The axis will not output this exact number of ticks, but rather dynamically vary gridline spacing depending on zoom up to this amount.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./AutoTicks/demo.ts start=region_A_start end=region_A_end
 
     ```
@@ -57,7 +57,7 @@ There are two methods to control gridline & label spacing in SciChart.js. The fi
 
 With a configuration like the above, SciChart.js will calculate tick spacing on the axis exactly an interval of 2 between major gridlines / labels and 0.4 between minor gridlines.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./AutoTicksFalse/demo.ts start=region_A_start end=region_A_end
 
     ```

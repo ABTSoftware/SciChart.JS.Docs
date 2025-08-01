@@ -19,7 +19,7 @@ The [JavaScript Candlestick Chart Example](https://www.scichart.com/demo/react/
 
 To create a [Javascript Candlestick Chart](https://www.scichart.com/demo/react/candlestick-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)", "JS", "jS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)", "JS", "JS"]}>
     ```ts {25-29,32,34-38} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 
@@ -49,7 +49,7 @@ You can format the date labels on the XAxis by following the instructions on the
 
 In the [SciChart.js demo - Candlestick Charts](https://www.scichart.com/demo/react/candlestick-chart) - volume bars are docked to the bottom of the chart. Here's how to do this with SciChart.js.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {19,21-22,24} showLineNumbers file=./VolumeBars/demo.ts start=#region_A_start end=#region_A_end
     ```
 

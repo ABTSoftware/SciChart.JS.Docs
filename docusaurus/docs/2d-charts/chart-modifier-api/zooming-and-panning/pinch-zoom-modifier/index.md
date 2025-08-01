@@ -15,7 +15,7 @@ Adding a PinchZoomModifier to a Chart
 
 A **PinchZoomModifier** may be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) colletion to enable pinch to zoom behaviour. For example:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {14} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
     ```
     ```ts {28} showLineNumbers file=./demo.ts start=region_B_start end=region_B_end

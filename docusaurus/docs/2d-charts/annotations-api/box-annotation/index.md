@@ -17,7 +17,7 @@ Declaring a BoxAnnotation in code
 
 The following code will declare a number of [BoxAnnotations:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/boxannotation.html) and add them to the chart.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {23,32,41} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {16,40} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
@@ -33,7 +33,7 @@ Aligning a BoxAnnotation with x/yCoordinateModes
 
 To position a [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/boxannotation.html) so that it stretches horizontally or vertically across the viewport, use x/yCoordinateMode. e.g. the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {11,14,28,31} showLineNumbers file=./CoordinateMode/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {16,19,29,32} showLineNumbers file=./CoordinateMode/demo.ts start=#region_B_start end=#region_B_end

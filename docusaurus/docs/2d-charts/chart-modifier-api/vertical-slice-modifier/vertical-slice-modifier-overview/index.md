@@ -24,7 +24,7 @@ Adding a VerticalSliceModifier to a Chart
 
 One or more [VerticalSliceModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable draggable lines with crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and allows dragging of the vertical lines.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {17,29} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,24} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

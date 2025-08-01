@@ -19,7 +19,7 @@ The [JavaScript Line Chart Example](https://scichart.com/demo/javascript/line-c
 
 To create a [Javascript Line Chart](https://scichart.com/demo/javascript-line-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {27-34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
 ```
 ```ts {8-18} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

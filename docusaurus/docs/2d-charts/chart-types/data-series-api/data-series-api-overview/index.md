@@ -52,7 +52,7 @@ Creating, Assigning a DataSeries
 
 A DataSeries can be created with a single line of code, once you have a wasmContext (WebAssembly Context). The WebAssembly Context is created when you call the [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create) function, and the context should be used for elements on that chart only.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts
 // import { SciChartSurface, XyDataSeries, FastLineRenderableSeries ... } from "scichart"
 const xValues = [];
@@ -122,7 +122,7 @@ Setting Data Distribution Flags
 
 For optimal drawing and correct operation, SciChart.js needs to know the distribution of your data, whether sorted in the x-direction and whether the data contains NaN (Not a Number). These flags will be computed automatically, but can be specified for improved performance.
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts
 const xyDataSeries = new XyDataSeries(wasmContext, {
     xValues,

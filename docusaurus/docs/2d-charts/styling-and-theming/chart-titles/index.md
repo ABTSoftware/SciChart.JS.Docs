@@ -8,7 +8,7 @@ New to SciChart.js v3.1, we've added a Chart Title property allowing for multi-l
 
 Adding a chart title is simple, you can do so with the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./ChartTitles/demo.ts start=region_A_start end=region_A_end
  

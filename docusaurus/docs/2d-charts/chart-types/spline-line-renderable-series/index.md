@@ -20,7 +20,7 @@ Create a Spline Line Series
 
 To create a [Javascript Spline Line Chart](https://scichart.com/demo/javascript-spline-line-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {20,28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9,17} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

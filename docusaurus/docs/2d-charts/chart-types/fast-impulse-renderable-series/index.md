@@ -19,7 +19,7 @@ The [JavaScript Impulse Series Example](https://scichart.com/demo/javascript/imp
 
 To create a [Javascript Impulse Chart](https://scichart.com/demo/javascript/impulse-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28-36} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {17-28} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end

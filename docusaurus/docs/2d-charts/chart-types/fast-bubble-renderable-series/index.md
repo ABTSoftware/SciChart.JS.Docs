@@ -19,7 +19,7 @@ The [JavaScript Bubble Chart Example](https://scichart.com/demo/javascript-bubb
 
 To create a [Javascript Bubble Chart](https://scichart.com/demo/javascript-bubble-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {27-31,33-42} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
 

@@ -130,38 +130,14 @@ You can apply this template function to the rolloverModifier itself, in which ca
 
 To change the shape and layout of the tooltip, you can create an SVG element to be hosted inside the tooltip:
 
-<CodeSnippetBlock labels={["Custom Tooltip SVG"]}>
-```ts
-const lineSeries = new FastLineRenderableSeries(wasmContext, { stroke: EColor.Orange });
-lineSeries.rolloverModifierProps.tooltipTemplate = (
-    id: string,
-    tooltipProps: RolloverModifierRenderableSeriesProps,
-    seriesInfo: SeriesInfo,
-    updateSize: (width: number, height: number) => void
-) => {
-    const { tooltipTitle, tooltipColor, tooltipTextColor } = tooltipProps;
-    const width = 120;
-    const height = 120;
-    updateSize(width, height);
-    return `<svg width="${width}" height="${height}">
-    <circle cx="50%" cy="50%" r="50%" fill="${tooltipColor}"/>
-    <svg width="100%">
-        <text y="40" font-size="13" font-family="Verdana" dy="0" fill="${tooltipTextColor}">
-            <tspan x="15" dy="1.2em">${tooltipTitle}</tspan>
-            <tspan x="15" dy="1.2em">x: ${seriesInfo.formattedXValue} y: ${seriesInfo.formattedYValue}</tspan>
-        </text>
-    </svg>
-</svg>`;
-};
-```
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```
 </CodeSnippetBlock>
 
 This results in the following output:
 
-<CenteredImageWrapper
-    src="/images/ChartModifiers_RolloverModifier_CustomTooltipSvg.png"
-    alt="Rollover Modifier Custom Tooltip SVG"
-/>
+<LiveDocSnippet name="./demo" />
 
 ### Consuming Tooltip Data in a Legend
 

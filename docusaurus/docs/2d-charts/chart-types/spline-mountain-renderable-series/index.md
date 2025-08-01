@@ -20,7 +20,7 @@ Create a Spline Mountain Series
 
 To create a [Javascript Spline Mountain Chart](https://scichart.com/demo/javascript-spline-mountain-chart) with SciChart.js, use the following code:
 
-<CodeSnippetBlock labels={["TS", "Builder API (Config)"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {29,39-42,44,46} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {16,25-32,42} showLineNumbers file=./Basic/demo.ts start=#region_B_start end=#region_B_end
