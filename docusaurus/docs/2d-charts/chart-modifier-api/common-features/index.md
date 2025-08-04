@@ -41,19 +41,120 @@ Refer to our [TypeDoc Documentation:blue_book:](https://www.scichart.com/docume
 Chart modifiers can be configured to respond to specific mouse and keyboard combinations using `executeCondition` and `secondaryExecuteCondition` properties. These conditions determine when the modifier should activate.
 
 Each condition can specify:
-- A mouse button (`button`) from `EExecuteOn` enum (e.g., MouseLeftButton, MouseMiddleButton)
+- A mouse button (`button`) from `EExecuteOn` enum (e.g., MouseLeftButton, MouseMiddleButton, MouseRightButton)
 - A keyboard modifier key (`key`) from `EModifierMouseArgKey` enum (Shift, Ctrl, Alt, or None)
 
-Example usage:
+**Available Mouse Buttons:**
 ```typescript
-// This modifier will respond to:
-// Primary action: Ctrl + Left Mouse Button
-// Secondary action: Shift + Right Mouse Button
-const modifier = new SomeModifier({
-    executeCondition: { button: EExecuteOn.MouseLeftButton, key: EModifierMouseArgKey.Ctrl },
-    secondaryExecuteCondition: { button: EExecuteOn.MouseRightButton, key: EModifierMouseArgKey.Shift }
-});
+enum EExecuteOn {
+    MouseLeftButton = 0,    // Primary mouse button
+    MouseMiddleButton = 1,  // Middle mouse button/wheel
+    MouseRightButton = 2,   // Secondary mouse button
+    BrowserBackButton = 3,  // Browser back button
+    BrowserForwardButton = 4 // Browser forward button
+}
 ```
+
+**Available Modifier Keys:**
+```typescript
+enum EModifierMouseArgKey {
+    None = 0,   // No modifier key
+    Shift = 1,  // Shift key
+    Ctrl = 2,   // Control key
+    Alt = 4     // Alt/Option key
+}
+```
+
+**Common Usage Patterns:**
+
+1. **Basic mouse button activation:**
+```typescript
+// Activate on right mouse button only
+new RubberBandXyZoomModifier({
+    executeCondition: { button: EExecuteOn.MouseRightButton }
+})
+```
+
+2. **Keyboard modifier combinations:**
+```typescript
+// Require Ctrl+Left mouse button
+new ZoomPanModifier({
+    executeCondition: { 
+        button: EExecuteOn.MouseLeftButton, 
+        key: EModifierMouseArgKey.Ctrl 
+    }
+})
+```
+
+3. **Different primary and secondary actions:**
+```typescript
+// Primary: Left mouse drag
+// Secondary: Right mouse drag with Shift key
+new CursorModifier({
+    executeCondition: { button: EExecuteOn.MouseLeftButton },
+    secondaryExecuteCondition: { 
+        button: EExecuteOn.MouseRightButton,
+        key: EModifierMouseArgKey.Shift
+    }
+})
+```
+
+4. **Browser navigation buttons:**
+```typescript
+// Use browser back/forward buttons for navigation
+new CustomModifier({
+    executeCondition: { button: EExecuteOn.BrowserBackButton },
+    secondaryExecuteCondition: { button: EExecuteOn.BrowserForwardButton }
+})
+```
+
+5. **Multiple modifier combinations:**
+```typescript
+// Complex combination example
+new TooltipModifier({
+    executeCondition: { 
+        button: EExecuteOn.MouseMiddleButton,
+        key: EModifierMouseArgKey.Alt | EModifierMouseArgKey.Ctrl
+    }
+})
+```
+
+**Important Notes:**
+- The `executeCondition` is the primary activation trigger
+- The `secondaryExecuteCondition` provides an alternative activation method
+- Modifier keys can be combined using bitwise OR (e.g., `Ctrl|Shift`)
+- When no condition is specified, most modifiers default to left mouse button with no modifiers
+- The `EExecuteOn` enum values correspond to standard mouse button indices (0=left, 1=middle, 2=right)
+
+**Advanced Example: Custom Interaction Scheme**
+```typescript
+sciChartSurface.chartModifiers.add(
+    // Zoom with Ctrl+Left drag
+    new RubberBandXyZoomModifier({
+        executeCondition: { 
+            button: EExecuteOn.MouseLeftButton,
+            key: EModifierMouseArgKey.Ctrl
+        }
+    }),
+    // Pan with Middle mouse drag
+    new ZoomPanModifier({
+        executeCondition: { button: EExecuteOn.MouseMiddleButton }
+    }),
+    // Show tooltips on Alt+Right click
+    new CursorModifier({
+        executeCondition: { 
+            button: EExecuteOn.MouseRightButton,
+            key: EModifierMouseArgKey.Alt
+        }
+    })
+);
+```
+
+This configuration creates a sophisticated interaction model where:
+- Ctrl+Left drag performs rectangular zoom
+- Middle mouse drag pans the chart
+- Alt+Right click shows cursor tooltips
+- All other interactions remain available for other modifiers
 
 ### Series Interaction
 
