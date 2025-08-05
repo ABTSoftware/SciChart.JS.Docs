@@ -18,7 +18,7 @@ The Suspend Updates API should be used when you want to temporarily stop drawing
 This can be useful in certain scenarios:
 
 - It helps improve performance and reduce visual artifacts when making many changes at once (see [Data Updates Batching example](#data-updates-batching-example)).
-- It can be used in combination with [Render Events](/docusaurus/2d-charts/miscellaneous-apis/render-events) to apply custom layout calculations.
+- It can be used in combination with [Render Events](/2d-charts/miscellaneous-apis/render-events) to apply custom layout calculations.
 - It allows control over rendering and timing. For example, by setting up your own render loop.
 
 ## SciChart's Redraw-on-Update Behavior Overview
