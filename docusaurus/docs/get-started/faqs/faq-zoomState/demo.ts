@@ -73,7 +73,6 @@ async function demo(divElementId) {
             statusLabel.text = "User is not zooming or panning"
         }
 
-
     }, 500)
 
     // region_A_end

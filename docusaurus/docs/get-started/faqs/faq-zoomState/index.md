@@ -12,7 +12,7 @@ The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentatio
 Here is example:
 
 
-```ts {16} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
+```ts {18} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
 
 ```
 
