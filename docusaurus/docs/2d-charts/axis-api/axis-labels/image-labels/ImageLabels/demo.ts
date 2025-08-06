@@ -9,6 +9,7 @@ async function imageLabels(divElementId) {
         ENumericFormat,
         NumberRange,
         createImagesArrayAsync,
+        createImageAsync,
         EAutoRange,
         WaveAnimation,
         TextAnnotation,
@@ -54,9 +55,7 @@ async function imageLabels(divElementId) {
         useNativeText: false // need to be set to "false" to show images
     });
 
-    // SciChart utility function to create HtmlImage elements from urls
-    // Note: createImageAsync / createImagesArrayAsync() also accept imported images if using WebPack
-    const images = await createImagesArrayAsync([
+    const images = [
         "https://scichart.com/demo/images/apple.png",
         "https://scichart.com/demo/images/samsung.png",
         "https://scichart.com/demo/images/xiaomi.png",
@@ -72,15 +71,21 @@ async function imageLabels(divElementId) {
         "https://scichart.com/demo/images/infinix.png",
         "https://scichart.com/demo/images/google.png",
         "https://scichart.com/demo/images/nokia.png"
-    ]);
+    ];
+
+    // SciChart utility function to create HtmlImage elements from urls
+    const promises = images.map(image => createImageAsync(image));
+    const res = await Promise.allSettled(promises);
 
     // Override labelProvider.getLabelTexture() to return an image
     const getLabelTexture = (labelText, textureManager, labelStyle) => {
         const index = parseInt(labelText);
         if (!isNaN(index)) {
-            const emoji = images[index];
-            if (emoji) {
+            if (res[index].status === "fulfilled") {
+                const emoji = res[index].value;
                 return textureManager.createTextureFromImage(emoji, 40, 40);
+            } else {
+                console.warn(`image ${images[index]} not found`);
             }
         }
         return textureManager.createTextTexture([labelText], labelStyle);

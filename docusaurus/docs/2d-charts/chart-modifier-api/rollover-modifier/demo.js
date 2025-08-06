@@ -1,4 +1,4 @@
-import { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, TextAnnotation, EHorizontalAnchorPoint, ECoordinateMode, EllipsePointMarker, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, VerticalSliceModifier } from "scichart";
+import { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, TextAnnotation, EHorizontalAnchorPoint, ECoordinateMode, EllipsePointMarker, RolloverModifier } from "scichart";
 async function cursorDataTemplates(divElementId) {
     // Create a chart surface
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
@@ -49,13 +49,13 @@ async function cursorDataTemplates(divElementId) {
         textColor: "White"
     };
     sciChartSurface.annotations.add(new TextAnnotation({
-        text: "Custom Vertical Slice Modifier",
+        text: "Custom Rollover Modifier",
         fontSize: 36,
         yCoordShift: 25,
         ...options
     }));
     sciChartSurface.annotations.add(new TextAnnotation({
-        text: "Move the chart or move the green line",
+        text: "Move the mouse over the chart",
         fontSize: 20,
         yCoordShift: 75,
         ...options
@@ -89,57 +89,9 @@ async function cursorDataTemplates(divElementId) {
     ) => {
         return customTooltipTemplate(id, seriesInfo, rolloverTooltip);
     };
-    const getTooltipLegendTemplate = (seriesInfos, svgAnnotation) => {
-        let outputSvgString = "";
-        // Foreach series there will be a seriesInfo supplied by SciChart. This contains info about the series under the house
-        seriesInfos.forEach((seriesInfo, index) => {
-            if (seriesInfo.isWithinDataBounds) {
-                const lineHeight = 30;
-                const y = 50 + index * lineHeight;
-                // Use the series stroke for legend text colour
-                const textColor = seriesInfo.stroke;
-                // Use the seriesInfo formattedX/YValue for text on the
-                outputSvgString += `<text x="8" y="${y}" font-size="16" font-family="Verdana" fill="${textColor}">
-                                    ${seriesInfo.seriesName}: X=${seriesInfo.formattedXValue}, Y=${seriesInfo.formattedYValue}
-                                </text>`;
-            }
-        });
-        // Content here is returned for the custom legend placed in top-left of the chart
-        return `<svg width="100%" height="100%">
-                <text x="8" y="20" font-size="15" font-family="Verdana" fill="lightblue">Custom Rollover Legend</text>
-                ${outputSvgString}
-            </svg>`;
-    };
-    const vSlice1 = new VerticalSliceModifier({
-        x1: 5.06,
-        xCoordinateMode: ECoordinateMode.DataValue,
-        isDraggable: true,
-        // Defines if rollover vertical line is shown
-        showRolloverLine: true,
-        rolloverLineStrokeThickness: 1,
-        rolloverLineStroke: "green",
-        lineSelectionColor: "green",
-        // Shows the default tooltip
-        showTooltip: true,
-        // Optional: Overrides the legend template to display additional info top-left of the chart
-        tooltipLegendTemplate: getTooltipLegendTemplate
-    });
-    const vSlice2 = new VerticalSliceModifier({
-        x1: 0.75,
-        xCoordinateMode: ECoordinateMode.Relative,
-        isDraggable: true,
-        // Defines if rollover vertical line is shown
-        showRolloverLine: true,
-        rolloverLineStrokeThickness: 1,
-        rolloverLineStroke: "orange",
-        lineSelectionColor: "orange",
-        // Shows the default tooltip
-        showTooltip: true
-    });
-    sciChartSurface.chartModifiers.add(vSlice1, vSlice2);
+    // Add a CursorModifier to the chart
+    const rolloverModifier = new RolloverModifier({});
+    sciChartSurface.chartModifiers.add(rolloverModifier);
     // #region_A_end
-    sciChartSurface.chartModifiers.add(new ZoomPanModifier({ enableZoom: true }));
-    sciChartSurface.chartModifiers.add(new ZoomExtentsModifier());
-    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier());
 }
 cursorDataTemplates("scichart-root");

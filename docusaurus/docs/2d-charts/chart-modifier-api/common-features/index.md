@@ -21,17 +21,165 @@ Refer to our [TypeDoc Documentation:blue_book:](https://www.scichart.com/docume
 |-------------|-----------------|
 | [.parentSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#parentsurface) | A property to get the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |
 | [.isEnabled:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isenabled) | A property which determines if the current modifier is enabled or not. |
-| [.isAttached:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isattached) | When true, the modifier is attached to a parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |. |
+| [.isAttached:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isattached) | When true, the modifier is attached to a parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
 | [.receiveHandledEvents:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#receivehandledevents) | When true, the modifier will receive all events even if that event is marked as handled by a previous modifier. When false (default), the modifier will not receive events if they are handled. |
-| [onAttach():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#onattach) | A function (which may be overridden) which is called when the modifier is attached to a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [onParentSurfaceRendered():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#onparentsurfacerendered) | A function (which may be overridden) which is called when the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |)is rendered. |
-| [modifierMouseDown():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousedown) | A function (which may be overridden) which is called when a mouse or touch-down event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierMouseMove():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousemove) | A function (which may be overridden) which is called when a mouse or touch-move event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierMouseUp():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseup) | A function (which may be overridden) which is called when a mouse or touch-up event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierMouseWheel():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousewheel) | A function (which may be overridden) which is called when a mouse wheel event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierDoubleClick():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifierdoubleclick) | A function (which may be overridden) which is called when a mouse or touch double-click event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierMouseEnter():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseenter) | A function (which may be overridden) which is called when a mouse-enter event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |). |
-| [modifierMouseLeave():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseleave) | A function (which may be overridden) which is called when a mouse-leave event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) when the modifier is attached. |).
+| [.executeCondition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#executecondition) | The primary action execute condition that modifier should respond to (see below). |
+| [.secondaryExecuteCondition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#secondaryexecutecondition) | The secondary action execute condition that modifier should respond to (see below). |
+| [.modifierGroup:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiergroup) | Specifies a string ID to group modifiers. When one receives a mouse event, all modifiers in the same group receive the event. |
+| [onAttach():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#onattach) | Called when the modifier is attached to a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [onParentSurfaceRendered():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#onparentsurfacerendered) | Called when the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) is rendered. |
+| [modifierMouseDown():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousedown) | Called when a mouse or touch-down event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierMouseMove():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousemove) | Called when a mouse or touch-move event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierMouseUp():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseup) | Called when a mouse or touch-up event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierMouseWheel():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermousewheel) | Called when a mouse wheel event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierDoubleClick():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifierdoubleclick) | Called when a mouse or touch double-click event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierMouseEnter():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseenter) | Called when a mouse-enter event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+| [modifierMouseLeave():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#modifiermouseleave) | Called when a mouse-leave event occurs on the parent [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). |
+
+### Execute Conditions
+
+Chart modifiers can be configured to respond to specific mouse and keyboard combinations using `executeCondition` and `secondaryExecuteCondition` properties. These conditions determine when the modifier should activate.
+
+Each condition can specify:
+- A mouse button (`button`) from `EExecuteOn` enum (e.g., MouseLeftButton, MouseMiddleButton, MouseRightButton)
+- A keyboard modifier key (`key`) from `EModifierMouseArgKey` enum (Shift, Ctrl, Alt, or None)
+
+**Available Mouse Buttons:**
+```typescript
+enum EExecuteOn {
+    MouseLeftButton = 0,    // Primary mouse button
+    MouseMiddleButton = 1,  // Middle mouse button/wheel
+    MouseRightButton = 2,   // Secondary mouse button
+    BrowserBackButton = 3,  // Browser back button
+    BrowserForwardButton = 4 // Browser forward button
+}
+```
+
+**Available Modifier Keys:**
+```typescript
+enum EModifierMouseArgKey {
+    None = 0,   // No modifier key
+    Shift = 1,  // Shift key
+    Ctrl = 2,   // Control key
+    Alt = 4     // Alt/Option key
+}
+```
+
+**Common Usage Patterns:**
+
+1. **Basic mouse button activation:**
+```typescript
+// Activate on right mouse button only
+new RubberBandXyZoomModifier({
+    executeCondition: { button: EExecuteOn.MouseRightButton }
+})
+```
+
+2. **Keyboard modifier combinations:**
+```typescript
+// Require Ctrl+Left mouse button
+new ZoomPanModifier({
+    executeCondition: { 
+        button: EExecuteOn.MouseLeftButton, 
+        key: EModifierMouseArgKey.Ctrl 
+    }
+})
+```
+
+3. **Different primary and secondary actions:**
+```typescript
+// Primary: Left mouse drag
+// Secondary: Right mouse drag with Shift key
+new CursorModifier({
+    executeCondition: { button: EExecuteOn.MouseLeftButton },
+    secondaryExecuteCondition: { 
+        button: EExecuteOn.MouseRightButton,
+        key: EModifierMouseArgKey.Shift
+    }
+})
+```
+
+4. **Browser navigation buttons:**
+```typescript
+// Use browser back/forward buttons for navigation
+new CustomModifier({
+    executeCondition: { button: EExecuteOn.BrowserBackButton },
+    secondaryExecuteCondition: { button: EExecuteOn.BrowserForwardButton }
+})
+```
+
+5. **Multiple modifier combinations:**
+```typescript
+// Complex combination example
+new TooltipModifier({
+    executeCondition: { 
+        button: EExecuteOn.MouseMiddleButton,
+        key: EModifierMouseArgKey.Alt | EModifierMouseArgKey.Ctrl
+    }
+})
+```
+
+**Important Notes:**
+- The `executeCondition` is the primary activation trigger
+- The `secondaryExecuteCondition` provides an alternative activation method
+- Modifier keys can be combined using bitwise OR (e.g., `Ctrl|Shift`)
+- When no condition is specified, most modifiers default to left mouse button with no modifiers
+- The `EExecuteOn` enum values correspond to standard mouse button indices (0=left, 1=middle, 2=right)
+
+**Advanced Example: Custom Interaction Scheme**
+```typescript
+sciChartSurface.chartModifiers.add(
+    // Zoom with Ctrl+Left drag
+    new RubberBandXyZoomModifier({
+        executeCondition: { 
+            button: EExecuteOn.MouseLeftButton,
+            key: EModifierMouseArgKey.Ctrl
+        }
+    }),
+    // Pan with Middle mouse drag
+    new ZoomPanModifier({
+        executeCondition: { button: EExecuteOn.MouseMiddleButton }
+    }),
+    // Show tooltips on Alt+Right click
+    new CursorModifier({
+        executeCondition: { 
+            button: EExecuteOn.MouseRightButton,
+            key: EModifierMouseArgKey.Alt
+        }
+    })
+);
+```
+
+This configuration creates a sophisticated interaction model where:
+- Ctrl+Left drag performs rectangular zoom
+- Middle mouse drag pans the chart
+- Alt+Right click shows cursor tooltips
+- All other interactions remain available for other modifiers
+
+### Series Interaction
+
+Chart modifiers can interact with specific series through these methods:
+
+| **Method** | **Description** |
+|------------|-----------------|
+| [onAttachSeries():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#onattachseries) | Called when a renderable series is attached to the chart |
+| [onDetachSeries():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#ondetachseries) | Called when a renderable series is detached from the chart |
+| [includeSeries():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#includeseries) | Controls whether a series should be included in the modifier's behavior |
+
+### Including/Excluding Series
+
+The `includeSeries()` method is particularly important for modifiers that display legends or tooltips (like `CursorModifier`, `LegendModifier`, `RolloverModifier`, etc.). It allows you to control which series should be included in the modifier's behavior.
+
+Example usage:
+```typescript
+// Include a specific series in the modifier
+modifier.includeSeries(mySeries, true);
+
+// Exclude a series from the modifier
+modifier.includeSeries(mySeries, false);
+```
+
+When a series is included/excluded, the modifier will update its internal state (e.g., update tooltip content or legend items) if it's currently attached to a chart.
 
 ### ChartModifierBase2D Type
 
