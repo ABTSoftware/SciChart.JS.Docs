@@ -1,27 +1,13 @@
 import * as SciChart from "scichart";
-
-const {
-    HtmlTextAnnotation,
-    HtmlCustomAnnotation,
-    NumericAxis,
-    SciChartSurface,
-    SciChartJsNavyTheme,
-    ECoordinateMode,
-    EHorizontalAnchorPoint,
-    ZoomPanModifier,
-    MouseWheelZoomModifier
-} = SciChart;
-
+const { HtmlTextAnnotation, HtmlCustomAnnotation, NumericAxis, SciChartSurface, SciChartJsNavyTheme, ECoordinateMode, EHorizontalAnchorPoint, ZoomPanModifier, MouseWheelZoomModifier } = SciChart;
 async function drawHtmlAnnotationsExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
-
     // region_A_start
     // A CustomHtmlAnnotation which contains an HTML input element
-
     const customHtmlAnnotation = new HtmlCustomAnnotation({
         xCoordinateMode: ECoordinateMode.DataValue,
         yCoordinateMode: ECoordinateMode.DataValue,
@@ -40,10 +26,8 @@ async function drawHtmlAnnotationsExample(divElementId) {
             <option value="yellow" style="background-color: yellow; color: black;">Yellow</option>
             <option value="purple" style="background-color: purple; color: white;">Purple</option>
         </select>`;
-
     sciChartSurface.annotations.add(customHtmlAnnotation);
     // region_A_end
-
     // region_B_start
     // A HtmlTextAnnotation which is resized on zoom and bound to data value coordinates
     const textAnnotation = new HtmlTextAnnotation({
@@ -68,11 +52,8 @@ async function drawHtmlAnnotationsExample(divElementId) {
             overflow: "hidden"
         }
     });
-
     sciChartSurface.annotations.add(textAnnotation);
     // region_B_end
-
     sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new MouseWheelZoomModifier());
 }
-
 drawHtmlAnnotationsExample("scichart-root");

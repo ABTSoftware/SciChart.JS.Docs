@@ -1,7 +1,7 @@
 import * as SciChart from "scichart";
 async function imageLabels(divElementId) {
     // Demonstrates how to configure an axis with rotated labels in scichart.js
-    const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, ENumericFormat, NumberRange, createImagesArrayAsync, EAutoRange, WaveAnimation, TextAnnotation, ECoordinateMode, EHorizontalAnchorPoint, PaletteFactory, GradientParams, Point, FastColumnRenderableSeries, XyDataSeries } = SciChart;
+    const { SciChartSurface, SciChartJsNavyTheme, NumericAxis, ENumericFormat, NumberRange, createImagesArrayAsync, createImageAsync, EAutoRange, WaveAnimation, TextAnnotation, ECoordinateMode, EHorizontalAnchorPoint, PaletteFactory, GradientParams, Point, FastColumnRenderableSeries, XyDataSeries } = SciChart;
     // Dataset = 'percentage market share of phones, 2022'
     const dataset = [
         { name: "Apple", percent: 28.41 },
@@ -32,9 +32,7 @@ async function imageLabels(divElementId) {
         labelFormat: ENumericFormat.NoFormat,
         useNativeText: false // need to be set to "false" to show images
     });
-    // SciChart utility function to create HtmlImage elements from urls
-    // Note: createImageAsync / createImagesArrayAsync() also accept imported images if using WebPack
-    const images = await createImagesArrayAsync([
+    const images = [
         "https://scichart.com/demo/images/apple.png",
         "https://scichart.com/demo/images/samsung.png",
         "https://scichart.com/demo/images/xiaomi.png",
@@ -50,14 +48,20 @@ async function imageLabels(divElementId) {
         "https://scichart.com/demo/images/infinix.png",
         "https://scichart.com/demo/images/google.png",
         "https://scichart.com/demo/images/nokia.png"
-    ]);
+    ];
+    // SciChart utility function to create HtmlImage elements from urls
+    const promises = images.map(image => createImageAsync(image));
+    const res = await Promise.allSettled(promises);
     // Override labelProvider.getLabelTexture() to return an image
     const getLabelTexture = (labelText, textureManager, labelStyle) => {
         const index = parseInt(labelText);
         if (!isNaN(index)) {
-            const emoji = images[index];
-            if (emoji) {
+            if (res[index].status === "fulfilled") {
+                const emoji = res[index].value;
                 return textureManager.createTextureFromImage(emoji, 40, 40);
+            }
+            else {
+                console.warn(`image ${images[index]} not found`);
             }
         }
         return textureManager.createTextTexture([labelText], labelStyle);
