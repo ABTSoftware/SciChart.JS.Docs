@@ -28,6 +28,15 @@ SciChartDefaults.useNativeText now defaults true
 
 If you do not have any special requirements for your labels, we recommend using the new native text defaults.  If you have specific axes using features not supported by native text, just set useNativeText: false on that axis.
 
+disableAspect option now defaults true in SciChartReact
+-------------------------------------------------------
+When creating a surface you can pass an option [disableAspect](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/i2dsurfaceoptions.html#disableaspect) to a surface.  
+Now, we have also introduce a global flag used as the default value for this property - [SciChartDefaults.disableAspect](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#disableaspect).  
+And in **SciChartReact** it has been set to `true`. This means that by default, a chart will have a zero size.  
+To avoid layout issues, make sure to apply the desired size styling to the SciChartReact element.  
+You can also change this flag per surface or globally.  
+
+
 SciChartSurface.svgClippingMode
 -------------------------------
 
