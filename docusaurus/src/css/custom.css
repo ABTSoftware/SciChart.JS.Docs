@@ -67,12 +67,12 @@ track it down within inspect element and change the variable from one of these c
   --ifm-color-primary: rgb(146, 197, 255);
   --aa-muted-color-rgb: rgb(146, 197, 255) !important;
   --ifm-color-success-dark: rgb(146, 197, 255);
-  --ifm-background-color: rgb(41, 41, 41) !important;
+  --ifm-background-color: rgb(32, 32, 32) !important;
   --ifm-color-success-contrast-background: #88bbff11;
   --docusaurus-highlighted-code-line-bg: #66FF6610;
 
-  --code-section-background: rgb(30, 30, 30);
-  --bg-secondary: rgb(30, 30, 30);
+  --code-section-background: rgb(18, 18, 18);
+  --bg-secondary: rgb(18, 18, 18);
   
   --absolute-text-color: rgb(255, 255, 255);
 }
