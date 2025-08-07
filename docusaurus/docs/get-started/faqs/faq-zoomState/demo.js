@@ -1,15 +1,38 @@
-import { NumberRange, EColumnMode, EColumnYMode, SciChartSurface, NumericAxis, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, ZoomExtentsModifier, ZoomPanModifier, EZoomState, MouseWheelZoomModifier, TextAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode } from "scichart";
+import {
+    NumberRange,
+    EColumnMode,
+    EColumnYMode,
+    SciChartSurface,
+    NumericAxis,
+    SciChartJsNavyTheme,
+    FastRectangleRenderableSeries,
+    XyxyDataSeries,
+    ZoomExtentsModifier,
+    ZoomPanModifier,
+    EZoomState,
+    MouseWheelZoomModifier,
+    TextAnnotation,
+    EHorizontalAnchorPoint,
+    EVerticalAnchorPoint,
+    ECoordinateMode,
+} from "scichart";
+
 async function demo(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
+
     const growBy = new NumberRange(0.1, 0.1);
+
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
+
+
     const xValues = [0, 6, 10, 17];
     const yValues = [0, 6, 2, 5];
     const x1Values = [5, 9, 15, 25];
     const y1Values = [5, 9, 8, 10];
+
     const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyxyDataSeries(wasmContext, {
             xValues,
@@ -24,7 +47,9 @@ async function demo(divElementId) {
         strokeThickness: 1,
         opacity: 0.5
     });
+
     // region_A_start
+
     const statusLabel = new TextAnnotation({
         x1: 0.1,
         y1: 0.1,
@@ -37,18 +62,28 @@ async function demo(divElementId) {
         yCoordinateMode: ECoordinateMode.Relative,
     });
     sciChartSurface.annotations.add(statusLabel);
-    setInterval(() => {
+
+
+    sciChartSurface.rendered.subscribe(() => {
+
         if (sciChartSurface.zoomState === EZoomState.UserZooming) {
-            statusLabel.text = "User is zooming or panning";
+            statusLabel.text = "Chart has been zoomed or panned by the user"
+        } else if (sciChartSurface.zoomState === EZoomState.AtExtents) {
+            statusLabel.text = "Chart is at extents of the data"
         }
-        else {
-            statusLabel.text = "User is not zooming or panning";
-        }
-    }, 500);
+
+    })
+
     // region_A_end
+
     sciChartSurface.renderableSeries.add(rectangleSeries);
-    sciChartSurface.chartModifiers.add(new ZoomExtentsModifier());
-    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier());
-    sciChartSurface.chartModifiers.add(new ZoomPanModifier());
+
+    sciChartSurface.chartModifiers.add(
+        new ZoomPanModifier(),
+        new ZoomExtentsModifier(),
+        new MouseWheelZoomModifier()
+    );
+
 }
+
 demo("scichart-root");
