@@ -14,7 +14,7 @@ import {
     TextAnnotation,
     EHorizontalAnchorPoint,
     EVerticalAnchorPoint,
-    ECoordinateMode
+    ECoordinateMode,
 } from "scichart";
 
 async function demo(divElementId) {
@@ -48,7 +48,6 @@ async function demo(divElementId) {
         opacity: 0.5
     });
 
-
     // region_A_start
 
     const statusLabel = new TextAnnotation({
@@ -65,28 +64,25 @@ async function demo(divElementId) {
     sciChartSurface.annotations.add(statusLabel);
 
 
-    setInterval(() => {
+    sciChartSurface.rendered.subscribe(() => {
 
         if (sciChartSurface.zoomState === EZoomState.UserZooming) {
-            statusLabel.text = "User is zooming or panning"
-        } else {
-            statusLabel.text = "User is not zooming or panning"
+            statusLabel.text = "Chart has been zoomed or panned by the user"
+        } else if (sciChartSurface.zoomState === EZoomState.AtExtents) {
+            statusLabel.text = "Chart is at extents of the data"
         }
 
-    }, 500)
+    })
 
     // region_A_end
 
-
-
     sciChartSurface.renderableSeries.add(rectangleSeries);
 
-    sciChartSurface.chartModifiers.add(new ZoomExtentsModifier());
-
-    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier());
-
-    sciChartSurface.chartModifiers.add(new ZoomPanModifier());
-
+    sciChartSurface.chartModifiers.add(
+        new ZoomPanModifier(),
+        new ZoomExtentsModifier(),
+        new MouseWheelZoomModifier()
+    );
 
 }
 
