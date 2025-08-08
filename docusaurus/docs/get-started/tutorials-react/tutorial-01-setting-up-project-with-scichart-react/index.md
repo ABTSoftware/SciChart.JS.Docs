@@ -60,7 +60,7 @@ Finally, Babel is required for JSX files
 
 <CodeSnippetBlock labels={["Initialising an npm project"]}>
 ```bash
-npm install --save-dev @babel.core
+npm install --save-dev @babel/core
 npm install --save-dev @babel/preset-react
 npm install --save-dev babel-loader
 ```
