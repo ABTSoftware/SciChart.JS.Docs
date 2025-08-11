@@ -172,7 +172,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - **Builder (JSON Chart Definition) API**
     - [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview)
     - [Creating a Simple Chart](/2d-charts/builder-api/simple-chart)
-    - [Creating a 3D Chart](/2d-charts/builder-api/default-3d-chart)
+    - [Creating a 3D Chart](/3d-charts/builder-api/default-3d-chart)
     - [Creating a Pie Chart](/2d-charts/builder-api/pie-chart)
     - [Creating a Polar Chart](/2d-charts/builder-api/polar-chart)
     - [Working with Data](/2d-charts/builder-api/working-with-data)

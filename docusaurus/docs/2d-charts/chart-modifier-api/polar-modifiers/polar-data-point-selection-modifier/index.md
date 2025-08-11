@@ -18,6 +18,3 @@ The [PolarDataPointSelectionModifier:blue_book:](https://www.scichart.com/docume
 </CodeSnippetBlock>
 
 <LiveDocSnippet name="./demo" />
-
-In the code above:
--

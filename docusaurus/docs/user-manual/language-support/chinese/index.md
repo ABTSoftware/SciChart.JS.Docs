@@ -30,7 +30,7 @@ SciChart 还支持在图表上添加中文文本注释：
 
 ## 3D 图表中的中文字符实现
 
-要在 Scichart 3d 中使用中文字符，请参阅本文 - [Native Text Api](https://www.scichart.com/documentation/js/v4/2d-charts/miscellaneous-apis/native-text-api/)
+要在 Scichart 3d 中使用中文字符，请参阅本文 - [Native Text Api:blue_book:](https://www.scichart.com/documentation/js/v4/2d-charts/miscellaneous-apis/native-text-api/)
 
 
 ## 最佳实践建议

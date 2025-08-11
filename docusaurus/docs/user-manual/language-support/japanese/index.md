@@ -30,7 +30,7 @@ SciChartは以下の理由で日本語文字を適切に処理できます：
 
 ## 3Dチャートでの日本語実装
 
-Scichart 3dで日本語文字を使用するには、この記事を参照してください。 - [Native Text Api](https://www.scichart.com/documentation/js/v4/2d-charts/miscellaneous-apis/native-text-api/)
+Scichart 3dで日本語文字を使用するには、この記事を参照してください。 - [Native Text Api:blue_book:](https://www.scichart.com/documentation/js/v4/2d-charts/miscellaneous-apis/native-text-api/)
 
 
 

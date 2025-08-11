@@ -80,8 +80,7 @@ export async function PolarMouseWheelZoom(divElementId) {
         new PolarMouseWheelZoomModifier({
             growFactor: 0.002,
             zoomSize: false,
-            defaultActionType: EActionType.Zoom // DEFAULT value -> for zooming / scaling the polar chart
-            // defaultActionType: EActionType.Pan // secondary value -> pans / spins the polar chart
+            defaultActionType: EActionType.Pan
         }),
     );
     // #region_A_end
@@ -92,58 +91,3 @@ export async function PolarMouseWheelZoom(divElementId) {
 }
 
 PolarMouseWheelZoom("scichart-root");
-
-async function builderExample(divElementId) {
-    // #region_B_start
-    // Demonstrates how to configure the PolarMouseWheelZoomModifier in SciChart.js using the Builder API
-    const { 
-        chartBuilder, 
-        EThemeProviderType, 
-        EAxisType, 
-        EChart2DModifierType, 
-        EPolarAxisMode, 
-        ESeriesType, 
-        EActionType 
-    } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
-        surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Angular 
-            } 
-        },
-        yAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Radial 
-            } 
-        },
-        series: {
-            type: ESeriesType.PolarBandSeries,
-            options: {
-                strokeThickness: 3,
-            },
-            xyyData: {
-                xValues: Array.from({ length: 12 }, (_, i) => i),
-                yValues: Array.from({ length: 12 }, (_, i) => Math.sin(i * 0.2)),
-                y1Values: Array.from({ length: 12 }, (_, i) => Math.cos(i * 0.2))
-            }
-        },
-        modifiers: [
-            {
-                type: EChart2DModifierType.PolarMouseWheelZoom,
-                options: {
-                    growFactor: 0.002,
-                    zoomSize: false,
-                    defaultActionType: EActionType.Zoom
-                }
-            }
-        ]
-    });
-    // #region_B_end
-}
-
-if (location.search.includes("builder=1")) builderExample("scichart-root");
