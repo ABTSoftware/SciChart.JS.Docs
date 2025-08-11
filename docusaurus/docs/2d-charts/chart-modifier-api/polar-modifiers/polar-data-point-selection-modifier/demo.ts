@@ -1,6 +1,6 @@
 import * as SciChart from "scichart";
 
-async function PolarArcZoom(divElementId) {
+async function PolarDataPointSelectionExample(divElementId) {
     const {
         SciChartPolarSurface,
         EPolarAxisMode,
@@ -110,18 +110,19 @@ async function PolarArcZoom(divElementId) {
     // #region_A_end
 }
 
-PolarArcZoom("scichart-root");
+PolarDataPointSelectionExample("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_B_start
-    // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
+    // Demonstrates how to configure the PolarDataPointSelection in SciChart.js using the Builder API
     const { 
         chartBuilder, 
         EThemeProviderType, 
         EAxisType, 
         EChart2DModifierType, 
-        easing, 
-        EPolarAxisMode 
+        ESeriesType, 
+        EPolarAxisMode,
+        DataPointSelectionPaletteProvider
     } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
@@ -135,17 +136,36 @@ async function builderExample(divElementId) {
             type: EAxisType.PolarNumericAxis, 
             options: { polarAxisMode: EPolarAxisMode.Angular } 
         },
+        series: [
+            {
+                type: ESeriesType.PolarLineSeries,
+                xyData: {
+                    xValues: Array.from({ length: 10 }, (_, i) => i),
+                    yValues: Array.from({ length: 10 }, (_, i) => Math.sin(i * 0.1))
+                },
+                options: {
+                    stroke: "#FFAA00",
+                    strokeThickness: 3,
+                    pointMarker: {
+                        type: SciChart.EPointMarkerType.Triangle,
+                        options: {
+                            width: 12,
+                            height: 12,
+                            fill: "#000000",
+                            stroke: "#FFAA00",
+                            strokeThickness: 2
+                        }
+                    },
+                    paletteProvider: new DataPointSelectionPaletteProvider({
+                        fill: "#FFFFFF",
+                        stroke: "#FFAA00", // keep the same
+                    })
+                }
+            }
+        ],
         modifiers: [
             {
-                type: EChart2DModifierType.PolarArcZoom, // TODO
-                options: {
-                    isAnimated: true,
-                    fill: "#00ffff33",
-                    strokeThickness: 5,
-                    stroke: "red",
-                    animationDuration: 2000,
-                    easingFunction: easing.outCubic
-                }
+                type: EChart2DModifierType.PolarDataPointSelection
             }
         ]
     });
