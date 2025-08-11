@@ -60,7 +60,7 @@ const { x, y } = convertPolarToCartesian(
 
 When hit-testing, convert the mouse (x, y) pixel coordinates to polar coordinates, then compare with data points.
 
-For reference, here is our actual implementation of a hit-test provider for the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarlinerenderableseries.html):
+For reference, here is our actual implementation of a hit-test provider for the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html):
 
 ```ts showLineNumbers {48-55,101}
 import { 

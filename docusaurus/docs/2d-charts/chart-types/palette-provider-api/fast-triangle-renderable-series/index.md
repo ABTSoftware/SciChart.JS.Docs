@@ -4,7 +4,7 @@ sidebar_position: 12
 
 # Per-Point Coloring for Triangle Series
 
-Triangle series can be colored per-point using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastTriangleRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+Triangle series can be colored per-point using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastTriangleRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasttrianglerenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
 First, let's create a PaletteProvider class like this:
 
@@ -23,7 +23,7 @@ Next, we can apply the PaletteProvider to the series. This can be done both with
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
 
 :::tip
-For a more detailed example of [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html), see the [Javascript Treemap Chart Example](https://stagingdemo2.scichart.com/demo/iframe/treemap-chart). Each rectangle is coloured based on its value, the larger the value, the darker the green, while negative values are coloured red in the same fashion.
+For a more detailed example of [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasttrianglerenderableseries.html), see the [Javascript Treemap Chart Example](https://stagingdemo2.scichart.com/demo/iframe/treemap-chart). Each rectangle is coloured based on its value, the larger the value, the darker the green, while negative values are coloured red in the same fashion.
 :::
 
 #### See Also

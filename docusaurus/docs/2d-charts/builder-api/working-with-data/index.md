@@ -109,6 +109,6 @@ For more information regarding the PointMetadata API, check the [PointMetadata 
 
 * [Creating a Polar Chart](/2d-charts/builder-api/polar-chart)
 
-* [Creating a 3D Chart](/2d-charts/builder-api/default-3d-chart)
+* [Creating a 3D Chart](/3d-charts/builder-api/default-3d-chart)
 
 * [Complex Options](/2d-charts/builder-api/complex-options)
