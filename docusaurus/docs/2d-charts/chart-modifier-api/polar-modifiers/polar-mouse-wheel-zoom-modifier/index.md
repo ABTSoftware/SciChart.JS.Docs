@@ -35,3 +35,4 @@ Which will result in this:
 #### See Also:
 
 * [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [MouseWheelZoomModifier](/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier)
