@@ -71,9 +71,10 @@ SciChart.js 3D also has an orthogonal mode. In this mode, there is no perspectiv
 Apparent distance to target is defined by [camera.orthoWidth:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#orthowidth) and [orthoHeight property:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#orthoheight). Camera.radius is ignored.
 
 when [projectionMode = ECameraProjectionMode.Orthogonal:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#projectionmode), instead of a pyramid shape for the camera view, imagine a box with parallel sides. The [orthoWidth:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#orthowidth) and [orthoHeight:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#orthoheight) specify the width and height of the view in 3D world coordinates. [Camera.radius:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cameracontroller.html#radius) makes no difference to apparent closeness to target as there is no persective (closer objects are not larger).  
-    src="
-        src="/images/Chart3D_Camera_Ortho.png"
-    />
+
+<CenteredImageWrapper
+    src="/images/Chart3D_Camera_Ortho.png"
+/>
 
 In this mode, **radius** and **fieldOfView** are ignored. Update the **orthoWidth** and **orthoHeight** property to modify apparent zoom. Camera **position**, **target** as well as **orbitalPitch**, **orbitalYaw** can be set to define camera orientation.
 
