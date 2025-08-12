@@ -52,9 +52,9 @@ MemoryUsageHelper.objectRegistry.log();
 
 This will output several collections and their contents to the JS console. From the output we can define a lifecycle state of an object and it's type.
 
-    src="
-        src="/images/MemoryDebugging_LogOutput.png"
-    />
+<CenteredImageWrapper
+    src="/images/MemoryDebugging_LogOutput.png"
+/>
 
 *   **undeletedObjectsMap** - objects that were created but .delete() was not called.
 *   **uncollectedObjectsMap** = objects that are not yet garbage collected by the JavaScript Garbage Collector

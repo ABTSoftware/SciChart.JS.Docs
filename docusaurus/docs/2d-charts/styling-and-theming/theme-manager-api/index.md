@@ -15,15 +15,15 @@ SciChart had a dark theme before dark-mode was cool :) Here's our default them
 
 <CodeSnippetBlock labels={["Applying dark theme"]}>
     ```ts
-import { SciChartSurface, SciChartJSDarkv2Theme } from "scichart";
+    import { SciChartSurface, SciChartJSDarkv2Theme } from "scichart";
 
-// For best results & applying to the loader animation, apply theme before chart creation
-const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
-    theme: new SciChartJSDarkv2Theme() 
-});
+    // For best results & applying to the loader animation, apply theme before chart creation
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
+        theme: new SciChartJSDarkv2Theme() 
+    });
 
-// You can also change the theme after creation
-sciChartSurface.applyTheme(new SciChartJSDarkv2Theme());
+    // You can also change the theme after creation
+    sciChartSurface.applyTheme(new SciChartJSDarkv2Theme());
     ```
 </CodeSnippetBlock>
 
@@ -36,15 +36,15 @@ For applications with a white or lighter background color, we also ship a light 
 
 <CodeSnippetBlock labels={["Applying light Theme"]}>
     ```ts
-import { SciChartSurface, SciChartJSLightTheme } from "scichart";
+    import { SciChartSurface, SciChartJSLightTheme } from "scichart";
 
-// For best results & applying to the loader animation, apply theme before chart creation
-const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
-    theme: new SciChartJSLightTheme() 
-});
+    // For best results & applying to the loader animation, apply theme before chart creation
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
+        theme: new SciChartJSLightTheme() 
+    });
 
-// You can also change the theme after creation
-sciChartSurface.applyTheme(new SciChartJSLightTheme());
+    // You can also change the theme after creation
+    sciChartSurface.applyTheme(new SciChartJSLightTheme());
     ```
 </CodeSnippetBlock>
 
@@ -57,15 +57,15 @@ In SciChart.js v3, we've added a new Navy theme. This looks great on both a ligh
 
 <CodeSnippetBlock labels={["Applying Navy Theme"]}>
     ```ts
-import { SciChartSurface, SciChartJsNavyTheme } from "scichart";
+    import { SciChartSurface, SciChartJsNavyTheme } from "scichart";
 
-// For best results & applying to the loader animation, apply theme before chart creation
-const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
-    theme: new SciChartJsNavyTheme() 
-});
+    // For best results & applying to the loader animation, apply theme before chart creation
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create("div-element-id", { 
+        theme: new SciChartJsNavyTheme() 
+    });
 
-// Changing theme after creation
-sciChartSurface.applyTheme(new SciChartJsNavyTheme());
+    // Changing theme after creation
+    sciChartSurface.applyTheme(new SciChartJsNavyTheme());
     ```
 </CodeSnippetBlock>
 
