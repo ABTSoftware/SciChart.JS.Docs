@@ -23,11 +23,11 @@ We have two places you can view the SciChart Demo online.
 
 **Option 1:** Browse all our examples at [scichart.com/examples/javascript-chart](https://www.scichart.com/examples/javascript-chart/), where demos are embedded into our website.
 
-[![](img/1.png)](https://scichart.com/example/javascript-chart)
+[![](img/1.png)](https://www.scichart.com/example/javascript-chart)
 
-**Option 2:** At [scichart.com/demo](https://scichart.com/demo), where the React app is hosted. The React App demo has a counterpart Github repo here: [SciChart.JS.Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Examples) 
+**Option 2:** At [scichart.com/demo](https://www.scichart.com/demo), where the React app is hosted. The React App demo has a counterpart Github repo here: [SciChart.JS.Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Examples) 
 
-[![scichart.com/demo](img/2.png)](https://scichart.com/demo)
+[![scichart.com/demo](img/2.png)](https://www.scichart.com/demo)
 
 :::tip
 _**Note**: The SciChart website wraps & displays the React App demos inside a webpage with supplementary information. Both are good tools for exploring the feature-set of SciChart.js._

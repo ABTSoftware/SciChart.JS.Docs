@@ -60,7 +60,7 @@ An Xy filter will produce an XyDataSeries, but it can accept any series type as 
 Percentage Change
 -----------------
 
-You can use a ScaleOffset filter to show the percentage change in a series, which is useful for comparing data at different scales. For a running example of this with code see our [Percentage Change demo](https://scichart.com/demo/javascript-percentage-change)
+You can use a ScaleOffset filter to show the percentage change in a series, which is useful for comparing data at different scales. For a running example of this with code see our [Percentage Change demo](https://www.scichart.com/demo/javascript-percentage-change)
 
 #### See Also
 

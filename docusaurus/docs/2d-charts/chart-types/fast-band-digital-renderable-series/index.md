@@ -7,17 +7,17 @@ sidebar_position: 24
 A Digital Band Series, or High-Low Fill between two Digital or Step lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
-The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/digital-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalBandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/digital-band-chart).
+The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/digital-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalBandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/digital-band-chart).
 :::
 
 <ChartFromSciChartDemo
-    src="https://scichart.com/demo/iframe/digital-band-chart"
+    src="https://www.scichart.com/demo/iframe/digital-band-chart"
     title="Digital Band Chart"
 />
 
 ## Create a Digital Band Series
 
-To create a [Javascript Digital Band Chart](https://scichart.com/demo/javascript-digital-band-chart) with SciChart.js, use the following code:
+To create a [Javascript Digital Band Chart](https://www.scichart.com/demo/javascript-digital-band-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {30,42} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

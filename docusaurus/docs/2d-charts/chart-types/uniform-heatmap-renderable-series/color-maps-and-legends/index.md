@@ -18,11 +18,11 @@ What this means:
 *   The GradientStop at `Offset = 0` with `Color = "Transparent"` corresponds to the [HeatmapColorMap.minimum:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html#minimum) value of `0`
 *   The GradientStop at `Offset = 1` with `Color = "#EC0F6C"` corresponds to [HeatmapColorMap.maximum:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html#maximum) value of `200`.
 *   Data within this range will be blended according to the gradient stops between `0` and `1`
-*   Data outside this range will be clamped to the minimum or maximum colors in the [HeatmapColorMap](https://scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html)
+*   Data outside this range will be clamped to the minimum or maximum colors in the [HeatmapColorMap](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html)
 
 ### Defining how Data-values outside of ColorMap range are drawn
 
-By default, when defining a [HeatmapColorMap](https://scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) any values that fall outside the range are clipped to the edges of the colormap. e.g. in the above example data falling outside of the range `0-200` is clipped to color `"#000000"` and `"#EC0F6C"` respectively.
+By default, when defining a [HeatmapColorMap](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) any values that fall outside the range are clipped to the edges of the colormap. e.g. in the above example data falling outside of the range `0-200` is clipped to color `"#000000"` and `"#EC0F6C"` respectively.
 
 There is also a [fillValuesOutOfRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baseheatmaprenderableseries.html#fillvaluesoutofrange) property which defines how the values outside the range are treated. Either clamped to the min/max color or drawn as transparent.
 
@@ -53,7 +53,7 @@ To Style the HeatmapLegend is very similar to styling an axis in SciChart. See m
 
 ## Updating ColorMaps Dynamically
 
-[HeatmapColorMaps](https://scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) can be updated dynamically by changing their properties. All the properties such as minimum, maximum, gradientStops are fully reactive and when set, the chart will redraw.
+[HeatmapColorMaps](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) can be updated dynamically by changing their properties. All the properties such as minimum, maximum, gradientStops are fully reactive and when set, the chart will redraw.
 
 Below we've created a demo to show how to update [HeatmapColorMap.gradientStops:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html#gradientstops) dynamically by adding interactivity to the [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html).
 

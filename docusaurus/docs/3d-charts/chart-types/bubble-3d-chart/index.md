@@ -7,13 +7,13 @@ sidebar_position: 2
 :::tip
 Examples for the Scatter/Bubble 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaded from SciChart.Js.Examples Github Repository
 
-*   [SciChart.js Demo app](https://scichart.com/demo/javascript-3d-bubble-chart)
+*   [SciChart.js Demo app](https://www.scichart.com/demo/javascript-3d-bubble-chart)
 *   [All examples on Github](https://github.com/abtsoftware/scichart.js.examples)
 :::
 
 3D Bubble Charts are provided by the [ScatterRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scatterrenderableseries3d.html) type. This draws a single PointMarker at an X,Y,Z location in the 3D world with a per-point scaling factor. Charts can be static or dynamic, and updated in real-time if required.
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-3d-bubble-chart" title="3D Bubble Chart" description="showing how to create 3D Bubble/Scatter charts with variable size and color of points." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-3d-bubble-chart" title="3D Bubble Chart" description="showing how to create 3D Bubble/Scatter charts with variable size and color of points." />
 
 The [ScatterRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scatterrenderableseries3d.html) allows creation of 3D Bubble charts and supports multiple pointmarkers, including:
 

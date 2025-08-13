@@ -7,17 +7,17 @@ sidebar_position: 25
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
-The [JavaScript Bubble Chart Example](https://scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/bubble-chart).
+The [JavaScript Bubble Chart Example](https://www.scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/bubble-chart).
 :::
 
 <ChartFromSciChartDemo
-    src="https://scichart.com/demo/iframe/bubble-chart"
+    src="https://www.scichart.com/demo/iframe/bubble-chart"
     title="Bubble Series Chart"
 />
 
 ## Create a Bubble Series
 
-To create a [Javascript Bubble Chart](https://scichart.com/demo/javascript-bubble-chart) with SciChart.js, use the following code:
+To create a [Javascript Bubble Chart](https://www.scichart.com/demo/javascript-bubble-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {27-31,33-42} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -85,7 +85,7 @@ Any of these can be used to create a bubble chart.
 :::tip
 To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://scichart.com/demo/javascript-chart-custom-pointmarkers)
+There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://www.scichart.com/demo/javascript-chart-custom-pointmarkers)
 :::
 
 ## Painting Bubbles with Different Colors

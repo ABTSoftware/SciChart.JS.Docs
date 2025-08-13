@@ -52,7 +52,7 @@ In order to make all TypeDoc links distinct decorate the link with book icon `:b
 
 ## Reference scichart.com/demo
 
-Use this link to reference scichart demo app - https://scichart.com/demo/react
+Use this link to reference scichart demo app - https://www.scichart.com/demo/react
 
 ## Do not reference DocumentX documents
 
@@ -96,7 +96,7 @@ The order may differ depending on some configuration specifics.
 
 **Quotation Example**
 
-> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 
 **Mermaid class diagram example**

@@ -28,7 +28,7 @@ There are several online reosurces to help you get the best out of SciChart.js J
 3.  SciChart.js forums at [www.scichart.com/questions-js](https://www.scichart.com/questions/categories/js)
 4.  API Documentation at [https://www.scichart.com/documentation/js/v4/typedoc/index.html:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html)
 5.  Support tickets (licensed customers only) at [https://support.scichart.com](https://support.scichart.com)    
-6.  The SciChart.js Online Demo at [https://scichart.com/demo](https://scichart.com/demo)
+6.  The SciChart.js Online Demo at [https://www.scichart.com/demo](https://www.scichart.com/demo)
 7.  Source code for Online Demo at [https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples)
 8. Source code for tutorials [https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials)
 9. Source code for examples [https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox)

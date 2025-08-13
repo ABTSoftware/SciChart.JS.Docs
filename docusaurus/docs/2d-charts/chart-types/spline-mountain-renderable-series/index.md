@@ -7,7 +7,7 @@ sidebar_position: 61
 Spline Mountain or Smoothed Area Series can be created using the [SplineMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinemountainrenderableseries.html) type.
 
 :::tip
-The [JavaScript Spline Mountain Chart Example](https://scichart.com/demo/javascript-spline-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/spline-mountain-chart)
+The [JavaScript Spline Mountain Chart Example](https://www.scichart.com/demo/javascript-spline-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/spline-mountain-chart)
 :::
 
 <ChartFromSciChartDemo 
@@ -18,7 +18,7 @@ The [JavaScript Spline Mountain Chart Example](https://scichart.com/demo/javascr
 Create a Spline Mountain Series
 -------------------------------
 
-To create a [Javascript Spline Mountain Chart](https://scichart.com/demo/javascript-spline-mountain-chart) with SciChart.js, use the following code:
+To create a [Javascript Spline Mountain Chart](https://www.scichart.com/demo/javascript-spline-mountain-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {29,39-42,44,46} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

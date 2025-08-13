@@ -7,7 +7,7 @@ sidebar_position: 18
 Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type.
 
 :::tip
-The [JavaScript Heatmap Chart Example](https://scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Contours Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ContoursChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/heatmap-chart).
+The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Contours Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ContoursChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/heatmap-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -19,7 +19,7 @@ The [JavaScript Heatmap Chart Example](https://scichart.com/demo/javascript/hea
 
 SciChart's Contour series is an extremely fast, lightweight chart types for rendering two dimensional data as a contour plot. The [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
 
-To create a [Javascript Contours Chart](https://scichart.com/demo/javascript-heatmap-chart-with-contours) with SciChart.js, use the following code:
+To create a [Javascript Contours Chart](https://www.scichart.com/demo/javascript-heatmap-chart-with-contours) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {20-22,26,29,40-45} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

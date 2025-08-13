@@ -47,7 +47,7 @@ Aligning a CustomAnnotation with x/yCoordinateModes
 
 Like other annotation types, the [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) can be positioned relatively or absolute using xCoordinateMode, yCoordinateMode property.
 
-For example. The [TradeMarkers demo in the SciChart.js Examples Suite](https://scichart.com/demo/javascript-stock-chart-buy-sell-markers) places a number of custom annotations for buy/sell markers, but also places news bullet annotations at the bottom of the chart using yCoordinateMode. 
+For example. The [TradeMarkers demo in the SciChart.js Examples Suite](https://www.scichart.com/demo/javascript-stock-chart-buy-sell-markers) places a number of custom annotations for buy/sell markers, but also places news bullet annotations at the bottom of the chart using yCoordinateMode. 
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {44,62,78} showLineNumbers file=./CoordinateMode/demo.ts start=#region_A_start end=#region_A_end

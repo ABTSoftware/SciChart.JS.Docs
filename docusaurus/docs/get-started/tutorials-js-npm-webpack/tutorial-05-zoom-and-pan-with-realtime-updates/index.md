@@ -202,9 +202,9 @@ Now run the application again, left click the chart and move the mouse. As a r
 Further Examples - the Realtime Ticking Stock Chart demo
 --------------------------------------------------------
 
-In the [SciChart.js Examples Suite - viewable at scichart.com/demo](https://scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://scichart.com/demo/react/realtime-ticking-stock-charts).
+In the [SciChart.js Examples Suite - viewable at scichart.com/demo](https://www.scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://www.scichart.com/demo/react/realtime-ticking-stock-charts).
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/realtime-ticking-stock-charts" title="Realtime Ticking Stock Charts" description="showing how to combine zooming, panning with a realtime updated chart." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/realtime-ticking-stock-charts" title="Realtime Ticking Stock Charts" description="showing how to combine zooming, panning with a realtime updated chart." />
 
 In this example as new candle data is added, the chart advances by 1 to automatically keep the new candle in the same place in the viewport. However, if you scroll back in time so that the latest candle is out of the viewport, the advancing by 1 does not occur.
 

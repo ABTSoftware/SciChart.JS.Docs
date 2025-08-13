@@ -23,7 +23,7 @@ This results in the following output:
 <LiveDocSnippet maxWidth={"100%"} name="./RotatingLabels/demo" />
 
 :::tip
-For an example of using rotation with text labels see the [Multiline and Rotated Text Labels](http://scichart.com/demo/javascript-multiline-labels) demo in our examples suite.
+For an example of using rotation with text labels see the [Multiline and Rotated Text Labels](http://www.scichart.com/demo/javascript-multiline-labels) demo in our examples suite.
 :::
 
 ### Further notes on Label Culling & Spacing

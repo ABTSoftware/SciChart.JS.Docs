@@ -162,4 +162,4 @@ Remember that the definition of your custom class, and the registration of it, m
 Custom Types Example
 --------------------
 
-For a full example of how to use Custom Types with the Builder API, see the SciChart.js demo [https://scichart.com/demo/javascript-custom-types](https://scichart.com/demo/javascript-custom-types).
+For a full example of how to use Custom Types with the Builder API, see the SciChart.js demo [https://www.scichart.com/demo/javascript-custom-types](https://www.scichart.com/demo/javascript-custom-types).

@@ -257,4 +257,4 @@ export async function deserializeAndDrawChart(divElementId) {
 
 You can generate JSON chart definitions as well using the SciChart.js library. For example if you wanted to define a chart definition on the server and send this over to a client as JSON it's possible to do this.
 
-For more information and a workable example, try the [Chart Serialization demo](https://scichart.com/demo/javascript-chart-from-json) on our JavaScript Chart Examples
+For more information and a workable example, try the [Chart Serialization demo](https://www.scichart.com/demo/javascript-chart-from-json) on our JavaScript Chart Examples

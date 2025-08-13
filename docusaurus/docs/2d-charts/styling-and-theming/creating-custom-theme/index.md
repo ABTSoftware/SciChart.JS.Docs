@@ -155,7 +155,7 @@ All colors in SciChart.js are strings, which are HTML color codes. Supported val
 :::
 
 :::note
-You can see an example live of creating a custom theme over at the [SciChart.js Examples Suite](https://scichart.com/demo/javascript-chart-custom-themes).
+You can see an example live of creating a custom theme over at the [SciChart.js Examples Suite](https://www.scichart.com/demo/javascript-chart-custom-themes).
 :::
 
 Inheriting a Built-In Theme 

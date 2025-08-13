@@ -7,7 +7,7 @@ sidebar_position: 12
 Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) type.
 
 :::tip
-The [JavaScript Scatter Chart Example](https://scichart.com/demo/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/scatter-chart).
+The [JavaScript Scatter Chart Example](https://www.scichart.com/demo/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/scatter-chart).
 :::
 
 <ChartFromSciChartDemo  
@@ -17,7 +17,7 @@ The [JavaScript Scatter Chart Example](https://scichart.com/demo/javascript/scat
 
 ## Create a Scatter Series
 
-To create a [Javascript Scatter Chart](https://scichart.com/demo/javascript-scatter-chart) with SciChart.js, use the following code:
+To create a [Javascript Scatter Chart](https://www.scichart.com/demo/javascript-scatter-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {26,31-37} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -56,7 +56,7 @@ Every data point of a Scatter Series is marked with a [PointMarker:blue_book:]
 :::tip
 To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).
 
-There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://scichart.com/demo/javascript-chart-custom-pointmarkers)
+There is also a TypeScript example of custom pointmarkers in the [SciChart.js Demo.](https://www.scichart.com/demo/javascript-chart-custom-pointmarkers)
 
 Finally, there is a dedicated [Bubble Series](/2d-charts/chart-types/fast-bubble-renderable-series) type with some more options such as per-point sizing.
 :::

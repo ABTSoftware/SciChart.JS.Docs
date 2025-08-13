@@ -9,7 +9,7 @@ A complementary type to the Uniform Heatmap is the Non-Uniform Heatmap, new to S
 Non-Uniform Heatmaps can be created using the [NonUniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html) type.
 
 :::tip
-The [JavaScript Non-Uniform Heatmap Chart Example](https://scichart.com/demo/javascript-non-uniform-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Non-Uniform Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/NonUniformHeatmapChart) on Github
+The [JavaScript Non-Uniform Heatmap Chart Example](https://www.scichart.com/demo/javascript-non-uniform-heatmap-chart) can be found in the [SciChart.Js Examples Suite > Non-Uniform Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/NonUniformHeatmapChart) on Github
 :::
 
 <ChartFromSciChartDemo

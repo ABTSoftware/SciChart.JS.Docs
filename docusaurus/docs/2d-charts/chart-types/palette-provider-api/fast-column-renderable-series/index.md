@@ -26,6 +26,6 @@ Next, we can apply the PaletteProvider to the series. This can be done both with
 
 </CodeSnippetBlock>
 
-The code above results in a [JavaScript Column Chart](https://scichart.com/demo/javascript-column-chart) with the following output. YValues > 10 are colored red, and YValues < 10 are the default series stroke and fill colors.
+The code above results in a [JavaScript Column Chart](https://www.scichart.com/demo/javascript-column-chart) with the following output. YValues > 10 are colored red, and YValues < 10 are the default series stroke and fill colors.
 
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
