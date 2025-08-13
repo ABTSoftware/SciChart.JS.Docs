@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Virtualized data example JS RxJS from CDN without NPM
 
-A customer asked how to create this https://scichart.com/demo/react/chart-with-virtualized-data example in JavaScript.
+A customer asked how to create this https://www.scichart.com/demo/react/chart-with-virtualized-data example in JavaScript.
 The difficulty was not converting TypeScript to JavaScript but how to handle imports for `SciChart.js` and `RxJS`.
 
 First we need to create `index.html` file
@@ -197,7 +197,7 @@ export const getChartsInitializationApi = () => {
 const loadPoints = async (xFrom, xTo, chartWidth, dataSeries) => {
   chartWidth = Math.floor(chartWidth);
 
-  const response = await fetch(`https://scichart.com/demo/api/data/${xFrom}-${xTo}/${chartWidth}`);
+  const response = await fetch(`https://www.scichart.com/demo/api/data/${xFrom}-${xTo}/${chartWidth}`);
   const data = await response.json();
   console.log(`Loaded ${data.x.length} points`);
   dataSeries.clear();

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 SciChart.js supports **unlimited, multiple X or Y axis** which can be aligned to the Right, Left, Top, Bottom sides of a chart.
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-chart-with-multiple-x-axis" title="Multiple X Axes" description="" />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-chart-with-multiple-x-axis" title="Multiple X Axes" description="" />
 
 How to Setup a Chart with Multiple Axes
 ---------------------------------------
@@ -43,7 +43,7 @@ Here's a worked example:
 
 </CodeSnippetBlock>
 
-This code results in the following configuration of axis. Also seen in our [Multiple Axis Demo](https://scichart.com/demo/javascript-chart-with-multiple-x-axis).
+This code results in the following configuration of axis. Also seen in our [Multiple Axis Demo](https://www.scichart.com/demo/javascript-chart-with-multiple-x-axis).
 
 
 <LiveDocSnippet maxWidth={"100%"} name="./MultiAxisDemo/demo" />
@@ -57,4 +57,4 @@ The link between series and axis is done via [AxisCore.id:blue_book:](https://w
 
 With a single X,Y Axis you never have to set these properties as they gets set automatically. When a series, annotation or modifier gets attached to SciChartSurface, xAxis.id and yAxis.id get values from the first X and Y axes.
 
-However, in a multiple axis scenario, series must be attached to an axis. To do this, ensure that you set the [BaseRenderableSeries.xAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#xaxisid) and [BaseRenderableSeries.yAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#yaxisid) equal to the [YAxis.id](https://scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) or [XAxis.id](https://scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) you wish to attach to.
+However, in a multiple axis scenario, series must be attached to an axis. To do this, ensure that you set the [BaseRenderableSeries.xAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#xaxisid) and [BaseRenderableSeries.yAxisId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#yaxisid) equal to the [YAxis.id](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) or [XAxis.id](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#id) you wish to attach to.

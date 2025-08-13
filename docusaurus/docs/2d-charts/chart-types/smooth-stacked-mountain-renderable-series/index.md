@@ -9,7 +9,7 @@ A variation on the [Stacked Mountain Series](/2d-charts/chart-types/stacked-mou
 Smoothed Stacked Mountain Charts can be created by a combination of the [SmoothStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/smoothstackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html) types. 
 
 :::tip
-The [JavaScript Smooth Stacked Mountain Chart Example](https://scichart.com/demo/javascript/smooth-stacked-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github
+The [JavaScript Smooth Stacked Mountain Chart Example](https://www.scichart.com/demo/javascript/smooth-stacked-mountain-chart) can be found in the [SciChart.Js Examples Suite > Spline Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineMountainChart) on Github
 :::
 
 <ChartFromSciChartDemo 
@@ -20,7 +20,7 @@ The [JavaScript Smooth Stacked Mountain Chart Example](https://scichart.com/dem
 Create a Bezier Smoothed Stacked Mountain Series
 ------------------------------------------------
 
-To create a [JavaScript Smoothed Stacked Mountain Series](https://scichart.com/demo/javascript/smooth-stacked-mountain-chart), use the following code:
+To create a [JavaScript Smoothed Stacked Mountain Series](https://www.scichart.com/demo/javascript/smooth-stacked-mountain-chart), use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28,40,52,64,76,89-90,93} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

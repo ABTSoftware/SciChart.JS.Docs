@@ -135,4 +135,4 @@ Breaking the Code Down
 3.  Verify the file that was downloaded, that it is actually the correct file & file type.  
 4.  Finally, ensure that the version numbers of *.wasm files and index.min.js match. The best way to ensure this is download a specific version again and overwrite files in your source-code repository.  
 
-If after that you still are having problems, contact [scichart support](https://scichart.com/contact-us) and we will be glad to help.
+If after that you still are having problems, contact [scichart support](https://www.scichart.com/contact-us) and we will be glad to help.

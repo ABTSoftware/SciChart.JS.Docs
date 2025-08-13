@@ -7,7 +7,7 @@ sidebar_position: 60
 Spline Line or Smoothed Series can be created using the [SplineLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/splinelinerenderableseries.html) type.
 
 :::tip
-The [JavaScript Spline Line Chart Example](https://scichart.com/demo/javascript/spline-line-chart) can be found in the [SciChart.Js Examples Suite > Spline Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineLineChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/spline-line-chart)
+The [JavaScript Spline Line Chart Example](https://www.scichart.com/demo/javascript/spline-line-chart) can be found in the [SciChart.Js Examples Suite > Spline Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/SplineLineChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/spline-line-chart)
 :::
 
 <ChartFromSciChartDemo 
@@ -18,7 +18,7 @@ The [JavaScript Spline Line Chart Example](https://scichart.com/demo/javascript/
 Create a Spline Line Series 
 ---------------------------
 
-To create a [Javascript Spline Line Chart](https://scichart.com/demo/javascript-spline-line-chart) with SciChart.js, use the following code:
+To create a [Javascript Spline Line Chart](https://www.scichart.com/demo/javascript-spline-line-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {20,28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

@@ -14,7 +14,7 @@ Inner axes can either be around the edges of the area, or bound to a coordinate 
 Inner Axes
 ----------
 
-To create an Inner axis simply set [isInnerAxis: true](https://scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#isinneraxis) on the axis options:
+To create an Inner axis simply set [isInnerAxis: true](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#isinneraxis) on the axis options:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./InsideAxis/demo.ts start=region_A_start end=region_A_end

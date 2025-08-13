@@ -6,7 +6,7 @@ sidebar_position: 2
 
 It is possible to create Vertical (Rotated) Charts with SciChart. This transposes the entire chart, swapping X-Axis for Y and renders series top to bottom intead of left to right. Tooltips and markers also are transposed to the final effect is like a vertical chart.
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-oil-and-gas-dashboard-showcase" title="JavaScript Oil and Gas Dashboard" description="showing a use-case of transposing the X,Y axis to achieve a vertical chart, visualising well drill depth." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-oil-and-gas-dashboard-showcase" title="JavaScript Oil and Gas Dashboard" description="showing a use-case of transposing the X,Y axis to achieve a vertical chart, visualising well drill depth." />
 
 To achieve this, simply set [axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) to Left or Right for X Axis and Top or Bottom for Y Axis. And that's it - SciChart takes care of the rest:
 
@@ -43,4 +43,4 @@ This Flexibility of SciChart allows for some pretty interesting configurations o
 
 #### See Also
 
-* [Vertical (Rotated) Chart Example](https://scichart.com/demo/javascript-vertical-charts)
+* [Vertical (Rotated) Chart Example](https://www.scichart.com/demo/javascript-vertical-charts)

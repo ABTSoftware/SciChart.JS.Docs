@@ -7,7 +7,7 @@ sidebar_position: 22
 Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasterrorbarsrenderableseries.html) type.
 
 :::tip
-The [JavaScript Error Bars Chart Example](https://scichart.com/demo/javascript-error-bars-chart) can be found in the [SciChart.Js Examples Suite > Error Bars Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ErrorBarsChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/error-bars-chart).
+The [JavaScript Error Bars Chart Example](https://www.scichart.com/demo/javascript-error-bars-chart) can be found in the [SciChart.Js Examples Suite > Error Bars Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ErrorBarsChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/error-bars-chart).
 :::
 
 <ChartFromSciChartDemo 
@@ -17,7 +17,7 @@ The [JavaScript Error Bars Chart Example](https://scichart.com/demo/javascript-e
 
 ## Creating Error Bars Series
 
-To create a [Javascript Error Bars Chart](https://scichart.com/demo/javascript-error-bars-chart) with SciChart.js, use the following code:
+To create a [Javascript Error Bars Chart](https://www.scichart.com/demo/javascript-error-bars-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {23,26-28} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

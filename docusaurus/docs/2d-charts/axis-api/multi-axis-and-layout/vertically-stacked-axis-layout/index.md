@@ -10,7 +10,7 @@ The Stacked Axis feature in SciChart allows you to specify the layout of the axi
 [Polar Charts](/2d-charts/surface/scichart-polar-surface-type) do not support stacked axes yet
 :::
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-vertically-stacked-axes" title="Vertically Stacked Axis" description="" />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-vertically-stacked-axes" title="Vertically Stacked Axis" description="" />
 
 Create a Vertically Stacked Axis Chart
 --------------------------------------
@@ -35,16 +35,16 @@ The following code with 8 YAxis on the left results in this output:
 
 ### Step 2: Apply the Layout Strategy
 
-To change the behaviour of axis stacking you need to set the appropriate layoutStrategy property on the [SciChartSurface.LayoutManager](https://scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager) with the stacked version. 
+To change the behaviour of axis stacking you need to set the appropriate layoutStrategy property on the [SciChartSurface.LayoutManager](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager) with the stacked version. 
 
 SciChart provides the following Outer Axes Layout Strategies:
 
-*   [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html)
-*   [RightAlignedOuterVerticallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html)
-*   [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html)
-*   [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html)
+*   [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html)
+*   [RightAlignedOuterVerticallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html)
+*   [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html)
+*   [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html)
 
-Modify the code above to set this property on the [SciChartSurface.LayoutManager](https://scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
+Modify the code above to set this property on the [SciChartSurface.LayoutManager](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./Step2/demo.ts start=region_A_start end=region_A_end
@@ -61,24 +61,24 @@ Make sure to assign Layout Strategy to an appropriate property on the Layout Man
 Experimenting with different Layout Strategies
 ----------------------------------------------
 
-The following vertically stacked layout strategies are available and may be applied to the following properties on [SciChartSurface.LayoutManager](https://scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
+The following vertically stacked layout strategies are available and may be applied to the following properties on [SciChartSurface.LayoutManager](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
 
 | Layout Strategy | Use With | Apply to LayoutManager Prop | Behavior |
 |-----------------|----------|-----------------------------|----------|
-| [LeftAlignedOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/leftalignedouteraxislayoutstrategy.html) | Y Axis | [leftInnerAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftinneraxeslayoutstrategy), [leftOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftouteraxeslayoutstrategy) | Default behavior |
-| [RightAlignedOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/rightalignedouteraxislayoutstrategy.html) | Y Axis | [rightInnerAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightinneraxeslayoutstrategy), [rightOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightouteraxeslayoutstrategy) | Default behavior |
-| [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html) | Y Axis | [rightOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightouteraxeslayoutstrategy) | Vertical stacking behavior |
-| [RightAlignedOuterVerticallyStackedAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html) | Y Axis | [leftOuterAxisLayoutStrategy](https://scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftouteraxeslayoutstrategy) | Vertical stacking behavior |
+| [LeftAlignedOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/leftalignedouteraxislayoutstrategy.html) | Y Axis | [leftInnerAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftinneraxeslayoutstrategy), [leftOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftouteraxeslayoutstrategy) | Default behavior |
+| [RightAlignedOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/rightalignedouteraxislayoutstrategy.html) | Y Axis | [rightInnerAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightinneraxeslayoutstrategy), [rightOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightouteraxeslayoutstrategy) | Default behavior |
+| [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html) | Y Axis | [rightOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#rightouteraxeslayoutstrategy) | Vertical stacking behavior |
+| [RightAlignedOuterVerticallyStackedAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html) | Y Axis | [leftOuterAxisLayoutStrategy](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#leftouteraxeslayoutstrategy) | Vertical stacking behavior |
 
 :::tip
 Try experimenting with the Codepen above to see how each of the strategies behave.  
-Note that a **RightLayoutStrategy** will require [Axis.axisAlignment](https://scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#axisalignment) = [EAxisAlignment.Right](https://scichart.com/documentation/js/current/typedoc/enums/eaxisalignment.html) and vice versa.
+Note that a **RightLayoutStrategy** will require [Axis.axisAlignment](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#axisalignment) = [EAxisAlignment.Right](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxisalignment.html) and vice versa.
 :::
 
 Customising Axis Size when Vertically Stacked
 ---------------------------------------------
 
-The [Axis.stackedAxisLength](https://scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#stackedaxislength) property allows you to customize the size of a Vertically Stacked Axis in SciChart.js. This property may be an absolute number, e.g. 50 pixels, or a percentage e.g. "30%". When left undefined, default equal spacing will be used.
+The [Axis.stackedAxisLength](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#stackedaxislength) property allows you to customize the size of a Vertically Stacked Axis in SciChart.js. This property may be an absolute number, e.g. 50 pixels, or a percentage e.g. "30%". When left undefined, default equal spacing will be used.
 
 Find an updated example below:
 

@@ -17,7 +17,7 @@ The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/j
 *   Vertical lines may be dragged or edited
 *   Vertical lines may be removed from the chart.
 
-The [Using VerticalSliceModifier Example](https://scichart.com/demo/javascript/chart-vertical-slice-modifier) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [Using VerticalSliceModifier Example](https://www.scichart.com/demo/javascript/chart-vertical-slice-modifier) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 
 Adding a VerticalSliceModifier to a Chart
 -----------------------------------------

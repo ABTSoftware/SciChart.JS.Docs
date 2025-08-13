@@ -9,7 +9,7 @@ There are several ways to add text to a SciChart.js chart. These include the Tex
 Text Series should be used when you want to render a lot of text, not necessarily at X,Y positions of other chart series.
 
 :::tip
-The [JavaScript Text / Word Cloud Chart Example](https://scichart.com/demo/javascript-text-chart) can be found in the [SciChart.Js Examples Suite > Text Series Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/TextSeriesChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [JavaScript Text / Word Cloud Chart Example](https://www.scichart.com/demo/javascript-text-chart) can be found in the [SciChart.Js Examples Suite > Text Series Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/TextSeriesChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 :::
 
 <ChartFromSciChartDemo 

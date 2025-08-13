@@ -7,7 +7,7 @@ sidebar_position: 14
 A Digital (Step) Mountain or area Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 
 :::tip
-The [JavaScript Digital Mountain Chart Example](https://scichart.com/demo/javascript/digital-mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalMountainChart) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript/digital-mountain-chart).
+The [JavaScript Digital Mountain Chart Example](https://www.scichart.com/demo/javascript/digital-mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalMountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/digital-mountain-chart).
 :::
 
 <ChartFromSciChartDemo
@@ -17,7 +17,7 @@ The [JavaScript Digital Mountain Chart Example](https://scichart.com/demo/javas
 
 ## Create a Digital Mountain Series
 
-To create a [Javascript Digital Mountain Chart](https://scichart.com/demo/javascript-digital-mountain-chart) with SciChart.js, use the following code:
+To create a [Javascript Digital Mountain Chart](https://www.scichart.com/demo/javascript-digital-mountain-chart) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {32,48} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

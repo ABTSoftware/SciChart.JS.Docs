@@ -210,7 +210,7 @@ DataSeries don't support dates, but you can store values as a unix timestamp and
 1.  Store Dates as Unix timestamps in the DataSeries.
 2.  Format the Date using our built-in [LabelProvider](/2d-charts/axis-api/axis-labels/label-provider-api-overview), or create your own
 
-Examples can be found in the [SciChart.js examples suite](https://scichart.com/demo), or in our documentation on the [Label Formatting page](/2d-charts/axis-api/axis-labels/numeric-formats).
+Examples can be found in the [SciChart.js examples suite](https://www.scichart.com/demo), or in our documentation on the [Label Formatting page](/2d-charts/axis-api/axis-labels/numeric-formats).
 
 ### Storing Strings in DataSeries in SciChart
 

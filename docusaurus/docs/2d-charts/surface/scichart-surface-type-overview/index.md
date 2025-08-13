@@ -76,7 +76,7 @@ Several RenderableSeries types are available in SciChart, including
 * [Polar Line Charts](/2d-charts/chart-types/polar-line-renderable-series)
 * [Polar Column Charts](/2d-charts/chart-types/polar-column-renderable-series) and more.
 
-> For more information about chart types in SciChart, head over to the [RenderableSeries API documentation](/2d-charts/chart-types/renderable-series-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about chart types in SciChart, head over to the [RenderableSeries API documentation](/2d-charts/chart-types/renderable-series-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 ## Axis and Axis Types
 
@@ -104,7 +104,7 @@ classDiagram
 
 A few axis types are available in SciChart, such as [Value Axis and Category Axis](/2d-charts/axis-api/axis-types/category-axis). Axis may be configured by setting [gridline interval](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval), gridline styling, titles, labels and more. 
 
-> For more information about Axis types and configuration in SciChart, head over to the [Axis API documentation](/2d-charts/axis-api/axis-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Axis types and configuration in SciChart, head over to the [Axis API documentation](/2d-charts/axis-api/axis-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 ## Annotations and Markers
 
@@ -138,7 +138,7 @@ classDiagram
     IAnnotation <|-- PolarArcAnnotation : implements
 ```
 
-> For more information about Annotations types in SciChart, head over to the [Annotations API documentation](/2d-charts/annotations-api/annotations-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Annotations types in SciChart, head over to the [Annotations API documentation](/2d-charts/annotations-api/annotations-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 ## Interaction - Zooming, Panning and Tooltips
 
@@ -170,7 +170,7 @@ classDiagram
     IChartModifierBase <|-- PolarArcZoomModifier : implements
 ```
 
-> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 ## Declaring a SciChartSurface Instance
 
@@ -178,4 +178,4 @@ In [Tutorial #1 - Setting up a Project with SciChart.js](/get-started/tutorials-
 
 If you haven't already, go and watch that tutorial quickly so that you can understand the basics of setting up a project with SciChart. The tutorial series is a great way to learn SciChart.
 
-We also have a comprehensive [Examples Suite](https://scichart.com/demo/react) with many examples of how to use our Fast, JavaScript Charts.
+We also have a comprehensive [Examples Suite](https://www.scichart.com/demo/react) with many examples of how to use our Fast, JavaScript Charts.

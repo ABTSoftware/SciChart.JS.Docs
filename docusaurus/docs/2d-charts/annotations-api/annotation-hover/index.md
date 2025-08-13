@@ -7,7 +7,7 @@ sidebar_position: 22
 Annotations Hover API is an opt-in functionality that allows detecting hover events on chart annotations and adding event handlers.
 
 :::tip
-The [JavaScript Hoverable Trade Markers Example](https://scichart.com/demo/javascript/stock-chart-buy-sell-markers) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [JavaScript Hoverable Trade Markers Example](https://www.scichart.com/demo/javascript/stock-chart-buy-sell-markers) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 :::
 
 <ChartFromSciChartDemo

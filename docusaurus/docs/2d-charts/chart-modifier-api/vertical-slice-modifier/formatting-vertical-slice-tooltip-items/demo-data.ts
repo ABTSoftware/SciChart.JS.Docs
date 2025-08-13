@@ -43,7 +43,7 @@ async function formattingVerticalSliceModifier(divElementId) {
     const tooltipDataTemplate = (seriesInfo, tooltipTitle, tooltipLabelX, tooltipLabelY) => {
         // each element in this array = 1 line in the tooltip
         const lineItems = [];
-        // See SeriesInfo docs at https://scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
+        // See SeriesInfo docs at https://www.scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
         // SeriesInfo.seriesName comes from dataSeries.dataSeriesName
         lineItems.push(`${seriesInfo.seriesName}`);
         // seriesInfo.xValue, yValue are available to be formatted
@@ -189,7 +189,7 @@ async function builderExample(divElementId) {
     const tooltipDataTemplate = (seriesInfo, tooltipTitle, tooltipLabelX, tooltipLabelY) => {
         // each element in this array = 1 line in the tooltip
         const lineItems = [];
-        // See SeriesInfo docs at https://scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
+        // See SeriesInfo docs at https://www.scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
         // SeriesInfo.seriesName comes from dataSeries.dataSeriesName
         lineItems.push(`${seriesInfo.seriesName}`);
         // seriesInfo.xValue, yValue are available to be formatted

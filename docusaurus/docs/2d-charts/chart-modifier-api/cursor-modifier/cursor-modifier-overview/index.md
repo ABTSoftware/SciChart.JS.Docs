@@ -16,7 +16,7 @@ SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:b
 *   Configure when the tooltip is shown (always, only on hover of a point)
 *   Configure which series react to the Tooltip (all, some, or specific series)
 
-The [Using CursorModifier Example](https://scichart.com/demo/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [Using CursorModifier Example](https://www.scichart.com/demo/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 
 Adding a CursorModifier to a Chart
 ----------------------------------

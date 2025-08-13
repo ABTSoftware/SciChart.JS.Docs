@@ -26,7 +26,7 @@ This results in the following output:
 <LiveDocSnippet maxWidth={"100%"} name="./ChartTitles/demo" />
 
 :::tip
-For an example of multiline chart titles see the [Chart Title demo](https://scichart.com/demo/javascript-chart-title) in our examples suite.
+For an example of multiline chart titles see the [Chart Title demo](https://www.scichart.com/demo/javascript-chart-title) in our examples suite.
 :::
 
 Title Styling and Positioning

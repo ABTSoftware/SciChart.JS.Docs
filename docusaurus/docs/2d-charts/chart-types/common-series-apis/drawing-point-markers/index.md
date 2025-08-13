@@ -46,5 +46,5 @@ Additional Tips for PointMarkers
 Custom markers can be created using the [SpritePointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/spritepointmarker.html) type, which allows loading a custom image as a marker. This uses the helper function [createImageAsync:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#createimageasync) which allows loading of a PNG file either from URL, or locally hosted / imported image.
 
 :::tip
-For a TypeScript / npm & webpack example you can see the [JavaScript Custom PointMarkers Chart](https://scichart.com/demo/javascript-chart-custom-pointmarkers) example in the SciChart.js demo.
+For a TypeScript / npm & webpack example you can see the [JavaScript Custom PointMarkers Chart](https://www.scichart.com/demo/javascript-chart-custom-pointmarkers) example in the SciChart.js demo.
 :::
