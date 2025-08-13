@@ -212,6 +212,7 @@ class PerformanceStatsAnnotation extends NativeTextAnnotation {
         // updating the underlying property instead of the setter to prevent invalidation,
         // alternatively Suspend API could be used
         this.textProperty = [
+            `FPS: ${(1000 / timeBetweenPaints).toFixed(3).padStart(3, "0")}`,
             `Render: ${renderTime.toFixed(2).padStart(2, "0")}ms`,
             renderToWebGlTime === renderToWebGlTime
                 ? `Copy to Canvas: ${copyToCanvasTime.toFixed(2).padStart(2, "0")}ms`
