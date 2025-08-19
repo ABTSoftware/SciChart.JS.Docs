@@ -9,21 +9,24 @@ export async function PolarTriangleChart(divElementId) {
     });
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial,
-        visibleRange: new NumberRange(0, 10),
+        visibleRange: new NumberRange(0, 7),
+        startAngle: Math.PI,
     });
     sciChartSurface.yAxes.add(radialYAxis);
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
-        visibleRange: new NumberRange(0, 20),
+        visibleRange: new NumberRange(1, 8),
+        flippedCoordinates: true,
+        startAngle: Math.PI,
     });
     sciChartSurface.xAxes.add(angularXAxis);
     const textSeries = new PolarTextRenderableSeries(wasmContext, {
         dataSeries: new XyTextDataSeries(wasmContext, {
             xValues: [1, 2, 3, 4, 5, 6],
-            yValues: [3, 5, 6, 4, 2, 5],
-            textValues: ["This", "text", "is", "drawn", "using", "FastTextRenderableSeries"]
+            yValues: [4, 3, 4, 4, 3, 3],
+            textValues: ["This", "text", "is", "drawn", "using", "PolarTextRenderableSeries"]
         }),
-        // font and size is required for text to be drawn
+        // font size & color are required for text to be drawn
         dataLabels: {
             style: {
                 fontSize: 18

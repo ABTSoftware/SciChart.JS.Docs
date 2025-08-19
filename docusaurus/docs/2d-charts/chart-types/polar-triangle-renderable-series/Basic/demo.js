@@ -1,33 +1,18 @@
-import {
-    SciChartPolarSurface,
-    PolarNumericAxis,
-    PolarTriangleRenderableSeries,
-    EPolarAxisMode,
-    XyDataSeries,
-    SciChartJsNavyTheme,
-    ETriangleSeriesDrawMode
-} from "scichart";
-
+import { SciChartPolarSurface, PolarNumericAxis, PolarTriangleRenderableSeries, EPolarAxisMode, XyDataSeries, SciChartJsNavyTheme, ETriangleSeriesDrawMode } from "scichart";
 export async function PolarTriangleChart(divElementId) {
     // Demonstrates how to create a basic polar triangle series chart using SciChart.js
-
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
-
     // #region_A_start
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial
     });
-
     sciChartSurface.yAxes.add(radialYAxis);
-
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular
     });
-
     sciChartSurface.xAxes.add(angularXAxis);
-
     const trianglesX = [
         [566.0, 551.0, 581.0],
         [529.0, 514.0, 544.0],
@@ -42,7 +27,6 @@ export async function PolarTriangleChart(divElementId) {
         [527.0, 512.0, 542.0],
         [574.0, 559.0, 589.0]
     ].flat(); // xValues and yValues take an array of numbers, and we are using an array of arrays just for readability reasons
-
     const trianglesY = [
         [296.32, 270.34, 270.34],
         [309.32, 283.34, 283.34],
@@ -57,7 +41,6 @@ export async function PolarTriangleChart(divElementId) {
         [94.32, 68.34, 68.34],
         [107.32, 81.34, 81.34]
     ].flat();
-
     const triangle = new PolarTriangleRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: trianglesX,
@@ -67,7 +50,6 @@ export async function PolarTriangleChart(divElementId) {
         opacity: 0.6,
         drawMode: ETriangleSeriesDrawMode.List
     });
-
     sciChartSurface.renderableSeries.add(triangle);
     // #region_A_end
 }

@@ -22,7 +22,7 @@ Creating a Text Series
 
 To create a chart using [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.html) use the following code. 
 
-**Note** that it is required to set a style with `fontFamily` and `size` in the dataLabels property in order for text to be drawn. 
+**Note** that it is required to set `style: { fontSize: X }` and `color` in the dataLabels property in order for text to be drawn. 
 
 FastTextRenderableSeries uses the special [XyTextDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xytextdataseries.html) which allows you to supply text values directly on the dataSeries, rather than having to use metadata. 
 
