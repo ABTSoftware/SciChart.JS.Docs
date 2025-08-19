@@ -37,7 +37,7 @@ export async function PolarPieChart(divElementId) {
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         startAngleDegrees: 90, // start at 12 o'clock
-        flippedCoordinates: false, // set to true if you want to go clockwise (biggest values first, starting from 12 o'clock, clockwise)
+        flippedCoordinates: true, // set to true to go clockwise (biggest values first, starting from 12 o'clock, clockwise)
         isVisible: false
     });
     sciChartSurface.xAxes.add(angularXAxis);
@@ -86,7 +86,7 @@ export async function PolarPieChart(divElementId) {
         dataLabels: {
             metaDataSelector: (metadata: IPointMetadata) => {
                 // @ts-ignore
-                if (metadata.xValue < 25) { 
+                if (metadata.xValue < 35) { 
                     // @ts-ignore
                     return metadata.customLabel + ' - ' + metadata.value + '%'; // keep smaller segments' label single-line
                 } else {

@@ -2,10 +2,14 @@
 sidebar_position: 105
 ---
 
-# The Polar Pie Chart Type
+# The Pie Chart (using Polar Columns)
 
 The Polar Pie Chart type is achieved using SciChart's `PolarColumnRenderableSeries` and some data manipulation to mimic pie segments while using the [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) class.
 It is the native way to create pie charts in SciChart.js, as opposed to using the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html)
+
+:::note
+The Polar Pie Chart is not yet able to support all features a regular pie chart would have, such as certain animation effects or selection behaviors, but it is a useful way to visualize data in a pie format using polar coordinates.
+:::
 
 <ChartFromSciChartDemo 
     src="https://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart"
