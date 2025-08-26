@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Custom Rollover SVG Tooltips
 
-While SciChart.js provides built-in tooltip functionality through the [RolloverModifier](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), developers often need complete control over tooltip appearance, styling, and content for a more polished user experience.
+While SciChart.js provides built-in tooltip functionality through the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), developers often need complete control over tooltip appearance, styling, and content for a more polished user experience.
 
 ## The Challenge
 

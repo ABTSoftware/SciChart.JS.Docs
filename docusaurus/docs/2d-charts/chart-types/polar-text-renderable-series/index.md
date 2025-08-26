@@ -6,7 +6,7 @@ sidebar_position: 105
 
 There are several ways to add text to a SciChart.js polar chart. These include the TextAnnotation / NativeTextAnnotation, renderable series DataLabels and also the PolarTextRenderableSeries (Text Series).
 
-Text Series should be used when you want to render a lot of text, not necessarily at X,Y positions of other chart series. The [PolarTextRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/polartextrenderableseries.html) is an extension of [FastTextRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.html), so there is some
+Text Series should be used when you want to render a lot of text, not necessarily at X,Y positions of other chart series. The [PolarTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polartextrenderableseries.html) is an extension of [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttextrenderableseries.html), so there is some
 
 :::tip
 The [JavaScript Text / Word Cloud Chart Example](https://www.scichart.com/demo/javascript-text-chart) can be found in the [SciChart.Js Examples Suite > Text Series Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/TextSeriesChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)

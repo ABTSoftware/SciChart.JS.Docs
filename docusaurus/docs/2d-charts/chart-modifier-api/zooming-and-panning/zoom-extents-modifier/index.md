@@ -15,7 +15,7 @@ A [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/cu
 
 For example:
 
-<CodeSnippetBlock labels={["TS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
    ```ts {4} showLineNumbers
    import { ZoomExtentsModifier, easing } from "scichart";
 
@@ -26,6 +26,25 @@ For example:
       easingFunction: easing.outExpo
    });
    sciChartSurface.chartModifiers.add(zoomExtentsModifier);
+   ```
+   
+   ```ts {8} showLineNumbers
+   // Demonstrates how to configure the ZoomExtentsModifier in SciChart.js using the Builder API
+   const { chartBuilder, EChart2DModifierType, easing } = SciChart;
+   // or, for npm, import { chartBuilder, ... } from "scichart"
+
+   const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+      modifiers: [
+         {
+            type: EChart2DModifierType.ZoomExtents,
+            options: {
+               isAnimated: true,
+               animationDuration: 400,
+               easingFunction: easing.outExpo
+            }
+         }
+      ]
+   });
       ```
 </CodeSnippetBlock>
 

@@ -13,7 +13,7 @@ Adding a XAxisDragModifier to a Chart
 
 A [XAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xaxisdragmodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable scaling or panning behavior. For example:
 
-<CodeSnippetBlock labels={["TS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {5} showLineNumbers
     import { XAxisDragModifier, EDragMode } from "scichart";
 
@@ -24,6 +24,23 @@ A [XAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/curr
         })
     );
     ```
+    
+    ```ts {8} showLineNumbers
+    // Demonstrates how to configure the XAxisDrag Modifier in SciChart.js using the Builder API
+    const { chartBuilder, EChart2DModifierType, EDragMode } = SciChart;
+    // or, for npm, import { chartBuilder, ... } from "scichart"
+
+    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+        modifiers: [
+            {
+                type: EChart2DModifierType.XAxisDrag,
+                options: {
+                    dragMode: EDragMode.Scaling,
+                }
+            }
+        ]
+    });
+      ```
 </CodeSnippetBlock>
 
 This results in the following behavior:

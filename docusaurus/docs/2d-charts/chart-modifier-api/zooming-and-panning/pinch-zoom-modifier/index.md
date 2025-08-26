@@ -16,9 +16,9 @@ Adding a PinchZoomModifier to a Chart
 A **PinchZoomModifier** may be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) colletion to enable pinch to zoom behaviour. For example:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
-    ```ts {14} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
+    ```ts {11} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
     ```
-    ```ts {28} showLineNumbers file=./demo.ts start=region_B_start end=region_B_end
+    ```ts {8} showLineNumbers file=./demo.ts start=region_B_start end=region_B_end
     ```
 </CodeSnippetBlock>
 
@@ -31,10 +31,15 @@ Additional Properties
 
 ### Adjust Zooming / Scale Factor
 
-Horizontal and vertical zoom scale factor can be adjusted via the following properties. The default value is set to `0.005`.
+Horizontal and vertical zoom scale factor can be adjusted via the following properties:
+- [PinchZoomModifier.horizontalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html#horizontalgrowfactor)
+- [PinchZoomModifier.verticalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html#verticalgrowfactor)
 
-*   **PinchZoomModifier.horizontalGrowFactor**
-*   **PinchZoomModifier.verticalGrowFactor**
+The default value for both is set to `0.005`.
+
+### Allow Pinch Zoom in only one direction
+
+If you want to enable pinch zooming in only one direction, e.g. horizontal only, modify the **PinchZoomModifier.verticalGrowFactor** to equal `0`.
 
 ### Include/Exclude Certain Axis from Pinch Zoom
 
@@ -43,7 +48,7 @@ The PinchZoomModifier allows you to include or exclude certain axis by axis.id f
 By default all axis are included, to exclude one or more X or Y axis, set the following property:
 
 <CodeSnippetBlock labels={["Exclude Axis"]}>
-    ```ts {2-3,10} showLineNumbers
+    ```ts showLineNumbers
     // Exclude a specific axis from the pinch zoom operation
     pinchZoomModifier.includeXAxis(axisXInstance, false);
     pinchZoomModifier.includeYAxis(axisYInstance, false);
@@ -56,7 +61,3 @@ By default all axis are included, to exclude one or more X or Y axis, set the fo
     pinchZoomModifier.includeAllAxes();
     ```
 </CodeSnippetBlock>
-
-### Allow Pinch Zoom in only one direction
-
-If you want to enable pinch zooming in only one direction, e.g. horizontal only, modify the **PinchZoomModifier.verticalGrowFactor** to equal `0`.
