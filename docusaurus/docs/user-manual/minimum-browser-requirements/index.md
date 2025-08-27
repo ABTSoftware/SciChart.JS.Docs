@@ -1,6 +1,6 @@
 ---
 id: Minimum-Browser-Requirements
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Minimum Browser Requirements
