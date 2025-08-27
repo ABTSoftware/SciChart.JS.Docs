@@ -13,8 +13,8 @@ Here we will describe some details on how series, annotations, labels, grid line
 This topic may require familiarity with the following points:
 
 - SciChart has different [target canvases](/2d-charts/annotations-api/html-annotation/#general-annotation-layer-types-overview) where the elements are rendered.
-- [SubCharts API:blue_book:](https://www.scichart.com/documentation/js/v4/WhatIsTheSubChartsAPI.html) allows putting multiple surfaces on a chart
-- [Native Text API:blue_book:](https://www.scichart.com/documentation/js/v4/webframe.html#Native%20Text%20Api.html) vs **Texture Text Rendering** (TODO add some info about this topic separately)
+- [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview) allows putting multiple surfaces on a chart
+- [Native Text API](/2d-charts/annotations-api/native-text-annotation) vs **Texture Text Rendering**
 
 ### Default behavior
 
@@ -86,8 +86,8 @@ And a sub-chart can use only a plain color as a background.
 
 :::note
 Both parent surfaces and sub-charts support transparent backgrounds.
-[Example of chart background styling:blue_book:](https://www.scichart.com/documentation/js/v4/webframe.html#Chart%20Styling%20-%20Images%20in%20Background.html)
-[Example of isTransparent property on sub-charts:blue_book:](https://www.scichart.com/documentation/js/v4/webframe.html#SubSurfaceTransparency.html)
+[Example of chart background styling:blue_book:](/2d-charts/styling-and-theming/image-transparent-blurred-backgrounds)
+[Example of isTransparent property on sub-charts:blue_book:](/2d-charts/subcharts-api/sub-chart-sub-surface-transparency)
 :::
 
 ## Custom Order
