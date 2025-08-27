@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # The Numeric Axis
 
-The [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) is a Value axis and is suitable for X and Y Axis when the data on that axis is numeric (e.g. number in TypeScript). It is not suitable for non-numeric data types.
+The [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html) is a Value axis and is suitable for X and Y Axis when the data on that axis is numeric (e.g. number in TypeScript). It is not suitable for non-numeric data types.
 
 :::info
 Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type).
@@ -20,15 +20,15 @@ To create and configure a NumericAxis, use the following code: 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./NumericAxis/demo.ts start=region_A_start end=region_A_end
- 
+
     ```
 
     ```ts showLineNumbers file=./NumericAxis/demo.ts start=region_B_start end=region_B_end
- 
+
     ```
- 
+
 </CodeSnippetBlock>
- 
+
 
 This results in the following output:
 

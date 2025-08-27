@@ -25,7 +25,7 @@ The provided modifiers include [RubberBandXyZoomModifier](/2d-charts/chart-modi
 
 ### Adding Chart Modifiers
 
-Now we are going to create and configure a couple of new modifiers and add them to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection:
+Now we are going to create and configure a couple of new modifiers and add them to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection:
 
 <CodeSnippetBlock labels={["JS"]}>
   ```js {6-9,43-57} showLineNumbers
@@ -51,9 +51,9 @@ Now we are going to create and configure a couple of new modifiers and add them 
         // Create an X,Y Axis and add to the chart
         sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
         sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
-        
+
         // Create 100 dataseries, each with 10k points
-        for (let seriesCount = 0; seriesCount < 100; seriesCount++) {        
+        for (let seriesCount = 0; seriesCount < 100; seriesCount++) {
             const xyDataSeries = new XyDataSeries(wasmContext);
 
             const opacity = (1 - ((seriesCount / 120))).toFixed(2);
@@ -75,7 +75,7 @@ Now we are going to create and configure a couple of new modifiers and add them 
         // For zoomPanModifier we change execute condition not to conflict with rubberBandZoomModifier
         const zoomPanModifier = new ZoomPanModifier({
             executeCondition: { button: EExecuteOn.MouseRightButton, key: EModifierMouseArgKey.None }
-        });    
+        });
         const rubberBandZoomModifier = new RubberBandXyZoomModifier();
         const zoomExtentsModifier = new ZoomExtentsModifier();
 
@@ -163,11 +163,11 @@ Let's extend the application to add panning behaviour, and also allow switching 
                 <input type="checkbox" id="enable-zoom">
                 <label for="enable-zoom">Enable Mouse-Drag to Zoom</label><br>
                 <input type="checkbox" id="enable-zoom-to-fit" checked>
-                <label for="enable-zoom-to-fit">Enable Double-Click to Zoom to Fit</label><br>          
+                <label for="enable-zoom-to-fit">Enable Double-Click to Zoom to Fit</label><br>
                 <input type="checkbox" id="enable-mouse-wheel-zoom" checked>
-                <label for="enable-mouse-wheel-zoom">Enable Mousewheel Zoom</label><br>                
+                <label for="enable-mouse-wheel-zoom">Enable Mousewheel Zoom</label><br>
             </div>
-            
+
             <!-- the Div where the SciChartSurface will reside -->
             <div id="scichart-root" style="height: 600px; width: 100%;"></div>
         </body>
@@ -270,17 +270,17 @@ Next, add the following code to index.js. We could use React or Angular to handl
   ```
 </CodeSnippetBlock>
 
-Enabling or disabling a ChartModifier is as easy as setting the [ChartModifierBase.isEnabled:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html#isenabled) property. You could have a keyboard shortcut to switch from pan to zoom behaviour for example, or a toolbar button to create the desired behaviour.
+Enabling or disabling a ChartModifier is as easy as setting the [ChartModifierBase.isEnabled:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html#isenabled) property. You could have a keyboard shortcut to switch from pan to zoom behaviour for example, or a toolbar button to create the desired behaviour.
 
 ![JavaScript Chart dynamic Zooming and Panning by SciChart.js](img/2.gif)
 
 <div style={{textAlign: "center", marginTop: -20, marginBottom: 20 }}>_Above:  Switching on and off different zoom, pan behaviours in SciChart.js_</div>
 
 :::warning
-**A Note on Licensing SciChart.**  
-  
+**A Note on Licensing SciChart.**
+
 The SciChart.js control comes with a community license which is watermarked. This can be used for commercial trial use for a reasonable time period.
 
-  
+
 For commercial licenses, a license key can be applied following the instructions at [www.scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js).
 :::

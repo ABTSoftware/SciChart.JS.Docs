@@ -15,11 +15,11 @@ The [JavaScript Text / Word Cloud Chart Example](https://www.scichart.com/demo/
 Creating a Polar Text Series
 ----------------------
 
-To create a chart using [PolarTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polartextrenderableseries.html) use the following code. 
+To create a chart using [PolarTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polartextrenderableseries.html) use the following code. 
 
 **Note** that it is required to set `style: { fontSize: X }` and `color` in the dataLabels property in order for text to be drawn. 
 
-PolarTextRenderableSeries uses the special [XyTextDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xytextdataseries.html) which allows you to supply text values directly on the dataSeries, rather than having to use metadata. 
+PolarTextRenderableSeries uses the special [XyTextDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xytextdataseries.html) which allows you to supply text values directly on the dataSeries, rather than having to use metadata. 
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {33-37,41,43} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end

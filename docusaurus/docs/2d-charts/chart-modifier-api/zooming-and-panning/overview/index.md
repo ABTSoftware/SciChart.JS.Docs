@@ -4,9 +4,9 @@ sidebar_position: 7
 
 # Easy Overview charts with SciChartOverview
 
-The [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html) Control is a component which can be used for navigating a 2D chart. It behaves like a minimap of the chart. The SciChartOverview is a separate chart which uses the original chart for configuration and displays the full range of it's data.
+The [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html) Control is a component which can be used for navigating a 2D chart. It behaves like a minimap of the chart. The SciChartOverview is a separate chart which uses the original chart for configuration and displays the full range of it's data.
 
-Benefits of the [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html):
+Benefits of the [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html):
 
 *   Displays an overview of the whole chart
 *   Allows you to select the visible range that should be displayed by dragging & resizing an element on the overview control
@@ -16,7 +16,7 @@ Benefits of the [SciChartOverview:blue_book:](https://www.scichart.com/documenta
 Using the SciChartOverview Control
 ----------------------------------
 
-The **SciChartOverview** uses a separate html element for displaying and behaves like a usual chart. So to create an instance of the **SciChartOverview** we need to pass a reference to the main surface and an id of the container element to the [SciChartOverview.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html#create) method:
+The **SciChartOverview** uses a separate html element for displaying and behaves like a usual chart. So to create an instance of the **SciChartOverview** we need to pass a reference to the main surface and an id of the container element to the [SciChartOverview.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html#create) method:
 
 <CodeSnippetBlock labels={["Create a SciChartOverview"]}>
     ```ts showLineNumbers
@@ -71,7 +71,7 @@ Next, let's instantiate a basic chart and add some dataseries:
         }
         dataSeries.appendRange(xValues, yValues);
     };
-    
+
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId);
 
     const xAxis = new NumericAxis(wasmContext);
@@ -87,19 +87,19 @@ Next, let's instantiate a basic chart and add some dataseries:
     ```
 </CodeSnippetBlock>
 
-Now that we have an empty chart with axis and data, let's bind a [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html) to it:
+Now that we have an empty chart with axis and data, let's bind a [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html) to it:
 
 <CodeSnippetBlock labels={["Adding the SciChartOverview"]}>
     ```ts {3} showLineNumbers
     import { SciChartOverview } from "scichart";
-    
+
     SciChartOverview.create(sciChartSurface, overviewDivElementId)
     ```
 </CodeSnippetBlock>
 
 At this point we should get a working example of the Overview control.
 
-<CenteredImageWrapper 
+<CenteredImageWrapper
     src="/images/Overview_Basic.png"
     height="500px"
 />
@@ -122,8 +122,8 @@ To demonstrate this, let's add some zoom / pan modifiers to the chart.  Modify 
     // ...
 
     sciChartSurface.chartModifiers.add(
-        new ZoomPanModifier(), 
-        new ZoomExtentsModifier(), 
+        new ZoomPanModifier(),
+        new ZoomExtentsModifier(),
         new MouseWheelZoomModifier()
     );
     ```
@@ -144,7 +144,7 @@ Since the control is using a separate element for displaying, you can place and 
 
 ### Modifying the Overview Chart
 
-The **SciChartOverview.create()** method returns an instance of [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html), which exposes properties for accessing and customizing the underlying chart.  The most important is **overviewSciChartSurface** which is the actual [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) used by the overview.
+The **SciChartOverview.create()** method returns an instance of [SciChartOverview:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html), which exposes properties for accessing and customizing the underlying chart.  The most important is **overviewSciChartSurface** which is the actual [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) used by the overview.
 
 <CodeSnippetBlock labels={["Modified overview chart"]}>
     ```ts showLineNumbers
@@ -171,7 +171,7 @@ The **SciChartOverview.create()** method returns an instance of [SciChartOvervi
 
 ### Customizing the Selection and Range Annotations
 
-SciChart Overview also allows to specify custom SVGs for the selection control using properties of the [OverviewRangeSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/overviewrangeselectionmodifier.html), which can be accessed via the [SciChartOverview.rangeSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartoverview.html#rangeselectionmodifier) property:
+SciChart Overview also allows to specify custom SVGs for the selection control using properties of the [OverviewRangeSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/overviewrangeselectionmodifier.html), which can be accessed via the [SciChartOverview.rangeSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartoverview.html#rangeselectionmodifier) property:
 
 
 <CodeSnippetBlock labels={["Customized selection area"]}>
@@ -191,7 +191,7 @@ SciChart Overview also allows to specify custom SVGs for the selection control u
         </svg>`;
 
     // Custom SVG template function for grab handles of the selection control
-    overview.rangeSelectionModifier.rangeSelectionAnnotation.adornerSvgStringTemplate = 
+    overview.rangeSelectionModifier.rangeSelectionAnnotation.adornerSvgStringTemplate =
         (x1: number, y1: number, x2: number, y2: number) => {
             const delta = 3;
             const ADORNER_GRIP_RADIUS = 10;
@@ -202,7 +202,7 @@ SciChart Overview also allows to specify custom SVGs for the selection control u
                 <circle cx="${x2}" cy="${y1 / 2 + y2 / 2}" r="${ADORNER_GRIP_RADIUS}" fill="rgb(142, 238, 195)" stroke="rgb(85, 158, 218)"/>
             </svg>`;
         };
-        
+
     ```
 </CodeSnippetBlock>
 
@@ -217,7 +217,7 @@ This results in the following output:
 Optional Parameters for creating SciChartOverview
 -------------------------------------------------
 
-**SciChartOverview.create()** accepts optional params object described in [IOverviewOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ioverviewoptions.html). These params allow to specify axis ids which should be used for binding **AxisBase2D.visibleRange** updates to the overview control via **IOverviewOptions.mainAxisId** and **IOverviewOptions.secondaryAxisId**.
+**SciChartOverview.create()** accepts optional params object described in [IOverviewOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ioverviewoptions.html). These params allow to specify axis ids which should be used for binding **AxisBase2D.visibleRange** updates to the overview control via **IOverviewOptions.mainAxisId** and **IOverviewOptions.secondaryAxisId**.
 
 :::tip
 Note: specifying the **IOverviewOptions.mainAxisId** and **IOverviewOptions.secondaryAxisId** is required when you are using custom axis ids (as in case when you have multiple X or Y axes).

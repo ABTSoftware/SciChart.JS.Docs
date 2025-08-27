@@ -19,23 +19,23 @@ import { SciChartDefaults } from "scichart";
 SciChartDefaults.useNativeText = false;
 ```
 
-You can control it for a particular axis by setting the useNativeText option when creating the axis, or by setting the [axis.labelProvider.useNativeText:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/labelproviderbase2d.html#usenativetext) property.
+You can control it for a particular axis by setting the useNativeText option when creating the axis, or by setting the [axis.labelProvider.useNativeText:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelproviderbase2d.html#usenativetext) property.
 
 :::warning
-To use any font other than Arial you will need ensure that font is available on your server (as fontname.ttf), or registered using [sciChartSurface.registerFont():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#registerfont) if coming from a remote url.  See [Native Text Font Loading](/2d-charts/miscellaneous-apis/native-text-api/index.md) for more details.
+To use any font other than Arial you will need ensure that font is available on your server (as fontname.ttf), or registered using [sciChartSurface.registerFont():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#registerfont) if coming from a remote url.  See [Native Text Font Loading](/2d-charts/miscellaneous-apis/native-text-api/index.md) for more details.
 :::
 
-All the normal options in [labelStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#labelstyle) are supported except for **fontStyle** and **fontWeight**. 
+All the normal options in [labelStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#labelstyle) are supported except for **fontStyle** and **fontWeight**. 
 
 The example below creates axes using both native and standard text.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./NativeText/demo.ts start=region_A_start end=region_A_end
- 
+
     ```
 
     ```ts showLineNumbers file=./NativeText/demo.ts start=region_B_start end=region_B_end
- 
+
     ```
 </CodeSnippetBlock>
 
@@ -55,7 +55,7 @@ When using angles that are not a multiple of 90, you probably want to set **hid
 Multiline labels are supported simply by using newline characters (\\n) in the label text.  lineSpacing is a property on the labelProvider.  The alignment property on labelStyle also affects the alignment for multiple lines. 
 
 :::note
-Note: for more info about [Text and MultiLine labels see this article](/2d-charts/axis-api/axis-labels/text-and-multi-line-labels).  
+Note: for more info about [Text and MultiLine labels see this article](/2d-charts/axis-api/axis-labels/text-and-multi-line-labels).
 For rotation of labels [see this article](/2d-charts/axis-api/axis-labels/rotating-axis-labels).
 :::
 

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Chart Styling - Creating a Custom Theme
 
-As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#applytheme) function.
+As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#applytheme) function.
 
 For example, the following code:
 
@@ -139,9 +139,9 @@ export async function createCustomThemeTs(divId: string) {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 }
     ```
- 
+
 </CodeSnippetBlock>
- 
+
 
 
 Results in this output:
@@ -168,26 +168,26 @@ If you want to create a custom theme built on one of the default themes supplied
 import {
     SciChartSurface,
     NumericAxis,
-    SciChartJSLightTheme 
+    SciChartJSLightTheme
 } from "scichart";
 
 export async function inheritThemeGradientBackground(divId) {
     // Create a theme and inherit / override some properties
     const myTheme = { ...new SciChartJSLightTheme() };
-    
+
     // Override axis text label
-    myTheme.tickTextBrush = "#ff6600"; 
-    
+    myTheme.tickTextBrush = "#ff6600";
+
     // Override gridlines
-    myTheme.majorGridLineBrush = "#777"; 
+    myTheme.majorGridLineBrush = "#777";
     myTheme.minorGridLineBrush = "#aaa";
 
     // Override background with a gradient
-    myTheme.sciChartBackground = 
+    myTheme.sciChartBackground =
         "radial-gradient(circle, #ffffff 0%, #eeeeee 50%, #AAAAAA 100%)";
 
     // Apply theme
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId, { 
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId, {
         theme: myTheme
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));

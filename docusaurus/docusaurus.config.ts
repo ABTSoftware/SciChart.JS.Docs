@@ -99,7 +99,7 @@ const config: Config = {
                     position: "left"
                 },
                 {
-                    href: "https://www.scichart.com/documentation/js/current/webframe.html",
+                    href: "https://www.scichart.com/documentation/js/v4/webframe.html",
                     label: "Docs v3",
                     position: "right"
                 },

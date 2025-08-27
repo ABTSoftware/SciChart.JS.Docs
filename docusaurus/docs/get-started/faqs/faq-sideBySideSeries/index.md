@@ -4,9 +4,9 @@ sidebar_position: 2
 
 # Custom Side-By-Side Series
 
-While SciChart.js provides the built-in [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumncollection.html) for stacking Column Series side-by-side or top-to-bottom, many developers need more flexibility to position different types of series alongside each other.
+While SciChart.js provides the built-in [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html) for stacking Column Series side-by-side or top-to-bottom, many developers need more flexibility to position different types of series alongside each other.
 
-<ChartFromSciChartDemo 
+<ChartFromSciChartDemo
     src="https://www.scichart.com/demo/iframe/stacked-grouped-column-chart-side-by-side"
     title="Built-in Stacked Column Chart Side-by-Side"
 />
@@ -24,7 +24,7 @@ Here's the result - three different series types (Candlestick, Impulse, and Erro
 ## Key Implementation Points
 
 1. **Calculate X-offsets**: Use the `calculateShift` function to position each series with new x-values
-2. **Consistent spacing**: Maintain uniform gaps between series for visual clarity  
+2. **Consistent spacing**: Maintain uniform gaps between series for visual clarity
 3. **Flexible series count**: The algorithm adapts to any number of side-by-side series
 4. **Series type independence**: Works with any combination of renderable series types
 
@@ -46,6 +46,6 @@ The `calculateShift` function takes your original X-value and calculates an offs
 - **Adjust dataPointWidth**: For series with width properties (like candlesticks), set `dataPointWidth` to prevent overlap
 - **Consistent spacing**: Use the same spacing value across all series for uniform appearance
 - **Scale with data**: The algorithm automatically scales positioning based on your total series count
-- **Related demos**: Check out other related CodePens, like: 
-  - [Different Y-Axis Side-by-Side Columns](https://codepen.io/vasculandrei/pen/zYVLLEe?editors=0010), 
+- **Related demos**: Check out other related CodePens, like:
+  - [Different Y-Axis Side-by-Side Columns](https://codepen.io/vasculandrei/pen/zYVLLEe?editors=0010),
   - [Column/ErrorBar overlay collection](http://codepen.io/vasculandrei/pen/VYwKpeZ)

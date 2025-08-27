@@ -165,7 +165,7 @@ We're going to create a simple Index.js / Index.html. Create and add these two f
     <body>
         <h1>Hello SciChart.js world!</h1>
         <p>In this example we setup webpack, scichart and create a simple chart with one X and Y axis</p>
-        
+
         <!-- the Div where the SciChartSurface will reside -->
         <div id="scichart-root" style="width: 800px; height: 600px;"></div>
     </body>
@@ -228,7 +228,7 @@ The SciChart.js API is pretty simple. In the code sample above we declare an ins
 
 This function returns a [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/) instance and a wasmContext (WebAssembly Context). You will need this context for all chart parts related to this chart.
 
-Next, we add a single X,Y Axis. We do this by creating a new [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis/), and adding it to the [SciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#xaxes) and [SciChartSurface.yAxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#yaxes) collections.
+Next, we add a single X,Y Axis. We do this by creating a new [NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis/), and adding it to the [SciChartSurface.xAxes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#xaxes) and [SciChartSurface.yAxes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#yaxes) collections.
 
 **Declaring a SciChartSurface**
 
@@ -236,7 +236,7 @@ Next, we add a single X,Y Axis. We do this by creating a new [NumericAxis](/2d-c
 // Create an X,Y Axis and add to the chart
 const xAxis = new NumericAxis(wasmContext);
 const yAxis = new NumericAxis(wasmContext);
-   
+
 sciChartSurface.xAxes.add(xAxis);
 sciChartSurface.yAxes.add(yAxis);
 ```
@@ -292,11 +292,11 @@ Source code for this tutorial can be found at our [SciChart.Js.Examples Github R
 :::
 
 :::warning
-**A Note on Licensing SciChart.**  
-  
+**A Note on Licensing SciChart.**
+
 The SciChart.js control comes with a community license which is watermarked. This can be used for commercial trial use for a reasonable time period.
 
-  
+
 For commercial licenses, a license key can be applied following the instructions at [www.scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js).
 :::
 

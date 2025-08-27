@@ -64,9 +64,9 @@ Which Series support StrokeDashArray?
 
 All the line-based series in SciChart.js support StrokeDashArray for dashed or dotted lines. These are:
 
-*   [FastLineRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#strokedasharray)
-*   [FastMountainRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html#strokedasharray)
-*   [FastBandRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html#strokedasharray)
+*   [FastLineRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html#strokedasharray)
+*   [FastMountainRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastmountainrenderableseries.html#strokedasharray)
+*   [FastBandRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#strokedasharray)
 *   SplineLineRenderableSeries
 *   SplineMountainRenderableSeries
 *   SplineBandRenderableSeries

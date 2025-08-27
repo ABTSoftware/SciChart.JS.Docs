@@ -19,9 +19,9 @@ Explore these for some rich examples of how to use this API.
 
 ## Label Colouring
 
-The color property on the dataLabels option sets the color for all labels, but you can do per-label coloring by overriding the [getColor():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html#getcolor) function on the [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html).
+The color property on the dataLabels option sets the color for all labels, but you can do per-label coloring by overriding the [getColor():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelprovider.html#getcolor) function on the [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelprovider.html).
 
-This function hsa to return the integer color codes used by SciChart's engine, so you need to use [parseColorToUIntArgb:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#parsecolortouintargb) helper function to convert from html colors. It is a good idea to pre-calculate integer colour codes, rather than compute them each time labels are drawn, as in the example below.
+This function hsa to return the integer color codes used by SciChart's engine, so you need to use [parseColorToUIntArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#parsecolortouintargb) helper function to convert from html colors. It is a good idea to pre-calculate integer colour codes, rather than compute them each time labels are drawn, as in the example below.
 
 <CodeSnippetBlock>
     ```ts showLineNumbers file=./demo.ts start=region_A_start end=region_A_end

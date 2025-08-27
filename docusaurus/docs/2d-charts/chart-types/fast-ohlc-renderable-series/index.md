@@ -35,12 +35,12 @@ In the code above:
 
 *   A Ohlc Series instance is created and added to the **SciChartSurface.renderableSeries** collection.
 *   This requires a special dataseries type: OhlcDataSeries, which accepts `X`, `Open`, `High`, `Low`, `Close` values
-*   We set the up/down stroke color via properties [strokeUp:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#strokeup), [strokeDown:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#strokedown).
-*   We set [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
+*   We set the up/down stroke color via properties [strokeUp:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastohlcrenderableseries.html#strokeup), [strokeDown:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastohlcrenderableseries.html#strokedown).
+*   We set [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastohlcrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
 *   We use a special axis type called the CategoryAxis which removes gaps in stock market data.
 
 :::tip
-A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) can be used as these are 24/7 markets.
+A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/categoryaxis.html) is necessary if you have Forex or Stock market data which includes weekend or overnight gaps, as this axis type measures by x-index, not by x-value. For CryptoCurrency data the [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html) can be used as these are 24/7 markets.
 
 You can format the date labels on the xAxis by following the instructions on the [Axis Label Formatting](/2d-charts/axis-api/axis-labels/numeric-formats) page.
 :::

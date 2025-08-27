@@ -35,16 +35,16 @@ The following code with 4 XAxis on the bottom results in this output:
 
 ### Step 2: Apply the Layout Strategy
 
-To change the behaviour of axis stacking you need to set the appropriate layoutStrategy property on the [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager) with the stacked version. 
+To change the behaviour of axis stacking you need to set the appropriate layoutStrategy property on the [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#layoutmanager) with the stacked version. 
 
 SciChart provides the following Outer Axes Layout Strategies:
 
-*   [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html)
-*   [RightAlignedOuterVerticallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html)
-*   [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html)
-*   [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html)
+*   [LeftAlignedOuterVerticallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/leftalignedouterverticallystackedaxislayoutstrategy.html)
+*   [RightAlignedOuterVerticallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rightalignedouterverticallystackedaxislayoutstrategy.html)
+*   [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html)
+*   [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html)
 
-Modify the code above to set this property on the [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
+Modify the code above to set this property on the [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#layoutmanager):
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./Step2/demo.ts start=region_A_start end=region_A_end
@@ -61,25 +61,25 @@ Now the layout is completely changed. 
 LayoutStrategies Applicable to X-Axis
 ----------------------------------------
 
-The following horizontally stacked layout strategies are available and may be applied to the following properties on [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager):
+The following horizontally stacked layout strategies are available and may be applied to the following properties on [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#layoutmanager):
 
 | Layout Strategy | Use With | Apply to LayoutManager Prop | Behavior |
 |-----------------|----------|-----------------------------|----------|
-| [TopAlignedOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/topalignedouteraxislayoutstrategy.html) | X Axis | [topInnerAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#topinneraxeslayoutstrategy), [topOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#topouteraxeslayoutstrategy) | Default behavior |
-| [BottomAlignedOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/bottomalignedouteraxislayoutstrategy.html) | X Axis | [bottomInnerAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#bottominneraxeslayoutstrategy), [bottomOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#bottomouteraxeslayoutstrategy) | Default behavior |
-| [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html) | X Axis | [topOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#topouteraxeslayoutstrategy) | Horizontal stacking behavior |
-| [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html) | X Axis | [bottomOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/layoutmanager.html#bottomouteraxeslayoutstrategy) | Horizontal stacking behavior |
+| [TopAlignedOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/topalignedouteraxislayoutstrategy.html) | X Axis | [topInnerAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#topinneraxeslayoutstrategy), [topOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#topouteraxeslayoutstrategy) | Default behavior |
+| [BottomAlignedOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/bottomalignedouteraxislayoutstrategy.html) | X Axis | [bottomInnerAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#bottominneraxeslayoutstrategy), [bottomOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#bottomouteraxeslayoutstrategy) | Default behavior |
+| [TopAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/topalignedouterhorizontallystackedaxislayoutstrategy.html) | X Axis | [topOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#topouteraxeslayoutstrategy) | Horizontal stacking behavior |
+| [BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/bottomalignedouterhorizontallystackedaxislayoutstrategy.html) | X Axis | [bottomOuterAxisLayoutStrategy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/layoutmanager.html#bottomouteraxeslayoutstrategy) | Horizontal stacking behavior |
 
 :::tip
-Try experimenting with the Codepen above to see how each of the strategies behave.  
-Note that a **TopLayoutStrategy** will require [Axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html#axisalignment) = [EAxisAlignment.Top:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eaxisalignment.html) and vice versa.
+Try experimenting with the Codepen above to see how each of the strategies behave.
+Note that a **TopLayoutStrategy** will require [Axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#axisalignment) = [EAxisAlignment.Top:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eaxisalignment.html) and vice versa.
 
 :::
 
 Customising Axis Size when Horizontally Stacked
 -----------------------------------------------
 
-The [Axis.stackedAxisLength:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#stackedaxislength) property allows you to customize the size of a Horizontally Stacked Axis in SciChart.js. This property may be an absolute number, e.g. 50 pixels, or a percentage e.g. "30%". When left undefined, default equal spacing will be used.
+The [Axis.stackedAxisLength:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#stackedaxislength) property allows you to customize the size of a Horizontally Stacked Axis in SciChart.js. This property may be an absolute number, e.g. 50 pixels, or a percentage e.g. "30%". When left undefined, default equal spacing will be used.
 
 Try the following code to see how it affects stacked axis size.
 
