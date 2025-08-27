@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Custom Side-By-Side Series
 
-While SciChart.js provides the built-in [StackedColumnCollection](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumncollection.html) for stacking Column Series side-by-side or top-to-bottom, many developers need more flexibility to position different types of series alongside each other.
+While SciChart.js provides the built-in [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumncollection.html) for stacking Column Series side-by-side or top-to-bottom, many developers need more flexibility to position different types of series alongside each other.
 
 <ChartFromSciChartDemo 
     src="https://www.scichart.com/demo/iframe/stacked-grouped-column-chart-side-by-side"

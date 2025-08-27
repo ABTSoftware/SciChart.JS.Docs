@@ -44,7 +44,7 @@ In the code above:
 *   A [NonUniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmapdataseries.html) instance is created with `xCellOffsets = []` and `yCellOffsets = []`. This defines the position of the heatmap in X,Y space as well as the position of each column/row.
 *   We set the Colormap, which maps colors to heat values in the dataseries.
 *   [NonUniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html) instance is created with [INonUniformHeatmapRenderableSeriesOptions.dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/inonuniformheatmaprenderableseriesoptions.html#dataseries) and [INonUniformHeatmapRenderableSeriesOptions.colorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/inonuniformheatmaprenderableseriesoptions.html#colormap) options and added to the [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   Alternatively we can assign a [NonUniformHeatmapRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/nonuniformheatmaprenderableseries.html#dataseries) property separately.
+*   Alternatively we can assign a [NonUniformHeatmapRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/nonuniformheatmaprenderableseries.html#dataseries) property separately.
 
 ### Updating Heatmap Values
 
@@ -73,7 +73,7 @@ The function should generate cell offsets based on the index. This feature is us
 ```ts {7-8} showLineNumbers
 // Passing just cell Offset Arrays
 const xRangeOffsetsSource = [0, 10, 20, 26, 36, 60, 72, 84];
-const yRangeOffsetsSource = [100, 250, 390, 410, 600]; 
+const yRangeOffsetsSource = [100, 250, 390, 410, 600];
 
 const dataSeries = new NonUniformHeatmapDataSeries(wasmContext, {
     zValues,
@@ -87,7 +87,7 @@ as well as this:
 ```ts {7-8} showLineNumbers
 // Passing just cell Offset Arrays
 const xRangeOffsetsSource = [0, 10, 20, 26, 36, 60, 72, 84];
-const yRangeOffsetsSource = [100, 250, 390, 410, 600]; 
+const yRangeOffsetsSource = [100, 250, 390, 410, 600];
 
 const dataSeries = new NonUniformHeatmapDataSeries(wasmContext, {
     zValues,
