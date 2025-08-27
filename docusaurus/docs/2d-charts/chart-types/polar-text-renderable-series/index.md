@@ -32,5 +32,5 @@ This results in the following output: 
 
 #### See Also
 
-* [(2D) Fast Text Renderable Series](docusaurus/docs/2d-charts/chart-types/fast-text-renderable-series)
+* [(2D) Fast Text Renderable Series](/2d-charts/chart-types/fast-text-renderable-series/index.md)
 * [Adding DataLabels to a Chart Series](/2d-charts/chart-types/data-point-labels/data-labels-api-overview)
