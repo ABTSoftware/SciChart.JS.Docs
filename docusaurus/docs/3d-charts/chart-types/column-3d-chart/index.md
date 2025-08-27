@@ -36,7 +36,7 @@ An xAxis, yAxis and zAxis are declared of type [NumericAxis3D:blue_book:](https
 
 Additional code is added to generate some data which is unwrapped into 1D arrays of X,Y and ZValues. These will specify the discrete 3D points on the column chart: X-Z providing the position and Y value providing the height. Data is passed into a [XyzDataSeries3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyzdataseries3d.html) which is the data source for the 3D column chart.
 
-A [ColumnRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/columnrenderableseries3d.html) is created and added to the [SciChart3DSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#renderableseries) collection. We set the [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/columnrenderableseries3doptions.html#datapointwidthx) properties to define the size of the 3D bar as well as the [fill:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/columnrenderableseries3doptions.html#fill) and [pointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/columnrenderableseries3doptions.html#pointmarker) properties to define the colour and type (shape) of the column.
+A [ColumnRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/columnrenderableseries3d.html) is created and added to the [SciChart3DSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#renderableseries) collection. We set the [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icolumnrenderableseries3doptions.html#datapointwidthx) properties to define the size of the 3D bar as well as the [fill:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icolumnrenderableseries3doptions.html#fill) and [pointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icolumnrenderableseries3doptions.html#pointmarker) properties to define the colour and type (shape) of the column.
 
 This results in the following output:
 
@@ -54,7 +54,7 @@ The [ColumnRenderableSeries3D:blue_book:](https://www.scichart.com/documentatio
 *   [PyramidPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/pyramidpointmarker3d.html) - a 3D Pyramid represents each bar/column
 *   [CylinderPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cylinderpointmarker3d.html) - a 3D Cylinder represents each bar/column
 
-Changing the [ColumnRenderableSeries3D.pointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/columnrenderableseries3doptions.html#pointmarker) property will update the type / shape of object used to denote a column.
+Changing the [ColumnRenderableSeries3D.pointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icolumnrenderableseries3doptions.html#pointmarker) property will update the type / shape of object used to denote a column.
 
 Colouring Individual Columns
 ----------------------------
