@@ -71,7 +71,7 @@ The following articles in this section show you how to do this for each series t
 * [Per-Point Coloring for Polar Band Series](/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series)
 * [Per-Point Coloring for Polar Column Series](/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series)
 * [Per-Point Coloring for Polar Line Series](/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series)
-<!-- * [Per-Point Coloring for Polar Mountain Series](/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)-->
-<!-- * [Per-Point Coloring for Polar Stacked Column Series](/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series) -->
-<!-- * [Per-Point Coloring for Polar Stacked Mountain Series](/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series) -->
+<!-- * [Per-Point Coloring for Polar Mountain Series(/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)-->
+<!-- * [Per-Point Coloring for Polar Stacked Column Series(/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series) -->
+<!-- * [Per-Point Coloring for Polar Stacked Mountain Series(/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series) -->
 * [Per-Point Coloring for Polar Scatter Series](/2d-charts/chart-types/palette-provider-api/polar-xy-scatter-renderable-series)

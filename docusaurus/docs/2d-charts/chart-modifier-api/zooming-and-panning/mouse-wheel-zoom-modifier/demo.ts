@@ -87,13 +87,11 @@ zoomPan2D("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the ZoomPanModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, EXyDirection } = SciChart;
+    const { chartBuilder, EThemeProviderType, EChart2DModifierType, EXyDirection } = SciChart;
     // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { type: EAxisType.NumericAxis },
-        yAxes: { type: EAxisType.NumericAxis },
         modifiers: [
             {
                 type: EChart2DModifierType.ZoomPan,

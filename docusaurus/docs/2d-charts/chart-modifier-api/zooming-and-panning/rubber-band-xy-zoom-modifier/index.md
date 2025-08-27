@@ -13,7 +13,7 @@ Adding a RubberBandXyZoomModifier to a Chart
 
 A [RubberBandXyZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rubberbandxyzoommodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable zoom to fit behavior. For example:
 
-<CodeSnippetBlock labels={["TS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
    ```ts {4} showLineNumbers
    import { RubberBandXyZoomModifier, easing } from "scichart";
 
@@ -27,6 +27,28 @@ A [RubberBandXyZoomModifier:blue_book:](https://www.scichart.com/documentation/
       strokeThickness: 1,
    });
    sciChartSurface.chartModifiers.add(rubberBandXyZoomModifier);
+      ```
+
+   ```ts {8} showLineNumbers
+   // Demonstrates how to configure the RubberBand Zoom Modifier in SciChart.js using the Builder API
+   const { chartBuilder, EChart2DModifierType, easing } = SciChart;
+   // or, for npm, import { chartBuilder, ... } from "scichart"
+
+   const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+      modifiers: [
+         {
+            type: EChart2DModifierType.RubberBandXYZoom,
+            options: {
+               isAnimated: true,
+               animationDuration: 400,
+               easingFunction: easing.outExpo,
+               fill: "#FFFFFF33",
+               stroke: "#FFFFFF77",
+               strokeThickness: 1,
+            }
+         }
+      ]
+   });
       ```
 </CodeSnippetBlock>
 

@@ -132,6 +132,24 @@ The full example code.
     htmlPath="./callback/index.html"
 />
 
+Creating Custom Legend Markers
+------------------------------
+
+By default, when `showSeriesMarkers` of the LegendModifier is set to true, all renderable series will display with a rectangle filled with the primary series color next to its name. You can override this and have custom SVG shapes as markers.
+
+Here is how:
+
+<LiveDocSnippet 
+    name="./customMarkers/demo" 
+/>
+
+And here is the code doing it:
+
+<CodeSnippetBlock labels={["ts"]}>
+    ```ts {49} showLineNumbers file=./customMarkers/demo.ts
+    ```
+</CodeSnippetBlock>
+
 #### See Also
 
 * [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features/)
