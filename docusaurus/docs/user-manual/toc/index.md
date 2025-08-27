@@ -10,7 +10,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
 <!-- generate-docs-toc.js start -->
 - **User Manual**
   - [Table of Contents](/user-manual/toc)
-  - [What Chart Types does SciChart.js Support?](/user-manual/what-chart-types)
+  - [Features, Chart Types and more supported by SciChart.js](/user-manual/what-chart-types)
   - [Minimum Browser Requirements](/user-manual/minimum-browser-requirements)
   - [Online Resources and Help](/user-manual/online-resources-and-help)
   - [Licensing SciChart.js](/user-manual/licensing-scichart-js)
