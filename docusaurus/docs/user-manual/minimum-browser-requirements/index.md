@@ -115,7 +115,7 @@ Yes, SciChart.js can run on any device which supports WebGL and WebAssembly, inc
 
 A list of Single-board computers (SBC's) which support WebGL can be found below:
 - Raspberry Pi 4/5 - capable of OpenGL and WebGL with it's VideoCore VI GPU and updated Mesa drivers
-- Orange Pi 5 - capable of OpenGL and WebGL due to the Rockchip RK3588(S) SoCs
+- Orange Pi 5 - capable of OpenGL and WebGL due to the Rockchip RK3588(S) SoC and Mali-G610 GPU
 - Asus Tinker Board - with a Rockchip RK3288 SoC offers strong graphics capabilities for WebGL
 - Rock Pi 4 - With a Rockchip RK3399 SoC provides GPU capable of WebGL content
 - Udoo Bolt - features an integrated GPU capable of OpenGL / WebGL
