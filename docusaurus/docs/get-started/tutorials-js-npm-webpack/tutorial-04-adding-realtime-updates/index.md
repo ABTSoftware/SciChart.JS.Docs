@@ -43,7 +43,7 @@ Let's start the tutorial with some basic code like this to declare a SciChartSur
         sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
         // Create a Scatter series, and Line series and add to chart
-        const scatterSeries = new XyScatterRenderableSeries(wasmContext, { 
+        const scatterSeries = new XyScatterRenderableSeries(wasmContext, {
             pointMarker: new EllipsePointMarker(wasmContext, { width: 7, height: 7, fill: "White", stroke: "SteelBlue" }),
         });
         const lineSeries = new FastLineRenderableSeries(wasmContext, { stroke: "#4083B7", strokeThickness: 2 });
@@ -103,11 +103,11 @@ Part 1 - Updating Data Values
 
 Now let's update some data-values in JavaScript to see real-time changes to the chart.
 
-We will use setTimeout to create a timer and call [xyDataSeries.update():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#update) to change the data. SciChart automatically redraws when the data is changed.
+We will use setTimeout to create a timer and call [xyDataSeries.update():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#update) to change the data. SciChart automatically redraws when the data is changed.
 
 <CodeSnippetBlock labels={["index.js"]}>
     ```js {} showLineNumbers
-    let phase = 0.0;    
+    let phase = 0.0;
 
     const updateDataFunc = () => {
 
@@ -129,7 +129,7 @@ We will use setTimeout to create a timer and call [xyDataSeries.update():blue_b
 
 Breaking this down, we're using the [DataSeries API](/2d-charts/chart-types/data-series-api/data-series-api-overview) to manipulate the data.
 
-Specifically, [dataSeries.update():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#update), which updates a Y-value at a specific index. There are also functions to [append:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append), [appendRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendrange), [insert:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insert), [insertRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#insertrange), [remove:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeat), [removeRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removerange) and [clear:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#clear), which will remove all data. Any changes to the DataSeries immediately reflect in the chart as SciChart is a fully reactive, dynamic JavaScript chart component.
+Specifically, [dataSeries.update():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#update), which updates a Y-value at a specific index. There are also functions to [append:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#append), [appendRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#appendrange), [insert:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#insert), [insertRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#insertrange), [remove:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#removeat), [removeRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#removerange) and [clear:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#clear), which will remove all data. Any changes to the DataSeries immediately reflect in the chart as SciChart is a fully reactive, dynamic JavaScript chart component.
 
 You can learn more about the [dynamic DataSeries API in SciChart here](/2d-charts/chart-types/data-series-api/data-series-api-overview).
 
@@ -140,12 +140,12 @@ Now run the application, you should see this!
 Part 2 - Appending Data Values
 ------------------------------
 
-As well as using dataSeries.update(), you can also use [dataSeries.append():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#append) to add new data-values to the end of a DataSeries. Make some changes in your updateDataFunc() as follows:
+As well as using dataSeries.update(), you can also use [dataSeries.append():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#append) to add new data-values to the end of a DataSeries. Make some changes in your updateDataFunc() as follows:
 
 <CodeSnippetBlock labels={["index.js"]}>
   ```js {} showLineNumbers
     // Update the updateDataFunc() to append a point to the end of the data series
-    
+
     const updateDataFunc = () => {
 
         // Append another data-point to the chart. We use dataSeries.count()
@@ -169,7 +169,7 @@ Now run the application again. You sould see the series growing larger as new da
 ![](img/3.gif)
 
 :::tip
-By default, when you append data, SciChart does not resize the viewport to fit the new data. In the code sample above we have called [sciChartSurface.zoomExtents():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomextents) to fit the data.
+By default, when you append data, SciChart does not resize the viewport to fit the new data. In the code sample above we have called [sciChartSurface.zoomExtents():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#zoomextents) to fit the data.
 
 Other options to manipulate the viewport can be seen at the pages [Axis Ranging - AutoRange](/2d-charts/axis-api/ranging-scaling/auto-range) and [Axis Ranging - Setting and Getting VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit).
 :::
@@ -179,21 +179,21 @@ Part 3 - Scrolling Realtime Charts
 
 What if you wanted to scroll as new data was appended? You have a few choices.
 
-*   If you simply want to scroll the viewport, you can manipulate [XAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange) (see [Getting and Setting VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit)) as you append new data.
+*   If you simply want to scroll the viewport, you can manipulate [XAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#visiblerange) (see [Getting and Setting VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit)) as you append new data.
 *   If you want to be memory efficient and discard old data, you can use dataSeries.removeAt, or dataSeries.removeRange to remove old values as well.
 
 We're going to show you how to scroll data in a JavaScript chart below.
 
 ### Scrolling the Chart via XAxis.visibleRange
 
-To scroll in SciChart.js, all we have to do is manipulate the [XAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#visiblerange). This accepts a type: [NumberRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numberrange.html), which defines a minimum and maximum value to display on the chart.
+To scroll in SciChart.js, all we have to do is manipulate the [XAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#visiblerange). This accepts a type: [NumberRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numberrange.html), which defines a minimum and maximum value to display on the chart.
 
 Modify the updateData() function as follows:
 
 <CodeSnippetBlock labels={["index.js"]}>
     ```js {} showLineNumbers
     // Scrolling the chart by appending and manipulating xAxis.visibleRange
-    
+
     const updateDataFunc = () => {
 
         // Append another data-point to the chart. We use dataSeries.count()
@@ -217,8 +217,8 @@ This results in the following.
 
 ![](img/4.gif)
 
-The above example is simple, but it never removes points from the XyDataSeries, so memory will grow forever. Consider if you are streaming lots of data-points calling [XyDataSeries.removeAt:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeat), or [removeRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removerange) or using [FIFO Modes](/2d-charts/chart-types/data-series-api/realtime-updates) to discard old data.
+The above example is simple, but it never removes points from the XyDataSeries, so memory will grow forever. Consider if you are streaming lots of data-points calling [XyDataSeries.removeAt:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#removeat), or [removeRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#removerange) or using [FIFO Modes](/2d-charts/chart-types/data-series-api/realtime-updates) to discard old data.
 
-Also, once you are done with a DataSeries, call [DataSeries.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#delete) to remove WebAssembly memory.
+Also, once you are done with a DataSeries, call [DataSeries.delete():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#delete) to remove WebAssembly memory.
 
 We've written live examples with how to Append Data, Update Data, Scroll or Sweep using FIFO Modes at the page [DataSeries Realtime Updates](/2d-charts/chart-types/data-series-api/realtime-updates). Read this page and the [DataSeries API pages](/2d-charts/chart-types/data-series-api/data-series-api-overview) to learn more about dynamic data updates in SciChart.

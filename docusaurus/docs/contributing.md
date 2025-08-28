@@ -37,7 +37,7 @@ If after changing `demo.ts` file the code snippet does not update, delete and in
 
 ## Create Search friendly titles
 
-Create titles friendly for the site Search. The title h1, h2, h3 can be created using one, two or three hash symbols (#, ##, ###). The docusaurus uses these title for the search autocomplete. Therefore, give titles wisely to have a useful search. For example, in order to see PolarBandRenderableSeries in the search, I've created a h2 title with 
+Create titles friendly for the site Search. The title h1, h2, h3 can be created using one, two or three hash symbols (#, ##, ###). The docusaurus uses these title for the search autocomplete. Therefore, give titles wisely to have a useful search. For example, in order to see PolarBandRenderableSeries in the search, I've created a h2 title with
 ```
 ## Create PolarBandRenderableSeries
 ```
@@ -79,7 +79,7 @@ Info about the properties and functions available can be found at the [TypeDoc A
 **Info Example**
 
 :::info
-The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/edefaultrenderlayer.html).  
+The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edefaultrenderlayer.html).
 :::
 
 **Note Example**
@@ -119,7 +119,7 @@ classDiagram
 
 **Insert Chart iFrame from scichart.com/demo**
 
-<ChartFromSciChartDemo 
+<ChartFromSciChartDemo
     src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
 />

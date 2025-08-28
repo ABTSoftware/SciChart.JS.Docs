@@ -4,7 +4,7 @@ sidebar_position: 21
 
 # The Lollipop (Impulse or Stem) Chart Type
 
-Lollipop Charts, otherwise known as Impulse or Stem charts, can be created using the [FastImpulseRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html) type.
+Lollipop Charts, otherwise known as Impulse or Stem charts, can be created using the [FastImpulseRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastimpulserenderableseries.html) type.
 
 :::tip
 The [JavaScript Impulse Series Example](https://www.scichart.com/demo/javascript/impulse-chart) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/impulse-chart).
@@ -15,7 +15,7 @@ The [JavaScript Impulse Series Example](https://www.scichart.com/demo/javascript
     title="JavaScript Impulse Chart example"
 />
 
-## Create an Impulse Series 
+## Create an Impulse Series
 
 To create a [Javascript Impulse Chart](https://www.scichart.com/demo/javascript/impulse-chart) with SciChart.js, use the following code:
 
@@ -33,13 +33,13 @@ This results in the following output:
 In the code above:
 
 *   A Impulse Series instance is created and added to the `SciChartSurface.renderableSeries` collection.
-*   We set the [fill:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html#fill) property that controls the color of connector and point of each dataset
-*   We can update the size of each point by updating [size:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html#size) property (default value is `10.0`)
-*   We assign a [FastImpulseRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html#dataseries) - which stores the Xy data to render.
+*   We set the [fill:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastimpulserenderableseries.html#fill) property that controls the color of connector and point of each dataset
+*   We can update the size of each point by updating [size:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastimpulserenderableseries.html#size) property (default value is `10.0`)
+*   We assign a [FastImpulseRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastimpulserenderableseries.html#dataseries) - which stores the Xy data to render.
 
 ## Setting the PointMarker on an Impulse Series
 
-Every data point of an Impulse Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). To change the pointmarker type, or size, use the following code. Note that the fill, size property on `FastImpulseRenderableSeries` overrides the width, height, fill, stroke on the `TrianglePointMarker`.
+Every data point of an Impulse Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#pointmarker). To change the pointmarker type, or size, use the following code. Note that the fill, size property on `FastImpulseRenderableSeries` overrides the width, height, fill, stroke on the `TrianglePointMarker`.
 
 ```ts {5} showLineNumbers
 const impulseSeries = new FastImpulseRenderableSeries(wasmContext, {

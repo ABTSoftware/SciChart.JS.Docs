@@ -4,33 +4,32 @@ sidebar_position: 3
 
 # Per-point Colouring of Mountain Segments
 
-Mountain series can be colored per-point using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastMountainRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+Mountain series can be colored per-point using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastMountainRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastmountainrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
 First, let's create a PaletteProvider class like this:
 
 <CodeSnippetBlock labels={["TS"]}>
 
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_A_start end=region_A_end
- 
+
     ```
- 
+
 </CodeSnippetBlock>
- 
+
 
 Next, we can apply the PaletteProvider to the series. This can be done both with the programmatic API and the Builder API:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_B_start end=region_B_end
- 
+
     ```
- 
+
     ```ts showLineNumbers file=./PaletteProvider/demo.ts start=region_C_start end=region_C_end
- 
-    ```    
+
+    ```
 
 </CodeSnippetBlock>
- 
 
 The code above results in a [JavaScript Mountain Chart](https://www.scichart.com/demo/javascript-mountain-chart) with the following output. XValues > 200 are colored red, and XValues < 200 are the default series colors.
 

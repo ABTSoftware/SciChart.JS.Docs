@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # ArcAnnotation
 
-The [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) is used to draw a filled arc sector or a curved line on a 2D Cartesian [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). Unlike the [PolarArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararcannotation.html) which uses angles, the [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) is defined by two data points (`x1, y1` and `x2, y2`) and a `height` property, which controls the arc's curvature.
+The [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) is used to draw a filled arc sector or a curved line on a 2D Cartesian [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html). Unlike the [PolarArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polararcannotation.html) which uses angles, the [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) is defined by two data points (`x1, y1` and `x2, y2`) and a `height` property, which controls the arc's curvature.
 
 ## Create an Arc Annotation
 
@@ -20,7 +20,7 @@ This results in the following output:
 <LiveDocSnippet name="./demo" />
 
 In the code above:
-- Two instances of [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) are created and added to a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html).
+- Two instances of [ArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html) are created and added to a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html).
 - The first annotation is a **filled arc segment**. It is defined by its start/end points and a positive [height:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html#height) for upward curvature. The [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html#innerradius) property makes it a segment rather than a full sector.
 - The second annotation is an **arc line**. This is achieved by setting [isLineMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html#islinemode): `true`. Its negative `height` causes it to curve downwards.
 - Both annotations are made editable by setting [isEditable:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/arcannotation.html#iseditable): `true`.

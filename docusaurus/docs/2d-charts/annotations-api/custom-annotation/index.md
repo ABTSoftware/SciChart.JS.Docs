@@ -4,18 +4,18 @@ sidebar_position: 5
 
 # CustomAnnotation
 
-<MinimizedImageAndTextHeader 
+<MinimizedImageAndTextHeader
     imgSrc="images/Annotations_CustomAnnotation.png"
 >
-    The [CustomAnnotation type:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) draws a custom shape defined by SVG at the x1, y1 location where coordinates are data-values.
+    The [CustomAnnotation type:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/customannotation.html) draws a custom shape defined by SVG at the x1, y1 location where coordinates are data-values.
 
-    Coordinates may be relative, absolute or data-value based, to both [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/annotationbase.html#ycoordinatemode) properties as values of [ECoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecoordinatemode.html) enum.
+    Coordinates may be relative, absolute or data-value based, to both [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) properties as values of [ECoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecoordinatemode.html) enum.
 </MinimizedImageAndTextHeader>
 
 Declaring a CustomAnnotation in code
 ------------------------------------
 
-The following code will declare a a [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) with a Rocket icon rendered in SVG. This is added to the chart at specific X and Y locations.
+The following code will declare a a [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/customannotation.html) with a Rocket icon rendered in SVG. This is added to the chart at specific X and Y locations.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {31,34} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -33,19 +33,19 @@ Notice that the SVG string is [W3C compliant SVG](https://www.w3.org/Graphics/S
 Positioning a CustomAnnotation with horizontal/vertical Anchor Points
 ---------------------------------------------------------------------
 
-A [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) only requires coordinates x1, y1 to be set. The alignment of the annotation around this coordinate is controlled by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#horizontalanchorpoint), [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
+A [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/customannotation.html) only requires coordinates x1, y1 to be set. The alignment of the annotation around this coordinate is controlled by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint), [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
 
 <CenteredImageWrapper
     src="/images/Annotations_AnchorPoints.png"
     width="50%"
 >
-    Above: Set the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#horizontalanchorpoint), and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#verticalanchorpoint) property to determine which anchor point (horizontal: left, center, right or vertical: top, center, bottom) the x1, y2 coordinate is bound to.
+    Above: Set the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint), and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) property to determine which anchor point (horizontal: left, center, right or vertical: top, center, bottom) the x1, y2 coordinate is bound to.
 </CenteredImageWrapper>
 
 Aligning a CustomAnnotation with x/yCoordinateModes
 ---------------------------------------------------
 
-Like other annotation types, the [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/customannotation.html) can be positioned relatively or absolute using xCoordinateMode, yCoordinateMode property.
+Like other annotation types, the [CustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/customannotation.html) can be positioned relatively or absolute using xCoordinateMode, yCoordinateMode property.
 
 For example. The [TradeMarkers demo in the SciChart.js Examples Suite](https://www.scichart.com/demo/javascript-stock-chart-buy-sell-markers) places a number of custom annotations for buy/sell markers, but also places news bullet annotations at the bottom of the chart using yCoordinateMode. 
 

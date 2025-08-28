@@ -4,15 +4,15 @@ sidebar_position: 10
 
 # The Line Series Type
 
-Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
+Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html) type.
 
 :::tip
 The [JavaScript Line Chart Example](https://www.scichart.com/demo/javascript/line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/line-chart).
 :::
 
-<ChartFromSciChartDemo 
-    src="https://www.scichart.com/demo/iframe/line-chart" 
-    title="Line Series Chart" 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/line-chart"
+    title="Line Series Chart"
 />
 
 ## Create a Line Series
@@ -32,9 +32,9 @@ This results in the following:
 
 In the code above:
 
-*   A [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   A [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html) instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
 *   We set the stroke, strokeThickness properties
-*   We assign an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) as our line's `dataSeries` - which stores the Xy data to render.
+*   We assign an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) as our line's `dataSeries` - which stores the Xy data to render.
 
 ## Render a Gap in a Line Series
 
