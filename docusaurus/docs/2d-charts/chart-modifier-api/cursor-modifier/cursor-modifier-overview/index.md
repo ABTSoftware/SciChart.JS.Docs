@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # The CursorModifier Type
 
-SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features/) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) allows to you to:
+SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features/) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html) allows to you to:
 
 *   **Place a crosshair (cursor) on the chart which tracks the mouse**
 *   **Place a single aggregated tooltip for all series at the crosshair site**
@@ -16,13 +16,13 @@ SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:b
 *   Configure when the tooltip is shown (always, only on hover of a point)
 *   Configure which series react to the Tooltip (all, some, or specific series)
 
-The [Using CursorModifier Example](https://scichart.com/demo/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [Using CursorModifier Example](https://www.scichart.com/demo/javascript-chart-cursormodifier-crosshairs) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 
 Adding a CursorModifier to a Chart
 ----------------------------------
 
-A CursorModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and axis labels.
- 
+A CursorModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and axis labels.
+
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {38,55} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
@@ -34,7 +34,7 @@ This results in the following output: 
 
 <LiveDocSnippet name="./demo" />
 
-Many of the properties here are optional - they have been included to show the configuration possibilities for the cursor. See [ICursorModifierOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icursormodifieroptions.html) for more.
+Many of the properties here are optional - they have been included to show the configuration possibilities for the cursor. See [ICursorModifierOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icursormodifieroptions.html) for more.
 
 #### See Also
 

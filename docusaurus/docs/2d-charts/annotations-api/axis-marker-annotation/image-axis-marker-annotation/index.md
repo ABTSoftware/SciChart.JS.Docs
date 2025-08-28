@@ -7,12 +7,12 @@ sidebar_position: 2
 SciChart.js allows to create **custom axis marker annotations** on axes. This is done by creating [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview) and passing an **image** option into the constructor.
 
 ```ts
-const htmlImageElement = await createImageAsync(imageUrl);  
+const htmlImageElement = await createImageAsync(imageUrl);
 
-const customAxisMarkerAnnotation = new AxisMarkerAnnotation({  
-    y1: 5,  
-    isEditable: true,  
-    image: htmlImageElement,  
+const customAxisMarkerAnnotation = new AxisMarkerAnnotation({
+    y1: 5,
+    isEditable: true,
+    image: htmlImageElement,
 });
 ```
 
@@ -25,7 +25,7 @@ The full example code is below:
     ```
 </CodeSnippetBlock>
 
-In this example we are using [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#createimageasync) helper function to create an [htmlImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement). This is then passed to [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#image) property. Optionally [AxisMarkerAnnotation.imageWidth:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#imagewidth) and [imageHeight:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axismarkerannotation.html#imageheight) may be set.
+In this example we are using [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#createimageasync) helper function to create an [htmlImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement). This is then passed to [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#image) property. Optionally [AxisMarkerAnnotation.imageWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#imagewidth) and [imageHeight:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#imageheight) may be set.
 
 Here's the output:
 

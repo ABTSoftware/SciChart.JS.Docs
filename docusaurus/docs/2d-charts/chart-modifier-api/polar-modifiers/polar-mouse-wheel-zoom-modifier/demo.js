@@ -52,8 +52,8 @@ export async function PolarMouseWheelZoom(divElementId) {
     sciChartSurface.chartModifiers.add(new PolarMouseWheelZoomModifier({
         growFactor: 0.002,
         zoomSize: false,
-        defaultActionType: EActionType.Pan // default value - pans the polar chart
-        // defaultActionType: EActionType.Zoom // for scaling the polar chart
+        defaultActionType: EActionType.Zoom // DEFAULT value -> for zooming / scaling the polar chart
+        // defaultActionType: EActionType.Pan // secondary value -> pans / spins the polar chart
     }));
     // #region_A_end
     sciChartSurface.chartModifiers.add(new PolarZoomExtentsModifier() // optional - double click to reset
@@ -96,7 +96,7 @@ async function builderExample(divElementId) {
                 options: {
                     growFactor: 0.002,
                     zoomSize: false,
-                    defaultActionType: EActionType.Pan
+                    defaultActionType: EActionType.Zoom
                 }
             }
         ]

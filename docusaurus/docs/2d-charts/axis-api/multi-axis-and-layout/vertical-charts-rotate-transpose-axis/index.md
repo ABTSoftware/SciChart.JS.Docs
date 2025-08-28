@@ -6,9 +6,9 @@ sidebar_position: 2
 
 It is possible to create Vertical (Rotated) Charts with SciChart. This transposes the entire chart, swapping X-Axis for Y and renders series top to bottom intead of left to right. Tooltips and markers also are transposed to the final effect is like a vertical chart.
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/javascript-oil-and-gas-dashboard-showcase" title="JavaScript Oil and Gas Dashboard" description="showing a use-case of transposing the X,Y axis to achieve a vertical chart, visualising well drill depth." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-oil-and-gas-dashboard-showcase" title="JavaScript Oil and Gas Dashboard" description="showing a use-case of transposing the X,Y axis to achieve a vertical chart, visualising well drill depth." />
 
-To achieve this, simply set [axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#axisalignment) to Left or Right for X Axis and Top or Bottom for Y Axis. And that's it - SciChart takes care of the rest:
+To achieve this, simply set [axis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#axisalignment) to Left or Right for X Axis and Top or Bottom for Y Axis. And that's it - SciChart takes care of the rest:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./VerticalCharts/demo.ts start=region_A_start end=region_A_end
@@ -27,9 +27,9 @@ This results in the following output, where the XAxis is on the left, the YAxis 
 Flipping the Axis when Horizontal or Vertical.
 ----------------------------------------------
 
-An Axis may be flipped when horizontal or vertical (coordinates drawn in opposite directions) by setting the [AxisCore.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#flippedcoordinates) property.
+An Axis may be flipped when horizontal or vertical (coordinates drawn in opposite directions) by setting the [AxisCore.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#flippedcoordinates) property.
 
-For example, taking the code sample above, and setting [xAxis.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html#flippedcoordinates) = true, we get the following result. Notice the XAxis is now drawn in reverse and the series is now drawn from bottom to top..
+For example, taking the code sample above, and setting [xAxis.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#flippedcoordinates) = true, we get the following result. Notice the XAxis is now drawn in reverse and the series is now drawn from bottom to top..
 
 ![](img/1.png)
 
@@ -43,4 +43,4 @@ This Flexibility of SciChart allows for some pretty interesting configurations o
 
 #### See Also
 
-* [Vertical (Rotated) Chart Example](https://scichart.com/demo/javascript-vertical-charts)
+* [Vertical (Rotated) Chart Example](https://www.scichart.com/demo/javascript-vertical-charts)

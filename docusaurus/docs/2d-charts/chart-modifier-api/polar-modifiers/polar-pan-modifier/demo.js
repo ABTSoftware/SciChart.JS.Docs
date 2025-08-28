@@ -65,7 +65,7 @@ export async function PolarPanModifier(divElementId) {
     // or for npm: import { PolarPanModifier } from "scichart";
     // Add PolarPanModifier behaviour to the chart
     sciChartSurface.chartModifiers.add(new PolarPanModifier({
-        primaryPanMode: EPolarPanModifierPanMode.PolarStartAngle,
+        primaryPanMode: EPolarPanModifierPanMode.PolarVisibleRange,
         secondaryPanMode: EPolarPanModifierPanMode.Cartesian,
         secondaryExecuteCondition: {
             key: SciChart.EModifierMouseArgKey.Ctrl

@@ -40,12 +40,12 @@ In order to show a legend add the **LegendModifier** to the chart.
 Showing visibility checkboxes
 -----------------------------
 
-In order to show visibility checkboxes pass [showCheckboxes:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/legendmodifier.html#showcheckboxes) option into the **LegendModifier** constructor.
+In order to show visibility checkboxes pass [showCheckboxes:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/legendmodifier.html#showcheckboxes) option into the **LegendModifier** constructor.
 
 ```ts {3} showLineNumbers
 sciChartSurface.chartModifiers.add(
-    new LegendModifier({ 
-        showCheckboxes: true 
+    new LegendModifier({
+        showCheckboxes: true
     })
 );
 ```
@@ -59,12 +59,12 @@ Now check/uncheck the checkboxes to show/hide renderable series. 
     alt="Legend Modifier with Checkboxes Example"
 />
 
-Note: the Checkbox is bound to [BaseRenderableSeries.isVisible:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisible). You can subscribe to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisiblechanged) by following steps in this [documentation page](/2d-charts/chart-types/common-series-apis/is-visible).
+Note: the Checkbox is bound to [BaseRenderableSeries.isVisible:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisible). You can subscribe to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisiblechanged) by following steps in this [documentation page](/2d-charts/chart-types/common-series-apis/is-visible).
 
 Subscribing to Checkbox Checked Changed
 ---------------------------------------
 
-As well as subscribing to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#isvisiblechanged), you can now subscribe to [LegendModifier.isCheckedChanged:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/legendmodifier.html#ischeckedchanged) event. This can be done either in the constructor options to LegendModifier or after creation.
+As well as subscribing to [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisiblechanged), you can now subscribe to [LegendModifier.isCheckedChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/legendmodifier.html#ischeckedchanged) event. This can be done either in the constructor options to LegendModifier or after creation.
 
 <CodeSnippetBlock labels={["TypeScript", "JavaScript"]}>
     ```ts {6,11} showLineNumbers
@@ -74,7 +74,7 @@ As well as subscribing to [BaseRenderableSeries.isVisibleChanged:blue_book:](ht
         showLegend: true,
         // Subscribe to checked changed here
         isCheckedChangedCallback: (series: IRenderableSeries, isChecked: boolean) => {
-            console.log(`Option 1: Legend item ${series.type} isChecked=${isChecked}`);   
+            console.log(`Option 1: Legend item ${series.type} isChecked=${isChecked}`);
         }
     });
     // Or here after instantiation
@@ -91,7 +91,7 @@ As well as subscribing to [BaseRenderableSeries.isVisibleChanged:blue_book:](ht
         showLegend: true,
         // Subscribe to checked changed here
         isCheckedChangedCallback: (series, isChecked) => {
-            console.log(`Option 1: Legend item ${series.type} isChecked=${isChecked}`);   
+            console.log(`Option 1: Legend item ${series.type} isChecked=${isChecked}`);
         }
     });
     // Or here after instantiation
@@ -127,10 +127,28 @@ The full example code.
 
  The result will be.
 
-<LiveDocSnippet 
-    name="./callback/demo" 
+<LiveDocSnippet
+    name="./callback/demo"
     htmlPath="./callback/index.html"
 />
+
+Creating Custom Legend Markers
+------------------------------
+
+By default, when `showSeriesMarkers` of the LegendModifier is set to true, all renderable series will display with a rectangle filled with the primary series color next to its name. You can override this and have custom SVG shapes as markers.
+
+Here is how:
+
+<LiveDocSnippet 
+    name="./customMarkers/demo" 
+/>
+
+And here is the code doing it:
+
+<CodeSnippetBlock labels={["ts"]}>
+    ```ts {49} showLineNumbers file=./customMarkers/demo.ts
+    ```
+</CodeSnippetBlock>
 
 #### See Also
 

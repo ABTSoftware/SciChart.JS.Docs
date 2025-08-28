@@ -4,14 +4,14 @@ sidebar_position: 5
 
 # Rollover Modifier
 
-SciChart.js provides a mouse-over tooltips behavior via the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html), available out of the box.
+SciChart.js provides a mouse-over tooltips behavior via the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase.html) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
+Besides common features which are inherited from the [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html) class, the [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html) allows adding custom or standard tooltips to a chart (per series), and consuming the tooltip data in another area of your UI (custom legends).
 
 Adding a RolloverModifier to a Chart
 ------------------------------------
 
-A RolloverModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable tooltip behavior. For example:
+A RolloverModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable tooltip behavior. For example:
 
 ```ts showLineNumbers
 // Create a SciChartSurface
@@ -35,7 +35,7 @@ Customizing the Rollover Appearance
 
 ### Styling the Vertical Line
 
-The Rollover Line itself can be styled by setting the [rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#rolloverlinestrokethickness) or [rolloverLineStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#rolloverlinestroke) properties as follows. It can also be hidden with the [showRolloverLine property:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#showrolloverline).
+The Rollover Line itself can be styled by setting the [rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#rolloverlinestrokethickness) or [rolloverLineStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#rolloverlinestroke) properties as follows. It can also be hidden with the [showRolloverLine property:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#showrolloverline).
 
 ### Styling the RolloverLine
 
@@ -81,7 +81,7 @@ This results in the following:
 
 ### Placing the tooltip outside the chart
 
-The tooltip can be placed anywhere on the chart by setting the [RolloverModifier.placementDivId:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#placementdivid) property.
+The tooltip can be placed anywhere on the chart by setting the [RolloverModifier.placementDivId:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#placementdivid) property.
 
 Simply add this code when declaring the rollover:
 
@@ -93,7 +93,7 @@ new RolloverModifier({ placementDivId: "tooltip-div-id" });
 
 The RolloverMarker is the small dot which intersects the rollover line and the series itself. By default this is set to the series stroke color.
 
-You can change the market color by setting the property [renderableSeries.rolloverModifierProps.markerColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#markercolor) to an HTML color code. e.g.:
+You can change the market color by setting the property [renderableSeries.rolloverModifierProps.markerColor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#markercolor) to an HTML color code. e.g.:
 
 ```ts showLineNumbers
 const rendSeries = new FastBandRenderableSeries(wasmContext, { dataSeries, strokeThickness: 2 });
@@ -111,7 +111,7 @@ Results in:
 
 The Tooltip Content can be customised in the RolloverModifier. There are two levels of this.  You can customise just the content for the tooltip, or you can supply your own svg to customise the appearance as well.
 
-To customise the content, create a [tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#tooltipdatatemplate). This is a function which takes a seriesInfo (which is the results of the hit-test) and returns an array of strings which are the lines that will appear in the tooltip.
+To customise the content, create a [tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#tooltipdatatemplate). This is a function which takes a seriesInfo (which is the results of the hit-test) and returns an array of strings which are the lines that will appear in the tooltip.
 
 
 <CodeSnippetBlock labels={["Tooltip Content"]}>
@@ -170,7 +170,7 @@ This results in the following active-legend which updates as you move the mouse 
 Getting tooltips for the nearest point only
 -------------------------------------------
 
-By default, RolloverModifier returns data for all series at the x-value the mouse is over, regardless of y-value. If you want to only see information for the points that are near the cursor in both x and y, then set the [hitTestRadius:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifier.html#hittestradius) property to a non-zero value, either on the modifier instance, or in the constructor options. This will cause it to report only on points that number of pixels away from the cursor.
+By default, RolloverModifier returns data for all series at the x-value the mouse is over, regardless of y-value. If you want to only see information for the points that are near the cursor in both x and y, then set the [hitTestRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html#hittestradius) property to a non-zero value, either on the modifier instance, or in the constructor options. This will cause it to report only on points that number of pixels away from the cursor.
 
 ### See Also
 

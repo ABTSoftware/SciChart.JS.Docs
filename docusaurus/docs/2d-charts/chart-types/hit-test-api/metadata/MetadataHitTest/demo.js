@@ -64,7 +64,7 @@ async function metadataHitTest(divElementId) {
 
         const HIT_TEST_RADIUS = 10;
 
-        // Perform a hit-test. Find out the members of HitTestInfo at https://www.scichart.com/documentation/js/current/typedoc/classes/hittestinfo.html
+        // Perform a hit-test. Find out the members of HitTestInfo at https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html
         const hitTestInfo = sciChartSurface.renderableSeries
             .get(0)
             .hitTestProvider.hitTest(premultipliedX, premultipliedY, HIT_TEST_RADIUS);

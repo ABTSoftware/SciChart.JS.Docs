@@ -12,7 +12,7 @@ Here you will find some simple examples what can be done with the Generic Animat
 
 ### Animating Annotations
 
-All SciChart [annotations](/2d-charts/annotations-api/annotations-api-overview/index.md) can be animated with Generic Animations API.  
+All SciChart [annotations](/2d-charts/annotations-api/annotations-api-overview/index.md) can be animated with Generic Animations API.
 This example demonstrates moving a line annotation from one set of coords to another. Any editable property of the annotation can be updated. The key is the use of the arrow function to specify onAnimate, which captures the local context and allows us to update the annotation created earlier.
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
@@ -120,7 +120,7 @@ async function drawVisibleRangeAnimationsChart(divId) {
     const yAxis = new NumericAxis(wasmContext, { visibleRange: new NumberRange(-1, 1.5) });
     sciChartSurface.xAxes.add(xAxis);
     sciChartSurface.yAxes.add(yAxis);
-   
+
     const columnSeries = new FastColumnRenderableSeries(wasmContext, {
         fill: "rgba(176, 196, 222, 1)",
         stroke: "#4682b4",
@@ -182,7 +182,7 @@ async function drawVisibleRangeAnimationsChart(divId: string) {
     const yAxis = new NumericAxis(wasmContext, { visibleRange: new NumberRange(-1, 1.5) });
     sciChartSurface.xAxes.add(xAxis);
     sciChartSurface.yAxes.add(yAxis);
-   
+
     const columnSeries = new FastColumnRenderableSeries(wasmContext, {
         fill: "rgba(176, 196, 222, 1)",
         stroke: "#4682b4",
@@ -229,7 +229,7 @@ drawVisibleRangeAnimationsChart("scichart");
 
 ### Animating AutoRange
 
-The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
+The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
 
 ### Animating Data and Styles
 
@@ -802,7 +802,7 @@ async function drawAnnotationAnimationsChart(divId) {
         document.getElementById("boxY1Coord").innerHTML = 'Y1: ' + parseFloat(y1).toFixed(2);
         document.getElementById("boxX2Coord").innerHTML = 'X2: ' + parseFloat(x2).toFixed(2);
         document.getElementById("boxY2Coord").innerHTML = 'Y2: ' + parseFloat(y2).toFixed(2);
-       
+
     }
 }
 drawAnnotationAnimationsChart("scichart");

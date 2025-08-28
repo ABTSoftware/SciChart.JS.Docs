@@ -4,16 +4,16 @@ sidebar_position: 5
 
 # YAxisDragModifier
 
-SciChart.js provides an zooming / panning behavior when dragging the Axis via the [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html), available out of the box.
+SciChart.js provides an zooming / panning behavior when dragging the Axis via the [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/yaxisdragmodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features) class, the [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html) allows you to choose panning or scaling via the [dragMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html#dragmode) property.
+Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features) class, the [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/yaxisdragmodifier.html) allows you to choose panning or scaling via the [dragMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/yaxisdragmodifier.html#dragmode) property.
 
 Adding a YAxisDragModifier to a Chart
 -------------------------------------
 
-A [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/yaxisdragmodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable scaling or panning behavior. For example:
+A [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/yaxisdragmodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable scaling or panning behavior. For example:
 
-<CodeSnippetBlock labels={["TS"]}>
+<CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {5} showLineNumbers
     import { YAxisDragModifier, EDragMode } from "scichart";
 
@@ -24,6 +24,23 @@ A [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/curr
         })
     );
     ```
+
+    ```ts {8} showLineNumbers
+    // Demonstrates how to configure the YAxisDrag Modifier in SciChart.js using the Builder API
+    const { chartBuilder, EChart2DModifierType, EDragMode } = SciChart;
+    // or, for npm, import { chartBuilder, ... } from "scichart"
+
+    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+        modifiers: [
+            {
+                type: EChart2DModifierType.YAxisDrag,
+                options: {
+                    dragMode: EDragMode.Scaling,
+                }
+            }
+        ]
+    });
+      ```
 </CodeSnippetBlock>
 
 This results in the following behavior:

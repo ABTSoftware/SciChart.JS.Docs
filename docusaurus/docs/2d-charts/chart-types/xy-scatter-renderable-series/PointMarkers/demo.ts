@@ -195,7 +195,7 @@ async function createScatterChartWithManyPointMarkers(divElementId) {
     );
 
     // Add a scatter series with Custom Image using SpritePointMarker
-    const imageBitmap = await createImageAsync("https://scichart.com/demo/images/CustomMarkerImage.png");
+    const imageBitmap = await createImageAsync("https://www.scichart.com/demo/images/CustomMarkerImage.png");
 
     sciChartSurface.renderableSeries.add(
         new XyScatterRenderableSeries(wasmContext, {
@@ -340,7 +340,7 @@ async function builderExample(divElementId) {
                     pointMarker: {
                         type: EPointMarkerType.Sprite,
                         options: {
-                            image: await createImageAsync("https://scichart.com/demo/images/CustomMarkerImage.png")
+                            image: await createImageAsync("https://www.scichart.com/demo/images/CustomMarkerImage.png")
                         }
                     }
                 }

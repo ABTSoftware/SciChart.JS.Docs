@@ -37,7 +37,7 @@ If after changing `demo.ts` file the code snippet does not update, delete and in
 
 ## Create Search friendly titles
 
-Create titles friendly for the site Search. The title h1, h2, h3 can be created using one, two or three hash symbols (#, ##, ###). The docusaurus uses these title for the search autocomplete. Therefore, give titles wisely to have a useful search. For example, in order to see PolarBandRenderableSeries in the search, I've created a h2 title with 
+Create titles friendly for the site Search. The title h1, h2, h3 can be created using one, two or three hash symbols (#, ##, ###). The docusaurus uses these title for the search autocomplete. Therefore, give titles wisely to have a useful search. For example, in order to see PolarBandRenderableSeries in the search, I've created a h2 title with
 ```
 ## Create PolarBandRenderableSeries
 ```
@@ -52,7 +52,7 @@ In order to make all TypeDoc links distinct decorate the link with book icon `:b
 
 ## Reference scichart.com/demo
 
-Use this link to reference scichart demo app - https://scichart.com/demo/react
+Use this link to reference scichart demo app - https://www.scichart.com/demo/react
 
 ## Do not reference DocumentX documents
 
@@ -79,7 +79,7 @@ Info about the properties and functions available can be found at the [TypeDoc A
 **Info Example**
 
 :::info
-The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/edefaultrenderlayer.html).  
+The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edefaultrenderlayer.html).
 :::
 
 **Note Example**
@@ -96,7 +96,7 @@ The order may differ depending on some configuration specifics.
 
 **Quotation Example**
 
-> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://scichart.com/demo/react).
+> For more information about Chart Modifier types in SciChart, head over to the [ChartModifier API documentation](/2d-charts/chart-modifier-api/chart-modifier-api-overview) or see our [Examples](https://www.scichart.com/demo/react).
 
 
 **Mermaid class diagram example**
@@ -119,7 +119,7 @@ classDiagram
 
 **Insert Chart iFrame from scichart.com/demo**
 
-<ChartFromSciChartDemo 
+<ChartFromSciChartDemo
     src="https://stagingdemo2.scichart.com/demo/iframe/polar-uniform-heatmap-chart"
     title="Polar Uniform Heatmap Series Chart"
 />

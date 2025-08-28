@@ -44,7 +44,7 @@ We're going to start off with the code we created in the previous [Tutorial 04 
         sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
         // Create a Scatter series, and Line series and add to chart
-        const scatterSeries = new XyScatterRenderableSeries(wasmContext, { 
+        const scatterSeries = new XyScatterRenderableSeries(wasmContext, {
             pointMarker: new EllipsePointMarker(wasmContext, { width: 7, height: 7, fill: "White", stroke: "SteelBlue" }),
         });
         const lineSeries = new FastLineRenderableSeries(wasmContext, { stroke: "#4083B7", strokeThickness: 2 });
@@ -65,11 +65,11 @@ We're going to start off with the code we created in the previous [Tutorial 04 
         lineSeries.dataSeries = lineData;
 
         // SciChart will now redraw with static data
-        // 
+        //
 
         // #region ExampleA
         // Scrolling the chart by appending and manipulating xAxis.visibleRange
-        
+
         const updateDataFunc = () => {
 
             // Append another data-point to the chart. We use dataSeries.count()
@@ -122,7 +122,7 @@ We're going to start off with the code we created in the previous [Tutorial 04 
 Adding Zooming Behavior
 -----------------------
 
-From [Tutorial 03 - Adding Zooming, Panning Behavior](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
+From [Tutorial 03 - Adding Zooming, Panning Behavior](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior), we learned that we can add ChartModifiers to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to add specific zoom, or pan behaviors to the chart.
 
 However, the code we added to scroll the chart on update is going to conflict with the user mouse-zooming behaviors. Take a look below:
 
@@ -132,13 +132,13 @@ However, the code we added to scroll the chart on update is going to conflict wi
     import {
         RubberBandXyZoomModifier,
         ZoomExtentsModifier,
-    } from "scichart";       
+    } from "scichart";
 
     async function initSciChart() {
-            
+
         // Add this code to enable zooming by mouse-drag and double-click to zoom extents
-        //        
-        sciChartSurface.chartModifiers.add(new ZoomExtentsModifier({isAnimated: false}));       
+        //
+        sciChartSurface.chartModifiers.add(new ZoomExtentsModifier({isAnimated: false}));
         sciChartSurface.chartModifiers.add(new RubberBandXyZoomModifier());
         ...
         const updateDataFunc = () => {
@@ -158,12 +158,12 @@ However, the code we added to scroll the chart on update is going to conflict wi
   ```
 </CodeSnippetBlock>
 
-If we want to enable user-zoom, and also scroll the chart, we need to selectively implement that scroll. To do so we can use the [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property.
+If we want to enable user-zoom, and also scroll the chart, we need to selectively implement that scroll. To do so we can use the [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#zoomstate) property.
 
 The sciChartSurface.zoomState Property
 --------------------------------------
 
-The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ezoomstate.html).
+The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ezoomstate.html).
 
 If we modified our code, we can selectively use this property to detect if the user is zooming and halt any automatic scrolling. For example, try modifying the updateDataFunc as follows:
 
@@ -202,9 +202,9 @@ Now run the application again, left click the chart and move the mouse. As a r
 Further Examples - the Realtime Ticking Stock Chart demo
 --------------------------------------------------------
 
-In the [SciChart.js Examples Suite - viewable at scichart.com/demo](https://scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://scichart.com/demo/react/realtime-ticking-stock-charts).
+In the [SciChart.js Examples Suite - viewable at scichart.com/demo](https://www.scichart.com/demo), we have an example of realtime updates with zooming & panning built into the chart. This is the [JavaScript Realtime Ticking Stock Charts example](https://www.scichart.com/demo/react/realtime-ticking-stock-charts).
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/realtime-ticking-stock-charts" title="Realtime Ticking Stock Charts" description="showing how to combine zooming, panning with a realtime updated chart." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/realtime-ticking-stock-charts" title="Realtime Ticking Stock Charts" description="showing how to combine zooming, panning with a realtime updated chart." />
 
 In this example as new candle data is added, the chart advances by 1 to automatically keep the new candle in the same place in the viewport. However, if you scroll back in time so that the latest candle is out of the viewport, the advancing by 1 does not occur.
 

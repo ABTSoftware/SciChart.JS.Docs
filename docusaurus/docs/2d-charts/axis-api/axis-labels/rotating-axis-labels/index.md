@@ -10,11 +10,11 @@ To use rotated labels on a chart, or vertical labels, use this code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./RotatingLabels/demo.ts start=region_A_start end=region_A_end
- 
+
     ```
 
     ```ts showLineNumbers file=./RotatingLabels/demo.ts start=region_B_start end=region_B_end
- 
+
     ```
 </CodeSnippetBlock>
 
@@ -23,7 +23,7 @@ This results in the following output:
 <LiveDocSnippet maxWidth={"100%"} name="./RotatingLabels/demo" />
 
 :::tip
-For an example of using rotation with text labels see the [Multiline and Rotated Text Labels](http://scichart.com/demo/javascript-multiline-labels) demo in our examples suite.
+For an example of using rotation with text labels see the [Multiline and Rotated Text Labels](http://www.scichart.com/demo/javascript-multiline-labels) demo in our examples suite.
 :::
 
 ### Further notes on Label Culling & Spacing
@@ -32,14 +32,14 @@ For an example of using rotation with text labels see the [Multiline and Rotate
 An axis with rotated labels obeys other rules of axis tick spacing and label culling. Take a look at the section on [Gridline and Label Spacing (Interval)](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval) for some more information how this works.
 :::
 
-When working with rotated labels that are not horizontal or vertical, it may be necessary to turn off [axis.axisRenderer.hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisrenderer.html#hideoverlappinglabels) as the bounding box of a partially rotated label is much larger than the text itself.This property may also be set via the axis constructor option [hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iaxisbase2doptions.html#hideoverlappinglabels).
+When working with rotated labels that are not horizontal or vertical, it may be necessary to turn off [axis.axisRenderer.hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisrenderer.html#hideoverlappinglabels) as the bounding box of a partially rotated label is much larger than the text itself.This property may also be set via the axis constructor option [hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iaxisbase2doptions.html#hideoverlappinglabels).
 
 To do this, use the following code:
 
 ```ts
 // hideOverlappingLabels  Example
 // Either
-const xAxis = new NumericAxis(wasmContext, { 
+const xAxis = new NumericAxis(wasmContext, {
     // Allow labels to overlap
     hideOverlappingLabels : false
 });

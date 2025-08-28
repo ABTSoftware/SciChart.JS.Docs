@@ -6,8 +6,8 @@ sidebar_position: 9
 
 One of the challenges when creating a chart with multiple series is picking colours for each series, especially when you are trying to keep to a color scheme.  We faced this problem during the recent rethemeing of our demos to match the new website theme.  The solution was to create a way to let SciChart automatically pick colours based off a palette.
 
-<ChartFromSciChartDemo 
-    src="https://scichart.com/demo/iframe/chart-websocket-bigdata-demo"
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/chart-websocket-bigdata-demo"
     title="Client/Server Websocket Data Streaming"
 />
 
@@ -58,7 +58,7 @@ export async function autoColoring(divId) {
                 height: 10
             })
         });
-        sciChartSurface.renderableSeries.add(series);     
+        sciChartSurface.renderableSeries.add(series);
     }
 }
 ```
@@ -70,7 +70,7 @@ export async function autoColoring(divId) {
 Overriding Auto Coloring
 ------------------------
 
-If you need to adjust the color that has been picked, you can override the [adjustAutoColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#adjustautocolor) method which exists on renerableSeries and pointMarker. DataLabels also support AUTO\_COLOR but for overrides there use getColor instead. See  [DataLabel Coloring](/2d-charts/chart-types/data-point-labels/data-label-coloring/index.md).
+If you need to adjust the color that has been picked, you can override the [adjustAutoColor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#adjustautocolor) method which exists on renerableSeries and pointMarker. DataLabels also support AUTO\_COLOR but for overrides there use getColor instead. See  [DataLabel Coloring](/2d-charts/chart-types/data-point-labels/data-label-coloring/index.md).
 
 adjustAutoColor receives a propertyName which is either "stroke" or "fill" along with the color generated.  If we add the following code into the loop in the above example
 
@@ -113,4 +113,4 @@ setTimeout(() => {
     src="/images/AutoColorRemove.png"
 />
 
-SciChartSurface has an [autoColorMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#autocolormode) property which is an [EAutoColorMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/eautocolormode.html).  This defaults to OnAddRemoveSeries but can also be Never, Once or Always.  With a fairly large number of series, Auto Coloring can potentially have a performance impact.
+SciChartSurface has an [autoColorMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#autocolormode) property which is an [EAutoColorMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eautocolormode.html).  This defaults to OnAddRemoveSeries but can also be Never, Once or Always.  With a fairly large number of series, Auto Coloring can potentially have a performance impact.

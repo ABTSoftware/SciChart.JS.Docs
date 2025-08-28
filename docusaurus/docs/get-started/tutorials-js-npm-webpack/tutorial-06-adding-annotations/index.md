@@ -17,7 +17,7 @@ Source code for this tutorial can be found at [SciChart.JS.Examples Github Repos
 Chart Annotations in SciChart
 -----------------------------
 
-The SciChart annotations derive from the [IAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iannotation.html) interface.
+The SciChart annotations derive from the [IAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotation.html) interface.
 
 The annotation types included with SciChart.js out of the box are: [LineAnnotation](/2d-charts/annotations-api/line-annotation), [BoxAnnotation](/2d-charts/annotations-api/box-annotation), [TextAnnotation](/2d-charts/annotations-api/text-annotation), [VerticalLineAnnotation](/2d-charts/annotations-api/vertical-line-annotation), [HorizontalLineAnnotation](/2d-charts/annotations-api/horizontal-line-annotation), [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview), [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation) and other.
 
@@ -32,7 +32,7 @@ Adding Annotations to the Chart
 
 In this tutorial we will create a simple example showing how to add different annotation types to a chart.
 
-First we create a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html), then we add X and Y Axes as normal, and finally we add a [LineAnnotation](/2d-charts/annotations-api/line-annotation) by adding an instance to the [SciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#annotations) collection.
+First we create a [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html), then we add X and Y Axes as normal, and finally we add a [LineAnnotation](/2d-charts/annotations-api/line-annotation) by adding an instance to the [SciChartSurface.annotations:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#annotations) collection.
 
 The code is shown below:
 
@@ -73,7 +73,7 @@ This code produces this following chart with an X,Y axis and a single [LineAnno
 
  ![](img/1.png)
 
-In order to add other annotation types to the chart pass appropriate annotation to [sciChartSurface.annotations.add():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#annotations). In the code below we add [LineAnnotation](/2d-charts/annotations-api/line-annotation) and [BoxAnnotation](/2d-charts/annotations-api/box-annotation) to the chart.
+In order to add other annotation types to the chart pass appropriate annotation to [sciChartSurface.annotations.add():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#annotations). In the code below we add [LineAnnotation](/2d-charts/annotations-api/line-annotation) and [BoxAnnotation](/2d-charts/annotations-api/box-annotation) to the chart.
 
 <CodeSnippetBlock labels={["Part2/index.js region A"]}>
     ```js
@@ -108,7 +108,7 @@ Let's also try to add a [TextAnnotation](/2d-charts/annotations-api/text-annota
 
 Note that this annotation type only requires x1,y1, whereas [LineAnnotation](/2d-charts/annotations-api/line-annotation) and [BoxAnnotation](/2d-charts/annotations-api/box-annotation) require x1,x2,y1,y2 to define their bounds.
 
-Instead the [TextAnnotation](/2d-charts/annotations-api/text-annotation) is placed at a single x,y point, and the location of that point is defined by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#horizontalanchorpoint) and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
+Instead the [TextAnnotation](/2d-charts/annotations-api/text-annotation) is placed at a single x,y point, and the location of that point is defined by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint) and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
 
 <CodeSnippetBlock labels={["Part2/index.js region B"]}>
     ```js
@@ -132,7 +132,7 @@ Instead the [TextAnnotation](/2d-charts/annotations-api/text-annotation) is pl
 
 The next annotation type we're going to add is a [CustomAnnotation](/2d-charts/annotations-api/custom-annotation).
 
-This allows you to create custom SVG markers and add them to the chart. CustomAnnotations require only x1,y1 properties and obey [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#horizontalanchorpoint) and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#verticalanchorpoint) properties like TextAnnotations do.
+This allows you to create custom SVG markers and add them to the chart. CustomAnnotations require only x1,y1 properties and obey [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint) and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) properties like TextAnnotations do.
 
 <CodeSnippetBlock labels={["Part2/index.js region C"]}>
     ```js
@@ -161,9 +161,9 @@ This results in a chart with four different annotation.
 Further APIs
 ------------
 
-Annotations support the ability to be docked to the left/right/top/bottom of the chart viewport. You can adjust the docking using the [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#xcoordinatemode) / [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#ycoordinatemode) properties.
+Annotations support the ability to be docked to the left/right/top/bottom of the chart viewport. You can adjust the docking using the [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#xcoordinatemode) / [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#ycoordinatemode) properties.
 
-Some annotations support [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#verticalanchorpoint) / [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/textannotation.html#horizontalanchorpoint) properties. These allow you to change the control point for annotations which have a single X,Y point.
+Some annotations support [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) / [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint) properties. These allow you to change the control point for annotations which have a single X,Y point.
 
 A combination of anchor points and coordinate modes can allow you to create text watermarks on charts, or boxes which stretch horizontally or vertically over a chart.
 
@@ -209,9 +209,9 @@ View our Annotations Demos online
 
 You can find out more about the Annotations API in the relevant section of the documentation: [The Annotations API Overview](/2d-charts/annotations-api/annotations-api-overview).
 
-Also, there is a couple of examples showcasing annotations in our Examples Suite. See the [JavaScript Chart Annotations example](https://scichart.com/demo/react/chart-annotations) for more details.
+Also, there is a couple of examples showcasing annotations in our Examples Suite. See the [JavaScript Chart Annotations example](https://www.scichart.com/demo/react/chart-annotations) for more details.
 
-<ChartFromSciChartDemo src="https://scichart.com/demo/iframe/chart-annotations" title="Chart Annotations" description="showing how create various kinds of annotations and animate them in javascript charts." />
+<ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/chart-annotations" title="Chart Annotations" description="showing how create various kinds of annotations and animate them in javascript charts." />
 
 In this example we show how to create multiple annotation types, including liners, text, watermarks, stretched boxes, images, vectors (SVG) and horizontal/vertical lines.
 

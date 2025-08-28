@@ -4,11 +4,11 @@ sidebar_position: 1
 
 # The VerticalSliceModifier Type
 
-With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
+With the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html), SciChart.js provides the ability to place multiple vertical lines on the chart, which can show tooltips intersecting chart series.
 
 This provides a similar behaviour to the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier), except instead of a single vertical line plus tooltips which track the mouse, you can place multiple draggable vertical lines on the chart, which intersect line series and display tooltips.
 
-The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) allows you to:
+The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) allows you to:
 
 *   Place one or more vertical lines on the chart at data-values, relative coordinates or pixel coordinates
 *   Vertical lines intersect chart series
@@ -17,12 +17,12 @@ The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/j
 *   Vertical lines may be dragged or edited
 *   Vertical lines may be removed from the chart.
 
-The [Using VerticalSliceModifier Example](https://scichart.com/demo/javascript/chart-vertical-slice-modifier) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://scichart.com/demo/javascript-line-chart)
+The [Using VerticalSliceModifier Example](https://www.scichart.com/demo/javascript/chart-vertical-slice-modifier) can be found in the [SciChart.Js Examples Suite](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript-line-chart)
 
 Adding a VerticalSliceModifier to a Chart
 -----------------------------------------
 
-One or more [VerticalSliceModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable draggable lines with crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and allows dragging of the vertical lines.
+One or more [VerticalSliceModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable draggable lines with crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and allows dragging of the vertical lines.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {17,29} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -35,7 +35,7 @@ This results in the following output: 
 
 <LiveDocSnippet name="./demo" />
 
-Many of the properties here are optional - they have been included to show the configuration possibilities for the cursor. See [IVerticalSliceOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/iverticalsliceoptions.html) for more.
+Many of the properties here are optional - they have been included to show the configuration possibilities for the cursor. See [IVerticalSliceOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iverticalsliceoptions.html) for more.
 
 Removing a VerticalSliceModifier from the Chart
 -----------------------------------------------
@@ -47,7 +47,7 @@ sciChartSurface.chartModifiers.remove(vSlice);
 Styling & Visibility of VerticalSliceModifier Elements
 ------------------------------------------------------
 
-The following elements can be turned on or off when using the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html).
+The following elements can be turned on or off when using the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html).
 
 
 <CodeSnippetBlock labels={["VerticalSliceModifier visibility"]}>
@@ -58,7 +58,7 @@ The following elements can be turned on or off when using the [VerticalSliceMod
     ```
 </CodeSnippetBlock>
 
-In addition, the line may be made editable (draggable) by setting the [isDraggable:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#isdraggable) property
+In addition, the line may be made editable (draggable) by setting the [isDraggable:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#isdraggable) property
 
 
 <CodeSnippetBlock labels={["VerticalSliceModifier editing"]}>
@@ -67,14 +67,14 @@ In addition, the line may be made editable (draggable) by setting the [isDragga
     ```
 </CodeSnippetBlock>
 
-The line colour, dash pattern, strokethickness and selection color of the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html) can also be set. e.g.
+The line colour, dash pattern, strokethickness and selection color of the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) can also be set. e.g.
 
 
 | **Property** | **Description** |
 |--------------|-----------------|
-| [VerticalSliceModifier.rolloverLineStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestroke) | Sets the colour of the rollover line as an HTML colour code |
-| [VerticalSliceModifier.rolloverLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokedasharray) | Sets the dash pattern (see [Dash Line Styling](/2d-charts/styling-and-theming/dash-line-patterns) for guidelines) |
-| [VerticalSliceModifier.rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokethickness) | Sets the rollover line thickness |
+| [VerticalSliceModifier.rolloverLineStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#rolloverlinestroke) | Sets the colour of the rollover line as an HTML colour code |
+| [VerticalSliceModifier.rolloverLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokedasharray) | Sets the dash pattern (see [Dash Line Styling](/2d-charts/styling-and-theming/dash-line-patterns) for guidelines) |
+| [VerticalSliceModifier.rolloverLineStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#rolloverlinestrokethickness) | Sets the rollover line thickness |
 
 <CodeSnippetBlock labels={["VerticalSliceModifier styling"]}>
     ```ts
@@ -84,14 +84,14 @@ The line colour, dash pattern, strokethickness and selection color of the [Vert
     ```
 </CodeSnippetBlock>
 
-Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
+Properties of the tooltip can be controlled on a per-series basis as per the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) via the [RenderableSeries.rolloverModifierProps:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html) property
 
 | **Property** | **Description** |
 |--------------|-----------------|
-| [series.rolloverModifierProps.tooltipTextColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptextcolor) | The text foreground color of the tooltip, on a per-series basis |
-| [series.rolloverModifierProps.tooltipColor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltipcolor) | The tooltip container color on a per-series basis |
-| [series.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) | Prefix label in the tooltip for X values. Defaults to 'X: ' |
-| [series.rolloverModifierProps.tooltipLabelY:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabely) | Prefix label in the tooltip for Y values. Defaults to 'Y: ' |
+| [series.rolloverModifierProps.tooltipTextColor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptextcolor) | The text foreground color of the tooltip, on a per-series basis |
+| [series.rolloverModifierProps.tooltipColor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltipcolor) | The tooltip container color on a per-series basis |
+| [series.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) | Prefix label in the tooltip for X values. Defaults to 'X: ' |
+| [series.rolloverModifierProps.tooltipLabelY:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabely) | Prefix label in the tooltip for Y values. Defaults to 'Y: ' |
 
 
 <CodeSnippetBlock labels={["VerticalSliceModifier Tooltip styling"]}>
@@ -104,7 +104,7 @@ Properties of the tooltip can be controlled on a per-series basis as per the [R
     ```
 </CodeSnippetBlock>
 
-Finally, the vertical line itself is simply a [LineAnnotation](/2d-charts/annotations-api/line-annotation) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
+Finally, the vertical line itself is simply a [LineAnnotation](/2d-charts/annotations-api/line-annotation) so all the properties there may be accessed via the [verticalSliceModifier.verticalLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#verticalline) property after instantiation.
 
 <CodeSnippetBlock labels={["VerticalSliceModifier.verticalLine Styling"]}>
     ```ts

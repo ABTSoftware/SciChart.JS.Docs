@@ -30,7 +30,7 @@ Designed for use in scientific, financial, trading, engineering, medical and bus
 
 ![Scichart](user-manual/toc/images/scichart-home-see-new-worlds.jpg)
 
-Across [Windows](https://www.scichart.com/wpf-chart-features), [iOS/macOS](https://www.scichart.com/ios-charts), [Android](https://www.scichart.com/android-charts) and now [JavaScript](https://scichart.com/javascript-chart-features), the SciChart Family is now in its 7th generation, and provides an extremely rich, fast and interactive JavaScript charting experience with a wide array of chart types, and the [JavaScript Charting Library](https://www.scichart.com/javascript-chart-features) is the newest edition to our portfolio, bringing high-performance, realtime charts to web browsers and JavaScript applications.
+Across [Windows](https://www.scichart.com/wpf-chart-features), [iOS/macOS](https://www.scichart.com/ios-charts), [Android](https://www.scichart.com/android-charts) and now [JavaScript](https://www.scichart.com/javascript-chart-features), the SciChart Family is now in its 7th generation, and provides an extremely rich, fast and interactive JavaScript charting experience with a wide array of chart types, and the [JavaScript Charting Library](https://www.scichart.com/javascript-chart-features) is the newest edition to our portfolio, bringing high-performance, realtime charts to web browsers and JavaScript applications.
 
 The SciChart family is used by thousands of customers in over 80 countries worldwide, in sectors ranging from Defence to Medical,
 Financial and Trading to Oil & Gas, Process Management to Formula 1.
@@ -41,4 +41,4 @@ We want you to enjoy using our products as much as we enjoy making them, as well
 
 The following document serves as a reference and an overview of the features in the SciChart.js JavaScript SDK. For a complete code
 reference, see the [TypeDoc API Documentation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html)
-and the [SciChart.js Examples Suite](https://scichart.com/demo), which contains many code samples you can run, export and modify for yourself.
+and the [SciChart.js Examples Suite](https://www.scichart.com/demo), which contains many code samples you can run, export and modify for yourself.

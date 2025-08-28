@@ -56,21 +56,21 @@ async function imageLabels(divElementId) {
     });
 
     const images = [
-        "https://scichart.com/demo/images/apple.png",
-        "https://scichart.com/demo/images/samsung.png",
-        "https://scichart.com/demo/images/xiaomi.png",
-        "https://scichart.com/demo/images/huawei.png",
-        "https://scichart.com/demo/images/oppo.png",
-        "https://scichart.com/demo/images/vivo.png",
-        "https://scichart.com/demo/images/realme.png",
-        "https://scichart.com/demo/images/motorola.png",
-        "https://scichart.com/demo/images/question.png",
-        "https://scichart.com/demo/images/lg.png",
-        "https://scichart.com/demo/images/oneplus.png",
-        "https://scichart.com/demo/images/tecno.png",
-        "https://scichart.com/demo/images/infinix.png",
-        "https://scichart.com/demo/images/google.png",
-        "https://scichart.com/demo/images/nokia.png"
+        "https://www.scichart.com/demo/images/apple.png",
+        "https://www.scichart.com/demo/images/samsung.png",
+        "https://www.scichart.com/demo/images/xiaomi.png",
+        "https://www.scichart.com/demo/images/huawei.png",
+        "https://www.scichart.com/demo/images/oppo.png",
+        "https://www.scichart.com/demo/images/vivo.png",
+        "https://www.scichart.com/demo/images/realme.png",
+        "https://www.scichart.com/demo/images/motorola.png",
+        "https://www.scichart.com/demo/images/question.png",
+        "https://www.scichart.com/demo/images/lg.png",
+        "https://www.scichart.com/demo/images/oneplus.png",
+        "https://www.scichart.com/demo/images/tecno.png",
+        "https://www.scichart.com/demo/images/infinix.png",
+        "https://www.scichart.com/demo/images/google.png",
+        "https://www.scichart.com/demo/images/nokia.png"
     ];
 
     // SciChart utility function to create HtmlImage elements from urls

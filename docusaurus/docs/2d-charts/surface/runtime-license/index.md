@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Another static method which allows you to license SciChart (apply a trial or paid production or test license) is SciChartSurface.setRuntimeLicenseKey()
 
-All of our instructions for licensing can be found at the page [scichart.com/licensing-scichart-js](https://scichart.com/licensing-scichart-js). A quick code sample is below. Ensure that you call this function once before any SciChartSurface is shown with a valid runtime key.
+All of our instructions for licensing can be found at the page [scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js). A quick code sample is below. Ensure that you call this function once before any SciChartSurface is shown with a valid runtime key.
 
 
 ```ts
@@ -24,7 +24,7 @@ SciChartSurface.setRuntimeLicenseKey("YOUR_RUNTIME_KEY_HERE");
 4.  Development activity carried out on your local PC will require an activated developer license.
 
 :::tip
-Full instructions how to activate developer licenses, how to add production & test domains to your account and how to include Runtime keys can be found at [scichart.com/licensing-scichart-js](https://scichart.com/licensing-scichart-js).
+Full instructions how to activate developer licenses, how to add production & test domains to your account and how to include Runtime keys can be found at [scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js).
 :::
 
 ### Resolving Wasm errors on load

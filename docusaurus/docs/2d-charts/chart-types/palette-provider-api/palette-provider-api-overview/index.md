@@ -27,10 +27,10 @@ What is the PaletteProvider API?
 
 The PaletteProvider API allows you to achieve per data-point colouring or styling. Here is a quick example below. The following pages have further worked examples for each series type.
 
-<ChartFromSciChartDemo 
-    src="https://scichart.com/demo/iframe/chart-color-points-individually-with-paletteprovider" 
-    title="Coloring Series per-point using PaletteProvider" 
-    description="showing how to color data-points based on a rule." 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/chart-color-points-individually-with-paletteprovider"
+    title="Coloring Series per-point using PaletteProvider"
+    description="showing how to color data-points based on a rule."
 />
 
 <br/>
@@ -53,7 +53,7 @@ Use this API any time you want to change the colour, fill or scatter-point colou
 Enabling the PaletteProvider
 ----------------------------
 
-To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
+To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
 
 The following articles in this section show you how to do this for each series type:
 
@@ -71,7 +71,7 @@ The following articles in this section show you how to do this for each series t
 * [Per-Point Coloring for Polar Band Series](/2d-charts/chart-types/palette-provider-api/polar-band-renderable-series)
 * [Per-Point Coloring for Polar Column Series](/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series)
 * [Per-Point Coloring for Polar Line Series](/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series)
-<!-- * [Per-Point Coloring for Polar Mountain Series](/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)-->
-<!-- * [Per-Point Coloring for Polar Stacked Column Series](/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series) -->
-<!-- * [Per-Point Coloring for Polar Stacked Mountain Series](/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series) -->
+<!-- * [Per-Point Coloring for Polar Mountain Series(/2d-charts/chart-types/palette-provider-api/polar-mountain-renderable-series)-->
+<!-- * [Per-Point Coloring for Polar Stacked Column Series(/2d-charts/chart-types/palette-provider-api/polar-stacked-column-renderable-series) -->
+<!-- * [Per-Point Coloring for Polar Stacked Mountain Series(/2d-charts/chart-types/palette-provider-api/polar-stacked-mountain-renderable-series) -->
 * [Per-Point Coloring for Polar Scatter Series](/2d-charts/chart-types/palette-provider-api/polar-xy-scatter-renderable-series)

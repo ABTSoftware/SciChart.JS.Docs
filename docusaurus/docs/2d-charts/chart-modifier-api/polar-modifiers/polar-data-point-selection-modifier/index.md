@@ -8,8 +8,6 @@ The [PolarDataPointSelectionModifier:blue_book:](https://www.scichart.com/docume
 
 ## Adding a PolarDataPointSelectionModifier to a Chart
 
-
-
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {10} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
     ```
@@ -19,5 +17,8 @@ The [PolarDataPointSelectionModifier:blue_book:](https://www.scichart.com/docume
 
 <LiveDocSnippet name="./demo" />
 
-In the code above:
--
+#### See Also:
+
+* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [PolarSeriesSelectionModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-series-selection-modifier)
+* [DataPointSelectionModifier](/2d-charts/chart-modifier-api/selection/data-point-selection/index.md)

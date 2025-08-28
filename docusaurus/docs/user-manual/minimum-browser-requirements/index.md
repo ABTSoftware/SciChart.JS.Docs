@@ -1,6 +1,6 @@
 ---
 id: Minimum-Browser-Requirements
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Minimum Browser Requirements
@@ -9,7 +9,7 @@ sidebar_position: 2
 Are you new to SciChart? Check out our most popular pages to get started below:
 
 * [Tutorials (JavaScript APIs / npm / webpack)](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
-* [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)        
+* [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)
 * [Series or Chart Types](/2d-charts/chart-types/renderable-series-api-overview)
 * [Axis Types and Configuration](/2d-charts/axis-api/axis-api-overview)
 * [Zooming & Panning](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)
@@ -90,4 +90,44 @@ WebGL 2 is supported on
 
 :::warning
 Note: WebGL 2 support is not available on earlier versions of Safari (Desktop or mobile), but in cases where WebGL 2 is not available SciChart.js will automatically downgrade to WebGL 1.
+:::
+
+FAQs
+----
+
+### Q: Do I need a GPU to run SciChart.js?
+
+SciChart.js uses WebGL for rendering of 2D and 3D charts. You generally need a GPU to run WebGL, however specific requirements depend on the task and hardware. WebGL relies on the GPU for rendering, and most modern computers have integrated graphics like Intel Iris that are sufficient for most basic WebGL tasks, such as 2D Graphics or 3D scenes.
+
+If the system lacks a GPU or has limited graphics capabilities, software rendering can still be used. For example, Google Chrome can use the SwiftShader software renderer, which emulates GPU functionality in software.
+
+### Q: How can I check if my system supports WebGL?
+
+If your browser supports WebGL, then SciChart.js will run. You can check WebGL compatibility by visiting [https://get.webgl.org/](https://get.webgl.org/) in your web browser. If your system supports WebGL, you will see a spinning cube.
+You can also check `chrome://gpu` in Chromium based browsers to see a report on whether WebGL is hardware accelerated, software emulated or not supported.
+
+### Q: Does SciChart.js run on the Client or the Server?
+
+At the moment, SciChart.js is a client-side library which renders on the client browser. Most clients machines (mobile devices, iPhone, Android phone, Raspberri Pi, Windows Desktop, macOS Desktop, Linux Desktop) will have at least a basic GPU and will support WebGL and therefore SciChart.js
+
+### Q: Can SciChart.js run on ARM based embedded hardware or single-board computer (SBC) devices such as a Raspberry Pi?
+
+Yes, SciChart.js can run on any device which supports WebGL and WebAssembly, including ARM based devices such as the Raspberry Pi 4 and 5.
+
+A list of Single-board computers (SBC's) which support WebGL can be found below:
+- Raspberry Pi 4/5 - capable of OpenGL and WebGL with it's VideoCore VI GPU and updated Mesa drivers
+- Orange Pi 5 - capable of OpenGL and WebGL due to the Rockchip RK3588(S) SoC and Mali-G610 GPU
+- Asus Tinker Board - with a Rockchip RK3288 SoC offers strong graphics capabilities for WebGL
+- Rock Pi 4 - With a Rockchip RK3399 SoC provides GPU capable of WebGL content
+- Udoo Bolt - features an integrated GPU capable of OpenGL / WebGL
+- ODROID N2+ - an industrial-grade SBC which offers robust performance for WebGL applications
+- Libre Computer Project - support OpenGL ES 1.1/2.0 and WebGL however performance varies by model
+
+:::tip
+To confirm an embedded device supports WebGL and hence SciChart.js, check the SBC's SoC (System on Chip) supports OpenGL, OpenGL ES and ensure
+a compatible Linux distribution with up to date Mesa drivers to run WebGL. WebGL support can then be checked in the browser by visiting `chrome://gpu` or [https://get.webgl.org/](https://get.webgl.org/)
+in your browser.
+
+See this blog post [how to setup Raspberry Pi OS on VMWare](https://www.scichart.com/blog/how-to-run-raspberry-pi-os-on-vmware-player-view-realtime-javascript-charts-with-scichart-js/)
+which details how to ensure Mesa drivers are installed for the Chromium browser on a Linux subsystem by using Raspberry Pi OS and VMWare as an example.
 :::

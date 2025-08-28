@@ -14,11 +14,11 @@ For this example we created a simple custom modifier - **KeyboardZoomPanModifier
 Here is the definition of the **KeyboardZoomPanModifier**:
 
 <CodeSnippetBlock labels={["JS","TS"]}>
-```ts 
-import { 
-    ChartModifierBase2D, 
-    EClipMode, 
-    Point, 
+```ts
+import {
+    ChartModifierBase2D,
+    EClipMode,
+    Point,
     EXyDirection
 } from "scichart";
 
@@ -34,7 +34,7 @@ class KeyboardZoomPanModifier extends ChartModifierBase2D {
          * zooms the chart 0.1%
          */
         this.growFactor = options && options.growFactor || 0.001;
-    
+
         /**
          * Modifies the speed of scroll, for example scrollFactor = 0.001 means each 'click'
          * scrolls the chart 0.1%
@@ -247,7 +247,7 @@ class KeyboardZoomPanModifier extends ChartModifierBase2D {
 
  Now let's look closer at the properties and methods of this class.
 
-First of all the class is extended from [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html), which provides it with some properties and methods required on a chart modifier.
+First of all the class is extended from [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html), which provides it with some properties and methods required on a chart modifier.
 
 Also we defined several optional properties on the class which may be useful for configuring the modifier: **type**, **growFactor**, **scrollFactor**.
 
@@ -256,7 +256,7 @@ To make it possible for a chart to respond to key press events we need to make s
 We can do this inside the **onAttach**/**onDetach** methods, which are called when the modifier is added to the chart:
 
 <CodeSnippetBlock labels={["JS","TS"]}>
-```ts 
+```ts
 onAttach() {
     // set tabIndex attribute of the chart root element if it was not set externally
     this.parentSurface.domChartRoot.tabIndex = this.parentSurface.domChartRoot.tabIndex || 0;

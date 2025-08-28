@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Chart Styling - Creating a Custom Theme
 
-As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#applytheme) function.
+As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#applytheme) function.
 
 For example, the following code:
 
@@ -139,9 +139,9 @@ export async function createCustomThemeTs(divId: string) {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 }
     ```
- 
+
 </CodeSnippetBlock>
- 
+
 
 
 Results in this output:
@@ -151,11 +151,11 @@ Results in this output:
 />
 
 :::note
-All colors in SciChart.js are strings, which are HTML color codes. Supported values are 6-digit hex codes e.g. "#ADFF2F", 8-digit hex codes in RGBA format where the last two digits are opacity e.g. "#AAFF2F33" and rgba CSS color codes e.g. "rgba(173, 255, 47, 0.3)"_
+All colors in SciChart.js are strings, which are HTML color codes. Supported values are 6-digit hex codes e.g. "#ADFF2F", 8-digit hex codes in RGBA format where the last two digits are opacity e.g. "#AAFF2F33" and rgba CSS color codes e.g. "rgba(173, 255, 47, 0.3)"
 :::
 
 :::note
-You can see an example live of creating a custom theme over at the [SciChart.js Examples Suite](https://scichart.com/demo/javascript-chart-custom-themes).
+You can see an example live of creating a custom theme over at the [SciChart.js Examples Suite](https://www.scichart.com/demo/javascript-chart-custom-themes).
 :::
 
 Inheriting a Built-In Theme 
@@ -165,25 +165,31 @@ If you want to create a custom theme built on one of the default themes supplied
 
 ```ts
 // Inheriting Themes
-
 import {
     SciChartSurface,
     NumericAxis,
-    SciChartJSLightTheme 
+    SciChartJSLightTheme
 } from "scichart";
 
 export async function inheritThemeGradientBackground(divId) {
     // Create a theme and inherit / override some properties
-    const theme = {... new SciChartJSLightTheme()};
+    const myTheme = { ...new SciChartJSLightTheme() };
+
     // Override axis text label
-    theme.tickTextBrush = "#ff6600";
+    myTheme.tickTextBrush = "#ff6600";
+
     // Override gridlines
-    theme.majorGridLineBrush = "#777";
-    theme.minorGridLineBrush = "#aaa";
+    myTheme.majorGridLineBrush = "#777";
+    myTheme.minorGridLineBrush = "#aaa";
+
     // Override background with a gradient
-    theme.sciChartBackground = "radial-gradient(circle, #ffffff 0%, #eeeeee 50%, #AAAAAA 100%)"
+    myTheme.sciChartBackground =
+        "radial-gradient(circle, #ffffff 0%, #eeeeee 50%, #AAAAAA 100%)";
+
     // Apply theme
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId,{ theme });
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId, {
+        theme: myTheme
+    });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 }
@@ -191,9 +197,9 @@ export async function inheritThemeGradientBackground(divId) {
 
 This results in the following custom theme, based off one of our themes:
 
-    src="
-        src="/images/Styling_InheritTheme.png"
-    />
+<CenteredImageWrapper
+    src="/images/Styling_InheritTheme.png"
+/>
 
 #### See Also
 

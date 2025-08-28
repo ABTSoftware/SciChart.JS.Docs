@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Interpolated Tooltip Values
 
-In SciChart.JS v3 we added some additional properties to the [hitTestInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/hittestinfo.html) object so you can now get full information about the points either side of the hit-test location.  This allows you to do interpolation for your tooltip values rather than just showing values at the actual data points. 
+In SciChart.JS v3 we added some additional properties to the [hitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object so you can now get full information about the points either side of the hit-test location.  This allows you to do interpolation for your tooltip values rather than just showing values at the actual data points. 
 
 xValue and yValue are always the values nearest the cursor.  point2xValue and point2vValue are the points on the other side of the cursor.  The interpolate function does linear interpoltion to find the y value for the x coordinate of the line between those points.
 
@@ -49,7 +49,7 @@ This example uses a CursorModifier, but the same principle would apply to Rollov
         showTooltip: true,
         axisLabelFill: "#F48420",
         axisLabelStroke: "#fff",
-        tooltipDataTemplate: interpolatedTooltipDataTemplate 
+        tooltipDataTemplate: interpolatedTooltipDataTemplate
     });
     ```
 </CodeSnippetBlock>

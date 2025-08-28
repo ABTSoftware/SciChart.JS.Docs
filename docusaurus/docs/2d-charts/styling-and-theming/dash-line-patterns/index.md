@@ -7,14 +7,14 @@ sidebar_position: 5
 In SciChart.js v1.3 and above, we have introduced a property to let you style dashed or dotted lines on certain series.
 
 :::tip
-We have an example in our SciChart.js Examples Suite which shows how to do this - the [Dashed Line Chart example](https://scichart.com/demo/javascript-dashed-line-chart).
+We have an example in our SciChart.js Examples Suite which shows how to do this - the [Dashed Line Chart example](https://www.scichart.com/demo/javascript-dashed-line-chart).
 :::
 
 <CenteredImageWrapper
     src="/images/Styling_DashedLineStylingExampleJavascript.png"
 />
 
-_**Above:**_ [_The Dashed Line Styling example_](https://scichart.com/demo/javascript-dashed-line-chart) _in the SciChart.js demo_
+_**Above:**_ [_The Dashed Line Styling example_](https://www.scichart.com/demo/javascript-dashed-line-chart) _in the SciChart.js demo_
 
 How to set a Stroke Dash
 ------------------------
@@ -64,9 +64,9 @@ Which Series support StrokeDashArray?
 
 All the line-based series in SciChart.js support StrokeDashArray for dashed or dotted lines. These are:
 
-*   [FastLineRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html#strokedasharray)
-*   [FastMountainRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html#strokedasharray)
-*   [FastBandRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html#strokedasharray)
+*   [FastLineRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html#strokedasharray)
+*   [FastMountainRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastmountainrenderableseries.html#strokedasharray)
+*   [FastBandRenderableSeries.strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#strokedasharray)
 *   SplineLineRenderableSeries
 *   SplineMountainRenderableSeries
 *   SplineBandRenderableSeries

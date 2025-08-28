@@ -8,12 +8,12 @@ DataLabels allow per data-point text labels to be drawn on series, or arbitrary 
 
 You can see several datalabel examples on the SciChart.js demo:
 
-*   [The Line Chart example](https://scichart.com/demo/javascript-line-chart)
-*   [The Column Chart example](https://scichart.com/demo/javascript-column-chart)
-*   [The PaletteProvider example](https://scichart.com/demo/javascript-chart-color-points-individually-with-paletteprovider)
-*   [The DataLabels demo](https://scichart.com/demo/javascript-datalabels)
-*   [The Stacked Column Chart demo](https://scichart.com/demo/javascript/stacked-column-chart)
-*   [The Population Pyramid demo](https://scichart.com/demo/javascript/population-pyramid)
+*   [The Line Chart example](https://www.scichart.com/demo/javascript-line-chart)
+*   [The Column Chart example](https://www.scichart.com/demo/javascript-column-chart)
+*   [The PaletteProvider example](https://www.scichart.com/demo/javascript-chart-color-points-individually-with-paletteprovider)
+*   [The DataLabels demo](https://www.scichart.com/demo/javascript-datalabels)
+*   [The Stacked Column Chart demo](https://www.scichart.com/demo/javascript/stacked-column-chart)
+*   [The Population Pyramid demo](https://www.scichart.com/demo/javascript/population-pyramid)
 
 Explore these for some rich examples of how to use this API.
 
@@ -22,9 +22,9 @@ In the article [DataLabels API Overview](/2d-charts/chart-types/data-point-labe
 Custom Label Formatting
 -----------------------
 
-To take full control of the label text, override the [dataLabelProvider.getText():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html#gettext) function on the series [renderableSeries.dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#datalabelprovider). 
+To take full control of the label text, override the [dataLabelProvider.getText():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelprovider.html#gettext) function on the series [renderableSeries.dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#datalabelprovider). 
 
-[getText:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html#gettext) has a single parameter of type [DataLabelState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelstate.html). This has a number of helper functions that allow you to get the x and y values and coordinates without having to worry about which way the axes run or if you are using a vertical chart.
+[getText:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelprovider.html#gettext) has a single parameter of type [DataLabelState:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelstate.html). This has a number of helper functions that allow you to get the x and y values and coordinates without having to worry about which way the axes run or if you are using a vertical chart.
 
 This example outputs both X and Y Values. DataLabels are rendered using the new native text system, so they support multiline using \\n for newlines. The dataLabels style option has **multiLineAlignment** and **lineSpacing** properties for controlling multiline text.
 
@@ -41,5 +41,5 @@ This example outputs both X and Y Values. DataLabels are rendered using the new 
 <LiveDocSnippet maxWidth={"100%"} />
 
 :::tip
-See the [DataLabelState:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelstate.html) type for what data is passed into the [getText():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html#gettext) function for each label
+See the [DataLabelState:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelstate.html) type for what data is passed into the [getText():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datalabelprovider.html#gettext) function for each label
 :::
