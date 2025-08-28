@@ -104,6 +104,7 @@ If the system lacks a GPU or has limited graphics capabilities, software renderi
 ### Q: How can I check if my system supports WebGL?
 
 If your browser supports WebGL, then SciChart.js will run. You can check WebGL compatibility by visiting [https://get.webgl.org/](https://get.webgl.org/) in your web browser. If your system supports WebGL, you will see a spinning cube.
+You can also check `chrome://gpu` in Chromium based browsers to see a report on whether WebGL is hardware accelerated, software emulated or not supported.
 
 ### Q: Does SciChart.js run on the Client or the Server?
 
@@ -124,7 +125,8 @@ A list of Single-board computers (SBC's) which support WebGL can be found below:
 
 :::tip
 To confirm an embedded device supports WebGL and hence SciChart.js, check the SBC's SoC (System on Chip) supports OpenGL, OpenGL ES and ensure
-a compatible Linux distribution with up to date Mesa drivers to run WebGL. WebGL support can then be checked in the browser by visiting `chrome://gpu`
+a compatible Linux distribution with up to date Mesa drivers to run WebGL. WebGL support can then be checked in the browser by visiting `chrome://gpu` or [https://get.webgl.org/](https://get.webgl.org/)
+in your browser.
 
 See this blog post [how to setup Raspberry Pi OS on VMWare](https://www.scichart.com/blog/how-to-run-raspberry-pi-os-on-vmware-player-view-realtime-javascript-charts-with-scichart-js/)
 which details how to ensure Mesa drivers are installed for the Chromium browser on a Linux subsystem by using Raspberry Pi OS and VMWare as an example.
