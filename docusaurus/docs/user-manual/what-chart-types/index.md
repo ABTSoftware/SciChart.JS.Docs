@@ -3,6 +3,8 @@ id: What-Chart-Types
 title: Features, Chart Types and more supported by SciChart.js
 sidebar_label: What Chart Types & Features does SciChart.js Support?
 sidebar_position: 2
+toc_min_heading_level: 1
+toc_max_heading_level: 2
 ---
 
 # Features and Chart Types of SciChart.js
