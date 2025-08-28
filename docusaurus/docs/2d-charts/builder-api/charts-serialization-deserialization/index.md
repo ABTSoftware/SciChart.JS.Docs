@@ -13,7 +13,7 @@ const definition = sciChartSurface.toJSON(true);
 const json = JSON.stringify(definition);
 ```
 
-When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. To do this you MUST use the [chartReviver:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartreviver) on [chartBuilder:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartbuilder) to ensure that the types are correctly deserialized.
+When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. To do this you MUST use the [chartReviver:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartreviver) on [chartBuilder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder) to ensure that the types are correctly deserialized.
 
 ```ts
 import { chartBuilder } from "scichart";
@@ -27,20 +27,20 @@ All of the Builder API functions for building parts of charts can take JSON stri
 Try this code and this JSON to see the output in SciChart.js
 
 ```ts
-import { 
+import {
     chartBuilder,
     ESeriesType,
     EChart2DModifierType,
-    ISciChart2DDefinition 
+    ISciChart2DDefinition
 } from "scichart";
 
 export async function drawAndSerializeChart(divElementId) {
     const { sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
-        series: { 
-            type: ESeriesType.LineSeries, 
-            xyData: { 
-                xValues: [1, 3, 4, 7, 9], 
-                yValues: [10, 6, 7, 2, 16] 
+        series: {
+            type: ESeriesType.LineSeries,
+            xyData: {
+                xValues: [1, 3, 4, 7, 9],
+                yValues: [10, 6, 7, 2, 16]
                 }
             }
     });

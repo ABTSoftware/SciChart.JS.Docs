@@ -19,7 +19,7 @@ Explore these for some rich examples of how to use this API.
 
 ## The DataLabels API
 
-Each RenderableSeries as a [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#datalabelprovider) property. Many also accept Data Label configuration via [constructor options:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaserenderableseriesoptions.html#datalabelprovider).
+Each RenderableSeries as a [dataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#datalabelprovider) property. Many also accept Data Label configuration via [constructor options:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#datalabelprovider).
 
 This defines whether text labels are rendered for data-points, and the style and positioning of these text labels.
 
@@ -30,7 +30,7 @@ This defines whether text labels are rendered for data-points, and the style and
 
 ## Adding Data Labels
 
-You an configure data labels for almost any series by setting a valid style on the [dataLabels property:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ibaselinerenderableseriesoptions.html#datalabels) in the series options:
+You an configure data labels for almost any series by setting a valid style on the [dataLabels property:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaselinerenderableseriesoptions.html#datalabels) in the series options:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers {39-45} file=./demo.ts start=region_A_start end=region_A_end
@@ -48,7 +48,7 @@ This results in the following output:
 
 ## Standard Label Formatting
 
-Datalabels supports the same numeric format and precision options as axis labels. By default the Y-value is printed to the label. The numericFormat option is one of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/enumericformat.html) values.
+Datalabels supports the same numeric format and precision options as axis labels. By default the Y-value is printed to the label. The numericFormat option is one of the [ENumericFormat:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/enumericformat.html) values.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers file=./demoLabelFormatting.ts start=region_A_start end=region_A_end

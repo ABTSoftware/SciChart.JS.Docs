@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # Licensing SciChart.js
@@ -8,7 +8,7 @@ sidebar_position: 4
 Are you new to SciChart? Check out our most popular pages to get started below:
 
 * [Tutorials (JavaScript APIs / npm / webpack)](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
-* [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)        
+* [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview)
 * [Series or Chart Types](/2d-charts/chart-types/renderable-series-api-overview)
 * [Axis Types and Configuration](/2d-charts/axis-api/axis-api-overview)
 * [Zooming & Panning](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier)

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Glow and DropShadow Shader Effects
 
-SciChart.js features WebGL shader-based [GlowEffect:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/gloweffect.html) and [ShadowEffect:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/shadoweffect.html) effects which may be added onto chart types throughout our library.
+SciChart.js features WebGL shader-based [GlowEffect:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gloweffect.html) and [ShadowEffect:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/shadoweffect.html) effects which may be added onto chart types throughout our library.
 
 ![WebGL Shader effects applied to JavaScript Charts to achieve glow and dropshadow](/images/RenderableSeries_GlowEffect_Ghosted.png)
 

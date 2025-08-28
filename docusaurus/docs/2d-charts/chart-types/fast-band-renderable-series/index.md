@@ -4,7 +4,7 @@ sidebar_position: 23
 
 # The Band Series type
 
-A Band Series, or High-Low Fill between two lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
+A Band Series, or High-Low Fill between two lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
 The [JavaScript Band Chart Example](https://www.scichart.com/demo/javascript-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/band-chart).
@@ -15,7 +15,7 @@ The [JavaScript Band Chart Example](https://www.scichart.com/demo/javascript-ban
     title="Band Series Chart"
 />
 
-## Create a Band Series 
+## Create a Band Series
 
 To create a [Javascript Band Chart](https://www.scichart.com/demo/javascript-band-chart) with SciChart.js, use the following code:
 
@@ -31,15 +31,15 @@ To create a [Javascript Band Chart](https://www.scichart.com/demo/javascript-ba
 
 In the code above:
 
-*   A Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set the stroke, fill properties for when Y1 > Y2 and vice versa (more info over at [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) in TypeDoc).
-*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html#dataseries) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyydataseries.html) which stores X, Y1, Y2 data.
+*   A Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   We set the stroke, fill properties for when Y1 > Y2 and vice versa (more info over at [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html) in TypeDoc).
+*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#dataseries) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyydataseries.html) which stores X, Y1, Y2 data.
 
 ## Gradient Fills in Band Series
 
 New to SciChart.js v3.4, the Band Series chart type now supports gradient fills as well as solid color fills.
 
-To use this, you need to set the [FastBandRenderableSeries.fillLinearGradient:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html#filllineargradient) & [fillLinearGradientY1:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html#filllineargradienty1) properties with a [GradientParams:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/gradientparams.html) object: a type which defines gradients by a number of gradient stops, with a start and end point.
+To use this, you need to set the [FastBandRenderableSeries.fillLinearGradient:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#filllineargradient) & [fillLinearGradientY1:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#filllineargradienty1) properties with a [GradientParams:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientparams.html) object: a type which defines gradients by a number of gradient stops, with a start and end point.
 
 Here's a code example:
 
@@ -104,12 +104,12 @@ Resulting in this:
 The Band Series chart primary use is in financial markets, when you want to display things like Bollinger Bands, MACD. For example, our Create Multi Pane Stock Charts demo has a band series for the MACD indicator, which you can see below.
 
 <CenteredImageWrapper
-    src="https://www.scichart.com/documentation/js/current/images/RenderSeries_BandSeries_UseCase.png"
+    src="https://www.scichart.com/documentation/js/v4/images/RenderSeries_BandSeries_UseCase.png"
     title="Bollinger Bands & MACD Indicators"
 />
 
 <CenteredImageWrapper
-    src="https://www.scichart.com/documentation/js/current/images/RenderSeries_BandSeries_UseCase2.png"
+    src="https://www.scichart.com/documentation/js/v4/images/RenderSeries_BandSeries_UseCase2.png"
     title="A complex visualisation using Band Series"
 />
 

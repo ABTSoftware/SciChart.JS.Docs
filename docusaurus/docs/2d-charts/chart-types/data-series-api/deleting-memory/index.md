@@ -15,7 +15,7 @@ See related articles: [Memory Usage Best Practices](/2d-charts/performance-tips
 Examples of how to use Delete()
 -------------------------------
 
-Once you are finished with the DataSeries, don't forget to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the host.
+Once you are finished with the DataSeries, don't forget to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ideletable.html#delete). This frees WebAssembly native memory and releases it back to the host.
 
 Below are a few examples of best-practices when deleting dataSeries, renderableSeries and sciChartSurfaces.
 
@@ -69,7 +69,7 @@ sciChartSurface.delete()
 console.log(`sciChartSurface is deleted: ${sciChartSurface.isDeleted}`);
 ```
 :::warning
-Failing to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html#delete) on a DataSeries or it's parent SciChartSurface when it is no longer needed can result in a memory leak.
+Failing to call [IDeletable.delete():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ideletable.html#delete) on a DataSeries or it's parent SciChartSurface when it is no longer needed can result in a memory leak.
 
 To simplify your code, if you do not change DataSeries instances, you can call delete on the parent SciChartSurface once. This will delete all child objects that hold native memory.
 :::

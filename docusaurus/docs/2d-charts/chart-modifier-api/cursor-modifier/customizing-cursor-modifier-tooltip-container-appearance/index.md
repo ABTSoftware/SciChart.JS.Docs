@@ -12,20 +12,20 @@ If you haven't already, read the article [The CursorModifier](/2d-charts/chart-
 
 Basic customisation of the cursor and tooltip appearance can be made through the following properties.
 
-- The crosshair line thickness and stroke color can be changed with the [crosshairStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#crosshairstrokethickness) and [crosshairStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#crosshairstroke) properties.
-- Axis labels can be turned on/off via the [showAxisLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#showaxislabels) property.
-- The tooltip can be turned on/off (to have a simple cursor) with the [showTooltip:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#showtooltip) property.
-- Axis Label backgrounds and text color can be changed with the [axisLabelStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#axislabelstroke), [axisLabelFill:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#axislabelfill) properties.
-- The tooltip background and text color can be changed with the [tooltipContainerBackground:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#tooltipcontainerbackground) and [tooltipTextStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#tooltiptextstroke) properties.
+- The crosshair line thickness and stroke color can be changed with the [crosshairStrokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#crosshairstrokethickness) and [crosshairStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#crosshairstroke) properties.
+- Axis labels can be turned on/off via the [showAxisLabels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#showaxislabels) property.
+- The tooltip can be turned on/off (to have a simple cursor) with the [showTooltip:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#showtooltip) property.
+- Axis Label backgrounds and text color can be changed with the [axisLabelStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#axislabelstroke), [axisLabelFill:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#axislabelfill) properties.
+- The tooltip background and text color can be changed with the [tooltipContainerBackground:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#tooltipcontainerbackground) and [tooltipTextStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#tooltiptextstroke) properties.
 
-Deeper customisation of the tooltip appearance can be achieved via the [tooltipSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html#tooltipsvgtemplate) property.
+Deeper customisation of the tooltip appearance can be achieved via the [tooltipSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#tooltipsvgtemplate) property.
 
-This defines the actual SVG used to host the tooltip container. This property expects a function in the following format (see [TCursorTooltipSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tcursortooltipsvgtemplate)):
+This defines the actual SVG used to host the tooltip container. This property expects a function in the following format (see [TCursorTooltipSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tcursortooltipsvgtemplate)):
 
 <CodeSnippetBlock labels={["cursorTooltipSvgTemplate function signature"]}>
 ```ts showLineNumbers
     cursorTooltipSvgTemplate: (
-        seriesInfos: SeriesInfo[], 
+        seriesInfos: SeriesInfo[],
         svgAnnotation: CursorTooltipSvgAnnotation
     ) => string
     ```
@@ -33,8 +33,8 @@ This defines the actual SVG used to host the tooltip container. This property ex
 
 Where the input/output parameters are:
 
-- **Input**: an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/seriesinfo.html): a data object which stores info about the series under the mouse.
-- **Input**: svgAnnotation ([CursorTooltipSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tcursortooltipsvgtemplate)) which is the current tooltip SVG annotation
+- **Input**: an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesinfo.html): a data object which stores info about the series under the mouse.
+- **Input**: svgAnnotation ([CursorTooltipSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tcursortooltipsvgtemplate)) which is the current tooltip SVG annotation
 - **Output**: string, containing the new SVG to define the tooltip container.
 
 Let's create a simple example which shows you how to customize the tooltip container.

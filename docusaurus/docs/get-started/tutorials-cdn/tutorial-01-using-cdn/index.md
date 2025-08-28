@@ -31,8 +31,8 @@ How to add SciChart index.min.js to your project
 SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/scichart](https://www.jsdelivr.com/package/npm/scichart). This can be included in a webpage either by linking direct to the script on CDN or downloading it.
 
 1.  Choose what version of SciChart you want to use. To find out which versions are available, head over to [npmjs.com/package/scichart](https://www.npmjs.com/package/scichart) and click on versions.
-2.  Add script pointing to SciChart.js version into the head section of your html file. 
-    
+2.  Add script pointing to SciChart.js version into the head section of your html file.
+
     a. For instance to use version `4.0.0-beta.734` add this script:
 
     <CodeSnippetBlock labels={["Include specific version index.html"]}>
@@ -66,7 +66,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
     </html>
     ```
     </CodeSnippetBlock>
-    
+
     b. You can if you wish, include latest minor version by using this syntax
 
     <CodeSnippetBlock labels={["Include latest minor version"]}>
@@ -77,9 +77,9 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
         ></script>
     ```
     </CodeSnippetBlock>
-    
+
     c. Or, latest major/minor version (unrecommended for production) by using this syntax
-    
+
     <CodeSnippetBlock labels={["Include latest version"]}>
     ```html
         <script
@@ -171,18 +171,18 @@ This results in the following output:
 Breaking the Code Down
 ----------------------
 
-1.  We included the `<script>` tag to load `index.min.js` with a specific version  
-2.  We have an async function to setup SciChart. This is necessary because SciChart itself uses async functions to load, and we don't want to block the browser loading.  
-3.  Inside this async function, we call [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#create) to instantiate a chart surface. This function must be awaited.  
+1.  We included the `<script>` tag to load `index.min.js` with a specific version
+2.  We have an async function to setup SciChart. This is necessary because SciChart itself uses async functions to load, and we don't want to block the browser loading.
+3.  Inside this async function, we call [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#create) to instantiate a chart surface. This function must be awaited.
 4.  Lastly, we can use the SciChart API to add a X and Y Axis and series with some data.
 
 :::tip
 When using npm we have
 ```js
 import { SciChartSurface, NumericAxis ..} from "scichart";
-``` 
-  
-When using index.min.js all types are global variables and we use 
+```
+
+When using index.min.js all types are global variables and we use
 ```js
 const { SciChartSurface, NumericAxis ..} = SciChart;
 ```
@@ -193,7 +193,7 @@ How the Wasm Files get Initialized
 
 If you've watched our [Tutorial 01 - Setting up an npm project with WebPack](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js), you will have read about wasm (WebAssembly) files which must be served to load the chart.
 
-SciChart.js when served from CDN automatically defaults to load the wasm from CDN as well. 
+SciChart.js when served from CDN automatically defaults to load the wasm from CDN as well.
 
 When we load SciChart.js via index.min.js implicitly this line of code is called
 
@@ -228,10 +228,10 @@ All of the SciChart APIs can be used in the index.min.js method where you inclu
 There is no intellisense or type discovery when using index.min.js. For professional or enterprise grade apps we recommend using npm, a bundler like WebPack and TypeScript which provides a far superior development experience.
 
 :::warning
-**A Note on Licensing SciChart.**  
-  
+**A Note on Licensing SciChart.**
+
 The SciChart.js control comes with a community license which is watermarked. This can be used for commercial trial use for a reasonable time period.
 
-  
+
 For commercial licenses, a license key can be applied following the instructions at [www.scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js).
 :::

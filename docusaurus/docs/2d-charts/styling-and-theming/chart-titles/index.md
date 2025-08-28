@@ -11,15 +11,15 @@ Adding a chart title is simple, you can do so with the following code:
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 
     ```ts showLineNumbers file=./ChartTitles/demo.ts start=region_A_start end=region_A_end
- 
+
     ```
 
     ```ts showLineNumbers file=./ChartTitles/demo.ts start=region_B_start end=region_B_end
- 
+
     ```
- 
+
 </CodeSnippetBlock>
- 
+
 
 This results in the following output:
 
@@ -32,7 +32,7 @@ For an example of multiline chart titles see the [Chart Title demo](https://www
 Title Styling and Positioning
 -----------------------------
 
-For styling and positioning a title we can use [I2DSurfaceOptions.titleStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/i2dsurfaceoptions.html#titlestyle) property in constructor options or a surface property [SciChartSurface.titleStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#titlestyle). Available styling options are defined by **[TChartTitleStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#tcharttitlestyle)** type.
+For styling and positioning a title we can use [I2DSurfaceOptions.titleStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/i2dsurfaceoptions.html#titlestyle) property in constructor options or a surface property [SciChartSurface.titleStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#titlestyle). Available styling options are defined by **[TChartTitleStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tcharttitlestyle)** type.
 
 :::note
 When setting via a surface instance, titleStyle should be assigned to an object (or partial object) of type instead of directly setting individual properties. The object then will be merged with the current or default title style.
@@ -62,7 +62,7 @@ Additionally we can set **fontWeight** and **fontStyle** for non-native text tit
 
 ### Title Positioning
 
-A title could be placed on different sides relative to the surface. The options are defined by **[ETitlePosition:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/etitleposition.html)** enum and are set by **TChartTitleStyle.position**.
+A title could be placed on different sides relative to the surface. The options are defined by **[ETitlePosition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/etitleposition.html)** enum and are set by **TChartTitleStyle.position**.
 
 To specify an anchor for a title using **TChartTitleStyle.alignment**, where options are defined in ETextAlignment enum.
 
@@ -95,7 +95,7 @@ Properties that could be applied to the multiline text are
 *   **TChartTitleStyle.lineSpacing**
 
 :::tip
-The multilineAlignment options are described in [EMultiLineAlignment:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/emultilinealignment.html) enum. The lineSpacing is a multiple of the line height.
+The multilineAlignment options are described in [EMultiLineAlignment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/emultilinealignment.html) enum. The lineSpacing is a multiple of the line height.
 :::
 
 ```ts
@@ -116,15 +116,15 @@ WebGL Native Text Titles
 
 It is possible to enable the Native Text Rendering for the Chart Title. This can improve the rendering performance and allows using custom fonts, but have some differences and limitations compared to the non-native text rendering (e.g. native text doesn't support fontWeight and fontStyle). Find more info about the [Native Text API here](/2d-charts/miscellaneous-apis/native-text-api).
 
-The Native Text Rendering for a chart title is set by **TChartTitleStyle.useNativeText** flag or uses the default value defined in [SciChartDefaults.useNativeText:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usenativetext).
+The Native Text Rendering for a chart title is set by **TChartTitleStyle.useNativeText** flag or uses the default value defined in [SciChartDefaults.useNativeText:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#usenativetext).
 
 Title Rendering Customisation
 -----------------------------
 
 For an advanced customization of the chart title rendering one may use a custom Chart Title Renderer.
 
-The Chart Title renderer could be accessed or set with [SciChartSurface.chartTitleRenderer:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#charttitlerenderer) property.
+The Chart Title renderer could be accessed or set with [SciChartSurface.chartTitleRenderer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#charttitlerenderer) property.
 
 :::note
-The default Chart Title Renderer additionally provides a debug rendering and caching of non-native text which could be toggled with [ChartTitleRenderer.drawDebug:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/charttitlerenderer.html#drawdebug) and **[ChartTitleRenderer.useCache:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/charttitlerenderer.html#usecache)** flags appropriately.
+The default Chart Title Renderer additionally provides a debug rendering and caching of non-native text which could be toggled with [ChartTitleRenderer.drawDebug:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/charttitlerenderer.html#drawdebug) and **[ChartTitleRenderer.useCache:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/charttitlerenderer.html#usecache)** flags appropriately.
 :::

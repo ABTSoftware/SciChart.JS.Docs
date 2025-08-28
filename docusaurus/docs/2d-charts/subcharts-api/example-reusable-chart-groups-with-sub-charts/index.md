@@ -4,9 +4,9 @@ sidebar_position: 10
 
 # Worked Example: Re-usable Chart Groups with SubCharts
 
-SubCharts give a way to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instance.
+SubCharts give a way to create re-usable multi-chart components that are managed by a single [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) instance.
 
-For example, if in your application you are repeatedly creating groups of charts that share a single common X-Axis, and must zoom and pan together, one way you could do this is by creating three separate [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html) instances (see the tutorial on [Linking Multiple Charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts).
+For example, if in your application you are repeatedly creating groups of charts that share a single common X-Axis, and must zoom and pan together, one way you could do this is by creating three separate [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) instances (see the tutorial on [Linking Multiple Charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts).
 
 Alternatively, you could create your multi-chart control using SubCharts and manage that with a single SciChartSurface. This will provide cleaner, neater code, plus also give you a performance boost, as SubCharts are faster than standard charts in multi-chart scenarios.
 

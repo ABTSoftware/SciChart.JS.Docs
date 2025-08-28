@@ -10,6 +10,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
 <!-- generate-docs-toc.js start -->
 - **User Manual**
   - [Table of Contents](/user-manual/toc)
+  - [Features, Chart Types and more supported by SciChart.js](/user-manual/what-chart-types)
   - [Minimum Browser Requirements](/user-manual/minimum-browser-requirements)
   - [Online Resources and Help](/user-manual/online-resources-and-help)
   - [Licensing SciChart.js](/user-manual/licensing-scichart-js)
@@ -17,7 +18,6 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [SciChart 是否支持中文](/user-manual/language-support/chinese)
     - [SciChartは日本語をサポートしていますか？](/user-manual/language-support/japanese)
 - **Get Started: Tutorials, Examples**
-  - [Virtualized data example JS RxJS from CDN without NPM](/get-started/faqs/faq-20250722)
   - [Tutorial 01 - Setting up a project with scichart-react and config object](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
   - **Tutorials (JavaScript APIs / npm / webpack)**
     - [Tutorial 01 - Setting up a npm Project with SciChart.js](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js)
@@ -34,6 +34,11 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Tutorial 01 - Including SciChart.js in an HTML Page using CDN](/get-started/tutorials-cdn/tutorial-01-using-cdn)
     - [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline)
   - [The SciChart.js Examples Suite](/get-started/scichart-js-examples-suite)
+  - **FAQs**
+    - [Virtualized data example JS RxJS from CDN without NPM](/get-started/faqs/faq-20250722)
+    - [Custom Rollover SVG Tooltips](/get-started/faqs/faq-customTooltips)
+    - [Custom Side-By-Side Series](/get-started/faqs/faq-sideBySideSeries)
+    - [How to Detect If a User Is Zooming or Panning](/get-started/faqs/faq-zoomState)
 - **What's New?**
   - [What's New in SciChart.js SDK v4.0](/whats-new/sdk-4.0)
   - [Breaking Changes in SciChart.js v4.x from v3.x](/whats-new/breaking-changes-v3-v4)
@@ -166,13 +171,15 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The Polar Stacked Mountain Chart Type](/2d-charts/chart-types/polar-stacked-mountain-renderable-series)
     - [The Polar Uniform Heatmap Chart Type](/2d-charts/chart-types/polar-uniform-heatmap-renderable-series)
     - [The Polar Scatter Chart Type](/2d-charts/chart-types/polar-xy-scatter-renderable-series)
-    - [The Polar Pie Chart Type](/2d-charts/chart-types/polar-pie-chart)
+    - [The Pie Chart (using Polar Columns)](/2d-charts/chart-types/polar-pie-chart)
     - [The Polar Radar Chart Type](/2d-charts/chart-types/polar-radar-chart)
+    - [The Polar Text Series Type](/2d-charts/chart-types/polar-text-renderable-series)
+    - [The Polar Triangle Series Type](/2d-charts/chart-types/polar-triangle-renderable-series)
     - [The Polar Sunburst Chart Type](/2d-charts/chart-types/polar-sunburst-chart)
   - **Builder (JSON Chart Definition) API**
     - [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview)
     - [Creating a Simple Chart](/2d-charts/builder-api/simple-chart)
-    - [Creating a 3D Chart](/3d-charts/builder-api/default-3d-chart)
+    - [Creating a 3D Chart](/2d-charts/builder-api/default-3d-chart)
     - [Creating a Pie Chart](/2d-charts/builder-api/pie-chart)
     - [Creating a Polar Chart](/2d-charts/builder-api/polar-chart)
     - [Working with Data](/2d-charts/builder-api/working-with-data)
@@ -218,6 +225,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Horizontally Stacked Axis Layout](/2d-charts/axis-api/multi-axis-and-layout/horizontally-stacked-axis-layout)
       - [Advanced Options - Custom Layout Managers](/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers)
       - [Polar Chart Layout](/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)
+      - [Axis Offset and OverrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset)
     - **Axis Styling**
       - [Title, Labels, Gridlines and Axis Band Style](/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style)
       - [Axis Borders and Background](/2d-charts/axis-api/axis-styling/axis-borders-and-background)
@@ -282,6 +290,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [PolarArcZoomModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-arc-zoom-modifier)
       - [PolarCursorModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-cursor-modifier)
       - [PolarDataPointSelectionModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-data-point-selection-modifier)
+      - [PolarSeriesSelectionModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-series-selection-modifier)
       - [PolarLegendModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-legend-modifier)
       - [PolarMouseWheelZoomModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-mouse-wheel-zoom-modifier)
       - [PolarPanModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-pan-modifier)
@@ -325,7 +334,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Keyboard Accessibility](/2d-charts/accessibility/keyboard-accessibility)
   - **Miscellaneous APIs**
     - [Retina Support and Browser Zoom](/2d-charts/miscellaneous-apis/retina-support-and-browser-zoom)
-    - [Batching updates or Temporary Suspending Drawing](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing)
+    - [Batching Updates or Temporary Suspending Drawing](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing)
     - [Native Text Api](/2d-charts/miscellaneous-apis/native-text-api)
     - [Glow and DropShadow Shader Effects](/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects)
     - [Ordered Rendering](/2d-charts/miscellaneous-apis/ordered-rendering)
@@ -335,6 +344,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Memory Best Practices](/2d-charts/performance-tips/memory-best-practices)
     - [Memory Leak Debugging](/2d-charts/performance-tips/memory-leak-debugging)
 - **3D Charts API**
+  - [Creating a 3D Chart](/3d-charts/builder-api/default-3d-chart)
   - **SciChart3D Basics**
     - [Creating your first SciChart3DSurface](/3d-charts/scichart-3d-basics/scichart-3d-basics-overview)
     - [SciChart3DSurface.create() vs. createSingle()](/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)

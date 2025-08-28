@@ -4,15 +4,15 @@ sidebar_position: 12
 
 # The Scatter Series Type
 
-Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) type.
+Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyscatterrenderableseries.html) type.
 
 :::tip
 The [JavaScript Scatter Chart Example](https://www.scichart.com/demo/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/scatter-chart).
 :::
 
-<ChartFromSciChartDemo  
-    src="https://www.scichart.com/demo/iframe/scatter-chart" 
-    title="Scatter Series Chart" 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/scatter-chart"
+    title="Scatter Series Chart"
 />
 
 ## Create a Scatter Series
@@ -33,8 +33,8 @@ This results in the following:
 
 In the code above:
 
-*   A Scatter Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). Several types such as Ellipse, Triangle, Cross and Custom are available ([see here for more info](/2d-charts/chart-types/common-series-apis/drawing-point-markers))
+*   A Scatter Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#pointmarker). Several types such as Ellipse, Triangle, Cross and Custom are available ([see here for more info](/2d-charts/chart-types/common-series-apis/drawing-point-markers))
 *   We assign a [DataSeries](/2d-charts/chart-types/data-series-api/data-series-api-overview) - which stores the Xy data to render.
 
 ## Render a Gap in a Scatter Series
@@ -46,12 +46,12 @@ It is possible to have null points or gaps in a Scatter Series by passing a 
 ## Drawing Last Point only in a Scatter Series
 
 :::tip
-New to SciChart.js v3.2! The PointMarker type has a property [isLastPointOnly:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/basepointmarker.html#lastpointonly). When true, only the last point of a scatter series is drawn. This can be useful to highlight a point in say a sweeping ECG chart.
+New to SciChart.js v3.2! The PointMarker type has a property [isLastPointOnly:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basepointmarker.html#lastpointonly). When true, only the last point of a scatter series is drawn. This can be useful to highlight a point in say a sweeping ECG chart.
 :::
 
 ## Different Point-Markers on a Scatter Series
 
-Every data point of a Scatter Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/baserenderableseries.html#pointmarker). Several different types of PointMarker are available in SciChart.js.
+Every data point of a Scatter Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#pointmarker). Several different types of PointMarker are available in SciChart.js.
 
 :::tip
 To learn more about the types of Point Marker in SciChart.js, see the [Point Markers API documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers).

@@ -13,7 +13,7 @@ Read the section in [Memory Best Practices - Deletable Entities](/2d-charts/per
 Enabling Memory Debugging tools
 -------------------------------
 
-Enabling memory leak debugging is possible by setting the static property [MemoryUsageHelper.isMemoryUsageDebugEnabled:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/memoryusagehelper.html#ismemoryusagedebugenabled) = true.
+Enabling memory leak debugging is possible by setting the static property [MemoryUsageHelper.isMemoryUsageDebugEnabled:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/memoryusagehelper.html#ismemoryusagedebugenabled) = true.
 
 ```ts
 import { MemoryUsageHelper } from "scichart";
@@ -34,10 +34,10 @@ Note this will only work in development mode: the environment variable process.e
 Tracking Undeleted objects
 --------------------------
 
-Once [MemoryUsageHelper:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/memoryusagehelper.html) is enabled, the memory usage debugging tool has two features:
+Once [MemoryUsageHelper:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/memoryusagehelper.html) is enabled, the memory usage debugging tool has two features:
 
 *   It adds helpful warnings to the JS Console when executing actions which may result in a potential memory leak or undesirable behaviour.
-*   It wraps objects implementing [IDeletable:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/ideletable.html) interface and native entites created in WebAssembly into a proxy - and will keep records of them in an [ObjectRegistry:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/objectregistry.html) instance - [MemoryUsageHelper.objectRegistry:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/memoryusagehelper.html#objectregistry).
+*   It wraps objects implementing [IDeletable:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ideletable.html) interface and native entites created in WebAssembly into a proxy - and will keep records of them in an [ObjectRegistry:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/objectregistry.html) instance - [MemoryUsageHelper.objectRegistry:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/memoryusagehelper.html#objectregistry).
 
 ### Examining the ObjectRegistry State
 
@@ -71,7 +71,7 @@ What to do if you find a Leak
 Tracking Arbitrary objects
 --------------------------
 
-**[MemoryUsageHelper:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/memoryusagehelper.html)** automatically tracks all objects created within SciChart itself. If you want to use our tools to track abitrary objects in your application. you can use the following functions:
+**[MemoryUsageHelper:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/memoryusagehelper.html)** automatically tracks all objects created within SciChart itself. If you want to use our tools to track abitrary objects in your application. you can use the following functions:
 
 ```ts
 // Register an arbitrary object
