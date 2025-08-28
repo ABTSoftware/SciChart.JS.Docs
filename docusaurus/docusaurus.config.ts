@@ -62,6 +62,13 @@ const config: Config = {
                 blog: false,
                 theme: {
                     customCss: "./src/css/custom.css"
+                },
+                sitemap: {
+                    lastmod: "datetime",
+                    changefreq: "weekly",
+                    priority: 0.5,
+                    ignorePatterns: ['/tags/**'],
+                    filename: 'sitemap.xml',
                 }
             } satisfies Preset.Options
         ]
