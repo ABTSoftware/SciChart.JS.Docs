@@ -7,7 +7,7 @@ import { baseUrl } from "./config";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
-const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/master/docusaurus";
+const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/dev/docusaurus";
 
 const config: Config = {
     title: "SciChart JS Docs",
