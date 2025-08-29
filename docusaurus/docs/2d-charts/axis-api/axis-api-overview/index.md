@@ -43,7 +43,12 @@ To learn more about the axis types, click one of the article links in the table 
 Axis Layout (Multiple Axis, Axis Alignment)
 -----------------------------------------------
 
-Many axis configurations are possible, including:
+### Q: Is it easier to render axes and layouts with SciChart compared to competitors?
+
+Yes, with SciChart.js, many axis configurations are possible, these are covered in detail in
+[What Axis Configuration Options and Axis Layout Options does SciChart.js Support?](/user-manual/what-chart-types/#what-axis-configuration-options-and-axis-layout-options-does-scichartjs-support)
+
+For an overview of axis layout options, see the documentation links below:
 
 *   [Aligning Axis](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview) on the Left, Right
 *   [Adding a Secondary Axis](/get-started/tutorials-js-npm-webpack/tutorial-08-adding-multiple-axis)
@@ -53,6 +58,7 @@ Many axis configurations are possible, including:
 *   [Placing axis in the centre of a chart](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout), or inside a chart surface
 *   [Vertically Stacking Axis](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout) - to create complex layouts
 *   [Horizontally Stacking Axis](/2d-charts/axis-api/multi-axis-and-layout/horizontally-stacked-axis-layout) - more complex layouts
+*   [Advanced Custom Axis Layout](2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers) via the Layout Provider API
 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-chart-with-multiple-x-axis" title="Multiple X Axis" description="" />
 
