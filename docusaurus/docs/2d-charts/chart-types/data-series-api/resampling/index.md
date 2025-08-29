@@ -5,7 +5,7 @@ sidebar_position: 5
 # DataSeries Resampling
 
 :::tip
-**New to SciChart.js v2.1!** Resampling in SciChart.js enables [_tens of millions of data-points_](https://blog.scichart.com/surpassing-limits-javascript-bigdata-webassembly/) to be displayed in a JavaScript chart, or insane levels of high performance such as ten million candlesticks, enough for the entire history of Bitcoin to be displayed in a 1-minute chart.
+**New to SciChart.js v2.1!** Resampling in SciChart.js enables [_tens of millions of data-points_](https://blog.scichart.com/surpassing-limits-javascript-bigdata-webassembly/) to be displayed in a JavaScript chart, or insane levels of high performance such as ten million candlesticks, enough for the entire history of Bitcoin to be displayed in a 1-minute chart.
 :::
 
 By default, SciChart.js uses resampling of data to ensure the minimum viable data-set is displayed on the screen. SciChart.js resampling algorithms are sophisticated time-series simplification algorithms which result in **visually imperceptible changes to the chart**, but hugely improved performance. They improve performance by allowing you to draw datasets with millions, or tens of millions of points in a JavaScript Chart.
@@ -13,7 +13,7 @@ By default, SciChart.js uses resampling of data to ensure the minimum viable dat
 Effect of Resampling on Visual Output
 -------------------------------------
 
-Resampling algorithms in SciChart are designed to preserve information about the dataset and not affect the visual output. Specifically, peaks and trough information is preserved as are all major turning points of a time-series. **Resampling algorithms in SciChart are not decimation, and information is not lost.** However, the number of points on screen are reduced so you may end up with a "thinner" or less dense looking dataset. The changes should be visually imperceptible and can be tuned if required (see more on resamplingPrecision below).
+Resampling algorithms in SciChart are designed to preserve information about the dataset and not affect the visual output. Specifically, peaks and trough information is preserved as are all major turning points of a time-series. **Resampling algorithms in SciChart are not decimation, and information is not lost.** However, the number of points on screen are reduced so you may end up with a "thinner" or less dense looking dataset. The changes should be visually imperceptible and can be tuned if required (see more on resamplingPrecision below).
 
 Here are some before/after images with resampling applied to show the effect on the visual output with resampling applied / not applied.
 
@@ -21,19 +21,19 @@ Here are some before/after images with resampling applied to show the effect on 
    src="/images/scichart-js-resampling-vs-no-resampling-random-walk.png"
 />
 
-_**Above**: Random walk data with and without resampling applied. All peak/trough information is preserved when resampling applied._
+_**Above**: Random walk data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
 <CenteredImageWrapper
    src="/images/scichart-js-resampling-vs-no-resampling-spikey-sinewave.png"
 />
 
-_**Above**: Sinewave data with random spikes with and without resampling applied. All peak/trough information is preserved when resampling applied._
+_**Above**: Sinewave data with random spikes with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
 <CenteredImageWrapper
    src="/images/scichart-js-resampling-vs-no-resampling-noisy-sine.png"
 />
 
-_**Above**: Noisy sinewave data with and without resampling applied. All peak/trough information is preserved when resampling applied._
+_**Above**: Noisy sinewave data with and without resampling applied. All peak/trough information is preserved when resampling applied._
 
 Properties which affect Resampling
 ----------------------------------
@@ -41,18 +41,18 @@ Properties which affect Resampling
 The following properties affect resampling mode and precision. Defaults are included in the table below.
 
 
-| **Property** | **Default** | Comment |
-|--|--|--|
-| [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingmode) | [Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) | Locally sets resampling mode for this series. Values of [Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) or [None:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) are the most useful. |
-| [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingmode) | 0 | Locally sets resampling precision for this series. Default = 0. Value of 1.0 means double precision, increasing density of output series but at an approx ~20% performance decrease. Value of 2.0 means quad precision etc... |
-| [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#debugdisableresampling) | false | NOT RECOMMENDED UNLESS IN DEBUG MODE: Turn on/off adaptive, visually lossless resampling algorithms globally for the entire application. |
+| **Property**                                                                                                                                                      | **Default** | Comment |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|--|--|
+| [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingmode)           | [Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) | Locally sets resampling mode for this series. Values of [Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) or [None:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) are the most useful. |
+| [BaseRenderableSeries.resamplingPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingprecision) | 0 | Locally sets resampling precision for this series. Default = 0. Value of 1.0 means double precision, increasing density of output series but at an approx ~20% performance decrease. Value of 2.0 means quad precision etc... |
+| [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#debugdisableresampling)   | false | NOT RECOMMENDED UNLESS IN DEBUG MODE: Turn on/off adaptive, visually lossless resampling algorithms globally for the entire application. |
 
-In addition, the distribution of data (which can be auto-detected or specified) or the series type will dictate which resampling mode is chosen automatically - in order to maximise performance without affecting visual output.  
+In addition, the distribution of data (which can be auto-detected or specified) or the series type will dictate which resampling mode is chosen automatically - in order to maximise performance without affecting visual output.
 
 Globally enabling or Disabling Resampling
 -----------------------------------------
 
-It is possible to globally enable or disable resampling for all series by setting the [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#debugdisableresampling) property.
+It is possible to globally enable or disable resampling for all series by setting the [SciChartDefaults.debugDisableResampling:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#debugdisableresampling) property.
 
 :::warning
 We recommend not disabling resampling unless debugging visual output of the chart. This will massively impact performance and is not necessary, as SciChart automatically chooses the correct algorithm and strategy to maintain visual output while hugely improving performance.
@@ -70,7 +70,7 @@ SciChartDefaults.debugDisableResampling = true;
 Disabling Resampling or Setting Mode per-series
 -----------------------------------------------
 
-By default [EResamplingMode.Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) is applied to DataSeries. you can also disable resampling on a per-series basis by setting [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingmode) = [EResamplingMode.None:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html).
+By default [EResamplingMode.Auto:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) is applied to DataSeries. you can also disable resampling on a per-series basis by setting [BaseRenderableSeries.resamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingmode) = [EResamplingMode.None:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html).
 
 ```ts
 // Setting ResamplingModes
@@ -89,7 +89,7 @@ const lineSeries = new FastLineRenderableSeries(wasmContext, {
 } );
 ```
 
-Other resampling modes are also available in the [EResamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) enumeration. We suggest leaving these to Auto or None unless directed to by SciChart.js support.
+Other resampling modes are also available in the [EResamplingMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eresamplingmode.html) enumeration. We suggest leaving these to Auto or None unless directed to by SciChart.js support.
 
 :::warning
 We recommend leaving resamplingMode as Auto unless debugging the visual output of the chart. This will massively impact performance and is not necessary, as SciChart automatically chooses the correct algorithm and strategy to maintain visual output while hugely improving performance.
@@ -132,27 +132,27 @@ dataSeries.containsNaN = true;
 When specified in the constructor options of a DataSeries, SciChart.js will not calculate **dataIsSortedInX** and **containsNaN**. This improves performance on data append/update/insert/remove operations by a factor of 5.
 :::
 
-ResamplingPrecision
+What is ResamplingPrecision?
 -------------------
 
-The [BaseRenderableSeries.resamplingPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingprecision) property may be tuned to affect the output result. In some cases where the dataset is very noisy, a higher resampling precision may provide a more visually appealing result.
+The [BaseRenderableSeries.resamplingPrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#resamplingprecision) property may be tuned to affect the output result. In some cases where the dataset is very noisy, a higher resampling precision may provide a more visually appealing result.
 
-Here is an example of a very noisy dataset (random values between 0-1) with varying resampling precisions.
+Here is an example of a very noisy dataset (random values between 0-1) with varying `resamplingPrecision`.
 
 <CenteredImageWrapper
    src="/images/scichart-js-resampling-vs-no-resampling-random-precision0.png"
 />
 
-_**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 0)_
+_**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (`resamplingPrecision = 0`)_
 
 <CenteredImageWrapper
    src="/images/scichart-js-resampling-vs-no-resampling-random-precision1.png"
 />
 
-_**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (resamplingPrecision = 1)_
+_**Above**: Random Noise (0..1) with Resampling Enabled vs. Disabled and XOR Difference (`resamplingPrecision = 1`)_
 
 :::tip
-In most cases the default resamplingPrecision value of 0 is sufficient. In some cases where the visual output is not appealing, simply increasing resamplingPrecision from 0 to 1 results in 2x the output points and a better result. This will incur an approx 20% performance hit for very large datasets.
+In most cases the default `resamplingPrecision` value of 0 is sufficient. In some cases where the visual output is not appealing, simply increasing `resamplingPrecision` from 0 to 1 results in 2x the output points and a better result. This will incur an approx 20% performance hit for very large datasets.
 :::
 
 Resampling effect on Performance
@@ -162,14 +162,14 @@ For smaller datasets Resampling will have no effect on performance. SciChart.js 
 
 For larger datasets, Resampling has a linear trade-off by dynamically reducing the data to the minimum viable set for visually identical drawing on the fly. You will start to see performance improvements from around 100,000 datapoints or more.
 
-With SciChart.js resampling, we were able to render [10,000,000 (ten million) data-points](https://blog.scichart.com/javascript-chart-performance-plotting-10-million-datapoints/) in under 25 milliseconds:
+With SciChart.js resampling, we were able to render [10,000,000 (ten million) data-points](https://blog.scichart.com/javascript-chart-performance-plotting-10-million-datapoints/) in under 25 milliseconds:
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/gZIivKIpaO4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-We were also able to achieve 10,000,000 (10 million) candles in a Candlestick Chart, enough to draw the entire history of Bitcoin BTC/USD in a 1-minute chart!
+We were also able to achieve 10,000,000 (10 million) candles in a Candlestick Chart, enough to draw the entire history of Bitcoin BTC/USD in a 1-minute chart!
 
 :::tip
-Read further info on how to get the best performance from SciChart.js on our [performance tips & tricks](/2d-charts/performance-tips/performance-tips-and-tricks) page.
+Read further info on how to get the best performance from SciChart.js on our [performance tips & tricks](/2d-charts/performance-tips/performance-tips-and-tricks) page.
 :::
 
 #### See Also
