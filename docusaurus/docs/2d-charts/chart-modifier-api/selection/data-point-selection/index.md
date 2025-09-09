@@ -4,21 +4,23 @@ sidebar_position: 2
 
 # DataPoint Selection
 
-SciChart now features a native ChartModifier called the [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) which allows individual data-points to be selected via the mouse, or programmatically.
+SciChart now features a native ChartModifier called the [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) which allows individual data-points to be clicked or selected via the mouse, or programmatically.
 
-The [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) allows you to do two things:
+The [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) allows you to do two things:
 
-1.  Be notified via the `onSelectionChanged` event when the user selects one or more points.
+1.  Be notified via the `onSelectionChanged` event when the user clicks to select one or more points.
 2.  Change the rendering of the selected points using a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionpaletteprovider.html) to change the fill/stroke of the point-marker when selected.
 
-Enabling the DataPointSelectionModifier
+Enabling Mouse Click Selection on Charts
 ---------------------------------------
 
-To enable Data-point selection, you must do the following:
+To make datapoints clickable in SciChart.js and enable the Data-point selection behaviour, you must do the following:
 
-1.  Add a **DataPointSelectionModifier** to the **SciChartSurface.chartModifier** collection
-2.  (Optional) Create and add **IPointMetadata** for each data-point you wish to programmatically select. If you do not do this, **DataPointSelectionModifier** will do it for you.
-3.  (Optional) Add a **DataPointSelectionPaletteProvider** to series if you want visual feedback on selection. If you do not do this, points will be selected but without visual feedback.
+1.  Add a `DataPointSelectionModifier` to the `SciChartSurface.chartModifier` collection
+2.  (Optional) Create and add `IPointMetadata` for each data-point you wish to programmatically select. If you do not do this, `DataPointSelectionModifier` will do it for you.
+3.  (Optional) Add a `DataPointSelectionPaletteProvider` to series if you want visual feedback on selection. If you do not do this, points will be selected on click but without visual feedback.
+
+This will make your data-points clickable (selectable) via the mouse or tap (touch).
 
 **Find an example below**
 
@@ -32,12 +34,12 @@ To enable Data-point selection, you must do the following:
     alt="DataPoint Selection Modifier Example"
 />
 
-Getting Notifications on Datapoint Selection
+Getting Callbacks on Click Selection of a DataPoint
 --------------------------------------------
 
-The [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) has an event, [selectionChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#selectionchanged), which allows you to subscribe to a callback when points are selected or deselected. The [onSelectionChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#onselectionchanged) function may also be passed into the **constructor options**.
+The [DataPointSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html) has an event, [selectionChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#selectionchanged), which allows you to subscribe to a callback when points are selected or deselected. The [onSelectionChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#onselectionchanged) function may also be passed into the **constructor options**.
 
-Here are two ways you can be notified when datapoint selection changes in SciChart.
+Here are two ways you can be notified when the user clicks a datapoint and selection changes in SciChart.
 
 ```ts {5,12} showLineNumbers
 import { DataPointSelectionModifier } from "scichart";
@@ -67,13 +69,14 @@ For more info about the arguments to the selectionChanged event or onSelectionCh
 Multi-select, Invert-selection and Replace-selection
 ----------------------------------------------------
 
-The **DataPointSelectionModifier** supports multi-selection by holding the **CTRL** key while clicking on datapoints. This option is available when `DataPointSelectionModifier.allowClickSelect = true`.
+The `DataPointSelectionModifier` supports multi-selection by holding the **CTRL** key while clicking on datapoints. This option is available when `DataPointSelectionModifier.allowClickSelect = true`.
 
 Holding the **SHIFT** key inverts a selection. Use this to deselect a single point on the chart.
 
 Without CTRL or SHIFT pressed, the default behaviour is to replace a selection, e.g. a new point clicked will replace a previously clicked point.
 
-To customize this behaviour you can pass a [getSelectionMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#getselectionmode) function into the constructor options of **DataPointSelectionModifier**, or, override the getSelectionMode function. For example:
+To customize this behaviour you can pass a [getSelectionMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionmodifier.html#getselectionmode) function into the constructor options of
+`DataPointSelectionModifier`, or, override the `getSelectionMode` function. For example:
 
 ```ts
 import { DataPointSelectionModifier, ESelectionMode, TModifierKeys } from "scichart";
@@ -99,9 +102,9 @@ Rectangle Select DataPoints
 
 Datapoints may be selected by dragging a rectangle on the chart. This option is available when `DataPointSelectionModifier.allowDragSelect = true`.
 
-Drag to Select rectangle can be customised by setting the properties **DataPointSelectionModifier.selectionStroke**, **DatapointSelectionModifier.selectionFill** and **DataPointSelectionModifier.selectionStrokeThickness** properties. This may also be customizable in the themes by setting **IThemeProvider.rubberBandFillBrush** and **IThemeProvider.rubberBandStrokeBrush** properties.
+Drag to Select rectangle can be customised by setting the properties `DataPointSelectionModifier.selectionStroke`, `DatapointSelectionModifier.selectionFill` and `DataPointSelectionModifier.selectionStrokeThickness` properties. This may also be customizable in the themes by setting `IThemeProvider.rubberBandFillBrush` and `IThemeProvider.rubberBandStrokeBrush` properties.
 
-Multi-select behaviour is also configurable via the getSelectionMode function.
+Multi-select behaviour is also configurable via the `getSelectionMode` function.
 
 <CenteredImageWrapper
     src="/images/datapointselectionmodifier-2.gif"
@@ -111,7 +114,7 @@ Multi-select behaviour is also configurable via the getSelectionMode function.
 Customizing the Visual of Datapoint Selection
 ---------------------------------------------
 
-By default there is no visual feedback that a datapoint is selected or deselected. To add this behaviour, you can add a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionpaletteprovider.html) to each series you want to show visual feedback. We've created one out of the box for you to simplify this process.
+By default there is no visual feedback that a datapoint has been clicked (is selected or deselected). To add this behaviour, you can add a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionpaletteprovider.html) to each series you want to show visual feedback. We've created one out of the box for you to simplify this process.
 
 ```ts {17} showLineNumbers
 // Create a chart with line series with a point-marker
@@ -134,7 +137,7 @@ sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
 }));
 ```
 
-The [DataPointSelectionPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionpaletteprovider.html) checks for **IPointMetadata.isSelected** to return a fill/stroke for point-markers that are selected. Our implementation looks like this. You can either use our default implementation or create your own based on this.
+The [DataPointSelectionPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datapointselectionpaletteprovider.html) checks for `IPointMetadata.isSelected` to return a fill/stroke for point-markers that are selected. Our implementation looks like this. You can either use our default implementation or create your own based on this.
 
 <CodeSnippetBlock labels={["DataPointSelectionPaletteProvider"]}>
     ```ts
@@ -201,7 +204,7 @@ For more information on how to style data-points, see the [PaletteProvider Docum
 Programmatically Selecting Points
 ---------------------------------
 
-If you want to select or deselect datapoints in code, you can do this through the **IPointMetadata.isSelected** property. After setting this property don't forget to call **sciChartSurface.invalidateElement()** to force a redraw of the chart!
+If you want to programmatically select or deselect datapoints in code, you can do this by setting the `IPointMetadata.isSelected` property. After setting this property don't forget to call `sciChartSurface.invalidateElement()` to force a redraw of the chart!
 
 ```ts showLineNumbers
 // Create a DataSeries with x,y values and metadata
