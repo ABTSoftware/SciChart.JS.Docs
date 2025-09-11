@@ -95,6 +95,11 @@ Note: WebGL 2 support is not available on earlier versions of Safari (Desktop or
 FAQs
 ----
 
+### Q: What ECMAScript (ES5, ES6) versions does SciChart.js Support?
+
+SciChart.js targets ES5 and supports JavaScript standard ECMAScript 5 (JavaScript 2009 edition).
+That means if your browser or a WebView support ES5 or higher, SciChart.js will run properly.
+
 ### Q: Do I need a GPU to run SciChart.js?
 
 SciChart.js uses WebGL for rendering of 2D and 3D charts. You generally need a GPU to run WebGL, however specific requirements depend on the task and hardware. WebGL relies on the GPU for rendering, and most modern computers have integrated graphics like Intel Iris that are sufficient for most basic WebGL tasks, such as 2D Graphics or 3D scenes.
