@@ -12,25 +12,85 @@ Products purchased from our store that enable SciChart.js advanced licensing inc
 
 - SciChart Bundle 2D Pro
 - SciChart Bundle 2D/3D Pro
-- Scichart Bundle 2D/3D Source
+- SciChart Bundle 2D/3D Source
 
 For to enable Advanced Licensing, you will need to talk to [technical sales](https://www.scichart.com/contact-us#pre-sales) and for licensing support post-sales please [contact technical support](https://www.scichart.com/contact-us#tech-support).
 :::
 
-big fat todo
+Standard scichart.js licenses allow for production deployment to a fixed host name, which is not `localhost`.
+If you are building an application that will be deployed by third parties to hosts you do not know or control (ie OEM scenarios)
+or if you are building an embedded system that has to run on `localhost`, then you will need one of our **Advanced Licensing solutions**.
 
-> Advanced licensing stuff you can literally copy and paste the content from https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing and the 3 it links to
+Advanced licensing requires a Bundle license and a commitment to maintain an active license for the lifetime of the project.
+For full details please see the knowlegebase article [SciChart Advanced Licensing](https://support.scichart.com/support/solutions/articles/101000516558-scichart-standard-advanced-licensing).
 
-> Some reformatting and reworking may help - be clearer about the process:
-Do I need it?
-How to enable it?
-What solution do I need?
-Solution details (server side for .net/node/other)
+Once the necessary license type and agreement is in place, Advanced Licensing will be enabled for your license.
+This adds new functionality to the Licenses section of the [scichart.com/my-account](https://www.scichart.com/my-account) page which will enable you to generate the key pairs needed.
 
-Licensing resources
--------------------
+:::tip
+Before trying to implement any of these solutions we recommend [submitting a support request](https://www.scichart.com/contact-us#tech-support)
+with details of your intended deployment, including the host requirement, the client and server tech stack and the target platform and architecture
+(eg windows/linux, x86/x64/arm/arm64), and we will make sure you get the correct solution.
+:::
+## How Advanced Licensing Works
 
-Licensing Demos
-- [.Net Server Side Licensing Demo](https://github.com/abtsoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/dotnet-server-licensing)
-- [Node.js Server Side Licensing Demo](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/nodejs-server-licensing)
-  https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox
+You will host a license key in the server of your application, and a client key set on the client.
+These will communicate to unlock SciChart.js for every domain, including `localhost`. The advanced licensing works offline and does not require an internet connection.
+
+:::warning
+Once deployed, an advanced license will work in perpetuity, however our [advanced licensing agreement](https://support.scichart.com/support/solutions/articles/101000516558-scichart-standard-advanced-licensing)
+requires you maintain least one active developer subscription during the lifetime of the application.
+This is a really low fee, and ensures ongoing maintenance of our systems & technical support for OEM use-cases.
+:::
+
+## Generating an advanced license client key / server key pair
+
+1. Head over to [scichart.com/my-account](https://www.scichart.com/my-account/) to administer your license keys (Need help? See [location and management of license keys](/user-manual/licensing-scichart-js/where-are-my-license-keys/))
+2. In the section **Orders & Keys** - **Manage Licenses** - **Hostnames** set a server assembly name or app name, with the drop-down value "OEM or Embedded License"
+
+:::info
+For dotnet server, this must be the actual assembly name of your .net server application.
+Else, it can be any application name or ID
+:::
+![Set server assembly name or app name for advanced licensing - scichart.js](/images/licensingtroubleshooting_generate_advanedlicense_servername.png)
+
+3. In the section **Orders & Keys** - **Manage Licenses** - **Runtime License Key** you can now generate a client/server key pair for your app.
+
+![Generate an advanced license client-server key pair - scichart.js](/images/licensingtroubleshooting_generate_advanedlicense.png)
+
+## Including advanced license keys in your app
+
+The actual implementation depends on your tech stack, however we have helpful examples for dotnet server, nodejs server or a self-hosted licensing server over at
+[our Github](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing)
+
+:::info
+The git repo [github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing)
+contains the code you need to setup and enable an advanced license in your system
+:::
+
+### Advanced licensing for .net (dotnet) server
+
+We have a folder in our [Github Repository here](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing) called `dotnet-server-licensing` with a detailed `Readme.md` and example test app that you can use to test out your Advanced Licensing keys.
+
+For the dotnet server example, the client/server key pair must be generated using the server entry assembly name as an OEM or Embedded License App name. For this demo that would be `DotnetServerLicensing`.
+
+### Advanced licensing for nodejs server
+
+We have a folder in our [Github Repository here](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing) called `nodejs-server-licensing` with a detailed `Readme.md` and example test app that you can use to test out your Advanced Licensing keys.
+
+For the nodejs example, the client/server key pair must be generated using the `APP_NAME`, e.g. in this demo that would be `scichart-nodejs-server-licensing`.
+
+### Advanced licensing for any server environment
+
+We have a folder in our [Github Repository here](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing) called `SciChartLicenseServer` with a detailed `Readme.md` and C++ assemblies that you can include in any server environment, e.g. Java, Python, PhP etc.
+
+For the C++ License server assemblies, set any desired App Name as an OEM or Embedded License App name when generating client/server key pairs in My-Account.
+After that, call `SetAssemblyName()` on the server with the same string, call `SetRuntimeLicenseKey()` on the server passing the server key.
+
+The first time a chart is created on the client, a validation challenge is generated using the client key and this is sent to the server (by default to `/api/license?orderid={orderId}&challenge={challenge}`).
+The server needs to pass the challenge to the SciChart native library which has the server key set, and return the response to the client. The result is the application can be deployed to any domain, including `localhost`.
+
+:::info
+Note, for advanced licensing the communication is only between the client and its originating server. It does not require outside internet access. The validation result is stored in a cookie on the client, so this
+validation only needs to occur once per week per client.
+:::
