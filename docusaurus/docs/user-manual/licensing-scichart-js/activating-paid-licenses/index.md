@@ -13,7 +13,7 @@ Products purchased from our store that enable SciChart.js developer licensing in
 - SciChart JS 2D & 3D
 - SciChart Bundle 2D Pro
 - SciChart Bundle 2D/3D Pro
-- Scichart Bundle 2D/3D Source
+- SciChart Bundle 2D/3D Source
 
 For purchasing, please visit [scichart.com/shop](https://www.scichart.com/shop). For pre-sales enquiries [contact technical sales](https://www.scichart.com/contact-us/#pre-sales) and for licensing support post-sales please contact [technical support](https://www.scichart.com/contact-us/#tech-support).
 :::
