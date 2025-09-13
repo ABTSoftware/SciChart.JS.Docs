@@ -129,9 +129,11 @@ Otherwise, the deployed application may default to community license
 
 For advanced licensing, the field `Is Server: true` will be present in the `LICENSE_DEBUG` output.
 
-**TODO
-TODO
-TODO**
+1. Ensure the client/server key pair was generated ([see steps](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/#generating-an-advanced-license-client-key--server-key-pair)) using the Assembly name or App name you expect
+2. You can view the License hostnames in the debug output when `LICENSE_DEBUG = 1` ([see steps](/user-manual/licensing-scichart-js/licensing-troubleshooting/#step-1-enabling-license-debugging))
+3. Check the network tab of devtools to see if the client is making the validation request to the server, if the endpoint is what you expect, and what the response is.
+
+If you still experience problems, contact tech support with your entire license debug output.
 
 ### I see a trial / community watermark in my test domain
 
@@ -143,9 +145,9 @@ If you require further urgent assistance with SciChart.js licensing, [contact te
 
 :::tip
 Send the following info to [tech support](https://www.scichart.com/contact-us/#tech-support) to resolve issues with licensing.
-1. `LICENSE_DEBUG` output ([see steps](/user-manual/licensing-scichart-js/licensing-troubleshooting/#step-1-enabling-license-debugging))
+1. Entire `LICENSE_DEBUG` output from `applyLicense2D` onwards ([see steps](/user-manual/licensing-scichart-js/licensing-troubleshooting/#step-1-enabling-license-debugging))
 2. Your Order ID
-3. Your runtime key
+3. Your runtime key (or client/server key pair for OEM/Advanced Licensing)
 4. The version of SciChart.js you are using
 :::
 
