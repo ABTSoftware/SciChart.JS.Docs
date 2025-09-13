@@ -13,7 +13,8 @@ If you receive an error message when running your app, you may not have deployed
 
 ### Option 1: Package Wasm & Data Files with Webpack (or similar) 
 
-In our tutorials and boilerplate examples we show you how to package the Wasm files to load them in a variety of JavaScript frameworks. Find the links to setting up a JavaScript project below:
+In our tutorials and boilerplate examples we show you how to package the Wasm files to load them in a variety of JavaScript frameworks including React, Angular, Vue, Vite, Electron, Tauri, Svelte, Blazor, Next, Nuxt and more.
+Find the links to setting up a JavaScript project below:
 
 | JS Project Framework                         | Boilerplate Project or Setup Instructions |
 |----------------------------------------------|-------------------------------------------|
