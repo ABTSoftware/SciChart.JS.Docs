@@ -31,7 +31,9 @@ You can now link your github account in the [scichart.com/my-account](https://ww
 
 ![Link Github account to scichart source code order](/images/licensingtroubleshooting_github3.png)
 
-4. You should now be able to access the SciChart.js private Github repository at [github.com/ABTSoftware/SciChartJS](https://github.com/ABTSoftware/SciChartJS)
+4. You will receive an invite email **to the email associated with your Github account**. Click to accept this to be granted access to the repository.
+
+5. You should now be able to access the SciChart.js private Github repository at [github.com/ABTSoftware/SciChartJS](https://github.com/ABTSoftware/SciChartJS)
 
 ![View SciChart.js private github repo with source code](/images/licensingtroubleshooting_github2.png)
 
