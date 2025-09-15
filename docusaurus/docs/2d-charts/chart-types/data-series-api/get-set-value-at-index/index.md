@@ -115,11 +115,9 @@ Note, the returned `Float64Array` is a **view** onto the wasm memory, not a copy
 :::
 
 ```ts
-import { TSciChart, TSciChart3D } from "../../src";
-import { FloatVector, SCRTDoubleVector } from "../../src/types/TSciChart";
-import { DoubleVector as DoubleVector3D, FloatVector as FloatVector3D } from "../../src/types/TSciChart3D";
+import { SCRTDoubleVector, TSciChart } from "SciChart";
 
-export function vectorToF64Array(vector: SCRTDoubleVector | DoubleVector3D | FloatVector | FloatVector3D, wasmContext: TSciChart | TSciChart3D): Float64Array {
+export function vectorToF64Array(vector: SCRTDoubleVector, wasmContext: TSciChart): Float64Array {
     // Access the memory pointer for the SCRTDoubleVector in webassembly
     const ptr = vector.dataPtr(0);
     // Get the SCRTDoubleVector size
