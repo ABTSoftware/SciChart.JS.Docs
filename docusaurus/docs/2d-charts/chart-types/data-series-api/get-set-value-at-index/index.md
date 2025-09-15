@@ -36,7 +36,7 @@ Accessing dataSeries xValues, yValues can be done via the `getNativeXValues()`, 
 These return an `SCRTDoubleVector` type which allows you to get a value at index via `dataSeries.getNativeXValues().get(i)`.
 
 point by point access to the DataSeries via this method is slow when you're dealing with millions of points.
-If you need to do bulk operations, its better to read the entire vector out to JavaScript array first ([see how](#converting-the-dataseries-xvalues-yvalues-scrtdoublevector-to-javascript-arrays))
+If you need to do bulk operations, its better to read the entire vector out to JavaScript array first ([see how](#converting-the-dataseries-xvalues-yvalues-to-float64array))
 :::
 
 
@@ -77,7 +77,7 @@ as this will manage internal state as well as memory.
 
 ## Accessing DataSeries Count (length) and Capacity
 
-The length, size or count or a `dataSeries` can be accessed via its `count()` function. Here is an example:
+The length, size or count or a `dataSeries` can be accessed via the [dataSeries.count():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#count) function. Here is an example:
 
 ```ts
 const count = 1_000_000;
@@ -92,7 +92,7 @@ console.log(`dataSeries count: ${series.count()}`);
 // Outputs: "dataSeries count: 1,000,000"
 ```
 
-The capacity of a `dataSeries` can be get/set via the `capacity` property. This sets the size of the underlying memory buffers allowing you to pre-allocate memory in demanding applications.
+The capacity of a `dataSeries` can be get/set via the [dataSeries.capacity:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#capacity) property. This sets the size of the underlying memory buffers allowing you to pre-allocate memory in demanding applications.
 
 For example, if you plan to call `dataSeries.append()` or `.appendRange()` many times up to a capacity of 1,000,000, you can pre-allocate the memory now by setting the `capacity`:
 
@@ -104,15 +104,14 @@ series.capacity = 1000000; // pre-allocates 1,000,000 values for X,Y
 
 ## Converting the DataSeries xValues, yValues to Float64Array
 
-As the `dataSeries.getNativeXValues()`, `dataSeries.getNativeYValues()` functions return a webassembly Float64 memory buffer (`SCRTDoubleVector`), you can't operate on this like a normal JavaScript array.
+As the `dataSeries.getNativeXValues()`, `dataSeries.getNativeYValues()` functions return the xValues and yValues as webassembly Float64 memory buffers (type `SCRTDoubleVector`), you can't operate on these like normal JavaScript arrays.
 
-However, it is possible to create a view on the dataSeries x, y values as a JS array (`Float64Array`) for further manipulation, read-back of dataSeries values or otherwise.
+However, it is possible to create a view on the dataSeries xValues, yValues as a JS array (`Float64Array`) for further manipulation, read-back of dataSeries values or otherwise.
 
-The following helper function will convert a `SCRTDoubleVector` (Float64 webassembly memory buffer) into a `Float64Array` (JavaScript array). This operation is super-fast and will allow you to read back values from a dataSeries into JavaScript with little overhead.
+The following helper function `vectorToF64Array()` will convert a `SCRTDoubleVector` (Float64 webassembly memory buffer) into a `Float64Array` (JavaScript typed 64-bit array).
+This operation is super-fast and will allow you to read back values from a `dataSeries` into JavaScript arrays with little overhead.
 
-:::info
-Note, the returned `Float64Array` is a **view** onto the wasm memory, not a copy. Create a new view every time you want to read-back data from a `dataSeries`.
-:::
+Here's the declaration of `vectorToF64Array()`:
 
 ```ts
 import { SCRTDoubleVector, TSciChart } from "SciChart";
@@ -129,7 +128,7 @@ export function vectorToF64Array(vector: SCRTDoubleVector, wasmContext: TSciChar
 }
 ```
 
-Now, to use it:
+Now, how to use it to convert `dataSeries` x,y values to JavaScript Arrays:
 
 ```ts
 const count = 1_000_000;
@@ -163,6 +162,8 @@ console.timeEnd("vectorToF64Array iterate");
 ```
 
 :::info
+Note, the returned `Float64Array` is a **view** onto the wasm memory, **not a copy**. Create a new view every time you want to read-back data from a `dataSeries`.
+
 This method of creating a `Float64Array` view onto the webassembly data is **much faster** than `getNativeXValues().get(i)` `getNativeYValues().get(i)` and can be used to read back dataSeries `xValues` `yValues` into JavaScript efficiently.
 :::
 :::warning
