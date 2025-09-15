@@ -200,10 +200,15 @@ const jsYValues = Array.from(vectorToF64Array(dataSeries.getNativeYValues(), web
 This operation involves a copy and is safer, but will introduce some extra latency depending on the size of the dataSeries data.
 :::
 
-## Fast copy one SCRTDoubleVector to another
+## Fast copy one XyDataSeries to another
 
 Using the utility function `vectorToF64Array()` we declared above, it's possible to fast copy an entire `XyDataSeries` to another.
 Use this in the case where you want to duplicate (copy) data from one DataSeries to another.
+
+1. Given a source `dataSeries` with `count()`
+2. Create a destination `dataSeries`, set `dest.capacity = source.count()`
+3. Use the `vectorToF64Array` helper function declared above to get `Float64Array` views into the source x, yValues
+4. call `dest.appendRange()` using these arrays
 
 ```ts
 const count = 1_000_000;
@@ -235,10 +240,11 @@ console.timeEnd("Time to copy an entire dataSeries");
 // Time to copy an entire dataSeries: 13.861ms
 ```
 
+:::info
+The time to copy a `dataSeries` using the above method is comparable to the time to create the `dataSeries` in the first place.
 
-
-
-
+This method can be used if you need to create copies (clones) of dataSeries in your js application.
+:::
 
 
 Examples of Dynamic Updates
