@@ -40,4 +40,4 @@ Try the above code with the following test harness:
     ```
 </CodeSnippetBlock>
 
-Find the full code sample for detecting clicks or mouse-over chart parts at [github.com/ABTSoftware/SciChart.JS.Examples/tree/dev\_v2.x/Sandbox/DocumentationSnippets/ChartModifierAPI](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v2.x/Sandbox/DocumentationSnippets/ChartModifierAPI/src)
+Find the full code sample for detecting clicks or mouse-over chart parts at [github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox/DocumentationSnippets/ChartModifierAPI](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Sandbox/DocumentationSnippets/ChartModifierAPI)
