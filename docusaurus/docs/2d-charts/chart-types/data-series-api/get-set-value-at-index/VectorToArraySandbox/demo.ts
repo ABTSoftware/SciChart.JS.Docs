@@ -1,6 +1,7 @@
 import * as SciChart from "scichart";
 
-const { SciChartSurface,
+const {
+    SciChartSurface,
     XyDataSeries,
     NumericAxis,
     TextAnnotation,
@@ -11,33 +12,34 @@ const { SciChartSurface,
 } = SciChart;
 
 async function initSciChart() {
-
-    console.log(`Scichart version ${libraryVersion}`)
+    console.log(`Scichart version ${libraryVersion}`);
     // Ignore warnings in console for this test harness
     SciChartDefaults.performanceWarnings = false;
     // Create the SciChartSurface - we need this for wasmContext
     const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root");
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
-    sciChartSurface.annotations.add(new TextAnnotation({
-        x1: 1,
-        y1: 9,
-        fontSize: 26,
-        text: "DataSeries vectorToArray tests. Check the console output!"
-    }))
+    sciChartSurface.annotations.add(
+        new TextAnnotation({
+            x1: 1,
+            y1: 9,
+            fontSize: 26,
+            text: "DataSeries vectorToArray tests. Check the console output!"
+        })
+    );
 
     const example1 = () => {
         console.log("example 1: get(i) from dataseries");
         // #region Example1-Start
         // Example: Accessing X, Y Values from DataSeries using getNativeXValues, getNativeYValues
         const xyDataSeries = new XyDataSeries(wasmContext);
-        xyDataSeries.appendRange([1,2,3], [10,20,30]);
+        xyDataSeries.appendRange([1, 2, 3], [10, 20, 30]);
 
         // Get xValues from the dataSeries
         const xValues = xyDataSeries.getNativeXValues();
         // Get yValues from the dataSeries
         const yValues = xyDataSeries.getNativeYValues();
-        for(let i = 0; i < xyDataSeries.count(); i++) {
+        for (let i = 0; i < xyDataSeries.count(); i++) {
             // Note, this method of point by point access using .get(i) is slow
             // faster methods exist below using the helper functions `vectorToArrayViewF64` and `vectorToArray`
             console.log(`index=${i}, xy = ${xValues.get(i)}, ${yValues.get(i)}`);
@@ -71,13 +73,14 @@ async function initSciChart() {
             test += series.getNativeXValues().get(i);
             test += series.getNativeYValues().get(i);
         }
-        console.log(`Time to readback 1M points using slow .get(i) method: ${(performance.now() - startIterate).toFixed(3)}ms`);
+        console.log(
+            `Time to readback 1M points using slow .get(i) method: ${(performance.now() - startIterate).toFixed(3)}ms`
+        );
         // Outputs: Time to readback 1M points using slow .get(i) method: 409ms
         //#endregion Example2-End
-    }
+    };
 
     const example3 = () => {
-
         console.log("example 3: get count of dataSeries");
         // #region Example3-Start
         // Example: get count (length, size) of dataSeries
@@ -107,10 +110,10 @@ async function initSciChart() {
         // Outputs: "dataSeries count: 0"
         // "dataSeries capacity: 1,000,000"
         // #endregion Example4-End
-    }
+    };
 
     const example5 = () => {
-        console.log("example 5: using vectorToArrayViewF64")
+        console.log("example 5: using vectorToArrayViewF64");
         // #region Example5-Start
         // vectorToArrayViewF64() (returns Float64Array) allows access to dataSeries xValues, yValues
         // by creating a view onto webassembly memory
@@ -144,10 +147,10 @@ async function initSciChart() {
         // vectorToArrayViewF64 get: 0.072ms
         // vectorToArrayViewF64 iterate: 2.747ms
         // #endregion Example5-End
-    }
+    };
 
     const example6 = () => {
-        console.log("example 6: using vectorToArray")
+        console.log("example 6: using vectorToArray");
         // #region Example6-Start
         // vectorToArray() (returns number[]) performs a deep-copy of a scichart webassembly vector
         // allowing for safer read-only access to dataseries data
@@ -216,7 +219,7 @@ async function initSciChart() {
         console.time("Time to deep copy an entire dataSeries");
         seriesDest.appendRange(
             vectorToArrayViewF64(seriesSrc.getNativeXValues(), wasmContext),
-            vectorToArrayViewF64(seriesSrc.getNativeYValues(), wasmContext),
+            vectorToArrayViewF64(seriesSrc.getNativeYValues(), wasmContext)
         );
 
         console.log(`time to deep copy a dataSeries 1M points: ${(performance.now() - startCopy).toFixed(3)}ms`);
