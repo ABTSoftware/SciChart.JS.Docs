@@ -55,7 +55,7 @@ Send these to your team along with instructions to [activate a developer license
 
 #### When a team member no longer needs a license (but may do in future)
 
-To reassign a license key from a user to another, instruct the developer to follow steps from [deactivating a developer license](user-manual/licensing-scichart-js/deactivating-reassigning-licenses/).
+To reassign a license key from a user to another, instruct the developer to follow steps from [deactivating a developer license](/user-manual/licensing-scichart-js/where-are-my-license-keys/#unassigning-or-transferring-a-developer-license-serial-key-from-a-team-member).
 
 ![Unassign or remove a developer license activation using the licensing wizard - scichart](/images/licensingtroubleshooting_deactivate.png)
 

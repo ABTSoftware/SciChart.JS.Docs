@@ -58,7 +58,7 @@ For an overview of axis layout options, see the documentation links below:
 *   [Placing axis in the centre of a chart](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout), or inside a chart surface
 *   [Vertically Stacking Axis](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout) - to create complex layouts
 *   [Horizontally Stacking Axis](/2d-charts/axis-api/multi-axis-and-layout/horizontally-stacked-axis-layout) - more complex layouts
-*   [Advanced Custom Axis Layout](2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers) via the Layout Provider API
+*   [Advanced Custom Axis Layout](/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers/) via the Layout Provider API
 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-chart-with-multiple-x-axis" title="Multiple X Axis" description="" />
 
