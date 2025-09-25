@@ -11,34 +11,22 @@ You can access `xValues`, `yValues` on a `DataSeries` by getting the internal We
 
 These functions return the x & y values as `SCRTDoubleVector`: a webassembly buffer type which stores underlying data as `Float64` array in the wasm heap.
 
-```ts
-// Accessing X, Y Values from DataSeries
-//
-const xyDataSeries = new XyDataSeries(wasmContext);
-xyDataSeries.appendRange([1,2,3], [10,20,30]);
+### Accessing DataSeries data via getNativeXValues() / getNativeYValues().get(i)
 
-// Get xValues from the dataSeries
-const xValues = xyDataSeries.getNativeXValues();
-// Get yValues from the dataSeries
-const yValues = xyDataSeries.getNativeYValues();
-for(let i = 0; i < xyDataSeries.count(); i++) {
-    console.log(`index=${i}, xy = ${xValues.get(i)}, ${yValues.get(i)}`);
-}
-
-// Will output to console
-// index=0, xy=1, 10
-// index=1, xy=2, 20
-// index=2, xy=3, 30
-```
-
-:::note
-Accessing dataSeries xValues, yValues can be done via the `getNativeXValues()`, `getNativeYValues()` functions.
+Accessing dataSeries xValues, yValues can be done via the `dataSeries.getNativeXValues()`, `dataSeries.getNativeYValues()` functions.
 These return an `SCRTDoubleVector` type which allows you to get a value at index via `dataSeries.getNativeXValues().get(i)`.
 
-point by point access to the DataSeries via this method is slow when you're dealing with millions of points.
-If you need to do bulk operations, its better to read the entire vector out to JavaScript array first ([see how](#converting-the-dataseries-xvalues-yvalues-to-float64array))
-:::
+Below find a simple example of accessing dataSeries x/y values point by point:
 
+<CodeSnippetBlock labels={["Ts"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example1-Start end=Example1-End
+```
+</CodeSnippetBlock>
+
+:::info
+point by point access to the DataSeries via this method is slow when you're dealing with millions of points.
+If you need to do bulk operations, it's better to read the entire vector out to JavaScript array first ([see how](#reading-dataseries-xvalues-yvalues-as-a-float64array-view))
+:::
 
 ### What is the SCRTDoubleVector type returned by getNativeXValues()?
 
@@ -79,172 +67,103 @@ as this will manage internal state as well as memory.
 
 The length, size or count or a `dataSeries` can be accessed via the [dataSeries.count():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#count) function. Here is an example:
 
-```ts
-const count = 1_000_000;
-const xValues: number[] = Array.from(Array(count).keys());
-const yValues: number[] = Array.from(Array(count).keys());
-
-const series = new XyDataSeries(webAssemblyContext, {
-    xValues,
-    yValues
-});
-console.log(`dataSeries count: ${series.count()}`);
-// Outputs: "dataSeries count: 1,000,000"
+<CodeSnippetBlock labels={["TS"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example3-Start end=Example3-End
 ```
+</CodeSnippetBlock>
 
 The capacity of a `dataSeries` can be get/set via the [dataSeries.capacity:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#capacity) property. This sets the size of the underlying memory buffers allowing you to pre-allocate memory in demanding applications.
 
 For example, if you plan to call `dataSeries.append()` or `.appendRange()` many times up to a capacity of 1,000,000, you can pre-allocate the memory now by setting the `capacity`:
 
-```ts
-const series = new XyDataSeries(webAssemblyContext);
-series.capacity = 1000000; // pre-allocates 1,000,000 values for X,Y
+<CodeSnippetBlock labels={["TS"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example4-Start end=Example4-End
 ```
+</CodeSnippetBlock>
 
-
-## Converting the DataSeries xValues, yValues to Float64Array
+## Reading DataSeries xValues, yValues as a Float64Array View
 
 As the `dataSeries.getNativeXValues()`, `dataSeries.getNativeYValues()` functions return the xValues and yValues as webassembly Float64 memory buffers (type `SCRTDoubleVector`), you can't operate on these like normal JavaScript arrays.
 
 However, it is possible to create a view on the dataSeries xValues, yValues as a JS array (`Float64Array`) for further manipulation, read-back of dataSeries values or otherwise.
 
-The following helper function `vectorToF64Array()` will convert a `SCRTDoubleVector` (Float64 webassembly memory buffer) into a `Float64Array` (JavaScript typed 64-bit array).
-This operation is super-fast and will allow you to read back values from a `dataSeries` into JavaScript arrays with little overhead.
+The following helper function `vectorToArrayViewF64()` (added in [version 4.0.873](https://www.scichart.com/changelog/scichart-js/)) will convert a `SCRTDoubleVector` (Float64 webassembly memory buffer)
+into a `Float64Array` (JavaScript typed 64-bit array). This operation is super-fast and will allow you to read back values from a `dataSeries`
+into JavaScript arrays with little overhead.
 
-Here's the declaration of `vectorToF64Array()`:
+Here's an example of how to use it to get a JavaScript array view of  `dataSeries` x,y values:
 
-```ts
-import { SCRTDoubleVector, TSciChart } from "SciChart";
-
-export function vectorToF64Array(vector: SCRTDoubleVector, wasmContext: TSciChart): Float64Array {
-    // Access the memory pointer for the SCRTDoubleVector in webassembly
-    const ptr = vector.dataPtr(0);
-    // Get the SCRTDoubleVector size
-    const size = vector.size();
-
-    // Create a Float64Array view on the Webassembly memory
-    // @ts-ignore
-    return new Float64Array(wasmContext.HEAPF64.buffer, ptr, size);
-}
+<CodeSnippetBlock labels={["TS"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example5-Start end=Example5-End
 ```
-
-Now, how to use it to convert `dataSeries` x,y values to JavaScript Arrays:
-
-```ts
-const count = 1_000_000;
-const xValues: number[] = Array.from(Array(count).keys());
-const yValues: number[] = Array.from(Array(count).keys());
-
-// Create an XyDataSeries with 1,000,000 xValues, yValues
-const dataSeries = new XyDataSeries(webAssemblyContext, {
-    xValues,
-    yValues
-});
-
-// Create a view into the data (maps dataSeries xValues, yValues onto a JavaScript Float64Array)
-console.time("vectorToF64Array get");
-const f64XValues = vectorToF64Array(dataSeries.getNativeXValues(), webAssemblyContext);
-const f64YValues = vectorToF64Array(dataSeries.getNativeYValues(), webAssemblyContext);
-console.timeEnd("vectorToF64Array get");
-
-// Operate on these as normal JS arrays
-console.time("vectorToF64Array iterate");
-// Check values
-let test = 0;
-for (let i = 0; i < count; i++) {
-    test += f64XValues[i];
-}
-console.timeEnd("vectorToF64Array iterate");
-
-// Output to console:
-// vectorToF64Array get: 0.072ms
-// vectorToF64Array iterate: 2.747ms
-```
+</CodeSnippetBlock>
 
 :::info
-Note, the returned `Float64Array` is a **view** onto the wasm memory, **not a copy**. Create a new view every time you want to read-back data from a `dataSeries`.
+Note, the returned `Float64Array` is a **view** onto the wasm memory, **not a copy**. Updating this `Float64Array` view will update the dataSeries data and vice-versa.
 
 This method of creating a `Float64Array` view onto the webassembly data is **much faster** than `getNativeXValues().get(i)` `getNativeYValues().get(i)` and can be used to read back dataSeries `xValues` `yValues` into JavaScript efficiently.
 :::
 :::warning
-Since the `Float64Array` is a **view** onto the webassembly memory, note that you should re-map this view every time you use it. If the underlying wasm memory is moved (`.dataPtr(0)` changes), then the
-view will no longer work as expected.
+Since the `Float64Array` is a **view** onto the webassembly memory, note that you should re-map this view every time you use it. If the underlying dataSeries size is changed, the wasm memory may be moved (`.dataPtr(0)` will change), then you run
+the risk of getting strange errors like `TypeError: Cannot perform %TypedArray%.prototype.set on a detached ArrayBuffer`.
 
-It's best to use this operation to **read** values from a dataSeries but not write. For write operations, use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) and related dataSeries types
+It's best to use this operation to **read/write** values from a dataSeries where you need fast access, but don't keep the `Float64Array` view instance for longer than needed (use once for an operation then discard). For passing JS array copies around your app, use `vectorToArray()` which provides a safer deep-copy.
+
+For write operations, it's recommended to use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) and related dataSeries types
+unless you absolutely know what you're doing!
 :::
 
-## Converting DataSeries xValues, yValues to JavaScript number[] array
+## Copying DataSeries xValues, yValues to JavaScript number[] array
 
-If you want to go a step further, you can convert a `Float64Array` to a JavaScript array (e.g. `number[]`). This operation involves a copy and is slower, but you can also be assured that the underlying data won't change. It's also the most compatible with JavaScript frameworks and other parts of your code.
+If you want to go a step further, you can convert a `Float64Array` to a JavaScript array (e.g. `number[]`) and perform a deep-copy of dataSeries data into JavaScript Arrays.
+This operation involves a copy and is slower, but you can also be assured that the underlying data won't change.
+It's also the most compatible with JavaScript frameworks and other parts of your code.
 
-```ts
-const count = 1_000_000;
-const xValues: number[] = Array.from(Array(count).keys());
-const yValues: number[] = Array.from(Array(count).keys());
+The `vectorToArray()` helper function (added in [version 4.0.873](https://www.scichart.com/changelog/scichart-js/)) can be used to perform a deep-copy of dataSeries data (xValues, yValues).
 
-// Create an XyDataSeries with 1,000,000 xValues, yValues
-const dataSeries = new XyDataSeries(webAssemblyContext, {
-    xValues,
-    yValues
-});
-
-// Create a Float64Array view onto dataSeries xValues, yValues and copy to JS Array
-const jsXValues = Array.from(vectorToF64Array(dataSeries.getNativeXValues(), webAssemblyContext));
-const jsYValues = Array.from(vectorToF64Array(dataSeries.getNativeYValues(), webAssemblyContext));
-
-// operate on jsXValues, jsYValues as normal javascript arrays
+<CodeSnippetBlock labels={["TS"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example6-Start end=Example6-End
 ```
+</CodeSnippetBlock>
 
 :::info
-This operation involves a copy and is safer, but will introduce some extra latency depending on the size of the dataSeries data.
+This operation involves a deep copy of dataSeries data and is safer, but will introduce some extra latency depending on the size of the dataSeries data.
 :::
 
 ## Fast copy one XyDataSeries to another
 
-Using the utility function `vectorToF64Array()` we declared above, it's possible to fast copy an entire `XyDataSeries` to another.
+Using the utility function `vectorToArrayViewF64()` we discussed above, it's possible to fast copy an entire `XyDataSeries` to another.
 Use this in the case where you want to duplicate (copy) data from one DataSeries to another.
 
 1. Given a source `dataSeries` with `count()`
-2. Create a destination `dataSeries`, set `dest.capacity = source.count()`
-3. Use the `vectorToF64Array` helper function declared above to get `Float64Array` views into the source x, yValues
-4. call `dest.appendRange()` using these arrays
+2. Create a destination `dataSeries`
+3. set `destination.capacity = source.count()` _**important** to avoid detached ArrayBuffer errors_
+3. Use the `vectorToArrayViewF64()` helper function declared above to get `Float64Array` views into the source xValues, yValues
+4. call `destination.appendRange()` using these array views
 
-```ts
-const count = 1_000_000;
-const xValues: number[] = Array.from(Array(count).keys());
-const yValues: number[] = Array.from(Array(count).keys());
-
-// Create a src series and fill with values
-console.time("Time to fill a dataSeries");
-const seriesSrc = new XyDataSeries(webAssemblyContext, {
-    xValues,
-    yValues
-});
-console.timeEnd("Time to fill a dataSeries");
-
-// Create a dest series and ensure the capacity (memory size) matches the soruce series
-const seriesDest = new XyDataSeries(webAssemblyContext);
-seriesDest.capacity = seriesSrc.count();
-
-// Fast copy xValues, yValues from one dataSeries to another
-console.time("Time to copy an entire dataSeries");
-seriesDest.appendRange(
-    vectorToF64Array(seriesSrc.getNativeXValues(), webAssemblyContext),
-    vectorToF64Array(seriesSrc.getNativeYValues(), webAssemblyContext),
-);
-console.timeEnd("Time to copy an entire dataSeries");
-
-// Console output
-// Time to fill a dataSeries: 11.762ms
-// Time to copy an entire dataSeries: 13.861ms
+<CodeSnippetBlock labels={["TS"]}>
+```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example7-Start end=Example7-End
 ```
+</CodeSnippetBlock>
 
 :::info
-The time to copy a `dataSeries` using the above method is comparable to the time to create the `dataSeries` in the first place.
+The time to deep copy `dataSeries` data from one series to another using `vectorToArrayViewF64()` is comparable to the time to create the `dataSeries` in the first place.
 
 This method can be used if you need to create copies (clones) of dataSeries in your js application.
 :::
 
+## Performance Table of different dataSeries readback methods
+
+Here's a performance table of the various methods to get, set, read, copy dataSeries xValues yValues into JS Arrays.
+Performance will vary from system to system, but the following can be used as a guide to assess the impact of using different 
+
+| Method                                                       | Time (ms) | Note                                                                          |
+|--------------------------------------------------------------|-----------|-------------------------------------------------------------------------------|
+| Read 1M points with `getNativeXValues().get(i)`              | 400ms     | point-by-point iteration is slow and should be avoided                        |
+| Read 1M points with `vectorToArray()`                        | 62ms      | performs a deep-copy of xValues, yValues into number[] array                  |
+| Read 1M points with `vectorToArrayViewF64()`                 | 4ms       | returns an unsafe array view. Used for v. fast read/write access with caveats |
+| create new 1M point dataSeries                               | 11ms      | creation of a new dataSeries with pre-allocated arrays                        |
+| deep copy 1M point dataSeries using `vectorToArrayViewF64()` | 13ms      | fast deep-copy of dataSeries data to another dataSeries                       |
 
 Examples of Dynamic Updates
 ---------------------------
