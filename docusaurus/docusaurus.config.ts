@@ -19,7 +19,7 @@ const config: Config = {
     themes: ["@docusaurus/theme-mermaid"],
 
     // Set the production url of your site here
-    url: "http://stagingdemo2.scichart.com",
+    url: "https://www.scichart.com",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: baseUrl,
@@ -27,7 +27,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: "SciChart", // Usually your GitHub org/user name.
-    projectName: "SciChart Documentation", // Usually your repo name.
+    projectName: "scichart.js", // Usually your repo name.
 
     onBrokenLinks: "warn",
     onBrokenMarkdownLinks: "warn",
@@ -62,6 +62,13 @@ const config: Config = {
                 blog: false,
                 theme: {
                     customCss: "./src/css/custom.css"
+                },
+                sitemap: {
+                    lastmod: "datetime",
+                    changefreq: "weekly",
+                    priority: 0.5,
+                    ignorePatterns: ['/tags/**'],
+                    filename: 'sitemap.xml',
                 }
             } satisfies Preset.Options
         ]
@@ -69,7 +76,7 @@ const config: Config = {
 
     themeConfig: {
         // Replace with your project's social card
-        image: "images/SciChartLogo.png",
+        image: "img/Default-Social-Image.jpg",
         navbar: {
             title: "SciChart.js Docs v4",
             logo: {

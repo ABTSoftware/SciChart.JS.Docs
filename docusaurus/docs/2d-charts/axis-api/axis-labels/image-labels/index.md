@@ -6,7 +6,7 @@ sidebar_position: 7
 
 In additional to all the label formatting options by SciChart.js, it is possible to go further and override the [LabelProvider.getLabelTexture():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelproviderbase2d.html#getlabeltexture) function which converts the label text that is produced by [LabelProvider.formatLabel():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelproviderbase2d.html#formatlabel) into a texture that can be drawn by WebGL. This gives you total control over the appearance of your labels so that you can use images, complex text, or a combination.
 
-The code below is taken from our online [Image Labels example](http://www.scichart.com/demo/javascript-image-labels). The key part is to pass an HtmlImageElement to [TextureManager.createTextureFromImage():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/texturemanager.html#createtexturefromimage). Everything else here is about mapping the data to the images.
+The code below is taken from our online [Image Labels example](https://www.scichart.com/demo/javascript-image-labels). The key part is to pass an HtmlImageElement to [TextureManager.createTextureFromImage():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/texturemanager.html#createtexturefromimage). Everything else here is about mapping the data to the images.
 
 :::warning
     Setting ```useNativeText: false``` on axis is needed for images to appear.
