@@ -13,7 +13,15 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - [Features, Chart Types and more supported by SciChart.js](/user-manual/what-chart-types)
   - [Minimum Browser Requirements](/user-manual/minimum-browser-requirements)
   - [Online Resources and Help](/user-manual/online-resources-and-help)
-  - [Licensing SciChart.js](/user-manual/licensing-scichart-js)
+  - **Licensing SciChart.js**
+    - [Get Started here](/user-manual/licensing-scichart-js/getting-started-for-free)
+    - [Location & Management of Licenses after Purchase](/user-manual/licensing-scichart-js/where-are-my-license-keys)
+    - [Activating a Purchased Developer License](/user-manual/licensing-scichart-js/activating-paid-licenses)
+    - [Deploying SciChart.js to Domains](/user-manual/licensing-scichart-js/deploying-to-live-sites)
+    - [Deploying SciChart.js with Advanced Licensing (OEM)](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing)
+    - [Github Source Code Access](/user-manual/licensing-scichart-js/github-source-code-access)
+    - [SciChart.js Licensing Troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting)
+    - [Misc licensing faqs](/user-manual/licensing-scichart-js/misc-licensing-faq)
   - **Language Support**
     - [SciChart 是否支持中文](/user-manual/language-support/chinese)
     - [SciChartは日本語をサポートしていますか？](/user-manual/language-support/japanese)
@@ -108,7 +116,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - **DataSeries (Data Updates) API**
       - [DataSeries API Overview](/2d-charts/chart-types/data-series-api/data-series-api-overview)
       - [Append, Insert, Update, Remove](/2d-charts/chart-types/data-series-api/append-insert-update-remove)
-      - [DataSeries Get Set value at Index](/2d-charts/chart-types/data-series-api/get-set-value-at-index)
+      - [Accessing DataSeries xValues, yValues and count](/2d-charts/chart-types/data-series-api/get-set-value-at-index)
       - [DataSeries Realtime Updates](/2d-charts/chart-types/data-series-api/realtime-updates)
       - [DataSeries Resampling](/2d-charts/chart-types/data-series-api/resampling)
       - [Deleting DataSeries Memory](/2d-charts/chart-types/data-series-api/deleting-memory)
@@ -212,6 +220,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Label Style, Alignment and Positioning](/2d-charts/axis-api/axis-labels/label-style-alignment-and-positioning)
       - [Native Text Axis Labels](/2d-charts/axis-api/axis-labels/performance-considerations-native-text-axis-abels)
       - [Polar Axis Labels](/2d-charts/axis-api/axis-labels/polar-axes-labels)
+      - [Axis Labels FAQs](/2d-charts/axis-api/axis-labels/axis-labels-faq)
     - **Axis Tick, Label Interval**
       - [Gridline and Label Spacing (Interval)](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval)
       - [The TickProvider API](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api)
@@ -295,8 +304,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [PolarMouseWheelZoomModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-mouse-wheel-zoom-modifier)
       - [PolarPanModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-pan-modifier)
       - [PolarZoomExtentsModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-zoom-extents-modifier)
-    - **Selection**
-      - [Series Selection](/2d-charts/chart-modifier-api/selection/series-selection)
+    - **Selection & Hover**
+      - [Series Selection and Hover](/2d-charts/chart-modifier-api/selection/series-selection)
       - [DataPoint Selection](/2d-charts/chart-modifier-api/selection/data-point-selection)
       - [Annotation Hover](/2d-charts/chart-modifier-api/selection/annotation-hover)
     - **Custom Modifiers**

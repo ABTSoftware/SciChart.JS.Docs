@@ -108,7 +108,7 @@ Expected: somedomain.com, Actual: anotherdomain.com
 
 In this case you will need to:
 
-1. **Generate a runtime key with the correct domains** by following steps from [here](user-manual/licensing-scichart-js/deploying-to-live-sites/).
+1. **Generate a runtime key with the correct domains** by following steps from [here](/user-manual/licensing-scichart-js/deploying-to-live-sites/).
 2. **Set the updated runtime license key** in your application.
 3. **Redeploy** your application.
 
@@ -137,7 +137,7 @@ If you still experience problems, contact tech support with your entire license 
 
 ### I see a trial / community watermark in my test domain
 
-Test domains added to the runtime key display a watermark by design. See the page on [domain licensing](user-manual/licensing-scichart-js/deploying-to-live-sites/) to find out more.
+Test domains added to the runtime key display a watermark by design. See the page on [domain licensing](/user-manual/licensing-scichart-js/deploying-to-live-sites/) to find out more.
 
 ## Step 3: Where to get further help & support
 

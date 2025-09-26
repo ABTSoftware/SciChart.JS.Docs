@@ -35,7 +35,7 @@ SciChart.js commercial licensing is a *perpetual runtime, developer subscription
 
 ### How many licenses do I need to purchase for developers?
 
-You will need to purchase one license for each developer on your team for the project(s) which use SciChart.js. [See above](/user-manual/licensing-scichart-js/licensing-faqs/#when-is-a-commercial-paid-license-needed-for-scichartjs) for the definition of developer.
+You will need to purchase one license for each developer on your team for the project(s) which use SciChart.js. [See above](/user-manual/licensing-scichart-js/misc-licensing-faq/#how-many-licenses-do-i-need-to-purchase-for-developers) for the definition of developer.
 
 For OEM/Embedded Systems you will also need an Advanced License. For more info see [Standard & Advanced Licensing](https://support.scichart.com/support/solutions/articles/101000516558-scichart-standard-advanced-licensing).
 
@@ -65,7 +65,7 @@ Advanced licensing & OEM cases are covered in the page [deploying SciChart.js wi
 
 ### Where is my License Key after purchase?
 
-Where is my license key, locating license keys and management of license keys is covered in the page [where are my license keys after purchase?](/user-maunal/licensing-scichart-js/where-are-my-license-keys/)
+Where is my license key, locating license keys and management of license keys is covered in the page [where are my license keys after purchase?](/user-manual/licensing-scichart-js/where-are-my-license-keys/)
 
 ### Is the paid version of SciChart watermarked?
 
@@ -73,7 +73,7 @@ The 'Powered by SciChart' watermark is only shown in the free community edition 
 
 ### I'm seeing the Trial / Community Watermark after purchase how do I remove this?
 
-Take a look at our [SciChart.js licensing troubleshooting](/user-manual/licensing-scichart-js/scichart.js-licensing-troubleshooting) guide here!
+Take a look at our [SciChart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting/) guide here!
 
 ## What License Type do I need for my Application?
 
