@@ -1,9 +1,11 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import { baseUrl } from "@site/config";
 
 export default function ChartPreviewWrapper(props?: { maxWidth?: string | number, htmlTemplate?: string, jsContent?: string }) {
     return (
         <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2 }}>
-            <iframe
+            <BrowserOnly>
+                {() => <iframe
                 width="100%"
                 height="100%"
                 srcDoc={`
@@ -46,7 +48,8 @@ export default function ChartPreviewWrapper(props?: { maxWidth?: string | number
         </body>
     </html>
     `}
-            ></iframe>
+            ></iframe>}
+            </BrowserOnly>
         </div>
     );
 }

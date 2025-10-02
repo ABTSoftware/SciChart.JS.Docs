@@ -1,3 +1,5 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
+
 export default function ChartFromSciChartDemo({
     src,
     title,
@@ -13,7 +15,9 @@ export default function ChartFromSciChartDemo({
 }) {
     return (
         <div style={{ width: '100%' }}>
-            <iframe src={src} style={{ width, aspectRatio }} frameBorder="0"></iframe>
+            <BrowserOnly>
+                {() => <iframe src={src} style={{ width, aspectRatio }} frameBorder="0"></iframe>}
+            </BrowserOnly>
 
             <div style={{ textAlign: "center" }}>
                 Above: The JavaScript <a href={src} target="_blank">{title}</a> example

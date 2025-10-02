@@ -20,10 +20,10 @@ To create a chart using [PolarTriangleRenderableSeries:blue_book:](https://www.s
 ## Polar Map Example
 
 :::tip
-The [JavaScript Polar Map Example](https://stagingdemo2.scichart.com/demo/javascript/polar-map-example) using the `PolarTriangleRenderableSeries` can be found in the [SciChart.Js Examples Suite > Polar Map Example](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/PolarCharts/PolarMapExample) on Github, or our live demo at [scichart.com/demo](https://stagingdemo2.scichart.com/demo/react/polar-column-chart).
+The [JavaScript Polar Map Example](https://www.scichart.com/demo/javascript/polar-map-example) using the `PolarTriangleRenderableSeries` can be found in the [SciChart.Js Examples Suite > Polar Map Example](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/PolarCharts/PolarMapExample) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/react/polar-column-chart).
 :::
 
 <ChartFromSciChartDemo 
-    src="https://stagingdemo2.scichart.com/demo/iframe/polar-map-example"
+    src="https://www.scichart.com/demo/iframe/polar-map-example"
     title="Polar Map Example"
 />

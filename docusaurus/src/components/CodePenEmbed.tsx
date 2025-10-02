@@ -1,3 +1,4 @@
+import BrowserOnly from "@docusaurus/BrowserOnly";
 import React from "react";
 
 type TProps = {
@@ -15,22 +16,24 @@ export default function CodePenEmbed(props: TProps) {
 
   return (
     <div id={chartId} style={{ width: "100%", aspectRatio: 3 / 2 }}>
-      <iframe
-        sandbox="allow-scripts allow-same-origin allow-popups"
-        allow="none"
-        allowFullScreen={true}
-        height="100%"
-        width="100%"
-        name={chartId}
-        scrolling="no"
-        src="https://codepen.io//embed/prefill"
-        style={{
-          width: "100%",
-          overflow: "hidden",
-          display: "block",
-        }}
-        title="CodePen Embed"
-      />
+      <BrowserOnly>
+        {() => <iframe
+          sandbox="allow-scripts allow-same-origin allow-popups"
+          allow="none"
+          allowFullScreen={true}
+          height="100%"
+          width="100%"
+          name={chartId}
+          scrolling="no"
+          src="https://codepen.io//embed/prefill"
+          style={{
+            width: "100%",
+            overflow: "hidden",
+            display: "block",
+          }}
+          title="CodePen Embed"
+        />}
+      </BrowserOnly>
       <form
         ref={formRef}
         style={{ display: "none" }}

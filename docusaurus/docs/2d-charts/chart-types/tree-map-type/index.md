@@ -11,7 +11,7 @@ The [JavaScript Treemap Chart Example](https://www.scichart.com/demo/javascript
 ::: 
 
 <ChartFromSciChartDemo 
-    src="https://stagingdemo2.scichart.com/demo/iframe/treemap-chart"
+    src="https://www.scichart.com/demo/iframe/treemap-chart"
     title="Treemap Chart"
 />
 

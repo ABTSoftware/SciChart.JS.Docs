@@ -12,7 +12,7 @@ The Polar Pie Chart is not yet able to support all features a regular pie chart 
 :::
 
 <ChartFromSciChartDemo 
-    src="https://stagingdemo2.scichart.com/demo/iframe/polar-pie-chart"
+    src="https://www.scichart.com/demo/iframe/polar-pie-chart"
     title="Polar Pie Chart"
 />
 
