@@ -2,6 +2,7 @@ import { baseUrl } from "@site/config";
 import { CodePenLauncher } from "./CodePenLauncher";
 import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 enum EHtmlType {
     Default = "Default",
@@ -60,7 +61,9 @@ export default function LiveDocSnippet(props?: Props) {
     return (
         <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem' }}>
             <CodePenLauncher js={files.ts} html={sandboxHtml} css={files.css} />
-            <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>
+            <BrowserOnly>
+                {() => <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
+            </BrowserOnly>
         </div>
     );
 }
@@ -77,11 +80,11 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
             <meta name='robots' content='noindex,follow' />
             <script type="importmap">
-                    {
-                        "imports": {
-                            "scichart": "${baseUrl}scichart.browser.js"
-                        }
+                {
+                    "imports": {
+                        "scichart": "${baseUrl}scichart.browser.js"
                     }
+                }
             </script>
             <script type="module" src="${baseUrl}scichart.browser.js"></script>
             <script type="module">
@@ -96,7 +99,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
                 SciChartDefaults.performanceWarnings = false;
             </script>
             <script type="module" src=${jsUrl}.js></script>
-            <link rel="stylesheet" href="${cssUrl}" />
+            ${cssUrl ? `<link rel="stylesheet" type="text/css" href="${cssUrl}">` : ""}
             <style>
                 iframe { border: 0; }
                 body { margin: 0; }

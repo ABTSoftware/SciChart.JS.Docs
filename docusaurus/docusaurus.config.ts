@@ -14,12 +14,15 @@ const config: Config = {
     tagline: "The Ultimate JavaScript Chart Library",
     favicon: "img/cropped-favicon-32x32.png",
     markdown: {
-        mermaid: true
+        mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: "warn"
+        }
     },
     themes: ["@docusaurus/theme-mermaid"],
 
     // Set the production url of your site here
-    url: "https://www.scichart.com",
+    url: "http://www.scichart.com",
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: baseUrl,
@@ -30,7 +33,6 @@ const config: Config = {
     projectName: "scichart.js", // Usually your repo name.
 
     onBrokenLinks: "warn",
-    onBrokenMarkdownLinks: "warn",
 
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
