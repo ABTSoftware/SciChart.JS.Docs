@@ -2,7 +2,7 @@
 sidebar_position: 5
 ---
 
-# Hover and Click Interacions
+# Hover and Click Interactions
 
 In SciChart.js, you can implement both click and hover events on charts using several different approaches. Here are the main methods for detecting these interactions:
 
