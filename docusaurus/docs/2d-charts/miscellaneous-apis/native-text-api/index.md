@@ -76,21 +76,21 @@ module.exports = {
 Use ```sciChartSurface.registerFont``` to provide a remote url to load a font file from.  Note that this requires a sciChartSurface instance - it is not a static method.  The method returns a promise which resolves once the file is downloaded.  If you do not await this method, the text will render using Arial until the font is available.  There is a timeout (set by SciChartDefaults.nativeFontTimeout, default 2000ms) after which SciChart will fall back to Arial and stop trying to load the custom font.  You might need to increase this if you need to load fonts over a slow connection, but in general it is better to await the registerFont method.
 
 :::warning
-There is currently a limitation in that the font fetching from webassembly will not follow a http 302 redirection, so you need to pass the url to the actual file.  For instance, when downloading from github, [https://github.com/google/fonts/raw/main/ofl/notoserif/NotoSerif-Regular.ttf](https://github.com/google/fonts/raw/main/ofl/notoserif/NotoSerif-Regular.ttf) redirects to [https://raw.githubusercontent.com/google/fonts/main/ofl/notoserif/NotoSerif-Regular.ttf](https://raw.githubusercontent.com/google/fonts/main/ofl/notoserif/NotoSerif-Regular.ttf) so you need to use the githubusercontent.com link.
+There is currently a limitation in that the font fetching from webassembly will not follow a http 302 redirection, so you need to pass the url to the actual file.  For instance, when downloading from github, [https://github.com/google/fonts/blob/main/ofl/braahone/BraahOne-Regular.ttf](https://github.com/google/fonts/blob/main/ofl/braahone/BraahOne-Regular.ttf) redirects to [https://raw.githubusercontent.com/google/fonts/main/ofl/braahone/BraahOne-Regular.ttf](https://raw.githubusercontent.com/google/fonts/main/ofl/braahone/BraahOne-Regular.ttf) so you need to use the githubusercontent.com link.
 :::
 
 ```ts
 // Registering a font
 
 await sciChartSurface.registerFont(
-      "notoserif",
-      "https://raw.githubusercontent.com/google/fonts/main/ofl/notoserif/NotoSerif-Regular.ttf"
+      "braahone",
+      "https://raw.githubusercontent.com/google/fonts/main/ofl/braahone/BraahOne-Regular.ttf"
 );
 const nativeTextRemote = new NativeTextAnnotation({
         x1: 3,
         y1: 7,
         text: "This text uses a font from the internet",
-        fontFamily: "notoserif",
+        fontFamily: "braahone",
         fontSize: 24
 });
 ```
