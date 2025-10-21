@@ -76,6 +76,20 @@ This results in the following output:
 Dynamic Control of Gridline, Label & Tick Spacing on Zoom
 ---------------------------------------------------------
 
-The above method of setting Major/Minor Delta could be dynamic if you combine with [Listening to Axis Range Changes](/2d-charts/axis-api/ranging-scaling/listen-to-visible-range-changes).
+This automatic major and minor delta calculation is done by a [DeltaCalculator:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/deltacalculator.html) which is specific to the axis type, so there is NumericDeltaCalculator, LogarithmicDeltaCalculator, CategoryDeltaCalculator and DateTimeDeltaCalculator.
 
-However, if you want to have finer grained control over axis gridline, label or minor gridline spacing, then read [The Tick Provider API Documentation](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api).
+You can override the DeltaCalculator to customise this behaviour.  For instance, if you have an axis with labelPrecision: 0, you may see duplicate labels if you zoom deeply into it, because the DeltaCalcuator is returning a fractional majorDelta, but the labelProvider is rounding the resulting tick values.  Here is a custom NumericDeltaCalculator which rounds up the deltas so you get integer values as a minimum.
+``` ts
+class IntegerDeltaCalculator extends NumericDeltaCalculator {
+    public getDeltaFromRange(min: number, max: number, minorsPerMajor: number, maxTicks: number): NumberRange {
+        const delta = super.getDeltaFromRange(min, max, minorsPerMajor, maxTicks);
+        return new NumberRange(Math.ceil(delta.min), Math.ceil(delta.max));
+    }
+}
+
+// Use like this
+xAxis.deltaCalculator = new IntegerDeltaCalculator(wasmContext);
+```
+
+
+Deltas are used by the TickProvider to produce the actual tick values, so you can also customise this behaviour there.  See the [The Tick Provider API Documentation](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api).
