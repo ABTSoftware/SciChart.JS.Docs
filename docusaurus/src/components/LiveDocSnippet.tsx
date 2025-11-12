@@ -120,6 +120,7 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
     }
+    const libraryVersionMajor = libraryVersion.split(".")[0];
     return `
     <html lang="en-us">
         <head>
@@ -129,11 +130,11 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
             <script type="importmap">
                     {
                         "imports": {
-                            "scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.browser.mjs"
+                            "scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersionMajor}/_wasm/scichart.browser.mjs"
                         }
                     }
             </script>
-            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.browser.mjs"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart@${libraryVersionMajor}/_wasm/scichart.browser.mjs"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
