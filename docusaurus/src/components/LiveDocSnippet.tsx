@@ -90,6 +90,8 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
+                SciChartSurface.UseCommunityLicense();
+                
                 SciChartSurface.configure({
                     wasmUrl: "${baseUrl}scichart2d.wasm"
                 });
@@ -135,6 +137,7 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
+                SciChartSurface.UseCommunityLicense();
                 SciChartSurface.useWasmFromCDN();
                 SciChart3DSurface.useWasmFromCDN();
                 SciChartDefaults.performanceWarnings = false;
