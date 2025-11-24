@@ -28,5 +28,5 @@ Textures created this way are automatically cached for performance, and disposed
 Normally, the size of the texture returned is used as the width and height for layout purposes.  Depending on the shape of your images, you may also want to override the **getLabelWidth** and **getLabelHeight** methods on [LabelProviderBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelproviderbase2d.html).
 
 :::tip
-For an example of how to do this with TypeScript, React and npm / webpack to import images, see our [Image Labels example](http://www.scichart.com/demo/javascript-image-labels), part of the SciChart Demo.
+For an example of how to do this with TypeScript, React and npm / webpack to import images, see our [Image Labels example](https://www.scichart.com/demo/javascript-image-labels), part of the SciChart Demo.
 :::
