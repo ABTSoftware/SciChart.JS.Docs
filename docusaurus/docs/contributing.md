@@ -44,7 +44,7 @@ Create titles friendly for the site Search. The title h1, h2, h3 can be created 
 
 ## Decorate TypeDoc links and reference v4
 
-This is v4 TypeDoc - https://www.scichart.com/documentation/js/v4/typedoc/
+This is v4 TypeDoc - https://www.scichart.com/documentation/js/v4/typedoc
 
 In order to make all TypeDoc links distinct decorate the link with book icon `:blue_book:`, this is an example of SciChartSurface class typedoc link
 
