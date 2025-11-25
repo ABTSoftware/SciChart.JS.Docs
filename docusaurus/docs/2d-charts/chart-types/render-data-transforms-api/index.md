@@ -93,20 +93,83 @@ Next we need a paletteProvider which applies colours according to the thresholds
 
 <CodeSnippetBlock labels={["TYPEscript"]}>
     ```ts showLineNumbers file=./Thresholds/demo.ts start=region_B_start end=region_B_end
-
     ```
-
 </CodeSnippetBlock>
 
 Now we can create a series and apply these to it
 
 <CodeSnippetBlock labels={["TYPEscript"]}>
     ```ts showLineNumbers file=./Thresholds/demo.ts start=region_C_start end=region_C_end
-
     ```
-
 </CodeSnippetBlock>
 
  This is the final result.  You can view the source of the embed below to see how the annotations are created and configured to update the thresholds.
 
 <LiveDocSnippet maxWidth={"100%"} name="./Thresholds/demo" />
+
+## Worked Example: SplitRenderDataTransform
+
+This class extends the BaseRenderDataTransform to convert XY data into OHLC (Open-High-Low-Close) format for rendering in SciChart.js, specifically preparing data for OHLC/styled point and line rendering.
+
+### Purpose
+
+* Transforms input XY data points into OHLC data points.
+
+* Unselected points have their values set in y (representing the close value).
+
+* Selected points place their values in low for point markers.
+
+* Selected points and their immediate neighbors are represented in high for drawing connecting lines.
+
+* If only point markers or columns are needed, a simpler Xyy transform might suffice.
+
+### Key Methods
+**createPointSeries()**
+* Creates and returns a new OhlcPointSeriesResampled object.
+
+* This object serves as the container for transformed OHLC points.
+
+* Initializes with a default numeric range of 0 to 0.
+
+**runTransformInternal(renderPassData: RenderPassData): IPointSeries**
+* The core transformation logic is implemented here.
+
+* Reads the original X and Y values, indexes, and resampling status from the input RenderPassData.
+
+* Clears and resizes the target OHLC point series vectors to match the length of input data.
+
+* Uses typed array views for efficient buffer access to input and output points.
+
+* Iterates over the points and applies selection metadata from the parent data series:
+
+    * Sets X and index values directly.
+
+    * For unselected points, Y (close) is assigned normally; for selected points, Y is set to NaN.
+
+    * Selected points' Y values go to the low vector for point markers.
+
+    * The high vector includes points that are selected or next to selected points to create lines between selected points.
+
+* Returns the transformed OHLC point series for further rendering in SciChart.
+
+### Usage Context
+
+* This transform suits cases where you want to visually differentiate selected data points using OHLC styling with point markers and connecting lines.
+
+* It leverages SciChart's resampling handling, metadata access, and native vector operations for high performance rendering.
+
+* Extending BaseRenderDataTransform ties this logic cleanly into the SciChart rendering pipeline and data flow.
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=./SplitRenderDataTransform/demo.ts start=region_A_start end=region_A_end
+    ```
+</CodeSnippetBlock>
+
+The output looks like this:
+
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/multi-style-series"
+    title="JavaScript Chart with Multi-Style Series"
+/>
+
+<!-- <LiveDocSnippet maxWidth={"100%"} name="./SplitRenderDataTransform/demo" /> -->
