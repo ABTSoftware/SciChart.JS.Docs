@@ -176,4 +176,4 @@ By default, RolloverModifier returns data for all series at the x-value the mous
 
 * [Interpolated Tooltip Values](/2d-charts/chart-modifier-api/cursor-modifier/interpolated-tooltip-values)
 * [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features/)
+* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features)

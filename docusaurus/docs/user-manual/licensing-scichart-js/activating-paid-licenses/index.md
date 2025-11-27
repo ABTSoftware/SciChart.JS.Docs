@@ -42,15 +42,15 @@ Note: Your SciChart.js applications on `localhost` will search for the licensing
 
 ### I cannot find my license key after purchase, where is it?
 
-Full steps to locate your license keys can be found in the page [where are my SciChart.js license keys?](/user-manual/licensing-scichart-js/where-are-my-license-keys/)
+Full steps to locate your license keys can be found in the page [where are my SciChart.js license keys?](/user-manual/licensing-scichart-js/where-are-my-license-keys)
 
 ### I have paid but did not receive a license email, where is it?
 
-Check your spam folders for license emails if you are the purchaser/customer. For further instructions, see [where are my SciChart.js license keys?](/user-manual/licensing-scichart-js/where-are-my-license-keys/)
+Check your spam folders for license emails if you are the purchaser/customer. For further instructions, see [where are my SciChart.js license keys?](/user-manual/licensing-scichart-js/where-are-my-license-keys)
 
 ### I have activated a developer license but still see the trial / community watermark?
 
-Full troubleshooting steps can be found at the page [scichart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting/)
+Full troubleshooting steps can be found at the page [scichart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting)
 
 ### The machine I'm trying to activate is offline or cannot reach the licensing servers
 
@@ -91,4 +91,4 @@ The response code is machine-specific. When received in your email (another PC) 
 
 ## Still need help activating SciChart.js developer licenses?
 
-Follow the [scichart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting/) and if you're still stuck, contact [tech support](https://www.scichart.com/contact-us/#tech-support)!
+Follow the [scichart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting) and if you're still stuck, contact [tech support](https://www.scichart.com/contact-us/#tech-support)!

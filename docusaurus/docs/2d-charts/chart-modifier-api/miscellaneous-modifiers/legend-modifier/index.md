@@ -152,7 +152,7 @@ And here is the code doing it:
 
 #### See Also
 
-* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features/)
+* [Common ChartModifiers Features](/2d-charts/chart-modifier-api/common-features)
 * [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
 * [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview)
 * [Common RenderableSeries Properties](/2d-charts/chart-types/common-series-apis/drawing-point-markers)

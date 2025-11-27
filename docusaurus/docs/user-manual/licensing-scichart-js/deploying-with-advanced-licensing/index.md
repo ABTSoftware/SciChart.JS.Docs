@@ -45,7 +45,7 @@ This is a really low fee, and ensures ongoing maintenance of our systems & techn
 
 ## Generating an advanced license client key / server key pair
 
-1. Head over to [scichart.com/my-account](https://www.scichart.com/my-account/) to administer your license keys (Need help? See [location and management of license keys](/user-manual/licensing-scichart-js/where-are-my-license-keys/))
+1. Head over to [scichart.com/my-account](https://www.scichart.com/my-account/) to administer your license keys (Need help? See [location and management of license keys](/user-manual/licensing-scichart-js/where-are-my-license-keys))
 2. In the section **Orders & Keys** - **Manage Licenses** - **Hostnames** set a server assembly name or app name, with the drop-down value "OEM or Embedded License"
 
 :::info

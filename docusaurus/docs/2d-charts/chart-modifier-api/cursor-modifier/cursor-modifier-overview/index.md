@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # The CursorModifier Type
 
-SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features/) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html) allows to you to:
+SciChart.js provides a cursors / crosshairs behavior via the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html), available out of the box. Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features) class, the [CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html) allows to you to:
 
 *   **Place a crosshair (cursor) on the chart which tracks the mouse**
 *   **Place a single aggregated tooltip for all series at the crosshair site**

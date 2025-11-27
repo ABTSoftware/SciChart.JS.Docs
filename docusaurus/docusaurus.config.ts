@@ -13,6 +13,7 @@ const config: Config = {
     title: "SciChart JS Docs",
     tagline: "The Ultimate JavaScript Chart Library",
     favicon: "img/cropped-favicon-32x32.png",
+    trailingSlash: false,
     markdown: {
         mermaid: true,
         hooks: {

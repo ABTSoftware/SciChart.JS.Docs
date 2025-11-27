@@ -1,0 +1,260 @@
+import {
+    ColumnSeriesDrawingProvider,
+    DataPointSelectionModifier,
+    ECoordinateMode,
+    EHorizontalAnchorPoint,
+    ELineDrawMode,
+    EllipsePointMarker,
+    EVerticalAnchorPoint,
+    FastColumnRenderableSeries,
+    FastLineRenderableSeries,
+    GradientParams,
+    ILineSeriesDrawingProviderProperties,
+    IOhlcPointSeries,
+    IPointMarker,
+    IPointMetadata,
+    IPointSeries,
+    LineSeriesDrawingProvider,
+    NativeTextAnnotation,
+    NumberRange,
+    NumericAxis,
+    OhlcPointSeriesResampled,
+    Point,
+    PointMarkerDrawingProvider,
+    RenderPassData,
+    RolloverModifier,
+    SciChartJsNavyTheme,
+    SciChartSurface,
+    SeriesInfo,
+    TrianglePointMarker,
+    vectorToArrayViewF64,
+    XyDataSeries,
+    BaseRenderDataTransform
+} from "scichart";
+
+// #region_A_start
+/**
+ * This transform turns xy data into ohlc.  Unselected points are in y (close).
+ * Selected points in low for pointmarkers, and selected plus points either side in high for lines.
+ * If you only need this for points or columns, you could transform to Xyy instead
+ */
+class SplitRenderDataTransform extends BaseRenderDataTransform<OhlcPointSeriesResampled> {
+    protected createPointSeries(): OhlcPointSeriesResampled {
+        return new OhlcPointSeriesResampled(this.wasmContext, new NumberRange(0, 0));
+    }
+    protected runTransformInternal(renderPassData: RenderPassData): IPointSeries {
+        const { xValues: oldX, yValues: oldY, indexes: oldI, resampled } = renderPassData.pointSeries;
+        // this.pointSeries is the target.  Clear the existing values
+        const { xValues, yValues, highValues, lowValues, indexes } = this.pointSeries;
+        // This shows how to properly handled resampled data, though this is not necessary here.
+        const iStart = resampled ? 0 : renderPassData.indexRange.min;
+        const iEnd = resampled ? oldX.size() - 1 : renderPassData.indexRange?.max;
+        const length = iEnd - iStart + 1;
+        // Since this produces a known number of points we can just fast resize the target pointSeries to the desired length.  All this will be overritten
+        xValues.resizeFast(length);
+        yValues.resizeFast(length);
+        highValues.resizeFast(length);
+        lowValues.resizeFast(length);
+        indexes.resizeFast(length);
+        // Create views over the source and target vectors for fast access.  These views are only valid as long as there is no memory allocation
+        const oldXView = vectorToArrayViewF64(oldX, this.wasmContext);
+        const oldYView = vectorToArrayViewF64(oldY, this.wasmContext);
+        const oldIndexView = vectorToArrayViewF64(oldI, this.wasmContext);
+        const xView = vectorToArrayViewF64(xValues, this.wasmContext);
+        const yView = vectorToArrayViewF64(yValues, this.wasmContext);
+        const highView = vectorToArrayViewF64(highValues, this.wasmContext);
+        const lowView = vectorToArrayViewF64(lowValues, this.wasmContext);
+        const indexView = vectorToArrayViewF64(indexes, this.wasmContext);
+
+        const ds = this.parentSeries.dataSeries as XyDataSeries;
+        let prevSelected = false;
+        let iOut = 0;
+        for (let i = iStart; i <= iEnd; i++) {
+            const index = resampled ? oldIndexView[i] : i;
+            const md = ds.getMetadataAt(index);
+            xView[iOut] = oldXView[i];
+            indexView[iOut] = oldIndexView[i];
+            let nextSelected = false;
+            if (i < iEnd) {
+                const nextmd = ds.getMetadataAt(index + 1);
+                nextSelected = nextmd.isSelected;
+            }
+            yView[iOut] = md.isSelected ? NaN : oldYView[i];
+            // For pointmarkers we just need the point itself
+            lowView[iOut] = md.isSelected ? oldYView[i] : NaN;
+            // need points either side of the selected value for the line to draw.
+            highView[iOut] = prevSelected || md.isSelected || nextSelected ? oldYView[i] : NaN;
+            prevSelected = md.isSelected;
+            iOut++;
+        }
+        return this.pointSeries;
+    }
+}
+// #region_A_end
+async function splitRenderDataTransform(divElementId: string) {
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
+        theme: new SciChartJsNavyTheme()
+    });
+
+    // #region_B_start
+
+    // Create X,Y Axis
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.05, 0.05) }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0, 0.05) }));
+
+    // Column series with different gradient fill for selected columns
+    const xValues = Array.from({ length: 20 }, (x, i) => i);
+    const colyValues = xValues.map(x => 10 + Math.random() * 40);
+    const colmetadata = xValues.map(x => ({
+        isSelected: Math.random() < 0.3
+    }));
+    const columnSeries = new FastColumnRenderableSeries(wasmContext, {
+        fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+            { color: "#DC7969", offset: 0 },
+            { color: "#7BCAAB", offset: 1 }
+        ]),
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: xValues,
+            yValues: colyValues,
+            metadata: colmetadata,
+            containsNaN: true
+        }),
+        stroke: "transparent"
+    });
+    // We cannot use a paletteProvider to change a gradient fill, so we have to use a second drawingProvider
+    const selectedColDP = new ColumnSeriesDrawingProvider(
+        wasmContext,
+        columnSeries,
+        // configure this to draw using the selected points
+        ps => (ps as IOhlcPointSeries).lowValues
+    );
+    selectedColDP.getProperties = parentSeries => {
+        const { stroke, strokeThickness, fill } = parentSeries;
+        return {
+            opacity: 1,
+            // Opacity setting does not currently apply to the gradient colors, so we have to apply it individually
+            fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
+                { color: "#DC7969" + "88", offset: 0 },
+                { color: "#83D2F5" + "88", offset: 1 }
+            ]),
+            stroke,
+            strokeThickness,
+            fill
+        };
+    };
+    columnSeries.drawingProviders.push(selectedColDP);
+    columnSeries.renderDataTransform = new SplitRenderDataTransform(
+        columnSeries,
+        wasmContext,
+        columnSeries.drawingProviders
+    );
+    sciChartSurface.renderableSeries.add(columnSeries);
+
+    const lineyValues = xValues.map(x => 30 + x + x * Math.random());
+    const linemetadata = xValues.map(x => ({
+        isSelected: Math.random() < 0.3
+    }));
+    // Line series with different pointmarker and dashed line for selected sections
+    const lineSeries = new FastLineRenderableSeries(wasmContext, {
+        dataSeries: new XyDataSeries(wasmContext, {
+            xValues: xValues,
+            yValues: lineyValues,
+            metadata: linemetadata,
+            containsNaN: true
+        }),
+        pointMarker: new EllipsePointMarker(wasmContext, {
+            width: 14,
+            height: 14,
+            strokeThickness: 0,
+            fill: "#50C7E0"
+        }),
+        stroke: "#30BC9A",
+        strokeThickness: 3,
+        drawNaNAs: ELineDrawMode.DiscontinuousLine
+    });
+
+    const trianglePM = new TrianglePointMarker(wasmContext, {
+        width: 15,
+        height: 15,
+        strokeThickness: 0,
+        fill: "#F48420"
+    });
+    // Additional line drawing for selected segments
+    const selectedLineDP = new LineSeriesDrawingProvider(
+        wasmContext,
+        lineSeries,
+        ps => (ps as IOhlcPointSeries).highValues
+    );
+    // Make this drawingProvider used dashed lines
+    selectedLineDP.getProperties = parentSeries => {
+        const { stroke, strokeThickness, opacity, isDigitalLine, lineType, drawNaNAs } = parentSeries;
+        return {
+            stroke,
+            strokeThickness,
+            strokeDashArray: [3, 4],
+            isDigitalLine,
+            lineType,
+            drawNaNAs,
+            containsNaN: true
+        } as ILineSeriesDrawingProviderProperties;
+    };
+    // Add this as the first drawingProviders so it draws behind all pointmarkers
+    lineSeries.drawingProviders.unshift(selectedLineDP);
+
+    // Additional point drawing for selecetd points
+    const triangleDP = new PointMarkerDrawingProvider(
+        wasmContext,
+        lineSeries,
+        ps => (ps as IOhlcPointSeries).lowValues
+    );
+    triangleDP.getProperties = series => {
+        return { pointMarker: trianglePM as IPointMarker };
+    };
+    lineSeries.drawingProviders.push(triangleDP);
+
+    // Apply the transform to all the drawingProviders
+    lineSeries.renderDataTransform = new SplitRenderDataTransform(lineSeries, wasmContext, lineSeries.drawingProviders);
+    sciChartSurface.renderableSeries.add(lineSeries);
+
+    sciChartSurface.annotations.add(
+        new NativeTextAnnotation({
+            xCoordinateMode: ECoordinateMode.Pixel,
+            yCoordinateMode: ECoordinateMode.Pixel,
+            x1: 20,
+            y1: 20,
+            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
+            verticalAnchorPoint: EVerticalAnchorPoint.Top,
+            text: "Selected points are styled differently.  Click and drag to change the selection",
+            textColor: "#FFFFFF",
+            fontSize: 16,
+            opacity: 0.77
+        })
+    );
+
+    // Optional: Add Interactivity Modifiers
+    sciChartSurface.chartModifiers.add(
+        new DataPointSelectionModifier({
+            allowClickSelect: true,
+            onSelectionChanged: args => {
+                lineSeries.renderDataTransform.requiresTransform = true;
+                columnSeries.renderDataTransform.requiresTransform = true;
+            }
+        })
+    );
+    sciChartSurface.chartModifiers.add(
+        new RolloverModifier({
+            tooltipDataTemplate: (seriesInfo: SeriesInfo) => {
+                const vals: string[] = [];
+                vals.push(`X ${seriesInfo.formattedXValue}`);
+                vals.push(`Y ${seriesInfo.formattedYValue}`);
+                vals.push(`selected ${(seriesInfo.pointMetadata as IPointMetadata).isSelected}`);
+                return vals;
+            }
+        })
+    );
+
+    sciChartSurface.zoomExtents();
+    // #region_B_end
+}
+
+splitRenderDataTransform("scichart-root");
