@@ -1,49 +1,50 @@
+import fs from "fs";
+import path from "path";
+
 /**
- * Recursively scans the /examples directory
- * and removes trailing slashes from URLs
- * that contain "scichart.com".
- *
- * Example:
- *   https://www.scichart.com/demo/react/ → https://www.scichart.com/demo/react
+ * Remove trailing slashes from internal markdown links.
+ * Example: [Link](/my/path/) -> [Link](/my/path)
  */
+const DOCS_DIR = path.join(process.cwd(), "docs");
 
-const fs = require("fs");
-const path = require("path");
-
-const URL_REGEX = /(https?:\/\/[^"'\s]*scichart\.com[^"'\s]*?)\/(?=["'\s])/g;
-
-function processFile(filePath) {
+function fixLinksInMarkdown(filePath) {
     let content = fs.readFileSync(filePath, "utf8");
 
-    const newContent = content.replace(URL_REGEX, "$1");
+    const updated = content.replace(
+        /]\((\/[^\s)]+?)\/\)/g, // match ](/path/)
+        (match, p1) => {
+        // Skip images and URLs with extensions: .png, .jpg, .svg, .md, .js, etc.
+        if (/\.(png|jpg|jpeg|gif|svg|md|js|ts|pdf|ico)$/i.test(p1)) {
+            return match; // do not modify
+        }
 
-    if (newContent !== content) {
-        fs.writeFileSync(filePath, newContent, "utf8");
-        console.log("- Updated:", filePath);
+        // Keep root "/" intact
+        if (p1 === "/") return match;
+
+        return `](${p1})`;
+        }
+    );
+
+    if (updated !== content) {
+        fs.writeFileSync(filePath, updated, "utf8");
+        console.log("Fixed:", filePath);
     }
 }
 
 function walk(dir) {
-    const files = fs.readdirSync(dir);
+    const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-    const DONT_TOUCH = ["node_modules", ".git", "build", "remove-trailing-slashes.js"];
+    for (const entry of entries) {
+        const fullPath = path.join(dir, entry.name);
 
-    for (const file of files) {
-        if (DONT_TOUCH.includes(file)) {
-            continue;
-        }
-
-        const fullPath = path.join(dir, file);
-        const stat = fs.statSync(fullPath);
-
-        if (stat.isDirectory()) {
+        if (entry.isDirectory()) {
             walk(fullPath);
-        } else if (stat.isFile()) {
-            processFile(fullPath);
+        } else if (entry.isFile() && /\.(md|mdx)$/i.test(entry.name)) {
+            fixLinksInMarkdown(fullPath);
         }
     }
 }
 
-console.log("- Scanning for `scichart.com` URLs with trailing slashes...");
-walk(__dirname);
-console.log("Done! All URLs normalized.");
+console.log("Removing trailing slashes from internal markdown links...");
+walk(DOCS_DIR);
+console.log("Done!");

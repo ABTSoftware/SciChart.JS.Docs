@@ -18,7 +18,7 @@ Automatic Gridline, Label or Tick Spacing
 
 In SciChart.js, the difference between two Major Gridlines is defined by [axisCore.MajorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#majordelta). The difference between two minor gridlines is defined by [axisCore.MinorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#minordelta).
 
-By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit/) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
+By default, **MajorDelta** and **MinorDelta** values are calculated automatically when [axis.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#autoticks) = true. Major/Minor deltas are calculated dynamically according to the [VisibleRange](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit) and size of an axis in pixels. This means as you zoom and pan, these properties are updated and you get a dynamic gridline spacing effect.
 
 ### Configuring Automatic Tick Spacing
 
