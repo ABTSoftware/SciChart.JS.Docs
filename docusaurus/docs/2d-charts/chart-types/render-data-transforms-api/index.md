@@ -129,8 +129,6 @@ This class extends the BaseRenderDataTransform to convert XY data into OHLC (Ope
 
 * This object serves as the container for transformed OHLC points.
 
-* Initializes with a default numeric range of 0 to 0.
-
 **runTransformInternal(renderPassData: RenderPassData): IPointSeries**
 * The core transformation logic is implemented here.
 
