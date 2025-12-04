@@ -82,7 +82,7 @@ When `Is IDE Tool: 1` in the license debug output, SciChart.js has detected you 
 
 In this case you will need to:
 
-1. **Activate a developer license** on your development PC following the steps from [here](/user-manual/licensing-scichart-js/activating-paid-licenses)
+1. **Activate a developer license** on your development PC following the steps from [here](/user-manual/licensing-scichart-js/activating-paid-licenses/)
 2. **Ensure your support expiry date** (see `ExpiryDate` in License Debug) is later than the release date of the library version you are using.
 3. **Keep the Licensing Wizard application open** or minimise to system tray (for periodic license checks)
 
@@ -94,7 +94,7 @@ If you update SciChart.js in your app to a version that was released after your 
 
 To resolve this, either roll-back SciChart.js to a version released before your support-expiry, or renew a developer subscription.
 
-Once renewed, then re-activate your developer license following steps from [here](/user-manual/licensing-scichart-js/activating-paid-licenses) before updating SciChart.js in local dev.
+Once renewed, then re-activate your developer license following steps from [here](/user-manual/licensing-scichart-js/activating-paid-licenses/) before updating SciChart.js in local dev.
 :::
 
 ### I see a trial / community watermark in my live deployed app
@@ -108,7 +108,7 @@ Expected: somedomain.com, Actual: anotherdomain.com
 
 In this case you will need to:
 
-1. **Generate a runtime key with the correct domains** by following steps from [here](/user-manual/licensing-scichart-js/deploying-to-live-sites).
+1. **Generate a runtime key with the correct domains** by following steps from [here](/user-manual/licensing-scichart-js/deploying-to-live-sites/).
 2. **Set the updated runtime license key** in your application.
 3. **Redeploy** your application.
 
@@ -137,7 +137,7 @@ If you still experience problems, contact tech support with your entire license 
 
 ### I see a trial / community watermark in my test domain
 
-Test domains added to the runtime key display a watermark by design. See the page on [domain licensing](/user-manual/licensing-scichart-js/deploying-to-live-sites) to find out more.
+Test domains added to the runtime key display a watermark by design. See the page on [domain licensing](/user-manual/licensing-scichart-js/deploying-to-live-sites/) to find out more.
 
 ## Step 3: Where to get further help & support
 

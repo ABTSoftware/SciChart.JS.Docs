@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 
 /**
- * Remove trailing slashes from internal markdown links.
- * Example: [Link](/my/path/) -> [Link](/my/path)
+ * ADD trailing slashes to internal markdown links.
+ * Example: [Link](/my/path) -> [Link](/my/path/)
  */
 const DOCS_DIR = path.join(process.cwd(), "docs");
 
@@ -11,17 +11,14 @@ function fixLinksInMarkdown(filePath) {
     let content = fs.readFileSync(filePath, "utf8");
 
     const updated = content.replace(
-        /]\((\/[^\s)]+?)\/\)/g, // match ](/path/)
+        /]\((\/[^\s)#?]+)\)/g, // match ](/path)
         (match, p1) => {
-        // Skip images and URLs with extensions: .png, .jpg, .svg, .md, .js, etc.
-        if (/\.(png|jpg|jpeg|gif|svg|md|js|ts|pdf|ico)$/i.test(p1)) {
-            return match; // do not modify
-        }
-
-        // Keep root "/" intact
-        if (p1 === "/") return match;
-
-        return `](${p1})`;
+            if (p1 === "/") return match;
+            if (p1.endsWith("/")) return match;
+            if (/\.(png|jpg|jpeg|gif|svg|md|js|ts|pdf|ico|zip)$/i.test(p1)) {
+                return match;
+            }
+            return `](${p1}/)`;
         }
     );
 
@@ -45,6 +42,6 @@ function walk(dir) {
     }
 }
 
-console.log("Removing trailing slashes from internal markdown links...");
+console.log("Adding trailing slashes to internal markdown links...");
 walk(DOCS_DIR);
 console.log("Done!");

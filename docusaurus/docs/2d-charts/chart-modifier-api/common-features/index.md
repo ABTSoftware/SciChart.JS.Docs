@@ -6,7 +6,7 @@ sidebar_position: 2
 
 All the ChartModifiers provided by SciChart.js implement the [IChartModifierBase interface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ichartmodifierbase.html) and derive from the [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html) class. These provide a powerful API which gives the full access to internals of a chart, axes, series, annotations, mouse, touch events and more.
 
-Please refer to the [What is a ChartModifier](/2d-charts/chart-modifier-api/chart-modifier-api-overview) article for the complete list of all the Chart Modifiers available out of the box in SciChart.
+Please refer to the [What is a ChartModifier](/2d-charts/chart-modifier-api/chart-modifier-api-overview/) article for the complete list of all the Chart Modifiers available out of the box in SciChart.
 
 Common Features of Chart Modifiers
 ----------------------------------
@@ -183,7 +183,7 @@ When a series is included/excluded, the modifier will update its internal state 
 
 ### ChartModifierBase2D Type
 
-The [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html) type provides a base class for all modifiers on 2D [SciChartSurfaces](/2d-charts/surface/scichart-surface-type-overview) and 2D [SciChartPolarSurfaces](/2d-charts/surface/scichart-polar-surface-type). Use this type when creating custom modifiers for 2D Charts.
+The [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html) type provides a base class for all modifiers on 2D [SciChartSurfaces](/2d-charts/surface/scichart-surface-type-overview/) and 2D [SciChartPolarSurfaces](/2d-charts/surface/scichart-polar-surface-type/). Use this type when creating custom modifiers for 2D Charts.
 
 ### ChartModifierBase3D Type
 
@@ -191,4 +191,4 @@ The [ChartModifierBase3D:blue_book:](https://www.scichart.com/documentation/js/
 
 #### See Also
 
-* [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
+* [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview/)

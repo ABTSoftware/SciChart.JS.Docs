@@ -32,7 +32,7 @@ async function initSciChart1() {
 SciChart3DSurface.createSingle()
 --------------------------------
 
-[SciChart3DSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#createsingle) is also an asynchronous static function which places a SciChart3DSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/2d-charts/performance-tips/performance-tips-and-tricks) article.
+[SciChart3DSurface.createSingle():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#createsingle) is also an asynchronous static function which places a SciChart3DSurface into the DOM. However, this variation forces one WebGL context per chart. This can improve performance in multi-chart scenarios but you must obey the WebGL Context Limits per browser. More on this in our [Performance Tips](/2d-charts/performance-tips/performance-tips-and-tricks/) article.
 
 <CodeSnippetBlock labels={["SciChart3DSurface.createSingle()"]}>
 ```ts showLineNumbers

@@ -58,14 +58,14 @@ To purchase advanced license types, please [contact sales](https://www.scichart.
 
 ### How to license my domain / website to use SciChart?
 
-Website Domain licensing is covered in the page [deploying SciChart.js to domains](/user-manual/licensing-scichart-js/deploying-to-live-sites).
+Website Domain licensing is covered in the page [deploying SciChart.js to domains](/user-manual/licensing-scichart-js/deploying-to-live-sites/).
 
 ### How to license my embedded system / OEM device to use SciChart?
-Advanced licensing & OEM cases are covered in the page [deploying SciChart.js with advanced licensing](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing).
+Advanced licensing & OEM cases are covered in the page [deploying SciChart.js with advanced licensing](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/).
 
 ### Where is my License Key after purchase?
 
-Where is my license key, locating license keys and management of license keys is covered in the page [where are my license keys after purchase?](/user-manual/licensing-scichart-js/where-are-my-license-keys)
+Where is my license key, locating license keys and management of license keys is covered in the page [where are my license keys after purchase?](/user-manual/licensing-scichart-js/where-are-my-license-keys/)
 
 ### Is the paid version of SciChart watermarked?
 
@@ -73,7 +73,7 @@ The 'Powered by SciChart' watermark is only shown in the free community edition 
 
 ### I'm seeing the Trial / Community Watermark after purchase how do I remove this?
 
-Take a look at our [SciChart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting) guide here!
+Take a look at our [SciChart.js licensing troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting/) guide here!
 
 ## What License Type do I need for my Application?
 

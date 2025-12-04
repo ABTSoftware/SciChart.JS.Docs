@@ -49,7 +49,7 @@ In this tab, you can view the serial keys associated with your license order(s) 
 
 Click on the **Serial Keys** tab in [scichart.com/my-account/subscriptions](https://www.scichart.com/my-account/subscriptions) to reveal the developer serial keys.
 
-Send these to your team along with instructions to [activate a developer license](/user-manual/licensing-scichart-js/activating-paid-licenses)
+Send these to your team along with instructions to [activate a developer license](/user-manual/licensing-scichart-js/activating-paid-licenses/)
 
 ### Unassigning or transferring a developer license (serial key) from a team member
 

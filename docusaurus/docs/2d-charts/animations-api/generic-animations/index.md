@@ -954,6 +954,6 @@ drawAnnotationAnimationsChart("scichart");
 #### See Also
 
 - [The Animations API](/2d-charts/animations-api/animations-api-overview/index.md)
-- [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+- [Series Startup Animations](/2d-charts/animations-api/series-startup-animations/)
 - [Style Transition Animations](/2d-charts/animations-api/style-transition-animations/index.md)
 - [Dataset Animations](/2d-charts/animations-api/dataset-animations/index.md)

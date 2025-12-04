@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Chart Styling - ThemeManager API
 
-SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/2d-charts/styling-and-theming/creating-custom-theme), so you can truly customize the chart to fit your application.
+SciChart ships with a light and dark theme out of the box, which you can select and apply to the charts in your application. Most of the components of SciChart are also stylable, and you can [create your own themes](/2d-charts/styling-and-theming/creating-custom-theme/), so you can truly customize the chart to fit your application.
 
 You can view our themes live at the [ThemeManager example, over at the SciChart.js Examples Suite](https://www.scichart.com/demo/javascript-chart-themes).
 
@@ -73,5 +73,5 @@ In SciChart.js v3, we've added a new Navy theme. This looks great on both a ligh
 
 #### See Also
 
-* [Chart Styling - Creating a Custom Theme](/2d-charts/styling-and-theming/creating-custom-theme)
-* [Chart Styling - Style Chart Parts in Code](/2d-charts/styling-and-theming/style-chart-parts-in-code)
+* [Chart Styling - Creating a Custom Theme](/2d-charts/styling-and-theming/creating-custom-theme/)
+* [Chart Styling - Style Chart Parts in Code](/2d-charts/styling-and-theming/style-chart-parts-in-code/)

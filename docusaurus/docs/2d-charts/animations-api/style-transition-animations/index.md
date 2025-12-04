@@ -76,6 +76,6 @@ This results in animating the pointmarker size, stroke and fill on a scatter ser
 
 #### See Also
 * [The Animations API](/2d-charts/animations-api/animations-api-overview/index.md)
-* [Series Startup Animations](/2d-charts/animations-api/series-startup-animations)
+* [Series Startup Animations](/2d-charts/animations-api/series-startup-animations/)
 * [Dataset Animations](/2d-charts/animations-api/dataset-animations/index.md)
 * [Generic Animations](/2d-charts/animations-api/generic-animations/index.md)

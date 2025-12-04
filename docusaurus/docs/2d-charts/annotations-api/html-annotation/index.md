@@ -22,12 +22,12 @@ The annotations could be divided by the node type where they are rendered.
 - Native "Render Context" Annotations - rendered using WebGl and displayed on the canvas layer.
   Some examples are:
 
-    - [BoxAnnotation](/2d-charts/annotations-api/box-annotation)
-    - [LineAnnotation](/2d-charts/annotations-api/line-annotation)
-    - [HorizontalLineAnnotation](/2d-charts/annotations-api/horizontal-line-annotation)
-    - [VerticalLineAnnotation](/2d-charts/annotations-api/vertical-line-annotation)
-    - [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation)
-    - [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview)
+    - [BoxAnnotation](/2d-charts/annotations-api/box-annotation/)
+    - [LineAnnotation](/2d-charts/annotations-api/line-annotation/)
+    - [HorizontalLineAnnotation](/2d-charts/annotations-api/horizontal-line-annotation/)
+    - [VerticalLineAnnotation](/2d-charts/annotations-api/vertical-line-annotation/)
+    - [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation/)
+    - [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview/)
 
 - HTML Annotations - rendered as a `div` element placed within a DOM layer.
   For example:
@@ -35,8 +35,8 @@ The annotations could be divided by the node type where they are rendered.
     - [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmltextannotation.html)
 - SVG Annotations - rendered as an SVG element on one of the SVG layers.
   For example:
-    - [CustomAnnotation](/2d-charts/annotations-api/custom-annotation)
-    - [TextAnnotation](/2d-charts/annotations-api/text-annotation)
+    - [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/)
+    - [TextAnnotation](/2d-charts/annotations-api/text-annotation/)
 
 We refer to HTML and SVG Annotations as "DOM Annotations" since they share some similar logic and the same rendering principles. Thus, the common base class is [DomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/domannotationbase.html).
 

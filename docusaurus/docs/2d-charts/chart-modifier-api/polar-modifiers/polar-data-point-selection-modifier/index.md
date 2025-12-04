@@ -19,6 +19,6 @@ The [PolarDataPointSelectionModifier:blue_book:](https://www.scichart.com/docume
 
 #### See Also:
 
-* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview)
-* [PolarSeriesSelectionModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-series-selection-modifier)
+* [What is the ChartModifier API?](/2d-charts/chart-modifier-api/chart-modifier-api-overview/)
+* [PolarSeriesSelectionModifier](/2d-charts/chart-modifier-api/polar-modifiers/polar-series-selection-modifier/)
 * [DataPointSelectionModifier](/2d-charts/chart-modifier-api/selection/data-point-selection/index.md)

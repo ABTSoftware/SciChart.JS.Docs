@@ -22,7 +22,7 @@
     "bookmark": "node link-bookmark-checker.js",
     "status": "node count-docs.js",
     "table-of-content": "node generate-docs-toc.js",
-    "remove-trailing-slashes": "node remove-trailing-slashes.js"
+    "enforce-trailing-slashes": "node enforce-link-trailing-slashes.js"
   },
   "dependencies": {
     "@cmfcmf/docusaurus-search-local": "^1.2.0",

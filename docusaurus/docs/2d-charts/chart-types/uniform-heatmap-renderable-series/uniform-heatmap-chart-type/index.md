@@ -155,6 +155,6 @@ This is the result
 
 #### See Also
 
-* [Updating (Realtime) Heatmaps](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime)
-* [Color Maps and Legends of Heatmap](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends)
-* [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview)
+* [Updating (Realtime) Heatmaps](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/)
+* [Color Maps and Legends of Heatmap](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/)
+* [Start Here - RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview/)
