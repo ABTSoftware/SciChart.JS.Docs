@@ -17,7 +17,7 @@ To get access, please follow the steps below:
 
 ## Step 1: Activate your developer license
 
-You will need to activate a developer license for product code `SC-BUNDLE-SDK-ENTERPRISE` following the steps from [activating a paid developer license](/user-manual/licensing-scichart-js/activating-paid-licenses)
+You will need to activate a developer license for product code `SC-BUNDLE-SDK-ENTERPRISE` following the steps from [activating a paid developer license](/user-manual/licensing-scichart-js/activating-paid-licenses/)
 
 ## Step 2: Link your github account
 

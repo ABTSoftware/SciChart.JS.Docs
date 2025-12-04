@@ -23,10 +23,10 @@ All of these classes inherit LabelProviderBase2D. Below there is a mapping betw
 
 | Axis Type | LabelProvider Type |
 |-----------|--------------------|
-| **[NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis)** and **[PolarNumericAxis](/2d-charts/axis-api/axis-types/polar-numeric-axis)** | [NumericLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericlabelprovider.html) |
-| **[DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis)** | [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html) |
-| **[CategoryAxis](/2d-charts/axis-api/axis-types/category-axis)** and **[PolarCategoryAxis](/2d-charts/axis-api/axis-types/polar-category-axis)** | [DateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datelabelprovider.html) |
-| **[LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis)** | [LogarithmicLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/logarithmiclabelprovider.html) |
+| **[NumericAxis](/2d-charts/axis-api/axis-types/numeric-axis/)** and **[PolarNumericAxis](/2d-charts/axis-api/axis-types/polar-numeric-axis/)** | [NumericLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericlabelprovider.html) |
+| **[DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis/)** | [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html) |
+| **[CategoryAxis](/2d-charts/axis-api/axis-types/category-axis/)** and **[PolarCategoryAxis](/2d-charts/axis-api/axis-types/polar-category-axis/)** | [DateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/datelabelprovider.html) |
+| **[LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/)** | [LogarithmicLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/logarithmiclabelprovider.html) |
 
 We've included examples of how to format labels via the built-in label providers in the above articles. Click on **NumericAxis** or **DateTimeNumericAxis** above for more info and a code sample.
 
@@ -121,6 +121,6 @@ See the following sections with worked examples on how to create custom label pr
 
 #### See Also
 
-* [Axis Label Formatting - Text / String Axis](/2d-charts/axis-api/axis-types/text-string-axis)
+* [Axis Label Formatting - Text / String Axis](/2d-charts/axis-api/axis-types/text-string-axis/)
 
 

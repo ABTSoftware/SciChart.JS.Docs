@@ -24,14 +24,14 @@ yAxis.axisAlignment = EAxisAlignemnt.Left; // or Right
 This transposes the entire chart including series rendering, tooltips and annotations and resulting in a vertical chart which renders top to bottom.
 
 :::tip
-Read more about creating [Vertical Charts here](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis).
+Read more about creating [Vertical Charts here](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/).
 :::
 
 ### Recap on Synchronizing Multiple Charts
 
 In SciChart.js, multiple charts may be synchronized to ensure that zooming/panning operations, tooltips or cursors and even axis sizes are synchronized. This allows you to create multi chart pane applications, or complex dashboards which zoom and pan or allow tooltips/cursors in unison.
 
-The method to synchronize multiple charts involves several steps, which are laid out in the page [Synchronizing Multiple Charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts)
+The method to synchronize multiple charts involves several steps, which are laid out in the page [Synchronizing Multiple Charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/)
 
 Creating a pair of Vertical Charts
 ----------------------------------

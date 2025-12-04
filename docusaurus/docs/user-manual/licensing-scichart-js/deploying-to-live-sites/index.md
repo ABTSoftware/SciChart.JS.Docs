@@ -22,7 +22,7 @@ For purchasing, please visit [scichart.com/shop](https://www.scichart.com/shop).
 If you are deploying to embedded devices (ie the site will run on `localhost`) or you are an OEM and the application will be deployed by your customers to
 domains that you do not control, then we have alternative licensing mechanisms.
 
-Please see [deploying with advanced licensing](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing) for more info.
+Please see [deploying with advanced licensing](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/) for more info.
 :::
 
 When you have a paid SciChart.js developer license, to deploy an application to a domain you need to register that domain with your account,
@@ -30,7 +30,7 @@ generate and insert the runtime key into your app. Please find the instructions 
 
 ## Adding / removing production domains to your scichart.js license key
 
-1. Head over to [scichart.com/my-account](https://www.scichart.com/my-account/) to adminster your license keys (Need help? See [location and management of license keys](/user-manual/licensing-scichart-js/where-are-my-license-keys))
+1. Head over to [scichart.com/my-account](https://www.scichart.com/my-account/) to adminster your license keys (Need help? See [location and management of license keys](/user-manual/licensing-scichart-js/where-are-my-license-keys/))
 2. In the section **Orders & Keys** - **Manage Licenses** - **Hostnames** you can add/remove hostnames for your license
 3. Enter the domain then select from the dropdown "Production" to add a production domain, or "Test" to add a test domain
 4. Click "Submit"

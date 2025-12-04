@@ -7,10 +7,10 @@ sidebar_position: 6
 The Stacked Axis feature in SciChart allows you to specify the layout of the axis panel. Normally when you have multiple XAxis, they are stacked vertically. However, you can switch this to stack horizontally. Custom and complex layouts are possible allowing for all kinds of chart scenarios.
 
 :::warning
-[Polar Charts](/2d-charts/surface/scichart-polar-surface-type) do not support stacked axes yet
+[Polar Charts](/2d-charts/surface/scichart-polar-surface-type/) do not support stacked axes yet
 :::
 
-In the [previous article we demonstrated Vertically Stacked Axis](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout). This is where you specify a layout strategy for Y Axis on the left or right of the chart to stack axis above each other.
+In the [previous article we demonstrated Vertically Stacked Axis](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/). This is where you specify a layout strategy for Y Axis on the left or right of the chart to stack axis above each other.
 
 Create a Horizontally Stacked Axis Chart
 ----------------------------------------
@@ -100,7 +100,7 @@ Combining Vertical (rotated) Charts & Stacked Axis
 
 Part of the magic of SciChart.js is the sheer number of combinations you can have for chart and axis layout!
 
-If we combine the [Vertical Chart feature](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis) where you set **XAxis.axisAlignment** = Left and **YAxis.axisAlignment** = Top with the Horizontally Stacked Axis feature where we can re-arrange the layout of axis on the top/bottom of the chart, we can achieve things like this:
+If we combine the [Vertical Chart feature](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/) where you set **XAxis.axisAlignment** = Left and **YAxis.axisAlignment** = Top with the Horizontally Stacked Axis feature where we can re-arrange the layout of axis on the top/bottom of the chart, we can achieve things like this:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=./Step3/demo.ts start=region_A_start end=region_A_end
@@ -112,6 +112,6 @@ If we combine the [Vertical Chart feature](/2d-charts/axis-api/multi-axis-and-l
 
 #### See Also
 
-* [Inner Axis Layout](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout)
-* [Secondary and Multiple Axis](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview)
+* [Inner Axis Layout](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout/)
+* [Secondary and Multiple Axis](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/)
 

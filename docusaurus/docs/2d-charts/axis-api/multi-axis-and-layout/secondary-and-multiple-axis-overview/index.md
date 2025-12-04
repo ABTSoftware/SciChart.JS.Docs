@@ -51,7 +51,7 @@ This code results in the following configuration of axis. Also seen in our [Mul
 Attaching Chart Series to an Axis 
 ----------------------------------
 
-Every [RenderableSeries](/2d-charts/chart-types/renderable-series-api-overview) (the chart types in SciChart.js e.g. Line, Candlestick, Column) and every [Annotation](/2d-charts/annotations-api/annotations-api-overview) (Trendlines, text or markers laid over the chart) and some [ChartModifiers](/2d-charts/chart-modifier-api/chart-modifier-api-overview) (zoom, pan behaviours) need to be attached to a particular axis.
+Every [RenderableSeries](/2d-charts/chart-types/renderable-series-api-overview/) (the chart types in SciChart.js e.g. Line, Candlestick, Column) and every [Annotation](/2d-charts/annotations-api/annotations-api-overview/) (Trendlines, text or markers laid over the chart) and some [ChartModifiers](/2d-charts/chart-modifier-api/chart-modifier-api-overview/) (zoom, pan behaviours) need to be attached to a particular axis.
 
 The link between series and axis is done via [AxisCore.id:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html#id), and [BaseRenderableSeries.xAxisId:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#xaxisid) and [BaseRenderableSeries.yAxisId:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#yaxisid) properties.
 

@@ -20,9 +20,9 @@ Before comparing render events, it's important to understand the following:
 
 For more details, check out these pages:
 
-- [SciChartSurface.create() vs. createSingle()](/2d-charts/surface/new-scichart-surface)
-- [SciChart3DSurface.create() vs. createSingle()](/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single)
-- [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview)
+- [SciChartSurface.create() vs. createSingle()](/2d-charts/surface/new-scichart-surface/)
+- [SciChart3DSurface.create() vs. createSingle()](/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single/)
+- [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview/)
 :::
 
 ## Lifecycle EventHandlers List
@@ -73,7 +73,7 @@ The library provides a helper function
 [receiveNextEvent:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#receivenextevent) to promisify a single event occurrence.
 
 Additionally, a surface exposes a [nextStateRender:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#nextstaterender) method,
-which works similarly to `receiveNextEvent`, but subscribes only to `renderedToDestination` and allows passing options to control the [Suspend Updates API](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing).
+which works similarly to `receiveNextEvent`, but subscribes only to `renderedToDestination` and allows passing options to control the [Suspend Updates API](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing/).
 
 ## Usage Examples
 

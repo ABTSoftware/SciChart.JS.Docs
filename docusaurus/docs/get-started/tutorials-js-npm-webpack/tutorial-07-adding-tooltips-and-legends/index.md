@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Tutorial 07 - Adding Tooltips and Legends
 
-In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends) we explained how to add annotations to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add tooltips and legends.
+In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends/) we explained how to add annotations to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add tooltips and legends.
 
 :::tip
 Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_7_Adding_Tooltips_and_Legends)
@@ -96,7 +96,7 @@ So far we have created a new chart, added both X axis and Y axis and plotted 5�
 Add a Legend
 ------------
 
-Now we will add a chart legend. In SciChart, a chart legend can be created and configured via the [LegendModifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier):
+Now we will add a chart legend. In SciChart, a chart legend can be created and configured via the [LegendModifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/):
 
 <CodeSnippetBlock labels={["index.js region B"]}>
 ```js
@@ -115,7 +115,7 @@ Now we will add a chart legend. In SciChart, a chart legend can be created and 
 Add a Cursor (Crosshair)
 ------------------------
 
-[CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview) adds a crosshair onto a [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview). When you place the cursor over the SciChartSurface, it shows X and Y values of the current point in tooltips over the Axes.
+[CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/) adds a crosshair onto a [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/). When you place the cursor over the SciChartSurface, it shows X and Y values of the current point in tooltips over the Axes.
 
 <CodeSnippetBlock labels={["index.js region C"]}>
 ```js
@@ -137,15 +137,15 @@ Add a Cursor (Crosshair)
 ![](img/3.png)
 
 :::tip
-To learn more about the CursorModifier, how to add configurable tooltips and how to show/hide or style parts like the crosshair, axis labels, see the [CursorModifier documentation](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview).
+To learn more about the CursorModifier, how to add configurable tooltips and how to show/hide or style parts like the crosshair, axis labels, see the [CursorModifier documentation](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/).
 :::
 
 Add a RolloverModifier Tooltip
 ------------------------------
 
-Tooltips may be added to the [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview) using the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier). This is a [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html) derived type which is attached to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) property.
+Tooltips may be added to the [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/) using the [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/). This is a [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase.html) derived type which is attached to the [SciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) property.
 
-Remove the previous CursorModifier from the chart. Now add a [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier) by add this code:
+Remove the previous CursorModifier from the chart. Now add a [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/) by add this code:
 
 <CodeSnippetBlock labels={["index.js region D"]}>
 ```js
@@ -171,6 +171,6 @@ Further Reading
 
 To learn more about cursors and legends in SciChart please find links to the corresponding documentation articles below:
 
-*   [Cursor Modifier](/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier)
-*   [Rollover Modifier](/2d-charts/chart-modifier-api/rollover-modifier)
-*   [Legend Modifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier)
+*   [Cursor Modifier](/2d-charts/chart-modifier-api/cursor-modifier/active-legends-cursor-modifier/)
+*   [Rollover Modifier](/2d-charts/chart-modifier-api/rollover-modifier/)
+*   [Legend Modifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/)
