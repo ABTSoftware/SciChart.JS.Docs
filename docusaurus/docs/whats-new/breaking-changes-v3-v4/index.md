@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Breaking Changes in SciChart.js v4.x from v3.x
