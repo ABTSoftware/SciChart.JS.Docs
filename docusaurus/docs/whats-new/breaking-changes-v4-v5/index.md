@@ -10,19 +10,31 @@ If you are using default native font, you will notice some small changes.
 
 If there are places where you are using Arial font explicitly you may want to set `SciChartDefaults.autoFontName = 'Arial'` in order to pick up the new default font. Another options would be loading Arial font from file or disabling native text.
 
-**Setting autoFontName**
-
-`SciChartDefaults.autoFontName = 'SomeFontName'`
-
-**Setting FontFamily for the auto font**
-
-```ts
-SciChartDefaults.nativeFontFamily = "MyCustomFont";
-sciChartSurface.registerFont(
-    "MyCustomFont",
-    "https://fontUrl.com/path/to/font/fontName.ttf"
-);
-```
+**The way font resolution works is as following:**
+1. There is a constructor option on the Axis, so set whether to use native text or canvas text. Defaults to native text which is more performant.
+    ```
+    const xAxis = new NumericAxis(wasmContext, {
+        useNativeText: true
+    });
+    ```
+2. If font family is not provided `SciChartDefaults.autoFontName` will be used. 
+3. If for a text the `autoFontName` is used the actual font family will be `SciChartDefaults.nativeFontFamily` for native text and `SciChartDefaults.canvasFontFamily` for canvas text.
+4. All these values can be changed
+    ```
+    // Useful if you need to replace all font family occurrences with a default font
+    SciChartDefaults.autoFontName = 'SomeFontFamily'
+    // Font family for default native text
+    SciChartDefaults.nativeFontFamily = 'NativeFontFamilyForAutoFont'
+    // Font family for default canvas text
+    SciChartDefaults.canvasFontFamily = 'CanvasFontFamilyForAutoFont'
+    ```
+5. In addition you may want to set from where to load the native font. This setting applies for all native fonts including the default one.
+    ```ts
+    sciChartSurface.registerFont(
+        "MyCustomNativeFont",
+        "https://fontUrl.com/path/to/font/fontName.ttf"
+    );
+    ```
 
 ## Support for WebGL1 has been abandoned
 
@@ -53,6 +65,13 @@ const config: Configuration = {
     ]
 };
 ```
+
+**SIMD settings**
+
+`SciChartDefaults.useWasmSimd` defines how WebAssembly SIMD should be used by SciChart. Defaults to Auto.
+- Always: Always use SIMD-enabled binaries (you must serve scichart2d.wasm, scichart3d.wasm)
+- Never: Never use SIMD, always use fallback binaries (you must serve scichart2d-nosimd.wasm, scichart3d-nosimd.wasm)
+- Auto: Automatically detect SIMD support and choose appropriate binary (you must serve both variants)
 
 ## DataLabelState.xValues yValues yFinalValues and PolarColumnDataLabelState.x1Values
 
