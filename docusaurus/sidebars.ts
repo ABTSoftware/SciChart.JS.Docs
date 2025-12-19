@@ -19,7 +19,7 @@ const sidebars: SidebarsConfig = {
         {
             type: "link",
             label: "API Documentation",
-            href: "https://www.scichart.com/documentation/js/v4/typedoc/index.html"
+            href: "https://www.scichart.com/documentation/js/v5/typedoc/index.html"
         }
     ]
 

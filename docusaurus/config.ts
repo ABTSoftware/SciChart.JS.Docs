@@ -1,1 +1,1 @@
-export const baseUrl = "/documentation/js/v4/"
+export const baseUrl = "/documentation/js/v5/"
