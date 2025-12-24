@@ -13,7 +13,7 @@ We recommend going through the following tutorials which explain the API first.�
 *   [Adding Realtime Updates](/get-started/tutorials-js-npm-webpack/tutorial-04-adding-realtime-updates/)
 
 :::tip
-Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_1_Setting_up_html_page_with_SciChart_CDN)
+Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_1_Setting_up_html_page_with_SciChart_CDN)
 :::
 
 Including SciChart.js in an HTML Page using CDN
@@ -33,7 +33,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
 1.  Choose what version of SciChart you want to use. To find out which versions are available, head over to [npmjs.com/package/scichart](https://www.npmjs.com/package/scichart) and click on versions.
 2.  Add script pointing to SciChart.js version into the head section of your html file.
 
-    a. For instance to use version `4.0.0-beta.734` add this script:
+    a. For instance to use version `5.0.0-alpha.135` add this script:
 
     <CodeSnippetBlock labels={["Include specific version index.html"]}>
     ```html {6-9} showLineNumbers
@@ -43,7 +43,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
         <title>SciChart.js Browser Bundle Tutorial 1</title>
         <script
-        src="https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/index.min.js"
+        src="https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js"
         crossorigin="anonymous"
         ></script>
         <script async type="text/javascript" src="index.js"></script>
@@ -72,7 +72,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
     <CodeSnippetBlock labels={["Include latest minor version"]}>
     ```html
         <script
-            src="https://cdn.jsdelivr.net/npm/scichart@4.0/index.min.js"
+            src="https://cdn.jsdelivr.net/npm/scichart@5.0/index.min.js"
             crossorigin="anonymous"
         ></script>
     ```
@@ -98,7 +98,7 @@ Worked Example using index.min.js
 In order to run the example you will need a server. The simplest option would be to open directory with index.js and index.html files in cmd or terminal and to start python server `python3 -m http.server`. The app will be running here `http://localhost:8000/`.
 :::
 
-We have a worked example over at [Github](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_1_Setting_up_html_page_with_SciChart_CDN) of how to use this, but for the sake of ease let's include the code below.
+We have a worked example over at [Github](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_1_Setting_up_html_page_with_SciChart_CDN) of how to use this, but for the sake of ease let's include the code below.
 
 
 
@@ -140,7 +140,7 @@ initSciChart();
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>SciChart.js Browser Bundle Tutorial 1</title>
     <script
-      src="https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/index.min.js"
+      src="https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js"
       crossorigin="anonymous"
     ></script>
     <script async type="text/javascript" src="index.js"></script>
@@ -191,7 +191,7 @@ const { SciChartSurface, NumericAxis ..} = SciChart;
 How the Wasm Files get Initialized
 ----------------------------------
 
-If you've watched our [Tutorial 01 - Setting up an npm project with WebPack](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/), you will have read about wasm (WebAssembly) files which must be served to load the chart.
+If you've watched our [Tutorial 01 - Setting up an npm project with WebPack](/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js/), you should have read about wasm (WebAssembly) files which must be served to load the chart.
 
 SciChart.js when served from CDN automatically defaults to load the wasm from CDN as well.
 
@@ -204,9 +204,10 @@ SciChartSurface.useWasmFromCDN();
 which is equivalent to calling SciChartSurface.configure() with the URL from the CDN for wasm file
 
 ```js
-const libraryVersion = "4.0.0";
+const libraryVersion = "5.0.0";
 SciChartSurface.configure({
   wasmUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d.wasm`,
+  wasmNoSimdUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d-nosimd.wasm`
 });
 ```
 

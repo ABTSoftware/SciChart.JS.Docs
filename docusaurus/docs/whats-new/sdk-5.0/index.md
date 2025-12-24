@@ -16,7 +16,8 @@ This release is all about performance optimization.
 * SIMD (Single Instruction, Multiple Data) support, which significantly improves performance of CPU operations such as resampling.
 * Index axis support
 * Improved layout of 3D labels.
-* Multiline Axis Title and Labels on 3D charts
+* Improved multiline text rendering and positioning for native text annotations and native text titles.
+* Multiline Axis Title and Labels support on 3D charts
 * SVG only mode for tooltips and annotations
 * Equidistant vertical margin for multiline text
 * Palette provider support for Stacked columns

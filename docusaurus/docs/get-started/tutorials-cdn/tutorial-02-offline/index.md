@@ -22,7 +22,7 @@ Adding Series and Data to a SciChart.js Chart
 ---------------------------------------------
 
 :::tip
-Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_2_Include_IndexMin_Wasm_Files_Offline)
+Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Browser_CDN_Tutorials_JavaScript/Tutorial_2_Include_IndexMin_Wasm_Files_Offline)
 :::
 
 In this tutorial, we are going to add some Line series onto the chart and to use downloaded js and wasm files to load SciChart.js offline (without internet access).
@@ -34,7 +34,7 @@ Next, we create an [XyDataSeries:blue_book:](https://www.scichart.com/document
 Try the code below:
 
 <CodeSnippetBlock labels={["index.js", "index.html"]}>
-```js {29-31} showLineNumbers
+```js {29-32} showLineNumbers
 // Equivalent of imports when using index.min.js is to declare global variables like this
 const { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries } =
   SciChart;
@@ -64,7 +64,8 @@ async function initSciChart() {
 }
 
 SciChartSurface.configure({
-  wasmUrl: `scichart/4.0.0-beta.734/scichart2d.wasm`,
+  wasmUrl: `scichart/5.0.0-alpha.135/scichart2d.wasm`,
+  wasmNoSimdUrl: `scichart/5.0.0-alpha.135/scichart2d-nosimd.wasm`,
 });
 
 initSciChart();
@@ -103,16 +104,18 @@ initSciChart();
 ```
 </CodeSnippetBlock>
 
-Second, we need to create `scichart` folder and download `index.min.js` and `scichart2d.wasm` into it.
+Second, we need to create `scichart` folder and download `index.min.js`, `scichart2d.wasm`, `scichart2d-nosimd.wasm` and `scichart3d.wasm`, `scichart3d-nosimd.wasm` if you are using 3D charts.
 
 You can use these links to download files:
 
-* https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/index.min.js
-* https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/_wasm/scichart2d.wasm
-* https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.734/_wasm/scichart3d.wasm (in case you need 3D charts)
+* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js
+* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart2d.wasm
+* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart2d-nosimd.wasm
+* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart3d.wasm (in case you need 3D charts)
+* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart3d-nosimd.wasm (in case you need 3D charts)
 
 :::tip
-Use your version instead of `4.0.0-beta.734`
+Use your version instead of `5.0.0-alpha.135`
 :::
 
 This is the folder structure:
