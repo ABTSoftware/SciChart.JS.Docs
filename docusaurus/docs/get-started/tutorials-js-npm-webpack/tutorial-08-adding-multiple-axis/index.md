@@ -9,7 +9,7 @@ In [Tutorial 7 - Adding Tooltips and Legends](/get-started/tutorials-js-npm-web
 SciChart supports unlimited axes. This unlocks different possibilities, such as **rotated (vertical)** charts.
 
 :::tip
-Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_8_Multiple_Axis)
+Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_8_Multiple_Axis)
 :::
 
 <YouTubeVideo url="https://www.youtube.com/embed/XDqTYGgEDKo" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 08 - Adding Multiple X and Y Axis" />

@@ -12,7 +12,7 @@ In this tutorial we will create a simple line chart with SciChart.js. We'll show
 <YouTubeVideo url="https://www.youtube.com/embed/PFYpCrZwqwU" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 01 - Setting up a Project with WebPack, Node and SciChart.js" />
 
 :::tip
-Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
+Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
 :::
 
 Pre-requisites
@@ -84,7 +84,7 @@ Our package.json should look something like this.
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "scichart": "^4.0.0-beta.734"
+        "scichart": "^5.0.0-alpha.135"
     },
     "devDependencies": {
         "copy-webpack-plugin": "^13.0.0",
@@ -108,7 +108,7 @@ Note, the following highlighted line is required to copy SciChart's WebAssembly 
 
 **webpack.config.js**
 
-```js showLineNumbers {24}
+```js showLineNumbers {24,25}
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -132,7 +132,8 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "src/index.html", to: "" },
-                { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" }
+                { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
+                { from: "node_modules/scichart/_wasm/scichart2d-nosimd.wasm", to: "" }
             ]
         })
     ]
@@ -243,31 +244,6 @@ sciChartSurface.yAxes.add(yAxis);
 
 Don't forget you will need to add a license to use SciChart.js commercially (for community licensing, nothing needs to be done). You can do this once in code as follows. You can apply a license by following instructions at [www.scichart.com/licensing-scichart-js](https://www.scichart.com/licensing-scichart-js)
 
-**src/index.js**
-
-```ts
-...
-async function initSciChart() {
-  // LICENSING //
-  // For community or trial usage, SciChart.js works out of the box
-
-  // For commercial use of SciChart, you need a license.
-  // Purchased license keys can be viewed at https://www.scichart.com/my-account
-  //
-  // e.g.
-  // Set your license code here
-  SciChartSurface.setRuntimeLicenseKey("YOUR_RUNTIME_KEY");
-  //
-  // Also, once activated (trial or paid license) having the licensing wizard open on your machine
-  // will mean any or all applications you run locally will be fully licensed.
-
-  const { sciChartSurface, wasmContext } = await SciChartSurface.create(
-    "scichart-root"
-  );
-    ...
-}
-```
-
 That's it! You have just created your first SciChartSurface using SciChart.js!
 
 Building and Running the App
@@ -288,7 +264,7 @@ Now visit [http://localhost:8080](http://localhost:8080) in your browser and voi
 ![](2.jpg)
 
 :::tip
-Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
+Source code for this tutorial can be found at our [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_1_Setting_up_a_project_with_SciChart).
 :::
 
 :::warning

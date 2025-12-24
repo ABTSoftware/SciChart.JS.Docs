@@ -7,7 +7,7 @@ sidebar_position: 10
 In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-09-linking-multiple-charts/) we explained how to link multiple charts using SciChart.js. In this tutorial, we are going to show you how to add a **Vertical Chart**.
 
 :::tip
-Source code for this tutorial can be found at [SciChart.JS.Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_10_Vertical_Charts) Github Repository
+Source code for this tutorial can be found at [SciChart.JS.Examples](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_10_Vertical_Charts) Github Repository
 :::
 
 Adding a Chart

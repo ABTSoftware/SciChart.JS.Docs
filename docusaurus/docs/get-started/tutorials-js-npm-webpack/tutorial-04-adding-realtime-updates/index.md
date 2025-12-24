@@ -9,7 +9,7 @@ In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-03-add
 Realtime updates is where SciChart excels. Our software is designed to be ultra high-performance and really shines in circumstances where you want to manipulate data in real-time. There are a lot of options for dynamically updating data and getting rich, reactive charts. If you're interested to find out how, read on!
 
 :::tip
-The source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_4_Adding_Realtime_Updates)  
+The source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_4_Adding_Realtime_Updates)  
 :::
 
 <YouTubeVideo url="https://www.youtube.com/embed/3TzRbpmx7T0" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 04 - Realtime Chart Updates" />

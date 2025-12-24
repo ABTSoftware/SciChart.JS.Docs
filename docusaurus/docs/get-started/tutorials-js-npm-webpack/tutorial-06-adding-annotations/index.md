@@ -9,7 +9,7 @@ In [Tutorial 5 - Zoom and Pan with Realtime Updates](/get-started/tutorials-js-
 The annotation API allows you to add other UI elements, markers or labels to a chart, like **Lines, **Text, **Boxes, **SVG elements and more.********
 
 :::tip
-Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_6_Adding_Annotations).
+Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_6_Adding_Annotations).
 :::
 
 <YouTubeVideo url="https://www.youtube.com/embed/kUsMslHD_YE" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 06 - Adding Annotations to Charts" />

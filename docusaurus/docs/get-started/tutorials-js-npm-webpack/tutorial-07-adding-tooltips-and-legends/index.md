@@ -7,7 +7,7 @@ sidebar_position: 7
 In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-07-adding-tooltips-and-legends/) we explained how to add annotations to a JavaScript Chart using SciChart.js. In this tutorial, we are going to show you how to add tooltips and legends.
 
 :::tip
-Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_7_Adding_Tooltips_and_Legends)
+Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_7_Adding_Tooltips_and_Legends)
 :::
 
 <YouTubeVideo url="https://www.youtube.com/embed/3YiQBRjzUx0" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 07 - Legends, Tooltips, Crosshairs and Cursors" />

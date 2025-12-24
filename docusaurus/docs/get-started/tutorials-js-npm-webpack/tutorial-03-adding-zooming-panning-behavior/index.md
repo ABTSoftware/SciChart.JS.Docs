@@ -9,7 +9,7 @@ In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-02-add
 <YouTubeVideo url="https://www.youtube.com/embed/p9wRUCatMTM" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 03 - Zooming and Panning" />
 
 :::tip
-The source code for this tutorial can be found at  [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_3_Add_Zoom_and_Pan_Behavior)
+The source code for this tutorial can be found at  [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_3_Add_Zoom_and_Pan_Behavior)
 :::
 
 Adding Zooming and Panning

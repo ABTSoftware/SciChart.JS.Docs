@@ -8,7 +8,7 @@ In [Tutorial 08 - Adding Multiple Axis](/get-started/tutorials-js-npm-webpack/tu
 Now we are going to show you how to create multiple charts and link them together.
 
 :::tip
-Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_9_Linking_Multiple_Charts)
+Source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_9_Linking_Multiple_Charts)
 :::
 
 Adding a First Chart
@@ -50,7 +50,7 @@ async function initSciChart() {
 
     // Create an X Axis and add to the chart
     sciChartSurface.xAxes.add(
-      new NumericAxis(wasmContext, { axisTitle: "X Axis" })
+      new NumericAxis(wasmContext, { axisTitle: "X Axis", useNativeText: false })
     );
 
     // Create Y Axis and add to the chart
@@ -60,6 +60,7 @@ async function initSciChart() {
         axisAlignment: EAxisAlignment.Right,
         autoRange: EAutoRange.Always,
         growBy: new NumberRange(0.2, 0.2),
+        useNativeText: false
       })
     );
 
@@ -163,7 +164,7 @@ Other things we change: align **Y Axis** left, use [Mountain Series Type](/2d
     );
 
     // Create an X Axis and add to the chart
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext), { useNativeText: false });
 
     // Create Y Axis and add to the chart
     sciChartSurface.yAxes.add(
@@ -172,6 +173,7 @@ Other things we change: align **Y Axis** left, use [Mountain Series Type](/2d
         axisAlignment: EAxisAlignment.Left,
         autoRange: EAutoRange.Always,
         growBy: new NumberRange(0.2, 0.2),
+        useNativeText: false
       })
     );
 
@@ -342,7 +344,7 @@ async function initSciChart() {
 
     // Create an X Axis and add to the chart
     sciChartSurface.xAxes.add(
-      new NumericAxis(wasmContext, { axisTitle: "X Axis" })
+      new NumericAxis(wasmContext, { axisTitle: "X Axis", useNativeText: false })
     );
 
     // Create Y Axis and add to the chart
@@ -352,6 +354,7 @@ async function initSciChart() {
         axisAlignment: EAxisAlignment.Right,
         autoRange: EAutoRange.Always,
         growBy: new NumberRange(0.2, 0.2),
+        useNativeText: false
       })
     );
 
@@ -390,7 +393,7 @@ async function initSciChart() {
     );
 
     // Create an X Axis and add to the chart
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { useNativeText: false }));
 
     // Create Y Axis and add to the chart
     sciChartSurface.yAxes.add(
@@ -399,6 +402,7 @@ async function initSciChart() {
         axisAlignment: EAxisAlignment.Left,
         autoRange: EAutoRange.Always,
         growBy: new NumberRange(0.2, 0.2),
+        useNativeText: false
       })
     );
 

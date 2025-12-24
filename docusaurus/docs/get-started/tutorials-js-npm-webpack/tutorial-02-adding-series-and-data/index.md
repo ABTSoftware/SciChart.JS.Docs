@@ -9,7 +9,7 @@ In the [previous tutorial](/get-started/tutorials-js-npm-webpack/tutorial-01-set
 <YouTubeVideo url="https://www.youtube.com/embed/dQYnwPeacSA" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 02 - Adding Series and Data" />
 
 :::tip
-Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_2_Adding_Series_and_Data)
+Source code for this tutorial can be found at [SciChart.Js.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_2_Adding_Series_and_Data)
 :::
 
 Adding Series to the Chart

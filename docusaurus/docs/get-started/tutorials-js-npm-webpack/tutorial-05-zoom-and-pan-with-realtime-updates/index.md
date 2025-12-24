@@ -9,7 +9,7 @@ In [Tutorial 04 - Adding Realtime Updates](/get-started/tutorials-js-npm-webpac
 If you haven't read it already, also check out [Tutorial 03 - Adding Zooming Panning Behavior](/get-started/tutorials-js-npm-webpack/tutorial-03-adding-zooming-panning-behavior/) as we will assume you have the knowledge to add zoom and pan behaviors to a SciChart.js JavaScript chart.
 
 :::tip
-The source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_5_Zoom_and_Pan_With_Realtime_Updates)
+The source code for this tutorial can be found at [SciChart.JS.Examples Github Repository](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/2D_Chart_Tutorials_JavaScript/Tutorial_5_Zoom_and_Pan_With_Realtime_Updates)
 :::
 
 <YouTubeVideo url="https://www.youtube.com/embed/SYBog05NamM" title="Video tutorial for version 3. SciChart.js JavaScript Chart Tutorial 05 - Zooming, Panning a Realtime Chart" />
