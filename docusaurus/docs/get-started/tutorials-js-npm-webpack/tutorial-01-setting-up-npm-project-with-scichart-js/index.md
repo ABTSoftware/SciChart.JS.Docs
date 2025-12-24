@@ -144,6 +144,46 @@ Your project with webpack.config.js should look like this. In particular, **noti
 
 ![](1.jpg)
 
+SIMD support
+------------------------------
+:::info
+In version 5 we introduced SIMD (Single Instruction, Multiple Data) support. 
+SIMD is a parallel processing technique where a single instruction operates on multiple data elements simultaneously. It's a form of data-level parallelism used to accelerate computations in applications like multimedia processing, scientific computing, and machine learning.
+:::
+
+In order to support this feature it is required to copy 2 wasm files one with SIMD support `scichart2d.wasm` and another without it `scichart2d-nosimd.wasm`, and similar for 3D `scichart3d.wasm` and `scichart3d-nosimd.wasm`.
+
+**Webpack config example**
+
+```js
+const config: Configuration = {
+    entry: "./src/index.tsx",
+    mode: "production",
+    ...
+    plugins: [
+        ...
+        new CopyPlugin({
+            patterns: [
+                { from: "src/static/", to: "" },
+                { from: "../src/_wasm/scichart2d.wasm", to: "" },
+                { from: "../src/_wasm/scichart2d-nosimd.wasm", to: "" },
+                { from: "../src/_wasm/scichart3d.wasm", to: "" },
+                { from: "../src/_wasm/scichart3d-nosimd.wasm", to: "" }
+            ]
+        })
+    ]
+};
+```
+
+**SIMD settings**
+
+It is also possible to use only one file SIMD or NO-SIMD, in this case updating `SciChartDefaults.useWasmSimd` setting is required.
+
+`SciChartDefaults.useWasmSimd` defines how WebAssembly SIMD should be used by SciChart. Defaults to Auto.
+- Always: Always use SIMD-enabled binaries (you must serve scichart2d.wasm, scichart3d.wasm)
+- Never: Never use SIMD, always use fallback binaries (you must serve scichart2d-nosimd.wasm, scichart3d-nosimd.wasm)
+- Auto: Automatically detect SIMD support and choose appropriate binary (you must serve both variants)
+
 Creating Index.js / Index.html
 ------------------------------
 
