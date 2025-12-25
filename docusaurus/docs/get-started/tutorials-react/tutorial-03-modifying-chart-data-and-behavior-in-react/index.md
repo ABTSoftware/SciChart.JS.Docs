@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In this tutorial we will show how to modify the **`initChart`** callback in **scichart-react** to pass properties, functions, or data back into **onInit**. This allows you to connect chart behavior to other UI elements in your React application, such as buttons or controls, to manipulate chart data or modify chart state.
 
-The previous tutorial [Tutorial 01 - Understanding the scichart-react boilerplate](../tutorial-01-setting-up-project-with-scichart-react/) should be used as a reference for project setup. Copy the boilerplate to a new folder or project from: [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/BoilerPlates/scichart-react).
+The previous tutorial [Tutorial 01 - Understanding the scichart-react boilerplate](../tutorial-01-setting-up-project-with-scichart-react/) should be used as a reference for project setup. Copy the boilerplate to a new folder or project from: [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react).
 
 ---
 
@@ -316,4 +316,4 @@ Add the rule:
 
 ![](/images/scichart-react-tutorial-03b.gif)
 
-Full source code is available on GitHub: [Tutorials/React/Tutorial_03b_Controlling_Chart_Behaviour_With_Toolbar](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials/React)
+Full source code is available on GitHub: [Tutorials/React/Tutorial_03b_Controlling_Chart_Behaviour_With_Toolbar](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/React/Tutorial_03b_Controlling_Chart_Behaviour_With_Toolbar)

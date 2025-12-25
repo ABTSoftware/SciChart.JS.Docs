@@ -8,7 +8,7 @@ In this tutorial, we'll show how to create a JavaScript chart in React using **s
 
 The previous tutorial [Tutorial 01 - Understanding the scichart-react boilerplate](../tutorial-01-setting-up-project-with-scichart-react/) serves as a reference. We'll use that boilerplate (npm setup, webpack config, package.json) as a starting point.
 
-Copy the boilerplate to a new folder or project. You can get the code from: [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/BoilerPlates/scichart-react).
+Copy the boilerplate to a new folder or project. You can get the code from: [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react).
 
 ---
 
@@ -170,7 +170,7 @@ const onDelete = (initResult) => {
 
 ![](/images/scichart-react-tutorial-initchart.png)
 
-The full source code is available at [SciChart.JS.Examples Tutorials/React/Tutorial_02](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials/React).
+The full source code is available at [SciChart.JS.Examples Tutorials/React/Tutorial_02](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react).
 
 ---
 

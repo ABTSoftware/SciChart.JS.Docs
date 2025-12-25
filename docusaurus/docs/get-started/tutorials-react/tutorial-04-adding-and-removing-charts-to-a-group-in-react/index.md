@@ -17,7 +17,7 @@ for the initial project setup.
 
 Copy the boilerplate to a new folder or project.
 You can get the code from here:
-👉 [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/BoilerPlates/scichart-react)
+👉 [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react)
 
 ---
 
@@ -276,4 +276,4 @@ You can dynamically add or remove charts — each one synchronizes with the grou
 ## Full Source Code
 
 You can find the full example here:
-👉 [Tutorials/React/Tutorial_04_Adding_Removing_Syncing_Charts](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials/React)
+👉 [Tutorials/React/Tutorial_04_Adding_Removing_Syncing_Charts](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/React/Tutorial_04_Adding_Removing_Syncing_Charts)

@@ -17,7 +17,7 @@ Starting with the App.jsx code from [Tutorial 04](../tutorial-04-adding-and-rem
 
 ### Creating a DataManager Class
 
-Add a new file to `src/RandomWalkGenerator.js` and paste in the following code. This is a JavaScript version of the [RandomWalkGenerator.ts from Github](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/master/Examples/src/components/Examples/ExampleData/RandomWalkGenerator.ts) which simply generates a randomised waveform based on some parameters.
+Add a new file to `src/RandomWalkGenerator.js` and paste in the following code. This is a JavaScript version of the [RandomWalkGenerator.ts from Github](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/dev_v5.x/Examples/src/components/Examples/ExampleData/RandomWalkGenerator.ts) which simply generates a randomised waveform based on some parameters.
 
 ```ts
 export class RandomWalkGenerator {
@@ -303,7 +303,7 @@ sciChartSurface.chartModifiers.add(
 );
 ```
 
-This ensures that mouse events from one ChartModifier are passed to others in the same group. This will partly tooltips across charts but will not synchronize everything - such as axis sizes or [axis.visibleRange](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange "axis.visibleRange TypeDoc API"). To do this, we need some further logic, found in `AxisSynchronizer`.
+This ensures that mouse events from one ChartModifier are passed to others in the same group. This will partly tooltips across charts but will not synchronize everything - such as axis sizes or [axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange "axis.visibleRange TypeDoc API"). To do this, we need some further logic, found in `AxisSynchronizer`.
 
 Go ahead and add a new class file to the project, AxisSynchronizer.js. Add the following code:
 
@@ -578,5 +578,5 @@ And here's the final output of the tutorial:
 Click the Add Chart, Remove Chart button. Now zoom on the chart by dragging the mouse. Use the mouse-wheel to zoom and double-click to reset zoom. All charts should be synchronized, tooltips should track the same x-Value across charts, and zooming/panning in the x-direction should match.
 
 :::tip
-You can get the full source code for this tutorial over at scichart.js.examples on Github under the folder [Tutorials/React/Tutorial_05_Synchronizing_React_Charts](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Tutorials/React)
+You can get the full source code for this tutorial over at scichart.js.examples on Github under the folder [Tutorials/React/Tutorial_05_Synchronizing_React_Charts](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/Tutorials/React/Tutorial_05_Synchronizing_React_Charts)
 :::

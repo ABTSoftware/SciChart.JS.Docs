@@ -13,7 +13,7 @@ We'll show you how to create a new JavaScript project and adding **scichart** a
 Finally, we'll show how to show a static chart using the **config** property which uses the [JSON Builder API](/2d-charts/builder-api/builder-api-overview/) to provide a chart definition.
 
 :::tip
-Source code for this tutorial [can be found in SciChart.JS.Examples repo](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v4.0/BoilerPlates/scichart-react)
+Source code for this tutorial can be found in [SciChart.JS.Examples repo](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react)
 :::
 
 What is SciChart-React?
@@ -71,36 +71,33 @@ By the time you've completed this your **package.json** should look like this:
 <CodeSnippetBlock labels={["package.json"]}>
 ```json
 {
-    "name": "react-scichart-demo",
-    "version": "1.0.0",
-    "description": "First Tutorial with scichart-react",
-    "main": "index.jsx",
-    "scripts":
-    {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack",
-        "start": "webpack-dev-server"
-    },
-    "author": "",
-    "license": "MIT",
-    "devDependencies":
-    {
-        "@babel/core": "^7.21.4",
-        "@babel/preset-react": "^7.18.6",
-        "babel-loader": "^9.1.2",
-        "copy-webpack-plugin": "^13.0.0",
-        "prettier": "^2.1.2",
-        "webpack": "^5.99.9",
-        "webpack-cli": "^6.0.1",
-        "webpack-dev-server": "^5.2.2"
-    },
-    "dependencies":
-    {
-        "react": "^19.0.0",
-        "react-dom": "^19.0.0",
-        "scichart": "^4.0.0-beta.734",
-        "scichart-react": "^0.2.0-beta.2"
-    }
+  "name": "react-scichart-demo",
+  "version": "1.0.0",
+  "description": "First Tutorial with scichart-react",
+  "main": "index.jsx",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/preset-react": "^7.18.6",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^13.0.0",
+    "prettier": "^2.1.2",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "scichart": "^5.0.0-alpha.135",
+    "scichart-react": "^0.2.0-beta.2"
+  }
 }
 ```
 </CodeSnippetBlock>
@@ -115,7 +112,7 @@ Whichever package bundler you use, some configuration will need to be done to se
 You'll have to add a **webpack.config.js** to your project which needs to load JSX/JS files, compiled to bundle.js and copy scichart wasm files to the output.
 
 <CodeSnippetBlock labels={["webpack.config.js"]}>
-```js {35-37} showLineNumbers
+```js {33-40} showLineNumbers
 const path = require("path");
 const CopyPlugin = require("copy-webpack-plugin");
 const webpack = require("webpack");
@@ -151,8 +148,11 @@ module.exports = {
         // Required for scichart to load wasm files for 2D charts
         // Loading from CDN is also possible by calling SciChartSurface.loadWasmFromCDN()
         { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
+        // This one also needed to work in browsers without SIMD support
+        { from: "node_modules/scichart/_wasm/scichart2d-nosimd.wasm", to: "" },
         // Optional: if including 3D charts copy these files
         { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
+        { from: "node_modules/scichart/_wasm/scichart3d-nosimd.wasm", to: "" },
       ],
     }),
   ],
@@ -168,7 +168,7 @@ module.exports = {
 ```
 </CodeSnippetBlock>
 
-Note in particular the use of **CopyPlugin** (from **copy-webpack-plugin**) which copies `scichart2d.wasm` and `scichart3d.wasm` (optional for 3D charts) to the output directory.
+Note in particular the use of **CopyPlugin** (from **copy-webpack-plugin**) which copies `scichart2d.wasm`, `scichart2d-nosimd.wasm` and `scichart3d.wasm`, `scichart3d-nosimd.wasm` (optional for 3D charts) to the output directory.
 
 :::tip
 Other methods of loading wasm and more detail is provided in the page [Deploying Wasm (WebAssembly) files with your app](/2d-charts/surface/deploying-wasm/). It's even possible to load wasm from our CDN and skip this step entirely for the purpose of learning.
