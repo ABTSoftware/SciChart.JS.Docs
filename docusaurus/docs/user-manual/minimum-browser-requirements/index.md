@@ -22,7 +22,7 @@ Are you new to SciChart? Check out our most popular pages to get started below:
 
 SciChart.js is a cutting-edge next-generation JavaScript Chart Library. As a result, we are using the latest technologies to draw our fast, real-time and interactive JavaScript charts.
 
-Minimum requirement for deployment of an application with SciChart.js is **your browser must support WebAssembly (wasm) and WebGL 1 (preferably WebGL 2).**
+Minimum requirement for deployment of an application with SciChart.js is **your browser must support WebAssembly (wasm) and WebGL 2.** WebGL 1 support has been dropped starting from v5.
 
 A full table of which browsers are supported can be found at the [caniuse.com](https://caniuse.com/) website.
 
@@ -52,45 +52,24 @@ WebAssembly can be enabled in some earlier browsers can by adjusting settings. S
 Note: WebAssembly support is not available on Internet Explorer 11, but is available on IE Edge 16 or later, Google Chrome, FireFox and Safari
 :::
 
-WebGL 1 Minimum Browser Support
--------------------------------
-
-According to [caniuse.com](https://caniuse.com/#search=webgl), 96.56% of web browsers worldwide support WebGL 1. SciChart achieves the best performance with a WebGL 2 browser support, but all features are available on WebGL 1.
-
-Minimum versions can be found below
-
-[![](2.png)](https://caniuse.com/#search=webgl)
-
-WebGL 1 is supported on
-
-*   Chrome v8 or later
-*   IE Edge v12 or later
-*   Firefox v4 or later
-*   Safari v5 or later
-*   Opera v12 or later.
-*   Almost all modern mobile and desktop browsers support WebGL 1
-
 WebGL 2 Minimum Browser Support
 -------------------------------
 
-According to [caniuse.com](https://caniuse.com/#search=webgl2), 95.1% of web browsers worldwide now support WebGL 2. SciChart achieves superior performance with WebGL 2, but will automatically drop down to WebGL 1 where this latest API is not available.
+According to [caniuse.com](https://caniuse.com/#search=webgl2), 95.64% of web browsers worldwide support WebGL 2.
 
-[![](3.png)](https://caniuse.com/#search=webgl2)
+Minimum versions can be found below
 
-WebGL 2 is supported on
+[![](2.png)](https://caniuse.com/#search=webgl2)
+
+WebGL 2 is supported on
 
 *   Chrome v56 or later
-*   IE Edge v79 or later
+*   Edge v79 or later
+*   Safari v15 or later
 *   Firefox v51 or later
-*   Safari iOS v 15 or later
-*   Safari mac v15 or later
-*   Firefox for Android v107
-*   Android Browser v108
-*   Opera mobile v72
-
-:::warning
-Note: WebGL 2 support is not available on earlier versions of Safari (Desktop or mobile), but in cases where WebGL 2 is not available SciChart.js will automatically downgrade to WebGL 1.
-:::
+*   Opera v43 or later
+*   IE not supported
+*   Almost all modern mobile and desktop browsers support WebGL 2
 
 FAQs
 ----

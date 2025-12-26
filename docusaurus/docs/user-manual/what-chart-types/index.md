@@ -21,6 +21,7 @@ The following page is a comprehensive list of all features in SciChart.js. From 
 - supports fast, real-time updates of data, efficient structure of arrays data formats, optional Js objects at X,y data-points (metadata API), data-labels rendered on the chart
 - supports per-point colouring (individual data-point colouring) via the PaletteProvider API
 - supports full GPU hardware acceleration via WebGL and fast pointer-based arithmetic and memory operations via WebAssembly
+- SIMD - Single Instruction, Multiple Data, which makes CPU intensive operations like resampling much faster
 - a programmatic API (JavaScript) or optional side-by-side JSON Builder API allowing creation of charts via JSON or JavaScript configuration objects
 - serialization/deserialization of charts to JSON
 - accessibility
