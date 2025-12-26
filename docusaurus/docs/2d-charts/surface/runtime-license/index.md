@@ -32,7 +32,7 @@ Full instructions how to activate developer licenses, how to add production & te
 If you get an error when loading a SciChartSurface as follows:
 
 :::warning
-**Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm and scichart2d.js files are from the same version
+**Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm, scichart2d-nosimd.wasm and scichart2d.js files are from the same version
 :::
 
 Please see our related article [Deploying Wasm or WebAssembly Data Files with your app](/2d-charts/surface/deploying-wasm/)

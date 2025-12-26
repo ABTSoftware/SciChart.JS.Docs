@@ -63,7 +63,6 @@ module.exports = {
                 { from: "src/index.html", to: "" },
                 // Copy the font to the root of the output location
                 { from: "src/jokerman.ttf", to: "" },
-                { from: "node_modules/scichart/_wasm/scichart2d.data", to: "" },
                 { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" }
             ]
         }),
