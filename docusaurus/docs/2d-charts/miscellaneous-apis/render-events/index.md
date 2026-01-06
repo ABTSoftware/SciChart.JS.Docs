@@ -35,13 +35,19 @@ Below is the list of render process event handlers, in the order they occur:
 
 - [**preRenderAll** :blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#prerenderall)
   Triggered on the main surface before the render loop begins.
-  Use it to apply custom configurations such as styling or changes to the visible range.
+  Use it to apply custom configurations such as styling.
   This event is **only** fired on the main surface and does **not** apply to sub-charts.
   It is also currently **not** applicable to 3D charts.
 
 - [**preRender** :blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#prerender)
-  Triggered on a surface or sub-surface before rendering.
-  Use it to apply logic for layout adjustments, such as modifying the visible range aspect ratio or `PointMarker` size.
+  Triggered on a surface or sub-surface before rendering.  
+  Could be used to apply styling dynamically.  
+
+  Warning: prefer `genericAnimationsRun` to apply logic for layout adjustments, such as modifying the visible range aspect ratio or `PointMarker` size, since visible range could be updated within animations (e.g. default behavior of ZoomExtentsModifier)
+
+- [**genericAnimationsRun** :blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#genericanimationsrun)
+  Triggered during rendering after animations but before layout.
+  Use this event to hook into the rendering process when you want to apply changes that may affect the chart layout, e.g. adjust visible range dynamically.
 
 - [**layoutMeasured** :blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#layoutmeasured)
   Triggered during rendering when the visible range, size, and axis positions are measured.
@@ -62,9 +68,19 @@ Below is the list of render process event handlers, in the order they occur:
   Triggered on the main surface after the frame has been committed by the client environment.
   This event is useful for confirming that the chart was drawn, for example, before exporting it as an image.
 
+- [**resized** :blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#resized)
+  Triggered on the main surface after the chart root element has been resized. 
+Could be used to add responsiveness on chart internal elements.
+
 :::tip
 Use `preRenderAll` and `renderedToDestination` to measure chart render performance.
 See [Performance Measurement](#performance-measurement).
+:::
+
+:::note
+Some event handlers suspend internal chart invalidations. This means that a new frame would not be requested even if some property on a chart has changed.  
+For example, when updating annotation position in `preRenderAll` listener, the update will take effect and will be reflected in the same frame as the listener was executed. So there is no need to request an additional redraw.  
+This improvement generally could be applied to the event handlers that are processed before the chart layout measurement.  
 :::
 
 ## Helper Functions
