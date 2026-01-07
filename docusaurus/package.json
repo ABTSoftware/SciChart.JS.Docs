@@ -1,76 +1,76 @@
 {
-  "name": "docusaurus",
-  "version": "0.0.0",
-  "private": true,
-  "scripts": {
-    "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
-    "swizzle": "docusaurus swizzle",
-    "deploy": "docusaurus deploy",
-    "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids",
-    "compileSnippets": "tsc --project tsconfig.demo.json",
-    "compileSnippets:watch": "tsc --project tsconfig.demo.json --watch",
-    "prettier": "prettier **/demo.{js,ts} --write",
-    "pretifyUncommitedSnippets": "git diff --name-only HEAD | grep -E '\\.js$' | cut -c12- | xargs -d '\\n' -r npx prettier --write",
-    "typecheck": "tsc",
-    "linkcheck": "node link-checker.js",
-    "linkcheck-internal": "node link-checker-internal.js",
-    "bookmark": "node link-bookmark-checker.js",
-    "status": "node count-docs.js",
-    "table-of-content": "node generate-docs-toc.js",
-    "enforce-trailing-slashes": "node enforce-link-trailing-slashes.js"
-  },
-  "dependencies": {
-    "@cmfcmf/docusaurus-search-local": "^1.2.0",
-    "@codesandbox/sandpack-react": "^2.20.0",
-    "@docusaurus/core": "^3.9.1",
-    "@docusaurus/preset-classic": "^3.9.1",
-    "@docusaurus/theme-mermaid": "^3.9.1",
-    "@mdx-js/react": "^3.0.0",
-    "clsx": "^2.0.0",
-    "fs": "^0.0.1-security",
-    "http": "^0.0.1-security",
-    "https": "^1.0.0",
-    "path": "^0.12.7",
-    "prettier": "^3.5.3",
-    "prism-react-renderer": "^2.3.0",
-    "raw-loader": "^4.0.2",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "remark-code-snippets": "^1.1.0",
-    "scichart": "^4.0.918",
-    "url": "^0.11.4"
-  },
-  "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.9.1",
-    "@docusaurus/tsconfig": "^3.8.1",
-    "@docusaurus/types": "^3.8.1",
-    "copy-webpack-plugin": "^13.0.0",
-    "gray-matter": "^4.0.3",
-    "typescript": "~5.6.2"
-  },
-  "browserslist": {
-    "production": [
-      ">0.5%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 3 chrome version",
-      "last 3 firefox version",
-      "last 5 safari version"
-    ]
-  },
-  "engines": {
-    "node": ">=18.0"
-  },
-  "overrides": {
-    "@cmfcmf/docusaurus-search-local": {
-      "@docusaurus/core": "^3.1.0"
+    "name": "docusaurus",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "docusaurus": "docusaurus",
+        "start": "docusaurus start",
+        "build": "docusaurus build",
+        "swizzle": "docusaurus swizzle",
+        "deploy": "docusaurus deploy",
+        "clear": "docusaurus clear",
+        "serve": "docusaurus serve",
+        "write-translations": "docusaurus write-translations",
+        "write-heading-ids": "docusaurus write-heading-ids",
+        "compileSnippets": "tsc --project tsconfig.demo.json",
+        "compileSnippets:watch": "tsc --project tsconfig.demo.json --watch",
+        "prettier": "prettier **/demo.{js,ts} --write",
+        "pretifyUncommitedSnippets": "git diff --name-only HEAD | grep -E '\\.js$' | cut -c12- | xargs -d '\\n' -r npx prettier --write",
+        "typecheck": "tsc",
+        "linkcheck": "node link-checker.js",
+        "linkcheck-internal": "node link-checker-internal.js",
+        "bookmark": "node link-bookmark-checker.js",
+        "status": "node count-docs.js",
+        "table-of-content": "node generate-docs-toc.js",
+        "enforce-trailing-slashes": "node enforce-link-trailing-slashes.js"
+    },
+    "dependencies": {
+        "@cmfcmf/docusaurus-search-local": "^1.2.0",
+        "@codesandbox/sandpack-react": "^2.20.0",
+        "@docusaurus/core": "^3.9.1",
+        "@docusaurus/preset-classic": "^3.9.1",
+        "@docusaurus/theme-mermaid": "^3.9.1",
+        "@mdx-js/react": "^3.0.0",
+        "clsx": "^2.0.0",
+        "fs": "^0.0.1-security",
+        "http": "^0.0.1-security",
+        "https": "^1.0.0",
+        "path": "^0.12.7",
+        "prettier": "^3.5.3",
+        "prism-react-renderer": "^2.3.0",
+        "raw-loader": "^4.0.2",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
+        "remark-code-snippets": "^1.1.0",
+        "scichart": "5.0.0-alpha.135",
+        "url": "^0.11.4"
+    },
+    "devDependencies": {
+        "@docusaurus/module-type-aliases": "^3.9.1",
+        "@docusaurus/tsconfig": "^3.8.1",
+        "@docusaurus/types": "^3.8.1",
+        "copy-webpack-plugin": "^13.0.0",
+        "gray-matter": "^4.0.3",
+        "typescript": "~5.6.2"
+    },
+    "browserslist": {
+        "production": [
+            ">0.5%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 3 chrome version",
+            "last 3 firefox version",
+            "last 5 safari version"
+        ]
+    },
+    "engines": {
+        "node": ">=18.0"
+    },
+    "overrides": {
+        "@cmfcmf/docusaurus-search-local": {
+            "@docusaurus/core": "^3.1.0"
+        }
     }
-  }
 }
