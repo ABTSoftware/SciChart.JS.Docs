@@ -213,6 +213,10 @@ SciChartSurface.configure({
 
 This code doesn't actually need to be called when using `index.min.js`, however its good to be aware that it is happening in the background.
 
+:::info
+To change SIMD support settings use `SciChartDefaults`. For example, this disables SIMD support `SciChartDefaults.useWasmSimd = 'Never'`. Read more on [SIMD support here](/2d-charts/surface/deploying-wasm/#simd-support)
+:::
+
 It's important to note when initializing SciChart.js from CDN that the wasm files will also be loaded from CDN. **So your application will require an internet connection to work**.
 
 :::tip
