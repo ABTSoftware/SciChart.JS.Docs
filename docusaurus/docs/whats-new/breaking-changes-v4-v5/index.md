@@ -10,31 +10,7 @@ If you are using default native font, you will notice some small changes.
 
 If there are places where you are using Arial font explicitly you may want to set `SciChartDefaults.autoFontName = 'Arial'` in order to pick up the new default font. Another options would be loading Arial font from file or disabling native text.
 
-**The way font resolution works is as following:**
-1. There is a constructor option on the Axis, so set whether to use native text or canvas text. Defaults to native text which is more performant.
-    ```
-    const xAxis = new NumericAxis(wasmContext, {
-        useNativeText: true
-    });
-    ```
-2. If font family is not provided `SciChartDefaults.autoFontName` will be used. 
-3. If for a text `SciChartDefaults.autoFontName` font family is used the actual font family will be `SciChartDefaults.nativeFontFamily` for native text and `SciChartDefaults.canvasFontFamily` for canvas text.
-4. All these values can be changed
-    ```
-    // Useful if you need to replace all font family occurrences with a default font
-    SciChartDefaults.autoFontName = 'SomeFontFamily'
-    // Font family for default native text
-    SciChartDefaults.nativeFontFamily = 'NativeFontFamilyForAutoFont'
-    // Font family for default canvas text
-    SciChartDefaults.canvasFontFamily = 'CanvasFontFamilyForAutoFont'
-    ```
-5. In addition you may want to set from where to load the native font. This setting applies for all native fonts including the default one.
-    ```ts
-    sciChartSurface.registerFont(
-        "MyCustomNativeFont",
-        "https://fontUrl.com/path/to/font/fontName.ttf"
-    );
-    ```
+Read more on [font resolution here](/2d-charts/miscellaneous-apis/native-text-api#font-resolution).
 
 ## Support for WebGL1 has been abandoned
 

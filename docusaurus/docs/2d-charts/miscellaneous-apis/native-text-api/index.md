@@ -6,6 +6,36 @@ sidebar_position: 3
 
 The Native Text api is new in SciChart v3.  It uses industry standard font libraries compiled into webassembly to render text directly using webGL, supporting all types of fonts including right to left text, shaped fonts such as Arabic and Chinese.  This first version of the api is not complete and we welcome your feedback to shape it going forward.
 
+Font Resolution
+---------------
+
+**The way font resolution works for native and canvas text is as following:**
+
+1. There is a constructor option on the Axis to set whether to use native or canvas text. It defaults to native text which is more performant.
+    ```
+    const xAxis = new NumericAxis(wasmContext, {
+        useNativeText: true
+    });
+    ```
+2. If the font family is not provided `SciChartDefaults.autoFontName` will be used. 
+3. If `SciChartDefaults.autoFontName` font family is used the actual font family will be `SciChartDefaults.nativeFontFamily` for native text and `SciChartDefaults.canvasFontFamily` for canvas text.
+4. All these values can be changed
+    ```
+    // Useful if you need to replace all font family occurrences with a default font
+    SciChartDefaults.autoFontName = 'SomeFontFamily'
+    // Font family for default native text
+    SciChartDefaults.nativeFontFamily = 'NativeFontFamilyForAutoFont'
+    // Font family for default canvas text
+    SciChartDefaults.canvasFontFamily = 'CanvasFontFamilyForAutoFont'
+    ```
+5. In addition you may want to set from where to load the native font. This setting applies for all native fonts including the default one.
+    ```ts
+    sciChartSurface.registerFont(
+        "MyCustomNativeFont",
+        "https://fontUrl.com/path/to/font/fontName.ttf"
+    );
+    ```
+
 Font Loading
 ------------
 
