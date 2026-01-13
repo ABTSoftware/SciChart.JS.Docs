@@ -246,6 +246,8 @@ For example:
 
 ### 1.8 Enable SIMD support to improve performance of CPU intensive tasks
 
+**Impact: Large Improvement to Data Manipulations in apps with big amount of data when using resampling**
+
 :::info
 In version 5 we introduced SIMD (Single Instruction, Multiple Data) support. SIMD is a parallel processing technique where a single instruction operates on multiple data elements simultaneously. It's a form of data-level parallelism used to accelerate computations in applications like multimedia processing, scientific computing, and machine learning.
 :::

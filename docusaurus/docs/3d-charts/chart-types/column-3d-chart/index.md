@@ -28,6 +28,10 @@ To declare a 3D Column Chart in JavaScript, use the following code:
 ```
 </CodeSnippetBlock>
 
+:::tip
+XyzDataSeries3D takes `number[]` or `Float64Array` as xValues, yValues and zValues. Read more on performance [benefits of using Float64Array here](/2d-charts/performance-tips/performance-tips-and-tricks#16-float64array-vs-array)
+:::
+
 Breaking this code down:
 
 We initialize a 3D chart by calling [SciChart3DSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#create). The [worldDimensions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#worlddimensions) and [cameraOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icameraoptions.html) are passed to [SciChart3DSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#create) to initialize the 3D scene.

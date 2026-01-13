@@ -30,11 +30,11 @@ First, let's setup the imports that we need for the heatmap type.
 ```
 </CodeSnippetBlock>
 
-### Creating Heatmap ZValues\[ \]\[ \] Array
+### Creating Heatmap ZValues 2D array
 
-Next, we want to create a 2-dimensional array of data. Heatmap data is a 2D number array (type `number[][]` in Typescript) which contains the heat values. These are later mapped to colours in the heatmap.
+Next, we want to create a 2-dimensional array of data. Heatmap data is a 2D number array which contains the heat values. It can be set by passing either `number[][]` or `Float64Array[]` ([NumberArray type:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/index.html#numberarray)). These are later mapped to colours in the heatmap.
 
-The dimensions of the zValues 2D array are \[height\]\[width\]
+The dimensions of the zValues 2D array are `[height][width]`
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts {18} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

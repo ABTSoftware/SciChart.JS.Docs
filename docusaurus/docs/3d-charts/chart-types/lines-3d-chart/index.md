@@ -50,6 +50,10 @@ This results in the following output: 
 
 <LiveDocSnippet maxWidth={"100%"} name="./Basic/demo" htmlPath="./Basic/demo.html" cssPath="./Basic/demo.css" />
 
+:::tip
+XyzDataSeries3D takes `number[]` or `Float64Array` as xValues, yValues and zValues. Read more on performance [benefits of using Float64Array here](/2d-charts/performance-tips/performance-tips-and-tricks#16-float64array-vs-array)
+:::
+
 Coloring Individual Line Segments
 ---------------------------------
 

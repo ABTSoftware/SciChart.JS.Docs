@@ -20,7 +20,7 @@ Examples for the Surface Mesh 3D Chart can be found in the SciChart.js Demo app 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-3d-surface-mesh-chart" title="3D Surface Mesh" description="" />
 
 :::tip
-Background reading: it may be helpful to read the [2D Heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md). Heatmaps share a lot of similarities with 3D Surface Mesh charts as both use 2-dimensional `number[][]` arrays, and both use colorMaps to map cell values to cell color.
+Background reading: it may be helpful to read the [2D Heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/index.md). Heatmaps share a lot of similarities with 3D Surface Mesh charts as both use 2-dimensional arrays, and both use colorMaps to map cell values to cell color.
 :::
 
 Declaring a Surface Mesh with Uniform Data
@@ -37,13 +37,17 @@ To declare a Surface Mesh with uniform data, use the following code:
 ```
 </CodeSnippetBlock>
 
+:::tip
+UniformGridDataSeries3D takes `number[][]` or `Float64Array[]` as yValues. Read more on performance [benefits of using Float64Array here](/2d-charts/performance-tips/performance-tips-and-tricks#16-float64array-vs-array)
+:::
+
 this results in the following output
 
 <LiveDocSnippet maxWidth={"100%"} name="./UniformData/demo" htmlPath="./UniformData/demo.html" cssPath="./UniformData/demo.css" />
 
 Breaking this down:
 
-1.  We create a 2-dimensional array of numbers to store the heights (yValues). This is in the format `number[][]` and contains double precision values.
+1.  We create a 2-dimensional array of numbers to store the heights (yValues). This is in the format `number[][]` or `Float64Array[]` and contains double precision values.
 2.  Height values are applied to a [UniformGridDataSeries3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformgriddataseries3d.html). The dataSeries is set on the dataSeries property of a [SurfaceMeshRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/surfacemeshrenderableseries3d.html)
 3.  Data-values are mapped to colours using a [MeshColorPalette:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/meshcolorpalette.html). In this example we use [GradientColorPalette:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/gradientcolorpalette.html) to map heights to a list of gradient stops.
 4.  Other properties are set to control wireframe, X,Y,Z axis and drawing.
@@ -53,7 +57,7 @@ The dimensions of the yValues height 2D array are `[zIndex][xIndex]`.
 Applying Color Palettes (Heightmaps) to Surfaces
 ------------------------------------------------
 
-[yValues:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformgriddataseries3d.html#setyvalues) in the UniformGridDataSeries3D are a 2-dimensional array of type `number[][]`. These are mapped to heights in the 3D world, and are also mapped to colors using the [SurfaceMeshRenderableSeries3D.meshColorPalette:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/surfacemeshrenderableseries3d.html#meshcolorpalette) property.
+[yValues:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformgriddataseries3d.html#setyvalues) in the UniformGridDataSeries3D are a 2-dimensional array of type `number[][]` or `Float64Array[]`. These are mapped to heights in the 3D world, and are also mapped to colors using the [SurfaceMeshRenderableSeries3D.meshColorPalette:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/surfacemeshrenderableseries3d.html#meshcolorpalette) property.
 
 The mapping is similar to the method used by the [2D Heatmap Series](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/). Let's explain by digging into a simple example below.
 
