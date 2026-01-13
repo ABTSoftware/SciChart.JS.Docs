@@ -244,6 +244,17 @@ For example:
     ```
 </CodeSnippetBlock>
 
+### 1.8 Enable SIMD support to improve performance of CPU intensive tasks
+
+:::info
+In version 5 we introduced SIMD (Single Instruction, Multiple Data) support. SIMD is a parallel processing technique where a single instruction operates on multiple data elements simultaneously. It's a form of data-level parallelism used to accelerate computations in applications like multimedia processing, scientific computing, and machine learning.
+:::
+
+SIMD enhances performance of CPU intensive tasks like resampling. 
+
+[SciChartDefaults.useWasmSimd:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/classes/scichartdefaults.html#usewasmsimd) setting is used to manage SIMD mode. By default `Auto` mode is used, which means it is enabled on all devices supporting SIMD. In case a device does not support SIMD instructions, it falls back to NO SIMD scenario and uses `scichart2d-nosimd.wasm` wasm file instead of `scichart2d.wasm`.
+
+Read more on [SIMD support here](/2d-charts/surface/deploying-wasm/#simd-support).
 
 ## 2. Multi Chart Optimizations
 
@@ -366,6 +377,16 @@ useSharedCache is not enabled by default. If you are overriding getLabelTexture,
 ### 3.3 Async Labels
 
 Async labels was available in earlier versions of ScIChart.js, but has been deprecated in favour of Native text labels.
+
+### 3.4 Init time optimization by disabling native text
+
+Although native text improves performance of rendering axis and data labels it requires additional initialization time to create a font atlas. If the app does not require updating/creating a lot of labels in real time disabling native text would be a good option to boost up the startup time. 
+
+```js
+SciChartDefaults.useNativeText = false;
+```
+
+Read more here [SciChartDefaults.useNativeText:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/classes/scichartdefaults.html#usenativetext)
 
 ## 4. Miscellaneous Optimizations
 
