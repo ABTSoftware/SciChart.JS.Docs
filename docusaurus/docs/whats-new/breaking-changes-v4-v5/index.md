@@ -18,7 +18,7 @@ If there are places where you are using Arial font explicitly you may want to se
     });
     ```
 2. If font family is not provided `SciChartDefaults.autoFontName` will be used. 
-3. If for a text the `autoFontName` is used the actual font family will be `SciChartDefaults.nativeFontFamily` for native text and `SciChartDefaults.canvasFontFamily` for canvas text.
+3. If for a text `SciChartDefaults.autoFontName` font family is used the actual font family will be `SciChartDefaults.nativeFontFamily` for native text and `SciChartDefaults.canvasFontFamily` for canvas text.
 4. All these values can be changed
     ```
     // Useful if you need to replace all font family occurrences with a default font
@@ -40,9 +40,9 @@ If there are places where you are using Arial font explicitly you may want to se
 
 After investigating current state of web browsers support, we decided to stop supporting WebGL 1 as all major browsers including mobile browsers support WebGL 2.
 
-## SIMD support introduced in v5 required copying nosimd wasm files for fallback support 
+## SIMD support introduced in v5 requires copying nosimd wasm files for fallback support 
 
-Webpack config needs to be updated on include `scichart2d-nosimd.wasm` and `scichart3d-nosimd.wasm` files.
+Webpack config needs to be updated to include `scichart2d-nosimd.wasm` and `scichart3d-nosimd.wasm` files.
 
 **Webpack config example**
 
@@ -68,14 +68,15 @@ const config: Configuration = {
 
 **SIMD settings**
 
-`SciChartDefaults.useWasmSimd` defines how WebAssembly SIMD should be used by SciChart. Defaults to Auto.
-- Always: Always use SIMD-enabled binaries (you must serve scichart2d.wasm, scichart3d.wasm)
-- Never: Never use SIMD, always use fallback binaries (you must serve scichart2d-nosimd.wasm, scichart3d-nosimd.wasm)
-- Auto: Automatically detect SIMD support and choose appropriate binary (you must serve both variants)
+`SciChartDefaults.useWasmSimd` defines how WebAssembly SIMD should be used by SciChart. The default behavior is `Auto`.
+The list of options:
+- `Always` Always use SIMD-enabled binaries (you must serve scichart2d.wasm, scichart3d.wasm)
+- `Never` Never use SIMD, always use fallback binaries (you must serve scichart2d-nosimd.wasm, scichart3d-nosimd.wasm)
+- `Auto` Automatically detect SIMD support and choose appropriate binary (you must serve both variants)
 
 ## DataLabelState.xValues yValues yFinalValues and PolarColumnDataLabelState.x1Values
 
-The type for `DataLabelState.xValues`, `DataLabelState.yValues`, `DataLabelState.xValues` and `PolarColumnDataLabelState.x1Values` has been changed from `SCRTDoubleVector` to `Float64Array` these code needs to be updated
+The type for `DataLabelState.xValues`, `DataLabelState.yValues`, `DataLabelState.xValues` and `PolarColumnDataLabelState.x1Values` has been changed from `SCRTDoubleVector` to `Float64Array`, therefore this code needs to be updated
 
 **Before**
 
