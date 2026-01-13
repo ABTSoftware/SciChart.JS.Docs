@@ -33,7 +33,7 @@ async function ohlcChart(divElementId) {
     // Add IndexAxis - which collapses gaps in stock market data
     sciChartSurface.xAxes.add(new IndexAxis(wasmContext, {
         // labelProvider: new SmartDateLabelProvider(),
-        growBy: new NumberRange(0.05, 0.05)
+        growBy: new NumberRange(0.05, 0.05),
     }));
     // Create a NumericAxis on the YAxis with 4 Decimal Places
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {

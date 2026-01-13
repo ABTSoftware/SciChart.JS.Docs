@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 16
 ---
 
 # Per-Point Coloring for Polar Scatter Series
