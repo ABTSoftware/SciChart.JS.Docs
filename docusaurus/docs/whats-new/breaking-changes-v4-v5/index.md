@@ -12,9 +12,25 @@ If there are places where you are using Arial font explicitly you may want to se
 
 Read more on [font resolution here](/2d-charts/miscellaneous-apis/native-text-api#font-resolution).
 
-## Support for WebGL1 has been abandoned
+## Fallback to WebGL 1 has been removed, SciChart.js v5 is now WebGL 2 only
 
-After investigating current state of web browsers support, we decided to stop supporting WebGL 1 as all major browsers including mobile browsers support WebGL 2.
+In SciChart.js v4 we noticed that the WebGL 1 fallback was either broken or not fully implemented. This, and for performance reasons, plus the ability to support future graphics APIs, we have decided to remove the WebGL 1 fallback making SciChart.js v5+ supports WebGL 2 only. Some FAQs are included below:
+
+**Q: Will this affect my apps?**
+
+Probably not. Since the WebGL 1 fallback was broken in SciChart.js v4, and we had zero bug reports, we don’t believe anyone was actually using it! Also, browser support for WebGL 2 has improved a lot in recent years and even the most basic integrated graphics chips support WebGL 2.
+
+WebGL 2 is supported on:
+
+* Any Chrome version later than 56 (2017)
+* Edge later than version 79 (2020)
+* Safari (macOS and iOS) later than version 15 (2021)
+* Firefox later than version 51 (2017)
+* Opera later than version 43 (2017)
+
+**Q: What about combability on browsers / systems without a GPU?**
+
+If you don’t have a GPU at all, SciChart.js can still run. Google Chrome and Chromium based browsers feature SwiftShader, a fast, software renderer for WebGL.
 
 ## SIMD support introduced in v5 requires copying nosimd wasm files for fallback support 
 
