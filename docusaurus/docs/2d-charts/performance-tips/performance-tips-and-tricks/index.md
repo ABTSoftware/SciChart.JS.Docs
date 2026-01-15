@@ -451,7 +451,29 @@ There are applications which will allow you to [switch GPU on Windows](https://
 Some computers such as Macbook Pro and certain Windows Laptops have dual-GPUs. Ensure the more powerful GPU is being utilised by your browser to get the best performance from SciChart.js.
 :::
 
-## 5. Keep Up to Date!
+### 4.4 Document Manual render control
+
+The engine has an internal loop based on `requestAnimationFrame` which triggers a chart draw on any surfaces that have been invalidated. If you have your own requestAnimationFrame based drawing you wish to synchronise with, you can disable the engine loop by setting this to true. 
+
+If you do this you are then responsible for calling `webassemblyContext.TSRRequestDraw()` which will immediately draw all surfaces belonging to the webassemblyContext that have been invalidated. 
+
+:::tip 
+Note that 2D and 3D charts, and all charts created using `createSingle()` have separate webassemblyContexts so you must call `TSRRequestDraw()` on each one. This setting is applied to the webassembly context when a chart is created, so for `SciChartSurface.create()` this will change the behaviour of all existing charts created using `SciChartSurface.create()`.
+:::
+
+The canvas will be cleared and require a redraw whenever it is resized. If you are trying to draw immediately after initializing the chart, be aware that if your css does not specify an absolute size for your chart div, you will likely get a resize event immediately after your initialization code yields.
+
+In order to enable manual render pass `disableEngineLoop = true` on scichart surface create
+
+```typescript
+const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
+    disableEngineLoop: true
+});
+```
+
+Then you would need to call `wasmContext.TSRRequestDraw()` each time you render.
+
+## 5. Keep Up to Date!
 
 We are always working on improving performance of the overall charting engine.
 
