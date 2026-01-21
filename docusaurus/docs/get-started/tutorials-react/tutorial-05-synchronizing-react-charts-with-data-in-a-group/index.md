@@ -8,7 +8,7 @@ In the previous tutorials we showed you how to use `<SciChartReact/>` and `<SciC
 
 As a basis for this tutorial, use [Tutorial 04 - Adding & Removing Charts](../tutorial-04-adding-and-removing-charts-to-a-group-in-react/ "Tutorial 04 - Adding & Removing Charts Documentation Page"). We're going to build directly on top of this code, so go ahead and copy to a new project folder.
 
-Also, for the project setup with webpack and npm, check out [Tutorial 01 - Understanding the scichart-react boilerplate](TutorialSetupProjectWithSciChartReact.html "Tutorial 01 - Understanding the scichart-react boilerplate Documentation Page") which explains how to start from scratch!
+Also, for the project setup with webpack and npm, check out [Tutorial 01 - Setting up a project with scichart-react and config object](../tutorial-01-setting-up-project-with-scichart-react/) which explains how to start from scratch!
 
 Refactoring the App.jsx Code
 ----------------------------
