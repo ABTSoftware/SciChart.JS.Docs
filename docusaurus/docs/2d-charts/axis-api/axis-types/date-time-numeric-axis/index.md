@@ -40,7 +40,67 @@ Date / Label Formatting Options
 
 You'll notice above the Date formatting is quite intuitive out of the box, and dynamically changes on zoom. The more zoomed in you are, the finer grained the date labels e.g. Month/Day becomes Day/Hour, and Day/Hour becomes Hour/Minute. This behaviour is provided by the [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html) which is assigned to the [Axis.LabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#labelprovider) property by default.
 
-This behaviour is pretty fixed, however some options of the [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html) are below:
+### High Precision & Advanced Label Formatting
+
+**New in SciChart.js** is the ability to handle High Precision dates (Microseconds, Nanoseconds) and finer control over how dates are composed.
+
+By setting the [datePrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html#dateprecision) property, you can instruct the axis to treat data values as [Nanoseconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#nanoseconds), [Microseconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#microseconds), [Milliseconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#milliseconds) or [Seconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#seconds).
+
+The default is [Seconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#seconds), which means 1 x-axis unit == `1s`. But if we're setting it to [Nanoseconds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edateprecision.html#nanoseconds), then 1 x-axis unit == `1ns`, which is `1 / 1,000,000,000s`.
+
+The [SmartDateLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html#highprecisionlabelmode) automatically adjusts to show suffixes (e.g., `50ns`, `20µs`) or fractional values based on the `highPrecisionLabelMode` you set.
+
+You can also control the verbose nature of labels using flags like `showSecondsOnPreciseDate`, `showSecondsOnWideDate` or `splitWideDateWithComma`.
+
+<CodeSnippetBlock labels={["TS"]}>
+
+```ts
+import { EDatePrecision, EHighPrecisionLabelMode } from "scichart";
+
+// ... 
+const xAxis = new DateTimeNumericAxis(wasmContext, {
+    axisTitle: "Time (Nanoseconds)",
+    
+    // 1. Define input precision (Default is Seconds)
+    // Options: Seconds, Milliseconds, Microseconds, Nanoseconds
+    datePrecision: EDatePrecision.Nanoseconds, 
+
+    // 2. Define how sub-millisecond labels are formatted
+    // Options: Suffix (50ns), Fractional (0.000000050), Scientific (5e-8)
+    highPrecisionLabelMode: EHighPrecisionLabelMode.Suffix,
+
+    // 3. Other Formatting Flags
+    // Toggles seconds on the 'Wide' context label (e.g. "Jan 01, 12:00" vs "Jan 01, 12:00:05")
+    showSecondsOnWideDate: false,
+    // Toggles seconds on the 'Precise' tick label (e.g. "59s500ms" vs "500ms")
+    showSecondsOnPreciseDate: true,
+    // Adds a comma to wide labels (e.g. "Jan 01, 2025" instead of "Jan 01 2025")
+    splitWideDateWithComma: true,
+});
+// ...
+```
+
+</CodeSnippetBlock>
+
+Here's a demo showcasing it:
+
+<ChartFromSciChartDemo 
+    src="https://www.scichart.com/demo/iframe/high-precision-date-axis"
+    title="High Precision Date Axis Example"
+/>
+
+:::info
+Key properties for High Precision and Advanced Formatting:
+
+* [datePrecision:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23dateprecision) - Defines the precision of input values (e.g. `EDatePrecision.Nanoseconds`).
+* [highPrecisionLabelMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23highprecisionlabelmode) - Controls formatting of precise labels (`Suffix`, `Fractional`, `Scientific`).
+* [showSecondsOnWideDate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23showsecondsonwidedate) - Whether to show seconds on the context (wide) label.
+* [showSecondsOnPreciseDate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23showsecondsonprecisedate) - Whether to repeat the seconds value on precise sub-second labels.
+* [splitWideDateWithComma:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23splitwidedatewithcomma) - Toggles the comma separator in date strings.
+* [labelThresholds:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html%23labelthresholds) - Advanced: Allows overriding the zoom levels at which formatters switch (e.g., switch to Minutes earlier or later).
+:::
+
+### Further customising the DateTimeNumericAxis Label Output
 
 :::info
 The properties on SmartDateLabelProvider can be found in the [TypeDoc API documentation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/smartdatelabelprovider.html).
