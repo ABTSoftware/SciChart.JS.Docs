@@ -148,6 +148,3 @@ xAxisDiscontinuous.minorDelta = 4 * 60 * 60;
 3. **Synchronize axes** when using multiple panes with the same time scale
 4. **Set `autoRange: EAutoRange.Never`** when manually controlling the visible range
 
-## Related Documentation
-
-- [SciChart.js DiscontinuousDateAxis Documentation](https://www.scichart.com/documentation/js/v4/DiscontinuousDateAxis.html)
