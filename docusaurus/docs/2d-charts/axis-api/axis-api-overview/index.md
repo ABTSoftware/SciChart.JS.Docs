@@ -35,6 +35,8 @@ Here's the content formatted as a two-column Markdown table:
 | **[PolarCategoryAxis](/2d-charts/axis-api/axis-types/polar-category-axis/)** | Category Axis for [Polar Charts](/2d-charts/surface/scichart-polar-surface-type/) - measures using index - Numeric Types or Dates |
 | **[LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/)** | Logarithmic Axis supporting Base2, BaseE, Base10 with or without scientific notation |
 | **[Text / String Axis](/2d-charts/axis-api/axis-types/text-string-axis/)** | Use LabelProviders to format axis labels as text |
+| **[BaseValueAxis](/2d-charts/axis-api/axis-types/base-value-axis/)** | This axis allows you to define a non-linear coordinate system by specifying custom "base values" that determine how data is mapped to screen coordinates. |
+| **[DiscontinuousDateAxis](/2d-charts/axis-api/axis-types/discontinuous-date-axis/)** | This axis is designed for use with discontinuous timeseries data, such as weekday only financial data. |
 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-axis-types" title="Axis Types" description="" />
 
@@ -110,3 +112,11 @@ Finally, SciChart.js supports Axis styling, including:
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/chart-styling-theming-in-code" title="Chart with custom style applied in code" description="" />
 
 To learn more about the axis styling options see [Axis Styling](/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style/) and related pages
+
+
+Discontinuous Date Axis
+----------------
+
+The [DiscontinuousDateAxis:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html) is a specialized axis type in SciChart.js that **inherits from `BaseValueAxis`** and provides intelligent handling of time-series data with gaps. Unlike a standard `NumericAxis` or `DateTimeNumericAxis`, it interpolates data based on a **fixed timescale after each baseValue**, effectively collapsing gaps (such as weekends, holidays, or after-hours periods in financial data) while maintaining proper time-based positioning within each segment.
+
+<ChartFromSciChartDemo src="http://stagingdemo.scichart.com/demo/iframe/chart-axis-comparison" title="DiscontinuousDateAxis Comparison" description="" />
