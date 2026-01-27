@@ -24,7 +24,7 @@ Adding a CursorModifier to a Chart
 A CursorModifier can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable crosshair/cursor behavior. For example, this code adds a crosshair, enables default tooltips and axis labels.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
-    ```ts {38,55} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {38,56} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
     ```ts {9} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end
     ```
@@ -35,6 +35,16 @@ This results in the following output: 
 <LiveDocSnippet name="./demo" />
 
 Many of the properties here are optional - they have been included to show the configuration possibilities for the cursor. See [ICursorModifierOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/icursormodifieroptions.html) for more.
+
+## High Performance SVG Rendering with `isSvgOnly` flag
+
+For optimal performance with heavy charts (millions of points), use `isSvgOnly: true` (which is already set by default). This renders crosshairs/tooltips to a decoupled SVG layer above the WebGL canvas.
+
+### Benefits:
+- Mouse movement updates SVG independently without triggering WebGL redraws
+- Maintains smooth 60 FPS cursor interaction even when main chart's FPS drop due to the large dataset it has to process
+- Essential for High Performance SVG Cursor demos
+
 
 #### See Also
 
