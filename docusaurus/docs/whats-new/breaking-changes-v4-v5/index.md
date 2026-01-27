@@ -81,3 +81,8 @@ dataLabelState.xValues.get(i)
 ```ts
 dataLabelState.xValues[i]
 ```
+
+## Acceptance of Float64Array on UniformGridDataSeries3D, UniformHeatmapDataSeries, XyzDataSeries3D may cause compile errors in Typescript
+
+## Svg-only render and tooltip changes may cause some annotation synchronisation code needs to move from preRender to layoutMeasured.
+If you have code that subscribes to preRender in which you use the position of an annotation managed by Rollover, Cursor or VerticalSlice modifier, subscribe to layoutMeasured instead.
