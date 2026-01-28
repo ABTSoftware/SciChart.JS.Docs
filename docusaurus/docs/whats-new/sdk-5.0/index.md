@@ -45,6 +45,8 @@ By stripping unnecessary C++ → WebAssembly code, chart initialization has been
 
 ### JavaScript chart and feature performance
 
+We regularly carry out a suite of performance tests on SciChart.js vs. earlier versions and competitors. Download this test suite for yourself from [this github repo](https://github.com/ABTSoftware/javascript-chart-performance-test-suite). You can see some details in the post: [JavaScript Chart Performance Comparisons](https://www.scichart.com/blog/scichart-is-the-fastest-js-chart-library-available-and-why-that-matters-in-todays-world/).
+
 Internal performance tests show significant gains versus SciChart.js v4.
 
 - Up to 1.8x faster: Stacked Column, Stacked Mountain charts.
@@ -82,32 +84,52 @@ SciChart.js v5 reduces memory usage and improves stability by cutting allocation
 
 When updates affect only SVG‑drawn chart elements, they are now applied without redrawing the rest of the chart. Rollover, Cursor and VerticalSlice modifiers were updated to be pure SVG, dramatically improving tooltip performance over large static datasets.
 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/performance-1m-points-svg-cursor"
+    title="High Performance SVG Cursor & Rollover"
+/>
+
 ### BaseValueAxis type
 
 A new [BaseValueAxis](/2d-charts/axis-api/axis-types/base-value-axis/) type uses a configurable set of base values, potentially independent of series data, to determine axis scale. This enables non‑linear axis configurations such as log‑linear or dynamic zoom behaviors.
+
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/basevalue-axes"
+    title="React Chart with BaseValue Axes"
+/>
 
 ### DiscontinuousDateAxis type
 
 [DiscontinuousDateAxis](/2d-charts/axis-api/axis-types/discontinuous-date-axis/) extends [BaseValueAxis](/2d-charts/axis-api/axis-types/base-value-axis/)  and is tailored for financial data with gaps (for example, weekends when markets are closed). It collapses these gaps like a category axis while still plotting by x‑value, supporting varying point counts per series and duplicate x‑values.
 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/chart-axis-comparison"
+    title="DiscontinuousDateAxis Comparison"
+/>
+
 ### High‑precision date formatting
 
 `SmartDateLabelProvider` now supports formatting from years down to nanoseconds and offers improved APIs for overriding formats or plugging in external formatting libraries. A new demo showcases the achievable range and precision due to SciChart’s retained 64‑bit precision in coordinate calculations.
 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/zoom-high-precision"
+    title="High Precision Date Axis"
+/>
+
 ### Additional feature updates
 
-- Stacked Column charts now support PaletteProvider and per‑point coloring.
+- Stacked Column charts now support [PaletteProvider](https://www.scichart.com/documentation/js/v5/2d-charts/chart-types/palette-provider-api/palette-provider-stacked-columns/) and per‑point coloring.
 - A `layoutMeasured` event was added; it fires mid‑render after axes are measured but before drawing, allowing modifiers to hit‑test and reposition annotations within the same frame to avoid extra renders.
-- Added `onResize` event to `SciChartSurface`.
+- Added `onResize` event to `SciChartSurface` ([Render Events documentation](https://scichart.com/documentation/js/v5/2d-charts/miscellaneous-apis/render-events/)).
 - `HeatmapDataSeries` and `UniformGridDataSeries3D` now support `Float64Array[]` as well as 2D `number[][]`.
 - `XyzDataSeries3D` now supports `Float64Array` as well as `number[]`.
-- 3D `SeriesInfo` types now expose `pointMetadata`.
+- 3D `SeriesInfo` types now expose `pointMetadata` ([3D Chart Styling Documentation](https://www.scichart.com/documentation/js/v5/3d-charts/axis-3d-api/chart-styling-3d/)).
 - Uniform heatmaps can bypass the former 4000×4000 limit, supporting textures up to the WebGL max (for example, 16384×16384, depending on hardware).
 - Multiple 3D axis improvements from WPF were ported: multiline labels/titles, auto‑rotation for perpendicular labels, `labelOffset`/`titleOffset`, axis planes (`xyAxisPlane`, `zyAxisPlane`, `zxAxisPlane`) with visibility/label placement options, and functioning `axisPlaneBackgroundFill`.
 
 ### Optional manual render control
 
-A new `disableEngineLoop` option on `SciChartSurface.create()` and `SciChart3DSurface.create()` allows disabling SciChart’s internal rendering loop when you manage rendering from an external loop. See the [manual rendering]([Manual Render Control](/2d-charts/miscellaneous-apis/manual-render)) section in the documentation for usage patterns and examples.
+A new `disableEngineLoop` option on `SciChartSurface.create()` and `SciChart3DSurface.create()` allows disabling SciChart’s internal rendering loop when you manage rendering from an external loop. See the [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render) section in the documentation for usage patterns and examples.
 
 ---
 
