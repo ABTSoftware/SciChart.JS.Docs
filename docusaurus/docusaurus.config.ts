@@ -108,6 +108,11 @@ const config: Config = {
                     label: "API Docs",
                     position: "left"
                 },
+                                {
+                    href: "https://www.scichart.com/documentation/js/v5/intro",
+                    label: "Docs v5",
+                    position: "right"
+                },
                 {
                     href: "https://www.scichart.com/documentation/js/current/webframe.html",
                     label: "Docs v3",
