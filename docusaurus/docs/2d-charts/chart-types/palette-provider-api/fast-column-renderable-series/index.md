@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Per-Point Colouring of Column Charts
 
-Column series can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastColumnRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastcolumnrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+Column series can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [FastColumnRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastcolumnrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
 First, let's create a PaletteProvider class like this:
 
@@ -32,7 +32,7 @@ The code above results in a [JavaScript Column Chart](https://www.scichart.com/
 
 ## Troubleshooting
 
-For [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastcolumnrenderableseries.html) you may notice that **palette provider stops working when zoomed out to the point that columns are 1px wide**. It may happens when a palette provider class overrides only fill and do not override stroke. When we zoom out far enough to reach one pixel width the drawing engine does not use fill any more it uses stroke. Therefore in order to make it look always the same color you would need to override both fill and stroke. For example:
+For [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastcolumnrenderableseries.html) you may notice that **palette provider stops working when zoomed out to the point that columns are 1px wide**. It may happens when a palette provider class overrides only fill and do not override stroke. When we zoom out far enough to reach one pixel width the drawing engine does not use fill any more it uses stroke. Therefore in order to make it look always the same color you would need to override both fill and stroke. For example:
 
 ```ts
 import {

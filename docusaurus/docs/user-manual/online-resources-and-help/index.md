@@ -26,7 +26,7 @@ There are several online resources to help you get the best out of SciChart.js J
     * Where to get SciChart.js from npm, and JSDelivr CDN
     * Notes on the Community Licensing and commercial licensing
 2. SciChart.js forums at [www.scichart.com/questions-js](https://www.scichart.com/questions/categories/js)
-3.  API Documentation at [https://www.scichart.com/documentation/js/v4/typedoc/index.html:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html)
+3.  API Documentation at [https://www.scichart.com/documentation/js/v5/typedoc/index.html:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html)
 4.  Support tickets (licensed customers only) at [https://support.scichart.com](https://support.scichart.com)
 5. Free AI Assistant at https://chat.scichart.com
 6. The SciChart.js Online Demo with ~500 JavaScript, React and Angular demos at [https://www.scichart.com/demo](https://www.scichart.com/demo)

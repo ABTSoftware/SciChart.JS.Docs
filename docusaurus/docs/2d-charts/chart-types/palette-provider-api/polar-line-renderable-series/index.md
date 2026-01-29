@@ -4,9 +4,9 @@ sidebar_position: 15
 
 # Per-Point Coloring for Polar Line Series
 
-Polar Line series can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (TS) or object (JS) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [PolarLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+Polar Line series can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (TS) or object (JS) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [PolarLineRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarlinerenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
-First, let's create a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) class like this:
+First, let's create a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) class like this:
 
 <CodeSnippetBlock labels={["Creating the PaletteProvider"]}>
     ```ts {8,10,23} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -26,11 +26,11 @@ The code above results in a [Polar Line Series](/2d-charts/chart-types/polar-lin
 
 <LiveDocSnippet name="./demo" />
 
-- We create a `ThresholdLinePaletteProvider` class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html)
-- The [strokePaletteMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#strokepalettemode) is set to [SOLID:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#solid) since we want abrupt color changes based on a condition, not a [GRADIENT:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#gradient)
-- We override [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) to return another stroke color when our rule is met: `Math.floor(xValue / 3) % 2 === 0`
+- We create a `ThresholdLinePaletteProvider` class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html)
+- The [strokePaletteMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html#strokepalettemode) is set to [SOLID:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/estrokepalettemode.html#solid) since we want abrupt color changes based on a condition, not a [GRADIENT:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/estrokepalettemode.html#gradient)
+- We override [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) to return another stroke color when our rule is met: `Math.floor(xValue / 3) % 2 === 0`
 - When the method returns `undefined`, the default stroke color is used; otherwise, the custom color is applied
-- The [interpolateLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html#interpolateline) is set to `true` to create smooth curved segments that follow the polar coordinate system
+- The [interpolateLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarlinerenderableseries.html#interpolateline) is set to `true` to create smooth curved segments that follow the polar coordinate system
 
 #### See Also
 

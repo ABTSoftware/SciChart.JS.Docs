@@ -44,11 +44,11 @@ Create titles friendly for the site Search. The title h1, h2, h3 can be created 
 
 ## Decorate TypeDoc links and reference v4
 
-This is v4 TypeDoc - https://www.scichart.com/documentation/js/v4/typedoc
+This is v4 TypeDoc - https://www.scichart.com/documentation/js/v5/typedoc
 
 In order to make all TypeDoc links distinct decorate the link with book icon `:blue_book:`, this is an example of SciChartSurface class typedoc link
 
-[SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html)
+[SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html)
 
 ## Reference scichart.com/demo
 
@@ -73,13 +73,13 @@ TODO: add more formatting example
 **Tip Example**
 
 :::tip
-Info about the properties and functions available can be found at the [TypeDoc API Documentation for SciChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html).
+Info about the properties and functions available can be found at the [TypeDoc API Documentation for SciChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html).
 :::
 
 **Info Example**
 
 :::info
-The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edefaultrenderlayer.html).
+The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/edefaultrenderlayer.html).
 :::
 
 **Note Example**

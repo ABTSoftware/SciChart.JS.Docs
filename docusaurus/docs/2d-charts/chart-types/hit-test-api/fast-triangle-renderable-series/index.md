@@ -4,14 +4,14 @@ sidebar_position: 14
 
 # Hit-Test API for Triangle Series
 
-The IHitTestProvider.hitTest method on [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasttrianglerenderableseries.html) tests if the click was within the Triangle's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
+The IHitTestProvider.hitTest method on [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttrianglerenderableseries.html) tests if the click was within the Triangle's bounds and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html) object with the following properties:
 
 ### HitTest on 1 particular Triangle Series:
 
 The algorithm is as follows:
 
 1. Find the nearest triangle in X direction.
-2. Test if the click was within triangle bounds and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html#isHit) property.
+2. Test if the click was within triangle bounds and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html#isHit) property.
 
 > First, you need to add at least 1 renderable series you plan to hit-test on:
 

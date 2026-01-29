@@ -13,13 +13,13 @@ The [JavaScript Partial Polar Chart Example](https://www.scichart.com/demo/ifra
     title="Partial Polar Series Chart"
 />
 
-This demo shows how a Polar plot can be used to look similar to a Cartesian plot, by setting [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#innerradius): to `0.998` (from the default of `0`) and [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalangle): to `0.001 * Math.PI` radians (from the default of 2 * Math.PI), so that it only displays a very small section of the total circle / polar system, which auto-ranges and zooms to fit in the parent div. 
+This demo shows how a Polar plot can be used to look similar to a Cartesian plot, by setting [innerRadius:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#innerradius): to `0.998` (from the default of `0`) and [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#totalangle): to `0.001 * Math.PI` radians (from the default of 2 * Math.PI), so that it only displays a very small section of the total circle / polar system, which auto-ranges and zooms to fit in the parent div. 
 
 The gridlines are never actually parallel, but the radius of the imaginary circle it's drawn on is so large when setting these 2 properties this way, that it looks like a Cartesian plot.
 
 ## What is a Partial Polar Chart?
 
-The Partial Polar Chart is just a regular polar chart, but with the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalangle) property of the **Angular** axis set to a value less than `2 * Math.PI` (or `360` degrees). This allows you to create a chart that only displays a portion of the polar coordinate system, which can be useful for visualizing data that is only relevant within a specific angular range.
+The Partial Polar Chart is just a regular polar chart, but with the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#totalangle) property of the **Angular** axis set to a value less than `2 * Math.PI` (or `360` degrees). This allows you to create a chart that only displays a portion of the polar coordinate system, which can be useful for visualizing data that is only relevant within a specific angular range.
 
 The example above is extreme, but partial polar charts refers to all plots that span across an angle that is less than `360` degrees (or `2 * Math.PI` radians).
 
@@ -55,7 +55,7 @@ The example above is extreme, but partial polar charts refers to all plots that 
 </div>
 
 ### 3. Polar Uniform Heatmap Chart
-> A polar uniform heatmap chart can also be created by setting the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalangle) property of the **Angular** axis to a value less than `2 * Math.PI` (or `360` degrees).
+> A polar uniform heatmap chart can also be created by setting the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#totalangle) property of the **Angular** axis to a value less than `2 * Math.PI` (or `360` degrees).
 
 <ChartFromSciChartDemo
     src="https://www.scichart.com/demo/iframe/polar-uniform-heatmap-chart"

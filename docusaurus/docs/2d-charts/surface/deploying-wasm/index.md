@@ -49,7 +49,7 @@ See more boilerplate examples for JavaScript frameworks at our Github repositor
 
 The easiest way for SciChart.js to load WebAssembly files is to load them from our CDN (see [jsdelivr.com/package/npm/scichart](https://www.jsdelivr.com/package/npm/scichart)). This method is particularly useful in projects or frameworks that don't have a package manager or module bundler.
 
-To do load SciChart's Wasm files from CDN, call [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#configure) once before any SciChartSurface is shown:
+To do load SciChart's Wasm files from CDN, call [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#configure) once before any SciChartSurface is shown:
 
 **Configure Wasm File URLs**
 
@@ -67,7 +67,7 @@ SciChartSurface.configure({
 If wasmNoSimdUrl is not specified it will search scichart2d-nosimd.wasm next to scichart2d.wasm
 :::
 
-We've packaged a helpful function that automatically loads the latest & correct version of SciChart's Wasm files from CDN. To use this, instead of calling [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#configure) passing in a URL, call [SciChartSurface.useWasmFromCDN():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#usewasmfromcdn).
+We've packaged a helpful function that automatically loads the latest & correct version of SciChart's Wasm files from CDN. To use this, instead of calling [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#configure) passing in a URL, call [SciChartSurface.useWasmFromCDN():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#usewasmfromcdn).
 
 **Load Wasm from CDN**
 
@@ -84,7 +84,7 @@ export async function initSciChart() {
 Loading Wasm files offline
 --------------------------
 
-If your application must load wasm files offline (does not have an internet connection), you can download the files and serve them and use [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#configure) to fetch the local file.
+If your application must load wasm files offline (does not have an internet connection), you can download the files and serve them and use [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#configure) to fetch the local file.
 
 To find out how to do this, see [Tutorial 02 - Including index.min.js and WebAssembly Files offline](/get-started/tutorials-cdn/tutorial-02-offline/).
 
@@ -93,7 +93,7 @@ Loading Wasm for 3D Charts
 
 The process for loading Wasm files for 3D Charts is exactly the same, except you must configure SciChart.js to load scichart3d.wasm.
 
-This can be done via Webpack/npm or a bundlers, or by calling [SciChart3DSurface.useWasmFromCDN():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#usewasmfromcdn) or [SciChart3DSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichart3dsurface.html#configure) as before.
+This can be done via Webpack/npm or a bundlers, or by calling [SciChart3DSurface.useWasmFromCDN():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichart3dsurface.html#usewasmfromcdn) or [SciChart3DSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichart3dsurface.html#configure) as before.
 
 **Configure Wasm File URLs**
 

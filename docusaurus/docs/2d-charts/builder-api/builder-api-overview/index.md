@@ -26,7 +26,7 @@ import { chartBuilder } from "scichart";
 
 The top level method is **buildChart**, which takes the id of the target div, and a definition, which can be a JSON string or an object.
 
-There are also specific function calls to [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.build2dpolarchart) and [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.build3dchart) which can be used to build on specific chart surfaces:
+There are also specific function calls to [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build2dpolarchart) and [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build3dchart) which can be used to build on specific chart surfaces:
 
 <CodeSnippetBlock labels={["Build Surface-specific Charts"]}>
     ```ts showLineNumbers

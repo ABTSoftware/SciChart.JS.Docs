@@ -4,7 +4,7 @@ sidebar_position: 14
 
 # The Digital (Step) Mountain Series Type
 
-A Digital (Step) Mountain or area Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastmountainrenderableseries.html) type.
+A Digital (Step) Mountain or area Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastmountainrenderableseries.html) type.
 
 :::tip
 The [JavaScript Digital Mountain Chart Example](https://www.scichart.com/demo/javascript/digital-mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalMountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/digital-mountain-chart).
@@ -33,7 +33,7 @@ This results in the following output:
 
 In the code above:
 
-*   A Mountain Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   A Mountain Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
 *   We set the stroke, strokethickness and fill properties
 *   ZeroLineY defines where the zero crossing is. The default is `0.0`
 *   We assign a [DataSeries](/2d-charts/chart-types/data-series-api/data-series-api-overview/) - which stores the Xy data to render.

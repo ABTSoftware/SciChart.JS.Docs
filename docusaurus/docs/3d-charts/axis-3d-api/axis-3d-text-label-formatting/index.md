@@ -6,7 +6,7 @@ sidebar_position: 3
 
 Axis 3D Label Formatting obeys the same rules as SciChart 2D.
 
-Each axis has a [labelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase3d.html#labelprovider) property, which allows you to attach pre-built classes to format numbers, dates, as well as create your own.
+Each axis has a [labelProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase3d.html#labelprovider) property, which allows you to attach pre-built classes to format numbers, dates, as well as create your own.
 
 Background reading: Read the [Axis LabelProvider API Overview](/2d-charts/axis-api/axis-labels/label-provider-api-overview/index.md) to learn more about this powerful API
 

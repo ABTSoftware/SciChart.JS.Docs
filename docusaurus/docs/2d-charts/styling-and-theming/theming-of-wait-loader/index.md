@@ -50,7 +50,7 @@ const { sciChartSurface, wasmContext } = await SciChartSurface.create(divId,{ th
 Disabling the Wait Loader entirely
 ----------------------------------
 
-New to SciChart.js v3.4, you can now disable the wait-loader entirely. To do this, pass _loader: false_ to [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#create).
+New to SciChart.js v3.4, you can now disable the wait-loader entirely. To do this, pass _loader: false_ to [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#create).
 
 ```ts
 // Disable wait-Loader
@@ -61,7 +61,7 @@ SciChartSurface.create({ loader: false });
 Customizing Wait Loader HTML
 ----------------------------
 
-Further customization of the wait loader is possible by implementing a chart loader. You need to create a class which confirms to the [ISciChartLoader:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartloader.html) interface and implement [addChartLoader():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartloader.html#addchartloader) and [removeChartLoader():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartloader.html#removechartloader) functions. This will let you put anything in the chart loader, for example images, a company logo or animations.
+Further customization of the wait loader is possible by implementing a chart loader. You need to create a class which confirms to the [ISciChartLoader:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iscichartloader.html) interface and implement [addChartLoader():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iscichartloader.html#addchartloader) and [removeChartLoader():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iscichartloader.html#removechartloader) functions. This will let you put anything in the chart loader, for example images, a company logo or animations.
 
 Here's an example below:
 

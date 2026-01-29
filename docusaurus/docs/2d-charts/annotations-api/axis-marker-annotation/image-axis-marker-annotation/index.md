@@ -25,7 +25,7 @@ The full example code is below:
     ```
 </CodeSnippetBlock>
 
-In this example we are using [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#createimageasync) helper function to create an [htmlImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement). This is then passed to [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#image) property. Optionally [AxisMarkerAnnotation.imageWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#imagewidth) and [imageHeight:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axismarkerannotation.html#imageheight) may be set.
+In this example we are using [createImageAsync():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#createimageasync) helper function to create an [htmlImageElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement). This is then passed to [AxisMarkerAnnotation.image:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axismarkerannotation.html#image) property. Optionally [AxisMarkerAnnotation.imageWidth:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axismarkerannotation.html#imagewidth) and [imageHeight:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axismarkerannotation.html#imageheight) may be set.
 
 Here's the output:
 

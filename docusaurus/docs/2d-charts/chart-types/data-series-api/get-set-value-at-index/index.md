@@ -7,7 +7,7 @@ title: "Accessing DataSeries xValues, yValues and count"
 
 ## How to access DataSeries xValues, yValues
 
-You can access `xValues`, `yValues` on a `DataSeries` by getting the internal WebAssembly native arrays via [dataSeries.getNativeXValues():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#getnativexvalues) and [dataSeries.getNativeYValues():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#getnativeyvalues) functions.
+You can access `xValues`, `yValues` on a `DataSeries` by getting the internal WebAssembly native arrays via [dataSeries.getNativeXValues():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#getnativexvalues) and [dataSeries.getNativeYValues():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#getnativeyvalues) functions.
 
 These functions return the x & y values as `SCRTDoubleVector`: a webassembly buffer type which stores underlying data as `Float64` array in the wasm heap.
 
@@ -30,7 +30,7 @@ If you need to do bulk operations, it's better to read the entire vector out to 
 
 ### What is the SCRTDoubleVector type returned by getNativeXValues()?
 
-[dataSeries.getNativeXValues():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#getnativexvalues) and [dataSeries.getNativeYValues():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#getnativeyvalues) allow you to access the dataSeries xValues, yValues.
+[dataSeries.getNativeXValues():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#getnativexvalues) and [dataSeries.getNativeYValues():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#getnativeyvalues) allow you to access the dataSeries xValues, yValues.
 
 These both return type `SCRTDoubleVector`. This is a type declared in webassembly which maps to a `Float64` array on the wasm heap.
 
@@ -59,20 +59,20 @@ export declare class SCRTDoubleVector {
 The above type declaration for `SCRTDoubleVector` is included for information purposes only.
 
 It's not recommended to use `SCRTDoubleVector.push_back`, `resize`, `clear`, `insertAt`, `removeAt` or `delete`.
-Instead, use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) and related dataSeries types,
+Instead, use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html) and related dataSeries types,
 as this will manage internal state as well as memory.
 :::
 
 ## Accessing DataSeries Count (length) and Capacity
 
-The length, size or count or a `dataSeries` can be accessed via the [dataSeries.count():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#count) function. Here is an example:
+The length, size or count or a `dataSeries` can be accessed via the [dataSeries.count():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#count) function. Here is an example:
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts showLineNumbers file=./VectorToArraySandbox/demo.ts start=Example3-Start end=Example3-End
 ```
 </CodeSnippetBlock>
 
-The capacity of a `dataSeries` can be get/set via the [dataSeries.capacity:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#capacity) property. This sets the size of the underlying memory buffers allowing you to pre-allocate memory in demanding applications.
+The capacity of a `dataSeries` can be get/set via the [dataSeries.capacity:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#capacity) property. This sets the size of the underlying memory buffers allowing you to pre-allocate memory in demanding applications.
 
 For example, if you plan to call `dataSeries.append()` or `.appendRange()` many times up to a capacity of 1,000,000, you can pre-allocate the memory now by setting the `capacity`:
 
@@ -109,7 +109,7 @@ the risk of getting strange errors like `TypeError: Cannot perform %TypedArray%.
 
 It's best to use this operation to **read/write** values from a dataSeries where you need fast access, but don't keep the `Float64Array` view instance for longer than needed (use once for an operation then discard). For passing JS array copies around your app, use `vectorToArray()` which provides a safer deep-copy.
 
-For write operations, it's recommended to use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) and related dataSeries types
+For write operations, it's recommended to use the `append` `update` `insert` `remove` `clear` and `delete` functions directly on [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html) and related dataSeries types
 unless you absolutely know what you're doing!
 :::
 

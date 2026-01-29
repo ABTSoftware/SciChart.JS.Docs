@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # PolarSeriesSelectionModifier
 
-The [PolarSeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarseriesselectionmodifier.html) is a modifier that allows users to select a series on a polar chart. It provides visual feedback when a series is selected or hovered, enhancing the user experience by allowing for interaction with the chart.
+The [PolarSeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarseriesselectionmodifier.html) is a modifier that allows users to select a series on a polar chart. It provides visual feedback when a series is selected or hovered, enhancing the user experience by allowing for interaction with the chart.
 
 ## Adding a PolarSeriesSelectionModifier to a Chart
 

@@ -5,7 +5,7 @@ sidebar_position: 2
 # Formatting VerticalSlice Tooltip Items
 
 :::tip
-**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview/) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
+**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview/) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
 :::
 
 This article goes into further detail on customising the tooltip items (formatting, text content)
@@ -13,11 +13,11 @@ This article goes into further detail on customising the tooltip items (formatti
 Basic VerticalSliceModifier Tooltip Formatting Options
 ------------------------------------------------------
 
-The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) obeys similar rules to the [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/) for customizing the tooltip content and appearance.
+The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) obeys similar rules to the [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/) for customizing the tooltip content and appearance.
 
-Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/), including how to specify formats from Enums and override formatting programmatically.
+Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/), including how to specify formats from Enums and override formatting programmatically.
 
-Below we're going to show you how to apply tooltip formatting to enable four-decimal places on [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) tooltips.
+Below we're going to show you how to apply tooltip formatting to enable four-decimal places on [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) tooltips.
 
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
@@ -36,9 +36,9 @@ For further customisation on a per-axis basis, consider using the [LabelProvide
 Tooltip DataTemplates
 ---------------------
 
-Further customisation of [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) tooltip content can be achieved with the [VerticalSliceModifier.tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#tooltipdatatemplate) property. This defines the content inside the tooltip e.g. what values are shown (x, y, values from metadata), if the series name is shown and so on.
+Further customisation of [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) tooltip content can be achieved with the [VerticalSliceModifier.tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html#tooltipdatatemplate) property. This defines the content inside the tooltip e.g. what values are shown (x, y, values from metadata), if the series name is shown and so on.
 
-This property expects a function in the following format (see [TRolloverTooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#trollovertooltipdatatemplate)):
+This property expects a function in the following format (see [TRolloverTooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#trollovertooltipdatatemplate)):
 
 <CodeSnippetBlock labels={["tooltipDataTemplateFunction"]}>
     ```ts showLineNumbers
@@ -55,13 +55,13 @@ The input/output parameters are:
 
 | **In/Out** | **Parameter** | **Description** |
 |------------|---------------|-----------------|
-| _Input_ | seriesInfo | an instance of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesinfo.html): a data object which stores info about the series that intersects the Vertical Line |
-| _Input_ | tooltipTitle | a tooltipTitle (string) which comes from [renderableSeries.rolloverModifierProps.tooltipTitle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptitle). |
-| _Input_ | tooltipLabelX | A prefix (string) which comes from [renderableSeries.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) |
-| _Input_ | tooltipLabelY | A prefix (string) which comes from [renderableSeries.rolloverModifierProps.tooltipLabelY:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabely) |
+| _Input_ | seriesInfo | an instance of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesinfo.html): a data object which stores info about the series that intersects the Vertical Line |
+| _Input_ | tooltipTitle | a tooltipTitle (string) which comes from [renderableSeries.rolloverModifierProps.tooltipTitle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptitle). |
+| _Input_ | tooltipLabelX | A prefix (string) which comes from [renderableSeries.rolloverModifierProps.tooltipLabelX:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabelx) |
+| _Input_ | tooltipLabelY | A prefix (string) which comes from [renderableSeries.rolloverModifierProps.tooltipLabelY:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiplabely) |
 | _Return_ | string[] | An array of strings, each one corresponding to a line in the tooltip |
 
-Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyseriesinfo.html) and output to tooltips.
+Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyseriesinfo.html) and output to tooltips.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {2,39,53} showLineNumbers file=./demo-data.ts start=#region_A_start end=#region_A_end

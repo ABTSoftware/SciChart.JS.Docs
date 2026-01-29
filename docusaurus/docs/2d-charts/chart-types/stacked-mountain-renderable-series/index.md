@@ -4,7 +4,7 @@ sidebar_position: 41
 
 # The Stacked Mountain Series Type
 
-Stacked Mountain Charts can be created by a combination of the [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountaincollection.html) types. [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountainrenderableseries.html) share many properties with the added feature that columns automatically stack vertically or side by side.
+Stacked Mountain Charts can be created by a combination of the [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountaincollection.html) types. [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountainrenderableseries.html) share many properties with the added feature that columns automatically stack vertically or side by side.
 
 :::tip
 The [JavaScript Stacked Mountain Chart Example](https://www.scichart.com/demo/javascript/stacked-mountain-chart) can be found in the [SciChart.Js Examples Suite > Stacked Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/StackedMountainChart) on Github
@@ -29,8 +29,8 @@ To create a [JavaScript Stacked Mountain Series](https://www.scichart.com/demo/
 
 Above:
 
-*   We created 5 [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountainrenderableseries.html) and added them to a [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountaincollection.html)
-*   The StackedMountainCollection itself is added to [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection, not the individual mountain series.
+*   We created 5 [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountainrenderableseries.html) and added them to a [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountaincollection.html)
+*   The StackedMountainCollection itself is added to [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection, not the individual mountain series.
 
 This results in the following output:
 
@@ -39,7 +39,7 @@ This results in the following output:
 Creating 100% Stacked Mountain Charts
 -------------------------------------
 
-SciChart.js also supports a [JavaScript 100% Stacked Mountain chart](https://www.scichart.com/demo/javascript/stacked-mountain-chart), which can be enabled by setting a single flag: [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountaincollection.html#isonehundredpercent).
+SciChart.js also supports a [JavaScript 100% Stacked Mountain chart](https://www.scichart.com/demo/javascript/stacked-mountain-chart), which can be enabled by setting a single flag: [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountaincollection.html#isonehundredpercent).
 
 <CodeSnippetBlock labels={["TS"]}>
 ```ts {13} showLineNumbers file=./GroupingOptions/demo.ts start=#region_A_start end=#region_A_end
@@ -50,4 +50,4 @@ Setting this flag results in the following output.
 
 <LiveDocSnippet name="./GroupingOptions/demo" />
 
-_**Above:** a [JavaScript 100% Stacked Mountain chart](https://www.scichart.com/demo/javascript/stacked-mountain-chart) when [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedmountaincollection.html#isonehundredpercent) is true_
+_**Above:** a [JavaScript 100% Stacked Mountain chart](https://www.scichart.com/demo/javascript/stacked-mountain-chart) when [StackedMountainCollection.isOneHundredPercent:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedmountaincollection.html#isonehundredpercent) is true_

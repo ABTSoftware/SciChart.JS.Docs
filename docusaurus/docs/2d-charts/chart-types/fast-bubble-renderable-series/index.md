@@ -4,7 +4,7 @@ sidebar_position: 25
 
 # The Bubble Series Type
 
-Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbubblerenderableseries.html) type.
+Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
 The [JavaScript Bubble Chart Example](https://www.scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/bubble-chart).
@@ -29,9 +29,9 @@ To create a [Javascript Bubble Chart](https://www.scichart.com/demo/javascript-
 
 In the code above:
 
-*   A Bubble Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basepointmarker.html) with a width, height = 64. Note that this pointmarker will be scaled up or down relative to bubble size. Having a [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basepointmarker.html#strokethickness) of 0 can create a better visual.
-*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basedataseries.html) - which stores the Xyz data to render, where X,Y is position and Z is scale factor.
+*   A Bubble Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   We set a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/basepointmarker.html) with a width, height = 64. Note that this pointmarker will be scaled up or down relative to bubble size. Having a [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/basepointmarker.html#strokethickness) of 0 can create a better visual.
+*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/basedataseries.html) - which stores the Xyz data to render, where X,Y is position and Z is scale factor.
 
 This results in the following output:
 
@@ -45,11 +45,11 @@ Because the Bubble Series renders a single point-market but scales for each poin
 ## Scaling Bubble sizes per-point
 
 :::tip
-The Bubble chart sizes are scaled using the zValue on the [XyzDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyzdataseries.html). By default, the z-value is pixels.
+The Bubble chart sizes are scaled using the zValue on the [XyzDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyzdataseries.html). By default, the z-value is pixels.
 
-You can scale up/down the entire bubble series by setting the [FastBubbleRenderableSeries.zMultiplier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbubblerenderableseries.html#zmultiplier) property. Default value=1.
+You can scale up/down the entire bubble series by setting the [FastBubbleRenderableSeries.zMultiplier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbubblerenderableseries.html#zmultiplier) property. Default value=1.
 
-You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](/2d-charts/chart-types/data-series-api/data-series-api-overview/) pages for more info about data updates.
+You can modify or edit sizes by adjusting the zValues via [xyzDataSeries.updateXyz():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyzdataseries.html#updatexyz) or similar. See the [DataSeries Documentation](/2d-charts/chart-types/data-series-api/data-series-api-overview/) pages for more info about data updates.
 :::
 
 Bubble sizes can be scaled using the DataSeries zValue, or the zMultiplier property (see above). What if you wanted to scale a bubble series depending on the zoom level of the viewport? Here's a quick worked example:
@@ -71,14 +71,14 @@ It is possible to have null points or gaps in a Bubble Series by passing a d
 
 ## Different Point-Markers on a Bubble Series
 
-Every data point of a Bubble Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basepointmarker.html). Several different types of PointMarker are available in SciChart.js:
+Every data point of a Bubble Series is marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/basepointmarker.html). Several different types of PointMarker are available in SciChart.js:
 
-*   [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/ellipsepointmarker.html) - Renders a circle at each point
-*   [SquarePointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/squarepointmarker.html) - Renders a square at each point
-*   [TrianglePointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/trianglepointmarker.html) - Renders a triangle at each point
-*   [CrossPointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/crosspointmarker.html) - Renders a plus sign '+' at each point
-*   [XPointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xpointmarker.html) - Renders an 'x' at each point
-*   [SpritePointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/spritepointmarker.html) - Allows an image to be used at each point to create custom pointmarkers
+*   [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/ellipsepointmarker.html) - Renders a circle at each point
+*   [SquarePointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/squarepointmarker.html) - Renders a square at each point
+*   [TrianglePointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/trianglepointmarker.html) - Renders a triangle at each point
+*   [CrossPointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/crosspointmarker.html) - Renders a plus sign '+' at each point
+*   [XPointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xpointmarker.html) - Renders an 'x' at each point
+*   [SpritePointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/spritepointmarker.html) - Allows an image to be used at each point to create custom pointmarkers
 
 Any of these can be used to create a bubble chart.
 

@@ -9,7 +9,7 @@ A box plot (also called a box-and-whisker plot) is a statistical visualization t
 ## Key Configuration Options
 
 ### Data Point Width Modes
-Sets the mode which determines how dataPointWidth is interpreted. Available values are [EDataPointWidthMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edatapointwidthmode.html). Default is Relative.
+Sets the mode which determines how dataPointWidth is interpreted. Available values are [EDataPointWidthMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/edatapointwidthmode.html). Default is Relative.
 
 - EDataPointWidthMode.Relative: Interprets Data Point Width as a relative to the full width which is axis length / number of columns. This assumes that there are no gaps in the data. If you are plotting sparse columns on a NumericAxis, consider Range mode
 - EDataPointWidthMode.Absolute: Interprets Data Point Width as an absolute pixel value
@@ -25,7 +25,7 @@ Sets the mode which determines how dataPointWidth is interpreted. Available valu
 
 ## Create a Box Plot Chart
 
-To create a Box Plot Chart with SciChart.js we need to use [FastBoxPlotRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastboxplotrenderableseries.html) and [BoxPlotDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/boxplotdataseries.html). Start with the following code:
+To create a Box Plot Chart with SciChart.js we need to use [FastBoxPlotRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastboxplotrenderableseries.html) and [BoxPlotDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/boxplotdataseries.html). Start with the following code:
 
 <CodeSnippetBlock labels={["TS", "JS"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=region_A_start end=region_A_end

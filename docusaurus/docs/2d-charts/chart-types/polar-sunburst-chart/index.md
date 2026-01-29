@@ -4,7 +4,7 @@ sidebar_position: 150
 
 # The Polar Sunburst Chart Type
 
-The **Polar Sunburst Chart** is a powerful way to visualize hierarchical data in a circular format. This chart type is not a single series, but rather a dynamic composition of multiple [`PolarColumnRenderableSeries`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html), arranged by angular position and radial depth.
+The **Polar Sunburst Chart** is a powerful way to visualize hierarchical data in a circular format. This chart type is not a single series, but rather a dynamic composition of multiple [`PolarColumnRenderableSeries`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcolumnrenderableseries.html), arranged by angular position and radial depth.
 
 Each layer in the hierarchy becomes a new radial level, with children elements subdividing the angular range of their parents. Selection and drill-down functionality are built in, allowing users to click to zoom in or back out of the tree.
 

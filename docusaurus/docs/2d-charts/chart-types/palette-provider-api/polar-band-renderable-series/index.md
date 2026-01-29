@@ -4,9 +4,9 @@ sidebar_position: 13
 
 # Per-Point Coloring for Polar Band Series
 
-[Polar Band series](/2d-charts/chart-types/polar-band-renderable-series/) can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (TS) or object (JS) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [PolarBandRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarbandrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
+[Polar Band series](/2d-charts/chart-types/polar-band-renderable-series/) can be colored per-point or per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (TS) or object (JS) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) and [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifillpaletteprovider.html) interfaces. Then, apply this to the [PolarBandRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarbandrenderableseries.html#paletteprovider) property. This allows you to colour data-points based on values, or custom rules with infinite extensiblity.
 
-First, let's create a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) class like this:
+First, let's create a [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) class like this:
 
 <CodeSnippetBlock labels={["Creating the PaletteProvider"]}>
     ```ts {10,17,25} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -27,7 +27,7 @@ The code above results in a [Polar Band Series](/2d-charts/chart-types/polar-ban
 <LiveDocSnippet name="./demo" />
 
 In the code above:
-- We create a class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) to override [overrideFillArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridefillargb) and [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) methods by `xValue`, more specifically, the orange fill & stroke when this custom rule is met:
+- We create a class that extends [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html) to override [overrideFillArgb:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html#overridefillargb) and [overrideStrokeArgb:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html#overridestrokeargb) methods by `xValue`, more specifically, the orange fill & stroke when this custom rule is met:
 
 ```ts
 ((xValue > 3 && xValue <= 6) || (xValue > 9 && xValue <= 12))

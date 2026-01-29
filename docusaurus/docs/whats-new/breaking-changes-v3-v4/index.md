@@ -30,8 +30,8 @@ If you do not have any special requirements for your labels, we recommend using 
 
 disableAspect option now defaults true in SciChartReact
 -------------------------------------------------------
-When creating a surface you can pass an option [disableAspect:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/i2dsurfaceoptions.html#disableaspect) to a surface.  
-Now, we have also introduce a global flag used as the default value for this property - [SciChartDefaults.disableAspect:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartdefaults.html#disableaspect).  
+When creating a surface you can pass an option [disableAspect:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/i2dsurfaceoptions.html#disableaspect) to a surface.  
+Now, we have also introduce a global flag used as the default value for this property - [SciChartDefaults.disableAspect:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartdefaults.html#disableaspect).  
 And in **SciChartReact** it has been set to `true`. This means that by default, a chart will have a zero size.  
 To avoid layout issues, make sure to apply the desired size styling to the SciChartReact element.  
 You can also change this flag per surface or globally.  
@@ -283,7 +283,7 @@ subChart.padding = Thickness.fromNumber(20);
 SciChartSubSurface.subPosition
 ------------------------------
 
-In prior versions, the position constructor option and the [subPosition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichartsubsurface.html#subposition) property on SciChartSubSurface could be set to Rect, or to `{x, y, width, height }`, which was then converted to Rect internally.
+In prior versions, the position constructor option and the [subPosition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iscichartsubsurface.html#subposition) property on SciChartSubSurface could be set to Rect, or to `{x, y, width, height }`, which was then converted to Rect internally.
 
 Now they could be set one of 3 formats:
 
@@ -307,7 +307,7 @@ You can only read values out if they are on the structure you used to set subPos
 SciChartSubSurface.coordinateMode
 ------------------------------
 The type for coordinate mode has been changed from `EECoordinateMode` to `ESubSurfacePositionCoordinateMode`.  
-Also it is now possible to set it separately for each corresponding coordinate of `subPosition` property. (Refer to [TSubSurfaceCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tsubsurfacecoordinatemode))
+Also it is now possible to set it separately for each corresponding coordinate of `subPosition` property. (Refer to [TSubSurfaceCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#tsubsurfacecoordinatemode))
 Example:
 ```ts
 // treat coordinates corresponding to horizontal position as pixel values, while the vertical coordinates as relative values

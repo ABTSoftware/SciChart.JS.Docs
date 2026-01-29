@@ -4,7 +4,7 @@ sidebar_position: 100
 
 # The Polar Stacked Mountain Chart Type
 
-The Polar Stacked Mountain Chart Type is created using a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountaincollection.html) to manage multiple series of [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html), which represent the individual stacked mountains in the chart.
+The Polar Stacked Mountain Chart Type is created using a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountaincollection.html) to manage multiple series of [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountainrenderableseries.html), which represent the individual stacked mountains in the chart.
 
 :::tip
 The [JavaScript Polar Stacked Mountain Chart](https://www.scichart.com/demo/javascript/polar-stacked-mountain-chart) can be found in the [SciChart.Js Examples Suite > Polar Stacked Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/release_v4.0/Examples/src/components/Examples/Charts2D/PolarCharts/PolarStackedMountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/react/polar-stacked-mountain-chart).
@@ -17,7 +17,7 @@ The [JavaScript Polar Stacked Mountain Chart](https://www.scichart.com/demo/java
 
 ## Create a Basic Polar Stacked Mountain Series 
 
-To create a Javascript [Polar Stacked Mountain Series:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html) with SciChart.js, use the following code:
+To create a Javascript [Polar Stacked Mountain Series:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountainrenderableseries.html) with SciChart.js, use the following code:
 
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
@@ -29,8 +29,8 @@ To create a Javascript [Polar Stacked Mountain Series:blue_book:](https://www.sc
 
 Above:
 
-We created 2 [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html) and added them to a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountaincollection.html). Each [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarstackedmountainrenderableseries.html) represents a single mountain in the chart, and they are stacked on top of each other.
-The StackedMountainCollection itself is added to [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection, not the individual mountain series.
+We created 2 [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountainrenderableseries.html) and added them to a [PolarStackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountaincollection.html). Each [PolarStackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarstackedmountainrenderableseries.html) represents a single mountain in the chart, and they are stacked on top of each other.
+The StackedMountainCollection itself is added to [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection, not the individual mountain series.
 
 This results in the following output:
 

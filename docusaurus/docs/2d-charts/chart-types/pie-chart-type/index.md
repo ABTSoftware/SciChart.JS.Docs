@@ -4,7 +4,7 @@ sidebar_position: 50
 
 # The Pie Chart Type
 
-In SciChart.js, the [JavaScript Pie Chart](https://www.scichart.com/demo/javascript-pie-chart) type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html) type.
+In SciChart.js, the [JavaScript Pie Chart](https://www.scichart.com/demo/javascript-pie-chart) type is represented by the [SciChartPieSurface:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpiesurface.html) type.
 
 :::tip
 The [JavaScript Pie Chart Example](https://www.scichart.com/demo/javascript-pie-chart) can be found in the [SciChart.Js Examples Suite > Pie Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/PieChart) on Github
@@ -15,14 +15,14 @@ The [JavaScript Pie Chart Example](https://www.scichart.com/demo/javascript-pie
     title="Pie Chart"
 />
 
-The Pie Chart represents data in a form of circle divided into triangular wedges called segments. A [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html) represents a percentage that corresponds to a particular value. This value appears drawn on every segment and can be set in code. A [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html) can be selected by clicking either on it or on the corresponding item in the Legend. This action provides a visual feedback on the chart and the Legend.
+The Pie Chart represents data in a form of circle divided into triangular wedges called segments. A [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html) represents a percentage that corresponds to a particular value. This value appears drawn on every segment and can be set in code. A [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html) can be selected by clicking either on it or on the corresponding item in the Legend. This action provides a visual feedback on the chart and the Legend.
 
 Create a Pie Chart
 ------------------
 
-To create a Pie Chart, you have to create a number of [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html) instances and add them to the [SciChartPieSurface.pieSegments:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html#piesegments) collection.
+To create a Pie Chart, you have to create a number of [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html) instances and add them to the [SciChartPieSurface.pieSegments:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpiesurface.html#piesegments) collection.
 
-Each [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html) has properties for **value**, **text** and **color**, or alternatively **colorLinearGradient** if you wish to specify a gradient fill. The property **isSelected** denotes whether the [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html) is in the selected state or not.
+Each [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html) has properties for **value**, **text** and **color**, or alternatively **colorLinearGradient** if you wish to specify a gradient fill. The property **isSelected** denotes whether the [PieSegment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html) is in the selected state or not.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {15,29,38,46,55,63} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -56,13 +56,13 @@ Formatting Pie Chart Labels
 
 Several options for formatting Pie Chart labels are possible with SciChart.js.
 
-*   Set [SciChartPieSurface.seriesSpacing:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html#seriesspacing) to put a padding in between pie segments.
-*   Set [SciChartPieSurface.labelStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html#labelstyle) to set a global label font size, color and family
-*   Override [SciChartPieSurface.labelProvider.getSegmentText:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpiesurface.html#labelprovider) to set a general label text override
-*   Set [PieSegment.labelOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html#labeloffset) to move labels further away from the pie segment.
-*   Set [PieSegment.labelStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html#labelstyle) to set individual pie segment font and color
-*   Set [PieSegment.radiusAdjustment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html#radiusadjustment) to make the pie segment larger or smaller.
-*   LabelProviders are also available on individual [PieSegment.labelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/piesegment.html#labelprovider) property
+*   Set [SciChartPieSurface.seriesSpacing:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpiesurface.html#seriesspacing) to put a padding in between pie segments.
+*   Set [SciChartPieSurface.labelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpiesurface.html#labelstyle) to set a global label font size, color and family
+*   Override [SciChartPieSurface.labelProvider.getSegmentText:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpiesurface.html#labelprovider) to set a general label text override
+*   Set [PieSegment.labelOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html#labeloffset) to move labels further away from the pie segment.
+*   Set [PieSegment.labelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html#labelstyle) to set individual pie segment font and color
+*   Set [PieSegment.radiusAdjustment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html#radiusadjustment) to make the pie segment larger or smaller.
+*   LabelProviders are also available on individual [PieSegment.labelProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/piesegment.html#labelprovider) property
 
 Below, an example combines several of these techniques:
 

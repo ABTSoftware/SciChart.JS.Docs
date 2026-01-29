@@ -4,14 +4,14 @@ sidebar_position: 4
 
 # ZoomExtentsModifier
 
-SciChart.js provides the ability to Zoom Extents the entire chart (zoom to fit data) by double-clicking the chart area with the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html), available out of the box.
+SciChart.js provides the ability to Zoom Extents the entire chart (zoom to fit data) by double-clicking the chart area with the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html), available out of the box.
 
-Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features/) class, the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html) allows animated zooming via the [isAnimated:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html#isanimated), [animationDuration:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html#animationduration) and [easingFunction:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html#easingfunction) properties.
+Besides common features which are inherited from the [ChartModifierBase](/2d-charts/chart-modifier-api/common-features/) class, the [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html) allows animated zooming via the [isAnimated:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html#isanimated), [animationDuration:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html#animationduration) and [easingFunction:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html#easingfunction) properties.
 
 Adding a ZoomExtentsModifier to a Chart
 ---------------------------------------
 
-A [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/zoomextentsmodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable zoom to fit behavior.
+A [ZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/zoomextentsmodifier.html) can be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#chartmodifiers) collection to enable zoom to fit behavior.
 
 For example:
 
@@ -57,9 +57,9 @@ This results in the following behavior when double-clicking the chart:
 Zoom to a Preset Range
 ----------------------
 
-If you would like the double-click to zoom to some preset range, rather than the data range, you can set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#zoomextentsrange) on the axes.  In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#zoomextentstoinitialrange) true, which will set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#zoomextentsrange) to the visibleRange passed in.
+If you would like the double-click to zoom to some preset range, rather than the data range, you can set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#zoomextentsrange) on the axes.  In addition, if you are setting an initial visibleRange on an axis and would like zoomExtents to return to this range, you can just set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#zoomextentstoinitialrange) true, which will set [zoomExtentsRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#zoomextentsrange) to the visibleRange passed in.
 
-If you just want to have some space around your data, set [growBy:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#growby) instead.
+If you just want to have some space around your data, set [growBy:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#growby) instead.
 
 #### See Also
 

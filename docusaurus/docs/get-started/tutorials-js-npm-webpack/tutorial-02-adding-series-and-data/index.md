@@ -21,9 +21,9 @@ In SciChart, there are special classes called [RenderableSeries](/2d-charts/cha
 
 In this tutorial, we are going to add some Line series onto the chart.
 
-First, we create a [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/).
+First, we create a [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/).
 
-Next, we create a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+Next, we create a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
 
 Try the code below:
 
@@ -70,7 +70,7 @@ Try the code below:
   ```
 </CodeSnippetBlock>
 
-Ensure you also have the index.html set, which must contain a div with id="scichart-root" (or whatever you pass to [SciChartSurface.create:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#create))
+Ensure you also have the index.html set, which must contain a div with id="scichart-root" (or whatever you pass to [SciChartSurface.create:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#create))
 
 <CodeSnippetBlock labels={["HTML"]}>
   ```html {21} showLineNumbers
@@ -162,9 +162,9 @@ Modify the code in index.js to the following:
   ```
 </CodeSnippetBlock>
 
-This code adds 100 series in a loop, each with 10,000 data-points using the [XyDataSeries.append:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html#append) method. The mathematical function in there is just to create a nice looking waveform.
+This code adds 100 series in a loop, each with 10,000 data-points using the [XyDataSeries.append:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html#append) method. The mathematical function in there is just to create a nice looking waveform.
 
-We create a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) for each trip around the outer loop and this time use the constructor parameters to set the [dataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html#dataseries), [stroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html#stroke) and [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html#strokethickness) properties.
+We create a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) for each trip around the outer loop and this time use the constructor parameters to set the [dataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html#dataseries), [stroke:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html#stroke) and [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html#strokethickness) properties.
 
 This is the result below:
 

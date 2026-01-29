@@ -4,7 +4,7 @@ sidebar_position: 20
 
 # Hit-Test API for Polar XY Scatter Series
 
-The IHitTestProvider.hitTest method on [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarxyscatterrenderableseries.html) tests if the click was within the Scatter series' Point-Marker body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
+The IHitTestProvider.hitTest method on [PolarXyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarxyscatterrenderableseries.html) tests if the click was within the Scatter series' Point-Marker body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html) object with the following properties:
 
 ### HitTest on 1 particular Polar Scatter Series:
 
@@ -20,7 +20,7 @@ const scatterHitTestInfo: HitTestInfo = scatterSeries1.hitTestProvider.hitTest(x
 The algorithm is as follows:
 
 1. Find the nearest Scatter Point in X direction.
-2. Test if the click was within Marker bounds and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html#isHit) property.
+2. Test if the click was within Marker bounds and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html#isHit) property.
 
 
 ### Here is how you would implement it on multiple Polar Scatter Series:

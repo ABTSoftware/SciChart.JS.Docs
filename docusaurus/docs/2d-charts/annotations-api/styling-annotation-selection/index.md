@@ -10,7 +10,7 @@ The Annotations API allows to customize the interaction adorners style of an ed
 2.  specifying the radius of the grip points
 3.  setting a custom svg template for the grips
 
-There is a number of common properties which could be used to customize the look and behavior of interactive annotations. They could be passed as constructor options, which are described by the [IAnnotationBaseOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html). And the relevant properties are defined as follows:
+There is a number of common properties which could be used to customize the look and behavior of interactive annotations. They could be passed as constructor options, which are described by the [IAnnotationBaseOptions:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html). And the relevant properties are defined as follows:
 
 <CodeSnippetBlock labels={["Discrete Dragging"]}>
     ```ts
@@ -37,19 +37,19 @@ There is a number of common properties which could be used to customize the look
 
 Also, the same properties could be modified using the properties on an annotation instance:
 
-*   [AnnotationBase.resizeDirections:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#resizedirections)
-*   [AnnotationBase.annotationsGripsStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#annotationsgripsstroke)
-*   [AnnotationBase.annotationsGripsFill:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#annotationsgripsfill)
-*   [AnnotationBase.annotationsGripsRadius:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#annotationsgripsradius)
-*   [AnnotationBase.selectionBoxStroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#selectionboxstroke)
-*   [AnnotationBase.selectionBoxDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#selectionboxdelta)
-*   [AnnotationBase.selectionBoxThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#selectionboxthickness)
-*   [AnnotationBase.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#dragpoints)
+*   [AnnotationBase.resizeDirections:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#resizedirections)
+*   [AnnotationBase.annotationsGripsStroke:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#annotationsgripsstroke)
+*   [AnnotationBase.annotationsGripsFill:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#annotationsgripsfill)
+*   [AnnotationBase.annotationsGripsRadius:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#annotationsgripsradius)
+*   [AnnotationBase.selectionBoxStroke:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#selectionboxstroke)
+*   [AnnotationBase.selectionBoxDelta:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#selectionboxdelta)
+*   [AnnotationBase.selectionBoxThickness:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#selectionboxthickness)
+*   [AnnotationBase.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#dragpoints)
 
 Default Adorners Style
 ----------------------
 
-We will start by creating a [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/boxannotation.html) on a surface and will use it as a boilerplate for further examples (other types of annotations could be modified similarly). In order to make the annotation interactable, we will set [IAnnotationBaseOptions.isEditable:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#iseditable) flag. Also we will set [IAnnotationBaseOptions.isSelected:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#isselected) to display adorners of the annotation.
+We will start by creating a [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/boxannotation.html) on a surface and will use it as a boilerplate for further examples (other types of annotations could be modified similarly). In order to make the annotation interactable, we will set [IAnnotationBaseOptions.isEditable:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html#iseditable) flag. Also we will set [IAnnotationBaseOptions.isSelected:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html#isselected) to display adorners of the annotation.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {7-14} showLineNumbers
@@ -98,7 +98,7 @@ Modify the code as follow:
 Modifying Dragging Grip Points
 ------------------------------
 
-By default, an annotation uses all of the predefined grip points for interactions (corners and body), but this can be changed to allow dragging and resizing only using specific ones. For this we will use the [IAnnotationBaseOptions.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#dragpoints) (or [AnnotationBase.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#dragpoints)) property.
+By default, an annotation uses all of the predefined grip points for interactions (corners and body), but this can be changed to allow dragging and resizing only using specific ones. For this we will use the [IAnnotationBaseOptions.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html#dragpoints) (or [AnnotationBase.dragPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#dragpoints)) property.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {18} showLineNumbers file=./demo2.ts start=#region_A_start end=#region_A_end
@@ -114,7 +114,7 @@ This modifies the output as follows: 
 Custom Adorners SVG
 -------------------
 
-More advanced option to customize the adorners is to override the SVG template for the selection box and grips. To do this we can create a derived annotation class, which in this case extends [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/boxannotation.html). In the class we are overriding the [AnnotationBase.getAnnotationGripSvg:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#getannotationgripsvg) and [AnnotationBase.svgStringAdornerTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#svgstringadornertemplate) methods, which are used to create the adorners.
+More advanced option to customize the adorners is to override the SVG template for the selection box and grips. To do this we can create a derived annotation class, which in this case extends [BoxAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/boxannotation.html). In the class we are overriding the [AnnotationBase.getAnnotationGripSvg:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#getannotationgripsvg) and [AnnotationBase.svgStringAdornerTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#svgstringadornertemplate) methods, which are used to create the adorners.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {} showLineNumbers file=./demo3.ts start=#region_A_start end=#region_A_end

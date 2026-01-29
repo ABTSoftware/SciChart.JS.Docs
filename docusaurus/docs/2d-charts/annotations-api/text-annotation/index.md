@@ -7,16 +7,16 @@ sidebar_position: 4
 <MinimizedImageAndTextHeader
     imgSrc="/images/Annotations_TextAnnotation.png"
 >
-The [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html) type draws a text label at the x1,y1 location where coordinates are data-values. The TextAnnotation supports [text:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#text), [fontSize:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#fontsize), [fontWeight:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#fontweight), [fontFamily:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#fontfamily) and [textColor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#textcolor) properties.
+The [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html) type draws a text label at the x1,y1 location where coordinates are data-values. The TextAnnotation supports [text:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#text), [fontSize:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#fontsize), [fontWeight:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#fontweight), [fontFamily:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#fontfamily) and [textColor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#textcolor) properties.
 
-Coordinates may be relative, absolute or data-value based, to both [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) properties as values of [ECoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecoordinatemode.html) enum.
+Coordinates may be relative, absolute or data-value based, to both [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#ycoordinatemode) properties as values of [ECoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ecoordinatemode.html) enum.
 
 </MinimizedImageAndTextHeader>
 
 Declaring a TextAnnotation in code
 ----------------------------------
 
-The following code will declare a number of [TextAnnotations:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html) and add them to the chart.
+The following code will declare a number of [TextAnnotations:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html) and add them to the chart.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {21,27,35,42,49} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -32,18 +32,18 @@ This results in the following output:
 Positioning a TextAnnotation with horizontal/vertical Anchor Points
 -------------------------------------------------------------------
 
-A [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html) only requires coordinates x1,y1 to be set. The alignment of the text around this coordinate is controlled by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint), [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
+A [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html) only requires coordinates x1,y1 to be set. The alignment of the text around this coordinate is controlled by the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#horizontalanchorpoint), [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#verticalanchorpoint) properties.
 
 <CenteredImageWrapper
     src="/images/Annotations_AnchorPoints.png"
 >
-    Above: Set the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#horizontalanchorpoint), and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html#verticalanchorpoint) property to determine which anchor point (horizontal: **left**, **center**, **right** or **vertical**: **top**, **center**, **bottom**) the x1, y1 coordinate is bound to.
+    Above: Set the [horizontalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#horizontalanchorpoint), and [verticalAnchorPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html#verticalanchorpoint) property to determine which anchor point (horizontal: **left**, **center**, **right** or **vertical**: **top**, **center**, **bottom**) the x1, y1 coordinate is bound to.
 </CenteredImageWrapper>
 
 Aligning a LineAnnotation with x/yCoordinateModes
 -------------------------------------------------
 
-Like other annotation types, the [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html) can be positioned relatively or absolute using [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#ycoordinatemode) properties.
+Like other annotation types, the [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html) can be positioned relatively or absolute using [xCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#xcoordinatemode), [yCoordinateMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#ycoordinatemode) properties.
 
 For example, to create a watermark in the centre of the chart, use this code:
 
@@ -61,7 +61,7 @@ This results in the following output:
 Polar Charts with TextAnnotation
 --------------------------------
 
-To add a [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/textannotation.html) to a Polar chart, use the same exact code, just change the surface and axes types. The TextAnnotation will be positioned in polar coordinates.
+To add a [TextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textannotation.html) to a Polar chart, use the same exact code, just change the surface and axes types. The TextAnnotation will be positioned in polar coordinates.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {16,31} showLineNumbers file=./Polar/demo.ts start=#region_A_start end=#region_A_end

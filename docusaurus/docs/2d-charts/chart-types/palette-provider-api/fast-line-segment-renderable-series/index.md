@@ -4,7 +4,7 @@ sidebar_position: 11
 
 # Per-Point Coloring for Line Segment Series
 
-Line Segment series can be colored per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineSegmentRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#paletteprovider) property.
+Line Segment series can be colored per line-segment using the [PaletteProvider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/). To use this, we must create a class (typescript) or object (javascript) which implements or confirms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html) interface. Then, apply this to the [FastLineSegmentRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#paletteprovider) property.
 
 Let's start off with the PaletteProvider class:
 
@@ -24,12 +24,12 @@ This results in the following output:
 
 <LiveDocSnippet maxWidth={"100%"} name="./PaletteProvider/demo" />
 
-In TypeScript you only need to implement an interface such as [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html), whereas in JavaScript you must extend the [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) class.
+In TypeScript you only need to implement an interface such as [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html), whereas in JavaScript you must extend the [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html) class.
 
 :::note
 SciChart won't bisect the line at a threshold value but only changes colour between line segments in the data you already have.
 
-That being said, a [EStrokePaletteMode.SOLID:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#solid) transition will not work with 2 points and a line drawn in between them (as it is done within the segment) - the result will only show 1 colour, so try to stick to [EStrokePaletteMode.GRADIENT:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/estrokepalettemode.html#gradient) for line segments' PaletteProviders.
+That being said, a [EStrokePaletteMode.SOLID:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/estrokepalettemode.html#solid) transition will not work with 2 points and a line drawn in between them (as it is done within the segment) - the result will only show 1 colour, so try to stick to [EStrokePaletteMode.GRADIENT:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/estrokepalettemode.html#gradient) for line segments' PaletteProviders.
 :::
 
 #### See Also

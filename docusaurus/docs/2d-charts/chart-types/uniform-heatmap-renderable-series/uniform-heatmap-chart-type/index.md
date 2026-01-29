@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # The Uniform Heatmap Chart Type
 
-Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmaprenderableseries.html) type.
+Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformheatmaprenderableseries.html) type.
 
 :::tip
 The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/heatmap-chart).
@@ -17,7 +17,7 @@ The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript
 
 ## Create a Uniform Heatmap
 
-Uniform heatmaps are extremely fast, lightweight series types for rendering two dimensional data as a heatmap or spectrogram. The [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmaprenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
+Uniform heatmaps are extremely fast, lightweight series types for rendering two dimensional data as a heatmap or spectrogram. The [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformheatmaprenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
 
 To create a [Javascript Heatmap Chart](https://www.scichart.com/demo/javascript-heatmap-chart) with SciChart.js, use the following code:
 
@@ -92,9 +92,9 @@ For viewing massive heatmaps, SciChart.js allows tiling of heatmaps by placing m
 
 ## How to insert gaps (transparent cells) in heatmap using NaN
 
-This section describes how to insert transparent cells (gaps, not a number, NaNs, null cells, empty cells) into [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmaprenderableseries.html). In order to insert gaps we need to add `NaN` values into `zValues` array and to set flag `dataSeries.hasNaNs = true`.
+This section describes how to insert transparent cells (gaps, not a number, NaNs, null cells, empty cells) into [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformheatmaprenderableseries.html). In order to insert gaps we need to add `NaN` values into `zValues` array and to set flag `dataSeries.hasNaNs = true`.
 
-For [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/uniformheatmapdataseries.html) this can be done by passing [zValue options:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iuniformheatmapseriesoptions.html#zvalues) in the constructor.
+For [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformheatmapdataseries.html) this can be done by passing [zValue options:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iuniformheatmapseriesoptions.html#zvalues) in the constructor.
 
 :::info
 A similar approach works for [Non-Uniform Heatmap Chart Type](/2d-charts/chart-types/non-uniform-heatmap-renderable-series/index.md).

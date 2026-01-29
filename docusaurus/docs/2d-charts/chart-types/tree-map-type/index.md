@@ -4,7 +4,7 @@ sidebar_position: 34
 
 # The Treemap Chart Type
 
-Treemap Charts can be within with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
+Treemap Charts can be within with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
 
 :::tip
 The [JavaScript Treemap Chart Example](https://www.scichart.com/demo/javascript-treemap-chart) can be found in the [SciChart.Js Examples Suite > Treemap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/release_v4.0/Examples/src/components/Examples/Charts2D/BasicChartTypes/TreemapChart) on Github
@@ -79,10 +79,10 @@ This transforms the flat data structure into a hierarchical tree and calculates 
 The main drawExample function sets up the SciChart surface with:
 
 - Hidden axes (since treemaps don't need traditional x/y axes)
-- [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) for high-performance rectangle rendering
+- [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html) for high-performance rectangle rendering
 - Interactive modifiers for zooming and panning
 
-The chart uses [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) to define rectangles with start/end coordinates for both X and Y dimensions, along with metadata for each company's information.
+The chart uses [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html) to define rectangles with start/end coordinates for both X and Y dimensions, along with metadata for each company's information.
 
 ## Interactive Features
 The visualization includes several user interaction capabilities:

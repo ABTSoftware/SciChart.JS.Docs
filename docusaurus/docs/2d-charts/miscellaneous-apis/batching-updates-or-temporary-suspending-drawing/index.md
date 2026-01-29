@@ -44,23 +44,23 @@ You can override the `invalidateElement` and `notifyPropertyChanged` methods for
 
 ## Usage
 
-The main logic for suspending updates is handled by an [UpdateSuspender:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html) instance, accessible via the [sciChartSurface.suspender:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurfacebase.html#suspender) property.
+The main logic for suspending updates is handled by an [UpdateSuspender:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html) instance, accessible via the [sciChartSurface.suspender:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurfacebase.html#suspender) property.
 
 There are two mechanisms to toggle update suspension:
 
-- [suspender.suspend:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#suspend)/[suspender.resume:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#resume) - a counter based mechanisms;
-- [suspender.lock:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#lock)/**unlock** - a token based mechanisms.
+- [suspender.suspend:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#suspend)/[suspender.resume:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#resume) - a counter based mechanisms;
+- [suspender.lock:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#lock)/**unlock** - a token based mechanisms.
   Both can be used together and are applied in some areas of the SciChart rendering logic implicitly.
 
-You can also check the current state with the [`suspender.isSuspended`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#issuspended) flag, which reflects the cumulative suspend state based on both counter and token-based controls.
+You can also check the current state with the [`suspender.isSuspended`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#issuspended) flag, which reflects the cumulative suspend state based on both counter and token-based controls.
 
 The surface also exposes convenience methods for accessing the API.
 
 ### Basic
 
-Two primary methods of this API are [`sciChartSurface.suspendUpdates`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html#suspendupdates) and [`sciChartSurface.resumeUpdates`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html#resumeupdates), which internally call [suspender.suspend:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#suspend) and [suspender.resume:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#resume) respectively.  
+Two primary methods of this API are [`sciChartSurface.suspendUpdates`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpolarsurface.html#suspendupdates) and [`sciChartSurface.resumeUpdates`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpolarsurface.html#resumeupdates), which internally call [suspender.suspend:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#suspend) and [suspender.resume:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#resume) respectively.  
 
-The surface also exposes the [`isSuspended`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html#issuspended) property.
+The surface also exposes the [`isSuspended`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpolarsurface.html#issuspended) property.
 
 A few important things to note:
 
@@ -84,7 +84,7 @@ A few important things to note:
 
 ### Alternative Lock/Unlock Methods
 
-Another way to suspend updates is via [`suspender.lock`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#lock), which returns an `unlock` function that must be called to resume updates.
+Another way to suspend updates is via [`suspender.lock`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#lock), which returns an `unlock` function that must be called to resume updates.
 
 These methods provide a stricter suspension mechanism.
 
@@ -107,7 +107,7 @@ the `lock`/`unlock` pair ensures that suspension is lifted only by its correspon
 
 ### Suspend Chart on Initialization
 
-To prevent the chart from rendering immediately upon initialization, use the [`createSuspended`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/i2dsurfaceoptions.html#createsuspended) option when creating the surface.
+To prevent the chart from rendering immediately upon initialization, use the [`createSuspended`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/i2dsurfaceoptions.html#createsuspended) option when creating the surface.
 
 <CodeSnippetBlock>
 
@@ -121,7 +121,7 @@ To prevent the chart from rendering immediately upon initialization, use the [`c
 
 ### onResumed Event Handler
 
-The [`suspender.onResumed`:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/updatesuspender.html#onresumed) handler lets you subscribe to an event when a surface becomes unsuspended.
+The [`suspender.onResumed`:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/updatesuspender.html#onresumed) handler lets you subscribe to an event when a surface becomes unsuspended.
 
 <CodeSnippetBlock>
 

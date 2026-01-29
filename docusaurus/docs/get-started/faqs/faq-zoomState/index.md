@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## The sciChartSurface.zoomState Property
 
-The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ezoomstate.html).
+The [sciChartSurface.zoomState:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#zoomstate) property allows us to detect if the chart has been zoomed or panned by the user, or if the chart is at extents of the data. You can take a look at the values of the [EZoomState Enum here:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ezoomstate.html).
 
 
 Here is example:

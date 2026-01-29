@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # The Column Series Type
 
-Column Series can be created using the [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastcolumnrenderableseries.html) type.
+Column Series can be created using the [FastColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastcolumnrenderableseries.html) type.
 
 :::tip
 The [JavaScript Column Chart Example](https://www.scichart.com/demo/javascript/column-chart) can be found in the [SciChart.Js Examples Suite > Column Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ColumnChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/column-chart).
@@ -32,10 +32,10 @@ This results in the following output:
 
 In the code above:
 
-*   A Column Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   A Column Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
 *   We set the stroke, strokethickness and fill properties
-*   We set [FastColumnRenderableSeries.dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastcolumnrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
-*   We assign a [FastColumnRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastcolumnrenderableseries.html#dataseries) - which stores the Xy data to render.
+*   We set [FastColumnRenderableSeries.dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastcolumnrenderableseries.html#datapointwidth) - which defines the fraction of width to occupy
+*   We assign a [FastColumnRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastcolumnrenderableseries.html#dataseries) - which stores the Xy data to render.
 
 
 ## Render a Gap in a Column Series

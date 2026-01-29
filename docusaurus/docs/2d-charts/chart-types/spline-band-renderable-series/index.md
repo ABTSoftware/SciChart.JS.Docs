@@ -4,7 +4,7 @@ sidebar_position: 62
 
 # The Spline (Smoothed) Band Series Type
 
-Spline Band or Smoothed High/Low Fill Series can be created using the [SplineBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/splinebandrenderableseries.html) type.
+Spline Band or Smoothed High/Low Fill Series can be created using the [SplineBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/splinebandrenderableseries.html) type.
 
 :::tip
 The [JavaScript Spline Band Chart Example](https://www.scichart.com/demo/javascript/spline-band-chart) can be found in the [SciChart.Js Examples Suite > Spline Band Series](https://github.com/abtsoftware/scichart.js.examples) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/spline-band-chart)
@@ -18,7 +18,7 @@ The [JavaScript Spline Band Chart Example](https://www.scichart.com/demo/javascr
 Create a Spline Band Series
 ---------------------------
 
-To create a [Javascript Spline Band Chart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/splinebandrenderableseries.html) with SciChart.js, use the following code:
+To create a [Javascript Spline Band Chart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/splinebandrenderableseries.html) with SciChart.js, use the following code:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {28,30-33,35} showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -29,10 +29,10 @@ To create a [Javascript Spline Band Chart:blue_book:](https://www.scichart.com/
 
 In the code above:
 
-*   A Spline Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   A Spline Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
 *   We set the stroke, strokeY1, strokethickness properties
 *   We assign an XyyDataSeries - which stores the Xyy data to render.
-*   We set the number of [interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/splinebandrenderableseries.html#interpolationpoints) - how many points between real Xy data points will be interpolated using a Spline interpolation algorithm.
+*   We set the number of [interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/splinebandrenderableseries.html#interpolationpoints) - how many points between real Xy data points will be interpolated using a Spline interpolation algorithm.
 
 This results in the following output:
 
@@ -42,11 +42,11 @@ Performance Tips in Spline Series
 ---------------------------------
 
 :::tip
-When the [SplineBandRenderableSeries.interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/splinemountainrenderableseries.html#interpolationpoints) property is set to zero, then this series renders and displays exactly like a FastLineRenderableSeries.
+When the [SplineBandRenderableSeries.interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/splinemountainrenderableseries.html#interpolationpoints) property is set to zero, then this series renders and displays exactly like a FastLineRenderableSeries.
 :::
 
 :::tip
-When the [interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/splinemountainrenderableseries.html#interpolationpoints) property is set to another number, e.g. 10, then SciChart.js will calculate 10 points for each Xy datapoint you add to the XyDataSeries. This means you will be displaying 10x the number of datapoints.
+When the [interpolationPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/splinemountainrenderableseries.html#interpolationpoints) property is set to another number, e.g. 10, then SciChart.js will calculate 10 points for each Xy datapoint you add to the XyDataSeries. This means you will be displaying 10x the number of datapoints.
 :::
 
 _SciChart.js can handle millions of datapoints, but this is something to be aware of. You might want to adjust down the interpolationPoints depending on amount of data on the chart, or zoom level._
@@ -61,7 +61,7 @@ It is possible to have null points or gaps in a Spline Band Series by passing 
 Add Point Markers onto a Spline Band Series
 -------------------------------------------
 
-Every data point of a Spline Band Series can be marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#pointmarker). To add Point Markers to the Spline Mountain Series, see the [PointMarkers API Documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers/).
+Every data point of a Spline Band Series can be marked with a [PointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#pointmarker). To add Point Markers to the Spline Mountain Series, see the [PointMarkers API Documentation](/2d-charts/chart-types/common-series-apis/drawing-point-markers/).
 
 :::tip
 _**Note:** PointMarkers are only applied to the original data-points, not the spline interpolated points which are for display purposes only._

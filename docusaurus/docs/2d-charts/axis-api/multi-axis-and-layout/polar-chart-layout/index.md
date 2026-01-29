@@ -4,7 +4,7 @@ sidebar_position: 8
 
 # Polar Chart Layout
 
-Polar charts - charts created with [SciChartPolarSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html#create), have a different axis layout compared to Cartesian charts. In polar charts, the axes are arranged in a circular manner, which allows for `radial` and `angular` measurements.
+Polar charts - charts created with [SciChartPolarSurface.create():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpolarsurface.html#create), have a different axis layout compared to Cartesian charts. In polar charts, the axes are arranged in a circular manner, which allows for `radial` and `angular` measurements.
 
 The easiest way of thinking about polar axes is this:
 - **Radial Axis**: Measures distance from the center of the chart up until the border of it, **like a radius**, and is typically used in the same logic an `Y Axis` is used in 2D Cartesian charts.
@@ -61,7 +61,7 @@ This will result in the following layout:
 
 ### Advanced Polar Chart Layout
 
-For the Polar Axes, we have created a special label provider, available out of the box, called [RadianLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html), which formats the labels in radians. Make sure to read the [TSDoc indications:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html) before using it, and observe how the [errorTolerance:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#errortolerance) and [maxDenominator:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/radianlabelprovider.html#maxdenominator) pair with [AxisBase.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#autoticks) and [AxisBase.majorDelta:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#majordelta) to determine the label values.
+For the Polar Axes, we have created a special label provider, available out of the box, called [RadianLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/radianlabelprovider.html), which formats the labels in radians. Make sure to read the [TSDoc indications:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/radianlabelprovider.html) before using it, and observe how the [errorTolerance:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/radianlabelprovider.html#errortolerance) and [maxDenominator:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/radianlabelprovider.html#maxdenominator) pair with [AxisBase.autoTicks:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#autoticks) and [AxisBase.majorDelta:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#majordelta) to determine the label values.
 
 <CodeSnippetBlock labels={["Advanced Polar Chart Layout"]}>
     ```ts {20-25} showLineNumbers file=./demo-advanced.ts start=region_A_start end=region_A_end
@@ -74,11 +74,11 @@ And this is how it looks like:
 
 ### Partial Polar Chart Layout
 
-By changing the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalAngle) property on your angular axis, you can control the sweeping angle of your polar surface, e.g. you can have half-circles, quarter-circles, etc. 
+By changing the [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#totalAngle) property on your angular axis, you can control the sweeping angle of your polar surface, e.g. you can have half-circles, quarter-circles, etc. 
 It expects values in between `0` and `Math.PI * 2`
 
 :::tip
-There is also a [totalAngleDegrees:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#totalAngleDegrees) property available for convenience, with values in between `0` and `360`
+There is also a [totalAngleDegrees:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#totalAngleDegrees) property available for convenience, with values in between `0` and `360`
 ::::
 
 <CodeSnippetBlock labels={["Partial Polar Layout"]}>
@@ -93,13 +93,13 @@ Resulting in the following layout:
 ### More Tips:
 
 :::tip
-If using [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarzoomextentsmodifier.html) on a polar chart, you will likely want to set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#zoomextentstoinitialrange) to `true`, so that the zoom extents modifier will not try and squash the first and last data points together.
+If using [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarzoomextentsmodifier.html) on a polar chart, you will likely want to set [zoomExtentsToInitialRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#zoomextentstoinitialrange) to `true`, so that the zoom extents modifier will not try and squash the first and last data points together.
 :::
 
 :::tip
 If the gridlines are too often for your liking, you can either:
-1. Set [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#drawminorgirdlines): `false` on any axis
-2. Or set [minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#minorsPerMajor) to something lower than `5` (the default). Use `2` for a minimal look.
+1. Set [drawMinorGridLines:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#drawminorgirdlines): `false` on any axis
+2. Or set [minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#minorsPerMajor) to something lower than `5` (the default). Use `2` for a minimal look.
 
-- You can also customize the `color`, `thickness` and `strokeDashArray` of both major and minor gridlines via [MajorGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#majorgridlinestyle) and [MinorGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#minorgridlinestyle), both having the [TGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tgridlinestyle) type.
+- You can also customize the `color`, `thickness` and `strokeDashArray` of both major and minor gridlines via [MajorGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#majorgridlinestyle) and [MinorGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#minorgridlinestyle), both having the [TGridLineStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#tgridlinestyle) type.
 :::

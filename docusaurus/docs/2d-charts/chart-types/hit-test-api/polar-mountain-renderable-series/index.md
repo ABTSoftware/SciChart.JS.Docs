@@ -4,7 +4,7 @@ sidebar_position: 20
 
 # Hit-Test API for Polar Mountain Series 
 
-The IHitTestProvider.hitTest method on [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmountainrenderableseries.html) tests if the click was within the mountain body, and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
+The IHitTestProvider.hitTest method on [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarmountainrenderableseries.html) tests if the click was within the mountain body, and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html) object with the following properties:
 
 ## Hit-Test on a particular Polar Mountain Series
 
@@ -20,7 +20,7 @@ const hitTestInfo: HitTestInfo = polarMountainSeries.hitTestProvider.hitTest(x, 
 The algorithm is as follows:
 
 1. Finds two nearest points in x direction that the x-hit value falls between them.
-2. Tests if the click is within the triangle formed by two nearest points and the center of polar surface [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html#isHit) property.
+2. Tests if the click is within the triangle formed by two nearest points and the center of polar surface [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html#isHit) property.
 
 
 ## Hit-Test on multiple Polar Mountain Series

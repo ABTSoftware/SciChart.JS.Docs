@@ -14,7 +14,7 @@ There are no real differences between polar and cartesian data labels.
 
 ## Adding Data Labels
 
-You can configure data labels for almost any series by setting a valid style on the [dataLabels property:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaselinerenderableseriesoptions.html#datalabels) in the series options:
+You can configure data labels for almost any series by setting a valid style on the [dataLabels property:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ibaselinerenderableseriesoptions.html#datalabels) in the series options:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts showLineNumbers {44-54} file=./demo.ts start=region_A_start end=region_A_end

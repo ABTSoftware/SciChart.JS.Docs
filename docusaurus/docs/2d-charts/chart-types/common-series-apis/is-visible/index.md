@@ -4,11 +4,11 @@ sidebar_position: 2
 
 # Series isVisible and isVisibleChanged API
 
-Each RenderableSeries has an [isVisible:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisible) property. This defines whether the series is included in rendering or not.
+Each RenderableSeries has an [isVisible:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#isvisible) property. This defines whether the series is included in rendering or not.
 
 isVisible can be set programmatically, or is also set by SciChart.js when checking or unchecking a Legend row checkbox (see [LegendModifier API](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/)).
 
-You can listen to isVisible changes via the [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisiblechanged) event. Listen to the event (get a callback) using the following code:
+You can listen to isVisible changes via the [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#isvisiblechanged) event. Listen to the event (get a callback) using the following code:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts file=./demo.ts start=region_A_start end=region_A_end
@@ -22,9 +22,9 @@ This can be used to get feedback about the current visibility state of a series,
 <LiveDocSnippet />
 
 :::tip
-See the onIsVisibleChanged parameter in [IBaseRenderableSeriesOptions.onIsVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#onisvisiblechanged) for type information.
+See the onIsVisibleChanged parameter in [IBaseRenderableSeriesOptions.onIsVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ibaserenderableseriesoptions.html#onisvisiblechanged) for type information.
 
-The [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#isvisiblechanged) event handler also has args of type [SeriesVisibleChangedArgs:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesvisiblechangedargs.html). In TypeScript, the code would look like this:
+The [BaseRenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#isvisiblechanged) event handler also has args of type [SeriesVisibleChangedArgs:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesvisiblechangedargs.html). In TypeScript, the code would look like this:
 
 **Typescript isVisibleChanged**
 
@@ -38,5 +38,5 @@ series.isVisibleChanged.subscribe((args: SeriesVisibleChangedArgs) => {
 
 #### See Also
 
-* [onIsVisibleChanged option:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#onisvisiblechanged)
-* [RenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/irenderableseries.html#isvisiblechanged)
+* [onIsVisibleChanged option:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ibaserenderableseriesoptions.html#onisvisiblechanged)
+* [RenderableSeries.isVisibleChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/irenderableseries.html#isvisiblechanged)

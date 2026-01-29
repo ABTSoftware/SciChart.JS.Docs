@@ -4,7 +4,7 @@ sidebar_position: 24
 
 # The Digital (Step) Band Series Type
 
-A Digital Band Series, or High-Low Fill between two Digital or Step lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html) type.
+A Digital Band Series, or High-Low Fill between two Digital or Step lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip
 The [JavaScript Digital Band Chart Example](https://www.scichart.com/demo/react/digital-band-chart) can be found in the [SciChart.Js Examples Suite > Band Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/DigitalBandSeriesChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/digital-band-chart).
@@ -33,10 +33,10 @@ This results in the following output:
 
 In the code above:
 
-*   A Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   We set the stroke, fill properties for when Y > Y1 and vice versa (more info over at [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html) in TypeDoc).
+*   A Band Series instance is created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   We set the stroke, fill properties for when Y > Y1 and vice versa (more info over at [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbandrenderableseries.html) in TypeDoc).
 *   We set the **isDigitalLine** property to true.
-*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html#dataseries) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyydataseries.html) which stores X, Y, Y1 data.
+*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbandrenderableseries.html#dataseries) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyydataseries.html) which stores X, Y, Y1 data.
 
 ## Render a Gap in a Digital Band Series
 

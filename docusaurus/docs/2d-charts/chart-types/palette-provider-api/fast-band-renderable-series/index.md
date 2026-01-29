@@ -54,7 +54,7 @@ const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElement
 
 ![](/images/PaletteProvider_Band1.png)
 
-Next we create a BandPaletteProvider by implementing [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) and [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces in typescript, or extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/defaultpaletteprovider.html) in JavaScript.
+Next we create a BandPaletteProvider by implementing [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifillpaletteprovider.html) and [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces in typescript, or extending [DefaultPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/defaultpaletteprovider.html) in JavaScript.
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
 

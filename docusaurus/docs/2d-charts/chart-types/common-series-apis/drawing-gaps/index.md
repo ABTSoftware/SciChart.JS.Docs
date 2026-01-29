@@ -21,7 +21,7 @@ The following example shows you how to draw null points by setting Y=NaN.
 Setting Y=NaN is considered a 'null point' in SciChart.js and will allow you to hide areas of the data.
 
 :::tip
-Note Line-based series such as Line, Mountain, Band and Spline may also be drawn as a closed-line when Y=NaN by setting [BaseRenderableSeries.drawNaNAs:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#drawnanas) = [ELineDrawMode.PolyLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/elinedrawmode.html). This property will be ignored for certain series types like Scatter.
+Note Line-based series such as Line, Mountain, Band and Spline may also be drawn as a closed-line when Y=NaN by setting [BaseRenderableSeries.drawNaNAs:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#drawnanas) = [ELineDrawMode.PolyLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/elinedrawmode.html). This property will be ignored for certain series types like Scatter.
 :::
 
 Here's an example below:
@@ -41,7 +41,7 @@ Here's an example below:
 Closing Lines with NaN
 ----------------------
 
-Lines may also be closed when Y=NaN by setting [BaseRenderableSeries.drawNaNAs:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#drawnanas) = [ELineDrawMode.PolyLine:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/elinedrawmode.html). This property will be ignored for certain series types like Scatter.
+Lines may also be closed when Y=NaN by setting [BaseRenderableSeries.drawNaNAs:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#drawnanas) = [ELineDrawMode.PolyLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/elinedrawmode.html). This property will be ignored for certain series types like Scatter.
 
 Having Different Styles in the Same Series
 ------------------------------------------

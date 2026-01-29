@@ -13,7 +13,7 @@ Source code for this tutorial can be found at [SciChart.JS.Examples](https://gi
 Adding a Chart
 --------------
 
-First let's create a simple [Line Chart](/2d-charts/chart-types/fast-line-renderable-series/). In this example we generate a data set for sine wave and add [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/) with two [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html) and [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastlinerenderableseries.html) to produce the **Line Chart**.
+First let's create a simple [Line Chart](/2d-charts/chart-types/fast-line-renderable-series/). In this example we generate a data set for sine wave and add [SciChartSurface](/2d-charts/surface/scichart-surface-type-overview/) with two [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html) and [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html) to produce the **Line Chart**.
 
 <CodeSnippetBlock labels={["index.js", "index.html"]}>
 ```js showLineNumbers
@@ -97,9 +97,9 @@ This gives us this chart:
 Making the Chart Vertical
 -------------------------
 
-In fact, just setting [xAxis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#axisalignment) to [EAxisAlignment.Left:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eaxisalignment.html) or Right and [yAxis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#axisalignment) to [EAxisAlignment.Top:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eaxisalignment.html) or EAxisAlignment.Bottom makes the chart vertical.
+In fact, just setting [xAxis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axisalignment) to [EAxisAlignment.Left:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/eaxisalignment.html) or Right and [yAxis.axisAlignment:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axisalignment) to [EAxisAlignment.Top:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/eaxisalignment.html) or EAxisAlignment.Bottom makes the chart vertical.
 
-Moreover if the axes orientation needs to be inverted there is [axis.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#flippedcoordinates) property on [AxisCore:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axiscore.html) class. 
+Moreover if the axes orientation needs to be inverted there is [axis.flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#flippedcoordinates) property on [AxisCore:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axiscore.html) class. 
 
 In order to make the chart interactive we add chart modifiers such as [ZoomPanModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-pan-modifier/), [ZoomExtentsModifier](/2d-charts/chart-modifier-api/zooming-and-panning/zoom-extents-modifier/), [MouseWheelZoomModifier](/2d-charts/chart-modifier-api/zooming-and-panning/mouse-wheel-zoom-modifier/) and [RolloverModifier](/2d-charts/chart-modifier-api/rollover-modifier/).
 

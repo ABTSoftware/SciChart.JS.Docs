@@ -35,6 +35,6 @@ In the example above:
 
 *   Some variance data is first created and returned as an array of objects.
 *   A Line series is created to display the actual X,Y value
-*   Several Band Series are created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection to render the variance bands.
-*   We set the stroke, fill properties and opacity of each series (more info over at [FastBandRenderableSeries in TypeDoc:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastbandrenderableseries.html)).
-*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/basedataseries.html) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyydataseries.html) which stores X, Y1, Y2 data for bands, and [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) for lines.
+*   Several Band Series are created and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection to render the variance bands.
+*   We set the stroke, fill properties and opacity of each series (more info over at [FastBandRenderableSeries in TypeDoc:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastbandrenderableseries.html)).
+*   We assign a [DataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/basedataseries.html) - in this case an [XyyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyydataseries.html) which stores X, Y1, Y2 data for bands, and [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html) for lines.

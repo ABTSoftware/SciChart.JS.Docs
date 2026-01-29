@@ -32,7 +32,7 @@ For an example of using rotation with text labels see the [Multiline and Rotate
 An axis with rotated labels obeys other rules of axis tick spacing and label culling. Take a look at the section on [Gridline and Label Spacing (Interval)](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/) for some more information how this works.
 :::
 
-When working with rotated labels that are not horizontal or vertical, it may be necessary to turn off [axis.axisRenderer.hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisrenderer.html#hideoverlappinglabels) as the bounding box of a partially rotated label is much larger than the text itself.This property may also be set via the axis constructor option [hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iaxisbase2doptions.html#hideoverlappinglabels).
+When working with rotated labels that are not horizontal or vertical, it may be necessary to turn off [axis.axisRenderer.hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisrenderer.html#hideoverlappinglabels) as the bounding box of a partially rotated label is much larger than the text itself.This property may also be set via the axis constructor option [hideOverlappingLabels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iaxisbase2doptions.html#hideoverlappinglabels).
 
 To do this, use the following code:
 

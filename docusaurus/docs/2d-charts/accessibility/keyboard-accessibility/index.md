@@ -247,7 +247,7 @@ class KeyboardZoomPanModifier extends ChartModifierBase2D {
 
  Now let's look closer at the properties and methods of this class.
 
-First of all the class is extended from [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html), which provides it with some properties and methods required on a chart modifier.
+First of all the class is extended from [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/chartmodifierbase2d.html), which provides it with some properties and methods required on a chart modifier.
 
 Also we defined several optional properties on the class which may be useful for configuring the modifier: **type**, **growFactor**, **scrollFactor**.
 

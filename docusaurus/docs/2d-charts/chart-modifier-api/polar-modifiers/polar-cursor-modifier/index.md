@@ -4,12 +4,12 @@ sidebar_position: 2
 
 # PolarCursorModifier
 
-The [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcursormodifier.html) is a modifier that provides a crosshair cursor on a polar chart. It allows users to hover over data points and see their values, enhancing the interactivity of the chart.
+The [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcursormodifier.html) is a modifier that provides a crosshair cursor on a polar chart. It allows users to hover over data points and see their values, enhancing the interactivity of the chart.
 
 
 ## Adding a PolarCursorModifier to a Chart
 
-Similarly to the [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/) for a Cartesian 2D chart, a [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcursormodifier.html) can be added to the `sciChartSurface.chartModifiers` collection of a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartpolarsurface.html) to enable crosshair behavior. For example:
+Similarly to the [CursorModifier](/2d-charts/chart-modifier-api/cursor-modifier/cursor-modifier-overview/) for a Cartesian 2D chart, a [PolarCursorModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcursormodifier.html) can be added to the `sciChartSurface.chartModifiers` collection of a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartpolarsurface.html) to enable crosshair behavior. For example:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
 ```ts {9} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end

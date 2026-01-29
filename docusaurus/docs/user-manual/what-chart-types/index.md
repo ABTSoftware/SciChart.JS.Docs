@@ -499,7 +499,7 @@ Some use-cases of `RenderDataTransforms` include:
 ### SVG Overlays on 2D and 3D Charts
 The `SciChartSurface` type has several SVG layers which can be drawn to for any custom overlay (think: custom tooltips, legend, annotations or content) should the
 built-in methods of customising rendering be insufficient. These are accessible via properties on the `SciChartSurface` such as
-[domSvgContainer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#domsvgcontainer).
+[domSvgContainer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#domsvgcontainer).
 
 ### CustomRenderableSeries (Custom Series in 2D Charts)
 

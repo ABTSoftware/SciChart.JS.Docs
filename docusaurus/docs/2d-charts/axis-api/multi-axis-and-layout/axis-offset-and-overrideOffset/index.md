@@ -12,12 +12,12 @@ Regular axes use the internal offset assigned by the chart’s layout system. Th
 
 ## Why Use overrideOffset and Not offset
 
-To manually control axis positioning, you should use [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) rather than trying to set [offset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#offset)
+To manually control axis positioning, you should use [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) rather than trying to set [offset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#offset)
 directly.
 
 The offset property is managed by SciChart’s layout strategies (especially when you have stacked or multi-axis layouts). Overriding this manually can cause unexpected results if the internal layout logic adjusts it later.
 
-Setting [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) ensures that the value you supply takes precedence, overriding whatever offset value the layout system would otherwise use.
+Setting [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) ensures that the value you supply takes precedence, overriding whatever offset value the layout system would otherwise use.
 
 ## How overrideOffset Creates the 3D Waterfall Effect
 
@@ -26,7 +26,7 @@ Setting [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4
     title="Interactive Waterfall Spectral Chart"
 />
 
-Here is the code from the example that shows how [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) is used:
+Here is the code from the example that shows how [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) is used:
 ```ts {10,22} showLineNumbers
         for (let i = 0; i < seriesCount; i++) {
             // Create one yAxis per series
@@ -55,11 +55,11 @@ Here is the code from the example that shows how [overrideOffset:blue_book:](htt
             ...
 ```
 
-In interactive waterfall charts where several series are visually stacked in an overlapping “3D” style [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) is critical for achieving the desired offset between axes.
+In interactive waterfall charts where several series are visually stacked in an overlapping “3D” style [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) is critical for achieving the desired offset between axes.
 
-Each “layer” or “slice” in a waterfall chart typically gets its own axis with a unique [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset). By increasing the [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) value for successive axes, you move each axis and corresponding series further away from the previous one, creating the illusion of depth making the chart look like a 3D waterfall.
+Each “layer” or “slice” in a waterfall chart typically gets its own axis with a unique [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset). By increasing the [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) value for successive axes, you move each axis and corresponding series further away from the previous one, creating the illusion of depth making the chart look like a 3D waterfall.
 
-Manual control via [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numericaxis.html#overrideoffset) allows precise tuning: you control how much each series/axis is visually offset, stacking the axes apart and making each new series appear "further back" in the chart layout.
+Manual control via [overrideOffset:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numericaxis.html#overrideoffset) allows precise tuning: you control how much each series/axis is visually offset, stacking the axes apart and making each new series appear "further back" in the chart layout.
 
 This method is especially useful in interactive waterfall charts where multiple stacked axes and series must not overlap and each needs unique spacing for clarity and aesthetics.
 

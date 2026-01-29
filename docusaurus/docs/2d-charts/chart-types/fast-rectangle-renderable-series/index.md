@@ -6,9 +6,9 @@ sidebar_position: 30
 
 The Rectangle Series Type in SciChart.js provides a highly configurable and performant way to visualize rectangular data, supporting a variety of charting scenarios where rectangles, bars, or ranges are required. Its flexible data and rendering options make it suitable for both simple and advanced data visualization needs.
 
-Rectangle Series can be created using the [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fastrectanglerenderableseries.html) type.
+Rectangle Series can be created using the [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html) type.
 
-Here is a simple Rectangle Series made using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html):
+Here is a simple Rectangle Series made using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html):
 
 ```ts {13,14} showLineNumbers file=./basic/demo.ts start=region_A_start end=region_A_end
 
@@ -30,7 +30,7 @@ Rectangle Series could be used for displaying:
 
 ## Properties
 
-- **columnXMode** ([EColumnMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnmode.html)) - This determines how the x values and optional x1 values are interpreted.
+- **columnXMode** ([EColumnMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ecolumnmode.html)) - This determines how the x values and optional x1 values are interpreted.
 
     - EColumnMode.Mid - each column is centered on its X-value. This means the center of the column aligns directly with the X data point, rather than the left or right edge. This is typically the default and most intuitive way to display columns, as it visually associates each bar with its data value on the axis
     - EColumnMode.Start - each column is drawn so that its left edge aligns exactly with the X data value
@@ -38,7 +38,7 @@ Rectangle Series could be used for displaying:
     - EColumnMode.StartWidth - each column (bar) should be positioned so its left edge aligns with the X data value, and the column's width extends to the right from that point. This means the X value marks the start (left boundary) of the column, and the entire width of the column is drawn to the right of this value
     - EColumnMode.StartEnd - each column’s left and right X positions are explicitly defined by two separate values "start" and "end" of the column. Instead of specifying a single X value and a width, you provide both the starting and ending X coordinates for each bar
 
-- **columnYMode** ([EColumnYMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/ecolumnymode.html)) - This determines how the y values and optional y1 values are interpreted.
+- **columnYMode** ([EColumnYMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ecolumnymode.html)) - This determines how the y values and optional y1 values are interpreted.
 
     - EColumnYMode.TopBottom - is a mode used to define the vertical positioning of columns (bars) by specifying both the top and bottom Y-values for each column. Instead of providing just a single Y-value (for example, the height or value of the bar), you provide two Y-values: one for the top edge and one for the bottom edge of the column
     - EColumnYMode.TopHeight - is a mode for defining the vertical positioning of columns (bars) where you specify the top Y-value and the height of each column, rather than the top and bottom Y-values
@@ -105,7 +105,7 @@ This example shows how to add a custom label to each rectangle in the series usi
 
 ### Rectangle Series Animated Example
 
-This example demonstrates how to animate the rectangle series using the [GenericAnimation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/genericanimation.html).
+This example demonstrates how to animate the rectangle series using the [GenericAnimation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/genericanimation.html).
 
 <LiveDocSnippet name="./animated/demo" />
 

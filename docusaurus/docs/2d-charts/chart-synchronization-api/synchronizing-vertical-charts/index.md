@@ -71,9 +71,9 @@ Synchronizing Zooming, Panning and Tooltips on Vertical Charts
 
 To synchronize the two charts, we have to carry out the following steps:
 
-1.  Synchronize [xAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#visiblerange) on the two charts by using a [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#visiblerangechanged) callback
-2.  Synchronize chart axis heights using a [SciChartHorizontalGroup:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scicharthorizontalgroup.html)
-3.  Finally, optionally synchronize chart modifiers (Cursor, Tooltips) using a [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html#modifiergroup)
+1.  Synchronize [xAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#visiblerange) on the two charts by using a [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#visiblerangechanged) callback
+2.  Synchronize chart axis heights using a [SciChartHorizontalGroup:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scicharthorizontalgroup.html)
+3.  Finally, optionally synchronize chart modifiers (Cursor, Tooltips) using a [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/chartmodifierbase2d.html#modifiergroup)
 
 <CodeSnippetBlock labels={["Synchronizing Vertical Charts"]}>
     ```ts showLineNumbers file=./demo.ts start=region_B_start end=region_B_end
@@ -83,8 +83,8 @@ To synchronize the two charts, we have to carry out the following steps:
 Some Notes on Chart Synchronization with Vertical Charts
 --------------------------------------------------------
 
-Adding a [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html#modifiergroup) to specific chart modifiers will ensure that mouse events from one chart are passed to the other and vice versa. This will actually cause zooming, panning, mousewheel and tooltip/cursor behaviour to occur on all charts (when one chart is interacted with).
+Adding a [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/chartmodifierbase2d.html#modifiergroup) to specific chart modifiers will ensure that mouse events from one chart are passed to the other and vice versa. This will actually cause zooming, panning, mousewheel and tooltip/cursor behaviour to occur on all charts (when one chart is interacted with).
 
-However, from an axis range point of view it is far more accurate to synchronize [xAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#visiblerange) on the two charts by using a [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#visiblerangechanged) callback. Mouse events are only accurate to a pixel and some inconsistencies can be built up with synchronized charts unless you also have the visibleRange synchronization.
+However, from an axis range point of view it is far more accurate to synchronize [xAxis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#visiblerange) on the two charts by using a [AxisCore.visibleRangeChanged:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#visiblerangechanged) callback. Mouse events are only accurate to a pixel and some inconsistencies can be built up with synchronized charts unless you also have the visibleRange synchronization.
 
-Adding a [SciChartHorizontalGroup:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scicharthorizontalgroup.html) ensures that the yAxis sizes on the two charts are exactly the same. This step is optional but in case of differing sizes of the axis it will give a more consistent look. For horizontal chart groups you can use the [SciChartVerticalGroup:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartverticalgroup.html) helper class.
+Adding a [SciChartHorizontalGroup:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scicharthorizontalgroup.html) ensures that the yAxis sizes on the two charts are exactly the same. This step is optional but in case of differing sizes of the axis it will give a more consistent look. For horizontal chart groups you can use the [SciChartVerticalGroup:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartverticalgroup.html) helper class.

@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Chart Styling - Creating a Custom Theme
 
-As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#applytheme) function.
+As well as the built-in [Light and Dark theme](/2d-charts/styling-and-theming/theme-manager-api/index.md), with SciChart.js you can also create a custom theme. To do this, you will need to pass all the properties of the [IThemeProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ithemeprovider.html) interface to the [SciChartSurface.applyTheme:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#applytheme) function.
 
 For example, the following code:
 

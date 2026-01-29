@@ -31,17 +31,17 @@ The annotations could be divided by the node type where they are rendered.
 
 - HTML Annotations - rendered as a `div` element placed within a DOM layer.
   For example:
-    - [HtmlCustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmlcustomannotation.html)
-    - [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmltextannotation.html)
+    - [HtmlCustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/htmlcustomannotation.html)
+    - [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/htmltextannotation.html)
 - SVG Annotations - rendered as an SVG element on one of the SVG layers.
   For example:
     - [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/)
     - [TextAnnotation](/2d-charts/annotations-api/text-annotation/)
 
-We refer to HTML and SVG Annotations as "DOM Annotations" since they share some similar logic and the same rendering principles. Thus, the common base class is [DomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/domannotationbase.html).
+We refer to HTML and SVG Annotations as "DOM Annotations" since they share some similar logic and the same rendering principles. Thus, the common base class is [DomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/domannotationbase.html).
 
 :::info
-There are [isDomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#isdomannotation) and [isSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#issvgannotation) properties on an annotation.
+There are [isDomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#isdomannotation) and [isSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#issvgannotation) properties on an annotation.
 :::
 So, the significant difference between DOM Annotations and Native Annotations
 is that each DOM Annotation instance is added as a separate node to the DOM tree
@@ -50,8 +50,8 @@ There might be multiple of layers of the same type to allow drawing DOM Annotati
 
 ## CustomHtmlAnnotation
 
-The [HtmlCustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmlcustomannotation.html) provides a basic functionality of an annotation and renders a `div` element on a chart at a specified position.
-And exposes a reference to this element via [HtmlCustomAnnotation.htmlElement:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmlcustomannotation.html#htmlelement).
+The [HtmlCustomAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/htmlcustomannotation.html) provides a basic functionality of an annotation and renders a `div` element on a chart at a specified position.
+And exposes a reference to this element via [HtmlCustomAnnotation.htmlElement:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/htmlcustomannotation.html#htmlelement).
 
 The use case for this annotation is rendering arbitrary HTML content within a chart.
 This provides a great flexibility by allowing to apply standard JS APIs to work with the content and styling it with CSS.
@@ -75,10 +75,10 @@ For more examples, check the our demo website. #TODO reference HTML Annotations 
 
 ## HtmlTextAnnotation
 
-The [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/htmltextannotation.html) extends the `CustomHtmlAnnotation` by providing a simple interface for adding textual annotations to a chart.
+The [HtmlTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/htmltextannotation.html) extends the `CustomHtmlAnnotation` by providing a simple interface for adding textual annotations to a chart.
 
 In the form of constructor options:
-[IHtmlTextAnnotationOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ihtmltextannotationoptions.html)
+[IHtmlTextAnnotationOptions:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ihtmltextannotationoptions.html)
 and instance properties:
 
 - **HtmlTextAnnotation.text**

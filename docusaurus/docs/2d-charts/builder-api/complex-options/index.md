@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # Complex Options
 
-Many things in SciChart.js are customised by providing a particular subclass, eg `PointMarkers`. The type signature in the options in these cases will be something like [IPointMarker:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipointmarker.html) | [TPointMarkerDefinition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tpointmarkerdefinition).
+Many things in SciChart.js are customised by providing a particular subclass, eg `PointMarkers`. The type signature in the options in these cases will be something like [IPointMarker:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ipointmarker.html) | [TPointMarkerDefinition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#tpointmarkerdefinition).
 
 Many of these classes require a `wasmContext` in the constructor, which you won’t have if you are trying to pass everything in a single definition, so instead use the Definition style, which as usual is `{ type, options }`.
 
@@ -17,7 +17,7 @@ For example:
 
 This works for **Themes**, **PointMarkers**, **Effects**, **Animations**, **PaletteProviders** and **LabelProviders**.
 
-Alternatively you can take the same approach as for option 3 of creating data and call [buildChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.buildchart) or [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#chartbuilder.build2dchart) with a partial definition, to get your wasmContext, then create an instance of the necessary class, then call buildSeries and pass it in. This is useful if you want to keep a reference to the object to be able to update it later.
+Alternatively you can take the same approach as for option 3 of creating data and call [buildChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.buildchart) or [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build2dchart) with a partial definition, to get your wasmContext, then create an instance of the necessary class, then call buildSeries and pass it in. This is useful if you want to keep a reference to the object to be able to update it later.
 
 
 <CodeSnippetBlock labels={["Building with complex options"]}>
@@ -47,7 +47,7 @@ When the modifier is built, SciChart will look up the function in its registry a
 onCreated Function 
 -------------------
 
-Specific to the builder api, there is an **onCreated** option in the [ISciChart2DDefinition:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iscichart2ddefinition.html) which is a callback that is run after the chart is built and takes the sciChartSurface as a parameter.  It can be used to run zoomExtents, or perform further configuration using the standard api.
+Specific to the builder api, there is an **onCreated** option in the [ISciChart2DDefinition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iscichart2ddefinition.html) which is a callback that is run after the chart is built and takes the sciChartSurface as a parameter.  It can be used to run zoomExtents, or perform further configuration using the standard api.
 
 #### See Also
 

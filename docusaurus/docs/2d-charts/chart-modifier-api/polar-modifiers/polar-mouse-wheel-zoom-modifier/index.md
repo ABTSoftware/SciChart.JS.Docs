@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # PolarMouseWheelZoomModifier
 
-The [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarmousewheelzoommodifier.html) is special a modifier that allows users to interact with the polar chart in 2 major ways: 
+The [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarmousewheelzoommodifier.html) is special a modifier that allows users to interact with the polar chart in 2 major ways: 
 
 ## 1. Zooming in and out, using `EActionType.Zoom` (default)
 

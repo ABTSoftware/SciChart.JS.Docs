@@ -4,21 +4,21 @@ sidebar_position: 8
 
 # The Polar Category Axis
 
-The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) brings category (discrete, label-based, or index-based) data to polar charts—enabling radar, spider, and circular bar charts where each sector represents a category or qualitative dimension.
+The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html) brings category (discrete, label-based, or index-based) data to polar charts—enabling radar, spider, and circular bar charts where each sector represents a category or qualitative dimension.
 
 **Key features:**
 - Lets you plot non-numeric, ordinal, or named categories around a circle (e.g., "Defense", "Shooting", ...).
 - Works in both angular (sweep) and radial (outward) modes.
-- Supports custom label lists via [labels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#labels), [startAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#startangle), [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#totalangle), gridline style, and many more.
+- Supports custom label lists via [labels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#labels), [startAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#startangle), [totalAngle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#totalangle), gridline style, and many more.
 - Collapses “gaps” in your data, making it perfect for displaying categorical time-series or performance data.
 
 ## Key Options
 
-- [labels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#labels) – Array of strings for each category.
-- [polarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#polaraaxismode) – Set to [Angular:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#angular) to lay categories around the sweep; or [Radial:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/epolaraxismode.html#radial) for concentric category rings.
-- [startAngle / startAngleDegrees:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#startangle) – Where the axis begins (e.g., `Math.PI / 2` for 12 o’clock).
-- [flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#flippedcoordinates) – Set to `true` for clockwise domain.
-- [polarLabelMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#polarlabelmode) – Controls label orientation (parallel, perpendicular, horizontal, etc).
+- [labels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#labels) – Array of strings for each category.
+- [polarAxisMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#polaraaxismode) – Set to [Angular:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/epolaraxismode.html#angular) to lay categories around the sweep; or [Radial:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/epolaraxismode.html#radial) for concentric category rings.
+- [startAngle / startAngleDegrees:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#startangle) – Where the axis begins (e.g., `Math.PI / 2` for 12 o’clock).
+- [flippedCoordinates:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#flippedcoordinates) – Set to `true` for clockwise domain.
+- [polarLabelMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#polarlabelmode) – Controls label orientation (parallel, perpendicular, horizontal, etc).
 
 ## Example: Category Radar Chart
 
@@ -27,7 +27,7 @@ The [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/
 <LiveDocSnippet name="./Basic/demo" />
 
 :::tip
-The number of string elements inside the [labels:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#labels) array determines the number of *possible* text tick labels, it does not force the chart to render that amount of ticks directly, that is still determined by the [visibleRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html#visibleRange) of the angular axis, or the x/y-range calculated to include all the renderable series's points, if present.
+The number of string elements inside the [labels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#labels) array determines the number of *possible* text tick labels, it does not force the chart to render that amount of ticks directly, that is still determined by the [visibleRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html#visibleRange) of the angular axis, or the x/y-range calculated to include all the renderable series's points, if present.
 :::
 
 ## Common Use Cases
@@ -37,7 +37,7 @@ The number of string elements inside the [labels:blue_book:](https://www.scichar
 - Survey, KPI, and performance dashboards
 - Any polar visualization with qualitative or ordinal axes
 
-## See the [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcategoryaxis.html) in Action:
+## See the [PolarCategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcategoryaxis.html) in Action:
 
 - https://www.scichart.com/demo/react/polar-column-category-chart
 - https://www.scichart.com/demo/react/polar-stacked-radial-column-chart

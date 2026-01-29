@@ -4,7 +4,7 @@ sidebar_position: 20
 
 # Hit-Test API for Polar Column Series 
 
-The IHitTestProvider.hitTest method on [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarcolumnrenderableseries.html) tests if the click was within the Column's body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html) object with the following properties:
+The IHitTestProvider.hitTest method on [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarcolumnrenderableseries.html) tests if the click was within the Column's body and returns a [HitTestInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html) object with the following properties:
 
 ### HitTest on 1 particular Polar Column Series:
 
@@ -20,7 +20,7 @@ const colHitTestInfo: HitTestInfo = colSeries1.hitTestProvider.hitTest(x, y);
 The algorithm is as follows:
 
 1. Find the nearest column in X direction.
-2. Test if the click was within column body and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hittestinfo.html#isHit) property.
+2. Test if the click was within column body and update [HitTestInfo.isHit:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hittestinfo.html#isHit) property.
 
 
 ### Here is how you would implement it on multiple Polar Column Series:

@@ -13,7 +13,7 @@ If you haven't already, read the article [The CursorModifier Type](/2d-charts/c
 Basic CursorModifier Tooltip Formatting Options
 -----------------------------------------------
 
-Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/), including how to specify formats from Enums and override formatting programmatically.
+Tooltip and Axis Label formatting comes from the [axis.labelprovider.formatCursorLabel():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/labelprovider.html#formatcursorlabel) function and is axis-specific. You can read more about the [Axis.LabelProvider API here](/2d-charts/axis-api/axis-labels/label-provider-api-overview/), including how to specify formats from Enums and override formatting programmatically.
 
 Below we're going to show you how to apply cursor formatting to enable four-decimal places on tooltips.
 
@@ -33,9 +33,9 @@ For further customisation on a per-axis basis, consider using the [LabelProvide
 Tooltip DataTemplates
 ---------------------
 
-Further customisation of tooltip content can be achieved with the [CursorModifier.tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/cursormodifier.html#tooltipdatatemplate) property. This defines the content inside the tooltip e.g. what values are shown (x, y, values from metadata), if the series name is shown and so on.
+Further customisation of tooltip content can be achieved with the [CursorModifier.tooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/cursormodifier.html#tooltipdatatemplate) property. This defines the content inside the tooltip e.g. what values are shown (x, y, values from metadata), if the series name is shown and so on.
 
-This property expects a function in the following format (see [TCursorTooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#tcursortooltipdatatemplate)):
+This property expects a function in the following format (see [TCursorTooltipDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#tcursortooltipdatatemplate)):
 
 <CodeSnippetBlock labels={["tooltipDataTemplate function signature"]}>
     ```ts showLineNumbers
@@ -48,11 +48,11 @@ This property expects a function in the following format (see [TCursorTooltipDa
 
 The input/output parameters are:
 
-*   **Input**: an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesinfo.html): a data object which stores info about the series under the mouse.
-*   **Input**: a tooltipTitle (string) which comes from [renderableSeries.rolloverModifierProps.tooltipTitle:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptitle).
+*   **Input**: an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesinfo.html): a data object which stores info about the series under the mouse.
+*   **Input**: a tooltipTitle (string) which comes from [renderableSeries.rolloverModifierProps.tooltipTitle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rollovermodifierrenderableseriesprops.html#tooltiptitle).
 *   **Output**: an array of strings, each one corresponding to a line in the tooltip.
 
-Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyseriesinfo.html) and output to tooltips.
+Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyseriesinfo.html) and output to tooltips.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {16,43} showLineNumbers file=./data-template.ts start=#region_A_start end=#region_A_end
@@ -68,7 +68,7 @@ This results in the following output
 Accessing Metadata in Tooltip DataTemplates
 -------------------------------------------
 
-In the above example we access properties of [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyseriesinfo.html) to format lines in the CursorModifier tooltip.
+In the above example we access properties of [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyseriesinfo.html) to format lines in the CursorModifier tooltip.
 
 You can also access metadata to store any custom object in your X,Y data, then read that data out in tooltips.
 

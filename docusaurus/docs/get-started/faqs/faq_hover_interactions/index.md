@@ -10,9 +10,9 @@ In SciChart.js, you can implement both click and hover events on charts using se
 
 ### Custom Chart Modifier for Click Detection
 
-<!-- [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rollovermodifier.html) -->
+<!-- [RolloverModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rollovermodifier.html) -->
 
-The most flexible approach is creating a CustomChartModifier that extends [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/chartmodifierbase2d.html)
+The most flexible approach is creating a CustomChartModifier that extends [ChartModifierBase2D:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/chartmodifierbase2d.html)
 
 ```ts {1} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
 
@@ -22,7 +22,7 @@ The most flexible approach is creating a CustomChartModifier that extends [Chart
 
 ### Series Selection Modifier
 
-For built-in series click functionality, use the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesselectionmodifier.html)
+For built-in series click functionality, use the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesselectionmodifier.html)
 
 ```ts {1} showLineNumbers file=./demo1.ts start=region_A_start end=region_A_end
 
@@ -34,7 +34,7 @@ For built-in series click functionality, use the [SeriesSelectionModifier:blue_b
 
 ### Hover Detection with Series Selection Modifier
 
-Enable hover detection using the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesselectionmodifier.html)
+Enable hover detection using the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesselectionmodifier.html)
 
 ```ts {1} showLineNumbers file=./demo2.ts start=region_A_start end=region_A_end
 

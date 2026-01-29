@@ -6,11 +6,11 @@ sidebar_position: 31
 
 The FastTriangleRenderableSeries is designed to plot data points as triangles, often used for custom scatter plots, mesh visualizations, or highlighting specific data points with a triangle marker. It supports full customization, including stroke, fill, and point marker options.
 
-Triangle Series can be created using the [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasttrianglerenderableseries.html) type.
+Triangle Series can be created using the [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttrianglerenderableseries.html) type.
 
 The FastTriangleRenderableSeries class in SciChart.js is a specialized renderable series used for visualizing data as a series of triangles on a 2D chart. It extends the base BaseRenderableSeries class and provides additional properties and methods tailored for rendering triangle shapes.
 
-Here is a simple Triangle Series example made using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html):
+Here is a simple Triangle Series example made using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html):
 
 ```ts {4} showLineNumbers file=./triangle-series-list/demo.ts start=region_A_start end=region_A_end
 ```
@@ -84,7 +84,7 @@ In this mode, each group of three consecutive points in the list defines a trian
 
 ### Triangle Series Custom Gradient Example
 
-In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html) and fillLinearGradient to display custom gradient.
+In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html) and fillLinearGradient to display custom gradient.
 
 <LiveDocSnippet name="./triangle-series-custom-gradient/demo" />
 
@@ -93,7 +93,7 @@ In this example we have used [XyxyDataSeries:blue_book:](https://www.scichart.co
 
 ### Triangle Series Texture Example
 
-In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyxydataseries.html), ETriangleSeriesDrawMode.Polygon and customTextureOptions to display rectangles with custom texture that are comprised of four triangles.
+In Triangle Series Texture example we are using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html), ETriangleSeriesDrawMode.Polygon and customTextureOptions to display rectangles with custom texture that are comprised of four triangles.
 
 <LiveDocSnippet name="./triangle-series-texture/demo" />
 

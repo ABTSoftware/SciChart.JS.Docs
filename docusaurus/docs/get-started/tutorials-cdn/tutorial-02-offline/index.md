@@ -27,9 +27,9 @@ Source code for this tutorial can be found at [SciChart.Js.Examples Github Repos
 
 In this tutorial, we are going to add some Line series onto the chart and to use downloaded js and wasm files to load SciChart.js offline (without internet access).
 
-First, we will add a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
+First, we will add a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) and add this to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
 
-Next, we create an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the FastLineRenderableSeries.
+Next, we create an [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xydataseries.html) which is the type which stores the data, and can accept dynamic updates (real-time updates) and manipulation of data. We will assign the dataseries to the FastLineRenderableSeries.
 
 Try the code below:
 
@@ -133,7 +133,7 @@ This results in the following output:
 Breaking the Code Down
 ----------------------
 
-1.  [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#configure) sets from where to load wasm file.
+1.  [SciChartSurface.configure():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#configure) sets from where to load wasm file.
 2.  Next, ensure that the *.wasm files are served with MIME type application/octet-stream.
 3.  Verify the file that was downloaded, that it is actually the correct file & file type.
 4.  Finally, ensure that the version numbers of *.wasm files and index.min.js match. The best way to ensure this is download a specific version again and overwrite files in your source-code repository.

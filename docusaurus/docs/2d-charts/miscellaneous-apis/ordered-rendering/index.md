@@ -30,7 +30,7 @@ Thus, text labels usually are above other types of entities.
 By default, elements of the same type are rendered in the insertion order.
 :::
 :::info
-The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edefaultrenderlayer.html).
+The default layers are defined in [EDefaultRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/edefaultrenderlayer.html).
 :::
 
 :::note
@@ -39,8 +39,8 @@ The order may differ depending on some configuration specifics.
 
 #### Series Render Order
 
-Series render order depends on the insertion order into [renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
-While it also may change when series are hovered or selected (this feature can be enabled with [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesselectionmodifier.html)).
+Series render order depends on the insertion order into [renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
+While it also may change when series are hovered or selected (this feature can be enabled with [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesselectionmodifier.html)).
 
 <ChartFromSciChartDemo
     src="https://www.scichart.com/demo/iframe/chart-series-selection"
@@ -49,9 +49,9 @@ While it also may change when series are hovered or selected (this feature can b
 
 #### Annotations Render Order
 
-Annotations expose [annotationLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#annotationlayer) property,
+Annotations expose [annotationLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#annotationlayer) property,
 which allows them to be placed behind grid-lines/series or above them.
-(Refer to [EAnnotationLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eannotationlayer.html))
+(Refer to [EAnnotationLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/eannotationlayer.html))
 
 :::note
 Dom Annotations have limited support of the layering options due to their rendering specifics.
@@ -67,8 +67,8 @@ Dom Annotations have limited support of the layering options due to their render
 Native Text rendering could be batched for performance optimization. However to make sure the text is rendered at the correct layer you may need to use immediate Native Text rendering.
 Some contexts where you can force the immediate rendering are:
 
-- [renderNativeAxisLabelsImmediately:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#rendernativeaxislabelsimmediately) for axis labels
-- [drawImmediate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/inativetextannotationoptions.html#drawimmediate) on [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/nativetextannotation.html)
+- [renderNativeAxisLabelsImmediately:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#rendernativeaxislabelsimmediately) for axis labels
+- [drawImmediate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/inativetextannotationoptions.html#drawimmediate) on [NativeTextAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/nativetextannotation.html)
 
 Also, native text can be used in other contexts such as annotations, data labels, titles, etc...
 
@@ -79,7 +79,7 @@ This also means that the elements attached to the main surface are rendered befo
 
 #### Background rendering
 
-A chart [background:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#background) is rendered on a root `div` element [domChartRoot:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#domchartroot),
+A chart [background:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#background) is rendered on a root `div` element [domChartRoot:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#domchartroot),
 while a sub-chart background is rendered with WebGl on the Render Context Canvas.
 Thus, a parent surface background is always rendered below everything else;
 And a sub-chart can use only a plain color as a background.
@@ -98,7 +98,7 @@ First of all, it is possible by setting the order of items within collections on
 To do this dynamically, Use and `add` and `remove` methods on a collection.
 
 Then, some elements (currently series and annotations) have methods for advanced control of the render order.
-The API is defined in [IOrderedRenderable:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/orderedrenderable.html)
+The API is defined in [IOrderedRenderable:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/orderedrenderable.html)
 
 ### Ordered Renderables
 
@@ -106,7 +106,7 @@ SciChart allows setting a custom render order on instances that implement `IOrde
 
 #### Absolute order
 
-The order can be set as a value via the [renderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#renderorder) constructor option (or dynamically via [setRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iorderedrenderable.html#setrenderorder)).
+The order can be set as a value via the [renderOrder:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html#renderorder) constructor option (or dynamically via [setRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iorderedrenderable.html#setrenderorder)).
 
 For example, in the following setup, we change the order of the first annotation so it is rendered on top of the second one, which is the opposite of the default behaviour.
 
@@ -120,8 +120,8 @@ For example, in the following setup, we change the order of the first annotation
 
 Alternatively, an order could be set as an offset from another Ordered Renderable instance.
 
-In this example, we demonstrate how to place an annotation on a layer between renderable series via [renderNextTo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/iannotationbaseoptions.html#rendernextto) option
-(or [setRenderNextTo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/annotationbase.html#setrendernextto) method).
+In this example, we demonstrate how to place an annotation on a layer between renderable series via [renderNextTo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/iannotationbaseoptions.html#rendernextto) option
+(or [setRenderNextTo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/annotationbase.html#setrendernextto) method).
 
 <LiveDocSnippet name="demo2" />
 
@@ -142,7 +142,7 @@ In this example, we demonstrate how to place an annotation on a layer between re
 Setting a custom render layer allows to place an entity at a layer of different entity kinds, as well.
 
 Here we will demonstrate how to place series at the background layer, so that grid lines are rendered above them.
-For that we can use [renderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ibaserenderableseriesoptions.html#renderlayer) or [setRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setrenderlayer)
+For that we can use [renderLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ibaserenderableseriesoptions.html#renderlayer) or [setRenderLayer:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#setrenderlayer)
 
 <LiveDocSnippet name="demo5" />
 
@@ -169,7 +169,7 @@ Let's consider the following setup:
 
 </CodeSnippetBlock>
 
-Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#setsurfacerenderorder) method on a surface:
+Then, to reorder the sub-charts, we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#setsurfacerenderorder) method on a surface:
 
 ```ts {13} showLineNumbers file=./demo3.js start=region_A_start end=region_A_end
 
@@ -179,7 +179,7 @@ Result:
 
 <LiveDocSnippet name="demo3" />
 
-Or to modify the render order only of the series from the first chart we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/baserenderableseries.html#setsurfacerenderorder) method on them:
+Or to modify the render order only of the series from the first chart we can apply the [setSurfaceRenderOrder:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/baserenderableseries.html#setsurfacerenderorder) method on them:
 
 <CodeSnippetBlock>
 

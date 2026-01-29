@@ -4,7 +4,7 @@ sidebar_position: 22
 
 # The Error Bars Chart Type
 
-Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html) type.
+Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html) type.
 
 :::tip
 The [JavaScript Error Bars Chart Example](https://www.scichart.com/demo/javascript-error-bars-chart) can be found in the [SciChart.Js Examples Suite > Error Bars Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ErrorBarsChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/error-bars-chart).
@@ -33,13 +33,13 @@ This results in the following:
 
 In the code above:
 
-*   We define [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hlcdataseries.html), passing arrays with X, Y, High, and Low values
-*   A [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html) is created with dataSeries option and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#renderableseries) collection.
-*   Alternatively we can assign a [FastErrorBarsRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#dataseries) property, which stores the HLC data to render.
+*   We define [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hlcdataseries.html), passing arrays with X, Y, High, and Low values
+*   A [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html) is created with dataSeries option and added to the [SciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   Alternatively we can assign a [FastErrorBarsRenderableSeries.dataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#dataseries) property, which stores the HLC data to render.
 
 ## Error Mode
 
-[FastErrorBarsRenderableSeries.errorMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#errormode) property defines whether high and low caps should be displayed on error bars. Available values are defined by enum [EErrorMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eerrormode.html). We can set this property either via the series itself, or passing in to constructor options (see type [IFastErrorBarsRenderableSeriesOptions:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifasterrorbarsrenderableseriesoptions.html)).
+[FastErrorBarsRenderableSeries.errorMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#errormode) property defines whether high and low caps should be displayed on error bars. Available values are defined by enum [EErrorMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/eerrormode.html). We can set this property either via the series itself, or passing in to constructor options (see type [IFastErrorBarsRenderableSeriesOptions:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifasterrorbarsrenderableseriesoptions.html)).
 
 The following example shows how to use only **high** error on bars.
 
@@ -59,7 +59,7 @@ This results in the following output:
 
 ## Horizontal Error Bars
 
-It is possible to change the direction of Error Bars to horizontal using [FastErrorBarsRenderableSeries.errorDirection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#errordirection) property. In this case the High & Low values in [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hlcdataseries.html) are applied in the X-direction.
+It is possible to change the direction of Error Bars to horizontal using [FastErrorBarsRenderableSeries.errorDirection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#errordirection) property. In this case the High & Low values in [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hlcdataseries.html) are applied in the X-direction.
 
 ```ts {9-10,12} showLineNumbers
 import { EErrorDirection } from "scichart";
@@ -88,7 +88,7 @@ This results in the following output
 
 ### Setting Stroke, StrokeThickness and StrokeDash
 
-Error Bars in SciChart.js support setting [stroke:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#stroke), [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#strokethickness) and [strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#strokeddasharray) to set a dashed line style.
+Error Bars in SciChart.js support setting [stroke:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#stroke), [strokeThickness:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#strokethickness) and [strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#strokeddasharray) to set a dashed line style.
 
 For example, this code:
 
@@ -114,7 +114,7 @@ Learn more about Dashed Line Styling at this [documentation page](/2d-charts/st
 
 ### Drawing a Line and PointMarker through Error Bars
 
-You can add a PointMarker to highlight the Y-value of an [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/hlcdataseries.html). The data can also be used twice to display both lines / scatter points and error bars.
+You can add a PointMarker to highlight the Y-value of an [HlcDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/hlcdataseries.html). The data can also be used twice to display both lines / scatter points and error bars.
 
 Try this code out:
 
@@ -156,7 +156,7 @@ This results in the folllowing output:
 
 ### Setting the Width of Error Bars Whiskers
 
-You can define the width of Error Bars using [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#datapointwidth) and [dataPointWidthMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#datapointwidthmode) which supports values from [EDataPointMode:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edatapointwidthmode.html).
+You can define the width of Error Bars using [dataPointWidth:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#datapointwidth) and [dataPointWidthMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#datapointwidthmode) which supports values from [EDataPointMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/edatapointwidthmode.html).
 
 For example. setting dataPointWidthMode to Absolute and dataPointWidth to 50 ensures 50 pixels always.
 
@@ -176,7 +176,7 @@ sciChartSurface.renderableSeries.add(errorBarsSeries);
     title="Setting the Width of Error Bars Whiskers"
 />
 
-The alternative mode is [EDataPointWidthMode.Relative:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/edatapointwidthmode.html).
+The alternative mode is [EDataPointWidthMode.Relative:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/edatapointwidthmode.html).
 
 In this mode a dataPointWidth value of `0.0` - `1.0` occupies 0% to 100% of the available space as calculated by SciChart.js.
 
@@ -198,7 +198,7 @@ sciChartSurface.renderableSeries.add(errorBarsSeries);
 
 ### Showing/Hiding Error Bars Connector or Whiskers 
 
-You can specify which parts of an Error Bar should be visible using [drawConnector:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#drawconnector) and [drawWhiskers:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/fasterrorbarsrenderableseries.html#drawwhiskers) and finally;
+You can specify which parts of an Error Bar should be visible using [drawConnector:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#drawconnector) and [drawWhiskers:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasterrorbarsrenderableseries.html#drawwhiskers) and finally;
 
 ```ts {5-6} showLineNumbers
 const errorBarsSeries = new FastErrorBarsRenderableSeries(wasmContext, {

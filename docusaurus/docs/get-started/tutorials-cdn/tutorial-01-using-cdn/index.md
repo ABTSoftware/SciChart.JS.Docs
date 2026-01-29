@@ -173,7 +173,7 @@ Breaking the Code Down
 
 1.  We included the `<script>` tag to load `index.min.js` with a specific version
 2.  We have an async function to setup SciChart. This is necessary because SciChart itself uses async functions to load, and we don't want to block the browser loading.
-3.  Inside this async function, we call [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html#create) to instantiate a chart surface. This function must be awaited.
+3.  Inside this async function, we call [SciChartSurface.create():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#create) to instantiate a chart surface. This function must be awaited.
 4.  Lastly, we can use the SciChart API to add a X and Y Axis and series with some data.
 
 :::tip

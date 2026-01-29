@@ -40,5 +40,5 @@ When you become a SciChart customer, you join a community of developers support 
 We want you to enjoy using our products as much as we enjoy making them, as well as to succeed, so if you have any feedback good or bad, please get in touch as **we want to hear from you**.
 
 The following document serves as a reference and an overview of the features in the SciChart.js JavaScript SDK. For a complete code
-reference, see the [TypeDoc API Documentation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html)
+reference, see the [TypeDoc API Documentation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html)
 and the [SciChart.js Examples Suite](https://www.scichart.com/demo), which contains many code samples you can run, export and modify for yourself.

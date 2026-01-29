@@ -53,7 +53,7 @@ Use this API any time you want to change the colour, fill or scatter-point colou
 Enabling the PaletteProvider
 ----------------------------
 
-To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
+To enable the paletting feature, you need to create a class which conforms to the [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/istrokepaletteprovider.html), [IFillPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ifillpaletteprovider.html) or [IPointMarkerPaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ipointmarkerpaletteprovider.html) interfaces and assign a new instance of the class to the [IRenderableSeries.paletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/irenderableseries.html#paletteprovider) property.
 
 The following articles in this section show you how to do this for each series type:
 

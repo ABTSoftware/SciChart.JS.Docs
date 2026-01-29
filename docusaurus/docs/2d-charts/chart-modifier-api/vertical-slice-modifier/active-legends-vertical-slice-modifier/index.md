@@ -5,7 +5,7 @@ sidebar_position: 3
 # Active Legends - VerticalSliceModifier output to a Legend
 
 :::tip
-**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview/) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
+**Background reading:** If you haven't already, read the article [The VerticalSliceModifier Type](/2d-charts/chart-modifier-api/vertical-slice-modifier/vertical-slice-modifier-overview/) which will show you how to setup a [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) with default options for tooltips.
 :::
 
 This article goes into further detail on customising the tooltip items (formatting, text content)
@@ -13,9 +13,9 @@ This article goes into further detail on customising the tooltip items (formatti
 VerticalSliceModifier tooltipLegendTemplates
 --------------------------------------------
 
-The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) supports a [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate) property which allows you to specify a function to transform [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) content into a legend which can be placed in the top left of the chart. This active legend updates with series values as you drag the vertical lines, or when a series updates.
+The [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) supports a [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate) property which allows you to specify a function to transform [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) content into a legend which can be placed in the top left of the chart. This active legend updates with series values as you drag the vertical lines, or when a series updates.
 
-The [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate) property expects a function in the following format (see [TRolloverLegendSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#trolloverlegendsvgtemplate)):
+The [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate) property expects a function in the following format (see [TRolloverLegendSvgTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#trolloverlegendsvgtemplate)):
 
 
 <CodeSnippetBlock labels={["tooltipLegendTemplate function signature"]}>
@@ -31,11 +31,11 @@ The input/output parameters are:
 
 | **In/Out** | **Parameter** | **Description** |
 |------------|---------------|-----------------|
-| _Input_ | seriesInfos | an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/seriesinfo.html): a data object which stores info about the series that intersects the Vertical Line |
-| _Input_ | svgAnnotation | The [RolloverLegendSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rolloverlegendsvgannotation.html) that will be used to render the legend. From here you can access properties of the underlying legend container, such as [tooltipLegendOffsetX:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rolloverlegendsvgannotation.html#tooltiplegendoffsetx) / Y or [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rolloverlegendsvgannotation.html#tooltiplegendtemplate) |
-| _Return_ | string[] | A string containing the result SVG to display inside the [RolloverLegendSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/rolloverlegendsvgannotation.html) |
+| _Input_ | seriesInfos | an array of [SeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesinfo.html): a data object which stores info about the series that intersects the Vertical Line |
+| _Input_ | svgAnnotation | The [RolloverLegendSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rolloverlegendsvgannotation.html) that will be used to render the legend. From here you can access properties of the underlying legend container, such as [tooltipLegendOffsetX:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rolloverlegendsvgannotation.html#tooltiplegendoffsetx) / Y or [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rolloverlegendsvgannotation.html#tooltiplegendtemplate) |
+| _Return_ | string[] | A string containing the result SVG to display inside the [RolloverLegendSvgAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/rolloverlegendsvgannotation.html) |
 
-Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/xyseriesinfo.html) and output to a custom legend.
+Let's create a simple example which shows you how to access properties on [XySeriesInfo:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyseriesinfo.html) and output to a custom legend.
 
 Here's a worked example below, which shows how to place the hit-test result from a vertical line into an active legend elsewhere in your application.
 
@@ -50,9 +50,9 @@ This results in the following output:
 Using External placementDivId with the VerticalSliceModifier
 ------------------------------------------------------------
 
-Another way you can control the placement of the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html) tooltip is using the [placementDivId:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#placementdivid) property. This places the standard VerticalSliceModifier tooltip into a div of your choice (which can be anywhere on the app).
+Another way you can control the placement of the [VerticalSliceModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html) tooltip is using the [placementDivId:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html#placementdivid) property. This places the standard VerticalSliceModifier tooltip into a div of your choice (which can be anywhere on the app).
 
-Note, it does not currently work with [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate), however we are working on more options for styling, placement and configuration of tooltips soon.
+Note, it does not currently work with [tooltipLegendTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/verticalslicemodifier.html#tooltiplegendtemplate), however we are working on more options for styling, placement and configuration of tooltips soon.
 
 Try the following code in your application:
 

@@ -7,7 +7,7 @@ sidebar_position: 2
 Creating a Series with the Builder API
 --------------------------------------
 
-Let’s add a series. A definition must have a type property which is an [ESeriesType:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/enums/eseriestype.html). We’ll go into options in more detail later. The data property tells us the shape of data we need. There are a few different ways to supply data, but the simplest is to set the values directly here.
+Let’s add a series. A definition must have a type property which is an [ESeriesType:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/eseriestype.html). We’ll go into options in more detail later. The data property tells us the shape of data we need. There are a few different ways to supply data, but the simplest is to set the values directly here.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {6} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -16,7 +16,7 @@ Let’s add a series. A definition must have a type property which is an [ESerie
 
 This is all we need for a working SciChart chart with our BuilderAPI.
 
-Notice that the return type of the **chartBuilder.buildChart()** function call is a Promise, which returns [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/scichartsurface.html) and **wasmContext** just like a call to **SciChartSurface.create()**, except it will already be populated with series, default axes and data provided in the builder options.
+Notice that the return type of the **chartBuilder.buildChart()** function call is a Promise, which returns [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html) and **wasmContext** just like a call to **SciChartSurface.create()**, except it will already be populated with series, default axes and data provided in the builder options.
 
 Run the code sample above and you will get this output:
 
@@ -42,7 +42,7 @@ This results in the following chart output:
     src="images/BuilderApi_CreateSeriesExample2.png"
 />
 
-Note that visible range for an axis needs to be supplied as a [NumberRange:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/numberrange.html) class, however, in a text definition you can write `visibleRange: { min: 0, max: 20 }` .
+Note that visible range for an axis needs to be supplied as a [NumberRange:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/numberrange.html) class, however, in a text definition you can write `visibleRange: { min: 0, max: 20 }` .
 
 Chart Modifiers, like pretty much everything, are `{ type, options }`. Note that series, axes, annotations and modifiers can all be a single definition, or an array.
 

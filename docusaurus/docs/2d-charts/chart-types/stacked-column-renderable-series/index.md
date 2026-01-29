@@ -4,12 +4,12 @@ sidebar_position: 40
 
 # The Stacked Column Series Type
 
-Stacked Column Charts can be created by a combination of the [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html)  and [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html)  type. StackedColumnRenderableSeries share many properties with the added feature that columns automatically stack vertically or side by side.
+Stacked Column Charts can be created by a combination of the [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumnrenderableseries.html)  and [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumncollection.html)  type. StackedColumnRenderableSeries share many properties with the added feature that columns automatically stack vertically or side by side.
 
 <LiveDocSnippet name="./basic-example/demo" />
 
-- We created 5 [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) and added them to a [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html)
-- The [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumncollection.html) itself is added to sciChartSurface.renderableSeries collection, not the individual column series.
+- We created 5 [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumnrenderableseries.html) and added them to a [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumncollection.html)
+- The [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumncollection.html) itself is added to sciChartSurface.renderableSeries collection, not the individual column series.
 
 ```ts showLineNumbers file=./basic-example/demo.ts start=region_A_start end=region_A_end
 
@@ -17,8 +17,8 @@ Stacked Column Charts can be created by a combination of the [StackedColumnRende
 
 ## How the Stacking and Grouping Works for Column Series
 
-[StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) have a property stackedGroupId which defines how columns are grouped and stacked.
-When two [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/stackedcolumnrenderableseries.html) have a stackedGroupId set the grouping behaves differently.
+[StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumnrenderableseries.html) have a property stackedGroupId which defines how columns are grouped and stacked.
+When two [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/stackedcolumnrenderableseries.html) have a stackedGroupId set the grouping behaves differently.
 
 <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
   <figure style={{ margin: 0, textAlign: 'center', flexGrow: "1" }}>

@@ -20,7 +20,7 @@ All conversions are relative to the **series area** (viewRect) of the chart.
 
 ## Converting Polar Data to Cartesian (Pixel) Coordinates
 
-To convert polar data (angle, radius) to Cartesian (pixel) coordinates for rendering or hit-testing, use the [annotationHelpers.convertPolarToCartesian():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/index.html#annotationhelpers.convertpolartocartesian) function:
+To convert polar data (angle, radius) to Cartesian (pixel) coordinates for rendering or hit-testing, use the [annotationHelpers.convertPolarToCartesian():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#annotationhelpers.convertpolartocartesian) function:
 
 **Parameters:**
 - `angularAxis`: The polar angular axis instance.
@@ -60,7 +60,7 @@ const { x, y } = convertPolarToCartesian(
 
 When hit-testing, convert the mouse (x, y) pixel coordinates to polar coordinates, then compare with data points.
 
-For reference, here is our actual implementation of a hit-test provider for the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polarlinerenderableseries.html):
+For reference, here is our actual implementation of a hit-test provider for the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarlinerenderableseries.html):
 
 ```ts showLineNumbers {48-55,101}
 import { 
@@ -185,5 +185,5 @@ export class PolarLineSeriesHitTestProvider extends PolarDataPointHitTestProvide
 ```
 
 :::note
-The inverse function of `convertPolarToCartesian()` is [reverseTransform():blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/polaraxisbase.html#reversetransform), which converts from cartesian to polar coordinates.
+The inverse function of `convertPolarToCartesian()` is [reverseTransform():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polaraxisbase.html#reversetransform), which converts from cartesian to polar coordinates.
 :::

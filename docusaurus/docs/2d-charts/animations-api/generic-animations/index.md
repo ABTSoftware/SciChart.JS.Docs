@@ -229,7 +229,7 @@ drawVisibleRangeAnimationsChart("scichart");
 
 ### Animating AutoRange
 
-The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation:blue_book:](https://www.scichart.com/documentation/js/v4/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
+The method above is used internally within SciChart to support animating during autoRange. To enable this, set the [autoRangeAnimation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#autoRangeAnimation) property on an axis.
 
 ### Animating Data and Styles
 
