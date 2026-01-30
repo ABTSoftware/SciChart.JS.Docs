@@ -97,6 +97,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Per-Point Coloring for Polar Column Series](/2d-charts/chart-types/palette-provider-api/polar-column-renderable-series)
       - [Per-Point Coloring for Polar Line Series](/2d-charts/chart-types/palette-provider-api/polar-line-renderable-series)
       - [Per-Point Coloring for Polar Scatter Series](/2d-charts/chart-types/palette-provider-api/polar-xy-scatter-renderable-series)
+      - [PaletteProvider for Stacked Columns](/2d-charts/chart-types/palette-provider-api/palette-provider-stacked-columns)
       - [The PaletteFactory Helper Class](/2d-charts/chart-types/palette-provider-api/palette-factory)
     - **Hit-Test API**
       - [Hit-Test API overview](/2d-charts/chart-types/hit-test-api/hit-test-api-overview)
@@ -214,6 +215,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Text / String Axis](/2d-charts/axis-api/axis-types/text-string-axis)
       - [The Polar Numeric Axis](/2d-charts/axis-api/axis-types/polar-numeric-axis)
       - [The Polar Category Axis](/2d-charts/axis-api/axis-types/polar-category-axis)
+      - [Base Value Axis](/2d-charts/axis-api/axis-types/base-value-axis)
+      - [Discontinuous Date Axis](/2d-charts/axis-api/axis-types/discontinuous-date-axis)
     - **Axis Ranging, Scaling**
       - [Axis Ranging - AutoRange](/2d-charts/axis-api/ranging-scaling/auto-range)
       - [Axis Ranging - Set Range and Zoom to Fit](/2d-charts/axis-api/ranging-scaling/set-range-zoom-to-fit)
@@ -244,6 +247,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Advanced Options - Custom Layout Managers](/2d-charts/axis-api/multi-axis-and-layout/advanced-options-custom-layout-managers)
       - [Polar Chart Layout](/2d-charts/axis-api/multi-axis-and-layout/polar-chart-layout)
       - [Axis Offset and OverrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset)
+      - [Axis Sizing](/2d-charts/axis-api/multi-axis-and-layout/axis-sizing)
     - **Axis Styling**
       - [Title, Labels, Gridlines and Axis Band Style](/2d-charts/axis-api/axis-styling/title-labels-gridlines-axis-band-style)
       - [Axis Borders and Background](/2d-charts/axis-api/axis-styling/axis-borders-and-background)
@@ -357,6 +361,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Glow and DropShadow Shader Effects](/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects)
     - [Ordered Rendering](/2d-charts/miscellaneous-apis/ordered-rendering)
     - [Render Events](/2d-charts/miscellaneous-apis/render-events)
+    - [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render)
   - **Performance Tips**
     - [Performance Tips & Tricks](/2d-charts/performance-tips/performance-tips-and-tricks)
     - [Memory Best Practices](/2d-charts/performance-tips/memory-best-practices)
@@ -372,6 +377,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Axis3D APIs Overview](/3d-charts/axis-3d-api/axis-3d-api-overview)
     - [Numeric and Date Axis in SciChart3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d)
     - [Axis3D Text (Label) Formatting](/3d-charts/axis-3d-api/axis-3d-text-label-formatting)
+    - [3D Label Options](/3d-charts/axis-3d-api/chart-styling-3d)
     - [Axis3D Gridline and Label Spacing (Interval)](/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval)
   - **3D Chart Types**
     - [The Scatter 3D Chart Type](/3d-charts/chart-types/scatter-3d-chart)
