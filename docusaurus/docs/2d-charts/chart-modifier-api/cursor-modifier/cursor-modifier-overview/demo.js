@@ -20,6 +20,7 @@ async function basicCursorModifier(divElementId) {
     // Add a CursorModifier to the chart
     const cursorModifier = new CursorModifier({
         // Optional properties to configure what parts are shown
+        isSvgOnly: true,
         showTooltip: true,
         showAxisLabels: true,
         showXLine: true,

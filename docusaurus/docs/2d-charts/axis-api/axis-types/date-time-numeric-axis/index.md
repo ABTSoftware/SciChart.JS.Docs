@@ -92,12 +92,12 @@ Here's a demo showcasing it:
 :::info
 Key properties for High Precision and Advanced Formatting:
 
-* [datePrecision:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23dateprecision) - Defines the precision of input values (e.g. `EDatePrecision.Nanoseconds`).
-* [highPrecisionLabelMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23highprecisionlabelmode) - Controls formatting of precise labels (`Suffix`, `Fractional`, `Scientific`).
-* [showSecondsOnWideDate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23showsecondsonwidedate) - Whether to show seconds on the context (wide) label.
-* [showSecondsOnPreciseDate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23showsecondsonprecisedate) - Whether to repeat the seconds value on precise sub-second labels.
-* [splitWideDateWithComma:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23splitwidedatewithcomma) - Toggles the comma separator in date strings.
-* [labelThresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html%23labelthresholds) - Advanced: Allows overriding the zoom levels at which formatters switch (e.g., switch to Minutes earlier or later).
+* [datePrecision:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#dateprecision) - Defines the precision of input values (e.g. `EDatePrecision.Nanoseconds`).
+* [highPrecisionLabelMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#highprecisionlabelmode) - Controls formatting of precise labels (`Suffix`, `Fractional`, `Scientific`).
+* [showSecondsOnWideDate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#showsecondsonwidedate) - Whether to show seconds on the context (wide) label.
+* [showSecondsOnPreciseDate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#showsecondsonprecisedate) - Whether to repeat the seconds value on precise sub-second labels.
+* [splitWideDateWithComma:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#splitwidedatewithcomma) - Toggles the comma separator in date strings.
+* [labelThresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#labelthresholds) - Advanced: Allows overriding the zoom levels at which formatters switch (e.g., switch to Minutes earlier or later).
 :::
 
 ### Further customising the DateTimeNumericAxis Label Output

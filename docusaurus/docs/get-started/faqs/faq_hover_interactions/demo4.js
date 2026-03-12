@@ -6,10 +6,10 @@ async function demo(divElementId) {
     const growBy = new NumberRange(0.1, 0.1);
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
-    const xValues = [-1, 0, 1, 6, 8, 13, 15, 14];
-    const yValues = [0, 1, 6, 0, 1, 0, 0, 9];
-    const x1Values = [0, 5, 6, 7, 13, 14, 16, 15];
-    const y1Values = [11, 5, 10, 11, 10, 11, 11, 10];
+    const xValues = [-2, -2, -2, 0, 1, 6, 8, 13, 15, 14];
+    const yValues = [-1, 12, 0, 1, 6, 0, 1, 0, 0, 9];
+    const x1Values = [17, 17, 0, 5, 6, 7, 13, 14, 17, 15];
+    const y1Values = [0, 11, 11, 5, 10, 11, 10, 11, 11, 10];
     const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyxyDataSeries(wasmContext, {
             xValues,
@@ -29,8 +29,8 @@ async function demo(divElementId) {
     });
     sciChartSurface.renderableSeries.add(rectangleSeries);
     const statusLabel = new TextAnnotation({
-        x1: 0.1,
-        y1: 0.1,
+        x1: 0.05,
+        y1: 0.05,
         opacity: 0.5,
         fontSize: 22,
         textColor: "white",

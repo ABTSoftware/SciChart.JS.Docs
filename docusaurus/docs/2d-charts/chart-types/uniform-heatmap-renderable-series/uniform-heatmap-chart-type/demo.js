@@ -21,6 +21,9 @@ async function simpleHeatmapChart(divElementId) {
     //   [2, 1.2, 5.4, 4, 3, 5],
     // ];
     //
+    // or create as an array of Float64Array
+    // e.g.
+    // const zValuesF64 = zValues.map(row => new Float64Array(row));
     const heatmapWidth = 7;
     const heatmapHeight = 4;
     const zValues = Array.from(Array(heatmapHeight));

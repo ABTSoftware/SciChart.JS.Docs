@@ -24,7 +24,7 @@ The most flexible approach is creating a CustomChartModifier that extends [Chart
 
 For built-in series click functionality, use the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesselectionmodifier.html)
 
-```ts {1} showLineNumbers file=./demo1.ts start=region_A_start end=region_A_end
+```ts {3-15} showLineNumbers file=./demo1.ts start=region_A_start end=region_A_end
 
 ```
 
@@ -36,7 +36,7 @@ For built-in series click functionality, use the [SeriesSelectionModifier:blue_b
 
 Enable hover detection using the [SeriesSelectionModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/seriesselectionmodifier.html)
 
-```ts {1} showLineNumbers file=./demo2.ts start=region_A_start end=region_A_end
+```ts {3-15} showLineNumbers file=./demo2.ts start=region_A_start end=region_A_end
 
 ```
 
@@ -46,7 +46,7 @@ Enable hover detection using the [SeriesSelectionModifier:blue_book:](https://ww
 
 You can attach hover callbacks directly to RenderableSeries
 
-```ts {8} showLineNumbers file=./demo3.ts start=region_A_start end=region_A_end
+```ts {8-12,19} showLineNumbers file=./demo3.ts start=region_A_start end=region_A_end
 
 ```
 
@@ -56,7 +56,7 @@ You can attach hover callbacks directly to RenderableSeries
 
 For detecting hover on specific chart parts (axes, series, chart area), create a custom modifier
 
-```ts {1} showLineNumbers file=./demo4.ts start=region_A_start end=region_A_end
+```ts {3} showLineNumbers file=./demo4.ts start=region_A_start end=region_A_end
 
 ```
 

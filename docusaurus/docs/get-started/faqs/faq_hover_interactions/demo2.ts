@@ -27,10 +27,10 @@ async function demo(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
 
-    const xValues = [-1, 0, 1, 6, 8, 13, 15, 14];
-    const yValues = [0, 1, 6, 0, 1, 0, 0, 9];
-    const x1Values = [0, 5, 6, 7, 13, 14, 16, 15];
-    const y1Values = [11, 5, 10, 11, 10, 11, 11, 10];
+    const xValues = [-2, -2, -2, 0, 1, 6, 8, 13, 15, 14];
+    const yValues = [-1, 12, 0, 1, 6, 0, 1, 0, 0, 9];
+    const x1Values = [17, 17, 0, 5, 6, 7, 13, 14, 17, 15];
+    const y1Values = [0, 11, 11, 5, 10, 11, 10, 11, 11, 10];
 
     const rectangleSeries = new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyxyDataSeries(wasmContext, {
@@ -54,8 +54,8 @@ async function demo(divElementId) {
 
 
     const statusLabel = new TextAnnotation({
-        x1: 0.1,
-        y1: 0.1,
+        x1: 0.05,
+        y1: 0.05,
         opacity: 0.5,
         fontSize: 22,
         textColor: "white",
@@ -72,9 +72,19 @@ async function demo(divElementId) {
         enableHover: true,
         onHoverChanged: args => {
             console.log("Series hovered:", args.hoveredSeries[0]);
+            
+            if (rectangleSeries.isHovered) {
+                rectangleSeries.fill = "#FFD16699";
+                rectangleSeries.stroke = "#FFD166";
+                statusLabel.text = "Hovered";
+            } else {
+                rectangleSeries.fill = "#6495ED88";
+                rectangleSeries.stroke = "#6495ED";
+                statusLabel.text = "Idle";
+            }
         }
     });
-     sciChartSurface.chartModifiers.add(seriesSelectionModifier);
+    sciChartSurface.chartModifiers.add(seriesSelectionModifier);
     // region_A_end
 
     sciChartSurface.chartModifiers.add(new ZoomPanModifier(), new ZoomExtentsModifier(), new MouseWheelZoomModifier());
