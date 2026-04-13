@@ -15,7 +15,6 @@ import {
     MouseWheelZoomModifier,
     CursorModifier,
     EAxisAlignment,
-    ELabelAlignment,
     TCursorTooltipDataTemplate
 } from "scichart";
 
@@ -46,7 +45,7 @@ function prepareGanttData(tasks: GanttTask[]) {
     const yValues: number[]  = [];
     const x1Values: number[] = [];
     const y1Values: number[] = [];
-    const metadata: { name: string; start: Date; end: Date; percentComplete: number }[] = [];
+    const metadata: { isSelected: boolean; name: string; start: Date; end: Date; percentComplete: number }[] = [];
 
     tasks.forEach((task, i) => {
         xValues.push(task.startDate.getTime());
@@ -54,7 +53,7 @@ function prepareGanttData(tasks: GanttTask[]) {
         // CategoryAxis is reversed: index 0 = top row, so y increases downward
         yValues.push(i);
         y1Values.push(i + BAR_HEIGHT);
-        metadata.push({ name: task.name, start: task.startDate, end: task.endDate, percentComplete: task.percentComplete });
+        metadata.push({ isSelected: false, name: task.name, start: task.startDate, end: task.endDate, percentComplete: task.percentComplete });
     });
 
     return { xValues, yValues, x1Values, y1Values, metadata };
@@ -74,11 +73,10 @@ async function projectTimelineGanttChart(divElementId: string) {
 
     // Y axis: category labels for each project stage, reversed so row 0 is at the top
     const yAxis = new CategoryAxis(wasmContext, {
-        isLabelCullingEnabled: false,
         axisAlignment: EAxisAlignment.Left,
         flippedCoordinates: true,
         growBy: new NumberRange(0.05, 0.05),
-        labelStyle: { padding: { bottom: 40 } }
+        labelStyle: { padding: { left: 0, right: 0, top: 0, bottom: 40 } }
     });
     // Map integer row indices to task name strings
     yAxis.labelProvider.formatLabel = (dataValue: number) =>
@@ -100,11 +98,10 @@ async function projectTimelineGanttChart(divElementId: string) {
         dataLabels: {
             style: { fontSize: 14, fontFamily: "Arial" },
             color: "white",
-            labelAlignment: ELabelAlignment.Center,
             // display completion percentage from metadata
-            getTextFunc: (_state, _x, _y, _x1, _y1, index) => {
-                const m = metadata[index];
-                return m ? `${m.percentComplete}%` : "";
+            metaDataSelector: (m) => {
+                const meta = m as { isSelected: boolean; name: string; start: Date; end: Date; percentComplete: number };
+                return meta ? `${meta.percentComplete}%` : "";
             }
         }
     });
@@ -116,7 +113,7 @@ async function projectTimelineGanttChart(divElementId: string) {
         return seriesInfos
             .filter(si => si.isHit)
             .map(si => {
-                const m = si.pointMetadata as { name: string; start: Date; end: Date; percentComplete: number };
+                const m = si.pointMetadata as { isSelected: boolean; name: string; start: Date; end: Date; percentComplete: number };
                 if (!m) return "";
                 return [
                     m.name,
