@@ -34,6 +34,8 @@ A Gantt chart in SciChart.js is assembled from:
 
 The simplest Gantt chart uses a plain `NumericAxis` on both axes and a `FastRectangleRenderableSeries` with `EColumnMode.StartEnd` and `EColumnYMode.TopBottom`. Each task occupies one integer row on the Y axis with a bar height less than 1 to leave gaps between rows.
 
+This simplified example uses `NumericAxis` on both axes with integer coordinates. For the full approach with real dates and task labels, see the [Project Timeline Example](#project-timeline-example) below.
+
 <LiveDocSnippet name="./basic/demo" />
 
 ```ts showLineNumbers file=./basic/demo.ts start=region_A_start end=region_A_end
@@ -105,13 +107,17 @@ yAxis.labelProvider.formatLabel = (dataValue: number) =>
 sciChartSurface.yAxes.add(yAxis);
 ```
 
+Here `TASKS` is the module-level array of `GanttTask` objects defined in the [Data Format](#data-format) section.
+
 :::tip
 Set `isLabelCullingEnabled: false` to ensure all task labels are always visible.
 :::
 
 ## Styling
 
-Task bars support rounded corners, opacity, stroke, and data labels. The `getTextFunc` callback reads the completion percentage from the per-point metadata and renders it inside each bar:
+Task bars support rounded corners, opacity, stroke, and data labels. The `getTextFunc` callback reads the completion percentage from the per-point metadata and renders it inside each bar.
+
+The snippet below assumes `metadata` has been prepared by the `prepareGanttData` function shown in the [Data Format](#data-format) section above.
 
 ```ts
 const ganttSeries = new FastRectangleRenderableSeries(wasmContext, {
@@ -135,15 +141,6 @@ const ganttSeries = new FastRectangleRenderableSeries(wasmContext, {
         }
     }
 });
-```
-
-## Project Timeline Example
-
-The full project timeline example adds a `CategoryAxis`, `DateTimeNumericAxis`, per-task metadata, data labels showing completion percentage, and interactive tooltips via `CursorModifier`.
-
-<LiveDocSnippet name="./project-timeline/demo" />
-
-```ts showLineNumbers file=./project-timeline/demo.ts start=region_A_start end=region_A_end
 ```
 
 ## Tooltips
@@ -179,6 +176,15 @@ sciChartSurface.chartModifiers.add(
     new MouseWheelZoomModifier({ xyDirection: EXyDirection.XDirection }),
     new CursorModifier({ showTooltip: true, tooltipDataTemplate })
 );
+```
+
+## Project Timeline Example
+
+The full project timeline example adds a `CategoryAxis`, `DateTimeNumericAxis`, per-task metadata, data labels showing completion percentage, and interactive tooltips via `CursorModifier`.
+
+<LiveDocSnippet name="./project-timeline/demo" />
+
+```ts showLineNumbers file=./project-timeline/demo.ts start=region_A_start end=region_A_end
 ```
 
 #### See Also
