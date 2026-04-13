@@ -73,7 +73,7 @@ async function verticalGradientGauge(divElementId: string | HTMLDivElement) {
             arrowStyle: { headLength: 10, headWidth: 7, headDepth: 1, fill: "#FFFFFF", strokeThickness: 1 }
         }),
         new TextAnnotation({
-            x1: 13, y1: value,
+            x1: 11.2, y1: value,
             text: `${value}`,
             fontSize: 12,
             textColor: "#FFFFFF",

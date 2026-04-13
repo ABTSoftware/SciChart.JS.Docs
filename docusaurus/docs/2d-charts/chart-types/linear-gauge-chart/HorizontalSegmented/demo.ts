@@ -90,7 +90,7 @@ async function horizontalSegmentedGauge(divElementId: string | HTMLDivElement) {
             arrowStyle: { headLength: 10, headWidth: 7, headDepth: 1, fill: "#FFFFFF", strokeThickness: 1 }
         }),
         new TextAnnotation({
-            x1: value, y1: GAUGE_HEIGHT + 3,
+            x1: value, y1: GAUGE_HEIGHT + 1.8,
             text: `${value}`,
             fontSize: 12,
             textColor: "#FFFFFF",

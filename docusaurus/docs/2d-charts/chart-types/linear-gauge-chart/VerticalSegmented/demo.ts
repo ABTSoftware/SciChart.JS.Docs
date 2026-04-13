@@ -78,7 +78,7 @@ async function verticalSegmentedGauge(divElementId: string | HTMLDivElement) {
             arrowStyle: { headLength: 10, headWidth: 7, headDepth: 1, fill: "#FFFFFF", strokeThickness: 1 }
         }),
         new TextAnnotation({
-            x1: GAUGE_WIDTH + 3, y1: value,
+            x1: GAUGE_WIDTH + 1.3, y1: value,
             text: `${value}`,
             fontSize: 12,
             textColor: "#FFFFFF",

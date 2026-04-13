@@ -50,7 +50,7 @@ async function animatedGauge(divElementId) {
 
     sciChartSurface.renderableSeries.add(new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyyDataSeries(wasmContext, {
-            xValues: [0],
+            xValues: [-2],
             yValues: [-10.5],
             y1Values: [10.5]
         }),

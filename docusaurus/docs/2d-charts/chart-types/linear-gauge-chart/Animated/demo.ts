@@ -59,10 +59,11 @@ async function animatedGauge(divElementId: string | HTMLDivElement) {
         return { xValues, yValues, y1Values: steps };
     };
 
-    // Background rectangle (the empty gauge track)
+    // Background rectangle (the empty gauge track) — offset by -2 so foreground bars
+    // at x=0 have equal 2-unit borders on both sides
     sciChartSurface.renderableSeries.add(new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyyDataSeries(wasmContext, {
-            xValues: [0],
+            xValues: [-2],
             yValues: [-10.5],
             y1Values: [10.5]
         }),
