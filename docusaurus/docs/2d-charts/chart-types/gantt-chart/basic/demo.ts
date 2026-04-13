@@ -15,7 +15,7 @@ async function basicGanttChart(divElementId: string) {
     });
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, {
-        growBy: new NumberRange(0.05, 0.1),
+        growBy: new NumberRange(0.1, 0.1),
         axisTitle: "Day"
     }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {
@@ -29,11 +29,11 @@ async function basicGanttChart(divElementId: string) {
     const BAR_HEIGHT = 0.6;
 
     const tasks = [
-        { name: "Research",    start: 0,  end: 3  },
-        { name: "Design",      start: 2,  end: 6  },
-        { name: "Development", start: 5,  end: 12 },
-        { name: "Testing",     start: 10, end: 14 },
-        { name: "Deployment",  start: 13, end: 15 },
+        { start: 0,  end: 3  },
+        { start: 2,  end: 6  },
+        { start: 5,  end: 12 },
+        { start: 10, end: 14 },
+        { start: 13, end: 15 },
     ];
 
     const xValues  = tasks.map(t => t.start);
