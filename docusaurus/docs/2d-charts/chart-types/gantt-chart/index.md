@@ -190,7 +190,7 @@ The full project timeline example adds a `CategoryAxis`, `DateTimeNumericAxis`, 
 #### See Also
 
 - [The Rectangle Series Type](/2d-charts/chart-types/fast-rectangle-renderable-series/)
-- [The CategoryAxis](/2d-charts/axis-apis/category-axis/)
-- [The DateTimeNumericAxis](/2d-charts/axis-apis/datetime-numeric-axis/)
+- [The CategoryAxis](/2d-charts/axis-api/axis-types/category-axis/)
+- [The DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis/)
 - [Data Labels API](/2d-charts/chart-types/data-point-labels/data-labels-api-overview/)
 - [The Linear Gauge Chart Type](/2d-charts/chart-types/linear-gauge-chart/)

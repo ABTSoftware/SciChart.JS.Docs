@@ -50,11 +50,7 @@ async function basicGanttChart(divElementId: string) {
         strokeThickness: 1,
         opacity: 0.85,
         topCornerRadius: 4,
-        bottomCornerRadius: 4,
-        dataLabels: {
-            style: { fontSize: 13, fontFamily: "Arial" },
-            color: "white"
-        }
+        bottomCornerRadius: 4
     });
     // region_A_end
 
