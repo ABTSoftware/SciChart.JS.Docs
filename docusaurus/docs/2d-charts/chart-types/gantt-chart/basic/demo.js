@@ -24,15 +24,15 @@ async function basicGanttChart(divElementId) {
     ];
     const xValues = tasks.map(t => t.start);
     const x1Values = tasks.map(t => t.end);
-    const yValues = tasks.map((_, i) => i);
-    const y1Values = tasks.map((_, i) => i + BAR_HEIGHT);
+    // Center each bar on its integer index so axis ticks land in the middle of each bar
+    const yValues = tasks.map((_, i) => i - BAR_HEIGHT / 2);
+    const y1Values = tasks.map((_, i) => i + BAR_HEIGHT / 2);
     const ganttSeries = new FastRectangleRenderableSeries(wasmContext, {
         dataSeries: new XyxyDataSeries(wasmContext, { xValues, yValues, x1Values, y1Values }),
         columnXMode: EColumnMode.StartEnd,
         columnYMode: EColumnYMode.TopBottom,
         fill: "steelblue",
-        stroke: "white",
-        strokeThickness: 1,
+        strokeThickness: 0,
         opacity: 0.85,
         topCornerRadius: 4,
         bottomCornerRadius: 4

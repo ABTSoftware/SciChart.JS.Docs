@@ -1,4 +1,4 @@
-import { EColumnMode, EColumnYMode, SciChartSurface, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, NumberRange, DateTimeNumericAxis, CategoryAxis, ENumericFormat, EXyDirection, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, CursorModifier, EAxisAlignment } from "scichart";
+import { EColumnMode, EColumnYMode, SciChartSurface, SciChartJsNavyTheme, FastRectangleRenderableSeries, XyxyDataSeries, NumberRange, DateTimeNumericAxis, CategoryAxis, EXyDirection, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, CursorModifier, EAxisAlignment, EAutoRange } from "scichart";
 const TASKS = [
     { name: "Project Planning", startDate: new Date("2025-01-06"), endDate: new Date("2025-01-17"), percentComplete: 100 },
     { name: "Requirements", startDate: new Date("2025-01-13"), endDate: new Date("2025-01-31"), percentComplete: 100 },
@@ -19,11 +19,11 @@ function prepareGanttData(tasks) {
     const y1Values = [];
     const metadata = [];
     tasks.forEach((task, i) => {
-        xValues.push(task.startDate.getTime());
-        x1Values.push(task.endDate.getTime());
-        // CategoryAxis is reversed: index 0 = top row, so y increases downward
-        yValues.push(i);
-        y1Values.push(i + BAR_HEIGHT);
+        xValues.push(task.startDate.getTime() / 1000);
+        x1Values.push(task.endDate.getTime() / 1000);
+        // Center each bar on its integer index so axis labels land in the middle
+        yValues.push(i - BAR_HEIGHT / 2);
+        y1Values.push(i + BAR_HEIGHT / 2);
         metadata.push({ isSelected: false, name: task.name, start: task.startDate, end: task.endDate, percentComplete: task.percentComplete });
     });
     return { xValues, yValues, x1Values, y1Values, metadata };
@@ -35,15 +35,16 @@ async function projectTimelineGanttChart(divElementId) {
     // region_A_start
     // X axis: date/time timeline
     sciChartSurface.xAxes.add(new DateTimeNumericAxis(wasmContext, {
-        labelFormat: ENumericFormat.Date_DDMMYYYY,
         growBy: new NumberRange(0.02, 0.05)
     }));
     // Y axis: category labels for each project stage, reversed so row 0 is at the top
     const yAxis = new CategoryAxis(wasmContext, {
         axisAlignment: EAxisAlignment.Left,
         flippedCoordinates: true,
-        growBy: new NumberRange(0.05, 0.05),
-        labelStyle: { padding: { left: 0, right: 0, top: 0, bottom: 40 } }
+        visibleRange: new NumberRange(-0.5, TASKS.length - 0.5),
+        autoRange: EAutoRange.Never,
+        drawMajorBands: false,
+        drawMinorGridLines: false,
     });
     // Map integer row indices to task name strings
     yAxis.labelProvider.formatLabel = (dataValue) => TASKS[Math.round(dataValue)]?.name ?? "";

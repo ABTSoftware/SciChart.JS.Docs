@@ -8,13 +8,13 @@ import {
     NumberRange,
     DateTimeNumericAxis,
     CategoryAxis,
-    ENumericFormat,
     EXyDirection,
     ZoomPanModifier,
     ZoomExtentsModifier,
     MouseWheelZoomModifier,
     CursorModifier,
     EAxisAlignment,
+    EAutoRange,
     TCursorTooltipDataTemplate
 } from "scichart";
 
@@ -48,11 +48,11 @@ function prepareGanttData(tasks: GanttTask[]) {
     const metadata: { isSelected: boolean; name: string; start: Date; end: Date; percentComplete: number }[] = [];
 
     tasks.forEach((task, i) => {
-        xValues.push(task.startDate.getTime());
-        x1Values.push(task.endDate.getTime());
-        // CategoryAxis is reversed: index 0 = top row, so y increases downward
-        yValues.push(i);
-        y1Values.push(i + BAR_HEIGHT);
+        xValues.push(task.startDate.getTime() / 1000);
+        x1Values.push(task.endDate.getTime() / 1000);
+        // Center each bar on its integer index so axis labels land in the middle
+        yValues.push(i - BAR_HEIGHT / 2);
+        y1Values.push(i + BAR_HEIGHT / 2);
         metadata.push({ isSelected: false, name: task.name, start: task.startDate, end: task.endDate, percentComplete: task.percentComplete });
     });
 
@@ -67,7 +67,6 @@ async function projectTimelineGanttChart(divElementId: string) {
     // region_A_start
     // X axis: date/time timeline
     sciChartSurface.xAxes.add(new DateTimeNumericAxis(wasmContext, {
-        labelFormat: ENumericFormat.Date_DDMMYYYY,
         growBy: new NumberRange(0.02, 0.05)
     }));
 
@@ -75,8 +74,10 @@ async function projectTimelineGanttChart(divElementId: string) {
     const yAxis = new CategoryAxis(wasmContext, {
         axisAlignment: EAxisAlignment.Left,
         flippedCoordinates: true,
-        growBy: new NumberRange(0.05, 0.05),
-        labelStyle: { padding: { left: 0, right: 0, top: 0, bottom: 40 } }
+        visibleRange: new NumberRange(-0.5, TASKS.length - 0.5),
+        autoRange: EAutoRange.Never,
+        drawMajorBands: false,
+        drawMinorGridLines: false,
     });
     // Map integer row indices to task name strings
     yAxis.labelProvider.formatLabel = (dataValue: number) =>
