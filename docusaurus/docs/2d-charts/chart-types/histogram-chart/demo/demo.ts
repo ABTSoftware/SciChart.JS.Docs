@@ -47,11 +47,10 @@ async function histogramChart(divElementId: string) {
             xValues:  bins.map(b => b.x),
             yValues:  bins.map(b => b.y),
             x1Values: bins.map(b => b.x1),
-            // y1Values omitted — defaultY1: 0 sets the baseline
+            y1Values: bins.map(() => 0),
         }),
         columnXMode: EColumnMode.StartEnd,
         columnYMode: EColumnYMode.TopBottom,
-        defaultY1: 0,
         fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
             { color: "rgba(70, 130, 180, 0.9)", offset: 0 },
             { color: "rgba(70, 130, 180, 0.3)", offset: 1 },

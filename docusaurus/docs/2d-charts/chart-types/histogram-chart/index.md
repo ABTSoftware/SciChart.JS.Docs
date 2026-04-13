@@ -27,9 +27,9 @@ The [JavaScript Histogram Chart Example](https://www.scichart.com/demo/react/his
 In the code above:
 
 - Each bin is defined as `{ x, x1, y }` — bin start, bin end, and count.
-- `XyxyDataSeries` stores `xValues` (bin starts), `x1Values` (bin ends), and `yValues` (counts). `y1Values` is omitted; `defaultY1: 0` sets the baseline for all bars.
+- `XyxyDataSeries` stores `xValues` (bin starts), `x1Values` (bin ends), `yValues` (bar tops — the counts), and `y1Values` (bar bottoms — all zero, the baseline).
 - `columnXMode: EColumnMode.StartEnd` tells the series that `x` and `x1` are explicit start/end positions on the X axis — each bar fills exactly its bin range with no gaps.
-- `columnYMode: EColumnYMode.TopBottom` tells the series that `y` is the bar top and `defaultY1` (0) is the bottom.
+- `columnYMode: EColumnYMode.TopBottom` tells the series that `y` is the bar top and `y1` is the bottom.
 - `fillLinearGradient` applies a vertical blue gradient from the bar top to bottom.
 - `topCornerRadius: 4` rounds the top corners; `strokeThickness: 0` removes the border.
 - `dataLabels` renders the count above each bar using the default Y value formatter.
