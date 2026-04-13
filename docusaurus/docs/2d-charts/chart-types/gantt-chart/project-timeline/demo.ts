@@ -12,24 +12,12 @@ import {
     EXyDirection,
     ZoomPanModifier,
     ZoomExtentsModifier,
+    MouseWheelZoomModifier,
     CursorModifier,
     EAxisAlignment,
     ELabelAlignment,
     TCursorTooltipDataTemplate
 } from "scichart";
-
-const PROJECT_STAGES = [
-    "Project Planning",
-    "Requirements",
-    "System Design",
-    "Database Design",
-    "Front-end Dev",
-    "Back-end Dev",
-    "Integration",
-    "Unit Testing",
-    "System Testing",
-    "Deployment"
-];
 
 interface GanttTask {
     name: string;
@@ -85,16 +73,17 @@ async function projectTimelineGanttChart(divElementId: string) {
     }));
 
     // Y axis: category labels for each project stage, reversed so row 0 is at the top
-    sciChartSurface.yAxes.add(new CategoryAxis(wasmContext, {
-        labelProvider: {
-            getLabelText: (dataValue: number) => PROJECT_STAGES[Math.round(dataValue)] ?? ""
-        },
+    const yAxis = new CategoryAxis(wasmContext, {
         isLabelCullingEnabled: false,
         axisAlignment: EAxisAlignment.Left,
         flippedCoordinates: true,
         growBy: new NumberRange(0.05, 0.05),
         labelStyle: { padding: { bottom: 40 } }
-    }));
+    });
+    // Map integer row indices to task name strings
+    yAxis.labelProvider.formatLabel = (dataValue: number) =>
+        TASKS[Math.round(dataValue)]?.name ?? "";
+    sciChartSurface.yAxes.add(yAxis);
 
     const { xValues, yValues, x1Values, y1Values, metadata } = prepareGanttData(TASKS);
 
@@ -103,7 +92,7 @@ async function projectTimelineGanttChart(divElementId: string) {
         columnXMode: EColumnMode.StartEnd,
         columnYMode: EColumnYMode.TopBottom,
         fill: "#4a90d9",
-        stroke: "#cc3333",
+        stroke: "white",
         strokeThickness: 1,
         opacity: 0.5,
         topCornerRadius: 4,
@@ -127,7 +116,7 @@ async function projectTimelineGanttChart(divElementId: string) {
         return seriesInfos
             .filter(si => si.isHit)
             .map(si => {
-                const m = metadata[si.dataSeriesIndex ?? si.pointIndex];
+                const m = si.pointMetadata as { name: string; start: Date; end: Date; percentComplete: number };
                 if (!m) return "";
                 return [
                     m.name,
@@ -141,6 +130,7 @@ async function projectTimelineGanttChart(divElementId: string) {
     sciChartSurface.chartModifiers.add(
         new ZoomPanModifier({ xyDirection: EXyDirection.XDirection }),
         new ZoomExtentsModifier(),
+        new MouseWheelZoomModifier({ xyDirection: EXyDirection.XDirection }),
         new CursorModifier({ showTooltip: true, tooltipDataTemplate })
     );
     // region_A_end
