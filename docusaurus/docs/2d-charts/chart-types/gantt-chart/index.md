@@ -28,7 +28,9 @@ A Gantt chart in SciChart.js is assembled from:
 - **[CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/categoryaxis.html)** — Y axis mapping integer row indices to task name strings; `flippedCoordinates: true` puts row 0 at the top
 - **[DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/datetimenumericaxis.html)** — X axis with automatic date/time tick formatting; dates are passed as Unix millisecond timestamps
 
-## Basic Gantt Chart
+## Examples
+
+### Basic Gantt Chart
 
 The simplest Gantt chart uses a plain `NumericAxis` on both axes and a `FastRectangleRenderableSeries` with `EColumnMode.StartEnd` and `EColumnYMode.TopBottom`. Each task occupies one integer row on the Y axis with a bar height less than 1 to leave gaps between rows.
 
