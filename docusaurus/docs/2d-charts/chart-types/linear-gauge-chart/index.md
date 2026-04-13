@@ -110,6 +110,6 @@ Both orientations use the same `EColumnMode.StartEnd` + `EColumnYMode.TopBottom`
 #### See Also
 
 * [Rectangle Series](/2d-charts/chart-types/fast-rectangle-renderable-series/)
-* [Palette Provider API](/2d-charts/chart-types/palette-provider-api/)
+* [Palette Provider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/)
 * [Line Arrow Annotation](/2d-charts/annotations-api/line-arrow-annotation/)
 * [The Polar Gauge Chart Type](/2d-charts/chart-types/polar-gauge-chart/)

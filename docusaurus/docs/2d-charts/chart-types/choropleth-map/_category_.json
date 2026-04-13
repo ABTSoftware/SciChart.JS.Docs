@@ -1,0 +1,8 @@
+{
+  "label": "Choropleth Maps",
+  "position": 35,
+  "link": {
+    "type": "doc",
+    "id": "2d-charts/chart-types/choropleth-map/index"
+  }
+}
