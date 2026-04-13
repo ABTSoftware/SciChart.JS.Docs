@@ -94,7 +94,7 @@ A detailed list of all supported chart types with links to documentation / demos
 32. [Population Pyramid Charts](https://www.scichart.com/demo/react/population-pyramid)
 33. [Quadrant Charts](https://www.scichart.com/demo/react/chart-background-annotations)
 34. [Waterfall Charts](https://www.scichart.com/demo/react/waterfall-chart)
-35. [Vector Field Charts](https://www.scichart.com/demo/react/vector-field)
+35. [Vector Field Charts](/2d-charts/chart-types/vector-field/)
 36. [Treemap Charts](/2d-charts/chart-types/tree-map-type/)
 37. [Gantt Charts](https://www.scichart.com/demo/react/gantt-chart)
 38. [Rectangle Series Charts](/2d-charts/chart-types/fast-rectangle-renderable-series/)
