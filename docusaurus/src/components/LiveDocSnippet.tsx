@@ -82,11 +82,11 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             <script type="importmap">
                 {
                     "imports": {
-                        "scichart": "${baseUrl}scichart.browser.js"
+                        "scichart": "${baseUrl}scichart.browser.js?v=${libraryVersion}"
                     }
                 }
             </script>
-            <script type="module" src="${baseUrl}scichart.browser.js"></script>
+            <script type="module" src="${baseUrl}scichart.browser.js?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 

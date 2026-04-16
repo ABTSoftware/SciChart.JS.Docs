@@ -1,5 +1,6 @@
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import { baseUrl } from "@site/config";
+import { libraryVersion } from "scichart";
 
 export default function ChartPreviewWrapper(props?: { maxWidth?: string | number, htmlTemplate?: string, jsContent?: string }) {
     return (
@@ -17,11 +18,11 @@ export default function ChartPreviewWrapper(props?: { maxWidth?: string | number
             <script type="importmap">
                     {
                         "imports": {
-                            "scichart": "${baseUrl}scichart.browser.js"
+                            "scichart": "${baseUrl}scichart.browser.js?v=${libraryVersion}"
                         }
                     }
             </script>
-            <script type="module" src="${baseUrl}scichart.browser.js"></script>
+            <script type="module" src="${baseUrl}scichart.browser.js?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
