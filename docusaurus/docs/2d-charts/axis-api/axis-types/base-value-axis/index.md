@@ -38,7 +38,7 @@ In this example, values around 5 are more densely packed, creating a "magnified"
 
 ### 3. XDataSeries for Dynamic Updates
 
-For scenarios where you need to update the base values at runtime, you can provide an [`XDataSeries`](Examples/src/components/Examples/Charts2D/ModifyAxisBehavior/BaseValueAxes/drawExample.ts:16) instance. This approach gives you full control over the coordinate mapping and allows you to modify it in response to user interactions or data changes.
+For scenarios where you need to update the base values at runtime, you can provide an [XDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xdataseries.html) instance. This approach gives you full control over the coordinate mapping and allows you to modify it in response to user interactions or data changes.
 
 ```typescript
 // Create an XDataSeries to hold the base values

@@ -6,7 +6,7 @@ sidebar_position: 10
 
 ## Overview
 
-The [DiscontinuousDateAxis:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html) is a specialized axis type in SciChart.js that **inherits from `BaseValueAxis`** and provides intelligent handling of time-series data with gaps. Unlike a standard `NumericAxis` or `DateTimeNumericAxis`, it interpolates data based on a **fixed timescale after each baseValue**, effectively collapsing gaps (such as weekends, holidays, or after-hours periods in financial data) while maintaining proper time-based positioning within each segment.
+The [DiscontinuousDateAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html) is a specialized axis type in SciChart.js that **inherits from `BaseValueAxis`** and provides intelligent handling of time-series data with gaps. Unlike a standard `NumericAxis` or `DateTimeNumericAxis`, it interpolates data based on a **fixed timescale after each baseValue**, effectively collapsing gaps (such as weekends, holidays, or after-hours periods in financial data) while maintaining proper time-based positioning within each segment.
 
 ## Inheritance Hierarchy
 
@@ -48,16 +48,16 @@ The `DiscontinuousDateAxis` uses **baseValues** (inherited from `BaseValueAxis`)
 
 | Property | Type | Description |
 |----------|------|-------------|
-| [`dataGap`](Examples/src/components/Examples/Charts2D/ModifyAxisBehavior/DiscontinuousDateAxisComparison/drawExample.ts:138) | `number` | The fixed time interval between baseValues in seconds. Auto-calculated from minimum gap if not specified. |
-| `baseValues` | `number[]` or `XDataSeries` | The anchor time points. Defaults to x-values from the first data series. |
-| [`cursorLabelFormat`](Examples/src/components/Examples/Charts2D/BasicChartTypes/CandlestickChart/drawExample.ts:56) | `ENumericFormat` | Format for cursor/crosshair labels |
-| [`labelThresholds`](Examples/src/components/Examples/Charts2D/BasicChartTypes/CandlestickChart/drawExample.ts:58) | `object` | Thresholds for smart date label formatting |
+| [dataGap:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html#datagap) | `number` | The fixed time interval between baseValues in seconds. Auto-calculated from minimum gap if not specified. |
+| [setBaseValues():blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html#setbasevalues), [setBaseValuesFromArray:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/discontinuousdateaxis.html#setbasevaluesfromarray) | `IDataSeries` or `number[]` | The anchor time points. Defaults to x-values from the first data series. |
+| [cursorLabelFormat:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/ilabeloptions.html#cursorlabelformat) | `ENumericFormat` | Format for cursor/crosshair labels |
+| [labelThresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/smartdatelabelprovider.html#labelthresholds) | `object` | Thresholds for smart date label formatting |
 
 ## Use Cases
 
 ### 1. Stock Market / Financial Charts
 
-The primary use case is displaying OHLC (candlestick) data where markets are closed on weekends and holidays. From [`CandlestickChart/drawExample.ts`](Examples/src/components/Examples/Charts2D/BasicChartTypes/CandlestickChart/drawExample.ts:52-59):
+The primary use case is displaying OHLC (candlestick) data where markets are closed on weekends and holidays.
 
 ```typescript
 const xAxis = new DiscontinuousDateAxis(wasmContext, {
