@@ -65,12 +65,13 @@ mapData.features.forEach((feature) => {
 
     rings.forEach((ring) => {
         ring.pop(); // GeoJSON closes polygons by repeating the first point — remove it
-        const triangulated = constrainedDelaunayTriangulation(ring); // [[x,y], [x,y], ...]
-        const flat = [].concat(...triangulated);
+        // constrainedDelaunayTriangulation returns an array of triangles: [[[x,y],[x,y],[x,y]], ...]
+        // Flatten one level to get a flat list of coordinate pairs: [[x,y],[x,y],...]
+        const triangleCoords = [].concat(...constrainedDelaunayTriangulation(ring));
 
         const dataSeries = new XyDataSeries(wasmContext, {
-            xValues: flat.map((p) => p[0]), // longitude
-            yValues: flat.map((p) => p[1]), // latitude
+            xValues: triangleCoords.map((p) => p[0]), // longitude
+            yValues: triangleCoords.map((p) => p[1]), // latitude
         });
 
         // store dataSeries alongside feature metadata for rendering
@@ -165,7 +166,7 @@ sciChartSurface.chartModifiers.add(
 - [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarzoomextentsmodifier.html) — double-click to snap the view back to fit all data.
 - [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/polarmousewheelzoommodifier.html) — scroll to zoom in and out radially.
 
-#### See Also
+## See Also
 
 - [The Polar Triangle Series Type](/2d-charts/chart-types/polar-triangle-renderable-series/) — core API reference for `PolarTriangleRenderableSeries`
 - [The Polar Radar Chart Type](/2d-charts/chart-types/polar-radar-chart/) — another polar chart example using line and mountain series
