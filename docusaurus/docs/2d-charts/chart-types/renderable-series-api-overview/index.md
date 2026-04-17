@@ -32,6 +32,7 @@ SciChart.js supports a number of 2D & 3D Chart types. These include:
 | [Scatter Series](/2d-charts/chart-types/xy-scatter-renderable-series/) | [Text Series](/2d-charts/chart-types/fast-text-renderable-series/) |
 | [Bubble Series](/2d-charts/chart-types/fast-bubble-renderable-series/) | [Triangle series](/2d-charts/chart-types/fast-triangle-renderable-series/index.md) |
 | [Rectangle series](/2d-charts/chart-types/fast-rectangle-renderable-series/) | [Treemap chart](/2d-charts/chart-types/tree-map-type/) |
+| [Waterfall Chart](/2d-charts/chart-types/waterfall-renderable-series/) | [Histogram Chart](/2d-charts/chart-types/histogram-chart/) |
 | [Box plot series](/2d-charts/chart-types/fast-box-plot-renderable-series/) | [Line Segment Series](/2d-charts/chart-types/fast-line-segment-renderable-series/index.md) |
 | [Polar Partial Chart](/2d-charts/chart-types/polar-partial-chart-type/) | [Polar Line Series](/2d-charts/chart-types/polar-line-renderable-series/) |
 | [Polar Band Series](/2d-charts/chart-types/polar-band-renderable-series/) | [Polar Column (Area) Series](/2d-charts/chart-types/polar-column-renderable-series/) |
