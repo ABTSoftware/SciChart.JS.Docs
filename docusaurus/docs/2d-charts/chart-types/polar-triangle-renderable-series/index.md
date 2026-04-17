@@ -19,11 +19,4 @@ To create a chart using [PolarTriangleRenderableSeries:blue_book:](https://www.s
 
 ## Polar Map Example
 
-:::tip
-The [JavaScript Polar Map Example](https://www.scichart.com/demo/javascript/polar-map-example) using the `PolarTriangleRenderableSeries` can be found in the [SciChart.Js Examples Suite > Polar Map Example](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/PolarCharts/PolarMapExample) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/react/polar-column-chart).
-:::
-
-<ChartFromSciChartDemo 
-    src="https://www.scichart.com/demo/iframe/polar-map-example"
-    title="Polar Map Example"
-/>
+A real-world application of `PolarTriangleRenderableSeries` is the [Polar Map](/2d-charts/chart-types/polar-map-example/) — geographic regions rendered as color-coded triangle meshes on a polar coordinate system, with support for switching between North Pole and South Pole perspectives. See the dedicated [Polar Map documentation page](/2d-charts/chart-types/polar-map-example/) for a full walkthrough.
