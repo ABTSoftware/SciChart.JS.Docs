@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Deploying SciChart.js with Advanced Licensing (OEM)
+# Deploying SciChart.js with Advanced Licensing — Native Server (OEM)
 
 :::info
 To allow deployment of SciChart.js to OEM applications, apps where the runtime domain is unknown or `localhost` without a watermark and to comply with the [terms for commercial use](https://www.scichart.com/scichart-eula),
@@ -32,7 +32,20 @@ Before trying to implement any of these solutions we recommend [submitting a sup
 with details of your intended deployment, including the host requirement, the client and server tech stack and the target platform and architecture
 (eg windows/linux, x86/x64/arm/arm64), and we will make sure you get the correct solution.
 :::
-## How Advanced Licensing Works
+
+## Choosing an Advanced Licensing approach
+
+There are two Advanced Licensing solutions. If you are unsure which to use, please contact support.
+
+| | [Simple Server Validation](/user-manual/licensing-scichart-js/simple-server-validation/) | Native Server Licensing (this page) |
+|---|---|---|
+| **How it works** | Server computes HMAC-SHA256 token | Server signs a challenge using a native DLL (NaCl) |
+| **Complexity** | Low — a few lines in any language | Higher — requires native binary on the server |
+| **Domain binding** | CORS | Cryptographic challenge/response |
+| **Requires** | `SV` feature flag on your license | Native DLL for your server OS/architecture |
+| **Best for** | Web servers, Electron, Tauri | Scenarios requiring strong domain enforcement |
+
+## How Native Server Licensing Works
 
 You will host a license key in the server of your application, and a client key set on the client.
 These will communicate to unlock SciChart.js for every domain, including `localhost`. The advanced licensing works offline and does not require an internet connection.
