@@ -95,4 +95,3 @@ Colors must be in UInt ARGB format where `0xFFFF0000` is opaque red. Use [parseC
 - [The Lines 3D Chart Type](/3d-charts/chart-types/lines-3d-chart/) — full reference for `PointLineRenderableSeries3D` including all marker types and per-segment coloring
 - [The Waterfall Chart Type](/2d-charts/chart-types/waterfall-renderable-series/) — 2D financial waterfall built with Rectangle Series
 - [Interactive Waterfall (Spectral) Chart](/2d-charts/chart-types/waterfall-renderable-series/interactive-waterfall-chart/) — 2D stacked spectral waterfall using offset axes
-- [3D Chart Types Overview](/3d-charts/chart-types/)

@@ -41,7 +41,7 @@ In the code above:
 `overrideOffset` lets you bypass SciChart's automatic axis layout and position an axis at an exact pixel offset from its default location. This is what makes the 3D stacking possible: by incrementing the offset for each successive axis, you physically move each layer back in the chart.
 
 :::tip
-For a deeper explanation of `overrideOffset` and how it interacts with SciChart's layout system, see [Axis Offset and overrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset/).
+For a deeper explanation of `overrideOffset` and how it interacts with SciChart's layout system, see [Axis Offset and overrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset/index.md).
 :::
 
 ## Series Selection and Highlighting
@@ -72,6 +72,6 @@ The full [SciChart.JS Examples interactive version](https://www.scichart.com/dem
 ## See Also
 
 - [The Waterfall Chart Type](/2d-charts/chart-types/waterfall-renderable-series/) — financial waterfall charts built with Rectangle Series
-- [Axis Offset and overrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset/) — the key property enabling the depth-stacking effect
+- [Axis Offset and overrideOffset](/2d-charts/axis-api/multi-axis-and-layout/axis-offset-and-overrideOffset/index.md) — the key property enabling the depth-stacking effect
 - [SeriesSelectionModifier](/2d-charts/chart-modifier-api/selection/series-selection/) — adding hover and click selection to series
-- [Multi-Axis Charts](/2d-charts/axis-api/multi-axis-and-layout/) — working with multiple axes
+- [Multi-Axis Charts](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/index.md) — working with multiple axes
