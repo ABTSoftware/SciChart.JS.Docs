@@ -59,7 +59,7 @@ export default function LiveDocSnippet(props?: Props) {
     }, []);
 
     return (
-        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem' }}>
+        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem', background: "#8881" }}>
             <CodePenLauncher js={files.ts} html={sandboxHtml} css={files.css} />
             <BrowserOnly>
                 {() => <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
@@ -82,11 +82,12 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             <script type="importmap">
                 {
                     "imports": {
-                        "scichart": "${baseUrl}scichart.browser.js?v=${libraryVersion}"
+                        "scichart": "${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}",
+                        "scichart-financial-tools": "${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}"
                     }
                 }
             </script>
-            <script type="module" src="${baseUrl}scichart.browser.js?v=${libraryVersion}"></script>
+            <script type="module" src="${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
@@ -130,11 +131,12 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
             <script type="importmap">
                     {
                         "imports": {
-                            "scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersionMajor}/_wasm/scichart.browser.mjs"
+                            "scichart": "https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}",
+                            "scichart-financial-tools": "https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}"
                         }
                     }
             </script>
-            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart@${libraryVersionMajor}/_wasm/scichart.browser.mjs"></script>
+            <script type="module" src="https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 

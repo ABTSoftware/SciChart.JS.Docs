@@ -24,6 +24,7 @@ The following annotation types are available out of the box in SciChart:
 | [VerticalLineAnnotation](/2d-charts/annotations-api/vertical-line-annotation/) | Draws a vertical line at a given x position, with various labelling options | Cartesian |
 | [HorizontalLineAnnotation](/2d-charts/annotations-api/horizontal-line-annotation/) | Draws a horizontal line at a given y position, with various labelling options | Cartesian |
 | [LineArrowAnnotation](/2d-charts/annotations-api/line-arrow-annotation/) | Allows to place line arrows at a specific location on a chart | Cartesian and Polar |
+| [CompositeAnnotation](/2d-charts/annotations-api/composite-annotation/) | Groups child annotations and keeps them positioned relative to a parent annotation box | Cartesian |
 | [AxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/axis-marker-annotation-overview/) | Allows to place a marker at a specific location on an axis | Cartesian |
 | [CustomAxisMarkerAnnotation](/2d-charts/annotations-api/axis-marker-annotation/image-axis-marker-annotation/) | Uses an image instead of text for an axis marker | Cartesian |
 | [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation/) | Draws text natively rather than using svg, supporting rotation, multiline, wordwrap and scaling | Cartesian and Polar |
@@ -40,6 +41,8 @@ If an annotation is only compatible with Polar surfaces it has prefix "Polar" in
 :::
 
 To learn more about any annotation type, please refer to the corresponding article.
+
+Trading and multi-point annotations such as `PolyLineAnnotation`, `FreehandDrawingAnnotation`, `ExtendedLineAnnotation`, `ChannelAnnotation`, `PitchforkAnnotation`, `FibonacciRetracementAnnotation`, `MeasureAnnotation` and `StopLossTakeProfitAnnotation` are available from the `scichart-financial-tools` package. See [Trading Annotations](/2d-charts/annotations-api/trading-annotations/overview/) for installation, shared label behavior and examples.
 
 Adding an Annotation to a Chart
 -------------------------------
@@ -65,6 +68,8 @@ Individual Annotation features are discussed in greater detail in the following 
 *   The [LineAnnotation](/2d-charts/annotations-api/line-annotation/) Type
 *   The [TextAnnotation](/2d-charts/annotations-api/text-annotation/) Type
 *   The [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/) Type
+*   The [Trading Annotations Deep-Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/) guide
+*   The [Trading Annotations](/2d-charts/annotations-api/trading-annotations/overview/) guide
 
 Common Annotation Properties
 ----------------------------
@@ -93,3 +98,5 @@ More annotation properties and the inheritence hierachy may be viewed at the [A
 * [LineAnnotation](/2d-charts/annotations-api/line-annotation/)
 * [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/)
 * [TextAnnotation](/2d-charts/annotations-api/text-annotation/)
+* [Trading Annotations Deep-Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+* [Trading Annotations](/2d-charts/annotations-api/trading-annotations/overview/)
