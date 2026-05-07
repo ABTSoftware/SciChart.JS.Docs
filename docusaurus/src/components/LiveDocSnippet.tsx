@@ -141,8 +141,14 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
                 SciChartSurface.UseCommunityLicense();
-                SciChartSurface.useWasmFromCDN();
-                SciChart3DSurface.useWasmFromCDN();
+                SciChartSurface.configure({
+                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d.wasm",
+                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d-nosimd.wasm"
+                });
+                SciChart3DSurface.configure({
+                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d.wasm",
+                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d-nosimd.wasm"
+                });
                 SciChartDefaults.performanceWarnings = false;
             </script>
 
