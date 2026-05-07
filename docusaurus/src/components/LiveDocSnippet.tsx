@@ -82,12 +82,12 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             <script type="importmap">
                 {
                     "imports": {
-                        "scichart": "${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}",
-                        "scichart-financial-tools": "${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}"
+                        "scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}",
+                        "scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"
                     }
                 }
             </script>
-            <script type="module" src="${baseUrl}scichart-financial-tools.browser.js?v=${libraryVersion}"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
@@ -131,12 +131,12 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
             <script type="importmap">
                     {
                         "imports": {
-                            "scichart": "https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}",
-                            "scichart-financial-tools": "https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}"
+                            "scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}",
+                            "scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"
                         }
                     }
             </script>
-            <script type="module" src="https://www.scichart.com/documentation/js/v5/scichart-financial-tools.browser.js?v=${libraryVersion}"></script>
+            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 

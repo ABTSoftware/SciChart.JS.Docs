@@ -4,9 +4,8 @@
     "private": true,
     "scripts": {
         "docusaurus": "docusaurus",
-        "buildFinancialToolsBundle": "node scripts/copy-financial-tools-browser.js",
-        "start": "npm run buildFinancialToolsBundle && docusaurus start",
-        "build": "npm run buildFinancialToolsBundle && docusaurus build",
+        "start": "docusaurus start",
+        "build": "docusaurus build",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy",
         "clear": "docusaurus clear",
@@ -43,8 +42,8 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "remark-code-snippets": "^1.1.0",
-        "scichart": "https://www.myget.org/F/abtsoftware-bleeding-edge/npm/scichart/-/scichart-5.1.27.tgz",
-        "scichart-financial-tools": "https://www.myget.org/F/abtsoftware-bleeding-edge/npm/scichart-financial-tools/-/scichart-financial-tools-5.1.27.tgz",
+        "scichart": "5.2.0-beta.0",
+        "scichart-financial-tools": "5.2.0-beta.0",
         "url": "^0.11.4"
     },
     "devDependencies": {
@@ -72,7 +71,8 @@
     },
     "overrides": {
         "@cmfcmf/docusaurus-search-local": {
-            "@docusaurus/core": "^3.1.0"
+            "@docusaurus/core": "^3.1.0",
+            "cheerio": "1.0.0-rc.12"
         }
     }
 }
