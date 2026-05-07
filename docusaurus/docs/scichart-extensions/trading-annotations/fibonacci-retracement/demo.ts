@@ -39,8 +39,8 @@ async function drawExample(divElementId) {
             thresholds: [0, 0.236, 0.382, 0.5, 0.618, 1, 1.618],
             
             regionColors: [ // Custom colors for each region. The default palette is based on the Fibonacci sequence.
-                "#ADF",
-                "#15A", // if there are more regions than colors, we'll interpolate the rest based on these for you!
+                "#FFF",
+                "#999", // if there are more regions than colors, we'll interpolate the rest based on these for you!
             ],
 
             fibonacciLabelPlacement: EFibonacciLabelPlacement.Top,
@@ -57,13 +57,13 @@ async function drawExample(divElementId) {
                     anchorMode: EMultiPointLabelAnchorMode.Point, 
                     pointIndex: 0, 
                     verticalTextPosition: EVerticalTextPosition.Below,
-                    text: "Low" 
+                    text: "Low", color: "#FFF"
                 },
                 { 
                     anchorMode: EMultiPointLabelAnchorMode.Point, 
                     pointIndex: 2, 
                     verticalTextPosition: EVerticalTextPosition.Above,
-                    text: "High" 
+                    text: "High", color: "#FFF"
                 }
             ],
         })

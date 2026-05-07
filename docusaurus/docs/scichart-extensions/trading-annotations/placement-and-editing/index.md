@@ -14,7 +14,7 @@ Create the modifier once, add it to the surface, then call `startPlacement(...)`
 <LiveDocSnippet maxWidth={"100%"} name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {19,30-62} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {16,25-26,28} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -25,7 +25,7 @@ Constructor options are useful when a page should open directly into one placeme
 <LiveDocSnippet maxWidth={"100%"} name="./demo-constructor" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {19,30-63} showLineNumbers file=./demo-constructor.ts start=#region_A_start end=#region_A_end
+    ```ts {116,25,26,28,58} showLineNumbers file=./demo-constructor.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

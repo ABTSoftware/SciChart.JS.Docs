@@ -70,7 +70,8 @@ async function drawExample(divElementId) {
             horizontalAnchorPoint: EHorizontalAnchorPoint.Center,
             verticalAnchorPoint: EVerticalAnchorPoint.Top,
             fontSize: 14,
-            opacity: 0.75
+            opacity: 0.75,
+            textColor: "#111"
         })
     );
 }
