@@ -32,7 +32,7 @@ Use inherited multi-point labels for endpoint, segment or axis values.
 
 #### See Also
 
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [FibonacciRetracementAnnotation](/2d-charts/annotations-api/trading-annotations/fibonacci-retracement/)
-- [PitchforkAnnotation and PitchfanAnnotation](/2d-charts/annotations-api/trading-annotations/pitchfork-and-pitchfan/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [FibonacciRetracementAnnotation](/scichart-extensions/trading-annotations/fibonacci-retracement/)
+- [PitchforkAnnotation and PitchfanAnnotation](/scichart-extensions/trading-annotations/pitchfork-and-pitchfan/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

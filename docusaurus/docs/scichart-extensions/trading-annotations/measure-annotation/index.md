@@ -20,7 +20,7 @@ The inherited multi-point labels are still available for endpoint or axis callou
 
 #### See Also
 
-- [FibonacciRetracementAnnotation](/2d-charts/annotations-api/trading-annotations/fibonacci-retracement/)
-- [StopLossTakeProfitAnnotation](/2d-charts/annotations-api/trading-annotations/stop-loss-take-profit/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [FibonacciRetracementAnnotation](/scichart-extensions/trading-annotations/fibonacci-retracement/)
+- [StopLossTakeProfitAnnotation](/scichart-extensions/trading-annotations/stop-loss-take-profit/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

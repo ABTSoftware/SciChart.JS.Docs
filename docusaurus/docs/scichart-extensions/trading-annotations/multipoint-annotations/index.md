@@ -16,7 +16,7 @@ The shared base class is [MultiPointAnnotationBase:blue_book:](https://www.scich
 <LiveDocSnippet maxWidth={"100%"} name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {16-21,50-107,110-120,128-133} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {17,45,105,111} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -65,7 +65,7 @@ This example keeps the formatter small by branching on `anchorMode`: point label
 <LiveDocSnippet maxWidth={"100%"} name="./demo-label-formatting" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {18,41-70,72-99} showLineNumbers file=./demo-label-formatting.ts start=#region_A_start end=#region_A_end
+    ```ts {67,84} showLineNumbers file=./demo-label-formatting.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -76,7 +76,7 @@ This example reuses one `formatLabelStyle` callback across several annotation ty
 <LiveDocSnippet maxWidth={"100%"} name="./demo-conditional-labels" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {13-18,28-52,55-104} showLineNumbers file=./demo-conditional-labels.ts start=#region_A_start end=#region_A_end
+    ```ts {23} showLineNumbers file=./demo-conditional-labels.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -112,7 +112,7 @@ Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/v
 
 #### See Also
 
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [Placement and Editing](/2d-charts/annotations-api/trading-annotations/placement-and-editing/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [Placement and Editing](/scichart-extensions/trading-annotations/placement-and-editing/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

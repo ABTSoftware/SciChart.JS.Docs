@@ -43,7 +43,7 @@ Try hovering it and see the cursor style change to "ns-resize".
 
 #### See Also
 
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
-- [ExtendedLineAnnotation](/2d-charts/annotations-api/trading-annotations/extended-line-annotation/)
-- [PitchforkAnnotation and PitchfanAnnotation](/2d-charts/annotations-api/trading-annotations/pitchfork-and-pitchfan/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)
+- [ExtendedLineAnnotation](/scichart-extensions/trading-annotations/extended-line-annotation/)
+- [PitchforkAnnotation and PitchfanAnnotation](/scichart-extensions/trading-annotations/pitchfork-and-pitchfan/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)

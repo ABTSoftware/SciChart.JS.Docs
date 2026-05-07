@@ -16,11 +16,11 @@ Most applications create this annotation through [FreehandDrawingModifier:blue_b
     ```
 </CodeSnippetBlock>
 
-For interactive pointer capture, see [FreehandDrawingModifier](/2d-charts/annotations-api/trading-annotations/freehand-drawing-modifier/).
+For interactive pointer capture, see [FreehandDrawingModifier](/scichart-extensions/trading-annotations/freehand-drawing-modifier/).
 
 #### See Also
 
-- [FreehandDrawingModifier](/2d-charts/annotations-api/trading-annotations/freehand-drawing-modifier/)
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [FreehandDrawingModifier](/scichart-extensions/trading-annotations/freehand-drawing-modifier/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

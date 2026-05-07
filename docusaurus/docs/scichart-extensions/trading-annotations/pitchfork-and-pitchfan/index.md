@@ -31,7 +31,7 @@ Both annotations inherit multi-point labels for handle, shoulder and axis callou
 
 #### See Also
 
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [FibonacciRetracementAnnotation](/2d-charts/annotations-api/trading-annotations/fibonacci-retracement/)
-- [ExtendedLineAnnotation](/2d-charts/annotations-api/trading-annotations/extended-line-annotation/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [FibonacciRetracementAnnotation](/scichart-extensions/trading-annotations/fibonacci-retracement/)
+- [ExtendedLineAnnotation](/scichart-extensions/trading-annotations/extended-line-annotation/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)

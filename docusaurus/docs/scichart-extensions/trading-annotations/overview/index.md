@@ -84,7 +84,7 @@ Common trading enum exports include:
 
 ## Shared Labels
 
-All annotations based on [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html) inherit generic multi-point labels. See [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/) for the shared point, segment and axis label model, or open the individual trading annotation pages for live examples.
+All annotations based on [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html) inherit generic multi-point labels. See [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/) for the shared point, segment and axis label model, or open the individual trading annotation pages for live examples.
 
 Some tools also have their own label systems:
 
@@ -92,11 +92,11 @@ Some tools also have their own label systems:
 - [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) has a measurement label and [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
 - [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) automatically contributes Y-axis labels for entry and target levels.
 
-For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/).
+For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/).
 
 #### See Also
 
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
-- [Placement and Editing](/2d-charts/annotations-api/trading-annotations/placement-and-editing/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
+- [Placement and Editing](/scichart-extensions/trading-annotations/placement-and-editing/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)

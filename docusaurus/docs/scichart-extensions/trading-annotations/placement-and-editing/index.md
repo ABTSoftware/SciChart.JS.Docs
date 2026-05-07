@@ -33,7 +33,7 @@ Constructor options are useful when a page should open directly into one placeme
 
 #### See Also
 
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [FreehandDrawingModifier](/2d-charts/annotations-api/trading-annotations/freehand-drawing-modifier/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [FreehandDrawingModifier](/scichart-extensions/trading-annotations/freehand-drawing-modifier/)

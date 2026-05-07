@@ -16,11 +16,11 @@ sidebar_label: PolyLine annotation
 
 Set [fill:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html#fill) to draw a closed filled polygon through the same points. Point and segment labels move with their anchor indexes while the polyline is edited.
 
-See [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/) for the shared label and snapping options.
+See [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/) for the shared label and snapping options.
 
 #### See Also
 
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [FreehandDrawingAnnotation](/2d-charts/annotations-api/trading-annotations/freehand-drawing-annotation/)
-- [Placement and Editing](/2d-charts/annotations-api/trading-annotations/placement-and-editing/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [FreehandDrawingAnnotation](/scichart-extensions/trading-annotations/freehand-drawing-annotation/)
+- [Placement and Editing](/scichart-extensions/trading-annotations/placement-and-editing/)

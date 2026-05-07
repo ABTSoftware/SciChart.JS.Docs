@@ -18,7 +18,7 @@ Use [takeProfitColor:blue_book:](https://www.scichart.com/documentation/js/v5/ty
 
 #### See Also
 
-- [MeasureAnnotation](/2d-charts/annotations-api/trading-annotations/measure-annotation/)
-- [FibonacciRetracementAnnotation](/2d-charts/annotations-api/trading-annotations/fibonacci-retracement/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [MeasureAnnotation](/scichart-extensions/trading-annotations/measure-annotation/)
+- [FibonacciRetracementAnnotation](/scichart-extensions/trading-annotations/fibonacci-retracement/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

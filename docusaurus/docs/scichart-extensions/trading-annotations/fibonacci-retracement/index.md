@@ -20,7 +20,7 @@ Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc
 
 #### See Also
 
-- [ChannelAnnotation](/2d-charts/annotations-api/trading-annotations/channel-annotations/)
-- [PitchforkAnnotation and PitchfanAnnotation](/2d-charts/annotations-api/trading-annotations/pitchfork-and-pitchfan/)
-- [MeasureAnnotation](/2d-charts/annotations-api/trading-annotations/measure-annotation/)
-- [Multi-Point Labels Deep Dive](/2d-charts/annotations-api/trading-annotations/multipoint-annotations/)
+- [ChannelAnnotation](/scichart-extensions/trading-annotations/channel-annotations/)
+- [PitchforkAnnotation and PitchfanAnnotation](/scichart-extensions/trading-annotations/pitchfork-and-pitchfan/)
+- [MeasureAnnotation](/scichart-extensions/trading-annotations/measure-annotation/)
+- [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)

@@ -33,7 +33,7 @@ Use [maxPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-
 
 #### See Also
 
-- [FreehandDrawingAnnotation](/2d-charts/annotations-api/trading-annotations/freehand-drawing-annotation/)
-- [Placement and Editing](/2d-charts/annotations-api/trading-annotations/placement-and-editing/)
-- [PolyLineAnnotation](/2d-charts/annotations-api/trading-annotations/polyline-annotation/)
+- [FreehandDrawingAnnotation](/scichart-extensions/trading-annotations/freehand-drawing-annotation/)
+- [Placement and Editing](/scichart-extensions/trading-annotations/placement-and-editing/)
+- [PolyLineAnnotation](/scichart-extensions/trading-annotations/polyline-annotation/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
