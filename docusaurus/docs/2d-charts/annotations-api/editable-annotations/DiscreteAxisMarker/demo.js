@@ -28,7 +28,7 @@ class DiscreteAxisMarker extends AxisMarkerAnnotation {
                 this.y1 = Math.min(Math.max(this.y1, this.minValue), this.maxValue);
             }
         }
-        this.dragDelta.raiseEvent(new AnnotationDragDeltaEventArgs());
+        this.dragDelta.raiseEvent(new AnnotationDragDeltaEventArgs(this));
     }
 }
 // Now add to the SciChartSurface:

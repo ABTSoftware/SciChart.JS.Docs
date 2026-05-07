@@ -46,11 +46,11 @@ async function drawExample(divElementId) {
             x1: 5,
             y1: 9,
             text: "Draw freehand annotations on the chart!\nTo edit any annotation after placement, you need to set \"isDrawing\" to false and select the annotation.",
-            fontSize: 14,
+            fontSize: 18,
             horizontalAnchorPoint: SciChart.EHorizontalAnchorPoint.Center,
             verticalAnchorPoint: SciChart.EVerticalAnchorPoint.Top,
             opacity: 0.7,
-            lineHeight: 15,
+            lineSpacing: 10
         })
     )
 }

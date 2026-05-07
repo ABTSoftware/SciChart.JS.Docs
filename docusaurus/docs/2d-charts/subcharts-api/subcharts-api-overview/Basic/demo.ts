@@ -228,7 +228,7 @@ async function builderExample(divElementId) {
     });
 
     // On parent chart zoom, pan, update the box annotation on the subchart
-    const subChartBoxAnnotation = sciChartSurface.subCharts.at(0).annotations.get(0);
+    const subChartBoxAnnotation = sciChartSurface.subCharts[0].annotations.get(0);
     sciChartSurface.xAxes.get(0).visibleRangeChanged.subscribe(args => {
         subChartBoxAnnotation.x1 = args.visibleRange.min;
         subChartBoxAnnotation.x2 = args.visibleRange.max;

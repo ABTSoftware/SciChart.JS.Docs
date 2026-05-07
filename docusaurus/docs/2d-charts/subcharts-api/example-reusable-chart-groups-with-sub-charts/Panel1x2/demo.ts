@@ -168,9 +168,9 @@ async function builderExample(divElementId) {
 
     return {
         sciChartSurface,
-        subChartTop: sciChartSurface.subCharts.at(0),
-        subChartBottomLeft: sciChartSurface.subCharts.at(1),
-        subChartBottomRight: sciChartSurface.subCharts.at(2)
+        subChartTop: sciChartSurface.subCharts[0],
+        subChartBottomLeft: sciChartSurface.subCharts[1],
+        subChartBottomRight: sciChartSurface.subCharts[2]
     };
 }
 // #region_B_end

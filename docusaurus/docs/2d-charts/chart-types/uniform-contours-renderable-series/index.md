@@ -72,6 +72,17 @@ heatmapDataSeries.setZValues(newZValues);
 
 For more details, including a live example of how to update 2D array data for heatmaps and contours, see the [Uniform Heatmap documentation - Updating Heatmaps](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/) documentation page. The mechanism for contour plots is the same.
 
+## Contours at arbitrary levels
+
+Using [UniformContoursRenderableSeries.zLevels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformcontoursrenderableseries.html#zlevels) we can specify albitrary levels where to draw contour lines.
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts {23} showLineNumbers file=./ArbitraryLevels/demo.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
+
+<LiveDocSnippet name="./ArbitraryLevels/demo" />
+
 #### See Also
 
 * [The Uniform Heatmap Chart Type](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/)

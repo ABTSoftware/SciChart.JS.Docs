@@ -67,8 +67,6 @@ async function imageLabels(divElementId) {
         return textureManager.createTextTexture([labelText], labelStyle);
     };
     xAxis.labelProvider.getLabelTexture = getLabelTexture;
-    // If using asyncLabels = true, override this as well
-    xAxis.labelProvider.getLabelTextureAsync = (labelText, textureManager, labelStyle) => Promise.resolve(getLabelTexture(labelText, textureManager, labelStyle));
     // Disable shared cache for this provider, otherwise other axes might pick up the emoji textures
     xAxis.labelProvider.useSharedCache = false;
     sciChartSurface.xAxes.add(xAxis);

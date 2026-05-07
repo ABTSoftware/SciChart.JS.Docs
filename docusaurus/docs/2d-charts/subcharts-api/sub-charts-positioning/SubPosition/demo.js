@@ -147,7 +147,7 @@ async function builderExample(divElementId) {
     });
     // On the parent chart, programmatically move the subchart with subPosition
     setTimeout(() => {
-        sciChartSurface.subCharts.at(0).subPosition = new Rect(0.75, 0.75, 0.1, 0.2);
+        sciChartSurface.subCharts[0].subPosition = new Rect(0.75, 0.75, 0.1, 0.2);
     }, 1000);
     // #region_B_end
 }

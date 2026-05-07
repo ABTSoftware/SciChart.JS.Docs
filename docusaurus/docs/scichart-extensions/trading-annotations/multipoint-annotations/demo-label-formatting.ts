@@ -76,7 +76,9 @@ async function drawExample(divElementId) {
                 }
 
                 if (anchorMode === EMultiPointLabelAnchorMode.Segment) {
+                    // @ts-ignore
                     const start = valuePoints[label.segmentStartIndex];
+                    // @ts-ignore
                     const end = valuePoints[label.segmentEndIndex];
                     const delta = end.y - start.y;
                     const percent = (delta / start.y) * 100;

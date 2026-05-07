@@ -9,6 +9,10 @@ sidebar_label: Freehand drawing annotation
 
 Most applications create this annotation through [FreehandDrawingModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingmodifier.html).
 
+:::tip
+In order to select the annotation click on the drawn line. Clicking not on the line does not select.
+:::
+
 <LiveDocSnippet maxWidth={"100%"} name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
