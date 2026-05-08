@@ -45,6 +45,10 @@ A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc
 You can format the date labels on the xAxis by following the instructions on the [Axis Label Formatting](/2d-charts/axis-api/axis-labels/numeric-formats/) page.
 :::
 
+## Financial Data Filters
+
+For alternate financial views built from OHLC data, the `scichart-financial-tools` extension includes [Heikin-Ashi](/scichart-extensions/scichart-financial-tools/data-filters/heikin-ashi/), [Renko](/scichart-extensions/scichart-financial-tools/data-filters/renko/) and [Point & Figure](/scichart-extensions/scichart-financial-tools/data-filters/point-and-figure/) filters.
+
 ## Adding Volume Bars to an OHLC Chart
 
 The [Candlestick Chart example](https://www.scichart.com/demo/react/candlestick-chart) shows a technique to add volume bars docked to the bottom of the chart. The technique is the same for OHLC series so please see the [candlestick docs](/2d-charts/chart-types/fast-candlestick-renderable-series/).

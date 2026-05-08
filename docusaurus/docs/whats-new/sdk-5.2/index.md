@@ -7,7 +7,7 @@ sidebar_position: 0
 ## SciChart Financial Drawing Tools Extension
 
 New [scichart-financial-tools](https://www.npmjs.com/package/scichart-financial-tools) NPM package.
-You will find [financial tools documentation here](/scichart-extensions/trading-annotations/overview/index.md).
+You will find [financial tools documentation here](/scichart-extensions/scichart-financial-tools/overview/).
 
 New trading annotations:
 

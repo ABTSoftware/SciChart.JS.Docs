@@ -42,7 +42,7 @@ If an annotation is only compatible with Polar surfaces it has prefix "Polar" in
 
 To learn more about any annotation type, please refer to the corresponding article.
 
-Trading and multi-point annotations such as `PolyLineAnnotation`, `FreehandDrawingAnnotation`, `ExtendedLineAnnotation`, `ChannelAnnotation`, `PitchforkAnnotation`, `FibonacciRetracementAnnotation`, `MeasureAnnotation` and `StopLossTakeProfitAnnotation` are available from the `scichart-financial-tools` package. See [Trading Annotations](/scichart-extensions/trading-annotations/overview/) for installation, shared label behavior and examples.
+Trading and multi-point annotations such as `PolyLineAnnotation`, `FreehandDrawingAnnotation`, `ExtendedLineAnnotation`, `ChannelAnnotation`, `PitchforkAnnotation`, `FibonacciRetracementAnnotation`, `MeasureAnnotation` and `StopLossTakeProfitAnnotation` are available from the `scichart-financial-tools` package. See [SciChart Financial Tools](/scichart-extensions/scichart-financial-tools/overview/) for installation, shared label behavior and examples.
 
 Adding an Annotation to a Chart
 -------------------------------
@@ -68,8 +68,8 @@ Individual Annotation features are discussed in greater detail in the following 
 *   The [LineAnnotation](/2d-charts/annotations-api/line-annotation/) Type
 *   The [TextAnnotation](/2d-charts/annotations-api/text-annotation/) Type
 *   The [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/) Type
-*   The [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/) guide
-*   The [Trading Annotations](/scichart-extensions/trading-annotations/overview/) guide
+*   The [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/) guide
+*   The [SciChart Financial Tools](/scichart-extensions/scichart-financial-tools/overview/) guide
 
 Common Annotation Properties
 ----------------------------
@@ -98,5 +98,5 @@ More annotation properties and the inheritence hierachy may be viewed at the [A
 * [LineAnnotation](/2d-charts/annotations-api/line-annotation/)
 * [CustomAnnotation](/2d-charts/annotations-api/custom-annotation/)
 * [TextAnnotation](/2d-charts/annotations-api/text-annotation/)
-* [Multi-Point Labels Deep Dive](/scichart-extensions/trading-annotations/multipoint-annotations/)
-* [Trading Annotations](/scichart-extensions/trading-annotations/overview/)
+* [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
+* [SciChart Financial Tools](/scichart-extensions/scichart-financial-tools/overview/)
