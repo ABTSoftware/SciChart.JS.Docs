@@ -13,7 +13,7 @@ function createSeries(heatmapWidth, heatmapHeight, colorPaletteMin, colorPalette
     return zValues;
 }
 const drawArbitraryLevels = async (divElementId) => {
-    const { SciChartSurface, NumericAxis, HeatmapColorMap, UniformHeatmapDataSeries, UniformHeatmapRenderableSeries, UniformContoursRenderableSeries, NumberRange, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, CursorModifier } = SciChart;
+    const { SciChartSurface, NumericAxis, HeatmapColorMap, UniformHeatmapDataSeries, UniformHeatmapRenderableSeries, UniformContoursRenderableSeries, NumberRange, ZoomPanModifier, ZoomExtentsModifier, MouseWheelZoomModifier, CursorModifier, ENumericFormat } = SciChart;
     // #region_A_start
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId);
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(-100, 100) }));
@@ -39,11 +39,12 @@ const drawArbitraryLevels = async (divElementId) => {
         stroke: "white",
         dataLabels: {
             style: {
-                fontSize: 10
+                fontSize: 20
             },
-            color: "white",
-            labelRowCount: 5,
-            precision: 0
+            color: "red",
+            labelRowCount: 1,
+            precision: 1,
+            numericFormat: ENumericFormat.Decimal
         }
     });
     // Add the contours to the chart

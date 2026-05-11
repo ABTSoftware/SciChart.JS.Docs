@@ -28,7 +28,8 @@ const drawArbitraryLevels = async (divElementId: string) => {
         ZoomPanModifier,
         ZoomExtentsModifier,
         MouseWheelZoomModifier,
-        CursorModifier
+        CursorModifier,
+        ENumericFormat
     } = SciChart;
 
     // #region_A_start
@@ -59,11 +60,12 @@ const drawArbitraryLevels = async (divElementId: string) => {
         stroke: "white",
         dataLabels: {
             style: {
-                fontSize: 10
+                fontSize: 20
             },
-            color: "white",
-            labelRowCount: 5,
-            precision: 0
+            color: "red",
+            labelRowCount: 1,
+            precision: 1,
+            numericFormat: ENumericFormat.Decimal
         }
     });
 

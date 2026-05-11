@@ -76,8 +76,10 @@ For more details, including a live example of how to update 2D array data for he
 
 Using [UniformContoursRenderableSeries.zLevels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/uniformcontoursrenderableseries.html#zlevels) we can specify albitrary levels where to draw contour lines.
 
+Use [dataLabels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/interfaces/icontoursdatalabelprovideroptions.html) constructor option to tune the way contour labels look.
+
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {23} showLineNumbers file=./ArbitraryLevels/demo.ts start=#region_A_start end=#region_A_end
+    ```ts {23,26-34} showLineNumbers file=./ArbitraryLevels/demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
