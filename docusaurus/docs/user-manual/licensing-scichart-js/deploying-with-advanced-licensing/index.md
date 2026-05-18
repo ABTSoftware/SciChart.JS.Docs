@@ -39,10 +39,10 @@ There are two Advanced Licensing solutions. If you are unsure which to use, plea
 
 | | [Simple Server Validation](/user-manual/licensing-scichart-js/simple-server-validation/) | Native Server Licensing (this page) |
 |---|---|---|
-| **How it works** | Server computes HMAC-SHA256 token | Server signs a challenge using a native DLL (NaCl) |
+| **How it works** | Server computes HMAC-SHA256 token (inline or round-trip mode) | Server signs a challenge using a native DLL (NaCl) |
 | **Complexity** | Low — a few lines in any language | Higher — requires native binary on the server |
-| **Domain binding** | CORS | Cryptographic challenge/response |
-| **Requires** | `SV` feature flag on your license | Native DLL for your server OS/architecture |
+| **Domain binding** | CORS + (round-trip mode) client nonce | Cryptographic challenge/response |
+| **Requires** | `SV:H:V:N` feature flag on your license | Native DLL for your server OS/architecture |
 | **Best for** | Web servers, Electron, Tauri | Scenarios requiring strong domain enforcement |
 
 ## How Native Server Licensing Works
