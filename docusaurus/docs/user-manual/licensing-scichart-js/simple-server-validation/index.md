@@ -26,7 +26,7 @@ If you need cryptographically enforced domain binding (rather than relying on CO
 
 A v2 token can take one of two shapes on the wire:
 
-- **Inline** (4 fields) — `v2:serverNonce:serverNow:hmac`. Independent of any client state. Can be served to many clients, embedded in served HTML via a `<meta>` tag for a zero-round-trip first paint, or cached on a CDN.
+- **Inline** (4 fields) — `v2:serverNonce:serverNow:hmac`. Independent of any client state. Can be served to many clients or embedded in served HTML via a `<meta>` tag for a zero-round-trip first paint. Should still be signed per request — the embedded `serverNow` ages relative to the client's clock and will fall outside `max_skew` once the token is older than the licence's tolerance, so caching past that point causes valid clients to reject otherwise-correct tokens.
 - **Round-trip** (5 fields) — `v2:clientNonce:serverNonce:serverNow:hmac`. The client generates a random nonce inside the SciChart WASM module and sends it as `?nonce=<hex>`; the server echoes it into the signed token. A captured response is bound to the requesting client and cannot be replayed on another origin.
 
 For most deployments the two shapes are **interchangeable under a single licence**: your server can hand out an inline token embedded in HTML for first paint *and* a round-trip token for subsequent re-validation; the SciChart client accepts whichever arrives. This is the common case.
@@ -117,7 +117,7 @@ Where:
 - `serverNow` — server wall-clock Unix timestamp (seconds), decimal
 - `hmac` — `HMAC-SHA256(serverSecretBytes, payload)` as 64 lowercase hex characters, where `payload` is the entire token text up to (but not including) the final `:` and HMAC field
 
-Inline tokens are not bound to a particular client and may be cached / CDN-distributed for up to `valid_time`. Round-trip responses must not be cached — each request gets its own signed token.
+Inline tokens are not bound to a particular client, but should still be signed per request — the embedded `serverNow` ages relative to the client's clock and will fall outside `max_skew` once the token is older than the licence's tolerance, so caching past that point causes valid clients to reject otherwise-correct tokens. Round-trip responses must not be cached either — each request gets its own signed token.
 
 ## Implementation
 
@@ -130,10 +130,6 @@ import { createHmac, randomBytes } from "crypto";
 const SCICHART_SERVER_SECRET = process.env.SCICHART_SERVER_SECRET!;
 const secretBuffer = Buffer.from(SCICHART_SERVER_SECRET, "hex");
 
-const INLINE_REFRESH_SECONDS = 30 * 60;
-let cachedInlineToken = "";
-let cachedInlineTokenIssuedAt = 0;
-
 const CLIENT_NONCE_PATTERN = /^[0-9a-fA-F]{8,64}$/;
 
 const signToken = (payload: string): string => {
@@ -144,23 +140,18 @@ const signToken = (payload: string): string => {
 app.get("/api/license", (req, res) => {
     const now = Math.floor(Date.now() / 1000);
     const rawNonce = typeof req.query.nonce === "string" ? req.query.nonce : "";
+    const serverNonce = randomBytes(8).toString("hex");
 
     if (rawNonce) {
         if (!CLIENT_NONCE_PATTERN.test(rawNonce)) {
             res.status(400).send("Error: malformed client nonce");
             return;
         }
-        const serverNonce = randomBytes(8).toString("hex");
         res.send(signToken(`v2:${rawNonce}:${serverNonce}:${now}`));
         return;
     }
 
-    if (!cachedInlineToken || now - cachedInlineTokenIssuedAt > INLINE_REFRESH_SECONDS) {
-        const serverNonce = randomBytes(8).toString("hex");
-        cachedInlineToken = signToken(`v2:${serverNonce}:${now}`);
-        cachedInlineTokenIssuedAt = now;
-    }
-    res.send(cachedInlineToken);
+    res.send(signToken(`v2:${serverNonce}:${now}`));
 });
 ```
 
@@ -174,11 +165,6 @@ using System.Text.RegularExpressions;
 var secret      = Environment.GetEnvironmentVariable("SCICHART_SERVER_SECRET")!;
 var secretBytes = Convert.FromHexString(secret);
 var noncePattern = new Regex("^[0-9a-fA-F]{8,64}$", RegexOptions.Compiled);
-
-const int InlineRefreshSeconds = 30 * 60;
-string?  cachedInlineToken = null;
-long     cachedIssuedAt    = 0;
-var      cacheLock         = new object();
 
 string Sign(string payload)
 {
@@ -199,15 +185,7 @@ app.MapGet("/api/license", (HttpContext ctx) =>
         return Results.Content(Sign($"v2:{clientNonce}:{serverNonce}:{now}"), "text/plain");
     }
 
-    lock (cacheLock)
-    {
-        if (cachedInlineToken is null || now - cachedIssuedAt > InlineRefreshSeconds)
-        {
-            cachedInlineToken = Sign($"v2:{serverNonce}:{now}");
-            cachedIssuedAt    = now;
-        }
-        return Results.Content(cachedInlineToken, "text/plain");
-    }
+    return Results.Content(Sign($"v2:{serverNonce}:{now}"), "text/plain");
 });
 ```
 
@@ -223,11 +201,6 @@ public class LicenseController : ControllerBase
 
     private static readonly Regex NoncePattern =
         new("^[0-9a-fA-F]{8,64}$", RegexOptions.Compiled);
-
-    private const int InlineRefreshSeconds = 30 * 60;
-    private static readonly object CacheLock = new();
-    private static string? _cachedInline;
-    private static long    _cachedIssuedAt;
 
     private static string Sign(string payload)
     {
@@ -248,15 +221,7 @@ public class LicenseController : ControllerBase
             return Content(Sign($"v2:{nonce}:{serverNonce}:{now}"), "text/plain");
         }
 
-        lock (CacheLock)
-        {
-            if (_cachedInline is null || now - _cachedIssuedAt > InlineRefreshSeconds)
-            {
-                _cachedInline   = Sign($"v2:{serverNonce}:{now}");
-                _cachedIssuedAt = now;
-            }
-            return Content(_cachedInline, "text/plain");
-        }
+        return Content(Sign($"v2:{serverNonce}:{now}"), "text/plain");
     }
 }
 ```
@@ -273,10 +238,7 @@ public class LicenseController {
     private static final Pattern NONCE_PATTERN =
         Pattern.compile("^[0-9a-fA-F]{8,64}$");
 
-    private static final int INLINE_REFRESH_SECONDS = 30 * 60;
     private static final SecureRandom RNG = new SecureRandom();
-    private static volatile String cachedInline;
-    private static volatile long   cachedIssuedAt;
 
     private static String sign(String payload) throws Exception {
         var mac = Mac.getInstance("HmacSHA256");
@@ -303,15 +265,7 @@ public class LicenseController {
             return ResponseEntity.ok(sign("v2:" + clientNonce + ":" + serverNonce + ":" + now));
         }
 
-        if (cachedInline == null || now - cachedIssuedAt > INLINE_REFRESH_SECONDS) {
-            synchronized (LicenseController.class) {
-                if (cachedInline == null || now - cachedIssuedAt > INLINE_REFRESH_SECONDS) {
-                    cachedInline   = sign("v2:" + serverNonce + ":" + now);
-                    cachedIssuedAt = now;
-                }
-            }
-        }
-        return ResponseEntity.ok(cachedInline);
+        return ResponseEntity.ok(sign("v2:" + serverNonce + ":" + now));
     }
 }
 ```
