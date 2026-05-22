@@ -17,6 +17,7 @@ classDiagram
     AxisBase2D <|-- LogarithmicAxis
     AxisBase2D <|-- CategoryAxisBase
     AxisBase3D <|-- NumericAxis3D
+    AxisBase3D <|-- LogarithmicAxis3D
     NumericAxis <|-- DateTimeNumericAxis
 ```
 
@@ -96,3 +97,4 @@ There are some addditional elements on the 3D chart which can be styled, such as
 #### See Also
 
 * [Numeric and Date Axis in SciChart3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d/index.md)
+* [LogarithmicAxis3D](/3d-charts/axis-3d-api/logarithmic-axis-3d/)
