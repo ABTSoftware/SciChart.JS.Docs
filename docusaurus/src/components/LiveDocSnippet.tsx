@@ -4,7 +4,7 @@ import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-const USE_LOCAL_PACKAGE = true;
+const USE_LOCAL_PACKAGE = false;
 
 enum EHtmlType {
     Default = "Default",

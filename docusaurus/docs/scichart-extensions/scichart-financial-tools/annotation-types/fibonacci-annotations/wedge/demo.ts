@@ -1,7 +1,7 @@
 import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 
-async function drawExample(divElementId) {
+async function drawExample(divElementId: string) {
     // #region_A_start
     const { NumberRange, NumericAxis, SciChartSurface } = SciChart;
     const {

@@ -16,10 +16,10 @@ async function drawExample(divElementId) {
             { x: 63, y: 550 } // does not NEED to be on the same x as first point
         ],
         thresholds: [0, 0.236, 0.382, 0.5, 0.618, 0.786, 1, 1.618],
-        regionColors: ["#6366F1", "#F97316"],
-        fillOpacity: 0.30,
+        regionColors: ["#0871B2", "darkgreen", "#D56E0B"],
+        fillOpacity: 0.25,
         strokeThickness: 2,
-        connectorLineStroke: "#6366F1",
+        // connectorLineStroke: "#242424",
         connectorLineStrokeDashArray: [10, 3],
         fibonacciLabelPlacement: EFibonacciLabelPlacement.Top,
         fibonacciLabelColorMode: EFibonacciLabelColorMode.MultiColor,
