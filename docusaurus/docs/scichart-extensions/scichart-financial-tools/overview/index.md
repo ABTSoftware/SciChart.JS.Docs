@@ -3,23 +3,27 @@ sidebar_position: 1
 sidebar_label: Overview
 ---
 
-# scichart-financial-tools Overview
+# "scichart-financial-tools" Overview
 
 `scichart-financial-tools` provides trading annotations, trading modifiers, trader themes, OHLC data filters and the label / snapping enums used by the examples in this section. The annotation types share [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html), [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html), and [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html).
 
 The annotations integrate with normal SciChart.js surfaces and axes, but their multi-point editing model lives in `scichart-financial-tools`. Use this page as the map; the individual pages contain the focused live examples.
 
-```bash
+```bash showLineNumbers
 npm install scichart scichart-financial-tools
 ```
 
-```ts
+```ts showLineNumbers
 import {
     ChannelAnnotation,
     EAnnotationVisibilityMode,
     ETradingAnnotationType,
     ExtendedLineAnnotation,
+    FibonacciCirclesAnnotation,
+    FibonacciExtensionAnnotation,
     FibonacciRetracementAnnotation,
+    FibonacciSpeedResistanceArcsAnnotation,
+    FibonacciWedgeAnnotation,
     FreehandDrawingAnnotation,
     FreehandDrawingModifier,
     MultiPointAnnotationBase,
@@ -42,16 +46,43 @@ Hover and cursor feedback in the examples uses `AnnotationHoverModifier` from `s
 | Annotation | Points | Main Use |
 | --- | --- | --- |
 | [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html) | 2 or more | Base concrete multi-point line / polygon annotation |
-| [ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/channelannotation.html) | 3 placement points, 4 corners | Parallel price channel |
+| [ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/channelannotation.html) | 3 placement points, 4 corners | Parallel ChannelAnnotation |
 | [ExtendedLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/extendedlineannotation.html) | 2 | Trend line, ray or infinite line |
 | [FlatBottomChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/flatbottomchannelannotation.html) | 3 placement points, 4 corners | Channel with horizontal lower boundary |
 | [DisjointChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/disjointchannelannotation.html) | 3 placement points, 4 corners | Channel with the second side constrained from the first |
-| [FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html) | 3 | Retracement levels, regions and level labels |
+| [FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html) | 2 by default, 3 in skewed mode | Retracement levels, regions and level labels |
+| [FibonacciExtensionAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciextensionannotation.html) | 3 | Extension levels from a measured trend and start offset |
+| [FibonacciCirclesAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccicirclesannotation.html) | 2 | Fibonacci circles or ovals from opposite corners |
+| [FibonacciSpeedResistanceArcsAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccispeedresistancearcsannotation.html) | 2 | Concentric speed resistance arcs from a center and radius |
+| [FibonacciWedgeAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciwedgeannotation.html) | 3 | Fibonacci arcs constrained inside a wedge |
 | [PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pitchforkannotation.html) | 3 | Andrews' Pitchfork with optional zones |
 | [PitchfanAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pitchfanannotation.html) | 3 | Projected fan lines from pitchfork points |
 | [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) | 2 | Change between two points |
 | [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) | 2 | Stop-loss or take-profit zone |
 | [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html) | Many sampled points | Editable freehand drawing stored as a polyline |
+
+## Annotation Class Hierarchy
+
+```mermaid
+classDiagram
+    MultiPointAnnotationBase <|-- PolyLineAnnotation
+    PolyLineAnnotation <|-- FreehandDrawingAnnotation
+    MultiPointAnnotationBase <|-- ExtendedLineAnnotation
+    MultiPointAnnotationBase <|-- ChannelAnnotation
+    ChannelAnnotation <|-- FlatBottomChannelAnnotation
+    ChannelAnnotation <|-- DisjointChannelAnnotation
+    MultiPointAnnotationBase <|-- PitchforkAnnotation
+    PitchforkAnnotation <|-- PitchfanAnnotation
+    MultiPointAnnotationBase <|-- MeasureAnnotation
+    MultiPointAnnotationBase <|-- StopLossTakeProfitAnnotation
+    MultiPointAnnotationBase <|-- FibonacciAnnotationBase
+    FibonacciAnnotationBase <|-- FibonacciRetracementAnnotation
+    FibonacciRetracementAnnotation <|-- FibonacciExtensionAnnotation
+    FibonacciAnnotationBase <|-- FibonacciArcAnnotationBase
+    FibonacciArcAnnotationBase <|-- FibonacciCirclesAnnotation
+    FibonacciArcAnnotationBase <|-- FibonacciSpeedResistanceArcsAnnotation
+    FibonacciArcAnnotationBase <|-- FibonacciWedgeAnnotation
+```
 
 ## Modifiers
 
@@ -97,7 +128,7 @@ All annotations based on [MultiPointAnnotationBase:blue_book:](https://www.scich
 
 Some tools also have their own label systems:
 
-- [FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html) has Fibonacci level labels and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#formatfibonaccilabel).
+- [Fibonacci annotations](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/) have Fibonacci level labels and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#formatfibonaccilabel).
 - [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) has a measurement label and [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
 - [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) automatically contributes Y-axis labels for entry and target levels.
 
@@ -113,4 +144,4 @@ For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/s
 - [Renko filter](/scichart-extensions/scichart-financial-tools/data-filters/renko/)
 - [Point & Figure filter](/scichart-extensions/scichart-financial-tools/data-filters/point-and-figure/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
-- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotation/)
+- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)

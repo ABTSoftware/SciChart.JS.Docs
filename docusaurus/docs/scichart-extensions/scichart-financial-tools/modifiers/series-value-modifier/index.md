@@ -7,7 +7,7 @@ sidebar_label: Series value modifier
 
 [SeriesValueModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/seriesvaluemodifier.html) adds y-axis marker annotations for each included renderable series. For line series it follows the y-value; for OHLC and candlestick series it follows the close value and uses the up / down candle colors for the marker background.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {15,67-70} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end

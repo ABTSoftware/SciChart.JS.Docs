@@ -11,7 +11,7 @@ sidebar_label: Placement and editing
 
 Create the modifier once, add it to the surface, then call `startPlacement(...)` when the user chooses a drawing tool. This is the cleanest approach for toolbar-driven apps because the same modifier can place different annotation types over time.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {16,25-26,28} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -22,7 +22,7 @@ Create the modifier once, add it to the surface, then call `startPlacement(...)`
 
 Constructor options are useful when a page should open directly into one placement mode. Set [isPlacing:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#isplacing) to start immediately, and use [keepPlacingAfterComplete:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#keepplacingaftercomplete) to keep creating new instances after one annotation is finished.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo-constructor" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-constructor" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {116,25,26,28,58} showLineNumbers file=./demo-constructor.ts start=#region_A_start end=#region_A_end
@@ -34,7 +34,7 @@ Constructor options are useful when a page should open directly into one placeme
 #### See Also
 
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
-- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotation/)
+- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [FreehandDrawingModifier](/scichart-extensions/scichart-financial-tools/modifiers/freehand-drawing-modifier/)
 - [Annotation editor modifier](/scichart-extensions/scichart-financial-tools/modifiers/multipoint-annotation-editor-modifier/)

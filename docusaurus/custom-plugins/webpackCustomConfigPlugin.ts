@@ -11,6 +11,7 @@ export default function () {
                     new CopyWebpackPlugin({
                         patterns: [
                             { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "scichart.browser.js" },
+                            { from: "node_modules/scichart-financial-tools/scichart-financial-tools.browser.mjs", to: "scichart-financial-tools.browser.js" },
                             { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
                             { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
                             {

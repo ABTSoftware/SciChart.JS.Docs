@@ -31,10 +31,12 @@ async function drawExample(divElementId) {
                 { x: 42, y: 80 },
                 { x: 42, y: 50 },
             ],
-            stroke: "#3388FF",
-            fill: "#3388FF33",
+            stroke: "#338888",
+            fill: "#33888833",
             showMidLine: false,
             showMidPointGrips: false,
+
+            // other properties:
             isEditable: true,
             isSelected: true,
             labels: [

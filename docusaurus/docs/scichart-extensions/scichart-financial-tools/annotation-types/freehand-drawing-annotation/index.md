@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 15
 sidebar_label: Freehand drawing annotation
 ---
 
@@ -13,10 +13,10 @@ Most applications create this annotation through [FreehandDrawingModifier:blue_b
 In order to select the annotation click on the drawn line. Clicking not on the line does not select.
 :::
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {18,21,35,37,38,40,41} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {10,20,23,48,50-51,53-54} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -25,6 +25,6 @@ For interactive pointer capture, see [FreehandDrawingModifier](/scichart-extensi
 #### See Also
 
 - [FreehandDrawingModifier](/scichart-extensions/scichart-financial-tools/modifiers/freehand-drawing-modifier/)
-- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotation/)
+- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

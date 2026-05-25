@@ -7,7 +7,7 @@ sidebar_label: Annotation editor modifier
 
 [MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) shows a floating property editor for the selected [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html). It listens to annotation selection changes, resolves an editor definition for the selected annotation type, and renders editable fields into a DOM container.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {19,24,41,54,138-147} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end

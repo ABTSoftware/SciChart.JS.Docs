@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 sidebar_label: PolyLine annotation
 ---
 
@@ -7,7 +7,7 @@ sidebar_label: PolyLine annotation
 
 [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html) is exported by `scichart-financial-tools`. It is the simplest concrete multi-point annotation: it renders straight segments through the [points:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#points) array and inherits editing, snapping and labels from that package's [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html).
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {14,24,26-31,74,81} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -24,6 +24,9 @@ See [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools
 
 #### See Also
 
+- [Polyline annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/)
+- [XABCD pattern](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/xabcd-pattern/)
+- [Elliott wave](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-wave/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [FreehandDrawingAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/freehand-drawing-annotation/)

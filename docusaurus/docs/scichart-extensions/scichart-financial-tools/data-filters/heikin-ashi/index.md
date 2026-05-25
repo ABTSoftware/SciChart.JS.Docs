@@ -7,7 +7,7 @@ sidebar_label: Heikin-Ashi filter
 
 [OhlcHeikinAshiFilter:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/ohlcheikinashifilter.html) converts an `OhlcDataSeries` into Heikin-Ashi candles. The filter keeps one output candle per source candle, so it can be swapped with the source series on the same candlestick or OHLC renderable series.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {14,33-35,51-57} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end

@@ -3,23 +3,24 @@ import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
     // #region_A_start
     const { NumberRange, NumericAxis, SciChartSurface, EVerticalTextPosition } = SciChart; // or import from "scichart"
-    const { ChannelAnnotation, EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, SciTraderLightTheme } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
+    const { DisjointChannelAnnotation, EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, SciTraderLightTheme } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 50) }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(20, 90) }));
-    sciChartSurface.annotations.add(new ChannelAnnotation({
+    sciChartSurface.annotations.add(new DisjointChannelAnnotation({
         // First two points define one channel edge; the third point defines the offset.
         points: [
             { x: 8, y: 60 },
             { x: 42, y: 80 },
             { x: 42, y: 50 },
         ],
-        stroke: "#3388FF",
-        fill: "#3388FF33",
-        showMidLine: true,
-        showMidPointGrips: true,
+        stroke: "#338888",
+        fill: "#33888833",
+        showMidLine: false,
+        showMidPointGrips: false,
+        // other properties:
         isEditable: true,
         isSelected: true,
         labels: [

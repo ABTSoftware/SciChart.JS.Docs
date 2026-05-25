@@ -88,11 +88,6 @@ const config: Config = {
             },
             items: [
                 {
-                    to: "/intro",
-                    label: "Home",
-                    position: "left"
-                },
-                {
                     to: "/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
                     label: "Tutorials",
                     position: "left"
@@ -101,6 +96,11 @@ const config: Config = {
                 {
                     to: "/3d-charts/scichart-3d-basics/scichart-3d-basics-overview",
                     label: "3D Docs",
+                    position: "left"
+                },
+                {
+                    to: "/scichart-extensions/scichart-financial-tools/overview/",
+                    label: "Financial-Tools Docs",
                     position: "left"
                 },
                 {

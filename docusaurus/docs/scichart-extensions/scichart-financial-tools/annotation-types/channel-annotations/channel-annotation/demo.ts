@@ -10,7 +10,7 @@ async function drawExample(divElementId) {
         EVerticalTextPosition
     } = SciChart; // or import from "scichart"
     const {
-        FlatBottomChannelAnnotation,
+        ChannelAnnotation,
         EAnnotationVisibilityMode,
         EMultiPointLabelAnchorMode,
         SciTraderLightTheme
@@ -24,7 +24,7 @@ async function drawExample(divElementId) {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(20, 90) }));
     
     sciChartSurface.annotations.add(
-        new FlatBottomChannelAnnotation({
+        new ChannelAnnotation({
             // First two points define one channel edge; the third point defines the offset.
             points: [
                 { x: 8, y: 60 },
@@ -35,6 +35,8 @@ async function drawExample(divElementId) {
             fill: "#3388FF33",
             showMidLine: true,
             showMidPointGrips: true,
+
+            // other properties:
             isEditable: true,
             isSelected: true,
             labels: [

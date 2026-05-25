@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 7
 sidebar_label: Extended line annotation
 ---
 
@@ -9,7 +9,7 @@ sidebar_label: Extended line annotation
 
 ### Basic example:
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo-simple" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-simple" />
 
 
 <CodeSnippetBlock labels={["TS"]}>
@@ -21,7 +21,7 @@ sidebar_label: Extended line annotation
 
 ### Complex example with labels and hover modifiers:
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {2,13,53} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
@@ -33,6 +33,7 @@ Use inherited multi-point labels for endpoint, segment or axis values.
 #### See Also
 
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
-- [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-retracement/)
-- [PitchforkAnnotation and PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-and-pitchfan/)
+- [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
+- [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotation/)
+- [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfan-annotation/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

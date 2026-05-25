@@ -4,18 +4,20 @@ import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
     // #region_A_start
     const {
-        NumberRange,
-        NumericAxis,
+        NumberRange, NumericAxis,
         SciChartSurface,
-        toEngineering
+        toEngineering,
+        EVerticalTextPosition
     } = SciChart; // or import from "scichart"
     const {
         ChannelAnnotation,
         EAnnotationVisibilityMode,
         EMultiPointLabelAnchorMode,
         ExtendedLineAnnotation,
+        FlatBottomChannelAnnotation,
         SciTraderLightTheme,
-        StopLossTakeProfitAnnotation
+        StopLossTakeProfitAnnotation,
+        ESegmentLabelRotationMode
     } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -26,21 +28,29 @@ async function drawExample(divElementId) {
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(20, 90) }));
 
     const trendLabelStyle = ({ annotation, label, defaultStyle }) => {
-        const [p1, p2, p3] = annotation.points;
+        const [p1, p2] = annotation.points;
         const isRising = p2.y >= p1.y;
 
         if (annotation instanceof StopLossTakeProfitAnnotation && label.anchorMode === EMultiPointLabelAnchorMode.Segment) {
-            return { ...defaultStyle, color: isRising ? annotation.takeProfitColor : annotation.stopLossColor, fontSize: 18 };
+            return { ...defaultStyle, color: isRising ? annotation.takeProfitColor : annotation.stopLossColor, fontSize: 16 };
         }
-
         if (annotation instanceof ExtendedLineAnnotation && label.anchorMode === EMultiPointLabelAnchorMode.Point) {
             return { ...defaultStyle, color: isRising ? "#111827" : "#DC2626", fontSize: 14 };
         }
-
         if (annotation instanceof ChannelAnnotation && label.anchorMode === EMultiPointLabelAnchorMode.Point) {
-            const offsetAbove = p3.y >= p1.y;
-            if (label.id === "channel-upper") return { ...defaultStyle, fontSize: offsetAbove ? 13 : 0 };
-            if (label.id === "channel-lower") return { ...defaultStyle, fontSize: offsetAbove ? 0 : 13 };
+            const [, , , p4] = annotation.points;
+            if (label.id.includes("1")) {
+                return {
+                    ...defaultStyle,
+                    fontSize: p4.y <= p1.y ? 13 : 0,
+                };
+            }
+            if (label.id.includes("4")) {
+                return {
+                    ...defaultStyle,
+                    fontSize: p4.y <= p1.y ? 0 : 13,
+                };
+            }
         }
 
         return defaultStyle;
@@ -53,18 +63,34 @@ async function drawExample(divElementId) {
 
     sciChartSurface.annotations.add(
         new StopLossTakeProfitAnnotation({
-            points: [{ x: 5, y: 42 }, { x: 21, y: 58 }],
+            points: [
+                { x: 5, y: 32 }, 
+                { x: 21, y: 48 }
+            ],
             takeProfitColor: "#16A34A",
             stopLossColor: "#DC2626",
             fillOpacity: 0.18,
             strokeThickness: 2,
             isEditable: true,
             labels: [
-                { id: "entry", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 0, text: "Entry" },
-                { id: "target", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 1, text: "Target" },
+                { 
+                    id: "entry", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point,
+                    verticalTextPosition: EVerticalTextPosition.Below, 
+                    pointIndex: 0, 
+                    text: "Entry" 
+                },
+                { 
+                    id: "target", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point,
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 1, 
+                    text: "Target" 
+                },
                 {
                     id: "trade-zone",
                     anchorMode: EMultiPointLabelAnchorMode.Segment,
+                    segmentLabelRotationMode: ESegmentLabelRotationMode.Horizontal,
                     segmentStartIndex: 0,
                     segmentEndIndex: 1,
                     segmentRatio: 0.5,
@@ -73,37 +99,108 @@ async function drawExample(divElementId) {
             ],
             pointLabelVisibility: EAnnotationVisibilityMode.Always,
             segmentLabelVisibility: EAnnotationVisibilityMode.Always,
+            gripVisibility: EAnnotationVisibilityMode.Always,
             formatLabel: priceLabel,
             formatLabelStyle: trendLabelStyle
         }),
         new ExtendedLineAnnotation({
-            points: [{ x: 26, y: 36 }, { x: 43, y: 52 }],
+            points: [
+                { x: 28, y: 36 }, 
+                { x: 43, y: 52 }
+            ],
             extendEnd: true,
             stroke: "#F59E0B",
             isEditable: true,
             labels: [
-                { id: "trend-start", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 0, text: "Start" },
-                { id: "trend-end", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 1, text: "Break" }
+                { 
+                    id: "trend-start", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 0, 
+                    text: "Start" 
+                },
+                { 
+                    id: "trend-end", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 1, 
+                    text: "Break" 
+                }
             ],
             pointLabelVisibility: EAnnotationVisibilityMode.Always,
+            gripVisibility: EAnnotationVisibilityMode.Always,
             formatLabel: priceLabel,
             formatLabelStyle: trendLabelStyle
         }),
-        new ChannelAnnotation({
-            points: [{ x: 8, y: 70 }, { x: 38, y: 78 }, { x: 38, y: 61 }],
-            stroke: "#3388FF",
-            fill: "#3388FF22",
+        new FlatBottomChannelAnnotation({
+            points: [
+                { x: 10, y: 74 }, 
+                { x: 42, y: 83 }, 
+                { x: 10, y: 66 }
+            ],
+            stroke: "#22A3BE",
+            fill: "#22A3BE22",
+            strokeThickness: 2,
+            showMidLine: true,
             isEditable: true,
             labels: [
-                { id: "channel-upper", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 1, text: "Upper" },
-                { id: "channel-lower", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 2, text: "Lower" }
+                { 
+                    id: "channel-pt-1", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 0, 
+                    text: "Sticky Label" 
+                },
+                { 
+                    id: "channel-pt-4", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 3, 
+                    text: "Sticky Label"
+                }
             ],
             pointLabelVisibility: EAnnotationVisibilityMode.Always,
+            gripVisibility: EAnnotationVisibilityMode.Always,
             formatLabel: priceLabel,
             formatLabelStyle: trendLabelStyle
         })
     );
     // #region_A_end
+
+    sciChartSurface.annotations.add(
+        new SciChart.NativeTextAnnotation({
+            text: "Try dragging the \"Sticky Label\" below the FlatChannel's base.",
+            x1: 10,
+            y1: 88,
+            textColor: "#555",
+            fontSize: 14,
+            verticalAnchorPoint: SciChart.EVerticalAnchorPoint.Top,
+        }),
+        new SciChart.NativeTextAnnotation({
+            text: "Try angling the line downwards to see a change!",
+            x1: 28,
+            y1: 30,
+            textColor: "#555",
+            fontSize: 14,
+            verticalAnchorPoint: SciChart.EVerticalAnchorPoint.Top,
+        }),
+        new SciChart.NativeTextAnnotation({
+            text: "Observe the center segment label changes color\nwith the stoploss/takeprofit annotation!",
+            x1: 3,
+            y1: 56,
+            textColor: "#555",
+            fontSize: 14,
+            verticalAnchorPoint: SciChart.EVerticalAnchorPoint.Top,
+        }),
+    );
+
+    sciChartSurface.chartModifiers.add(
+        new SciChart.AnnotationHoverModifier({
+            enableHover: true,
+            enableCursor: true,
+            idleCursor: SciChart.ECursorStyle.Crosshair,
+        })
+    );
 }
 
 drawExample("scichart-root");

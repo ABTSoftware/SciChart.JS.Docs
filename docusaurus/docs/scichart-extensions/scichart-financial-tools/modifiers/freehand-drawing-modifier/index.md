@@ -10,10 +10,10 @@ sidebar_label: Freehand drawing modifier
 While drawing is active, pointer-down starts a stroke, pointer-move appends sampled points and pointer-up completes the annotation. The modifier temporarily bypasses normal annotation hover and selection so drawing feels direct.
 The demo starts in drawing mode and includes one existing stroke so the finished annotation behavior is visible immediately.
 
-<LiveDocSnippet maxWidth={"100%"} name="./demo" />
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {20-28,32-34,36} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {18-26,30-32,34} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock> 
 
@@ -35,5 +35,5 @@ Use [maxPoints:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-
 
 - [FreehandDrawingAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/freehand-drawing-annotation/)
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
-- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotation/)
+- [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

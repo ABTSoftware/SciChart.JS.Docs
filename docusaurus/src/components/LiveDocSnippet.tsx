@@ -4,6 +4,8 @@ import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
+const USE_LOCAL_PACKAGE = true;
+
 enum EHtmlType {
     Default = "Default",
     WithResult = "WithResult"
@@ -15,6 +17,7 @@ type Props = {
     htmlPath?: string;
     cssPath?: string;
     htmlType?: EHtmlType;
+    includeFinTools?: boolean;
 };
 
 export default function LiveDocSnippet(props?: Props) {
@@ -34,8 +37,8 @@ export default function LiveDocSnippet(props?: Props) {
 
     const htmlTemplate = files?.html ?? htmlString;
     const cssTemplate = files?.css ?? "";
-    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType);
-    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType);
+    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools);
+    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools);
 
     useEffect(() => {
         const fetchFiles = async () => {
@@ -68,55 +71,83 @@ export default function LiveDocSnippet(props?: Props) {
     );
 }
 
-const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType) => {
+const getImportMap = (includeFinTools?: boolean) => {
+    const imports = [];
+
+    if (USE_LOCAL_PACKAGE) { // for testing purposes
+        if (!includeFinTools) {
+            imports.push(
+                `"scichart": "${baseUrl}scichart.browser.js"`
+            )
+        }
+        if (includeFinTools) {
+            imports.push(
+                `"scichart": "${baseUrl}scichart-financial-tools.browser.js"`,
+                `"scichart-financial-tools": "${baseUrl}scichart-financial-tools.browser.js"`,
+            );
+        } 
+    } else {
+        if (!includeFinTools) {
+            imports.push(
+                `"scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.browser.mjs?v=${libraryVersion}"`
+            )
+        }
+        if (includeFinTools) {
+            imports.push(
+                `"scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"`,
+                `"scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"`
+            );
+        } 
+    }
+
+    return imports.join(",\n\t\t\t\t\t\t");
+};
+
+const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
     }
-    return `
-    <html lang="en-us">
-        <head>
-            <meta charset="utf-8" />
-            <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-            <meta name='robots' content='noindex,follow' />
-            <script type="importmap">
-                {
-                    "imports": {
-                        "scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}",
-                        "scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"
-                    }
+    return `<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+        <meta name='robots' content='noindex,follow' />
+        <script type="importmap">
+            {
+                "imports": {
+                    ${getImportMap(includeFinTools)}
                 }
-            </script>
-            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"></script>
-            <script type="module">
-                import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
+            }
+        </script>
+        <script type="module">
+            import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
-                SciChartSurface.UseCommunityLicense();
-                
-                SciChartSurface.configure({
-                    wasmUrl: "${baseUrl}scichart2d.wasm"
-                });
-                SciChart3DSurface.configure({
-                    wasmUrl: "${baseUrl}scichart3d.wasm"
-                });
-                SciChartDefaults.performanceWarnings = false;
-            </script>
-            <script type="module" src=${jsUrl}.js></script>
-            ${cssUrl ? `<link rel="stylesheet" type="text/css" href="${cssUrl}">` : ""}
-            <style>
-                iframe { border: 0; }
-                body { margin: 0; }
-                #scichart-root { width: 100%; height: ${height}; }
-            </style>
-        </head>
-        <body>
-        <div style="width: 100%; height: 100vh;">${htmlTemplate}</div>
-        </body>
-    </html>
-    `;
+            SciChartSurface.UseCommunityLicense();
+            
+            SciChartSurface.configure({
+                wasmUrl: "${baseUrl}scichart2d.wasm"
+            });
+            SciChart3DSurface.configure({
+                wasmUrl: "${baseUrl}scichart3d.wasm"
+            });
+            SciChartDefaults.performanceWarnings = false;
+        </script>
+        <script type="module" src=${jsUrl}.js></script>
+        ${cssUrl ? `<link rel="stylesheet" type="text/css" href="${cssUrl}">` : ""}
+        <style>
+            iframe { border: 0; }
+            body { margin: 0; }
+            #scichart-root { width: 100%; height: ${height}; }
+        </style>
+    </head>
+    <body>
+    <div style="width: 100%; height: 100vh;">${htmlTemplate}</div>
+    </body>
+</html>`;
 };
 
-const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
+const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -131,12 +162,10 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType) => {
             <script type="importmap">
                     {
                         "imports": {
-                            "scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}",
-                            "scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"
+                            ${getImportMap(includeFinTools)}
                         }
                     }
             </script>
-            <script type="module" src="https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"></script>
             <script type="module">
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 

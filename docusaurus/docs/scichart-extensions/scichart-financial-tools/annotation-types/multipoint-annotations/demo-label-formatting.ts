@@ -24,23 +24,40 @@ async function drawExample(divElementId) {
     });
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 40) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(95, 125) }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(1090, 1130) }));
 
     sciChartSurface.annotations.add(
         new PolyLineAnnotation({
             points: [
-                { x: 5, y: 101 },
-                { x: 14, y: 117 },
-                { x: 26, y: 108 },
-                { x: 35, y: 121 }
+                { x: 5, y: 1101 },
+                { x: 16, y: 1120 },
+                { x: 24, y: 1108 },
+                { x: 31, y: 1117 },
+                { x: 35, y: 1109 }
             ],
-            stroke: "#3388FF",
+            stroke: "#FF8833",
             strokeThickness: 3,
+            fill: "#FF883333",
             isEditable: true,
             isSelected: true,
             labels: [
-                { id: "entry", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 0, text: "Entry" },
-                { id: "breakout", anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 1, text: "Breakout" },
+                { 
+                    id: "entry", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Below, 
+                    pointIndex: 0, 
+                    yOffset: 10,
+                    text: "Entry" 
+                },
+                { 
+                    id: "breakout", 
+                    anchorMode: EMultiPointLabelAnchorMode.Point, 
+                    verticalTextPosition: EVerticalTextPosition.Above, 
+                    pointIndex: 1,
+                    yOffset: -12,
+                    text: "Breakout" 
+                },
+                // segment labels
                 {
                     id: "leg-1",
                     anchorMode: EMultiPointLabelAnchorMode.Segment,
@@ -58,11 +75,18 @@ async function drawExample(divElementId) {
                     segmentRatio: 0.5,
                     verticalTextPosition: EVerticalTextPosition.Below
                 },
+                // axis labels:
+                {
+                    id: "first-price",
+                    anchorMode: EMultiPointLabelAnchorMode.Axis,
+                    pointIndex: 0,
+                    axisLabelDrawMode: EAxisLabelDrawMode.X
+                },
                 {
                     id: "last-price",
                     anchorMode: EMultiPointLabelAnchorMode.Axis,
-                    pointIndex: 3,
-                    axisLabelDrawMode: EAxisLabelDrawMode.Y
+                    pointIndex: 4,
+                    axisLabelDrawMode: EAxisLabelDrawMode.X
                 }
             ],
             pointLabelVisibility: EAnnotationVisibilityMode.Always,
@@ -90,18 +114,27 @@ async function drawExample(divElementId) {
 
             formatLabelStyle: ({ label, defaultStyle }) => {
                 if (label.anchorMode === EMultiPointLabelAnchorMode.Segment) {
-                    return { ...defaultStyle, color: "#475569", fontSize: 12 };
+                    return { ...defaultStyle, color: "#FF8833", fontSize: 12 };
                 }
-                if (label.anchorMode === EMultiPointLabelAnchorMode.Axis) {
-                    return { ...defaultStyle, color: "#FFFFFF", fontSize: 13 };
+                if (label.anchorMode === EMultiPointLabelAnchorMode.Point) {
+                    return { ...defaultStyle, color: "#000000", fontSize: label.id === "breakout" ? 16 : 13 };
                 }
-                return { ...defaultStyle, color: "#111827", fontSize: label.id === "breakout" ? 16 : 13 };
+                return { ...defaultStyle };
             },
-
+            
+            axisLabelStroke: "#FFFFFF",
             gripVisibility: EAnnotationVisibilityMode.Always
         })
     );
     // #region_A_end
+
+    sciChartSurface.chartModifiers.add(
+        new SciChart.AnnotationHoverModifier({
+            enableHover: true,
+            enableCursor: true,
+            idleCursor: SciChart.ECursorStyle.Crosshair,
+        })
+    );
 }
 
 drawExample("scichart-root");

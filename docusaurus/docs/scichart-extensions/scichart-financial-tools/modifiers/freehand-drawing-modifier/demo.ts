@@ -4,19 +4,17 @@ import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
     // #region_A_start
     const {
-        NumberRange,
         NumericAxis,
-        SciChartJsNavyTheme,
         SciChartSurface,
         NativeTextAnnotation,
     } = SciChart; // or import from "scichart"
     const {
-        FreehandDrawingAnnotation,
+        SciTraderLightTheme,
         FreehandDrawingModifier
     } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
-        theme: new SciChartJsNavyTheme()
+        theme: new SciTraderLightTheme()
     });
 
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
@@ -45,6 +43,7 @@ async function drawExample(divElementId) {
         new NativeTextAnnotation({
             x1: 5,
             y1: 9,
+            textColor: "#000",
             text: "Draw freehand annotations on the chart!\nTo edit any annotation after placement, you need to set \"isDrawing\" to false and select the annotation.",
             fontSize: 18,
             horizontalAnchorPoint: SciChart.EHorizontalAnchorPoint.Center,

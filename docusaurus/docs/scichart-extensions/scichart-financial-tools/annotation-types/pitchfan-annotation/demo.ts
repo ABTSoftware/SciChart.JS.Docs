@@ -74,7 +74,7 @@ async function drawExample(divElementId) {
     );
 
     sciChartSurface.chartModifiers.add(
-        new AnnotationHoverModifier({
+        new AnnotationHoverModifier({ // this is just to get nice cursor styles on hover / drag
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair
