@@ -4,7 +4,11 @@ import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-const USE_LOCAL_PACKAGE = false;
+const USE_LOCAL_PACKAGE = false; // for testing purposes
+
+// todo - revert back to using the same versions in the next minor release (now 5.2.28) of scichart.
+const financialToolsVersion = "5.2.31"; 
+// const financialToolsVersion = libraryVersion;
 
 enum EHtmlType {
     Default = "Default",
@@ -95,7 +99,7 @@ const getImportMap = (includeFinTools?: boolean) => {
         if (includeFinTools) {
             imports.push(
                 `"scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"`,
-                `"scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"`
+                `"scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${financialToolsVersion}/scichart-financial-tools.browser.mjs?v=${financialToolsVersion}"`
             );
         } 
     }
