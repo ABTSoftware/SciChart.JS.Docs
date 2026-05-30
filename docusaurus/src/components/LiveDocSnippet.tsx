@@ -98,7 +98,7 @@ const getImportMap = (includeFinTools?: boolean) => {
         }
         if (includeFinTools) {
             imports.push(
-                `"scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${libraryVersion}/scichart-financial-tools.browser.mjs?v=${libraryVersion}"`,
+                `"scichart": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${financialToolsVersion}/scichart-financial-tools.browser.mjs?v=${financialToolsVersion}"`,
                 `"scichart-financial-tools": "https://cdn.jsdelivr.net/npm/scichart-financial-tools@${financialToolsVersion}/scichart-financial-tools.browser.mjs?v=${financialToolsVersion}"`
             );
         } 
