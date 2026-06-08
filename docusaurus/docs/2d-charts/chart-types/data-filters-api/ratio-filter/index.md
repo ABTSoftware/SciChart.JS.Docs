@@ -14,46 +14,14 @@ Calculating a Ratio of Two Chart Series
 To create a ratio filter and apply to a chart, use the code below:
 
 <CodeSnippetBlock labels={["Ratio filter example"]}>
-    ```ts showLineNumbers
-    import { 
-        SciChartSurface,
-        NumericAxis,
-        XyDataSeries,
-        FastLineRenderableSeries,
-        NumberRange,
-        XyMovingAverageFilter 
-    } from "scichart";
-    ...
-    const { sciChartSurface, wasmContext } = await SciChartSurface.create('scichart-div-id-4');
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.1, 0.1) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy: new NumberRange(0.01, 0.01), autoRange: EAutoRange.Always }));
-    // A function to get some data - sinewave plus a randm factor
-    const getData = (start, count) => {
-        let xValues = \[\];
-        let yValues = \[\];
-        for (let i = start; i < start + count; i++) {
-            xValues.push(i);
-            yValues.push(2 \* Math.sin(i/10) + Math.random());      
-        }
-        return { xValues, yValues };
-    };
-    // Original Data
-    const dataSeries = new XyDataSeries(wasmContext, getData(0, 100));
-    const originalLine = new FastLineRenderableSeries(wasmContext, { dataSeries, stroke: "#5555ff", strokeThickness: 3 });
-    // Create the filter, passing in the original series
-    const movingAverage = new XyMovingAverageFilter(dataSeries, { length: 10 });
-    const filteredLine = new FastLineRenderableSeries(wasmContext, { dataSeries: movingAverage, stroke: "#cc6600", strokeThickness: 3 });
-    // Another filter using the same original data, but different length
-    const movingAverage30 = new XyMovingAverageFilter(dataSeries, { length: 30});
-    const filteredLine30 = new FastLineRenderableSeries(wasmContext, { dataSeries: movingAverage30, stroke: "#55dd55", strokeThickness: 3 });
-    sciChartSurface.renderableSeries.add(originalLine, filteredLine, filteredLine30);
+    ```ts showLineNumbers file=./RatioFilter/demo.ts start=#region_A_start end=#region_A_end
     ```
 
 </CodeSnippetBlock>
 
 This produces the following chart. We also added a LegendModifier to make it clear which line is which:
 
-![](img/1.png)
+<LiveDocSnippet name="./RatioFilter/demo" />
 
 The ratio filter requires that the original series and divisor series have the same number of elements.
 
