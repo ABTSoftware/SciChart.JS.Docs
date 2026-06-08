@@ -24,8 +24,6 @@ Simple Server Validation is the right choice if:
 - You are building an **Electron** or **Tauri** desktop application and want to keep the HMAC secret in the privileged process.
 - You want the **simplest possible integration** — a few lines in any language that supports HMAC-SHA256.
 
-If you need cryptographically enforced domain binding (rather than relying on CORS + client nonce), see [Deploying with Advanced Licensing (Native Server)](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/).
-
 ## Two delivery shapes
 
 A v2 token can take one of two shapes on the wire:
