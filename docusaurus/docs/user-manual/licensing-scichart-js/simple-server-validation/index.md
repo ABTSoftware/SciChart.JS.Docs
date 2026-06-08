@@ -88,7 +88,7 @@ Example licences:
 
 ### Server Secret
 
-Find your **Server Secret** in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Advanced Licensing**.
+Find your **Server Secret** in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Runtime License Key**, in the **Server Secret** section.
 It is a 64-character hex string (32 bytes). It will only be present if Simple Validation is enabled on your order.
 
 Keep this value secret — it is analogous to a private key. Never expose it to the browser, commit it to source control, or include it in client-side bundles.

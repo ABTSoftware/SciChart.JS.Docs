@@ -37,7 +37,7 @@ dotnet add package SciChart.AspNetCore.SimpleLicensing
 }
 ```
 
-For production, override via the standard ASP.NET Core configuration sources (user secrets, environment variables, Azure Key Vault, etc.). Find your Server Secret in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Advanced Licensing** — see "What you need" on the [main Simple Server Validation page](.).
+For production, override via the standard ASP.NET Core configuration sources (user secrets, environment variables, Azure Key Vault, etc.). Find your Server Secret in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Runtime License Key**, in the **Server Secret** section — see "What you need" on the [main Simple Server Validation page](.).
 
 ## Register the service and endpoint
 
