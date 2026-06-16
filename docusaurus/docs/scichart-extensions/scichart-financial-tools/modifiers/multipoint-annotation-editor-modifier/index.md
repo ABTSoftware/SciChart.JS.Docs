@@ -39,4 +39,4 @@ Manual definitions are best when a field needs custom coercion, conditional visi
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
 - [SeriesValueModifier](/scichart-extensions/scichart-financial-tools/modifiers/series-value-modifier/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
-- [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/extended-line-annotation/)
+- [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/extended-line-annotation/)

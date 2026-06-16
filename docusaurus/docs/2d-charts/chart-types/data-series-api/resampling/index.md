@@ -5,7 +5,7 @@ sidebar_position: 5
 # DataSeries Resampling
 
 :::tip
-**New to SciChart.js v2.1!** Resampling in SciChart.js enables [_tens of millions of data-points_](https://blog.scichart.com/surpassing-limits-javascript-bigdata-webassembly/) to be displayed in a JavaScript chart, or insane levels of high performance such as ten million candlesticks, enough for the entire history of Bitcoin to be displayed in a 1-minute chart.
+**New to SciChart.js v2.1!** Resampling in SciChart.js enables [_tens of millions of data-points_](https://www.scichart.com/blog/surpassing-limits-javascript-bigdata-webassembly/) to be displayed in a JavaScript chart, or insane levels of high performance such as ten million candlesticks, enough for the entire history of Bitcoin to be displayed in a 1-minute chart.
 :::
 
 By default, SciChart.js uses resampling of data to ensure the minimum viable data-set is displayed on the screen. SciChart.js resampling algorithms are sophisticated time-series simplification algorithms which result in **visually imperceptible changes to the chart**, but hugely improved performance. They improve performance by allowing you to draw datasets with millions, or tens of millions of points in a JavaScript Chart.
@@ -162,7 +162,7 @@ For smaller datasets Resampling will have no effect on performance. SciChart.js 
 
 For larger datasets, Resampling has a linear trade-off by dynamically reducing the data to the minimum viable set for visually identical drawing on the fly. You will start to see performance improvements from around 100,000 datapoints or more.
 
-With SciChart.js resampling, we were able to render [10,000,000 (ten million) data-points](https://blog.scichart.com/javascript-chart-performance-plotting-10-million-datapoints/) in under 25 milliseconds:
+With SciChart.js resampling, we were able to render [10,000,000 (ten million) data-points](https://www.scichart.com/blog/javascript-chart-performance-plotting-10-million-datapoints-in-under-25ms/) in under 25 milliseconds:
 
 <iframe width="100%" height="480" src="https://www.youtube.com/embed/gZIivKIpaO4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -176,7 +176,7 @@ Read further info on how to get the best performance from SciChart.js on our [pe
 
 - [The DataSeries API](/2d-charts/chart-types/data-series-api/data-series-api-overview/)
 
-- [How SciChart.js Transforms Trading Performance](https://blog.scichart.com/javascript-candlestick-charts-plotting-years-1-minute-data/)
+- [How SciChart.js Transforms Trading Performance](https://www.scichart.com/blog/javascript-candlestick-charts-plotting-years-1-minute-data/)
 
 ##### Miscellaneous APIs
 

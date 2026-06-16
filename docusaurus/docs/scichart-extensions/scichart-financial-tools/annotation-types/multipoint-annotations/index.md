@@ -76,7 +76,7 @@ This example reuses one `formatLabelStyle` callback across several annotation ty
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-conditional-labels" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {16,25,54,99-100,128-129,158-159} showLineNumbers file=./demo-conditional-labels.ts start=#region_A_start end=#region_A_end
+    ```ts {16,25,54,99-100,128-129,160-161} showLineNumbers file=./demo-conditional-labels.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -84,7 +84,7 @@ This example reuses one `formatLabelStyle` callback across several annotation ty
 
 Most Multi-point annotations can snap placement and edits to a series.
 
-```ts showLineNumbers {8-11}
+```ts showLineNumbers {10-12}
 import { ESnapMode, PolyLineAnnotation } from "scichart-financial-tools";
 
 const snapped = new PolyLineAnnotation({
@@ -92,15 +92,19 @@ const snapped = new PolyLineAnnotation({
         { x: 10, y: 0 },
         { x: 20, y: 0 }
     ],
+    isEditable: true,
+
     snapMode: ESnapMode.DataPoint,
     snapToDataPointRadius: 12,
     snapToSeriesId: "priceSeries",
-    snapToDataPointOnInit: true,
-    isEditable: true
 });
 ```
 
-Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#datapoint) when both X and Y should snap to the nearest point. Use [ESnapMode.XSlice:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#xslice) when the X value should snap to the nearest data point while preserving the annotation's Y value.
+Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#datapoint) when both X and Y should snap to the nearest point. Use [ESnapMode.XSlice:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#xslice) when the X value should snap to the nearest data point while preserving the annotation's Y value. 
+
+:::tip
+We recommend using `XSlice` for most annotations that are meant to be drawn on top of a price series, as it allows the user to place the annotation at any Y value while still snapping to the nearest X value in the series.
+:::
 
 ## Label Notes
 

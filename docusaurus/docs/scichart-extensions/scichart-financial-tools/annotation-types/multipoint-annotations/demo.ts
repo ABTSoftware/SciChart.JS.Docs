@@ -1,4 +1,5 @@
 import * as SciChart from "scichart";
+import { IMultiPointLabelFormatParams } from "scichart-financial-tools";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 
 async function drawExample(divElementId) {
@@ -113,11 +114,11 @@ async function drawExample(divElementId) {
             }),
 
             // Text callbacks can combine the label definition with live anchor values.
-            formatLabel: (params) => {
+            formatLabel: (params: IMultiPointLabelFormatParams): string => {
                 if (params.anchorMode === EMultiPointLabelAnchorMode.Point) {
                     return `${params.label.text} - ${toEngineering(params.anchorValuePoint.y)}`;
                 }
-                return params.label.text;
+                return params.label.text ?? "";
             },
 
             gripVisibility: EAnnotationVisibilityMode.Always,
@@ -126,7 +127,7 @@ async function drawExample(divElementId) {
     );
 
     sciChartSurface.chartModifiers.add(
-        new AnnotationHoverModifier({
+        new AnnotationHoverModifier({ // To enable nicer cursor styles
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair

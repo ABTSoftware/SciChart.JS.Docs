@@ -21,7 +21,7 @@ Controls the **automatic engine draw loop**:
 This is called internally during chart creation with the **opposite** of the `disableEngineLoop` option. For example, if you create a chart with `disableEngineLoop: true`, the engine calls `TSRSetDrawRequestsEnabled(false)`.
 
 ### `wasmContext.TSRRequestCanvasDraw(canvasId: string)`
-Marks a specific canvas for redraw on the **next frame**. This is called internally by [`invalidateElement()`](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). The actual draw occurs:
+Marks a specific canvas for redraw on the **next frame**. This is called internally by [`invalidateElement()`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html). The actual draw occurs:
 - On the next call to `TSRRequestDraw()`, or
 - On the next animation frame if the engine loop is enabled
 

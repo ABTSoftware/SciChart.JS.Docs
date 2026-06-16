@@ -23,7 +23,7 @@ SciChart.js v5 delivers transformative performance via [Wasm SIMD](https://v8.de
 - **Axes**: [BaseValueAxis](/2d-charts/axis-api/axis-types/base-value-axis/) (non‑linear scales), [DiscontinuousDateAxis](/2d-charts/axis-api/axis-types/discontinuous-date-axis/) (gapped financial data).
 - **Data support**: `Float64Array` for heatmaps/3D series; heatmaps up to 16K×16K.
 - **3D axes**: Multiline labels, auto‑rotation, plane options from WPF.
-- **Manual rendering**: [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render)
+- **Manual rendering**: [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render/)
 
 ## Performance Improvements
 
@@ -32,7 +32,7 @@ SciChart.js v5 delivers transformative performance via [Wasm SIMD](https://v8.de
 SciChart.js v5 and above is now compiled with [wasm-simd](https://v8.dev/features/simd). This enables the graphics engine to use 128‑bit SIMD registers (SSE/NEON) on Intel, AMD and ARM hardware across Windows, macOS, iOS, Android and Linux, allowing on‑chip parallelization for performance‑critical algorithms and maths functions. Wasm‑simd is portable and works on all modern browsers that support WebAssembly SIMD (see [caniuse.com](https://caniuse.com/wasm-simd)), including Chrome, Edge, Safari, Firefox, Opera, Chrome for Android, Safari iOS, Samsung Internet, Android Browser and Firefox for Android. SciChart.js auto‑detects wasm‑simd support in your browser and falls back to a non‑SIMD build for rare cases without support.
 
 :::info
-Adding wasm‑simd support results in a >2x–4x performance boost for big‑data charts in SciChart.js v5, as key algorithms such as resampling and AutoRange (axis autofitting) benefit from on‑chip parallelization. This applies automatically with no code changes required in your app, and configuring the non‑SIMD fallback is minimal (see [SIMD documentation](https://www.scichart.com/documentation/js/v5/2d-charts/surface/deploying-wasm/#simd-support) in the SciChart docs).
+Adding wasm‑simd support results in a >2x–4x performance boost for big‑data charts in SciChart.js v5, as key algorithms such as resampling and AutoRange (axis autofitting) benefit from on‑chip parallelization. This applies automatically with no code changes required in your app, and configuring the non‑SIMD fallback is minimal (see [SIMD documentation:blue_book:](https://www.scichart.com/documentation/js/v5/2d-charts/surface/deploying-wasm/#simd-support) in the SciChart docs).
 :::
 
 ### Bundle and library size reductions
@@ -118,18 +118,18 @@ A new [BaseValueAxis](/2d-charts/axis-api/axis-types/base-value-axis/) type uses
 
 ### Additional feature updates
 
-- Stacked Column charts now support [PaletteProvider](https://www.scichart.com/documentation/js/v5/2d-charts/chart-types/palette-provider-api/palette-provider-stacked-columns/) and per‑point coloring.
+- Stacked Column charts now support [PaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v5/2d-charts/chart-types/palette-provider-api/palette-provider-stacked-columns/) and per‑point coloring.
 - A `layoutMeasured` event was added; it fires mid‑render after axes are measured but before drawing, allowing modifiers to hit‑test and reposition annotations within the same frame to avoid extra renders.
 - Added `onResize` event to `SciChartSurface` ([Render Events documentation](https://scichart.com/documentation/js/v5/2d-charts/miscellaneous-apis/render-events/)).
 - `HeatmapDataSeries` and `UniformGridDataSeries3D` now support `Float64Array[]` as well as 2D `number[][]`.
 - `XyzDataSeries3D` now supports `Float64Array` as well as `number[]`.
-- 3D `SeriesInfo` types now expose `pointMetadata` ([3D Chart Styling Documentation](https://www.scichart.com/documentation/js/v5/3d-charts/axis-3d-api/chart-styling-3d/)).
+- 3D `SeriesInfo` types now expose `pointMetadata` ([3D Chart Styling Documentation:blue_book:](https://www.scichart.com/documentation/js/v5/3d-charts/axis-3d-api/chart-styling-3d/)).
 - Uniform heatmaps can bypass the former 4000×4000 limit, supporting textures up to the WebGL max (for example, 16384×16384, depending on hardware).
 - Multiple 3D axis improvements from WPF were ported: multiline labels/titles, auto‑rotation for perpendicular labels, `labelOffset`/`titleOffset`, axis planes (`xyAxisPlane`, `zyAxisPlane`, `zxAxisPlane`) with visibility/label placement options, and functioning `axisPlaneBackgroundFill`.
 
 ### Optional manual render control
 
-A new `disableEngineLoop` option on `SciChartSurface.create()` and `SciChart3DSurface.create()` allows disabling SciChart’s internal rendering loop when you manage rendering from an external loop. See the [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render) section in the documentation for usage patterns and examples.
+A new `disableEngineLoop` option on `SciChartSurface.create()` and `SciChart3DSurface.create()` allows disabling SciChart’s internal rendering loop when you manage rendering from an external loop. See the [Manual Render Control](/2d-charts/miscellaneous-apis/manual-render/) section in the documentation for usage patterns and examples.
 
 ---
 

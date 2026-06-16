@@ -6,8 +6,8 @@ sidebar_position: 9
 
 There are two properties on an axis that allow to manually set its size:
 
-- [axisThickness](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axisthickness) - The size of the axis perpendicular to its main direction (space occupied by labels, ticks, and title).
-- [axisLength](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axislength) - The size of the axis along its main direction (the direction the axis runs).
+- [axisThickness:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axisthickness) - The size of the axis perpendicular to its main direction (space occupied by labels, ticks, and title).
+- [axisLength:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/axisbase2d.html#axislength) - The size of the axis along its main direction (the direction the axis runs).
 
 ## Axis Thickness
 

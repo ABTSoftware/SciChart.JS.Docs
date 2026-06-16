@@ -93,7 +93,7 @@ async function drawExample(divElementId) {
             if (params.anchorMode === EMultiPointLabelAnchorMode.Point) {
                 return `${params.label.text} - ${toEngineering(params.anchorValuePoint.y)}`;
             }
-            return params.label.text;
+            return params.label.text ?? "";
         },
         gripVisibility: EAnnotationVisibilityMode.Always,
         adornerVisibility: EAnnotationVisibilityMode.OnInteraction

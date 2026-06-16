@@ -17,7 +17,7 @@ The [JavaScript Multi-Region Map Example](https://www.scichart.com/demo/react/mu
 
 ## Core Building Blocks
 
-The same series types used for [choropleth maps](..) are used here — one [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttrianglerenderableseries.html) per region for filled polygons, and a paired [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html) per region for outlines.
+The same series types used for [choropleth maps](/2d-charts/chart-types/choropleth-map) are used here — one [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttrianglerenderableseries.html) per region for filled polygons, and a paired [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html) per region for outlines.
 
 ## Switching Regions at Runtime
 
@@ -101,7 +101,7 @@ function preserveAspectRatio(sciChartSurface) {
 sciChartSurface.addDirtied(preserveAspectRatio);
 ```
 
-This is the same technique described in the [Choropleth Maps](..) parent page.
+This is the same technique described in the [Choropleth Maps](/2d-charts/chart-types/choropleth-map) parent page.
 
 ## Pre-Triangulated Data Format
 

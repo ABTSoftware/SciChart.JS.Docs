@@ -1,16 +1,7 @@
 import * as SciChart from "scichart";
 export async function ratioFilter(divElementId) {
     // #region_A_start
-    const {
-        SciChartSurface,
-        NumericAxis,
-        XyDataSeries,
-        FastLineRenderableSeries,
-        NumberRange,
-        XyRatioFilter,
-        LegendModifier,
-        SciChartJsNavyTheme
-    } = SciChart;
+    const { SciChartSurface, NumericAxis, XyDataSeries, FastLineRenderableSeries, NumberRange, XyRatioFilter, LegendModifier, SciChartJsNavyTheme } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -36,15 +27,11 @@ export async function ratioFilter(divElementId) {
         dataSeriesName: "Ratio"
     });
     // Add the original, divisor and ratio series to the chart
-    sciChartSurface.renderableSeries.add(
-        new FastLineRenderableSeries(wasmContext, {
-            dataSeries: originalSeries,
-            stroke: "#5555ff",
-            strokeThickness: 3
-        }),
-        new FastLineRenderableSeries(wasmContext, { dataSeries: divisorSeries, stroke: "#55dd55", strokeThickness: 3 }),
-        new FastLineRenderableSeries(wasmContext, { dataSeries: ratioSeries, stroke: "#cc6600", strokeThickness: 3 })
-    );
+    sciChartSurface.renderableSeries.add(new FastLineRenderableSeries(wasmContext, {
+        dataSeries: originalSeries,
+        stroke: "#5555ff",
+        strokeThickness: 3
+    }), new FastLineRenderableSeries(wasmContext, { dataSeries: divisorSeries, stroke: "#55dd55", strokeThickness: 3 }), new FastLineRenderableSeries(wasmContext, { dataSeries: ratioSeries, stroke: "#cc6600", strokeThickness: 3 }));
     // Add a LegendModifier to make it clear which line is which
     sciChartSurface.chartModifiers.add(new LegendModifier({ showCheckboxes: false }));
     // #region_A_end

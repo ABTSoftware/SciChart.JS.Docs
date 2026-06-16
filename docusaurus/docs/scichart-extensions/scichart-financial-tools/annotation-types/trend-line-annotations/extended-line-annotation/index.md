@@ -34,6 +34,6 @@ Use inherited multi-point labels for endpoint, segment or axis values.
 
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
-- [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotation/)
-- [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfan-annotation/)
+- [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfork-annotation/)
+- [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfan-annotation/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

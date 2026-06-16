@@ -69,6 +69,7 @@ async function drawExample(divElementId) {
             ],
             takeProfitColor: "#16A34A",
             stopLossColor: "#DC2626",
+            annotationsGripsStroke: "#111",
             fillOpacity: 0.18,
             strokeThickness: 2,
             isEditable: true,

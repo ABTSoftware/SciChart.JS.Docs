@@ -59,7 +59,7 @@ Simple Server Validation is ideal for OEM scenarios where you need to deploy Sci
 
 **Get started**
 
-1. Full documentation, including step-by-step implementation guides for every supported stack: [Simple Server Validation — SciChart.js Docs](https://www.scichart.com/documentation/js/v5/user-manual/licensing-scichart-js/simple-server-validation/)
+1. Full documentation, including step-by-step implementation guides for every supported stack: [Simple Server Validation — SciChart.js Docs:blue_book:](https://www.scichart.com/documentation/js/v5/user-manual/licensing-scichart-js/simple-server-validation/)
 2. Runnable example projects for Node.js, ASP.NET Core (Minimal API and MVC), Spring Boot, Electron, and Tauri are on GitHub: [SciChart.JS.Examples — AdvancedLicensing](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/AdvancedLicensing)
 3. Simple Server Validation requires a license with the SV (Simple Validation) feature flag. If you'd like this enabled on your order, please [contact technical sales](https://www.scichart.com/contact-us/#pre-sales) or [submit a support request](http://scichart.com/contact-us#tech-support).
 

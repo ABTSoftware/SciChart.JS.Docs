@@ -39,7 +39,7 @@ async function drawExample(divElementId) {
             strokeThickness: 2,
             annotationsGripsFill: "#FFFFFF",
             annotationsGripsStroke: "#111827",
-            annotationsGripsRadius: 5,
+            annotationsGripsRadius: 4,
             isEditable: true,
             isSelected: true,
             axisLabelStroke: "#FFF",

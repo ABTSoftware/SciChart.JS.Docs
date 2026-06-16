@@ -6,7 +6,7 @@ sidebar_position: 1
 
 In this tutorial, we'll show how to create a JavaScript chart in React using **scichart.js** and **scichart-react**.
 
-The previous tutorial [Tutorial 01 - Understanding the scichart-react boilerplate](../tutorial-01-setting-up-project-with-scichart-react/) serves as a reference. We'll use that boilerplate (npm setup, webpack config, package.json) as a starting point.
+The previous tutorial [Tutorial 01 - Understanding the scichart-react boilerplate](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react) serves as a reference. We'll use that boilerplate (npm setup, webpack config, package.json) as a starting point.
 
 Copy the boilerplate to a new folder or project. You can get the code from: [Boilerplates/scichart-react](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v5.x/BoilerPlates/scichart-react).
 

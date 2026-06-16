@@ -33,13 +33,23 @@ async function drawExample(divElementId) {
             // Return one string per line for the central measurement label.
             labelDataTemplate: ({ percentChange, bars, scaledDeltaY }) => [
                 `${percentChange.toFixed(2)}%`,
-                `${bars} bars`,
-                `${scaledDeltaY.toFixed(1)} bps`
+                `${Math.floor(bars)} bars`,
+                `${scaledDeltaY.toFixed(1)} bps` // these are basis points, so the scaled delta is formatted with one decimal place
             ],
-            isEditable: true
+            isEditable: true,
+            annotationsGripsStroke: "#333", // annotations that do NOT have "stroke" likely need a color set for the svg grips to look good
+            isSelected: true
         })
     );
     // #region_A_end
+
+    sciChartSurface.chartModifiers.add(
+        new SciChart.AnnotationHoverModifier({
+            enableHover: true,
+            enableCursor: true,
+            idleCursor: SciChart.ECursorStyle.Crosshair,
+        })
+    )
 }
 
 drawExample("scichart-root");

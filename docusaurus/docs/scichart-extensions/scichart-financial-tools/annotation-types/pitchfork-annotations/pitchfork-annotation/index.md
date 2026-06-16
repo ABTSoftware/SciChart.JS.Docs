@@ -19,7 +19,7 @@ Pitchfork annotations inherit multi-point labels for handle, shoulder and axis c
 #### See Also
 
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
-- [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfan-annotation/)
+- [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfan-annotation/)
 - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
-- [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/extended-line-annotation/)
+- [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/extended-line-annotation/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)

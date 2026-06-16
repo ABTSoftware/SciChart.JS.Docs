@@ -4,10 +4,10 @@ import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
 
-const USE_LOCAL_PACKAGE = false; // for testing purposes
+const USE_LOCAL_PACKAGE = true; // for testing purposes
 
 // todo - revert back to using the same versions in the next minor release (now 5.2.28) of scichart.
-const financialToolsVersion = "5.2.31"; 
+const financialToolsVersion = "5.2.41"; 
 // const financialToolsVersion = libraryVersion;
 
 enum EHtmlType {

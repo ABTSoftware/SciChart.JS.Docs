@@ -9,7 +9,7 @@ A Waterfall Chart visualizes how individual positive and negative values contrib
 In SciChart.js, Waterfall Charts are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html) with [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html), using `EColumnYMode.TopBottom` to position each bar between its accumulated start and end values.
 
 :::tip
-The [JavaScript Waterfall Chart Example](https://www.scichart.com/demo/react/waterfall-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/WaterfallChart) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/waterfall-chart).
+The [JavaScript Waterfall Chart Example](https://www.scichart.com/demo/react/waterfall-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/v4Charts/WaterfallChart) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/waterfall-chart).
 :::
 
 <ChartFromSciChartDemo
