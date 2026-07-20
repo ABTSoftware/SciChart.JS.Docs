@@ -114,9 +114,23 @@ We recommend using `XSlice` for most annotations that are meant to be drawn on t
 - A [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle) callback can suppress a label completely by returning a style with `fontSize: 0`.
 - Some trading annotations add their own specialized labels in addition to inherited multi-point labels. Fibonacci level labels and Measure labels are separate systems.
 
+## Custom Grips and Adorners
+
+Multi-point annotations also expose styling hooks for the handles and selection outline:
+
+- `selectionBoxStroke` and `selectionBoxThickness` control the selection outline itself.
+- `gripSvgTemplate` lets you replace the default vertex grips with a custom SVG. The callback receives the annotation plus hover / select / drag state and the drag-point id, which makes it easy to create different default, hover and selected appearances.
+- `annotationsGripsRadius`, `annotationsGripsFill` and `annotationsGripsStroke` are still useful as fallback values when a custom SVG wants to reuse the built-in palette.
+- `adornerStrokeLineCap` and `adornerStrokeLineJoin` control the selection outline style. They are especially useful on angular annotations where square or rounded caps make the adorner easier to read.
+- For a focused walkthrough of these properties, see [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/).
+
 #### See Also
 
 - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
+- [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/)
+- [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
+- [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
+- [Annotation eraser](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)

@@ -12,7 +12,7 @@ This page focuses on the properties that most strongly affect how those adorners
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {15-85} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {18,39,61} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

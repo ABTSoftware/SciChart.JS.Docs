@@ -1,21 +1,20 @@
 import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
+    const { AnnotationHoverModifier, ECursorStyle, NumericAxis, SciChartSurface } = SciChart; // or import from "scichart";
+    const { SciTraderLightTheme, InsidePitchforkAnnotation } = SciChartFinancialTools; // or import from "scichart-financial-tools";
+    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, { theme: new SciTraderLightTheme() });
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
     // #region_A_start
-    const { AnnotationHoverModifier, ECursorStyle, NumberRange, NumericAxis, SciChartSurface } = SciChart;
-    const { InsidePitchforkAnnotation, SciTraderLightTheme } = SciChartFinancialTools;
-    const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
-        theme: new SciTraderLightTheme()
-    });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 30) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
     sciChartSurface.annotations.add(new InsidePitchforkAnnotation({
-        isEditable: true,
         points: [
-            { x: 5, y: 12 },
-            { x: 12, y: 8 },
-            { x: 12, y: 4 }
+            { x: 2, y: 7 },
+            { x: 5, y: 3 },
+            { x: 5, y: 6 },
         ],
+        isEditable: true,
+        isSelected: true,
         stroke: "#A855F7",
         strokeThickness: 2,
         showFullWidthZone: true,
@@ -23,11 +22,11 @@ async function drawExample(divElementId) {
         showHalfWidthZone: true,
         halfWidthZoneFill: "#A855F733"
     }));
+    // #region_A_end
     sciChartSurface.chartModifiers.add(new AnnotationHoverModifier({
         enableHover: true,
         enableCursor: true,
         idleCursor: ECursorStyle.Crosshair
     }));
-    // #region_A_end
 }
 drawExample("scichart-root");

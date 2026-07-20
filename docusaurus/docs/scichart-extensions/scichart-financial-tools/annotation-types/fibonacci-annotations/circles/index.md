@@ -10,7 +10,7 @@ sidebar_label: Fibonacci circles
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {8,18,24,27,42} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {2} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ``` 
 </CodeSnippetBlock>
 

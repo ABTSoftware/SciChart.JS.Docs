@@ -10,7 +10,7 @@ sidebar_label: Pitchfork
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {14,24,33-34} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {2,16} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

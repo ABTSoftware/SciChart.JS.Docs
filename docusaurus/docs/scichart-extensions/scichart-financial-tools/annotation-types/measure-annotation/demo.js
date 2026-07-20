@@ -20,7 +20,7 @@ async function drawExample(divElementId) {
         decliningColor: "#DC2626",
         // Scale the delta into basis points for this financial example.
         yValueScaleFactor: 100,
-        // Return one string per line for the central measurement label.
+        // (optinoal) Return one string per line for the central measurement label.
         labelDataTemplate: ({ percentChange, bars, scaledDeltaY }) => [
             `${percentChange.toFixed(2)}%`,
             `${Math.floor(bars)} bars`,

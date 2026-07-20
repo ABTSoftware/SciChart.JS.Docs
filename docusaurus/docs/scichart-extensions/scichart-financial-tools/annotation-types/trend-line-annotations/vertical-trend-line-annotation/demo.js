@@ -1,17 +1,17 @@
 import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
-    const { SciChartSurface, NumericAxis, NumberRange, AnnotationHoverModifier, ECursorStyle, EAxisLabelDrawMode } = SciChart;
-    const { VerticalTrendLineAnnotation, EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, SciTraderLightTheme } = SciChartFinancialTools;
+    const { SciChartSurface, NumericAxis, NumberRange, AnnotationHoverModifier, ECursorStyle } = SciChart;
+    const { VerticalTrendLineAnnotation, EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, SciTraderLightTheme, EAxisLabelDrawMode } = SciChartFinancialTools;
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
     // #region_A_start
     sciChartSurface.annotations.add(new VerticalTrendLineAnnotation({
         isEditable: true,
-        points: [{ x: 8, y: 5 }],
+        points: [{ x: 4, y: 3 }],
         stroke: "#A78BFA",
         strokeThickness: 3,
         extendStart: true,
@@ -28,7 +28,7 @@ async function drawExample(divElementId) {
         gripVisibility: EAnnotationVisibilityMode.Always
     }), new VerticalTrendLineAnnotation({
         isEditable: true,
-        points: [{ x: 12, y: 11 }],
+        points: [{ x: 6, y: 5 }],
         stroke: "#22C55E",
         strokeThickness: 2,
         strokeDashArray: [16, 4],

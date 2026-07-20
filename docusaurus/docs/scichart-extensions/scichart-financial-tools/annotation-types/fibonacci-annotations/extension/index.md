@@ -10,7 +10,7 @@ sidebar_label: Fibonacci extension
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
  
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {10,20,22-26,34} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {2} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ``` 
 </CodeSnippetBlock> 
 

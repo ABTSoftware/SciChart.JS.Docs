@@ -2,25 +2,36 @@ import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 
 async function drawExample(divElementId) {
-    // #region_A_start
-    const { AnnotationHoverModifier, ECursorStyle, NumberRange, NumericAxis, SciChartSurface } = SciChart;
-    const { SciTraderLightTheme, SchiffPitchforkAnnotation } = SciChartFinancialTools;
-
+    const { 
+        AnnotationHoverModifier, 
+        ECursorStyle, 
+        NumberRange, 
+        NumericAxis, 
+        SciChartSurface 
+    } = SciChart; // or import from "scichart";
+    const { 
+        SciTraderLightTheme, 
+        SchiffPitchforkAnnotation 
+    } = SciChartFinancialTools; // or import from "scichart-financial-tools";
+    
+    
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 30) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-
+    
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    
+    // #region_A_start
     sciChartSurface.annotations.add(
         new SchiffPitchforkAnnotation({
-            isEditable: true,
             points: [
-                { x: 5, y: 12 },
-                { x: 12, y: 8 },
-                { x: 12, y: 4 }
+                { x: 2, y: 7 },
+                { x: 4, y: 3 },
+                { x: 5, y: 6 }
             ],
+            isEditable: true,
+            isSelected: true,
             stroke: "#38BDF8",
             strokeThickness: 2,
             showFullWidthZone: true,
@@ -29,6 +40,7 @@ async function drawExample(divElementId) {
             halfWidthZoneFill: "#0EA5E933"
         })
     );
+    // #region_A_end
 
     sciChartSurface.chartModifiers.add(
         new AnnotationHoverModifier({
@@ -37,7 +49,6 @@ async function drawExample(divElementId) {
             idleCursor: ECursorStyle.Crosshair
         })
     );
-    // #region_A_end
 }
 
 drawExample("scichart-root");

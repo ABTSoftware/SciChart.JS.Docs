@@ -6,14 +6,14 @@ async function drawExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
     // #region_A_start
     sciChartSurface.annotations.add(new AngleLineAnnotation({
         isEditable: true,
         points: [
-            { x: 3, y: 6 },
-            { x: 8, y: 12 }
+            { x: 1.5, y: 3 },
+            { x: 4, y: 6 }
         ],
         angleGuideLength: 60,
         stroke: "#F97316",
@@ -24,8 +24,8 @@ async function drawExample(divElementId) {
     }), new AngleLineAnnotation({
         isEditable: true,
         points: [
-            { x: 11, y: 14 },
-            { x: 16, y: 9 }
+            { x: 5.5, y: 7 },
+            { x: 8, y: 4.5 }
         ],
         stroke: "#22C55E",
         strokeThickness: 3,

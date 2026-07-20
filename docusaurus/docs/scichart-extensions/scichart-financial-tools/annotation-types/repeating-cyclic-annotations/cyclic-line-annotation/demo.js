@@ -6,15 +6,15 @@ async function drawExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
     // #region_A_start
     sciChartSurface.annotations.add(new CyclicLineAnnotation({
         isEditable: true,
         isSelected: true,
         points: [
-            { x: 5, y: 8 },
-            { x: 7, y: 8 }
+            { x: 2, y: 4 },
+            { x: 3, y: 4 }
         ],
         stroke: "#38BDF8",
         strokeThickness: 2,
@@ -27,6 +27,6 @@ async function drawExample(divElementId) {
         enableHover: true,
         enableCursor: true,
         idleCursor: ECursorStyle.Crosshair
-    }));
+    }), new SciChart.MouseWheelZoomModifier());
 }
 drawExample("scichart-root");

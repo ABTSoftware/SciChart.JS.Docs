@@ -13,13 +13,13 @@ async function drawExample(divElementId) {
         NumberRange,
         NumericAxis,
         SciChartSurface
-    } = SciChart;
+    } = SciChart; // or import from "scichart"
     const {
         EAnnotationVisibilityMode,
         EMultiPointLabelAnchorMode,
         PolyLineAnnotation,
         SciTraderLightTheme
-    } = SciChartFinancialTools;
+    } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
@@ -58,12 +58,12 @@ async function drawExample(divElementId) {
         }),
         buildWave(
             [
-                { x: 6, y: 118 },
-                { x: 16, y: 144 },
-                { x: 28, y: 132 },
-                { x: 40, y: 162 },
-                { x: 50, y: 142 },
-                { x: 62, y: 176 }
+                { x: 6, y: 138 },
+                { x: 16, y: 164 },
+                { x: 28, y: 152 },
+                { x: 40, y: 182 },
+                { x: 50, y: 162 },
+                { x: 62, y: 196 }
             ],
             "#7C3AED",
             "#7C3AED22",
@@ -85,7 +85,7 @@ async function drawExample(divElementId) {
     );
 
     sciChartSurface.chartModifiers.add(
-        new AnnotationHoverModifier({
+        new AnnotationHoverModifier({ // not needed, but makes the annotation Grips hover/drag Cursor style match actions
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair

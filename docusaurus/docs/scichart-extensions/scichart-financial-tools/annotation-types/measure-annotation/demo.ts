@@ -8,8 +8,10 @@ async function drawExample(divElementId) {
         NumericAxis,
         SciChartSurface
     } = SciChart; // or import from "scichart"
-    const { MeasureAnnotation,
-        SciTraderLightTheme } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
+    const { 
+        MeasureAnnotation,
+        SciTraderLightTheme 
+    } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
@@ -30,7 +32,7 @@ async function drawExample(divElementId) {
             decliningColor: "#DC2626",
             // Scale the delta into basis points for this financial example.
             yValueScaleFactor: 100,
-            // Return one string per line for the central measurement label.
+            // (optinoal) Return one string per line for the central measurement label.
             labelDataTemplate: ({ percentChange, bars, scaledDeltaY }) => [
                 `${percentChange.toFixed(2)}%`,
                 `${Math.floor(bars)} bars`,

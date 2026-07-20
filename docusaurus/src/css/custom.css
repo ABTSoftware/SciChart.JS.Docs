@@ -130,7 +130,7 @@ track it down within inspect element and change the variable from one of these c
 }
 
 /* Custom css for making the page look more SciChart-esque */
-.docMainContainer_TBSr {
+main[class*='docMainContainer_'] {
   background: linear-gradient(90deg, #12003e 0%, #2e0066 15%, #60008f 50%, #9c3874 85%, rgb(95,136,219) 100%) 0 0 / 100% 400px no-repeat, var(--bg-secondary) !important;
 
   > .container {
@@ -146,13 +146,36 @@ track it down within inspect element and change the variable from one of these c
 }
 
 @media (min-width: 997px) { /* screens that are wider than 997px */
-  .docMainContainer_TBSr {
+  main[class*='docMainContainer_'] {
     padding: 1.5rem !important;
 
     > .container > .row {
       border-radius: 8px;
     }
   }
+}
+
+@media (min-width: 997px) and (max-width: 1439px) {
+  main[class*='docMainContainer_'] > .container > .row > .col:first-child {
+    max-width: 100% !important;
+  }
+
+  main[class*='docMainContainer_'] > .container > .row > .col--3 {
+    display: none;
+  }
+}
+
+main[class*='docMainContainer_'] > .container:has(> .row > .col--3 > .theme-doc-toc-desktop:empty) {
+  max-width: 1100px !important;
+  margin-inline: auto;
+}
+
+main[class*='docMainContainer_'] > .container > .row:has(> .col--3 > .theme-doc-toc-desktop:empty) > .col:first-child {
+  max-width: 100% !important;
+}
+
+main[class*='docMainContainer_'] > .container > .row > .col--3:has(> .theme-doc-toc-desktop:empty) {
+  display: none;
 }
 
 .docSidebarContainer_YfHR {

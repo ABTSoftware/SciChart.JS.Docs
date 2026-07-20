@@ -83,7 +83,7 @@ async function drawExample(divElementId) {
     );
 
     sciChartSurface.chartModifiers.add(
-        new AnnotationHoverModifier({
+        new AnnotationHoverModifier({ // not needed, but makes the annotation Grips hover/drag Cursor style match actions
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair

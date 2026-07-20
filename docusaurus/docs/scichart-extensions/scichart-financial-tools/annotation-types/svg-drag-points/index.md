@@ -12,7 +12,7 @@ The built-in `annotationsGripsRadius`, `annotationsGripsFill` and `annotationsGr
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {25-52,56-111} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {24,42,84,97} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

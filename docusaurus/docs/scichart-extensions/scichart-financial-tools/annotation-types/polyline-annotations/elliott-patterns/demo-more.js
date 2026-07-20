@@ -2,8 +2,8 @@ import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
     // #region_A_start
-    const { AnnotationHoverModifier, ECursorStyle, EHorizontalAnchorPoint, EVerticalAnchorPoint, EVerticalTextPosition, NativeTextAnnotation, NumberRange, NumericAxis, SciChartSurface } = SciChart;
-    const { EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, PolyLineAnnotation, SciTraderLightTheme } = SciChartFinancialTools;
+    const { AnnotationHoverModifier, ECursorStyle, EHorizontalAnchorPoint, EVerticalAnchorPoint, EVerticalTextPosition, NativeTextAnnotation, NumberRange, NumericAxis, SciChartSurface } = SciChart; // or import from "scichart"
+    const { EAnnotationVisibilityMode, EMultiPointLabelAnchorMode, PolyLineAnnotation, SciTraderLightTheme } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
@@ -34,12 +34,12 @@ async function drawExample(divElementId) {
         fontSize: 13,
         textColor: "#111827"
     }), buildWave([
-        { x: 6, y: 118 },
-        { x: 16, y: 144 },
-        { x: 28, y: 132 },
-        { x: 40, y: 162 },
-        { x: 50, y: 142 },
-        { x: 62, y: 176 }
+        { x: 6, y: 138 },
+        { x: 16, y: 164 },
+        { x: 28, y: 152 },
+        { x: 40, y: 182 },
+        { x: 50, y: 162 },
+        { x: 62, y: 196 }
     ], "#7C3AED", "#7C3AED22", ["0", "1", "2", "3", "4", "5"]), buildWave([
         { x: 8, y: 100 },
         { x: 18, y: 122 },

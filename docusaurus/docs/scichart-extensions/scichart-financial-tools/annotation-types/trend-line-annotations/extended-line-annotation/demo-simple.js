@@ -23,5 +23,10 @@ async function drawExample(divElementId) {
         isSelected: true,
     }));
     // #region_A_end
+    sciChartSurface.chartModifiers.add(new SciChart.AnnotationHoverModifier({
+        enableHover: true,
+        enableCursor: true,
+        idleCursor: SciChart.ECursorStyle.Crosshair,
+    }));
 }
 drawExample("scichart-root");

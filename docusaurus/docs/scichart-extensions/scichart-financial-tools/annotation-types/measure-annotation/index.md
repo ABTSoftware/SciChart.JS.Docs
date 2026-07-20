@@ -10,7 +10,7 @@ sidebar_label: Measure annotation
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {17,24,25,27,29-33} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {19,26,27,31-35} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

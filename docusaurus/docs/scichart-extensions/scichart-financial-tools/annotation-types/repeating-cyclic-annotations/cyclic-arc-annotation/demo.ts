@@ -9,16 +9,17 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new CyclicArcAnnotation({
-            isEditable: true,
+            isEditable: true, 
+            isSelected: true,
             points: [
-                { x: 4, y: 13 },
-                { x: 5.5, y: 13 }
+                { x: 2, y: 7 },
+                { x: 3, y: 7 }
             ],
             stroke: "#111",
             fill: "#1115",
@@ -28,8 +29,8 @@ async function drawExample(divElementId) {
         new CyclicArcAnnotation({
             isEditable: true,
             points: [
-                { x: 12, y: 8 },
-                { x: 16, y: 8 }
+                { x: 4, y: 4 },
+                { x: 6, y: 4 }
             ],
             stroke: "#F97316",
             fill: "#F9731633",
@@ -44,7 +45,8 @@ async function drawExample(divElementId) {
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair
-        })
+        }),
+        new SciChart.MouseWheelZoomModifier()
     );
 }
 

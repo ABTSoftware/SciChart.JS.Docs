@@ -11,56 +11,6 @@ For the full API reference, see [API Documentation:blue_book:](https://www.scich
 
 The annotations integrate with normal SciChart.js surfaces and axes, but their multi-point editing model lives in `scichart-financial-tools`. Use this page as the map; the individual pages contain the focused live examples.
 
-```bash showLineNumbers
-npm install scichart scichart-financial-tools
-```
-
-```ts showLineNumbers
-import {
-    AnnotationEraserModifier,
-    AxisAlignedTrendLineAnnotationBase,
-    ChannelAnnotation,
-    AngleLineAnnotation,
-    CrossLineAnnotation,
-    CyclicArcAnnotation,
-    CyclicLineAnnotation,
-    EAnnotationVisibilityMode,
-    ETradingAnnotationType,
-    ExtendedLineAnnotation,
-    FibonacciTimeZoneAnnotation,
-    FibonacciCirclesAnnotation,
-    FibonacciExtensionAnnotation,
-    FibonacciRetracementAnnotation,
-    FibonacciSpeedResistanceArcsAnnotation,
-    FibonacciWedgeAnnotation,
-    FreehandDrawingAnnotation,
-    FreehandDrawingModifier,
-    MultiPointAnnotationBase,
-    MultiPointAnnotationEditorModifier,
-    MultiPointAnnotationPlacementModifier,
-    OhlcHeikinAshiFilter,
-    OhlcRenkoFilter,
-    RepeatedHorizontalIntervalAnnotationBase,
-    PitchfanAnnotation,
-    PitchforkAnnotation,
-    SchiffPitchforkAnnotation,
-    ModifiedSchiffPitchforkAnnotation,
-    InsidePitchforkAnnotation,
-    DisjointChannelAnnotation,
-    FlatBottomChannelAnnotation,
-    PointAndFigureFilter,
-    PolyLineAnnotation,
-    SectorAnnotation,
-    SciTraderLightTheme,
-    SeriesValueModifier,
-    StopLossTakeProfitAnnotation,
-    HorizontalTrendLineAnnotation,
-    VerticalTrendLineAnnotation
-} from "scichart-financial-tools";
-```
-
-Hover and cursor feedback in the examples uses `AnnotationHoverModifier` from `scichart`.
-
 ## Annotation Types
 
 | Annotation | Placement Points | Main Use |

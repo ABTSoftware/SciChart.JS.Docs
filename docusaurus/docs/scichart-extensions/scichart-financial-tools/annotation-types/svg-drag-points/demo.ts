@@ -11,12 +11,12 @@ async function drawExample(divElementId) {
         NativeTextAnnotation,
         NumberRange,
         NumericAxis,
-        SciChartSurface,
-        EVerticalTextPosition
+        SciChartSurface
     } = SciChart;
     const {
         PolyLineAnnotation,
-        SciTraderLightTheme
+        SciTraderLightTheme,
+        EAnnotationVisibilityMode
     } = SciChartFinancialTools;
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -29,13 +29,11 @@ async function drawExample(divElementId) {
     const hoverGrowGripSvgTemplate = (annotation, x, y, context) => {
         const strokeWidth = "strokeThickness" in annotation ? annotation.strokeThickness : 1;
         const radius = annotation.annotationsGripsRadius + (context?.isHovered ? 2 : 0);
-        const fill = context?.isDragging
-            ? "#F59E0B"
-            : context?.isSelected
-                ? "#10B981"
-                : context?.isHovered
-                    ? "#60A5FA"
-                    : annotation.annotationsGripsFill;
+        const fill = context?.isSelected
+            ? "#10B981"
+            : context?.isHovered
+                ? "#60A5FA"
+                : annotation.annotationsGripsFill;
 
         return `<circle
             cx="${x}" cy="${y}"
@@ -49,11 +47,9 @@ async function drawExample(divElementId) {
     const squareStateGripSvgTemplate = (annotation, x, y, context) => {
         const strokeWidth = "strokeThickness" in annotation ? annotation.strokeThickness : 1;
         const size = Math.max(6, annotation.annotationsGripsRadius * 2 + (context?.isSelected ? -2 : 0));
-        const fill = context?.isDragging
-            ? "#FB7185"
-            : context?.isSelected
-                ? "#22C55E"
-                : annotation.annotationsGripsFill;
+        const fill = context?.isSelected
+            ? "#222"
+            : annotation.annotationsGripsFill;
 
         return `<rect
             x="${x - size / 2}"
@@ -69,15 +65,6 @@ async function drawExample(divElementId) {
     };
 
     sciChartSurface.annotations.add(
-        new NativeTextAnnotation({
-            x1: 6,
-            y1: 128,
-            text: "Default grips",
-            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
-            verticalAnchorPoint: EVerticalAnchorPoint.Top,
-            fontSize: 14,
-            textColor: "#111827"
-        }),
         new PolyLineAnnotation({
             points: [
                 { x: 10, y: 118 },
@@ -87,24 +74,7 @@ async function drawExample(divElementId) {
             stroke: "#94A3B8",
             strokeThickness: 2,
             isEditable: true,
-            labels: [
-                {
-                    anchorMode: SciChartFinancialTools.EMultiPointLabelAnchorMode.Point,
-                    pointIndex: 1,
-                    text: "Default",
-                    verticalTextPosition: EVerticalTextPosition.Above
-                }
-            ],
-            pointLabelVisibility: SciChartFinancialTools.EAnnotationVisibilityMode.Always
-        }),
-        new NativeTextAnnotation({
-            x1: 6,
-            y1: 109,
-            text: "Hover grows",
-            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
-            verticalAnchorPoint: EVerticalAnchorPoint.Top,
-            fontSize: 14,
-            textColor: "#111827"
+            gripVisibility: EAnnotationVisibilityMode.Always,
         }),
         new PolyLineAnnotation({
             points: [
@@ -115,16 +85,8 @@ async function drawExample(divElementId) {
             stroke: "#3B82F6",
             strokeThickness: 2,
             isEditable: true,
+            gripVisibility: EAnnotationVisibilityMode.Always,
             gripSvgTemplate: hoverGrowGripSvgTemplate
-        }),
-        new NativeTextAnnotation({
-            x1: 6,
-            y1: 90,
-            text: "Selected state",
-            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
-            verticalAnchorPoint: EVerticalAnchorPoint.Top,
-            fontSize: 14,
-            textColor: "#111827"
         }),
         new PolyLineAnnotation({
             points: [
@@ -136,9 +98,41 @@ async function drawExample(divElementId) {
             strokeThickness: 2,
             isEditable: true,
             isSelected: true,
+            gripVisibility: EAnnotationVisibilityMode.Always,
             gripSvgTemplate: squareStateGripSvgTemplate
         })
     );
+    // #region_A_end
+
+    sciChartSurface.annotations.add(
+        new NativeTextAnnotation({
+            x1: 6,
+            y1: 128,
+            text: "Default grips",
+            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
+            verticalAnchorPoint: EVerticalAnchorPoint.Top,
+            fontSize: 14,
+            textColor: "#111827"
+        }),
+        new NativeTextAnnotation({
+            x1: 6,
+            y1: 109,
+            text: "Hover grows",
+            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
+            verticalAnchorPoint: EVerticalAnchorPoint.Top,
+            fontSize: 14,
+            textColor: "#111827",
+        }),
+        new NativeTextAnnotation({
+            x1: 6,
+            y1: 90,
+            text: "Selected state",
+            horizontalAnchorPoint: EHorizontalAnchorPoint.Left,
+            verticalAnchorPoint: EVerticalAnchorPoint.Top,
+            fontSize: 14,
+            textColor: "#111827",
+        }),
+    )
 
     sciChartSurface.chartModifiers.add(
         new AnnotationHoverModifier({
@@ -147,7 +141,6 @@ async function drawExample(divElementId) {
             idleCursor: ECursorStyle.Crosshair
         })
     );
-    // #region_A_end
 }
 
 drawExample("scichart-root");

@@ -99,11 +99,6 @@ const config: Config = {
                     position: "left"
                 },
                 {
-                    to: "/scichart-extensions/scichart-financial-tools/overview/",
-                    label: "Financial-Tools Docs",
-                    position: "left"
-                },
-                {
                     href: "https://www.scichart.com/documentation/js/v5/typedoc/index.html",
                     label: "API Docs",
                     position: "left"

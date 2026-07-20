@@ -9,18 +9,18 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 30) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new PitchfanAnnotation({
-            isEditable: true,
             points: [
-                { x: 5, y: 12 },
-                { x: 12, y: 8 },
-                { x: 12, y: 4 }
+                { x: 2, y: 2 },
+                { x: 2, y: 6 },
+                { x: 4, y: 5 }
             ],
+            isEditable: true,
             stroke: "#AA8C15",
             strokeThickness: 2,
             showShoulderLine: true,
@@ -30,16 +30,17 @@ async function drawExample(divElementId) {
             halfWidthZoneFill: "#A55E0B33"
         }),
         new PitchfanAnnotation({
-            isEditable: true,
             points: [
-                { x: 17, y: 11 },
-                { x: 23, y: 8 },
-                { x: 23, y: 5 }
+                { x: 4, y: 3 },
+                { x: 6, y: 5 },
+                { x: 7, y: 2 }
             ],
+            isEditable: true,
+            isSelected: true,
             stroke: "#38BDF8",
             strokeThickness: 2,
-            showShoulderLine: false,
-            showHalfWidthZone: true,
+            showShoulderLine: true, // set to `false` to hide the line joining the 2 shoulder points
+            showHalfWidthZone: false,
             halfWidthZoneFill: "#38BDF833"
         })
     );

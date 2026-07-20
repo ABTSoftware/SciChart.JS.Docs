@@ -34,7 +34,7 @@ The important part is to keep in mind that ANY pattern can be drawn with a `Poly
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-other" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {17,42} showLineNumbers file=./demo-other.ts start=#region_A_start end=#region_A_end
+    ```ts {17,42,48} showLineNumbers file=./demo-other.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -45,7 +45,7 @@ This variant keeps the same `PolyLineAnnotation` recipe but shows two labeled wa
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-more" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {14,24,32-41,45-75} showLineNumbers file=./demo-more.ts start=#region_A_start end=#region_A_end
+    ```ts {11,17,26,54,67} showLineNumbers file=./demo-more.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

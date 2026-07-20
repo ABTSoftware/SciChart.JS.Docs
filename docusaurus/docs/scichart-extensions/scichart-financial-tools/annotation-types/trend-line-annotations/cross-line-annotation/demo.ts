@@ -9,14 +9,14 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new CrossLineAnnotation({
             isEditable: true,
-            points: [{ x: 8, y: 8 }],
+            points: [{ x: 4, y: 4 }],
             stroke: "#F97316",
             strokeThickness: 2,
         }),

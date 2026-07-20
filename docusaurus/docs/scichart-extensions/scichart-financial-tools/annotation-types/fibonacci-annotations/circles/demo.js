@@ -1,29 +1,27 @@
 import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 async function drawExample(divElementId) {
-    // #region_A_start
     const { NumberRange, NumericAxis, SciChartSurface } = SciChart;
     const { EFibonacciLabelColorMode, EFibonacciLabelPlacement, FibonacciCirclesAnnotation, EAnnotationVisibilityMode, SciTraderLightTheme } = SciChartFinancialTools; // if using npm, import from "scichart-financial-tools";
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 100) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 1000) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    // #region_A_start
     sciChartSurface.annotations.add(new FibonacciCirclesAnnotation({
         // The two points are opposite corners of the threshold 1 oval.
         points: [
-            { x: 40, y: 390 },
-            { x: 61, y: 610 },
+            { x: 4, y: 4 },
+            { x: 6, y: 6 },
         ],
         thresholds: [
-            0, 0.236, 0.5, 0.618, 1, 1.618, 2.618, 3.618, 4.236
+            0, 0.618, 1, 1.618, 2.618, 3.618, 4.236
         ],
         regionColors: [
             "rgb(223,72,76)", // used for both strokes & fills of this annotation
             "rgb(231,147,46)",
             "rgb(68,151,130)",
-            "rgb(103,173,92)",
-            "rgb(85,185,209)",
             "rgb(128,128,128)",
             "rgb(214,56,101)",
             "rgb(56,97,246)",

@@ -2,7 +2,6 @@ import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
 
 async function drawExample(divElementId) {
-    // #region_A_start
     const {
         AnnotationHoverModifier,
         ECursorStyle,
@@ -15,20 +14,21 @@ async function drawExample(divElementId) {
         FibonacciRetracementAnnotation,
         SciTraderLightTheme
     } = SciChartFinancialTools;
-
+    
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 60) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(82, 136) }));
-
+    
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
+    
+    // #region_A_start
     sciChartSurface.annotations.add(
         new FibonacciRetracementAnnotation({
             points: [
-                { x: 10, y: 108 },
-                { x: 24, y: 121 },
-                { x: 44, y: 100 }
+                { x: 4, y: 4 },
+                { x: 7, y: 5 },
+                { x: 8, y: 2 }
             ],
             verticalOnly: false,
             strokeThickness: 2,
@@ -41,6 +41,7 @@ async function drawExample(divElementId) {
             isSelected: true
         })
     );
+    // #region_A_end
 
     sciChartSurface.chartModifiers.add(
         new AnnotationHoverModifier({
@@ -49,7 +50,6 @@ async function drawExample(divElementId) {
             idleCursor: ECursorStyle.Crosshair
         })
     );
-    // #region_A_end
 }
 
 drawExample("scichart-root");

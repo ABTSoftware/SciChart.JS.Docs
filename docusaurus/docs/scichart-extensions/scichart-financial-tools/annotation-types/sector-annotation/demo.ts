@@ -9,17 +9,17 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 30) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new SectorAnnotation({
             isEditable: true,
             points: [
-                { x: 5, y: 12 },
-                { x: 12, y: 8 },
-                { x: 15, y: 5 }
+                { x: 1.5, y: 6 },
+                { x: 4, y: 4 },
+                { x: 5, y: 2.5 }
             ],
             strokeThickness: 2,
             fillOpacity: 0.22,

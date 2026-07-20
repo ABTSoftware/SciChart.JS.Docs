@@ -13,7 +13,7 @@ sidebar_label: Extended line annotation
 
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {8,11,18,20-23,25,26} showLineNumbers file=./demo-simple.ts start=#region_A_start end=#region_A_end
+    ```ts {8,11,18,25,26} showLineNumbers file=./demo-simple.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

@@ -9,16 +9,17 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20), axisAlignment: EAxisAlignment.Top }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { axisAlignment: EAxisAlignment.Top }));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new FibonacciTimeZoneAnnotation({
             isEditable: true,
+            isSelected: true,
             points: [
-                { x: 3, y: 6 },
-                { x: 4, y: 6 }
+                { x: 1, y: 2 },
+                { x: 1.25, y: 2 }
             ],
             stroke: "#38F",
             strokeThickness: 2,
@@ -36,7 +37,8 @@ async function drawExample(divElementId) {
             enableHover: true,
             enableCursor: true,
             idleCursor: ECursorStyle.Crosshair
-        })
+        }),
+        new SciChart.MouseWheelZoomModifier(),
     );
 }
 

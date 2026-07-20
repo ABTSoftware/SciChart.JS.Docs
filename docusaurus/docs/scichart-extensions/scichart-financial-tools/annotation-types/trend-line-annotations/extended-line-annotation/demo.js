@@ -6,14 +6,14 @@ async function drawExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext));
     // #region_A_start
     sciChartSurface.annotations.add(new ExtendedLineAnnotation({
         isEditable: true,
         points: [
-            { x: 3, y: 3 },
-            { x: 7, y: 7 }
+            { x: 2, y: 2 },
+            { x: 4, y: 3 }
         ],
         extendStart: false,
         extendEnd: true,

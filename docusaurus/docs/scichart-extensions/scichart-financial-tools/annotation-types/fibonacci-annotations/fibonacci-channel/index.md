@@ -12,9 +12,9 @@ In that skewed mode, points 1 and 2 define the baseline, while point 3 defines t
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {15-18,24-30,34-38} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {2} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
-</CodeSnippetBlock>
+</CodeSnippetBlock> 
 
 :::tip
 If you want a skewed Fibonacci channel, keep using `FibonacciRetracementAnnotation` and switch `verticalOnly` off. The same class becomes a 3-point channel-like retracement without needing a new annotation type.

@@ -14,14 +14,14 @@ async function drawExample(divElementId) {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
-    sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 20) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext,));
+    sciChartSurface.yAxes.add(new NumericAxis(wasmContext,));
 
     // #region_A_start
     sciChartSurface.annotations.add(
         new HorizontalTrendLineAnnotation({
             isEditable: true,
-            points: [{ x: 4, y: 6 }],
+            points: [{ x: 2, y: 3 }],
             stroke: "#38BDF8",
             strokeThickness: 3,
             extendStart: true,
@@ -37,7 +37,7 @@ async function drawExample(divElementId) {
         }),
         new HorizontalTrendLineAnnotation({
             isEditable: true,
-            points: [{ x: 12, y: 13 }],
+            points: [{ x: 6, y: 7 }],
             stroke: "#F97316",
             strokeThickness: 2,
             strokeDashArray: [6, 3],
