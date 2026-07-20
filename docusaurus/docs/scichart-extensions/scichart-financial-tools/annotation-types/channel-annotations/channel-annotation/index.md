@@ -18,6 +18,12 @@ Enable [showMidPointGrips:blue_book:](https://www.scichart.com/documentation/js/
 
 Segment labels are useful when each edge needs its own text.
 
+:::tip
+- `fill` can be set to `null` if you only want the outline without a band fill.
+- `showMidLine` is independent from `showMidPointGrips`, so you can expose the edit handles without drawing the middle connector.
+- `midLineStrokeDashArray` lets the center line carry a different visual weight from the outer boundaries.
+:::
+
 #### See Also
 
 - [Channel annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)

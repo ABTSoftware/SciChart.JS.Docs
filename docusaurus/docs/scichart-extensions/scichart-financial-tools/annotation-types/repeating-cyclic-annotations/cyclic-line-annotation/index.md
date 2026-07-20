@@ -16,6 +16,12 @@ It inherits the shared multi-point editing and label behavior from `scichart-fin
     ```
 </CodeSnippetBlock>
 
+:::tip
+- `showConnectorLine` and `connectorLineStrokeDashArray` let you decide whether the base interval line should be visible and how strong it should look.
+- `maxRepeatCount` limits how many repeated cycle markers are drawn, which is useful when a chart would otherwise get too busy.
+- `extendStart` and `extendEnd` control whether the cycle pattern repeats before the first point or after the second point.
+:::
+
 #### See Also
 
 - [CyclicArcAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/cyclic-arc-annotation/)

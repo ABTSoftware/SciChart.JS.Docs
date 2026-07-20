@@ -32,11 +32,17 @@ Use [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/v5/
 
 Fibonacci annotations have two label systems. Inherited multi-point labels describe anchors or segments. Fibonacci level labels describe each threshold and are configured with [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelplacement), [fibonacciLabelColorMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelcolormode), [fibonacciLabelFontSize:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelfontsize), [fibonacciLabelLinePadding:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabellinepadding) and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#formatfibonaccilabel).
 
+:::tip
+- `FibonacciRetracementAnnotation` is the one Fibonacci tool that can switch between 2-point vertical mode and 3-point skewed mode via `verticalOnly`.
+- The new [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/) page shows the 3-point skewed retracement recipe in a channel-like layout.
+:::
+
 ## Placement Points
 
 | Annotation | Placement points | Meaning |
 | --- | ---: | --- |
 | [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/) | 2 by default, 3 in skewed mode | Point 1 to point 2 defines the retraced move. In skewed mode point 3 defines the parallel level direction. |
+| [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/) | 3 | Skewed retracement recipe: a retracement that behaves like a channel when `verticalOnly: false`. |
 | [FibonacciExtensionAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/extension/) | 3 | Points 1 and 2 define the measured trend. Point 3 anchors the projected levels. |
 | [FibonacciSpeedResistanceArcsAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/speed-resistance-arcs/) | 2 | Point 1 is the center. Point 2 defines threshold `1` radius and top/bottom direction. |
 | [FibonacciCirclesAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/circles/) | 2 | The points are opposite corners of the threshold `1` oval. |
@@ -56,7 +62,9 @@ classDiagram
 #### See Also
 
 - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
+- [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/)
 - [FibonacciExtensionAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/extension/)
 - [FibonacciCirclesAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/circles/)
 - [FibonacciSpeedResistanceArcsAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/speed-resistance-arcs/)
 - [FibonacciWedgeAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/wedge/)
+- [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)

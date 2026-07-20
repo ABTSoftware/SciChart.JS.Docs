@@ -34,6 +34,9 @@ Constructor options are useful when a page should open directly into one placeme
 #### See Also
 
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
+- [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
+- [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
+- [Annotation eraser](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/)
 - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [FreehandDrawingModifier](/scichart-extensions/scichart-financial-tools/modifiers/freehand-drawing-modifier/)

@@ -17,6 +17,8 @@ npm install scichart scichart-financial-tools
 
 ```ts showLineNumbers
 import {
+    AnnotationEraserModifier,
+    AxisAlignedTrendLineAnnotationBase,
     ChannelAnnotation,
     AngleLineAnnotation,
     CrossLineAnnotation,
@@ -34,15 +36,23 @@ import {
     FreehandDrawingAnnotation,
     FreehandDrawingModifier,
     MultiPointAnnotationBase,
+    MultiPointAnnotationEditorModifier,
     MultiPointAnnotationPlacementModifier,
     OhlcHeikinAshiFilter,
     OhlcRenkoFilter,
+    RepeatedHorizontalIntervalAnnotationBase,
     PitchfanAnnotation,
     PitchforkAnnotation,
+    SchiffPitchforkAnnotation,
+    ModifiedSchiffPitchforkAnnotation,
+    InsidePitchforkAnnotation,
+    DisjointChannelAnnotation,
+    FlatBottomChannelAnnotation,
     PointAndFigureFilter,
     PolyLineAnnotation,
     SectorAnnotation,
     SciTraderLightTheme,
+    SeriesValueModifier,
     StopLossTakeProfitAnnotation,
     HorizontalTrendLineAnnotation,
     VerticalTrendLineAnnotation
@@ -53,34 +63,22 @@ Hover and cursor feedback in the examples uses `AnnotationHoverModifier` from `s
 
 ## Annotation Types
 
-```mermaid
-flowchart TD
-    A["Trend Line Annotations"]
-    B["Repeating / Cyclic Annotations"]
-    C["Pitchfork Annotations"]
-    D["SectorAnnotation"]
-    A --> E["ExtendedLineAnnotation"]
-    A --> F["Horizontal / Vertical / Cross / Angle"]
-    B --> G["CyclicLineAnnotation"]
-    B --> H["CyclicArcAnnotation"]
-    B --> I["FibonacciTimeZoneAnnotation"]
-    C --> J["PitchforkAnnotation"]
-    C --> K["PitchfanAnnotation"]
-```
-
-| Annotation | Points | Main Use |
+| Annotation | Placement Points | Main Use |
 | --- | --- | --- |
 | [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html) | 2 or more | Base concrete multi-point line / polygon annotation |
 | [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/extended-line-annotation/) | 2 | Trend line, ray or infinite line |
-| [HorizontalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/horizontal-trend-line-annotation/) | 2 | Horizontal trend line |
-| [VerticalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/vertical-trend-line-annotation/) | 2 | Vertical trend line |
-| [CrossLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/cross-line-annotation/) | 2 | Crosshair-style guide from two points |
+| [HorizontalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/horizontal-trend-line-annotation/) | 1 | Horizontal trend line |
+| [VerticalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/vertical-trend-line-annotation/) | 1 | Vertical trend line |
+| [CrossLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/cross-line-annotation/) | 1 | Crosshair-style guide from a single anchor |
 | [AngleLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/angle-line-annotation/) | 2 | Angled guide line |
 | [CyclicLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/cyclic-line-annotation/) | 2 | Cyclical projection line |
 | [CyclicArcAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/cyclic-arc-annotation/) | 2 | Cyclical arc guide |
 | [FibonacciTimeZoneAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/fibonacci-time-zone-annotation/) | 2 | Fibonacci time-zone projections |
 | [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfork-annotation/) | 3 | Andrews' Pitchfork with optional zones |
 | [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfan-annotation/) | 3 | Projected fan lines from pitchfork points |
+| [SchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/schiff-pitchfork-annotation/) | 3 | Schiff pitchfork variant with an inward virtual handle |
+| [ModifiedSchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/modified-schiff-pitchfork-annotation/) | 3 | Modified Schiff pitchfork variant with a midpoint virtual handle |
+| [InsidePitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/inside-pitchfork-annotation/) | 3 | Inside pitchfork variant with an inward guide ray |
 | [SectorAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/sectorannotation.html) | 3 | Circular or radial sector annotation |
 | [ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/channelannotation.html) | 3 placement points, 4 corners | Parallel ChannelAnnotation |
 | [FlatBottomChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/flatbottomchannelannotation.html) | 3 placement points, 4 corners | Channel with horizontal lower boundary |
@@ -90,8 +88,6 @@ flowchart TD
 | [FibonacciCirclesAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccicirclesannotation.html) | 2 | Fibonacci circles or ovals from opposite corners |
 | [FibonacciSpeedResistanceArcsAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccispeedresistancearcsannotation.html) | 2 | Concentric speed resistance arcs from a center and radius |
 | [FibonacciWedgeAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciwedgeannotation.html) | 3 | Fibonacci arcs constrained inside a wedge |
-| [PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pitchforkannotation.html) | 3 | Andrews' Pitchfork with optional zones |
-| [PitchfanAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pitchfanannotation.html) | 3 | Projected fan lines from pitchfork points |
 | [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) | 2 | Change between two points |
 | [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) | 2 | Stop-loss or take-profit zone |
 | [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html) | Many sampled points | Editable freehand drawing stored as a polyline |
@@ -100,24 +96,60 @@ flowchart TD
 
 ```mermaid
 classDiagram
+    direction LR
+
+    class MultiPointAnnotationBase {
+      <<Abstract>>
+    }
+
+    class AxisAlignedTrendLineAnnotationBase {
+      <<Abstract>>
+    }
+
+    class RepeatedHorizontalIntervalAnnotationBase {
+      <<Abstract>>
+    }
+
+    class FibonacciAnnotationBase {
+      <<Abstract>>
+    }
+
+    class FibonacciArcAnnotationBase {
+      <<Abstract>>
+    }
+
     MultiPointAnnotationBase <|-- PolyLineAnnotation
     PolyLineAnnotation <|-- FreehandDrawingAnnotation
+
     MultiPointAnnotationBase <|-- ExtendedLineAnnotation
-    MultiPointAnnotationBase <|-- HorizontalTrendLineAnnotation
-    MultiPointAnnotationBase <|-- VerticalTrendLineAnnotation
-    MultiPointAnnotationBase <|-- CrossLineAnnotation
+
+    MultiPointAnnotationBase <|-- AxisAlignedTrendLineAnnotationBase
+    AxisAlignedTrendLineAnnotationBase <|-- HorizontalTrendLineAnnotation
+    AxisAlignedTrendLineAnnotationBase <|-- VerticalTrendLineAnnotation
+    AxisAlignedTrendLineAnnotationBase <|-- CrossLineAnnotation
+
     MultiPointAnnotationBase <|-- AngleLineAnnotation
     MultiPointAnnotationBase <|-- CyclicLineAnnotation
     MultiPointAnnotationBase <|-- CyclicArcAnnotation
-    MultiPointAnnotationBase <|-- FibonacciTimeZoneAnnotation
+
+    MultiPointAnnotationBase <|-- RepeatedHorizontalIntervalAnnotationBase
+    RepeatedHorizontalIntervalAnnotationBase <|-- FibonacciTimeZoneAnnotation
+
     MultiPointAnnotationBase <|-- SectorAnnotation
+
     MultiPointAnnotationBase <|-- ChannelAnnotation
     ChannelAnnotation <|-- FlatBottomChannelAnnotation
     ChannelAnnotation <|-- DisjointChannelAnnotation
+
     MultiPointAnnotationBase <|-- PitchforkAnnotation
     PitchforkAnnotation <|-- PitchfanAnnotation
+    PitchforkAnnotation <|-- SchiffPitchforkAnnotation
+    PitchforkAnnotation <|-- ModifiedSchiffPitchforkAnnotation
+    PitchforkAnnotation <|-- InsidePitchforkAnnotation
+
     MultiPointAnnotationBase <|-- MeasureAnnotation
     MultiPointAnnotationBase <|-- StopLossTakeProfitAnnotation
+
     MultiPointAnnotationBase <|-- FibonacciAnnotationBase
     FibonacciAnnotationBase <|-- FibonacciRetracementAnnotation
     FibonacciRetracementAnnotation <|-- FibonacciExtensionAnnotation
@@ -133,6 +165,7 @@ classDiagram
 | --- | --- |
 | [MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html) | Click-to-place workflow for supported multi-point annotations. See [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/). |
 | [MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) | Schema-driven editor panel for selected multi-point annotations. See [Annotation editor modifier](/scichart-extensions/scichart-financial-tools/modifiers/multipoint-annotation-editor-modifier/). |
+| [AnnotationEraserModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/annotationerasermodifier.html) | Pointer-driven eraser that removes annotations under a click or drag trail. See [Annotation eraser](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/). |
 | [FreehandDrawingModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingmodifier.html) | Captures pointer strokes and creates [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html) instances. See [Freehand drawing modifier](/scichart-extensions/scichart-financial-tools/modifiers/freehand-drawing-modifier/). |
 | [SeriesValueModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/seriesvaluemodifier.html) | Adds y-axis markers that track latest / last-visible renderable series values. See [Series value modifier](/scichart-extensions/scichart-financial-tools/modifiers/series-value-modifier/). |
 
@@ -175,7 +208,7 @@ Some tools also have their own label systems:
 - [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) has a measurement label and [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
 - [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) automatically contributes Y-axis labels for entry and target levels.
 
-For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/).
+For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/). For grip styling and selection outlines, see [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/), [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/) and [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/).
 
 #### See Also
 
@@ -190,4 +223,9 @@ For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/s
 - [Renko filter](/scichart-extensions/scichart-financial-tools/data-filters/renko/)
 - [Point & Figure filter](/scichart-extensions/scichart-financial-tools/data-filters/point-and-figure/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
+- [Annotation eraser](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/)
+- [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/)
+- [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
+- [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
+- [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/)
 - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)

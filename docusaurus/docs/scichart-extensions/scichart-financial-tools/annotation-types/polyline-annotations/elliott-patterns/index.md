@@ -22,9 +22,9 @@ For example, an Elliott impulse wave can be drawn as a simple 6-point [PolyLineA
 
 Keep the annotation editable so traders can adjust the vertices after placement.
 
-# Other Elliott patterns:
+## Other Elliott patterns
 
-This shows 2 more variants:
+This example shows two more variants:
 
 - An Elliott Motive Wave with labels: `["", "A", "B", "C", "D", "E"]`
 - An Elliott Triple correction with labels: `["(0)", "(W)", "(X)", "(Y)", "(X)", "(Z)"]`
@@ -35,6 +35,17 @@ The important part is to keep in mind that ANY pattern can be drawn with a `Poly
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {17,42} showLineNumbers file=./demo-other.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
+
+## Side-by-Side Elliott Layout
+
+This variant keeps the same `PolyLineAnnotation` recipe but shows two labeled wave structures on the same chart. It is a nice way to compare an impulse wave with a correction wave while keeping the label placement readable.
+
+<LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-more" />
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts {14,24,32-41,45-75} showLineNumbers file=./demo-more.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 

@@ -16,6 +16,11 @@ sidebar_label: Flat-bottom channel
 
 Use this variant when the channel needs a fixed support level and a sloped upper boundary.
 
+:::tip
+- The lower edge is kept horizontal automatically, so dragging the lower side still preserves a flat support line.
+- It inherits the same styling props as the base channel, including `fill`, `showMidLine` and `showMidPointGrips`.
+:::
+
 #### See Also
 
 - [Channel annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)

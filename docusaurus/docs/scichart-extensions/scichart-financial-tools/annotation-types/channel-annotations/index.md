@@ -21,9 +21,16 @@ classDiagram
 
 All channel variants inherit multi-point labels, segment labels, edit grips, midpoint grips and axis labels from [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html).
 
+:::tip
+- `ChannelAnnotation` gives you `showMidLine`, `midLineStrokeDashArray`, `showMidPointGrips` and `fill` so you can tune both the geometry and the visual weight of the channel.
+- `FlatBottomChannelAnnotation` keeps the lower edge horizontal while still reusing the same channel styling model.
+- `DisjointChannelAnnotation` defaults `showMidPointGrips` to `false` and renders its third grip as a square, vertical-only handle.
+:::
+
 #### See Also
 
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/channel-annotation/)
 - [FlatBottomChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/flat-bottom-channel/)
 - [DisjointChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/disjoint-channel/)
+- [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)

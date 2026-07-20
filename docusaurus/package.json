@@ -42,8 +42,8 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "remark-code-snippets": "^1.1.0",
-        "scichart": "^5.2.41",
-        "scichart-financial-tools": "^5.2.41",
+        "scichart": "^5.2.42",
+        "scichart-financial-tools": "^5.2.42",
         "url": "^0.11.4"
     },
     "devDependencies": {

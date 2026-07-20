@@ -5,7 +5,7 @@ sidebar_label: Trend lines
 
 # Trend Line Annotations
 
-These annotations draw directional or reference lines on a chart. Some are simple two-point lines, while others add axis labels, guide lines or extensions.
+These annotations draw directional or reference lines on a chart. `ExtendedLineAnnotation` and `AngleLineAnnotation` use two points, while the axis-aligned line types use a single anchor point to produce horizontal, vertical or cross-style guides.
 
 ```mermaid
 classDiagram

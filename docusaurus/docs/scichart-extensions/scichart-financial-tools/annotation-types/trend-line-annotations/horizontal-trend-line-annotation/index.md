@@ -5,7 +5,7 @@ sidebar_label: Horizontal trend line
 
 # HorizontalTrendLineAnnotation
 
-[HorizontalTrendLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/horizontaltrendlineannotation.html) is a two-point annotation that keeps the line horizontal, making it useful for support, resistance and flat price markers.
+[HorizontalTrendLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/horizontaltrendlineannotation.html) is a one-point annotation that keeps the line horizontal, making it useful for support, resistance and flat price markers.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 
@@ -15,6 +15,12 @@ It inherits the shared multi-point editing and label behavior from `scichart-fin
     ```ts showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
+
+:::tip
+- Use `extendStart` and `extendEnd` to turn the single anchor into a finite segment, a half-line or a full-span guide.
+- `strokeDashArray` can make the guide feel less dominant when you use it as a reference rather than a hard level.
+- The annotation still uses the shared multi-point grips, so `gripVisibility` and the general multi-point styling knobs all apply.
+:::
 
 #### See Also
 

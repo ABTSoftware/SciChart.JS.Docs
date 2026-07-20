@@ -9,9 +9,10 @@ These annotations project repeating line, arc or time-zone patterns forward from
 
 ```mermaid
 classDiagram
-    MultiPointAnnotationBase <|-- CyclicLineAnnotation
-    MultiPointAnnotationBase <|-- CyclicArcAnnotation
-    MultiPointAnnotationBase <|-- FibonacciTimeZoneAnnotation
+    MultiPointAnnotationBase <|-- RepeatedHorizontalIntervalAnnotationBase
+    RepeatedHorizontalIntervalAnnotationBase <|-- CyclicLineAnnotation
+    RepeatedHorizontalIntervalAnnotationBase <|-- CyclicArcAnnotation
+    RepeatedHorizontalIntervalAnnotationBase <|-- FibonacciTimeZoneAnnotation
 ```
 
 ## Annotation Types
@@ -25,4 +26,5 @@ classDiagram
 #### See Also
 
 - [Fibonacci annotations](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/)
+- [FibonacciTimeZoneAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/fibonacci-time-zone-annotation/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)

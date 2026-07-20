@@ -16,9 +16,17 @@ sidebar_label: Pitchfan
 
 Set [showShoulderLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pitchfanannotation.html#showshoulderline) to control the line joining the two shoulder points. Pitchfan annotations also inherit multi-point labels for handle, shoulder, segment and axis callouts.
 
+:::tip
+- `showShoulderLine` only hides the shoulder connector; the fan rays and pitchfork zones still render.
+- Because it extends `PitchforkAnnotation`, you can keep the same zone fills and line styling while changing only the projection style.
+:::
+
 #### See Also
 
 - [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfork-annotation/)
+- [SchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/schiff-pitchfork-annotation/)
+- [ModifiedSchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/modified-schiff-pitchfork-annotation/)
+- [InsidePitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/inside-pitchfork-annotation/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [Fibonacci annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)

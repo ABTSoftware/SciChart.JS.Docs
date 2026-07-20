@@ -16,6 +16,11 @@ sidebar_label: Disjoint channel
 
 The third point uses a special square drag grip and moves along the Y axis, making the offset role visible while editing.
 
+:::tip
+- `showMidPointGrips` defaults to `false` on this variant, because the third point is already a dedicated vertical-only offset control.
+- `showMidLine` and `fill` still work normally, so you can keep the disjoint geometry while changing the visual emphasis.
+:::
+
 #### See Also
 
 - [Channel annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)

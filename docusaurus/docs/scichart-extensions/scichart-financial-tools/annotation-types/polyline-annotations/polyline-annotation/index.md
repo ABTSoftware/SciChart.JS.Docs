@@ -20,13 +20,22 @@ Set [fill:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-t
 When using a [MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html), pass in the line annotation's options `placementPointCount: 5` for example, to allow the user to place 5 points on the chart when creating a new annotation. The PolyLineAnnotation will then render segments between those 5 points, and the user can edit the annotation to add more points if desired.
 :::
 
+:::tip
+- `fill` turns a polyline into a closed polygon when you want a shape instead of an open path.
+- `placementPointCount` is what makes the same class behave like a pattern tool instead of a simple line tool.
+- `gripSvgTemplate` can be used to customize the point handles, which is especially useful when the polyline needs to feel more like a trading tool than a generic editor.
+:::
+
 See [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/) for the shared label and snapping options.
 
 #### See Also
 
 - [Polyline annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/)
 - [XABCD pattern](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/xabcd-pattern/)
-- [Elliott wave](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-wave/)
+- [Elliott patterns](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-patterns/)
+- [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/)
+- [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
+- [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [FreehandDrawingAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/freehand-drawing-annotation/)

@@ -16,10 +16,19 @@ sidebar_label: Pitchfork
 
 Pitchfork annotations inherit multi-point labels for handle, shoulder and axis callouts.
 
+:::tip
+- `showFullWidthZone` and `showHalfWidthZone` let you control whether the outer and inner pitchfork zones are visible.
+- `fullWidthZoneFill` / `fullWidthZoneStroke` and `halfWidthZoneFill` / `halfWidthZoneStroke` can be tuned independently if you want the zones to read differently.
+- `strokeDashArray` is useful when you want the fork lines to feel more like guides than hard trend lines.
+:::
+
 #### See Also
 
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfan-annotation/)
+- [SchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/schiff-pitchfork-annotation/)
+- [ModifiedSchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/modified-schiff-pitchfork-annotation/)
+- [InsidePitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/inside-pitchfork-annotation/)
 - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
 - [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/extended-line-annotation/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)

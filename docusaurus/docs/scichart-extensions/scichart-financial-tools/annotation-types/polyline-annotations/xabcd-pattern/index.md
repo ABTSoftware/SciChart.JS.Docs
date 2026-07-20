@@ -34,4 +34,4 @@ E.g. the popular ABCD pattern can be implemented with `PolyLineAnnotation` with 
 - [Polyline annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/)
 - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
-- [Elliott Financial Patterns](/scichart-extensions/scichart-financial-tools/annotation-types/elliott-patterns/)
+- [Elliott patterns](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-patterns/)
