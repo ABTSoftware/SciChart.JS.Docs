@@ -7,9 +7,19 @@ sidebar_label: Overview
 
 `scichart-financial-tools` provides trading annotations, trading modifiers, trader themes, OHLC data filters and the label / snapping enums used by the examples in this section. The annotation types share [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html), [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html), and [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html).
 
+<ChartFromSciChartDemo
+    src="https://www.scichart.com/demo/iframe/trading-drawing-tools"
+    title="Trading Drawing Tools"
+    description=""
+/>
+
 For the full API reference, see [API Documentation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/index.html).
 
 The annotations integrate with normal SciChart.js surfaces and axes, but their multi-point editing model lives in `scichart-financial-tools`. Use this page as the map; the individual pages contain the focused live examples.
+
+```bash
+npm i scichart scichart-financial-tools
+```
 
 ## Annotation Types
 

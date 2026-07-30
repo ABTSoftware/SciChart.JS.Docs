@@ -7,7 +7,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 const USE_LOCAL_PACKAGE = false; // for testing purposes
 
 // todo - revert back to using the same versions in the next minor release (now 5.2.28) of scichart.
-const financialToolsVersion = "5.2.42"; 
+const financialToolsVersion = "5.2.62"; 
 // const financialToolsVersion = libraryVersion;
 
 enum EHtmlType {
