@@ -13,16 +13,13 @@ async function drawExample(divElementId) {
         NumericAxis,
         SciChartSurface
     } = SciChart;
-    const {
-        PolyLineAnnotation,
-        SciTraderLightTheme
-    } = SciChartFinancialTools;
+    const { PolyLineAnnotation, SciTraderLightTheme } = SciChartFinancialTools;
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
 
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 70) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 60) }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(84, 136) }));
 
     const createEditableLine = (points, stroke, isSelected = false) =>
@@ -75,7 +72,9 @@ async function drawExample(divElementId) {
     let clipboardOptions;
 
     const getSelectedAnnotation = () =>
-        sciChartSurface.annotations.asArray().find(annotation => annotation.isSelected && annotation instanceof PolyLineAnnotation);
+        sciChartSurface.annotations
+            .asArray()
+            .find(annotation => annotation.isSelected && annotation instanceof PolyLineAnnotation);
 
     const clonePolyline = (options, offsetX, offsetY) => ({
         ...options,
@@ -103,7 +102,7 @@ async function drawExample(divElementId) {
             return false;
         }
 
-        clipboardOptions = JSON.parse(JSON.stringify(selectedAnnotation.toJSON().options));
+        clipboardOptions = selectedAnnotation.toJSON().options;
         return true;
     };
 
@@ -112,7 +111,7 @@ async function drawExample(divElementId) {
             return false;
         }
 
-        const duplicate = new PolyLineAnnotation(clonePolyline(JSON.parse(JSON.stringify(clipboardOptions)), 3, -3));
+        const duplicate = new PolyLineAnnotation(clonePolyline(clipboardOptions, 3, -3));
         sciChartSurface.annotations.add(duplicate);
         return true;
     };
@@ -186,4 +185,3 @@ async function drawExample(divElementId) {
 }
 
 drawExample("scichart-root");
-

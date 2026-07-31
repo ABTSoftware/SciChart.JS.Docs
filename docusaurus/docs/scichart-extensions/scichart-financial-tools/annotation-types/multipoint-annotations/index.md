@@ -42,10 +42,11 @@ const annotation = new PolyLineAnnotation({
         { anchorMode: EMultiPointLabelAnchorMode.Point, pointIndex: 0 },
         { anchorMode: EMultiPointLabelAnchorMode.Axis, pointIndex: 1 }
     ],
-    formatLabel: ({ anchorValuePoint, anchorMode }) =>
-        anchorMode === EMultiPointLabelAnchorMode.Axis
+    formatLabel: ({ anchorValuePoint, anchorMode }) => {
+        return anchorMode === EMultiPointLabelAnchorMode.Axis
             ? anchorValuePoint.y.toFixed(2)
-            : `(${anchorValuePoint.x}, ${anchorValuePoint.y})`,
+            : `(${anchorValuePoint.x}, ${anchorValuePoint.y})`
+    }
     formatLabelStyle: ({ labelIndex, defaultStyle }) => ({
         ...defaultStyle,
         color: labelIndex === 0 ? "#50C7E0" : "#FFFFFF",
@@ -56,6 +57,16 @@ const annotation = new PolyLineAnnotation({
 
 For Builder API JSON configuration, register formatter functions by name and pass the registered name in [formatLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabel) or [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle).
 
+## Segment Label Rotation
+
+[ESegmentLabelRotationMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esegmentlabelrotationmode.html) controls how a segment label follows its line:
+
+| Mode | Behavior |
+| --- | --- |
+| `Horizontal` | Remains horizontal in screen coordinates. |
+| `Parallel` | Follows the segment and is the default when the option is omitted. |
+| `Perpendicular` | Rotates 90 degrees from the segment. |
+
 ## Advanced Label Formatting Examples
 
 ### Formatter Functions by Anchor Type
@@ -65,7 +76,7 @@ This example keeps the formatter small by branching on `anchorMode`: point label
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-label-formatting" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {91,110} showLineNumbers file=./demo-label-formatting.ts start=#region_A_start end=#region_A_end
+    ```ts {62,71,92,111} showLineNumbers file=./demo-label-formatting.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -79,32 +90,6 @@ This example reuses one `formatLabelStyle` callback across several annotation ty
     ```ts {16,25,54,99-100,128-129,160-161} showLineNumbers file=./demo-conditional-labels.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
-
-## Snapping
-
-Most Multi-point annotations can snap placement and edits to a series.
-
-```ts showLineNumbers {10-12}
-import { ESnapMode, PolyLineAnnotation } from "scichart-financial-tools";
-
-const snapped = new PolyLineAnnotation({
-    points: [
-        { x: 10, y: 0 },
-        { x: 20, y: 0 }
-    ],
-    isEditable: true,
-
-    snapMode: ESnapMode.DataPoint,
-    snapToDataPointRadius: 12,
-    snapToSeriesId: "priceSeries",
-});
-```
-
-Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#datapoint) when both X and Y should snap to the nearest point. Use [ESnapMode.XSlice:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esnapmode.html#xslice) when the X value should snap to the nearest data point while preserving the annotation's Y value. 
-
-:::tip
-We recommend using `XSlice` for most annotations that are meant to be drawn on top of a price series, as it allows the user to place the annotation at any Y value while still snapping to the nearest X value in the series.
-:::
 
 ## Label Notes
 
@@ -128,6 +113,7 @@ Multi-point annotations also expose styling hooks for the handles and selection 
 
 - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
 - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
+- [Annotation Point Snapping](/scichart-extensions/scichart-financial-tools/annotation-types/snapping/)
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
 - [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/)
 - [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)

@@ -30,6 +30,16 @@ The default is:
 
 Use [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#showconnectorline), [connectorLineStroke:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestroke) and [connectorLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestrokedasharray) to show how the placement points define the annotation.
 
+## Line and Connector Styling
+
+Use [strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#strokedasharray) to style the Fibonacci level lines or arcs. This is independent from `connectorLineStrokeDashArray`, which styles only the placement connector.
+
+Line-based Fibonacci tools also support [extendStart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendstart) and [extendEnd:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendend). Both default to `false`. They extend retracement, extension, and skewed Fibonacci-channel level lines and colored bands to the chart boundary. “Start” and “end” follow the calculated level-line point order, so they are not always the same as screen-left and screen-right.
+
+:::note
+`extendStart` and `extendEnd` do not extend Fibonacci circles, speed-resistance arcs, or wedges. Their level geometry can still use `strokeDashArray`.
+:::
+
 Fibonacci annotations have two label systems. Inherited multi-point labels describe anchors or segments. Fibonacci level labels describe each threshold and are configured with [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelplacement), [fibonacciLabelColorMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelcolormode), [fibonacciLabelFontSize:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelfontsize), [fibonacciLabelLinePadding:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabellinepadding) and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciannotationbase.html#formatfibonaccilabel).
 
 :::tip

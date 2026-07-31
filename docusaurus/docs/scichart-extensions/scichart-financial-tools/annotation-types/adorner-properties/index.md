@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.3
+sidebar_position: 2.4
 sidebar_label: Adorner properties
 ---
 

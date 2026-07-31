@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.2
+sidebar_position: 2.3
 sidebar_label: Keyboard shortcuts
 ---
 
@@ -17,7 +17,7 @@ This example keeps the logic deliberately small and uses `toJSON()` as the bridg
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {31-90,94-170} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts {130-168,170} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
@@ -33,4 +33,3 @@ The exact same shortcut pattern can be generalized to `ChannelAnnotation`, `Pitc
 - [Annotation eraser](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/)
 - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
-

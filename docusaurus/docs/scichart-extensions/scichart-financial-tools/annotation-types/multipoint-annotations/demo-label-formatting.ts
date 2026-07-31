@@ -73,6 +73,7 @@ async function drawExample(divElementId) {
                     segmentStartIndex: 1,
                     segmentEndIndex: 2,
                     segmentRatio: 0.5,
+                    segmentLabelRotationMode: ESegmentLabelRotationMode.Perpendicular,
                     verticalTextPosition: EVerticalTextPosition.Below
                 },
                 // axis labels:
@@ -121,7 +122,7 @@ async function drawExample(divElementId) {
                 }
                 return { ...defaultStyle };
             },
-            
+
             axisLabelStroke: "#FFFFFF",
             gripVisibility: EAnnotationVisibilityMode.Always
         })

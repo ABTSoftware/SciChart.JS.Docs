@@ -9,6 +9,8 @@ There is no separate `FibonacciChannelAnnotation` class in `scichart-financial-t
 
 In that skewed mode, points 1 and 2 define the baseline, while point 3 defines the parallel channel direction. The result is both Fibonacci and channel-like: the levels remain Fibonacci levels, but the geometry can lean with the move instead of staying vertical.
 
+Because this is still a `FibonacciRetracementAnnotation`, `extendStart` and `extendEnd` can project its skewed level lines and colored bands beyond either side.  Note that by changing the X order of the 2 points (where point 1's X value is before point 2's X value), the extensions will flip from "start" to "end" and vice versa. 
+
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
 <CodeSnippetBlock labels={["TS"]}>
@@ -26,4 +28,3 @@ If you want a skewed Fibonacci channel, keep using `FibonacciRetracementAnnotati
 - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
 - [Channel annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
-

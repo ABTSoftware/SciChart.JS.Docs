@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.1
+sidebar_position: 2.2
 sidebar_label: SVG drag points
 ---
 
@@ -26,4 +26,3 @@ The state object passed to `gripSvgTemplate` exposes `isHovered`, `isSelected` a
 - [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
 - [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
 - [AnnotationHoverModifier](/2d-charts/annotations-api/annotation-hover/)
-

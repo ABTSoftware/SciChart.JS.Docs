@@ -26,7 +26,7 @@ When using a [MultiPointAnnotationPlacementModifier:blue_book:](https://www.scic
 - `gripSvgTemplate` can be used to customize the point handles, which is especially useful when the polyline needs to feel more like a trading tool than a generic editor.
 :::
 
-See [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/) for the shared label and snapping options.
+See [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/) for shared label options and [Annotation Point Snapping](/scichart-extensions/scichart-financial-tools/annotation-types/snapping/) for snap behavior.
 
 #### See Also
 

@@ -168,11 +168,16 @@ Some tools also have their own label systems:
 - [MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) has a measurement label and [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
 - [StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) automatically contributes Y-axis labels for entry and target levels.
 
-For point, segment and axis label options, see [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/). For grip styling and selection outlines, see [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/), [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/) and [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/).
+## Grip Points
+
+- For grip snapping behavior, see [Annotation Point Snapping](/scichart-extensions/scichart-financial-tools/annotation-types/snapping/). 
+
+- For grip styling and selection outlines, see [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/), [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/) and [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/).
 
 #### See Also
 
 - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
+- [Annotation Point Snapping](/scichart-extensions/scichart-financial-tools/annotation-types/snapping/)
 - [Trend Line Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/)
 - [Repeating / cyclic annotations](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/)
 - [Pitchfork annotations](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/)

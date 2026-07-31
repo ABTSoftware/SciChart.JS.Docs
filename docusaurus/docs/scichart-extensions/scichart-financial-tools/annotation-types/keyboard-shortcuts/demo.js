@@ -7,7 +7,7 @@ async function drawExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciTraderLightTheme()
     });
-    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 70) }));
+    sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 60) }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(84, 136) }));
     const createEditableLine = (points, stroke, isSelected = false) => new PolyLineAnnotation({
         points,
@@ -39,7 +39,9 @@ async function drawExample(divElementId) {
         { x: 38, y: 97 }
     ], "#10B981"));
     let clipboardOptions;
-    const getSelectedAnnotation = () => sciChartSurface.annotations.asArray().find(annotation => annotation.isSelected && annotation instanceof PolyLineAnnotation);
+    const getSelectedAnnotation = () => sciChartSurface.annotations
+        .asArray()
+        .find(annotation => annotation.isSelected && annotation instanceof PolyLineAnnotation);
     const clonePolyline = (options, offsetX, offsetY) => ({
         ...options,
         points: (options.points ?? []).map(point => ({
@@ -62,14 +64,14 @@ async function drawExample(divElementId) {
         if (!selectedAnnotation) {
             return false;
         }
-        clipboardOptions = JSON.parse(JSON.stringify(selectedAnnotation.toJSON().options));
+        clipboardOptions = selectedAnnotation.toJSON().options;
         return true;
     };
     const pasteClipboardAnnotation = () => {
         if (!clipboardOptions) {
             return false;
         }
-        const duplicate = new PolyLineAnnotation(clonePolyline(JSON.parse(JSON.stringify(clipboardOptions)), 3, -3));
+        const duplicate = new PolyLineAnnotation(clonePolyline(clipboardOptions, 3, -3));
         sciChartSurface.annotations.add(duplicate);
         return true;
     };
