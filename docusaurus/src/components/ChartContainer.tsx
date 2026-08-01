@@ -1,8 +1,7 @@
 import { Sandpack } from "@codesandbox/sandpack-react";
 import commonJsContent from "!!raw-loader!./common.js";
 import scichartBundle from "!!raw-loader!../../node_modules/scichart/_wasm/scichart.browser.mjs";
-// import scichartWasm2D from "!!raw-loader!../../node_modules/scichart/_wasm/scichart2d.wasm";
-// import scichartWasm3D from "!!raw-loader!../../node_modules/scichart/_wasm/scichart3d.wasm";
+// import scichartWasm2D from "!!raw-loader!../../node_modules/scichart/_wasm/scichart.wasm";
 
 export default function ChartContainer(props?: { demoJsContent: string; htmlTemplate?: string, cssContent?: string }) {
     return (
@@ -60,11 +59,10 @@ export default function ChartContainer(props?: { demoJsContent: string; htmlTemp
                     code: props?.cssContent ?? "",
                     hidden: !props?.cssContent
                 },
-                // "scichart2d.wasm": {
+                // "scichart.wasm": {
                 //     code: scichartWasm2D,
                 //     hidden: true
-                // },
-                // "scichart3d.wasm": {
+                // }
                 //     code: scichartWasm3D,
                 //     hidden: true
                 // }

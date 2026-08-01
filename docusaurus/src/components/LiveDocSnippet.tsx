@@ -130,10 +130,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             SciChartSurface.UseCommunityLicense();
             
             SciChartSurface.configure({
-                wasmUrl: "${baseUrl}scichart2d.wasm"
-            });
-            SciChart3DSurface.configure({
-                wasmUrl: "${baseUrl}scichart3d.wasm"
+                wasmUrl: "${baseUrl}scichart.wasm"
             });
             SciChartDefaults.performanceWarnings = false;
         </script>
@@ -175,12 +172,8 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
 
                 SciChartSurface.UseCommunityLicense();
                 SciChartSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d-nosimd.wasm"
-                });
-                SciChart3DSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d-nosimd.wasm"
+                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.wasm",
+                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart-nosimd.wasm"
                 });
                 SciChartDefaults.performanceWarnings = false;
             </script>

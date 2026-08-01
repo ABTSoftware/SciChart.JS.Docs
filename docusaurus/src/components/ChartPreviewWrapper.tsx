@@ -27,10 +27,7 @@ export default function ChartPreviewWrapper(props?: { maxWidth?: string | number
                 import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
 
                 SciChartSurface.configure({
-                    wasmUrl: "${baseUrl}scichart2d.wasm"
-                });
-                SciChart3DSurface.configure({
-                    wasmUrl: "${baseUrl}scichart3d.wasm"
+                    wasmUrl: "${baseUrl}scichart.wasm"
                 });
                 SciChartDefaults.performanceWarnings = false;
             </script>
