@@ -254,7 +254,7 @@ In version 5 we introduced SIMD (Single Instruction, Multiple Data) support. SIM
 
 SIMD enhances performance of CPU intensive tasks like resampling. 
 
-[SciChartDefaults.useWasmSimd:blue_book:](http://stagingdemo.scichart.com/documentation/js/v5/typedoc/classes/scichartdefaults.html#usewasmsimd) setting is used to manage SIMD mode. By default `Auto` mode is used, which means it is enabled on all devices supporting SIMD. In case a device does not support SIMD instructions, it falls back to NO SIMD scenario and uses `scichart2d-nosimd.wasm` wasm file instead of `scichart2d.wasm`.
+[SciChartDefaults.useWasmSimd:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartdefaults.html#usewasmsimd) setting is used to manage SIMD mode. By default `Auto` mode is used, which means SIMD is enabled on all devices that support it. On a device without SIMD instructions SciChart falls back to the no-SIMD binary, loading `scichart-nosimd.wasm` instead of `scichart.wasm` — so in `Auto` mode you need to deploy both.
 
 Read more on [SIMD support here](/2d-charts/surface/deploying-wasm/#simd-support).
 
@@ -458,7 +458,12 @@ The engine has an internal loop based on `requestAnimationFrame` which triggers 
 If you do this you are then responsible for calling `webassemblyContext.TSRRequestDraw()` which will immediately draw all surfaces belonging to the webassemblyContext that have been invalidated. 
 
 :::tip 
-Note that 2D and 3D charts, and all charts created using `createSingle()` have separate webassemblyContexts so you must call `TSRRequestDraw()` on each one. This setting is applied to the webassembly context when a chart is created, so for `SciChartSurface.create()` this will change the behaviour of all existing charts created using `SciChartSurface.create()`.
+From v6, charts created with `SciChartSurface.create()` and `SciChart3DSurface.create()` **share a
+single webassemblyContext** — one wasm module carries both engines — so one `TSRRequestDraw()` call
+covers all of them. Charts created with `createSingle()` still get their own context, so you must
+call `TSRRequestDraw()` on each of those separately. This setting is applied to the webassembly
+context when a chart is created, so for `SciChartSurface.create()` this will change the behaviour of
+all existing charts created using `SciChartSurface.create()` or `SciChart3DSurface.create()`.
 :::
 
 The canvas will be cleared and require a redraw whenever it is resized. If you are trying to draw immediately after initializing the chart, be aware that if your css does not specify an absolute size for your chart div, you will likely get a resize event immediately after your initialization code yields.

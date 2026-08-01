@@ -59,6 +59,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
   - [What's New in SciChart.js SDK v4.0](/whats-new/sdk-4.0/)
   - [Breaking Changes in SciChart.js v5.x from v4.x](/whats-new/breaking-changes-v4-v5/)
   - [Breaking Changes in SciChart.js v4.x from v3.x](/whats-new/breaking-changes-v3-v4/)
+  - [Upgrading with the scichart-migrate tool](/whats-new/scichart-migrate/)
 - **2D Charts API**
   - **The SciChartSurface**
     - [The SciChartSurface Type](/2d-charts/surface/scichart-surface-type-overview/)

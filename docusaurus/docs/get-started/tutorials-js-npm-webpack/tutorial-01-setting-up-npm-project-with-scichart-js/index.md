@@ -132,15 +132,15 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "src/index.html", to: "" },
-                { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
-                { from: "node_modules/scichart/_wasm/scichart2d-nosimd.wasm", to: "" }
+                { from: "node_modules/scichart/_wasm/scichart.wasm", to: "" },
+                { from: "node_modules/scichart/_wasm/scichart-nosimd.wasm", to: "" }
             ]
         })
     ]
 };
 ```
 
-Your project with webpack.config.js should look like this. In particular, **notice the lines which copy scichart2d.wasm, scichart2d-nosimd.wasm to the output folder**. [Read more about SIMD here](/2d-charts/surface/deploying-wasm/#simd-support).
+Your project with webpack.config.js should look like this. In particular, **notice the lines which copy scichart.wasm, scichart-nosimd.wasm to the output folder**. A single wasm binary carries both the 2D and the 3D engine, so these two files are all you need to copy. [Read more about SIMD here](/2d-charts/surface/deploying-wasm/#simd-support).
 
 ![](1.jpg)
 

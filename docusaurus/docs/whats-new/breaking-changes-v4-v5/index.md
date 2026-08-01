@@ -4,6 +4,17 @@ sidebar_position: 4
 
 # Breaking Changes in SciChart.js v5.x from v4.x
 
+:::info This page documents the v4 → v5 boundary
+The wasm filenames below (`scichart2d.wasm`, `scichart3d.wasm` and their `-nosimd` variants) are
+**v5's** and are kept here as the historical record of that upgrade. They no longer exist: from v6 a
+single binary, `scichart.wasm`, serves both the 2D and the 3D engine.
+
+If you are upgrading to v6, do not copy the configuration snippets on this page. See
+[Deploying Wasm](/2d-charts/surface/deploying-wasm/), and let
+[`scichart-migrate`](/whats-new/scichart-migrate/) rewrite your copy configuration for you — it
+chains the v5 and v6 boundaries in one run.
+:::
+
 ## Default native font has been change from Arial to Arimo
 
 If you are using default native font, you will notice some small changes. 

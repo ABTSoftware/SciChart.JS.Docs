@@ -91,7 +91,7 @@ The order may differ depending on some configuration specifics.
 **Warning**
 
 :::warning
-**Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart2d.wasm, scichart2d-nosimd.wasm and scichart2d.js files are from the same version
+**Error**: Could not load SciChart WebAssembly module. Check your build process and ensure that your "scichart.wasm" and "scichart.js" files are from the same version.
 :::
 
 **Quotation Example**

@@ -53,7 +53,11 @@ async function initSciChart2() {
 If you get an error when loading a SciChart3DSurface as follows:
 
 :::warning
-Could not load SciChart WebAssembly module. Check your build process and ensure that your scichart3d.wasm and scichart3d.js files are from the same version
+Could not load SciChart WebAssembly module. Check your build process and ensure that your "scichart.wasm" and "scichart.js" files are from the same version.
 :::
 
-If so, find out how to resolve this at the page [Deploying Wasm and Data files](/2d-charts/surface/deploying-wasm/index.md).
+The message names `scichart.wasm` even though you are creating a 3D chart. That is expected: from v6 a
+**single** wasm binary carries both the 2D and the 3D engine, so there is no 3D-specific file to
+deploy. If your 2D charts already work, 3D needs nothing extra.
+
+If so, find out how to resolve this at the page [Deploying Wasm and Data files](/2d-charts/surface/deploying-wasm/).

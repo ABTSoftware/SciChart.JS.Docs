@@ -4,6 +4,12 @@ sidebar_position: 1
 
 # Tutorial 01 - Including SciChart.js in an HTML Page using CDN
 
+:::note
+The `<script>` examples below pin `5.0.0-alpha.135` to show how version pinning works — substitute
+the version you want. Wasm filenames are current: from v6 a single `scichart.wasm` serves both the
+2D and the 3D engine, replacing v5's `scichart2d`/`scichart3d` pair.
+:::
+
 This set of tutorials will be limited to how to use SciChart.js by including index.min.js in a vanilla JS application (without npm and webpack).
 
 We recommend going through the following tutorials which explain the API first.                        
@@ -204,10 +210,10 @@ SciChartSurface.useWasmFromCDN();
 which is equivalent to calling SciChartSurface.configure() with the URL from the CDN for wasm file
 
 ```js
-const libraryVersion = "5.0.0";
+// libraryVersion is baked into the build, so the URL always matches the script you loaded
 SciChartSurface.configure({
-  wasmUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d.wasm`,
-  wasmNoSimdUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d-nosimd.wasm`
+  wasmUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.wasm`,
+  wasmNoSimdUrl: `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart-nosimd.wasm`
 });
 ```
 

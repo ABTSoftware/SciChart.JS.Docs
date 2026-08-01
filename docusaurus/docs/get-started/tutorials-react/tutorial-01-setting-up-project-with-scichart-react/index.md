@@ -145,14 +145,12 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "src/index.html", to: "" },
-        // Required for scichart to load wasm files for 2D charts
+        // Required for scichart to load wasm files. One binary serves both 2D and 3D charts,
+        // so there is nothing extra to copy if you add 3D charts later.
         // Loading from CDN is also possible by calling SciChartSurface.loadWasmFromCDN()
-        { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
+        { from: "node_modules/scichart/_wasm/scichart.wasm", to: "" },
         // This one also needed to work in browsers without SIMD support
-        { from: "node_modules/scichart/_wasm/scichart2d-nosimd.wasm", to: "" },
-        // Optional: if including 3D charts copy these files
-        { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
-        { from: "node_modules/scichart/_wasm/scichart3d-nosimd.wasm", to: "" },
+        { from: "node_modules/scichart/_wasm/scichart-nosimd.wasm", to: "" },
       ],
     }),
   ],
@@ -168,7 +166,7 @@ module.exports = {
 ```
 </CodeSnippetBlock>
 
-Note in particular the use of **CopyPlugin** (from **copy-webpack-plugin**) which copies `scichart2d.wasm`, `scichart2d-nosimd.wasm` and `scichart3d.wasm`, `scichart3d-nosimd.wasm` (optional for 3D charts) to the output directory.
+Note in particular the use of **CopyPlugin** (from **copy-webpack-plugin**) which copies `scichart.wasm` and `scichart-nosimd.wasm` to the output directory. A single wasm binary carries both the 2D and the 3D engine, so there are no additional files to copy if you use 3D charts.
 
 :::tip
 Other methods of loading wasm and more detail is provided in the page [Deploying Wasm (WebAssembly) files with your app](/2d-charts/surface/deploying-wasm/). It's even possible to load wasm from our CDN and skip this step entirely for the purpose of learning.

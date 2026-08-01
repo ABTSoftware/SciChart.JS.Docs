@@ -4,6 +4,16 @@ sidebar_position: 2
 
 # Tutorial 02 - Including index.min.js and WebAssembly Files offline
 
+:::warning Filenames on this page are pinned to v5
+This tutorial walks through downloading a specific version, `5.0.0-alpha.135`, so the wasm filenames
+below are that version's: `scichart2d.wasm` and `scichart3d.wasm` plus their `-nosimd` variants.
+
+**From v6 there is one binary for both engines**, so the equivalent download list is just
+`scichart.wasm` and `scichart-nosimd.wasm` (plus `scichart-64.wasm` only if you opt into wasm64).
+Substitute your own version in the URLs and download the files that version actually ships. See
+[Deploying Wasm](/2d-charts/surface/deploying-wasm/).
+:::
+
 This set of tutorials will be limited to how to use SciChart.js by including index.min.js in a vanilla JS application (without npm and webpack).
 
 We recommend going through the following tutorials which explain the API first.                        

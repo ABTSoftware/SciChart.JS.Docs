@@ -8,6 +8,14 @@ SciChart.js v4 is a very big release with many new features and many fixes and i
 
 We in the the process of updating our documentation and examples for all the changes and new features.  let us know if you find something that is out of date.
 
+:::info This page documents the v3 → v4 boundary
+Filenames on this page are v4's. If you are upgrading further, note that from v6 a single binary,
+`scichart.wasm`, replaces the `scichart2d`/`scichart3d` pair — see
+[Deploying Wasm](/2d-charts/surface/deploying-wasm/).
+[`scichart-migrate`](/whats-new/scichart-migrate/) chains every boundary between your current
+version and v6 in one run.
+:::
+
 .data files removed
 -------------------
 
