@@ -27,7 +27,7 @@ async function drawExample(divElementId) {
         regionColors: [
             "#38F",
             "#f93416" // This array would ideally have as many colors as (thresholds - 1)
-            // But, missing intermediate colors are interpolated.
+            // But, missing intermediate colors are interpolated for you.
         ],
         fillOpacity: 0.2,
         fibonacciLabelPlacement: EFibonacciLabelPlacement.Top,

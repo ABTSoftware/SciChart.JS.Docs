@@ -10,7 +10,7 @@ sidebar_label: Fibonacci retracement
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" htmlPath="./demo.html" />
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts {2,13} showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
+    ```ts showLineNumbers file=./demo.ts start=#region_A_start end=#region_A_end
     ```
 </CodeSnippetBlock>
 
