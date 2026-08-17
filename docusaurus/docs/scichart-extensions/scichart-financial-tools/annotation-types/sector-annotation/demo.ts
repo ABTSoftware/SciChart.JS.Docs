@@ -17,14 +17,15 @@ async function drawExample(divElementId) {
         new SectorAnnotation({
             isEditable: true,
             points: [
-                { x: 1.5, y: 6 },
-                { x: 4, y: 4 },
-                { x: 5, y: 2.5 }
+                { x: 2, y: 3 },
+                { x: 7, y: 8 },
+                { x: 8, y: 2 }
             ],
             strokeThickness: 2,
-            fillOpacity: 0.22,
+            fillOpacity: 0.25,
             thresholds: [0, 1],
-            regionColors: ["#38BDF833"]
+            regionColors: [ "#38BDF8" ],
+            selectionBoxStroke: "none"
         })
     );
     // #region_A_end
