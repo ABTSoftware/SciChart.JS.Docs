@@ -1,5 +1,6 @@
 import * as SciChart from "scichart";
 import * as SciChartFinancialTools from "scichart-financial-tools";
+import type { IAnnotationGripSvgContext } from "scichart-financial-tools";
 
 async function drawExample(divElementId) {
     // #region_A_start
@@ -26,7 +27,7 @@ async function drawExample(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(0, 60) }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { visibleRange: new NumberRange(72, 132) }));
 
-    const hoverGrowGripSvgTemplate = (annotation, x, y, context) => {
+    const hoverGrowGripSvgTemplate = (annotation, x, y, context?: IAnnotationGripSvgContext) => {
         const strokeWidth = "strokeThickness" in annotation ? annotation.strokeThickness : 1;
         const radius = annotation.annotationsGripsRadius + (context?.isHovered ? 2 : 0);
         const fill = context?.isSelected
@@ -44,7 +45,7 @@ async function drawExample(divElementId) {
         />`;
     };
 
-    const squareStateGripSvgTemplate = (annotation, x, y, context) => {
+    const squareStateGripSvgTemplate = (annotation, x, y, context?: IAnnotationGripSvgContext) => {
         const strokeWidth = "strokeThickness" in annotation ? annotation.strokeThickness : 1;
         const size = Math.max(6, annotation.annotationsGripsRadius * 2 + (context?.isSelected ? -2 : 0));
         const fill = context?.isSelected
