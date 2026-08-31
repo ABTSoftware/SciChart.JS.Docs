@@ -81,7 +81,7 @@ const config: Config = {
         // Replace with your project's social card
         image: "img/Default-Social-Image.jpg",
         navbar: {
-            title: "SciChart.js Docs v5",
+            title: "SciChart.js Docs v6",
             logo: {
                 alt: "SciChart LOGO",
                 src: "img/logo.svg"
@@ -102,6 +102,11 @@ const config: Config = {
                     href: "https://www.scichart.com/documentation/js/v5/typedoc/index.html",
                     label: "API Docs",
                     position: "left"
+                },
+                {
+                    href: "https://www.scichart.com/documentation/js/v5/intro",
+                    label: "Docs v5",
+                    position: "right"
                 },
                 {
                     href: "https://www.scichart.com/documentation/js/v4/intro",

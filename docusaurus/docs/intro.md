@@ -1,11 +1,11 @@
 ---
-title: SciChart.js Docs v5
-description: SciChart.js Documentation version 5
-keywords: [scichart.js, scichart, js, javascript, documentation, docs, version 5, v5]
+title: SciChart.js Docs v6
+description: SciChart.js Documentation version 6
+keywords: [scichart.js, scichart, js, javascript, documentation, docs, version 6, v6]
 sidebar_position: 0
 ---
 
-# SciChart.js Documentation version 5
+# SciChart.js Documentation version 6
 
 :::tip
 Are you new to SciChart? Check out our most popular pages to get started below:
