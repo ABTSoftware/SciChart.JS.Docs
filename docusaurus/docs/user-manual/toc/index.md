@@ -18,7 +18,8 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Location & Management of Licenses after Purchase](/user-manual/licensing-scichart-js/where-are-my-license-keys/)
     - [Activating a Purchased Developer License](/user-manual/licensing-scichart-js/activating-paid-licenses/)
     - [Deploying SciChart.js to Domains](/user-manual/licensing-scichart-js/deploying-to-live-sites/)
-    - [Deploying SciChart.js with Advanced Licensing (OEM)](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/)
+    - [Deploying SciChart.js with Advanced Licensing — Native Server (OEM)](/user-manual/licensing-scichart-js/deploying-with-advanced-licensing/)
+    - [Simple Server Validation](/user-manual/licensing-scichart-js/simple-server-validation/)
     - [Github Source Code Access](/user-manual/licensing-scichart-js/github-source-code-access/)
     - [SciChart.js Licensing Troubleshooting](/user-manual/licensing-scichart-js/licensing-troubleshooting/)
     - [Misc licensing faqs](/user-manual/licensing-scichart-js/misc-licensing-faq/)
@@ -55,8 +56,12 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Hover and Click Interactions](/get-started/faqs/faq_hover_interactions/)
     - [FAQ: Generating a Standalone SciChart HTML File](/get-started/faqs/faq_standaloneHTMLfile/)
 - **What's New?**
+  - [What's New in SciChart.js SDK v6.0](/whats-new/sdk-6.0/)
+  - [What's New in SciChart.js SDK v5.2](/whats-new/sdk-5.2/)
   - [What's New in SciChart.js SDK v5.0](/whats-new/sdk-5.0/)
   - [What's New in SciChart.js SDK v4.0](/whats-new/sdk-4.0/)
+  - [Breaking Changes in SciChart.js v6.0 from v5.2](/whats-new/breaking-changes-v5.2-v6.0/)
+  - [Breaking Changes in SciChart.js v5.2 from v5.1](/whats-new/breaking-changes-v5.1-v5.2/)
   - [Breaking Changes in SciChart.js v5.x from v4.x](/whats-new/breaking-changes-v4-v5/)
   - [Breaking Changes in SciChart.js v4.x from v3.x](/whats-new/breaking-changes-v3-v4/)
 - **2D Charts API**
@@ -67,6 +72,10 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Setting a Runtime License on a SciChartSurface](/2d-charts/surface/runtime-license/)
     - [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wasm/)
   - **2D Chart Types**
+    - **waterfall-renderable-series**
+      - [Interactive Waterfall (Spectral) Chart](/2d-charts/chart-types/waterfall-renderable-series/interactive-waterfall-chart/)
+      - [3D Waterfall / Point-Line Chart](/2d-charts/chart-types/waterfall-renderable-series/waterfall-3d-chart/)
+      - [The Waterfall Chart Type](/2d-charts/chart-types/waterfall-renderable-series/)
     - [RenderableSeries Overview](/2d-charts/chart-types/renderable-series-api-overview/)
     - **Common Series APIs**
       - [Series isVisible and isVisibleChanged API](/2d-charts/chart-types/common-series-apis/is-visible/)
@@ -169,6 +178,14 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The Triangle Series Type](/2d-charts/chart-types/fast-triangle-renderable-series/)
     - [The Line Segment Series Type](/2d-charts/chart-types/fast-line-segment-renderable-series/)
     - [The Treemap Chart Type](/2d-charts/chart-types/tree-map-type/)
+    - **Choropleth Maps**
+      - [Heatmap over Map](/2d-charts/chart-types/choropleth-map/heatmap-over-map/)
+      - [Multi-Region Maps](/2d-charts/chart-types/choropleth-map/multi-map/)
+      - [Choropleth Maps](/2d-charts/chart-types/choropleth-map/)
+    - [Vector Field Charts](/2d-charts/chart-types/vector-field/)
+    - [Gantt Charts](/2d-charts/chart-types/gantt-chart/)
+    - [Histogram Charts](/2d-charts/chart-types/histogram-chart/)
+    - [The Parallel Coordinate Plot Type](/2d-charts/chart-types/parallel-coordinate-plot/)
     - [The Stacked Column Series Type](/2d-charts/chart-types/stacked-column-renderable-series/)
     - [The Stacked Mountain Series Type](/2d-charts/chart-types/stacked-mountain-renderable-series/)
     - [The Pie Chart Type](/2d-charts/chart-types/pie-chart-type/)
@@ -179,6 +196,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The Bezier (Smoothed) Stacked Mountain Series Type](/2d-charts/chart-types/smooth-stacked-mountain-renderable-series/)
     - [The Text Series Type](/2d-charts/chart-types/fast-text-renderable-series/)
     - [The Box Plot Series Type](/2d-charts/chart-types/fast-box-plot-renderable-series/)
+    - [The Linear Gauge Chart Type](/2d-charts/chart-types/linear-gauge-chart/)
     - [The Partial Polar Chart Type](/2d-charts/chart-types/polar-partial-chart-type/)
     - [The Polar Gauge Chart Type](/2d-charts/chart-types/polar-gauge-chart/)
     - [The Polar Band Series Type](/2d-charts/chart-types/polar-band-renderable-series/)
@@ -193,6 +211,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The Polar Radar Chart Type](/2d-charts/chart-types/polar-radar-chart/)
     - [The Polar Text Series Type](/2d-charts/chart-types/polar-text-renderable-series/)
     - [The Polar Triangle Series Type](/2d-charts/chart-types/polar-triangle-renderable-series/)
+    - [Polar Maps](/2d-charts/chart-types/polar-map-example/)
     - [The Polar Sunburst Chart Type](/2d-charts/chart-types/polar-sunburst-chart/)
   - **Builder (JSON Chart Definition) API**
     - [Intro to the Builder API](/2d-charts/builder-api/builder-api-overview/)
@@ -283,6 +302,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Editable Annotations](/2d-charts/annotations-api/editable-annotations/)
     - [Styling Annotation Selection](/2d-charts/annotations-api/styling-annotation-selection/)
     - [Annotation Hover](/2d-charts/annotations-api/annotation-hover/)
+    - [CompositeAnnotation](/2d-charts/annotations-api/composite-annotation/)
   - **ChartModifier API**
     - [Legend Modifier](/2d-charts/chart-modifier-api/miscellaneous-modifiers/legend-modifier/)
     - [What is the ChartModifier API](/2d-charts/chart-modifier-api/chart-modifier-api-overview/)
@@ -378,6 +398,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Numeric and Date Axis in SciChart3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d/)
     - [Axis3D Text (Label) Formatting](/3d-charts/axis-3d-api/axis-3d-text-label-formatting/)
     - [3D Label Options](/3d-charts/axis-3d-api/chart-styling-3d/)
+    - [LogarithmicAxis3D](/3d-charts/axis-3d-api/logarithmic-axis-3d/)
     - [Axis3D Gridline and Label Spacing (Interval)](/3d-charts/axis-3d-api/axis-3d-gridline-and-label-spacing-interval/)
   - **3D Chart Types**
     - [The Scatter 3D Chart Type](/3d-charts/chart-types/scatter-3d-chart/)
@@ -392,4 +413,64 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
       - [Mouse Wheel Zoom Modifier 3D](/3d-charts/chart-modifier-3d-api/zooming-and-panning/mouse-wheel-zoom-modifier-3d/)
       - [Reset Camera Modifier 3D](/3d-charts/chart-modifier-3d-api/zooming-and-panning/reset-camera-modifier-3d/)
     - [Tooltip Modifier 3D](/3d-charts/chart-modifier-3d-api/tooltip-modifier-3d/)
+    - [SeriesSelectionModifier3D](/3d-charts/chart-modifier-3d-api/series-selection-modifier-3d/)
+- **scichart-financial-tools**
+  - ["scichart-financial-tools" Overview](/scichart-extensions/scichart-financial-tools/overview/)
+  - **Annotation Types**
+    - [Multi-Point Labels Deep Dive](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/)
+    - [Annotation Point Snapping](/scichart-extensions/scichart-financial-tools/annotation-types/snapping/)
+    - [SVG drag points](/scichart-extensions/scichart-financial-tools/annotation-types/svg-drag-points/)
+    - [Keyboard shortcuts](/scichart-extensions/scichart-financial-tools/annotation-types/keyboard-shortcuts/)
+    - [Adorner properties](/scichart-extensions/scichart-financial-tools/annotation-types/adorner-properties/)
+    - **Polyline annotations**
+      - [Polyline Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/)
+      - [PolyLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/polyline-annotation/)
+      - [XABCD Pattern](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/xabcd-pattern/)
+      - [Elliott Patterns](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-patterns/)
+    - **Channel annotations**
+      - [Channel Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/)
+      - [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/channel-annotation/)
+      - [FlatBottomChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/flat-bottom-channel/)
+      - [DisjointChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/disjoint-channel/)
+    - **Fibonacci annotations**
+      - [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/)
+      - [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/)
+      - [FibonacciExtensionAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/extension/)
+      - [FibonacciCirclesAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/circles/)
+      - [FibonacciSpeedResistanceArcsAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/speed-resistance-arcs/)
+      - [Fibonacci Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/)
+      - [FibonacciWedgeAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/wedge/)
+    - **Trend line annotations**
+      - [ExtendedLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/extended-line-annotation/)
+      - [Trend Line Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/)
+      - [HorizontalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/horizontal-trend-line-annotation/)
+      - [VerticalTrendLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/vertical-trend-line-annotation/)
+      - [CrossLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/cross-line-annotation/)
+      - [AngleLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/angle-line-annotation/)
+    - **Repeating / cyclic annotations**
+      - [Repeating / Cyclic Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/)
+      - [CyclicLineAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/cyclic-line-annotation/)
+      - [CyclicArcAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/cyclic-arc-annotation/)
+      - [FibonacciTimeZoneAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/fibonacci-time-zone-annotation/)
+    - **Pitchfork annotations**
+      - [Pitchfork Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/)
+      - [PitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfork-annotation/)
+      - [PitchfanAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/pitchfan-annotation/)
+      - [SchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/schiff-pitchfork-annotation/)
+      - [InsidePitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/inside-pitchfork-annotation/)
+      - [ModifiedSchiffPitchforkAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/modified-schiff-pitchfork-annotation/)
+    - [MeasureAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/measure-annotation/)
+    - [StopLossTakeProfitAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/stop-loss-take-profit/)
+    - [FreehandDrawingAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/freehand-drawing-annotation/)
+    - [SectorAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/sector-annotation/)
+  - **Modifiers**
+    - [Placement and Editing](/scichart-extensions/scichart-financial-tools/modifiers/placement-and-editing/)
+    - [MultiPointAnnotationEditorModifier](/scichart-extensions/scichart-financial-tools/modifiers/multipoint-annotation-editor-modifier/)
+    - [FreehandDrawingModifier](/scichart-extensions/scichart-financial-tools/modifiers/freehand-drawing-modifier/)
+    - [AnnotationEraserModifier](/scichart-extensions/scichart-financial-tools/modifiers/annotation-eraser-modifier/)
+    - [SeriesValueModifier](/scichart-extensions/scichart-financial-tools/modifiers/series-value-modifier/)
+  - **Data Filters**
+    - [OhlcHeikinAshiFilter](/scichart-extensions/scichart-financial-tools/data-filters/heikin-ashi/)
+    - [OhlcRenkoFilter](/scichart-extensions/scichart-financial-tools/data-filters/renko/)
+    - [PointAndFigureFilter](/scichart-extensions/scichart-financial-tools/data-filters/point-and-figure/)
 <!-- generate-docs-toc.js end -->

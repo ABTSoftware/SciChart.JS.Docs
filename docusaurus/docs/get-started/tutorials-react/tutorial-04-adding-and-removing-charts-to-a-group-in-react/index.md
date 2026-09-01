@@ -12,7 +12,7 @@ In this tutorial, we're going to show how to **dynamically add and remove chart 
 
 ## Before We Begin
 
-As a basis for this tutorial, use [Tutorial 01 - Understanding the scichart-react boilerplate](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react)
+As a basis for this tutorial, use [Tutorial 01 - Understanding the scichart-react boilerplate](/get-started/tutorials-react/tutorial-01-setting-up-project-with-scichart-react/)
 for the initial project setup.
 
 Copy the boilerplate to a new folder or project.

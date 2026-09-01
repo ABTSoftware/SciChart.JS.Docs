@@ -70,8 +70,10 @@ function walkDir(dir) {
         }
     }
 
+    // A folder with a single child is flattened away by renderMarkdownToc, so it must sort
+    // by that child's position. File items have no children and always sort by their own.
     const positionFn = (el) => {
-        const ee = el.children.length == 1 ? el.children[0] : el;
+        const ee = el.type === "folder" && el.children.length === 1 ? el.children[0] : el;
         return isNaN(ee.position) ? Infinity : ee.position;
     }
 
