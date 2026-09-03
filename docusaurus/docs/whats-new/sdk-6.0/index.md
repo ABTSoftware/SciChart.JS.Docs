@@ -133,9 +133,8 @@ See [Builder API Overview](/2d-charts/builder-api/builder-api-overview/).
 ## New chart types and features
 
 * **[Parallel Coordinate Plot](/2d-charts/chart-types/parallel-coordinate-plot/)** — a new chart type for exploring high-dimensional data, with a demo and full documentation (SCJS-524, SCJS-1045)
-* **Logarithmic axis for 3D charts** — `LogarithmicAxis3D` (SCJS-2528)
 * **Immediate Mesh 3D** — mesh geometry expressed in data space as a renderable series, with a new example (SCJS-2649)
-* **Slug text rendering** — full support for slug text across data labels and annotations, as an additional render path alongside Canvas and Native text (SCJS-2457)
+* **[Slug text rendering](/2d-charts/miscellaneous-apis/native-text-api/#how-native-text-is-rendered)** — all 2D native text (axis labels, axis and chart titles, data labels, `NativeTextAnnotation`) now renders through Slug GPU Bezier text, **replacing** the Signed Distance Field texture atlas. Glyphs are exact at any size, scale and rotation, and changing a font size no longer rebuilds an atlas. 3D charts still use the atlas. No public 2D api changed (SCJS-2457)
 * **Better contour labels** and **individual colouring for contour lines** (SCJS-2592, SCJS-2600)
 * **Heatmap `linearTextureFilteringIntensity`** — control the strength of linear texture filtering on uniform and non-uniform heatmaps (SCJS-2694)
 * **Stacked columns with individual Y axes** — each `StackedGroupId` can now bind to its own Y axis (SCJS-2597)

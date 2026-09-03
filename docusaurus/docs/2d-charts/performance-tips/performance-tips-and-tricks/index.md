@@ -382,7 +382,11 @@ Async labels was available in earlier versions of ScIChart.js, but has been depr
 
 ### 3.4 Init time optimization by disabling native text
 
-Although native text improves performance of rendering axis and data labels it requires additional initialization time to create a font atlas. If the app does not require updating/creating a lot of labels in real time disabling native text would be a good option to boost up the startup time. 
+:::warning Obsolete in v6
+In v5.2 and earlier, native text built a font atlas per face and size at startup, so disabling it could shorten init time for charts that did not update labels often.
+
+Since v6, 2D native text renders with Slug (GPU Bezier) and builds no atlas - the default face is preprocessed once during `SciChartSurface.create()`, and changing font sizes rebuilds nothing. Native text is now at least as fast as canvas text at first paint and dramatically faster on any font change, so there is no longer a startup reason to turn it off. See [Native Text Api](/2d-charts/miscellaneous-apis/native-text-api/index.md).
+:::
 
 ```js
 SciChartDefaults.useNativeText = false;

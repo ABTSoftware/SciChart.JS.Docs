@@ -100,9 +100,15 @@ This results in the following output:
 
 To assign custom font to labels and titles in SciChart.js 3D charts, you can use the labelStyle and axisTitleStyle properties on your 3D axes.
 
-Only Arial is included in the webassembly data as standard. Other fonts must either be hosted on your server, or registered if coming from a remote location. In either case, fonts are only downloaded once, and are then cached in the browser (in indexdb).
+:::info 3D text rendering in v6
+3D charts render their text through a **Signed Distance Field texture atlas** — the glyph set is rasterized into a texture per font face *and* size, which is then sampled when drawing. This is **unchanged in v6**: the switch to Slug (GPU Bezier) text applies to 2D charts only.
 
-Use `sciChartSurface.registerFont` to provide a remote url to load a font file from.  Note that this requires a sciChartSurface instance - it is not a static method.  The method returns a promise which resolves once the file is downloaded.  If you do not await this method, the text will render using Arial until the font is available.  There is a timeout (set by SciChartDefaults.nativeFontTimeout, default 2000ms) after which SciChart will fall back to Arial and stop trying to load the custom font.  You might need to increase this if you need to load fonts over a slow connection, but in general it is better to await the registerFont method.
+The practical difference is that changing a font size at runtime in 3D still builds an atlas for the new size, whereas in 2D it now costs nothing. See [Native Text Api — how native text is rendered](/2d-charts/miscellaneous-apis/native-text-api/#sdf-atlas-text-in-3d).
+:::
+
+Only the packaged default face is included in the webassembly binary as standard. Other fonts must either be hosted on your server, or registered if coming from a remote location. In either case, fonts are only downloaded once, and are then cached in the browser (in indexdb).
+
+Use `sciChartSurface.registerFont` to provide a remote url to load a font file from.  Note that this requires a sciChartSurface instance - it is not a static method.  The method returns a promise which resolves once the file is downloaded.  If you do not await this method, the text will render using the default face until the font is available.  There is a timeout (set by SciChartDefaults.nativeFontTimeout, default 2000ms) after which SciChart will fall back to the default face and stop trying to load the custom font.  You might need to increase this if you need to load fonts over a slow connection, but in general it is better to await the registerFont method.
 
 :::warning
 There is currently a limitation in that the font fetching from webassembly will not follow a http 302 redirection, so you need to pass the url to the actual file.  For instance, when downloading from github, [https://github.com/google/fonts/blob/main/ofl/braahone/BraahOne-Regular.ttf](https://github.com/google/fonts/blob/main/ofl/braahone/BraahOne-Regular.ttf) redirects to [https://raw.githubusercontent.com/google/fonts/main/ofl/braahone/BraahOne-Regular.ttf](https://raw.githubusercontent.com/google/fonts/main/ofl/braahone/BraahOne-Regular.ttf) so you need to use the githubusercontent.com link.

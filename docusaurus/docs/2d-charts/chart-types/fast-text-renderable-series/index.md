@@ -49,7 +49,7 @@ There is however an [onAfterGenerate:blue_book:](https://www.scichart.com/docume
 [FastTextRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttextrenderableseries.html) supports pointmarkers and also [horizontalTextPosition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textdatalabelprovider.html#horizontaltextposition) and [verticalTextPosition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/textdatalabelprovider.html#verticaltextposition) dataLabels options.
 
 :::warning
-Text is drawn using Native Text rendering, so to use any font other than Arial you will need ensure that font is available on your server (as fontname.ttf), or registered using **sciChartSurface.registerFont(...)** if coming from a remote url. 
+Text is drawn using Native Text rendering, so to use any font other than the packaged default face you will need ensure that font is available on your server (as fontname.ttf), or registered using **sciChartSurface.registerFont(...)** if coming from a remote url. 
 :::
 
 <CodeSnippetBlock labels={["TS"]}>
