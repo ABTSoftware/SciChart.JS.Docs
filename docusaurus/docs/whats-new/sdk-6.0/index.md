@@ -46,7 +46,7 @@ One rendering behaviour differs between backends. In WebGL mode, multiple charts
 
 See [WebGPU and WebGL Renderers](/2d-charts/surface/webgpu-and-webgl-renderers/) for how to pin either renderer, check which one is active, and why multiple charts on one page benefit most.
 
-## Smaller bundles: tree-shaking and dual CJS + ESM builds
+## ES Module support and tree-shaking
 
 :::info
 Bundle size reduction for any application using SciChart.js
@@ -69,56 +69,13 @@ Measured savings on real webpack and other builds:
 A TypeScript project compiling with `"module": "commonjs"` will **not** tree-shake, because TypeScript rewrites your `import` to `require()` before the bundler sees it. See [Enabling tree-shaking in a TypeScript project](/whats-new/breaking-changes-v5.2-v6.0/#enabling-tree-shaking-in-a-typescript-project) for the `tsconfig.json` settings you need.
 :::
 
-## One wasm module for 2D and 3D
-
-:::info
-Huge win when combining both 2D and 3D charts as you do not need to load the shared code twice.
-:::
-
-The 2D and 3D engines have been unified. Where v5 shipped `scichart2d.wasm` and `scichart3d.wasm` as separate binaries with separate bootstrap APIs, v6 ships a **single wasm module carrying both engines**, configured through the `SciChartSurface` statics for 2D and 3D alike:
-
-```typescript
-// configures the shared module for both 2D and 3D charts
-SciChartSurface.configure({ wasmUrl: "/scichart.wasm" });
-```
-
-The `SciChart3DSurface` wasm-loading statics still exist as deprecated forwards, so existing code keeps working — but calling both `SciChartSurface.configure()` and `SciChart3DSurface.configure()` now means the second call overwrites the first. See [the migration notes](/whats-new/breaking-changes-v5.2-v6.0/#watch-for-the-two-call-configure-pattern).
-
-### Modular wasm
-
-:::info
-Smaller load time as modules are fetched lazily
-:::
-
-The unified binary is **modular**: a smaller core plus side modules fetched at runtime. There are two today — `data` (the native data-series layer) and `charting3d` (the whole 3D engine, fetched lazily at the first 3D chart, so 2D-only pages never download it).
-
-Deployment is now a single directory copy:
-
-```js
-new CopyPlugin({
-    patterns: [{ from: "node_modules/scichart/_wasm/", to: "" }]
-});
-```
-
-See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wasm/).
-
-### wasm64 (Memory64) builds
-
-:::info
-Expends wasm memory limit to 16 Gb
-:::
-
-v6 adds an optional **64-bit WebAssembly build** (`-sMEMORY64=1`), raising the maximum heap from the wasm32 4 GB ceiling to 16 GB for very large datasets. The wasm64 binaries (`scichart-64.wasm` and its side modules) ship alongside the 32-bit ones and are selected by browser capability; `FeatureDetectionHelper` reports both SIMD and wasm64 support.
-
-Memory64 is currently a Chromium-first feature, so the wasm32 build remains the default path everywhere else.
-
-## Builder API: modular registration
+### Builder API: modular registration
 
 :::info
 Builder API smaller bundle size
 :::
 
-The Builder API no longer registers every built-in chart type as an import side effect. Register only what your definitions name as strings, and keep the rest out of the bundle:
+Side-effect registration in the Builder API was the biggest single obstacle to tree-shaking: importing it registered every built-in chart type, so a bundler could never prove any of them unused — the largest saving in the table above. In v6 it registers nothing by default. Register only what your definitions name as strings, and keep the rest out of the bundle:
 
 ```typescript
 import { build2DChart, registerLineSeries, registerXyDataSeries, registerNumericAxis } from "scichart";
@@ -131,6 +88,45 @@ registerNumericAxis();
 `registerAllTypes()` restores the old register-everything behaviour in one line. Unknown types now throw an actionable error naming the register function to call, instead of being silently skipped — and **custom series definitions now work**, where previously they type-checked but produced nothing.
 
 See [Builder API Overview](/2d-charts/builder-api/builder-api-overview/).
+
+## Larger datasets with 64-bit WebAssembly
+
+:::info
+Extends the wasm memory limit to 16 GB
+:::
+
+v6 adds an optional **64-bit WebAssembly build** (`-sMEMORY64=1`), raising the maximum heap from the wasm32 4 GB ceiling to 16 GB for very large datasets. The wasm64 binaries (`scichart-64.wasm` and its side modules) ship alongside the 32-bit ones and are selected by browser capability; `FeatureDetectionHelper` reports both SIMD and wasm64 support.
+
+Memory64 is currently a Chromium-first feature, so the wasm32 build remains the default path everywhere else.
+
+See [Larger Datasets with 64-bit WebAssembly](/2d-charts/surface/larger-datasets-with-wasm64/) for how much more data this buys you, the trade-offs, how it interacts with SIMD, and every related setting.
+
+## One modular wasm build for 2D and 3D
+
+:::info
+Shared code loads once instead of twice, and the 3D engine is fetched only when a 3D chart is created.
+:::
+
+The 2D and 3D engines have been unified. Where v5 shipped `scichart2d.wasm` and `scichart3d.wasm` as separate binaries with separate bootstrap APIs, v6 ships a **single wasm module carrying both engines**, configured through the `SciChartSurface` statics for 2D and 3D alike:
+
+```typescript
+// configures the shared module for both 2D and 3D charts
+SciChartSurface.configure({ wasmUrl: "/scichart.wasm" });
+```
+
+The `SciChart3DSurface` wasm-loading statics still exist as deprecated forwards, so existing code keeps working — but calling both `SciChartSurface.configure()` and `SciChart3DSurface.configure()` now means the second call overwrites the first. See [the migration notes](/whats-new/breaking-changes-v5.2-v6.0/#watch-for-the-two-call-configure-pattern).
+
+Unifying the binaries does not mean loading more up front, because that single build is also **modular**: a smaller core plus side modules fetched at runtime. There are two today — `data` (the native data-series layer, loaded with every chart) and `charting3d` (the whole 3D engine, fetched lazily at the first 3D chart, so 2D-only pages never download it).
+
+Deployment gets simpler rather than harder: every servable binary lives in one directory, so the copy step is a single directory copy that never needs updating when a module is added.
+
+```js
+new CopyPlugin({
+    patterns: [{ from: "node_modules/scichart/_wasm/", to: "" }]
+});
+```
+
+See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wasm/).
 
 ## New chart types and features
 
