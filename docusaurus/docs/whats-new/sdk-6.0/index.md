@@ -44,6 +44,8 @@ localStorage.setItem("IS_WEB_GPU", "0"); // then reload
 One rendering behaviour differs between backends. In WebGL mode, multiple charts on a page share a master canvas and each surface is copied to its own destination canvas. In WebGPU mode there is no copy step — every surface renders directly to its destination canvas.
 :::
 
+See [WebGPU and WebGL Renderers](/2d-charts/surface/webgpu-and-webgl-renderers/) for how to pin either renderer, check which one is active, and why multiple charts on one page benefit most.
+
 ## Smaller bundles: tree-shaking and dual CJS + ESM builds
 
 :::info
