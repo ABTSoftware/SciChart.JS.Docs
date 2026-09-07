@@ -44,7 +44,7 @@ At engine startup SciChart probes for WebGPU:
 
 If any step fails — no `navigator.gpu`, no adapter, or a device that cannot be brought up (a driver fault, for instance) — SciChart logs a `console.warn` naming the step that failed and **falls back to WebGL 2**. Each warning is prefixed `SciChart.js:`, so a quick look at the console tells you which renderer you ended up on and why.
 
-The choice applies to **both 2D and 3D charts**, and to both `SciChartSurface.create()` and `SciChartSurface.createSingle()`.
+The choice applies to **both 2D and 3D charts**, and to both [SciChartSurface.create():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#create) and [SciChartSurface.createSingle():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#createsingle).
 
 :::note
 The renderer is resolved **once** during engine initialisation and used for the lifetime of the page. There is no way to switch renderer on a chart that already exists.
@@ -52,7 +52,7 @@ The renderer is resolved **once** during engine initialisation and used for the 
 
 ## Switching renderer in code
 
-Call `WebGpuHelper.setWebGpuSupported(false)` to force WebGL 2. It must run **before the first surface is created**, because that is when the engine initialises:
+Call [WebGpuHelper.setWebGpuSupported():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.setwebgpusupported) with `false` to force WebGL 2. It must run **before the first surface is created**, because that is when the engine initialises:
 
 ```ts
 import { SciChartSurface, WebGpuHelper } from "scichart";
@@ -81,14 +81,14 @@ const device = WebGpuHelper.getCachedWebGPUDevice();
 
 The two answer different questions, and it is worth being precise about which you want:
 
-* **`getWebGpuSupported()` is the one to use** to find out what SciChart is actually rendering with. It reports the *intent* before the probe has run and the *outcome* after — the probe flips it to `false` on failure.
-* **`getCachedWebGPUDevice()` reports only whether a `GPUDevice` was acquired**, which is not the same thing as WebGPU being in use.
+* **[getWebGpuSupported():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.getwebgpusupported) is the one to use** to find out what SciChart is actually rendering with. It reports the *intent* before the probe has run and the *outcome* after — the probe flips it to `false` on failure.
+* **[getCachedWebGPUDevice():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.getcachedwebgpudevice) reports only whether a `GPUDevice` was acquired**, which is not the same thing as WebGPU being in use.
 
 :::note
 If you force WebGL 2 with `setWebGpuSupported(false)` while local storage still permits WebGPU, SciChart renders with WebGL 2 as asked, but the startup probe has already run and cached a `GPUDevice`. So `getCachedWebGPUDevice()` can return a device even though WebGL 2 is doing the drawing. Treat `getWebGpuSupported()` as the source of truth; the same caveat applies to `webGpuDeviceAcquired` in the diagnostics below. To avoid the situation entirely, disable WebGPU through local storage instead of in code.
 :::
 
-For a single readout of everything the engine decided, including the renderer, call the static diagnostics helper:
+For a single readout of everything the engine decided, including the renderer, call the static diagnostics helper [SciChartSurface.debugWasmWebGPU():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#debugwasmwebgpu), which logs through [Logger:blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/logger.html):
 
 ```ts
 import { SciChartSurface, Logger } from "scichart";
@@ -149,21 +149,21 @@ Because the fallback is automatic and needs no code change, it is safe to ship w
 
 ## API Reference
 
-:::warning TODO
-The v6 Typedoc is not published yet, so the links below are placeholders. Once it is published, replace each `TODO` with a `:blue_book:` link under `https://www.scichart.com/documentation/js/v6/typedoc/`, and link these symbols inline in the sections above.
-:::
+| Symbol | Typedoc |
+|---|---|
+| `WebGpuHelper` | [WebGpuHelper:blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper) |
+| `WebGpuHelper.getWebGpuSupported()` | [getWebGpuSupported():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.getwebgpusupported) |
+| `WebGpuHelper.setWebGpuSupported()` | [setWebGpuSupported():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.setwebgpusupported) |
+| `WebGpuHelper.getCachedWebGPUDevice()` | [getCachedWebGPUDevice():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.getcachedwebgpudevice) |
+| `WebGpuHelper.initializeWebGPUDevice()` | [initializeWebGPUDevice():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/index.html#webgpuhelper.initializewebgpudevice) |
+| `SciChartSurface.debugWasmWebGPU()` | [debugWasmWebGPU():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#debugwasmwebgpu) (inherited from [SciChartSurfaceBase:blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurfacebase.html)) |
+| `SciChartSurface.create()` | [create():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#create) |
+| `SciChartSurface.createSingle()` | [createSingle():blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#createsingle) |
+| `Logger` | [Logger:blue_book:](https://stagingdemo2.scichart.com/documentation/js/v6/typedoc/classes/logger.html) |
 
-| Symbol | Expected Typedoc path | Link |
-|---|---|---|
-| `WebGpuHelper` | `variables/webgpuhelper.html` | TODO |
-| `WebGpuHelper.getWebGpuSupported()` | `variables/webgpuhelper.html#getwebgpusupported` | TODO |
-| `WebGpuHelper.setWebGpuSupported()` | `variables/webgpuhelper.html#setwebgpusupported` | TODO |
-| `WebGpuHelper.getCachedWebGPUDevice()` | `variables/webgpuhelper.html#getcachedwebgpudevice` | TODO |
-| `WebGpuHelper.initializeWebGPUDevice()` | `variables/webgpuhelper.html#initializewebgpudevice` | TODO |
-| `SciChartSurface.debugWasmWebGPU()` | `classes/scichartsurface.html#debugwasmwebgpu` (inherited from `SciChartSurfaceBase`) | TODO |
-| `SciChartSurface.create()` | `classes/scichartsurface.html#create` | TODO |
-| `SciChartSurface.createSingle()` | `classes/scichartsurface.html#createsingle` | TODO |
-| `Logger` | `classes/logger.html` | TODO |
+:::note
+`WebGpuHelper` is exported as an object literal rather than a class, so it and its members are documented on the Typedoc module index page (`index.html#webgpuhelper`), not under `classes/` or `variables/`.
+:::
 
 #### See Also
 

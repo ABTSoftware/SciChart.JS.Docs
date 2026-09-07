@@ -10,10 +10,12 @@ export default function () {
                 plugins: [
                     new CopyWebpackPlugin({
                         patterns: [
-                            { from: "node_modules/scichart/_wasm/scichart.browser.mjs", to: "scichart.browser.js" },
+                            { from: "node_modules/scichart/_glue/scichart.browser.mjs", to: "scichart.browser.js" },
                             { from: "node_modules/scichart-financial-tools/scichart-financial-tools.browser.mjs", to: "scichart-financial-tools.browser.js" },
-                            { from: "node_modules/scichart/_wasm/scichart2d.wasm", to: "" },
-                            { from: "node_modules/scichart/_wasm/scichart3d.wasm", to: "" },
+                            // From v6 every servable binary lives in _wasm/ - the unified 2D+3D core, its
+                            // nosimd and wasm64 variants, and the side modules fetched at runtime. Copy the
+                            // directory so adding a module needs no change here.
+                            { from: "node_modules/scichart/_wasm/", to: "" },
                             {
                                 from: "docs/**/*.@(ts|html|js|css)",
                                 to({ context, absoluteFilename }) {

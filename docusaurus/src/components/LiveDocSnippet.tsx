@@ -6,9 +6,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 
 const USE_LOCAL_PACKAGE = false; // for testing purposes
 
-// todo - revert back to using the same versions in the next minor release (now 5.2.28) of scichart.
-const financialToolsVersion = "5.2.62"; 
-// const financialToolsVersion = libraryVersion;
+const financialToolsVersion = libraryVersion;
 
 enum EHtmlType {
     Default = "Default",
@@ -93,7 +91,7 @@ const getImportMap = (includeFinTools?: boolean) => {
     } else {
         if (!includeFinTools) {
             imports.push(
-                `"scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.browser.mjs?v=${libraryVersion}"`
+                `"scichart": "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_glue/scichart.browser.mjs?v=${libraryVersion}"`
             )
         }
         if (includeFinTools) {
@@ -125,15 +123,16 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             }
         </script>
         <script type="module">
-            import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
+            import {SciChartSurface, SciChartDefaults} from "scichart";
 
             SciChartSurface.UseCommunityLicense();
-            
+
+            // From v6 one wasm module serves both 2D and 3D, and its side modules (charting3d) are
+            // fetched lazily from the same directory. Do not also call SciChart3DSurface.configure()
+            // here - in v6 the second call overwrites the first.
             SciChartSurface.configure({
-                wasmUrl: "${baseUrl}scichart2d.wasm"
-            });
-            SciChart3DSurface.configure({
-                wasmUrl: "${baseUrl}scichart3d.wasm"
+                wasmUrl: "${baseUrl}scichart.wasm",
+                wasmNoSimdUrl: "${baseUrl}scichart-nosimd.wasm"
             });
             SciChartDefaults.performanceWarnings = false;
         </script>
@@ -171,16 +170,12 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
                     }
             </script>
             <script type="module">
-                import {SciChartSurface, SciChart3DSurface, SciChartDefaults} from "scichart";
+                import {SciChartSurface, SciChartDefaults} from "scichart";
 
                 SciChartSurface.UseCommunityLicense();
                 SciChartSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart2d-nosimd.wasm"
-                });
-                SciChart3DSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart3d-nosimd.wasm"
+                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.wasm",
+                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart-nosimd.wasm"
                 });
                 SciChartDefaults.performanceWarnings = false;
             </script>
