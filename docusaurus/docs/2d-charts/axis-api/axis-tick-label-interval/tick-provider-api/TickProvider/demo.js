@@ -60,10 +60,9 @@ async function tickProvider(divElementId) {
 tickProvider("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to apply a custom tickprovider in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EAxisType } = SciChart;
     // #region_C_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

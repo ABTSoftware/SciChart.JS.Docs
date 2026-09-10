@@ -40,7 +40,7 @@ async function addAnnotationToChart(divElementId) {
             x1: 0.0, // from left edge of chart
             x2: 1.0, // .. to right edge of chart
 
-            yCoordinateMode: ECoordinateMode.DataValue, 
+            yCoordinateMode: ECoordinateMode.DataValue,
             y1: 2, // coordinate value
             y2: 2
         }),
@@ -71,10 +71,10 @@ addAnnotationToChart("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, EAnnotationType } = SciChart;
+    const { build2DChart, EAnnotationType } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.SVGTextAnnotation,

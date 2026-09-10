@@ -467,14 +467,6 @@ import { build2DChart } from "scichart";
 const { sciChartSurface } = await build2DChart(divId, definition);
 ```
 
-Or reproduce the old shape with a namespace import, if you have many call sites:
-
-```ts
-import * as chartBuilder from "scichart";
-
-const { sciChartSurface } = await chartBuilder.build2DChart(divId, definition);
-```
-
 Measured on a webpack build of the lean Builder path this saves **43.2 KB gzip (21.7%)**, and 35.6 KB gzip for the `registerAllTypes()` path. Nothing else in the API changed — same functions, same signatures.
 
 The full list, all importable from `scichart`: `buildChart`, `build2DChart`, `build2DPolarChart`, `buildPieChart`, `build3DChart`, `configureChart`, `chartReviver`, `buildSeries`, `buildDataSeries`, `buildModifiers`, `buildAxes`, `buildAnnotations`, `buildAxis3D`, `buildModifiers3D`, `buildSeries3D`, `buildDataSeries3D`, `registerType`, `registerWasmType`, `registerFunction`.
@@ -496,9 +488,13 @@ const { sciChartSurface } = await chartBuilder.build2DChart(divId, {
 **After, option A** — the one-line migration. Identical behaviour to before, and the right first step for an existing app: get it working, then trim if bundle size matters.
 
 ```ts
-import { chartBuilder, registerAllTypes } from "scichart";
+import { build2DChart, registerAllTypes } from "scichart";
 
 registerAllTypes();
+
+const { sciChartSurface } = await build2DChart(divId, {
+    series: { type: ESeriesType.LineSeries, xyData }
+});
 ```
 
 **After, option B** — register only what your definitions use, keeping the rest out of the bundle:
@@ -530,7 +526,7 @@ A built-in class registers itself when its module is in your bundle. So registra
 In practice that means anything you construct yourself is already usable in a definition:
 
 ```ts
-import { FastLineRenderableSeries, EllipsePointMarker, chartBuilder } from "scichart";
+import { FastLineRenderableSeries, EllipsePointMarker } from "scichart";
 
 // These classes are in the bundle, so their types resolve in any definition or round-trip below.
 const series = new FastLineRenderableSeries(wasmContext, {
@@ -557,11 +553,11 @@ These apply to the definition-only style above, where your code imports no chart
 
 ### Persisting charts needs no registration list
 
-`toJSON()` → `chartBuilder.buildChart()` round-trips work without any register call, because every type in the serialized definition came from an object you created, and those classes are in your bundle:
+`toJSON()` → `build2DChart()` round-trips work without any register call, because every type in the serialized definition came from an object you created, and those classes are in your bundle:
 
 ```ts
 const json = sciChartSurface.toJSON();
-const { sciChartSurface: restored } = await chartBuilder.build2DChart(divId, json);
+const { sciChartSurface: restored } = await build2DChart(divId, json);
 ```
 
 This matters more than it looks, because a serialized definition contains far more than the objects you built by hand:
@@ -638,11 +634,11 @@ The declarative form of sub-component options is resolved by the Builder API **b
 
 ```text
 The declarative { type, options } form of "pointMarker" is only supported by the Builder API -
-use chartBuilder or the build* functions from "scichart". When constructing directly, pass a
+use a named `build*` function from "scichart". When constructing directly, pass a
 constructed instance instead.
 ```
 
-Builder API users are unaffected — definitions keep working through `chartBuilder.build*`, the standalone `build*` functions, `configure2DSurface` and JSON round-trips. Only **direct constructor calls** must change.
+Builder API users are unaffected — definitions keep working through the named `build*` functions, `configure2DSurface` and JSON round-trips. Only **direct constructor calls** must change.
 
 ### Migrating a direct constructor call
 

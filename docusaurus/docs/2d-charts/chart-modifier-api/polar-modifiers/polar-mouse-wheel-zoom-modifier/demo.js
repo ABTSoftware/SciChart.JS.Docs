@@ -63,9 +63,8 @@ PolarMouseWheelZoom("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarMouseWheelZoomModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType, EPolarAxisMode, ESeriesType, EActionType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { build2DPolarChart, EThemeProviderType, EAxisType, EChart2DModifierType, EPolarAxisMode, ESeriesType, EActionType } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.PolarNumericAxis,

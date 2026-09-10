@@ -44,8 +44,7 @@ simpleSplineBandChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
     const xValues = [];
     const yValues = [];
     const y1Values = [];
@@ -54,7 +53,7 @@ async function builderExample(divElementId) {
         yValues.push(2 + 0.2 * Math.sin(i) - Math.cos(i * 0.12));
         y1Values.push(1.8 + 0.19 * Math.sin(i * 2) - Math.cos(i * 0.24));
     }
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

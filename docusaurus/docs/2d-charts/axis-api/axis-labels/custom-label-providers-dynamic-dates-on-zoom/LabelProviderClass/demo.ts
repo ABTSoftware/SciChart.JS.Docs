@@ -142,15 +142,14 @@ async function labelProviderClass(divElementId) {
 labelProviderClass("scichart-root");
 
 async function builderExample(divElementId) {
-    const { chartBuilder, EThemeProviderType, NumberRange, EAxisType, EChart2DModifierType } = SciChart;
+    const { build2DChart, EThemeProviderType, NumberRange, EAxisType, EChart2DModifierType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const minDate = new Date("2023-03-01");
     const maxDate = new Date("2023-03-03");
 
     // #region_C_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

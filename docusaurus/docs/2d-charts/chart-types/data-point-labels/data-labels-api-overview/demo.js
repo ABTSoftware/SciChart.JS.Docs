@@ -41,9 +41,8 @@ dataLabelsBasicExample("scichart-root");
 async function builderExample(divElementId) {
     // #region region_B_start
     // Demonstrates how to add DataLabels to a chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

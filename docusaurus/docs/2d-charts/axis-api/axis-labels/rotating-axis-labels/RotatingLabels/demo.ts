@@ -6,7 +6,7 @@ async function chartWithDateTimeNumericAxis(divElementId) {
 
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
-    // #region_A_start 
+    // #region_A_start
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
@@ -43,13 +43,12 @@ chartWithDateTimeNumericAxis("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a chart with rotated labels with the builder API
-    const { chartBuilder, EThemeProviderType, ENumericFormat, EAxisType, NumberRange } = SciChart;
+    const { build2DChart, EThemeProviderType, ENumericFormat, EAxisType, NumberRange } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    // #region_B_start 
+    // #region_B_start
     // If you want to show an Axis with rotated labels. Using a numeric axis for example
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,
@@ -76,7 +75,7 @@ async function builderExample(divElementId) {
             }
         }
     });
-    // #region_B_end 
+    // #region_B_end
 }
 
 if (location.search.includes("builder=1")) builderExample("scichart-root");

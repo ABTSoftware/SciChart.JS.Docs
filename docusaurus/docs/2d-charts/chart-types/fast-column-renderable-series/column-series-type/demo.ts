@@ -28,7 +28,7 @@ async function simpleColumnChart(divElementId) {
             yValues: [0.1, 0.2, 0.4, 0.8, 1.1, 1.5, 2.4, 4.6, 8.1, 11.7, 14.4, 16, 13.7, 10.1, 6.4, 3.5, 2.5, 1.4, 0.4, 0.1]
         }),
         // When solid fill required, use fill
-        fill: "rgba(176, 196, 222, 0.5)", 
+        fill: "rgba(176, 196, 222, 0.5)",
 
         // When gradient fill required, use fillGradient
         fillLinearGradient: new GradientParams(new Point(0, 0), new Point(0, 1), [
@@ -53,10 +53,9 @@ simpleColumnChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a Column chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

@@ -27,13 +27,12 @@ For example:
    });
    sciChartSurface.chartModifiers.add(zoomExtentsModifier);
    ```
-   
+
    ```ts {8} showLineNumbers
    // Demonstrates how to configure the ZoomExtentsModifier in SciChart.js using the Builder API
-   const { chartBuilder, EChart2DModifierType, easing } = SciChart;
-   // or, for npm, import { chartBuilder, ... } from "scichart"
+   const { build2DChart, EChart2DModifierType, easing } = SciChart;
 
-   const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+   const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
       modifiers: [
          {
             type: EChart2DModifierType.ZoomExtents,

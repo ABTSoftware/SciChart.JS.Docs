@@ -106,7 +106,7 @@ labelFormattingWithDateTimeNumericAxis("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         EThemeProviderType,
         NumberRange,
         EAxisAlignment,
@@ -116,14 +116,13 @@ async function builderExample(divElementId) {
         EChart2DModifierType
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // #region_B_start
     // If you want to show an XAxis with dates and dynamic label formats
     const minDate = new Date("2023-03-01");
     const maxDate = new Date("2023-03-03");
 
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.DateTimeNumericAxis,

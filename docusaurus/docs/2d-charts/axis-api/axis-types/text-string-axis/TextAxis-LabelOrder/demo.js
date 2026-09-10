@@ -45,10 +45,9 @@ async function chartWithTextAxis(divElementId) {
 chartWithTextAxis("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to configure a text axis in SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, ELabelProviderType, EAxisType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType, ELabelProviderType, EAxisType } = SciChart;
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

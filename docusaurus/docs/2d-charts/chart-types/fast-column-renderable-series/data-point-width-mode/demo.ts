@@ -115,15 +115,14 @@ simpleColumnChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a Column chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EDataPointWidthMode } = SciChart;
+    const { build2DChart, ESeriesType, EThemeProviderType, EDataPointWidthMode } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // Create some data with gaps
     const xValues = [0, 10, 30, 70, 80, 90, 110, 120, 150, 180, 190];
     const yValues = [0.2, 0.4, 0.8, 1.5, 2.4, 8.1, 13.7, 6.4, 3.5, 1.4, 0.4];
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

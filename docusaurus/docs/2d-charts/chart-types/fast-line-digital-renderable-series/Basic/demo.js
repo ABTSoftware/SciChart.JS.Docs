@@ -31,15 +31,14 @@ digitalLineChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a digital line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
     const xValues = [];
     const yValues = [];
     for (let i = 0; i < 100; i++) {
         xValues.push(i);
         yValues.push(Math.sin(i * 0.1));
     }
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

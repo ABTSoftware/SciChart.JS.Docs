@@ -136,10 +136,9 @@ basicCursorModifier("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the CursorModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EAxisType, EChart2DModifierType } = SciChart;
 
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         modifiers: [
             {

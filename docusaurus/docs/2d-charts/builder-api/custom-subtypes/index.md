@@ -12,10 +12,10 @@ Here is an example below:
 
 <CodeSnippetBlock labels={["JS", "TS"]}>
 ```ts showLineNumbers
-import { 
-    EFillPaletteMode, 
-    EStrokePaletteMode, 
-    IFillPaletteProvider, 
+import {
+    EFillPaletteMode,
+    EStrokePaletteMode,
+    IFillPaletteProvider,
     IStrokePaletteProvider,
     parseColorToUIntArgb,
     EPaletteProviderType,
@@ -52,7 +52,7 @@ class ExampleMountainPaletteProvider {
             return undefined;
         }
     }
-    
+
     // Add a toJSON method so this can be serialized.
     toJSON() {
         return {
@@ -64,15 +64,15 @@ class ExampleMountainPaletteProvider {
 }
 ```
 ```ts showLineNumbers
-import { 
-    EFillPaletteMode, 
-    EStrokePaletteMode, 
-    IFillPaletteProvider, 
+import {
+    EFillPaletteMode,
+    EStrokePaletteMode,
+    IFillPaletteProvider,
     IStrokePaletteProvider,
     parseColorToUIntArgb,
     EBaseType,
     EPaletteProviderType,
-    TPaletteProviderDefinition 
+    TPaletteProviderDefinition
 } from "scichart";
 
 // ...
@@ -126,10 +126,10 @@ class ExampleMountainPaletteProvider implements IStrokePaletteProvider, IFillPal
 Once you have created your custom type and implemented `toJSON()`, next you will need to register the type with the builder API to be able to use it.
 
 ```ts showLineNumber
-import { chartBuilder } from "scichart";
+import { build2DChart, registerType} from "scichart";
 
 // Register it for use by the builder api
-chartBuilder.registerType(
+registerType(
     EBaseType.PaletteProvider,
     "ExampleMountainPaletteProvider",
     (options) => new ExampleMountainPaletteProvider(options)
@@ -139,10 +139,10 @@ chartBuilder.registerType(
 Now the usage of the custom type can be done as follows. It will appear to the Builder API as just another type like those already existing in SciChart.
 
 ```ts showLineNumbers
-import { chartBuilder } from "scichart";
+import { build2DChart, registerType} from "scichart";
 
 // Build the surface
-const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
     series: {
         type: ESeriesType.MountainSeries,
         options: {

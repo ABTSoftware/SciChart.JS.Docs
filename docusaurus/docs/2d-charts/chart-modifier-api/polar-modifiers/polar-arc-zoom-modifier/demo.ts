@@ -103,30 +103,29 @@ PolarArcZoom("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarArcZoomModifier in SciChart.js using the Builder API
-    const { 
-        chartBuilder,
-        EThemeProviderType, 
-        EAxisType, 
-        EChart2DModifierType, 
-        easing, 
-        EPolarAxisMode, 
-        ESeriesType 
+    const {
+        build2DChart, build2DPolarChart,
+        EThemeProviderType,
+        EAxisType,
+        EChart2DModifierType,
+        easing,
+        EPolarAxisMode,
+        ESeriesType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Angular 
-            } 
+        xAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Angular
+            }
         },
-        yAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Radial 
-            } 
+        yAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Radial
+            }
         },
         series: [
             {

@@ -107,8 +107,7 @@ simpleStackedMountainChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a Mountain chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
 
     // Data for the example
     const xValues = [1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000, 2001, 2002, 2003];
@@ -118,7 +117,7 @@ async function builderExample(divElementId) {
     const yValues4 = [16, 10, 9, 8, 22, 14, 12, 27, 25, 23, 17, 17];
     const yValues5 = [7, 24, 21, 11, 19, 17, 14, 27, 26, 22, 28, 16];
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             // Group StackedMountain into one StackedMountainCollection and pass into the series object

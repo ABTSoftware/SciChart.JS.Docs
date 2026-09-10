@@ -109,9 +109,8 @@ chartWithDateTimeNumericAxis("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, NumberRange, EAxisAlignment, EAxisType, ESeriesType } = SciChart;
+    const { build2DChart, EThemeProviderType, NumberRange, EAxisAlignment, EAxisType, ESeriesType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // #region_B_start
     // If you want to show an XAxis with dates between 1st March 2023 and 10th March 2023
@@ -128,7 +127,7 @@ async function builderExample(divElementId) {
         startDate += 86400; // number of seconds in a day
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.DateTimeNumericAxis,

@@ -144,7 +144,7 @@ async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         ESeriesType,
         EAxisType,
         EThemeProviderType,
@@ -155,9 +155,8 @@ async function builderExample(divElementId) {
         EChart2DModifierType
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         // Main chart definition is here
         xAxes: { type: EAxisType.NumericAxis },

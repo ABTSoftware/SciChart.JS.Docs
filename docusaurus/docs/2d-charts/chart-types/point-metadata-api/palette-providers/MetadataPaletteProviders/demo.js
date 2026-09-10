@@ -128,7 +128,7 @@ async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to combine PointMetadata and PaletteProviders in SciChart.js with the Builder API
     const {
-        chartBuilder,
+        build2DChart, registerType,
         ESeriesType,
         EThemeProviderType,
         EChart2DModifierType,
@@ -137,12 +137,11 @@ async function builderExample(divElementId) {
         EPaletteProviderType
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    // Register the custom LinePaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "LinePaletteProvider", options => new LinePaletteProvider());
+    // Register the custom LinePaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "LinePaletteProvider", options => new LinePaletteProvider());
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

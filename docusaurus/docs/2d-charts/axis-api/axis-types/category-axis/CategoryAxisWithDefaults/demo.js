@@ -63,14 +63,13 @@ async function chartWithCategoryAxis(divElementId) {
 chartWithCategoryAxis("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, NumberRange, EAxisAlignment, EAxisType, ENumericFormat } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, NumberRange, EAxisAlignment, EAxisType, ENumericFormat } = SciChart;
     // #region_B_start
     // Unix Epoch for March 1st 2023 & March 2nd 2023
     const march1st2023 = new Date("2023-03-1").getTime(); // = 1677628800000 ms since 1/1/1970
     const march2nd2023 = new Date("2023-03-2").getTime(); // = 1677715200000 ms since 1/1/1970
     const oneDay = march2nd2023 - march1st2023; // = 86400000 milliseconds in one day
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.CategoryAxis,

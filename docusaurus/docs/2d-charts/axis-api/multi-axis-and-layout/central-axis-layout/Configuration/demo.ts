@@ -55,13 +55,12 @@ centralAxisConfigure("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to configure a central axis in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, ELayoutManagerType, EInnerAxisPlacementCoordinateMode } =
+    const { build2DChart, EThemeProviderType, EAxisType, ELayoutManagerType, EInnerAxisPlacementCoordinateMode } =
         SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: { type: EThemeProviderType.Dark },
             layoutManager: {

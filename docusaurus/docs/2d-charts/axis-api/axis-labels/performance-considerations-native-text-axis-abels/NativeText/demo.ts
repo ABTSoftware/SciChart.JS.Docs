@@ -70,9 +70,8 @@ nativeText("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates native text vs. standard text in SciChart.js using the Builder API
-    const { chartBuilder, SciChartDefaults, EAxisAlignment, ELabelAlignment, EAxisType, Thickness } = SciChart;
+    const { build2DChart, SciChartDefaults, EAxisAlignment, ELabelAlignment, EAxisType, Thickness } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // Use Native text for all axes by default
     SciChartDefaults.useNativeText = true;
@@ -85,7 +84,7 @@ async function builderExample(divElementId) {
         alignment: ELabelAlignment.Auto
     };
 
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         xAxes: [
             {
                 type: EAxisType.NumericAxis,

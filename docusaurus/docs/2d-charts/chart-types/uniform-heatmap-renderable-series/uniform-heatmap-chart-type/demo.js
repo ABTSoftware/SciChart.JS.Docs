@@ -80,9 +80,8 @@ simpleHeatmapChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_D_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: {
             type: ESeriesType.UniformHeatmapSeries,

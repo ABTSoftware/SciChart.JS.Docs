@@ -91,27 +91,25 @@ PolarLegendModifier("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarLegendModifier in SciChart.js using the Builder API
-    const {
-        chartBuilder,
+    const { build2DPolarChart,
         EAxisType,
         EChart2DModifierType,
         EPolarAxisMode,
         ESeriesType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
-        xAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Angular 
-            } 
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
+        xAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Angular
+            }
         },
-        yAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { 
-                polarAxisMode: EPolarAxisMode.Radial 
-            } 
+        yAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: {
+                polarAxisMode: EPolarAxisMode.Radial
+            }
         },
         series: [
             {

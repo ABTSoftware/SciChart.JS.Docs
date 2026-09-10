@@ -37,10 +37,10 @@ This is good for multiple series which share x data, but is not as convenient if
 
 Once the chart is created, you can use the `wasmContext` that is returned to create a `dataSeries` in the normal way.
 
-Here we’re using [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder#build2dchart) rather than [buildChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder#buildchart) so that we don’t have to cast the result.
+Here we use [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build2dchart), which returns a 2D surface without a cast.
 
 :::tip
-Note that [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder#build2dchart) (and [buildChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder#buildchart)) returns a `Promise` so we need to resolve it to use the result, e.g. use `async/await` syntax or `Promise chaining`.
+`build2DChart` returns a `Promise`, so resolve it with `async`/`await` or promise chaining.
 :::
 
 <CodeSnippetBlock labels={["JS"]}>

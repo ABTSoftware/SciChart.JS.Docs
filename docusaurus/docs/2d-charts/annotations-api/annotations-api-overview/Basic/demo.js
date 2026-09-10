@@ -49,9 +49,9 @@ addAnnotationToChart("scichart-root");
 // #region_A_end
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, EAnnotationType, ECoordinateMode, EVerticalAnchorPoint, EHorizontalAnchorPoint } = SciChart;
+    const { build2DChart, EAnnotationType, ECoordinateMode, EVerticalAnchorPoint, EHorizontalAnchorPoint } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.RenderContextBoxAnnotation,

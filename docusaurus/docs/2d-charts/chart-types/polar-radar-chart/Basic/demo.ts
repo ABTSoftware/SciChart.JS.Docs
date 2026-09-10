@@ -14,7 +14,7 @@ export async function simpleRadarChart (rootElement) {
         XyDataSeries,
     } = SciChart;
     // or for npm import { SciChartPolarSurface, ... } from "scichart"
-    
+
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(rootElement, {
         theme: new SciChartJsNavyTheme()
     });
@@ -33,9 +33,9 @@ export async function simpleRadarChart (rootElement) {
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial,
         gridlineMode: EPolarGridlineMode.Polygons, // this creates the radar chart look
-        visibleRange: new NumberRange(0, 10), 
+        visibleRange: new NumberRange(0, 10),
         startAngle: Math.PI / 2, // start at 12 o'clock
-        
+
         labelPrecision: 0,
         majorGridLineStyle: { color: "#88888844" },
         drawMinorGridLines: false,
@@ -46,7 +46,7 @@ export async function simpleRadarChart (rootElement) {
 
     const xValues = [0, 1, 2, 3, 4, 5];
     const yValues = [9, 10, 7, 5, 8, 6]; // values for: "Offense", "Shooting", "Defense", "Rebounds", "Passing", "Bench"
-    
+
     // Radar / Spider Charts may also work with `PolarLineRenderableSeries`
     const polarMountain = new PolarMountainRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
@@ -67,10 +67,9 @@ simpleRadarChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a Column chart with SciChart.js using the Builder API
-    const { chartBuilder, EAxisType, EPolarAxisMode, NumberRange, EAxisAlignment, ESeriesType, EPolarLabelMode, EThemeProviderType } = SciChart;
+    const { build2DChart, build2DPolarChart, EAxisType, EPolarAxisMode, NumberRange, EAxisAlignment, ESeriesType, EPolarLabelMode, EThemeProviderType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    await chartBuilder.build2DPolarChart(divElementId, {
+    await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

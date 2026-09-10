@@ -24,9 +24,9 @@ class LineSegmentPaletteProvider extends DefaultPaletteProvider {
 // #region_A_end
 
 export async function lineSegmentPaletteProvider(divElementId) {
-    const { 
-        SciChartSurface, 
-        NumericAxis, 
+    const {
+        SciChartSurface,
+        NumericAxis,
         SciChartJsNavyTheme,
         XyDataSeries,
         FastLineSegmentRenderableSeries,
@@ -81,7 +81,7 @@ export async function lineSegmentPaletteProvider(divElementId) {
         return { xValues, yValues };
     }
     const { xValues, yValues } = generateVectorFieldSegments(30);
-    
+
     const lineSegment1 = new FastLineSegmentRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: xValues,
@@ -100,12 +100,12 @@ lineSegmentPaletteProvider("scichart-root");
 
 export async function builderLineSegmentPaletteProvider(divElementId) {
     // #region_C_start
-    const { 
-        chartBuilder,
+    const {
+        build2DChart,
         EThemeProviderType,
     } = SciChart;
 
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         series: [
             // {

@@ -8,9 +8,9 @@ export async function simpleScatterChart(rootElement) {
         SciChartJsNavyTheme,
         XyDataSeries,
         PolarNumericAxis,
-        EPolarAxisMode, 
-        NumberRange, 
-        EAxisAlignment, 
+        EPolarAxisMode,
+        NumberRange,
+        EAxisAlignment,
         EPolarLabelMode,
         PolarXyScatterRenderableSeries,
         TrianglePointMarker,
@@ -64,10 +64,9 @@ simpleScatterChart("scichart-root");
 export async function builderScatterChart(divElementId) {
     // #region_B_start
     // Demonstrates how to create a scatter with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
+    const { build2DChart, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         series: [
             {

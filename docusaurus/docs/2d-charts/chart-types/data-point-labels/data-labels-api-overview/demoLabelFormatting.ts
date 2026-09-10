@@ -64,9 +64,8 @@ dataLabelsBasicFormatting("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to add DataLabels to a chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType, ENumericFormat } = SciChart;
+    const { build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType, ENumericFormat } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     /** @type {import("scichart").TPointMarkerDefinition} */
     const pointMarker: TPointMarkerDefinition = {
@@ -81,7 +80,7 @@ async function builderExample(divElementId) {
     };
 
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

@@ -110,8 +110,7 @@ PolarZoomExtents("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarZoomExtentsModifier in SciChart.js using the Builder API
-    const {
-        chartBuilder,
+    const { build2DPolarChart,
         EAxisAlignment,
         EThemeProviderType,
         EAxisType,
@@ -120,9 +119,8 @@ async function builderExample(divElementId) {
         Point,
         ESeriesType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

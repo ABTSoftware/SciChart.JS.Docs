@@ -51,11 +51,10 @@ axisAutoTicksFalse("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure axis autoticks in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType } = SciChart;
+    const { build2DChart, EThemeProviderType, EAxisType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

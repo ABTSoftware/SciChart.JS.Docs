@@ -1,35 +1,35 @@
-import { 
-    chartBuilder,
+import {
+    build2DChart, buildSeries, buildModifiers, registerType, registerFunction,
     ESeriesType,
     EChart2DModifierType,
     EPointMarkerType,
     EBaseType,
     SelectionChangedArgs,
-    EFillPaletteMode, 
-    EStrokePaletteMode, 
-    IFillPaletteProvider, 
+    EFillPaletteMode,
+    EStrokePaletteMode,
+    IFillPaletteProvider,
     IStrokePaletteProvider,
     parseColorToUIntArgb,
     IRenderableSeries,
     EPaletteProviderType,
     XyDataSeries,
     TPaletteProviderDefinition,
-    EllipsePointMarker 
+    EllipsePointMarker
 } from "scichart";
 
 export async function drawWithComplexOptionsUsingBuilderApi(divElementId: string) {
     // #region_A_start
-    return chartBuilder.buildChart(divElementId, {
+    return build2DChart(divElementId, {
         series: {
             type: ESeriesType.ScatterSeries,
-            xyData: { 
-                xValues: [1, 3, 4, 7, 9], 
-                yValues: [10, 6, 7, 2, 16] 
+            xyData: {
+                xValues: [1, 3, 4, 7, 9],
+                yValues: [10, 6, 7, 2, 16]
             },
             options: {
-                pointMarker: { 
-                    type: EPointMarkerType.Ellipse, 
-                    options: { 
+                pointMarker: {
+                    type: EPointMarkerType.Ellipse,
+                    options: {
                         stroke: "red",
                         fill: "white",
                     }
@@ -42,18 +42,18 @@ export async function drawWithComplexOptionsUsingBuilderApi(divElementId: string
 
 export async function drawWithComplexOptionsAlternativeUsingBuilderApi(divElementId: string) {
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {});
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {});
 
     const pointMarker = new EllipsePointMarker(wasmContext, {
         stroke: "red",
         fill: "white",
     });
 
-    const seriesArray = await chartBuilder.buildSeries(wasmContext, {
+    const seriesArray = await buildSeries(wasmContext, {
         type: ESeriesType.ScatterSeries,
-        xyData: { 
-            xValues: [1, 3, 4, 7, 9], 
-            yValues: [10, 6, 7, 2, 16] 
+        xyData: {
+            xValues: [1, 3, 4, 7, 9],
+            yValues: [10, 6, 7, 2, 16]
         },
         options: {
             pointMarker: pointMarker // you can use the pointMarker instance created above
@@ -66,23 +66,23 @@ export async function drawWithComplexOptionsAlternativeUsingBuilderApi(divElemen
 
 export async function drawChartWithRegisteredFunctionUsingBuilderApi(divElementId: string) {
     // #region_C_start
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
-        series: { 
-            type: ESeriesType.LineSeries, 
-            xyData: { 
-                xValues: [1, 3, 4, 7, 9], 
-                yValues: [10, 6, 7, 2, 16] 
-            } 
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
+        series: {
+            type: ESeriesType.LineSeries,
+            xyData: {
+                xValues: [1, 3, 4, 7, 9],
+                yValues: [10, 6, 7, 2, 16]
+            }
         }
     });
 
-    const logOnSelectionChanged = (args: SelectionChangedArgs) => { 
-        console.log(args) 
+    const logOnSelectionChanged = (args: SelectionChangedArgs) => {
+        console.log(args)
     };
 
-    chartBuilder.registerFunction(EBaseType.OptionFunction, "logOnSelectionChanged", logOnSelectionChanged);
+    registerFunction(EBaseType.OptionFunction, "logOnSelectionChanged", logOnSelectionChanged);
 
-    const [chartModifier] = chartBuilder.buildModifiers({
+    const [chartModifier] = buildModifiers({
         type: EChart2DModifierType.SeriesSelection,
         options: { onSelectionChanged: "logOnSelectionChanged" }
     });
@@ -138,14 +138,14 @@ export async function drawChartWithCustomSubtypeUsingBuilderApi(divElementId: st
     }
 
     // Register it for use by the builder api
-    chartBuilder.registerType(
+    registerType(
         EBaseType.PaletteProvider,
         ExampleMountainPaletteProvider.Name,
         (options: { stroke: string; fill: string }) => new ExampleMountainPaletteProvider(options)
     );
 
     // Build the surface
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         series: {
             type: ESeriesType.MountainSeries,
             options: {

@@ -7,7 +7,7 @@ import {
     ZoomPanModifier,
     XyDataSeries,
     FastLineRenderableSeries,
-    chartBuilder,
+    build2DChart,
     EAxisType,
     EThemeProviderType,
     EChart2DModifierType
@@ -108,7 +108,7 @@ createThreePanelChart("scichart-root");
 // Demonstrates how to create a 1x2 panel of charts using SubCharts and the Builder API
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         // Main chart
         subCharts: [

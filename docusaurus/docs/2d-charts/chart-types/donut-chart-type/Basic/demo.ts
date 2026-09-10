@@ -66,7 +66,7 @@ async function simpleDonutChart(divElementId) {
             { color: "#EDDE5D", offset: 1 }
         ])
     });
-    
+
     sciChartPieSurface.pieSegments.add(pieSegment1, pieSegment2, pieSegment3, pieSegment4);
     // #region_A_end
 }
@@ -76,27 +76,8 @@ simpleDonutChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a pie chart with SciChart.js using the Builder API
-    const { chartBuilder, ESciChartSurfaceType, EPieType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-
-    const sciChartDonutChart = await chartBuilder.buildChart(divElementId, {
-        type: ESciChartSurfaceType.Pie2D,
-        options: {
-            surface: {
-                theme: { type: EThemeProviderType.Dark },
-                holeRadius: 0.6,
-                pieType: EPieType.Donut
-            },
-            segments: [
-                { text: "This", value: 10, color: "red", labelStyle: { color: "white " } },
-                { text: "That", value: 5, color: "blue", labelStyle: { color: "white " } },
-                { text: "Other", value: 7, color: "green", labelStyle: { color: "white " } }
-            ]
-        }
-    });
-
-    // Alternative API
-    const donutChart = await chartBuilder.buildPieChart(divElementId, {
+    const { buildPieChart, EPieType, EThemeProviderType } = SciChart;
+    const donutChart = await buildPieChart(divElementId, {
         surface: {
             theme: { type: EThemeProviderType.Dark },
             pieType: EPieType.Donut,

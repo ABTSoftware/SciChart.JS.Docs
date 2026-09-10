@@ -59,17 +59,16 @@ drawColumnChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
-    const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    // Register the custom ColumnPaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "ColumnPaletteProvider", options => new ColumnPaletteProvider(options.threshold));
+    const { build2DChart, registerType, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
+    // Register the custom ColumnPaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "ColumnPaletteProvider", options => new ColumnPaletteProvider(options.threshold));
     // Create some data
     const xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     const yValues = [
         0.1, 0.2, 0.4, 0.8, 1.1, 1.5, 2.4, 4.6, 8.1, 11.7, 14.4, 16.0, 13.7, 10.1, 6.4, 3.5, 2.5, 1.4, 0.4, 0.1
     ];
     // Now use the Builder-API to build the chart
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

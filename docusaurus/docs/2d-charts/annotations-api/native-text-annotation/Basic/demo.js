@@ -1,4 +1,4 @@
-import { SciChartSurface, NumericAxis, EWrapTo, NativeTextAnnotation, GenericAnimation, SciChartJsNavyTheme, chartBuilder, EAnnotationType } from "scichart";
+import { SciChartSurface, NumericAxis, EWrapTo, NativeTextAnnotation, GenericAnimation, SciChartJsNavyTheme, build2DChart, EAnnotationType } from "scichart";
 // #region_A_start
 async function addAnnotationToChart(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -75,7 +75,7 @@ addAnnotationToChart("scichart-root");
 // #region_A_end
 async function builderExample(divElementId) {
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.RenderContextNativeTextAnnotation,

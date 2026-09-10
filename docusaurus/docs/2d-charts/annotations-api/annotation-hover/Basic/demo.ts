@@ -6,7 +6,7 @@ import {
     ECoordinateMode,
     AnnotationHoverModifier,
     EHoverMode,
-    chartBuilder,
+    build2DChart,
     EChart2DModifierType,
     EAnnotationType
 } from "scichart";
@@ -79,7 +79,7 @@ annotationHover("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_D_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: new SciChartJsNavyTheme()
         },

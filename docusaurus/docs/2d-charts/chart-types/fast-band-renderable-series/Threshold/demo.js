@@ -53,8 +53,7 @@ bandChartThresholds("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
     const xValues = [];
     const yValues = [];
     const y1Values = [];
@@ -67,7 +66,7 @@ async function builderExample(divElementId) {
         yValues.push(threshold); // constant value for Y
         y1Values.push(Math.cos(i * STEP) * k);
     }
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

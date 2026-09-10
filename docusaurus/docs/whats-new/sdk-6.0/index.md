@@ -60,7 +60,7 @@ Measured savings on real webpack and other builds:
 
 | Change | Saving |
 |---|---|
-| Importing `build2DChart` instead of the whole `chartBuilder` object | −43.2 KB gzip (−21.7%) |
+| Importing `build2DChart` instead of the named `build2DChart` export | −43.2 KB gzip (−21.7%) |
 | Builder API lean-by-default, per-type registration vs `registerAllTypes()` | ~155 KB vs ~360 KB gzip |
 | Core no longer loading Builder registration modules | ~15 KB gzip |
 | A single enum import from the barrel, on esbuild and Vite | ~230 KB → 0.4 KB gzip |

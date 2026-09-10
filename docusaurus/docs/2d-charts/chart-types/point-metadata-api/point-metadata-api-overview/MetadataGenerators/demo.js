@@ -18,7 +18,7 @@ class ExampleMetadataGenerator {
 // #region_A_end
 async function metadataGenerators(divElementId) {
     // Demonstrates how to add PointMetadata to a DataSeries and consume it in SciChart.js
-    const { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, EllipsePointMarker, NumberRange, RolloverModifier, EBaseType, chartBuilder } = SciChart;
+    const { SciChartSurface, NumericAxis, FastLineRenderableSeries, XyDataSeries, SciChartJsNavyTheme, EllipsePointMarker, NumberRange, RolloverModifier, EBaseType, build2DChart, registerType} = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -27,8 +27,8 @@ async function metadataGenerators(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { growBy }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { growBy }));
     // #region_B_start
-    // call chartBuilder.registerType to register a new custom type
-    chartBuilder.registerType(EBaseType.MetadataGenerator, "ExampleMetadataGenerator", data => new ExampleMetadataGenerator(data));
+    // call registerType to register a new custom type
+    registerType(EBaseType.MetadataGenerator, "ExampleMetadataGenerator", data => new ExampleMetadataGenerator(data));
     // Assign a Metadata generator instance to create metadata dynamically
     const dataSeries = new XyDataSeries(wasmContext, {
         xValues: [1, 2, 3, 4, 5],
@@ -77,12 +77,11 @@ metadataGenerators("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to add PointMetadata to a DataSeries and consume it in SciChart.js with the BuilderAPI
-    const { chartBuilder, ESeriesType, EThemeProviderType, EChart2DModifierType, EPointMarkerType, EBaseType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, registerType, ESeriesType, EThemeProviderType, EChart2DModifierType, EPointMarkerType, EBaseType } = SciChart;
     // #region_C_start
-    // call chartBuilder.registerType to register a new custom type
-    chartBuilder.registerType(EBaseType.MetadataGenerator, "ExampleMetadataGenerator", data => new ExampleMetadataGenerator(data));
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    // call registerType to register a new custom type
+    registerType(EBaseType.MetadataGenerator, "ExampleMetadataGenerator", data => new ExampleMetadataGenerator(data));
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

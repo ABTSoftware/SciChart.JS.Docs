@@ -80,7 +80,7 @@ async function multipleAxis(divElementId) {
 multipleAxis("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to configure multiple axis in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, ELabelAlignment, NumberRange, ENumericFormat, EAxisAlignment } = SciChart;
+    const { build2DChart, EThemeProviderType, EAxisType, ELabelAlignment, NumberRange, ENumericFormat, EAxisAlignment } = SciChart;
     const titleStyle1 = {
         color: "#50C7E0",
         fontSize: 30
@@ -96,9 +96,8 @@ async function builderExample(divElementId) {
         color: "#F48420",
         alignment: ELabelAlignment.Right
     };
-    // or, for npm, import { chartBuilder, ... } from "scichart"
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

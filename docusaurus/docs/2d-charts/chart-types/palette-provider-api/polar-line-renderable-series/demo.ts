@@ -24,8 +24,8 @@ class ThresholdLinePaletteProvider extends DefaultPaletteProvider {
     }
 
     overrideStrokeArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: IPointMetadata) {
-        return this.rule(yValue, xValue) 
-            ? this.stroke 
+        return this.rule(yValue, xValue)
+            ? this.stroke
             : undefined;
     }
 }
@@ -94,22 +94,20 @@ async function builderExample(divElementId) {
         EPolarLabelMode,
         NumberRange,
         ESeriesType,
-        EThemeProviderType,
-        chartBuilder,
+        EThemeProviderType, build2DPolarChart, registerType,
         EAxisType,
         EBaseType,
         EPaletteProviderType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    // Register the custom ThresholdLinePaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom ThresholdLinePaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "ThresholdLinePaletteProvider",
         options => new ThresholdLinePaletteProvider(options.stroke, options.rule)
     );
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         xAxes: [
             {

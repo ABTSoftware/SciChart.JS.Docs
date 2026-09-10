@@ -73,23 +73,8 @@ simplePieChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a pie chart with SciChart.js using the Builder API
-    const { chartBuilder, ESciChartSurfaceType, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-
-    const sciChartPieChart = await chartBuilder.buildChart(divElementId, {
-        type: ESciChartSurfaceType.Pie2D,
-        options: {
-            surface: { theme: { type: EThemeProviderType.Dark } },
-            segments: [
-                { text: "This", value: 10, color: "red" },
-                { text: "That", value: 5, color: "blue" },
-                { text: "Other", value: 7, color: "green" }
-            ]
-        }
-    });
-
-    // Alternative API
-    const pieChart = await chartBuilder.buildPieChart(divElementId, {
+    const { buildPieChart, ESeriesType, EThemeProviderType } = SciChart;
+    const pieChart = await buildPieChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         segments: [
             { text: "This", value: 10, color: "red" },

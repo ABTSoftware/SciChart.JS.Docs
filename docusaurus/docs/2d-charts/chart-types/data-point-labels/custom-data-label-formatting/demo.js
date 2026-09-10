@@ -1,4 +1,4 @@
-import { SciChartSurface, NumericAxis, FastLineRenderableSeries, EllipsePointMarker, XyDataSeries, NumberRange, EMultiLineAlignment, SciChartJsNavyTheme, chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } from "scichart";
+import { SciChartSurface, NumericAxis, FastLineRenderableSeries, EllipsePointMarker, XyDataSeries, NumberRange, EMultiLineAlignment, SciChartJsNavyTheme, build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType } from "scichart";
 async function dataLabelProviderGetText(divElementId) {
     // Create a chart with X,Y axis
     const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElementId, {
@@ -45,7 +45,7 @@ dataLabelProviderGetText("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to add DataLabels to a chart with SciChart.js using the Builder API
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

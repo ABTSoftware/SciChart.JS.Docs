@@ -79,11 +79,10 @@ drawScatterChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create an interpolated polar line chart with SciChart.js using the Builder API
-    const { EPolarAxisMode, EAxisAlignment, ESeriesType, EThemeProviderType, chartBuilder, EAxisType, EPointMarkerType, EBaseType, EPaletteProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    // Register the custom ScatterPaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "ScatterPaletteProvider", options => new ScatterPaletteProvider(options.stroke, options.fill, options.rule));
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { EPolarAxisMode, EAxisAlignment, ESeriesType, EThemeProviderType, build2DPolarChart, registerType, EAxisType, EPointMarkerType, EBaseType, EPaletteProviderType } = SciChart;
+    // Register the custom ScatterPaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "ScatterPaletteProvider", options => new ScatterPaletteProvider(options.stroke, options.fill, options.rule));
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         xAxes: [
             {

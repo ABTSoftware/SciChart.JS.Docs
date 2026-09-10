@@ -7,9 +7,9 @@ export async function serialisedPointMarker(rootElement) {
         SciChartJsNavyTheme,
         XyDataSeries,
         PolarNumericAxis,
-        EPolarAxisMode, 
-        NumberRange, 
-        EAxisAlignment, 
+        EPolarAxisMode,
+        NumberRange,
+        EAxisAlignment,
         EPolarLabelMode,
         PolarXyScatterRenderableSeries,
         EPointMarkerType,
@@ -45,7 +45,7 @@ export async function serialisedPointMarker(rootElement) {
         labelPostfix: `°`, // Degree symbol
     });
     sciChartSurface.xAxes.add(angularXAxis);
-    
+
     // #region_A_start
     const scatterExample = new PolarXyScatterRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
@@ -71,10 +71,9 @@ serialisedPointMarker("scichart-root");
 export async function builderPointMarker(divElementId) {
     // #region_B_start
     // Demonstrates how to create a scatter with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
+    const { build2DChart, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         series: [
             {

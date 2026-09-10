@@ -89,7 +89,7 @@ drawMountainChartsWithGaps("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with gaps in SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         ESeriesType,
         ELineDrawMode,
         EThemeProviderType,
@@ -112,7 +112,7 @@ async function builderExample(divElementId) {
         yValues.push(i % 50 < 15 ? NaN : y);
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

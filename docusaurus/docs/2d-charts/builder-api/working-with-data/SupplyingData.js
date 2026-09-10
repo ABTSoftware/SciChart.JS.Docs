@@ -1,13 +1,13 @@
 import * as SciChart from "scichart";
 export async function drawChartWithSharedDataSeries(divElementId) {
     // #region_A_start
-    const { chartBuilder, ESeriesType } = SciChart;
+    const { build2DChart, buildSeries, ESeriesType } = SciChart;
     const DATA = {
         x: [1, 2, 3, 4, 5],
         col: [8, 2, 3, 7, 10],
         line: [10, 6, 7, 2, 16]
     };
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         series: [
             { type: ESeriesType.ColumnSeries, xyData: { xDataId: "x", yDataId: "col" } },
             { type: ESeriesType.LineSeries, xyData: { xDataId: "x", yDataId: "line" } },
@@ -18,8 +18,8 @@ export async function drawChartWithSharedDataSeries(divElementId) {
 }
 export async function drawChartWithManuallyCreatedDataSeries(divElementId) {
     // #region_B_start
-    const { chartBuilder, XyDataSeries, ESeriesType } = SciChart;
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, buildSeries, XyDataSeries, ESeriesType } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         series: [
             {
                 type: ESeriesType.ColumnSeries,
@@ -44,13 +44,13 @@ export async function drawChartWithManuallyCreatedDataSeries(divElementId) {
 }
 export async function drawChartWithBuiltRenderableSeries(divElementId) {
     // #region_C_start
-    const { chartBuilder, XyDataSeries, ESeriesType } = SciChart;
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, buildSeries, XyDataSeries, ESeriesType } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         series: [
             { type: ESeriesType.ColumnSeries, xyData: { xDataId: "x", yDataId: "col" } },
         ]
     });
-    const seriesArray = chartBuilder.buildSeries(wasmContext, {
+    const seriesArray = buildSeries(wasmContext, {
         type: ESeriesType.LineSeries,
         options: {
             stroke: "red",

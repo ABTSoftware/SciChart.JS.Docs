@@ -2,16 +2,16 @@ import * as SciChart from "scichart";
 
 // #region_A_start
 // Demonstrates how to create an interpolated polar line chart using SciChart.js
-import { 
-    SciChartPolarSurface, 
+import {
+    SciChartPolarSurface,
     DefaultPaletteProvider,
-    PolarNumericAxis, 
+    PolarNumericAxis,
     PolarLineRenderableSeries,
     EPolarAxisMode,
     EAxisAlignment,
     SciChartJsNavyTheme,
     NumberRange,
-    XyDataSeries, 
+    XyDataSeries,
     Thickness,
     EStrokePaletteMode,
     parseColorToUIntArgb,
@@ -48,14 +48,14 @@ export async function PolarLinePaletteProvider(divElementId: string) {
             this.stroke2 = parseColorToUIntArgb(stroke2);
             this.strokePaletteMode = EStrokePaletteMode.SOLID;
         }
-    
+
         overrideStrokeArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: IPointMetadata) {
             return this.rule(yValue, xValue) // when rule is met, return the stroke color
-                ? this.stroke2 
+                ? this.stroke2
                 : undefined;
         }
     }
-    
+
     const polarLine = new PolarLineRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
             xValues: Array.from({ length: 34 }, (_, i) => i),
@@ -71,7 +71,7 @@ export async function PolarLinePaletteProvider(divElementId: string) {
     });
     sciChartSurface.renderableSeries.add(polarLine);
     // #region_A_end
-    
+
     return { sciChartSurface, wasmContext };
 }
 
@@ -80,8 +80,8 @@ PolarLinePaletteProvider("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create an interpolated polar line chart with SciChart.js using the Builder API
-    const { 
-        chartBuilder,
+    const {
+        build2DChart, build2DPolarChart,
         EPolarAxisMode,
         EAxisAlignment,
         EAxisType,
@@ -92,7 +92,6 @@ async function builderExample(divElementId) {
         parseColorToUIntArgb,
         SciChartJsNavyTheme,
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     class ThresholdLinePaletteProvider extends DefaultPaletteProvider {
         rule: (yValue: number, xValue: number) => boolean;
@@ -104,15 +103,15 @@ async function builderExample(divElementId) {
             this.stroke2 = parseColorToUIntArgb(stroke2);
             this.strokePaletteMode = EStrokePaletteMode.SOLID;
         }
-    
+
         overrideStrokeArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: IPointMetadata) {
             return this.rule(yValue, xValue) // when rule is met, return the stroke color
-                ? this.stroke2 
+                ? this.stroke2
                 : undefined;
         }
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

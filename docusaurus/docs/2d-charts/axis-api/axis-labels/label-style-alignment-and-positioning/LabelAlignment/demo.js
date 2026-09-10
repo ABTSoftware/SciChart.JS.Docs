@@ -44,9 +44,8 @@ labelAlignment("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure a numeric axis in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisAlignment, ELabelAlignment, EAxisType, ENumericFormat, NumberRange } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, EThemeProviderType, EAxisAlignment, ELabelAlignment, EAxisType, ENumericFormat, NumberRange } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

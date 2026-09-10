@@ -28,10 +28,9 @@ A [MouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js
 
     ```ts {8} showLineNumbers
     // Demonstrates how to configure the MouseWheelZoomModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EChart2DModifierType, EXyDirection } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EChart2DModifierType, EXyDirection } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         modifiers: [
             {
                 type: EChart2DModifierType.MouseWheelZoom,

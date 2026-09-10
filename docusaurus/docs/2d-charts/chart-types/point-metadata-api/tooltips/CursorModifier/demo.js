@@ -109,11 +109,10 @@ metadataCursorModifier("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to add PointMetadata to a DataSeries and consume it in SciChart.js with the BuilderAPI
-    const { chartBuilder, ESeriesType, EThemeProviderType, EChart2DModifierType, EPointMarkerType } = SciChart;
+    const { build2DChart, ESeriesType, EThemeProviderType, EChart2DModifierType, EPointMarkerType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

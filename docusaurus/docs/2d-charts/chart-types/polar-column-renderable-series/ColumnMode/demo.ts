@@ -36,11 +36,11 @@ async function PolarColumnChart(divElementId) {
         innerRadius: 0.1,
     });
     sciChartSurface.xAxes.add(radialYAxis);
-    
+
     // #region_A_start
     const polarColumn = new PolarColumnRenderableSeries(wasmContext, {
         dataSeries: new XyxDataSeries(wasmContext, {
-            xValues:  [  1,   2,   3, 5, 6.5, 9.5], 
+            xValues:  [  1,   2,   3, 5, 6.5, 9.5],
             x1Values: [1.5, 2.5, 4.5, 6,   9, 10 ], // columns go from 1 -> 1.5 // 2 -> 2.5, etc
             yValues: [6.6, 8.7, 3.5, 5.7, 3.8, 6.8], // dictates the height of the column
         }),
@@ -59,52 +59,54 @@ PolarColumnChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESciChartSurfaceType, ESeriesType, EThemeProviderType, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, GradientParams, Point } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DPolarChart, EAxisType, ESeriesType, EThemeProviderType, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, GradientParams, Point } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.buildChart(divElementId, {
-        // @ts-ignore
-        type: ESciChartSurfaceType.Polar2D,
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         xAxes: [
             {
-                polarAxisMode: EPolarAxisMode.Angular,
-                axisAlignment: EAxisAlignment.Top,
-                visibleRange: new NumberRange(0, 9),
-                useNativeText: true,
-                drawMajorGridLines: true,
-                drawMajorTickLines: false,
-                drawMinorTickLines: false,
-                drawMinorGridLines: false,
-                autoTicks: false,
-                majorDelta: 1,
-                startAngle: Math.PI / 2,
-                flippedCoordinates: true,
-                polarLabelMode: EPolarLabelMode.Parallel
+                type: EAxisType.PolarNumericAxis,
+                options: {
+                    polarAxisMode: EPolarAxisMode.Angular,
+                    axisAlignment: EAxisAlignment.Top,
+                    visibleRange: new NumberRange(0, 9),
+                    useNativeText: true,
+                    drawMajorGridLines: true,
+                    drawMajorTickLines: false,
+                    drawMinorTickLines: false,
+                    drawMinorGridLines: false,
+                    autoTicks: false,
+                    majorDelta: 1,
+                    startAngle: Math.PI / 2,
+                    flippedCoordinates: true,
+                    polarLabelMode: EPolarLabelMode.Parallel
+                }
             }
         ],
         yAxes: [
             {
-                axisAlignment: EAxisAlignment.Right,
-                polarAxisMode: EPolarAxisMode.Radial,
-                visibleRange: new NumberRange(0, 6),
-                useNativeText: true,
-                autoTicks: false,
-                majorDelta: 1,
-                drawMajorGridLines: true,
-                drawMajorTickLines: false,
-                labelPrecision: 0,
-                innerRadius: 0.1,
-                startAngle: Math.PI / 2,
-                drawLabels: false,
-                majorGridLineStyle: { strokeThickness: 1, color: "#666666" }
+                type: EAxisType.PolarNumericAxis,
+                options: {
+                    axisAlignment: EAxisAlignment.Right,
+                    polarAxisMode: EPolarAxisMode.Radial,
+                    visibleRange: new NumberRange(0, 6),
+                    useNativeText: true,
+                    autoTicks: false,
+                    majorDelta: 1,
+                    drawMajorGridLines: true,
+                    drawMajorTickLines: false,
+                    labelPrecision: 0,
+                    innerRadius: 0.1,
+                    startAngle: Math.PI / 2,
+                    drawLabels: false,
+                    majorGridLineStyle: { strokeThickness: 1, color: "#666666" }
+                }
             }
         ],
         series: [
             {
-                // @ts-ignore
                 type: ESeriesType.PolarColumnSeries,
-                xyyData: {
+                xyData: {
                     xValues: [0, 1, 2, 3, 4, 5, 6, 7, 8],
                     yValues: [2.6, 5.3, 3.5, 2.7, 4.8, 3.8, 5, 4.5, 3.5]
                 },

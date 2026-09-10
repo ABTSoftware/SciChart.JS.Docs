@@ -1,7 +1,7 @@
-import { chartBuilder, EThemeProviderType, ESeriesType, EAxisType, EChart2DModifierType, NumberRange } from "scichart";
+import { build2DChart, EThemeProviderType, ESeriesType, EAxisType, EChart2DModifierType, NumberRange } from "scichart";
 export async function drawSimpleChartUsingBuilderApi(divElementId) {
     // #region_A_start
-    const { sciChartSurface, wasmContext } = await chartBuilder.buildChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         series: {
             type: ESeriesType.LineSeries,
             xyData: {
@@ -13,7 +13,7 @@ export async function drawSimpleChartUsingBuilderApi(divElementId) {
     // #region_A_end
 }
 export async function drawComplexChartUsingBuilderApi(divElementId) {
-    const { sciChartSurface, wasmContext } = await chartBuilder.buildChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: {
             theme: {
                 type: EThemeProviderType.Light

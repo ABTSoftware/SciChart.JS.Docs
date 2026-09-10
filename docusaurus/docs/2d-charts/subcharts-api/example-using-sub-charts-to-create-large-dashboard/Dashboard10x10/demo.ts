@@ -12,7 +12,7 @@ import {
     EHorizontalAnchorPoint,
     EVerticalAnchorPoint,
     ECoordinateMode,
-    chartBuilder,
+    build2DChart,
     EAxisType,
     ESeriesType
 } from "scichart";
@@ -169,7 +169,7 @@ async function builderExample(divElementId) {
         });
     }
 
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { padding: Thickness.fromNumber(0) },
         subCharts
     });

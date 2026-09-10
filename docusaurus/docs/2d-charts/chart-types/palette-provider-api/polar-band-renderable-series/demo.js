@@ -66,9 +66,8 @@ paletteProviderBandChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { EThemeProviderType, chartBuilder, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, EAxisType, ESeriesType, } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { EThemeProviderType, build2DPolarChart, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, EAxisType, ESeriesType, } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         xAxes: [
             {

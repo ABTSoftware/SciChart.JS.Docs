@@ -81,13 +81,12 @@ sciChartSurface.renderableSeries.add(lineSeries);
 
 ```ts
 // Demonstrates how to create and assign a dataSeries with SciChart.js using the Builder API
-const { chartBuilder, ESeriesType, EThemeProviderType, XyDataSeries } = SciChart;
+const { build2DChart, ESeriesType, EThemeProviderType, XyDataSeries } = SciChart;
 
-// or, for npm, import { chartBuilder, ... } from "scichart"
 const xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8];
 const yValues = [2.5, 3.5, 3.7, 4.0, 5.0, 5.5, 5.0, 4.0, 3.0];
 
-const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
     surface: { theme: { type: EThemeProviderType.Dark } },
     series: [
         {
@@ -137,7 +136,7 @@ const xyDataSeries = new XyDataSeries(wasmContext, {
 ```
 
 ```ts
-const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
     surface: { theme: { type: EThemeProviderType.Dark } },
     series: [
         {

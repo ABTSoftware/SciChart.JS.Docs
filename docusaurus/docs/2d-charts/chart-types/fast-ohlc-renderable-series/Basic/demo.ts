@@ -91,8 +91,7 @@ simpleOhlcChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create an OHLC chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EAxisType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType, EAxisType } = SciChart;
 
     // Data format is { dateValues[], openValues[], highValues[], lowValues[], closeValues[] }
     const { dateValues, openValues, highValues, lowValues, closeValues, volumeValues } = await getCandles(
@@ -101,7 +100,7 @@ async function builderExample(divElementId) {
         100
     );
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [{ type: EAxisType.CategoryAxis }],
         yAxes: [{ type: EAxisType.NumericAxis, options: { labelPrefix: "$", labelPrecision: 2 } }],

@@ -82,12 +82,11 @@ async function labelproviderProperties(divElementId) {
 labelproviderProperties("scichart-root");
 
 async function builderExample(divElementId) {
-    const { chartBuilder, EThemeProviderType, ENumericFormat, EAxisType } = SciChart;
+    const { build2DChart, EThemeProviderType, ENumericFormat, EAxisType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // #region_B_start
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

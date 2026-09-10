@@ -27,8 +27,8 @@ class ColumnPaletteProvider extends DefaultPaletteProvider {
     // Return undefined to use the default color for the line,
     // else, return a custom colour as an ARGB color code, e.g. 0xFFFF0000 is red
     overrideStrokeArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: any) {
-        return yValue > this.threshold 
-            ? this.fillColor 
+        return yValue > this.threshold
+            ? this.fillColor
             : undefined;
     }
 
@@ -36,8 +36,8 @@ class ColumnPaletteProvider extends DefaultPaletteProvider {
     // Return undefined to use the default color for the fill, else, return
     // a custom color as ARGB color code e.g. 0xFFFF0000 is red
     overrideFillArgb(xValue: number, yValue: number, index: number, opacity: number, metadata: any) {
-        return yValue > this.threshold 
-            ? this.fillColor 
+        return yValue > this.threshold
+            ? this.fillColor
             : undefined;
     }
 }
@@ -59,7 +59,7 @@ async function drawColumnChartWithPalette(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
-    
+
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
         axisAlignment: EAxisAlignment.Top,
@@ -81,7 +81,7 @@ async function drawColumnChartWithPalette(divElementId) {
         stroke: "rgba(176, 196, 222, 1)",
         strokeThickness: 2,
         dataPointWidth: 0.7,
-        dataSeries: new XyDataSeries(wasmContext, { 
+        dataSeries: new XyDataSeries(wasmContext, {
             xValues: Array.from({ length: 20 }, (_, i) => i),
             yValues: Array.from({ length: 20 }).map((_) => Math.random() * 10 + 5)
         }),
@@ -97,11 +97,11 @@ drawColumnChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create a polar column chart with a custom PaletteProvider, using the builder API
-    const { 
-        chartBuilder, 
-        EBaseType, 
-        ESeriesType, 
-        EPaletteProviderType, 
+    const {
+        build2DChart, build2DPolarChart, registerType,
+        EBaseType,
+        ESeriesType,
+        EPaletteProviderType,
         EThemeProviderType,
         EAxisType,
         EPolarAxisMode,
@@ -109,17 +109,16 @@ async function builderExample(divElementId) {
         EPolarLabelMode,
         NumberRange,
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    // Register the custom ColumnPaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom ColumnPaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "ColumnPaletteProvider",
         options => new ColumnPaletteProvider(options.threshold)
     );
 
     // Now use the Builder-API to build the chart
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

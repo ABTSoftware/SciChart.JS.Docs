@@ -48,9 +48,8 @@ simpleRadarChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a Column chart with SciChart.js using the Builder API
-    const { chartBuilder, EAxisType, EPolarAxisMode, NumberRange, EAxisAlignment, ESeriesType, EPolarLabelMode, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    await chartBuilder.build2DPolarChart(divElementId, {
+    const { build2DChart, build2DPolarChart, EAxisType, EPolarAxisMode, NumberRange, EAxisAlignment, ESeriesType, EPolarLabelMode, EThemeProviderType } = SciChart;
+    await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

@@ -178,12 +178,11 @@ async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PinchZoomModifier in SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         EThemeProviderType,
         ECoordinateMode,
         EChart2DModifierType,
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // Add a custom tooltip data template
     const tooltipDataTemplate = (seriesInfo, tooltipTitle, tooltipLabelX, tooltipLabelY) => {
@@ -210,7 +209,7 @@ async function builderExample(divElementId) {
         return lineItems;
     };
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         modifiers: [
             {

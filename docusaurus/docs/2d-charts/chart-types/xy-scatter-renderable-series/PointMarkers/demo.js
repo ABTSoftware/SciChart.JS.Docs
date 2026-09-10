@@ -156,7 +156,7 @@ async function createScatterChartWithManyPointMarkers(divElementId) {
 createScatterChartWithManyPointMarkers("scichart-root");
 // Demonstrates the alternative Builder-API to create a line chart with gaps
 async function builderExample(divElementId) {
-    const { chartBuilder, NumberRange, EAxisType, ESeriesType, EPointMarkerType, EThemeProviderType, createImageAsync } = SciChart;
+    const { build2DChart, NumberRange, EAxisType, ESeriesType, EPointMarkerType, EThemeProviderType, createImageAsync } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
     const createData = () => {
         // Create some dataseries
@@ -180,7 +180,7 @@ async function builderExample(divElementId) {
     };
     const { xValues, yValues1, yValues2, yValues3, yValues4, yValues5 } = createData();
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: { type: EAxisType.NumericAxis },
         yAxes: { type: EAxisType.NumericAxis, options: { growBy: new NumberRange(0, 0.15) } },

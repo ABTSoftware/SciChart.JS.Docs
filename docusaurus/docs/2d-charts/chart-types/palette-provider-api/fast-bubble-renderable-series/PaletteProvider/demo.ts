@@ -109,10 +109,9 @@ drawBubbleChartWithPalette("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a bubble with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EPointMarkerType, EThemeProviderType, EBaseType, EPaletteProviderType } =
+    const { build2DChart, registerType, ESeriesType, EPointMarkerType, EThemeProviderType, EBaseType, EPaletteProviderType } =
         SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const xValues = [];
     const yValues = [];
@@ -124,14 +123,14 @@ async function builderExample(divElementId) {
     }
 
     // #region_C_start
-    // Register the custom BubblePaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom BubblePaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "BubblePaletteProvider",
         options => new BubblePaletteProvider(options.fill, options.rule)
     );
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

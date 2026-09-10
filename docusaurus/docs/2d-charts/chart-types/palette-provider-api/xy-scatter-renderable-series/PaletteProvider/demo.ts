@@ -98,7 +98,7 @@ drawScatterChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
     const {
-        chartBuilder,
+        build2DChart, registerType,
         EBaseType,
         ESeriesType,
         EPaletteProviderType,
@@ -108,7 +108,6 @@ async function builderExample(divElementId) {
         ELabelPlacement
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const xValues = [];
     const yValues = [];
@@ -118,15 +117,15 @@ async function builderExample(divElementId) {
     }
 
     // #region_C_start
-    // Register the custom ScatterPaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom ScatterPaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "ScatterPaletteProvider",
         options => new ScatterPaletteProvider(options.stroke, options.fill, options.rule)
     );
 
     // Use the Builder-API to build the chart and apply a paletteprovider
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

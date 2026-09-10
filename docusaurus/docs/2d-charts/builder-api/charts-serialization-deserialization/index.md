@@ -13,13 +13,13 @@ const definition = sciChartSurface.toJSON(true);
 const json = JSON.stringify(definition);
 ```
 
-When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. To do this you MUST use the [chartReviver:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartreviver) on [chartBuilder:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder) to ensure that the types are correctly deserialized.
+When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. Use [chartReviver:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartreviver) to ensure that the types are correctly deserialized.
 
 ```ts
-import { chartBuilder } from "scichart";
+import { build2DChart, chartReviver } from "scichart";
 
-const definition = JSON.parse(json, chartBuilder.chartReviver);
-const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, definition);
+const definition = JSON.parse(json, chartReviver);
+const { sciChartSurface, wasmContext } = await build2DChart(divElementId, definition);
 ```
 
 All of the Builder API functions for building parts of charts can take JSON strings or a definition object.
@@ -28,14 +28,15 @@ Try this code and this JSON to see the output in SciChart.js
 
 ```ts
 import {
-    chartBuilder,
+    build2DChart,
+    chartReviver,
     ESeriesType,
     EChart2DModifierType,
     ISciChart2DDefinition
 } from "scichart";
 
 export async function drawAndSerializeChart(divElementId) {
-    const { sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface } = await build2DChart(divElementId, {
         series: {
             type: ESeriesType.LineSeries,
             xyData: {
@@ -249,9 +250,9 @@ export async function deserializeAndDrawChart(divElementId) {
         "modifiers": [],
         "annotations": []
     };
-    const definition = JSON.parse(json, chartBuilder.chartReviver);
+    const definition = JSON.parse(json, chartReviver);
     definition.modifiers = [{ type: EChart2DModifierType.Rollover }];
-    return chartBuilder.build2DChart(divElementId, definition);
+    return build2DChart(divElementId, definition);
 }
 ```
 

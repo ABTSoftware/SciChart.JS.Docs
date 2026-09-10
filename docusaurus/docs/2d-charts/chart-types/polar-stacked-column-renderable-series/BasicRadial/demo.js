@@ -51,9 +51,8 @@ polarStackedRadialColumnChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, EPolarAxisMode, EAxisType, ESeriesType, EAxisAlignment, EPolarLabelMode, NumberRange, GradientParams, Point, SciChartJsNavyTheme } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { build2DChart, build2DPolarChart, EPolarAxisMode, EAxisType, ESeriesType, EAxisAlignment, EPolarLabelMode, NumberRange, GradientParams, Point, SciChartJsNavyTheme } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

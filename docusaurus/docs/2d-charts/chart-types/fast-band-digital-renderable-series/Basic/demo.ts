@@ -3,12 +3,12 @@ import * as SciChart from "scichart";
 async function digitalBandChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a band chart using SciChart.js
-    const { 
-        SciChartSurface, 
-        NumericAxis, 
-        FastBandRenderableSeries, 
-        XyyDataSeries, 
-        SciChartJsNavyTheme 
+    const {
+        SciChartSurface,
+        NumericAxis,
+        FastBandRenderableSeries,
+        XyyDataSeries,
+        SciChartJsNavyTheme
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -32,10 +32,10 @@ async function digitalBandChart(divElementId) {
     }
 
     const bandSeries = new FastBandRenderableSeries(wasmContext, {
-        dataSeries: new XyyDataSeries(wasmContext, { 
-            xValues, 
+        dataSeries: new XyyDataSeries(wasmContext, {
+            xValues,
             yValues,
-            y1Values 
+            y1Values
         }),
         stroke: "#F48420",
         strokeY1: "#50C7E0",
@@ -58,8 +58,7 @@ digitalBandChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
 
     const xValues = [];
     const yValues = [];
@@ -73,7 +72,7 @@ async function builderExample(divElementId) {
         y1Values.push(Math.cos(i * STEP) * k);
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         series: [
             {
                 type: ESeriesType.BandSeries,

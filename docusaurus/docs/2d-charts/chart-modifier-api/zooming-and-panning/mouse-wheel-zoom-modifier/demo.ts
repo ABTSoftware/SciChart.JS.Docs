@@ -61,7 +61,7 @@ async function zoomPan2D(divElementId) {
     // #region_A_start
     const { ZoomPanModifier, EXyDirection } = SciChart;
     // or for npm: import { PinchZoomModifier } from "scichart";
-    
+
     // Add Zoom Pan and Pinch behaviour to the chart. All parameters are optional
     sciChartSurface.chartModifiers.add(new ZoomPanModifier({
         // Specifies Panning in X,Y direction or both
@@ -87,10 +87,9 @@ zoomPan2D("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the ZoomPanModifier in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EChart2DModifierType, EXyDirection } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EChart2DModifierType, EXyDirection } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         modifiers: [
             {

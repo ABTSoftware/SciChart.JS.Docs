@@ -45,8 +45,7 @@ async function gradientFillBandChart(divElementId) {
 gradientFillBandChart("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, GradientParams, Point } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, GradientParams, Point } = SciChart;
     const xValues = [];
     const yValues = [];
     const y1Values = [];
@@ -59,7 +58,7 @@ async function builderExample(divElementId) {
         y1Values.push(Math.cos(i * STEP) * k);
     }
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         series: [
             {
                 type: ESeriesType.BandSeries,

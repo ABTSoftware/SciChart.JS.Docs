@@ -48,8 +48,7 @@ simpleImpulseChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
 
     // Create some data
     const xValues = [];
@@ -59,7 +58,7 @@ async function builderExample(divElementId) {
         yValues.push(Math.sin(i * 0.2) * Math.log(i / 100));
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

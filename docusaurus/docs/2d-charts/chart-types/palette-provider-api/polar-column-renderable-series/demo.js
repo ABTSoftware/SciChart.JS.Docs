@@ -72,12 +72,11 @@ drawColumnChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create a polar column chart with a custom PaletteProvider, using the builder API
-    const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType, EAxisType, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    // Register the custom ColumnPaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "ColumnPaletteProvider", options => new ColumnPaletteProvider(options.threshold));
+    const { build2DChart, build2DPolarChart, registerType, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType, EAxisType, EPolarAxisMode, EAxisAlignment, EPolarLabelMode, NumberRange, } = SciChart;
+    // Register the custom ColumnPaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "ColumnPaletteProvider", options => new ColumnPaletteProvider(options.threshold));
     // Now use the Builder-API to build the chart
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: [
             {

@@ -55,17 +55,16 @@ simpleErrorBarsChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a chart with error bars in SciChart.js using the Builder API
-    const { 
-        chartBuilder, 
-        ESeriesType, 
+    const {
+        build2DChart,
+        ESeriesType,
         EThemeProviderType,
         EErrorMode,
         EErrorDirection,
         EDataPointWidthMode
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

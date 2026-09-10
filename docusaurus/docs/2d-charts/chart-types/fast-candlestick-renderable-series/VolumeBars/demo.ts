@@ -58,10 +58,10 @@ async function candlestickAndVolumeChart(divElementId) {
     // #region_A_start
     // Add a secondary axis for the volume bars
     sciChartSurface.yAxes.add(
-        new NumericAxis(wasmContext, { 
-            id: "VolumeAxisId", 
-            isVisible: false, 
-            growBy: new NumberRange(0, 4) 
+        new NumericAxis(wasmContext, {
+            id: "VolumeAxisId",
+            isVisible: false,
+            growBy: new NumberRange(0, 4)
         })
     );
 
@@ -75,9 +75,9 @@ async function candlestickAndVolumeChart(divElementId) {
     // Add a column series to render the volume bars
     sciChartSurface.renderableSeries.add(
         new FastColumnRenderableSeries(wasmContext, {
-            dataSeries: new XyDataSeries(wasmContext, { 
-                xValues: dateValues, 
-                yValues: volumeValues 
+            dataSeries: new XyDataSeries(wasmContext, {
+                xValues: dateValues,
+                yValues: volumeValues
             }),
             yAxisId: "VolumeAxisId",
             strokeThickness: 0,
@@ -117,8 +117,7 @@ candlestickAndVolumeChart("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EAxisType, NumberRange } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EAxisType, NumberRange } = SciChart;
 
     // Data format is { dateValues[], openValues[], highValues[], lowValues[], closeValues[] }
     const { dateValues, openValues, highValues, lowValues, closeValues, volumeValues } = await getCandles(
@@ -128,12 +127,12 @@ async function builderExample(divElementId) {
     );
 
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         xAxes: [{ type: EAxisType.CategoryAxis }],
         yAxes: [
-            { 
-                type: EAxisType.NumericAxis, 
-                options: { labelPrefix: "$", labelPrecision: 2 } 
+            {
+                type: EAxisType.NumericAxis,
+                options: { labelPrefix: "$", labelPrecision: 2 }
             },
             {
                 type: EAxisType.NumericAxis,

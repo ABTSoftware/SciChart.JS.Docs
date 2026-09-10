@@ -2,10 +2,10 @@ import * as SciChart from "scichart";
 import { IPointMetadata } from "scichart";
 
 // #region_A_start
-const { 
-    DefaultPaletteProvider, 
-    EStrokePaletteMode, 
-    parseColorToUIntArgb 
+const {
+    DefaultPaletteProvider,
+    EStrokePaletteMode,
+    parseColorToUIntArgb
 } = SciChart;
 // or, for npm, import { DefaultPaletteProvider, ... } from "scichart"
 
@@ -78,7 +78,7 @@ async function drawScatterChartWithPalette(divElementId) {
     // #region_B_start
     // The ScatterPaletteProvider we created before is applied to a PolarXyScatterRenderableSeries
     const scatterSeries = new PolarXyScatterRenderableSeries(wasmContext, {
-        dataSeries: new XyDataSeries(wasmContext, { 
+        dataSeries: new XyDataSeries(wasmContext, {
             xValues: Array.from({ length: 100 }, (_, i) => i),
             yValues: Array.from({ length: 100 }, (_, i) => Math.random() * 2 - 1), // Random values between -1 and 1
         }),
@@ -118,17 +118,15 @@ async function builderExample(divElementId) {
         EPolarAxisMode,
         EAxisAlignment,
         ESeriesType,
-        EThemeProviderType,
-        chartBuilder,
+        EThemeProviderType, build2DPolarChart, registerType,
         EAxisType,
         EPointMarkerType,
         EBaseType,
         EPaletteProviderType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    // Register the custom ScatterPaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom ScatterPaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "ScatterPaletteProvider",
         options => new ScatterPaletteProvider(
@@ -138,7 +136,7 @@ async function builderExample(divElementId) {
         )
     );
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         xAxes: [
             {

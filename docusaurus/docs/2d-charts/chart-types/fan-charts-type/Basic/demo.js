@@ -96,8 +96,7 @@ simpleFanChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
     // get data for the fan chart
     // format is [{ date, actual, varMax, var4, var3, var2, var1, varMin }]
     const varianceData = getVarianceData();
@@ -110,7 +109,7 @@ async function builderExample(divElementId) {
     const var2Values = varianceData.map(v => v.var2);
     const var3Values = varianceData.map(v => v.var3);
     const var4Values = varianceData.map(v => v.var4);
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

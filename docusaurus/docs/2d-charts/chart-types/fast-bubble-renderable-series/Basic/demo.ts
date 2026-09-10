@@ -58,8 +58,7 @@ simpleBubbleChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a scatter with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
 
     const xValues = [];
     const yValues = [];
@@ -70,7 +69,7 @@ async function builderExample(divElementId) {
         sizes.push(Math.sin(i) * 60 + 3);
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

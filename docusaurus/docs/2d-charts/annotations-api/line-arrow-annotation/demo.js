@@ -77,9 +77,9 @@ async function drawExample(divElementId) {
 drawExample("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, EAnnotationType, EArrowHeadPosition, EDraggingGripPoint, } = SciChart;
+    const { build2DChart, EAnnotationType, EArrowHeadPosition, EDraggingGripPoint, } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: { type: "Navy" },
         },

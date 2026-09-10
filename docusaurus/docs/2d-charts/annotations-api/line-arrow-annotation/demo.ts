@@ -60,7 +60,7 @@ async function drawExample(divElementId) {
         arrowHeadPosition: EArrowHeadPosition.StartEnd, // show arrow heads on both ends
         isEditable: true,
         dragPoints: [
-            EDraggingGripPoint.x1y1, 
+            EDraggingGripPoint.x1y1,
             EDraggingGripPoint.x2y2
         ], // allow dragging by both end points
     });
@@ -69,10 +69,10 @@ async function drawExample(divElementId) {
     sciChartSurface.annotations.add(arrow1, arrow2);
     // #region_A_end
 
-    const { 
-        MouseWheelZoomModifier, 
-        ZoomExtentsModifier, 
-        ZoomPanModifier, 
+    const {
+        MouseWheelZoomModifier,
+        ZoomExtentsModifier,
+        ZoomPanModifier,
         NativeTextAnnotation,
         EHorizontalAnchorPoint,
         EVerticalAnchorPoint,
@@ -95,10 +95,10 @@ async function drawExample(divElementId) {
             renderOrder: 1
         }),
     )
-    
+
     // need to fix the visible range since annotations alone do not set the visible range depending on their x and y range
     sciChartSurface.xAxes.get(0).zoomExtentsRange = new NumberRange(0, 10);
-    sciChartSurface.yAxes.get(0).zoomExtentsRange = new NumberRange(0, 10); 
+    sciChartSurface.yAxes.get(0).zoomExtentsRange = new NumberRange(0, 10);
 
     sciChartSurface.chartModifiers.add(
         new MouseWheelZoomModifier(),
@@ -111,15 +111,15 @@ drawExample("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_B_start
-    const { 
-        chartBuilder, 
-        EAnnotationType, 
+    const {
+        build2DChart,
+        EAnnotationType,
         EArrowHeadPosition,
         EDraggingGripPoint,
     } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: { type: "Navy" },
         },

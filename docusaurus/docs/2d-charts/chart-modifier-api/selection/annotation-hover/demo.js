@@ -1,4 +1,4 @@
-import { SciChartSurface, SciChartJsNavyTheme, NumericAxis, BoxAnnotation, ECoordinateMode, AnnotationHoverModifier, EHoverMode, chartBuilder, EChart2DModifierType, EAnnotationType } from "scichart";
+import { SciChartSurface, SciChartJsNavyTheme, NumericAxis, BoxAnnotation, ECoordinateMode, AnnotationHoverModifier, EHoverMode, build2DChart, EChart2DModifierType, EAnnotationType } from "scichart";
 async function annotationHover(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -67,7 +67,7 @@ async function annotationHover(divElementId) {
 annotationHover("scichart-root");
 async function builderExample(divElementId) {
     // #region_D_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: new SciChartJsNavyTheme()
         },

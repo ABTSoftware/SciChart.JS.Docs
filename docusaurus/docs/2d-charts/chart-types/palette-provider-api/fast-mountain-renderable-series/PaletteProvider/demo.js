@@ -72,10 +72,9 @@ drawMountainChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // #region_C_start
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
-    const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    // Register the custom ThresholdLinePaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "MountainPaletteProvider", options => new MountainPaletteProvider(options.threshold));
+    const { build2DChart, registerType, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
+    // Register the custom ThresholdLinePaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "MountainPaletteProvider", options => new MountainPaletteProvider(options.threshold));
     // Create some data
     let yLast = 100.0;
     const xValues = [];
@@ -87,7 +86,7 @@ async function builderExample(divElementId) {
         yValues.push(y);
     }
     // Now use the Builder-API to build the chart
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

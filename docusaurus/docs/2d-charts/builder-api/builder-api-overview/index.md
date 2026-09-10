@@ -19,19 +19,15 @@ It is not intended to completely replace the existing API. The two can be used 
 To use the SciChart.js Builder API, you will need this import.
 
 ```ts
-import { chartBuilder } from "scichart";
+import { build2DChart, build2DPolarChart, buildPieChart, build3DChart } from "scichart";
 ```
 
-**chartBuilder** exposes all the builder methods, which can be used to build parts of, or the entire chart from a JSON definition:
+Use the named builder function for the surface you are creating. The functions can also build chart parts from a JSON definition.
 
-The top level method is **buildChart**, which takes the id of the target div, and a definition, which can be a JSON string or an object.
-
-There are also specific function calls to [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build2dpolarchart) and [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#chartbuilder.build3dchart) which can be used to build on specific chart surfaces:
+Use [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build2dpolarchart), or [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build3dchart):
 
 <CodeSnippetBlock labels={["Build Surface-specific Charts"]}>
     ```ts showLineNumbers
-    const { build2DChart, buildPieChart, build2DPolarChart, build3DChart } = chartBuilder;
-
     // build a 2D chart
     const simple2d = await build2DChart("chartDivId", {
         // ...
@@ -48,6 +44,9 @@ There are also specific function calls to [build2DChart:blue_book:](https://www.
     ```
 </CodeSnippetBlock>
 
+:::note
+Builder definitions now register only the types you use. Importing a class registers it automatically; for type-only definitions, call the matching `register*` functions, or `registerAllTypes()` as a simple migration step.
+:::
 
 Note that all the elements are optional. This lets you define partial definitions that you can reuse and combine.
 ## Worked Examples of the Builder API
@@ -73,7 +72,7 @@ We've created some worked examples of the Builder API on the following pages. Al
 
 The Builder API is best when used with Typescript, so it can guide you as to what types are available or required.
 
-Intellisense shows which options can be passed to **buildChart**:
+Intellisense shows which options can be passed to **build2DChart**:
 
 ![](img/1.png)
 

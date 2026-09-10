@@ -28,7 +28,7 @@ addAnnotationToChart("scichart-root");
 // #region_A_end
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, EAnnotationType } = SciChart;
+    const { build2DChart, EAnnotationType } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
     const rocketSvg = `<?xml version="1.0" ?><!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.1//EN'  'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
     <svg height="64.013px" id="Layer_1" style="enable-background:new 0 0 64.02 64.013;" version="1.1" viewBox="0 0 64.02 64.013" width="64.02px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -39,7 +39,7 @@ async function builderExample(divElementId) {
         <g id="Glass"><g><circle cx="48" cy="16.013" r="8" style="fill:#4D4D4D;"/></g></g>
         <g id="Glass_1_"><g><circle cx="48" cy="16.013" r="4" style="fill:#FFFFFF;"/></g></g>
     </svg>`;
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.SVGCustomAnnotation,

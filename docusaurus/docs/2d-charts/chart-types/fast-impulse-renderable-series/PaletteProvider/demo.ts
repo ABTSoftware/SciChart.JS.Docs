@@ -91,10 +91,9 @@ palettedImpulseChart("scichart-root");
 async function builderExample(divElementId) {
     // #region ExampleC
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType, EPaletteProviderType, EBaseType } =
+    const { build2DChart, registerType, ESeriesType, EThemeProviderType, EPointMarkerType, EPaletteProviderType, EBaseType } =
         SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // Create some data
     const xValues = [];
@@ -104,14 +103,14 @@ async function builderExample(divElementId) {
         yValues.push(Math.sin(i * 0.2) * Math.log(i / 100));
     }
 
-    // Register the custom LineAndPointMarkerPaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom LineAndPointMarkerPaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "LineAndPointMarkerPaletteProvider",
         options => new LineAndPointMarkerPaletteProvider(options.stroke, options.rule)
     );
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

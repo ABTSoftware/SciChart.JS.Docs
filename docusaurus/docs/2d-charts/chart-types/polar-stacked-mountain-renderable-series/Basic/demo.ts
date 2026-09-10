@@ -3,15 +3,15 @@ import * as SciChart from "scichart";
 export async function polarStackedMountainChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a basic polar mountain chart using SciChart.js
-    const { 
-        SciChartPolarSurface, 
-        PolarNumericAxis, 
+    const {
+        SciChartPolarSurface,
+        PolarNumericAxis,
         SciChartJsNavyTheme,
         PolarStackedMountainCollection,
         PolarStackedMountainRenderableSeries,
         EPolarAxisMode,
         NumberRange,
-        XyDataSeries, 
+        XyDataSeries,
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -32,7 +32,7 @@ export async function polarStackedMountainChart(divElementId) {
         drawLabels: false, // hide radial labels
     });
     sciChartSurface.yAxes.add(radialYAxis);
-    
+
     // Create the collection the stacked mountains will be added to
     const polarCollection = new PolarStackedMountainCollection(wasmContext);
 
@@ -66,7 +66,7 @@ export async function polarStackedMountainChart(divElementId) {
     // Add the mountains to the collection
     sciChartSurface.renderableSeries.add(polarCollection);
     // #region_A_end
-    
+
     return { sciChartSurface, wasmContext };
 }
 
@@ -75,8 +75,8 @@ polarStackedMountainChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { 
-        chartBuilder,
+    const {
+        build2DChart, build2DPolarChart,
         SciChartJsNavyTheme,
         EAxisType,
         ESeriesType,
@@ -84,9 +84,8 @@ async function builderExample(divElementId) {
         EAxisAlignment,
         NumberRange,
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

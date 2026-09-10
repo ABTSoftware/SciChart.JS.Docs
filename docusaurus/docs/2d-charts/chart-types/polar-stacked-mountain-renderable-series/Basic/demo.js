@@ -53,9 +53,8 @@ polarStackedMountainChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    const { chartBuilder, SciChartJsNavyTheme, EAxisType, ESeriesType, EPolarAxisMode, EAxisAlignment, NumberRange, } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { build2DChart, build2DPolarChart, SciChartJsNavyTheme, EAxisType, ESeriesType, EPolarAxisMode, EAxisAlignment, NumberRange, } = SciChart;
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

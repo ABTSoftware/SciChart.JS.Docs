@@ -3,15 +3,15 @@ import * as SciChart from "scichart";
 export async function PolarMountainChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a basic polar mountain chart using SciChart.js
-    const { 
-        SciChartPolarSurface, 
+    const {
+        SciChartPolarSurface,
         SciChartJsNavyTheme,
-        PolarNumericAxis, 
+        PolarNumericAxis,
         PolarMountainRenderableSeries,
         EPolarAxisMode,
         EAxisAlignment,
         NumberRange,
-        XyDataSeries, 
+        XyDataSeries,
         EPolarLabelMode
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
@@ -47,7 +47,7 @@ export async function PolarMountainChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(polarMountain);
     // #region_A_end
-    
+
     return { sciChartSurface, wasmContext };
 }
 
@@ -56,7 +56,7 @@ PolarMountainChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a polar line chart with SciChart.js using the Builder API
-    const { 
+    const {
         build2DPolarChart,
         EAxisType,
         EPolarAxisMode,
@@ -65,7 +65,6 @@ async function builderExample(divElementId) {
         SciChartJsNavyTheme,
         ESeriesType
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },

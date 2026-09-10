@@ -52,17 +52,16 @@ addAnnotationToChart("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_B_start
-    const { 
-        chartBuilder, 
-        EAnnotationType, 
-        EHorizontalAnchorPoint, 
-        EVerticalAnchorPoint, 
-        ECoordinateMode, 
+    const {
+        build2DChart, build2DPolarChart,
+        EAnnotationType,
+        EHorizontalAnchorPoint,
+        EVerticalAnchorPoint,
+        ECoordinateMode,
         EAnnotationLayer
     } = SciChart;
-    // or for npm import { chartBuilder , ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.SVGTextAnnotation,

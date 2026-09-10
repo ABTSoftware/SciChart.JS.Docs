@@ -68,9 +68,8 @@ drawDigitalLineChartWithPalette("scichart-root");
 
 async function builderExample(divElementId) {
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
-    const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
+    const { build2DChart, registerType, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const xValues = [];
     const yValues = [];
@@ -79,8 +78,8 @@ async function builderExample(divElementId) {
         yValues.push(Math.sin(i * 0.1));
     }
 
-    // Register the custom ThresholdLinePaletteProvider with the chartBuilder
-    chartBuilder.registerType(
+    // Register the custom ThresholdLinePaletteProvider with the Builder API
+    registerType(
         EBaseType.PaletteProvider,
         "ThresholdLinePaletteProvider",
         options => new ThresholdLinePaletteProvider(options.stroke, options.rule)
@@ -88,7 +87,7 @@ async function builderExample(divElementId) {
 
     // #region ExampleC
     // Use the Builder-API to build the chart and apply a paletteprovider
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

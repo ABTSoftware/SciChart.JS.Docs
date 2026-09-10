@@ -88,12 +88,11 @@ async function candlestickAndVolumeChart(divElementId) {
 candlestickAndVolumeChart("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EAxisType, NumberRange } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EAxisType, NumberRange } = SciChart;
     // Data format is { dateValues[], openValues[], highValues[], lowValues[], closeValues[] }
     const { dateValues, openValues, highValues, lowValues, closeValues, volumeValues } = await getCandles("BTCUSDT", "1h", 100);
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         xAxes: [{ type: EAxisType.CategoryAxis }],
         yAxes: [
             {

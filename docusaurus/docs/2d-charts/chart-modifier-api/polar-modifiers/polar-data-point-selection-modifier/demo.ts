@@ -60,8 +60,8 @@ async function PolarDataPointSelectionExample(divElementId) {
     );
 
     // #region_A_start
-    const { 
-        PolarDataPointSelectionModifier, 
+    const {
+        PolarDataPointSelectionModifier,
         DataPointSelectionPaletteProvider,
         PolarLineRenderableSeries,
         XyDataSeries,
@@ -115,26 +115,25 @@ PolarDataPointSelectionExample("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure the PolarDataPointSelection in SciChart.js using the Builder API
-    const { 
-        chartBuilder, 
-        EThemeProviderType, 
-        EAxisType, 
-        EChart2DModifierType, 
-        ESeriesType, 
+    const {
+        build2DChart, build2DPolarChart,
+        EThemeProviderType,
+        EAxisType,
+        EChart2DModifierType,
+        ESeriesType,
         EPolarAxisMode,
         DataPointSelectionPaletteProvider
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
-        xAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { polarAxisMode: EPolarAxisMode.Angular } 
+        xAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: { polarAxisMode: EPolarAxisMode.Angular }
         },
-        yAxes: { 
-            type: EAxisType.PolarNumericAxis, 
-            options: { polarAxisMode: EPolarAxisMode.Angular } 
+        yAxes: {
+            type: EAxisType.PolarNumericAxis,
+            options: { polarAxisMode: EPolarAxisMode.Angular }
         },
         series: [
             {

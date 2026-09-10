@@ -52,10 +52,9 @@ async function simpleSubChart(divElementId) {
 simpleSubChart("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EAxisType, EThemeProviderType, Rect, ESubSurfacePositionCoordinateMode } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EAxisType, EThemeProviderType, Rect, ESubSurfacePositionCoordinateMode } = SciChart;
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         // Main chart definition is here
         xAxes: { type: EAxisType.NumericAxis },

@@ -77,9 +77,8 @@ dataLabelsMetadata("scichart-root");
 export async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to add DataLabels to a chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
+    const { build2DChart, ESeriesType, EThemeProviderType, EPointMarkerType } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     const metadata = [
         { text: "Bananas", isSelected: false },
@@ -96,7 +95,7 @@ export async function builderExample(divElementId) {
         { text: "Guava", isSelected: false }
     ];
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

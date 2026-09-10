@@ -1,4 +1,4 @@
-import { SciChartSurface, SciChartSubSurface, NumericAxis, SciChartJsNavyTheme, Rect, ZoomPanModifier, XyDataSeries, FastLineRenderableSeries, chartBuilder, EAxisType, EThemeProviderType, EChart2DModifierType } from "scichart";
+import { SciChartSurface, SciChartSubSurface, NumericAxis, SciChartJsNavyTheme, Rect, ZoomPanModifier, XyDataSeries, FastLineRenderableSeries, build2DChart, EAxisType, EThemeProviderType, EChart2DModifierType } from "scichart";
 let colorIndex = 0;
 function getRandomColor() {
     return ["#274b92", "#47bde6", "#ae418d", "#e97064", "#68bcae", "#634e96"][colorIndex++ % 6];
@@ -73,7 +73,7 @@ createThreePanelChart("scichart-root");
 // Demonstrates how to create a 1x2 panel of charts using SubCharts and the Builder API
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         // Main chart
         subCharts: [

@@ -73,8 +73,7 @@ async function drawScatterChartWithPalette(divElementId) {
 drawScatterChartWithPalette("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a chart with a custom PaletteProvider, using the builder API
-    const { chartBuilder, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType, EPointMarkerType, EAnnotationType, ELabelPlacement } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, registerType, EBaseType, ESeriesType, EPaletteProviderType, EThemeProviderType, EPointMarkerType, EAnnotationType, ELabelPlacement } = SciChart;
     const xValues = [];
     const yValues = [];
     for (let i = 0; i < 100; i++) {
@@ -82,10 +81,10 @@ async function builderExample(divElementId) {
         yValues.push(Math.sin(i * 0.1));
     }
     // #region_C_start
-    // Register the custom ScatterPaletteProvider with the chartBuilder
-    chartBuilder.registerType(EBaseType.PaletteProvider, "ScatterPaletteProvider", options => new ScatterPaletteProvider(options.stroke, options.fill, options.rule));
+    // Register the custom ScatterPaletteProvider with the Builder API
+    registerType(EBaseType.PaletteProvider, "ScatterPaletteProvider", options => new ScatterPaletteProvider(options.stroke, options.fill, options.rule));
     // Use the Builder-API to build the chart and apply a paletteprovider
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

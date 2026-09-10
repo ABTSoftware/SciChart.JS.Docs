@@ -42,7 +42,7 @@ async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure chart titles in SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         EThemeProviderType,
         EAxisType,
         Thickness,
@@ -51,9 +51,8 @@ async function builderExample(divElementId) {
         ETitlePosition
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: { type: EThemeProviderType.Dark },
             title: "SciChart.js Chart Title",

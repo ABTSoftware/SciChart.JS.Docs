@@ -27,11 +27,10 @@ async function autoRangeOptions(divElementId) {
 autoRangeOptions("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, ESeriesType, EThemeProviderType, EAutoRange, EAxisType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType, EAutoRange, EAxisType } = SciChart;
     const xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     const yValues = xValues.map(x => Math.sin(x * 0.2));
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

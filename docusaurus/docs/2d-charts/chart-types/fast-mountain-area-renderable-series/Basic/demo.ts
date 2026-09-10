@@ -55,8 +55,7 @@ simpleMountainChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
 
     // Create some data
     let yLast = 100.0;
@@ -69,7 +68,7 @@ async function builderExample(divElementId) {
         yValues.push(y);
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         series: [
             {
                 type: ESeriesType.MountainSeries,

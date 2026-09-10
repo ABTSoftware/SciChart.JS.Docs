@@ -49,8 +49,8 @@ async function nonUniformHeatmapChart(divElementId) {
     // Create the non-uniform heatmap series
     const heatmapSeries = new NonUniformHeatmapRenderableSeries(wasmContext, {
         // Pass in the 2d zValues array and x/yCellOffsets to give x,y positions
-        dataSeries: new NonUniformHeatmapDataSeries(wasmContext, { 
-            zValues, 
+        dataSeries: new NonUniformHeatmapDataSeries(wasmContext, {
+            zValues,
             // arrays with the cell offsets
             xCellOffsets: [0, 10, 20, 26, 36, 60, 72, 84],
             yCellOffsets: [100, 250, 390, 410, 600]
@@ -77,9 +77,9 @@ async function nonUniformHeatmapChart(divElementId) {
         fillValuesOutOfRange: true,
         // Optional datalabels may be placed in cell
         dataLabels: {
-            style: { 
-                fontFamily: "Default", 
-                fontSize: 16 
+            style: {
+                fontFamily: "Default",
+                fontSize: 16
             },
             color: "white"
         }
@@ -98,10 +98,9 @@ nonUniformHeatmapChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: {
             type: ESeriesType.NonUniformHeatmapSeries,

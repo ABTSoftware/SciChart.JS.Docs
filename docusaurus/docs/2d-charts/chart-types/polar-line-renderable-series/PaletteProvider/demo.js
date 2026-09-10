@@ -53,8 +53,7 @@ PolarLinePaletteProvider("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create an interpolated polar line chart with SciChart.js using the Builder API
-    const { chartBuilder, EPolarAxisMode, EAxisAlignment, EAxisType, NumberRange, ESeriesType, DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme, } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, build2DPolarChart, EPolarAxisMode, EAxisAlignment, EAxisType, NumberRange, ESeriesType, DefaultPaletteProvider, EStrokePaletteMode, parseColorToUIntArgb, SciChartJsNavyTheme, } = SciChart;
     class ThresholdLinePaletteProvider extends DefaultPaletteProvider {
         rule;
         stroke2;
@@ -70,7 +69,7 @@ async function builderExample(divElementId) {
                 : undefined;
         }
     }
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

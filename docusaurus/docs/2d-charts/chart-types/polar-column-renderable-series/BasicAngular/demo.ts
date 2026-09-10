@@ -3,16 +3,16 @@ import * as SciChart from "scichart";
 export async function polarColumnChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a basic polar column chart using SciChart.js
-    const { 
-        SciChartPolarSurface, 
-        PolarNumericAxis, 
+    const {
+        SciChartPolarSurface,
+        PolarNumericAxis,
         SciChartJsNavyTheme,
         PolarColumnRenderableSeries,
         EPolarAxisMode,
         EAxisAlignment,
         EPolarLabelMode,
         NumberRange,
-        XyDataSeries, 
+        XyDataSeries,
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -57,16 +57,14 @@ export async function polarColumnChart(divElementId) {
     });
     sciChartSurface.renderableSeries.add(polarColumn);
     // #region_A_end
-    
+
     return { sciChartSurface, wasmContext };
 }
 
 polarColumnChart("scichart-root");
 
-import { 
-    chartBuilder,
-    ESciChartSurfaceType,
-    EPolarAxisMode,
+import { build2DPolarChart,
+        EPolarAxisMode,
     EAxisAlignment,
     EPolarLabelMode,
     NumberRange,
@@ -80,9 +78,8 @@ import {
 async function builderExample(divElementId) {
     // #region ExampleB
     // Demonstrates how to create a band chart with SciChart.js using the Builder API
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [
             {

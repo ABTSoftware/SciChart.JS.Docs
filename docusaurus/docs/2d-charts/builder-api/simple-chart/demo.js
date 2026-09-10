@@ -2,8 +2,8 @@ import { EThemeProviderType, NumberRange } from "scichart";
 import * as SciChart from "scichart";
 export async function drawSimpleChartUsingBuilderApi(divElementId) {
     // #region_A_start
-    const { chartBuilder, ESeriesType } = SciChart;
-    const { sciChartSurface, wasmContext } = await chartBuilder.buildChart(divElementId, {
+    const { build2DChart, ESeriesType } = SciChart;
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         series: {
             type: ESeriesType.LineSeries,
             xyData: {
@@ -16,8 +16,8 @@ export async function drawSimpleChartUsingBuilderApi(divElementId) {
 }
 export async function drawComplexChartUsingBuilderApi(divElementId) {
     // #region_B_start
-    const { chartBuilder, ESeriesType, EAxisType, EChart2DModifierType } = SciChart;
-    const { sciChartSurface, wasmContext } = await chartBuilder.buildChart(divElementId, {
+    const { build2DChart, ESeriesType, EAxisType, EChart2DModifierType } = SciChart;
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: {
             theme: {
                 type: EThemeProviderType.Light

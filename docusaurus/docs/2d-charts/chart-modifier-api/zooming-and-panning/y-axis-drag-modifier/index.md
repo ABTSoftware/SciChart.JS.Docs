@@ -27,10 +27,9 @@ A [YAxisDragModifier:blue_book:](https://www.scichart.com/documentation/js/v5/t
 
     ```ts {8} showLineNumbers
     // Demonstrates how to configure the YAxisDrag Modifier in SciChart.js using the Builder API
-    const { chartBuilder, EChart2DModifierType, EDragMode } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EChart2DModifierType, EDragMode } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         modifiers: [
             {
                 type: EChart2DModifierType.YAxisDrag,

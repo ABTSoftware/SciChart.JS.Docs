@@ -46,15 +46,14 @@ async function horizontallyStackedAxis(divElementId) {
 }
 horizontallyStackedAxis("scichart-root");
 async function builderExample(divElementId) {
-    const { chartBuilder, EThemeProviderType, EAxisType, EAxisAlignment, ESeriesType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EAxisType, EAxisAlignment, ESeriesType } = SciChart;
     const xValues = Array.from(Array(50).keys());
     const yValues = xValues.map(x => Math.sin(x * 0.4));
     const yValues1 = xValues.map(x => Math.sin(x * 0.4 + 1));
     const yValues2 = xValues.map(x => Math.sin(x * 0.4 + 2));
     const yValues3 = xValues.map(x => Math.sin(x * 0.4 + 3));
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         yAxes: {
             type: EAxisType.NumericAxis,

@@ -1,4 +1,4 @@
-import { SciChartSurface, SciChartSubSurface, NumericAxis, SciChartJsNavyTheme, Rect, XyDataSeries, FastLineRenderableSeries, Thickness, EAutoRange, TextAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, chartBuilder, EAxisType, ESeriesType } from "scichart";
+import { SciChartSurface, SciChartSubSurface, NumericAxis, SciChartJsNavyTheme, Rect, XyDataSeries, FastLineRenderableSeries, Thickness, EAutoRange, TextAnnotation, EHorizontalAnchorPoint, EVerticalAnchorPoint, ECoordinateMode, build2DChart, EAxisType, ESeriesType } from "scichart";
 // #region_helperFunctions_start
 const subChartsNumber = 100;
 let columnsNumber = 10;
@@ -128,7 +128,7 @@ async function builderExample(divElementId) {
             }
         });
     }
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { padding: Thickness.fromNumber(0) },
         subCharts
     });

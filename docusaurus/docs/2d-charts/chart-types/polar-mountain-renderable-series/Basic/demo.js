@@ -39,7 +39,6 @@ async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a polar line chart with SciChart.js using the Builder API
     const { build2DPolarChart, EAxisType, EPolarAxisMode, EAxisAlignment, NumberRange, SciChartJsNavyTheme, ESeriesType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
     const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: new SciChartJsNavyTheme() },
         xAxes: [

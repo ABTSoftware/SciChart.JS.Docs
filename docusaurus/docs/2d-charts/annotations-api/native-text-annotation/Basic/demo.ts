@@ -5,7 +5,7 @@ import {
     NativeTextAnnotation,
     GenericAnimation,
     SciChartJsNavyTheme,
-    chartBuilder,
+    build2DChart,
     EAnnotationType
 } from "scichart";
 
@@ -105,7 +105,7 @@ addAnnotationToChart("scichart-root");
 
 async function builderExample(divElementId) {
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.RenderContextNativeTextAnnotation,

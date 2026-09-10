@@ -3,12 +3,12 @@ import * as SciChart from "scichart";
 export async function digitalLineChart(divElementId) {
     // #region_A_start
     // Demonstrates how to create a digitral line chart with SciChart.js
-    const { 
-        SciChartSurface, 
-        NumericAxis, 
-        FastLineRenderableSeries, 
-        XyDataSeries, 
-        SciChartJsNavyTheme 
+    const {
+        SciChartSurface,
+        NumericAxis,
+        FastLineRenderableSeries,
+        XyDataSeries,
+        SciChartJsNavyTheme
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -44,8 +44,7 @@ digitalLineChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a digital line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EThemeProviderType } = SciChart;
 
     const xValues = [];
     const yValues = [];
@@ -54,7 +53,7 @@ async function builderExample(divElementId) {
         yValues.push(Math.sin(i * 0.1));
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

@@ -49,12 +49,12 @@ async function addAnnotationToChart(divElementId) {
 addAnnotationToChart("scichart-root");
 
 async function builderExample(divElementId) {
-    const { chartBuilder, EAnnotationType } = SciChart;
+    const { build2DChart, EAnnotationType } = SciChart;
 
     // or for npm import { SciChartSurface, ... } from "scichart"
 
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.SVGTextAnnotation,

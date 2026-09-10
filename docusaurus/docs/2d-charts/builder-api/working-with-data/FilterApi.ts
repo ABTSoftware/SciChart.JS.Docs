@@ -2,17 +2,17 @@ import * as SciChart from "scichart";
 
 export async function drawChartWithFilterUsingBuilderApi(divElementId) {
     // #region_A_start
-    const { chartBuilder, ESeriesType, EDataFilterType } = SciChart;
+    const { build2DChart, ESeriesType, EDataFilterType } = SciChart;
 
     const xyData = {
         xValues: [1, 2, 3, 4, 5, 6],
         yValues: [2, 5, 7, 4, 10, 15]
     };
-    chartBuilder.buildChart(divElementId, {
+    build2DChart(divElementId, {
         series: [
             {
                 type: ESeriesType.LineSeries,
-                xyData, 
+                xyData,
             },
             {
                 type: ESeriesType.LineSeries,

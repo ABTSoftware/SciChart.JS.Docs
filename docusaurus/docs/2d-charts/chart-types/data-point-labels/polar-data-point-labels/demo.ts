@@ -21,7 +21,7 @@ async function dataLabelsBasicExample(divElementId: string | HTMLDivElement) {
     const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
     });
-    
+
     // Add the yAxis
     const radialYAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Radial,
@@ -29,7 +29,7 @@ async function dataLabelsBasicExample(divElementId: string | HTMLDivElement) {
         drawLabels: false,
     });
     sciChartSurface.yAxes.add(radialYAxis);
-    
+
     // Add the xAxis
     const angularXAxis = new PolarNumericAxis(wasmContext, {
         polarAxisMode: EPolarAxisMode.Angular,
@@ -68,17 +68,16 @@ dataLabelsBasicExample("scichart-root");
 async function builderExample(divElementId) {
     // #region region_B_start
     // Demonstrates how to add DataLabels to a Polar chart with SciChart.js using the Builder API
-    const { 
-        chartBuilder, 
-        ESeriesType, 
-        EThemeProviderType, 
+    const {
+        build2DChart, build2DPolarChart,
+        ESeriesType,
+        EThemeProviderType,
         EHorizontalTextPosition,
         EVerticalTextPosition,
-        EDataLabelSkipMode 
+        EDataLabelSkipMode
     } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DPolarChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DPolarChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

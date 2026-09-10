@@ -37,10 +37,9 @@ drawExample("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure a PinchZoom Modifier in SciChart.js using the Builder API
-    const { chartBuilder, EChart2DModifierType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EChart2DModifierType } = SciChart;
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         modifiers: [
             {
                 type: EChart2DModifierType.PinchZoom,

@@ -60,7 +60,7 @@ loggarithmicAxisConfig("scichart-root");
 async function builderExample(divElementId) {
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
     const {
-        chartBuilder,
+        build2DChart,
         EThemeProviderType,
         NumberRange,
         ENumericFormat,
@@ -69,10 +69,9 @@ async function builderExample(divElementId) {
         ELogarithmicMajorTickMode
     } = SciChart;
 
-    // or, for npm, import { chartBuilder, ... } from "scichart"
 
     // #region_B_start
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.LogarithmicAxis,

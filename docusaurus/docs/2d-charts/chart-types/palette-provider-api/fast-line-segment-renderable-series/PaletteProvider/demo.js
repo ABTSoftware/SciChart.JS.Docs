@@ -72,8 +72,8 @@ export async function lineSegmentPaletteProvider(divElementId) {
 lineSegmentPaletteProvider("scichart-root");
 export async function builderLineSegmentPaletteProvider(divElementId) {
     // #region_C_start
-    const { chartBuilder, EThemeProviderType, } = SciChart;
-    const { sciChartSurface, wasmContext } = await chartBuilder.build2DChart(divElementId, {
+    const { build2DChart, EThemeProviderType, } = SciChart;
+    const { sciChartSurface, wasmContext } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Navy } },
         series: [
         // {

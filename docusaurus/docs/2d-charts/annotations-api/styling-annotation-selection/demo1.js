@@ -31,11 +31,11 @@ async function addAnnotationToChart(divElementId) {
 addAnnotationToChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
-    const { chartBuilder, EAnnotationType } = SciChart;
+    const { build2DChart, EAnnotationType } = SciChart;
     // or for npm import { SciChartSurface, ... } from "scichart"
     // Add a box annotation to the chart using the builder API and make it editable and selected
     // Style the adorners (selectiong grips) using properties
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         annotations: [
             {
                 type: EAnnotationType.RenderContextBoxAnnotation,

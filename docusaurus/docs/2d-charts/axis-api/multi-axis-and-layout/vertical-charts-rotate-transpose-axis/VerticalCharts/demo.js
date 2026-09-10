@@ -44,11 +44,10 @@ verticalCharts("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure a vertical chart in SciChart.js using the Builder API
-    const { chartBuilder, EThemeProviderType, EAxisType, EAxisAlignment, ESeriesType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, EThemeProviderType, EAxisType, EAxisAlignment, ESeriesType } = SciChart;
     const xValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
     const yValues = xValues.map(x => Math.sin(x * 0.4));
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         xAxes: {
             type: EAxisType.NumericAxis,

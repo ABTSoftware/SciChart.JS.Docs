@@ -115,8 +115,7 @@ simpleContoursChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a line chart with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, HeatmapColorMap, EThemeProviderType } = SciChart;
 
     const WIDTH = 300;
     const HEIGHT = 200;
@@ -126,7 +125,7 @@ async function builderExample(divElementId) {
     // Open the Codepen below to see the definition of this function
     const zValues = generateExampleData(3, WIDTH, HEIGHT, colorPaletteMax);
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {
@@ -146,7 +145,7 @@ async function builderExample(divElementId) {
             },
             {
                 type: ESeriesType.UniformHeatmapSeries,
-                options: { 
+                options: {
                     colorMap: new HeatmapColorMap({
                         minimum: 0,
                         maximum: colorPaletteMax,
@@ -159,8 +158,8 @@ async function builderExample(divElementId) {
                             { offset: 0.2, color: "#264B93" },
                             { offset: 0, color: "#14233C" }
                         ]
-                    }), 
-                    opacity: 0.5 
+                    }),
+                    opacity: 0.5
                 },
                 heatmapData: {
                     zValues,

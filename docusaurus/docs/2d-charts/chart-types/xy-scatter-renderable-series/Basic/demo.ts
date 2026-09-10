@@ -29,7 +29,7 @@ async function simpleScatterChart(divElementId) {
 
     const scatterSeries = new XyScatterRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
-            xValues, 
+            xValues,
             yValues
         }),
         pointMarker: new EllipsePointMarker(wasmContext, {
@@ -49,8 +49,7 @@ simpleScatterChart("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to create a scatter with SciChart.js using the Builder API
-    const { chartBuilder, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
-    // or, for npm, import { chartBuilder, ... } from "scichart"
+    const { build2DChart, ESeriesType, EPointMarkerType, EThemeProviderType } = SciChart;
 
     const xValues = [];
     const yValues = [];
@@ -59,7 +58,7 @@ async function builderExample(divElementId) {
         yValues.push(0.2 * Math.sin(i * 0.1) - Math.cos(i * 0.01));
     }
 
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: { theme: { type: EThemeProviderType.Dark } },
         series: [
             {

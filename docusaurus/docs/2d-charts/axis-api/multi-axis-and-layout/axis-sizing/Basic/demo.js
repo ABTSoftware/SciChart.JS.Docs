@@ -1,4 +1,4 @@
-import { SciChartSurface, NumericAxis, SciChartJsNavyTheme, ZoomExtentsModifier, ZoomPanModifier, chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType } from "scichart";
+import { SciChartSurface, NumericAxis, SciChartJsNavyTheme, ZoomExtentsModifier, ZoomPanModifier, build2DChart, EThemeProviderType, EAxisType, EChart2DModifierType } from "scichart";
 async function drawExample(divElementId) {
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme()
@@ -39,8 +39,7 @@ drawExample("scichart-root");
 async function builderExample(divElementId) {
     // #region_B_start
     // Demonstrates how to configure axis sizing in SciChart.js using the Builder API
-    // import { chartBuilder, EThemeProviderType, EAxisType, EChart2DModifierType } from "scichart"
-    const { wasmContext, sciChartSurface } = await chartBuilder.build2DChart(divElementId, {
+    const { wasmContext, sciChartSurface } = await build2DChart(divElementId, {
         surface: {
             theme: { type: EThemeProviderType.Dark }
         },
