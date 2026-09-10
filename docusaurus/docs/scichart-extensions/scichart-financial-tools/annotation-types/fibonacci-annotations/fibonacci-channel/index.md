@@ -18,10 +18,6 @@ Because this is still a `FibonacciRetracementAnnotation`, `extendStart` and `ext
     ```
 </CodeSnippetBlock> 
 
-:::tip
-If you want a skewed Fibonacci channel, keep using `FibonacciRetracementAnnotation` and switch `verticalOnly` off. The same class becomes a 3-point channel-like retracement without needing a new annotation type.
-:::
-
 #### See Also
 
 - [Fibonacci annotations overview](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/)

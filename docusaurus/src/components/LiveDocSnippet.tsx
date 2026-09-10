@@ -18,18 +18,22 @@ type Props = {
     name?: string;
     htmlPath?: string;
     cssPath?: string;
+    extraJSPaths?: string[];
     htmlType?: EHtmlType;
     includeFinTools?: boolean;
 };
+
+type ExtraJs = { path: string; content: string };
 
 export default function LiveDocSnippet(props?: Props) {
     const filenameBase = props?.name ?? "demo";
     const cssUrl = props?.cssPath;
     const htmlUrl = props?.htmlPath;
+    const extraJSPaths = props?.extraJSPaths ?? [];
     const tsUrl = `${filenameBase}.ts`;
     const jsUrl = `${filenameBase}.js`;
 
-    const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string }>({});
+    const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string; extraJs?: ExtraJs[] }>({});
     const [isLoading, setIsLoading] = useState(false);
 
     let htmlString = `<div id="scichart-root" ></div>`;
@@ -39,21 +43,23 @@ export default function LiveDocSnippet(props?: Props) {
 
     const htmlTemplate = files?.html ?? htmlString;
     const cssTemplate = files?.css ?? "";
-    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools);
+    const inlineJs = files.extraJs?.length && files.js ? inlineExtraJs(files.js, files.extraJs) : undefined;
+    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools, inlineJs);
     const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools);
 
     useEffect(() => {
         const fetchFiles = async () => {
             setIsLoading(true);
 
-            const [html, ts, js, css] = await Promise.all([
+            const [html, ts, js, css, ...extraJs] = await Promise.all([
                 htmlUrl ? fetch(htmlUrl).then(res => res.text()) : null,
                 fetch(tsUrl).then(res => res.text()),
                 fetch(jsUrl).then(res => res.text()),
-                cssUrl ? fetch(cssUrl).then(res => res.text()) : null
+                cssUrl ? fetch(cssUrl).then(res => res.text()) : null,
+                ...extraJSPaths.map(path => fetch(path).then(res => res.text()))
             ]);
 
-            setFiles({ html, ts, js, css });
+            setFiles({ html, ts, js, css, extraJs: extraJSPaths.map((path, index) => ({ path, content: extraJs[index] })) });
             setIsLoading(false);
         };
 
@@ -65,7 +71,7 @@ export default function LiveDocSnippet(props?: Props) {
 
     return (
         <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem', background: "#8881" }}>
-            <CodePenLauncher js={files.ts} html={sandboxHtml} css={files.css} />
+            <CodePenLauncher js={inlineJs ?? files.ts} html={sandboxHtml} css={files.css} />
             <BrowserOnly>
                 {() => <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
             </BrowserOnly>
@@ -105,7 +111,7 @@ const getImportMap = (includeFinTools?: boolean) => {
     return imports.join(",\n\t\t\t\t\t\t");
 };
 
-const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean) => {
+const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean, inlineJs?: string) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -136,7 +142,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             });
             SciChartDefaults.performanceWarnings = false;
         </script>
-        <script type="module" src=${jsUrl}.js></script>
+        ${inlineJs ? `<script type="module">${inlineJs}</script>` : `<script type="module" src=${jsUrl}.js></script>`}
         ${cssUrl ? `<link rel="stylesheet" type="text/css" href="${cssUrl}">` : ""}
         <style>
             iframe { border: 0; }
@@ -148,6 +154,35 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
     <div style="width: 100%; height: 100vh;">${htmlTemplate}</div>
     </body>
 </html>`;
+};
+
+const inlineExtraJs = (mainJs: string, extraJs: ExtraJs[]) => {
+    const localModulePaths = new Set(extraJs.flatMap(({ path }) => [path, path.replace(/\.js$/, "")]));
+    const imports = new Map<string, Set<string>>();
+    const stripLocalImports = (source: string) => source.replace(
+        /^import\s+[\s\S]*?\s+from\s+["']([^"']+)["'];?\s*$/gm,
+        (statement, path) => localModulePaths.has(path) ? "" : statement
+    );
+    const collectNamedImports = (source: string) => source.replace(
+        /^import\s*{\s*([^}]+)\s*}\s*from\s*["']([^"']+)["'];?\s*$/gm,
+        (_statement, names, path) => {
+            const bindings = imports.get(path) ?? new Set<string>();
+            names.split(",").forEach((name: string) => bindings.add(name.trim()));
+            imports.set(path, bindings);
+            return "";
+        }
+    );
+    const stripExports = (source: string) => source
+        .replace(/\bexport\s+(?=(?:async\s+)?(?:class|function|const|let|var)\b)/g, "")
+        .replace(/^export\s*{[^}]*};?\s*$/gm, "");
+
+    const body = [
+        ...extraJs.map(({ content }) => stripExports(collectNamedImports(stripLocalImports(content)))),
+        collectNamedImports(stripLocalImports(mainJs))
+    ].join("\n");
+    const externalImports = [...imports].map(([path, bindings]) => `import { ${[...bindings].join(", ")} } from "${path}";`).join("\n");
+
+    return `${externalImports}\n${body}`;
 };
 
 const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean) => {

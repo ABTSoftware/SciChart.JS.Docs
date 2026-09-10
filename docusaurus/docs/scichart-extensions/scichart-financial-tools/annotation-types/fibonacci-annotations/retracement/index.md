@@ -14,9 +14,7 @@ sidebar_label: Fibonacci retracement
     ```
 </CodeSnippetBlock>
 
-:::note
-The default [verticalOnly:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#verticalonly) mode uses 2 placement points and draws non-skewed horizontal levels. Set `verticalOnly: false` to use three points: points 1 and 2 define the baseline, and point 3 defines the retracement direction for parallel skewed levels.
-:::
+For three-point skewed levels, see [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/).
 
 Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#thresholds) to control the levels, [regionColors:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#regioncolors) and [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#fillopacity) to style the bands, and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#formatfibonaccilabel) for custom level text.
 

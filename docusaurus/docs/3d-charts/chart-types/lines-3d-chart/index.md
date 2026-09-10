@@ -54,6 +54,18 @@ This results in the following output: 
 XyzDataSeries3D takes `number[]` or `Float64Array` as xValues, yValues and zValues. Read more on performance [benefits of using Float64Array here](/2d-charts/performance-tips/performance-tips-and-tricks#16-float64array-vs-array)
 :::
 
+## Dashed 3D Lines
+
+Use `strokeDashArray` on `PointLineRenderableSeries3D` to draw a dashed line. The array alternates between dash and gap lengths in 3D world units: `[10, 2]` draws a dash of 10 units followed by a gap of 2 units, repeating along the line. Omit the property or set it to `[]` for a solid line. Use at least two positive, finite values for a dash pattern.
+
+<LiveDocSnippet maxWidth={"100%"} name="./Dashed/demo" />
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts {5} showLineNumbers file=./Dashed/demo.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
+
+
 Coloring Individual Line Segments
 ---------------------------------
 

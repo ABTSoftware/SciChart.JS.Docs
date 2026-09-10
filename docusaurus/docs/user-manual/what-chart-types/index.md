@@ -150,6 +150,7 @@ A detailed list of all supported chart types with links to documentation / demos
 70. [3D Point Cloud Charts](https://www.scichart.com/demo/react/3d-lidar-visualization)
 71. [3D Scatter Charts](/3d-charts/chart-types/scatter-3d-chart/)
 72. [3D Column / Bar Charts](/3d-charts/chart-types/column-3d-chart/)
+73. [Immediate Mesh 3D](/3d-charts/chart-types/immediate-mesh-3d/) for custom lit geometry
 
 ## What Axis Types does SciChart.js Support?
 
@@ -542,4 +543,3 @@ or created programmatically in your application. JSON served from a server can b
 - Batching or temporarily suspending drawing via the [Update Suspender API](/2d-charts/miscellaneous-apis/batching-updates-or-temporary-suspending-drawing/#the-suspend-updates-api)
 - [Effects (glow, dropshadow)](/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects/) - experimental shaders which can be applied to series to provide glow effect (oscilloscope / VDU style effect). These may not work on all
 hardware due to the complexity of the shaders.
-

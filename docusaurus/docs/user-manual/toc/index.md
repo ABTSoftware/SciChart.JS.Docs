@@ -393,6 +393,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [SciChart3DSurface.create() vs. createSingle()](/3d-charts/scichart-3d-basics/scichart-3d-surface-create-and-create-single/)
     - [Coordinates in 3D Space](/3d-charts/scichart-3d-basics/coordinates-in-3d-space/)
     - [The SciChartSurface Camera](/3d-charts/scichart-3d-basics/scichart-surface-camera/)
+    - [3D Scene Lighting](/3d-charts/scichart-3d-basics/scene-lighting-3d/)
   - **Axis3D APIs**
     - [Axis3D APIs Overview](/3d-charts/axis-3d-api/axis-3d-api-overview/)
     - [Numeric and Date Axis in SciChart3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d/)
@@ -406,6 +407,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [The SurfaceMesh 3D Chart Type](/3d-charts/chart-types/surface-mesh-3d/)
     - [The Lines 3D Chart Type](/3d-charts/chart-types/lines-3d-chart/)
     - [The Column 3D Chart Type](/3d-charts/chart-types/column-3d-chart/)
+    - [Immediate Mesh 3D](/3d-charts/chart-types/immediate-mesh-3d/)
   - **ChartModifier 3D API**
     - **Zooming and Panning**
       - [Orbit Modifier 3D](/3d-charts/chart-modifier-3d-api/zooming-and-panning/orbit-modifier-3d/)

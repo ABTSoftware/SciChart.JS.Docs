@@ -45,6 +45,19 @@ A [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc
 You can format the date labels on the xAxis by following the instructions on the [Axis Label Formatting](/2d-charts/axis-api/axis-labels/numeric-formats/) page.
 :::
 
+## Simplifying OHLC Bars When Zooming Out
+
+When many OHLC bars share a small amount of screen space, their open and close ticks can become difficult to distinguish. Starting in v6, set `autoSimplify: true` on `FastOhlcRenderableSeries` to hide those ticks as you zoom out. The vertical high–low stems remain visible, and the ticks return as you zoom back in. `autoSimplify` defaults to `false`.
+
+The thresholds apply to the horizontal spacing per bar, rather than the width set by `dataPointWidth`:
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers {7-9} file=./AutoSimplify/demo.ts start=#region_A_start end=#region_A_end
+    ```
+</CodeSnippetBlock>
+
+<LiveDocSnippet name="./AutoSimplify/demo" />
+
 ## Financial Data Filters
 
 For alternate financial views built from OHLC data, the `scichart-financial-tools` extension includes [Heikin-Ashi](/scichart-extensions/scichart-financial-tools/data-filters/heikin-ashi/), [Renko](/scichart-extensions/scichart-financial-tools/data-filters/renko/) and [Point & Figure](/scichart-extensions/scichart-financial-tools/data-filters/point-and-figure/) filters.
