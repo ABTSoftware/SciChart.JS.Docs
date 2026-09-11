@@ -95,6 +95,8 @@ Keep this value secret — it is analogous to a private key. Never expose it to 
 
 This is the full license key string you pass to `SciChartSurface.setRuntimeLicenseKey(...)`, the same key you would use for a normal deployment. It must carry an `SV:H:V:N` feature.
 
+The minimum required SciChart.js version is `scichart: "^5.2.42"` or later.
+
 ## Token format
 
 The server returns a plain-text response body. The format depends on the mode:
