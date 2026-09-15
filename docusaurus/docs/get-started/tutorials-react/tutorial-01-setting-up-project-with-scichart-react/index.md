@@ -95,8 +95,8 @@ By the time you've completed this your **package.json** should look like this:
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "scichart": "^5.0.0-alpha.135",
-    "scichart-react": "^0.2.0-beta.2"
+    "scichart": "^6.0.0-alpha.193",
+    "scichart-react": "^2.0.0-alpha.2"
   }
 }
 ```

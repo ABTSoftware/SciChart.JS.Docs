@@ -22,6 +22,11 @@ export default function () {
                                     const relativePath = path.relative(path.join(context, "docs"), absoluteFilename);
                                     return relativePath;
                                 },
+                                // Doc snippets are served verbatim: LiveDocSnippet fetches them, and for
+                                // pages with extraJSPaths it inlines them into one module. Without this,
+                                // Terser minifies the copies onto a single line, which defeats the
+                                // inliner's line-based import handling and emits duplicate bindings.
+                                info: { minimized: true },
                                 noErrorOnMissing: false
                             }
                         ]

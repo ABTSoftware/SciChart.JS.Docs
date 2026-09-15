@@ -84,7 +84,7 @@ Our package.json should look something like this.
     "author": "",
     "license": "MIT",
     "dependencies": {
-        "scichart": "^5.0.0-alpha.135"
+        "scichart": "^6.0.0-alpha.193"
     },
     "devDependencies": {
         "copy-webpack-plugin": "^13.0.0",

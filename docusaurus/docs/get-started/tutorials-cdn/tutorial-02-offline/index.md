@@ -64,8 +64,8 @@ async function initSciChart() {
 }
 
 SciChartSurface.configure({
-  wasmUrl: `scichart/5.0.0-alpha.135/scichart2d.wasm`,
-  wasmNoSimdUrl: `scichart/5.0.0-alpha.135/scichart2d-nosimd.wasm`,
+  wasmUrl: `scichart/6.0.0-alpha.193/scichart.wasm`,
+  wasmNoSimdUrl: `scichart/6.0.0-alpha.193/scichart-nosimd.wasm`,
 });
 
 initSciChart();
@@ -80,7 +80,7 @@ initSciChart();
     <!-- Ensure you have the correct path to the SciChart.js library locally -->
     <!-- and use crossorigin=anonymous to avoid CORS issues -->
     <script
-      src="scichart/4.0.0-beta.734/index.min.js"
+      src="scichart/6.0.0-alpha.193/index.min.js"
       crossorigin="anonymous"
     ></script>
     <!-- #endregion -->
@@ -104,18 +104,18 @@ initSciChart();
 ```
 </CodeSnippetBlock>
 
-Second, we need to create `scichart` folder and download `index.min.js`, `scichart2d.wasm`, `scichart2d-nosimd.wasm` and `scichart3d.wasm`, `scichart3d-nosimd.wasm` if you are using 3D charts.
+Second, we need to create `scichart` folder and download `index.min.js`, `scichart.wasm`, `scichart-nosimd.wasm` and `scichart-charting3d.wasm`, `scichart-charting3d-nosimd.wasm` if you are using 3D charts.
 
 You can use these links to download files:
 
-* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js
-* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart2d.wasm
-* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart2d-nosimd.wasm
-* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart3d.wasm (in case you need 3D charts)
-* https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/_wasm/scichart3d-nosimd.wasm (in case you need 3D charts)
+* https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/index.min.js
+* https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/_wasm/scichart.wasm
+* https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/_wasm/scichart-nosimd.wasm
+* https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/_wasm/scichart-charting3d.wasm (in case you need 3D charts)
+* https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/_wasm/scichart-charting3d-nosimd.wasm (in case you need 3D charts)
 
 :::tip
-Use your version instead of `5.0.0-alpha.135`
+Use your version instead of `6.0.0-alpha.193`
 :::
 
 This is the folder structure:

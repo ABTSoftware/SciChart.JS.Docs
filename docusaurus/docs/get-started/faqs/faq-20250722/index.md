@@ -21,7 +21,7 @@ First we need to create `index.html` file
   <script type="importmap">
     {
       "imports": {
-        "scichart": "https://cdn.jsdelivr.net/npm/scichart@4.0.0-beta.788/_wasm/scichart.browser.mjs"
+        "scichart": "https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/_glue/scichart.browser.mjs"
       }
     }
   </script>

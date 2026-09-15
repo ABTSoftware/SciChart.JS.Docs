@@ -33,7 +33,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
 1.  Choose what version of SciChart you want to use. To find out which versions are available, head over to [npmjs.com/package/scichart](https://www.npmjs.com/package/scichart) and click on versions.
 2.  Add script pointing to SciChart.js version into the head section of your html file.
 
-    a. For instance to use version `5.0.0-alpha.135` add this script:
+    a. For instance to use version `6.0.0-alpha.193` add this script:
 
     <CodeSnippetBlock labels={["Include specific version index.html"]}>
     ```html {6-9} showLineNumbers
@@ -43,7 +43,7 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
         <title>SciChart.js Browser Bundle Tutorial 1</title>
         <script
-        src="https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js"
+        src="https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/index.min.js"
         crossorigin="anonymous"
         ></script>
         <script async type="text/javascript" src="index.js"></script>
@@ -72,11 +72,15 @@ SciChart.js is hosted as a javascript file over at [jsdelivr.com/package/npm/sc
     <CodeSnippetBlock labels={["Include latest minor version"]}>
     ```html
         <script
-            src="https://cdn.jsdelivr.net/npm/scichart@5.0/index.min.js"
+            src="https://cdn.jsdelivr.net/npm/scichart@6.0/index.min.js"
             crossorigin="anonymous"
         ></script>
     ```
     </CodeSnippetBlock>
+
+    :::note
+    Version-range URLs like `scichart@6.0` resolve to stable releases only. While SciChart.js v6 is in alpha, pin the full version as shown in (a).
+    :::
 
     c. Or, latest major/minor version (unrecommended for production) by using this syntax
 
@@ -140,7 +144,7 @@ initSciChart();
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <title>SciChart.js Browser Bundle Tutorial 1</title>
     <script
-      src="https://cdn.jsdelivr.net/npm/scichart@5.0.0-alpha.135/index.min.js"
+      src="https://cdn.jsdelivr.net/npm/scichart@6.0.0-alpha.193/index.min.js"
       crossorigin="anonymous"
     ></script>
     <script async type="text/javascript" src="index.js"></script>
