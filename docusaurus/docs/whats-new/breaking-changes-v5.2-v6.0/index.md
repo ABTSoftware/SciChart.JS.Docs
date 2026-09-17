@@ -1,5 +1,7 @@
 ---
 sidebar_position: 4
+toc_min_heading_level: 2
+toc_max_heading_level: 2
 ---
 
 # Breaking Changes in SciChart.js v6.0 from v5.2
@@ -85,7 +87,7 @@ These are only breaking if you import directly from internal file paths, for exa
 | `TPointMarkerDefinition`, `TEffectDefinition`, `TPaletteProviderDefinition`, `TAnimationDefinition`, `TDataLabelProviderDefinition`, `TSeriesDefinition`, `TSeriesDefinition3D`, `TPointMarkerDefinition3D`, `TPaletteDefinition` | `Builder/buildSeries` | `Builder/types/SeriesDefinitions` |
 | `ISciChart2DDefinition`, `ISubChartDefinition`, `ISciChartPieDefinition`, `ISciChart3DDefinition`, `TLayoutManagerDefinition` | `Builder/buildSurface` | `Builder/types/SurfaceDefinitions` |
 
-## Wasm deployment has changed — copy the `_wasm` directory
+## Wasm deployment has changed — copy the _wasm directory
 
 v6 replaces the separate 2D and 3D binaries with a **single modular wasm build**: a smaller core binary plus side modules the core loads at runtime. There are two side modules today — **`data`** (the native data-series layer: `DynamicDataSeries` and the crossfilter query path) and **`charting3d`** (the entire 3D engine, fetched lazily at the first 3D chart, so 2D-only pages never pay for it).
 
@@ -245,7 +247,7 @@ const hasSimd = FeatureDetectionHelper.supportsWasmSIMD();
 
 `TSciChart3D` is unchanged. It remains a type alias of the unified wasm context (the same type as `TSciChart`), so code that only names the type is unaffected by any of the above.
 
-## TSciChartDestination now requires a `kind` field
+## TSciChartDestination now requires a kind field
 
 The five separate destination arrays (one per chart family: 2D multi, 3D multi, 2D single, 3D single, pie) that used to encode which population a destination belonged to — by *which array it sat in* — have been replaced with a single internal store. That population now has to travel with the entry itself, so `TSciChartDestination` gains a required field:
 
@@ -302,7 +304,13 @@ palettingState.palettedColors.set(index, parseColorToUIntAbgr("red"));
 Symptom if not migrated: red and blue appear swapped. Green and black are unaffected.
 :::
 
-## PaletteProvider cannot use pure white (`#FFFFFF`)
+## Point markers on a series with a palette provider render ~3px larger
+
+When a series has a palette provider that implements `overridePointMarkerArgb` — which includes any subclass of `DefaultPaletteProvider`, even one that only overrides stroke or fill — point markers are drawn from the marker's *fill mask* rather than its sprite. In v5 that mask was deliberately baked 3 device pixels smaller than the requested size, to hide a fill-coloured fringe leaking outside the stroke ring. The fringe is now fixed in the shader, so the mask is baked at the real size, inset by the real `strokeThickness`.
+
+Such markers therefore now render at the `width`/`height` you configured, where v5 undersized them by 3 device pixels — a `width: 10` marker drew at 8.5px at `devicePixelRatio` 2, and at 7px at `devicePixelRatio` 1. If you tuned a marker size against the v5 rendering, reduce `width`/`height` to match.
+
+## PaletteProvider cannot use pure white (#FFFFFF)
 
 Pure white (`0xFFFFFFFF`) is reserved as the internal "neutral" sentinel colour used by the line and series shaders to mean *"no per-point override — use the series' default stroke"*. If a `PaletteProvider` returns pure white from `overrideStrokeArgb` (or the other override callbacks), the override is indistinguishable from the sentinel and is silently ignored — the point renders with the default stroke instead of white.
 
@@ -447,7 +455,28 @@ const drawArcsFn = (wasmContext: TSciChart, sciChartSurface: SciChartSurface) =>
 };
 ```
 
-## The `chartBuilder` object is gone — import the build functions by name
+## Custom themes must use theme.applyOverrides() — spreading a theme instance no longer works
+
+Spreading a theme drops its prototype, leaving a plain object with a `type` but no `applyOverrides`. That is how v6 tells a theme instance from a declarative Builder definition, so `SciChartSurface.create` now throws `The declarative { type, options } form of "theme" is only supported by the Builder API`.
+
+**Before** — now throws
+
+```ts
+const customTheme = { ...new SciChartJSLightTheme(), sciChartBackground: "#E4F5FC" };
+```
+
+**After** — the instance keeps its prototype
+
+```ts
+const customTheme = new SciChartJSLightTheme();
+customTheme.applyOverrides({ sciChartBackground: "#E4F5FC" });
+
+const { sciChartSurface } = await SciChartSurface.create(divId, { theme: customTheme });
+```
+
+Builder API users are unaffected — the declarative `{ type, ...overrides }` form is still resolved into an instance (see [Declarative `{ type, options }` sub-component options are now Builder-only](#declarative--type-options--sub-component-options-are-now-builder-only)).
+
+## The chartBuilder object is gone — import the build functions by name
 
 `chartBuilder` was an object holding every builder as a property. Because of that, importing it referenced all four surface builders, so a 2D-only app shipped the polar surface, the pie surface and the whole 3D surface. Every member was already a named export, so they are now the only way in.
 
@@ -628,7 +657,7 @@ console.log(series.length); // 1
 
 Unknown *axis* types still fall back to a default `NumericAxis`. Types registered via `registerType`/`registerWasmType` keep working exactly as before. See [Custom Subtypes](/2d-charts/builder-api/custom-subtypes/).
 
-## Declarative `{ type, options }` sub-component options are now Builder-only
+## Declarative \{ type, options \} sub-component options are now Builder-only
 
 The declarative form of sub-component options is resolved by the Builder API **before** construction. Core constructors accept instances only, and throw when handed a definition:
 
@@ -747,7 +776,7 @@ Resolving definitions in the Builder means core no longer needs the registration
 
 See [Complex Options in the Builder API](/2d-charts/builder-api/complex-options/).
 
-## `XyNDataSeries` renamed to `TableDataSeries`
+## XyNDataSeries renamed to TableDataSeries
 
 `XyNDataSeries` is now a deprecated alias of `TableDataSeries` and will be removed in a future major version. The name no longer described the type: it holds string, date and currency columns as well as numeric Y values.
 
@@ -798,7 +827,7 @@ The two are the type's two construction shapes — tabular (`columns`, where X i
 new TableDataSeries(wasmContext, { columns: [...], yValuesArray: [[1, 2, 3]] });
 ```
 
-## `EDataSeriesType.Grid` renamed to `EDataSeriesType.Table`
+## EDataSeriesType.Grid renamed to EDataSeriesType.Table
 
 :::note
 `GridDataSeries` was never released, so only pre-release users are affected.
@@ -812,7 +841,7 @@ One behaviour changed with the move: **`getTextAt` returns `""` for a row with n
 
 `appendN`, `appendRangeN`, `insertN` and `insertRangeN` previously threw on `GridDataSeries`. They now succeed, filling every string column with the empty value for the added rows, so the invariant that every column holds exactly one cell per row still holds. If you relied on the throw to catch a mistake, note that rows added this way have blank text.
 
-## String columns are a `BaseDataSeries` capability, not a data series type
+## String columns are a BaseDataSeries capability, not a data series type
 
 Dictionary-encoded string columns moved from `GridDataSeries` onto `BaseDataSeries`, so **any** data series can carry one — declare it with the `stringColumns` option and read it with `getTextAt(name, index)`.
 
@@ -834,7 +863,7 @@ if (dataSeries.isStringColumn?.(field)) {
 
 `TextDataLabelProvider` already made this change internally, and `DataLabelProvider` gained a `textColumn` option that takes label text straight from a named string column.
 
-## `XyTextDataSeries` text is now stored in a dictionary-encoded string column
+## XyTextDataSeries text is now stored in a dictionary-encoded string column
 
 `XyTextDataSeries` stored its text in a plain JavaScript `string[]` with hand-rolled FIFO index arithmetic. It now declares a single native string column and delegates to it.
 
