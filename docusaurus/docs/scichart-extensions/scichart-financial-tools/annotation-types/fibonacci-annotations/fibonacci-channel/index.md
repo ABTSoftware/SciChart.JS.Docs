@@ -5,7 +5,7 @@ sidebar_label: Fibonacci channel
 
 # Fibonacci channel
 
-There is no separate `FibonacciChannelAnnotation` class in `scichart-financial-tools`. The channel-like Fibonacci tool is the existing [FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html) configured with `verticalOnly: false`.
+There is no separate `FibonacciChannelAnnotation` class in `scichart-financial-tools`. The channel-like Fibonacci tool is the existing [FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html) configured with `verticalOnly: false`.
 
 In that skewed mode, points 1 and 2 define the baseline, while point 3 defines the parallel channel direction. The result is both Fibonacci and channel-like: the levels remain Fibonacci levels, but the geometry can lean with the move instead of staying vertical.
 

@@ -5,7 +5,7 @@ sidebar_label: Stop-loss / take-profit
 
 # StopLossTakeProfitAnnotation
 
-[StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) draws a stop-loss or take-profit zone from two points. The second point chooses the take-profit or stop-loss color.
+[StopLossTakeProfitAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html) draws a stop-loss or take-profit zone from two points. The second point chooses the take-profit or stop-loss color.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: Stop-loss / take-profit
     ```
 </CodeSnippetBlock>
 
-Use [takeProfitColor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#takeprofitcolor), [stopLossColor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#stoplosscolor), [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#fillopacity) and line stroke options to style the zone. The annotation also inherits editable grips and point labels from the multi-point annotation base. Set `annotationsGripsStroke` and `annotationsGripsFill` when the grip stroke needs more contrast against the chart theme.
+Use [takeProfitColor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#takeprofitcolor), [stopLossColor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#stoplosscolor), [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/stoplosstakeprofitannotation.html#fillopacity) and line stroke options to style the zone. The annotation also inherits editable grips and point labels from the multi-point annotation base. Set `annotationsGripsStroke` and `annotationsGripsFill` when the grip stroke needs more contrast against the chart theme.
 
 #### See Also
 

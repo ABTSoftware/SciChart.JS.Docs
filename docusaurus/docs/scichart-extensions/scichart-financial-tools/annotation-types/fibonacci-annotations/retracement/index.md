@@ -5,7 +5,7 @@ sidebar_label: Fibonacci retracement
 
 # FibonacciRetracementAnnotation
 
-[FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html) draws Fibonacci retracement levels after two placed points by default. Point 1 and point 2 define the price move, and horizontal levels are calculated between those values. Dragging from a high to a low gives a downward retracement; dragging from a low to a high gives an upward retracement.
+[FibonacciRetracementAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html) draws Fibonacci retracement levels after two placed points by default. Point 1 and point 2 define the price move, and horizontal levels are calculated between those values. Dragging from a high to a low gives a downward retracement; dragging from a low to a high gives an upward retracement.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" htmlPath="./demo.html" />
 
@@ -16,7 +16,7 @@ sidebar_label: Fibonacci retracement
 
 For three-point skewed levels, see [Fibonacci channel](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/fibonacci-channel/).
 
-Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#thresholds) to control the levels, [regionColors:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#regioncolors) and [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#fillopacity) to style the bands, and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciretracementannotation.html#formatfibonaccilabel) for custom level text.
+Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html#thresholds) to control the levels, [regionColors:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html#regioncolors) and [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html#fillopacity) to style the bands, and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciretracementannotation.html#formatfibonaccilabel) for custom level text.
 
 The demo uses `extendStart: false` and `extendEnd: true`, so each level stroke and colored band continues past its second calculated point to the chart boundary. The labels remain anchored to the original calculated levels.
 

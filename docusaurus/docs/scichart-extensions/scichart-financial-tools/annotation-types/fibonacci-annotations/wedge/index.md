@@ -5,7 +5,7 @@ sidebar_label: Fibonacci wedge
 
 # FibonacciWedgeAnnotation
 
-[FibonacciWedgeAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciwedgeannotation.html) draws Fibonacci arcs inside a wedge from three placed points. Point 1 is the center. Points 2 and 3 define the angular span and are constrained to the same pixel radius from the center.
+[FibonacciWedgeAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciwedgeannotation.html) draws Fibonacci arcs inside a wedge from three placed points. Point 1 is the center. Points 2 and 3 define the angular span and are constrained to the same pixel radius from the center.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: Fibonacci wedge
     ```
 </CodeSnippetBlock> 
 
-The equal-radius constraint keeps the threshold `1` wedge boundary circular while you drag. Thresholds then scale that radius inside the same angle range. Use [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciwedgeannotation.html#fibonaccilabelplacement) to move labels around the arcs and [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciwedgeannotation.html#showconnectorline) if you want to show placement guidance during editing.
+The equal-radius constraint keeps the threshold `1` wedge boundary circular while you drag. Thresholds then scale that radius inside the same angle range. Use [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciwedgeannotation.html#fibonaccilabelplacement) to move labels around the arcs and [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciwedgeannotation.html#showconnectorline) if you want to show placement guidance during editing.
 
 #### See Also
 

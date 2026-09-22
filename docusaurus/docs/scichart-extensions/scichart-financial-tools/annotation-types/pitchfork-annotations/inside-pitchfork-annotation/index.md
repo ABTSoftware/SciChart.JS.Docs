@@ -5,7 +5,7 @@ sidebar_label: Inside pitchfork
 
 # InsidePitchforkAnnotation
 
-[InsidePitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/insidepitchforkannotation.html) keeps the shoulder zone between the same two shoulder points as the base pitchfork, but the projected guide ray starts from the midpoint of the handle-to-shoulderA segment.
+[InsidePitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/insidepitchforkannotation.html) keeps the shoulder zone between the same two shoulder points as the base pitchfork, but the projected guide ray starts from the midpoint of the handle-to-shoulderA segment.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

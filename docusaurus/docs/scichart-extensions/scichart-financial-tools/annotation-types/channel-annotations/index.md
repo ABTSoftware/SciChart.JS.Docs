@@ -8,7 +8,7 @@ Channel annotations draw channels from three placement points. The first two poi
 
 | Annotation | Channel behavior |
 | --- | --- |
-| [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/channel-annotation/) | The default [ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/channelannotation.html), with parallel top and bottom edges. |
+| [ChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/channel-annotation/) | The default [ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/channelannotation.html), with parallel top and bottom edges. |
 | [FlatBottomChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/flat-bottom-channel/) | Keeps the lower edge horizontal so it can represent a fixed support level. |
 | [DisjointChannelAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/disjoint-channel/) | Mirrors the first edge from a constrained offset point, allowing disjoint channel edges. |
 
@@ -19,7 +19,7 @@ classDiagram
     ChannelAnnotation <|-- DisjointChannelAnnotation
 ```
 
-All channel variants inherit multi-point labels, segment labels, edit grips, midpoint grips and axis labels from [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html).
+All channel variants inherit multi-point labels, segment labels, edit grips, midpoint grips and axis labels from [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html).
 
 :::tip
 - `ChannelAnnotation` gives you `showMidLine`, `midLineStrokeDashArray`, `showMidPointGrips` and `fill` so you can tune both the geometry and the visual weight of the channel.

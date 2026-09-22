@@ -5,7 +5,7 @@ sidebar_label: Flat-bottom channel
 
 # FlatBottomChannelAnnotation
 
-[FlatBottomChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/flatbottomchannelannotation.html) normalizes the lower edge so both bottom points share the same y-value. Parallelism is no longer maintained, but the bottom edge is guaranteed to be flat.
+[FlatBottomChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/flatbottomchannelannotation.html) normalizes the lower edge so both bottom points share the same y-value. Parallelism is no longer maintained, but the bottom edge is guaranteed to be flat.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-flatbottom" />
 

@@ -5,7 +5,7 @@ sidebar_label: Cross line
 
 # CrossLineAnnotation
 
-[CrossLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/crosslineannotation.html) draws a one-point cross-style guide line. It is useful for aligned visual markers across the chart.
+[CrossLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/crosslineannotation.html) draws a one-point cross-style guide line. It is useful for aligned visual markers across the chart.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

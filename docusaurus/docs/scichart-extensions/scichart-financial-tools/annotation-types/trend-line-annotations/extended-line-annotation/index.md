@@ -5,7 +5,7 @@ sidebar_label: Extended line annotation
 
 # ExtendedLineAnnotation
 
-[ExtendedLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/extendedlineannotation.html) is a two-point trend line. Use [extendStart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/extendedlineannotation.html#extendstart) and/or [extendEnd:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/extendedlineannotation.html#extendend) to project the line beyond its endpoints.
+[ExtendedLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/extendedlineannotation.html) is a two-point trend line. Use [extendStart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/extendedlineannotation.html#extendstart) and/or [extendEnd:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/extendedlineannotation.html#extendend) to project the line beyond its endpoints.
 
 ### Basic example:
 

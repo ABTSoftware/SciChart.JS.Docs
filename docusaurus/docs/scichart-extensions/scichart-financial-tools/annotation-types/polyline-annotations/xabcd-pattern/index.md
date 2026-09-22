@@ -5,7 +5,7 @@ sidebar_label: XABCD pattern
 
 # XABCD Pattern
 
-An XABCD pattern can be represented with a five-point [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html). The polyline stores the turning points in order, while point labels name the pattern anchors.
+An XABCD pattern can be represented with a five-point [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html). The polyline stores the turning points in order, while point labels name the pattern anchors.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ An XABCD pattern can be represented with a five-point [PolyLineAnnotation:blue_b
     ```
 </CodeSnippetBlock>
 
-Use [placementPointCount:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html#placementpointcount) when the same pattern should be placed interactively.
+Use [placementPointCount:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html#placementpointcount) when the same pattern should be placed interactively.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-placement" />
 

@@ -5,7 +5,7 @@ sidebar_label: Renko filter
 
 # OhlcRenkoFilter
 
-[OhlcRenkoFilter:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/ohlcrenkofilter.html) converts an `OhlcDataSeries` into Renko bricks represented as OHLC values. Set [brickSize:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/ohlcrenkofilter.html#bricksize) for the price move per brick and [reversalAmount:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/ohlcrenkofilter.html#reversalamount) for the number of bricks required to reverse direction.
+[OhlcRenkoFilter:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/ohlcrenkofilter.html) converts an `OhlcDataSeries` into Renko bricks represented as OHLC values. Set [brickSize:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/ohlcrenkofilter.html#bricksize) for the price move per brick and [reversalAmount:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/ohlcrenkofilter.html#reversalamount) for the number of bricks required to reverse direction.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

@@ -5,7 +5,7 @@ sidebar_label: Point & Figure filter
 
 # PointAndFigureFilter
 
-[PointAndFigureFilter:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pointandfigurefilter.html) converts OHLC close values into Point & Figure marks. It outputs an `XyDataSeries` where X is the Point & Figure column index and Y is the mark price, and it exposes the full calculation through [lastResult:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pointandfigurefilter.html#lastresult).
+[PointAndFigureFilter:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pointandfigurefilter.html) converts OHLC close values into Point & Figure marks. It outputs an `XyDataSeries` where X is the Point & Figure column index and Y is the mark price, and it exposes the full calculation through [lastResult:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pointandfigurefilter.html#lastresult).
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: Point & Figure filter
     ```
 </CodeSnippetBlock>
 
-Use [boxSize:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pointandfigurefilter.html#boxsize) to control the price distance represented by one box and [reversalAmount:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/pointandfigurefilter.html#reversalamount) to control how many boxes are required before a new opposite-direction column begins.
+Use [boxSize:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pointandfigurefilter.html#boxsize) to control the price distance represented by one box and [reversalAmount:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pointandfigurefilter.html#reversalamount) to control how many boxes are required before a new opposite-direction column begins.
 
 #### See Also
 

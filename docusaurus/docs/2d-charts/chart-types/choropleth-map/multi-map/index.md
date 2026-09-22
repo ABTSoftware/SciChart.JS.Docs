@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Multi-Region Maps
 
-The Multi-Region Map demo demonstrates switching the displayed geographic region at runtime — between world, Europe, Australia, and Africa — while reusing the same [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html). Each region's pre-triangulated polygon data is swapped in by clearing existing series and adding new ones, keeping memory and initialization overhead low.
+The Multi-Region Map demo demonstrates switching the displayed geographic region at runtime — between world, Europe, Australia, and Africa — while reusing the same [SciChartSurface:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html). Each region's pre-triangulated polygon data is swapped in by clearing existing series and adding new ones, keeping memory and initialization overhead low.
 
 :::tip
 The [JavaScript Multi-Region Map Example](https://www.scichart.com/demo/react/multi-map-example) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/multi-map-example).
@@ -17,7 +17,7 @@ The [JavaScript Multi-Region Map Example](https://www.scichart.com/demo/react/mu
 
 ## Core Building Blocks
 
-The same series types used for [choropleth maps](/2d-charts/chart-types/choropleth-map/) are used here — one [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fasttrianglerenderableseries.html) per region for filled polygons, and a paired [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastlinerenderableseries.html) per region for outlines.
+The same series types used for [choropleth maps](/2d-charts/chart-types/choropleth-map/) are used here — one [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) per region for filled polygons, and a paired [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) per region for outlines.
 
 ## Switching Regions at Runtime
 

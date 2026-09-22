@@ -5,7 +5,7 @@ sidebar_label: Sector
 
 # SectorAnnotation
 
-[SectorAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/sectorannotation.html) draws a radial sector-style annotation. It is useful for marking angular ranges or highlighted circular regions.
+[SectorAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/sectorannotation.html) draws a radial sector-style annotation. It is useful for marking angular ranges or highlighted circular regions.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

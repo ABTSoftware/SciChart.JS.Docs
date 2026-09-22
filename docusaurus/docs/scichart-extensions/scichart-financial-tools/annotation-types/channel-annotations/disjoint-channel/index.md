@@ -5,7 +5,7 @@ sidebar_label: Disjoint channel
 
 # DisjointChannelAnnotation
 
-[DisjointChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/disjointchannelannotation.html) calculates the fourth point so points 3 and 4 mirror points 1 and 2. This allows disjoint channel edges while preserving a clear relationship between the two sides.
+[DisjointChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/disjointchannelannotation.html) calculates the fourth point so points 3 and 4 mirror points 1 and 2. This allows disjoint channel edges while preserving a clear relationship between the two sides.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-disjoint" />
 

@@ -5,7 +5,7 @@ sidebar_label: Annotation editor modifier
 
 # MultiPointAnnotationEditorModifier
 
-[MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) shows a floating property editor for the selected [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html). It listens to annotation selection changes, resolves an editor definition for the selected annotation type, and renders editable fields into a DOM container.
+[MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) shows a floating property editor for the selected [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html). It listens to annotation selection changes, resolves an editor definition for the selected annotation type, and renders editable fields into a DOM container.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -18,7 +18,7 @@ The editor `container` can be any DOM element, including one outside the SciChar
 
 ## Definition Model
 
-The modifier is driven by [IAnnotationEditorDefinition:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/interfaces/iannotationeditordefinition.html) objects. A definition can match by `annotationType`, `annotationTypes`, or a custom `matches(annotation)` predicate. Each [IAnnotationEditorField:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/interfaces/iannotationeditorfield.html) provides:
+The modifier is driven by [IAnnotationEditorDefinition:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/iannotationeditordefinition.html) objects. A definition can match by `annotationType`, `annotationTypes`, or a custom `matches(annotation)` predicate. Each [IAnnotationEditorField:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/iannotationeditorfield.html) provides:
 
 - `id`, `label`, `type`, optional `category` and `description`
 - optional `min`, `max`, `step` for numeric fields

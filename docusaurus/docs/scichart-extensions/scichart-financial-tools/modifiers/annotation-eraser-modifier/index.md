@@ -5,7 +5,7 @@ sidebar_label: Annotation eraser
 
 # AnnotationEraserModifier
 
-[AnnotationEraserModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/annotationerasermodifier.html) turns pointer input into an erase gesture. Click once to erase at a point, or drag to sample a freehand trail and erase every annotation that lies under the trail.
+[AnnotationEraserModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/annotationerasermodifier.html) turns pointer input into an erase gesture. Click once to erase at a point, or drag to sample a freehand trail and erase every annotation that lies under the trail.
 
 The demo keeps erasing mode active, shows the temporary trail and uses a small instruction banner above the chart so the behavior is obvious without reading the code first.
 

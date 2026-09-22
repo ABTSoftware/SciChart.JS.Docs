@@ -24,7 +24,7 @@ import { build2DChart, build2DPolarChart, buildPieChart, build3DChart } from "sc
 
 Use the named builder function for the surface you are creating. The functions can also build chart parts from a JSON definition.
 
-Use [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build2dpolarchart), or [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/index.html#build3dchart):
+Use [build2DChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#build2dchart), [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#buildpiechart), [build2DPolarChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#build2dpolarchart), or [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#build3dchart):
 
 <CodeSnippetBlock labels={["Build Surface-specific Charts"]}>
     ```ts showLineNumbers

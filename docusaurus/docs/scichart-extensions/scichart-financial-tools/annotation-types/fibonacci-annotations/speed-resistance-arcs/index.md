@@ -5,7 +5,7 @@ sidebar_label: Fibonacci speed resistance arcs
 
 # FibonacciSpeedResistanceArcsAnnotation
 
-[FibonacciSpeedResistanceArcsAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccispeedresistancearcsannotation.html) draws concentric Fibonacci arcs from two placed points. Point 1 is the arc center. Point 2 defines the threshold `1` radius and chooses whether the arcs open above or below the center.
+[FibonacciSpeedResistanceArcsAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonaccispeedresistancearcsannotation.html) draws concentric Fibonacci arcs from two placed points. Point 1 is the arc center. Point 2 defines the threshold `1` radius and chooses whether the arcs open above or below the center.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: Fibonacci speed resistance arcs
     ```
 </CodeSnippetBlock>
 
-This annotation is arc-based, so it inherits the shared Fibonacci threshold, region and label properties from [FibonacciArcAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonacciarcannotationbase.html). Regions are drawn between neighboring arcs. The connector line is often useful because it shows the reference radius used for threshold `1`.
+This annotation is arc-based, so it inherits the shared Fibonacci threshold, region and label properties from [FibonacciArcAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciarcannotationbase.html). Regions are drawn between neighboring arcs. The connector line is often useful because it shows the reference radius used for threshold `1`.
 
 #### See Also
 

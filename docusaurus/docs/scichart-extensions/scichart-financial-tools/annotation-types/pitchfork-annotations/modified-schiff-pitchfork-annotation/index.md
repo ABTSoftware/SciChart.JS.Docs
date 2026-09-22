@@ -5,7 +5,7 @@ sidebar_label: Modified Schiff pitchfork
 
 # ModifiedSchiffPitchforkAnnotation
 
-[ModifiedSchiffPitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/modifiedschiffpitchforkannotation.html) shifts the virtual handle to the midpoint of the first two selected points. It is the closest of the pitchfork variants to the classic Schiff pitchfork while still keeping the fork projection centered between the first two points.
+[ModifiedSchiffPitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/modifiedschiffpitchforkannotation.html) shifts the virtual handle to the midpoint of the first two selected points. It is the closest of the pitchfork variants to the classic Schiff pitchfork while still keeping the fork projection centered between the first two points.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

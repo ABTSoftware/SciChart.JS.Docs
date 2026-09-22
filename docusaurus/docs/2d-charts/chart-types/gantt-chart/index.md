@@ -6,7 +6,7 @@ sidebar_position: 37
 
 A Gantt chart visualizes tasks against a time axis — each task is drawn as a horizontal bar spanning its start and end dates. Optional metadata such as completion percentage, assignee, or priority can be attached to each bar. Typical use cases include project scheduling, sprint planning, and resource allocation.
 
-SciChart.js has no dedicated Gantt series. Gantt charts are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html) for the task bars, a [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/categoryaxis.html) for the task rows on the Y axis, and a [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/datetimenumericaxis.html) for the timeline on the X axis.
+SciChart.js has no dedicated Gantt series. Gantt charts are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastrectanglerenderableseries.html) for the task bars, a [CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/categoryaxis.html) for the task rows on the Y axis, and a [DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/datetimenumericaxis.html) for the timeline on the X axis.
 
 :::tip
 The [JavaScript Gantt Chart Example](https://www.scichart.com/demo/react/gantt-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/gantt-chart).
@@ -21,12 +21,12 @@ The [JavaScript Gantt Chart Example](https://www.scichart.com/demo/react/gantt-c
 
 A Gantt chart in SciChart.js is assembled from:
 
-- **[FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/fastrectanglerenderableseries.html)** — renders each task as a horizontal bar
-- **[XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/xyxydataseries.html)** — stores `[x, y, x1, y1]` per task: start date, row bottom, end date, row top
-- **[EColumnMode.StartEnd:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ecolumnmode.html#startend)** — interprets `x` and `x1` as explicit start/end positions on the X axis
-- **[EColumnYMode.TopBottom:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/enums/ecolumnymode.html#topbottom)** — interprets `y` and `y1` as explicit bottom/top positions on the Y axis
-- **[CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/categoryaxis.html)** — Y axis mapping integer row indices to task name strings; `flippedCoordinates: true` puts row 0 at the top
-- **[DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/datetimenumericaxis.html)** — X axis with automatic date/time tick formatting; dates are passed as Unix millisecond timestamps
+- **[FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastrectanglerenderableseries.html)** — renders each task as a horizontal bar
+- **[XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xyxydataseries.html)** — stores `[x, y, x1, y1]` per task: start date, row bottom, end date, row top
+- **[EColumnMode.StartEnd:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/ecolumnmode.html#startend)** — interprets `x` and `x1` as explicit start/end positions on the X axis
+- **[EColumnYMode.TopBottom:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/ecolumnymode.html#topbottom)** — interprets `y` and `y1` as explicit bottom/top positions on the Y axis
+- **[CategoryAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/categoryaxis.html)** — Y axis mapping integer row indices to task name strings; `flippedCoordinates: true` puts row 0 at the top
+- **[DateTimeNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/datetimenumericaxis.html)** — X axis with automatic date/time tick formatting; dates are passed as Unix millisecond timestamps
 
 ## Examples
 

@@ -603,6 +603,48 @@ The package `sideEffects` list stays empty, which lets esbuild and Vite fully tr
 
 See [Builder API Overview](/2d-charts/builder-api/builder-api-overview/) and [Chart Serialization and Deserialization](/2d-charts/builder-api/charts-serialization-deserialization/).
 
+## scichart-react: a config chart is now SciChartDeclarative, not SciChartReact
+
+`scichart-react@1.x` accepted either prop on one component — `initChart` for a function that builds the surface, or `config` for a Builder API definition. That single component therefore pulled the Builder and its whole type registry into every bundle, including apps that only ever passed `initChart`. In `scichart-react@2.x` the two paths are separate components, and `scichart-react@2.0.0` is the first release compatible with SciChart.js v6 — 1.x imports the removed `chartBuilder` object and will not build against v6 at all.
+
+`SciChartReact` now takes `initChart` only. Passing `config` throws at runtime:
+
+```text
+SciChartReact requires the "initChart" prop. To create a chart from a Builder API config, use the "SciChartDeclarative" component instead.
+```
+
+**Before**
+
+```tsx
+import { SciChartReact } from "scichart-react";
+
+<SciChartReact config={chartConfig} onInit={onInit} />;
+```
+
+**After** — a Builder API definition goes to `SciChartDeclarative`
+
+```tsx
+import { SciChartDeclarative } from "scichart-react";
+
+<SciChartDeclarative config={chartConfig} onInit={onInit} />;
+```
+
+Call sites that pass `initChart` are unchanged — keep using `SciChartReact`:
+
+```tsx
+import { SciChartReact } from "scichart-react";
+
+<SciChartReact initChart={drawExample} />;
+```
+
+`SciChartDeclarative` registers every built-in type for you, so any definition works with no setup — it is the component form of `registerAllTypes()`, with the same bundle cost. `SciChartReact` with an `initChart` function does not touch the Builder API, so a chart built from imported classes now pays nothing for the registry. This is the same split described in [The Builder API is lean by default](#the-builder-api-is-lean-by-default--one-call-restores-register-everything).
+
+The prop types follow the split: `TChartComponentPropsWithInit` for `SciChartReact` and `TChartComponentPropsWithConfig` for `SciChartDeclarative`. The old union `TChartComponentProps` is deprecated but still exported.
+
+:::note
+**Chart sizing is unchanged.** Neither version gives the component's root element a default height — the root is `{ position: "relative", ...props.style }` and the inner chart div is `height: 100%`. So a component with only a width (`style={{ width: 900 }}`) inside an auto-height parent collapses to zero height and the chart never initialises. Always give the component an explicit height, or a parent with a resolved one. This is long-standing behaviour, not a v2 change, but it is easy to misread as one when upgrading.
+:::
+
 ## Builder API resolves series, axes and data series through the class factory registry
 
 The Builder API's hardcoded type dispatch — a 42-branch if/else naming every series class, plus switches for axes and data series — has been replaced by lookups in the class factory registry, the same mechanism modifiers and annotations have always used.

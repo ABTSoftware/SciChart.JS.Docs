@@ -5,7 +5,7 @@ sidebar_label: Vertical trend line
 
 # VerticalTrendLineAnnotation
 
-[VerticalTrendLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/verticaltrendlineannotation.html) is a one-point annotation that keeps the line vertical, making it useful for time markers and event boundaries.
+[VerticalTrendLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/verticaltrendlineannotation.html) is a one-point annotation that keeps the line vertical, making it useful for time markers and event boundaries.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

@@ -5,7 +5,7 @@ sidebar_label: Measure annotation
 
 # MeasureAnnotation
 
-[MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html) measures the change between two points. It renders a rectangle, horizontal and vertical arrows and a dedicated measurement label.
+[MeasureAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/measureannotation.html) measures the change between two points. It renders a rectangle, horizontal and vertical arrows and a dedicated measurement label.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,9 +14,9 @@ sidebar_label: Measure annotation
     ```
 </CodeSnippetBlock>
 
-Use [growingColor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#growingcolor) and [decliningColor:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#decliningcolor) to style positive and negative moves. Customize the measurement label with [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
+Use [growingColor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/measureannotation.html#growingcolor) and [decliningColor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/measureannotation.html#decliningcolor) to style positive and negative moves. Customize the measurement label with [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate).
 
-The inherited multi-point labels are still available for endpoint or axis callouts. Use [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate) only for the central measurement label.
+The inherited multi-point labels are still available for endpoint or axis callouts. Use [labelDataTemplate:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/measureannotation.html#labeldatatemplate) only for the central measurement label.
 
 #### See Also
 

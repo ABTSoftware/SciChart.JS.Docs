@@ -11,7 +11,7 @@ In similar fashion to the XABCD pattern (See [XABCD doc page](/scichart-extensio
 Optionally - the 1st point can be left without a label `""` or labeled with `"0"` to keep the wave start unmarked.
 :::
 
-For example, an Elliott impulse wave can be drawn as a simple 6-point [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html).
+For example, an Elliott impulse wave can be drawn as a simple 6-point [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html).
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

@@ -100,7 +100,7 @@ const config: Config = {
                     position: "left"
                 },
                 {
-                    href: "https://www.scichart.com/documentation/js/v5/typedoc/index.html",
+                    href: "https://www.scichart.com/documentation/js/v6/typedoc/index.html",
                     label: "API Docs",
                     position: "left"
                 },
@@ -138,7 +138,7 @@ const config: Config = {
                         },
                         {
                             label: "API Documentation",
-                            href: "https://www.scichart.com/documentation/js/v5/typedoc/index.html"
+                            href: "https://www.scichart.com/documentation/js/v6/typedoc/index.html"
                         }
                     ]
                 },

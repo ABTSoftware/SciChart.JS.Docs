@@ -5,7 +5,7 @@ sidebar_label: Fibonacci time zone
 
 # FibonacciTimeZoneAnnotation
 
-[FibonacciTimeZoneAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/fibonaccitimezoneannotation.html) projects Fibonacci time zones from two points. It inherits from `RepeatedHorizontalIntervalAnnotationBase`, so the repeated spacing and connector-line behavior comes from the shared repeated-interval engine. It is used to mark potential time-based turning points.
+[FibonacciTimeZoneAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonaccitimezoneannotation.html) projects Fibonacci time zones from two points. It inherits from `RepeatedHorizontalIntervalAnnotationBase`, so the repeated spacing and connector-line behavior comes from the shared repeated-interval engine. It is used to mark potential time-based turning points.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

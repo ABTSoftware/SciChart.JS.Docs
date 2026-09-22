@@ -5,7 +5,7 @@ sidebar_label: Cyclic line
 
 # CyclicLineAnnotation
 
-[CyclicLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/cycliclineannotation.html) draws a cyclical projection line from two points. It is useful for repeating timing or cycle-based analysis.
+[CyclicLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/cycliclineannotation.html) draws a cyclical projection line from two points. It is useful for repeating timing or cycle-based analysis.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

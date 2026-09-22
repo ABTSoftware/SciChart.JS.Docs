@@ -5,12 +5,12 @@ sidebar_label: Multi-point labels deep dive
 
 # Multi-Point Labels Deep Dive
 
-Trading annotations are multi-point annotations whose shape is defined by an ordered [points:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#points) array rather than only x1, x2, y1, y2. This page focuses on the shared label system: **point** labels, **segment** labels and **axis** labels.
+Trading annotations are multi-point annotations whose shape is defined by an ordered [points:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#points) array rather than only x1, x2, y1, y2. This page focuses on the shared label system: **point** labels, **segment** labels and **axis** labels.
  
-The shared base class is [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html) from `scichart-financial-tools`. It is used by [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/polylineannotation.html), [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/freehanddrawingannotation.html) and the trading annotations from the same package. It owns the common editing model: point storage, vertex grips, whole-shape dragging, optional snapping and point / segment / axis labels.
+The shared base class is [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html) from `scichart-financial-tools`. It is used by [PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html), [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/freehanddrawingannotation.html) and the trading annotations from the same package. It owns the common editing model: point storage, vertex grips, whole-shape dragging, optional snapping and point / segment / axis labels.
 
 :::note
-[MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html) is not the same thing as `CompositeAnnotation`. A composite annotation is only a container that keeps other annotations positioned together. It does not provide points, label anchors, snapping or multi-point drag grips.
+[MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html) is not the same thing as `CompositeAnnotation`. A composite annotation is only a container that keeps other annotations positioned together. It does not provide points, label anchors, snapping or multi-point drag grips.
 :::
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
@@ -22,13 +22,13 @@ The shared base class is [MultiPointAnnotationBase:blue_book:](https://www.scich
 
 ## Label Types
 
-Multi-point labels are defined in the [labels:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#labels) array. Each label is anchored to either a point, a segment or an axis marker position.
+Multi-point labels are defined in the [labels:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#labels) array. Each label is anchored to either a point, a segment or an axis marker position.
 
 Point and segment labels are drawn inside the series view. Axis labels are drawn on the chart axes and can be configured to draw on the X axis, Y axis or both.
 
 ## Formatting Labels
 
-[formatLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabel) controls label text. [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle) can override the resolved style per label. Both callbacks receive the annotation, the original label definition, anchor values and pixel positions.
+[formatLabel:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabel) controls label text. [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle) can override the resolved style per label. Both callbacks receive the annotation, the original label definition, anchor values and pixel positions.
 
 ```ts
 import { EMultiPointLabelAnchorMode, PolyLineAnnotation } from "scichart-financial-tools";
@@ -55,11 +55,11 @@ const annotation = new PolyLineAnnotation({
 });
 ```
 
-For Builder API JSON configuration, register formatter functions by name and pass the registered name in [formatLabel:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabel) or [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle).
+For Builder API JSON configuration, register formatter functions by name and pass the registered name in [formatLabel:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabel) or [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle).
 
 ## Segment Label Rotation
 
-[ESegmentLabelRotationMode:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/esegmentlabelrotationmode.html) controls how a segment label follows its line:
+[ESegmentLabelRotationMode:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/enums/esegmentlabelrotationmode.html) controls how a segment label follows its line:
 
 | Mode | Behavior |
 | --- | --- |
@@ -93,10 +93,10 @@ This example reuses one `formatLabelStyle` callback across several annotation ty
 
 ## Label Notes
 
-- [OnInteraction:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/enums/eannotationvisibilitymode.html#oninteraction) labels appear while the annotation is hovered, selected or dragged.
+- [OnInteraction:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/enums/eannotationvisibilitymode.html#oninteraction) labels appear while the annotation is hovered, selected or dragged.
 - Axis labels can be anchored to a point or to a segment interpolation.
-- Segment labels use [segmentRatio:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/interfaces/imultipointlabeldefinitionlike.html#segmentratio) from `0` to `1` to choose their anchor along the segment. The ratio can also exit this 0 - 1 interval and behave as expected, for example a ratio of `2` will place the label twice as far WRT point1 and point2.
-- A [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle) callback can suppress a label completely by returning a style with `fontSize: 0`.
+- Segment labels use [segmentRatio:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/imultipointlabeldefinitionlike.html#segmentratio) from `0` to `1` to choose their anchor along the segment. The ratio can also exit this 0 - 1 interval and behave as expected, for example a ratio of `2` will place the label twice as far WRT point1 and point2.
+- A [formatLabelStyle:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#formatlabelstyle) callback can suppress a label completely by returning a style with `fontSize: 0`.
 - Some trading annotations add their own specialized labels in addition to inherited multi-point labels. Fibonacci level labels and Measure labels are separate systems.
 
 ## Custom Grips and Adorners

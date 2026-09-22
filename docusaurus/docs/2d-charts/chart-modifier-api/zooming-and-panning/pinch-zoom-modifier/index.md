@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # PinchZoomModifier
 
-SciChart.js provides Pinch zooming on touch devices via the [PinchZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/pinchzoommodifier.html) type.
+SciChart.js provides Pinch zooming on touch devices via the [PinchZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pinchzoommodifier.html) type.
 
 :::tip
 As of SciChart.js v3.2, **ZoomPanModifier** now inherits **PinchZoomModifier**, allowing you to configure zooming, panning and touch-to-zoom interaction via a single modifier.
@@ -13,7 +13,7 @@ As of SciChart.js v3.2, **ZoomPanModifier** now inherits **PinchZoomModifier**, 
 Adding a PinchZoomModifier to a Chart
 -------------------------------------
 
-A **PinchZoomModifier** may be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v5/typedoc/classes/scichartsurface.html#chartmodifiers) colletion to enable pinch to zoom behaviour. For example:
+A **PinchZoomModifier** may be added to the [sciChartSurface.chartModifiers:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#chartmodifiers) colletion to enable pinch to zoom behaviour. For example:
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {11} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end
@@ -32,8 +32,8 @@ Additional Properties
 ### Adjust Zooming / Scale Factor
 
 Horizontal and vertical zoom scale factor can be adjusted via the following properties:
-- [PinchZoomModifier.horizontalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html#horizontalgrowfactor)
-- [PinchZoomModifier.verticalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pinchzoommodifier.html#verticalgrowfactor)
+- [PinchZoomModifier.horizontalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pinchzoommodifier.html#horizontalgrowfactor)
+- [PinchZoomModifier.verticalGrowFactor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pinchzoommodifier.html#verticalgrowfactor)
 
 The default value for both is set to `0.005`.
 
