@@ -160,10 +160,13 @@ Dictionary-encoded **string columns are now a `BaseDataSeries` capability**, so 
 
 Selected fixes from the v6.0 cycle.
 
-* SCJS-2543: Shadow/Glow effect on a line series resulted in no draw
 * SCJS-2596: Thin charts showed gaps on thin lines
 * SCJS-2602: Resampling for OHLC with NaNs was incorrect
 * SCJS-2630: `PolarArcZoomModifier` did not work on a vertical chart
+
+**[Glow and Drop Shadow shader effects](/2d-charts/miscellaneous-apis/glow-and-dro-shadow-shader-effects/)**
+
+`ShadowEffect.offset` is now applied on a different scale, so an offset tuned against v5 will look roughly three times too large. What was `new Point(10, 10)` is about `new Point(3, 3)` in v6 — see [ShadowEffect offset is applied on a different scale](/whats-new/breaking-changes-v5.2-v6.0/#shadoweffect-offset-is-applied-on-a-different-scale).
 
 **3D charts**
 

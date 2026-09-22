@@ -916,3 +916,68 @@ Not a behaviour change — listed here because it changes bytes you may be compa
 `toJSON()` on a `DataLabelProvider` that was never given a `numericFormat` or a `precision` no longer emits those keys, and the same for `labelFormat`/`labelPrecision` on `TextDataLabelProvider`. Providers you did configure serialize exactly as before, and JSON written by v5 loads unchanged.
 
 The keys only ever echoed the class defaults (`ENumericFormat.Decimal` and `1`). Emitting them wrote those defaults to disk as though you had asked for them, which in v6 would permanently beat the per-column default that a `TableDataSeries` column's `EColumnType` supplies. If you snapshot serialized charts, expect the two keys to disappear from unconfigured providers.
+
+## WebGPU rendering is new, and is selected automatically on Apple Silicon Macs
+
+v6 can render with WebGPU as well as WebGL. Which one you get is controlled by the `IS_WEB_GPU` local storage key:
+
+| `IS_WEB_GPU` | Renderer |
+| --- | --- |
+| unset (or unrecognised) | **Auto** — WebGPU on Apple Silicon Macs, WebGL everywhere else |
+| `"1"` | WebGPU |
+| `"0"` | WebGL |
+
+WebGPU and WebGL are not pixel-identical, so anything comparing screenshots against stored baselines should pin `IS_WEB_GPU` to `"1"` or `"0"` rather than inherit Auto, which varies by machine. The key is read once at module load, so set it before the library's first import.
+
+Auto is the absence of the key, not a sentinel value — select it with `localStorage.removeItem("IS_WEB_GPU")`.
+
+## domCanvas2D has no 2D context under WebGPU
+
+`sciChartSurface.domCanvas2D.getContext("2d")` returns `null` when the surface renders with WebGPU — the canvas is owned by the GPU context and cannot also hand out a 2D one. Custom overlays drawn from a `rendered` / `renderedToDestination` handler therefore stop appearing, silently: nothing throws until you call a method on the `null` context.
+
+Guard the context before using it:
+
+```ts
+sciChartSurface.renderedToDestination.subscribe(() => {
+    const ctx = sciChartSurface.domCanvas2D.getContext("2d");
+    if (!ctx) return; // null under WebGPU
+    ctx.fillStyle = "blue";
+    ctx.fillRect(50, 50, 150, 100);
+});
+```
+
+To keep such overlays on every renderer, either pin `IS_WEB_GPU` to `"0"` or move the drawing to SciChart's own API (a `CustomAnnotation`, `SvgAnnotation`, or a custom `RenderableSeries`).
+
+## Spline series now throw on a CategoryAxis
+
+A spline series whose X axis is a `CategoryAxis` now throws during the render pass:
+
+```
+Error: Spline interpolation cannot be used with a CategoryAxis
+```
+
+This affects `SplineLineRenderableSeries`, `SplineMountainRenderableSeries` and `SplineBandRenderableSeries` — the three series built on `SplineRenderDataTransform` / `XyySplineRenderDataTransform`.
+
+In v5 the same combination rendered. The transform quietly substituted the point **indexes** for the X values on a category axis and interpolated over those, so the curve was drawn against index space rather than your data's X values. That is what now throws instead of being silently wrong.
+
+**Migration.** Either drop the spline and use the straight-segment equivalent, which is unaffected on a `CategoryAxis`:
+
+```ts
+// v5 — silently splined over indexes
+const series = new SplineLineRenderableSeries(wasmContext, { dataSeries });
+sciChartSurface.xAxes.add(new CategoryAxis(wasmContext));
+
+// v6 — either use the non-spline series on a CategoryAxis...
+const series = new FastLineRenderableSeries(wasmContext, { dataSeries });
+sciChartSurface.xAxes.add(new CategoryAxis(wasmContext));
+```
+
+...or keep the spline and give it an axis it can interpolate over:
+
+```ts
+// ...or keep the spline and use a NumericAxis / DateTimeAxis
+const series = new SplineLineRenderableSeries(wasmContext, { dataSeries });
+sciChartSurface.xAxes.add(new NumericAxis(wasmContext));
+```
+
+Recorded on the changelog as [SCJS-2738](https://abtsoftware.myjetbrains.com/youtrack/issue/SCJS-2738).
