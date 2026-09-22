@@ -138,7 +138,7 @@ See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wa
 * **Heatmap `linearTextureFilteringIntensity`** — control the strength of linear texture filtering on uniform and non-uniform heatmaps (SCJS-2694)
 * **Stacked columns with individual Y axes** — each `StackedGroupId` can now bind to its own Y axis (SCJS-2597)
 * **OHLC support for AutoSimplify**, including `SimplifyOpenThresholdPx` and `SimplifyCloseThresholdPx` (SCJS-2574)
-* **Arbitrary contour line values** for `UniformContoursRenderableSeries` (SCJS-2513)
+* **[Arbitrary contour line values](/2d-charts/chart-types/uniform-contours-renderable-series/#contours-at-arbitrary-levels)** — `UniformContoursRenderableSeries.zLevels` draws contour lines at levels you choose, instead of the uniform spacing `zStep` gives (SCJS-2513)
 
 ## TableDataSeries and native string columns
 
