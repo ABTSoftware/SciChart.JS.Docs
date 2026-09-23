@@ -9,7 +9,7 @@ The **Parallel Coordinate Plot** (PCP) is a way to visualize multivariate data â
 This chart type is not a single series. It is a composition of standard SciChart.js building blocks: one inner [`NumericAxis`:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/numericaxis.html) per dimension positioned by a custom layout strategy, one [`FastLineRenderableSeries`:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) per record, and a set of [custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/) for the interactions.
 
 :::tip
-The [JavaScript Parallel Coordinate Plot Example](https://www.scichart.com/demo/react/parallel-coordinates-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/parallel-coordinates-chart).
+The [JavaScript Parallel Coordinate Plot Example](https://www.scichart.com/demo/react/parallel-coordinates-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v6.x) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/parallel-coordinates-chart).
 :::
 
 <ChartFromSciChartDemo

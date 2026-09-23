@@ -16,9 +16,9 @@ Huge improvement in performance when rendering multiple charts on one page
 
 SciChart.js now renders through **WebGPU**, the successor to WebGL, with automatic fallback to WebGL 2.
 
-**WebGPU is enabled by default.** At startup SciChart requests a high-performance WebGPU adapter and device. If any step is unavailable — no `navigator.gpu`, no adapter, or a device that fails to come up — SciChart logs a warning and falls back to WebGL 2 automatically. Existing applications need no code change.
+**WebGPU is enabled by default on Apple Silicon Macs (auto mode).** At startup SciChart requests a high-performance WebGPU adapter and device. If any step is unavailable — no `navigator.gpu`, no adapter, or a device that fails to come up — SciChart logs a warning and falls back to WebGL 2 automatically. Existing applications need no code change.
 
-Where the adapter supports them, SciChart opts into the `float32-filterable` and `texture-compression-bc` device features.
+You can override Render Mode with the `IS_WEB_GPU` localStorage key: "1" forces WebGPU on any device (the Apple check is skipped), "0" forces WebGL, anything else (or unset) is auto mode.
 
 ### Checking and controlling the renderer
 
@@ -131,14 +131,75 @@ See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wa
 ## New chart types and features
 
 * **[Parallel Coordinate Plot](/2d-charts/chart-types/parallel-coordinate-plot/)** — a new chart type for exploring high-dimensional data, with a demo and full documentation (SCJS-524, SCJS-1045)
-* **Immediate Mesh 3D** — mesh geometry expressed in data space as a renderable series, with a new example (SCJS-2649)
+* **Immediate Mesh 3D** — mesh geometry expressed in data space as a renderable series, with a new [3D Model Example](https://www.scichart.com/demo/react/3d-model-chart)
 * **[Slug text rendering](/2d-charts/miscellaneous-apis/native-text-api/#how-native-text-is-rendered)** — all 2D native text (axis labels, axis and chart titles, data labels, `NativeTextAnnotation`) now renders through Slug GPU Bezier text, **replacing** the Signed Distance Field texture atlas. Glyphs are exact at any size, scale and rotation, and changing a font size no longer rebuilds an atlas. 3D charts still use the atlas. No public 2D api changed (SCJS-2457)
 * **[Individual colouring for contour lines](/2d-charts/chart-types/uniform-contours-renderable-series/#individual-colouring-for-contour-lines)** — `UniformContoursRenderableSeries.colorMapMode` colours each contour line by its own z-value from the series `colorMap`, instead of drawing every line in one flat colour (SCJS-2600)
 * **Better contour labels** — the built-in `ContoursDataLabelProvider` is unchanged in v6; see [Laying labels along the contour lines](/2d-charts/chart-types/uniform-contours-renderable-series/#laying-labels-along-the-contour-lines) for a worked recipe that subclasses it to place labels on the lines, rotated to follow them (SCJS-2592)
-* **Heatmap `linearTextureFilteringIntensity`** — control the strength of linear texture filtering on uniform and non-uniform heatmaps (SCJS-2694)
-* **Stacked columns with individual Y axes** — each `StackedGroupId` can now bind to its own Y axis (SCJS-2597)
-* **OHLC support for AutoSimplify**, including `SimplifyOpenThresholdPx` and `SimplifyCloseThresholdPx` (SCJS-2574)
+* **Heatmap `linearTextureFilteringIntensity`** — control the strength of linear texture filtering on uniform and non-uniform heatmaps (SCJS-2694) (TODO: update once it is fixed in v6)
+* **[Stacked columns with individual Y axes](#stacked-columns-with-individual-y-axes)** — each `stackedGroupId` can now bind to its own Y axis (SCJS-2597)
+* **[OHLC support for AutoSimplify](#ohlc-support-for-autosimplify)** — `autoSimplify` drops the Open and Close ticks as bars crowd together, controlled by [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) and [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) (SCJS-2574)
 * **[Arbitrary contour line values](/2d-charts/chart-types/uniform-contours-renderable-series/#contours-at-arbitrary-levels)** — `UniformContoursRenderableSeries.zLevels` draws contour lines at levels you choose, instead of the uniform spacing `zStep` gives (SCJS-2513)
+
+### Stacked columns with individual Y axes
+
+In v5 a `StackedColumnCollection` drew against one Y axis, so groups whose values were orders of magnitude apart had to share a scale. In v6 a `StackedColumnRenderableSeries` can set its own `yAxisId`, and only falls back to the collection's when it does not. Series sharing a `stackedGroupId` must still resolve to the same Y axis — that is what makes a stack meaningful — so the axis is effectively chosen per group.
+
+```typescript
+// One axis per group, each with its own scale
+sciChartSurface.yAxes.add(
+    new NumericAxis(wasmContext, { id: "yLeft", axisAlignment: EAxisAlignment.Left }),
+    new NumericAxis(wasmContext, { id: "yRight", axisAlignment: EAxisAlignment.Right })
+);
+
+const collection = new StackedColumnCollection(wasmContext, { yAxisId: "yLeft" });
+collection.add(
+    // group "one" stacks vertically on the left axis
+    new StackedColumnRenderableSeries(wasmContext, {
+        dataSeries: tomatoes,
+        fill: "#dc443f",
+        stackedGroupId: "one",
+        yAxisId: "yLeft"
+    }),
+    new StackedColumnRenderableSeries(wasmContext, {
+        dataSeries: cucumbers,
+        fill: "#aad34f",
+        stackedGroupId: "one",
+        yAxisId: "yLeft"
+    }),
+    // group "two" sits beside it, measured against the right axis
+    new StackedColumnRenderableSeries(wasmContext, {
+        dataSeries: peppers,
+        fill: "#8562b4",
+        stackedGroupId: "two",
+        yAxisId: "yRight"
+    })
+);
+
+sciChartSurface.renderableSeries.add(collection);
+```
+
+Mixing axes *within* one `stackedGroupId` throws, since the stack would have no common scale to add up on. A series pointing at an axis id that does not exist only warns, and falls back to the collection's axis.
+
+### OHLC support for AutoSimplify
+
+Zoomed out far enough, the Open and Close ticks of an OHLC bar collapse into the stem and stop carrying information. Setting `autoSimplify` on [FastOhlcRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html) drops those ticks once bars crowd past a threshold, leaving the high–low stems; they come back as you zoom in. It is `false` by default.
+
+```typescript
+const ohlcSeries = new FastOhlcRenderableSeries(wasmContext, {
+    dataSeries,
+    strokeThickness: 2,
+    dataPointWidth: 0.8,
+    autoSimplify: true,
+    simplifyOpenThresholdPx: 6, // hide the Open tick below 6px of spacing per bar
+    simplifyCloseThresholdPx: 4 // hide the Close tick below 4px
+});
+
+sciChartSurface.renderableSeries.add(ohlcSeries);
+```
+
+Both thresholds are measured against the **horizontal spacing per bar**, not the drawn bar width that `dataPointWidth` gives, so they behave the same whichever width you choose. `0` always draws the tick and a negative value always hides it, which makes each tick individually switchable without touching `autoSimplify`. Only OHLC bars simplify — candlesticks are unaffected.
+
+See [Simplifying OHLC Bars When Zooming Out](/2d-charts/chart-types/fast-ohlc-renderable-series/#simplifying-ohlc-bars-when-zooming-out) for a live example, and [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) / [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) in the typedoc.
 
 ## TableDataSeries and native string columns
 
