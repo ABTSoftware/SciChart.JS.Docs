@@ -4,9 +4,9 @@ sidebar_position: 106
 
 # Polar Maps
 
-A Polar Map renders geographic regions as color-coded triangle meshes on a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichartpolarsurface.html), mapping longitude to the angular axis and latitude to the radial axis. This makes it well-suited for global data visualizations such as population density, climate data, or geopolitical comparisons — any dataset where values vary across geographic regions.
+A Polar Map renders geographic regions as color-coded triangle meshes on a [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpolarsurface.html), mapping longitude to the angular axis and latitude to the radial axis. This makes it well-suited for global data visualizations such as population density, climate data, or geopolitical comparisons — any dataset where values vary across geographic regions.
 
-The map is built from [PolarTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polartrianglerenderableseries.html): GeoJSON polygon outlines are decomposed into triangles via Delaunay triangulation, and each country or region gets its own series with a fill color derived from a data value (e.g. population).
+The map is built from [PolarTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polartrianglerenderableseries.html): GeoJSON polygon outlines are decomposed into triangles via Delaunay triangulation, and each country or region gets its own series with a fill color derived from a data value (e.g. population).
 
 :::tip
 The [JavaScript Polar Map Example](https://www.scichart.com/demo/javascript/polar-map-example) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/PolarCharts/PolarMapExample) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/polar-map-example).
@@ -19,7 +19,7 @@ The [JavaScript Polar Map Example](https://www.scichart.com/demo/javascript/pola
 
 ## Creating the Surface and Axes
 
-The surface is a standard [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichartpolarsurface.html). Two [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarnumericaxis.html) instances map geographic coordinates: longitude on the angular axis (`-180` to `180`) and latitude on the radial axis (`-90` to `90`). Gridlines, tick marks, and major bands are all disabled to keep the visual clean — the triangle fills supply all the visual structure.
+The surface is a standard [SciChartPolarSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpolarsurface.html). Two [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarnumericaxis.html) instances map geographic coordinates: longitude on the angular axis (`-180` to `180`) and latitude on the radial axis (`-90` to `90`). Gridlines, tick marks, and major bands are all disabled to keep the visual clean — the triangle fills supply all the visual structure.
 
 ```ts
 const { sciChartSurface, wasmContext } = await SciChartPolarSurface.create(divElementId, {
@@ -105,7 +105,7 @@ Pass the global `min` and `max` for the dataset so every country is scaled consi
 
 ## Rendering Triangle Series
 
-One [PolarTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polartrianglerenderableseries.html) is created per geographic region. `ETriangleSeriesDrawMode.List` tells the renderer that every three consecutive `(x, y)` pairs in the data series form an independent triangle — the direct output format of Delaunay triangulation.
+One [PolarTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polartrianglerenderableseries.html) is created per geographic region. `ETriangleSeriesDrawMode.List` tells the renderer that every three consecutive `(x, y)` pairs in the data series form an independent triangle — the direct output format of Delaunay triangulation.
 
 ```ts
 const triangleSeries = new PolarTriangleRenderableSeries(wasmContext, {
@@ -119,7 +119,7 @@ sciChartSurface.renderableSeries.add(triangleSeries);
 
 ## Switching Pole Perspective
 
-The `flippedCoordinates` property on a [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarnumericaxis.html) reverses the direction of that axis. To toggle between a North Pole view and a South Pole view, the angular axis is mirrored while the radial axis uses the inverse setting. Because `flippedCoordinates` is set at construction time and cannot be changed after the fact, both axes and all renderable series must be cleared and rebuilt on each switch.
+The `flippedCoordinates` property on a [PolarNumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarnumericaxis.html) reverses the direction of that axis. To toggle between a North Pole view and a South Pole view, the angular axis is mirrored while the radial axis uses the inverse setting. Because `flippedCoordinates` is set at construction time and cannot be changed after the fact, both axes and all renderable series must be cleared and rebuilt on each switch.
 
 ```ts
 const setView = (viewFromSouthPole: boolean) => {
@@ -162,9 +162,9 @@ sciChartSurface.chartModifiers.add(
 );
 ```
 
-- [PolarPanModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarpanmodifier.html) — click and drag to rotate or translate the polar view.
-- [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarzoomextentsmodifier.html) — double-click to snap the view back to fit all data.
-- [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarmousewheelzoommodifier.html) — scroll to zoom in and out radially.
+- [PolarPanModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarpanmodifier.html) — click and drag to rotate or translate the polar view.
+- [PolarZoomExtentsModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarzoomextentsmodifier.html) — double-click to snap the view back to fit all data.
+- [PolarMouseWheelZoomModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarmousewheelzoommodifier.html) — scroll to zoom in and out radially.
 
 ## See Also
 

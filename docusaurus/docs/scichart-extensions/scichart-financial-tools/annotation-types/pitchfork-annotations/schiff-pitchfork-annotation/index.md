@@ -5,7 +5,7 @@ sidebar_label: Schiff pitchfork
 
 # SchiffPitchforkAnnotation
 
-[SchiffPitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/schiffpitchforkannotation.html) is a pitchfork variant whose virtual handle shifts halfway toward the second point on the Y axis while preserving the original X position.
+[SchiffPitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/schiffpitchforkannotation.html) is a pitchfork variant whose virtual handle shifts halfway toward the second point on the Y axis while preserving the original X position.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

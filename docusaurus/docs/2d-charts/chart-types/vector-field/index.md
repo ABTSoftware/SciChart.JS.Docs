@@ -6,7 +6,7 @@ sidebar_position: 36
 
 A Vector Field Chart visualizes a 2D field of vectors — each arrow shows direction and optionally magnitude at a point in space. Common applications include fluid dynamics, electromagnetic field visualization, gradient plots in mathematics, and wind/current maps in geoscience.
 
-SciChart.js has no dedicated vector field series; instead, vector fields are composed from [FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinesegmentrenderableseries.html) for the vector lines, an [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/istrokepaletteprovider.html) for gradient coloring, and optionally [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) for arrowheads.
+SciChart.js has no dedicated vector field series; instead, vector fields are composed from [FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinesegmentrenderableseries.html) for the vector lines, an [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) for gradient coloring, and optionally [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) for arrowheads.
 
 :::tip
 The [JavaScript Vector Field Example](https://www.scichart.com/demo/react/vector-field) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/vector-field).
@@ -21,16 +21,16 @@ The [JavaScript Vector Field Example](https://www.scichart.com/demo/react/vector
 
 A vector field in SciChart.js is assembled from:
 
-- **[FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinesegmentrenderableseries.html)** — renders each vector as a line segment between a start and end point
-- **[XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xydataseries.html)** — stores alternating start/end coordinate pairs; pairs `[x₀, y₀]` and `[x₁, y₁]` define one segment
-- **[XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xyxydataseries.html)** — alternative data series with explicit `x, y, x1, y1` per segment; cleaner for pre-computed data
-- **[IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/istrokepaletteprovider.html)** with `EStrokePaletteMode.GRADIENT` — applies distinct colors to each end of a segment, producing a per-vector gradient
-- **[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html)** — renders arrowheads as filled triangles positioned at each vector tip *(optional)*
-- **[CentralAxesLayoutManager:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/centralaxeslayoutmanager.html)** — positions axes at the center of the chart instead of the borders, useful when the field spans negative and positive coordinates *(optional)*
+- **[FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinesegmentrenderableseries.html)** — renders each vector as a line segment between a start and end point
+- **[XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html)** — stores alternating start/end coordinate pairs; pairs `[x₀, y₀]` and `[x₁, y₁]` define one segment
+- **[XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyxydataseries.html)** — alternative data series with explicit `x, y, x1, y1` per segment; cleaner for pre-computed data
+- **[IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html)** with `EStrokePaletteMode.GRADIENT` — applies distinct colors to each end of a segment, producing a per-vector gradient
+- **[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html)** — renders arrowheads as filled triangles positioned at each vector tip *(optional)*
+- **[CentralAxesLayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/centralaxeslayoutmanager.html)** — positions axes at the center of the chart instead of the borders, useful when the field spans negative and positive coordinates *(optional)*
 
 ## Data Format
 
-[FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinesegmentrenderableseries.html) draws one independent line segment per consecutive pair of data points. The two data series options offer different ergonomics:
+[FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinesegmentrenderableseries.html) draws one independent line segment per consecutive pair of data points. The two data series options offer different ergonomics:
 
 ### Using XyDataSeries (alternating pairs)
 
@@ -80,7 +80,7 @@ const lineSegmentSeries = new FastLineSegmentRenderableSeries(wasmContext, {
 
 ## Gradient Coloring
 
-To color each vector with a gradient that runs from its tail to its tip, implement [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/istrokepaletteprovider.html) and set `strokePaletteMode` to `EStrokePaletteMode.GRADIENT`.
+To color each vector with a gradient that runs from its tail to its tip, implement [IStrokePaletteProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/istrokepaletteprovider.html) and set `strokePaletteMode` to `EStrokePaletteMode.GRADIENT`.
 
 `overrideStrokeArgb` is called once per data point. Since points alternate `start / end`, even indices receive the tail color and odd indices receive the tip color:
 
@@ -164,7 +164,7 @@ for (let i = 0; i < gridSize; i++) {
 
 ## Centering the Axes
 
-When a vector field spans both negative and positive coordinates, [CentralAxesLayoutManager:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/centralaxeslayoutmanager.html) positions the axes through the origin:
+When a vector field spans both negative and positive coordinates, [CentralAxesLayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/centralaxeslayoutmanager.html) positions the axes through the origin:
 
 ```ts
 import { CentralAxesLayoutManager, EAutoRange, NumberRange } from "scichart";
@@ -193,7 +193,7 @@ sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {
 
 ## Adding Arrowheads
 
-Arrowheads make direction unambiguous and are rendered using a separate [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html). Each arrowhead is a small filled triangle placed at the tip of each vector and rotated to match its direction:
+Arrowheads make direction unambiguous and are rendered using a separate [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html). Each arrowhead is a small filled triangle placed at the tip of each vector and rotated to match its direction:
 
 ```ts
 import {
@@ -259,7 +259,7 @@ sciChartSurface.chartModifiers.add(
 );
 ```
 
-[CursorModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/cursormodifier.html) can display tooltips showing the start and end coordinates of a hovered vector. When using `XyxyDataSeries`, the tooltip data includes `xValue`, `yValue`, `point2xValue`, and `point2yValue`:
+[CursorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cursormodifier.html) can display tooltips showing the start and end coordinates of a hovered vector. When using `XyxyDataSeries`, the tooltip data includes `xValue`, `yValue`, `point2xValue`, and `point2yValue`:
 
 ```ts
 const tooltipDataTemplate = seriesInfos => {

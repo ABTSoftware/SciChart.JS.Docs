@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # PolarLegendModifier
 
-The [PolarLegendModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/polarlegendmodifier.html) is a modifier that displays a legend for the series in a polar chart. It provides information about the series, such as their names and colors, enhancing the user experience by allowing for easy identification of data series.
+The [PolarLegendModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarlegendmodifier.html) is a modifier that displays a legend for the series in a polar chart. It provides information about the series, such as their names and colors, enhancing the user experience by allowing for easy identification of data series.
 
 <CodeSnippetBlock labels={["TS", "Builder API (JSON Config)"]}>
     ```ts {6} showLineNumbers file=./demo.ts start=region_A_start end=region_A_end

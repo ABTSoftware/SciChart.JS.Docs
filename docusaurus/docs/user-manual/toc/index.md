@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Table of Contents
 
-The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html).
+The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html).
 
 <!-- generate-docs-toc.js start -->
 - **User Manual**

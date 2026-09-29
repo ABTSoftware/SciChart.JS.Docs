@@ -5,7 +5,7 @@ sidebar_label: Fibonacci annotations
 
 # Fibonacci Annotations
 
-Fibonacci annotations share a common base: [FibonacciAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html). It provides the level thresholds, colored regions, connector lines and level labels used by retracements, extensions and arc-based Fibonacci tools.
+Fibonacci annotations share a common base: [FibonacciAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html). It provides the level thresholds, colored regions, connector lines and level labels used by retracements, extensions and arc-based Fibonacci tools.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -16,31 +16,31 @@ Fibonacci annotations share a common base: [FibonacciAnnotationBase:blue_book:](
 
 ## Shared Properties
 
-Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#thresholds) to choose which levels are drawn.  
+Use [thresholds:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#thresholds) to choose which levels are drawn.  
 The default list includes common ratios: 
 ```ts
 [0, 0.236, 0.382, 0.5, 0.618, 0.786, 1, 1.618, 2.618, 3.618, 4.236]
 ```
 
-Use [regionColors:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#regioncolors) and [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#fillopacity) to style the bands between consecutive thresholds. If `regionColors` has fewer colors than the number of bands, SciChart interpolates the missing colors. If it has one color, that color is reused for every band.  
+Use [regionColors:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#regioncolors) and [fillOpacity:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#fillopacity) to style the bands between consecutive thresholds. If `regionColors` has fewer colors than the number of bands, SciChart interpolates the missing colors. If it has one color, that color is reused for every band.  
 The default is: 
 ```ts
 ["#F87171","#FB8B62","#FBA55A","#FBC35A","#F5D86A","#D2E26F","#9EDB7E","#70CEA5","#7FAECE","#A1A1AA"]
 ```
 
-Use [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#showconnectorline), [connectorLineStroke:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestroke) and [connectorLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestrokedasharray) to show how the placement points define the annotation.
+Use [showConnectorLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#showconnectorline), [connectorLineStroke:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestroke) and [connectorLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#connectorlinestrokedasharray) to show how the placement points define the annotation.
 
 ## Line and Connector Styling
 
-Use [strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#strokedasharray) to style the Fibonacci level lines or arcs. This is independent from `connectorLineStrokeDashArray`, which styles only the placement connector.
+Use [strokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#strokedasharray) to style the Fibonacci level lines or arcs. This is independent from `connectorLineStrokeDashArray`, which styles only the placement connector.
 
-Line-based Fibonacci tools also support [extendStart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendstart) and [extendEnd:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendend). Both default to `false`. They extend retracement, extension, and skewed Fibonacci-channel level lines and colored bands to the chart boundary. “Start” and “end” follow the calculated level-line point order, so they are not always the same as screen-left and screen-right.
+Line-based Fibonacci tools also support [extendStart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendstart) and [extendEnd:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#extendend). Both default to `false`. They extend retracement, extension, and skewed Fibonacci-channel level lines and colored bands to the chart boundary. “Start” and “end” follow the calculated level-line point order, so they are not always the same as screen-left and screen-right.
 
 :::note
 `extendStart` and `extendEnd` do not extend Fibonacci circles, speed-resistance arcs, or wedges. Their level geometry can still use `strokeDashArray`.
 :::
 
-Fibonacci annotations have two label systems. Inherited multi-point labels describe anchors or segments. Fibonacci level labels describe each threshold and are configured with [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelplacement), [fibonacciLabelColorMode:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelcolormode), [fibonacciLabelFontSize:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelfontsize), [fibonacciLabelLinePadding:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabellinepadding) and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/fibonacciannotationbase.html#formatfibonaccilabel).
+Fibonacci annotations have two label systems. Inherited multi-point labels describe anchors or segments. Fibonacci level labels describe each threshold and are configured with [fibonacciLabelPlacement:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelplacement), [fibonacciLabelColorMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelcolormode), [fibonacciLabelFontSize:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabelfontsize), [fibonacciLabelLinePadding:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#fibonaccilabellinepadding) and [formatFibonacciLabel:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/fibonacciannotationbase.html#formatfibonaccilabel).
 
 :::tip
 - `FibonacciRetracementAnnotation` is the one Fibonacci tool that can switch between 2-point vertical mode and 3-point skewed mode via `verticalOnly`.

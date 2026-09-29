@@ -6,7 +6,7 @@ sidebar_position: 3
 
 SciChart provides a powerful API for creating various types of charts, including **3D Charts**.
 
-Use [build3DChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#build3dchart) to create a 3D Chart.
+Use [build3DChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#build3dchart) to create a 3D Chart.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {3,11} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

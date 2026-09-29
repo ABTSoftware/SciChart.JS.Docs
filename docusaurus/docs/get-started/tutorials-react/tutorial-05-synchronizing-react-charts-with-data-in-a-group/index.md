@@ -285,7 +285,7 @@ export default App;
 Synchronizing Zoom, Pan and Tooltip Operations Across Charts
 ------------------------------------------------------------
 
-The next step in the tutorial is to synchronize Zoom, Pan and Tooltip operations across charts. To do this we're going to use the `AxisSynchronizer` class found in the [SciChart.js demo - Sync Multi Chart](https://demo.scichart.com/react/sync-multi-chart) example, as well as the [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/chartmodifierbase2d.html#modifiergroup "modifierGroup TypeDoc API") property found on [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/chartmodifierbase2d.html "ChartModifierBase TypeDoc API").
+The next step in the tutorial is to synchronize Zoom, Pan and Tooltip operations across charts. To do this we're going to use the `AxisSynchronizer` class found in the [SciChart.js demo - Sync Multi Chart](https://demo.scichart.com/react/sync-multi-chart) example, as well as the [modifierGroup:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html#modifiergroup "modifierGroup TypeDoc API") property found on [ChartModifierBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/chartmodifierbase2d.html "ChartModifierBase TypeDoc API").
 
 You'll notice in the `initChart()` function `modifierGroup` is set here:
 
@@ -303,7 +303,7 @@ sciChartSurface.chartModifiers.add(
 );
 ```
 
-This ensures that mouse events from one ChartModifier are passed to others in the same group. This will partly tooltips across charts but will not synchronize everything - such as axis sizes or [axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/axisbase2d.html#visiblerange "axis.visibleRange TypeDoc API"). To do this, we need some further logic, found in `AxisSynchronizer`.
+This ensures that mouse events from one ChartModifier are passed to others in the same group. This will partly tooltips across charts but will not synchronize everything - such as axis sizes or [axis.visibleRange:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase2d.html#visiblerange "axis.visibleRange TypeDoc API"). To do this, we need some further logic, found in `AxisSynchronizer`.
 
 Go ahead and add a new class file to the project, AxisSynchronizer.js. Add the following code:
 

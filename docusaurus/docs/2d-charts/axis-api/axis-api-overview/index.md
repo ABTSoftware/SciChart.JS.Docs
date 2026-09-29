@@ -117,6 +117,6 @@ To learn more about the axis styling options see [Axis Styling](/2d-charts/axis
 Discontinuous Date Axis
 ----------------
 
-The [DiscontinuousDateAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/discontinuousdateaxis.html) is a specialized axis type in SciChart.js that **inherits from `BaseValueAxis`** and provides intelligent handling of time-series data with gaps. Unlike a standard `NumericAxis` or `DateTimeNumericAxis`, it interpolates data based on a **fixed timescale after each baseValue**, effectively collapsing gaps (such as weekends, holidays, or after-hours periods in financial data) while maintaining proper time-based positioning within each segment.
+The [DiscontinuousDateAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/discontinuousdateaxis.html) is a specialized axis type in SciChart.js that **inherits from `BaseValueAxis`** and provides intelligent handling of time-series data with gaps. Unlike a standard `NumericAxis` or `DateTimeNumericAxis`, it interpolates data based on a **fixed timescale after each baseValue**, effectively collapsing gaps (such as weekends, holidays, or after-hours periods in financial data) while maintaining proper time-based positioning within each segment.
 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/chart-axis-comparison" title="DiscontinuousDateAxis Comparison" description="" />

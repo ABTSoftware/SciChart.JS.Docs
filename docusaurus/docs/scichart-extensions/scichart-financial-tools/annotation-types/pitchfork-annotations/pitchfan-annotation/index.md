@@ -5,7 +5,7 @@ sidebar_label: Pitchfan
 
 # PitchfanAnnotation
 
-[PitchfanAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pitchfanannotation.html) extends [PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pitchforkannotation.html) and uses the same three placement points: handle, shoulder A and shoulder B. Instead of drawing Andrews' Pitchfork, it projects fan rays from those points.
+[PitchfanAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/pitchfanannotation.html) extends [PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/pitchforkannotation.html) and uses the same three placement points: handle, shoulder A and shoulder B. Instead of drawing Andrews' Pitchfork, it projects fan rays from those points.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: Pitchfan
     ```
 </CodeSnippetBlock>
 
-Set [showShoulderLine:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pitchfanannotation.html#showshoulderline) to control the line joining the two shoulder points. Pitchfan annotations also inherit multi-point labels for handle, shoulder, segment and axis callouts.
+Set [showShoulderLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/pitchfanannotation.html#showshoulderline) to control the line joining the two shoulder points. Pitchfan annotations also inherit multi-point labels for handle, shoulder, segment and axis callouts.
 
 :::tip
 - `showShoulderLine` only hides the shoulder connector; the fan rays and pitchfork zones still render.

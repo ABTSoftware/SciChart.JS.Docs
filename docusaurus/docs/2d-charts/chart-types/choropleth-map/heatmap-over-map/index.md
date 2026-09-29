@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Heatmap over Map
 
-A geographic heatmap overlays a [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmaprenderableseries.html) on top of world map outlines rendered with [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html). Both share the same longitude/latitude axis ranges, so heatmap cells align precisely with the underlying geography.
+A geographic heatmap overlays a [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) on top of world map outlines rendered with [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html). Both share the same longitude/latitude axis ranges, so heatmap cells align precisely with the underlying geography.
 
 :::tip
 The [JavaScript Heatmap over Map Example](https://www.scichart.com/demo/react/heatmap-over-map) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/heatmap-over-map).
@@ -19,10 +19,10 @@ The [JavaScript Heatmap over Map Example](https://www.scichart.com/demo/react/he
 
 | Layer | Class | Purpose |
 |---|---|---|
-| Base (bottom) | [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) | Country and continent boundary outlines |
-| Overlay (top) | [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmaprenderableseries.html) | Color-graded data grid at 50% opacity |
+| Base (bottom) | [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) | Country and continent boundary outlines |
+| Overlay (top) | [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) | Color-graded data grid at 50% opacity |
 
-The heatmap legend is provided by [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmaplegend.html), and color mapping by [HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmapcolormap.html).
+The heatmap legend is provided by [HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html), and color mapping by [HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html).
 
 ## Data Pipeline
 
@@ -32,7 +32,7 @@ The demo visualizes ~23,000 earthquake records from a CSV file. The pipeline con
 2. **Map to grid cells** — normalize coordinates into a 600×400 cell grid covering the full world extent (`[-180, 180]` × `[-90, 90]`)
 3. **Aggregate** — when multiple earthquakes fall in the same cell, keep the maximum magnitude
 4. **Smooth** — apply a 3×3 averaging kernel across neighbouring cells for a continuous visual appearance
-5. **Pass to** [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmapdataseries.html) — the resulting `zValues` 2D array, with `xStart`, `xStep`, `yStart`, `yStep` derived from the world coordinate bounds
+5. **Pass to** [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) — the resulting `zValues` 2D array, with `xStart`, `xStep`, `yStart`, `yStep` derived from the world coordinate bounds
 
 ```ts
 import {
@@ -65,7 +65,7 @@ sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {
 
 ## Coordinate Alignment
 
-The key to correct overlay is that the heatmap grid and the map outlines use **identical axis ranges**. The `xStart / xStep / yStart / yStep` parameters of [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmapdataseries.html) must map each grid cell to its world coordinate:
+The key to correct overlay is that the heatmap grid and the map outlines use **identical axis ranges**. The `xStart / xStep / yStart / yStep` parameters of [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) must map each grid cell to its world coordinate:
 
 ```ts
 const COLS = 600;
@@ -88,7 +88,7 @@ The Y axis uses `flippedCoordinates: true` so that increasing latitude values ap
 
 ## Color Map
 
-[HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmapcolormap.html) maps Z values (0–10 Richter scale) to a continuous color gradient. Values at or near zero are transparent black so ocean areas without seismic activity remain invisible:
+[HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) maps Z values (0–10 Richter scale) to a continuous color gradient. Values at or near zero are transparent black so ocean areas without seismic activity remain invisible:
 
 ```ts
 import { HeatmapColorMap } from "scichart";
@@ -118,7 +118,7 @@ Setting `opacity: 0.5` on the series lets the map outline layer show through the
 
 ## Map Outlines
 
-Country and continent boundaries are stored in a JSON file as arrays of `[longitude, latitude]` coordinate pairs. Each boundary polyline becomes a [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) added **before** the heatmap series so it renders underneath:
+Country and continent boundaries are stored in a JSON file as arrays of `[longitude, latitude]` coordinate pairs. Each boundary polyline becomes a [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) added **before** the heatmap series so it renders underneath:
 
 ```ts
 import { FastLineRenderableSeries, XyDataSeries } from "scichart";
@@ -142,7 +142,7 @@ sciChartSurface.renderableSeries.add(heatmapSeries);
 
 ## Heatmap Legend
 
-[HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmaplegend.html) is a companion component that renders the color scale in a separate DOM element. It must reference the same [HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmapcolormap.html) instance:
+[HeatmapLegend:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html) is a companion component that renders the color scale in a separate DOM element. It must reference the same [HeatmapColorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) instance:
 
 ```ts
 import { HeatmapLegend } from "scichart";

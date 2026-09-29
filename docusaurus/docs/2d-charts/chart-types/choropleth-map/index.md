@@ -4,7 +4,7 @@ sidebar_position: 35
 
 # Choropleth Maps
 
-Choropleth Maps visualize geographic regions colored by a data metric — population, density, area, or any continuous value — making spatial patterns immediately visible. SciChart.js has no dedicated map series; instead, choropleth maps are composed from [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) for filled regions, [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) for boundary outlines, and [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastbubblerenderableseries.html) for point-of-interest markers.
+Choropleth Maps visualize geographic regions colored by a data metric — population, density, area, or any continuous value — making spatial patterns immediately visible. SciChart.js has no dedicated map series; instead, choropleth maps are composed from [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) for filled regions, [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) for boundary outlines, and [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) for point-of-interest markers.
 
 :::tip
 The [JavaScript Choropleth Map Example](https://www.scichart.com/demo/react/map-example) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/map-example).
@@ -19,23 +19,23 @@ The [JavaScript Choropleth Map Example](https://www.scichart.com/demo/react/map-
 
 A choropleth map in SciChart.js is assembled from standard chart primitives:
 
-- **[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html)** — renders each geographic region as a set of filled triangles using [ETriangleSeriesDrawMode.List:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/etriangleseriesdrawmode.html#list)
-- **[XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xydataseries.html)** — stores the flat list of triangle vertex coordinates (longitude/latitude pairs) produced by triangulation
-- **[FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html)** — draws region boundary outlines over the filled triangles
-- **[FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastbubblerenderableseries.html)** — places city or point-of-interest markers using [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/ellipsepointmarker.html)
-- **[XyzDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xyzdataseries.html)** — stores marker positions with a Z value controlling marker size
-- **[NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/numericaxis.html)** — maps longitude (X) and latitude (Y) coordinates to screen space; typically hidden via `isVisible: false` and padded with `growBy`
+- **[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html)** — renders each geographic region as a set of filled triangles using [ETriangleSeriesDrawMode.List:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/etriangleseriesdrawmode.html#list)
+- **[XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html)** — stores the flat list of triangle vertex coordinates (longitude/latitude pairs) produced by triangulation
+- **[FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html)** — draws region boundary outlines over the filled triangles
+- **[FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html)** — places city or point-of-interest markers using [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/ellipsepointmarker.html)
+- **[XyzDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html)** — stores marker positions with a Z value controlling marker size
+- **[NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html)** — maps longitude (X) and latitude (Y) coordinates to screen space; typically hidden via `isVisible: false` and padded with `growBy`
 
 ## From GeoJSON to Triangle Vertices
 
-[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) renders triangles, not arbitrary polygons. Geographic region boundaries (typically sourced from GeoJSON) must be converted to a flat list of triangles before they can be passed to [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xydataseries.html).
+[FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) renders triangles, not arbitrary polygons. Geographic region boundaries (typically sourced from GeoJSON) must be converted to a flat list of triangles before they can be passed to [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html).
 
 The standard approach is **constrained Delaunay triangulation**, which fills the interior of any polygon with non-overlapping triangles that respect the boundary edges:
 
 1. **Load boundary outlines** from GeoJSON (array of `[longitude, latitude]` coordinate pairs per region)
 2. **Triangulate** each polygon outline using a library such as [poly2tri](https://github.com/r3mi/poly2tri.js) or a custom Bowyer-Watson / sweep-line implementation
 3. **Flatten** the resulting triangle list: each triangle produces three `[x, y]` pairs appended in sequence
-4. **Store** the flat `xValues` / `yValues` arrays in [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xydataseries.html) and pass to [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) with `drawMode: ETriangleSeriesDrawMode.List`
+4. **Store** the flat `xValues` / `yValues` arrays in [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) and pass to [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) with `drawMode: ETriangleSeriesDrawMode.List`
 
 Pre-computing triangulation offline and bundling the result as JSON (e.g. `australiaConverted.json`) is strongly recommended — triangulation can be expensive at runtime for regions with many vertices. Each region object in the bundle typically has the shape:
 
@@ -49,7 +49,7 @@ type RegionData = {
 
 ## Color Mapping
 
-Each region gets its own [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fasttrianglerenderableseries.html) instance, and the `fill` property drives the choropleth coloring. A helper function linearly interpolates between two colors based on where a region's value falls in the dataset range:
+Each region gets its own [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) instance, and the `fill` property drives the choropleth coloring. A helper function linearly interpolates between two colors based on where a region's value falls in the dataset range:
 
 ```ts
 function interpolateColor(
@@ -73,7 +73,7 @@ To switch between metrics (e.g. population vs. area vs. density), recalculate th
 
 ## Boundary Outlines
 
-A separate [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastlinerenderableseries.html) per region renders the boundary outline on top of the filled triangles. The outline `xValues`/`yValues` come directly from the region's `outline` coordinate array — no triangulation needed:
+A separate [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) per region renders the boundary outline on top of the filled triangles. The outline `xValues`/`yValues` come directly from the region's `outline` coordinate array — no triangulation needed:
 
 ```ts
 import { FastLineRenderableSeries, XyDataSeries } from "scichart";
@@ -91,7 +91,7 @@ sciChartSurface.renderableSeries.add(outlineSeries);
 
 ## City Markers
 
-[FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastbubblerenderableseries.html) with an [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/ellipsepointmarker.html) places labelled city dots over the map. City names are rendered via the `dataLabels` API using [DataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/datalabelprovider.html):
+[FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) with an [EllipsePointMarker:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/ellipsepointmarker.html) places labelled city dots over the map. City names are rendered via the `dataLabels` API using [DataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/datalabelprovider.html):
 
 ```ts
 import {

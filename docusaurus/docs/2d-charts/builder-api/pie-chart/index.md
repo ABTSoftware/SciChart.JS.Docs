@@ -6,7 +6,7 @@ sidebar_position: 3
 
 SciChart provides a powerful API for creating various types of charts, including **Pie Charts**.
 
-Use [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#buildpiechart) to create a Pie Chart:
+Use [buildPieChart:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#buildpiechart) to create a Pie Chart:
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {3} showLineNumbers file=./demo.ts start=#region_B_start end=#region_B_end

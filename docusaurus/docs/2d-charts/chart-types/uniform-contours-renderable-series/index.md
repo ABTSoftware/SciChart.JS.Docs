@@ -4,7 +4,7 @@ sidebar_position: 18
 
 # The Contours Series Type
 
-Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html) type.
+Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type.
 
 :::tip
 The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Contours Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ContoursChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/heatmap-chart).
@@ -17,7 +17,7 @@ The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript
 
 ## Create a Contours Plot
 
-SciChart's Contour series is an extremely fast, lightweight chart types for rendering two dimensional data as a contour plot. The [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
+SciChart's Contour series is an extremely fast, lightweight chart types for rendering two dimensional data as a contour plot. The [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type should be used in conjunction with a [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) when you simply want to specify a Step in the X,Y direction (each cell is the same size).
 
 To create a [Javascript Contours Chart](https://www.scichart.com/demo/javascript-heatmap-chart-with-contours) with SciChart.js, use the following code:
 
@@ -31,9 +31,9 @@ To create a [Javascript Contours Chart](https://www.scichart.com/demo/javascrip
 In the code above:
 
 *   We create an empty 2D array `number[][]` using the helper function `zeroArray2D`. This is filled with values in the generateData function
-*   A [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformheatmapdataseries.html) instance is created with `xStart`, `xStep`, `yStart`, `yStep` values = `0`, `1`, `0`, `1`. This means the heatmap starts at `(X, Y)` = `(0, 0)` and each cell is `1` on the axis.
+*   A [UniformHeatmapDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) instance is created with `xStart`, `xStep`, `yStart`, `yStep` values = `0`, `1`, `0`, `1`. This means the heatmap starts at `(X, Y)` = `(0, 0)` and each cell is `1` on the axis.
 *   We set the contour `stroke` and `strokeThickness`.
-*   A [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html) instance is created and added to the [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichartsurface.html#renderableseries) collection.
+*   A [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) instance is created and added to the [sciChartSurface.renderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#renderableseries) collection.
 
 This results in the following output:
 
@@ -41,7 +41,7 @@ This results in the following output:
 
 ## Updating Data in a Contour map
 
-The contour map is supposed to be fully dynamic, enabling real-time graphics. The [Contours Series:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html) however does not support append, insert, update, remove functions like other DataSeries do. You can however update the data and force a refresh simply by updating the data passed in. To do this, use the following code:
+The contour map is supposed to be fully dynamic, enabling real-time graphics. The [Contours Series:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) however does not support append, insert, update, remove functions like other DataSeries do. You can however update the data and force a refresh simply by updating the data passed in. To do this, use the following code:
 
 ```ts {19-20,23-24} showLineNumbers
 import { UniformHeatmapDataSeries, zeroArray2D  } from "scichart";
@@ -74,9 +74,9 @@ For more details, including a live example of how to update 2D array data for he
 
 ## Contours at arbitrary levels
 
-Using [UniformContoursRenderableSeries.zLevels:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html#zlevels) we can specify arbitrary levels where to draw contour lines.
+Using [UniformContoursRenderableSeries.zLevels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html#zlevels) we can specify arbitrary levels where to draw contour lines.
 
-Use [dataLabels:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icontoursdatalabelprovideroptions.html) constructor option to tune the way contour labels look.
+Use [dataLabels:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icontoursdatalabelprovideroptions.html) constructor option to tune the way contour labels look.
 
 <CodeSnippetBlock labels={["TS"]}>
     ```ts {23,26-34} showLineNumbers file=./ArbitraryLevels/demo.ts start=#region_A_start end=#region_A_end
@@ -88,24 +88,24 @@ Use [dataLabels:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc
 ## Individual colouring for contour lines
 
 By default a contours series draws **every** line in one flat colour, taken from `stroke` (or from
-[majorLineStyle:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icontoursrenderableseriesoptions.html#majorlinestyle) /
-[minorLineStyle:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icontoursrenderableseriesoptions.html#minorlinestyle) when those are set).
+[majorLineStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icontoursrenderableseriesoptions.html#majorlinestyle) /
+[minorLineStyle:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icontoursrenderableseriesoptions.html#minorlinestyle) when those are set).
 That makes it hard to tell one level from another without reading the labels.
 
 :::info New in v6
-[UniformContoursRenderableSeries.colorMapMode:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html#colormapmode)
+[UniformContoursRenderableSeries.colorMapMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html#colormapmode)
 colours each contour line **individually**, by its own z-value, using the series
-[colorMap:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmapcolormap.html) — so the lines read as a legend on their own, with no background
+[colorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) — so the lines read as a legend on their own, with no background
 heatmap needed.
 :::
 
-The mode is an [EContourColorMapMode:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/econtourcolormapmode.html):
+The mode is an [EContourColorMapMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/econtourcolormapmode.html):
 
 | `EContourColorMapMode` | Effect |
 |---|---|
-| [`SingleColor`:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/econtourcolormapmode.html#singlecolor) | **The default.** Every line takes the flat colour from `majorLineStyle` / `minorLineStyle`. `colorMap` is used only to normalise the data, not to colour lines |
-| [`GradientColors`:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/econtourcolormapmode.html#gradientcolors) | Each line's colour is interpolated from the gradient at that line's z-value, over the `colorMap` `minimum`..`maximum` range — so the colours follow the data, exactly as a heatmap's do |
-| [`AlternateColors`:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/econtourcolormapmode.html#alternatecolors) | Each line takes the next `gradientStops` colour in turn, **ignoring the offsets**. With stops red, green, blue the lines cycle red, green, blue, red, ... Useful for telling adjacent levels apart when the data range is narrow |
+| [`SingleColor`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/econtourcolormapmode.html#singlecolor) | **The default.** Every line takes the flat colour from `majorLineStyle` / `minorLineStyle`. `colorMap` is used only to normalise the data, not to colour lines |
+| [`GradientColors`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/econtourcolormapmode.html#gradientcolors) | Each line's colour is interpolated from the gradient at that line's z-value, over the `colorMap` `minimum`..`maximum` range — so the colours follow the data, exactly as a heatmap's do |
+| [`AlternateColors`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/econtourcolormapmode.html#alternatecolors) | Each line takes the next `gradientStops` colour in turn, **ignoring the offsets**. With stops red, green, blue the lines cycle red, green, blue, red, ... Useful for telling adjacent levels apart when the data range is narrow |
 
 To colour each line by its z-value, set `colorMapMode` together with a `colorMap`:
 
@@ -120,8 +120,8 @@ In the code above:
 
 *   `zMin` and `zStep` place a contour line every `20` z-values, so there is one ring per level.
 *   `colorMapMode: EContourColorMapMode.GradientColors` switches on per-line colouring.
-*   The [colorMap:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/heatmapcolormap.html) supplies both the gradient and the range it is mapped over. A line at `z = 90` sits halfway through `minimum: 0`..`maximum: 180`, so it takes the colour at gradient offset `0.5`.
-*   `strokeThickness` still sets the line width — `colorMapMode` only overrides the *colour*. Set `majorLineStyle` and `minorLineStyle` (with [minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icontoursrenderableseriesoptions.html#minorspermajor)) to give majors and minors different thicknesses; both still take their colour from the `colorMap`.
+*   The [colorMap:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) supplies both the gradient and the range it is mapped over. A line at `z = 90` sits halfway through `minimum: 0`..`maximum: 180`, so it takes the colour at gradient offset `0.5`.
+*   `strokeThickness` still sets the line width — `colorMapMode` only overrides the *colour*. Set `majorLineStyle` and `minorLineStyle` (with [minorsPerMajor:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icontoursrenderableseriesoptions.html#minorspermajor)) to give majors and minors different thicknesses; both still take their colour from the `colorMap`.
 *   `dataLabels` puts the z-value on each line, so you can read which value a colour stands for. See [Contours at arbitrary levels](#contours-at-arbitrary-levels) above.
 
 :::note
@@ -135,8 +135,8 @@ the per-line modes enumerate the levels and emit **one draw call per level**. On
 
 ## Laying labels along the contour lines
 
-The built-in [ContoursDataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/contoursdatalabelprovider.html) places labels by
-scanning [labelRowCount:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icontoursdatalabelprovideroptions.html#labelrowcount) evenly
+The built-in [ContoursDataLabelProvider:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/contoursdatalabelprovider.html) places labels by
+scanning [labelRowCount:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icontoursdatalabelprovideroptions.html#labelrowcount) evenly
 spaced **horizontal rows** across the chart and dropping an **upright** label wherever a row crosses a contour line.
 That works well when the lines run roughly horizontally and are well separated. It works less well when they are steep
 or tightly packed: the same line picks up one label per row, labels from neighbouring levels end up side by side, and
@@ -160,7 +160,7 @@ replace `generateDataLabels` with your own layout. The chart on the right below 
 How it works:
 
 *   **Find the lines.** The contour geometry lives in a shader, so it is not readable from JavaScript. The *Contour tracer* tab re-derives it with **marching squares**: for every cell of the `zValues` grid, the four corners' positions relative to a level decide which cell edges the line enters and leaves by, and the crossing point on each edge is linearly interpolated. It returns loose **segments** rather than stitched polylines — enough to know where a line is and which way it runs, which is all a label needs.
-*   **Ask the series which levels it drew.** [getContourDrawingParams():blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/uniformcontoursrenderableseries.html#getcontourdrawingparams) resolves `zLevels`, or `zMin` / `zMax` / `zStep` / `zOffset`, into the levels actually on screen, so the labels can never disagree with the lines.
+*   **Ask the series which levels it drew.** [getContourDrawingParams():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html#getcontourdrawingparams) resolves `zLevels`, or `zMin` / `zMax` / `zStep` / `zOffset`, into the levels actually on screen, so the labels can never disagree with the lines.
 *   **Map grid indices to pixels.** The contour surface is a texture stretched over `[xMin, xMax] x [yMin, yMax]` with the data samples at cell *centres*, hence the `+ 0.5`. Going through the render pass's coordinate calculators keeps the labels on the lines under any zoom, pan or axis type.
 *   **Thin, then place.** A segment is skipped if a label for the same level already sits within `labelSpacing` pixels — a cheap distance test done *before* any text measurement. What survives gets a `rotationAngle` from the segment's own direction, folded into a quarter turn either way so text is never upside down, and is dropped if its box leaves the chart or lands on a label already placed.
 *   **Override `useRotation`.** Returning `true` makes the base class request the transformable font instance; without it `rotationAngle` is ignored.

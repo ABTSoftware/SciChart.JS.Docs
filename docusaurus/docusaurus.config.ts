@@ -100,7 +100,7 @@ const config: Config = {
                     position: "left"
                 },
                 {
-                    href: "https://www.scichart.com/documentation/js/v6/typedoc/index.html",
+                    href: "https://www.scichart.com/documentation/js/current/typedoc/index.html",
                     label: "API Docs",
                     position: "left"
                 },
@@ -115,7 +115,7 @@ const config: Config = {
                     position: "right"
                 },
                 {
-                    href: "https://www.scichart.com/documentation/js/current/webframe.html",
+                    href: "https://www.scichart.com/documentation/js/v3/webframe.html",
                     label: "Docs v3",
                     position: "right"
                 },
@@ -138,7 +138,7 @@ const config: Config = {
                         },
                         {
                             label: "API Documentation",
-                            href: "https://www.scichart.com/documentation/js/v6/typedoc/index.html"
+                            href: "https://www.scichart.com/documentation/js/current/typedoc/index.html"
                         }
                     ]
                 },

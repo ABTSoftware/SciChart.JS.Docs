@@ -34,7 +34,7 @@ async function cursorDataTemplates(divElementId) {
         tooltipDataTemplate: (seriesInfos, tooltipTitle) => {
             // each element in this array = 1 line in the tooltip
             const lineItems = [];
-            // See SeriesInfo docs at https://www.scichart.com/documentation/js/v6/typedoc/classes/xyseriesinfo.html
+            // See SeriesInfo docs at https://www.scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
             seriesInfos.forEach(si => {
                 // If hit (within hitTestRadius of point)
                 if (si.isHit) {
@@ -152,7 +152,7 @@ async function builderExample(divElementId) {
                     tooltipDataTemplate: (seriesInfos, tooltipTitle) => {
                         // each element in this array = 1 line in the tooltip
                         const lineItems = [];
-                        // See SeriesInfo docs at https://www.scichart.com/documentation/js/v6/typedoc/classes/xyseriesinfo.html
+                        // See SeriesInfo docs at https://www.scichart.com/documentation/js/current/typedoc/classes/xyseriesinfo.html
                         seriesInfos.forEach(si => {
                             // If hit (within hitTestRadius of point)
                             if (si.isHit) {

@@ -5,7 +5,7 @@ sidebar_label: Pitchfork
 
 # PitchforkAnnotation
 
-[PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/pitchforkannotation.html) draws Andrews' Pitchfork from three points: handle, shoulder A and shoulder B. It supports optional full-width and half-width zones.
+[PitchforkAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/pitchforkannotation.html) draws Andrews' Pitchfork from three points: handle, shoulder A and shoulder B. It supports optional full-width and half-width zones.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 

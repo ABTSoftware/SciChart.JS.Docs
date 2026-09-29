@@ -5,7 +5,7 @@ sidebar_label: ChannelAnnotation
 
 # ChannelAnnotation
 
-[ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/channelannotation.html) draws a parallel channel. The first two points define one channel edge; the third point controls the offset, and the fourth corner is calculated automatically to preserve parallelism.
+[ChannelAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/channelannotation.html) draws a parallel channel. The first two points define one channel edge; the third point controls the offset, and the fourth corner is calculated automatically to preserve parallelism.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,7 +14,7 @@ sidebar_label: ChannelAnnotation
     ```
 </CodeSnippetBlock>
 
-Enable [showMidPointGrips:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/channelannotation.html#showmidpointgrips) to drag midpoint grips on the channel edges. Use [showMidLine:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/channelannotation.html#showmidline) and [midLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/channelannotation.html#midlinestrokedasharray) to control the center line.
+Enable [showMidPointGrips:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/channelannotation.html#showmidpointgrips) to drag midpoint grips on the channel edges. Use [showMidLine:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/channelannotation.html#showmidline) and [midLineStrokeDashArray:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/channelannotation.html#midlinestrokedasharray) to control the center line.
 
 Segment labels are useful when each edge needs its own text.
 

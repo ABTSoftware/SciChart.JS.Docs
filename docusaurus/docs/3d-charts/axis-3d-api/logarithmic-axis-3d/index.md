@@ -14,7 +14,7 @@ Plotting data on a logarithmic axis is equivalent to plotting the log of the dat
 
 ## Create and Configure a LogarithmicAxis3D
 
-To use `LogarithmicAxis3D`, import it from `scichart` and assign it to one of the `xAxis`, `yAxis` or `zAxis` properties on [SciChart3DSurface:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/scichart3dsurface.html).
+To use `LogarithmicAxis3D`, import it from `scichart` and assign it to one of the `xAxis`, `yAxis` or `zAxis` properties on [SciChart3DSurface:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichart3dsurface.html).
 
 ```ts
 import { SciChart3DSurface, LogarithmicAxis3D, NumericAxis3D, NumberRange } from "scichart";
@@ -70,7 +70,7 @@ You will find the full code here.
 
 ## Inherited Properties from AxisBase3D
 
-`LogarithmicAxis3D` inherits from [AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/axisbase3d.html) and supports all the same styling and configuration options as [NumericAxis3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d/), including:
+`LogarithmicAxis3D` inherits from [AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html) and supports all the same styling and configuration options as [NumericAxis3D](/3d-charts/axis-3d-api/numeric-and-date-axis-in-scichart-3d/), including:
 
 - `axisTitle`, `titleOffset`, `tickLabelsOffset`
 - `visibleRange`, `autoRange`, `growBy`

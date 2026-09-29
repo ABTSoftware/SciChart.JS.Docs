@@ -5,7 +5,7 @@ sidebar_label: Cyclic arc
 
 # CyclicArcAnnotation
 
-[CyclicArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/cyclicarcannotation.html) draws a cyclical arc guide from two points. It is useful when a cycle needs to be visualized as a curve instead of a line.
+[CyclicArcAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/cyclicarcannotation.html) draws a cyclical arc guide from two points. It is useful when a cycle needs to be visualized as a curve instead of a line.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

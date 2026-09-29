@@ -5,7 +5,7 @@ sidebar_label: Freehand drawing modifier
 
 # FreehandDrawingModifier
 
-[FreehandDrawingModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/freehanddrawingmodifier.html) is exported by `scichart-financial-tools`. It captures pointer input and creates [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/freehanddrawingannotation.html) instances.
+[FreehandDrawingModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/freehanddrawingmodifier.html) is exported by `scichart-financial-tools`. It captures pointer input and creates [FreehandDrawingAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/freehanddrawingannotation.html) instances.
 
 While drawing is active, pointer-down starts a stroke, pointer-move appends sampled points and pointer-up completes the annotation. The modifier temporarily bypasses normal annotation hover and selection so drawing feels direct.
 The demo starts in drawing mode and includes one existing stroke so the finished annotation behavior is visible immediately.
@@ -29,7 +29,7 @@ buttonStop.onclick = () => modifier.stopDrawing(false); // Pass "true" to cancel
 buttonCancel.onclick = () => modifier.stopDrawing(true); // Set `cancelCurrent=false` to keep the in-progress stroke. */
 ```
 
-Use [maxPoints:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/ifreehanddrawingmodifieroptions.html#maxpoints) to cap very long strokes. Use [simplifyTolerancePx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/ifreehanddrawingmodifieroptions.html#simplifytolerancepx) to reduce point count after capture while preserving the visible shape.
+Use [maxPoints:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/interfaces/ifreehanddrawingmodifieroptions.html#maxpoints) to cap very long strokes. Use [simplifyTolerancePx:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/interfaces/ifreehanddrawingmodifieroptions.html#simplifytolerancepx) to reduce point count after capture while preserving the visible shape.
 
 #### See Also
 

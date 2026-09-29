@@ -13,7 +13,7 @@ const definition = sciChartSurface.toJSON(true);
 const json = JSON.stringify(definition);
 ```
 
-When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. Use [chartReviver:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#chartreviver) to ensure that the types are correctly deserialized.
+When handling incoming JSON, you may want to parse the string to a definition object, in order to combine it with something (usually data) before using it to build the chart. Use [chartReviver:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#chartreviver) to ensure that the types are correctly deserialized.
 
 ```ts
 import { build2DChart, chartReviver } from "scichart";

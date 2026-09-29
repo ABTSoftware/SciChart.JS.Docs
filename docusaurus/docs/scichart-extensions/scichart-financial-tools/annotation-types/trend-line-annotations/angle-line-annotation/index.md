@@ -5,7 +5,7 @@ sidebar_label: Angle line
 
 # AngleLineAnnotation
 
-[AngleLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/anglelineannotation.html) draws a two-point angled guide line. It is a simple directional annotation for highlighting slope or projection.
+[AngleLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/anglelineannotation.html) draws a two-point angled guide line. It is a simple directional annotation for highlighting slope or projection.
 
 It inherits the shared multi-point editing and label behavior from `scichart-financial-tools`.
 

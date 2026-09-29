@@ -137,7 +137,7 @@ See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wa
 * **Better contour labels** — the built-in `ContoursDataLabelProvider` is unchanged in v6; see [Laying labels along the contour lines](/2d-charts/chart-types/uniform-contours-renderable-series/#laying-labels-along-the-contour-lines) for a worked recipe that subclasses it to place labels on the lines, rotated to follow them (SCJS-2592)
 * **Heatmap `linearTextureFilteringIntensity`** — control the strength of linear texture filtering on uniform and non-uniform heatmaps (SCJS-2694) (TODO: update once it is fixed in v6)
 * **[Stacked columns with individual Y axes](#stacked-columns-with-individual-y-axes)** — each `stackedGroupId` can now bind to its own Y axis (SCJS-2597)
-* **[OHLC support for AutoSimplify](#ohlc-support-for-autosimplify)** — `autoSimplify` drops the Open and Close ticks as bars crowd together, controlled by [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) and [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) (SCJS-2574)
+* **[OHLC support for AutoSimplify](#ohlc-support-for-autosimplify)** — `autoSimplify` drops the Open and Close ticks as bars crowd together, controlled by [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) and [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) (SCJS-2574)
 * **[Arbitrary contour line values](/2d-charts/chart-types/uniform-contours-renderable-series/#contours-at-arbitrary-levels)** — `UniformContoursRenderableSeries.zLevels` draws contour lines at levels you choose, instead of the uniform spacing `zStep` gives (SCJS-2513)
 
 ### Stacked columns with individual Y axes
@@ -182,7 +182,7 @@ Mixing axes *within* one `stackedGroupId` throws, since the stack would have no 
 
 ### OHLC support for AutoSimplify
 
-Zoomed out far enough, the Open and Close ticks of an OHLC bar collapse into the stem and stop carrying information. Setting `autoSimplify` on [FastOhlcRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html) drops those ticks once bars crowd past a threshold, leaving the high–low stems; they come back as you zoom in. It is `false` by default.
+Zoomed out far enough, the Open and Close ticks of an OHLC bar collapse into the stem and stop carrying information. Setting `autoSimplify` on [FastOhlcRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html) drops those ticks once bars crowd past a threshold, leaving the high–low stems; they come back as you zoom in. It is `false` by default.
 
 ```typescript
 const ohlcSeries = new FastOhlcRenderableSeries(wasmContext, {
@@ -199,7 +199,7 @@ sciChartSurface.renderableSeries.add(ohlcSeries);
 
 Both thresholds are measured against the **horizontal spacing per bar**, not the drawn bar width that `dataPointWidth` gives, so they behave the same whichever width you choose. `0` always draws the tick and a negative value always hides it, which makes each tick individually switchable without touching `autoSimplify`. Only OHLC bars simplify — candlesticks are unaffected.
 
-See [Simplifying OHLC Bars When Zooming Out](/2d-charts/chart-types/fast-ohlc-renderable-series/#simplifying-ohlc-bars-when-zooming-out) for a live example, and [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) / [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) in the typedoc.
+See [Simplifying OHLC Bars When Zooming Out](/2d-charts/chart-types/fast-ohlc-renderable-series/#simplifying-ohlc-bars-when-zooming-out) for a live example, and [simplifyOpenThresholdPx:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#simplifyopenthresholdpx) / [simplifyCloseThresholdPx:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastohlcrenderableseries.html#simplifyclosethresholdpx) in the typedoc.
 
 ## TableDataSeries and native string columns
 

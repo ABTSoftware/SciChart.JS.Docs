@@ -6,7 +6,7 @@ sidebar_position: 38
 
 A histogram visualizes the distribution of a dataset by grouping values into contiguous bins and displaying each bin as a bar whose height represents the count (or frequency) within that range. Typical use cases include frequency distributions, population statistics, and scientific data analysis.
 
-SciChart.js has no dedicated histogram series type. Histograms are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastrectanglerenderableseries.html) with [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/xyxydataseries.html), using [EColumnMode.StartEnd:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/enums/ecolumnmode.html#startend) to place each bar between explicit bin boundaries on the X axis.
+SciChart.js has no dedicated histogram series type. Histograms are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) with [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyxydataseries.html), using [EColumnMode.StartEnd:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecolumnmode.html#startend) to place each bar between explicit bin boundaries on the X axis.
 
 :::tip
 The [JavaScript Histogram Chart Example](https://www.scichart.com/demo/react/histogram-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/histogram-chart).
@@ -72,7 +72,7 @@ new XyxyDataSeries(wasmContext, { xValues, yValues, x1Values })
 
 ### X Axis
 
-A standard [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/numericaxis.html) with `axisTitle` and a small `growBy` padding so the outermost bars don't clip against the chart edge:
+A standard [NumericAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) with `axisTitle` and a small `growBy` padding so the outermost bars don't clip against the chart edge:
 
 ```ts
 sciChartSurface.xAxes.add(new NumericAxis(wasmContext, {
@@ -95,11 +95,11 @@ sciChartSurface.yAxes.add(new NumericAxis(wasmContext, {
 
 ## Styling
 
-Key styling properties on [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastrectanglerenderableseries.html):
+Key styling properties on [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html):
 
 | Property | Purpose |
 |---|---|
-| `fillLinearGradient` | Vertical gradient fill using [GradientParams:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/gradientparams.html) |
+| `fillLinearGradient` | Vertical gradient fill using [GradientParams:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/gradientparams.html) |
 | `fill` | Solid fill color (alternative to gradient) |
 | `opacity` | Bar transparency (0–1) |
 | `topCornerRadius` | Rounds top corners of each bar |
@@ -137,7 +137,7 @@ sciChartSurface.chartModifiers.add(
 
 ## Custom Texture Fills
 
-[FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/fastrectanglerenderableseries.html) supports a `customTextureOptions` property that accepts an [ICustomTextureOptions:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/interfaces/icustomtextureoptions.html) implementation. This enables pictograph-style (isotype) histograms where bars are filled with a repeating icon pattern — as seen in the live showcase above, which uses a custom `StickFigureTextureOptions` class to render proportionally-scaled stick figures inside each bar. For an introduction to custom texture fills see the [Custom Texture styling example](https://www.scichart.com/demo/react/custom-texture).
+[FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) supports a `customTextureOptions` property that accepts an [ICustomTextureOptions:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/interfaces/icustomtextureoptions.html) implementation. This enables pictograph-style (isotype) histograms where bars are filled with a repeating icon pattern — as seen in the live showcase above, which uses a custom `StickFigureTextureOptions` class to render proportionally-scaled stick figures inside each bar. For an introduction to custom texture fills see the [Custom Texture styling example](https://www.scichart.com/demo/react/custom-texture).
 
 #### See Also
 

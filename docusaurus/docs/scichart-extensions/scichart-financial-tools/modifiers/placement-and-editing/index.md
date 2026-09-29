@@ -5,7 +5,7 @@ sidebar_label: Placement and editing
 
 # Placement and Editing
 
-[MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html) provides a click-to-place workflow for multi-point annotations. The active annotation grows point-by-point until the required points are committed.
+[MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html) provides a click-to-place workflow for multi-point annotations. The active annotation grows point-by-point until the required points are committed.
 
 ### Starting Placement with startPlacement()
 
@@ -20,7 +20,7 @@ Create the modifier once, add it to the surface, then call `startPlacement(...)`
 
 ### Starting Placement from the Constructor
 
-Constructor options are useful when a page should open directly into one placement mode. Set [isPlacing:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#isplacing) to start immediately, and use [keepPlacingAfterComplete:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#keepplacingaftercomplete) to keep creating new instances after one annotation is finished.
+Constructor options are useful when a page should open directly into one placement mode. Set [isPlacing:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#isplacing) to start immediately, and use [keepPlacingAfterComplete:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/interfaces/imultipointannotationplacementmodifieroptions.html#keepplacingaftercomplete) to keep creating new instances after one annotation is finished.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo-constructor" />
 
@@ -29,7 +29,7 @@ Constructor options are useful when a page should open directly into one placeme
     ```
 </CodeSnippetBlock>
 
-[MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) shows a schema-driven property editor for selected multi-point annotations. See [Annotation editor modifier](/scichart-extensions/scichart-financial-tools/modifiers/multipoint-annotation-editor-modifier/) for schema and manual definition examples.
+[MultiPointAnnotationEditorModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/multipointannotationeditormodifier.html) shows a schema-driven property editor for selected multi-point annotations. See [Annotation editor modifier](/scichart-extensions/scichart-financial-tools/modifiers/multipoint-annotation-editor-modifier/) for schema and manual definition examples.
 
 #### See Also
 

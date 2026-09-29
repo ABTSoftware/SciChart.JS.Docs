@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # 3D Waterfall / Point-Line Chart
 
-The 3D Waterfall Chart renders spectral or time-series data as stacked line slices in a 3D world, giving a sense of depth and evolution over time. Each slice is a [PointLineRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pointlinerenderableseries3d.html) whose points share the same Z value, spreading the series along the Z axis to form the waterfall stack.
+The 3D Waterfall Chart renders spectral or time-series data as stacked line slices in a 3D world, giving a sense of depth and evolution over time. Each slice is a [PointLineRenderableSeries3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pointlinerenderableseries3d.html) whose points share the same Z value, spreading the series along the Z axis to form the waterfall stack.
 
 :::tip
 The [JavaScript 3D Point-Line Chart Example](https://www.scichart.com/demo/react/3d-point-line-chart) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts3D/Basic3DChartTypes/PointLine3DChart) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/3d-point-line-chart).
@@ -56,12 +56,12 @@ In the code above:
 
 | Marker type | Class |
 |---|---|
-| Sphere | [SpherePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/spherepointmarker3d.html) |
-| Cube | [CubePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/cubepointmarker3d.html) |
-| Pyramid | [PyramidPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pyramidpointmarker3d.html) |
-| Cylinder | [CylinderPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/cylinderpointmarker3d.html) |
-| Ellipse (flat, camera-facing) | [EllipsePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/ellipsepointmarker3d.html) |
-| Pixel | [PixelPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/classes/pixelpointmarker3d.html) |
+| Sphere | [SpherePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/spherepointmarker3d.html) |
+| Cube | [CubePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cubepointmarker3d.html) |
+| Pyramid | [PyramidPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pyramidpointmarker3d.html) |
+| Cylinder | [CylinderPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/cylinderpointmarker3d.html) |
+| Ellipse (flat, camera-facing) | [EllipsePointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/ellipsepointmarker3d.html) |
+| Pixel | [PixelPointMarker3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/pixelpointmarker3d.html) |
 
 Pass a marker instance to the `pointMarker` constructor option:
 
@@ -87,7 +87,7 @@ new XyzDataSeries3D(wasmContext, { xValues, yValues, zValues, metadata })
 ```
 
 :::tip
-Colors must be in UInt ARGB format where `0xFFFF0000` is opaque red. Use [parseColorToUIntArgb:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#parsecolortouintargb) to convert from CSS hex strings, and [uintArgbColorLerp:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc/index.html#uintargbcolorlerp) to blend between two colors.
+Colors must be in UInt ARGB format where `0xFFFF0000` is opaque red. Use [parseColorToUIntArgb:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#parsecolortouintargb) to convert from CSS hex strings, and [uintArgbColorLerp:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/index.html#uintargbcolorlerp) to blend between two colors.
 :::
 
 ## See Also

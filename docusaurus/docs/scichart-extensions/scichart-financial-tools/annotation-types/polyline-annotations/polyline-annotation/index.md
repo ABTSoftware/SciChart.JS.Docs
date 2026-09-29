@@ -5,7 +5,7 @@ sidebar_label: PolyLine annotation
 
 # PolyLineAnnotation
 
-[PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html) is exported by `scichart-financial-tools`. It is the simplest concrete multi-point annotation: it renders straight segments through the [points:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html#points) array and inherits editing, snapping and labels from that package's [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationbase.html).
+[PolyLineAnnotation:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/polylineannotation.html) is exported by `scichart-financial-tools`. It is the simplest concrete multi-point annotation: it renders straight segments through the [points:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/multipointannotationbase.html#points) array and inherits editing, snapping and labels from that package's [MultiPointAnnotationBase:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/multipointannotationbase.html).
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" />
 
@@ -14,10 +14,10 @@ sidebar_label: PolyLine annotation
     ``` 
 </CodeSnippetBlock>
 
-Set [fill:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/polylineannotation.html#fill) to draw a closed filled polygon through the same points. Point and segment labels move with their anchor indexes while the polyline is edited.
+Set [fill:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/polylineannotation.html#fill) to draw a closed filled polygon through the same points. Point and segment labels move with their anchor indexes while the polyline is edited.
 
 :::note
-When using a [MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html), pass in the line annotation's options `placementPointCount: 5` for example, to allow the user to place 5 points on the chart when creating a new annotation. The PolyLineAnnotation will then render segments between those 5 points, and the user can edit the annotation to add more points if desired.
+When using a [MultiPointAnnotationPlacementModifier:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/classes/multipointannotationplacementmodifier.html), pass in the line annotation's options `placementPointCount: 5` for example, to allow the user to place 5 points on the chart when creating a new annotation. The PolyLineAnnotation will then render segments between those 5 points, and the user can edit the annotation to add more points if desired.
 :::
 
 :::tip

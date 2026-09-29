@@ -5,7 +5,7 @@ sidebar_label: Annotation point snapping
 
 # Annotation Point Snapping
 
-Most multi-point annotations can snap placement and edits to a series. Use the button in this example to switch between every [ESnapMode:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/enums/esnapmode.html), then drag a vertex to see how the selected mode constrains it. Drag a line segment to move the complete annotation.
+Most multi-point annotations can snap placement and edits to a series. Use the button in this example to switch between every [ESnapMode:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/enums/esnapmode.html), then drag a vertex to see how the selected mode constrains it. Drag a line segment to move the complete annotation.
 
 <LiveDocSnippet maxWidth={"100%"} includeFinTools name="./demo" htmlPath="./demo.html" />
 
@@ -14,7 +14,7 @@ Most multi-point annotations can snap placement and edits to a series. Use the b
     ```
 </CodeSnippetBlock>
 
-Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/enums/esnapmode.html#datapoint) when both X and Y should snap to the nearest point. Use [ESnapMode.XSlice:blue_book:](https://www.scichart.com/documentation/js/v6/typedoc-fin-tools/enums/esnapmode.html#xslice) when only X should snap and the annotation's Y value should remain unchanged.
+Use [ESnapMode.DataPoint:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/enums/esnapmode.html#datapoint) when both X and Y should snap to the nearest point. Use [ESnapMode.XSlice:blue_book:](https://www.scichart.com/documentation/js/current/typedoc-fin-tools/enums/esnapmode.html#xslice) when only X should snap and the annotation's Y value should remain unchanged.
 
 :::info Snapping details
 - `ESnapMode.None` allows free placement and movement.
