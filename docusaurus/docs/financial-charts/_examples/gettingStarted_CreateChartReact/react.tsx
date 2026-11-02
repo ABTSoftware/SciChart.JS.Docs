@@ -62,19 +62,41 @@ export function TradingChart() {
     const hasMacd = studies.some((study) => study instanceof MACDStudy);
     const hasAdx = studies.some((study) => study instanceof ADXStudy);
 
+    // Fills its parent, so give the parent a height
     return (
-        <div style={{ display: "flex", flexDirection: "column", height: 600 }}>
-            <div>
-                <button disabled={!ready} onClick={() => toggleStudy(MACDStudy)}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
+            <div style={toolbarStyle}>
+                <button style={buttonStyle(hasMacd, ready)} disabled={!ready} onClick={() => toggleStudy(MACDStudy)}>
                     {hasMacd ? "Remove MACD" : "Add MACD"}
                 </button>
-                <button disabled={!ready} onClick={() => toggleStudy(ADXStudy)}>
+                <button style={buttonStyle(hasAdx, ready)} disabled={!ready} onClick={() => toggleStudy(ADXStudy)}>
                     {hasAdx ? "Remove ADX" : "Add ADX"}
                 </button>
             </div>
-            <div style={{ flex: 1 }}>
+            <div style={{ flex: 1, minHeight: 0 }}>
                 <SciFinanceChartView ref={chartRef} config={config} onInit={onInit} />
             </div>
         </div>
     );
 }
+
+// The toolbar uses SciTrader's UI colours: its --st-ui-* CSS variables, with the stylesheet's defaults
+const toolbarStyle: React.CSSProperties = {
+    display: "flex",
+    gap: 8,
+    padding: 8,
+    background: "var(--st-ui-background, #2b2839)",
+    borderBottom: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+};
+
+const buttonStyle = (active: boolean, enabled: boolean): React.CSSProperties => ({
+    padding: "6px 14px",
+    fontSize: 14,
+    fontFamily: "var(--st-font-family, sans-serif)",
+    color: "var(--st-ui-text, #ffffff)",
+    background: active ? "var(--st-ui-accent, #7464ff)" : "var(--st-ui-surface, #373447)",
+    border: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    borderRadius: 4,
+    cursor: enabled ? "pointer" : "default",
+    opacity: enabled ? 1 : 0.5,
+});

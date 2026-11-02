@@ -41,10 +41,30 @@ export function TradingChart() {
     };
     const hasMacd = studies.some((study) => study instanceof MACDStudy);
     const hasAdx = studies.some((study) => study instanceof ADXStudy);
-    return (React.createElement("div", { style: { display: "flex", flexDirection: "column", height: 600 } },
-        React.createElement("div", null,
-            React.createElement("button", { disabled: !ready, onClick: () => toggleStudy(MACDStudy) }, hasMacd ? "Remove MACD" : "Add MACD"),
-            React.createElement("button", { disabled: !ready, onClick: () => toggleStudy(ADXStudy) }, hasAdx ? "Remove ADX" : "Add ADX")),
-        React.createElement("div", { style: { flex: 1 } },
+    // Fills its parent, so give the parent a height
+    return (React.createElement("div", { style: { display: "flex", flexDirection: "column", height: "100%" } },
+        React.createElement("div", { style: toolbarStyle },
+            React.createElement("button", { style: buttonStyle(hasMacd, ready), disabled: !ready, onClick: () => toggleStudy(MACDStudy) }, hasMacd ? "Remove MACD" : "Add MACD"),
+            React.createElement("button", { style: buttonStyle(hasAdx, ready), disabled: !ready, onClick: () => toggleStudy(ADXStudy) }, hasAdx ? "Remove ADX" : "Add ADX")),
+        React.createElement("div", { style: { flex: 1, minHeight: 0 } },
             React.createElement(SciFinanceChartView, { ref: chartRef, config: config, onInit: onInit }))));
 }
+// The toolbar uses SciTrader's UI colours: its --st-ui-* CSS variables, with the stylesheet's defaults
+const toolbarStyle = {
+    display: "flex",
+    gap: 8,
+    padding: 8,
+    background: "var(--st-ui-background, #2b2839)",
+    borderBottom: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+};
+const buttonStyle = (active, enabled) => ({
+    padding: "6px 14px",
+    fontSize: 14,
+    fontFamily: "var(--st-font-family, sans-serif)",
+    color: "var(--st-ui-text, #ffffff)",
+    background: active ? "var(--st-ui-accent, #7464ff)" : "var(--st-ui-surface, #373447)",
+    border: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    borderRadius: 4,
+    cursor: enabled ? "pointer" : "default",
+    opacity: enabled ? 1 : 0.5,
+});

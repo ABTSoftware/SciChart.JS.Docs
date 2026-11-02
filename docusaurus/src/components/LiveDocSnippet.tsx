@@ -45,6 +45,19 @@ createRoot(document.getElementById("root")).render(React.createElement(${compone
 /** Remove `import "….css";` lines: a browser can't import CSS as a module, so the page links the stylesheet instead. */
 const stripCssImports = (source?: string) => source?.replace(/^import\s+["'][^"']+\.css["'];?[ \t]*\r?\n/gm, "");
 
+/**
+ * Fetch a snippet's source file. The dev server answers a file it doesn't serve with the site's HTML
+ * page and a 200, which would otherwise end up in the iframe and in CodePen as the "code".
+ */
+const fetchSource = async (url: string) => {
+    const res = await fetch(url);
+    const text = await res.text();
+    if (!res.ok || /^\s*<!doctype html/i.test(text)) {
+        throw new Error(`LiveDocSnippet: ${url} was not found (got ${res.status}${res.ok ? ", an HTML page" : ""})`);
+    }
+    return text;
+};
+
 enum EHtmlType {
     Default = "Default",
     WithResult = "WithResult"
@@ -85,7 +98,7 @@ export default function LiveDocSnippet(props?: Props) {
     const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string; extraJs?: ExtraJs[] }>({});
     const [isLoading, setIsLoading] = useState(false);
 
-    let htmlString = props.html ?? (reactComponent ? `<div id="root"></div>` : `<div id="scichart-root" ></div>`);
+    let htmlString = props.html ?? (reactComponent ? `<div id="root" style="height: 100%"></div>` : `<div id="scichart-root" ></div>`);
     if (props.htmlType === EHtmlType.WithResult) {
         htmlString = `<div><div id="scichart-root" ></div><div id="result" style="height: 20px; color: red"></div><div>`
     }
@@ -107,10 +120,10 @@ export default function LiveDocSnippet(props?: Props) {
 
             const [html, ts, js, css, ...extraJs] = await Promise.all([
                 htmlUrl ? fetch(htmlUrl).then(res => res.text()) : null,
-                fetch(tsUrl).then(res => res.text()),
-                fetch(jsUrl).then(res => res.text()),
-                cssUrl ? fetch(cssUrl).then(res => res.text()) : null,
-                ...extraJSPaths.map(path => fetch(path).then(res => res.text()))
+                fetchSource(tsUrl),
+                fetchSource(jsUrl),
+                cssUrl ? fetchSource(cssUrl) : null,
+                ...extraJSPaths.map(path => fetchSource(path))
             ]);
 
             setFiles({ html, ts, js, css, extraJs: extraJSPaths.map((path, index) => ({ path, content: extraJs[index] })) });
