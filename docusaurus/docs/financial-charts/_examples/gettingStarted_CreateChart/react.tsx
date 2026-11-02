@@ -1,8 +1,8 @@
 import "scichart-scitrader/scitrader.css";
 import * as React from "react";
 import {
-    BinanceExchange,
     CandleInterval,
+    CoinbaseExchange,
     defaultExchangeProvider,
     idbPriceStore,
     ISciFinanceChartPanelConfig,
@@ -12,15 +12,15 @@ import {
 import { SciFinanceChartView } from "scichart-scitrader-react";
 
 // Register a data source, once, at app startup
-defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
+defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 
 export function CandlestickChart() {
     // Create the config once per mounted chart: studies are live objects bound to one chart
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
         () => ({
-            exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
-            symbol: "BTCUSDT",
-            interval: CandleInterval.FOUR_HOURS,
+            exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
+            symbol: "BTC-USD", // Coinbase's symbol format
+            interval: CandleInterval.ONE_HOUR, // Coinbase offers 1m, 5m, 15m, 1h, 6h and 1d candles
             studies: [new OHLCStudy(), new VolumeStudy()],
         }),
         []

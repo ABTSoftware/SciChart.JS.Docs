@@ -8,6 +8,25 @@ const USE_LOCAL_PACKAGE = false; // for testing purposes
 
 const financialToolsVersion = libraryVersion;
 
+// SciTrader (scichart-scitrader) has no browser bundle yet, so it loads from jsDelivr's "+esm" build.
+// That build imports its peers from pinned jsDelivr URLs, which the import map below points at the
+// scichart-financial-tools browser bundle, so the page has one copy of SciChart. That bundle includes
+// SciChart, so the WebAssembly must come from the same SciChart version.
+// If you change SCITRADER_VERSION, re-check which URLs its +esm build imports:
+// https://cdn.jsdelivr.net/npm/scichart-scitrader@<version>/+esm
+const SCITRADER_VERSION = "0.0.4";
+const SCITRADER_FINTOOLS_VERSION = "6.0.14"; // its browser bundle contains scichart 6.0.14
+const SCITRADER_ESM_PEER_URLS = [
+    "https://cdn.jsdelivr.net/npm/scichart@6.0.15/+esm",
+    "https://cdn.jsdelivr.net/npm/scichart-financial-tools@6.0.14/+esm"
+];
+const SCITRADER_FINTOOLS_BUNDLE = `https://cdn.jsdelivr.net/npm/scichart-financial-tools@${SCITRADER_FINTOOLS_VERSION}/scichart-financial-tools.browser.mjs`;
+const SCITRADER_CSS = `https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/styles/scitrader.css`;
+const SCITRADER_WASM = `https://cdn.jsdelivr.net/npm/scichart@${SCITRADER_FINTOOLS_VERSION}/_wasm/`;
+
+/** Remove `import "….css";` lines: a browser can't import CSS as a module, so the page links the stylesheet instead. */
+const stripCssImports = (source?: string) => source?.replace(/^import\s+["'][^"']+\.css["'];?[ \t]*\r?\n/gm, "");
+
 enum EHtmlType {
     Default = "Default",
     WithResult = "WithResult"
@@ -21,6 +40,10 @@ type Props = {
     extraJSPaths?: string[];
     htmlType?: EHtmlType;
     includeFinTools?: boolean;
+    /** Load scichart-scitrader (and its peers) from jsDelivr, with its stylesheet. */
+    includeSciTrader?: boolean;
+    /** The page's HTML. Default: a `#scichart-root` div. */
+    html?: string;
 };
 
 type ExtraJs = { path: string; content: string };
@@ -36,16 +59,19 @@ export default function LiveDocSnippet(props?: Props) {
     const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string; extraJs?: ExtraJs[] }>({});
     const [isLoading, setIsLoading] = useState(false);
 
-    let htmlString = `<div id="scichart-root" ></div>`;
+    let htmlString = props.html ?? `<div id="scichart-root" ></div>`;
     if (props.htmlType === EHtmlType.WithResult) {
         htmlString = `<div><div id="scichart-root" ></div><div id="result" style="height: 20px; color: red"></div><div>`
     }
 
     const htmlTemplate = files?.html ?? htmlString;
     const cssTemplate = files?.css ?? "";
-    const inlineJs = files.extraJs?.length && files.js ? inlineExtraJs(files.js, files.extraJs) : undefined;
-    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools, inlineJs);
-    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools);
+    const sciTrader = props.includeSciTrader;
+    const jsSource = sciTrader ? stripCssImports(files.js) : files.js;
+    const tsSource = sciTrader ? stripCssImports(files.ts) : files.ts;
+    const inlineJs = files.extraJs?.length && jsSource ? inlineExtraJs(jsSource, files.extraJs) : sciTrader ? jsSource : undefined;
+    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools, inlineJs, sciTrader);
+    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools, sciTrader);
 
     useEffect(() => {
         const fetchFiles = async () => {
@@ -71,16 +97,26 @@ export default function LiveDocSnippet(props?: Props) {
 
     return (
         <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem', background: "#8881" }}>
-            <CodePenLauncher js={inlineJs ?? files.ts} html={sandboxHtml} css={files.css} />
+            <CodePenLauncher js={files.extraJs?.length ? inlineJs : tsSource} html={sandboxHtml} css={files.css} />
             <BrowserOnly>
-                {() => <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
+                {() => (sciTrader && !inlineJs) ? null : <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
             </BrowserOnly>
         </div>
     );
 }
 
-const getImportMap = (includeFinTools?: boolean) => {
+const getImportMap = (includeFinTools?: boolean, includeSciTrader?: boolean) => {
     const imports = [];
+
+    if (includeSciTrader) {
+        imports.push(
+            `"scichart": "${SCITRADER_FINTOOLS_BUNDLE}"`,
+            `"scichart-financial-tools": "${SCITRADER_FINTOOLS_BUNDLE}"`,
+            `"scichart-scitrader": "https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/+esm"`,
+            ...SCITRADER_ESM_PEER_URLS.map((url) => `"${url}": "${SCITRADER_FINTOOLS_BUNDLE}"`)
+        );
+        return imports.join(",\n\t\t\t\t\t\t");
+    }
 
     if (USE_LOCAL_PACKAGE) { // for testing purposes
         if (!includeFinTools) {
@@ -111,7 +147,7 @@ const getImportMap = (includeFinTools?: boolean) => {
     return imports.join(",\n\t\t\t\t\t\t");
 };
 
-const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean, inlineJs?: string) => {
+const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean, inlineJs?: string, includeSciTrader?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -124,10 +160,11 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
         <script type="importmap">
             {
                 "imports": {
-                    ${getImportMap(includeFinTools)}
+                    ${getImportMap(includeFinTools, includeSciTrader)}
                 }
             }
         </script>
+        ${includeSciTrader ? `<link rel="stylesheet" href="${SCITRADER_CSS}">` : ""}
         <script type="module">
             import {SciChartSurface, SciChartDefaults} from "scichart";
 
@@ -137,8 +174,8 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             // fetched lazily from the same directory. Do not also call SciChart3DSurface.configure()
             // here - in v6 the second call overwrites the first.
             SciChartSurface.configure({
-                wasmUrl: "${baseUrl}scichart.wasm",
-                wasmNoSimdUrl: "${baseUrl}scichart-nosimd.wasm"
+                wasmUrl: "${includeSciTrader ? SCITRADER_WASM : baseUrl}scichart.wasm",
+                wasmNoSimdUrl: "${includeSciTrader ? SCITRADER_WASM : baseUrl}scichart-nosimd.wasm"
             });
             SciChartDefaults.performanceWarnings = false;
         </script>
@@ -185,7 +222,7 @@ const inlineExtraJs = (mainJs: string, extraJs: ExtraJs[]) => {
     return `${externalImports}\n${body}`;
 };
 
-const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean) => {
+const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean, includeSciTrader?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -200,17 +237,18 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
             <script type="importmap">
                     {
                         "imports": {
-                            ${getImportMap(includeFinTools)}
+                            ${getImportMap(includeFinTools, includeSciTrader)}
                         }
                     }
             </script>
+            ${includeSciTrader ? `<link rel="stylesheet" href="${SCITRADER_CSS}">` : ""}
             <script type="module">
                 import {SciChartSurface, SciChartDefaults} from "scichart";
 
                 SciChartSurface.UseCommunityLicense();
                 SciChartSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart-nosimd.wasm"
+                    wasmUrl: "${includeSciTrader ? SCITRADER_WASM : `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/`}scichart.wasm",
+                    wasmNoSimdUrl: "${includeSciTrader ? SCITRADER_WASM : `https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/`}scichart-nosimd.wasm"
                 });
                 SciChartDefaults.performanceWarnings = false;
             </script>

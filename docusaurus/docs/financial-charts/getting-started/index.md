@@ -36,17 +36,17 @@ The second argument is the candle store. `idbPriceStore` caches downloaded candl
 
 ```ts
 import {
-    BinanceExchange,
     CandleInterval,
+    CoinbaseExchange,
     OHLCStudy,
     SciFinanceChartPanel,
     VolumeStudy
 } from "scichart-scitrader";
 
 const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
-    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
-    symbol: "BTCUSDT",
-    interval: CandleInterval.FOUR_HOURS,
+    exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
+    symbol: "BTC-USD",
+    interval: CandleInterval.ONE_HOUR,
     studies: [new OHLCStudy(), new VolumeStudy()],
 });
 ```
@@ -68,7 +68,9 @@ The legend and crosshair follow the mouse.
 | `toJSON()` | The chart's state as JSON ([Saving and restoring](/financial-charts/save-and-restore/)). |
 | `cleanup()` | Destroys the chart and its feeds. Call it when the element goes away. |
 
-<CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChart/screenshot.png").default} title="Create a Financial Chart" />
+The chart below is live, with Coinbase data. The **Edit on CodePen** button above it opens the TS sample in CodePen.
+
+<LiveDocSnippet maxWidth={"100%"} includeSciTrader name="../_examples/gettingStarted_CreateChart/vanilla" html={`<div id="chart" style="width: 100%; height: 100%"></div>`} />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
     ```ts showLineNumbers file=../_examples/gettingStarted_CreateChart/vanilla.ts

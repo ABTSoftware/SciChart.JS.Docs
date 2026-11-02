@@ -20,7 +20,7 @@ keywords:
         "scichart-scitrader",
         "scichart-scitrader-react"
     ]
-image: /img/Default-Social-Image.jpg
+image: https://www.scichart.com/wp-content/uploads/2026/10/scitrader-react-financial-charts.jpg
 ---
 
 <head>
@@ -29,6 +29,7 @@ image: /img/Default-Social-Image.jpg
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
             "name": "SciTrader.js",
+            "image": "https://www.scichart.com/wp-content/uploads/2026/10/scitrader-react-financial-charts.jpg",
             "alternateName": ["SciTrader", "scichart-scitrader"],
             "applicationCategory": "DeveloperApplication",
             "operatingSystem": "Web browser",
@@ -68,7 +69,7 @@ image: /img/Default-Social-Image.jpg
 
 SciTrader is built on [SciChart.js](/intro/), so every chart is drawn by SciChart's GPU-accelerated WebGL / WebGPU and WebAssembly engine. That means smooth zooming and panning through long price histories, live updates without frame drops, and many charts on one page. It is the engine behind the SciTrader app, packaged for your own trading platforms, crypto exchanges, brokerage dashboards and fintech apps.
 
-<CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChart/screenshot.png").default} title="SciTrader.js candlestick trading chart with volume, indicators and drawing tools" />
+<CenteredImageWrapper src="https://www.scichart.com/wp-content/uploads/2026/10/scitrader-react-financial-charts.jpg" title="SciTrader.js React financial charts: a candlestick trading chart with volume, indicators and drawing tools" />
 
 ```js
 # JavaScript / TypeScript
