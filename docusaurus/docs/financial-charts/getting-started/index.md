@@ -72,10 +72,8 @@ The chart below is live, with Coinbase data. The **Edit on CodePen** button abov
 
 <LiveDocSnippet maxWidth={"100%"} includeSciTrader name="../_examples/gettingStarted_CreateChart/vanilla" html={`<div id="chart" style="width: 100%; height: 100%"></div>`} />
 
-<CodeSnippetBlock labels={["TS", "React"]}>
+<CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=../_examples/gettingStarted_CreateChart/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChart/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -94,10 +92,16 @@ The second argument to `create` is an `ISciFinanceChartPanelConfig`. Only `excha
 `<SciFinanceChartView>` takes the same config as `SciFinanceChartPanel.create`. It hands back the same API through `ref`, and through `onInit` when the chart is ready:
 
 ```tsx
+import * as React from "react";
 import {
+    CandleInterval,
     CoinbaseExchange,
     ISciFinanceChartPanelApi,
-    ISciFinanceChartPanelConfig
+    ISciFinanceChartPanelConfig,
+    MACDStudy,
+    OHLCStudy,
+    RSIStudy,
+    VolumeStudy
 } from "scichart-scitrader";
 import { SciFinanceChartView } from "scichart-scitrader-react";
 

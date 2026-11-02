@@ -22,9 +22,10 @@ export function TradingChart() {
     const onInit = (api) => {
         const chart = api.financeApi;
         setReady(true);
-        setStudies(chart.studies);
-        // Also fires when the user closes a study's pane from the chart
-        chart.studiesChanged.subscribe(() => setStudies([...chart.studies]));
+        setStudies(chart.studies); // studies returns a new array each time, so React sees the change
+        // Also fires when the user closes a study's pane from the chart.
+        // The chart is deleted when this component unmounts, so there's no need to unsubscribe.
+        chart.studiesChanged.subscribe(() => setStudies(chart.studies));
     };
     // Detach the study of this type if the chart has one, otherwise attach a new one
     const toggleStudy = (StudyType) => {
