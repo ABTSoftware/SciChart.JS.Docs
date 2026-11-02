@@ -42,40 +42,117 @@ const config: ISciFinanceChartPanelConfig = {
 
 **The config is read once.** Changing it afterwards does nothing, including passing a new `config` prop to `<SciFinanceChartView>`. To change a live chart, use the [Finance Chart API](/financial-charts/finance-chart-api/). The section for each option below names the call that changes it later.
 
-## The interface
+## The ISciFinanceChartPanelConfig Interface
+
+This is the interface as it is declared in `scichart-scitrader`, with its TSDoc comments:
 
 ```ts
+/**
+ * Configuration for creating a {@link SciFinanceChartPanel} or {@link SciFinanceChartView}.
+ *
+ * Defines the data feed, initial studies, and layout options. Passed to the
+ * static `create` factory or as React props.
+ */
 interface ISciFinanceChartPanelConfig {
-    // Data
+    /** Exchange name for the data feed (e.g. "Binance"). */
     exchangeName: string;
+    /** Trading symbol (e.g. "BTCUSDT"). */
     symbol: string;
+    /** Candle interval (e.g. ONE_DAY). */
     interval: CandleInterval;
-    services?: ISciFinanceChartServices;
-
-    // Studies
-    studies: IStudy[];
-    maxPanes?: number;                               // default 6
-
-    // Period and zoom
+    /**
+     * Initial preset period (e.g. `"3M"`). When set, the chart applies
+     * `setPeriod(period)` after initial data load to zoom the visible range
+     * and load any missing historical candles. When omitted, the chart shows
+     * whatever the data feed's natural visible range is.
+     */
     period?: TPeriod;
-    periodBufferRatio?: number;                      // default 0.2
-    lockPeriodWidth?: boolean;                       // default true
-    liveTipMode?: "follow" | "anchored";             // default "follow"
-    forwardHeadroomSec?: number | null;              // default null
-
-    // Layout
-    useSubCharts?: boolean;                          // default true
-    direction?: "column" | "row";                    // default "column"
-    paneSizing?: Record<string, IPaneSizeConfig>;
-    paneControls?: IPaneControlOptions;
-    loading?: IPaneLoadingOptions;
-
-    // Look
-    theme?: ISciTraderTheme;                         // default SCITRADER_DARK_THEME
-    axisDefaults?: IChartAxisDefaults;
+    /**
+     * Extra candles to fetch beyond the period window, as a fraction of the
+     * period's candle count (e.g. `0.2` = +20%). The buffer sits just off
+     * the left edge of the visible window so a small pan-back doesn't trigger
+     * a fresh fetch. Negative values clamp to 0. Default: `0.2`.
+     */
+    periodBufferRatio?: number;
+    /**
+     * Live-tip behaviour while a period is active:
+     *   - `"follow"` — visible range slides right with each new candle.
+     *   - `"anchored"` — visible range stays pinned where the period
+     *     was applied; new candles appear off-screen.
+     * Default: `"follow"` (matches TradingView).
+     */
+    liveTipMode?: "follow" | "anchored";
+    /**
+     * Whether {@link period} also imposes a hard zoom-out cap. Default `true`
+     * — `setPeriod` clamps `xAxis.visibleRangeSizeLimit` so users can't zoom
+     * wider than the period. Set `false` to treat `period` as an
+     * initial-view hint only — pan/zoom stays unrestricted afterwards.
+     */
+    lockPeriodWidth?: boolean;
+    /**
+     * Forward pan/zoom headroom past the latest candle, in seconds, or
+     * `null` (default) for no forward limit. Forwarded to
+     * {@link ISciFinanceChartPredefinedStudiesOptions.forwardHeadroomSec}.
+     */
+    forwardHeadroomSec?: number | null;
+    /** Initial studies to attach (OHLC, Volume, RSI, MACD, etc.). */
+    studies: IStudy[];
+    /** Use sub-chart mode (shared parent surface). Default: `true` ({@link DEFAULT_USE_SUB_CHARTS}). */
+    useSubCharts?: boolean;
+    /** Layout direction. Default: `"column"`. */
+    direction?: LayoutDirection;
+    /** Optional pre-configured services (data manager, data feed manager). When provided, bypasses default creation. */
+    services?: ISciFinanceChartServices;
+    /** Optional surface configuration applied to the default pane and study panes that don't specify their own (e.g. navy theme + transparent background). */
     surfaceConfig?: TSurfaceConfigurationFunction;
-}
-```
+    /**
+     * Default options applied to every X and Y axis the finance chart creates,
+     * including the X axes in `addXAxis` and every study's Y axis. Each axis
+     * spreads these first, then its study-specific options — so studies can
+     * still override per-axis. See {@link IChartAxisDefaults}.
+     */
+    axisDefaults?: IChartAxisDefaults;
+    /**
+     * Colours for the whole chart: surfaces, axes, legend, crosshair and every study's
+     * defaults. Default `SCITRADER_DARK_THEME`. Switch later with `financeApi.setTheme(theme)`.
+     */
+    theme?: ISciTraderTheme;
+    /**
+     * Per-pane size hints keyed by paneId. Overrides each pane's primary
+     * study's `paneSizeConfig` default. Use to tune the layout from the
+     * host without modifying study classes.
+     *
+     * Resolution: `paneSizing[paneId]` > primary study's `paneSizeConfig` >
+     * layout renderer's default (`grow: 1`).
+     *
+     * @example
+     * paneSizing: {
+     *   [PaneId.DEFAULT.value]: { grow: 4 }, // bigger price pane
+     *   "RSIPane": { size: 100 },             // fixed-height RSI
+     * }
+     */
+    paneSizing?: Record<string, IPaneSizeConfig>;
+    /**
+     * Maximum total chart panes (price pane + indicator panes). Studies that
+     * would create a new pane (oscillators) are refused once the chart is at
+     * this limit — the chart raises `paneLimitReached` so the host can toast.
+     * Overlay studies (EMA/WMA/VWAP/PSAR/Volume) share an existing pane and are
+     * never affected. Default 6.
+     */
+    maxPanes?: number;
+    /**
+     * Each pane's control bar and the dividers between panes: whether the bar shows, which
+     * buttons it has, and the touch layout for phones and tablets. The finance chart leaves out
+     * the axis-sync and V-/H-group toggles unless `buttons` turns them on. Change later with
+     * {@link ISciFinanceChartPanelApi.setPaneControls}.
+     */
+    paneControls?: IPaneControlOptions;
+    /**
+     * What each pane shows while it loads: a skeleton until its chart is ready (or your own
+     * placeholder), and a shimmer overlay while a symbol or interval switch loads.
+     */
+    loading?: IPaneLoadingOptions;
+}```
 
 ## Data
 
@@ -294,7 +371,9 @@ axisDefaults: { labelStyle: { fontSize: 11 }, drawMinorGridLines: false }
 ### surfaceConfig
 
 ```ts
-surfaceConfig?: (chart: IChart) => Promise<IChart>;
+surfaceConfig?: TSurfaceConfigurationFunction;
+
+type TSurfaceConfigurationFunction = (chart: IChart) => Promise<IChart>;
 ```
 
 A function run on each pane's `SciChartSurface` as it is created, for anything the other options don't cover. `chart.sciChartSurface` is the surface. Return the same `chart` when you're done.

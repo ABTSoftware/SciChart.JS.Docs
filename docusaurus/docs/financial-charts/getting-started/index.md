@@ -79,25 +79,7 @@ The legend and crosshair follow the mouse.
 
 ### Configuration
 
-`ISciFinanceChartPanelConfig` (every option, with its type and examples, is in [Chart configuration](/financial-charts/finance-chart-api/chart-config/)):
-
-| Option | Default | Meaning |
-|---|---|---|
-| `exchangeName`, `symbol`, `interval` | required | The data to chart. |
-| `studies` | required | What to draw, in order. See [Studies](/financial-charts/studies-and-indicators/). |
-| `period` | none | How much time to show at first, e.g. `"1M"` or `"1Y"`. See [Periods](/financial-charts/symbols-intervals-periods/periods/). |
-| `lockPeriodWidth` | `true` | Whether `period` also caps how far the user can zoom out. |
-| `liveTipMode` | `"follow"` | Whether the view scrolls with new candles (`"follow"`) or stays put (`"anchored"`). |
-| `useSubCharts` | `true` | Draw all panes on one surface (`true`), or give each pane its own (`false`). See [Layout](/financial-charts/layout/). |
-| `direction` | `"column"` | Stack panes vertically (`"column"`) or side by side (`"row"`). |
-| `maxPanes` | `6` | Most panes allowed. Studies that would add more are refused, and `paneLimitReached` is raised. |
-| `paneSizing` | none | Size hints per pane id, e.g. `{ default: { grow: 4 } }`. |
-| `paneControls` | all controls, mouse layout | Each pane's control bar and the dividers, including the touch layout. See [Pane controls](/financial-charts/layout/#pane-controls). |
-| `loading` | skeleton and overlay | What panes show while they load. See [Loading states](/financial-charts/layout/#loading-states). |
-| `theme` | `SCITRADER_DARK_THEME` | Every colour the chart draws with. See [Styling and themes](/financial-charts/styling-and-themes/). |
-| `axisDefaults` | none | Options applied to every axis, over the theme's. See [Styling](/financial-charts/styling-and-themes/#axes). |
-| `surfaceConfig` | none | A function run on each pane's `SciChartSurface` as it is created. |
-| `services` | global | The data services to use. See [Data sources](/financial-charts/data-sources/#keeping-an-exchange-private-to-a-chart). |
+The second argument to `create` is an `ISciFinanceChartPanelConfig`. Only `exchangeName`, `symbol`, `interval` and `studies` are required. The other options set the starting period, the pane layout and controls, loading states, the theme and the axes. [Chart Config object](/financial-charts/finance-chart-api/chart-config/) describes every option.
 
 ## Create a chart in React
 

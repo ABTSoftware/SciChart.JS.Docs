@@ -33,26 +33,56 @@ The same object comes from each way of making a chart:
 
 The type parameter `TPaneContent` is the only difference between them. It is what [`addCustomPane`](#addcustompane) accepts: an `HTMLElement` in plain TypeScript, and a `ReactNode` in React.
 
-## The interface
+## The ISciFinanceChartPanelApi Interface
+
+This is the interface as it is declared in `scichart-scitrader`, with its TSDoc comments:
 
 ```ts
+/**
+ * API exposed by {@link SciFinanceChartPanel} (vanilla) and
+ * {@link SciFinanceChartView} (React, via ref).
+ *
+ * Provides access to the underlying finance and pane group APIs,
+ * plus combined serialization and cleanup. Sub-chart mode is a layout
+ * concern — controlled by the caller via config, not this API.
+ *
+ * `TPaneContent` is what {@link addCustomPane} accepts: a `ReactNode` for the React wrapper.
+ * The SDK itself has no UI framework, so it defaults to `unknown`.
+ */
 interface ISciFinanceChartPanelApi<TPaneContent = unknown> {
-    /** Whether the chart has finished initialising, and financeApi is safe to read. */
+    /**
+     * Whether chart initialization has completed and {@link financeApi} is safe to read.
+     *
+     * The React view hands out its API handle as soon as it mounts, but `financeApi`
+     * THROWS until init finishes — so handle presence is not readiness. UI that can be
+     * clicked while the chart is still loading (e.g. the drawing-tools rail, which
+     * renders immediately) must check this before touching `financeApi`.
+     */
     readonly isInitialized: boolean;
-    /** The finance chart: studies, data feeds, symbol, interval, period, theme, events. Throws until isInitialized. */
+    /** Finance chart API — studies, data feeds, intervals. Throws while {@link isInitialized} is false. */
     readonly financeApi: SciFinanceChart;
-    /** The pane group: pane order, sizes, visibility, axis sync and layout events. */
+    /** Pane group API — pane management, coordination, visibility, sizing, events. */
     readonly paneGroupApi: IPaneApi;
-
-    /** Add a custom (non-chart) pane beside the chart panes, with content inside it. */
+    /**
+     * Add a custom (non-chart) pane alongside the finance chart panes, with `content` inside it
+     * when given: an `HTMLElement` for the vanilla `SciFinanceChartPanel`, a `ReactNode` for the
+     * React `SciFinanceChartView`.
+     */
     addCustomPane(content?: TPaneContent): void;
-    /** Change the panes' control bars and dividers. Only the options given change. */
+    /**
+     * Change the panes' control bar and dividers; only the options given change. For example,
+     * `setPaneControls({ touch: true })` when the page switches to its phone layout.
+     */
     setPaneControls(options: IPaneControlOptions): void;
-    /** The info area at the start of a pane's control bar, for your own content. */
+    /**
+     * The info area at the start of a pane's control bar, for the host's own content, such as a
+     * candle counter on the price pane (`PaneId.DEFAULT.value`). Hidden while empty. The same
+     * element is kept while the pane exists. `undefined` if there is no such pane.
+     */
     getPaneInfoElement(paneId: string): HTMLElement | undefined;
-    /** The whole chart's state, finance and layout, as JSON. */
+    /** Serialize the full panel state — finance + layout. */
     toJSON(): ISciFinanceChartPanelState;
-    /** Destroy the chart and free its resources. */
+    /** Teardown and clean up all resources. */
     cleanup(): void;
 }
 ```
