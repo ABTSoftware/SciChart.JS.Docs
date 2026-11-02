@@ -1,6 +1,6 @@
 /**
  * CSS overrides for the SDK's toolbars and controls. In an app these rules go in your own
- * stylesheet; the demo injects whichever one is picked so it can switch between them.
+ * stylesheet; the samples inject whichever one is picked so they can switch between them.
  *
  * Each set is scoped under a class on an element around the chart (`.skin-rounded` and so on).
  * That keeps it to this chart, and the extra class also makes every rule more specific than the

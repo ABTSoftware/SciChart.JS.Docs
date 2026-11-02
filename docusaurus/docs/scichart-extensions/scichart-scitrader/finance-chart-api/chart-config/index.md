@@ -24,10 +24,16 @@ SciFinanceChartPanel.create(container: HTMLElement, config: ISciFinanceChartPane
 Only four options are required: `exchangeName`, `symbol`, `interval` and `studies`. Everything else has a default.
 
 ```ts
-import { CandleInterval, ISciFinanceChartPanelConfig, OHLCStudy, VolumeStudy } from "scichart-scitrader";
+import {
+    BinanceExchange,
+    CandleInterval,
+    ISciFinanceChartPanelConfig,
+    OHLCStudy,
+    VolumeStudy
+} from "scichart-scitrader";
 
 const config: ISciFinanceChartPanelConfig = {
-    exchangeName: "Binance",
+    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
     symbol: "BTCUSDT",
     interval: CandleInterval.FOUR_HOURS,
     studies: [new OHLCStudy(), new VolumeStudy()],
@@ -307,7 +313,7 @@ surfaceConfig: async (chart) => {
 ```tsx
 const config = React.useMemo<ISciFinanceChartPanelConfig>(
     () => ({
-        exchangeName: "Binance",
+        exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
         symbol: "ETHUSDT",
         interval: CandleInterval.ONE_DAY,
         period: "1Y",

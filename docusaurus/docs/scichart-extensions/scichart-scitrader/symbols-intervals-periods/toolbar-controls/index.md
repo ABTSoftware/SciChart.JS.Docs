@@ -43,7 +43,12 @@ The controls only pick a value and call `onChange`. You pass the value on to the
 ## Plain JavaScript / TypeScript
 
 ```ts
-import { CandleInterval, carryPeriodToInterval, IntervalSelector, PeriodSelector } from "scichart-scitrader";
+import {
+    CandleInterval,
+    carryPeriodToInterval,
+    IntervalSelector,
+    PeriodSelector
+} from "scichart-scitrader";
 
 const chart = financeChartPanel.financeApi; // SciFinanceChart
 const toolbar = document.getElementById("toolbar");
@@ -110,9 +115,9 @@ function ChartToolbar({ financeChartPanel }) {
 The TS tab is a plain TypeScript chart with all four toolbar controls: interval, period, [candle type](/scichart-extensions/scichart-scitrader/studies-and-indicators/#candle-types) and live-tip. The React tab is a React toolbar with a symbol switcher, `IntervalSelector` and `PeriodSelector`.
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../../_examples/components_ChartControls/drawExample.ts
+    ```ts showLineNumbers file=../../_examples/components_ChartControls/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../../_examples/gettingStarted_SymbolInterval/index.tsx
+    ```tsx showLineNumbers file=../../_examples/gettingStarted_SymbolInterval/react.tsx
     ```
 </CodeSnippetBlock>
 

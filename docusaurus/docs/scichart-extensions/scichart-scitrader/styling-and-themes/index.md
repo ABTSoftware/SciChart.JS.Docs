@@ -62,9 +62,9 @@ It works by comparing values. A colour that still equals the old theme's value f
 <CenteredImageWrapper src={require("../_examples/styling_Themes/screenshot.png").default} title="Themes" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/styling_Themes/drawExample.ts
+    ```ts showLineNumbers file=../_examples/styling_Themes/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/styling_Themes/index.tsx
+    ```tsx showLineNumbers file=../_examples/styling_Themes/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -174,9 +174,9 @@ Scoping overrides under a class of your own (`.my-chart .st-…`), as the demo d
 <CenteredImageWrapper src={require("../_examples/styling_CssOverrides/screenshot.png").default} title="CSS Overrides" />
 
 <CodeSnippetBlock labels={["TS", "React", "skins.ts"]}>
-    ```ts showLineNumbers file=../_examples/styling_CssOverrides/drawExample.ts
+    ```ts showLineNumbers file=../_examples/styling_CssOverrides/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/styling_CssOverrides/index.tsx
+    ```tsx showLineNumbers file=../_examples/styling_CssOverrides/react.tsx
     ```
     ```ts showLineNumbers file=../_examples/styling_CssOverrides/skins.ts
     ```

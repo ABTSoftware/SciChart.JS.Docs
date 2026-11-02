@@ -66,7 +66,7 @@ defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
 defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 
 await SciFinanceChartPanel.create(container, {
-    exchangeName: "Coinbase",
+    exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
     symbol: "BTC-USD", // Binance: "BTCUSDT"
     interval: CandleInterval.ONE_MINUTE,
     period: "1H",
@@ -83,9 +83,9 @@ await SciFinanceChartPanel.create(container, {
 <CenteredImageWrapper src={require("../_examples/dataSources_LiveExchanges/screenshot.png").default} title="Binance and Coinbase (live)" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_LiveExchanges/drawExample.ts
+    ```ts showLineNumbers file=../_examples/dataSources_LiveExchanges/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/dataSources_LiveExchanges/index.tsx
+    ```tsx showLineNumbers file=../_examples/dataSources_LiveExchanges/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -100,7 +100,7 @@ const csv = await CSVExchange.fromUrl("data/crypto-1h.csv", { name: "MyCSV" });
 registerCSVExchange(defaultExchangeProvider, csv);
 
 await SciFinanceChartPanel.create(container, {
-    exchangeName: "MyCSV",
+    exchangeName: csv.name, // name="MyCSV", set by fromUrl above
     symbol: "SOLUSDT",
     interval: CandleInterval.FOUR_HOURS, // resampled from the file's hourly rows
     studies: [new OHLCStudy(), new VolumeStudy()],
@@ -166,9 +166,9 @@ Because the dates change with every load, register CSV data with `nullCandleStor
 <CenteredImageWrapper src={require("../_examples/dataSources_CSV/screenshot.png").default} title="CSV Data" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_CSV/drawExample.ts
+    ```ts showLineNumbers file=../_examples/dataSources_CSV/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/dataSources_CSV/index.tsx
+    ```tsx showLineNumbers file=../_examples/dataSources_CSV/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -237,12 +237,12 @@ defaultExchangeProvider.registerExchange(new MyExchange(), idbPriceStore);
 
 <CenteredImageWrapper src={require("../_examples/dataSources_CustomExchange/screenshot.png").default} title="Custom Data Source" />
 
-The **Custom Data Source** example A complete exchange generates prices from a formula, with live updates twice a second.
+The **Custom Data Source** example is a complete exchange that generates prices from a formula, with live updates twice a second.
 
 <CodeSnippetBlock labels={["TS", "React", "SyntheticExchange.ts"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_CustomExchange/drawExample.ts
+    ```ts showLineNumbers file=../_examples/dataSources_CustomExchange/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/dataSources_CustomExchange/index.tsx
+    ```tsx showLineNumbers file=../_examples/dataSources_CustomExchange/react.tsx
     ```
     ```ts showLineNumbers file=../_examples/dataSources_CustomExchange/SyntheticExchange.ts
     ```
@@ -268,10 +268,12 @@ The source provides these, all keyed by symbol:
 
 The **Order Book (dummy data)** example uses a randomised source (`DummyOrderBookSource`, in the `DummyDataExchange.ts` tab below), a template for adapting a real one.
 
-<CodeSnippetBlock labels={["React", "DummyDataExchange.ts"]}>
-    ```tsx showLineNumbers file=../_examples/dataSources_OrderBook/index.tsx
+<CodeSnippetBlock labels={["TS", "React", "DummyDataExchange.ts"]}>
+    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/vanilla.ts
     ```
-    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/../_shared/DummyDataExchange.ts
+    ```tsx showLineNumbers file=../_examples/dataSources_OrderBook/react.tsx
+    ```
+    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/DummyDataExchange.ts
     ```
 </CodeSnippetBlock>
 

@@ -19,7 +19,7 @@ Studies are passed in `studies` when the chart is created, or added and removed 
 
 ```ts
 const financeChartPanel = await SciFinanceChartPanel.create(container, {
-    exchangeName: "Binance",
+    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
     symbol: "BTCUSDT",
     interval: CandleInterval.ONE_DAY,
     period: "6M",
@@ -45,9 +45,9 @@ Constructor options set a study's inputs (lengths, levels) and its styles (colou
 <CenteredImageWrapper src={require("../_examples/studies_AddIndicators/screenshot.png").default} title="Add Indicators" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/studies_AddIndicators/drawExample.ts
+    ```ts showLineNumbers file=../_examples/studies_AddIndicators/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/studies_AddIndicators/index.tsx
+    ```tsx showLineNumbers file=../_examples/studies_AddIndicators/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -71,9 +71,9 @@ financeChartPanel.financeApi.detachStudy(rsi); // its pane goes with it
 <CenteredImageWrapper src={require("../_examples/studies_RuntimeIndicators/screenshot.png").default} title="Add / Remove at Runtime" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/studies_RuntimeIndicators/drawExample.ts
+    ```ts showLineNumbers file=../_examples/studies_RuntimeIndicators/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/studies_RuntimeIndicators/index.tsx
+    ```tsx showLineNumbers file=../_examples/studies_RuntimeIndicators/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -117,9 +117,9 @@ Leave `brickSize` / `boxSize` unset to derive them from the price range.
 <CenteredImageWrapper src={require("../_examples/studies_CandleTypes/screenshot.png").default} title="Candle Types, Renko, P&F" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/studies_CandleTypes/drawExample.ts
+    ```ts showLineNumbers file=../_examples/studies_CandleTypes/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/studies_CandleTypes/index.tsx
+    ```tsx showLineNumbers file=../_examples/studies_CandleTypes/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -159,8 +159,10 @@ In plain TypeScript, `StudySettingsForm.create(container, { study })` and `Study
 
 <CenteredImageWrapper src={require("../_examples/studies_StudiesUi/screenshot.png").default} title="Studies UI (React)" />
 
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/studies_StudiesUi/index.tsx
+<CodeSnippetBlock labels={["TS", "React"]}>
+    ```ts showLineNumbers file=../_examples/studies_StudiesUi/vanilla.ts
+    ```
+    ```tsx showLineNumbers file=../_examples/studies_StudiesUi/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -198,8 +200,10 @@ studyProvider.registerStudy("MyStudy", {
 
 The **Custom Study** example is a complete momentum study written outside the SDK, with a settings form, registered so it can be saved and restored.
 
-<CodeSnippetBlock labels={["React", "MomentumStudy.ts"]}>
-    ```tsx showLineNumbers file=../_examples/studies_CustomStudy/index.tsx
+<CodeSnippetBlock labels={["TS", "React", "MomentumStudy.ts"]}>
+    ```ts showLineNumbers file=../_examples/studies_CustomStudy/vanilla.ts
+    ```
+    ```tsx showLineNumbers file=../_examples/studies_CustomStudy/react.tsx
     ```
     ```ts showLineNumbers file=../_examples/studies_CustomStudy/MomentumStudy.ts
     ```

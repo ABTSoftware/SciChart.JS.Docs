@@ -10,39 +10,41 @@ keywords: ["SciTrader", "SciTrader.js", "SciTrader getting started", "JavaScript
 
 ## Before you start
 
-Install the packages, import the stylesheet and serve SciChart's WebAssembly: [Installation](/scichart-extensions/scichart-scitrader/installation/) has the commands, and an example for each common bundler. In short:
-
-```js
-npm install scichart-scitrader scichart scichart-financial-tools rxjs
-npm install scichart-scitrader-react react react-dom   # for React
-```
-
-```ts
-import "scichart-scitrader/scitrader.css";
-```
+Follow [Installation](/scichart-extensions/scichart-scitrader/installation/) first: it installs the packages, imports the stylesheet, and serves SciChart's WebAssembly with your bundler.
 
 ## Register a data source
 
 Charts get their candles from an **exchange**, looked up by name. The SDK registers none by default. Register the ones your app uses once at startup, before any chart is created:
 
 ```ts
-import { BinanceExchange, CoinbaseExchange, defaultExchangeProvider, idbPriceStore } from "scichart-scitrader";
+import {
+    BinanceExchange,
+    CoinbaseExchange,
+    defaultExchangeProvider,
+    idbPriceStore
+} from "scichart-scitrader";
 
 defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
 defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 ```
 
-The second argument is the candle store. `idbPriceStore` caches downloaded candles in IndexedDB, so a reload draws straight away and fetches only what is new. See [Data sources](/scichart-extensions/scichart-scitrader/data-sources/) for the other options, including CSV files, which the examples below use.
+The second argument is the candle store. `idbPriceStore` caches downloaded candles in IndexedDB, so a reload draws straight away and fetches only what is new. See [Data sources](/scichart-extensions/scichart-scitrader/data-sources/) for the other options, including CSV files and your own data.
 
 ## Create a chart
 
 `SciFinanceChartPanel.create` builds a whole chart inside a DOM element. It creates the layout, the price pane, a data feed for the symbol, and a pane for each study that needs one.
 
 ```ts
-import { CandleInterval, OHLCStudy, SciFinanceChartPanel, VolumeStudy } from "scichart-scitrader";
+import {
+    BinanceExchange,
+    CandleInterval,
+    OHLCStudy,
+    SciFinanceChartPanel,
+    VolumeStudy
+} from "scichart-scitrader";
 
 const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
-    exchangeName: "Binance",
+    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
     symbol: "BTCUSDT",
     interval: CandleInterval.FOUR_HOURS,
     studies: [new OHLCStudy(), new VolumeStudy()],
@@ -69,9 +71,9 @@ The legend and crosshair follow the mouse.
 <CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChart/screenshot.png").default} title="Create a Financial Chart" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/gettingStarted_CreateChart/drawExample.ts
+    ```ts showLineNumbers file=../_examples/gettingStarted_CreateChart/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChart/index.tsx
+    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChart/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -99,17 +101,20 @@ The legend and crosshair follow the mouse.
 
 ## Create a chart in React
 
-> **SciTrader ships a React wrapper, `scichart-scitrader-react`.** It provides `<SciFinanceChartView>` and React versions of the toolbar controls, study settings, drawing toolbar and market-depth view, each wrapping the plain TypeScript SDK. Install it alongside the core packages:
+> **SciTrader ships a React wrapper, `scichart-scitrader-react`.** It provides `<SciFinanceChartView>` and React versions of the toolbar controls, study settings, drawing toolbar and market-depth view, each wrapping the plain TypeScript SDK. Add it to an app that already has the [core packages](/scichart-extensions/scichart-scitrader/installation/#install-the-packages):
 >
 > ```js
-> npm install scichart-scitrader scichart scichart-financial-tools rxjs
 > npm install scichart-scitrader-react react react-dom
 > ```
 
 `<SciFinanceChartView>` takes the same config as `SciFinanceChartPanel.create`. It hands back the same API through `ref`, and through `onInit` when the chart is ready:
 
 ```tsx
-import { ISciFinanceChartPanelApi, ISciFinanceChartPanelConfig } from "scichart-scitrader";
+import {
+    BinanceExchange,
+    ISciFinanceChartPanelApi,
+    ISciFinanceChartPanelConfig
+} from "scichart-scitrader";
 import { SciFinanceChartView } from "scichart-scitrader-react";
 
 function Chart() {
@@ -118,7 +123,7 @@ function Chart() {
     // Create the config once per mounted chart. Studies are live objects bound to one chart.
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
         () => ({
-            exchangeName: "Binance",
+            exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
             symbol: "ETHUSDT",
             interval: CandleInterval.ONE_DAY,
             period: "1Y",
@@ -147,23 +152,14 @@ function Chart() {
 <CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChartReact/screenshot.png").default} title="Create a Chart in React" />
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChartReact/index.tsx
+    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChartReact/react.tsx
     ```
 </CodeSnippetBlock>
 
 ## About the code samples
 
-The samples in this section come from the SciTrader demo app, and import a few small helpers from it:
+Every sample in this section is self-contained: it imports nothing but the SciTrader, SciChart and React packages. Copy one into an app that has followed [Installation](/scichart-extensions/scichart-scitrader/installation/) to try it.
 
-- `loadSampleData()` and `SAMPLE_EXCHANGE` register a [CSV exchange](/scichart-extensions/scichart-scitrader/data-sources/#csv-data) with bundled sample candles, so the samples run without network access. Swap `exchangeName` and `symbol` for `"Binance"` and `"BTCUSDT"` to chart live data instead.
-- `useVanillaExample()` mounts a plain-TypeScript `drawExample` function into a React `div`, and cleans it up on unmount.
-- `ExamplePage` is the demo app's page frame (title, description, toolbar). Replace it with your own layout.
-
-<CodeSnippetBlock labels={["sampleData.ts", "useVanillaExample.ts", "useSampleData.ts"]}>
-    ```ts showLineNumbers file=../_examples/_shared/sampleData.ts
-    ```
-    ```ts showLineNumbers file=../_examples/_shared/useVanillaExample.ts
-    ```
-    ```ts showLineNumbers file=../_examples/_shared/useSampleData.ts
-    ```
-</CodeSnippetBlock>
+- **TS** samples are plain TypeScript modules. They use top-level `await`, and look up the elements they need by id. A comment at the top shows the HTML each one expects, e.g. `<div id="chart" style="height: 600px">`.
+- **React** samples export a function component. Render it anywhere in your app.
+- **Data** is live from Binance: no API key is needed. Each sample registers `BinanceExchange` at the top. In your app, do that once at startup, rather than in every module. The [Data sources](/scichart-extensions/scichart-scitrader/data-sources/) samples show CSV files and your own data instead.

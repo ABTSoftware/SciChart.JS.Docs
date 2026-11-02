@@ -56,8 +56,8 @@ React: pass the state as `restoreState`, and remount to apply it:
 <CenteredImageWrapper src={require("../_examples/layoutState_SaveRestore/screenshot.png").default} title="Save and Restore" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/layoutState_SaveRestore/drawExample.ts
+    ```ts showLineNumbers file=../_examples/layoutState_SaveRestore/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/layoutState_SaveRestore/index.tsx
+    ```tsx showLineNumbers file=../_examples/layoutState_SaveRestore/react.tsx
     ```
 </CodeSnippetBlock>

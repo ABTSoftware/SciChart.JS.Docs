@@ -73,11 +73,14 @@ The files are in `node_modules/scichart/_wasm/`:
 
 ### Where SciChart looks
 
-By default SciChart requests `scichart.wasm` **relative to the page's URL**, not the script's. On a page at `/charts/btc`, that's `/charts/scichart.wasm`. So unless every page sits at the root, tell SciChart the file's absolute URL before the first chart is created:
+By default SciChart requests `scichart.wasm` with a **relative** path, so the browser resolves it against the page's URL, not the script's. On a page at `/charts/btc`, that's `/charts/scichart.wasm`.
+
+So unless every page sits at the root, tell SciChart where the file is before the first chart is created. Start the path with a forward slash to make it absolute, from the root of your site:
 
 ```ts
 import { SciChartSurface } from "scichart";
 
+// Leading "/": always /scichart.wasm, whatever the page's URL
 SciChartSurface.configure({ wasmUrl: "/scichart.wasm" });
 ```
 
@@ -86,6 +89,8 @@ If your app also uses [`scichart-react`](https://www.npmjs.com/package/scichart-
 SciChart finds `scichart-nosimd.wasm` and `scichart-64.wasm` from the same URL, by adding `-nosimd` or `-64` to the name. If your bundler renames files (Vite and Parcel add content hashes), pass `wasmNoSimdUrl` too, as in their examples below.
 
 If the file can't be loaded, chart creation fails with *"Could not load SciChart WebAssembly module"*. Look for a `404` on `scichart.wasm` in the browser's network tab: the URL it shows is where SciChart looked.
+
+[Deploying Wasm](/2d-charts/surface/deploying-wasm/) in the SciChart.js docs has more detail, including framework boilerplates and loading the files offline.
 
 ### webpack
 

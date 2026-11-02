@@ -20,7 +20,11 @@ Every method on these pages is on **`SciFinanceChart`**, the chart itself. You r
 | `<SciFinanceChartView config={…} />` (React) | `ISciFinanceChartPanelApi`, through `ref` and `onInit` | `chartRef.current.financeApi` |
 
 ```ts
-import { ISciFinanceChartPanelApi, SciFinanceChart, SciFinanceChartPanel } from "scichart-scitrader";
+import {
+    ISciFinanceChartPanelApi,
+    SciFinanceChart,
+    SciFinanceChartPanel
+} from "scichart-scitrader";
 
 // financeChartPanel: ISciFinanceChartPanelApi — the chart and its layout
 const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), config);
@@ -79,8 +83,8 @@ The chart below starts on `BTCUSDT` at 4 hours over one month. Its toolbar chang
 <CenteredImageWrapper src={require("../_examples/gettingStarted_SymbolInterval/screenshot.png").default} title="Symbol, Interval and Period" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/gettingStarted_SymbolInterval/drawExample.ts
+    ```ts showLineNumbers file=../_examples/gettingStarted_SymbolInterval/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/gettingStarted_SymbolInterval/index.tsx
+    ```tsx showLineNumbers file=../_examples/gettingStarted_SymbolInterval/react.tsx
     ```
 </CodeSnippetBlock>

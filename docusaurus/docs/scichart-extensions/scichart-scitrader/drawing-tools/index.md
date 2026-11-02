@@ -77,17 +77,20 @@ The toolbar is plain DOM, styled by the theme's CSS variables, so it follows `se
 
 <CenteredImageWrapper src={require("../_examples/drawing_Vanilla/screenshot.png").default} title="Drawing Tools" />
 
-<CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/drawing_Vanilla/drawExample.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/drawing_Vanilla/index.tsx
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=../_examples/drawing_Vanilla/vanilla.ts
     ```
 </CodeSnippetBlock>
 
 ## Toolbar (React)
 
 ```tsx
-import { DrawingList, DrawingToolbar, SciFinanceChartView, useDrawingTools } from "scichart-scitrader-react";
+import {
+    DrawingList,
+    DrawingToolbar,
+    SciFinanceChartView,
+    useDrawingTools
+} from "scichart-scitrader-react";
 
 const [chart, setChart] = React.useState<ISciFinanceChartPanelApi>();
 const { controller } = useDrawingTools(chart);
@@ -102,7 +105,7 @@ const { controller } = useDrawingTools(chart);
 <CenteredImageWrapper src={require("../_examples/drawing_React/screenshot.png").default} title="Drawing Tools (React)" />
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/drawing_React/index.tsx
+    ```tsx showLineNumbers file=../_examples/drawing_React/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -158,8 +161,8 @@ A pane has keyboard focus after it is clicked.
 <CenteredImageWrapper src={require("../_examples/drawing_Interaction/screenshot.png").default} title="Keyboard, Touch, Buttons" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/drawing_Interaction/drawExample.ts
+    ```ts showLineNumbers file=../_examples/drawing_Interaction/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/drawing_Interaction/index.tsx
+    ```tsx showLineNumbers file=../_examples/drawing_Interaction/react.tsx
     ```
 </CodeSnippetBlock>

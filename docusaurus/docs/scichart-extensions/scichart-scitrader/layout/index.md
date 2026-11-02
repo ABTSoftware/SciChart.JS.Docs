@@ -45,15 +45,15 @@ Each pane has a **control bar**, shown while the pointer is over the pane. Its b
 
 ```ts
 const financeChartPanel = await SciFinanceChartPanel.create(container, {
-    exchangeName: SAMPLE_EXCHANGE,
+    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
     symbol: "BTCUSDT",
     interval: CandleInterval.ONE_DAY,
     period: "6M",
     lockPeriodWidth: false,
-    useSubCharts: layout.useSubCharts,
-    direction: layout.direction,
+    useSubCharts: true,
+    direction: "column",
     paneSizing: { [PaneId.DEFAULT.value]: { grow: 4 } },
-    paneControls, // e.g. { touch: true }
+    paneControls: { touch: false }, // the touch layout, for phones and tablets
     studies: [new OHLCStudy(), new VolumeStudy(), new RSIStudy(), new MACDStudy(), new StochasticStudy()],
 });
 
@@ -74,9 +74,9 @@ financeChartPanel.setPaneControls({ touch: true });
 <CenteredImageWrapper src={require("../_examples/layoutState_MultiPane/screenshot.png").default} title="Multi-Pane Layout" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/layoutState_MultiPane/drawExample.ts
+    ```ts showLineNumbers file=../_examples/layoutState_MultiPane/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/layoutState_MultiPane/index.tsx
+    ```tsx showLineNumbers file=../_examples/layoutState_MultiPane/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -131,8 +131,10 @@ In plain TypeScript, `loading: paneProgressDotsLoading(progress)` does the same,
 
 <CenteredImageWrapper src={require("../_examples/layoutState_Loading/screenshot.png").default} title="Loading States and Pane Info" />
 
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/layoutState_Loading/index.tsx
+<CodeSnippetBlock labels={["TS", "React"]}>
+    ```ts showLineNumbers file=../_examples/layoutState_Loading/vanilla.ts
+    ```
+    ```tsx showLineNumbers file=../_examples/layoutState_Loading/react.tsx
     ```
 </CodeSnippetBlock>
 

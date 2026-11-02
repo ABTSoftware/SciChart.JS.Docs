@@ -87,7 +87,7 @@ SciTrader ships as two npm packages:
 | `scichart-scitrader` | The framework-agnostic SDK: charts, studies, data feeds, exchange connectors, layouts, drawing tools, themes, UI components in plain DOM, and a plain-CSS stylesheet | `scichart`, `scichart-financial-tools`, `rxjs` 7.5.5+ |
 | `scichart-scitrader-react` | React bindings: `SciFinanceChartView`, `MarketDepthView`, the toolbar controls, the study settings, the drawing toolbar and list, `PaneProgressDots`, `CandleCounter`, `SciTraderIcon`, `useDrawingTools`, `SciTraderThemeProvider`. Each mounts the SDK's vanilla equivalent | `scichart-scitrader`, `react`, `react-dom` |
 
-Every code sample in this section is taken from a running SciTrader demo, and is shown in TypeScript and React.
+Every code sample in this section is self-contained and shown in TypeScript and React, with live Binance data.
 
 ## What you can build with SciTrader.js
 
@@ -126,7 +126,7 @@ defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
 
 // Create a candlestick chart with volume in a <div id="chart">
 const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
-    exchangeName: "Binance",
+    exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
     symbol: "BTCUSDT",
     interval: CandleInterval.FOUR_HOURS,
     studies: [new OHLCStudy(), new VolumeStudy()]
@@ -136,14 +136,21 @@ const financeChartPanel = await SciFinanceChartPanel.create(document.getElementB
 ### React financial charts
 
 ```tsx
-import { CandleInterval, ISciFinanceChartPanelConfig, OHLCStudy, RSIStudy, VolumeStudy } from "scichart-scitrader";
+import {
+    BinanceExchange,
+    CandleInterval,
+    ISciFinanceChartPanelConfig,
+    OHLCStudy,
+    RSIStudy,
+    VolumeStudy
+} from "scichart-scitrader";
 import { SciFinanceChartView } from "scichart-scitrader-react";
 
 function TradingChart() {
     // Create the config once per mounted chart. Studies are live objects bound to one chart.
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
         () => ({
-            exchangeName: "Binance",
+            exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
             symbol: "ETHUSDT",
             interval: CandleInterval.ONE_DAY,
             period: "1Y",
@@ -169,9 +176,9 @@ A chart is a **`SciFinanceChart`** hosted by a **layout**, `SciChartPaneSplitter
 
 | | Use it for |
 | --- | --- |
-| [SciChart.js](/intro/) | General-purpose high-performance charts, including [candlestick](/2d-charts/chart-types/fast-candlestick-renderable-series/) and [OHLC](/2d-charts/chart-types/fast-ohlc-renderable-series/) series you assemble yourself |
-| [scichart-financial-tools](/scichart-extensions/scichart-financial-tools/overview/) | Trading annotations, drawing modifiers and OHLC data filters on top of your own SciChart.js surfaces |
-| **SciTrader.js** | A complete, ready-made trading chart: data feeds, indicators, panes, drawing tools and UI, built on both of the above |
+| [scichart](https://www.npmjs.com/package/scichart) | General-purpose high-performance charts, including [candlestick](/2d-charts/chart-types/fast-candlestick-renderable-series/) and [OHLC](/2d-charts/chart-types/fast-ohlc-renderable-series/) series you assemble yourself. See the [SciChart.js docs](/intro/) |
+| [scichart-financial-tools](https://www.npmjs.com/package/scichart-financial-tools) | Trading annotations, drawing modifiers and OHLC data filters on top of your own SciChart.js surfaces. See the [scichart-financial-tools docs](/scichart-extensions/scichart-financial-tools/overview/) |
+| [scichart-scitrader](https://www.npmjs.com/package/scichart-scitrader) | **SciTrader.js:** a complete, ready-made trading chart with data feeds, indicators, panes, drawing tools and UI, built on both of the above |
 
 ## Documentation
 

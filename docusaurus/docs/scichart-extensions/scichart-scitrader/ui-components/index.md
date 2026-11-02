@@ -100,9 +100,9 @@ LiveTipToggle.create(toolbar, {
 <CenteredImageWrapper src={require("../_examples/components_ChartControls/screenshot.png").default} title="Chart Controls (plain TypeScript)" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/components_ChartControls/drawExample.ts
+    ```ts showLineNumbers file=../_examples/components_ChartControls/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/components_ChartControls/index.tsx
+    ```tsx showLineNumbers file=../_examples/components_ChartControls/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -137,9 +137,9 @@ import { IntervalSelector, PeriodSelector } from "scichart-scitrader-react";
 <CenteredImageWrapper src={require("../_examples/gettingStarted_SymbolInterval/screenshot.png").default} title="Symbol, Interval and Period" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/gettingStarted_SymbolInterval/drawExample.ts
+    ```ts showLineNumbers file=../_examples/gettingStarted_SymbolInterval/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../_examples/gettingStarted_SymbolInterval/index.tsx
+    ```tsx showLineNumbers file=../_examples/gettingStarted_SymbolInterval/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -170,10 +170,12 @@ const setColour = (key: "bid" | "ask", value: string) =>
 
 <CenteredImageWrapper src={require("../_examples/dataSources_OrderBook/screenshot.png").default} title="Order Book (dummy data)" />
 
-<CodeSnippetBlock labels={["React", "DummyDataExchange.ts"]}>
-    ```tsx showLineNumbers file=../_examples/dataSources_OrderBook/index.tsx
+<CodeSnippetBlock labels={["TS", "React", "DummyDataExchange.ts"]}>
+    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/vanilla.ts
     ```
-    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/../_shared/DummyDataExchange.ts
+    ```tsx showLineNumbers file=../_examples/dataSources_OrderBook/react.tsx
+    ```
+    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/DummyDataExchange.ts
     ```
 </CodeSnippetBlock>
 
@@ -197,8 +199,10 @@ In plain TypeScript, `CandleCounter.create(financeChartPanel.getPaneInfoElement(
 
 <CenteredImageWrapper src={require("../_examples/layoutState_Loading/screenshot.png").default} title="Loading States and Pane Info" />
 
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/layoutState_Loading/index.tsx
+<CodeSnippetBlock labels={["TS", "React"]}>
+    ```ts showLineNumbers file=../_examples/layoutState_Loading/vanilla.ts
+    ```
+    ```tsx showLineNumbers file=../_examples/layoutState_Loading/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -227,7 +231,7 @@ The SDK has no watchlist component, because a watchlist's layout differs from ap
 ```tsx
 // One manager for the list: prices arrive through onDataUpdate.
 React.useEffect(() => {
-    const wl = new WatchListDataManager({ exchangeName: DUMMY_EXCHANGE, onDataUpdate: setRows });
+    const wl = new WatchListDataManager({ exchangeName: BinanceExchange.name, onDataUpdate: setRows });
     wl.createFeeds(SYMBOLS);
     setManager(wl);
     return () => wl.delete();
@@ -236,7 +240,7 @@ React.useEffect(() => {
 // In each row:
 const prefetched = await manager.getSparklineData(symbol);
 const { sciChartSurface } = await SparkLineChart.createSpark(hostRef.current, {
-    exchangeName: DUMMY_EXCHANGE,
+    exchangeName: BinanceExchange.name,
     instrument: symbol,
     interval: SPARKLINE_INTERVAL,
     candles: SPARKLINE_WINDOW_CANDLES,
@@ -253,6 +257,6 @@ To show a symbol as a pair, `formatSymbolPair(symbol, exchangeName)` gives `BTC/
 <CenteredImageWrapper src={require("../_examples/components_Watchlist/screenshot.png").default} title="Watchlist" />
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/components_Watchlist/index.tsx
+    ```tsx showLineNumbers file=../_examples/components_Watchlist/react.tsx
     ```
 </CodeSnippetBlock>
