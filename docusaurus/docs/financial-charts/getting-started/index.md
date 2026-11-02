@@ -95,7 +95,7 @@ The second argument to `create` is an `ISciFinanceChartPanelConfig`. Only `excha
 
 ```tsx
 import {
-    BinanceExchange,
+    CoinbaseExchange,
     ISciFinanceChartPanelApi,
     ISciFinanceChartPanelConfig
 } from "scichart-scitrader";
@@ -107,8 +107,8 @@ function Chart() {
     // Create the config once per mounted chart. Studies are live objects bound to one chart.
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
         () => ({
-            exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
-            symbol: "ETHUSDT",
+            exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
+            symbol: "ETH-USD",
             interval: CandleInterval.ONE_DAY,
             period: "1Y",
             studies: [new OHLCStudy(), new VolumeStudy(), new RSIStudy()],
@@ -133,7 +133,9 @@ function Chart() {
 - **Changing `config` doesn't rebuild the chart.** Drive changes through `financeApi` instead ([next page](/financial-charts/symbols-intervals-periods/)). To start over, remount with a new `key`.
 - **The other props.** `paneControls` applies to the live chart, and `paneInfo` renders your content into each pane's control bar. `paneLoadingContent`, read once like `config`, replaces the loading skeleton. See [Layout](/financial-charts/layout/#pane-controls).
 
-<CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChartReact/screenshot.png").default} title="Create a Chart in React" />
+The React chart below is live, with Coinbase data. **Edit on CodePen** opens the React sample in CodePen.
+
+<LiveDocSnippet maxWidth={"100%"} height={680} includeSciTrader reactComponent="TradingChart" name="../_examples/gettingStarted_CreateChartReact/react" />
 
 <CodeSnippetBlock labels={["React"]}>
     ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChartReact/react.tsx

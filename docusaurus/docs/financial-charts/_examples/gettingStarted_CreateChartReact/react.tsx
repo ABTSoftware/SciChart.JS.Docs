@@ -1,12 +1,14 @@
 import "scichart-scitrader/scitrader.css";
 import * as React from "react";
 import {
-    BinanceExchange,
+    ADXStudy,
     CandleInterval,
+    CoinbaseExchange,
     defaultExchangeProvider,
     idbPriceStore,
     ISciFinanceChartPanelApi,
     ISciFinanceChartPanelConfig,
+    IStudy,
     MACDStudy,
     OHLCStudy,
     RSIStudy,
@@ -15,18 +17,20 @@ import {
 import { SciFinanceChartView } from "scichart-scitrader-react";
 
 // Register a data source, once, at app startup
-defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
+defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 
 export function TradingChart() {
     // The same ISciFinanceChartPanelApi that SciFinanceChartPanel.create returns
     const chartRef = React.useRef<ISciFinanceChartPanelApi>(null);
+    // The studies on the chart, kept in state so the buttons re-render when they change
+    const [studies, setStudies] = React.useState<readonly IStudy[]>([]);
     const [ready, setReady] = React.useState(false);
 
     // Create the config once per mounted chart: studies are live objects bound to one chart
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
         () => ({
-            exchangeName: BinanceExchange.name, // name="Binance" matches the built-in BinanceExchange
-            symbol: "ETHUSDT",
+            exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
+            symbol: "ETH-USD", // Coinbase's symbol format
             interval: CandleInterval.ONE_DAY,
             period: "1Y",
             studies: [new OHLCStudy(), new VolumeStudy(), new RSIStudy()],
@@ -34,22 +38,42 @@ export function TradingChart() {
         []
     );
 
-    // financeApi throws until the chart has initialised, so only use it after onInit
-    const addMacd = () => {
-        if (chartRef.current?.isInitialized) {
-            chartRef.current.financeApi.attachStudy(new MACDStudy());
+    // financeApi throws until the chart has initialised, so only use it from onInit
+    const onInit = (api: ISciFinanceChartPanelApi) => {
+        const chart = api.financeApi;
+        setReady(true);
+        setStudies(chart.studies);
+        // Also fires when the user closes a study's pane from the chart
+        chart.studiesChanged.subscribe(() => setStudies([...chart.studies]));
+    };
+
+    // Detach the study of this type if the chart has one, otherwise attach a new one
+    const toggleStudy = (StudyType: new () => IStudy) => {
+        const chart = chartRef.current;
+        if (!chart?.isInitialized) return;
+        const existing = chart.financeApi.studies.find((study) => study instanceof StudyType);
+        if (existing) {
+            chart.financeApi.detachStudy(existing);
+        } else {
+            chart.financeApi.attachStudy(new StudyType());
         }
     };
+
+    const hasMacd = studies.some((study) => study instanceof MACDStudy);
+    const hasAdx = studies.some((study) => study instanceof ADXStudy);
 
     return (
         <div style={{ display: "flex", flexDirection: "column", height: 600 }}>
             <div>
-                <button disabled={!ready} onClick={addMacd}>
-                    Add MACD
+                <button disabled={!ready} onClick={() => toggleStudy(MACDStudy)}>
+                    {hasMacd ? "Remove MACD" : "Add MACD"}
+                </button>
+                <button disabled={!ready} onClick={() => toggleStudy(ADXStudy)}>
+                    {hasAdx ? "Remove ADX" : "Add ADX"}
                 </button>
             </div>
             <div style={{ flex: 1 }}>
-                <SciFinanceChartView ref={chartRef} config={config} onInit={() => setReady(true)} />
+                <SciFinanceChartView ref={chartRef} config={config} onInit={onInit} />
             </div>
         </div>
     );
