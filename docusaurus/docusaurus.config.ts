@@ -99,6 +99,7 @@ const config: Config = {
                     label: "3D Docs",
                     position: "left"
                 },
+                { to: "/financial-charts/overview", label: "Financial Docs", position: "left" },
                 {
                     href: "https://www.scichart.com/documentation/js/current/typedoc/index.html",
                     label: "API Docs",

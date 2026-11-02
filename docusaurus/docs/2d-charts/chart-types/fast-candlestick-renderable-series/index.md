@@ -10,6 +10,10 @@ Candlestick Series or JavaScript Stock Charts can be created using the [FastCan
 The [JavaScript Candlestick Chart Example](https://www.scichart.com/demo/react/candlestick-chart) can be found in the [SciChart.Js Examples Suite > Candlestick Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/CandlestickChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/candlestick-chart).
 :::
 
+:::tip
+Building a complete trading app? [SciTrader.js](/financial-charts/overview/), the **Financial Charts API**, is built on SciChart.js. It gives you a ready-made trading chart around candlestick and OHLC series: live market data feeds, 30+ technical indicators, multiple panes, drawing tools and themes, in JavaScript, TypeScript and React. See [Getting started](/financial-charts/getting-started/).
+:::
+
 <ChartFromSciChartDemo
     src="https://www.scichart.com/demo/iframe/candlestick-chart"
     title="Candlestick Series Chart"

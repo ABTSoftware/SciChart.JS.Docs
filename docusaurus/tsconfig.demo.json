@@ -25,5 +25,5 @@
         "lib": ["es2021", "dom"]
     },
     "include": ["docs/**/*.ts"],
-    "exclude": ["node_modules", "docs/scichart-extensions/scichart-scitrader/**"]
+    "exclude": ["node_modules", "docs/financial-charts/**"]
 }
