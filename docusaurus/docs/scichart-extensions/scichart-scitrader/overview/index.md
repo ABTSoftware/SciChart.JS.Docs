@@ -55,7 +55,7 @@ image: /img/Default-Social-Image.jpg
                 {
                     "@type": "Question",
                     "name": "Which data sources can SciTrader.js trading charts use?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "SciTrader.js ships live connectors for Binance and Coinbase, a CSV connector for your own files, the SciTrader DataServer for order-book data, and an interface for plugging in any other market data feed." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "SciTrader.js ships live connectors for Binance and Coinbase, a CSV connector for your own files, and an interface for plugging in any other market data feed." }
                 }
             ]
         })}
@@ -70,7 +70,7 @@ SciTrader is built on [SciChart.js](/intro/), so every chart is drawn by SciChar
 
 <CenteredImageWrapper src={require("../_examples/gettingStarted_CreateChart/screenshot.png").default} title="SciTrader.js candlestick trading chart with volume, indicators and drawing tools" />
 
-```bash
+```js
 # JavaScript / TypeScript
 npm install scichart-scitrader scichart scichart-financial-tools rxjs
 
@@ -96,7 +96,6 @@ Every code sample in this section is taken from a running SciTrader demo, and is
 - **Real-time trading charts from any data source.**
     - Built-in live connectors for Binance and Coinbase.
     - A CSV connector for your own files.
-    - The SciTrader DataServer, which adds order-book data.
     - An interface for plugging in any other market data feed.
 
     See [Data sources](/scichart-extensions/scichart-scitrader/data-sources/).
@@ -126,7 +125,7 @@ import {
 defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
 
 // Create a candlestick chart with volume in a <div id="chart">
-const panel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
+const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
     exchangeName: "Binance",
     symbol: "BTCUSDT",
     interval: CandleInterval.FOUR_HOURS,
@@ -178,14 +177,15 @@ A chart is a **`SciFinanceChart`** hosted by a **layout**, `SciChartPaneSplitter
 
 1. [Installation](/scichart-extensions/scichart-scitrader/installation/): the packages to install, the stylesheet, and serving SciChart's WebAssembly with webpack, Vite, esbuild, Rollup or Parcel.
 2. [Getting started](/scichart-extensions/scichart-scitrader/getting-started/): your first chart, in plain TypeScript and in React.
-3. [Symbols, intervals and periods](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/): changing what the chart shows.
-4. [Studies and indicators](/scichart-extensions/scichart-scitrader/studies-and-indicators/): adding, configuring and removing indicators; candle types.
-5. [Data sources](/scichart-extensions/scichart-scitrader/data-sources/): exchanges, CSV data, live connectors, custom sources.
-6. [Drawing tools](/scichart-extensions/scichart-scitrader/drawing-tools/): the drawing controller, toolbars for plain TypeScript and React, keyboard and touch.
-7. [Saving and restoring](/scichart-extensions/scichart-scitrader/save-and-restore/): chart state as JSON.
-8. [Layout: panes, controls and PaneGroup](/scichart-extensions/scichart-scitrader/layout/): pane control bars, touch layout, loading states, and the layout layer under the chart.
-9. [UI components](/scichart-extensions/scichart-scitrader/ui-components/): toolbar controls, colour picker, candle counter, icons, watchlist.
-10. [Styling and themes](/scichart-extensions/scichart-scitrader/styling-and-themes/): one theme object for every colour; switch a live chart with `setTheme`.
+3. [Finance Chart API](/scichart-extensions/scichart-scitrader/finance-chart-api/): the `ISciFinanceChartPanelApi` that creating a chart returns, and what is in it.
+4. [Symbols, intervals and periods](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/): changing what the chart shows.
+5. [Studies and indicators](/scichart-extensions/scichart-scitrader/studies-and-indicators/): adding, configuring and removing indicators; candle types.
+6. [Data sources](/scichart-extensions/scichart-scitrader/data-sources/): exchanges, CSV data, live connectors, custom sources.
+7. [Drawing tools](/scichart-extensions/scichart-scitrader/drawing-tools/): the drawing controller, toolbars for plain TypeScript and React, keyboard and touch.
+8. [Saving and restoring](/scichart-extensions/scichart-scitrader/save-and-restore/): chart state as JSON.
+9. [Layout: panes, controls and PaneGroup](/scichart-extensions/scichart-scitrader/layout/): pane control bars, touch layout, loading states, and the layout layer under the chart.
+10. [UI components](/scichart-extensions/scichart-scitrader/ui-components/): toolbar controls, colour picker, candle counter, icons, watchlist.
+11. [Styling and themes](/scichart-extensions/scichart-scitrader/styling-and-themes/): one theme object for every colour; switch a live chart with `setTheme`.
 
 ## FAQ
 
@@ -199,7 +199,7 @@ Yes. `scichart-scitrader-react` provides React components such as `<SciFinanceCh
 
 ### Which data sources can SciTrader.js trading charts use?
 
-Live Binance and Coinbase connectors are built in, along with a CSV connector and the SciTrader DataServer for order-book data. Any other feed (stocks, FX, futures or your own backend) plugs in by implementing `IRemoteExchange`. See [A custom data source](/scichart-extensions/scichart-scitrader/data-sources/#a-custom-data-source).
+Live Binance and Coinbase connectors are built in, along with a CSV connector. Any other feed (stocks, FX, futures or your own backend) plugs in by implementing `IRemoteExchange`. See [A custom data source](/scichart-extensions/scichart-scitrader/data-sources/#a-custom-data-source).
 
 ### Which bundlers does SciTrader.js work with?
 

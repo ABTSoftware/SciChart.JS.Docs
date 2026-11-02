@@ -12,7 +12,7 @@ keywords: ["SciTrader", "SciTrader.js", "SciTrader getting started", "JavaScript
 
 Install the packages, import the stylesheet and serve SciChart's WebAssembly: [Installation](/scichart-extensions/scichart-scitrader/installation/) has the commands, and an example for each common bundler. In short:
 
-```sh
+```js
 npm install scichart-scitrader scichart scichart-financial-tools rxjs
 npm install scichart-scitrader-react react react-dom   # for React
 ```
@@ -41,7 +41,7 @@ The second argument is the candle store. `idbPriceStore` caches downloaded candl
 ```ts
 import { CandleInterval, OHLCStudy, SciFinanceChartPanel, VolumeStudy } from "scichart-scitrader";
 
-const panel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
+const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
     exchangeName: "Binance",
     symbol: "BTCUSDT",
     interval: CandleInterval.FOUR_HOURS,
@@ -57,7 +57,7 @@ The container needs a size. The chart fills it and follows it when it resizes. B
 
 The legend and crosshair follow the mouse.
 
-`create` resolves with the panel's API:
+`create` resolves with an `ISciFinanceChartPanelApi`, called `financeChartPanel` in these docs. [Finance Chart API](/scichart-extensions/scichart-scitrader/finance-chart-api/) describes it in full:
 
 | Member | Use |
 |---|---|
@@ -77,13 +77,13 @@ The legend and crosshair follow the mouse.
 
 ### Configuration
 
-`ISciFinanceChartPanelConfig`:
+`ISciFinanceChartPanelConfig` (every option, with its type and examples, is in [Chart configuration](/scichart-extensions/scichart-scitrader/finance-chart-api/chart-config/)):
 
 | Option | Default | Meaning |
 |---|---|---|
 | `exchangeName`, `symbol`, `interval` | required | The data to chart. |
 | `studies` | required | What to draw, in order. See [Studies](/scichart-extensions/scichart-scitrader/studies-and-indicators/). |
-| `period` | none | How much time to show at first, e.g. `"1M"` or `"1Y"`. See [Periods](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/). |
+| `period` | none | How much time to show at first, e.g. `"1M"` or `"1Y"`. See [Periods](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/periods/). |
 | `lockPeriodWidth` | `true` | Whether `period` also caps how far the user can zoom out. |
 | `liveTipMode` | `"follow"` | Whether the view scrolls with new candles (`"follow"`) or stays put (`"anchored"`). |
 | `useSubCharts` | `true` | Draw all panes on one surface (`true`), or give each pane its own (`false`). See [Layout](/scichart-extensions/scichart-scitrader/layout/). |
@@ -99,7 +99,14 @@ The legend and crosshair follow the mouse.
 
 ## Create a chart in React
 
-`<SciFinanceChartView>` takes the same config. It hands back the same API through `ref`, and through `onInit` when the chart is ready:
+> **SciTrader ships a React wrapper, `scichart-scitrader-react`.** It provides `<SciFinanceChartView>` and React versions of the toolbar controls, study settings, drawing toolbar and market-depth view, each wrapping the plain TypeScript SDK. Install it alongside the core packages:
+>
+> ```js
+> npm install scichart-scitrader scichart scichart-financial-tools rxjs
+> npm install scichart-scitrader-react react react-dom
+> ```
+
+`<SciFinanceChartView>` takes the same config as `SciFinanceChartPanel.create`. It hands back the same API through `ref`, and through `onInit` when the chart is ready:
 
 ```tsx
 import { ISciFinanceChartPanelApi, ISciFinanceChartPanelConfig } from "scichart-scitrader";

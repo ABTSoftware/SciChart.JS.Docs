@@ -23,7 +23,6 @@ An exchange only has to answer simple requests.
 | Binance              | `BinanceExchange`                                        | yes               | no                     |
 | Coinbase             | `CoinbaseExchange`                                       | yes               | no                     |
 | CSV files            | `CSVExchange`                                            | no                | no                     |
-| SciTrader DataServer | `DataServerExchange` (via `registerDataServerExchanges`) | yes               | yes                    |
 | Your own             | implement `IRemoteExchange`                              | if you provide it | via `IOrderBookSource` |
 
 ## Registering an exchange
@@ -310,26 +309,3 @@ In React, `MarketDepthView` from `scichart-scitrader-react` mounts it, with the 
     -   **Placement:** beside the panel on its left when there is room; otherwise, as on a phone, inside the panel on the half away from the finger, and kept on screen.
     -   The ladder sets `touch-action: none` and turns off the iOS long-press text selection and callout, so the hold isn't taken by the browser.
 -   **`MarketDepthLadder`** is the headless model underneath, for a host that wants to render the rows itself: `subscribe` delivers `IDepthLadder` (bids, asks, mid, spread, grouping) on every book update.
-
-## SciTrader DataServer
-
-The SciTrader DataServer is a backend that collects exchange data into QuestDB. It serves candles, trades, and order-book snapshots and heatmap tiles. Each exchange it collects is registered under its own name (`"Binance"`, `"Coinbase"`), so charts and saved state don't change:
-
-```ts
-import { registerDataServerExchanges, setOrderBookSources } from "scichart-scitrader";
-
-const registration = await registerDataServerExchanges(defaultExchangeProvider, idbPriceStore);
-if (registration.config) {
-    // Book sources feed the order-book heatmap, book imbalance and market-depth views.
-    setOrderBookSources(registration.orderBookSources);
-} else {
-    // Disabled (?dataserver=0): fall back to the direct connectors
-    defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
-}
-```
-
-The call throws if the server can't be reached, so wrap it in `try` and fall back to the direct connectors, as the SciTrader app does.
-
--   **Server URL and API key.** These come from the build-time variables `DATA_SERVER_URL` and `DATA_SERVER_API_KEY`. Override them per page load with `?dataserverUrl=` and `?apiKey=`.
--   **Wire format.** `?qwp=0` switches the transport from the binary protocol to JSON.
--   **Studies it enables.** Order-book data turns on `OrderBookHeatmapStudy` and `OrderBookImbalanceStudy`, and the market-depth panel (`MarketDepthPanel`, or `MarketDepthView` in React).

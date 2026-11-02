@@ -32,7 +32,7 @@ const theme = createSciTraderTheme(SCITRADER_DARK_THEME, {
     },
 });
 
-const panel = await SciFinanceChartPanel.create(container, { /* … */ theme });
+const financeChartPanel = await SciFinanceChartPanel.create(container, { /* … */ theme });
 ```
 
 `createSciTraderTheme(base, overrides)` copies `base` and applies only the colours you list, so a custom theme stays complete as the SDK adds colours. React charts take the same `theme` in their `config`.
@@ -40,7 +40,7 @@ const panel = await SciFinanceChartPanel.create(container, { /* … */ theme });
 ### Switching a live chart
 
 ```ts
-panel.financeApi.setTheme(nextTheme);
+financeChartPanel.financeApi.setTheme(nextTheme);
 ```
 
 Everything is restyled in place, with no reload:
@@ -242,7 +242,7 @@ axisDefaults: {
 },
 ```
 
-To change axis options later, call `panel.financeApi.applyAxisStyle(partial)`.
+To change axis options later, call `financeChartPanel.financeApi.applyAxisStyle(partial)`.
 
 Axis labels are drawn by WebGL, so their font must be registered with SciChart (`sciChartSurface.registerFont`) before `labelStyle.fontFamily` can use it. The theme's `fontFamily` is for HTML text only.
 
@@ -263,7 +263,7 @@ The theme sets the legend and crosshair colours. Other styling goes through `Fin
 - `setLegendFontSize` for text size;
 - `legendOffsetX` / `legendOffsetY` for position.
 
-Find the modifier in `panel.financeApi.finChartModifiers`.
+Find the modifier in `financeChartPanel.financeApi.finChartModifiers`.
 
 ## Limits
 

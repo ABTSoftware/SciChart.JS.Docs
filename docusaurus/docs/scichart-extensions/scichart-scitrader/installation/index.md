@@ -17,7 +17,7 @@ Step 3 depends on your bundler, so this page has an example for each of the comm
 
 ## Install the packages
 
-```sh
+```js
 # Plain TypeScript or JavaScript
 npm install scichart-scitrader scichart scichart-financial-tools rxjs
 
@@ -25,7 +25,15 @@ npm install scichart-scitrader scichart scichart-financial-tools rxjs
 npm install scichart-scitrader-react react react-dom
 ```
 
-Why so many? `scichart-scitrader` relies on SciChart, but doesn't bring its own copy. `scichart`, `scichart-financial-tools` and `rxjs` are **peer dependencies**: your app installs them, and the SDK uses your copy. An app must have exactly one copy of SciChart, because SciChart keeps global state: the licence, the loaded WebAssembly engine, and the registry used when charts are saved and restored. Peer dependencies make sure the SDK and your own chart code share that copy. They also let you choose its version. `scichart-scitrader-react` works the same way with `react`, `react-dom` and `scichart-scitrader`.
+**Why so many?** `scichart-scitrader` relies on SciChart, but doesn't bring its own copy.
+
+`scichart`, `scichart-financial-tools` and `rxjs` are **peer dependencies**: your app installs them, and the SDK uses your copy.
+
+An app must have exactly one copy of SciChart, because SciChart keeps global state: the licence, the loaded WebAssembly engine, and the registry used when charts are saved and restored.
+
+Peer dependencies make sure the SDK and your own chart code share that copy. They also let you choose its version.
+
+`scichart-scitrader-react` works the same way with `react`, `react-dom` and `scichart-scitrader`.
 
 | Package | Version |
 |---|---|
@@ -54,14 +62,14 @@ SciChart draws with a WebAssembly engine. Your bundler bundles SciChart's JavaSc
 
 The files are in `node_modules/scichart/_wasm/`:
 
-| File | Size | Loaded |
+| File | Size (gzipped) | Loaded |
 |---|---|---|
-| `scichart.wasm` | 1.6 MB | Always, in browsers with WebAssembly SIMD (every browser since 2023) |
-| `scichart-nosimd.wasm` | 1.6 MB | Instead of `scichart.wasm`, in older browsers without SIMD |
-| `scichart-64.wasm` | 1.6 MB | Only if you opt in to 64-bit memory (`SciChartDefaults.useWasm64`) |
-| `scichart-charting3d*.wasm` | 0.5 MB each | Only for SciChart 3D charts; SciTrader doesn't use them |
+| `scichart.wasm` | 0.8 MB | In browsers with WebAssembly SIMD (every major browser since 2023) |
+| `scichart-nosimd.wasm` | 0.8 MB | Instead of `scichart.wasm`, in older browsers without SIMD |
+| `scichart-64.wasm` | 0.8 MB | Only if you opt in to 64-bit memory (`SciChartDefaults.useWasm64`) |
+| `scichart-charting3d*.wasm` | 0.25 MB each | Only for SciChart 3D charts; SciTrader doesn't use them |
 
-Copying the whole folder is simplest. To serve less, `scichart.wasm` and `scichart-nosimd.wasm` cover every browser for SciTrader charts.
+> **Serve all the files in `_wasm/`.** Copy the whole folder into your build. SciChart picks the one file it needs for each browser, based on what that browser supports, so a user only downloads one of them. Serving every file means each browser finds the right one.
 
 ### Where SciChart looks
 

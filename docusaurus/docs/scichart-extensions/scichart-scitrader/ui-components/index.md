@@ -55,7 +55,7 @@ import {
     PeriodSelector,
 } from "scichart-scitrader";
 
-const chart = panel.financeApi;
+const chart = financeChartPanel.financeApi;
 
 const intervals = IntervalSelector.create(toolbar, {
     value: CandleInterval.FIVE_MINUTES,
@@ -193,7 +193,7 @@ It is made for the info area at the start of a pane's control bar ([Layout](/sci
 />
 ```
 
-In plain TypeScript, `CandleCounter.create(panel.getPaneInfoElement(PaneId.DEFAULT.value), { chart: panel.financeApi })`. For the numbers alone, `countCandles(chart)` counts once, and `observeCandleCounts(chart, onChange)` reports them as they change and returns a function that stops it. The look is `.st-candle-counter`.
+In plain TypeScript, `CandleCounter.create(financeChartPanel.getPaneInfoElement(PaneId.DEFAULT.value), { chart: financeChartPanel.financeApi })`. For the numbers alone, `countCandles(chart)` counts once, and `observeCandleCounts(chart, onChange)` reports them as they change and returns a function that stops it. The look is `.st-candle-counter`.
 
 <CenteredImageWrapper src={require("../_examples/layoutState_Loading/screenshot.png").default} title="Loading States and Pane Info" />
 

@@ -18,7 +18,7 @@ Studies are passed in `studies` when the chart is created, or added and removed 
 ## Add indicators
 
 ```ts
-const panel = await SciFinanceChartPanel.create(container, {
+const financeChartPanel = await SciFinanceChartPanel.create(container, {
     exchangeName: "Binance",
     symbol: "BTCUSDT",
     interval: CandleInterval.ONE_DAY,
@@ -57,9 +57,9 @@ Constructor options set a study's inputs (lengths, levels) and its styles (colou
 import { EStudyType, studyProvider } from "scichart-scitrader";
 
 const rsi = studyProvider.getStudy(EStudyType.RSI); // a new RSI with default settings
-await panel.financeApi.attachStudy(rsi);
+await financeChartPanel.financeApi.attachStudy(rsi);
 
-panel.financeApi.detachStudy(rsi); // its pane goes with it
+financeChartPanel.financeApi.detachStudy(rsi); // its pane goes with it
 ```
 
 - **`studyProvider`** creates any registered study from its `EStudyType`. That is what a study picker needs, and it is also how saved charts are restored.
@@ -90,7 +90,7 @@ panel.financeApi.detachStudy(rsi); // its pane goes with it
 
 `LargeTradeStudy` (large-trade markers on the price pane) is not in the menu or `studyProvider`. It reads a trade feed you create yourself.
 
-The **order-book studies** need an order-book or trade data source. Today that means the SciTrader DataServer ([Data sources](/scichart-extensions/scichart-scitrader/data-sources/#scitrader-dataserver)).
+The **order-book studies** need an order-book data source (`IOrderBookSource`) registered for the chart's exchange. See [Order-book data](/scichart-extensions/scichart-scitrader/data-sources/#order-book-data).
 
 ## Candle types
 
@@ -100,7 +100,7 @@ The price study can draw candlesticks, OHLC bars, a line, a mountain (area), or 
 import { ECandleType } from "scichart-scitrader";
 
 new OHLCStudy({ candleType: ECandleType.HeikinAshi }); // initial style
-panel.financeApi.setCandleType(ECandleType.OhlcBars); // change it later
+financeChartPanel.financeApi.setCandleType(ECandleType.OhlcBars); // change it later
 ```
 
 Changing the candle type swaps the price series in place. Data, zoom and studies are untouched, and `candleTypeChanged` is raised. `CANDLE_TYPE_MENU_ITEMS` lists the types with labels, and `CandleTypeSelector` is a ready-made picker ([UI components](/scichart-extensions/scichart-scitrader/ui-components/#toolbar-controls)).
@@ -108,8 +108,8 @@ Changing the candle type swaps the price series in place. Data, zoom and studies
 **Renko** and **point & figure** are not candle types. They plot price movement, not time: a new brick or column appears only when price moves far enough. So they are studies, each with its own pane and a category (index) axis:
 
 ```ts
-await panel.financeApi.attachStudy(new RenkoStudy({ reversalAmount: 2 }));
-await panel.financeApi.attachStudy(new PointAndFigureStudy({ boxSize: 5, reversalAmount: 3 }));
+await financeChartPanel.financeApi.attachStudy(new RenkoStudy({ reversalAmount: 2 }));
+await financeChartPanel.financeApi.attachStudy(new PointAndFigureStudy({ boxSize: 5, reversalAmount: 3 }));
 ```
 
 Leave `brickSize` / `boxSize` unset to derive them from the price range.
@@ -155,7 +155,7 @@ import { StudyList } from "scichart-scitrader-react";
 <StudyList chart={chart.financeApi} />
 ```
 
-In plain TypeScript, `StudySettingsForm.create(container, { study })` and `StudyList.create(container, { chart: panel.financeApi })` build the same components ([UI components](/scichart-extensions/scichart-scitrader/ui-components/#how-they-work)).
+In plain TypeScript, `StudySettingsForm.create(container, { study })` and `StudyList.create(container, { chart: financeChartPanel.financeApi })` build the same components ([UI components](/scichart-extensions/scichart-scitrader/ui-components/#how-they-work)).
 
 <CenteredImageWrapper src={require("../_examples/studies_StudiesUi/screenshot.png").default} title="Studies UI (React)" />
 

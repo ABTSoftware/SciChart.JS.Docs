@@ -15,7 +15,7 @@ The layout has three layers, from highest to lowest:
 | Layer | API | Role |
 |---|---|---|
 | Layout component | `SciChartPaneSplitter` (React: inside `<SciFinanceChartView>`) | The DOM: panes, drag dividers, per-pane control bars, the strip that restores hidden panes, loading placeholders |
-| **PaneGroup** | `panel.paneGroupApi`, or `SciChartPaneApi.createPaneManager()` | Headless pane state: order, sizes, visibility, direction, maximise |
+| **PaneGroup** | `financeChartPanel.paneGroupApi`, or `SciChartPaneApi.createPaneManager()` | Headless pane state: order, sizes, visibility, direction, maximise |
 | DashboardApi | internal | SciChart surfaces: creation, axis sync, vertical and horizontal groups |
 
 ## Multi-chart and sub-chart modes
@@ -44,7 +44,7 @@ Each pane has a **control bar**, shown while the pointer is over the pane. Its b
 `paneControls` sets up the control bar and dividers:
 
 ```ts
-const panel = await SciFinanceChartPanel.create(container, {
+const financeChartPanel = await SciFinanceChartPanel.create(container, {
     exchangeName: SAMPLE_EXCHANGE,
     symbol: "BTCUSDT",
     interval: CandleInterval.ONE_DAY,
@@ -58,7 +58,7 @@ const panel = await SciFinanceChartPanel.create(container, {
 });
 
 // Later, e.g. when the page switches to its phone layout:
-panel.setPaneControls({ touch: true });
+financeChartPanel.setPaneControls({ touch: true });
 ```
 
 | Option (`IPaneControlOptions`) | Default | Meaning |
@@ -82,7 +82,7 @@ panel.setPaneControls({ touch: true });
 
 ### Your own content in the control bar
 
-The control bar starts with an info area for your content, such as the SDK's [candle counter](/scichart-extensions/scichart-scitrader/ui-components/#candle-counter). It is hidden while empty. In plain TypeScript, `panel.getPaneInfoElement(paneId)` returns the element to fill; in React, `paneInfo` renders into it:
+The control bar starts with an info area for your content, such as the SDK's [candle counter](/scichart-extensions/scichart-scitrader/ui-components/#candle-counter). It is hidden while empty. In plain TypeScript, `financeChartPanel.getPaneInfoElement(paneId)` returns the element to fill; in React, `paneInfo` renders into it:
 
 ```tsx
 <SciFinanceChartView
@@ -177,7 +177,7 @@ This is what `SciFinanceChartPanel.create` does. The splitter provides the divid
 PaneGroup is the single source of truth for layout state. The splitter reads `snapshot()`, renders it, and changes the layout only through PaneGroup's methods. PaneGroup then re-applies the chart rules itself, including axis labels on the bottom pane only, group membership, axis sync and chart visibility.
 
 ```ts
-const group = panel.paneGroupApi;
+const group = financeChartPanel.paneGroupApi;
 
 group.setDirection("row");
 group.reorderPane(paneId, 0);

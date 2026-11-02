@@ -35,7 +35,7 @@ Any toolbar, menu or keyboard shortcut can drive it.
 import { DrawingToolsController } from "scichart-scitrader";
 import { ETradingAnnotationType } from "scichart-financial-tools";
 
-const drawing = DrawingToolsController.attach(panel.financeApi);
+const drawing = DrawingToolsController.attach(financeChartPanel.financeApi);
 
 drawing.selectTool(ETradingAnnotationType.FibonacciRetracementAnnotation);
 drawing.activeToolChanged.subscribe((tool) => console.log("active tool:", tool)); // null once placed

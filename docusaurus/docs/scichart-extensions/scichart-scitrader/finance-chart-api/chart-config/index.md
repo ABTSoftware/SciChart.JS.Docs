@@ -1,0 +1,327 @@
+---
+sidebar_position: 2
+sidebar_label: Chart Config object
+title: "Chart Configuration: ISciFinanceChartPanelConfig | SciTrader.js Financial Charts"
+description: "Every option of ISciFinanceChartPanelConfig, the config passed to SciFinanceChartPanel.create and SciFinanceChartView in SciTrader.js: data, studies, periods, layout, pane controls, loading, theme and axes."
+keywords: ["SciTrader", "SciTrader.js", "ISciFinanceChartPanelConfig", "SciFinanceChartPanel config", "SciFinanceChartView config", "trading chart options", "candlestick chart configuration"]
+---
+
+# Chart Configuration
+
+**`ISciFinanceChartPanelConfig`** describes the chart you want: what data to show, which studies to draw, and how the panes are laid out. You pass it once, when the chart is created:
+
+```ts
+// Plain TypeScript
+SciFinanceChartPanel.create(container: HTMLElement, config: ISciFinanceChartPanelConfig)
+    : Promise<ISciFinanceChartPanelApi<HTMLElement>>
+```
+
+```tsx
+// React
+<SciFinanceChartView config={config} />
+```
+
+Only four options are required: `exchangeName`, `symbol`, `interval` and `studies`. Everything else has a default.
+
+```ts
+import { CandleInterval, ISciFinanceChartPanelConfig, OHLCStudy, VolumeStudy } from "scichart-scitrader";
+
+const config: ISciFinanceChartPanelConfig = {
+    exchangeName: "Binance",
+    symbol: "BTCUSDT",
+    interval: CandleInterval.FOUR_HOURS,
+    studies: [new OHLCStudy(), new VolumeStudy()],
+};
+```
+
+**The config is read once.** Changing it afterwards does nothing, including passing a new `config` prop to `<SciFinanceChartView>`. To change a live chart, use the [Finance Chart API](/scichart-extensions/scichart-scitrader/finance-chart-api/). The section for each option below names the call that changes it later.
+
+## The interface
+
+```ts
+interface ISciFinanceChartPanelConfig {
+    // Data
+    exchangeName: string;
+    symbol: string;
+    interval: CandleInterval;
+    services?: ISciFinanceChartServices;
+
+    // Studies
+    studies: IStudy[];
+    maxPanes?: number;                               // default 6
+
+    // Period and zoom
+    period?: TPeriod;
+    periodBufferRatio?: number;                      // default 0.2
+    lockPeriodWidth?: boolean;                       // default true
+    liveTipMode?: "follow" | "anchored";             // default "follow"
+    forwardHeadroomSec?: number | null;              // default null
+
+    // Layout
+    useSubCharts?: boolean;                          // default true
+    direction?: "column" | "row";                    // default "column"
+    paneSizing?: Record<string, IPaneSizeConfig>;
+    paneControls?: IPaneControlOptions;
+    loading?: IPaneLoadingOptions;
+
+    // Look
+    theme?: ISciTraderTheme;                         // default SCITRADER_DARK_THEME
+    axisDefaults?: IChartAxisDefaults;
+    surfaceConfig?: TSurfaceConfigurationFunction;
+}
+```
+
+## Data
+
+### exchangeName, symbol, interval
+
+```ts
+exchangeName: string;
+symbol: string;
+interval: CandleInterval;
+```
+
+What to chart. `exchangeName` is the name an exchange was registered under, e.g. `"Binance"` for `BinanceExchange`. Register it before you create the chart, or the chart has nowhere to load candles from. See [Register a data source](/scichart-extensions/scichart-scitrader/getting-started/#register-a-data-source).
+
+`symbol` is in the exchange's own format (`"BTCUSDT"` on Binance, `"BTC-USD"` on Coinbase). `interval` is the candle size, e.g. `CandleInterval.FOUR_HOURS`.
+
+**Later:** [`financeApi.setSymbol`](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-symbol/) and [`financeApi.changeInterval`](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-interval/).
+
+### services
+
+```ts
+services?: ISciFinanceChartServices;
+
+interface ISciFinanceChartServices {
+    dataManager?: IDataManager;
+    dataFeedManager?: IDataFeedManager;
+    progress?: PaneProgressEmitter;
+}
+```
+
+The services the chart loads data through. Leave this out and the chart creates its own, using the globally registered exchanges. Most apps never set it.
+
+Set it for two reasons:
+
+- **To keep an exchange private to one chart**, rather than registering it globally. See [Keeping an exchange private to a chart](/scichart-extensions/scichart-scitrader/data-sources/#keeping-an-exchange-private-to-a-chart).
+- **To follow loading progress from the start.** Each pane reports `"surface"`, then `"configured"`, then `"data"` as it loads. Those events fire before `create` resolves, so subscribe to your own `PaneProgressEmitter` and pass it in as `progress`. Otherwise the chart creates one, which you can reach afterwards as `financeApi.progress`. See [Loading states](/scichart-extensions/scichart-scitrader/layout/#loading-states).
+
+## Studies
+
+### studies
+
+```ts
+studies: IStudy[];
+```
+
+What to draw, in order. Include `OHLCStudy` for the price candles. Overlays such as moving averages and volume share the price pane; oscillators such as RSI and MACD each get a pane of their own.
+
+Each study object belongs to one chart. Create new ones for every chart, and in React create them inside `useMemo`, so a re-render doesn't hand the chart new objects.
+
+**Later:** `financeApi.attachStudy(study)` and `financeApi.detachStudy(study)`. See [Studies and indicators](/scichart-extensions/scichart-scitrader/studies-and-indicators/).
+
+### maxPanes
+
+```ts
+maxPanes?: number; // default 6
+```
+
+The most panes the chart may have, counting the price pane. Once it is reached, studies that need a pane of their own are refused, and `financeApi.paneLimitReached` is raised so you can tell the user. Overlays such as EMA, VWAP and Volume share an existing pane and are never refused.
+
+**Later:** set `financeApi.maxPanes`.
+
+## Period and zoom
+
+### period
+
+```ts
+period?: TPeriod;
+```
+
+How much time to show at first, e.g. `"3M"` for three months. Once the first candles are loaded, the chart zooms to the period and fetches any older candles it needs. Leave it out to show the data feed's natural range.
+
+**Later:** [`financeApi.setPeriod`](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/periods/).
+
+### periodBufferRatio
+
+```ts
+periodBufferRatio?: number; // default 0.2
+```
+
+Extra candles to fetch beyond the period, as a fraction of it: `0.2` fetches 20% more. They sit just off the left edge, so a small pan back doesn't need another fetch. Negative values count as `0`.
+
+### lockPeriodWidth
+
+```ts
+lockPeriodWidth?: boolean; // default true
+```
+
+Whether the period is also the widest the user can zoom out to. Set `false` to treat the period as the starting view only, with zoom unrestricted afterwards.
+
+### liveTipMode
+
+```ts
+liveTipMode?: "follow" | "anchored"; // default "follow"
+```
+
+What the view does as new candles arrive, while a period is set:
+
+- `"follow"`: the view slides right with each new candle, so the latest one stays in view.
+- `"anchored"`: the view stays where it is, and new candles appear off-screen to the right.
+
+**Later:** set `financeApi.liveTipMode`, or use the `LiveTipToggle` control ([UI components](/scichart-extensions/scichart-scitrader/ui-components/#toolbar-controls)).
+
+### forwardHeadroomSec
+
+```ts
+forwardHeadroomSec?: number | null; // default null
+```
+
+How far, in seconds, the user can pan or zoom past the latest candle. `null` sets no limit.
+
+## Layout
+
+### useSubCharts
+
+```ts
+useSubCharts?: boolean; // default true
+```
+
+Whether all panes are drawn on one shared SciChart surface (`true`, sub-chart mode) or each pane has its own surface (`false`). One surface uses less memory and fewer WebGL contexts. See [Multi-chart and sub-chart modes](/scichart-extensions/scichart-scitrader/layout/#multi-chart-and-sub-chart-modes).
+
+### direction
+
+```ts
+direction?: "column" | "row"; // default "column"
+```
+
+Stack panes vertically (`"column"`), or side by side (`"row"`).
+
+**Later:** `financeChartPanel.paneGroupApi.setDirection(direction)`.
+
+### paneSizing
+
+```ts
+paneSizing?: Record<string, IPaneSizeConfig>;
+
+interface IPaneSizeConfig {
+    grow?: number; // share of the free space, relative to other panes. Default 1
+    size?: number; // fixed size in pixels; the pane doesn't grow
+}
+```
+
+Size hints for each pane, keyed by pane id. A hint here wins over the pane's study's own default.
+
+```ts
+import { PaneId } from "scichart-scitrader";
+
+paneSizing: {
+    [PaneId.DEFAULT.value]: { grow: 4 }, // a bigger price pane
+    RSIPane: { size: 100 },              // a fixed-height RSI pane
+}
+```
+
+### paneControls
+
+```ts
+paneControls?: IPaneControlOptions;
+
+interface IPaneControlOptions {
+    visible?: boolean;                // show each pane's control bar. Default true
+    touch?: boolean;                  // phone and tablet layout. Default false
+    buttons?: IPaneControlBarButtons; // buttons to leave out, e.g. { close: false }
+}
+```
+
+Each pane's control bar, and the dividers between panes.
+
+- **`touch`**: the control bar moves into a drawer at each pane's right edge, opened by a tap or swipe, rather than appearing on hover. The dividers get a wider hit area. You decide when to turn it on, e.g. from the viewport size.
+- **`buttons`**: `move`, `maximize`, `hide`, `close`, `lockSize` and `yAxisAutoRange` are shown by default. `axisSync`, `verticalGroup` and `horizontalGroup` are hidden on a finance chart, because it keeps every pane's X axis in step already; set them to `true` to show them.
+
+**Later:** [`financeChartPanel.setPaneControls(options)`](/scichart-extensions/scichart-scitrader/finance-chart-api/#setpanecontrols). See [Pane controls](/scichart-extensions/scichart-scitrader/layout/#pane-controls).
+
+### loading
+
+```ts
+loading?: IPaneLoadingOptions;
+
+interface IPaneLoadingOptions {
+    placeholder?: boolean | ((paneId: string) => HTMLElement); // default true
+    onPlaceholderRemoved?: (paneId: string, element: HTMLElement) => void;
+    overlay?: boolean;                                         // default true
+}
+```
+
+What each pane shows while it loads.
+
+- **`placeholder`**: shown in each pane until its chart is ready. `true` is a shimmering skeleton, `false` shows nothing, and a function returns your own element for a pane. `onPlaceholderRemoved` is called when it is taken out, so you can clean up anything inside it.
+- **`overlay`**: while a symbol or interval change loads, covers each pane with a translucent shimmer that also blocks input.
+
+See [Loading states](/scichart-extensions/scichart-scitrader/layout/#loading-states).
+
+## Look
+
+### theme
+
+```ts
+theme?: ISciTraderTheme; // default SCITRADER_DARK_THEME
+```
+
+Every colour the chart draws with: surfaces, axes, legend, crosshair, and each study's defaults. `SCITRADER_LIGHT_THEME` is the built-in alternative.
+
+**Later:** `financeApi.setTheme(theme)`. See [Styling and themes](/scichart-extensions/scichart-scitrader/styling-and-themes/).
+
+### axisDefaults
+
+```ts
+axisDefaults?: IChartAxisDefaults; // Partial<IAxisBase2dOptions>
+```
+
+SciChart axis options applied to every X and Y axis the chart creates, on top of the theme's. A study's own axis options still win over these.
+
+```ts
+axisDefaults: { labelStyle: { fontSize: 11 }, drawMinorGridLines: false }
+```
+
+**Later:** `financeApi.applyAxisStyle(partial)`. See [Axes](/scichart-extensions/scichart-scitrader/styling-and-themes/#axes).
+
+### surfaceConfig
+
+```ts
+surfaceConfig?: (chart: IChart) => Promise<IChart>;
+```
+
+A function run on each pane's `SciChartSurface` as it is created, for anything the other options don't cover. `chart.sciChartSurface` is the surface. Return the same `chart` when you're done.
+
+```ts
+surfaceConfig: async (chart) => {
+    chart.sciChartSurface.background = "Transparent";
+    return chart;
+}
+```
+
+## React
+
+`<SciFinanceChartView>` takes the same config as its `config` prop. Because it is only read once, create it inside `useMemo`, and to start the chart over, remount the view with a new `key`:
+
+```tsx
+const config = React.useMemo<ISciFinanceChartPanelConfig>(
+    () => ({
+        exchangeName: "Binance",
+        symbol: "ETHUSDT",
+        interval: CandleInterval.ONE_DAY,
+        period: "1Y",
+        studies: [new OHLCStudy(), new VolumeStudy()],
+    }),
+    []
+);
+
+return <SciFinanceChartView key={chartKey} config={config} />;
+```
+
+#### See also
+
+- [Finance Chart API](/scichart-extensions/scichart-scitrader/finance-chart-api/): the object `create` returns
+- [Getting started](/scichart-extensions/scichart-scitrader/getting-started/)
+- [Layout](/scichart-extensions/scichart-scitrader/layout/)
+- [Styling and themes](/scichart-extensions/scichart-scitrader/styling-and-themes/)

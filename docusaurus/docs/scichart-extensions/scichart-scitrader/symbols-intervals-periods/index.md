@@ -1,134 +1,80 @@
 ---
 sidebar_position: 4
-sidebar_label: Symbols, Intervals and Periods
+sidebar_label: Overview
 title: "Symbols, Intervals and Periods | SciTrader.js Financial Charts"
-description: "Change the symbol, candle interval and visible period of a SciTrader.js financial chart at runtime."
-keywords: ["SciTrader", "SciTrader.js", "trading chart timeframe", "candle interval", "SciTrader symbol"]
+description: "Change the symbol, candle interval and visible period of a SciTrader.js financial chart at runtime with SciFinanceChart.setSymbol, changeInterval and setPeriod."
+keywords: ["SciTrader", "SciTrader.js", "trading chart timeframe", "candle interval", "SciTrader symbol", "SciFinanceChart"]
 ---
 
-# Symbols, intervals and periods
+# Symbols, Intervals and Periods
 
-A chart keeps its studies, panes and drawings when its data changes. Three calls on `financeApi` change the data.
+A trading chart shows one **symbol** (e.g. `BTCUSDT`), at one candle **interval** (e.g. 4 hours), over a **period** of time (e.g. the last month). All three can change while the chart is running. The chart keeps its studies, panes and drawings when they do: every study recalculates on the new data.
 
-## Change symbol
+## Where these methods live
 
-```ts
-await panel.financeApi.setSymbol("ETHUSDT");
-```
+Every method on these pages is on **`SciFinanceChart`**, the chart itself. You reach it through the **`financeApi`** property of the API object that creating a chart returns:
 
-`setSymbol` keeps the current interval and period, and every study recalculates on the new data. While it loads, the chart raises `dataLoadStarted`; when the new data is drawn, `dataRenderComplete` with `type: "symbol-change"`.
-
-A second argument switches exchange too:
-
-```ts
-await panel.financeApi.setSymbol("ETH-USD", "Coinbase");
-```
-
-Each exchange names symbols in its own way: Binance uses `BTCUSDT`, Coinbase uses `BTC-USD`. `mapSymbol(symbol, from, to)` converts between them. To show a different period once the new symbol loads, pass it as an option: `setSymbol("ETHUSDT", undefined, { period: "1M" })`.
-
-Under the hood the chart draws its **default data feed**, and `setSymbol` replaces it. To change symbol and interval in one step, create the new default feed yourself:
+| You created the chart with | You get | The chart is |
+| --- | --- | --- |
+| `SciFinanceChartPanel.create(element, config)` (plain TypeScript) | `Promise<ISciFinanceChartPanelApi>` | `financeChartPanel.financeApi` |
+| `<SciFinanceChartView config={…} />` (React) | `ISciFinanceChartPanelApi`, through `ref` and `onInit` | `chartRef.current.financeApi` |
 
 ```ts
-import { EDataFeedType } from "scichart-scitrader";
+import { ISciFinanceChartPanelApi, SciFinanceChart, SciFinanceChartPanel } from "scichart-scitrader";
 
-await panel.financeApi.createDataFeed(
-    EDataFeedType.OHLCVRealtime,
-    "Binance",    // exchange
-    "ETHUSDT",    // symbol
-    interval,     // interval to load at
-    true,         // make this the default feed
-    period        // optional: the period to show once loaded
-);
+// financeChartPanel: ISciFinanceChartPanelApi — the chart and its layout
+const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), config);
+
+// chart: SciFinanceChart — studies, data feeds, symbol, interval, period, events
+const chart: SciFinanceChart = financeChartPanel.financeApi;
+
+await chart.setSymbol("ETHUSDT");
 ```
-
-## Change interval
-
-```ts
-await panel.financeApi.changeInterval(CandleInterval.ONE_DAY);        // the interval's default period
-await panel.financeApi.changeInterval(CandleInterval.ONE_DAY, "1M");  // show the last month
-await panel.financeApi.changeInterval(CandleInterval.ONE_DAY, null);  // no period
-```
-
-`changeInterval` reloads the current symbol at the new candle size and lands on a [period](#periods) in the same step, with one fetch sized for it. The second argument picks the period:
-
-- **Omitted**: the new interval's default period (`defaultPeriodForInterval`: a week at 1h, a month at 4h, a year at 1d, and so on), even if no period was set before.
-- **A period**: that period, at the new interval.
-- **`null`**: no period. The view starts on the interval's default span, but nothing holds it there. Pass `null` to keep a chart without a period.
-
-Afterwards `currentPeriod` reports what is on screen, so there is no need to call `setPeriod` as well.
-
-To keep roughly the span the user had instead, pass `carryPeriodToInterval(period, interval)`. It keeps the period, but cuts it to the longest that suits the interval (a week of 1m candles becomes a day) or steps it up when it would show fewer than 20 candles (a day of 1w candles becomes six months). It returns `null` for `null`:
-
-```ts
-import { carryPeriodToInterval } from "scichart-scitrader";
-
-const period = carryPeriodToInterval(chart.currentPeriod, CandleInterval.ONE_DAY);
-await chart.changeInterval(CandleInterval.ONE_DAY, period);
-```
-
-Which intervals are available depends on the exchange. `defaultExchangeProvider.getExchange(name).getSupportedIntervals()` lists them.
-
-## Periods
-
-A **period** is how much time the chart shows: the last hour, day, month, year, and so on.
-
-```ts
-await panel.financeApi.setPeriod("3M"); // last three months
-await panel.financeApi.setPeriod(null); // no period: leave the view where it is
-```
-
-| Value | Span |
-|---|---|
-| `"1m"` | 1 minute |
-| `"1H"` | 1 hour |
-| `"1D"` | 1 day |
-| `"5D"` | 5 days |
-| `"1W"` | 1 week |
-| `"1M"` | 1 month |
-| `"3M"` | 3 months |
-| `"6M"` | 6 months |
-| `"YTD"` | Year to date |
-| `"1Y"` | 1 year |
-| `"10Y"` | 10 years |
-| `"ALL"` | All data |
-
-These are also available by name as `EPeriod`.
-
-The chart fetches enough candles to fill the period, plus two extras: a buffer (`periodBufferRatio`, default 20%) and whatever warm-up the attached indicators need.
-
-A period stays set while the user pans. `currentPeriod` keeps reporting it until `setPeriod` is called again. With `lockPeriodWidth` (the default), the period is also the widest the user can zoom out to. Set `lockPeriodWidth: false` to treat the period as the starting view only.
-
-Not every period suits every interval: a year of one-minute candles is too many to fetch. `validPeriodsForInterval(interval)` lists the sensible ones.
-
-## Controls
-
-The SDK has ready-made pickers for the interval and period, and for the candle type and live-tip mode, in plain TypeScript and React. In React:
 
 ```tsx
-import { IntervalSelector, PeriodSelector } from "scichart-scitrader-react";
-
-<IntervalSelector
-    value={interval}
-    intervals={INTERVALS}
-    onChange={(next) => {
-        // Keep about the same span, adjusted to suit the new interval.
-        const carried = carryPeriodToInterval(period, next);
-        setInterval(next);
-        setPeriod(carried);
-        api && changeInterval(api, next, carried);
-    }}
-/>
-<PeriodSelector
-    value={period}
-    currentInterval={interval}
-    onChange={(next) => {
-        setPeriod(next);
-        api && changePeriod(api, next);
-    }}
+// React: the same API, once the chart has initialised
+<SciFinanceChartView
+    config={config}
+    onInit={(financeChartPanel: ISciFinanceChartPanelApi) => financeChartPanel.financeApi.setSymbol("ETHUSDT")}
 />
 ```
 
-`PeriodSelector` greys out periods that don't suit `currentInterval`. [UI components](/scichart-extensions/scichart-scitrader/ui-components/#toolbar-controls) covers all four controls, including their plain TypeScript versions.
+`ISciFinanceChartPanelApi` also has `paneGroupApi` (the [layout](/scichart-extensions/scichart-scitrader/layout/)), `toJSON()` and `cleanup()`. `financeApi` throws until the chart has initialised; in React, wait for `onInit` or check `isInitialized`. See [Finance Chart API](/scichart-extensions/scichart-scitrader/finance-chart-api/).
+
+## API at a glance
+
+| Member of `SciFinanceChart` | Does |
+| --- | --- |
+| `setSymbol(symbol: string, exchangeName?: string, options?: { period?: TPeriod \| null }): Promise<IDataFeed \| undefined>` | [Changes the symbol](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-symbol/), and optionally the exchange |
+| `createDataFeed(feedType: EDataFeedType, exchangeName: string, symbol: string, interval: CandleInterval, isDefault: boolean, period?: TPeriod \| null): Promise<IDataFeed \| undefined>` | [Creates a data feed](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-symbol/#changing-symbol-and-interval-together); with `isDefault: true`, replaces what the chart shows |
+| `changeInterval(interval: CandleInterval, period?: TPeriod \| null): Promise<void>` | [Changes the candle interval](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-interval/) |
+| `setPeriod(period: TPeriod \| null): Promise<void>` | [Changes the visible period](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/periods/) |
+| `currentPeriod: TPeriod \| null` | The period on screen, or `null` for none |
+| `dataFeeds: Map<string, IDataFeed>` | The chart's data feeds. The default one (`isDefault: true`) has the current `exchangeName`, `symbol` and `interval` |
+| `dataLoadStarted: EventHandler<void>` | Raised when a symbol or interval change starts loading |
+| `dataRenderComplete: EventHandler<IDataRenderCompleteArgs>` | Raised when the new data is drawn. `args.type` is `"init"`, `"symbol-change"`, `"interval-change"`, `"historical"` or `"stale-recovery"` |
+
+Events are SciChart `EventHandler`s:
+
+```ts
+chart.dataLoadStarted.subscribe(() => showSpinner());
+chart.dataRenderComplete.subscribe((args) => {
+    if (args.type === "symbol-change" || args.type === "interval-change") {
+        hideSpinner();
+    }
+});
+```
+
+## Pages in this section
+
+1. [Changing the symbol](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-symbol/): `setSymbol`, where the data comes from, and `createDataFeed`.
+2. [Changing the interval](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/changing-the-interval/): `changeInterval` and keeping the user's span with `carryPeriodToInterval`.
+3. [Periods](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/periods/): `setPeriod`, the period values, and how they fetch data.
+4. [Toolbar controls](/scichart-extensions/scichart-scitrader/symbols-intervals-periods/toolbar-controls/): ready-made interval and period pickers, in plain TypeScript and React.
+
+## Example
+
+The chart below starts on `BTCUSDT` at 4 hours over one month. Its toolbar changes symbol, interval and period with the three calls above.
 
 <CenteredImageWrapper src={require("../_examples/gettingStarted_SymbolInterval/screenshot.png").default} title="Symbol, Interval and Period" />
 

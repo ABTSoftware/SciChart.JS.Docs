@@ -11,7 +11,7 @@ keywords: ["SciTrader", "SciTrader.js", "save chart state JSON", "SciTrader toJS
 `toJSON()` returns a chart's state as plain JSON, which you can store anywhere.
 
 ```ts
-const state = panel.toJSON(); // ISciFinanceChartPanelState
+const state = financeChartPanel.toJSON(); // ISciFinanceChartPanelState
 localStorage.setItem("my-chart", JSON.stringify(state));
 ```
 
@@ -31,7 +31,7 @@ Plain TypeScript:
 const state: ISciFinanceChartPanelState = JSON.parse(localStorage.getItem("my-chart"));
 
 oldPanel?.cleanup();
-const panel = await SciFinanceChartPanel.fromJSON(container, state, { useSubCharts: state.useSubCharts });
+const financeChartPanel = await SciFinanceChartPanel.fromJSON(container, state, { useSubCharts: state.useSubCharts });
 ```
 
 `fromJSON` rebuilds everything in `state` in three steps: it creates each study through `studyProvider`, opens the panes, and then applies the saved layout. After that, fresh data loads for the saved symbol and period. Its third argument also takes non-serialisable settings: `services`, `axisDefaults`, `paneSizing` and `maxPanes`.
