@@ -146,10 +146,13 @@ The React chart below is live, with Coinbase data. **Edit on CodePen** opens the
     ```
 </CodeSnippetBlock>
 
-## About the code samples
+## Where to read next
 
-Every sample in this section is self-contained: it imports nothing but the SciTrader, SciChart and React packages. Copy one into an app that has followed [Installation](/financial-charts/installation/) to try it.
-
-- **TS** samples are plain TypeScript modules. They use top-level `await`, and look up the elements they need by id. A comment at the top shows the HTML each one expects, e.g. `<div id="chart" style="height: 600px">`.
-- **React** samples export a function component. Render it anywhere in your app.
-- **Data** is live from Binance: no API key is needed. Each sample registers `BinanceExchange` at the top. In your app, do that once at startup, rather than in every module. The [Data sources](/financial-charts/data-sources/) samples show CSV files and your own data instead.
+- [Finance Chart API](/financial-charts/finance-chart-api/): the `financeChartPanel` object that `create` returns, and the [Chart Config object](/financial-charts/finance-chart-api/chart-config/) with every option.
+- [Symbols, Intervals and Periods](/financial-charts/symbols-intervals-periods/): change the symbol, candle interval and visible period, and add toolbar controls for them.
+- [Studies and Indicators](/financial-charts/studies-and-indicators/): add, remove and configure studies such as RSI, MACD and ADX, and change the candle type.
+- [Data Sources](/financial-charts/data-sources/): the built-in exchanges, CSV files and your own data.
+- [Drawing Tools](/financial-charts/drawing-tools/): trend lines, Fibonacci retracements and other annotations.
+- [Saving and Restoring](/financial-charts/save-and-restore/): save a chart's state as JSON and restore it later.
+- [Layout, Panes and PaneGroup](/financial-charts/layout/): pane order, sizes and controls.
+- [Styling and Themes](/financial-charts/styling-and-themes/): themes, colours and axis styles.
