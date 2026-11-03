@@ -192,7 +192,7 @@ getSupportedIntervals(): CandleInterval[];
 
 </details>
 
-To let the user pick an interval, build your buttons from this list, as the [example below](#typescript-example-changing-the-interval) does, or use the ready-made [IntervalSelector](/financial-charts/symbols-intervals-periods/toolbar-controls/) and pass it these intervals.
+To let the user pick an interval, build your buttons from this list, as the [example below](#typescript-example-changing-the-interval) does, or use the ready-made [IntervalSelector](/financial-charts/ui-components/interval-and-period-selectors/#intervalselector) and pass it these intervals.
 
 ## Keeping the User's Span with carryPeriodToInterval {#keeping-the-users-span}
 

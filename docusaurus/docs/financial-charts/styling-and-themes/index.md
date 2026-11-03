@@ -186,7 +186,7 @@ The crosshair isn't in the stylesheet. It is redrawn every frame, so its colours
 
 ## Icons
 
-The SDK's UI icons ([UI components](/financial-charts/ui-components/#icons)) draw in `currentColor`, so they take the colour of the button they sit in: style the button, not the icon. The "selected" look fills them with the theme's brand gradient, `ui.brandGradientStart` → `ui.brandGradientEnd` (`--st-ui-brand-gradient-start` / `-end`), so it follows `setTheme` like everything else. Size them with `width` / `height`, or with CSS on the `<svg>` through `className`.
+The SDK's UI icons ([Icons](/financial-charts/ui-components/icons/)) draw in `currentColor`, so they take the colour of the button they sit in: style the button, not the icon. The "selected" look fills them with the theme's brand gradient, `ui.brandGradientStart` → `ui.brandGradientEnd` (`--st-ui-brand-gradient-start` / `-end`), so it follows `setTheme` like everything else. Size them with `width` / `height`, or with CSS on the `<svg>` through `className`.
 
 ## React components
 

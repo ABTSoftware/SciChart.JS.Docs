@@ -564,7 +564,7 @@ What the view does as new candles arrive, while a period is set:
 - `"follow"`: the view slides right with each new candle, so the latest one stays in view.
 - `"anchored"`: the view stays where it is, and new candles appear off-screen to the right.
 
-**Later:** set `financeApi.liveTipMode`, or use the `LiveTipToggle` control ([UI components](/financial-charts/ui-components/#toolbar-controls)).
+**Later:** set `financeApi.liveTipMode`, or use the `LiveTipToggle` control ([Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/)).
 
 ### ISciFinanceChartPanelConfig.forwardHeadroomSec {#forwardheadroomsec}
 

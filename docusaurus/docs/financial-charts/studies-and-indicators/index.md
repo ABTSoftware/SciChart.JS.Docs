@@ -103,7 +103,7 @@ new OHLCStudy({ candleType: ECandleType.HeikinAshi }); // initial style
 financeChartPanel.financeApi.setCandleType(ECandleType.OhlcBars); // change it later
 ```
 
-Changing the candle type swaps the price series in place. Data, zoom and studies are untouched, and `candleTypeChanged` is raised. `CANDLE_TYPE_MENU_ITEMS` lists the types with labels, and `CandleTypeSelector` is a ready-made picker ([UI components](/financial-charts/ui-components/#toolbar-controls)).
+Changing the candle type swaps the price series in place. Data, zoom and studies are untouched, and `candleTypeChanged` is raised. `CANDLE_TYPE_MENU_ITEMS` lists the types with labels, and `CandleTypeSelector` is a ready-made picker ([Candle Type Selector](/financial-charts/ui-components/candle-type-selector/)).
 
 **Renko** and **point & figure** are not candle types. They plot price movement, not time: a new brick or column appears only when price moves far enough. So they are studies, each with its own pane and a category (index) axis:
 

@@ -2,123 +2,27 @@
 sidebar_position: 4
 sidebar_label: Toolbar Controls
 title: "Interval and Period Toolbar Controls | SciTrader.js Trading Charts"
-description: "Add ready-made interval and period pickers to a SciTrader.js trading chart, in plain JavaScript / TypeScript with IntervalSelector.create and PeriodSelector.create, or in React with scichart-scitrader-react."
+description: "The ready-made toolbar controls for a SciTrader.js trading chart: interval and period buttons, a candle-type menu and a live-tip toggle, in plain TypeScript and React."
 keywords: ["SciTrader", "SciTrader.js", "IntervalSelector", "PeriodSelector", "trading chart toolbar", "React financial chart toolbar"]
 ---
 
 # Toolbar Controls
 
-The SDK has ready-made pickers for the interval and the period, so you don't have to build the toolbar yourself. They come in two forms with the same options:
+The SDK has ready-made toolbar controls for the interval and the period, so you don't have to build the toolbar yourself. Each only picks a value and calls `onChange`; you pass it on to the chart with [changeInterval](/financial-charts/symbols-intervals-periods/changing-the-interval/) or [setPeriod](/financial-charts/symbols-intervals-periods/periods/).
 
-| | Plain JavaScript / TypeScript | React |
+<CenteredImageWrapper src={require("../../_examples/components_IntervalPeriodSelectors/screenshot.png").default} title="IntervalSelector and PeriodSelector above a SciTrader.js chart" />
+
+| Control | What it picks | Documented in |
 | --- | --- | --- |
-| Package | `scichart-scitrader` | `scichart-scitrader-react` |
-| Create | `IntervalSelector.create(container, options)`, `PeriodSelector.create(container, options)` | `<IntervalSelector … />`, `<PeriodSelector … />` |
-| Update | `control.update(partialOptions)` | Change the props |
-| Remove | `control.destroy()` | Unmount |
+| `IntervalSelector` | The candle interval: 1m, 1h, 1d, … | [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) |
+| `PeriodSelector` | The visible period: 1D, 1M, 1Y, …, or "Free" for none | [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) |
+| `CandleTypeSelector` | How prices are drawn: candlesticks, OHLC bars, line, mountain, Heikin-Ashi | [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) |
+| `LiveTipToggle` | Whether the view follows new candles, or stays where the user left it | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
 
-The controls only pick a value and call `onChange`. You pass the value on to the chart with [changeInterval](/financial-charts/symbols-intervals-periods/changing-the-interval/) or [setPeriod](/financial-charts/symbols-intervals-periods/periods/), so you stay in control of what happens.
+Each control's page has live TypeScript and React examples with CodePens, its options, and how to style it. They come in plain TypeScript from `scichart-scitrader`, and in React from `scichart-scitrader-react`.
 
-<CenteredImageWrapper src={require("../../_examples/gettingStarted_SymbolInterval/period-toolbar.png").default} title="IntervalSelector and PeriodSelector above a SciTrader.js chart" />
+#### See also
 
-## Options
-
-**`IntervalSelector`**
-
-| Option | Type | Meaning |
-| --- | --- | --- |
-| `value` | `CandleInterval` | The selected interval |
-| `intervals` | `readonly CandleInterval[]` | The intervals to offer. Default `DEFAULT_INTERVALS` (the common ones, 1s to 1M); `ALL_INTERVALS` lists every interval |
-| `onChange` | `(interval: CandleInterval) => void` | Called when the user picks one |
-
-**`PeriodSelector`**
-
-| Option | Type | Meaning |
-| --- | --- | --- |
-| `value` | `TPeriod \| null` | The selected period; `null` selects "Free" |
-| `periods` | `readonly TPeriod[]` | The periods to offer |
-| `currentInterval` | `CandleInterval` | Greys out the periods that don't suit this interval (`validPeriodsForInterval`) |
-| `onChange` | `(period: TPeriod \| null) => void` | Called when the user picks one. "Free", or clicking the selected period again, gives `null` |
-
-## Plain JavaScript / TypeScript
-
-```ts
-import {
-    CandleInterval,
-    carryPeriodToInterval,
-    IntervalSelector,
-    PeriodSelector
-} from "scichart-scitrader";
-
-const chart = financeChartPanel.financeApi; // SciFinanceChart
-const toolbar = document.getElementById("toolbar");
-
-const intervals = IntervalSelector.create(toolbar, {
-    value: CandleInterval.FIVE_MINUTES,
-    intervals: [CandleInterval.ONE_MINUTE, CandleInterval.FIVE_MINUTES, CandleInterval.ONE_HOUR, CandleInterval.ONE_DAY],
-    onChange: async (next) => {
-        // Keep about the same span on screen, adjusted to suit the new interval
-        const period = carryPeriodToInterval(periods.value, next);
-        periods.update({ currentInterval: next, value: period });
-        await chart.changeInterval(next, period);
-    },
-});
-
-const periods = PeriodSelector.create(toolbar, {
-    value: "1D",
-    currentInterval: CandleInterval.FIVE_MINUTES,
-    onChange: (period) => chart.setPeriod(period),
-});
-
-// When the chart goes away
-intervals.destroy();
-periods.destroy();
-```
-
-## React
-
-```tsx
-import { CandleInterval, carryPeriodToInterval, TPeriod } from "scichart-scitrader";
-import { IntervalSelector, PeriodSelector } from "scichart-scitrader-react";
-
-function ChartToolbar({ financeChartPanel }) {
-    const [interval, setInterval] = React.useState(CandleInterval.FOUR_HOURS);
-    const [period, setPeriod] = React.useState<TPeriod | null>("1M");
-
-    return (
-        <>
-            <IntervalSelector
-                value={interval}
-                intervals={[CandleInterval.ONE_HOUR, CandleInterval.FOUR_HOURS, CandleInterval.ONE_DAY]}
-                onChange={(next) => {
-                    const carried = carryPeriodToInterval(period, next);
-                    setInterval(next);
-                    setPeriod(carried);
-                    financeChartPanel.financeApi.changeInterval(next, carried);
-                }}
-            />
-            <PeriodSelector
-                value={period}
-                currentInterval={interval}
-                onChange={(next) => {
-                    setPeriod(next);
-                    financeChartPanel.financeApi.setPeriod(next);
-                }}
-            />
-        </>
-    );
-}
-```
-
-## Full examples
-
-The TS tab is a plain TypeScript chart with all four toolbar controls: interval, period, [candle type](/financial-charts/studies-and-indicators/#candle-types) and live-tip. The React tab is a React toolbar with a symbol switcher, `IntervalSelector` and `PeriodSelector`.
-
-<CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../../_examples/components_ChartControls/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../../_examples/gettingStarted_SymbolInterval/react.tsx
-    ```
-</CodeSnippetBlock>
-
-`CandleTypeSelector` and `LiveTipToggle` work the same way. [UI components](/financial-charts/ui-components/#toolbar-controls) covers all four controls, and how they are styled.
+- [UI Components](/financial-charts/ui-components/)
+- [Changing the Interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)
+- [Periods](/financial-charts/symbols-intervals-periods/periods/)

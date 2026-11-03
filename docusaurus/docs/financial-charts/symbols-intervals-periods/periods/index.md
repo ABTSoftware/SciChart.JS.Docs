@@ -90,7 +90,7 @@ interface IPeriodSelectorOptions {
 
 </details>
 
-For a React version, and the `PeriodSelector` alongside an interval picker, see [Toolbar controls](/financial-charts/symbols-intervals-periods/toolbar-controls/).
+For a React version, the `PeriodSelector` alongside an interval picker, and how to style it, see [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/).
 
 ## SciFinanceChart.setPeriod {#setperiod}
 
@@ -353,7 +353,7 @@ The results for the intervals Coinbase supports:
 
 `YTD` is always allowed, whatever the interval. There is no upper limit here: `validPeriodsForInterval` allows ten years of one-minute candles, which would be millions of candles. To keep a period to a sensible size, use [carryPeriodToInterval](/financial-charts/symbols-intervals-periods/changing-the-interval/#keeping-the-users-span) when the interval changes, which cuts a period to `maxAllowedPeriodForInterval(interval)`, or offer only the periods you want with the `PeriodSelector`'s `periods` option, as the [example above](#typescript-example-a-period-selector-above-the-chart) does.
 
-The [PeriodSelector](/financial-charts/symbols-intervals-periods/toolbar-controls/) uses `validPeriodsForInterval` to disable the periods that don't suit its `currentInterval`.
+The [PeriodSelector](/financial-charts/ui-components/interval-and-period-selectors/#periodselector) uses `validPeriodsForInterval` to disable the periods that don't suit its `currentInterval`.
 
 <details>
 <summary>validPeriodsForInterval, isCompatible, minPeriodForInterval and maxAllowedPeriodForInterval, with their TSDoc</summary>

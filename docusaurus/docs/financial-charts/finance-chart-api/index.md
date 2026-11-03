@@ -155,7 +155,7 @@ The finance chart itself, and where most of the API lives. It **throws** while `
 | Studies | `attachStudy(study): Promise<void>`, `detachStudy(study)`, `studies`, `studiesChanged` | [Studies and indicators](/financial-charts/studies-and-indicators/) |
 | Candle type | `setCandleType(type)`, `getCandleType()`, `candleTypeChanged` | [Candle types](/financial-charts/studies-and-indicators/#candle-types) |
 | Theme and axes | `setTheme(theme)`, `theme`, `themeChanged`, `applyAxisStyle(partial)`, `axisDefaults` | [Styling and themes](/financial-charts/styling-and-themes/) |
-| Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [UI components](/financial-charts/ui-components/#toolbar-controls) |
+| Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
 | Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/layout/) |
 | Drawings | `clearAllDrawings()`, `finChartModifiers` | [Drawing tools](/financial-charts/drawing-tools/) |
 | Loading events | `dataLoadStarted`, `dataRenderComplete`, `historicalLoadStarted`, `historicalLoadComplete` | [Loading events](/financial-charts/symbols-intervals-periods/#loading-events) |

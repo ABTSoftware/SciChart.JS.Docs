@@ -82,7 +82,7 @@ financeChartPanel.setPaneControls({ touch: true });
 
 ### Your own content in the control bar
 
-The control bar starts with an info area for your content, such as the SDK's [candle counter](/financial-charts/ui-components/#candle-counter). It is hidden while empty. In plain TypeScript, `financeChartPanel.getPaneInfoElement(paneId)` returns the element to fill; in React, `paneInfo` renders into it:
+The control bar starts with an info area for your content, such as the SDK's [candle counter](/financial-charts/ui-components/candle-counter/). It is hidden while empty. In plain TypeScript, `financeChartPanel.getPaneInfoElement(paneId)` returns the element to fill; in React, `paneInfo` renders into it:
 
 ```tsx
 <SciFinanceChartView

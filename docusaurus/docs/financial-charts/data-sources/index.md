@@ -303,7 +303,7 @@ In React, `MarketDepthView` from `scichart-scitrader-react` mounts it, with the 
 ```
 
 -   **Settings** (`TMarketDepthSettings`) cover the refresh rate, the pulled-wall rule, the grouping, the row height, fonts, flash duration and colours. Model settings apply to the running book; a change to how the ladder is drawn rebuilds its surface. Settings are theme-neutral, so they are safe to persist; see [Styling → Market depth](/financial-charts/styling-and-themes/#market-depth).
--   **No settings dialog ships.** Pass `onSettingsClick` and the header shows a cog that calls it. The SciTrader app opens its own dialog there, reading `panel.themedSettings` and `panel.availableGroupings()`, with a `ColorPicker` for each colour. The **Order Book (dummy data)** demo recolours the bid and ask prices the same way ([UI components](/financial-charts/ui-components/#colour-picker)).
+-   **No settings dialog ships.** Pass `onSettingsClick` and the header shows a cog that calls it. The SciTrader app opens its own dialog there, reading `panel.themedSettings` and `panel.availableGroupings()`, with a `ColorPicker` for each colour. The **Order Book (dummy data)** demo recolours the bid and ask prices the same way ([Colour Picker](/financial-charts/ui-components/colour-picker/)).
 -   **Rows.** By default the row count follows the panel's height and the row height. Pass `rows` for a fixed count.
 -   **Slippage readout.** <a id="slippage-readout"></a>On by default; turn it off with `sweepReadout: false` or `panel.setSweepReadout(false)`. It follows the input device, so the page doesn't need to detect phones or tablets:
     -   **Mouse or pen:** hovering a rung shows it, and it goes when the pointer leaves the ladder.
