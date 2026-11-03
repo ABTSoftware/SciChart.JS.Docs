@@ -158,7 +158,7 @@ The finance chart itself, and where most of the API lives. It **throws** while `
 | Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [UI components](/financial-charts/ui-components/#toolbar-controls) |
 | Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/layout/) |
 | Drawings | `clearAllDrawings()`, `finChartModifiers` | [Drawing tools](/financial-charts/drawing-tools/) |
-| Loading events | `dataLoadStarted`, `dataRenderComplete`, `historicalLoadStarted`, `historicalLoadComplete` | [Events](/financial-charts/symbols-intervals-periods/#api-at-a-glance) |
+| Loading events | `dataLoadStarted`, `dataRenderComplete`, `historicalLoadStarted`, `historicalLoadComplete` | [Loading events](/financial-charts/symbols-intervals-periods/#loading-events) |
 | State | `toJSON(): ISciFinanceChartState` (the finance part only) | [Saving and restoring](/financial-charts/save-and-restore/) |
 
 ```ts
