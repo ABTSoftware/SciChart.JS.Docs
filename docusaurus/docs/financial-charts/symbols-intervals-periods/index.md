@@ -8,7 +8,7 @@ keywords: ["SciTrader", "SciTrader.js", "trading chart timeframe", "candle inter
 
 # Symbols, Intervals and Periods
 
-A trading chart shows one **symbol** (e.g. `BTCUSDT`), at one candle **interval** (e.g. 4 hours), over a **period** of time (e.g. the last month). All three can change while the chart is running. The chart keeps its studies, panes and drawings when they do: every study recalculates on the new data.
+A trading chart shows one **symbol** (e.g. `BTC-USD`), at one candle **interval** (e.g. 6 hours), over a **period** of time (e.g. the last month). All three can change while the chart is running. The chart keeps its studies, panes and drawings when they do: every study recalculates on the new data.
 
 ## Where SciFinanceChart Comes From
 
@@ -198,15 +198,32 @@ interface IDataRenderCompleteArgs {
 3. [Periods](/financial-charts/symbols-intervals-periods/periods/): `setPeriod`, the period values, and how they fetch data.
 4. [Toolbar controls](/financial-charts/symbols-intervals-periods/toolbar-controls/): ready-made interval and period pickers, in plain TypeScript and React.
 
-## Example
+## TypeScript Example: Changing the Symbol, Interval and Period
 
-The chart below starts on `BTCUSDT` at 4 hours over one month. Its toolbar changes symbol, interval and period with the three calls above.
+This example changes the symbol, interval and period of a live chart in plain TypeScript, with the three `SciFinanceChart` calls above. The chart starts on `BTC-USD` at 6-hour candles over one month, with live Coinbase data. Its toolbar has:
 
-<CenteredImageWrapper src={require("../_examples/gettingStarted_SymbolInterval/screenshot.png").default} title="Symbol, Interval and Period" />
+- **Symbol buttons** that call `setSymbol`.
+- An **`IntervalSelector`** that calls `changeInterval`, keeping about the same span on screen with `carryPeriodToInterval`.
+- A **`PeriodSelector`** that calls `setPeriod`.
 
-<CodeSnippetBlock labels={["TS", "React"]}>
+<LiveDocSnippet maxWidth={"100%"} height={600} includeSciTrader name="../_examples/gettingStarted_SymbolInterval/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["TS"]}>
     ```ts showLineNumbers file=../_examples/gettingStarted_SymbolInterval/vanilla.ts
     ```
+</CodeSnippetBlock>
+
+## React Example: Changing the Symbol, Interval and Period
+
+The same chart as a React component. It uses `<SciFinanceChartView>`, and the React `IntervalSelector` and `PeriodSelector` from `scichart-scitrader-react`, and keeps the symbol, interval and period in React state.
+
+<LiveDocSnippet maxWidth={"100%"} height={600} includeSciTrader reactComponent="SymbolIntervalPeriodChart" name="../_examples/gettingStarted_SymbolInterval/react" />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["React"]}>
     ```tsx showLineNumbers file=../_examples/gettingStarted_SymbolInterval/react.tsx
     ```
 </CodeSnippetBlock>
