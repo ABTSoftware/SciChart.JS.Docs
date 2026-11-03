@@ -20,6 +20,21 @@ const SCITRADER_ESM_PEER_URLS = [
     "https://cdn.jsdelivr.net/npm/scichart@6.0.15/+esm",
     "https://cdn.jsdelivr.net/npm/scichart-financial-tools@6.0.14/+esm"
 ];
+// The jsDelivr +esm builds import each other by root-relative path, e.g. "/npm/rxjs@7.8.2/+esm". Those
+// should resolve against cdn.jsdelivr.net, but in a CodePen preview some browsers (seen in Safari)
+// resolve them against the pen's base, codepen.io, and the import 404s. A key starting with "/" is
+// resolved against the page's base too, so mapping each path to its full jsDelivr URL catches that
+// case, and is never matched otherwise. The scichart and fin-tools paths go to the one bundle, as above.
+// This is the whole graph below scichart-scitrader(-react)@0.0.4: re-check it if a version changes.
+const SCITRADER_ESM_PATHS = [
+    "/npm/scichart-scitrader@0.0.4/+esm",
+    "/npm/rxjs@7.8.2/+esm",
+    "/npm/rxjs@7.8.2/operators/+esm",
+    "/npm/idb@7.1.1/+esm",
+    "/npm/technicalindicators@3.1.0/+esm",
+    "/npm/tslib@2.8.1/+esm"
+];
+const SCITRADER_REACT_ESM_PATHS = ["/npm/react@19.3.1/+esm", "/npm/react-dom@19.3.1/+esm", "/npm/scheduler@0.28.0/+esm"];
 const SCITRADER_FINTOOLS_BUNDLE = `https://cdn.jsdelivr.net/npm/scichart-financial-tools@${SCITRADER_FINTOOLS_VERSION}/scichart-financial-tools.browser.mjs`;
 const SCITRADER_CSS = `https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/styles/scitrader.css`;
 // scichart-scitrader-react's +esm build imports react@REACT_VERSION and react-dom@REACT_VERSION. Map
@@ -155,7 +170,10 @@ const getImportMap = (includeFinTools?: boolean, includeSciTrader?: boolean, inc
             `"scichart-financial-tools": "${SCITRADER_FINTOOLS_BUNDLE}"`,
             `"scichart-scitrader": "https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/+esm"`,
             ...SCITRADER_ESM_PEER_URLS.map((url) => `"${url}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
-            ...(includeReact ? REACT_IMPORTS : [])
+            ...SCITRADER_ESM_PEER_URLS.map((url) => `"${new URL(url).pathname}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
+            ...SCITRADER_ESM_PATHS.map((path) => `"${path}": "https://cdn.jsdelivr.net${path}"`),
+            ...(includeReact ? REACT_IMPORTS : []),
+            ...(includeReact ? SCITRADER_REACT_ESM_PATHS.map((path) => `"${path}": "https://cdn.jsdelivr.net${path}"`) : [])
         );
         return imports.join(",\n\t\t\t\t\t\t");
     }
