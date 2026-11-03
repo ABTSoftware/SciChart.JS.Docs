@@ -169,6 +169,8 @@ const getImportMap = (includeFinTools?: boolean, includeSciTrader?: boolean, inc
             `"scichart": "${SCITRADER_FINTOOLS_BUNDLE}"`,
             `"scichart-financial-tools": "${SCITRADER_FINTOOLS_BUNDLE}"`,
             `"scichart-scitrader": "https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/+esm"`,
+            // Samples that import rxjs themselves (e.g. an IOrderBookSource) get the same copy SciTrader uses
+            `"rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm"`,
             ...SCITRADER_ESM_PEER_URLS.map((url) => `"${url}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
             ...SCITRADER_ESM_PEER_URLS.map((url) => `"${new URL(url).pathname}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
             ...SCITRADER_ESM_PATHS.map((path) => `"${path}": "https://cdn.jsdelivr.net${path}"`),

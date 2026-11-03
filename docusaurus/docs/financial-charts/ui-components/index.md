@@ -21,7 +21,7 @@ Besides the chart, the SDK ships the controls a trading app puts around it: tool
 | The chart's studies, each with its form | `StudyList` | `<StudyList>` | [Studies](/financial-charts/studies-and-indicators/#settings-forms) |
 | Drawing tools rail | `DrawingToolbar` | `<DrawingToolbar>` | [Drawing tools](/financial-charts/drawing-tools/) |
 | List of drawings | `DrawingList` | `<DrawingList>` | [Drawing tools](/financial-charts/drawing-tools/#list-of-drawings) |
-| Market-depth ladder | `MarketDepthPanel` | `<MarketDepthView>` | [Data sources](/financial-charts/data-sources/#market-depth) |
+| Market-depth ladder | `MarketDepthPanel` | `<MarketDepthView>` | [Market Depth](/financial-charts/ui-components/market-depth/) |
 | Loading progress dots | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` | [Layout](/financial-charts/layout/#loading-states) |
 | Candle counts (visible / loaded / total) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` | [Candle Counter](/financial-charts/ui-components/candle-counter/) |
 | UI icons | `SCITRADER_ICONS`, `sciTraderIconSvg` | `<SciTraderIcon>` | [Icons](/financial-charts/ui-components/icons/) |

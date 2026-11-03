@@ -279,35 +279,5 @@ The **Order Book (dummy data)** example uses a randomised source (`DummyOrderBoo
 
 ### Market depth
 
-`MarketDepthPanel` shows the live book as a price ladder: asks above the spread, bids below, each rung with its amount and the running total, and a depth bar behind it. It is drawn with SciChart, so it keeps up with a fast book. The header has the symbol and a ± stepper for the price grouping, and pointing at a rung shows what sweeping the book to that price would cost (see [Slippage readout](#slippage-readout)).
+`MarketDepthPanel`, and `MarketDepthView` in React, show the live book as a price ladder. They read `getBookSnapshot` and `getBookStream` from the source. [Market Depth](/financial-charts/ui-components/market-depth/) covers them, with live examples on Coinbase's order book.
 
-```ts
-import { getOrderBookSource, MarketDepthPanel } from "scichart-scitrader";
-
-const panel = MarketDepthPanel.create(document.getElementById("depth"), {
-    source: getOrderBookSource("Binance"),
-    symbol: "BTCUSDT",
-    settings: loadSavedSettings(), // optional; DEFAULT_MARKET_DEPTH_SETTINGS otherwise
-    onSettingsChange: saveSettings, // the stepper changed the grouping
-});
-
-panel.setSymbol("ETHUSDT"); // re-points the book; nothing is rebuilt
-panel.setTheme(SCITRADER_LIGHT_THEME);
-panel.destroy();
-```
-
-In React, `MarketDepthView` from `scichart-scitrader-react` mounts it, with the same options as props and the theme from `SciTraderThemeProvider`:
-
-```tsx
-<MarketDepthView source={source} symbol={symbol} settings={settings} onSettingsChange={setSettings} />
-```
-
--   **Settings** (`TMarketDepthSettings`) cover the refresh rate, the pulled-wall rule, the grouping, the row height, fonts, flash duration and colours. Model settings apply to the running book; a change to how the ladder is drawn rebuilds its surface. Settings are theme-neutral, so they are safe to persist; see [Styling → Market depth](/financial-charts/styling-and-themes/#market-depth).
--   **No settings dialog ships.** Pass `onSettingsClick` and the header shows a cog that calls it. The SciTrader app opens its own dialog there, reading `panel.themedSettings` and `panel.availableGroupings()`, with a `ColorPicker` for each colour. The **Order Book (dummy data)** demo recolours the bid and ask prices the same way ([Colour Picker](/financial-charts/ui-components/colour-picker/)).
--   **Rows.** By default the row count follows the panel's height and the row height. Pass `rows` for a fixed count.
--   **Slippage readout.** <a id="slippage-readout"></a>On by default; turn it off with `sweepReadout: false` or `panel.setSweepReadout(false)`. It follows the input device, so the page doesn't need to detect phones or tablets:
-    -   **Mouse or pen:** hovering a rung shows it, and it goes when the pointer leaves the ladder.
-    -   **Touch:** hold a finger on a rung for 450 ms. The device vibrates briefly where the browser supports it (not iOS). Drag to move between rungs, and lift the finger to hide it. A finger that moves more than 10 px before the hold completes is treated as a scroll or swipe, and a second finger cancels it.
-    -   **Placement:** beside the panel on its left when there is room; otherwise, as on a phone, inside the panel on the half away from the finger, and kept on screen.
-    -   The ladder sets `touch-action: none` and turns off the iOS long-press text selection and callout, so the hold isn't taken by the browser.
--   **`MarketDepthLadder`** is the headless model underneath, for a host that wants to render the rows itself: `subscribe` delivers `IDepthLadder` (bids, asks, mid, spread, grouping) on every book update.
