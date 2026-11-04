@@ -106,19 +106,22 @@ function topLevels(book: Map<number, number>, depth: number, order: (a: number, 
 }
 
 async function createChartAndDepth() {
+    // MarketDepthPanel: the order book as a price ladder, asks above the spread and bids below.
+    // It reads the book from an IOrderBookSource, here the Coinbase one above. Create it first:
+    // it doesn't need the chart, so the book shows while the chart loads
+    const depth = MarketDepthPanel.create(document.getElementById("depth"), {
+        source: new CoinbaseOrderBookSource(),
+        symbol: "BTC-USD", // Coinbase's symbol format
+    });
+
+    // One-minute candles over the last hour: the first load is a single request of at most
+    // 300 candles, Coinbase's limit per request
     const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
         exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
         symbol: "BTC-USD",
         interval: CandleInterval.ONE_MINUTE,
         period: "1H",
         studies: [new OHLCStudy(), new VolumeStudy()],
-    });
-
-    // MarketDepthPanel: the order book as a price ladder, asks above the spread and bids below.
-    // It reads the book from an IOrderBookSource, here the Coinbase one above
-    const depth = MarketDepthPanel.create(document.getElementById("depth"), {
-        source: new CoinbaseOrderBookSource(),
-        symbol: "BTC-USD", // Coinbase's symbol format
     });
 
     // When the page goes away: depth.destroy(); financeChartPanel.cleanup();

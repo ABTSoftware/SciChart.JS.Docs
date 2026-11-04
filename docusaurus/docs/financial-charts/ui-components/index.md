@@ -25,8 +25,8 @@ Besides the chart, the SDK ships the controls a trading app puts around it: tool
 | Loading progress dots | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` | [Layout](/financial-charts/layout/#loading-states) |
 | Candle counts (visible / loaded / total) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` | [Candle Counter](/financial-charts/ui-components/candle-counter/) |
 | UI icons | `SCITRADER_ICONS`, `sciTraderIconSvg` | `<SciTraderIcon>` | [Icons](/financial-charts/ui-components/icons/) |
-| Watchlist prices and sparklines | `WatchListDataManager`, `SparkLineChart` | none: build the list in React | [Watchlist](/financial-charts/ui-components/watchlist/) |
-| Symbols as pairs (`BTC/USDT`) | `formatSymbolPair`, `parseInstrument` | the same functions | [Watchlist](/financial-charts/ui-components/watchlist/) |
+| Sparklines, and watchlist prices | `SparkLineChart`, `WatchListDataManager` | none: use them from React | [Sparklines](/financial-charts/ui-components/sparklines/) |
+| Symbols as pairs (`BTC/USDT`) | `formatSymbolPair`, `parseInstrument` | the same functions | [Sparklines](/financial-charts/ui-components/sparklines/#symbol-pairs) |
 
 ## How the Components Work {#how-they-work}
 

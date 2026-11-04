@@ -252,6 +252,8 @@ const DEFAULT_MARKET_DEPTH_SETTINGS: TMarketDepthSettings;
 
 ### Slippage Readout {#slippage-readout}
 
+<CenteredImageWrapper src={require("../../_examples/components_MarketDepth/slippage-readout.png").default} title="The slippage readout: what buying up to the hovered ask price would cost" />
+
 The slippage readout shows what sweeping the book to the hovered price would cost. It is on by default; turn it off with `sweepReadout: false` or `panel.setSweepReadout(false)`. It follows the input device, so the page doesn't need to detect phones or tablets:
 -   **Mouse or pen:** hovering a rung shows it, and it goes when the pointer leaves the ladder.
 -   **Touch:** hold a finger on a rung for 450 ms. The device vibrates briefly where the browser supports it (not iOS). Drag to move between rungs, and lift the finger to hide it. A finger that moves more than 10 px before the hold completes is treated as a scroll or swipe, and a second finger cancels it.
@@ -344,7 +346,154 @@ interface IBookLevel {
 
 ## Styling the Market Depth Panel {#styling}
 
-The panel's header and readout are HTML, with the classes `st-market-depth`, `__header`, `__title`, `__grouping`, `__step`, `__grouping-value`, `__settings` and `__body`, and the readout's `__sweep` (`--bid` / `--ask`), `__sweep-head`, `__sweep-rows` and `__sweep-foot`. The ladder itself is drawn with SciChart, so its colours, fonts and row height are settings, not CSS. See [Styling and Themes](/financial-charts/styling-and-themes/#market-depth).
+The panel's header and slippage readout are HTML. The ladder itself is drawn with SciChart, so its colours, fonts and row height are [settings](#marketdepthpanel), not CSS; see [Styling and Themes](/financial-charts/styling-and-themes/#market-depth).
+
+| Element | Class |
+| --- | --- |
+| The panel | `st-market-depth` |
+| The header: symbol, grouping stepper and settings cog | `__header`, `__title`, `__grouping`, `__step`, `__grouping-value`, `__settings` |
+| The ladder area | `__body` |
+| The slippage readout | `__sweep` (`--bid` / `--ask`), `__sweep-head`, `__sweep-rows`, `__sweep-foot` |
+
+These are the stylesheet's rules for them, as a starting point for your own. Override them in your own CSS, loaded after `scitrader.css`:
+
+<details>
+<summary>The default .st-market-depth CSS, from scitrader.css</summary>
+
+```css
+.st-market-depth {
+    background: var(--st-ui-background, #2b2839);
+    color: var(--st-market-text, #d3d1de);
+    font-size: 12px;
+    /* Prices and sizes are read as columns of digits; proportional figures make them ragged. */
+    font-variant-numeric: tabular-nums;
+}
+
+.st-market-depth__header {
+    gap: 8px;
+    padding: 10px 12px 6px;
+}
+
+.st-market-depth__title {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.st-market-depth__grouping {
+    gap: 2px;
+}
+
+.st-market-depth__step {
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: 1px solid rgb(var(--st-ui-overlay-rgb, 255 255 255) / 0.12);
+    border-radius: 4px;
+    background: rgb(var(--st-ui-overlay-rgb, 255 255 255) / 0.04);
+    color: var(--st-market-text, #d3d1de);
+    font-size: 13px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.st-market-depth__step:hover:not(:disabled) {
+    background: rgb(var(--st-ui-overlay-rgb, 255 255 255) / 0.1);
+}
+
+.st-market-depth__step:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.st-market-depth__settings {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--st-market-text-muted, #8b88a0);
+    cursor: pointer;
+}
+
+.st-market-depth__settings:hover {
+    color: var(--st-ui-text-muted, #9da2bc);
+}
+
+.st-market-depth__grouping-value {
+    min-width: 66px;
+    text-align: center;
+    color: var(--st-market-text-muted, #8b88a0);
+}
+
+.st-market-depth__sweep {
+    z-index: 1400;
+    min-width: 156px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(var(--st-ui-overlay-rgb, 255 255 255) / 0.14);
+    background: var(--st-ui-menu-background, rgba(20,20,30,0.95));
+    color: var(--st-market-text, #d3d1de);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.st-market-depth__sweep--ask {
+    border-left: 3px solid var(--st-market-ask, #f6465d);
+}
+
+.st-market-depth__sweep--bid {
+    border-left: 3px solid var(--st-market-bid, #2ebd85);
+}
+
+.st-market-depth__sweep-head {
+    margin-bottom: 6px;
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 11px;
+}
+
+.st-market-depth__sweep-head strong {
+    color: var(--st-market-text, #d3d1de);
+    font-weight: 600;
+}
+
+.st-market-depth__sweep-rows {
+    gap: 2px 10px;
+    margin: 0;
+}
+
+.st-market-depth__sweep-rows dt {
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 11px;
+}
+
+.st-market-depth__sweep-rows dd {
+    margin: 0;
+    text-align: right;
+}
+
+.st-market-depth__sweep-foot {
+    margin-top: 6px;
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 10px;
+}
+```
+
+</details>
+
+```css
+/* A larger symbol in the header, and a sans-serif font for the panel */
+.st-market-depth {
+    font-family: var(--st-font-family, "DM Sans", sans-serif);
+}
+.st-market-depth__title {
+    font-size: 15px;
+}
+```
 
 #### See also
 

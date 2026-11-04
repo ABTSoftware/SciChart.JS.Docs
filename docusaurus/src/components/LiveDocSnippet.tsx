@@ -36,6 +36,9 @@ const SCITRADER_ESM_PATHS = [
 ];
 const SCITRADER_REACT_ESM_PATHS = ["/npm/react@19.3.1/+esm", "/npm/react-dom@19.3.1/+esm", "/npm/scheduler@0.28.0/+esm"];
 const SCITRADER_FINTOOLS_BUNDLE = `https://cdn.jsdelivr.net/npm/scichart-financial-tools@${SCITRADER_FINTOOLS_VERSION}/scichart-financial-tools.browser.mjs`;
+// SciTrader samples use the dark theme: give the page its background, so it isn't white while the
+// bundles load (a couple of seconds), and its font, for any text a sample doesn't style itself.
+const SCITRADER_PAGE_STYLE = `body { background: #2b2839; color: #ffffff; font-family: "DM Sans", sans-serif; }`;
 const SCITRADER_CSS = `https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/styles/scitrader.css`;
 // scichart-scitrader-react's +esm build imports react@REACT_VERSION and react-dom@REACT_VERSION. Map
 // "react" to that same URL, so the sample and the wrapper share one copy of React.
@@ -249,6 +252,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             iframe { border: 0; }
             body { margin: 0; }
             #scichart-root { width: 100%; height: ${height}; }
+            ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
         </style>
     </head>
     <body>
@@ -319,6 +323,7 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
                 iframe { border: 0; }
                 body { margin: 0; }
                 #scichart-root { width: 100%; height: ${height}; }
+                ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
 
             </style>
         </head>

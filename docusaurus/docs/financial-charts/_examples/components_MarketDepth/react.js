@@ -87,6 +87,8 @@ export function ChartWithMarketDepth() {
     const source = React.useMemo(() => new CoinbaseOrderBookSource(), []);
     // The panel's settings, e.g. the price grouping its ± stepper changes. Persist them if you like
     const [settings, setSettings] = React.useState(DEFAULT_MARKET_DEPTH_SETTINGS);
+    // One-minute candles over the last hour: the first load is a single request of at most
+    // 300 candles, Coinbase's limit per request
     const config = React.useMemo(() => ({
         exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
         symbol: "BTC-USD",
