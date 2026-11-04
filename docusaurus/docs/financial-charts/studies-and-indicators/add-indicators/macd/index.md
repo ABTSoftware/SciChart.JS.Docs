@@ -38,7 +38,7 @@ $$
 k = \frac{2}{n + 1} \qquad \text{EMA}_t = (\text{close}_t - \text{EMA}_{t-1}) \times k + \text{EMA}_{t-1}
 $$
 
-where $n$ is the EMA's length. The first EMA value is the simple average of the first `length` closes. See [Moving Averages](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) for more.
+where $n$ is the EMA's length. The first EMA value is the simple average of the first `length` closes. See [Moving Averages](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) for more.
 
 The MACD line starts after `slow` candles, and the signal line and histogram after `slow + signal`, about 35 candles with the defaults. SciTrader loads that many extra candles to the left of the visible period, so the lines start at the left edge.
 
@@ -139,7 +139,6 @@ interface IMACDOptions extends IStudyOptions {
 
 ## Where to read next
 
-- [Technical Indicators Reference](/financial-charts/studies-and-indicators/indicators/): the other indicators explained.
-- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add and remove indicators at runtime, and an indicator picker.
+- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.

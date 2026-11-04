@@ -148,7 +148,6 @@ interface IRsiOptions extends IStudyOptions {
 
 ## Where to read next
 
-- [Technical Indicators Reference](/financial-charts/studies-and-indicators/indicators/): the other indicators explained.
-- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add and remove indicators at runtime, and an indicator picker.
+- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.

@@ -19,15 +19,14 @@ This section covers:
 
 | Page | What it covers |
 | --- | --- |
-| [Technical Indicators Reference](/financial-charts/studies-and-indicators/indicators/) | What RSI, MACD, Bollinger Bands and moving averages are, how they are calculated, and how to add each to a JavaScript or React financial chart |
 | [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/) | Candlestick, OHLC bar, line, mountain and Heikin-Ashi price series, and Renko and Point & Figure charts |
-| [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/) | Adding indicators when the chart is created, adding and removing them at runtime, and building an indicator picker |
+| [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/) | Adding indicators when the chart is created, adding and removing them at runtime, and building an indicator picker. Under it, a page for each of RSI, MACD, Bollinger Bands and moving averages: what each is, how it is calculated, and how to add it |
 | [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/) | Changing an indicator's settings (lengths, levels, colours) from code or with the ready-made Settings Form and Study List |
 | [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/) | Writing an indicator of your own, step by step, with a settings form, live updates and save and restore |
 
 ## Every Built-in Indicator and Study {#the-catalogue}
 
-The tables below list every study, grouped by the categories of the SDK's study picker (`EStudyCategory`). Indicators with a page in the [Technical Indicators Reference](/financial-charts/studies-and-indicators/indicators/) link to it, for what the indicator is, how it is calculated and how to add it. For each one:
+The tables below list every study, grouped by the categories of the SDK's study picker (`EStudyCategory`). Indicators with a page of their own link to it, for what the indicator is, how it is calculated and how to add it. For each one:
 
 - **Class** is the class to construct, e.g. `new RSIStudy({ length: 21 })`.
 - **`EStudyType`** is the type to create it by, e.g. `studyProvider.getStudy(EStudyType.RSI)`.
@@ -49,9 +48,9 @@ See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-typ
 
 | Indicator | Class | `EStudyType` | Draws on | Options (default) |
 | --- | --- | --- | --- | --- |
-| [SMA: Simple Moving Average](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) | `SMAStudy` | `SMA` | Price pane | `length` (14), `renderOptions` |
-| [EMA: Exponential Moving Average](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) | `EMAStudy` | `EMA` | Price pane | `length` (14), `renderOptions` |
-| [WMA: Weighted Moving Average](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) | `WMAStudy` | `WMA` | Price pane | `length` (14), `renderOptions` |
+| [SMA: Simple Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `SMAStudy` | `SMA` | Price pane | `length` (14), `renderOptions` |
+| [EMA: Exponential Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `EMAStudy` | `EMA` | Price pane | `length` (14), `renderOptions` |
+| [WMA: Weighted Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `WMAStudy` | `WMA` | Price pane | `length` (14), `renderOptions` |
 | PSAR: Parabolic SAR | `PSARStudy` | `PSAR` | Price pane | `step` (0.02), `max` (0.2), `dotColor`, `pointSize` (5) |
 | Ichimoku Cloud | `IchimokuCloudStudy` | `Ichimoku` | Price pane | `conversionPeriod` (9), `basePeriod` (26), `spanPeriod` (52), `displacement` (26), and a line style per line: `tenkanOptions`, `kijunOptions`, `senkouAOptions`, `senkouBOptions`, `chikouOptions`, `cloudFillOptions` |
 | ADX: Average Directional Index | `ADXStudy` | `ADX` | Own pane | `length` (14), `adxColor`, `pdiColor`, `mdiColor`, `strokeThickness` |
@@ -60,8 +59,8 @@ See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-typ
 
 | Indicator | Class | `EStudyType` | Draws on | Options (default) |
 | --- | --- | --- | --- | --- |
-| [RSI: Relative Strength Index](/financial-charts/studies-and-indicators/indicators/rsi-relative-strength-index/) | `RSIStudy` | `RSI` | Own pane | `length` (14), `overbought` (70), `oversold` (30), `thresholdFills` (`"show"`), `overboughtFill`, `oversoldFill`, `renderOptions` |
-| [MACD: Moving Average Convergence/Divergence](/financial-charts/studies-and-indicators/indicators/macd/) | `MACDStudy` | `MACD` | Own pane | `fast` (12), `slow` (26), `signal` (9), `bandOptions` (MACD and signal lines), `columnOptions`, `histogramAboveZero`, `histogramBelowZero` |
+| [RSI: Relative Strength Index](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/) | `RSIStudy` | `RSI` | Own pane | `length` (14), `overbought` (70), `oversold` (30), `thresholdFills` (`"show"`), `overboughtFill`, `oversoldFill`, `renderOptions` |
+| [MACD: Moving Average Convergence/Divergence](/financial-charts/studies-and-indicators/add-indicators/macd/) | `MACDStudy` | `MACD` | Own pane | `fast` (12), `slow` (26), `signal` (9), `bandOptions` (MACD and signal lines), `columnOptions`, `histogramAboveZero`, `histogramBelowZero` |
 | Stochastic Oscillator | `StochasticStudy` | `Stochastic` | Own pane | `length` (14), `signalPeriod` (3), `strokeK`, `strokeD`, `strokeThickness` |
 | CCI: Commodity Channel Index | `CCIStudy` | `CCI` | Own pane | `length` (20), `renderOptions` |
 | Williams %R: Williams Percent Range | `WilliamsRStudy` | `WilliamsR` | Own pane | `length` (14), `renderOptions` |
@@ -73,7 +72,7 @@ See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-typ
 
 | Indicator | Class | `EStudyType` | Draws on | Options (default) |
 | --- | --- | --- | --- | --- |
-| [BBANDS: Bollinger Bands](/financial-charts/studies-and-indicators/indicators/bollinger-bands/) | `BollingerBandsStudy` | `BBANDS` | Price pane | `period` (20), `stdDev` (2), `upperBandOptions`, `middleBandOptions`, `lowerBandOptions`, `bandFillOptions` |
+| [BBANDS: Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/) | `BollingerBandsStudy` | `BBANDS` | Price pane | `period` (20), `stdDev` (2), `upperBandOptions`, `middleBandOptions`, `lowerBandOptions`, `bandFillOptions` |
 | Keltner Channels | `KeltnerChannelsStudy` | `Keltner` | Price pane | `maPeriod` (20), `atrPeriod` (10), `multiplier` (2), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
 | Donchian Channels | `DonchianChannelsStudy` | `Donchian` | Price pane | `period` (20), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
 | ATR: Average True Range | `ATRStudy` | `ATR` | Own pane | `length` (14), `renderOptions` |
