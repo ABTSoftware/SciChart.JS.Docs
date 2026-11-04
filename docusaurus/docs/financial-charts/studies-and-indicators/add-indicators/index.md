@@ -1,22 +1,22 @@
 ---
 sidebar_position: 2
-sidebar_label: Add Indicators
-title: "Add Indicators to a Financial Chart | SciTrader.js Trading Charts"
-description: "Add technical indicators such as RSI, MACD, moving averages and Bollinger Bands to a JavaScript or React financial chart with SciTrader.js, and add or remove them at runtime with an indicator picker."
-keywords: ["SciTrader", "SciTrader.js", "add indicator to chart", "JavaScript trading chart indicators", "React stock chart indicators", "attachStudy", "detachStudy", "studyProvider", "indicator picker"]
+sidebar_label: Add Technical Indicators
+title: "Add Technical Indicators to a Financial Chart | SciTrader.js"
+description: "Add technical indicators such as RSI, MACD, moving averages and Bollinger Bands to a JavaScript or React financial chart with SciTrader.js, when the chart is created, at runtime, and from a searchable technical indicator picker."
+keywords: ["SciTrader", "SciTrader.js", "technical indicators", "add technical indicators to chart", "add indicator to chart", "JavaScript trading chart indicators", "React stock chart indicators", "attachStudy", "detachStudy", "studyProvider", "indicator picker"]
 ---
 
-# Add Indicators to a Financial Chart
+# Add Technical Indicators to a Financial Chart
 
-Indicators are studies (see [Technical Indicators and Studies](/financial-charts/studies-and-indicators/) for the full list). This page shows how to:
+Technical indicators are studies (see [Technical Indicators and Studies](/financial-charts/studies-and-indicators/) for the full list). This page shows how to:
 
-1. [add indicators when the chart is created](#add-indicators);
+1. [add technical indicators when the chart is created](#add-indicators);
 2. [add and remove them at runtime](#add-and-remove-at-runtime);
-3. [build an indicator picker](#indicator-picker) from the SDK's catalogue.
+3. [build a technical indicator picker](#indicator-picker) from the SDK's catalogue, with search, categories and favourites.
 
-The [TypeScript](#typescript-example-adding-and-removing-indicators-at-runtime) and [React](#react-example-adding-and-removing-indicators-at-runtime) examples below do all three.
+Each has TypeScript and React examples with live CodePens.
 
-## Adding Indicators When the Chart Is Created {#add-indicators}
+## Adding Technical Indicators When the Chart Is Created {#add-indicators}
 
 Pass the studies in the `studies` option, in the order they should draw. The first is usually `OHLCStudy`, which draws the price series:
 
@@ -49,7 +49,7 @@ const financeChartPanel = await SciFinanceChartPanel.create(document.getElementB
 
 In React, pass the same `studies` in the `config` of `SciFinanceChartView`. Create them in a `useMemo`, once per mounted chart: a study is a live object, bound to one chart.
 
-## Adding and Removing Indicators at Runtime {#add-and-remove-at-runtime}
+## Adding and Removing Technical Indicators at Runtime {#add-and-remove-at-runtime}
 
 `financeApi` is the chart's `SciFinanceChart`. Its `attachStudy` adds a study, and `detachStudy` removes one; an oscillator's pane goes with it.
 
@@ -79,51 +79,7 @@ chart.studiesChanged.subscribe(() => console.log(chart.studies.map((study) => st
 chart.paneLimitReached.subscribe(({ max, studyType }) => console.log(`${studyType} refused: at most ${max} panes`));
 ```
 
-## Building an Indicator Picker with STUDY_MENU_ITEMS {#indicator-picker}
-
-`STUDY_MENU_ITEMS` is the SDK's catalogue of the studies a picker can offer, in display order. Each item has a `type` to pass to `studyProvider.getStudy`, a short `label` such as `"RSI"`, a `description` such as `"Relative Strength Index"`, and a `category`. Two helpers do a picker's work without its UI:
-
-- **`filterStudyMenuItems(items, { query, category, isFavorite })`** narrows the list. The search matches labels, descriptions, categories and types, so `"average"`, `"bollinger"`, `"volatility"` and `"rsi"` all find what you'd expect. `isFavorite` keeps only the studies it returns `true` for, e.g. a user's favourites.
-- **`groupStudyMenuItems(items)`** sorts the list into categories, in `STUDY_CATEGORY_ORDER`, A–Z within each.
-
-```ts
-import { filterStudyMenuItems, groupStudyMenuItems, STUDY_MENU_ITEMS } from "scichart-scitrader";
-
-const matches = filterStudyMenuItems(STUDY_MENU_ITEMS, { query: "moving", category: "all" });
-for (const { category, items } of groupStudyMenuItems(matches)) {
-    console.log(category, items.map((item) => item.label)); // "Trend" ["EMA", "SMA", "WMA"]
-}
-```
-
-The examples below build a `<select>` with an `<optgroup>` per category. They leave out the order-book studies, because the built-in Coinbase exchange has no order-book source.
-
-## TypeScript Example: Adding and Removing Indicators at Runtime
-
-A BTC-USD chart from Coinbase, created with Volume, a 50-candle SMA, Bollinger Bands and RSI. Pick an indicator and click **Add indicator** to add it; click a chip to remove that indicator. `maxPanes` is 5 here, so adding a fifth oscillator shows the pane-limit message.
-
-<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/studies_AddRemoveIndicators/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
-
-The code for this example is found below.
-
-<CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../../_examples/studies_AddRemoveIndicators/vanilla.ts
-    ```
-</CodeSnippetBlock>
-
-## React Example: Adding and Removing Indicators at Runtime
-
-The same chart in React. The chips come from React state, which `studiesChanged` keeps up to date.
-
-<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader reactComponent="IndicatorsChart" name="../../_examples/studies_AddRemoveIndicators/react" />
-
-The code for this example is found below.
-
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../../_examples/studies_AddRemoveIndicators/react.tsx
-    ```
-</CodeSnippetBlock>
-
-## SciFinanceChart Study Methods and Events
+### SciFinanceChart Study Methods and Events
 
 | Member | What it does |
 | --- | --- |
@@ -173,7 +129,7 @@ paneLimitReached: EventHandler<{
 
 </details>
 
-## The studyProvider Registry
+### The studyProvider Registry
 
 `studyProvider` holds a factory for every registered study type. `getStudy(type, descriptor?, options?)` creates one, with the settings in `descriptor` if given (see [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/)), and returns `undefined` for an unknown type. `getStudies()` lists the registrations, including your own.
 
@@ -200,7 +156,51 @@ type StudyRegistration = {
 
 </details>
 
-## The Study Catalogue: STUDY_MENU_ITEMS, filterStudyMenuItems and groupStudyMenuItems
+### TypeScript Example: Adding and Removing Technical Indicators at Runtime
+
+A BTC-USD chart from Coinbase, created with Volume, a 50-candle SMA, Bollinger Bands and RSI. Pick an indicator from the dropdown, built with `groupStudyMenuItems`, and click **Add indicator** to add it; click a chip to remove that indicator. `maxPanes` is 5 here, so adding a fifth oscillator shows the pane-limit message.
+
+<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/studies_AddRemoveIndicators/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=../../_examples/studies_AddRemoveIndicators/vanilla.ts
+    ```
+</CodeSnippetBlock>
+
+### React Example: Adding and Removing Technical Indicators at Runtime
+
+The same chart in React. The chips come from React state, which `studiesChanged` keeps up to date.
+
+<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader reactComponent="IndicatorsChart" name="../../_examples/studies_AddRemoveIndicators/react" />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["React"]}>
+    ```tsx showLineNumbers file=../../_examples/studies_AddRemoveIndicators/react.tsx
+    ```
+</CodeSnippetBlock>
+
+## Building a Technical Indicator Picker with STUDY_MENU_ITEMS {#indicator-picker}
+
+`STUDY_MENU_ITEMS` is the SDK's catalogue of the studies a picker can offer, in display order. Each item has a `type` to pass to `studyProvider.getStudy`, a short `label` such as `"RSI"`, a `description` such as `"Relative Strength Index"`, and a `category`. Two helpers do a picker's work without its UI:
+
+- **`filterStudyMenuItems(items, { query, category, isFavorite })`** narrows the list. The search matches labels, descriptions, categories and types, so `"average"`, `"bollinger"`, `"volatility"` and `"rsi"` all find what you'd expect. `isFavorite` keeps only the studies it returns `true` for, e.g. a user's favourites.
+- **`groupStudyMenuItems(items)`** sorts the list into categories, in `STUDY_CATEGORY_ORDER`, A–Z within each.
+
+```ts
+import { filterStudyMenuItems, groupStudyMenuItems, STUDY_MENU_ITEMS } from "scichart-scitrader";
+
+const matches = filterStudyMenuItems(STUDY_MENU_ITEMS, { query: "moving", category: "all" });
+for (const { category, items } of groupStudyMenuItems(matches)) {
+    console.log(category, items.map((item) => item.label)); // "Trend" ["EMA", "SMA", "WMA"]
+}
+```
+
+To list [your own studies](/financial-charts/studies-and-indicators/creating-custom-studies/) too, add an `IStudyMenuItem` for each to the list you filter. The examples below leave out the order-book studies, because the built-in Coinbase exchange has no order-book source.
+
+### The Study Catalogue API: STUDY_MENU_ITEMS, filterStudyMenuItems and groupStudyMenuItems
 
 <details>
 <summary>The IStudyMenuItem interface, EStudyCategory enum and STUDY_MENU_ITEMS, with their TSDoc</summary>
@@ -271,8 +271,40 @@ function groupStudyMenuItems(items: readonly IStudyMenuItem[]): IStudyMenuGroup[
 
 </details>
 
+### TypeScript Example: A Technical Indicator Picker with Search, Categories and Favourites
+
+A BTC-USD chart from Coinbase, with a technical indicator picker on the right:
+
+- **Search** filters as you type: try "average", "volatility" or "oscillator".
+- **The category dropdown** shows one category, or all of them.
+- **Favourites only** shows the starred indicators. Click ☆ to star one.
+- **Click an indicator** to add it to the chart. The picker shows how many of each are on the chart; close a pane to remove its indicator.
+
+<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/studies_IndicatorPicker/vanilla" html={`<div style="display: flex; height: 100%"><div id="chart" style="flex: 1; min-width: 0"></div><div id="picker" style="width: 300px; overflow-y: auto"></div></div>`} />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=../../_examples/studies_IndicatorPicker/vanilla.ts
+    ```
+</CodeSnippetBlock>
+
+### React Example: A Technical Indicator Picker with Search, Categories and Favourites
+
+The same picker in React. The search text, category, favourites and the chart's studies are React state, and the list is filtered and grouped on each render.
+
+<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader reactComponent="IndicatorPickerChart" name="../../_examples/studies_IndicatorPicker/react" />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["React"]}>
+    ```tsx showLineNumbers file=../../_examples/studies_IndicatorPicker/react.tsx
+    ```
+</CodeSnippetBlock>
+
 ## Where to read next
 
 - [Technical Indicators and Studies](/financial-charts/studies-and-indicators/): every indicator, with its options.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): let users change an indicator's settings.
+- [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/): candlestick, Heikin-Ashi, Renko and Point & Figure charts.
 - [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/): add an indicator of your own to the picker.
