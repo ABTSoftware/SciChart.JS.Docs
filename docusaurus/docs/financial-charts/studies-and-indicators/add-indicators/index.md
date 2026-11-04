@@ -200,8 +200,6 @@ for (const { category, items } of groupStudyMenuItems(matches)) {
 
 To list [your own studies](/financial-charts/studies-and-indicators/creating-custom-studies/) too, add an `IStudyMenuItem` for each to the list you filter. The examples below leave out the order-book studies, because the built-in Coinbase exchange has no order-book source.
 
-### The Study Catalogue API: STUDY_MENU_ITEMS, filterStudyMenuItems and groupStudyMenuItems
-
 <details>
 <summary>The IStudyMenuItem interface, EStudyCategory enum and STUDY_MENU_ITEMS, with their TSDoc</summary>
 
