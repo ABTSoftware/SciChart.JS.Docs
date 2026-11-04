@@ -302,6 +302,7 @@ The code for this example is found below.
 
 ## Where to read next
 
+- [Technical Indicators Reference](/financial-charts/studies-and-indicators/indicators/): RSI, MACD, Bollinger Bands and moving averages explained, each with examples.
 - [Technical Indicators and Studies](/financial-charts/studies-and-indicators/): every indicator, with its options.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): let users change an indicator's settings.
 - [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/): candlestick, Heikin-Ashi, Renko and Point & Figure charts.
