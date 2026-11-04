@@ -359,7 +359,7 @@ studies: [new OHLCStudy(), new ZScoreStudy({ period: 20, threshold: 2 })],
 await financeChartPanel.financeApi.attachStudy(studyProvider.getStudy(Z_SCORE));
 ```
 
-To add it to a picker built on `STUDY_MENU_ITEMS` (see [Building an Indicator Picker](/financial-charts/studies-and-indicators/add-indicators/#indicator-picker)), add an item for it:
+To add it to a picker built on `STUDY_MENU_ITEMS` (see [Building a Technical Indicator Picker](/financial-charts/studies-and-indicators/add-indicators/#indicator-picker)), add an item for it:
 
 ```ts
 const items = [
@@ -650,173 +650,7 @@ abstract class StudyBase<T> implements IStudy {
 
 </details>
 
-<details>
-<summary>The IStudy interface, with its TSDoc</summary>
-
-```ts
-interface IStudy {
-    readonly type: EStudyType;
-    readonly chartPaneId: PaneId;
-    readonly id: string;
-    readonly studyId: StudyId;
-    readonly parentSurface: SciChartSurface;
-    readonly yAxes: ObservableArray<AxisBase2D>;
-    /**
-     * Sizing hint for this study's pane when this study is the primary occupant.
-     * Caller's `ISciFinanceChartPanelConfig.paneSizing[paneId]` overrides this.
-     * If neither is set, the pane uses the layout renderer's default (`grow: 1`).
-     *
-     * Use `{ grow: N }` for a flex weight relative to other grow-based panes,
-     * or `{ size: Npx }` for a fixed pixel height/width along the layout axis.
-     */
-    readonly paneSizeConfig?: IPaneSizeConfig;
-    /**
-     * A feed this study cannot work without, created on its behalf before it attaches.
-     *
-     * Studies normally read a source the default OHLCV feed already publishes, so they need no
-     * such declaration. The order-book heatmap is the first that does not: its data arrives on a
-     * separate feed that nothing else on the chart would ever ask for, and `onAttach` resolves
-     * its input synchronously — so unless the feed exists by then, the study binds to the candle
-     * close instead and silently draws nothing.
-     *
-     * Best-effort. A feed that cannot be built (no book source for this venue) is not an error:
-     * the study still attaches and draws nothing, which is the documented empty path.
-     */
-    readonly requiredFeedType?: EDataFeedType;
-    /**
-     * Optional — the chart has switched symbol or exchange, and the {@link requiredFeedType}
-     * feed now follows the new instrument. For studies that fetch from that feed on viewport
-     * changes rather than through their inputs: without it they keep drawing the old instrument
-     * until the next pan.
-     */
-    onInstrumentChanged?(): void;
-    readonly inputIds: DataSourceId[];
-    readonly outputIds: DataSourceId[];
-    /**
-     * A line for the legend when the study has something to say that is not a value — "not
-     * recorded for this instrument", "1m tier". Shown for studies with no outputs, which would
-     * otherwise have no legend row at all. The legend re-reads it on every redraw.
-     */
-    readonly legendStatus?: string;
-    /**
-     * Optional — a legend line for what is under the mouse, for studies whose reading depends on
-     * the cursor's price as well as its candle (the order-book heatmap). Called only while the
-     * mouse is over this study's own pane; `undefined` falls back to {@link legendStatus}.
-     *
-     * @param at the cursor in DEVICE pixels within the pane's series area — the space the pane's
-     *   coordinate calculators take — so a study reads it through its own axes.
-     */
-    getLegendReadout?(at: {
-        x: number;
-        y: number;
-    }): string | undefined;
-    readonly renderableSeries: ObservableArray<IRenderableSeries>;
-    readonly options: IStudyOptions;
-    /** Fires whenever the study's input data updates — fired after `onDataChanged` processes the update. */
-    readonly dataChanged: EventHandler<TDataUpdate<any>>;
-    /**
-     * Fires after {@link applyDescriptor} has mutated the live study (whether
-     * invoked by the form's debounced apply, the per-study "Reset to defaults"
-     * button, or the batch "Reset all study styles" helper). The form
-     * subscribes so it can re-sync its local draft state when an external
-     * applyDescriptor lands — without this, the form keeps showing stale
-     * values while the chart already reflects the new descriptor.
-     */
-    readonly descriptorApplied: EventHandler<TStudyDescriptor>;
-    onAttach(parentFinanceChart: SciFinanceChart, parentChartPane: ChartPane, wasmContext: TSciChart, dataManager: IDataManager): void;
-    onDetach(): void;
-    /**
-     * Optional — supply the X axis for this study's pane. When a study returns an
-     * axis here, {@link SciFinanceChart} uses it instead of the default time-based
-     * `DiscontinuousDateAxis`, marks the pane **non-time-domain** (excluded from
-     * axis-sync and from the shared time-label routing in `applyXAxisLabels`), and
-     * skips the base-values / live-tip machinery for that pane.
-     *
-     * Used by studies whose data is not indexed in the time domain — e.g. Renko
-     * (evenly-spaced bricks) and Point & Figure (columns) both return a
-     * `CategoryAxis` so points are positioned by index, not by timestamp.
-     *
-     * Return `undefined` (the default — omit the method) to keep the standard
-     * time axis. Studies that share their pane's existing axis need not implement it.
-     *
-     * `axisDefaults` is passed in because this runs during pane configuration —
-     * BEFORE `onAttach`, so `parentFinanceChart` is not yet set. Spread it onto the
-     * axis to inherit the chart's theme (label style, strip background, etc.).
-     */
-    createXAxis?(wasmContext: TSciChart, axisDefaults: IChartAxisDefaults): AxisBase2D | undefined;
-    getDescriptor(): TStudyDescriptor;
-    /**
-     * Returns the descriptor a freshly-constructed instance of this study
-     * type would expose — i.e. constructor defaults, no user customisation.
-     * Powers the per-study "Reset to defaults" form button and the batch
-     * "Reset all study styles" header / More-tab actions. Does NOT mutate
-     * this instance — callers are expected to feed the returned descriptor
-     * into {@link applyDescriptor} (or hand it to the form draft, which
-     * will fire its debounced apply for them).
-     */
-    getDefaultDescriptor(): TStudyDescriptor;
-    addDescriptor(section: EDescriptorSectionName, descriptor: IuiDescriptor): void;
-    setDescriptor(descriptor: TStudyDescriptor): void;
-    /**
-     * Apply edits from an in-form descriptor onto this live study instance.
-     * Concrete studies that override {@link IStudy.supportsLiveApply} to
-     * return `true` mutate their renderable series / data series in place
-     * (instant for style edits, recompute for input edits) — no detach,
-     * no re-attach, no flash.
-     *
-     * Studies that haven't implemented live apply leave
-     * {@link supportsLiveApply} as `false` (the default); callers detect that
-     * and fall back to the legacy `detachStudy + getStudy(new) + attachStudy`
-     * pipeline.
-     */
-    applyDescriptor(descriptor: TStudyDescriptor): void;
-    /**
-     * Whether {@link applyDescriptor} performs a real in-place update. When
-     * `false`, the caller (e.g. the SDK's `StudyList`) falls back
-     * to detach + re-instantiate. Default `false` on {@link StudyBase}; each
-     * study opts in by overriding to return `true`.
-     */
-    readonly supportsLiveApply: boolean;
-    /**
-     * Number of input candles the study needs to consume before producing its
-     * first valid output. Used by `SciFinanceChart` to size the fetch buffer
-     * so every candle in the visible range has every indicator's output.
-     *
-     * Raw-display studies (OHLC, Volume) return 0. Computed indicators
-     * (RSI, SMA, MACD, Bollinger Bands) return their period — possibly the
-     * sum of cascaded periods (MACD = slow + signal).
-     *
-     * Default impl in `StudyBase` returns 0.
-     */
-    getRequiredWarmup(): number;
-    /**
-     * Colour to paint this output's VALUE with in the legend, so a reader can tell
-     * which row belongs to which line. Only the number is coloured — the label stays
-     * in the legend's muted text colour, otherwise the row is all one colour and the
-     * label competes with the value it is labelling.
-     *
-     * Implementations read the LIVE renderable series rather than the study's stored
-     * `renderOptions`, so a colour drag in the study form shows up in the legend on the
-     * next cursor move with no extra plumbing. Where SciChart auto-picked the colour,
-     * the stored options never held it in the first place.
-     *
-     * `xIndex` is the candle under the cursor (`undefined` = the latest), for outputs
-     * whose colour is a function of the data rather than a fixed stroke: OHLC and Volume
-     * are red or green per candle, and the MACD histogram flips about zero.
-     *
-     * Return `undefined` to leave the value in the legend's default colour — correct
-     * for an output with no single colour of its own.
-     */
-    getLegendColor(outputId: DataSourceId, xIndex?: number): string | undefined;
-    /**
-     * Move the study's theme-following colours from one theme to another. Optional so a
-     * hand-written `IStudy` still type-checks; `StudyBase` implements it for every built-in study.
-     */
-    applyThemeChange?(from: ISciTraderTheme, to: ISciTraderTheme): void;
-}
-```
-
-</details>
+The `IStudy` interface, which `StudyBase` implements, is on [Technical Indicators and Studies](/financial-charts/studies-and-indicators/#istudy).
 
 <details>
 <summary>The IStudyOptions interface and StudyRegistration type, with their TSDoc</summary>
@@ -1010,5 +844,5 @@ interface IDataManager {
 ## Where to read next
 
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): the Settings Form and Study List your study works with.
-- [Add Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add it at runtime, and to a picker.
+- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add it at runtime, and to a picker.
 - [Save and Restore](/financial-charts/save-and-restore/): restoring a chart with custom studies.

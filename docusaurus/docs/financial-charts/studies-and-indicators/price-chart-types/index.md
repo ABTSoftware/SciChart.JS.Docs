@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1.5
+sidebar_position: 2.5
 sidebar_label: Price Chart Types
 title: "Candlestick, Heikin-Ashi, Renko & Point and Figure Charts | SciTrader.js"
 description: "Draw a JavaScript or React trading chart as candlesticks, OHLC bars, a line, a mountain or Heikin-Ashi candles, switch between them at runtime, and add Renko and Point & Figure charts with SciTrader.js."
@@ -22,18 +22,52 @@ A SciTrader chart can draw prices in seven ways. Five are **candle types**: styl
 
 ## Candle Types: Candlestick, OHLC Bars, Line, Mountain and Heikin-Ashi {#candle-types}
 
-The price study, `OHLCStudy`, draws the price series in any of the five candle types (`ECandleType`). **Heikin-Ashi** candles average each candle with the one before, which smooths out noise so trends are easier to see. Set the starting type on the study, and change it later with `setCandleType`:
+The price series is drawn by the chart's price study, `OHLCStudy`, usually the first study in `studies`. It can draw in any of the five candle types (`ECandleType`). **Heikin-Ashi** candles average each candle with the one before, which smooths out noise so trends are easier to see.
+
+### Setting the Starting Candle Type
+
+Pass `candleType` to the `OHLCStudy` in the chart's `studies`. Leave it out for candlesticks:
 
 ```ts
-import { ECandleType, OHLCStudy } from "scichart-scitrader";
+import {
+    CandleInterval, CoinbaseExchange, ECandleType, OHLCStudy, SciFinanceChartPanel, VolumeStudy,
+} from "scichart-scitrader";
 
-new OHLCStudy({ candleType: ECandleType.HeikinAshi }); // the starting type
-financeChartPanel.financeApi.setCandleType(ECandleType.OhlcBars); // change it later
+const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
+    exchangeName: CoinbaseExchange.name,
+    symbol: "ETH-USD",
+    interval: CandleInterval.ONE_DAY,
+    period: "1Y",
+    studies: [
+        new OHLCStudy({ candleType: ECandleType.HeikinAshi }), // the price series, as Heikin-Ashi candles
+        new VolumeStudy(),
+    ],
+});
 ```
 
-`setCandleType` swaps the price series in place: data, zoom and studies are untouched. It raises `candleTypeChanged`, so a picker can follow changes made elsewhere. `CANDLE_TYPE_MENU_ITEMS` lists the types with their labels, and the ready-made [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) is a picker for them.
+In React, pass the same `studies` in the `config` of `SciFinanceChartView`.
 
-The candle type is also a setting of the price study, so users can change it in the [Settings Form](/financial-charts/studies-and-indicators/altering-study-settings/), and it is [saved with the chart](/financial-charts/save-and-restore/).
+### Changing the Candle Type at Runtime
+
+Call `setCandleType` on the chart, `financeChartPanel.financeApi`. You don't need a reference to the `OHLCStudy`: the chart passes the new type on to its price study.
+
+```ts
+const chart = financeChartPanel.financeApi;
+
+chart.setCandleType(ECandleType.OhlcBars); // redraw the price series as OHLC bars
+chart.getCandleType(); // ECandleType.OhlcBars
+
+// Fires after each setCandleType call, so a picker can follow changes made elsewhere
+chart.candleTypeChanged.subscribe((type) => console.log("Candle type is now", type));
+```
+
+`setCandleType` swaps the price series in place: the data, zoom and other studies are untouched, and nothing reloads. A chart without an `OHLCStudy` ignores it.
+
+`candleTypeChanged` fires only for `setCandleType`. The candle type is also a setting in the price study's [Settings Form](/financial-charts/studies-and-indicators/altering-study-settings/), and a change made there redraws the chart without raising it; `getCandleType()` still returns the new type.
+
+`CANDLE_TYPE_MENU_ITEMS` lists the types with their labels, and the ready-made [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) is a picker for them.
+
+The candle type is [saved with the chart](/financial-charts/save-and-restore/).
 
 ## Renko and Point & Figure Charts {#renko-and-point-and-figure}
 
@@ -53,7 +87,7 @@ await financeChartPanel.financeApi.attachStudy(new PointAndFigureStudy({ boxSize
 | `PointAndFigureStudy` | `boxSize` | Sized from the price range | The price move each X or O box stands for |
 | `PointAndFigureStudy` | `reversalAmount` | 3 | Boxes of opposite move needed to start a new column |
 
-Add them like any other study, when the chart is created or at runtime; see [Add Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
+Add them like any other study, when the chart is created or at runtime; see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
 
 ## TypeScript Example: Heikin-Ashi, Renko and Point & Figure Charts
 
@@ -140,4 +174,4 @@ enum ECandleType {
 
 - [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/): a ready-made candle type picker.
 - [Technical Indicators and Studies](/financial-charts/studies-and-indicators/): every indicator you can add to the chart.
-- [Add Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add Renko, Point & Figure and indicators at runtime.
+- [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add Renko, Point & Figure and indicators at runtime.

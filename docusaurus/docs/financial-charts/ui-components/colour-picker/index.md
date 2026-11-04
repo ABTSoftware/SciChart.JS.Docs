@@ -71,7 +71,7 @@ Studies whose `supportsLiveApply` is `true`, such as `SMAStudy` and `MACDStudy`,
 | `SMAStudy` | `strokeColor` |
 | `MACDStudy` | `bandMacdColor` (MACD line), `bandSignalColor` (signal line), `fillMacdAboveSignal`, `fillMacdBelowSignal`, `histogramAboveZero`, `histogramBelowZero` |
 
-The settings you apply are saved with the chart, so they survive `toJSON` and `fromJSON`. For a complete form of a study's settings, with a `ColorPicker` for each colour, use `StudySettingsForm` instead; see [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/#settings-forms).
+The settings you apply are saved with the chart, so they survive `toJSON` and `fromJSON`. For a complete form of a study's settings, with a `ColorPicker` for each colour, use `StudySettingsForm` instead; see [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/).
 
 <details>
 <summary>IStudy.getDescriptor, applyDescriptor and the descriptor types, with their TSDoc</summary>
