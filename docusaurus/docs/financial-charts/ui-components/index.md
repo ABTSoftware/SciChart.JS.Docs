@@ -17,8 +17,8 @@ Besides the chart, the SDK ships the controls a trading app puts around it: tool
 | Candle-type menu | `CandleTypeSelector` | `<CandleTypeSelector>` | [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) |
 | Follow / Anchored toggle | `LiveTipToggle` | `<LiveTipToggle>` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
 | Colour field with opacity | `ColorPicker` | `<ColorPicker>` | [Colour Picker](/financial-charts/ui-components/colour-picker/) |
-| A study's settings form | `StudySettingsForm` | `<StudySettingsForm>` | [Studies](/financial-charts/studies-and-indicators/#settings-forms) |
-| The chart's studies, each with its form | `StudyList` | `<StudyList>` | [Studies](/financial-charts/studies-and-indicators/#settings-forms) |
+| A study's settings form | `StudySettingsForm` | `<StudySettingsForm>` | [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/#settings-forms) |
+| The chart's studies, each with its form | `StudyList` | `<StudyList>` | [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/#settings-forms) |
 | Drawing tools rail | `DrawingToolbar` | `<DrawingToolbar>` | [Drawing tools](/financial-charts/drawing-tools/) |
 | List of drawings | `DrawingList` | `<DrawingList>` | [Drawing tools](/financial-charts/drawing-tools/#list-of-drawings) |
 | Market-depth ladder | `MarketDepthPanel` | `<MarketDepthView>` | [Market Depth](/financial-charts/ui-components/market-depth/) |

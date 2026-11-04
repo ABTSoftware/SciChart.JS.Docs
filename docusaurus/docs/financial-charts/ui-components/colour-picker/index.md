@@ -71,7 +71,7 @@ Studies whose `supportsLiveApply` is `true`, such as `SMAStudy` and `MACDStudy`,
 | `SMAStudy` | `strokeColor` |
 | `MACDStudy` | `bandMacdColor` (MACD line), `bandSignalColor` (signal line), `fillMacdAboveSignal`, `fillMacdBelowSignal`, `histogramAboveZero`, `histogramBelowZero` |
 
-The settings you apply are saved with the chart, so they survive `toJSON` and `fromJSON`. For a complete form of a study's settings, with a `ColorPicker` for each colour, use `StudySettingsForm` instead; see [Settings forms](/financial-charts/studies-and-indicators/#settings-forms).
+The settings you apply are saved with the chart, so they survive `toJSON` and `fromJSON`. For a complete form of a study's settings, with a `ColorPicker` for each colour, use `StudySettingsForm` instead; see [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/#settings-forms).
 
 <details>
 <summary>IStudy.getDescriptor, applyDescriptor and the descriptor types, with their TSDoc</summary>
@@ -260,5 +260,5 @@ The picker is attached to `document.body`, outside your toolbar, so scope its ru
 
 #### See also
 
-- [Settings forms](/financial-charts/studies-and-indicators/#settings-forms)
+- [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/)
 - [Market Depth](/financial-charts/ui-components/market-depth/): its colours can be edited with a `ColorPicker` too

@@ -21,7 +21,7 @@ localStorage.setItem("my-chart", JSON.stringify(state));
 | `layout`       | Pane direction and order; pane sizes, visibility and maximised state; axis sync and group membership      |
 | `useSubCharts` | Whether the chart used sub-chart mode                                                                     |
 
-Each study's settings are saved as its [descriptor](/financial-charts/studies-and-indicators/#settings-forms), so settings the user edits in a study form are kept. Drawings are saved and restored when their annotation type is registered. `DrawingToolsController.attach` registers the built-in drawing tools' types; to restore drawings into a chart without a controller, call `registerDrawingTools()` first. For your own annotation types, call `SciFinanceChart.registerDrawingType(name)`.
+Each study's settings are saved as its [descriptor](/financial-charts/studies-and-indicators/altering-study-settings/#descriptors), so settings the user edits in a study form are kept. Drawings are saved and restored when their annotation type is registered. `DrawingToolsController.attach` registers the built-in drawing tools' types; to restore drawings into a chart without a controller, call `registerDrawingTools()` first. For your own annotation types, call `SciFinanceChart.registerDrawingType(name)`.
 
 ## Restore
 
