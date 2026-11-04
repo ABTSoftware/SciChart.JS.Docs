@@ -260,6 +260,139 @@ The slippage readout shows what sweeping the book to the hovered price would cos
 -   **Placement:** beside the panel on its left when there is room; otherwise, as on a phone, inside the panel on the half away from the finger, and kept on screen.
 -   The ladder sets `touch-action: none` and turns off the iOS long-press text selection and callout, so the hold isn't taken by the browser.
 
+### Customising the Slippage Readout {#customising-the-slippage-readout}
+
+You can change how the readout looks, but not yet what it says.
+
+**What you can customise:**
+
+- **The readout's look, with CSS.** The readout is an HTML element, so its fonts, colours, borders, padding, spacing and shadow are all yours to restyle. Its parts have these classes:
+
+    | Part | Class |
+    | --- | --- |
+    | The box | `st-market-depth__sweep`, plus `st-market-depth__sweep--ask` when buying or `--bid` when selling, and a `data-side` attribute |
+    | The headline: "Buy up to **78,471.97**" | `st-market-depth__sweep-head`; the price is its `<strong>` |
+    | The rows: Average price, Sum BTC, Sum USD | `st-market-depth__sweep-rows`, a `<dl>` grid of `<dt>` labels and `<dd>` values |
+    | The footer: "4 levels" | `st-market-depth__sweep-foot` |
+
+    CSS can also hide a part, such as one row with `:nth-of-type`, and add fixed text with `::before` or `::after`. The readout is attached to `document.body`, outside your own containers, so write the rules with its own classes. Start each with `body`, as in `body .st-market-depth__sweep`: it always matches the readout, and makes your rule win over `scitrader.css` whichever loads first.
+- **The shading on the ladder.** The wash over the rungs an order would consume, and the dashed line at its edge, are drawn on the ladder's canvas. Their colours are the panel settings `colours.highlight` and `colours.highlightEdge`.
+- **Turning it off:** `sweepReadout: false`, or `panel.setSweepReadout(false)`.
+
+**What you can't customise yet:** the readout's content. Its labels ("Buy up to", "Average price", "Sum BTC", "Sum USD", "4 levels") and its number formatting are fixed, and the panel has no option to add rows, change the wording, translate it or format the numbers differently. Options for that are planned. Until then, to show a readout of your own, build the ladder from `MarketDepthGrid`: its `onSweep(sweep)` option receives every number below as an `IDepthSweep`, or `undefined` when the pointer leaves, for you to render as you like. You then build the panel's header and layout yourself.
+
+<details>
+<summary>The IDepthSweep interface, with its TSDoc</summary>
+
+```ts
+/** What sweeping the book up to the hovered rung would cost. */
+interface IDepthSweep {
+    /** Which side would be consumed — buying lifts asks, selling hits bids. */
+    side: "bid" | "ask";
+    /** Rungs consumed, from the touch outward. */
+    levels: number;
+    /** Total base-asset quantity the order would fill. */
+    sumBase: number;
+    /** What it would cost in the quote asset. */
+    sumQuote: number;
+    /** `sumQuote / sumBase` — the price actually paid, not the price displayed. */
+    averagePrice: number;
+    /** The worst price reached: the rung being hovered. */
+    limitPrice: number;
+    /** Decimals the ladder is currently formatting prices to. */
+    priceDecimals: number;
+    /**
+     * The selection's outer boundary as a VIEWPORT y, the same place the dashed rule is drawn.
+     *
+     * Resolved here rather than handed out as a fraction for the host to convert. A fraction
+     * looks more robust and is not: the ladder occupies the series view rect, which is shorter
+     * than the panel by whatever the axes take, so a host converting against its own box lands a
+     * row out — which it did. The axis's own coordinate calculator is the only thing that knows
+     * the mapping, and it lives here.
+     */
+    clientY: number;
+    /** The pointer's viewport x, so a host can keep the readout clear of a finger. */
+    pointerClientX: number;
+    /** True when a finger raised the readout (a long press) rather than a hovering mouse. */
+    touch: boolean;
+}
+```
+
+</details>
+
+<details>
+<summary>The default slippage readout CSS (.st-market-depth__sweep), from scitrader.css</summary>
+
+```css
+.st-market-depth__sweep {
+    z-index: 1400;
+    min-width: 156px;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(var(--st-ui-overlay-rgb, 255 255 255) / 0.14);
+    background: var(--st-ui-menu-background, rgba(20,20,30,0.95));
+    color: var(--st-market-text, #d3d1de);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.st-market-depth__sweep--ask {
+    border-left: 3px solid var(--st-market-ask, #f6465d);
+}
+
+.st-market-depth__sweep--bid {
+    border-left: 3px solid var(--st-market-bid, #2ebd85);
+}
+
+.st-market-depth__sweep-head {
+    margin-bottom: 6px;
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 11px;
+}
+
+.st-market-depth__sweep-head strong {
+    color: var(--st-market-text, #d3d1de);
+    font-weight: 600;
+}
+
+.st-market-depth__sweep-rows {
+    gap: 2px 10px;
+    margin: 0;
+}
+
+.st-market-depth__sweep-rows dt {
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 11px;
+}
+
+.st-market-depth__sweep-rows dd {
+    margin: 0;
+    text-align: right;
+}
+
+.st-market-depth__sweep-foot {
+    margin-top: 6px;
+    color: var(--st-market-text-muted, #8b88a0);
+    font-size: 10px;
+}
+```
+
+</details>
+
+#### TypeScript Example: Restyling the Slippage Readout
+
+The market-depth example, with the readout restyled using CSS. The box is larger and rounder, with a thicker side stripe, the price is coloured by side, the values use a monospaced font, the "Sum USD" row is hidden, and the footer gains the text "indicative, before fees". The ladder's shading and edge line are amber, from the `highlight` and `highlightEdge` settings. Point at a rung in the ladder to see the readout.
+
+<LiveDocSnippet maxWidth={"100%"} height={600} includeSciTrader name="../../_examples/components_MarketDepthSweepStyle/vanilla" html={`<div style="display: flex; height: 100%"><div id="chart" style="flex: 1; min-width: 0"></div><div id="depth" style="width: 340px"></div></div>`} />
+
+The code for this example is found below.
+
+<CodeSnippetBlock labels={["TS"]}>
+    ```ts showLineNumbers file=../../_examples/components_MarketDepthSweepStyle/vanilla.ts
+    ```
+</CodeSnippetBlock>
+
 ### Recolouring the Ladder {#recolouring-the-ladder}
 
 The settings' colours follow the theme while they are at their defaults. To let the user change them, show `panel.themedSettings` (the colours as drawn) in a `ColorPicker`, and store an edit theme-neutral again with `unthemeMarketDepthSettings`:
