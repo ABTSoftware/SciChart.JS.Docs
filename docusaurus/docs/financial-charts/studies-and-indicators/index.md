@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-sidebar_label: Overview
+sidebar_position: 5
+sidebar_label: Studies and Indicators
 title: "Technical Indicators & Studies: Every Built-in Indicator | SciTrader.js"
 description: "Every technical indicator in SciTrader.js trading charts: RSI, MACD, Bollinger Bands, Ichimoku, VWAP, Volume Profile and more, with their options and defaults, plus Heikin-Ashi, Renko and Point & Figure price charts."
 keywords: ["SciTrader", "SciTrader.js", "technical indicators JavaScript", "RSI MACD chart", "Bollinger Bands JavaScript", "Ichimoku chart", "Heikin-Ashi Renko chart", "Point and Figure chart", "trading indicators"]
