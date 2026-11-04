@@ -92,7 +92,7 @@ Every code sample in this section is self-contained and shown in TypeScript and 
 
 ## What you can build with SciTrader.js
 
-- **Financial charts and candlestick charts.** Candlesticks, OHLC bars, line, mountain, Heikin-Ashi, Renko and Point & Figure. Price, volume and indicator panes pan and zoom together. See [Studies and indicators](/financial-charts/studies-and-indicators/#candle-types).
+- **Financial charts and candlestick charts.** Candlesticks, OHLC bars, line, mountain, Heikin-Ashi, Renko and Point & Figure. Price, volume and indicator panes pan and zoom together. See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/).
 - **30+ technical indicators.** Moving averages, Bollinger Bands and channels, Ichimoku, and oscillators such as RSI, MACD, Stochastic and ADX. There are also volume profile, order-book heatmap and book-imbalance studies. Every setting can be edited at runtime, and you can write your own studies. See [Studies and indicators](/financial-charts/studies-and-indicators/).
 - **Real-time trading charts from any data source.**
     - Built-in live connectors for Binance and Coinbase.

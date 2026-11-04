@@ -19,6 +19,7 @@ This section covers:
 
 | Page | What it covers |
 | --- | --- |
+| [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/) | Candlestick, OHLC bar, line, mountain and Heikin-Ashi price series, and Renko and Point & Figure charts |
 | [Add Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/) | Adding indicators when the chart is created, adding and removing them at runtime, and building an indicator picker |
 | [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/) | Changing an indicator's settings (lengths, levels, colours) from code or with the ready-made Settings Form and Study List |
 | [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/) | Writing an indicator of your own, step by step, with a settings form, live updates and save and restore |
@@ -41,7 +42,7 @@ Every study also takes the [`IStudyOptions`](#istudyoptions) every study shares.
 | Renko | `RenkoStudy` | `Renko` | Own pane, category axis | `brickSize` (sized from the price range), `reversalAmount` (2) |
 | Point & Figure | `PointAndFigureStudy` | `PointAndFigure` | Own pane, category axis | `boxSize` (sized from the price range), `reversalAmount` (3) |
 
-See [Price Chart Types](#candle-types) below.
+See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/).
 
 ### Trend Indicators
 
@@ -143,101 +144,17 @@ interface IStudyOptions {
 
 ## Price Chart Types: Candlestick, Heikin-Ashi, Renko and Point & Figure {#candle-types}
 
-The price study, `OHLCStudy`, draws the price series in one of five styles (`ECandleType`): candlesticks, OHLC bars, a line, a mountain (area), or Heikin-Ashi candles. Heikin-Ashi averages each candle with the one before, which smooths out noise so trends are easier to see.
+The price series itself can be drawn in several ways:
 
-```ts
-import { ECandleType, OHLCStudy } from "scichart-scitrader";
+- **Candlestick**, **OHLC bars**, **line** and **mountain** (area) charts;
+- **Heikin-Ashi** candles, which average each candle with the one before to smooth out noise;
+- **Renko** and **Point & Figure** charts, which plot price moves rather than time, each in a pane of its own.
 
-new OHLCStudy({ candleType: ECandleType.HeikinAshi }); // the starting style
-financeChartPanel.financeApi.setCandleType(ECandleType.OhlcBars); // change it later
-```
-
-`setCandleType` swaps the price series in place. Data, zoom and studies are untouched, and `candleTypeChanged` is raised. `CANDLE_TYPE_MENU_ITEMS` lists the types with their labels, and the ready-made [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) is a picker for them.
-
-**Renko** and **Point & Figure** are not candle types. They plot price movement, not time: a new brick or column appears only when price moves far enough, however long that takes. So they are studies, each in a pane of its own with a category (index) axis:
-
-```ts
-await financeChartPanel.financeApi.attachStudy(new RenkoStudy({ reversalAmount: 2 }));
-await financeChartPanel.financeApi.attachStudy(new PointAndFigureStudy({ boxSize: 5, reversalAmount: 3 }));
-```
-
-Leave `brickSize` and `boxSize` unset to size them from the price range.
-
-<details>
-<summary>SciFinanceChart.setCandleType, getCandleType and candleTypeChanged, and the ECandleType enum, with their TSDoc</summary>
-
-```ts
-/**
- * Change the price series rendering style (candlestick, OHLC bars, line,
- * mountain or Heikin-Ashi). Delegates to the default-pane
- * OHLC study, which swaps its renderable series in place (preserving data /
- * zoom / pan). No-op if there is no price study. Raises {@link candleTypeChanged}.
- */
-setCandleType(type: ECandleType): void;
-
-/** The current price rendering style. Defaults to candlestick when no price study exists. */
-getCandleType(): ECandleType;
-
-/**
- * Fires when the price series rendering style changes via {@link setCandleType}.
- * Carries the new {@link ECandleType} so UI controls can reflect external changes.
- */
-candleTypeChanged: EventHandler<ECandleType>;
-
-/**
- * The rendering style for the main price series of a finance chart.
- *
- * Candlestick / OhlcBars / Line / Mountain bind directly to the raw
- * {@link OhlcDataSeries}; HeikinAshi is derived via a `scichart-financial-tools`
- * filter (see {@link createPriceSeries}). All are **time-domain** — one mark per
- * time slot, on the price pane's shared time axis.
- *
- * Renko and Point & Figure are NOT candle types — they remap X off the time
- * domain (price-driven bricks / columns) and ship as their own studies
- * (`RenkoStudy` / `PointAndFigureStudy`) on dedicated `CategoryAxis` panes.
- *
- * String values (not numeric) so the choice round-trips cleanly through the
- * study descriptor / `toJSON` serialization and the `?candleType=` URL param.
- */
-enum ECandleType {
-    Candlestick = "Candlestick",
-    OhlcBars = "OhlcBars",
-    Line = "Line",
-    Mountain = "Mountain",
-    HeikinAshi = "HeikinAshi"
-}
-```
-
-</details>
-
-## TypeScript Example: Heikin-Ashi, Renko and Point & Figure Charts
-
-An ETH-USD daily chart from Coinbase, drawn with Heikin-Ashi candles and a Renko pane below. The selector changes the candle type, and the buttons swap the Renko pane for a Point & Figure pane, or remove it.
-
-<LiveDocSnippet maxWidth={"100%"} height={600} includeSciTrader name="../_examples/studies_PriceChartTypes/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
-
-The code for this example is found below.
-
-<CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../_examples/studies_PriceChartTypes/vanilla.ts
-    ```
-</CodeSnippetBlock>
-
-## React Example: Heikin-Ashi, Renko and Point & Figure Charts
-
-The same chart in React, with the React `CandleTypeSelector` from `scichart-scitrader-react`.
-
-<LiveDocSnippet maxWidth={"100%"} height={600} includeSciTrader reactComponent="PriceChartTypes" name="../_examples/studies_PriceChartTypes/react" />
-
-The code for this example is found below.
-
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/studies_PriceChartTypes/react.tsx
-    ```
-</CodeSnippetBlock>
+The first five are candle types of the price study, switched with `setCandleType`. Renko and Point & Figure are studies. See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/), with live examples.
 
 ## Where to read next
 
+- [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/): candlestick, Heikin-Ashi, Renko and Point & Figure charts.
 - [Add Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): add the indicators above, and add or remove them at runtime.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change their settings from code or with the Settings Form.
 - [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/): write an indicator of your own.

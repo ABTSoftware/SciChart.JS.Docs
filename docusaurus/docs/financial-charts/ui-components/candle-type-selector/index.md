@@ -10,7 +10,7 @@ keywords: ["SciTrader", "SciTrader.js", "CandleTypeSelector", "candle type", "He
 
 The **candle type** is how the chart draws prices: as candlesticks, OHLC bars, a line, a mountain (a filled line) or Heikin-Ashi candles. `CandleTypeSelector` is a ready-made toolbar button for it: it shows the current type's icon and name, and opens a menu of types.
 
-Like the other [toolbar controls](/financial-charts/ui-components/#how-they-work), it only picks a type. It calls `onChange`, and you apply the type with `financeApi.setCandleType(type)`. Changing the candle type redraws the price series in place: the data, zoom and studies stay as they are. See [Candle types](/financial-charts/studies-and-indicators/#candle-types).
+Like the other [toolbar controls](/financial-charts/ui-components/#how-they-work), it only picks a type. It calls `onChange`, and you apply the type with `financeApi.setCandleType(type)`. Changing the candle type redraws the price series in place: the data, zoom and studies stay as they are. See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/).
 
 ## TypeScript Example: Candle Type Selector
 
@@ -221,6 +221,6 @@ The menu is attached to `document.body`, outside your toolbar, so scope menu rul
 
 #### See also
 
-- [Candle types](/financial-charts/studies-and-indicators/#candle-types)
+- [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/)
 - [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/)
 - [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/)

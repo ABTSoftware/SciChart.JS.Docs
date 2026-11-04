@@ -153,7 +153,7 @@ The finance chart itself, and where most of the API lives. It **throws** while `
 | --- | --- | --- |
 | Symbol, interval, period | `setSymbol`, `changeInterval`, `setPeriod`, `currentPeriod`, `createDataFeed`, `removeDataFeed`, `dataFeeds` | [Symbols, intervals and periods](/financial-charts/symbols-intervals-periods/) |
 | Studies | `attachStudy(study): Promise<void>`, `detachStudy(study)`, `studies`, `studiesChanged` | [Studies and indicators](/financial-charts/studies-and-indicators/) |
-| Candle type | `setCandleType(type)`, `getCandleType()`, `candleTypeChanged` | [Candle types](/financial-charts/studies-and-indicators/#candle-types) |
+| Candle type | `setCandleType(type)`, `getCandleType()`, `candleTypeChanged` | [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/) |
 | Theme and axes | `setTheme(theme)`, `theme`, `themeChanged`, `applyAxisStyle(partial)`, `axisDefaults` | [Styling and themes](/financial-charts/styling-and-themes/) |
 | Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
 | Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/layout/) |
