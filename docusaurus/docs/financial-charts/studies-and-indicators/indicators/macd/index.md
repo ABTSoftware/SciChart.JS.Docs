@@ -24,20 +24,21 @@ Because its values are differences in price, not prices, a chart draws MACD in a
 
 MACD uses exponential moving averages (EMAs) of the close, with three lengths: `fast` (12 by default), `slow` (26) and `signal` (9):
 
-```text
-MACD line   = EMA(close, fast) − EMA(close, slow)
-signal line = EMA(MACD line, signal)
-histogram   = MACD line − signal line
-```
+$$
+\begin{aligned}
+\text{MACD line} &= \text{EMA}_{\text{fast}}(\text{close}) - \text{EMA}_{\text{slow}}(\text{close}) \\
+\text{signal line} &= \text{EMA}_{\text{signal}}(\text{MACD line}) \\
+\text{histogram} &= \text{MACD line} - \text{signal line}
+\end{aligned}
+$$
 
 An EMA weights recent candles more than older ones. Each value moves part of the way towards the latest close:
 
-```text
-k   = 2 / (length + 1)
-EMA = (close − previous EMA) × k + previous EMA
-```
+$$
+k = \frac{2}{n + 1} \qquad \text{EMA}_t = (\text{close}_t - \text{EMA}_{t-1}) \times k + \text{EMA}_{t-1}
+$$
 
-The first EMA value is the simple average of the first `length` closes. See [Moving Averages](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) for more.
+where $n$ is the EMA's length. The first EMA value is the simple average of the first `length` closes. See [Moving Averages](/financial-charts/studies-and-indicators/indicators/moving-averages-sma-ema-wma/) for more.
 
 The MACD line starts after `slow` candles, and the signal line and histogram after `slow + signal`, about 35 candles with the defaults. SciTrader loads that many extra candles to the left of the visible period, so the lines start at the left edge.
 

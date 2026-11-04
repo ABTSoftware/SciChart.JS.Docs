@@ -23,12 +23,15 @@ When price swings widely, the standard deviation grows and the bands move apart;
 
 Bollinger Bands use two settings: `period`, the number of candles (20 by default), and `stdDev`, the band width in standard deviations (2 by default). For each candle, over the last `period` closes:
 
-```text
-middle band = SMA(close, period)             the average of the last `period` closes
-σ           = √( Σ (close − middle)² / period )   their standard deviation
-upper band  = middle + stdDev × σ
-lower band  = middle − stdDev × σ
-```
+$$
+\begin{aligned}
+\text{middle} &= \frac{1}{n} \sum_{i=1}^{n} \text{close}_i \\
+\sigma &= \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left(\text{close}_i - \text{middle}\right)^2} \\
+\text{upper} &= \text{middle} + m\,\sigma \qquad \text{lower} = \text{middle} - m\,\sigma
+\end{aligned}
+$$
+
+where $n$ is `period`, $m$ is `stdDev`, the middle band is the simple moving average of the last $n$ closes, and $\sigma$ is their standard deviation.
 
 SciTrader divides by `period` (the population standard deviation), as Bollinger's original definition does. The bands start after `period` candles; SciTrader loads that many extra candles to the left of the visible period, so they start at the left edge.
 

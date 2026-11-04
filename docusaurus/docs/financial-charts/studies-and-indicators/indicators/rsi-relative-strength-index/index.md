@@ -28,16 +28,20 @@ The RSI compares the average gain to the average loss over `length` candles, 14 
 2. **First averages.** The first average gain is the simple average of the first `length` gains, and the same for losses.
 3. **Wilder smoothing.** Each later average carries most of the previous one forward:
 
-    ```text
-    averageGain = (previousAverageGain × (length − 1) + gain) / length
-    averageLoss = (previousAverageLoss × (length − 1) + loss) / length
-    ```
+    $$
+    \begin{aligned}
+    \text{averageGain}_t &= \frac{\text{averageGain}_{t-1} \times (n - 1) + \text{gain}_t}{n} \\
+    \text{averageLoss}_t &= \frac{\text{averageLoss}_{t-1} \times (n - 1) + \text{loss}_t}{n}
+    \end{aligned}
+    $$
+
+    where $n$ is `length`.
 
 4. **RS and RSI.** RS is the average gain divided by the average loss, and
 
-    ```text
-    RSI = 100 − 100 / (1 + RS)
-    ```
+    $$
+    RS = \frac{\text{averageGain}}{\text{averageLoss}} \qquad RSI = 100 - \frac{100}{1 + RS}
+    $$
 
     When there have been no losses at all, RSI is 100.
 

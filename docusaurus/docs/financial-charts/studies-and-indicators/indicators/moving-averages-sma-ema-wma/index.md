@@ -26,28 +26,27 @@ Moving averages are prices, so a chart draws them on the price pane, over the ca
 
 ## How Are Moving Averages Calculated?
 
-Each uses the last `length` closes, 14 by default.
+Each uses the last $n$ closes, where $n$ is `length`, 14 by default; $\text{close}_n$ is the newest.
 
 **SMA: Simple Moving Average.** The plain average:
 
-```text
-SMA = (close₁ + close₂ + … + closeₙ) / n
-```
+$$
+\text{SMA} = \frac{\text{close}_1 + \text{close}_2 + \dots + \text{close}_n}{n}
+$$
 
-**WMA: Weighted Moving Average.** Weights 1, 2, … n, from the oldest close to the newest, divided by the sum of the weights:
+**WMA: Weighted Moving Average.** Weights $1, 2, \dots, n$, from the oldest close to the newest, divided by the sum of the weights:
 
-```text
-WMA = (1 × close₁ + 2 × close₂ + … + n × closeₙ) / (n × (n + 1) / 2)
-```
+$$
+\text{WMA} = \frac{1 \cdot \text{close}_1 + 2 \cdot \text{close}_2 + \dots + n \cdot \text{close}_n}{n(n + 1)/2}
+$$
 
-**EMA: Exponential Moving Average.** Each value moves part of the way from the previous EMA towards the latest close. The first value is the SMA of the first `n` closes:
+**EMA: Exponential Moving Average.** Each value moves part of the way from the previous EMA towards the latest close. The first value is the SMA of the first $n$ closes:
 
-```text
-k   = 2 / (n + 1)
-EMA = (close − previous EMA) × k + previous EMA
-```
+$$
+k = \frac{2}{n + 1} \qquad \text{EMA}_t = (\text{close}_t - \text{EMA}_{t-1}) \times k + \text{EMA}_{t-1}
+$$
 
-With `n` = 20, `k` is about 0.095: each new close moves the EMA about 9.5% of the way towards it.
+With $n = 20$, $k$ is about 0.095: each new close moves the EMA about 9.5% of the way towards it.
 
 Each line starts after `length` candles. SciTrader loads that many extra candles to the left of the visible period, so the lines start at the left edge.
 
