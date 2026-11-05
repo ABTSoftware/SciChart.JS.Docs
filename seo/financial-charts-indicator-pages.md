@@ -1,4 +1,4 @@
-# Financial Charts: Technical Indicator Pages Plan
+# Financial Charts: Technical Indicator and Drawing Tool Pages Plan
 
 Which technical indicator pages to add to the SciTrader.js docs (Studies and Indicators > Add Technical Indicators), ranked by search volume. Each page follows the same template: what the indicator is, how it is calculated, how to read it, and how to add it to a JavaScript and a React financial chart, with live TypeScript and React examples.
 
@@ -89,3 +89,48 @@ Searches for charting libraries are small, so the indicator pages mainly bring i
 | technical indicators javascript | 0 | – |
 | rsi javascript | 0 | – |
 | javascript trading chart | 0 | – |
+
+## Drawing Tool Pages
+
+Drawing tool pages under Drawing Tools > Add Drawing Tools, ranked by search volume. Same source as above (Ahrefs Keywords Explorer, queried 2026-11-05). Each page: what the tool is for, how it works, how traders use it, and how to draw it on a JavaScript and a React financial chart, by point and click and in code, with live examples.
+
+Left out: "horizontal line" (261,000, KD 0): its parent topic is the maths term, not trading. "measure tool" (1,600): its parent topic is the iPhone Measure app.
+
+### Published: Drawing Tools Batch 1
+
+| Status | Tool | Tool / class | Keywords (global volume, KD) | Total | Page / notes |
+| --- | --- | --- | --- | --- | --- |
+| Done | Elliott Wave | Elliott wave presets (`PolyLineAnnotation`) | elliott wave 14,000 (KD 0), elliott wave theory 12,000 (KD 46), elliott wave pattern 1,600 (KD 50), elliott wave indicator 250 (KD 0) | ~27.9k | `/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/` |
+| Done | Trend Lines | `ExtendedLineAnnotation`, `HorizontalTrendLineAnnotation` | trendline 16,000 (KD 24), trend line 10,000 (KD 6), trend line chart 600 (KD 7), how to draw trend lines 500 (KD 8), support and resistance lines 250 (KD 12) | ~27.4k | `/financial-charts/drawing-tools/add-drawing-tools/trend-lines/`. No tool is labelled "Trend Line" (SCT-930) |
+| Done | Fibonacci Retracement | `FibonacciRetracementAnnotation` | fibonacci retracement 20,000 (KD 38), fibonacci retracement calculator 1,100 (KD 2), fibonacci extension 1,000 (KD 16) | ~22.1k | `/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/` |
+| Done | Stop Loss / Take Profit | `StopLossTakeProfitAnnotation` | risk reward ratio 4,800 (KD 7), stop loss take profit 600 (KD 0) | ~5.4k | `/financial-charts/drawing-tools/add-drawing-tools/stop-loss-take-profit/`. No position tool or ratio readout (SCT-930) |
+| Done | Harmonic Patterns (XABCD) | XABCD preset (`PolyLineAnnotation`) | harmonic patterns 2,700 (KD 5), abcd pattern 1,600 (KD 0), xabcd pattern 900 (KD 0) | ~5.2k | `/financial-charts/drawing-tools/add-drawing-tools/harmonic-patterns-xabcd/`. No leg ratios (SCT-930) |
+
+### Later: Drawing Tools
+
+| Status | Tool | Tool / class | Keywords (global volume, KD) | Total | Notes |
+| --- | --- | --- | --- | --- | --- |
+| Hold | Channels | `ChannelAnnotation` and variants | parallel channel 600 (KD 0), channel trading 250 (KD 0), trend channel 200 (KD 0), price channel 200 (KD 0) | ~1.2k |  |
+| Hold | Pitchforks | `PitchforkAnnotation` and variants | andrews pitchfork 300 (KD 0), pitchfork trading 200 (KD 0), schiff pitchfork 70 (KD 0), pitchfork indicator 40 (KD 0) | ~0.6k |  |
+| Hold | Angle Line | `AngleLineAnnotation` | angle line 1,500 (KD 0) | ~1.5k | Parent topic "angle line" may be geometry, not trading |
+| Hold | Fibonacci Time Zones, Circles, Arcs, Fan | Fibonacci tools | fibonacci fan 200 (KD 0), fibonacci circles 100 (KD 1), fibonacci time zones 80 (KD 0), fibonacci arcs 70 (KD 0) | ~0.5k |  |
+
+### Known SDK Gaps Found While Writing the Drawing Tool Pages
+
+| Ticket | Type | What |
+| --- | --- | --- |
+| SCT-928 | Bug | The full editor floats instead of docking in `editorContainer`; wrong "favourites" TSDoc; `.st-pane--focused` unstyled |
+| SCT-929 | Feature | Selection/edit events, pattern helpers not exported, custom tools in the catalogue, keyboard modifiers on every pane |
+| SCT-930 | Feature | Long/short position tool with risk/reward, XABCD leg ratios, a "Trend Line" tool |
+
+### Developer Keywords: Drawing Tools
+
+| Keyword | Global volume | KD |
+| --- | --- | --- |
+| tradingview drawing tools | 150 | 0 |
+| chart drawing tools | 40 | – |
+| javascript chart annotations | 0 | – |
+| react chart drawing tools | 0 | – |
+| chart annotation library | 0 | – |
+| trading chart annotations | 0 | – |
+| drawing tools trading | 0 | – |

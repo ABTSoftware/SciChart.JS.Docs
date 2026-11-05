@@ -19,8 +19,8 @@ Besides the chart, the SDK ships the controls a trading app puts around it: tool
 | Colour field with opacity | `ColorPicker` | `<ColorPicker>` | [Colour Picker](/financial-charts/ui-components/colour-picker/) |
 | A study's settings form | `StudySettingsForm` | `<StudySettingsForm>` | [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) |
 | The chart's studies, each with its form | `StudyList` | `<StudyList>` | [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) |
-| Drawing tools rail | `DrawingToolbar` | `<DrawingToolbar>` | [Drawing tools](/financial-charts/drawing-tools/) |
-| List of drawings | `DrawingList` | `<DrawingList>` | [Drawing tools](/financial-charts/drawing-tools/#list-of-drawings) |
+| Drawing tools rail | `DrawingToolbar` | `<DrawingToolbar>` | [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) |
+| List of drawings | `DrawingList` | `<DrawingList>` | [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/#drawing-list) |
 | Market-depth ladder | `MarketDepthPanel` | `<MarketDepthView>` | [Market Depth](/financial-charts/ui-components/market-depth/) |
 | Loading progress dots | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` | [Layout](/financial-charts/layout/#loading-states) |
 | Candle counts (visible / loaded / total) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` | [Candle Counter](/financial-charts/ui-components/candle-counter/) |

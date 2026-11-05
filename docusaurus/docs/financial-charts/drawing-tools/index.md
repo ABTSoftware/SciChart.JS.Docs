@@ -1,168 +1,357 @@
 ---
 sidebar_position: 7
 sidebar_label: Drawing Tools
-title: "Drawing Tools | SciTrader.js Trading Charts"
-description: "Add trend lines, Fibonacci, pitchforks and other trading drawing tools to SciTrader.js charts, with toolbars for plain TypeScript and React plus keyboard and touch support."
-keywords: ["SciTrader", "SciTrader.js", "trading drawing tools", "Fibonacci retracement chart", "trend line JavaScript chart"]
+title: "Trading Chart Drawing Tools: Trend Lines, Fibonacci, Patterns | SciTrader.js"
+description: "Every drawing tool in SciTrader.js trading charts: trend lines, channels, pitchforks, Fibonacci retracements, Elliott wave and harmonic patterns, measure and risk tools, for JavaScript and React financial charts."
+keywords: ["SciTrader", "SciTrader.js", "trading chart drawing tools", "chart drawing tools JavaScript", "trend line JavaScript chart", "Fibonacci retracement chart", "Elliott wave chart", "React financial chart drawing tools"]
 ---
 
-# Drawing tools
+# Drawing Tools
 
-SciTrader has about 35 drawing tools. Each is an entry in `DRAWING_TOOLS`, grouped by `EDrawingToolGroup`:
-- **Lines:** poly line, extended line, horizontal and vertical lines, cross line, angle line.
-- **Channels:** channel, flat-bottom channel, disjoint channel.
-- **Pitchforks:** pitchfork, inside, Schiff and modified Schiff pitchforks.
-- **Fibonacci:** retracement, extension, time zones, speed-resistance arcs, circles and wedge; also pitchfan.
-- **Cycles & time:** cyclic line, cyclic arc, sector.
-- **Patterns:** XABCD and Elliott waves.
-- **Measure & risk:** measure, stop-loss / take-profit.
-- **Freehand:** freehand pen and highlighter.
-- **Eraser.**
+SciTrader has 34 drawing tools for marking up a trading chart: trend lines, channels, pitchforks, Fibonacci tools, Elliott wave and harmonic patterns, measure and risk tools, and a freehand pen. Each drawing is an annotation from `scichart-financial-tools`, drawn on a pane of the chart.
 
-Drawings are saved with the chart ([Saving and restoring](/financial-charts/save-and-restore/)).
+- **Add them with point and click.** `DrawingToolsController` turns the chart into a drawing surface: select a tool, then click the chart to place its points. The ready-made [Drawing Toolbar](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) gives users the tools.
+- **Or add them in code**, by creating the annotation with its points and adding it to a pane.
+- **Edit them.** A selected drawing gets a quick-edit toolbar, and the full editor has every option.
+- **Keep them.** Drawings are [saved and restored with the chart](/financial-charts/save-and-restore/), and follow its [theme](/financial-charts/styling-and-themes/).
 
-## The controller
+This section covers:
 
-`DrawingToolsController` does the work and has no UI of its own:
-- it adds the drawing modifiers to every pane, including panes added later;
-- it shows a floating edit toolbar on the selected drawing;
-- it suspends panning, x-axis drag and zoom-to-extents while a tool is in use;
-- it reports when a drawing is finished.
+| Page | What it covers |
+| --- | --- |
+| [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/) | Enabling point-and-click drawing, adding drawings in code, and listing, selecting and removing drawings. Under it, a page for each of the most popular drawing tools |
+| [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/) | The quick-edit toolbar, the full editor, editing drawings in code, and selection and edit events |
+| [Keyboard and Touch](/financial-charts/drawing-tools/keyboard-and-touch/) | Keyboard shortcuts, touch gestures and on-chart buttons, through optional modifiers |
+| [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) | The ready-made toolbar and list of drawings, in UI Components |
 
-Any toolbar, menu or keyboard shortcut can drive it.
+## Every Drawing Tool {#the-catalogue}
 
-```ts
-import { DrawingToolsController } from "scichart-scitrader";
-import { ETradingAnnotationType } from "scichart-financial-tools";
+The tables below list every drawing tool, grouped by `EDrawingToolGroup`, the groups the toolbar uses. For each one:
 
-const drawing = DrawingToolsController.attach(financeChartPanel.financeApi);
+- **Tool id** is the `TDrawingToolId` to pass to `selectTool` to start it, e.g. `drawing.selectTool(ETradingAnnotationType.FibonacciRetracementAnnotation)`.
+- **Annotation class** is the class to create it in code, from `scichart-financial-tools`, e.g. `new FibonacciRetracementAnnotation({ points })`.
+- **Points** is how many points the user clicks to place it, and how many its `points` take.
 
-drawing.selectTool(ETradingAnnotationType.FibonacciRetracementAnnotation);
-drawing.activeToolChanged.subscribe((tool) => console.log("active tool:", tool)); // null once placed
-drawing.drawingsChanged.subscribe((items) => console.log(items.length, "drawings"));
+Tools with a page of their own link to it.
 
-drawing.stop();      // cancel the active tool
-drawing.remove();    // delete every drawing (or pass one item)
-drawing.detach();    // remove the modifiers; drawings stay
-```
+### Lines Drawing Tools {#lines}
 
-- **When a tool finishes.** Click-to-place tools finish when their last point is placed, and freehand tools when the stroke ends. `activeTool` then returns to `null`.
-- **The eraser** stays on until `stop()`, and removes only user drawings, never study annotations.
-- **`drawings`** lists the user's drawings. Each item has an `annotation`, a `type`, and the `toolId` that made it.
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| [Poly Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.PolyLineAnnotation` | `PolyLineAnnotation` | 2 | Straight line segments through its points |
+| [Extended Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.ExtendedLineAnnotation` | `ExtendedLineAnnotation` | 2 | A two-point trend line that can extend past either end |
+| [Horizontal Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.HorizontalTrendLineAnnotation` | `HorizontalTrendLineAnnotation` | 1 | A line at one price, across the pane |
+| Vertical Line | `ETradingAnnotationType.VerticalTrendLineAnnotation` | `VerticalTrendLineAnnotation` | 1 | A line at one time, down the pane |
+| Cross Line | `ETradingAnnotationType.CrossLineAnnotation` | `CrossLineAnnotation` | 1 | A horizontal and a vertical line, crossing at one point |
+| Angle Line | `ETradingAnnotationType.AngleLineAnnotation` | `AngleLineAnnotation` | 2 | A line from point 1 to point 2, with its angle measured on an arc |
 
-Pass `editorContainer` to `attach` to offer the full annotation editor, with every option of the selected drawing, from the floating toolbar. `openEditor(item)` opens it for a drawing, as an Edit button in a list would, and `clearSelection()` deselects every drawing.
+### Channels Drawing Tools {#channels}
 
-### Options for touch layouts
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| Channel | `ETradingAnnotationType.ChannelAnnotation` | `ChannelAnnotation` | 3 | A parallel price channel: a trend line, and a parallel line through the third point |
+| Flat Bottom Channel | `ETradingAnnotationType.FlatBottomChannelAnnotation` | `FlatBottomChannelAnnotation` | 3 | A channel whose bottom edge is always horizontal |
+| Disjoint Channel | `ETradingAnnotationType.DisjointChannelAnnotation` | `DisjointChannelAnnotation` | 3 | A channel whose second side is constrained by the first |
 
-Three more `attach` options suit a phone or tablet:
+### Pitchforks Drawing Tools {#pitchforks}
 
-- **`touch`**: a long press selects a drawing; a tap doesn't, as it may start a pan. Placement uses a movable cursor: drag to aim, then tap to commit each point. Lifting after a drag only moves the cursor; it does not place a point. Pass `true`, or the options of `AnnotationTouchSelectionModifier` (hold time, hit slop) to tune selection. The cursor applies to every pointer, a mouse included, so turn `touch` on for touch devices only, for example with `matchMedia("(pointer: coarse)").matches`. Without it, each click places a point.
-- **`selectFinishedDrawing`**: `false` leaves a new drawing unselected, so its editor doesn't cover the chart. The default, `true`, shows the floating edit toolbar on a drawing as soon as it is placed.
-- **`resumeGestures`**: by default the controller turns pan, x-axis drag and zoom-to-extents back on when a tool finishes or is stopped. Pass this when your app sometimes keeps them off, for example a touch "cursor mode" in which a drag moves the crosshair.
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| Pitchfork | `ETradingAnnotationType.PitchforkAnnotation` | `PitchforkAnnotation` | 3 | Andrews' pitchfork: a median line from the first point through the midpoint of the other two, with parallel lines through them |
+| Inside Pitchfork | `ETradingAnnotationType.InsidePitchforkAnnotation` | `InsidePitchforkAnnotation` | 3 | A pitchfork whose median line starts at the midpoint of the first two points |
+| Schiff Pitchfork | `ETradingAnnotationType.SchiffPitchforkAnnotation` | `SchiffPitchforkAnnotation` | 3 | A pitchfork whose start moves halfway towards the second point in price |
+| Modified Schiff Pitchfork | `ETradingAnnotationType.ModifiedSchiffPitchforkAnnotation` | `ModifiedSchiffPitchforkAnnotation` | 3 | A pitchfork whose start moves to the midpoint of the first two points, in time and price |
 
-## Toolbar (plain TypeScript)
+### Fibonacci Drawing Tools {#fibonacci}
 
-```ts
-import { DrawingToolbar } from "scichart-scitrader";
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| [Fibonacci Retracement](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) | `ETradingAnnotationType.FibonacciRetracementAnnotation` | `FibonacciRetracementAnnotation` | 2 (3 when skewed) | Levels at Fibonacci ratios of a price move |
+| [Fibonacci Extension](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) | `ETradingAnnotationType.FibonacciExtensionAnnotation` | `FibonacciExtensionAnnotation` | 3 | Levels projecting a move from a third point |
+| Fibonacci Time Zone | `ETradingAnnotationType.FibonacciTimeZoneAnnotation` | `FibonacciTimeZoneAnnotation` | 2 | Vertical lines at Fibonacci intervals of time |
+| Fib Speed Resistance Arcs | `ETradingAnnotationType.FibonacciSpeedResistanceArcsAnnotation` | `FibonacciSpeedResistanceArcsAnnotation` | 2 | Concentric arcs at Fibonacci ratios |
+| Fibonacci Circles | `ETradingAnnotationType.FibonacciCirclesAnnotation` | `FibonacciCirclesAnnotation` | 2 | Circles or ovals at Fibonacci ratios |
+| Fibonacci Wedge | `ETradingAnnotationType.FibonacciWedgeAnnotation` | `FibonacciWedgeAnnotation` | 3 | Fibonacci arcs inside a wedge |
+| Pitchfan | `ETradingAnnotationType.PitchfanAnnotation` | `PitchfanAnnotation` | 3 | Fan lines projected from a pitchfork's points |
 
-const toolbar = DrawingToolbar.create(document.getElementById("tools"), drawing, {
-    tools: DEFAULT_DRAWING_TOOLBAR_TOOLS, // the rail's tools, in order
-    orientation: "vertical",              // or "horizontal"
-    showAllTools: true,                   // a button opening every tool, grouped and labelled
-});
-// later: toolbar.destroy();
-```
+### Cycles and Time Drawing Tools {#cycles-and-time}
 
-The toolbar is plain DOM, styled by the theme's CSS variables, so it follows `setTheme`.
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| Cyclic Line | `ETradingAnnotationType.CyclicLineAnnotation` | `CyclicLineAnnotation` | 2 | Vertical lines repeated at the interval between the two points |
+| Cyclic Arc | `ETradingAnnotationType.CyclicArcAnnotation` | `CyclicArcAnnotation` | 2 | Half-circle arcs repeated at the interval between the two points |
+| Sector | `ETradingAnnotationType.SectorAnnotation` | `SectorAnnotation` | 3 | A sector-shaped Fibonacci wedge, without labels by default |
 
-<CenteredImageWrapper src={require("../_examples/drawing_Vanilla/screenshot.png").default} title="Drawing Tools" />
+### Patterns Drawing Tools {#patterns}
 
-<CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../_examples/drawing_Vanilla/vanilla.ts
-    ```
-</CodeSnippetBlock>
+Patterns are poly lines (`PolyLineAnnotation`) with a letter at each point. Their tool ids are `EDrawingToolVariantId` values, because several share one annotation type.
 
-## Toolbar (React)
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| [XABCD Pattern](/financial-charts/drawing-tools/add-drawing-tools/harmonic-patterns-xabcd/) | `EDrawingToolVariantId.PatternXabcd` | `PolyLineAnnotation` | 6: 0, X, A, B, C, D | A harmonic pattern's legs |
+| [Elliott Impulse Wave (12345)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottImpulse` | `PolyLineAnnotation` | 6: (0) to (5) | A five-wave Elliott impulse |
+| [Elliott Correction Wave (ABC)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottCorrection` | `PolyLineAnnotation` | 4: 0, A, B, C | A three-wave Elliott correction |
+| [Elliott Triangle Wave (ABCDE)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottTriangle` | `PolyLineAnnotation` | 6: (0), (A) to (E) | An Elliott triangle |
+| [Elliott Double Combo (WXY)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottDoubleCombo` | `PolyLineAnnotation` | 4: (0), (W), (X), (Y) | An Elliott double combination |
+| [Elliott Triple Combo (WXYXZ)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottTripleCombo` | `PolyLineAnnotation` | 6: (0), (W), (X), (Y), (X), (Z) | An Elliott triple combination |
 
-```tsx
-import {
-    DrawingList,
-    DrawingToolbar,
-    SciFinanceChartView,
-    useDrawingTools
-} from "scichart-scitrader-react";
+### Measure and Risk Drawing Tools {#measure-and-risk}
 
-const [chart, setChart] = React.useState<ISciFinanceChartPanelApi>();
-const { controller } = useDrawingTools(chart);
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| Measure | `ETradingAnnotationType.MeasureAnnotation` | `MeasureAnnotation` | 2 | The price change, percentage change and number of candles between two points |
+| [Stop Loss / Take Profit](/financial-charts/drawing-tools/add-drawing-tools/stop-loss-take-profit/) | `ETradingAnnotationType.StopLossTakeProfitAnnotation` | `StopLossTakeProfitAnnotation` | 2 | A take-profit or stop-loss zone from an entry point |
 
-<DrawingToolbar controller={controller} />
-<SciFinanceChartView config={config} onInit={setChart} />
-<DrawingList controller={controller} />
-```
+### Freehand and Eraser Drawing Tools {#freehand-and-eraser}
 
-`useDrawingTools` attaches the controller once the chart is ready and detaches it on unmount. It also returns `activeTool` and `drawings` as React state. The React `DrawingToolbar` is the vanilla rail above, mounted by React: it takes the same `tools`, `orientation` and `showAllTools` options.
+These are drawn by dragging, not by placing points.
 
-<CenteredImageWrapper src={require("../_examples/drawing_React/screenshot.png").default} title="Drawing Tools (React)" />
+| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
+| --- | --- | --- | --- | --- |
+| Freehand | `ETradingAnnotationType.FreehandDrawingAnnotation` | `FreehandDrawingAnnotation` | Drag | A pen stroke |
+| Highlighter | `EDrawingToolVariantId.Highlighter` | `FreehandDrawingAnnotation` | Drag | A wide, translucent pen stroke |
+| Eraser | `EDrawingToolVariantId.Eraser` | (none) | Click | Removes the drawings you click, until stopped. It never removes a study's annotations |
 
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/drawing_React/react.tsx
-    ```
-</CodeSnippetBlock>
+## How Drawings Work
 
-## List of drawings
+A drawing is an annotation on one of the chart's panes, from `scichart-financial-tools`, which builds on SciChart's annotations. What makes it a drawing, rather than one of a study's own annotations such as the RSI's level lines, is its type: `registerDrawingTools()` registers every tool's annotation type with the chart. Then the chart:
 
-`DrawingList` lists the chart's drawings, each with its tool's icon and name. Given a `controller`, it follows the drawings by itself:
-- clicking a row selects that drawing on the chart;
-- each row has a delete button;
-- "Clear all" removes every drawing, after asking in a small built-in dialog (`.st-confirm-dialog`).
+- tracks it as a user drawing, so the drawing tools list it and the eraser can remove it;
+- saves it with `toJSON()` and restores it with `fromJSON()`;
+- colours it with the chart's [theme](/financial-charts/styling-and-themes/), wherever the drawing has no colour of its own.
 
-```ts
-import { DrawingList } from "scichart-scitrader";
+`DrawingToolsController.attach` calls `registerDrawingTools()` for you. Call it yourself, once at startup, when you add drawings in code or restore a saved chart without a controller. For an annotation type of your own, call `SciFinanceChart.registerDrawingType(name)`.
 
-const list = DrawingList.create(document.getElementById("drawings"), { controller: drawing });
-// later: list.destroy();
-```
+| Theme colour (`ISciTraderDrawingColors`) | CSS variable | Used for |
+| --- | --- | --- |
+| `line` | `--st-drawing-line` | Lines of drawings whose tool sets no colour, such as the poly line and extended line |
+| `fill` | `--st-drawing-fill` | Neutral area fills, such as the cyclic arc's |
+| `text` | `--st-drawing-text` | Label text with no colour of its own, such as Fibonacci labels in single-colour mode |
+| `gripStroke`, `gripFill` | `--st-drawing-grip-stroke`, `--st-drawing-grip-fill` | The drag handles of a selected drawing, or one being placed |
+| `selection` | `--st-drawing-selection` | The outline around a selected drawing |
 
-In React, `<DrawingList controller={controller} />`, as above.
-
-| Option | Use |
-|---|---|
-| `items`, `onSelect`, `onDelete`, `onClearAll` | Drive the list yourself instead of from a `controller`. Each callback replaces the controller's action. |
-| `onEdit` | Adds an edit button to each row, e.g. to open your own editor. |
-| `confirmClearAll(proceed)` | Ask for confirmation your own way before "Clear all"; call `proceed` if the user agrees. |
-| `title`, `emptyMessage` | The heading (default "Drawing Tools") and the text shown with no drawings. |
-
-## Keyboard and touch
-
-These modifiers are optional, added to each pane's surface:
-
-| Modifier | Keys / gesture |
-|---|---|
-| `OnChartKeyboardZoomPanModifier` | Arrow keys pan, `+` / `-` zoom, `0` resets; Shift for larger steps |
-| `AnnotationKeyboardSelectionModifier` | `N` / `P` step through drawings, `Delete` removes, `Esc` deselects, `A` draws again |
-| `AnnotationTouchSelectionModifier` | Long-press selects a drawing on touch screens. Added for you by the controller's `touch` option |
-| `OnChartButtonsModifier` | A zoom / pan / reset strip on the pane under the mouse |
+<details>
+<summary>The ISciTraderDrawingColors interface, with its TSDoc</summary>
 
 ```ts
-chart.chartPanes.forEach(({ surface }) =>
-    surface.chartModifiers.add(
-        new OnChartKeyboardZoomPanModifier(),
-        new AnnotationKeyboardSelectionModifier({
-            onAddAnnotation: () => drawing.selectTool(drawing.lastUsedTool ?? ETradingAnnotationType.FreehandDrawingAnnotation),
-            onCancelPlacement: () => drawing.stop(),
-        }),
-        new OnChartButtonsModifier({ visible: true })
-    )
-);
+/**
+ * Colours for user drawings (trend lines, channels, Fibonacci tools, patterns…).
+ *
+ * Tools with a colour of their own keep it: the orange horizontal line, the cyan Schiff pitchfork,
+ * the coloured pattern presets. These are the neutral defaults: what a drawing uses when its tool
+ * leaves a colour unset, and what `scichart-financial-tools` would otherwise hard-code (white lines
+ * and grips, which disappear on a light chart). The chart applies them as drawings are placed or
+ * restored, and moves them on `setTheme`. A colour the user set in a drawing's editor is kept.
+ *
+ * Drawings are SVG, so any SVG colour works, but prefer hex or `rgba(…)`.
+ */
+interface ISciTraderDrawingColors {
+    /**
+     * Lines of drawings whose tool sets no colour: the channel's edges, poly line, extended line,
+     * angle line. Their labels follow the line. Derived from `ui.text`. CSS: `--st-drawing-line`.
+     */
+    line: string;
+    /**
+     * Neutral area fill, e.g. the cyclic arc's. Use a low alpha. Derived from `ui.selection` at 20%.
+     * CSS: `--st-drawing-fill`.
+     */
+    fill: string;
+    /**
+     * Label text with no colour of its own, e.g. Fibonacci level labels in single-colour mode.
+     * Derived from `chart.axisLabel`. CSS: `--st-drawing-text`.
+     */
+    text: string;
+    /** Outline of the drag handles on a selected or placing drawing. Derived from `ui.text`. CSS: `--st-drawing-grip-stroke`. */
+    gripStroke: string;
+    /**
+     * Fill of the drag handles, so they read as holes in the line. Derived from `chart.background`
+     * (`ui.background` when that is transparent). CSS: `--st-drawing-grip-fill`.
+     */
+    gripFill: string;
+    /** Outline drawn around a selected drawing. Derived from `ui.selection`. CSS: `--st-drawing-selection`. */
+    selection: string;
+}
 ```
 
-A pane has keyboard focus after it is clicked.
+</details>
 
-<CenteredImageWrapper src={require("../_examples/drawing_Interaction/screenshot.png").default} title="Keyboard, Touch, Buttons" />
+<details>
+<summary>registerDrawingTools and SciFinanceChart.registerDrawingType, with their TSDoc</summary>
 
-<CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/drawing_Interaction/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/drawing_Interaction/react.tsx
-    ```
-</CodeSnippetBlock>
+```ts
+/**
+ * Tell `SciFinanceChart` which annotation types count as user drawings (vs. internal
+ * study annotations like RSI overbought/oversold lines or MACD palette boxes). This
+ * drives the `collection-changed` filter so user drawings round-trip through `toJSON()`
+ * but study annotations are filtered out.
+ *
+ * The type list is derived from the shared drawing-tool registry, so adding a tool
+ * there automatically makes its annotations tracked and persisted.
+ *
+ * Idempotent — call once at app startup.
+ */
+function registerDrawingTools(): void;
+
+/**
+ * Register an annotation type as a user-drawing kind. Once registered, any
+ * annotation of this type added to a chart pane's surface will be tracked
+ * for serialization. Idempotent.
+ */
+static registerDrawingType(name: string): void;
+```
+
+</details>
+
+## The Drawing Tool Catalogue API: DRAWING_TOOLS {#catalogue-api}
+
+The tools' toolbar, list and menus all come from one catalogue, `DRAWING_TOOLS`, which you can use to build your own:
+
+| Export | What it is |
+| --- | --- |
+| `DRAWING_TOOLS` | Every tool, as an `IDrawingToolDefinition`, in display order |
+| `DRAWING_TOOL_BY_ID` | A tool's definition by its id, e.g. to show its label |
+| `DRAWING_TOOL_GROUPS`, `getToolsForGroup(group)` | The groups, and the tools in one, in display order |
+| `resolveToolIdForAnnotation(annotation)` | The tool that made a drawing, e.g. telling an Elliott wave from a plain poly line |
+| `TOOL_ICON_SVGS`, `toolIconSvg(iconKey, size)` | Each tool's icon, as SVG markup, by its definition's `iconKey` |
+
+```ts
+import { DRAWING_TOOL_BY_ID, DRAWING_TOOL_GROUPS, getToolsForGroup, toolIconSvg } from "scichart-scitrader";
+
+// A menu of every tool, grouped
+for (const group of DRAWING_TOOL_GROUPS) {
+    console.log(group, getToolsForGroup(group).map((tool) => tool.label)); // "Lines" ["Poly Line", "Extended Line", …]
+}
+
+// A tool's label and icon, from its id
+const tool = DRAWING_TOOL_BY_ID.get("FibonacciRetracementAnnotation");
+button.innerHTML = toolIconSvg(tool.iconKey, 20) + tool.label;
+```
+
+<details>
+<summary>The drawing tool catalogue: IDrawingToolDefinition, TDrawingToolId, EDrawingToolGroup, DRAWING_TOOLS and the lookup functions, with their TSDoc</summary>
+
+```ts
+/**
+ * Union of all selectable drawing-tool ids. For plain annotation tools the id IS the
+ * `ETradingAnnotationType` value; variant tools use {@link EDrawingToolVariantId}.
+ */
+type TDrawingToolId = TPlacementAnnotationType | ETradingAnnotationType.FreehandDrawingAnnotation | EDrawingToolVariantId;
+/** Annotation type a tool produces (placement types + freehand). */
+type TDrawingToolAnnotationType = TPlacementAnnotationType | ETradingAnnotationType.FreehandDrawingAnnotation;
+/**
+ * How a tool is activated by the host page:
+ * - `placement` — `MultiPointAnnotationPlacementModifier.startPlacement`
+ * - `freehand` — `FreehandDrawingModifier.startDrawing`
+ * - `eraser` — `AnnotationEraserModifier.startErasing` (modal: stays active until cancelled)
+ */
+type TDrawingToolKind = "placement" | "freehand" | "eraser";
+/** Display group a tool belongs to. Groups drive rail grouping, flyouts, and section headers. */
+enum EDrawingToolGroup {
+    Lines = "Lines",
+    Channels = "Channels",
+    Pitchforks = "Pitchforks",
+    Fibonacci = "Fibonacci",
+    CyclesAndTime = "Cycles & Time",
+    Patterns = "Patterns",
+    MeasureAndRisk = "Measure & Risk",
+    Freehand = "Freehand",
+    Eraser = "Eraser"
+}
+/** One entry in the drawing-tool catalogue. */
+interface IDrawingToolDefinition {
+    /** Unique selectable id — for annotation tools this is the `ETradingAnnotationType` value. */
+    readonly id: TDrawingToolId;
+    /** Activation mechanism the host page must use for this tool. */
+    readonly kind: TDrawingToolKind;
+    /** Human-readable label, used identically across every surface. */
+    readonly label: string;
+    /** Key into `TOOL_ICON_SVGS` (drawingTools/toolIcons.ts). */
+    readonly iconKey: string;
+    /** Display group for rail grouping and section headers. */
+    readonly group: EDrawingToolGroup;
+    /**
+     * The annotation type this tool produces (equals `id` for plain annotation tools;
+     * `FreehandDrawingAnnotation` for freehand variants; unset for the eraser). Drives
+     * the user-drawing type filter in `registerDrawingTools` and the host pages.
+     */
+    readonly annotationType?: TDrawingToolAnnotationType;
+    /**
+     * `placement` tools: starts click-to-place on the given modifier with this tool's
+     * default options. Defined as a per-entry closure so each `startPlacement` call is
+     * checked against the package's typed options map for that annotation type.
+     */
+    readonly startPlacement?: (modifier: MultiPointAnnotationPlacementModifier) => void;
+    /** `freehand` tools: starts drag-to-draw on the given modifier with this tool's stroke config. */
+    readonly startFreehand?: (modifier: FreehandDrawingModifier) => void;
+    /**
+     * `eraser` tool: starts erase mode on the given modifier. `targetFilter` MUST restrict
+     * erasure to user drawings — without it the eraser also deletes study annotations
+     * (RSI bands, MACD boxes); hosts pass a filter built from the registry's type set.
+     */
+    readonly startErasing?: (modifier: AnnotationEraserModifier, targetFilter: (annotation: IAnnotation) => boolean) => void;
+}
+/** The full drawing-tool catalogue, in display order (grouped). */
+const DRAWING_TOOLS: readonly IDrawingToolDefinition[];
+/**
+ * Annotation type strings produced by user drawing tools — the filter set for
+ * `SciFinanceChart.registerDrawingType` and the hosts' drawing-vs-study checks.
+ */
+const DRAWING_ANNOTATION_TYPE_NAMES: ReadonlySet<string>;
+/** Lookup by tool id (keyed as string so annotation `type` strings resolve directly). */
+const DRAWING_TOOL_BY_ID: ReadonlyMap<string, IDrawingToolDefinition>;
+/** Ordered list of groups that currently contain at least one tool. */
+const DRAWING_TOOL_GROUPS: readonly EDrawingToolGroup[];
+/** Tools of one group, in catalogue order. */
+function getToolsForGroup(group: EDrawingToolGroup): readonly IDrawingToolDefinition[];
+/**
+ * Resolves the tool that produced a placed annotation. Plain annotation tools resolve
+ * by their `type` string; pattern presets fingerprint by their unique label-text
+ * sequence; Highlighter by stroke thickness (see {@link HIGHLIGHTER_MIN_STROKE_THICKNESS}).
+ */
+function resolveToolIdForAnnotation(annotation: {
+    type?: string;
+    labels?: ReadonlyArray<{
+        text?: string;
+    }>;
+    strokeThickness?: number;
+}): TDrawingToolId | undefined;
+```
+
+</details>
+
+<details>
+<summary>The EDrawingToolVariantId enum, TOOL_ICON_SVGS and toolIconSvg, with their TSDoc</summary>
+
+```ts
+/**
+ * Ids for drawing tools that are NOT 1:1 with an `ETradingAnnotationType` value —
+ * variants of an annotation type (Highlighter is a wide translucent freehand preset,
+ * patterns are labelled PolyLine presets) or non-annotation modes (Eraser).
+ *
+ * Lives in its own module (not `toolRegistry`) so `patternPresets` and the registry
+ * can both import it without a cycle.
+ */
+enum EDrawingToolVariantId {
+    Highlighter = "Tool.Highlighter",
+    Eraser = "Tool.Eraser",
+    PatternXabcd = "Pattern.Xabcd",
+    PatternElliottImpulse = "Pattern.ElliottImpulse",
+    PatternElliottCorrection = "Pattern.ElliottCorrection",
+    PatternElliottTriangle = "Pattern.ElliottTriangle",
+    PatternElliottDoubleCombo = "Pattern.ElliottDoubleCombo",
+    PatternElliottTripleCombo = "Pattern.ElliottTripleCombo"
+}
+
+/** 47 icons ported verbatim from SciChartDemo TradingAnnotations SVG_ICONS.ts */
+const TOOL_ICON_SVGS: Record<string, string>;
+/** An icon's markup at a given size, with `--text` bound to `currentColor`. Empty for unknown keys. */
+function toolIconSvg(iconKey: string, size?: number): string;
+```
+
+</details>
+
+## Where to read next
+
+- [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): point-and-click drawing, and drawings in code.
+- [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): ready-made tools and list for users.
+- [Save and Restore](/financial-charts/save-and-restore/): drawings are saved with the chart.
