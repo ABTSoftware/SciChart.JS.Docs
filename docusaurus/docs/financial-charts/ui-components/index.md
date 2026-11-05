@@ -1,18 +1,17 @@
 ---
 sidebar_position: 1
 sidebar_label: Overview
-title: "UI Components: Trading Chart, Toolbars, Watchlist, Market Depth | SciTrader.js"
-description: "SciTrader.js UI components for trading apps: the SciFinanceChart candlestick chart, interval and period pickers, candle-type menu, live-tip toggle, colour picker, candle counter, icons, market-depth ladder and watchlist sparklines, in plain DOM and React."
+title: "UI Components: Toolbars, Watchlist, Market Depth | SciTrader.js"
+description: "SciTrader.js UI components for trading apps: interval and period pickers, candle-type menu, live-tip toggle, colour picker, candle counter, icons, market-depth ladder and watchlist sparklines, in plain DOM and React."
 keywords: ["SciTrader", "SciTrader.js", "trading UI components", "IntervalSelector", "PeriodSelector", "CandleTypeSelector", "LiveTipToggle", "watchlist sparkline", "market depth ladder React"]
 ---
 
 # UI Components
 
-The chart itself is the [SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) component. Around it, the SDK ships the controls a trading app needs: toolbar pickers, study settings, a drawings list, a market-depth ladder, loading placeholders, a candle counter, UI icons and the pieces of a watchlist. Each one is plain DOM in `scichart-scitrader`, and `scichart-scitrader-react` wraps it for React. They have the SciTrader app's look, from the stylesheet, and follow the theme.
+The chart itself is the [SciFinanceChart](/financial-charts/sci-finance-chart/) component. Around it, the SDK ships the controls a trading app needs: toolbar pickers, study settings, a drawings list, a market-depth ladder, loading placeholders, a candle counter, UI icons and the pieces of a watchlist. Each one is plain DOM in `scichart-scitrader`, and `scichart-scitrader-react` wraps it for React. They have the SciTrader app's look, from the stylesheet, and follow the theme.
 
 | Component | Plain TypeScript | React |
 | --- | --- | --- |
-| **The chart: candlesticks, indicator panes, live data**<br />See [SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) | `SciFinanceChartPanel` | `<SciFinanceChartView>` |
 | **Interval buttons**<br />See [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) | `IntervalSelector` | `<IntervalSelector>` |
 | **Period buttons**<br />See [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) | `PeriodSelector` | `<PeriodSelector>` |
 | **Candle-type menu**<br />See [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) | `CandleTypeSelector` | `<CandleTypeSelector>` |
@@ -23,7 +22,7 @@ The chart itself is the [SciFinanceChart](/financial-charts/ui-components/sci-fi
 | **Drawing tools rail**<br />See [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) | `DrawingToolbar` | `<DrawingToolbar>` |
 | **List of drawings**<br />See [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/#drawing-list) | `DrawingList` | `<DrawingList>` |
 | **Market-depth ladder**<br />See [Market Depth](/financial-charts/ui-components/market-depth/) | `MarketDepthPanel` | `<MarketDepthView>` |
-| **Loading progress dots**<br />See [Layout](/financial-charts/ui-components/sci-finance-chart/layout/#loading-states) | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` |
+| **Loading progress dots**<br />See [Layout](/financial-charts/sci-finance-chart/layout/#loading-states) | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` |
 | **Candle counts (visible / loaded / total)**<br />See [Candle Counter](/financial-charts/ui-components/candle-counter/) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` |
 | **UI icons**<br />See [Icons](/financial-charts/ui-components/icons/) | `SCITRADER_ICONS`, `sciTraderIconSvg` | `<SciTraderIcon>` |
 | **Sparklines, and watchlist prices**<br />See [Sparklines](/financial-charts/ui-components/sparklines/) | `SparkLineChart`, `WatchListDataManager` | none: use them from React |

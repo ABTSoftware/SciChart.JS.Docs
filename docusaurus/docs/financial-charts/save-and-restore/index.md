@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 9
 sidebar_label: Saving and Restoring
 title: "Saving and Restoring Chart State | SciTrader.js"
 description: "Save a SciTrader.js trading chart, including its studies, layout and drawings, to JSON and restore it later."

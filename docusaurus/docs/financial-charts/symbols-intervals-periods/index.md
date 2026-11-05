@@ -12,7 +12,7 @@ A trading chart shows one **symbol** (e.g. `BTC-USD`), at one candle **interval*
 
 ## Where SciFinanceChart Comes From
 
-Every method on these pages is a member of [`SciFinanceChart`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#the-scifinancechart-class), the chart itself. You reach it through the [`financeApi`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#financeapi) property of the `ISciFinanceChartPanelApi` that `SciFinanceChartPanel.create` returns. In React, `<SciFinanceChartView>` hands you the same object through `ref` and `onInit`.
+Every method on these pages is a member of [`SciFinanceChart`](/financial-charts/sci-finance-chart/finance-chart-api/#the-scifinancechart-class), the chart itself. You reach it through the [`financeApi`](/financial-charts/sci-finance-chart/finance-chart-api/#financeapi) property of the `ISciFinanceChartPanelApi` that `SciFinanceChartPanel.create` returns. In React, `<SciFinanceChartView>` hands you the same object through `ref` and `onInit`.
 
 ```ts
 import { SciFinanceChart, SciFinanceChartPanel } from "scichart-scitrader";

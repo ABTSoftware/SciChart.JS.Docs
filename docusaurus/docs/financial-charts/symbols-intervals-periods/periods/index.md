@@ -94,7 +94,7 @@ For a React version, the `PeriodSelector` alongside an interval picker, and how 
 
 ## SciFinanceChart.setPeriod {#setperiod}
 
-`setPeriod` is a method of [`SciFinanceChart`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#the-scifinancechart-class), the chart you reach through `financeChartPanel.financeApi`. It changes how much time the chart shows, and fetches any older candles it needs to fill it.
+`setPeriod` is a method of [`SciFinanceChart`](/financial-charts/sci-finance-chart/finance-chart-api/#the-scifinancechart-class), the chart you reach through `financeChartPanel.financeApi`. It changes how much time the chart shows, and fetches any older candles it needs to fill it.
 
 ```ts
 setPeriod(period: TPeriod | null): Promise<void>;
@@ -120,7 +120,7 @@ await chart.setPeriod("YTD");
 await chart.setPeriod(null);
 ```
 
-To start the chart on a period, set the [`period` option](/financial-charts/ui-components/sci-finance-chart/chart-config/#period) of the chart config instead.
+To start the chart on a period, set the [`period` option](/financial-charts/sci-finance-chart/chart-config/#period) of the chart config instead.
 
 <details>
 <summary>SciFinanceChart.setPeriod, with its TSDoc</summary>
@@ -217,7 +217,7 @@ When the period needs more candles than the chart has, `setPeriod` fetches them 
 
 `periodBufferRatio` is declared in two places:
 
-- **When you create the chart:** the [`periodBufferRatio` option](/financial-charts/ui-components/sci-finance-chart/chart-config/#periodbufferratio) of `ISciFinanceChartPanelConfig`.
+- **When you create the chart:** the [`periodBufferRatio` option](/financial-charts/sci-finance-chart/chart-config/#periodbufferratio) of `ISciFinanceChartPanelConfig`.
 - **Later:** the `SciFinanceChart.periodBufferRatio` property, e.g. `financeChartPanel.financeApi.periodBufferRatio = 0.5`. It applies from the next fetch.
 
 ```ts
@@ -274,7 +274,7 @@ console.log(chart.currentPeriod); // e.g. "1M", or null when no period is set
 
 It is declared in two places, like `periodBufferRatio`:
 
-- **When you create the chart:** the [`lockPeriodWidth` option](/financial-charts/ui-components/sci-finance-chart/chart-config/#lockperiodwidth) of `ISciFinanceChartPanelConfig`.
+- **When you create the chart:** the [`lockPeriodWidth` option](/financial-charts/sci-finance-chart/chart-config/#lockperiodwidth) of `ISciFinanceChartPanelConfig`.
 - **Later:** the `SciFinanceChart.lockPeriodWidth` property. It applies from the next `setPeriod` call.
 
 ```ts

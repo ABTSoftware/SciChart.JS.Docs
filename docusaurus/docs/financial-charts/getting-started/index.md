@@ -64,11 +64,11 @@ The chart below is live, with Coinbase data. **Edit on CodePen** opens the code 
     ```
 </CodeSnippetBlock>
 
-**Using React?** `<SciFinanceChartView config={config} />`, from `scichart-scitrader-react`, takes the same config. [SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) has a live React example.
+**Using React?** `<SciFinanceChartView config={config} />`, from `scichart-scitrader-react`, takes the same config. [SciFinanceChart](/financial-charts/sci-finance-chart/) has a live React example.
 
 ## Next: the SciFinanceChart Component
 
-[SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) is the chart you just created, in full: in TypeScript and React, the pane sizes, maximising, hiding and autoranging panes in code, touch and mouse modes, its API and every config option.
+[SciFinanceChart](/financial-charts/sci-finance-chart/) is the chart you just created, in full: in TypeScript and React, the pane sizes, maximising, hiding and autoranging panes in code, touch and mouse modes, its API and every config option.
 
 ## What Else You Can Do
 

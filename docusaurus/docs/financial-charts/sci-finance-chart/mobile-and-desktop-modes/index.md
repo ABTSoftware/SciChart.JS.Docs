@@ -120,12 +120,12 @@ The drawing tools turn panning off while a tool is in use, and back on when it f
 
 BTC-USD from Coinbase, with the drawing tools rail. **Auto** picks touch from `(pointer: coarse)`; **Touch** and **Mouse** override it, so you can try touch mode with a mouse. In touch mode, each pane’s control bar is behind the handle at its right edge, the divider has a grip, the crosshair starts off, and drawing tools place points with a cursor. Turn the crosshair on, and a drag moves it instead of panning. A mode change creates the chart again.
 
-<LiveDocSnippet maxWidth={"100%"} height={700} includeSciTrader name="../../../_examples/uiComponents_TouchMode/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div style="display: flex; flex: 1; min-height: 0"><div id="tools"></div><div id="chart" style="flex: 1; min-width: 0"></div></div></div>`} />
+<LiveDocSnippet maxWidth={"100%"} height={700} includeSciTrader name="../../_examples/uiComponents_TouchMode/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div style="display: flex; flex: 1; min-height: 0"><div id="tools"></div><div id="chart" style="flex: 1; min-width: 0"></div></div></div>`} />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../../../_examples/uiComponents_TouchMode/vanilla.ts
+    ```ts showLineNumbers file=../../_examples/uiComponents_TouchMode/vanilla.ts
     ```
 </CodeSnippetBlock>
 
@@ -133,12 +133,12 @@ The code for this example is found below.
 
 The same in React. A `useSyncExternalStore` hook follows the media query, and the chart’s `key` changes with the mode, so React creates it again.
 
-<LiveDocSnippet maxWidth={"100%"} height={700} includeSciTrader reactComponent="TouchModeChart" name="../../../_examples/uiComponents_TouchMode/react" />
+<LiveDocSnippet maxWidth={"100%"} height={700} includeSciTrader reactComponent="TouchModeChart" name="../../_examples/uiComponents_TouchMode/react" />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../../../_examples/uiComponents_TouchMode/react.tsx
+    ```tsx showLineNumbers file=../../_examples/uiComponents_TouchMode/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -239,5 +239,5 @@ class FinChartLegendModifier {
 ## Where to read next
 
 - [Keyboard and Touch](/financial-charts/drawing-tools/keyboard-and-touch/): the drawing tools' touch option in detail, keyboard shortcuts, and on-chart zoom buttons.
-- [Layout, Panes and PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/#pane-controls): the pane control bars.
+- [Layout, Panes and PaneGroup](/financial-charts/sci-finance-chart/layout/#pane-controls): the pane control bars.
 - [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): the drawing tools rail.

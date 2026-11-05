@@ -67,16 +67,16 @@ financeChartPanel.setPaneControls({ touch: true });
 | `touch` | `false` | The layout for phones and tablets. Each control bar sits in a drawer at the pane's right edge, opened by tapping or swiping its handle, because touch screens have no hover. Dividers get a wider hit area with grip dots. |
 | `buttons` | all on | Buttons to leave out, e.g. `{ close: false }`: `lockSize`, `yAxisAutoRange`, `move`, `maximize`, `hide`, `close`, `axisSync`, `verticalGroup`, `horizontalGroup`. |
 
-- **The chart doesn't detect touch screens.** Your page decides, usually from its own breakpoint, and switches a live chart with `setPaneControls`, which changes only the options given. See [Mobile and Desktop Modes](/financial-charts/ui-components/sci-finance-chart/mobile-and-desktop-modes/).
+- **The chart doesn't detect touch screens.** Your page decides, usually from its own breakpoint, and switches a live chart with `setPaneControls`, which changes only the options given. See [Mobile and Desktop Modes](/financial-charts/sci-finance-chart/mobile-and-desktop-modes/).
 - **Axis sync and the V-/H-group toggles are off.** A finance chart keeps every pane's X axis in step itself, so it leaves those three buttons out. Turn them on with `buttons: { axisSync: true, … }`.
 - **React.** `<SciFinanceChartView paneControls={…}>` applies changes to the live chart, unlike `config`.
 
-<CenteredImageWrapper src={require("../../../_examples/layoutState_MultiPane/screenshot.png").default} title="Multi-Pane Layout" />
+<CenteredImageWrapper src={require("../../_examples/layoutState_MultiPane/screenshot.png").default} title="Multi-Pane Layout" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../../../_examples/layoutState_MultiPane/vanilla.ts
+    ```ts showLineNumbers file=../../_examples/layoutState_MultiPane/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../../../_examples/layoutState_MultiPane/react.tsx
+    ```tsx showLineNumbers file=../../_examples/layoutState_MultiPane/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -129,12 +129,12 @@ const config = React.useMemo<ISciFinanceChartPanelConfig>(
 
 In plain TypeScript, `loading: paneProgressDotsLoading(progress)` does the same, and `createPaneProgressDots(emitter, paneId)` gives one pane's dots for a placeholder of your own.
 
-<CenteredImageWrapper src={require("../../../_examples/layoutState_Loading/screenshot.png").default} title="Loading States and Pane Info" />
+<CenteredImageWrapper src={require("../../_examples/layoutState_Loading/screenshot.png").default} title="Loading States and Pane Info" />
 
 <CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../../../_examples/layoutState_Loading/vanilla.ts
+    ```ts showLineNumbers file=../../_examples/layoutState_Loading/vanilla.ts
     ```
-    ```tsx showLineNumbers file=../../../_examples/layoutState_Loading/react.tsx
+    ```tsx showLineNumbers file=../../_examples/layoutState_Loading/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -176,7 +176,7 @@ This is what `SciFinanceChartPanel.create` does. The splitter provides the divid
 
 ## PaneGroup
 
-[Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/) shows the common tasks, with live examples: sizing panes, and maximising, hiding, closing and autoranging them in code.
+[Pane Sizes and Pane State](/financial-charts/sci-finance-chart/pane-sizes-and-state/) shows the common tasks, with live examples: sizing panes, and maximising, hiding, closing and autoranging them in code.
 
 PaneGroup is the single source of truth for layout state. The splitter reads `snapshot()`, renders it, and changes the layout only through PaneGroup's methods. PaneGroup then re-applies the chart rules itself, including axis labels on the bottom pane only, group membership, axis sync and chart visibility.
 

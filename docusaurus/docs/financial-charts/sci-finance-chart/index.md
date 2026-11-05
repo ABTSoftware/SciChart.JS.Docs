@@ -23,18 +23,18 @@ Both create:
 - **a data feed** for the symbol, from the [exchange](/financial-charts/data-sources/) you name, which loads older candles as the user pans back and adds live ones;
 - **the chart's interaction:** zoom, pan, axis drag, crosshair and legend, by mouse or by touch.
 
-The config is an [`ISciFinanceChartPanelConfig`](/financial-charts/ui-components/sci-finance-chart/chart-config/), and the API an [`ISciFinanceChartPanelApi`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/), called `financeChartPanel` in these docs. Its `financeApi` is the chart, a `SciFinanceChart`, and its `paneGroupApi` the panes.
+The config is an [`ISciFinanceChartPanelConfig`](/financial-charts/sci-finance-chart/chart-config/), and the API an [`ISciFinanceChartPanelApi`](/financial-charts/sci-finance-chart/finance-chart-api/), called `financeChartPanel` in these docs. Its `financeApi` is the chart, a `SciFinanceChart`, and its `paneGroupApi` the panes.
 
 ## TypeScript Example: Creating a Chart
 
 `SciFinanceChartPanel.create` builds the chart inside an element. The element needs a size: the chart fills it, and follows it when it resizes.
 
-<LiveDocSnippet maxWidth={"100%"} includeSciTrader name="../../_examples/gettingStarted_CreateChart/vanilla" html={`<div id="chart" style="width: 100%; height: 100%"></div>`} />
+<LiveDocSnippet maxWidth={"100%"} includeSciTrader name="../_examples/gettingStarted_CreateChart/vanilla" html={`<div id="chart" style="width: 100%; height: 100%"></div>`} />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../../_examples/gettingStarted_CreateChart/vanilla.ts
+    ```ts showLineNumbers file=../_examples/gettingStarted_CreateChart/vanilla.ts
     ```
 </CodeSnippetBlock>
 
@@ -48,12 +48,12 @@ npm install scichart-scitrader-react scichart-scitrader scichart scichart-financ
 
 See [Installation](/financial-charts/installation/#install-the-packages) for the versions, the stylesheet and serving SciChart's WebAssembly.
 
-<LiveDocSnippet maxWidth={"100%"} height={680} includeSciTrader reactComponent="TradingChart" name="../../_examples/gettingStarted_CreateChartReact/react" />
+<LiveDocSnippet maxWidth={"100%"} height={680} includeSciTrader reactComponent="TradingChart" name="../_examples/gettingStarted_CreateChartReact/react" />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../../_examples/gettingStarted_CreateChartReact/react.tsx
+    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChartReact/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -82,7 +82,7 @@ financeChartPanel.paneGroupApi.setExpanded(RSI_PANE.value); // maximise the RSI 
 financeChartPanel.financeApi.getYAxisAutoRangeController(RSI_PANE).isYAxisAutoRangeEnabled = false;
 ```
 
-[Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/) covers each of them, with live examples.
+[Pane Sizes and Pane State](/financial-charts/sci-finance-chart/pane-sizes-and-state/) covers each of them, with live examples.
 
 ## Mobile and Desktop Modes
 
@@ -95,17 +95,17 @@ const financeChartPanel = await SciFinanceChartPanel.create(element, { /* … */
 const drawing = DrawingToolsController.attach(financeChartPanel.financeApi, { touch, selectFinishedDrawing: !touch });
 ```
 
-[Mobile and Desktop Modes](/financial-charts/ui-components/sci-finance-chart/mobile-and-desktop-modes/) lists what changes, and how the SciTrader app decides.
+[Mobile and Desktop Modes](/financial-charts/sci-finance-chart/mobile-and-desktop-modes/) lists what changes, and how the SciTrader app decides.
 
 ## Pages in This Section
 
 | Page | What it covers |
 | --- | --- |
-| [Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/) | Pane sizes; Y-axis autorange, maximising, hiding and closing panes in code |
-| [Mobile and Desktop Modes](/financial-charts/ui-components/sci-finance-chart/mobile-and-desktop-modes/) | Touch and mouse layouts, and how your app chooses |
-| [Layout, Panes and PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/) | Sub-chart and multi-chart modes, pane control bars, loading states, and the layout underneath |
-| [Finance Chart API](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/) | `ISciFinanceChartPanelApi`, and the `SciFinanceChart` class |
-| [Chart Config Object](/financial-charts/ui-components/sci-finance-chart/chart-config/) | Every `ISciFinanceChartPanelConfig` option |
+| [Pane Sizes and Pane State](/financial-charts/sci-finance-chart/pane-sizes-and-state/) | Pane sizes; Y-axis autorange, maximising, hiding and closing panes in code |
+| [Mobile and Desktop Modes](/financial-charts/sci-finance-chart/mobile-and-desktop-modes/) | Touch and mouse layouts, and how your app chooses |
+| [Layout, Panes and PaneGroup](/financial-charts/sci-finance-chart/layout/) | Sub-chart and multi-chart modes, pane control bars, loading states, and the layout underneath |
+| [Finance Chart API](/financial-charts/sci-finance-chart/finance-chart-api/) | `ISciFinanceChartPanelApi`, and the `SciFinanceChart` class |
+| [Chart Config Object](/financial-charts/sci-finance-chart/chart-config/) | Every `ISciFinanceChartPanelConfig` option |
 
 ## Where to read next
 

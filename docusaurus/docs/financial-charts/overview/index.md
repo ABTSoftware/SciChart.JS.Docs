@@ -101,7 +101,7 @@ Every code sample in this section is self-contained and shown in TypeScript and 
 
     See [Data sources](/financial-charts/data-sources/).
 - **Trading drawing tools.** Trend lines, Fibonacci, pitchforks, channels and more, with toolbars for plain TypeScript and React, plus keyboard and touch support. See [Drawing tools](/financial-charts/drawing-tools/).
-- **Multi-pane layouts.** Vertical or horizontal split panes with resize, maximise, hide and reorder, from per-pane control bars that also work by touch. Axes are synchronised across panes. See [Layout](/financial-charts/ui-components/sci-finance-chart/layout/).
+- **Multi-pane layouts.** Vertical or horizontal split panes with resize, maximise, hide and reorder, from per-pane control bars that also work by touch. Axes are synchronised across panes. See [Layout](/financial-charts/sci-finance-chart/layout/).
 - **UI around the chart.** Interval, period, candle-type and live-tip pickers; study settings forms; a drawings list; a market-depth ladder; watchlist sparklines. All plain DOM, with React wrappers, restyled through CSS. See [UI components](/financial-charts/ui-components/).
 - **Themes.** One theme object for every colour, switchable on a live chart. See [Styling and themes](/financial-charts/styling-and-themes/).
 - **State.** Save a chart to JSON and restore it later, with its studies, layout and drawings. See [Saving and restoring](/financial-charts/save-and-restore/).
@@ -185,13 +185,13 @@ A chart is a **`SciFinanceChart`** hosted by a **layout**, `SciChartPaneSplitter
 
 1. [Installation](/financial-charts/installation/): the packages to install, the stylesheet, and serving SciChart's WebAssembly with webpack, Vite, esbuild, Rollup or Parcel.
 2. [Getting started](/financial-charts/getting-started/): your first chart, in plain TypeScript and in React.
-3. [Finance Chart API](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/): the `ISciFinanceChartPanelApi` that creating a chart returns, and what is in it.
+3. [Finance Chart API](/financial-charts/sci-finance-chart/finance-chart-api/): the `ISciFinanceChartPanelApi` that creating a chart returns, and what is in it.
 4. [Symbols, intervals and periods](/financial-charts/symbols-intervals-periods/): changing what the chart shows.
 5. [Studies and indicators](/financial-charts/studies-and-indicators/): adding, configuring and removing indicators; candle types.
 6. [Data sources](/financial-charts/data-sources/): exchanges, CSV data, live connectors, custom sources.
 7. [Drawing tools](/financial-charts/drawing-tools/): the drawing controller, toolbars for plain TypeScript and React, keyboard and touch.
 8. [Saving and restoring](/financial-charts/save-and-restore/): chart state as JSON.
-9. [Layout: panes, controls and PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/): pane control bars, touch layout, loading states, and the layout layer under the chart.
+9. [Layout: panes, controls and PaneGroup](/financial-charts/sci-finance-chart/layout/): pane control bars, touch layout, loading states, and the layout layer under the chart.
 10. [UI components](/financial-charts/ui-components/): toolbar controls, colour picker, candle counter, icons, watchlist.
 11. [Styling and themes](/financial-charts/styling-and-themes/): one theme object for every colour; switch a live chart with `setTheme`.
 

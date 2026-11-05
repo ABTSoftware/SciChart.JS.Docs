@@ -465,4 +465,4 @@ class OnChartButtonsModifier extends ChartModifierBase2D {
 
 - [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/): selection and edit events.
 - [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): point-and-click drawing.
-- [Layout](/financial-charts/ui-components/sci-finance-chart/layout/): the panes the modifiers go on.
+- [Layout](/financial-charts/sci-finance-chart/layout/): the panes the modifiers go on.

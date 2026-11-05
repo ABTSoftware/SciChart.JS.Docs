@@ -21,7 +21,7 @@ const financeChartPanel: ISciFinanceChartPanelApi<HTMLElement> = await SciFinanc
 );
 ```
 
-`config` is an `ISciFinanceChartPanelConfig`: the data, studies and layout the chart starts with. [Chart configuration](/financial-charts/ui-components/sci-finance-chart/chart-config/) describes every option.
+`config` is an `ISciFinanceChartPanelConfig`: the data, studies and layout the chart starts with. [Chart configuration](/financial-charts/sci-finance-chart/chart-config/) describes every option.
 
 The same object comes from each way of making a chart:
 
@@ -156,7 +156,7 @@ The finance chart itself, and where most of the API lives. It **throws** while `
 | Candle type | `setCandleType(type)`, `getCandleType()`, `candleTypeChanged` | [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/) |
 | Theme and axes | `setTheme(theme)`, `theme`, `themeChanged`, `applyAxisStyle(partial)`, `axisDefaults` | [Styling and themes](/financial-charts/styling-and-themes/) |
 | Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
-| Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/ui-components/sci-finance-chart/layout/) |
+| Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/sci-finance-chart/layout/) |
 | Drawings | `clearAllDrawings()`, `finChartModifiers` | [Drawing tools](/financial-charts/drawing-tools/) |
 | Loading events | `dataLoadStarted`, `dataRenderComplete`, `historicalLoadStarted`, `historicalLoadComplete` | [Loading events](/financial-charts/symbols-intervals-periods/#loading-events) |
 | State | `toJSON(): ISciFinanceChartState` (the finance part only) | [Saving and restoring](/financial-charts/save-and-restore/) |
@@ -778,7 +778,7 @@ const group = financeChartPanel.paneGroupApi; // IPaneApi
 group.orderChanged.subscribe((slots) => saveLayout(slots));
 ```
 
-[Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/) shows how to size, maximise, hide and close panes with it.
+[Pane Sizes and Pane State](/financial-charts/sci-finance-chart/pane-sizes-and-state/) shows how to size, maximise, hide and close panes with it.
 
 #### The IPaneApi Interface
 
@@ -1015,7 +1015,7 @@ type LayoutSnapshot = {
 
 </details>
 
-See [PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/#panegroup) for how the layout uses it.
+See [PaneGroup](/financial-charts/sci-finance-chart/layout/#panegroup) for how the layout uses it.
 
 ## ISciFinanceChartPanelApi Methods {#methods}
 
@@ -1054,7 +1054,7 @@ Changes each pane's control bar and the dividers between panes, on a live chart.
 financeChartPanel.setPaneControls({ touch: true });
 ```
 
-The options are the same as the [`paneControls` config option](/financial-charts/ui-components/sci-finance-chart/chart-config/#panecontrols). See [Pane controls](/financial-charts/ui-components/sci-finance-chart/layout/#pane-controls).
+The options are the same as the [`paneControls` config option](/financial-charts/sci-finance-chart/chart-config/#panecontrols). See [Pane controls](/financial-charts/sci-finance-chart/layout/#pane-controls).
 
 #### The IPaneControlOptions Interface
 
@@ -1135,7 +1135,7 @@ CandleCounter.create(financeChartPanel.getPaneInfoElement(PaneId.DEFAULT.value),
 });
 ```
 
-In React, use the `paneInfo` prop of `<SciFinanceChartView>` instead. See [Your own content in the control bar](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar).
+In React, use the `paneInfo` prop of `<SciFinanceChartView>` instead. See [Your own content in the control bar](/financial-charts/sci-finance-chart/layout/#your-own-content-in-the-control-bar).
 
 ### ISciFinanceChartPanelApi.toJSON {#tojson}
 
@@ -1280,8 +1280,8 @@ While `create` or `fromJSON` runs, the container has a `data-chart-loading` attr
 
 #### See also
 
-- [Chart configuration](/financial-charts/ui-components/sci-finance-chart/chart-config/)
+- [Chart configuration](/financial-charts/sci-finance-chart/chart-config/)
 - [Getting started](/financial-charts/getting-started/)
 - [Symbols, intervals and periods](/financial-charts/symbols-intervals-periods/)
-- [Layout](/financial-charts/ui-components/sci-finance-chart/layout/)
+- [Layout](/financial-charts/sci-finance-chart/layout/)
 - [Saving and restoring](/financial-charts/save-and-restore/)

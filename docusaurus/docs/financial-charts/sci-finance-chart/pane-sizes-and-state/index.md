@@ -158,12 +158,12 @@ group.stateChanged.subscribe((snapshot) => {
 
 BTC-USD from Coinbase, with RSI and MACD panes sized by `paneSizing`. The buttons above the chart call the methods on this page for each pane. Hover a pane and use its control bar, or drag a divider: the buttons follow, because they redraw on `stateChanged`.
 
-<LiveDocSnippet maxWidth={"100%"} height={760} includeSciTrader name="../../../_examples/uiComponents_PaneState/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
+<LiveDocSnippet maxWidth={"100%"} height={760} includeSciTrader name="../../_examples/uiComponents_PaneState/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["TS"]}>
-    ```ts showLineNumbers file=../../../_examples/uiComponents_PaneState/vanilla.ts
+    ```ts showLineNumbers file=../../_examples/uiComponents_PaneState/vanilla.ts
     ```
 </CodeSnippetBlock>
 
@@ -171,12 +171,12 @@ The code for this example is found below.
 
 The same in React. The toolbar re-renders when `stateChanged` or a pane’s `yAxisAutoRangeChanged` fires.
 
-<LiveDocSnippet maxWidth={"100%"} height={760} includeSciTrader reactComponent="PaneStateChart" name="../../../_examples/uiComponents_PaneState/react" />
+<LiveDocSnippet maxWidth={"100%"} height={760} includeSciTrader reactComponent="PaneStateChart" name="../../_examples/uiComponents_PaneState/react" />
 
 The code for this example is found below.
 
 <CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../../../_examples/uiComponents_PaneState/react.tsx
+    ```tsx showLineNumbers file=../../_examples/uiComponents_PaneState/react.tsx
     ```
 </CodeSnippetBlock>
 
@@ -326,6 +326,6 @@ interface IPaneSizeConfig {
 
 ## Where to read next
 
-- [Layout, Panes and PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/): the pane control bars, the restore strip, and the rest of `paneGroupApi`.
-- [Mobile and Desktop Modes](/financial-charts/ui-components/sci-finance-chart/mobile-and-desktop-modes/): the touch layout of the control bars.
+- [Layout, Panes and PaneGroup](/financial-charts/sci-finance-chart/layout/): the pane control bars, the restore strip, and the rest of `paneGroupApi`.
+- [Mobile and Desktop Modes](/financial-charts/sci-finance-chart/mobile-and-desktop-modes/): the touch layout of the control bars.
 - [Saving and Restoring](/financial-charts/save-and-restore/): pane sizes and order are saved with the chart.

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 10
 sidebar_label: Styling and Themes
 title: "Styling and Themes | SciTrader.js Financial Charts"
 description: "Theme every colour of a SciTrader.js financial chart with one theme object, switch themes live with setTheme, and restyle the UI with CSS."
@@ -130,7 +130,7 @@ Override the rules in your own CSS, loaded after `scitrader.css`. Every element 
 
 | Component | Classes |
 |---|---|
-| Per-pane control bar | `st-pane-control-bar`, `__info` (your content, [Layout](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar)), `__button`, `__icon`, `__separator` |
+| Per-pane control bar | `st-pane-control-bar`, `__info` (your content, [Layout](/financial-charts/sci-finance-chart/layout/#your-own-content-in-the-control-bar)), `__button`, `__icon`, `__separator` |
 | Control bar drawer (touch layout) | `st-pane-control-drawer`, `__handle`, `__chevron` |
 | Divider between panes | `st-pane-divider` (`--touch`), `__grip` |
 | Restore strip for hidden panes | `st-pane-restore-strip`, `__chip`, `__icon` |
