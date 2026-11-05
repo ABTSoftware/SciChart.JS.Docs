@@ -55,7 +55,7 @@ function themeFromCss(): ISciTraderTheme {
     const css = getComputedStyle(document.documentElement);
     const brand = (name: string) => css.getPropertyValue(`--brand-${name}`).trim();
     return createSciTraderTheme(SCITRADER_LIGHT_THEME, {
-        name: "From CSS",
+        name: "Classic",
         chart: { background: brand("background"), axisBackground: brand("background") },
         studies: {
             OHLC: { brushUp: brand("up"), brushDown: brand("down"), strokeUp: brand("up"), strokeDown: brand("down") },
@@ -71,7 +71,7 @@ The chart is drawn by WebGL, which can't read CSS, so CSS alone can't change the
 
 ## TypeScript Example: Two Custom Themes
 
-Midnight Gold is the Dark theme with gold candles, made with `createSciTraderTheme`. From CSS is the Light theme in brand colours read from CSS variables on the page. Both turn off the axis bands with a transparent `chart.axisBands`, and Midnight Gold the minor gridlines too. Switch between them and the built-in Dark theme.
+Midnight Gold is the Dark theme with gold candles, made with `createSciTraderTheme`. Classic is the Light theme in beige and deep green and red, read from CSS variables on the page. Both turn off the axis bands with a transparent `chart.axisBands`, and Midnight Gold the minor gridlines too. Switch between them and the built-in Dark theme.
 
 <LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/styling_CustomTheme/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 

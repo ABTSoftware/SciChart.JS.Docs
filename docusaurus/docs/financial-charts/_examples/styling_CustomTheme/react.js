@@ -42,7 +42,7 @@ function themeFromCss() {
     const css = getComputedStyle(document.documentElement);
     const brand = (name) => css.getPropertyValue(`--brand-${name}`).trim();
     return createSciTraderTheme(SCITRADER_LIGHT_THEME, {
-        name: "From CSS",
+        name: "Classic",
         chart: {
             background: brand("background"),
             axisBackground: brand("background"),
