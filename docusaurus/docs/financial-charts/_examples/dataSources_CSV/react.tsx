@@ -65,9 +65,10 @@ function CsvChart({ handle, symbols }: { handle: ICSVServicesHandle; symbols: st
         <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
             <div style={toolbarStyle}>
                 <ButtonGroup values={symbols} selected={symbol} onSelect={(s) => (setSymbol(s), chart()?.setSymbol(s))} />
-                {/* 3. The intervals the files can serve. changeInterval picks a period that suits the interval */}
+                {/* 3. The intervals the files can serve, except 1M, which charts can't show yet.
+                    changeInterval picks a period that suits the interval */}
                 <ButtonGroup
-                    values={handle.exchange.getSupportedIntervals()}
+                    values={handle.exchange.getSupportedIntervals().filter((i) => i !== CandleInterval.ONE_MONTH)}
                     selected={interval}
                     onSelect={(i) => (setInterval(i), chart()?.changeInterval(i))}
                 />

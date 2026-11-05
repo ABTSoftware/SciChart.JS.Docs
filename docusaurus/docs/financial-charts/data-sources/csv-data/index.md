@@ -110,7 +110,7 @@ The examples on these pages use real Binance candles for BTCUSDT, ETHUSDT and SO
 
 ## TypeScript Example: A Candlestick Chart from CSV Files
 
-The two sample files, loaded into one exchange with `CSVExchange.fromUrl` and charted with `createCSVServices`. The buttons list the symbols and intervals the data serves, from `getInstruments()` and `getSupportedIntervals()`: 1h to 12h from the hourly file, 1d to 1M from the daily one.
+The two sample files, loaded into one exchange with `CSVExchange.fromUrl` and charted with `createCSVServices`. The buttons list the symbols and intervals the data serves, from `getInstruments()` and `getSupportedIntervals()`: 1h to 12h from the hourly file, 1d to 1w from the daily one. 1M is left out: charts can’t show monthly candles yet.
 
 <LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/dataSources_CSV/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 

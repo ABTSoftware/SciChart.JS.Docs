@@ -42,7 +42,7 @@ function CsvChart({ handle, symbols }) {
     return (React.createElement("div", { style: { display: "flex", flexDirection: "column", height: "100%" } },
         React.createElement("div", { style: toolbarStyle },
             React.createElement(ButtonGroup, { values: symbols, selected: symbol, onSelect: (s) => (setSymbol(s), chart()?.setSymbol(s)) }),
-            React.createElement(ButtonGroup, { values: handle.exchange.getSupportedIntervals(), selected: interval, onSelect: (i) => (setInterval(i), chart()?.changeInterval(i)) })),
+            React.createElement(ButtonGroup, { values: handle.exchange.getSupportedIntervals().filter((i) => i !== CandleInterval.ONE_MONTH), selected: interval, onSelect: (i) => (setInterval(i), chart()?.changeInterval(i)) })),
         React.createElement("div", { style: { flex: 1, minHeight: 0 } },
             React.createElement(SciFinanceChartView, { ref: chartRef, config: config }))));
 }

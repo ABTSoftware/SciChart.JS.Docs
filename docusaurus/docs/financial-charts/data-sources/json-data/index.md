@@ -74,9 +74,9 @@ The data is moved to end now, like any CSV data; pass `alignToNow: false` if it 
 
 ## TypeScript Example: A Candlestick Chart from JSON Data
 
-Four years of BTCUSDT daily candles, fetched as JSON, turned into an exchange and charted with Volume and MACD.
+Four years of BTCUSDT daily candles, fetched as JSON, turned into an exchange and charted with Volume and MACD. The buttons change the interval with `changeInterval`: from daily candles, the exchange also makes 3-day and weekly ones.
 
-<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/dataSources_JSON/vanilla" html={`<div id="chart" style="height: 100%"></div>`} />
+<LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/dataSources_JSON/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 
 The code for this example is found below.
 

@@ -24,15 +24,52 @@ export function JsonDataChart() {
             .then((response) => response.json())
             .then((candles) => setHandle(servicesFor(candles)));
     }, []);
-    // Create the config once the data is in: studies are live objects bound to one chart
-    const config = React.useMemo(() => handle && {
+    // Fills its parent, so give the parent a height
+    return handle ? React.createElement(JsonChart, { handle: handle }) : React.createElement("div", { style: toolbarStyle }, "Loading the candles\u2026");
+}
+function JsonChart({ handle }) {
+    const chartRef = React.useRef(null);
+    const [interval, setInterval] = React.useState(CandleInterval.ONE_DAY);
+    // Create the config once per mounted chart: studies are live objects bound to one chart
+    const config = React.useMemo(() => ({
         exchangeName: handle.exchange.name,
         symbol: "BTCUSDT",
         interval: CandleInterval.ONE_DAY,
         period: "1Y",
         services: handle.services,
         studies: [new OHLCStudy(), new VolumeStudy(), new MACDStudy()],
-    }, [handle]);
-    // SciFinanceChartView fills its parent, so give the parent a height
-    return config ? React.createElement(SciFinanceChartView, { config: config }) : React.createElement("div", null, "Loading\u2026");
+    }), [handle]);
+    // financeApi throws until the chart has initialised
+    const chart = () => (chartRef.current?.isInitialized ? chartRef.current.financeApi : undefined);
+    return (React.createElement("div", { style: { display: "flex", flexDirection: "column", height: "100%" } },
+        React.createElement("div", { style: toolbarStyle },
+            React.createElement(ButtonGroup, { values: handle.exchange.getSupportedIntervals().filter((i) => i !== CandleInterval.ONE_MONTH), selected: interval, onSelect: (i) => (setInterval(i), chart()?.changeInterval(i)) })),
+        React.createElement("div", { style: { flex: 1, minHeight: 0 } },
+            React.createElement(SciFinanceChartView, { ref: chartRef, config: config }))));
 }
+// A row of toggle buttons: one per value, the selected one highlighted
+function ButtonGroup(props) {
+    return (React.createElement("div", { style: { display: "flex", gap: 4 } }, props.values.map((value) => (React.createElement("button", { key: value, style: buttonStyle(value === props.selected), onClick: () => props.onSelect(value) }, value)))));
+}
+// The toolbar uses SciTrader's UI colours: its --st-ui-* CSS variables, with the stylesheet's defaults
+const toolbarStyle = {
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: "8px 16px",
+    padding: 8,
+    background: "var(--st-ui-background, #2b2839)",
+    borderBottom: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    color: "var(--st-ui-text-muted, #9da2bc)",
+    fontSize: 13,
+};
+const buttonStyle = (active = false) => ({
+    padding: "4px 10px",
+    border: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    borderRadius: 6,
+    background: active ? "var(--st-ui-selection, #6c63ff)" : "var(--st-ui-surface, #373447)",
+    color: "var(--st-ui-text, #ffffff)",
+    font: "inherit",
+    fontSize: 13,
+    cursor: "pointer",
+});

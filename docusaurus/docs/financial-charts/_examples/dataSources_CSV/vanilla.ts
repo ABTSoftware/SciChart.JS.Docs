@@ -37,7 +37,8 @@ async function createChart() {
 
     // 3. The symbols and intervals the files can serve
     const symbols = await exchange.getInstruments(); // ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
-    const intervals = exchange.getSupportedIntervals();
+    // getSupportedIntervals() also lists 1M, which charts can't show yet, so leave it out
+    const intervals = exchange.getSupportedIntervals().filter((i) => i !== CandleInterval.ONE_MONTH);
     toolbar.append(
         buttonGroup(symbols, (s) => s, "BTCUSDT", (symbol) => chart.setSymbol(symbol)),
         // changeInterval picks a period that suits the interval
