@@ -54,7 +54,7 @@ Import it once, next to your first import of the SDK:
 import "scichart-scitrader/scitrader.css";
 ```
 
-It gives the SDK's toolbars, pane controls, menus and overlays their look ([Styling](/financial-charts/styling-and-themes/#the-stylesheet)). It is plain CSS, and the SDK's JavaScript never imports it, so your bundler handles it like any other CSS file. Without a bundler, link `node_modules/scichart-scitrader/styles/scitrader.css` from your page.
+It gives the SDK's toolbars, pane controls, menus and overlays their look ([Styling](/financial-charts/styling-and-themes/css-stylesheet/)). It is plain CSS, and the SDK's JavaScript never imports it, so your bundler handles it like any other CSS file. Without a bundler, link `node_modules/scichart-scitrader/styles/scitrader.css` from your page.
 
 ## Serve SciChart's WebAssembly
 

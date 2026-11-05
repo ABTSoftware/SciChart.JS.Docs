@@ -183,7 +183,7 @@ interface IHostProps {
 }
 ```
 
-The picker is attached to `document.body`, outside your toolbar, so scope its rules by its own class, or attach it inside your container with `popoverContainer`. See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
+The picker is attached to `document.body`, outside your toolbar, so scope its rules by its own class, or attach it inside your container with `popoverContainer`. See [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/).
 
 #### See also
 

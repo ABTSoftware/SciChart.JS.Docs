@@ -155,7 +155,7 @@ It is a toggle group, like the [interval and period selectors](/financial-charts
 }
 ```
 
-See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
+See [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/).
 
 #### See also
 

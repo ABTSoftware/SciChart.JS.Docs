@@ -264,7 +264,7 @@ Override them in your own CSS, loaded after `scitrader.css`:
 }
 ```
 
-See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
+See [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/).
 
 #### See also
 

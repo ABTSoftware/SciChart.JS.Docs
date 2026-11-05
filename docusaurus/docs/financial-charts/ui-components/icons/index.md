@@ -192,6 +192,6 @@ function SciTraderIcon({ name, width, height, selected, className }: ISciTraderI
 }
 ```
 
-See [Styling and Themes](/financial-charts/styling-and-themes/#icons).
+See [Styling and Themes](/financial-charts/styling-and-themes/styling-ui-components/#icons).
 
 The `palette` icon's path is from Font Awesome Free 5.15.4 (CC BY 4.0).

@@ -61,7 +61,7 @@ In React, `MarketDepthView` from `scichart-scitrader-react` mounts it, with the 
 <MarketDepthView source={source} symbol={symbol} settings={settings} onSettingsChange={setSettings} />
 ```
 
--   **Settings** (`TMarketDepthSettings`) cover the refresh rate, the pulled-wall rule, the grouping, the row height, fonts, flash duration and colours. Model settings apply to the running book; a change to how the ladder is drawn rebuilds its surface. Settings are theme-neutral, so they are safe to persist; see [Styling → Market depth](/financial-charts/styling-and-themes/#market-depth).
+-   **Settings** (`TMarketDepthSettings`) cover the refresh rate, the pulled-wall rule, the grouping, the row height, fonts, flash duration and colours. Model settings apply to the running book; a change to how the ladder is drawn rebuilds its surface. Settings are theme-neutral, so they are safe to persist; see [Styling → Market depth](/financial-charts/styling-and-themes/styling-ui-components/#market-depth).
 -   **No settings dialog ships.** Pass `onSettingsClick` and the header shows a cog that calls it. The SciTrader app opens its own dialog there, reading `panel.themedSettings` and `panel.availableGroupings()`, with a [`ColorPicker`](/financial-charts/ui-components/colour-picker/) for each colour; see [Recolouring the Ladder](#recolouring-the-ladder).
 -   **Rows.** By default the row count follows the panel's height and the row height. Pass `rows` for a fixed count.
 
@@ -412,7 +412,7 @@ const setColour = (key: "bid" | "ask", value: string) =>
 <MarketDepthView source={source} symbol={symbol} settings={depthSettings} />
 ```
 
-See [Styling → Market depth](/financial-charts/styling-and-themes/#market-depth).
+See [Styling → Market depth](/financial-charts/styling-and-themes/styling-ui-components/#market-depth).
 
 ### The Headless Ladder: MarketDepthLadder {#marketdepthladder}
 
@@ -479,7 +479,7 @@ interface IBookLevel {
 
 ## Styling the Market Depth Panel {#styling}
 
-The panel's header and slippage readout are HTML. The ladder itself is drawn with SciChart, so its colours, fonts and row height are [settings](#marketdepthpanel), not CSS; see [Styling and Themes](/financial-charts/styling-and-themes/#market-depth).
+The panel's header and slippage readout are HTML. The ladder itself is drawn with SciChart, so its colours, fonts and row height are [settings](#marketdepthpanel), not CSS; see [Styling and Themes](/financial-charts/styling-and-themes/styling-ui-components/#market-depth).
 
 | Element | Class |
 | --- | --- |

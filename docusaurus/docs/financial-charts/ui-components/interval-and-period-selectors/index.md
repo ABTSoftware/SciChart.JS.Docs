@@ -314,7 +314,7 @@ Override them in your own CSS, loaded after `scitrader.css`. Scope the rules und
 }
 ```
 
-In React, `className` and `style` apply to the wrapper's host `<div>`. To change colours everywhere, change the theme instead; see [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
+In React, `className` and `style` apply to the wrapper's host `<div>`. To change colours everywhere, change the theme instead; see [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/).
 
 #### See also
 

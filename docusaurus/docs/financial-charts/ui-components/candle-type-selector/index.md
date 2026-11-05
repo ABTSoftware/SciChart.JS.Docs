@@ -217,7 +217,7 @@ The button has `aria-expanded="true"` while the menu is open, and the current ty
 }
 ```
 
-The menu is attached to `document.body`, outside your toolbar, so scope menu rules by the menu's own class, or attach it inside your container with `menuContainer`. See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
+The menu is attached to `document.body`, outside your toolbar, so scope menu rules by the menu's own class, or attach it inside your container with `menuContainer`. See [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/).
 
 #### See also
 

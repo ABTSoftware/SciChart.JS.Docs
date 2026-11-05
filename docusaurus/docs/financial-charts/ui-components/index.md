@@ -52,7 +52,7 @@ The components get their look from the SDK's stylesheet. Import it once:
 import "scichart-scitrader/scitrader.css";
 ```
 
-Without it, the controls still work but look like plain browser buttons. The stylesheet reads the theme's colours from CSS variables such as `--st-ui-surface` and `--st-ui-text`, with the dark theme's colours as fallbacks, so the components follow the chart's theme. Every element has a class, e.g. `st-toggle-group__button`, so you can restyle any part with your own CSS, loaded after `scitrader.css`. Each component's page lists its classes. [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet) covers the stylesheet, the theme variables and the full list of classes.
+Without it, the controls still work but look like plain browser buttons. The stylesheet reads the theme's colours from CSS variables such as `--st-ui-surface` and `--st-ui-text`, with the dark theme's colours as fallbacks, so the components follow the chart's theme. Every element has a class, e.g. `st-toggle-group__button`, so you can restyle any part with your own CSS, loaded after `scitrader.css`. Each component's page lists its classes. [Styling and Themes](/financial-charts/styling-and-themes/css-stylesheet/) covers the stylesheet, the theme variables and the full list of classes.
 
 #### See also
 

@@ -724,7 +724,7 @@ SciChart axis options applied to every X and Y axis the chart creates, on top of
 axisDefaults: { labelStyle: { fontSize: 11 }, drawMinorGridLines: false }
 ```
 
-**Later:** `financeApi.applyAxisStyle(partial)`. See [Axes](/financial-charts/styling-and-themes/#axes).
+**Later:** `financeApi.applyAxisStyle(partial)`. See [Axes](/financial-charts/styling-and-themes/styling-the-chart/#axes).
 
 <details>
 <summary>The IChartAxisDefaults type, with its TSDoc</summary>
