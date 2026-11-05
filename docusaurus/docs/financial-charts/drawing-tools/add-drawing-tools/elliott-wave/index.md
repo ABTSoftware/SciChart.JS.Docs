@@ -230,3 +230,4 @@ interface IPolyLineAnnotationOptions extends IMultiPointAnnotationBaseOptions {
 - [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): the other drawing tools, point-and-click drawing and drawings in code.
 - [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/): the quick-edit toolbar, the full editor and edit events.
 - [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): ready-made tools and list for users.
+- [Elliott wave patterns](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/elliott-patterns/): the poly line patterns, in the `scichart-financial-tools` docs.

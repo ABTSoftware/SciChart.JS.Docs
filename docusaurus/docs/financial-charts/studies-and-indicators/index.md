@@ -142,9 +142,54 @@ interface IStudyOptions {
 
 </details>
 
-## The IStudy Interface: What Every Study Has {#istudy}
+## Study Class Hierarchy: IStudy, StudyBase and the Built-in Studies {#study-class-hierarchy}
 
-Every study, built-in or [your own](/financial-charts/studies-and-indicators/creating-custom-studies/), implements `IStudy`. The members you use from an app are:
+Every study implements the `IStudy` interface. The built-in studies all extend the abstract `StudyBase` class, which implements `IStudy` and does the work every study shares: it claims its pane and axes, runs its data updates, keeps its settings, and moves its colours when the chart's theme changes. A study of [your own](/financial-charts/studies-and-indicators/creating-custom-studies/) extends `StudyBase` too. The diagram shows a few of the 32 built-in studies:
+
+```mermaid
+classDiagram
+    direction TB
+    class IStudy {
+        <<interface>>
+        +type
+        +id
+        +options
+        +getDescriptor()
+        +applyDescriptor(descriptor)
+        +getRequiredWarmup()
+    }
+    class StudyBase {
+        <<abstract>>
+        +createInputOutputIds()*
+        +createDataSeries()*
+        +createAxes()*
+        +createRenderableSeries()*
+        #onDataChanged(update)*
+    }
+    class IStudyOptions {
+        <<interface>>
+        +paneId
+        +themeColors
+    }
+    class MyStudy {
+        <<your own>>
+    }
+    IStudy <|.. StudyBase : implements
+    StudyBase --> IStudyOptions : options
+    StudyBase <|-- OHLCStudy
+    StudyBase <|-- VolumeStudy
+    StudyBase <|-- SMAStudy
+    StudyBase <|-- RSIStudy
+    StudyBase <|-- MACDStudy
+    StudyBase <|-- BollingerBandsStudy
+    StudyBase <|-- MyStudy
+```
+
+Members marked `*` are abstract: each study implements them. Each study's options extend `IStudyOptions`, e.g. `IRsiOptions` for `RSIStudy`.
+
+### The IStudy Interface: What Every Study Has {#istudy}
+
+The members you use from an app are:
 
 | Member | What it is |
 | --- | --- |
@@ -160,7 +205,7 @@ Every study, built-in or [your own](/financial-charts/studies-and-indicators/cre
 | `renderableSeries`, `yAxes`, `parentSurface` | The SciChart series, axes and surface it draws with |
 | `getRequiredWarmup()` | Candles it needs before its first value; the chart loads that many extra |
 
-The rest are called by the chart, such as `onAttach` and `onDetach`, or implemented by [custom studies](/financial-charts/studies-and-indicators/creating-custom-studies/), such as `createXAxis` and `getLegendColor`. The built-in studies extend `StudyBase`, which implements `IStudy`; its full API is on [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/#studybase-api-for-custom-studies).
+The rest are called by the chart, such as `onAttach` and `onDetach`, or implemented by custom studies, such as `createXAxis` and `getLegendColor`.
 
 <details>
 <summary>The IStudy interface, with its TSDoc</summary>
@@ -325,6 +370,239 @@ interface IStudy {
      * hand-written `IStudy` still type-checks; `StudyBase` implements it for every built-in study.
      */
     applyThemeChange?(from: ISciTraderTheme, to: ISciTraderTheme): void;
+}
+```
+
+</details>
+
+### The StudyBase Class {#studybase}
+
+`StudyBase<T>` is the abstract base of every built-in study, where `T` is the type of value it reads, `number` for prices. Extend it to write a study of your own: [Creating Custom Studies](/financial-charts/studies-and-indicators/creating-custom-studies/) walks through each member you implement or override.
+
+| Members | Kind | What they are for |
+| --- | --- | --- |
+| `createInputOutputIds`, `createDataSeries`, `createAxes`, `createRenderableSeries`, `onDataChanged` | Abstract | What it reads, stores, draws and calculates |
+| `onInitComplete`, `getRequiredWarmup`, `configureDescriptor`, `onDescriptorApplied`, `supportsLiveApply`, `onThemeChanged`, `getLegendColor` | Override | Optional behaviour: set-up, warm-up, settings, theme and legend colours |
+| `getInputSourceId`, `createOutputSourceId`, `addReferenceAnnotation`, `nanPad`, `valueAt`, `strokeForDataSeries` | Helper | Data columns, guide lines and values |
+| `wasmContext`, `dataManager`, `parentFinanceChart`, `parentSurface`, `theme` | Context | Set when the study attaches |
+
+<details>
+<summary>The StudyBase class (public and protected members), with its TSDoc</summary>
+
+```ts
+abstract class StudyBase<T> implements IStudy {
+    readonly type: EStudyType;
+    readonly chartPaneId: PaneId;
+    readonly options: IStudyOptions;
+    readonly yAxes: ObservableArray<AxisBase2D>;
+    readonly renderableSeries: ObservableArray<IRenderableSeries>;
+    readonly outputIds: DataSourceId[];
+    readonly inputIds: DataSourceId[];
+    /** Fires whenever the study's input data updates — fired after {@link Changed} processes the update. */
+    readonly dataChanged: EventHandler<TDataUpdate<T>>;
+    /** Fires after {@link applyDescriptor} mutates this study's live state. */
+    readonly descriptorApplied: EventHandler<TStudyDescriptor>;
+    /** Convenience accessor — delegates to parentChartPane.surface. */
+    get parentSurface(): SciChartSurface;
+    protected idProperty: StudyId;
+    get studyId(): StudyId;
+    get id(): string;
+    protected xId: DataSourceId;
+    protected wasmContext: TSciChart;
+    protected dataManager: IDataManager;
+    protected parentChartPane: ChartPane;
+    protected parentFinanceChart: SciFinanceChart;
+    protected subscriptions: Subscription[];
+    /**
+     * Guide-line annotations (e.g. overbought/oversold reference lines) this
+     * study added to the pane surface via {@link addReferenceAnnotation}. Tracked
+     * so {@link onDetach} can remove them: an annotation left on the surface after
+     * its y-axis is deleted dereferences the axis's (now-undefined) WASM index
+     * calculator on the next render loop, crashing it with
+     * `Cannot read properties of undefined (reading 'GetIndex')`.
+     */
+    protected readonly referenceAnnotations: IAnnotation[];
+    protected descriptor: TStudyDescriptor;
+    /**
+     * Frozen snapshot of the descriptor right after {@link initialize} completes
+     * — i.e. RS instances exist with SciChart's auto-picked brushes / strokes,
+     * and no user edits have landed yet. Drives {@link getDefaultDescriptor}.
+     * `undefined` until the study is attached.
+     */
+    protected defaultDescriptorSnapshot?: TStudyDescriptor;
+    constructor(type: EStudyType, defaultChartPaneId: PaneId, options: IStudyOptions);
+    protected setDefaultDescriptors(): void;
+    /**
+     * Refresh-on-read: every call clears the descriptor structure and asks the
+     * concrete study to repopulate it from its **current** instance state via
+     * {@link configureDescriptor}.
+     */
+    getDescriptor(): TStudyDescriptor;
+    /**
+     * Per-study descriptor registration. Concrete studies override to register
+     * their inputs/styles via {@link addDescriptor}. Called once at construction
+     * (to seed the descriptor) and again on every {@link getDescriptor} read
+     * (to refresh from live state). Idempotent — `addDescriptor` overwrites by
+     * `name` so re-running rebuilds the same entries with current values.
+     */
+    protected configureDescriptor(): void;
+    setDescriptor(descriptor: TStudyDescriptor): void;
+    /**
+     * Returns the descriptor that represents this study's "freshly attached"
+     * state — the snapshot taken right after {@link initialize} completed,
+     * before any user edits could land. Powers the per-study "Reset to
+     * defaults" form button and the batch "Reset all study styles" actions.
+     *
+     * **Why a snapshot, not a transient instance:** some studies (OHLC, MACD)
+     * delegate default colors to SciChart's auto-picker, which only sets
+     * brushes/strokes on the live RS — never copied back into the study's
+     * `renderOptions`. A transient instance has no RS, so its descriptor
+     * would fall back to empty strings (`""`); applying those would paint
+     * invisible candles. Snapshotting after RS creation captures the
+     * auto-picked colors correctly.
+     *
+     * **Lifecycle note:** if called before {@link onAttach} runs (no snapshot
+     * captured yet), falls back to {@link getDescriptor}. This shouldn't
+     * happen for any user-facing reset path because the UI only exposes the
+     * action after the study is on the chart.
+     */
+    getDefaultDescriptor(): TStudyDescriptor;
+    /**
+     * Override in concrete studies to return `true` once they've implemented
+     * {@link onDescriptorApplied}. Callers gate the live-apply path on this
+     * flag and fall back to detach + re-instantiate when it's `false`.
+     */
+    get supportsLiveApply(): boolean;
+    /**
+     * Dispatch an in-form descriptor edit onto this live instance.
+     *
+     * Derives constructor-options from the descriptor via the concrete study's
+     * static `getOptionsFromDescriptor`,
+     * then hands them to {@link onDescriptorApplied}.  Concrete studies
+     * override that method to mutate their renderable / data series in place
+     * and (where required) trigger an internal recompute.
+     *
+     * Studies that haven't implemented live apply yet leave
+     * {@link supportsLiveApply} as `false`; the caller bails out before
+     * reaching here.
+     */
+    applyDescriptor(descriptor: TStudyDescriptor): void;
+    /**
+     * Override in concrete studies to mutate renderable / data series in place
+     * given the new options. Default is a no-op so a study without an override
+     * combined with `supportsLiveApply: false` results in the caller using the
+     * fallback detach+attach path — see StudyList.
+     */
+    protected onDescriptorApplied(_opts: IStudyOptions): void;
+    /**
+     * The theme this study draws with: its chart's, or the built-in theme before the study is
+     * attached. Read colours that are not settings-form controls (reference lines, markers) from
+     * here, and update them in {@link onThemeChanged}.
+     */
+    protected get theme(): ISciTraderTheme;
+    /**
+     * The colours chosen for this study per theme; see {@link TStudyThemeColors}. Saved with the
+     * chart through `options.themeColors`.
+     */
+    get themeColors(): TStudyThemeColors;
+    /**
+     * Draw this study in `to`'s colours: for each of its colour controls, the colour chosen for
+     * `to` if there is one, else a colour set for every theme, else `to`'s default. Colours chosen
+     * under other themes are kept for when the chart switches back. "Reset to defaults" in the
+     * settings form resets to `to`'s defaults.
+     *
+     * The chart calls this on every attached study when its theme changes, and on each study as it
+     * attaches.
+     */
+    applyThemeChange(from: ISciTraderTheme, to: ISciTraderTheme): void;
+    /**
+     * Record `descriptor`'s colours against the current theme, when they came from the user rather
+     * than from a theme switch. The base {@link applyDescriptor} calls this; a study that overrides
+     * `applyDescriptor` must call it too, with the descriptor as applied, or its colour edits
+     * won't be kept per theme.
+     */
+    protected rememberEditedThemeColours(descriptor: TStudyDescriptor): void;
+    /**
+     * Recolour anything that is not a settings-form control: reference lines, markers,
+     * annotations. Descriptor colours have already moved by the time this runs.
+     */
+    protected onThemeChanged(_theme: ISciTraderTheme, _previous: ISciTraderTheme): void;
+    addDescriptor(section: EDescriptorSectionName, descriptor: IuiDescriptor): void;
+    onAttach(parentFinanceChart: SciFinanceChart, parentChartPane: ChartPane, wasmContext: TSciChart, dataManager: IDataManager): void;
+    /**
+     * Add a horizontal guide / reference line to the pane surface and track it so
+     * {@link onDetach} removes it. Use this instead of calling
+     * `parentSurface.modifierAnnotations.add(...)` directly — an untracked
+     * annotation outlives its y-axis and crashes the render loop on teardown.
+     */
+    protected addReferenceAnnotation(...annotations: IAnnotation[]): void;
+    onDetach(): void;
+    /** Set inputIds and create unique output Ids using the studyId */
+    abstract createInputOutputIds(): void;
+    /** Create the Dataseries(s) and anything else that needs to exist before data is loaded */
+    abstract createDataSeries(): void;
+    /** Create Y Axes and return them */
+    abstract createAxes(): AxisBase2D[];
+    /** Create RenderableSeries and return them */
+    abstract createRenderableSeries(): IRenderableSeries[];
+    /** Anything that should happen after initial data is loaded */
+    protected onInitComplete(): void;
+    protected abstract onDataChanged(update: TDataUpdate<T>): void;
+    /**
+     * Default warmup is zero — appropriate for raw-display studies (OHLC,
+     * Volume) that have valid output from index 0. Studies with rolling-window
+     * indicators (RSI, SMA, MACD, Bollinger Bands) override and return their
+     * configured period.
+     */
+    getRequiredWarmup(): number;
+    /**
+     * Default: a study drawing a single line has exactly one colour, so every output
+     * it owns takes that line's stroke. Covers all the single-output indicators
+     * (SMA, EMA, WMA, RSI, VWAP, ATR, CCI, ROC, TRIX, …) without each restating it.
+     *
+     * Multi-output studies override — one stroke cannot stand for three bands — as do
+     * OHLC and Volume, whose colour depends on the candle rather than on a fixed
+     * stroke. See {@link IStudy.getLegendColor}.
+     */
+    getLegendColor(_outputId: DataSourceId, _xIndex?: number): string | undefined;
+    /**
+     * Value of `sourceId` at the hovered candle — the same read the legend template
+     * performs, so a colour derived from the data always agrees with the number it is
+     * painting. `undefined` xIndex means the latest candle, matching the legend's
+     * static (no cursor) mode.
+     */
+    protected valueAt(sourceId: DataSourceId, xIndex?: number): number | undefined;
+    /**
+     * Stroke of whichever renderable series draws `dataSeries`.
+     *
+     * Multi-output studies pair an output with its line this way rather than by index
+     * into `renderableSeries`, because the arrays are not parallel: the band studies
+     * put a fill series first, and Ichimoku draws a Chikou line that has no output
+     * column at all.
+     */
+    protected strokeForDataSeries(dataSeries: unknown): string | undefined;
+    protected setXInput(): void;
+    /**
+     * Resolve the {@link DataSourceId} for a named feed source on the default
+     * feed (e.g. High / Low / Close / Volume). Wraps the verbose
+     * `getSourceIdByName(DEFAULT_FEED_ID, name)` call every multi-input study
+     * otherwise repeats in {@link createInputOutputIds}.
+     */
+    protected getInputSourceId(name: EDataSourceStringId): DataSourceId;
+    /**
+     * Create a new output {@link DataSourceId} for this study, inheriting the
+     * feed from `fromInputId`. `shortName` becomes the source's legend name.
+     * Wraps the `DataSourceId.create(this.dataManager, "", shortName, this.studyId, …)`
+     * call every study makes for each of its outputs.
+     */
+    protected createOutputSourceId(shortName: string, fromInputId: DataSourceId): DataSourceId;
+    /**
+     * Prepend `warmup` NaN values so an indicator's (shorter) output array
+     * aligns by index with the full input series — the RSI/SMA convention,
+     * where callers pass `this.dataManager.xValues.length - result.length`.
+     * Returns the array unchanged when `warmup <= 0`.
+     */
+    protected static nanPad(values: number[], warmup: number): number[];
 }
 ```
 

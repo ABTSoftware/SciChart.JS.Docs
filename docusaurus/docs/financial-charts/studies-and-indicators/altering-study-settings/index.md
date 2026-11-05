@@ -33,7 +33,7 @@ descriptor.styles.controls.strokeColor;
 // { name: "strokeColor", type: "color", label: "Stroke Color", default: "#…" }
 ```
 
-Every study has these settings members (see [the IStudy interface](/financial-charts/studies-and-indicators/#istudy) for all of a study's members):
+Every study has these settings members. They are part of the [IStudy interface](/financial-charts/studies-and-indicators/#istudy), where their TSDoc is:
 
 | Member | What it does |
 | --- | --- |
@@ -45,7 +45,9 @@ Every study has these settings members (see [the IStudy interface](/financial-ch
 
 `getDescriptor()` refills and returns the same object on every call. Copy it before you keep it, e.g. as React state, or a later read changes your copy too.
 
-`setDescriptor` and `addDescriptor` are for [writing a study](/financial-charts/studies-and-indicators/creating-custom-studies/): `setDescriptor` stores a descriptor without applying it, so don't use it to change settings.
+:::warning
+Change settings with `applyDescriptor`, not `setDescriptor`. `setDescriptor` only stores a descriptor, without applying it to the chart, and the next `getDescriptor()` replaces it with the study's live settings. `setDescriptor` and `addDescriptor` are for [writing a study](/financial-charts/studies-and-indicators/creating-custom-studies/).
+:::
 
 The descriptor is also what [Save and Restore](/financial-charts/save-and-restore/) saves for each study, so edited settings are kept.
 
@@ -86,55 +88,6 @@ enum EDescriptorType {
     /** A colour ramp: stops of colour and position, edited on a gradient bar. See {@link GradientDescriptor}. */
     GRADIENT = "gradient"
 }
-```
-
-</details>
-
-<details>
-<summary>IStudy.getDescriptor, getDefaultDescriptor, setDescriptor, applyDescriptor, supportsLiveApply and descriptorApplied, with their TSDoc</summary>
-
-```ts
-getDescriptor(): TStudyDescriptor;
-/**
- * Returns the descriptor a freshly-constructed instance of this study
- * type would expose — i.e. constructor defaults, no user customisation.
- * Powers the per-study "Reset to defaults" form button and the batch
- * "Reset all study styles" header / More-tab actions. Does NOT mutate
- * this instance — callers are expected to feed the returned descriptor
- * into {@link applyDescriptor} (or hand it to the form draft, which
- * will fire its debounced apply for them).
- */
-getDefaultDescriptor(): TStudyDescriptor;
-setDescriptor(descriptor: TStudyDescriptor): void;
-/**
- * Apply edits from an in-form descriptor onto this live study instance.
- * Concrete studies that override {@link IStudy.supportsLiveApply} to
- * return `true` mutate their renderable series / data series in place
- * (instant for style edits, recompute for input edits) — no detach,
- * no re-attach, no flash.
- *
- * Studies that haven't implemented live apply leave
- * {@link supportsLiveApply} as `false` (the default); callers detect that
- * and fall back to the legacy `detachStudy + getStudy(new) + attachStudy`
- * pipeline.
- */
-applyDescriptor(descriptor: TStudyDescriptor): void;
-/**
- * Whether {@link applyDescriptor} performs a real in-place update. When
- * `false`, the caller (e.g. the SDK's `StudyList`) falls back
- * to detach + re-instantiate. Default `false` on {@link StudyBase}; each
- * study opts in by overriding to return `true`.
- */
-readonly supportsLiveApply: boolean;
-/**
- * Fires after {@link applyDescriptor} has mutated the live study (whether
- * invoked by the form's debounced apply, the per-study "Reset to defaults"
- * button, or the batch "Reset all study styles" helper). The form
- * subscribes so it can re-sync its local draft state when an external
- * applyDescriptor lands — without this, the form keeps showing stale
- * values while the chart already reflects the new descriptor.
- */
-readonly descriptorApplied: EventHandler<TStudyDescriptor>;
 ```
 
 </details>

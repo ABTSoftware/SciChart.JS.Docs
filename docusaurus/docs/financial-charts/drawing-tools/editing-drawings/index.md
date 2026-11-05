@@ -48,7 +48,9 @@ const drawing = DrawingToolsController.attach(financeChartPanel.financeApi, {
 drawing.openEditor(item); // select a drawing and open the full editor for it, e.g. from an Edit button
 ```
 
-**Docking the editor.** The editor sets its own position and look inline, as a floating panel near the top right of the page. To dock it in its container instead, give it classes with `editorRootClassName` and `editorPanelClassName`, and override its position with `!important`:
+:::warning[Docking the editor]
+The editor sets its own position and look inline, as a floating panel near the top right of the page, even with an `editorContainer`. To dock it in its container instead, give it classes with `editorRootClassName` and `editorPanelClassName`, and override its position with `!important`, as below.
+:::
 
 ```css
 /* The editor's root: fill its container rather than float */
@@ -123,7 +125,9 @@ drawing.drawingsChanged.subscribe((items) =>
 
 For a drawing you create in code, you can pass the same as callbacks in its options instead: `onDragStarted`, `onDrag`, `onDragEnded`, `onClick` and `onHover`.
 
-Edits made in the quick-edit toolbar or the full editor, such as a new colour, change the annotation's properties without raising an event.
+:::note
+Edits made in the quick-edit toolbar or the full editor, such as a new colour or thickness, change the annotation's properties without raising any event. To save a drawing's look after an edit, read its properties when you need them, e.g. with `financeChartPanel.toJSON()`.
+:::
 
 <details>
 <summary>The annotation events and callback options, from scichart's AnnotationBase, with their TSDoc</summary>

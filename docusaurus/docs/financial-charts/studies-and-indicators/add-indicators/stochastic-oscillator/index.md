@@ -35,7 +35,9 @@ $$
 
 where the highest high and lowest low are over the last $n$ candles, including the latest, and $\text{SMA}_m$ is a simple moving average of the last $m$ %K values. If the range is zero, because every candle has the same price, %K is 0.
 
-This is the **fast stochastic**: %K is used as it is. Many platforms default to the **slow stochastic**, which smooths %K with a 3-candle average first, so its lines are smoother than `StochasticStudy`'s.
+:::note
+`StochasticStudy` is the **fast stochastic**: %K is used as it is. Many platforms default to the **slow stochastic**, which smooths %K with a 3-candle average first, so their lines are smoother than `StochasticStudy`'s with the same settings.
+:::
 
 %K starts after $n$ candles and %D after $n + m - 1$. SciTrader loads `length + signalPeriod` extra candles to the left of the visible period, so the lines start at the left edge.
 

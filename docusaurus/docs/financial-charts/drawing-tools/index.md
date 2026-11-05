@@ -114,13 +114,25 @@ These are drawn by dragging, not by placing points.
 
 ## How Drawings Work
 
+```mermaid
+flowchart TB
+    Toolbar["DrawingToolbar<br/>or your own buttons"] -- "selectTool(id)" --> Controller["DrawingToolsController"]
+    List["DrawingList"] -- "select, remove, openEditor" --> Controller
+    Controller -- "activeToolChanged, drawingsChanged" --> List
+    Controller -- "adds the drawing modifiers" --> Panes["Each pane's surface"]
+    Code["Your code"] -- "annotations.add(annotation)" --> Panes
+    Panes -- "drawings are annotations" --> Chart["SciFinanceChart<br/>lists, saves and themes them"]
+```
+
 A drawing is an annotation on one of the chart's panes, from `scichart-financial-tools`, which builds on SciChart's annotations. What makes it a drawing, rather than one of a study's own annotations such as the RSI's level lines, is its type: `registerDrawingTools()` registers every tool's annotation type with the chart. Then the chart:
 
 - tracks it as a user drawing, so the drawing tools list it and the eraser can remove it;
 - saves it with `toJSON()` and restores it with `fromJSON()`;
 - colours it with the chart's [theme](/financial-charts/styling-and-themes/), wherever the drawing has no colour of its own.
 
-`DrawingToolsController.attach` calls `registerDrawingTools()` for you. Call it yourself, once at startup, when you add drawings in code or restore a saved chart without a controller. For an annotation type of your own, call `SciFinanceChart.registerDrawingType(name)`.
+:::warning
+`DrawingToolsController.attach` calls `registerDrawingTools()` for you. Without a controller, call it yourself, once at startup, before you add drawings in code or restore a saved chart: otherwise the chart doesn't list, save or theme them, and pattern drawings fail to create. For an annotation type of your own, call `SciFinanceChart.registerDrawingType(name)`.
+:::
 
 | Theme colour (`ISciTraderDrawingColors`) | CSS variable | Used for |
 | --- | --- | --- |
@@ -201,6 +213,65 @@ static registerDrawingType(name: string): void;
 ```
 
 </details>
+
+## Drawing Annotation Class Hierarchy {#class-hierarchy}
+
+Every drawing tool makes an annotation from `scichart-financial-tools`. They all extend `MultiPointAnnotationBase`, which extends SciChart's `AnnotationBase` (through `RenderContextAnnotationBase`), so every drawing has `points`, point labels, snapping, and SciChart's annotation events and options. Tools of a family share a base class with their options. The diagram shows the main families:
+
+```mermaid
+classDiagram
+    direction LR
+    class AnnotationBase {
+        <<SciChart>>
+        +isEditable
+        +isSelected
+        +selectedChanged
+        +dragEnded
+    }
+    class MultiPointAnnotationBase {
+        <<abstract>>
+        +points
+        +labels
+        +snapMode
+    }
+    class AxisAlignedTrendLineAnnotationBase {
+        <<abstract>>
+    }
+    class FibonacciAnnotationBase {
+        <<abstract>>
+        +thresholds
+        +regionColors
+    }
+    AnnotationBase <|-- MultiPointAnnotationBase
+    MultiPointAnnotationBase <|-- PolyLineAnnotation
+    PolyLineAnnotation <|-- FreehandDrawingAnnotation
+    MultiPointAnnotationBase <|-- ExtendedLineAnnotation
+    MultiPointAnnotationBase <|-- AxisAlignedTrendLineAnnotationBase
+    AxisAlignedTrendLineAnnotationBase <|-- HorizontalTrendLineAnnotation
+    AxisAlignedTrendLineAnnotationBase <|-- VerticalTrendLineAnnotation
+    MultiPointAnnotationBase <|-- FibonacciAnnotationBase
+    FibonacciAnnotationBase <|-- FibonacciRetracementAnnotation
+    FibonacciRetracementAnnotation <|-- FibonacciExtensionAnnotation
+    MultiPointAnnotationBase <|-- ChannelAnnotation
+    MultiPointAnnotationBase <|-- PitchforkAnnotation
+    MultiPointAnnotationBase <|-- StopLossTakeProfitAnnotation
+```
+
+The pattern tools (Elliott waves and XABCD) make a `PolyLineAnnotation` with a label at each point. Every class is documented in the `scichart-financial-tools` docs:
+
+| Family | Base class | Annotation classes |
+| --- | --- | --- |
+| [Poly lines and patterns](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/) | `MultiPointAnnotationBase` | `PolyLineAnnotation`, and `FreehandDrawingAnnotation` ([freehand](/scichart-extensions/scichart-financial-tools/annotation-types/freehand-drawing-annotation/)) |
+| [Trend lines](/scichart-extensions/scichart-financial-tools/annotation-types/trend-line-annotations/) | `MultiPointAnnotationBase`, `AxisAlignedTrendLineAnnotationBase` | `ExtendedLineAnnotation`, `HorizontalTrendLineAnnotation`, `VerticalTrendLineAnnotation`, `CrossLineAnnotation`, `AngleLineAnnotation` |
+| [Channels](/scichart-extensions/scichart-financial-tools/annotation-types/channel-annotations/) | `ChannelAnnotation` | `ChannelAnnotation`, `FlatBottomChannelAnnotation`, `DisjointChannelAnnotation` |
+| [Pitchforks](/scichart-extensions/scichart-financial-tools/annotation-types/pitchfork-annotations/) | `PitchforkAnnotation` | `PitchforkAnnotation`, `InsidePitchforkAnnotation`, `SchiffPitchforkAnnotation`, `ModifiedSchiffPitchforkAnnotation`, `PitchfanAnnotation` |
+| [Fibonacci](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/) | `FibonacciAnnotationBase`, `FibonacciArcAnnotationBase` | `FibonacciRetracementAnnotation`, `FibonacciExtensionAnnotation`, `FibonacciCirclesAnnotation`, `FibonacciSpeedResistanceArcsAnnotation`, `FibonacciWedgeAnnotation`, and `SectorAnnotation` ([sector](/scichart-extensions/scichart-financial-tools/annotation-types/sector-annotation/)) |
+| [Cycles and time](/scichart-extensions/scichart-financial-tools/annotation-types/repeating-cyclic-annotations/) | `RepeatedHorizontalIntervalAnnotationBase` | `CyclicLineAnnotation`, `CyclicArcAnnotation`, `FibonacciTimeZoneAnnotation` |
+| [Measure](/scichart-extensions/scichart-financial-tools/annotation-types/measure-annotation/) and [stop loss / take profit](/scichart-extensions/scichart-financial-tools/annotation-types/stop-loss-take-profit/) | `MultiPointAnnotationBase` | `MeasureAnnotation`, `StopLossTakeProfitAnnotation` |
+
+:::tip
+Options every drawing shares, such as `points`, point labels, snapping and the selection handles, are documented in [Multi-Point Annotations](/scichart-extensions/scichart-financial-tools/annotation-types/multipoint-annotations/).
+:::
 
 ## The Drawing Tool Catalogue API: DRAWING_TOOLS {#catalogue-api}
 

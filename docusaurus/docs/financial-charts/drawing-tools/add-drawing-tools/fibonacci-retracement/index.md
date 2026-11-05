@@ -18,7 +18,9 @@ The Fibonacci retracement is one of the 34 drawing tools in the SciTrader SDK. F
 
 After a strong move, price often pulls back part of the way before continuing. A Fibonacci retracement marks how far: it divides the move into levels at ratios from the Fibonacci sequence, chiefly **23.6%, 38.2%, 50%, 61.8% and 78.6%**. 50% is not a Fibonacci ratio, but traders watch it too.
 
-You draw it from the start of a move to its end: from a swing low to a swing high for an up-move, or from a high to a low for a down-move. The levels then sit between the two.
+:::tip
+Draw it from the start of a move to its end: from a swing low to a swing high for an up-move, or from a high to a low for a down-move. The levels then sit between the two, with 0 at the end of the move.
+:::
 
 ## How Are Fibonacci Retracement Levels Calculated?
 
@@ -296,3 +298,4 @@ enum EFibonacciLabelColorMode {
 - [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): the other drawing tools, point-and-click drawing and drawings in code.
 - [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/): the quick-edit toolbar, the full editor and edit events.
 - [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): ready-made tools and list for users.
+- [FibonacciRetracementAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/fibonacci-annotations/retracement/): every property and option, in the `scichart-financial-tools` docs.

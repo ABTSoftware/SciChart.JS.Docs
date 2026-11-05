@@ -21,7 +21,11 @@ The modifiers are SciChart chart modifiers: add them to each pane's surface, as 
 
 ## Keyboard Focus
 
-A pane takes keyboard focus when it is clicked, and the keys act on that pane. The keyboard modifiers make each pane focusable with Tab too, and add the class `st-pane--focused` to the focused pane, or to the element you pass as `focusIndicatorElement`. `scitrader.css` doesn't style it, so give it a look of your own:
+A pane takes keyboard focus when it is clicked, and the keys act on that pane. The keyboard modifiers make each pane focusable with Tab too, and add the class `st-pane--focused` to the focused pane, or to the element you pass as `focusIndicatorElement`.
+
+:::tip
+`scitrader.css` doesn't style `st-pane--focused`, so a focused pane looks no different. Give it a look of your own, so keyboard users can see which pane the keys act on:
+:::
 
 ```css
 /* An outline on the pane with keyboard focus */
@@ -79,7 +83,9 @@ Pass `touch: true` to `DrawingToolsController.attach`, or to `useDrawingTools` i
 - **A long press selects a drawing**, and keeps it held so a drag moves it straight away. A tap doesn't select, because it may start a pan. The phone vibrates briefly where the browser allows.
 - **Placement uses a cursor:** drag to aim, then tap to commit each point. Lifting after a drag only moves the cursor.
 
-The cursor applies to a mouse too, so turn `touch` on for touch screens only:
+:::warning
+The placement cursor applies to a mouse too: with `touch` on, a mouse user also drags the cursor to aim and clicks to commit each point. Selection by mouse is unchanged. Turn `touch` on for touch screens only, e.g. from `matchMedia("(pointer: coarse)")`:
+:::
 
 ```ts
 const drawing = DrawingToolsController.attach(financeChartPanel.financeApi, {

@@ -33,11 +33,13 @@ $$
 \text{VWAP}_t = \frac{\sum_{i=1}^{t} \text{typical price}_i \times \text{volume}_i}{\sum_{i=1}^{t} \text{volume}_i}
 $$
 
-The sums start at the **anchor**, the candle VWAP is measured from. In SciTrader, `VWAPStudy` anchors at the **first loaded candle**:
+The sums start at the **anchor**, the candle VWAP is measured from.
 
+:::note[VWAP in SciTrader is anchored at the first loaded candle]
 - **It doesn't reset each session.** Many trading platforms restart VWAP at the start of each trading day (a session VWAP). SciTrader's runs on from the first candle loaded, like an anchored VWAP.
 - **Loading history moves the anchor.** When older candles load as the user scrolls back, or old candles are dropped to save memory, VWAP is recalculated from the new first candle, so the whole line can shift.
 - **It updates once per candle.** The latest value is recalculated when a new candle opens, not on every live tick.
+:::
 
 VWAP has no length setting and no warm-up: it has a value from the first candle.
 

@@ -46,7 +46,9 @@ $$
 
 The three lookbacks are `conversionPeriod` (9), `basePeriod` (26) and `spanPeriod` (52); the shift is `displacement` (26). Senkou Span B needs 52 candles and is then shifted 26 ahead, so SciTrader loads `spanPeriod + displacement` (78) extra candles to the left of the visible period, so the cloud starts at the left edge.
 
-The cloud reaches 26 candles past the latest one. Pan or zoom out to the right to see it.
+:::tip
+The cloud reaches 26 candles past the latest one, which is off the right of the chart when it opens. Pan or zoom out to the right to see it.
+:::
 
 ## How to Read the Ichimoku Cloud
 

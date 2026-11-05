@@ -112,6 +112,10 @@ A drawing is an annotation from `scichart-financial-tools`. To add one in code:
 2. **Create the annotation** with its `points`, in data coordinates: **x is a candle's time in seconds** (Unix time), and **y is a price**. The [catalogue](/financial-charts/drawing-tools/#the-catalogue) lists each tool's class and how many points it takes.
 3. **Add it to a pane's surface**: `chart.chartPanes.get(PaneId.DEFAULT)` is the price pane. A study's pane is `chart.chartPanes.get(study.chartPaneId)`.
 
+:::warning
+A point's x is a candle's time in **seconds**, not milliseconds as JavaScript dates use: divide `Date.getTime()` by 1000. A time in milliseconds places the drawing far off to the right of the chart.
+:::
+
 ```ts
 import { Point } from "scichart";
 import { FibonacciRetracementAnnotation } from "scichart-financial-tools";
@@ -134,7 +138,9 @@ pricePane.annotations.add(
 
 **Changing a drawing later.** Keep the annotation, or find it in `drawing.drawings`, and set its properties: `annotation.points = [...]` moves it, and its own options, such as `stroke` or a Fibonacci's `thresholds`, restyle it. See [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/#in-code).
 
+:::note
 **Patterns** (Elliott waves and XABCD) are poly lines with a label at each point. The SDK's own pattern helpers aren't exported, so build the labels yourself; see [Elliott Wave](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/#in-code). The label text is what identifies the pattern, e.g. in the drawing list.
+:::
 
 ### TypeScript Example: Adding Drawings in Code
 

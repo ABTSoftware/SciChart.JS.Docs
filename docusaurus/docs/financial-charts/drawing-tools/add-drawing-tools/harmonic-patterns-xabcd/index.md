@@ -47,7 +47,11 @@ and the depth of D is measured as a retracement of XA. The common patterns' rati
 | Butterfly | 0.786 | 0.382 to 0.886 | 1.618 to 2.24 | 1.27 to 1.618 |
 | Crab | 0.382 to 0.618 | 0.382 to 0.886 | 2.24 to 3.618 | 1.618 |
 
-These ratios are the usual published guidelines; sources differ slightly. The tool draws the pattern but doesn't measure its ratios: draw a [Fibonacci Retracement](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) over a leg to check one.
+These ratios are the usual published guidelines; sources differ slightly.
+
+:::tip
+The XABCD tool draws the pattern but doesn't measure its ratios. To check a leg's ratio, draw a [Fibonacci Retracement](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) over the leg before it.
+:::
 
 ## How to Use Harmonic Patterns
 
@@ -233,3 +237,4 @@ interface IPolyLineAnnotationOptions extends IMultiPointAnnotationBaseOptions {
 - [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): the other drawing tools, point-and-click drawing and drawings in code.
 - [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/): the quick-edit toolbar, the full editor and edit events.
 - [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): ready-made tools and list for users.
+- [XABCD pattern](/scichart-extensions/scichart-financial-tools/annotation-types/polyline-annotations/xabcd-pattern/): the poly line pattern, in the `scichart-financial-tools` docs.

@@ -35,7 +35,9 @@ SciTrader's `VolumeProfileStudy` builds the profile from the candles' high, low 
 
 With `rangeMode: "visible"` (the default), the candles used are the ones on screen, so the profile is recalculated as you pan and zoom. With `"all"`, it uses every loaded candle.
 
-Exact volume at each price needs every trade; spreading each candle's volume over its range is the standard way to estimate it from candles. Some platforms also mark a **value area**, the range around the point of control that holds 70% of the volume. `VolumeProfileStudy` doesn't calculate one.
+Exact volume at each price needs every trade; spreading each candle's volume over its range is the standard way to estimate it from candles. :::note
+Some platforms also mark a **value area**, the range around the point of control that holds 70% of the volume. `VolumeProfileStudy` doesn't calculate one.
+:::
 
 ## How to Read a Volume Profile
 

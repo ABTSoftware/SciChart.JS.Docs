@@ -24,7 +24,11 @@ For a long trade (buying, expecting the price to rise):
 
 For a short trade, they are the other way round.
 
-SciTrader's **Stop Loss / Take Profit** tool draws one zone from an entry. The first point is the entry; the second sets the zone's price and its width in time. **A zone above the entry is drawn green** (`takeProfitColor`) **and one below it red** (`stopLossColor`), so for a long trade, draw one zone up to the target and one down to the stop. The colour follows the side of the entry, not the trade's direction, so for a short trade the take-profit zone, below the entry, is red.
+SciTrader's **Stop Loss / Take Profit** tool draws one zone from an entry. The first point is the entry; the second sets the zone's price and its width in time. **A zone above the entry is drawn green** (`takeProfitColor`) **and one below it red** (`stopLossColor`), so for a long trade, draw one zone up to the target and one down to the stop.
+
+:::note
+The colour follows the side of the entry, not the trade's direction. For a short trade, the take-profit zone is below the entry, so it is drawn red, and the stop-loss zone green.
+:::
 
 The **Measure** tool, in the same group, shows the price change, percentage change and number of candles between two points.
 
@@ -40,7 +44,9 @@ $$
 
 A trade entered at 80,000 with a target of 84,800 and a stop at 77,600 risks 2,400 to make 4,800: a risk/reward of 2. Risking 1,000 on it, the position size is 1,000 / 2,400 ≈ 0.42 units.
 
-The tool draws the zones; it doesn't show the ratio. Use **Measure** to read each zone's size.
+:::tip
+The tool draws the zones, but doesn't show the ratio. Use the **Measure** tool over each zone to read its size, in price and percent.
+:::
 
 ## How to Use Stop Loss and Take Profit Levels
 
@@ -191,3 +197,4 @@ interface IStopLossTakeProfitAnnotationOptions extends IMultiPointAnnotationBase
 - [Add Drawing Tools to a Financial Chart](/financial-charts/drawing-tools/add-drawing-tools/): the other drawing tools, point-and-click drawing and drawings in code.
 - [Editing Drawings](/financial-charts/drawing-tools/editing-drawings/): the quick-edit toolbar, the full editor and edit events.
 - [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/): ready-made tools and list for users.
+- [StopLossTakeProfitAnnotation](/scichart-extensions/scichart-financial-tools/annotation-types/stop-loss-take-profit/): every property and option, in the `scichart-financial-tools` docs.
