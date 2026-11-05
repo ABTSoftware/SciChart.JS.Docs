@@ -2,17 +2,17 @@
 sidebar_position: 3
 sidebar_label: Getting Started
 title: "Getting Started with SciTrader.js | JavaScript & React Trading Charts"
-description: "Create your first JavaScript or React candlestick trading chart with SciTrader.js: register a data source, then create a SciFinanceChartPanel or SciFinanceChartView."
+description: "Create your first JavaScript candlestick trading chart with SciTrader.js: register a data source, create a chart, then add indicators, drawing tools, your own data and a theme."
 keywords: ["SciTrader", "SciTrader.js", "SciTrader getting started", "JavaScript trading chart tutorial", "React candlestick chart", "SciFinanceChartView"]
 ---
 
-# Getting started
+# Getting Started
 
-## Before you start
+## Before You Start
 
 Follow [Installation](/financial-charts/installation/) first: it installs the packages, imports the stylesheet, and serves SciChart's WebAssembly with your bundler.
 
-## Register a data source
+## Register a Data Source
 
 Charts get their candles from an **exchange**, looked up by name. The SDK registers none by default. Register the ones your app uses once at startup, before any chart is created:
 
@@ -28,11 +28,11 @@ defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
 defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 ```
 
-The second argument is the candle store. `idbPriceStore` caches downloaded candles in IndexedDB, so a reload draws straight away and fetches only what is new. See [Data sources](/financial-charts/data-sources/) for the other options, including CSV files and your own data.
+The second argument is the candle store. `idbPriceStore` caches downloaded candles in IndexedDB, so a reload draws straight away and fetches only what is new.
 
-## Create a chart
+## Create a Chart
 
-`SciFinanceChartPanel.create` builds a whole chart inside a DOM element. It creates the layout, the price pane, a data feed for the symbol, and a pane for each study that needs one.
+`SciFinanceChartPanel.create` builds a whole chart inside a DOM element: the price pane, a pane for each study that needs one, and a data feed for the symbol.
 
 ```ts
 import {
@@ -51,24 +51,11 @@ const financeChartPanel = await SciFinanceChartPanel.create(document.getElementB
 });
 ```
 
-The container needs a size. The chart fills it and follows it when it resizes. By default the user can:
-- scroll to zoom, and drag to pan;
-- pan left to load older candles;
-- drag an axis to rescale it;
-- double-click to zoom to fit.
+The element needs a size: the chart fills it, and follows it when it resizes. Out of the box, the user can zoom with the wheel or a pinch, pan by dragging, load older candles by panning left, rescale an axis by dragging it, and double-click to fit. The legend and crosshair follow the mouse.
 
-The legend and crosshair follow the mouse.
+`create` resolves with the chart's API, called `financeChartPanel` in these docs. Its `financeApi` is the chart, with the methods in the sections below; `cleanup()` removes it.
 
-`create` resolves with an `ISciFinanceChartPanelApi`, called `financeChartPanel` in these docs. [Finance Chart API](/financial-charts/finance-chart-api/) describes it in full:
-
-| Member | Use |
-|---|---|
-| `financeApi` | The `SciFinanceChart`. It covers studies, data feeds, interval, period, candle type and events. |
-| `paneGroupApi` | The layout: pane order, sizes, visibility, axis sync ([Layout](/financial-charts/layout/)). |
-| `toJSON()` | The chart's state as JSON ([Saving and restoring](/financial-charts/save-and-restore/)). |
-| `cleanup()` | Destroys the chart and its feeds. Call it when the element goes away. |
-
-The chart below is live, with Coinbase data. The **Edit on CodePen** button above it opens the TS sample in CodePen.
+The chart below is live, with Coinbase data. **Edit on CodePen** opens the code in CodePen.
 
 <LiveDocSnippet maxWidth={"100%"} includeSciTrader name="../_examples/gettingStarted_CreateChart/vanilla" html={`<div id="chart" style="width: 100%; height: 100%"></div>`} />
 
@@ -77,82 +64,96 @@ The chart below is live, with Coinbase data. The **Edit on CodePen** button abov
     ```
 </CodeSnippetBlock>
 
-### Configuration
+**Using React?** `<SciFinanceChartView config={config} />`, from `scichart-scitrader-react`, takes the same config. [SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) has a live React example.
 
-The second argument to `create` is an `ISciFinanceChartPanelConfig`. Only `exchangeName`, `symbol`, `interval` and `studies` are required. The other options set the starting period, the pane layout and controls, loading states, the theme and the axes. [Chart Config object](/financial-charts/finance-chart-api/chart-config/) describes every option.
+## Next: the SciFinanceChart Component
 
-## Create a chart in React
+[SciFinanceChart](/financial-charts/ui-components/sci-finance-chart/) is the chart you just created, in full: in TypeScript and React, the pane sizes, maximising, hiding and autoranging panes in code, touch and mouse modes, its API and every config option.
 
-> **SciTrader ships a React wrapper, `scichart-scitrader-react`.** It provides `<SciFinanceChartView>` and React versions of the toolbar controls, study settings, drawing toolbar and market-depth view, each wrapping the plain TypeScript SDK. Add it to an app that already has the [core packages](/financial-charts/installation/#install-the-packages):
->
-> ```js
-> npm install scichart-scitrader-react react react-dom
-> ```
+## What Else You Can Do
 
-`<SciFinanceChartView>` takes the same config as `SciFinanceChartPanel.create`. It hands back the same API through `ref`, and through `onInit` when the chart is ready:
+Each section below is a short taste. `chart` is `financeChartPanel.financeApi`.
 
-```tsx
-import * as React from "react";
-import {
-    CandleInterval,
-    CoinbaseExchange,
-    ISciFinanceChartPanelApi,
-    ISciFinanceChartPanelConfig,
-    MACDStudy,
-    OHLCStudy,
-    RSIStudy,
-    VolumeStudy
-} from "scichart-scitrader";
-import { SciFinanceChartView } from "scichart-scitrader-react";
+### Symbols, Intervals and Periods
 
-function Chart() {
-    const chartRef = React.useRef<ISciFinanceChartPanelApi>(null);
+Change what the chart shows: the symbol, the candle interval, and the period in view.
 
-    // Create the config once per mounted chart. Studies are live objects bound to one chart.
-    const config = React.useMemo<ISciFinanceChartPanelConfig>(
-        () => ({
-            exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
-            symbol: "ETH-USD",
-            interval: CandleInterval.ONE_DAY,
-            period: "1Y",
-            studies: [new OHLCStudy(), new VolumeStudy(), new RSIStudy()],
-        }),
-        []
-    );
-
-    return (
-        <div style={{ height: 600 }}>
-            <SciFinanceChartView
-                ref={chartRef}
-                config={config}
-                onInit={(api) => api.financeApi.attachStudy(new MACDStudy())}
-            />
-        </div>
-    );
-}
+```ts
+await chart.setSymbol("ETH-USD");
+await chart.changeInterval(CandleInterval.ONE_DAY);
+await chart.setPeriod("1Y");
 ```
 
-- **Wait for `onInit`.** `chartRef.current` is set as soon as the view mounts, but `financeApi` throws until the chart has initialised. Use `onInit`, or check `chartRef.current.isInitialized`, before touching it.
-- **The view unmounts cleanly.** It cleans itself up on unmount.
-- **Changing `config` doesn't rebuild the chart.** Drive changes through `financeApi` instead ([next page](/financial-charts/symbols-intervals-periods/)). To start over, remount with a new `key`.
-- **The other props.** `paneControls` applies to the live chart, and `paneInfo` renders your content into each pane's control bar. `paneLoadingContent`, read once like `config`, replaces the loading skeleton. See [Layout](/financial-charts/layout/#pane-controls).
+See [Symbols, Intervals and Periods](/financial-charts/symbols-intervals-periods/).
 
-The React chart below is live, with Coinbase data. **Edit on CodePen** opens the React sample in CodePen.
+### Studies and Indicators
 
-<LiveDocSnippet maxWidth={"100%"} height={680} includeSciTrader reactComponent="TradingChart" name="../_examples/gettingStarted_CreateChartReact/react" />
+Add technical indicators such as RSI, MACD, moving averages and Bollinger Bands, in the price pane or a pane of their own, and change the candle type.
 
-<CodeSnippetBlock labels={["React"]}>
-    ```tsx showLineNumbers file=../_examples/gettingStarted_CreateChartReact/react.tsx
-    ```
-</CodeSnippetBlock>
+```ts
+const rsi = new RSIStudy();
+await chart.attachStudy(rsi); // in a pane of its own, below the price
+chart.detachStudy(rsi);
+```
 
-## Where to read next
+See [Studies and Indicators](/financial-charts/studies-and-indicators/), with a page for each indicator.
 
-- [Finance Chart API](/financial-charts/finance-chart-api/): the `financeChartPanel` object that `create` returns, and the [Chart Config object](/financial-charts/finance-chart-api/chart-config/) with every option.
-- [Symbols, Intervals and Periods](/financial-charts/symbols-intervals-periods/): change the symbol, candle interval and visible period, and add toolbar controls for them.
-- [Studies and Indicators](/financial-charts/studies-and-indicators/): add, remove and configure studies such as RSI, MACD and ADX, and change the candle type.
-- [Data Sources](/financial-charts/data-sources/): the built-in exchanges, CSV files and your own data.
-- [Drawing Tools](/financial-charts/drawing-tools/): trend lines, Fibonacci retracements and other annotations.
-- [Saving and Restoring](/financial-charts/save-and-restore/): save a chart's state as JSON and restore it later.
-- [Layout, Panes and PaneGroup](/financial-charts/layout/): pane order, sizes and controls.
-- [Styling and Themes](/financial-charts/styling-and-themes/): themes, colours and axis styles.
+### Drawing Tools
+
+Let users draw trend lines, Fibonacci retracements, channels and patterns, from a toolbar.
+
+```ts
+const drawing = DrawingToolsController.attach(chart);
+DrawingToolbar.create(document.getElementById("tools"), drawing, { orientation: "vertical" });
+```
+
+See [Drawing Tools](/financial-charts/drawing-tools/).
+
+### Data Sources
+
+Besides Coinbase and Binance, chart CSV files, JSON, or any market data API through an exchange of your own.
+
+```ts
+const exchange = await CSVExchange.fromUrl("/data/btc-1h.csv", { name: "MyData" });
+registerCSVExchange(defaultExchangeProvider, exchange); // charts can now use exchangeName: "MyData"
+```
+
+See [Data Sources](/financial-charts/data-sources/).
+
+### UI Components
+
+The controls a trading app puts around the chart: interval and period pickers, a candle-type menu, study settings, a drawing list, a market-depth ladder and watchlist sparklines, in plain DOM and React.
+
+```ts
+IntervalSelector.create(document.getElementById("intervals"), {
+    value: CandleInterval.ONE_HOUR,
+    onChange: (interval) => chart.changeInterval(interval),
+});
+```
+
+See [UI Components](/financial-charts/ui-components/).
+
+### Saving and Restoring
+
+Save a chart's symbol, studies, drawings and layout as JSON, and restore it later.
+
+```ts
+const state = financeChartPanel.toJSON();
+
+// Later, e.g. on the next visit
+financeChartPanel.cleanup();
+const restored = await SciFinanceChartPanel.fromJSON(element, state);
+```
+
+See [Saving and Restoring](/financial-charts/save-and-restore/).
+
+### Styling and Themes
+
+Choose a built-in theme, dark, light or ocean, or make your own, and switch a live chart.
+
+```ts
+const financeChartPanel = await SciFinanceChartPanel.create(element, { /* … */ theme: SCITRADER_LIGHT_THEME });
+financeChartPanel.financeApi.setTheme(SCITRADER_OCEAN_THEME);
+```
+
+See [Styling and Themes](/financial-charts/styling-and-themes/).

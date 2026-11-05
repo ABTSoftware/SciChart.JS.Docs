@@ -4,7 +4,7 @@ Docs work still to do for the SciTrader.js (Financial Charts) section, `docusaur
 
 ## 1. Mobile (touch) and desktop (mouse) modes
 
-- [ ] Document switching between mobile (touch) and desktop (mouse) mode.
+- [x] Document switching between mobile (touch) and desktop (mouse) mode. Done: `ui-components/sci-finance-chart/mobile-and-desktop-modes/`, with live TS and React examples.
   - Follow the SciTraderApp's pattern, which passes `isMobile` to the `SciFinanceChart`.
   - Explain how behaviour differs between touch and mouse mode:
     - **drawing tools:** long press to select; placement with a drag-to-aim cursor; `selectFinishedDrawing`; `resumeGestures`;
@@ -24,9 +24,9 @@ Decided (2026-11-05): a built-in SDK exchange that serves candles from a JavaScr
 
 ## 3. Move the finance chart into UI Components
 
-- [ ] Move the finance chart (`SciFinanceChartPanel` / `SciFinanceChartView`) into **UI Components**.
+- [x] Move the finance chart (`SciFinanceChartPanel` / `SciFinanceChartView`) into **UI Components**. Done: `ui-components/sci-finance-chart/`, first under UI Components, which now follows Getting Started.
   - Keep **Finance Chart API** and the **Chart Config** object pages as its sub-pages.
-  - Update every link to `/financial-charts/finance-chart-api/`.
+  - Update every link to `/financial-charts/ui-components/sci-finance-chart/finance-chart-api/`.
 
 ## 4. Expand Data Sources
 
@@ -96,11 +96,12 @@ Pages:
 
 ## 6. Layout, Panes and PaneGroup under the finance chart UI component
 
-- [ ] Make Layout, Panes and PaneGroup a sub-item of the finance chart UI component (see item 3). Show how to:
-  - customise the layout in code;
+- [x] Make Layout, Panes and PaneGroup a sub-item of the finance chart UI component (see item 3): `ui-components/sci-finance-chart/layout/`.
+- [x] Pre-place panes at given heights, and toggle maximised, hidden, closed and Y-axis autorange in code: `ui-components/sci-finance-chart/pane-sizes-and-state/`, with live examples.
+- [ ] Still to do on the Layout page:
+  - customise the layout in code (direction, order, custom panes);
   - add custom HTML and UI, and style it;
-  - pre-place panes at given heights;
-  - toggle settings such as maximised and minimised in code.
+  - replace its two screenshot examples (`layoutState_MultiPane`, `layoutState_Loading`) with live ones.
 
 ## 7. Styling and Themes
 

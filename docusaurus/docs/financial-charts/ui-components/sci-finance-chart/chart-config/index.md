@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-sidebar_label: Chart Config object
+sidebar_position: 6
+sidebar_label: Chart Config Object
 title: "Chart Configuration: ISciFinanceChartPanelConfig | SciTrader.js Financial Charts"
 description: "Every option of ISciFinanceChartPanelConfig, the config passed to SciFinanceChartPanel.create and SciFinanceChartView in SciTrader.js: data, studies, periods, layout, pane controls, loading, theme and axes."
 keywords: ["SciTrader", "SciTrader.js", "ISciFinanceChartPanelConfig", "SciFinanceChartPanel config", "SciFinanceChartView config", "trading chart options", "candlestick chart configuration"]
@@ -40,7 +40,7 @@ const config: ISciFinanceChartPanelConfig = {
 };
 ```
 
-**The config is read once.** Changing it afterwards does nothing, including passing a new `config` prop to `<SciFinanceChartView>`. To change a live chart, use the [Finance Chart API](/financial-charts/finance-chart-api/). The section for each option below names the call that changes it later.
+**The config is read once.** Changing it afterwards does nothing, including passing a new `config` prop to `<SciFinanceChartView>`. To change a live chart, use the [Finance Chart API](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/). The section for each option below names the call that changes it later.
 
 ## The ISciFinanceChartPanelConfig Interface
 
@@ -237,7 +237,7 @@ The services the chart loads data through. Leave this out and the chart creates 
 Set it for two reasons:
 
 - **To keep an exchange private to one chart**, rather than registering it globally. See [Keeping an exchange private to a chart](/financial-charts/data-sources/#keeping-an-exchange-private-to-a-chart).
-- **To follow loading progress from the start.** Each pane reports `"surface"`, then `"configured"`, then `"data"` as it loads. Those events fire before `create` resolves, so subscribe to your own `PaneProgressEmitter` and pass it in as `progress`. Otherwise the chart creates one, which you can reach afterwards as `financeApi.progress`. See [Loading states](/financial-charts/layout/#loading-states).
+- **To follow loading progress from the start.** Each pane reports `"surface"`, then `"configured"`, then `"data"` as it loads. Those events fire before `create` resolves, so subscribe to your own `PaneProgressEmitter` and pass it in as `progress`. Otherwise the chart creates one, which you can reach afterwards as `financeApi.progress`. See [Loading states](/financial-charts/ui-components/sci-finance-chart/layout/#loading-states).
 
 <details>
 <summary>The ISciFinanceChartServices interface, with its TSDoc</summary>
@@ -422,7 +422,7 @@ How far, in seconds, the user can pan or zoom past the latest candle. `null` set
 useSubCharts?: boolean;
 ```
 
-Whether all panes are drawn on one shared SciChart surface (`true`, sub-chart mode) or each pane has its own surface (`false`). One surface uses less memory and fewer WebGL contexts. See [Multi-chart and sub-chart modes](/financial-charts/layout/#multi-chart-and-sub-chart-modes).
+Whether all panes are drawn on one shared SciChart surface (`true`, sub-chart mode) or each pane has its own surface (`false`). One surface uses less memory and fewer WebGL contexts. See [Multi-chart and sub-chart modes](/financial-charts/ui-components/sci-finance-chart/layout/#multi-chart-and-sub-chart-modes).
 
 ### ISciFinanceChartPanelConfig.direction {#direction}
 
@@ -458,13 +458,18 @@ paneSizing?: Record<string, IPaneSizeConfig>;
 Size hints for each pane, keyed by pane id. A hint here wins over the pane's study's own default. Set either `grow`, the pane's share of the free space relative to the other panes (default `1`), or `size`, a fixed size in pixels.
 
 ```ts
-import { PaneId } from "scichart-scitrader";
+import { PaneId, RSIStudy } from "scichart-scitrader";
 
+const RSI_PANE = new PaneId("rsi"); // give the study's pane an id, to size it
+
+studies: [new OHLCStudy(), new RSIStudy({ paneId: RSI_PANE })],
 paneSizing: {
     [PaneId.DEFAULT.value]: { grow: 4 }, // a bigger price pane
-    RSIPane: { size: 100 },              // a fixed-height RSI pane
+    [RSI_PANE.value]: { size: 100 },     // a fixed-height RSI pane
 }
 ```
+
+A study's pane gets a new id each time unless you give it one, as here. [Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/#sizes-when-creating) has a live example, and shows how to change sizes later.
 
 <details>
 <summary>The IPaneSizeConfig interface, with its TSDoc</summary>
@@ -505,7 +510,7 @@ Each pane's control bar, and the dividers between panes.
 - **`touch`**: the control bar moves into a drawer at each pane's right edge, opened by a tap or swipe, rather than appearing on hover. The dividers get a wider hit area. You decide when to turn it on, e.g. from the viewport size.
 - **`buttons`**: `move`, `maximize`, `hide`, `close`, `lockSize` and `yAxisAutoRange` are shown by default. `axisSync`, `verticalGroup` and `horizontalGroup` are hidden on a finance chart, because it keeps every pane's X axis in step already; set them to `true` to show them.
 
-**Later:** [`financeChartPanel.setPaneControls(options)`](/financial-charts/finance-chart-api/#setpanecontrols). See [Pane controls](/financial-charts/layout/#pane-controls).
+**Later:** [`financeChartPanel.setPaneControls(options)`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#setpanecontrols). See [Pane controls](/financial-charts/ui-components/sci-finance-chart/layout/#pane-controls).
 
 <details>
 <summary>The IPaneControlOptions and IPaneControlBarButtons interfaces, with their TSDoc</summary>
@@ -557,6 +562,9 @@ interface IPaneControlBarButtons {
 
 </details>
 
+For phones and tablets, and how your app decides when to use `touch`, see [Mobile and Desktop Modes](/financial-charts/ui-components/sci-finance-chart/mobile-and-desktop-modes/).
+
+
 ### ISciFinanceChartPanelConfig.loading {#loading}
 
 ```ts
@@ -572,7 +580,7 @@ What each pane shows while it loads.
 - **`placeholder`**: shown in each pane until its chart is ready. `true` is a shimmering skeleton, `false` shows nothing, and a function returns your own element for a pane. `onPlaceholderRemoved` is called when it is taken out, so you can clean up anything inside it.
 - **`overlay`**: while a symbol or interval change loads, covers each pane with a translucent shimmer that also blocks input.
 
-See [Loading states](/financial-charts/layout/#loading-states).
+See [Loading states](/financial-charts/ui-components/sci-finance-chart/layout/#loading-states).
 
 <details>
 <summary>The IPaneLoadingOptions interface, with its TSDoc</summary>
@@ -795,7 +803,7 @@ return <SciFinanceChartView key={chartKey} config={config} />;
 
 #### See also
 
-- [Finance Chart API](/financial-charts/finance-chart-api/): the object `create` returns
+- [Finance Chart API](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/): the object `create` returns
 - [Getting started](/financial-charts/getting-started/)
-- [Layout](/financial-charts/layout/)
+- [Layout](/financial-charts/ui-components/sci-finance-chart/layout/)
 - [Styling and themes](/financial-charts/styling-and-themes/)

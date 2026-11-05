@@ -49,7 +49,7 @@ The code for this example is found below.
 | `onChange` | `(mode: TLiveTipMode) => void` | Called when the user picks the other mode |
 | `autoSelect` | `boolean` | Whether a pick is selected straight away. Default `true` |
 
-The chart side: `SciFinanceChart.liveTipMode` gets or sets the mode, and `liveTipModeChanged` is raised when it changes. To start a chart in one mode, set the [`liveTipMode` option](/financial-charts/finance-chart-api/chart-config/#livetipmode) of the chart config.
+The chart side: `SciFinanceChart.liveTipMode` gets or sets the mode, and `liveTipModeChanged` is raised when it changes. To start a chart in one mode, set the [`liveTipMode` option](/financial-charts/ui-components/sci-finance-chart/chart-config/#livetipmode) of the chart config.
 
 <details>
 <summary>The LiveTipToggle class and ILiveTipToggleOptions, with their TSDoc</summary>
@@ -160,5 +160,5 @@ See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
 #### See also
 
 - [Periods](/financial-charts/symbols-intervals-periods/periods/)
-- [Chart Config object: liveTipMode](/financial-charts/finance-chart-api/chart-config/#livetipmode)
+- [Chart Config object: liveTipMode](/financial-charts/ui-components/sci-finance-chart/chart-config/#livetipmode)
 - [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/)

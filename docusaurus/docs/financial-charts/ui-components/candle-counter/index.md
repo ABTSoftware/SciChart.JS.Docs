@@ -48,7 +48,7 @@ The code for this example is found below.
 
 ## Showing It in the Pane Control Bar {#pane-info-area}
 
-Each chart pane has a **pane control bar**: a strip of buttons over the top right of the pane, which appears when you hover over the pane. Its buttons lock the pane's size, toggle the Y axis's auto-range, move, maximise, hide and close the pane ([Pane controls](/financial-charts/layout/#pane-controls)). The bar starts with an **info area** for your own content, which is hidden while it is empty.
+Each chart pane has a **pane control bar**: a strip of buttons over the top right of the pane, which appears when you hover over the pane. Its buttons lock the pane's size, toggle the Y axis's auto-range, move, maximise, hide and close the pane ([Pane controls](/financial-charts/ui-components/sci-finance-chart/layout/#pane-controls)). The bar starts with an **info area** for your own content, which is hidden while it is empty.
 
 In the screenshot below, from the example above, the candle counter ("124 / 645 / ~16,499") is in the price pane's control bar, circled. The line above the chart is the example's own toolbar, which shows the same counts with `observeCandleCounts`.
 
@@ -88,7 +88,7 @@ const infoArea = financeChartPanel.getPaneInfoElement(PaneId.DEFAULT.value);
 CandleCounter.create(infoArea, { chart: financeChartPanel.financeApi });
 ```
 
-The info area is not only for the candle counter: put any content there, such as the symbol, or a status. See [Your own content in the control bar](/financial-charts/layout/#your-own-content-in-the-control-bar).
+The info area is not only for the candle counter: put any content there, such as the symbol, or a status. See [Your own content in the control bar](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar).
 
 <details>
 <summary>ISciFinanceChartPanelApi.getPaneInfoElement and ISciFinanceChartViewProps.paneInfo, with their TSDoc</summary>
@@ -268,5 +268,5 @@ See [Styling and Themes](/financial-charts/styling-and-themes/#the-stylesheet).
 
 #### See also
 
-- [Your own content in the control bar](/financial-charts/layout/#your-own-content-in-the-control-bar)
-- [Finance Chart API: getPaneInfoElement](/financial-charts/finance-chart-api/#getpaneinfoelement)
+- [Your own content in the control bar](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar)
+- [Finance Chart API: getPaneInfoElement](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#getpaneinfoelement)

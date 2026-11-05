@@ -12,7 +12,7 @@ The **interval** is the time each candle covers: one minute, six hours, one day,
 
 ## SciFinanceChart.changeInterval {#changeinterval}
 
-`changeInterval` is a method of [`SciFinanceChart`](/financial-charts/finance-chart-api/#the-scifinancechart-class), the chart you reach through `financeChartPanel.financeApi`. It reloads the current symbol at the new candle size, and lands on a [period](/financial-charts/symbols-intervals-periods/periods/) in the same step.
+`changeInterval` is a method of [`SciFinanceChart`](/financial-charts/ui-components/sci-finance-chart/finance-chart-api/#the-scifinancechart-class), the chart you reach through `financeChartPanel.financeApi`. It reloads the current symbol at the new candle size, and lands on a [period](/financial-charts/symbols-intervals-periods/periods/) in the same step.
 
 ```ts
 /**

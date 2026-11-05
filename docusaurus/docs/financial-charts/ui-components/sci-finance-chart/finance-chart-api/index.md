@@ -1,6 +1,6 @@
 ---
-sidebar_position: 1
-sidebar_label: ISciFinanceChartPanelApi
+sidebar_position: 5
+sidebar_label: Finance Chart API
 title: "Finance Chart API: ISciFinanceChartPanelApi | SciTrader.js Financial Charts"
 description: "The API object returned by SciFinanceChartPanel.create and SciFinanceChartView in SciTrader.js: ISciFinanceChartPanelApi, its financeApi (SciFinanceChart), paneGroupApi, serialization and cleanup."
 keywords: ["SciTrader", "SciTrader.js", "ISciFinanceChartPanelApi", "SciFinanceChartPanel", "SciFinanceChart", "financeApi", "React financial charts API", "trading chart API"]
@@ -21,7 +21,7 @@ const financeChartPanel: ISciFinanceChartPanelApi<HTMLElement> = await SciFinanc
 );
 ```
 
-`config` is an `ISciFinanceChartPanelConfig`: the data, studies and layout the chart starts with. [Chart configuration](/financial-charts/finance-chart-api/chart-config/) describes every option.
+`config` is an `ISciFinanceChartPanelConfig`: the data, studies and layout the chart starts with. [Chart configuration](/financial-charts/ui-components/sci-finance-chart/chart-config/) describes every option.
 
 The same object comes from each way of making a chart:
 
@@ -156,7 +156,7 @@ The finance chart itself, and where most of the API lives. It **throws** while `
 | Candle type | `setCandleType(type)`, `getCandleType()`, `candleTypeChanged` | [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/) |
 | Theme and axes | `setTheme(theme)`, `theme`, `themeChanged`, `applyAxisStyle(partial)`, `axisDefaults` | [Styling and themes](/financial-charts/styling-and-themes/) |
 | Live tip | `liveTipMode` (`"follow"` or `"anchored"`), `liveTipModeChanged` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
-| Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/layout/) |
+| Panes | `maxPanes`, `paneLimitReached`, `chartPanes`, `toggleChartPane(paneId)`, `getDefaultSurface()` | [Layout](/financial-charts/ui-components/sci-finance-chart/layout/) |
 | Drawings | `clearAllDrawings()`, `finChartModifiers` | [Drawing tools](/financial-charts/drawing-tools/) |
 | Loading events | `dataLoadStarted`, `dataRenderComplete`, `historicalLoadStarted`, `historicalLoadComplete` | [Loading events](/financial-charts/symbols-intervals-periods/#loading-events) |
 | State | `toJSON(): ISciFinanceChartState` (the finance part only) | [Saving and restoring](/financial-charts/save-and-restore/) |
@@ -778,6 +778,8 @@ const group = financeChartPanel.paneGroupApi; // IPaneApi
 group.orderChanged.subscribe((slots) => saveLayout(slots));
 ```
 
+[Pane Sizes and Pane State](/financial-charts/ui-components/sci-finance-chart/pane-sizes-and-state/) shows how to size, maximise, hide and close panes with it.
+
 #### The IPaneApi Interface
 
 `IPaneApi` is the pane group's interface. It is made of smaller interfaces, one per area:
@@ -1013,7 +1015,7 @@ type LayoutSnapshot = {
 
 </details>
 
-See [PaneGroup](/financial-charts/layout/#panegroup) for how the layout uses it.
+See [PaneGroup](/financial-charts/ui-components/sci-finance-chart/layout/#panegroup) for how the layout uses it.
 
 ## ISciFinanceChartPanelApi Methods {#methods}
 
@@ -1052,7 +1054,7 @@ Changes each pane's control bar and the dividers between panes, on a live chart.
 financeChartPanel.setPaneControls({ touch: true });
 ```
 
-The options are the same as the [`paneControls` config option](/financial-charts/finance-chart-api/chart-config/#panecontrols). See [Pane controls](/financial-charts/layout/#pane-controls).
+The options are the same as the [`paneControls` config option](/financial-charts/ui-components/sci-finance-chart/chart-config/#panecontrols). See [Pane controls](/financial-charts/ui-components/sci-finance-chart/layout/#pane-controls).
 
 #### The IPaneControlOptions Interface
 
@@ -1133,7 +1135,7 @@ CandleCounter.create(financeChartPanel.getPaneInfoElement(PaneId.DEFAULT.value),
 });
 ```
 
-In React, use the `paneInfo` prop of `<SciFinanceChartView>` instead. See [Your own content in the control bar](/financial-charts/layout/#your-own-content-in-the-control-bar).
+In React, use the `paneInfo` prop of `<SciFinanceChartView>` instead. See [Your own content in the control bar](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar).
 
 ### ISciFinanceChartPanelApi.toJSON {#tojson}
 
@@ -1278,8 +1280,8 @@ While `create` or `fromJSON` runs, the container has a `data-chart-loading` attr
 
 #### See also
 
-- [Chart configuration](/financial-charts/finance-chart-api/chart-config/)
+- [Chart configuration](/financial-charts/ui-components/sci-finance-chart/chart-config/)
 - [Getting started](/financial-charts/getting-started/)
 - [Symbols, intervals and periods](/financial-charts/symbols-intervals-periods/)
-- [Layout](/financial-charts/layout/)
+- [Layout](/financial-charts/ui-components/sci-finance-chart/layout/)
 - [Saving and restoring](/financial-charts/save-and-restore/)

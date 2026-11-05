@@ -130,7 +130,7 @@ Override the rules in your own CSS, loaded after `scitrader.css`. Every element 
 
 | Component | Classes |
 |---|---|
-| Per-pane control bar | `st-pane-control-bar`, `__info` (your content, [Layout](/financial-charts/layout/#your-own-content-in-the-control-bar)), `__button`, `__icon`, `__separator` |
+| Per-pane control bar | `st-pane-control-bar`, `__info` (your content, [Layout](/financial-charts/ui-components/sci-finance-chart/layout/#your-own-content-in-the-control-bar)), `__button`, `__icon`, `__separator` |
 | Control bar drawer (touch layout) | `st-pane-control-drawer`, `__handle`, `__chevron` |
 | Divider between panes | `st-pane-divider` (`--touch`), `__grip` |
 | Restore strip for hidden panes | `st-pane-restore-strip`, `__chip`, `__icon` |
