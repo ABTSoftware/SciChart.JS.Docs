@@ -10,23 +10,23 @@ keywords: ["SciTrader", "SciTrader.js", "trading UI components", "IntervalSelect
 
 Besides the chart, the SDK ships the controls a trading app puts around it: toolbar pickers, study settings, a drawings list, a market-depth ladder, loading placeholders, a candle counter, UI icons and the pieces of a watchlist. Each one is plain DOM in `scichart-scitrader`, and `scichart-scitrader-react` wraps it for React. They have the SciTrader app's look, from the stylesheet, and follow the theme.
 
-| Component | Plain TypeScript | React | Documented in |
-|---|---|---|---|
-| Interval buttons | `IntervalSelector` | `<IntervalSelector>` | [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) |
-| Period buttons | `PeriodSelector` | `<PeriodSelector>` | [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) |
-| Candle-type menu | `CandleTypeSelector` | `<CandleTypeSelector>` | [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) |
-| Follow / Anchored toggle | `LiveTipToggle` | `<LiveTipToggle>` | [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) |
-| Colour field with opacity | `ColorPicker` | `<ColorPicker>` | [Colour Picker](/financial-charts/ui-components/colour-picker/) |
-| A study's settings form | `StudySettingsForm` | `<StudySettingsForm>` | [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) |
-| The chart's studies, each with its form | `StudyList` | `<StudyList>` | [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) |
-| Drawing tools rail | `DrawingToolbar` | `<DrawingToolbar>` | [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) |
-| List of drawings | `DrawingList` | `<DrawingList>` | [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/#drawing-list) |
-| Market-depth ladder | `MarketDepthPanel` | `<MarketDepthView>` | [Market Depth](/financial-charts/ui-components/market-depth/) |
-| Loading progress dots | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` | [Layout](/financial-charts/layout/#loading-states) |
-| Candle counts (visible / loaded / total) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` | [Candle Counter](/financial-charts/ui-components/candle-counter/) |
-| UI icons | `SCITRADER_ICONS`, `sciTraderIconSvg` | `<SciTraderIcon>` | [Icons](/financial-charts/ui-components/icons/) |
-| Sparklines, and watchlist prices | `SparkLineChart`, `WatchListDataManager` | none: use them from React | [Sparklines](/financial-charts/ui-components/sparklines/) |
-| Symbols as pairs (`BTC/USDT`) | `formatSymbolPair`, `parseInstrument` | the same functions | [Sparklines](/financial-charts/ui-components/sparklines/#symbol-pairs) |
+| Component | Plain TypeScript | React |
+| --- | --- | --- |
+| **Interval buttons**<br />See [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) | `IntervalSelector` | `<IntervalSelector>` |
+| **Period buttons**<br />See [Interval and Period Selectors](/financial-charts/ui-components/interval-and-period-selectors/) | `PeriodSelector` | `<PeriodSelector>` |
+| **Candle-type menu**<br />See [Candle Type Selector](/financial-charts/ui-components/candle-type-selector/) | `CandleTypeSelector` | `<CandleTypeSelector>` |
+| **Follow / Anchored toggle**<br />See [Live Tip Toggle](/financial-charts/ui-components/live-tip-toggle/) | `LiveTipToggle` | `<LiveTipToggle>` |
+| **Colour field with opacity**<br />See [Colour Picker](/financial-charts/ui-components/colour-picker/) | `ColorPicker` | `<ColorPicker>` |
+| **A study's settings form**<br />See [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) | `StudySettingsForm` | `<StudySettingsForm>` |
+| **The chart's studies, each with its form**<br />See [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/) | `StudyList` | `<StudyList>` |
+| **Drawing tools rail**<br />See [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/) | `DrawingToolbar` | `<DrawingToolbar>` |
+| **List of drawings**<br />See [Drawing Toolbar and Drawing List](/financial-charts/ui-components/drawing-toolbar-and-drawing-list/#drawing-list) | `DrawingList` | `<DrawingList>` |
+| **Market-depth ladder**<br />See [Market Depth](/financial-charts/ui-components/market-depth/) | `MarketDepthPanel` | `<MarketDepthView>` |
+| **Loading progress dots**<br />See [Layout](/financial-charts/layout/#loading-states) | `createPaneProgressDots`, `paneProgressDotsLoading` | `<PaneProgressDots>` |
+| **Candle counts (visible / loaded / total)**<br />See [Candle Counter](/financial-charts/ui-components/candle-counter/) | `CandleCounter`, `countCandles`, `observeCandleCounts` | `<CandleCounter>` |
+| **UI icons**<br />See [Icons](/financial-charts/ui-components/icons/) | `SCITRADER_ICONS`, `sciTraderIconSvg` | `<SciTraderIcon>` |
+| **Sparklines, and watchlist prices**<br />See [Sparklines](/financial-charts/ui-components/sparklines/) | `SparkLineChart`, `WatchListDataManager` | none: use them from React |
+| **Symbols as pairs (`BTC/USDT`)**<br />See [Sparklines](/financial-charts/ui-components/sparklines/#symbol-pairs) | `formatSymbolPair`, `parseInstrument` | the same functions |
 
 ## How the Components Work {#how-they-work}
 

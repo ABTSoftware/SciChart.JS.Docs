@@ -199,3 +199,15 @@ main[class*='docMainContainer_'] > .container > .row > .col--3:has(> .theme-doc-
 .menu_SIkG {
   padding: 0.5rem !important;
 }
+
+/* Financial Charts pages on phones: tighter tables, so they fit the screen. Long code in their cells
+   also wraps, through custom-plugins/remarkTableCodeBreaks */
+@media (max-width: 600px) {
+    html[class*="docs-doc-id-financial-charts"] .markdown table {
+        font-size: 0.875rem;
+    }
+    html[class*="docs-doc-id-financial-charts"] .markdown table th,
+    html[class*="docs-doc-id-financial-charts"] .markdown table td {
+        padding: 0.5rem 0.4rem;
+    }
+}

@@ -10,10 +10,10 @@ keywords: ["SciTrader", "SciTrader.js", "drawing toolbar", "DrawingToolbar", "Dr
 
 Two ready-made UI components give users the [drawing tools](/financial-charts/drawing-tools/):
 
-| Component | Plain TypeScript | React | What it is |
-| --- | --- | --- | --- |
-| [Drawing toolbar](#drawing-toolbar) | `DrawingToolbar` | `<DrawingToolbar>` | A rail of drawing tools: click one to start it |
-| [Drawing list](#drawing-list) | `DrawingList` | `<DrawingList>` | The drawings on the chart, with buttons to select, edit and delete them |
+| Component | Plain TypeScript | React |
+| --- | --- | --- |
+| **[Drawing toolbar](#drawing-toolbar)**<br />A rail of drawing tools: click one to start it | `DrawingToolbar` | `<DrawingToolbar>` |
+| **[Drawing list](#drawing-list)**<br />The drawings on the chart, with buttons to select, edit and delete them | `DrawingList` | `<DrawingList>` |
 
 Both drive a `DrawingToolsController`, which [enables point-and-click drawing](/financial-charts/drawing-tools/add-drawing-tools/#point-and-click). Like the other [UI components](/financial-charts/ui-components/#how-they-work), each is plain DOM in `scichart-scitrader`, and `scichart-scitrader-react` wraps it for React. They take the SciTrader theme's colours, so they follow `setTheme`.
 

@@ -62,10 +62,10 @@ const { controller, activeTool, drawings } = useDrawingTools(chartApi);
 
 ### DrawingToolsController Events {#events}
 
-| Event | Raised when | Payload |
-| --- | --- | --- |
-| `activeToolChanged` | A tool is selected, finishes, or is stopped | The active tool's id, or `null` |
-| `drawingsChanged` | A drawing is added or removed, by the user, your code or the eraser | Every drawing, as `IDrawingItem[]` |
+| Event | Payload |
+| --- | --- |
+| `activeToolChanged`<br />Raised when a tool is selected, finishes, or is stopped | The active tool's id, or `null` |
+| `drawingsChanged`<br />Raised when a drawing is added or removed, by the user, your code or the eraser | Every drawing, as `IDrawingItem[]` |
 
 ```ts
 drawing.activeToolChanged.subscribe((tool) => console.log("active tool:", tool)); // null once placed

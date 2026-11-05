@@ -28,84 +28,84 @@ This section covers:
 
 The tables below list every study, grouped by the categories of the SDK's study picker (`EStudyCategory`). Indicators with a page of their own link to it, for what the indicator is, how it is calculated and how to add it. For each one:
 
-- **Class** is the class to construct, e.g. `new RSIStudy({ length: 21 })`.
-- **`EStudyType`** is the type to create it by, e.g. `studyProvider.getStudy(EStudyType.RSI)`.
+- **Under its name** is its class, to construct, e.g. `new RSIStudy({ length: 21 })`.
+- **Under that**, its `EStudyType`, to create it by, e.g. `studyProvider.getStudy(EStudyType.RSI)`.
 - **Options** are its constructor options, with their defaults. Options left out take their defaults.
 
 Every study also takes the [`IStudyOptions`](#istudyoptions) every study shares. Line studies take `renderOptions`, SciChart's `IFastLineRenderableSeriesOptions` (`stroke`, `strokeThickness`, `strokeDashArray`), for their line.
 
 ### Price and Chart Type Studies
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| OHLC: Open-High-Low-Close | `OHLCStudy` | `OHLC` | Price pane | `candleType` (`ECandleType.Candlestick`), `renderOptions` |
-| Renko | `RenkoStudy` | `Renko` | Own pane, category axis | `brickSize` (sized from the price range), `reversalAmount` (2) |
-| Point & Figure | `PointAndFigureStudy` | `PointAndFigure` | Own pane, category axis | `boxSize` (sized from the price range), `reversalAmount` (3) |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **OHLC: Open-High-Low-Close**<br />`OHLCStudy`<br />`EStudyType.OHLC` | Price pane | `candleType` (`ECandleType.Candlestick`), `renderOptions` |
+| **Renko**<br />`RenkoStudy`<br />`EStudyType.Renko` | Own pane, category axis | `brickSize` (sized from the price range), `reversalAmount` (2) |
+| **Point & Figure**<br />`PointAndFigureStudy`<br />`EStudyType.PointAndFigure` | Own pane, category axis | `boxSize` (sized from the price range), `reversalAmount` (3) |
 
 See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/).
 
 ### Trend Indicators
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| [SMA: Simple Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `SMAStudy` | `SMA` | Price pane | `length` (14), `renderOptions` |
-| [EMA: Exponential Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `EMAStudy` | `EMA` | Price pane | `length` (14), `renderOptions` |
-| [WMA: Weighted Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) | `WMAStudy` | `WMA` | Price pane | `length` (14), `renderOptions` |
-| PSAR: Parabolic SAR | `PSARStudy` | `PSAR` | Price pane | `step` (0.02), `max` (0.2), `dotColor`, `pointSize` (5) |
-| [Ichimoku Cloud](/financial-charts/studies-and-indicators/add-indicators/ichimoku-cloud/) | `IchimokuCloudStudy` | `Ichimoku` | Price pane | `conversionPeriod` (9), `basePeriod` (26), `spanPeriod` (52), `displacement` (26), and a line style per line: `tenkanOptions`, `kijunOptions`, `senkouAOptions`, `senkouBOptions`, `chikouOptions`, `cloudFillOptions` |
-| [ADX: Average Directional Index](/financial-charts/studies-and-indicators/add-indicators/adx-average-directional-index/) | `ADXStudy` | `ADX` | Own pane | `length` (14), `adxColor`, `pdiColor`, `mdiColor`, `strokeThickness` |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **[SMA: Simple Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/)**<br />`SMAStudy`<br />`EStudyType.SMA` | Price pane | `length` (14), `renderOptions` |
+| **[EMA: Exponential Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/)**<br />`EMAStudy`<br />`EStudyType.EMA` | Price pane | `length` (14), `renderOptions` |
+| **[WMA: Weighted Moving Average](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/)**<br />`WMAStudy`<br />`EStudyType.WMA` | Price pane | `length` (14), `renderOptions` |
+| **PSAR: Parabolic SAR**<br />`PSARStudy`<br />`EStudyType.PSAR` | Price pane | `step` (0.02), `max` (0.2), `dotColor`, `pointSize` (5) |
+| **[Ichimoku Cloud](/financial-charts/studies-and-indicators/add-indicators/ichimoku-cloud/)**<br />`IchimokuCloudStudy`<br />`EStudyType.Ichimoku` | Price pane | `conversionPeriod` (9), `basePeriod` (26), `spanPeriod` (52), `displacement` (26), and a line style per line: `tenkanOptions`, `kijunOptions`, `senkouAOptions`, `senkouBOptions`, `chikouOptions`, `cloudFillOptions` |
+| **[ADX: Average Directional Index](/financial-charts/studies-and-indicators/add-indicators/adx-average-directional-index/)**<br />`ADXStudy`<br />`EStudyType.ADX` | Own pane | `length` (14), `adxColor`, `pdiColor`, `mdiColor`, `strokeThickness` |
 
 ### Momentum Indicators
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| [RSI: Relative Strength Index](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/) | `RSIStudy` | `RSI` | Own pane | `length` (14), `overbought` (70), `oversold` (30), `thresholdFills` (`"show"`), `overboughtFill`, `oversoldFill`, `renderOptions` |
-| [MACD: Moving Average Convergence/Divergence](/financial-charts/studies-and-indicators/add-indicators/macd/) | `MACDStudy` | `MACD` | Own pane | `fast` (12), `slow` (26), `signal` (9), `bandOptions` (MACD and signal lines), `columnOptions`, `histogramAboveZero`, `histogramBelowZero` |
-| [Stochastic Oscillator](/financial-charts/studies-and-indicators/add-indicators/stochastic-oscillator/) | `StochasticStudy` | `Stochastic` | Own pane | `length` (14), `signalPeriod` (3), `strokeK`, `strokeD`, `strokeThickness` |
-| CCI: Commodity Channel Index | `CCIStudy` | `CCI` | Own pane | `length` (20), `renderOptions` |
-| Williams %R: Williams Percent Range | `WilliamsRStudy` | `WilliamsR` | Own pane | `length` (14), `renderOptions` |
-| ROC: Rate of Change | `ROCStudy` | `ROC` | Own pane | `length` (12), `renderOptions` |
-| TRIX: Triple EMA Oscillator | `TRIXStudy` | `TRIX` | Own pane | `length` (18), `renderOptions` |
-| AO: Awesome Oscillator | `AwesomeOscillatorStudy` | `AO` | Own pane | `upColor`, `downColor` |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **[RSI: Relative Strength Index](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/)**<br />`RSIStudy`<br />`EStudyType.RSI` | Own pane | `length` (14), `overbought` (70), `oversold` (30), `thresholdFills` (`"show"`), `overboughtFill`, `oversoldFill`, `renderOptions` |
+| **[MACD: Moving Average Convergence/Divergence](/financial-charts/studies-and-indicators/add-indicators/macd/)**<br />`MACDStudy`<br />`EStudyType.MACD` | Own pane | `fast` (12), `slow` (26), `signal` (9), `bandOptions` (MACD and signal lines), `columnOptions`, `histogramAboveZero`, `histogramBelowZero` |
+| **[Stochastic Oscillator](/financial-charts/studies-and-indicators/add-indicators/stochastic-oscillator/)**<br />`StochasticStudy`<br />`EStudyType.Stochastic` | Own pane | `length` (14), `signalPeriod` (3), `strokeK`, `strokeD`, `strokeThickness` |
+| **CCI: Commodity Channel Index**<br />`CCIStudy`<br />`EStudyType.CCI` | Own pane | `length` (20), `renderOptions` |
+| **Williams %R: Williams Percent Range**<br />`WilliamsRStudy`<br />`EStudyType.WilliamsR` | Own pane | `length` (14), `renderOptions` |
+| **ROC: Rate of Change**<br />`ROCStudy`<br />`EStudyType.ROC` | Own pane | `length` (12), `renderOptions` |
+| **TRIX: Triple EMA Oscillator**<br />`TRIXStudy`<br />`EStudyType.TRIX` | Own pane | `length` (18), `renderOptions` |
+| **AO: Awesome Oscillator**<br />`AwesomeOscillatorStudy`<br />`EStudyType.AO` | Own pane | `upColor`, `downColor` |
 
 ### Volatility Indicators
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| [BBANDS: Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/) | `BollingerBandsStudy` | `BBANDS` | Price pane | `period` (20), `stdDev` (2), `upperBandOptions`, `middleBandOptions`, `lowerBandOptions`, `bandFillOptions` |
-| Keltner Channels | `KeltnerChannelsStudy` | `Keltner` | Price pane | `maPeriod` (20), `atrPeriod` (10), `multiplier` (2), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
-| Donchian Channels | `DonchianChannelsStudy` | `Donchian` | Price pane | `period` (20), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
-| [ATR: Average True Range](/financial-charts/studies-and-indicators/add-indicators/atr-average-true-range/) | `ATRStudy` | `ATR` | Own pane | `length` (14), `renderOptions` |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **[BBANDS: Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/)**<br />`BollingerBandsStudy`<br />`EStudyType.BBANDS` | Price pane | `period` (20), `stdDev` (2), `upperBandOptions`, `middleBandOptions`, `lowerBandOptions`, `bandFillOptions` |
+| **Keltner Channels**<br />`KeltnerChannelsStudy`<br />`EStudyType.Keltner` | Price pane | `maPeriod` (20), `atrPeriod` (10), `multiplier` (2), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
+| **Donchian Channels**<br />`DonchianChannelsStudy`<br />`EStudyType.Donchian` | Price pane | `period` (20), `upperBandOptions`, `basisOptions`, `lowerBandOptions`, `bandFillOptions` |
+| **[ATR: Average True Range](/financial-charts/studies-and-indicators/add-indicators/atr-average-true-range/)**<br />`ATRStudy`<br />`EStudyType.ATR` | Own pane | `length` (14), `renderOptions` |
 
 ### Volume Indicators
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| Volume | `VolumeStudy` | `Volume` | Price pane, along the bottom | `volumeUpColor`, `volumeDownColor`, `renderOptions` |
-| [Volume Profile: volume traded by price](/financial-charts/studies-and-indicators/add-indicators/volume-profile/) | `VolumeProfileStudy` | `VolumeProfile` | Price pane, as sideways bars | `binCount` (40), `rangeMode` (`"visible"`, or `"all"`), `side` (`"right"`), `widthFraction` (0.25), `showPointOfControl` (`true`), `pointOfControlColor` |
-| [VWAP: Volume Weighted Average Price](/financial-charts/studies-and-indicators/add-indicators/vwap-volume-weighted-average-price/) | `VWAPStudy` | `VWAP` | Price pane | `renderOptions` |
-| OBV: On Balance Volume | `OBVStudy` | `OBV` | Own pane | `renderOptions` |
-| MFI: Money Flow Index | `MFIStudy` | `MFI` | Own pane | `length` (14), `renderOptions` |
-| Force Index | `ForceIndexStudy` | `ForceIndex` | Own pane | `length` (13), `renderOptions` |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **Volume**<br />`VolumeStudy`<br />`EStudyType.Volume` | Price pane, along the bottom | `volumeUpColor`, `volumeDownColor`, `renderOptions` |
+| **[Volume Profile: volume traded by price](/financial-charts/studies-and-indicators/add-indicators/volume-profile/)**<br />`VolumeProfileStudy`<br />`EStudyType.VolumeProfile` | Price pane, as sideways bars | `binCount` (40), `rangeMode` (`"visible"`, or `"all"`), `side` (`"right"`), `widthFraction` (0.25), `showPointOfControl` (`true`), `pointOfControlColor` |
+| **[VWAP: Volume Weighted Average Price](/financial-charts/studies-and-indicators/add-indicators/vwap-volume-weighted-average-price/)**<br />`VWAPStudy`<br />`EStudyType.VWAP` | Price pane | `renderOptions` |
+| **OBV: On Balance Volume**<br />`OBVStudy`<br />`EStudyType.OBV` | Own pane | `renderOptions` |
+| **MFI: Money Flow Index**<br />`MFIStudy`<br />`EStudyType.MFI` | Own pane | `length` (14), `renderOptions` |
+| **Force Index**<br />`ForceIndexStudy`<br />`EStudyType.ForceIndex` | Own pane | `length` (13), `renderOptions` |
 
 ### Order Book Studies
 
 These read an order-book feed, so they need an order-book data source (`IOrderBookSource`) registered for the chart's exchange. The built-in Coinbase and Binance exchanges don't provide one; see [Order-book data](/financial-charts/data-sources/#order-book-data).
 
-| Indicator | Class | `EStudyType` | Draws on | Options (default) |
-| --- | --- | --- | --- | --- |
-| Order Book Heatmap: resting liquidity behind price | `OrderBookHeatmapStudy` | `OrderBookHeatmap` | Price pane | `side` (`"both"`, `"bid"` or `"ask"`), `palette` (`"liquidity"`), `opacity` (50), `scaleType` (`"log"`), `colorFromPct` (50), `colorToPct` (99), `stops` |
-| Order Book Imbalance: bid versus ask depth, per candle | `OrderBookImbalanceStudy` | `OrderBookImbalance` | Own pane | `method` (`"weighted"`, `"band"` or `"percent"`), `pct` (0.3), `bidColor`, `askColor`, `fillStyle` (`"gradient"`), `gauge` (`"show"`) |
+| Indicator | Draws on | Options (default) |
+| --- | --- | --- |
+| **Order Book Heatmap: resting liquidity behind price**<br />`OrderBookHeatmapStudy`<br />`EStudyType.OrderBookHeatmap` | Price pane | `side` (`"both"`, `"bid"` or `"ask"`), `palette` (`"liquidity"`), `opacity` (50), `scaleType` (`"log"`), `colorFromPct` (50), `colorToPct` (99), `stops` |
+| **Order Book Imbalance: bid versus ask depth, per candle**<br />`OrderBookImbalanceStudy`<br />`EStudyType.OrderBookImbalance` | Own pane | `method` (`"weighted"`, `"band"` or `"percent"`), `pct` (0.3), `bidColor`, `askColor`, `fillStyle` (`"gradient"`), `gauge` (`"show"`) |
 
 ### Studies Outside the Study Picker
 
 Three more studies aren't in the picker's catalogue (`STUDY_MENU_ITEMS`) or registered with `studyProvider`, because each needs an input you choose. Create them with `new`:
 
-| Study | Class | Draws on | What it is for |
-| --- | --- | --- | --- |
-| Line | `LineStudy` | Price pane | Plots any data source as a line: pass its `DataSourceId` as `inputId` |
-| Large trades | `LargeTradeStudy` | Price pane | Marks trades above `threshold` from a trade feed you create; `buyColor`, `sellColor` |
-| [Sparkline](/financial-charts/ui-components/sparklines/) | `SparklineStudy` | Price pane | The small price chart in each row of a watchlist |
+| Study | Draws on | What it is for |
+| --- | --- | --- |
+| **Line**<br />`LineStudy` | Price pane | Plots any data source as a line: pass its `DataSourceId` as `inputId` |
+| **Large trades**<br />`LargeTradeStudy` | Price pane | Marks trades above `threshold` from a trade feed you create; `buyColor`, `sellColor` |
+| **[Sparkline](/financial-charts/ui-components/sparklines/)**<br />`SparklineStudy` | Price pane | The small price chart in each row of a watchlist |
 
 ### IStudyOptions: Options Every Study Takes {#istudyoptions}
 

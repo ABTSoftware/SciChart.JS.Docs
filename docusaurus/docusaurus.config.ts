@@ -5,6 +5,7 @@ import CustomCopyPlugin from "./custom-plugins/webpackCustomConfigPlugin";
 import remarkCodeSnippets from "remark-code-snippets";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import remarkTableCodeBreaks from "./custom-plugins/remarkTableCodeBreaks";
 import { baseUrl } from "./config";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -64,7 +65,8 @@ const config: Config = {
                     // Remove this to remove the "edit this page" links.
                     editUrl: gitHubUrl,
                     // remarkMath + rehypeKatex: $inline$ and $$block$$ maths, rendered by KaTeX at build time
-                    remarkPlugins: [remarkCodeSnippets, remarkMath],
+                    // remarkTableCodeBreaks: long code in Financial Charts tables wraps on phones
+                    remarkPlugins: [remarkCodeSnippets, remarkMath, [remarkTableCodeBreaks, { include: /financial-charts/ }]],
                     rehypePlugins: [rehypeKatex]
                 },
                 blog: false,

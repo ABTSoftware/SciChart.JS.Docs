@@ -10,10 +10,10 @@ keywords: ["SciTrader", "SciTrader.js", "StudySettingsForm", "StudyList", "indic
 
 Two ready-made UI components let users edit the settings of the chart's studies and technical indicators:
 
-| Component | Plain TypeScript | React | What it is |
-| --- | --- | --- | --- |
-| [Study settings form](#studysettingsform) | `StudySettingsForm` | `<StudySettingsForm>` | One study's settings as a form, applied as they are edited |
-| [Study list](#studylist) | `StudyList` | `<StudyList>` | The chart's studies as cards: each opens its settings form, and × removes the study |
+| Component | Plain TypeScript | React |
+| --- | --- | --- |
+| **[Study settings form](#studysettingsform)**<br />One study's settings as a form, applied as they are edited | `StudySettingsForm` | `<StudySettingsForm>` |
+| **[Study list](#studylist)**<br />The chart's studies as cards: each opens its settings form, and × removes the study | `StudyList` | `<StudyList>` |
 
 Both edit the study's **descriptor**, the description of its settings that every study has. See [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/) to change settings from code instead. They work with every study, including [your own](/financial-charts/studies-and-indicators/creating-custom-studies/).
 
