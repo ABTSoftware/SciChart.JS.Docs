@@ -32,6 +32,7 @@ const MIDNIGHT_GOLD = createSciTraderTheme(SCITRADER_DARK_THEME, {
 - **Groups merge.** List only the colours you change, at any depth: `studies.OHLC.strokeUp` alone is fine.
 - **It stays complete.** When an SDK update adds a colour, your theme gets the base theme's value for it.
 - **Give it a `name`.** Theme pickers show it.
+- **Hide what you don't want with `transparent`:** a theme holds colours, so `chart: { axisBands: "transparent", minorGridLine: "transparent" }` turns off the alternating axis bands and the minor gridlines for that theme only. (`axisDefaults: { drawMajorBands: false }` turns them off whatever the theme.)
 - **`isDark`** comes from the base theme. Set it if you turn a dark theme light, or the other way: the order book heatmap uses it to pick its colours.
 
 **Candle colours** are `studies.OHLC`: `brushUp` and `brushDown` fill the bodies, and `strokeUp` and `strokeDown` draw the outlines and wicks. Renko bricks use them too. The line and mountain candle types use `candles`.
@@ -54,7 +55,7 @@ function themeFromCss(): ISciTraderTheme {
     const css = getComputedStyle(document.documentElement);
     const brand = (name: string) => css.getPropertyValue(`--brand-${name}`).trim();
     return createSciTraderTheme(SCITRADER_LIGHT_THEME, {
-        name: "Brand",
+        name: "From CSS",
         chart: { background: brand("background"), axisBackground: brand("background") },
         studies: {
             OHLC: { brushUp: brand("up"), brushDown: brand("down"), strokeUp: brand("up"), strokeDown: brand("down") },
@@ -70,7 +71,7 @@ The chart is drawn by WebGL, which can't read CSS, so CSS alone can't change the
 
 ## TypeScript Example: Two Custom Themes
 
-Midnight Gold is the Dark theme with gold candles, made with `createSciTraderTheme`. Brand is the Light theme in colours read from CSS variables on the page. Switch between them and the built-in Dark theme.
+Midnight Gold is the Dark theme with gold candles, made with `createSciTraderTheme`. From CSS is the Light theme in brand colours read from CSS variables on the page. Both turn off the axis bands with a transparent `chart.axisBands`, and Midnight Gold the minor gridlines too. Switch between them and the built-in Dark theme.
 
 <LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/styling_CustomTheme/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 

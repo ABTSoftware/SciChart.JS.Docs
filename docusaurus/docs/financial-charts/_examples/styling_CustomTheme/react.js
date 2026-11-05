@@ -12,6 +12,9 @@ const MIDNIGHT_GOLD = createSciTraderTheme(SCITRADER_DARK_THEME, {
         background: "#0E0E14",
         axisBackground: "#0E0E14",
         gridLine: "#1C1C26",
+        // A quieter chart: no alternating axis bands, and no minor gridlines
+        axisBands: "transparent",
+        minorGridLine: "transparent",
         currentPriceLine: "#E8B931",
         crosshairLabelBackground: "#E8B931",
         crosshairLabelText: "#0E0E14",
@@ -25,8 +28,8 @@ const MIDNIGHT_GOLD = createSciTraderTheme(SCITRADER_DARK_THEME, {
     },
     ui: { accent: "#C99A1E", toolbarBackground: "#15151E", selection: "#E8B931" },
 });
-// 2. A custom theme from CSS: your brand colours as CSS variables, read into a theme. In an app, they
-// would be in your stylesheet; here they are added to the page
+// 2. A custom theme from CSS: your app's brand colours, kept as CSS variables, read into a theme. In an
+// app, they would be in your stylesheet; here they are added to the page
 document.head.appendChild(document.createElement("style")).textContent = `
 :root {
     --brand-background: #F7F5EF;
@@ -39,11 +42,12 @@ function themeFromCss() {
     const css = getComputedStyle(document.documentElement);
     const brand = (name) => css.getPropertyValue(`--brand-${name}`).trim();
     return createSciTraderTheme(SCITRADER_LIGHT_THEME, {
-        name: "Brand",
+        name: "From CSS",
         chart: {
             background: brand("background"),
             axisBackground: brand("background"),
             gridLine: brand("grid"),
+            axisBands: "transparent", // no alternating axis bands
             currentPriceLine: brand("accent"),
             crosshairLabelBackground: brand("accent"),
         },
