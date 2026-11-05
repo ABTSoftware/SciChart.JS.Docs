@@ -29,88 +29,88 @@ This section covers:
 The tables below list every drawing tool, grouped by `EDrawingToolGroup`, the groups the toolbar uses. For each one:
 
 - **Tool id** is the `TDrawingToolId` to pass to `selectTool` to start it, e.g. `drawing.selectTool(ETradingAnnotationType.FibonacciRetracementAnnotation)`.
-- **Annotation class** is the class to create it in code, from `scichart-financial-tools`, e.g. `new FibonacciRetracementAnnotation({ points })`.
+- **The annotation class**, to create the drawing in code, has the same name as the tool id after the dot, from `scichart-financial-tools`: e.g. `new FibonacciRetracementAnnotation({ points })`. Where it differs, for the patterns and the highlighter, the table names it; the eraser has none.
 - **Points** is how many points the user clicks to place it, and how many its `points` take.
 
 Tools with a page of their own link to it.
 
 ### Lines Drawing Tools {#lines}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| [Poly Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.PolyLineAnnotation` | `PolyLineAnnotation` | 2 | Straight line segments through its points |
-| [Extended Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.ExtendedLineAnnotation` | `ExtendedLineAnnotation` | 2 | A two-point trend line that can extend past either end |
-| [Horizontal Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/) | `ETradingAnnotationType.HorizontalTrendLineAnnotation` | `HorizontalTrendLineAnnotation` | 1 | A line at one price, across the pane |
-| Vertical Line | `ETradingAnnotationType.VerticalTrendLineAnnotation` | `VerticalTrendLineAnnotation` | 1 | A line at one time, down the pane |
-| Cross Line | `ETradingAnnotationType.CrossLineAnnotation` | `CrossLineAnnotation` | 1 | A horizontal and a vertical line, crossing at one point |
-| Angle Line | `ETradingAnnotationType.AngleLineAnnotation` | `AngleLineAnnotation` | 2 | A line from point 1 to point 2, with its angle measured on an arc |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **[Poly Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/)**<br />Straight line segments through its points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Poly<wbr />Line<wbr />Annotation</code> | 2 |
+| **[Extended Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/)**<br />A two-point trend line that can extend past either end | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Extended<wbr />Line<wbr />Annotation</code> | 2 |
+| **[Horizontal Line](/financial-charts/drawing-tools/add-drawing-tools/trend-lines/)**<br />A line at one price, across the pane | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Horizontal<wbr />Trend<wbr />Line<wbr />Annotation</code> | 1 |
+| **Vertical Line**<br />A line at one time, down the pane | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Vertical<wbr />Trend<wbr />Line<wbr />Annotation</code> | 1 |
+| **Cross Line**<br />A horizontal and a vertical line, crossing at one point | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Cross<wbr />Line<wbr />Annotation</code> | 1 |
+| **Angle Line**<br />A line from point 1 to point 2, with its angle measured on an arc | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Angle<wbr />Line<wbr />Annotation</code> | 2 |
 
 ### Channels Drawing Tools {#channels}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| Channel | `ETradingAnnotationType.ChannelAnnotation` | `ChannelAnnotation` | 3 | A parallel price channel: a trend line, and a parallel line through the third point |
-| Flat Bottom Channel | `ETradingAnnotationType.FlatBottomChannelAnnotation` | `FlatBottomChannelAnnotation` | 3 | A channel whose bottom edge is always horizontal |
-| Disjoint Channel | `ETradingAnnotationType.DisjointChannelAnnotation` | `DisjointChannelAnnotation` | 3 | A channel whose second side is constrained by the first |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **Channel**<br />A parallel price channel: a trend line, and a parallel line through the third point | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Channel<wbr />Annotation</code> | 3 |
+| **Flat Bottom Channel**<br />A channel whose bottom edge is always horizontal | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Flat<wbr />Bottom<wbr />Channel<wbr />Annotation</code> | 3 |
+| **Disjoint Channel**<br />A channel whose second side is constrained by the first | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Disjoint<wbr />Channel<wbr />Annotation</code> | 3 |
 
 ### Pitchforks Drawing Tools {#pitchforks}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| Pitchfork | `ETradingAnnotationType.PitchforkAnnotation` | `PitchforkAnnotation` | 3 | Andrews' pitchfork: a median line from the first point through the midpoint of the other two, with parallel lines through them |
-| Inside Pitchfork | `ETradingAnnotationType.InsidePitchforkAnnotation` | `InsidePitchforkAnnotation` | 3 | A pitchfork whose median line starts at the midpoint of the first two points |
-| Schiff Pitchfork | `ETradingAnnotationType.SchiffPitchforkAnnotation` | `SchiffPitchforkAnnotation` | 3 | A pitchfork whose start moves halfway towards the second point in price |
-| Modified Schiff Pitchfork | `ETradingAnnotationType.ModifiedSchiffPitchforkAnnotation` | `ModifiedSchiffPitchforkAnnotation` | 3 | A pitchfork whose start moves to the midpoint of the first two points, in time and price |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **Pitchfork**<br />Andrews' pitchfork: a median line from the first point through the midpoint of the other two, with parallel lines through them | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Pitchfork<wbr />Annotation</code> | 3 |
+| **Inside Pitchfork**<br />A pitchfork whose median line starts at the midpoint of the first two points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Inside<wbr />Pitchfork<wbr />Annotation</code> | 3 |
+| **Schiff Pitchfork**<br />A pitchfork whose start moves halfway towards the second point in price | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Schiff<wbr />Pitchfork<wbr />Annotation</code> | 3 |
+| **Modified Schiff Pitchfork**<br />A pitchfork whose start moves to the midpoint of the first two points, in time and price | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Modified<wbr />Schiff<wbr />Pitchfork<wbr />Annotation</code> | 3 |
 
 ### Fibonacci Drawing Tools {#fibonacci}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| [Fibonacci Retracement](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) | `ETradingAnnotationType.FibonacciRetracementAnnotation` | `FibonacciRetracementAnnotation` | 2 (3 when skewed) | Levels at Fibonacci ratios of a price move |
-| [Fibonacci Extension](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/) | `ETradingAnnotationType.FibonacciExtensionAnnotation` | `FibonacciExtensionAnnotation` | 3 | Levels projecting a move from a third point |
-| Fibonacci Time Zone | `ETradingAnnotationType.FibonacciTimeZoneAnnotation` | `FibonacciTimeZoneAnnotation` | 2 | Vertical lines at Fibonacci intervals of time |
-| Fib Speed Resistance Arcs | `ETradingAnnotationType.FibonacciSpeedResistanceArcsAnnotation` | `FibonacciSpeedResistanceArcsAnnotation` | 2 | Concentric arcs at Fibonacci ratios |
-| Fibonacci Circles | `ETradingAnnotationType.FibonacciCirclesAnnotation` | `FibonacciCirclesAnnotation` | 2 | Circles or ovals at Fibonacci ratios |
-| Fibonacci Wedge | `ETradingAnnotationType.FibonacciWedgeAnnotation` | `FibonacciWedgeAnnotation` | 3 | Fibonacci arcs inside a wedge |
-| Pitchfan | `ETradingAnnotationType.PitchfanAnnotation` | `PitchfanAnnotation` | 3 | Fan lines projected from a pitchfork's points |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **[Fibonacci Retracement](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/)**<br />Levels at Fibonacci ratios of a price move | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Retracement<wbr />Annotation</code> | 2 (3 when skewed) |
+| **[Fibonacci Extension](/financial-charts/drawing-tools/add-drawing-tools/fibonacci-retracement/)**<br />Levels projecting a move from a third point | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Extension<wbr />Annotation</code> | 3 |
+| **Fibonacci Time Zone**<br />Vertical lines at Fibonacci intervals of time | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Time<wbr />Zone<wbr />Annotation</code> | 2 |
+| **Fib Speed Resistance Arcs**<br />Concentric arcs at Fibonacci ratios | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Speed<wbr />Resistance<wbr />Arcs<wbr />Annotation</code> | 2 |
+| **Fibonacci Circles**<br />Circles or ovals at Fibonacci ratios | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Circles<wbr />Annotation</code> | 2 |
+| **Fibonacci Wedge**<br />Fibonacci arcs inside a wedge | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Fibonacci<wbr />Wedge<wbr />Annotation</code> | 3 |
+| **Pitchfan**<br />Fan lines projected from a pitchfork's points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Pitchfan<wbr />Annotation</code> | 3 |
 
 ### Cycles and Time Drawing Tools {#cycles-and-time}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| Cyclic Line | `ETradingAnnotationType.CyclicLineAnnotation` | `CyclicLineAnnotation` | 2 | Vertical lines repeated at the interval between the two points |
-| Cyclic Arc | `ETradingAnnotationType.CyclicArcAnnotation` | `CyclicArcAnnotation` | 2 | Half-circle arcs repeated at the interval between the two points |
-| Sector | `ETradingAnnotationType.SectorAnnotation` | `SectorAnnotation` | 3 | A sector-shaped Fibonacci wedge, without labels by default |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **Cyclic Line**<br />Vertical lines repeated at the interval between the two points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Cyclic<wbr />Line<wbr />Annotation</code> | 2 |
+| **Cyclic Arc**<br />Half-circle arcs repeated at the interval between the two points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Cyclic<wbr />Arc<wbr />Annotation</code> | 2 |
+| **Sector**<br />A sector-shaped Fibonacci wedge, without labels by default | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Sector<wbr />Annotation</code> | 3 |
 
 ### Patterns Drawing Tools {#patterns}
 
 Patterns are poly lines (`PolyLineAnnotation`) with a letter at each point. Their tool ids are `EDrawingToolVariantId` values, because several share one annotation type.
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| [XABCD Pattern](/financial-charts/drawing-tools/add-drawing-tools/harmonic-patterns-xabcd/) | `EDrawingToolVariantId.PatternXabcd` | `PolyLineAnnotation` | 6: 0, X, A, B, C, D | A harmonic pattern's legs |
-| [Elliott Impulse Wave (12345)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottImpulse` | `PolyLineAnnotation` | 6: (0) to (5) | A five-wave Elliott impulse |
-| [Elliott Correction Wave (ABC)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottCorrection` | `PolyLineAnnotation` | 4: 0, A, B, C | A three-wave Elliott correction |
-| [Elliott Triangle Wave (ABCDE)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottTriangle` | `PolyLineAnnotation` | 6: (0), (A) to (E) | An Elliott triangle |
-| [Elliott Double Combo (WXY)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottDoubleCombo` | `PolyLineAnnotation` | 4: (0), (W), (X), (Y) | An Elliott double combination |
-| [Elliott Triple Combo (WXYXZ)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) | `EDrawingToolVariantId.PatternElliottTripleCombo` | `PolyLineAnnotation` | 6: (0), (W), (X), (Y), (X), (Z) | An Elliott triple combination |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **[XABCD Pattern](/financial-charts/drawing-tools/add-drawing-tools/harmonic-patterns-xabcd/)**<br />A harmonic pattern's legs | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Xabcd</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 6: 0, X, A, B, C, D |
+| **[Elliott Impulse Wave (12345)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/)**<br />A five-wave Elliott impulse | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Impulse</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 6: (0) to (5) |
+| **[Elliott Correction Wave (ABC)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/)**<br />A three-wave Elliott correction | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Correction</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 4: 0, A, B, C |
+| **[Elliott Triangle Wave (ABCDE)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/)**<br />An Elliott triangle | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Triangle</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 6: (0), (A) to (E) |
+| **[Elliott Double Combo (WXY)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/)**<br />An Elliott double combination | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Double<wbr />Combo</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 4: (0), (W), (X), (Y) |
+| **[Elliott Triple Combo (WXYXZ)](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/)**<br />An Elliott triple combination | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Triple<wbr />Combo</code><br />Class: <code>Poly<wbr />Line<wbr />Annotation</code> | 6: (0), (W), (X), (Y), (X), (Z) |
 
 ### Measure and Risk Drawing Tools {#measure-and-risk}
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| Measure | `ETradingAnnotationType.MeasureAnnotation` | `MeasureAnnotation` | 2 | The price change, percentage change and number of candles between two points |
-| [Stop Loss / Take Profit](/financial-charts/drawing-tools/add-drawing-tools/stop-loss-take-profit/) | `ETradingAnnotationType.StopLossTakeProfitAnnotation` | `StopLossTakeProfitAnnotation` | 2 | A take-profit or stop-loss zone from an entry point |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **Measure**<br />The price change, percentage change and number of candles between two points | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Measure<wbr />Annotation</code> | 2 |
+| **[Stop Loss / Take Profit](/financial-charts/drawing-tools/add-drawing-tools/stop-loss-take-profit/)**<br />A take-profit or stop-loss zone from an entry point | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Stop<wbr />Loss<wbr />Take<wbr />Profit<wbr />Annotation</code> | 2 |
 
 ### Freehand and Eraser Drawing Tools {#freehand-and-eraser}
 
 These are drawn by dragging, not by placing points.
 
-| Tool | Tool id (`TDrawingToolId`) | Annotation class | Points | What it draws |
-| --- | --- | --- | --- | --- |
-| Freehand | `ETradingAnnotationType.FreehandDrawingAnnotation` | `FreehandDrawingAnnotation` | Drag | A pen stroke |
-| Highlighter | `EDrawingToolVariantId.Highlighter` | `FreehandDrawingAnnotation` | Drag | A wide, translucent pen stroke |
-| Eraser | `EDrawingToolVariantId.Eraser` | (none) | Click | Removes the drawings you click, until stopped. It never removes a study's annotations |
+| Tool | Tool id (`TDrawingToolId`) | Points |
+| --- | --- | --- |
+| **Freehand**<br />A pen stroke | <code>ETrading<wbr />Annotation<wbr />Type.</code><br /><code>Freehand<wbr />Drawing<wbr />Annotation</code> | Drag |
+| **Highlighter**<br />A wide, translucent pen stroke | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Highlighter</code><br />Class: <code>Freehand<wbr />Drawing<wbr />Annotation</code> | Drag |
+| **Eraser**<br />Removes the drawings you click, until stopped. It never removes a study's annotations | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Eraser</code><br />No annotation | Click |
 
 ## How Drawings Work
 

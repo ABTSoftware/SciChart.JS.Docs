@@ -26,11 +26,11 @@ SciTrader has an Elliott wave tool for each of the common patterns. Each is a po
 
 | Tool | Tool id | Points (labels) | Pattern |
 | --- | --- | --- | --- |
-| Elliott Impulse Wave (12345) | `EDrawingToolVariantId.PatternElliottImpulse` | 6: (0) to (5) | Five waves with the trend |
-| Elliott Correction Wave (ABC) | `EDrawingToolVariantId.PatternElliottCorrection` | 4: 0, A, B, C | A three-wave zigzag correction |
-| Elliott Triangle Wave (ABCDE) | `EDrawingToolVariantId.PatternElliottTriangle` | 6: (0), (A) to (E) | A five-wave contracting or expanding triangle |
-| Elliott Double Combo (WXY) | `EDrawingToolVariantId.PatternElliottDoubleCombo` | 4: (0), (W), (X), (Y) | Two corrections joined by an X wave |
-| Elliott Triple Combo (WXYXZ) | `EDrawingToolVariantId.PatternElliottTripleCombo` | 6: (0), (W), (X), (Y), (X), (Z) | Three corrections joined by X waves |
+| Elliott Impulse Wave (12345) | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Impulse</code> | 6: (0) to (5) | Five waves with the trend |
+| Elliott Correction Wave (ABC) | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Correction</code> | 4: 0, A, B, C | A three-wave zigzag correction |
+| Elliott Triangle Wave (ABCDE) | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Triangle</code> | 6: (0), (A) to (E) | A five-wave contracting or expanding triangle |
+| Elliott Double Combo (WXY) | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Double<wbr />Combo</code> | 4: (0), (W), (X), (Y) | Two corrections joined by an X wave |
+| Elliott Triple Combo (WXYXZ) | <code>EDrawing<wbr />Tool<wbr />Variant<wbr />Id.</code><br /><code>Pattern<wbr />Elliott<wbr />Triple<wbr />Combo</code> | 6: (0), (W), (X), (Y), (X), (Z) | Three corrections joined by X waves |
 
 The first point, (0), is where the pattern starts.
 
