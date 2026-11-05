@@ -520,79 +520,10 @@ function dashArrayToStrokeStyle(dashArray: number[] | undefined): string;
 
 ## Data Updates: EDataUpdateType and IDataManager
 
-<details>
-<summary>The EDataUpdateType enum, IDataUpdate interface and TDataUpdate type, with their TSDoc</summary>
+A study reads its inputs from the chart's data manager, and is told of each change as an `EDataUpdateType`. [Data Manager and Data Feeds](/financial-charts/data-sources/data-manager-and-data-feeds/) describes both, with their TSDoc:
 
-```ts
-enum EDataUpdateType {
-    Replace = 0,
-    Append = 1,
-    Insert = 2,
-    Update = 3,
-    /**
-     * Candles were removed from one or both ends of the source array
-     *. `values` is an empty array (no new data); the
-     * `eviction` field carries the per-edge drop counts. Subscribers that
-     * mirror data into renderable series should shrink their copy
-     * symmetrically; subscribers that recompute outputs from inputs (e.g.
-     * indicator studies) can treat Evict like a Replace-shrunken — values
-     * for surviving indices are unchanged, so no recomputation is needed
-     * beyond keeping the output series the same length as the input.
-     */
-    Evict = 4
-}
-interface IDataUpdate<T> {
-    id: DataSourceId;
-    values: T[];
-    updateType: EDataUpdateType;
-    startIndex?: number;
-    /**
-     * Populated only for {@link EDataUpdateType.Evict}. Reports how many
-     * elements were dropped from each edge of the source array, so
-     * subscribers can mirror the eviction without recomputing indices.
-     */
-    eviction?: {
-        leadingDrop: number;
-        trailingDrop: number;
-    };
-}
-type TDataUpdate<T> = Record<string, IDataUpdate<T>>;
-```
-
-</details>
-
-<details>
-<summary>The IDataManager interface, with its TSDoc</summary>
-
-```ts
-interface IDataManager {
-    xId: DataSourceId;
-    xValues: number[];
-    yEntries: {
-        id: DataSourceId;
-        values: any[];
-    }[];
-    getSources(): DataSourceId[];
-    getValues<T>(id: DataSourceId): T[];
-    getSourceId(id: string): DataSourceId;
-    getSourceIdByName(feedId: string, name: string): DataSourceId;
-    getOrCreateSourceId(id: string, builder: () => DataSourceId): DataSourceId;
-    replaceValues(ids: DataSourceId[], values: any[][]): void;
-    appendValues(ids: DataSourceId[], values: any[][], startIndex: number): void;
-    insertValues(ids: DataSourceId[], values: any[][], startIndex: number): void;
-    updateValues(ids: DataSourceId[], values: any[], startIndex: number): void;
-    /**
-     * Drop `leadingCount` entries from the front and `trailingCount` from
-     * the back of every registered source, emitting one `Evict` update per
-     * source. Used to cap memory.
-     */
-    evict(leadingCount: number, trailingCount: number): void;
-    observeChanges<T>(ids: DataSourceId[]): Observable<TDataUpdate<T>>;
-    removeSources(ids: DataSourceId[]): void;
-}
-```
-
-</details>
+- [the update types](/financial-charts/data-sources/data-manager-and-data-feeds/#update-types): `EDataUpdateType`, `IDataUpdate` and `TDataUpdate`;
+- [the data manager's API](/financial-charts/data-sources/data-manager-and-data-feeds/#data-manager-api): `IDataManager` and `DataSourceId`.
 
 ## Where to read next
 

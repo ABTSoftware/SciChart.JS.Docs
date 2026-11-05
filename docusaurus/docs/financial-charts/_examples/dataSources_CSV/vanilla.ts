@@ -1,56 +1,95 @@
 import "scichart-scitrader/scitrader.css";
-import {
-    CandleInterval,
-    createCSVServices,
-    CSVExchange,
-    IntervalSelector,
-    OHLCStudy,
-    SciFinanceChartPanel,
-    VolumeStudy,
-} from "scichart-scitrader";
+import { CandleInterval, createCSVServices, CSVExchange, OHLCStudy, SciFinanceChartPanel, VolumeStudy } from "scichart-scitrader";
 
-// A CSV file of candles, one row per candle. Several symbols can share a file:
-//
-//   symbol,time,open,high,low,close,volume
-//   BTCUSDT,2026-07-01 12:00,58622.02,58676,58326,58538.01,1716.61
-//   SOLUSDT,2026-07-01 12:00,141.20,141.95,140.80,141.55,25310.4
-//
-// Columns are found by their usual names (time/date/timestamp, open/o, ...), or map them with
-// { columns: { time: "Date", close: "Adj Close" } }. Times can be epoch seconds, epoch milliseconds
-// or dates, read as UTC. The data is moved forward so its last candle is now; pass alignToNow: false
-// to keep the file's own dates.
-const exchange = await CSVExchange.fromUrl("data/my-candles-1h.csv", { name: "MyCSV" });
+// This example expects this HTML:
+// <div style="display: flex; flex-direction: column; height: 100%">
+//     <div id="toolbar"></div>
+//     <div id="chart" style="flex: 1; min-height: 0"></div>
+// </div>
 
-// Give the chart its own services, so this exchange stays private to this chart. To make it
-// available to every chart by name instead: registerCSVExchange(defaultExchangeProvider, exchange)
-const { services } = createCSVServices(exchange);
+// The sample price history: real Binance candles for BTCUSDT, ETHUSDT and SOLUSDT, served by jsDelivr
+const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data";
 
-// <div id="toolbar"></div>
-// <div id="chart" style="height: 600px"></div>
-const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
-    exchangeName: exchange.name, // name="MyCSV", set by fromUrl above
-    symbol: "SOLUSDT",
-    interval: CandleInterval.TWO_HOURS, // resampled from the file's hourly rows
-    studies: [new OHLCStudy(), new VolumeStudy()],
-    services,
-});
-const chart = financeChartPanel.financeApi; // SciFinanceChart
-const toolbar = document.getElementById("toolbar");
+async function createChart() {
+    const toolbar = document.getElementById("toolbar");
+    Object.assign(toolbar.style, toolbarStyle);
 
-// One button per symbol in the file
-for (const symbol of await exchange.getInstruments()) {
-    const button = document.createElement("button");
-    button.textContent = symbol;
-    button.onclick = () => chart.setSymbol(symbol);
-    toolbar.appendChild(button);
+    // 1. Load the CSV files. Each row is "symbol,time,open,high,low,close,volume", so one exchange
+    // serves all three symbols. CSVExchange serves every interval the data can make: the hourly
+    // file gives 1h to 12h, the daily file 1d, 1w and 1M. It moves the dates so the data ends now
+    const exchange = await CSVExchange.fromUrl([`${SAMPLE_DATA}/crypto-1h.csv`, `${SAMPLE_DATA}/crypto-1d.csv`], {
+        name: "Sample", // the exchangeName charts ask for
+    });
+
+    // 2. Chart services for this exchange alone, so nothing is registered in defaultExchangeProvider.
+    // To make it available to every chart by name, call registerCSVExchange(defaultExchangeProvider, exchange)
+    const { services } = createCSVServices(exchange);
+
+    const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
+        exchangeName: exchange.name,
+        symbol: "BTCUSDT",
+        interval: CandleInterval.FOUR_HOURS,
+        period: "1M",
+        services,
+        studies: [new OHLCStudy(), new VolumeStudy()],
+    });
+    const chart = financeChartPanel.financeApi;
+
+    // 3. The symbols and intervals the files can serve
+    const symbols = await exchange.getInstruments(); // ["BTCUSDT", "ETHUSDT", "SOLUSDT"]
+    const intervals = exchange.getSupportedIntervals();
+    toolbar.append(
+        buttonGroup(symbols, (s) => s, "BTCUSDT", (symbol) => chart.setSymbol(symbol)),
+        // changeInterval picks a period that suits the interval
+        buttonGroup(intervals, (i) => i, CandleInterval.FOUR_HOURS, (interval) => chart.changeInterval(interval))
+    );
+
+    // When the page goes away: financeChartPanel.cleanup();
+    return financeChartPanel;
 }
 
-// The file's own interval, and every coarser one made of whole candles (2h, 4h, 12h, 1d, ...)
-IntervalSelector.create(toolbar, {
-    value: CandleInterval.TWO_HOURS,
-    intervals: exchange.getSupportedIntervals(),
-    onChange: (interval) => chart.changeInterval(interval),
+// A row of toggle buttons: one per value, the selected one highlighted
+function buttonGroup<T>(values: readonly T[], label: (v: T) => string, selected: T, onSelect: (v: T) => void) {
+    const group = document.createElement("div");
+    Object.assign(group.style, { display: "flex", gap: "4px" });
+    const render = (current: T) =>
+        group.replaceChildren(
+            ...values.map((value) => {
+                const b = document.createElement("button");
+                b.textContent = label(value);
+                Object.assign(b.style, buttonStyle(value === current));
+                b.onclick = () => {
+                    render(value);
+                    onSelect(value);
+                };
+                return b;
+            })
+        );
+    render(selected);
+    return group;
+}
+
+// The toolbar uses SciTrader's UI colours: its --st-ui-* CSS variables, with the stylesheet's defaults
+const toolbarStyle: Partial<CSSStyleDeclaration> = {
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: "8px 16px",
+    padding: "8px",
+    background: "var(--st-ui-background, #2b2839)",
+    borderBottom: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    color: "var(--st-ui-text-muted, #9da2bc)",
+    fontSize: "13px",
+};
+const buttonStyle = (active = false): Partial<CSSStyleDeclaration> => ({
+    padding: "4px 10px",
+    border: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    borderRadius: "6px",
+    background: active ? "var(--st-ui-selection, #6c63ff)" : "var(--st-ui-surface, #373447)",
+    color: "var(--st-ui-text, #ffffff)",
+    font: "inherit",
+    fontSize: "13px",
+    cursor: "pointer",
 });
 
-// CSV text already in memory works the same way:
-// new CSVExchange({ csv: "Date,Open,High,Low,Close,Volume\n2024-01-01,100,104,99,103,1200", symbol: "DEMO" }, { name: "InlineCSV" });
+createChart();

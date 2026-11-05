@@ -41,45 +41,48 @@ Decided (2026-11-05):
 
 Pages:
 
-- [ ] **Data Sources overview**
+- [x] **Data Sources overview**
   - A Mermaid diagram of the flow: `IRemoteExchange` → `registerExchange` wraps it in an `ExchangeClient` with a range cache (`DataCacheLayer`) and an `ICandleStore` → `IExchangeProvider` → the chart's data feeds → `DataManager` → studies.
   - A table of every built-in source: Coinbase, Binance, CSV, the JSON exchange (SCT-932), custom.
   - Registering an exchange: `defaultExchangeProvider.registerExchange(exchange, store)`.
   - A private provider for one chart: `createExchangeProvider()` and the chart's `services`.
   - The `IExchangeProvider` and `IExchangeClient` TSDoc.
-- [ ] **Coinbase and Binance** (`CoinbaseExchange`, `BinanceExchange`)
+- [x] **Coinbase and Binance** (`CoinbaseExchange`, `BinanceExchange`)
   - Per exchange: symbol format (`BTC-USD`, `BTCUSDT`), supported intervals, candles per request, live candle stream, trades, tickers, and Coinbase's sparkline stream.
   - Caveats: the listing-date probe and slow first draw; Binance geo-blocking; Coinbase has no order book source (SCT-918).
   - A Coinbase live pen; Binance as code only.
-- [ ] **CSV Data** (`CSVExchange`)
+- [x] **CSV Data** (`CSVExchange`)
   - CSV text, or `CSVExchange.fromUrl`; parse options (column mapping, time units, symbol column); `registerCSVExchange`; `createCSVServices`.
   - Resampling to coarser intervals, `alignToNow`, and the limits (no live data).
   - The parsing utilities: `parseCandleCsv`, `inferInterval`, `resampleCandles`.
   - Live pens using the sample data.
 - [ ] **Loading Data from JSON or a JavaScript Object** (new; depends on SCT-932)
+  - Written for now with `CSVExchange` (JSON converted to CSV text). Rewrite with the SCT-932 exchange when it ships.
   - The JSON exchange and its shapes, and loading from your own API with `fetch`.
   - Simulated live updates, if SCT-932 adds them.
-- [ ] **Building a Custom Exchange** (`IRemoteExchange`)
+- [x] **Building a Custom Exchange** (`IRemoteExchange`)
   - Every member, required and optional; the candle, trade and ticker types (`ExchangeRestCandle`, `SciTraderCandle`, `SciTraderTrade`, `SciTraderTicker`).
   - `candleLimit`, `getListingDate`, `getSupportedIntervals`, `hasCompleteCandleStream`, `getSparklineCandleStream`, and cancelling requests with `AbortSignal`.
   - Rule for live streams: each candle's `symbol` must be the string the caller asked for.
   - Symbol normalising, and the symbol catalogue (`getSymbolCatalog`).
   - Live example: a Kraken REST and WebSocket adapter. Check Kraken's CORS for browser use, and its terms.
-- [ ] **Candle Stores and Caching** (`ICandleStore`, `IdbCandleStore`, `NullCandleStore`)
+- [x] **Candle Stores and Caching** (`ICandleStore`, `IdbCandleStore`, `NullCandleStore`)
   - `idbPriceStore`: IndexedDB; per-interval caps (`getIntervalCap`, `setIntervalCap`, `resetIntervalCaps`); eviction and `subscribeToEvictions`; listing-date floors; known empty ranges; `clearAll`.
   - `nullCandleStore`, and `isCandleCacheEnabled()`, as the SciTraderApp uses them.
   - How the range cache uses the store; writing your own store, e.g. one backed by your server.
-  - A warning about the IndexedDB `VersionError` across pages on the same origin, and its planned fallback (SCT-917).
-- [ ] **Data Manager and Data Feeds** (public flow only)
+  - A warning about the IndexedDB `VersionError` across pages on the same origin, and its planned fallback (SCT-917). Update the warning when SCT-917 ships.
+- [x] **Data Manager and Data Feeds** (public flow only)
   - `DataManager`, `DataSourceId`, `EDataSourceStringId`, `DEFAULT_FEED_ID`; the feed types (`EDataFeedType`: OHLCV, realtime, trades, order book).
   - `EDataUpdateType` (Replace, Append, Insert, Update, Evict), and how studies subscribe and recalculate.
   - How history loads: period, warm-up, panning back, the memory cap.
   - Becomes the single home for the `IDataManager` and `EDataUpdateType` TSDoc, which is now on Creating Custom Studies; link to it from there.
-- [ ] **Order Book Data** (`IOrderBookSource`)
+- [x] **Order Book Data** (`IOrderBookSource`)
   - Snapshots, updates and heatmap tiles; `setOrderBookSources`, `getOrderBookSource`.
   - The studies and the Market Depth panel that use it; the Coinbase `level2` source from the Market Depth example.
-- [ ] **Replace the four old examples** (`dataSources_LiveExchanges`, `dataSources_CSV`, `dataSources_CustomExchange`, `dataSources_OrderBook`), which have screenshots instead of live pens and use Binance, with standalone live pens.
-- [ ] **Cross-links:** Sparklines (`WatchListDataManager`), Market Depth, Save and Restore, Chart Config (`exchangeName`, `services`), Changing the Symbol (`createDataFeed`), Periods (the fetch plan).
+- [x] **Replace the four old examples** (`dataSources_LiveExchanges`, `dataSources_CSV`, `dataSources_CustomExchange`, `dataSources_OrderBook`), which have screenshots instead of live pens and use Binance, with standalone live pens.
+- [ ] **Cross-links:** done for Sparklines, Market Depth, Chart Config, Changing the Symbol, Periods, Studies, Creating Custom Studies and the Overview. Still to do: Save and Restore (what of the data source is saved: `exchangeName`, symbol, interval).
+  - Was: Sparklines (`WatchListDataManager`), Market Depth, Save and Restore, Chart Config (`exchangeName`, `services`), Changing the Symbol (`createDataFeed`), Periods (the fetch plan).
+- [ ] **Sample data URLs:** the examples load `static/financial-charts/data/` from jsDelivr pinned to `@v6.x-scitrader`. Switch the `SAMPLE_DATA` constant in every `dataSources_*` example (and the CodePens) to `@master` once this branch is merged. The CSV and JSON pens fail until the files are pushed.
 - [ ] **SEO:** an Ahrefs pass for searches such as "load JSON into a candlestick chart", "CSV candlestick chart JavaScript", "real-time crypto chart", "Coinbase/Binance/Kraken API chart". Shape page titles and headings to them, as for the indicator pages.
 
 ## 5. Expand Saving and Restoring

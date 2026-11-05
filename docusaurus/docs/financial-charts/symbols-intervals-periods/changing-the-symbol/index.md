@@ -110,7 +110,7 @@ The chart doesn't hold candles itself. It draws its **default data feed**: an ob
 6. **Live updates start.** The feed subscribes to `IRemoteExchange.getCandleStream(symbol, interval)`, an RxJS `Observable` of the current candle, and updates the last candle (or appends a new one) as it changes. Exchanges without live data return `EMPTY`.
 7. **Older data loads on demand.** When the user pans left past the loaded data, the chart fetches the next page of older candles the same way, from the cache first, then the exchange.
 
-So the same `setSymbol` call works whether the data comes from Binance, a CSV file or your own server: what changes is the `IRemoteExchange` registered under `exchangeName`. To connect your own source, see [A custom data source](/financial-charts/data-sources/#a-custom-data-source).
+So the same `setSymbol` call works whether the data comes from Binance, a CSV file or your own server: what changes is the `IRemoteExchange` registered under `exchangeName`. To connect your own source, see [Building a Custom Exchange](/financial-charts/data-sources/custom-exchange/).
 
 To find out what the chart is currently showing, read the default feed:
 
@@ -127,7 +127,7 @@ console.log(feed.exchangeName, feed.symbol, feed.interval); // e.g. "Coinbase" "
 
 `setSymbol` changes the symbol, and `changeInterval` changes the interval. Calling one after the other works, but the chart loads candles twice: once for the new symbol at the old interval, then again at the new interval. `createDataFeed` does both in one step, with one load.
 
-It does this by creating a new **data feed**: the object that loads one exchange's candles for one symbol at one interval, and keeps them up to date. The chart draws its candles from its **default** feed, so making the new feed the default switches the chart to it. `setSymbol` does exactly this, with the current interval.
+It does this by creating a new **data feed**: the object that loads one exchange's candles for one symbol at one interval, and keeps them up to date. See [Data Manager and Data Feeds](/financial-charts/data-sources/data-manager-and-data-feeds/) for how feeds fill the chart's data. The chart draws its candles from its **default** feed, so making the new feed the default switches the chart to it. `setSymbol` does exactly this, with the current interval.
 
 ```ts
 createDataFeed(
@@ -172,7 +172,7 @@ console.log(feed.id, feed.symbol, feed.interval);
 
 - **`isDefault: true`** replaces the chart's default feed. The old feed stops, as described in [What happens when the symbol changes](#what-happens-when-the-symbol-changes), and the chart raises the same events as `setSymbol`.
 - **`isDefault: false`** adds a feed beside the default one. To remove it later, pass its `id` to `chart.removeDataFeed(id)`.
-- **`EDataFeedType.OrderBook`** resolves with `undefined` when the exchange has no order-book source. See [Order-book data](/financial-charts/data-sources/#order-book-data).
+- **`EDataFeedType.OrderBook`** resolves with `undefined` when the exchange has no order-book source. See [Order Book Data](/financial-charts/data-sources/order-book-data/).
 
 <details>
 <summary>The IDataFeed interface and EDataFeedType enum, with their TSDoc</summary>

@@ -208,7 +208,7 @@ type TPeriod = (typeof EPeriod)[keyof typeof EPeriod];
 
 ## How a Period Loads Data
 
-When the period needs more candles than the chart has, `setPeriod` fetches them in one request, sized for the period. It reads the candle store first, and asks the exchange only for what is missing (see [What happens when the symbol changes](/financial-charts/symbols-intervals-periods/changing-the-symbol/#what-happens-when-the-symbol-changes)). It fetches enough candles to fill the period, plus two extras off the left edge of the view:
+When the period needs more candles than the chart has, `setPeriod` fetches them in one request, sized for the period. It reads the [candle store](/financial-charts/data-sources/candle-stores-and-caching/) first, and asks the exchange only for what is missing (see [What happens when the symbol changes](/financial-charts/symbols-intervals-periods/changing-the-symbol/#what-happens-when-the-symbol-changes)). It fetches enough candles to fill the period, plus two extras off the left edge of the view:
 
 - **A pan-back buffer**, so a little panning doesn't need another fetch. Its size is `periodBufferRatio`, a fraction of the period's candles: the default `0.2` adds 20%.
 - **A warm-up for the indicators**, so e.g. a 200-candle moving average is already valid at the left edge. Its size is the largest warm-up any attached study needs, times `warmupMultiplier`.
@@ -398,3 +398,5 @@ function maxAllowedPeriodForInterval(interval: CandleInterval): TPeriod;
 
 - [Changing the interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)
 - [Toolbar controls](/financial-charts/symbols-intervals-periods/toolbar-controls/)
+- [Data Manager and Data Feeds](/financial-charts/data-sources/data-manager-and-data-feeds/#how-history-loads): how history loads, end to end
+- [Candle Stores and Caching](/financial-charts/data-sources/candle-stores-and-caching/)

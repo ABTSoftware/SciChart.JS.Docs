@@ -10,7 +10,7 @@ keywords: ["SciTrader", "SciTrader.js", "MarketDepthPanel", "MarketDepthView", "
 
 `MarketDepthPanel` shows the live book as a price ladder: asks above the spread, bids below, each rung with its amount and the running total, and a depth bar behind it. It is drawn with SciChart, so it keeps up with a fast book. The header has the symbol and a ± stepper for the price grouping, and pointing at a rung shows what sweeping the book to that price would cost (see [Slippage Readout](#slippage-readout)).
 
-The panel reads the book from an **`IOrderBookSource`**: an object that gives it a snapshot of the book and a live stream of updates for a symbol. The examples below implement a small one for Coinbase's public order book, which needs no API key. To feed it from your own server or exchange, implement the same interface; see [Order-book data](/financial-charts/data-sources/#order-book-data).
+The panel reads the book from an **`IOrderBookSource`**: an object that gives it a snapshot of the book and a live stream of updates for a symbol. The examples below implement a small one for Coinbase's public order book, which needs no API key. To feed it from your own server or exchange, implement the same interface; see [Order Book Data](/financial-charts/data-sources/order-book-data/).
 
 ## TypeScript Example: Market Depth with Coinbase Order Book Data
 
@@ -475,7 +475,7 @@ interface IBookLevel {
 
 </details>
 
-[Order-book data](/financial-charts/data-sources/#order-book-data) covers the whole interface, including the heatmap, with a randomised source to adapt.
+[Order Book Data](/financial-charts/data-sources/order-book-data/) covers the whole interface, including the recorded book the heatmap studies read.
 
 ## Styling the Market Depth Panel {#styling}
 
@@ -630,5 +630,5 @@ These are the stylesheet's rules for them, as a starting point for your own. Ove
 
 #### See also
 
-- [Order-book data](/financial-charts/data-sources/#order-book-data)
+- [Order Book Data](/financial-charts/data-sources/order-book-data/)
 - [Colour Picker](/financial-charts/ui-components/colour-picker/)

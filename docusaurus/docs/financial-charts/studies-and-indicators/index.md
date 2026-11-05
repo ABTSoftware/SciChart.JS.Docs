@@ -90,7 +90,7 @@ See [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-typ
 
 ### Order Book Studies
 
-These read an order-book feed, so they need an order-book data source (`IOrderBookSource`) registered for the chart's exchange. The built-in Coinbase and Binance exchanges don't provide one; see [Order-book data](/financial-charts/data-sources/#order-book-data).
+These draw the order book over time, so they need an order book source (`IOrderBookSource`) registered for the chart's exchange, with the book's history recorded on a server. The built-in Coinbase and Binance exchanges don't provide one, and a source with only the live book draws nothing here; see [Order Book Data](/financial-charts/data-sources/order-book-data/#the-book-over-time-heatmap-tiers).
 
 | Indicator | Draws on | Options (default) |
 | --- | --- | --- |

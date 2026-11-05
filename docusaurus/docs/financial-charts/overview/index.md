@@ -207,7 +207,7 @@ Yes. `scichart-scitrader-react` provides React components such as `<SciFinanceCh
 
 ### Which data sources can SciTrader.js trading charts use?
 
-Live Binance and Coinbase connectors are built in, along with a CSV connector. Any other feed (stocks, FX, futures or your own backend) plugs in by implementing `IRemoteExchange`. See [A custom data source](/financial-charts/data-sources/#a-custom-data-source).
+Live Binance and Coinbase connectors are built in, along with a CSV connector. Any other feed (stocks, FX, futures or your own backend) plugs in by implementing `IRemoteExchange`. See [Building a Custom Exchange](/financial-charts/data-sources/custom-exchange/).
 
 ### Which bundlers does SciTrader.js work with?
 

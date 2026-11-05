@@ -1,283 +1,288 @@
 ---
 sidebar_position: 6
 sidebar_label: Data Sources
-title: "Data Sources: Binance, Coinbase, CSV & Custom Feeds | SciTrader.js"
-description: "Connect SciTrader.js trading charts to live Binance and Coinbase market data, CSV files, order-book data or your own custom data feed."
-keywords: ["SciTrader", "SciTrader.js", "Binance chart JavaScript", "Coinbase chart", "real-time trading chart data", "custom market data feed"]
+title: "Data Sources: Live, CSV, JSON and Custom Market Data for Financial Charts | SciTrader.js"
+description: "Where SciTrader.js trading charts get their candles: the built-in Coinbase and Binance exchanges, CSV and JSON OHLCV data, your own exchange adapter, candle caching and order book data, for JavaScript and React financial charts."
+keywords: ["SciTrader", "SciTrader.js", "financial chart data source", "OHLCV data", "candlestick chart data", "Coinbase API chart", "Binance API chart", "real-time crypto chart", "custom data feed", "React financial chart"]
 ---
 
-# Data sources
+# Data Sources
 
-A chart asks for data by **exchange name**, for example `exchangeName: "Binance"`. An **exchange** is any object implementing `IRemoteExchange`. You register it once, with an `IExchangeProvider`, under its `name`.
+A SciTrader chart asks for its candles by **exchange name**, e.g. `exchangeName: "Coinbase"`, and a symbol and interval. An **exchange** is any object that implements `IRemoteExchange`: it answers simple requests such as "the 1h candles for BTC-USD between these times", and streams live candles. You register it once, by name, and every chart, watchlist and symbol picker can use it.
 
-The SDK wraps each registered exchange in its own client. The client provides:
+The SDK has exchanges for Coinbase, Binance and CSV data built in, and you can write one for any market data API.
 
--   an in-memory candle cache, plus optional persistent caching;
--   paging back through history in chunks;
--   stopping at the first candle ever listed.
+## How Data Reaches the Chart
 
-An exchange only has to answer simple requests.
+```mermaid
+flowchart TB
+    Exchange["IRemoteExchange<br/>Coinbase, Binance, CSV or your own"] -- "registerExchange(exchange, store)" --> Client["ExchangeClient<br/>paging, in-memory range cache"]
+    Store["ICandleStore<br/>idbPriceStore (IndexedDB) or nullCandleStore"] <--> Client
+    Client --> Provider["IExchangeProvider<br/>defaultExchangeProvider, by exchange name"]
+    Provider --> Feeds["The chart's data feeds<br/>history, live candles, trades"]
+    Feeds --> DM["DataManager<br/>one column per value"]
+    DM --> Studies["Studies<br/>price, volume, indicators"]
+    Book["IOrderBookSource<br/>setOrderBookSources"] --> Depth["Market depth and order book studies"]
+```
 
-| Source               | Class                                                    | Live updates      | Order book             |
-| -------------------- | -------------------------------------------------------- | ----------------- | ---------------------- |
-| Binance              | `BinanceExchange`                                        | yes               | no                     |
-| Coinbase             | `CoinbaseExchange`                                       | yes               | no                     |
-| CSV files            | `CSVExchange`                                            | no                | no                     |
-| Your own             | implement `IRemoteExchange`                              | if you provide it | via `IOrderBookSource` |
+1. **You register an exchange** with `registerExchange(exchange, store)`. The SDK wraps it in a client that pages through long ranges, keeps the candles it has in memory, and stores them in the **candle store**, e.g. IndexedDB, so a reload draws from the cache. See [Candle Stores and Caching](/financial-charts/data-sources/candle-stores-and-caching/).
+2. **A chart asks the provider** for the exchange by name, and its **data feeds** load the candles for its symbol, interval and period, then stream live updates.
+3. **The feeds write the candles into the chart's data manager**, as columns of open, high, low, close and volume. **Studies** read those columns, and write their own. See [Data Manager and Data Feeds](/financial-charts/data-sources/data-manager-and-data-feeds/).
 
-## Registering an exchange
+Order books are separate: an `IOrderBookSource` per exchange, which the Market Depth panel and the order book studies read. See [Order Book Data](/financial-charts/data-sources/order-book-data/).
+
+## Every Built-in Data Source
+
+| Data source | Class | History | Live updates |
+| --- | --- | --- | --- |
+| [Coinbase](/financial-charts/data-sources/coinbase-and-binance/) | `CoinbaseExchange` | Yes, back to listing | Yes: candles, trades, tickers |
+| [Binance](/financial-charts/data-sources/coinbase-and-binance/) | `BinanceExchange` | Yes, back to listing | Yes: candles, trades, tickers |
+| [CSV files or text](/financial-charts/data-sources/csv-data/) | `CSVExchange` | The file's rows, at every coarser interval | No |
+| [JSON or JavaScript objects](/financial-charts/data-sources/json-data/) | `CSVExchange`, for now | The objects | No |
+| [Any market data API](/financial-charts/data-sources/custom-exchange/) | your own `IRemoteExchange` | As the API allows | If the API streams |
+| [Order books](/financial-charts/data-sources/order-book-data/) | your own `IOrderBookSource` | Recorded heatmap history, if you have it | Yes: the live book |
+
+:::tip
+The examples in this section that don't need live data use real price history for BTCUSDT, ETHUSDT and SOLUSDT: 90 days of hourly and 4 years of daily candles. The files are on the [CSV Data](/financial-charts/data-sources/csv-data/#sample-data) page; use them for your own experiments.
+:::
+
+## Registering an Exchange {#registering-an-exchange}
+
+Register each exchange once, at app startup, with the candle store that caches its candles:
 
 ```ts
-import { defaultExchangeProvider, idbPriceStore } from "scichart-scitrader";
+import { CoinbaseExchange, defaultExchangeProvider, idbPriceStore } from "scichart-scitrader";
 
-defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
+defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
+
+// Any chart can now ask for it by name
+await SciFinanceChartPanel.create(container, { exchangeName: CoinbaseExchange.name, symbol: "BTC-USD", … });
 ```
 
 `defaultExchangeProvider` is the registry that charts, the watchlist and the symbol picker use unless told otherwise. It starts empty.
 
 The second argument is the **candle store**, which decides what is cached between sessions:
 
--   `idbPriceStore` persists candles in IndexedDB. A reload draws from the cache and fetches only newer candles. Use it for real market data.
--   `nullCandleStore` persists nothing, so every page load starts cold (the in-session memory cache still works). Use it for data that isn't stable between sessions, such as generated data, or CSV data shifted to the current date.
+- `idbPriceStore` keeps candles in IndexedDB. A reload draws from the cache and fetches only newer candles. Use it for real market data.
+- `nullCandleStore` keeps nothing, so every page load starts cold; the in-memory cache still works within a session. Use it for data that changes between loads, such as generated data, or CSV data moved to the current date.
 
-### Keeping an exchange private to a chart
+See [Candle Stores and Caching](/financial-charts/data-sources/candle-stores-and-caching/) for both, and for writing your own.
 
-To use an exchange in one chart without registering it globally, give the chart its own services:
+## Keeping an Exchange Private to a Chart {#keeping-an-exchange-private-to-a-chart}
+
+To use an exchange in one chart without registering it for every chart, give the chart a provider of its own, through its `services`:
 
 ```ts
-import { createExchangeProvider, DataFeedManager } from "scichart-scitrader";
+import { createExchangeProvider, DataFeedManager, nullCandleStore } from "scichart-scitrader";
 
-const provider = createExchangeProvider();
+const provider = createExchangeProvider(); // an empty registry of this chart's own
 provider.registerExchange(myExchange, nullCandleStore);
 
 await SciFinanceChartPanel.create(container, {
     exchangeName: myExchange.name,
     // …
-    services: { dataFeedManager: new DataFeedManager(provider) },
+    services: { dataFeedManager: new DataFeedManager(provider) }, // the chart's data comes from `provider`
 });
 ```
 
-The symbol picker (`getSymbolCatalog`) always reads `defaultExchangeProvider`, so a privately registered exchange won't appear in it.
+For CSV data, `createCSVServices(exchange)` builds the same services for you; see [CSV Data](/financial-charts/data-sources/csv-data/).
 
-## Binance and Coinbase
+:::note
+The symbol picker (`getSymbolCatalog`) always reads `defaultExchangeProvider`, so a privately registered exchange doesn't appear in it.
+:::
 
-```ts
-defaultExchangeProvider.registerExchange(BinanceExchange, idbPriceStore);
-defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
+## Reading Data from a Registered Exchange: IExchangeClient
 
-await SciFinanceChartPanel.create(container, {
-    exchangeName: CoinbaseExchange.name, // name="Coinbase" matches the built-in CoinbaseExchange
-    symbol: "BTC-USD", // Binance: "BTCUSDT"
-    interval: CandleInterval.ONE_MINUTE,
-    period: "1H",
-    studies: [new OHLCStudy(), new VolumeStudy()],
-});
-```
-
--   **How data arrives:** history over REST, then the latest candle updated over the exchange's websocket.
--   **Keys:** neither connector needs an API key.
--   **Region:** Binance refuses connections from some regions, including the US (HTTP 451).
--   **Symbol formats:** each exchange writes symbols differently. `mapSymbol("BTCUSDT", "Binance", "Coinbase")` returns `"BTC-USD"`.
--   **Intervals:** Coinbase supports fewer intervals than Binance; see `getSupportedIntervals()`.
-
-<CenteredImageWrapper src={require("../_examples/dataSources_LiveExchanges/screenshot.png").default} title="Binance and Coinbase (live)" />
-
-<CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_LiveExchanges/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/dataSources_LiveExchanges/react.tsx
-    ```
-</CodeSnippetBlock>
-
-## CSV data
-
-`CSVExchange` charts candles from CSV text: your own historical data, demo data, test fixtures.
+`provider.getExchange(name)` returns the registered exchange's **client**, an `IExchangeClient`. Charts use it; your own UI can too, e.g. for a price ticker or a table of candles. Its requests go through the same cache:
 
 ```ts
-import { CSVExchange, registerCSVExchange } from "scichart-scitrader";
+const coinbase = defaultExchangeProvider.getExchange("Coinbase");
 
-const csv = await CSVExchange.fromUrl("data/crypto-1h.csv", { name: "MyCSV" });
-registerCSVExchange(defaultExchangeProvider, csv);
+// Historical candles: times in milliseconds; prices as strings, as exchanges send them
+const candles = await coinbase.getCandles("BTC-USD", CandleInterval.ONE_HOUR, Date.now() - 86_400_000, Date.now());
 
-await SciFinanceChartPanel.create(container, {
-    exchangeName: csv.name, // name="MyCSV", set by fromUrl above
-    symbol: "SOLUSDT",
-    interval: CandleInterval.FOUR_HOURS, // resampled from the file's hourly rows
-    studies: [new OHLCStudy(), new VolumeStudy()],
-});
+// Live data, as RxJS Observables: unsubscribe when done
+const subscription = coinbase.getTickerStream("BTC-USD").subscribe((ticker) => console.log(ticker.curDayClose));
+subscription.unsubscribe();
 ```
 
-### File format
+| IExchangeClient member | What it gives |
+| --- | --- |
+| `getCandles(symbol, interval, start, end)` | Historical candles, through the cache |
+| `getCandleStream`, `getRealtimeCandleStream` | Live candles |
+| `getTrades`, `getTradeStream` | Recent trades, and live trades |
+| `getTickerStream`, `getAllTickerStream` | Live 24-hour tickers: price, change, volume |
+| `getInstruments()` | Every symbol the exchange trades |
+| `getSupportedIntervals()` | The intervals it serves, which the interval pickers offer |
+| `getListingDate(symbol, interval)` | Where its history starts |
 
-One row per candle. The header names the columns, in any order:
-
-```
-symbol,time,open,high,low,close,volume
-BTCUSDT,2026-07-01 12:00,58622.02,58676,58326,58538.01,1716.61
-```
-
-**Columns**
-
--   **Found automatically** by their usual names:
-    -   time: `time`, `timestamp`, `date`, `datetime`, `open_time`
-    -   prices and volume: `open`, `high`, `low`, `close` (or `adj close`), `volume`; single letters `o`, `h`, `l`, `c`, `v` also work
-    -   optional: `trades`, `symbol`
--   **Mapped by hand** for anything else, by header name or column index: `columns: { time: "Date", close: 4 }`.
--   **Headerless files**: pass `hasHeader: false`. The columns are then read as `time, open, high, low, close, volume`.
-
-**Symbols**
-
--   A `symbol` column lets one file hold several symbols.
--   Otherwise, give each file's symbol explicitly: `{ url, symbol: "AAPL" }`.
-
-**Time**
-
--   Epoch seconds, epoch milliseconds or date strings.
--   Dates without a timezone are read as **UTC**.
--   Set `timeUnit` if the automatic detection guesses wrong.
-
-**Rows**
-
--   Other delimiters: `delimiter: ";"`.
--   Quoted fields, and numbers with thousands separators (`"1,234.5"`), are handled.
--   Rows that can't be parsed (blank prices, a trailing summary line) are skipped.
-
-### Intervals
-
-The exchange works out a file's interval from its row spacing; pass `interval` if it can't. It serves that interval **and every coarser interval made of whole candles**, resampled on first request. An hourly file also serves 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w and 1M.
-
-Buckets follow exchange conventions: weeks start on Monday, and months are calendar months. When several files cover one symbol, each interval comes from an exact match if there is one. Otherwise it is resampled from the coarsest file that divides it. For example, an hourly file and a daily file together give detailed intraday charts and long daily history.
-
-### Dates move to now
-
-The chart loads the candles leading up to _now_, so a file that ended last year would show nothing. By default `CSVExchange` moves each series forward so its last candle is the current one. It moves by whole candles, so every candle stays on its interval boundary; prices are untouched.
-
--   Pass `alignToNow: false` for data that is already current.
--   Pass a timestamp to align to a fixed moment, for repeatable screenshots and tests.
-
-Because the dates change with every load, register CSV data with `nullCandleStore`, never `idbPriceStore`. `registerCSVExchange` does this for you. It also registers a symbol normalizer, so the symbol picker can list the file's symbols.
-
-### Limits
-
--   **No live updates.** The candle stream is empty. The ticker stream emits one 24-hour summary per symbol, computed from the data, so a watchlist has prices to show.
--   **Gaps.** The SDK's calendar runs 24/7, so weekends and holidays in equity data show as gaps.
--   **`candleLimit`.** A range longer than `candleLimit` (default 10,000) is loaded in pages, and paging stops at the first gap. Keep it at least as long as your longest series.
-
-<CenteredImageWrapper src={require("../_examples/dataSources_CSV/screenshot.png").default} title="CSV Data" />
-
-<CodeSnippetBlock labels={["TS", "React"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_CSV/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/dataSources_CSV/react.tsx
-    ```
-</CodeSnippetBlock>
-
-## A custom data source
-
-Implement `IRemoteExchange`:
+<details>
+<summary>The IExchangeProvider interface, createExchangeProvider, defaultExchangeProvider and ISciFinanceChartServices, with their TSDoc</summary>
 
 ```ts
-import { EMPTY, Observable } from "rxjs";
-import { IRemoteExchange } from "scichart-scitrader";
-
-class MyExchange implements IRemoteExchange {
-    readonly name = "MyExchange";
-    candleLimit = 1000; // most candles per getCandles call
-    readonly hasCompleteCandleStream = true;
-
-    async getInstruments() {
-        return ["ALPHA", "BETA"];
-    }
-    getSupportedIntervals() {
-        return [CandleInterval.ONE_MINUTE, CandleInterval.ONE_HOUR, CandleInterval.ONE_DAY];
-    }
-    async getListingDate() {
-        return { openTime: Date.UTC(2024, 0, 1) };
-    }
-
-    // History: candles with start <= openTime <= end, oldest first, at most `limit` from `start`.
-    async getCandles(symbol, interval, start, end, limit) {
-        /* … */
-    }
-
-    // Live: emit the whole current candle whenever it changes. EMPTY for historical-only sources.
-    getCandleStream(symbol, interval): Observable<SciTraderCandle> {
-        /* … */
-    }
-
-    // Trades and tickers feed the trade studies and the watchlist. Return empty if you have none.
-    async getTrades() {
-        return [];
-    }
-    getTradeStream() {
-        return EMPTY;
-    }
-    getTickerStream() {
-        return EMPTY;
-    }
-    getAllTickerStream() {
-        return EMPTY;
-    }
+interface IExchangeProvider {
+    getExchange: (name: string) => IExchangeClient;
+    registerExchange: (exchange: IRemoteExchange, localStore: ICandleStore) => void;
 }
 
-defaultExchangeProvider.registerExchange(new MyExchange(), idbPriceStore);
+/**
+ * Construct a fresh, isolated `IExchangeProvider` registry.
+ *
+ * Each call returns an independent registry — no shared module-level state.
+ * Apps (`SciTraderApp`, `SciTraderSandbox`) call this once at startup and
+ * register their adapters (`BinanceExchange`, future `CoinbaseExchange`, …)
+ * into the returned instance.
+ */
+const createExchangeProvider: () => IExchangeProvider;
+
+/**
+ * Shared default registry, **empty by default**.
+ *
+ * Bootstrap responsibility: `SciTraderApp` and `SciTraderSandbox` register
+ * `BinanceExchange` into this instance at startup. Library consumers that
+ * read `defaultExchangeProvider.getExchange("Binance")` rely on that
+ * registration having run.
+ *
+ * Tests that need isolation should call {@link createExchangeProvider}
+ * directly instead of mutating this shared instance.
+ */
+const defaultExchangeProvider: IExchangeProvider;
+
+/** Services shared across all panes in a SciFinanceChart. */
+interface ISciFinanceChartServices {
+    dataManager?: IDataManager;
+    dataFeedManager?: IDataFeedManager;
+    /**
+     * Per-pane init-phase emitter (`"surface"` → `"configured"` → `"data"`).
+     * Pass an emitter when callers need to subscribe *during* init — events on
+     * the returned `SciFinanceChart` only become subscribable after
+     * `createWithStudies` resolves, by which point all init-time phase advances
+     * have already fired. When omitted, the chart default-creates one,
+     * accessible via {@link SciFinanceChart.progress}.
+     */
+    progress?: PaneProgressEmitter;
+}
 ```
 
--   **Candles.** `getCandles` returns `ExchangeRestCandle`s:
+</details>
 
-    -   timestamps (`openTime`, `closeTime`) are epoch **milliseconds**, with `closeTime = openTime + interval - 1`;
-    -   prices and volume are **strings**.
-
-    It is the only method a historical chart needs. The SDK pages through long ranges itself, in chunks of `candleLimit`.
-
--   **The live stream.** `getCandleStream` emits `SciTraderCandle`s for the forming candle. Echo each `symbol` exactly as it was requested. Set `hasCompleteCandleStream = true` when each emission is the full candle. Otherwise, the SDK rebuilds the live candle from `getTradeStream`.
--   **The listing floor.** `getListingDate` gives the first candle, so the chart stops loading when the user pans back to it. Return `null` if you don't know it.
--   **rxjs.** Build Observables with the app's single copy of rxjs (7.5.5 or later), the one the SDK uses as its peer dependency. Two copies of rxjs in one app do not interoperate.
--   **Other exchanges' helpers.** Registries keyed by exchange name, such as `intervalMaps` and `symbolNormalizers`, only know the built-in exchanges. A custom exchange doesn't need them, but the symbol picker needs a `symbolNormalizers[name]` entry to list its instruments.
-
-<CenteredImageWrapper src={require("../_examples/dataSources_CustomExchange/screenshot.png").default} title="Custom Data Source" />
-
-The **Custom Data Source** example is a complete exchange that generates prices from a formula, with live updates twice a second.
-
-<CodeSnippetBlock labels={["TS", "React", "SyntheticExchange.ts"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_CustomExchange/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/dataSources_CustomExchange/react.tsx
-    ```
-    ```ts showLineNumbers file=../_examples/dataSources_CustomExchange/SyntheticExchange.ts
-    ```
-</CodeSnippetBlock>
-
-## Order-book data
-
-The order-book studies (`OrderBookHeatmapStudy`, `OrderBookImbalanceStudy`) and the market-depth components read an `IOrderBookSource`, registered per exchange name:
+<details>
+<summary>The IExchangeClient interface, with its TSDoc</summary>
 
 ```ts
-import { setOrderBookSources } from "scichart-scitrader";
-
-setOrderBookSources(new Map([["MyExchange", myOrderBookSource]]));
+interface IExchangeClient {
+    /**
+     * Candles this client will fetch in ONE request, when it knows. Optional: replay and mock
+     * clients do not page.
+     *
+     * Read by the chart so the historical-load coordinator can size a backward spawn to a
+     * whole page instead of a fixed 1,000 candles. Sizing the spawn LARGER than this would
+     * make `getCandlesInternal` paginate it internally into several sequential round trips,
+     * which is the opposite of the intent — hence taking the real figure rather than a
+     * constant.
+     */
+    readonly batchSize?: number;
+    name: string;
+    /** List of all trading-status symbols on the exchange (provider-native shape). */
+    getInstruments: () => Promise<string[]>;
+    getCandles: (symbol: string, interval: CandleInterval, start?: number, end?: number, endInclusive?: boolean, 
+    /**
+     * Optional per-call cap on candles returned by the underlying remote-exchange API.
+     * When set, the call bypasses the cache layer (limited fetches are typically
+     * one-off transient queries like watchlist sparklines where caching has no value).
+     * When omitted, the client's default `candleLimit` is used and the cache layer applies.
+     */
+    limit?: number, 
+    /**
+     * optional cancellation signal. Propagated to the
+     * cache layer and remote exchange via {@link abortable}.
+     */
+    signal?: AbortSignal) => Promise<ExchangeRestCandle[]>;
+    /**
+     * Live candles for the requested symbol(s).
+     *
+     * **Adapter contract.** The stream must emit candles for the requested symbol(s) and no
+     * others, and each candle's `symbol` must be the same string the caller passed in
+     * (compared case-insensitively downstream). An adapter that multiplexes several
+     * subscriptions over one transport owns the demultiplexing — a shared connection is an
+     * implementation detail of the adapter, never of its callers.
+     */
+    getCandleStream: (symbol: string | string[], interval: CandleInterval) => Observable<SciTraderCandle>;
+    /** Single-symbol live candles. Same adapter contract as {@link getCandleStream}. */
+    getRealtimeCandleStream: (symbol: string, interval: CandleInterval) => Observable<SciTraderCandle>;
+    /**
+     * Optional snapshot+live streaming candle source — present only when the underlying remote
+     * exchange implements {@link IRemoteExchange.getSparklineCandleStream} (Coinbase Advanced
+     * Trade WS). Delegated straight through (no cache layer). Used by the watchlist sparklines.
+     */
+    getSparklineCandleStream?: (symbols: string[], interval: CandleInterval, 
+    /**
+     * How many historical candles to seed each symbol with. A source that cannot honour
+     * the requested `interval` will not honour this count as a duration either, so treat
+     * it as a depth hint and trim the result by timestamp — see `ICandleBatch.interval`.
+     */
+    snapshotCandles?: number) => Observable<ICandleBatch>;
+    getTrades: (symbol: string, start?: number, end?: number, limit?: number) => Promise<SciTraderTrade[]>;
+    getTradeStream(symbol: string): Observable<SciTraderTrade>;
+    getTickerStream(symbol: string | string[]): Observable<SciTraderTicker>;
+    /**
+     * Multiplexed ticker stream emitting batches of `SciTraderTicker[]`.
+     *
+     * Binance: subscribes to `!ticker@arr` (one stream → every market). `productIds` is ignored.
+     * Coinbase: requires `productIds` (no "all markets" channel exists); subscribes to the
+     * `ticker` WebSocket channel with that product list. Calling without `productIds` on
+     * Coinbase yields `EMPTY`.
+     */
+    getAllTickerStream(productIds?: string[]): Observable<SciTraderTicker[]>;
+    /**
+     * drop the cache-layer entry for `(symbol, interval)` so the
+     * next `getCandles` call re-seeds from IDB and starts a fresh
+     * `knownEmptyRanges` registry. Called from `DataFeedBase.change` on
+     * symbol/interval swap. Safe to call when no entry exists.
+     */
+    invalidateCache?(symbol: string, interval: CandleInterval): void;
+    /**
+     * Read the persisted listing-date floor (open time, ms) for this
+     * `(symbol, interval)` from the underlying local store. Used by
+     * `OHLCVDataFeed.loadInitialData` to short-circuit the HTTP call
+     * when the value is already cached from a prior session.
+     *
+     * Optional: clients without a local store (in-memory mocks,
+     * stubbed exchanges) omit this — callers must tolerate `undefined`.
+     */
+    getEarliestCandleTime?(symbol: string, interval: CandleInterval): Promise<number | undefined>;
+    /**
+     * Persist a discovered listing-date floor (open time, ms) to the
+     * underlying local store. Called by `OHLCVDataFeed.loadInitialData`
+     * on successful `getListingDate` lookup (and by `loadPreviousData` on
+     * lazy floor discovery) so future sessions can short-circuit.
+     *
+     * Optional: clients without a local store omit this.
+     */
+    setEarliestCandleTime?(symbol: string, interval: CandleInterval, time: number): Promise<void>;
+    /**
+     * Forward to the underlying remote exchange's {@link IRemoteExchange.getListingDate}.
+     */
+    getListingDate(symbol: string, interval: CandleInterval, signal?: AbortSignal): Promise<IListingDateResult | null>;
+    /**
+     * Persist externally-sourced candles into the local store. Used by
+     * `OHLCVDataFeed.resolveListingDate` to save the surplus candles a
+     * listing-date probe returned (Binance gets the first 1000 candles
+     * for free with its probe; this method caches them for future
+     * sessions). Optional — clients without a local store omit this.
+     */
+    insertLocalCandles?(symbol: string, interval: CandleInterval, candles: ExchangeRestCandle[]): Promise<void>;
+    /**
+     * Forward to the underlying remote exchange's {@link IRemoteExchange.getSupportedIntervals}.
+     */
+    getSupportedIntervals(): CandleInterval[];
+}
 ```
 
-The source provides these, all keyed by symbol:
+</details>
 
--   snapshots and a live stream of the book, for the market-depth panel;
--   the heatmap's tiers and tiles: resting size per price row, per time bucket;
--   a live depth column for the forming bucket.
+## Where to read next
 
-<CenteredImageWrapper src={require("../_examples/dataSources_OrderBook/screenshot.png").default} title="Order Book (dummy data)" />
-
-The **Order Book (dummy data)** example uses a randomised source (`DummyOrderBookSource`, in the `DummyDataExchange.ts` tab below), a template for adapting a real one.
-
-<CodeSnippetBlock labels={["TS", "React", "DummyDataExchange.ts"]}>
-    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/vanilla.ts
-    ```
-    ```tsx showLineNumbers file=../_examples/dataSources_OrderBook/react.tsx
-    ```
-    ```ts showLineNumbers file=../_examples/dataSources_OrderBook/DummyDataExchange.ts
-    ```
-</CodeSnippetBlock>
-
-### Market depth
-
-`MarketDepthPanel`, and `MarketDepthView` in React, show the live book as a price ladder. They read `getBookSnapshot` and `getBookStream` from the source. [Market Depth](/financial-charts/ui-components/market-depth/) covers them, with live examples on Coinbase's order book.
-
+- [Coinbase and Binance](/financial-charts/data-sources/coinbase-and-binance/): the built-in live exchanges.
+- [CSV Data](/financial-charts/data-sources/csv-data/) and [JSON Data](/financial-charts/data-sources/json-data/): chart your own OHLCV data.
+- [Building a Custom Exchange](/financial-charts/data-sources/custom-exchange/): connect any market data API, with a Kraken example.

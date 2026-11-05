@@ -1,66 +1,163 @@
 import "scichart-scitrader/scitrader.css";
+import { EMPTY, firstValueFrom, Observable } from "rxjs";
 import {
     CandleInterval,
-    ColorPicker,
+    CoinbaseExchange,
     defaultExchangeProvider,
+    getOrderBookSource,
+    IBookSnapshot,
+    IBookUpdate,
+    IDepthColumn,
+    IHeatmapAvailability,
+    IHeatmapTile,
+    idbPriceStore,
+    IOrderBookSource,
     MarketDepthPanel,
-    nullCandleStore,
     OHLCStudy,
-    OrderBookHeatmapStudy,
-    OrderBookImbalanceStudy,
-    SCITRADER_DARK_THEME,
     SciFinanceChartPanel,
     setOrderBookSources,
-    unthemeMarketDepthSettings,
     VolumeStudy,
 } from "scichart-scitrader";
-import { DummyDataExchange, DummyOrderBookSource } from "./DummyDataExchange";
 
-// Candles come from an exchange; the order book from an IOrderBookSource registered under the same
-// exchange name. Both are randomised here (see DummyDataExchange.ts), so the sample runs offline.
-const exchange = new DummyDataExchange();
-const orderBook = new DummyOrderBookSource();
-defaultExchangeProvider.registerExchange(exchange, nullCandleStore);
-setOrderBookSources(new Map([[exchange.name, orderBook]]));
-
-const symbol = "ALPHAUSD";
-
-// <div id="toolbar"></div>
-// <div style="display: flex; height: 600px">
-//     <div id="chart" style="flex: 1"></div>
-//     <div id="depth" style="width: 300px; display: flex"></div>
+// This example expects this HTML:
+// <div style="display: flex; flex-direction: column; height: 100%">
+//     <div id="toolbar"></div>
+//     <div style="display: flex; flex: 1; min-height: 0">
+//         <div id="chart" style="flex: 1; min-width: 0"></div>
+//         <div id="depth" style="width: 340px"></div>
+//     </div>
 // </div>
-const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
-    exchangeName: exchange.name, // name="Dummy", set in DummyDataExchange
-    symbol,
-    interval: CandleInterval.ONE_MINUTE,
-    period: "1H",
-    // The order-book studies need an order-book feed. The chart creates one from the source
-    // registered for the exchange.
-    studies: [
-        new OrderBookHeatmapStudy(), // resting liquidity, painted behind the candles
-        new OHLCStudy(),
-        new VolumeStudy(),
-        new OrderBookImbalanceStudy(), // bid versus ask depth, in its own pane
-    ],
-});
 
-// The live market-depth ladder. Hover a rung to see what sweeping the book to that price would cost.
-const depth = MarketDepthPanel.create(document.getElementById("depth"), { source: orderBook, symbol });
+// Register a data source for the chart's candles, once, at app startup
+defaultExchangeProvider.registerExchange(CoinbaseExchange, idbPriceStore);
 
-// Recolour the ladder's bid and ask prices, as a settings dialog would. Settings are stored
-// theme-neutral: themedSettings shows the colours as drawn under the current theme.
-const toolbar = document.getElementById("toolbar");
-for (const side of ["bid", "ask"] as const) {
-    ColorPicker.create(toolbar, {
-        label: side === "bid" ? "Bid" : "Ask",
-        value: depth.themedSettings.colours[side],
-        onChange: (colour) => {
-            const shown = depth.themedSettings;
-            const edited = { ...shown, colours: { ...shown.colours, [side]: colour } };
-            depth.setSettings(unthemeMarketDepthSettings(edited, SCITRADER_DARK_THEME)); // the panel's default theme
-        },
-    });
+// An IOrderBookSource for Coinbase's public order book, which the depth panel reads.
+// Coinbase's "level2_batch" WebSocket channel needs no API key. It sends the whole book once, then
+// batches of changes. This source keeps the book in memory and sends the panel the top levels four
+// times a second, as the IOrderBookSource contract asks: the panel has no use for every change
+class CoinbaseOrderBookSource implements IOrderBookSource {
+    readonly exchangeName = CoinbaseExchange.name;
+
+    getBookStream(symbol: string, depth = 50): Observable<IBookUpdate> {
+        return new Observable<IBookUpdate>((subscriber) => {
+            // price -> quantity, for each side of the book
+            const bids = new Map<number, number>();
+            const asks = new Map<number, number>();
+            const socket = new WebSocket("wss://ws-feed.exchange.coinbase.com");
+
+            socket.onopen = () =>
+                socket.send(JSON.stringify({ type: "subscribe", product_ids: [symbol], channels: ["level2_batch"] }));
+
+            socket.onmessage = (event) => {
+                const message = JSON.parse(event.data);
+                if (message.type === "snapshot") {
+                    // The whole book: [price, size] pairs as strings
+                    for (const [price, size] of message.bids) bids.set(Number(price), Number(size));
+                    for (const [price, size] of message.asks) asks.set(Number(price), Number(size));
+                } else if (message.type === "l2update") {
+                    // Changes: [side, price, size]. A size of 0 removes the level
+                    for (const [side, price, size] of message.changes) {
+                        const book = side === "buy" ? bids : asks;
+                        if (Number(size) === 0) book.delete(Number(price));
+                        else book.set(Number(price), Number(size));
+                    }
+                }
+            };
+            socket.onerror = () => subscriber.error(new Error("Coinbase order-book connection failed"));
+
+            // Four times a second, send the top of the book. isSnapshot: true replaces the ladder
+            const timer = setInterval(() => {
+                if (bids.size === 0 || asks.size === 0) return;
+                subscriber.next({
+                    symbol,
+                    timestamp: Date.now(),
+                    isSnapshot: true,
+                    bids: topLevels(bids, depth, (a, b) => b - a), // highest bid first
+                    asks: topLevels(asks, depth, (a, b) => a - b), // lowest ask first
+                });
+            }, 250);
+
+            // Called when the panel unsubscribes: stop the timer and close the connection
+            return () => {
+                clearInterval(timer);
+                socket.close();
+            };
+        });
+    }
+
+    // The current top of the book: the stream's first frame
+    getBookSnapshot(symbol: string, depth?: number): Promise<IBookSnapshot | null> {
+        return firstValueFrom(this.getBookStream(symbol, depth));
+    }
+
+    // No liquidity heatmap here: the depth panel only needs the book
+    async getHeatmapAvailability(): Promise<IHeatmapAvailability> {
+        return { enabled: false, tileColumns: 0, tiers: [] };
+    }
+    async getHeatmapTile(): Promise<IHeatmapTile | null> {
+        return null;
+    }
+    getDepthStream(): Observable<IDepthColumn> {
+        return EMPTY;
+    }
 }
 
-// When the page goes away: depth.destroy(); financeChartPanel.cleanup();
+// The best `depth` levels of one side of the book, as { price, qty }
+function topLevels(book: Map<number, number>, depth: number, order: (a: number, b: number) => number) {
+    return [...book.keys()]
+        .sort(order)
+        .slice(0, depth)
+        .map((price) => ({ price, qty: book.get(price) }));
+}
+
+// Register the order book source, once, at app startup, under its exchange's name. Order book
+// studies and panels find it with getOrderBookSource(exchangeName)
+setOrderBookSources(new Map([[CoinbaseExchange.name, new CoinbaseOrderBookSource()]]));
+
+async function createChart() {
+    // The depth panel, given the source registered for the chart's exchange
+    const depth = MarketDepthPanel.create(document.getElementById("depth"), {
+        source: getOrderBookSource(CoinbaseExchange.name),
+        symbol: "BTC-USD",
+    });
+
+    // Read the book yourself: the top of the book, from the same registered source.
+    // getBookStream(symbol, depth) emits the best `depth` levels of each side
+    const topOfBook = document.getElementById("toolbar");
+    Object.assign(topOfBook.style, toolbarStyle);
+    const subscription = getOrderBookSource(CoinbaseExchange.name)
+        .getBookStream("BTC-USD", 1)
+        .subscribe(({ bids, asks }) => {
+            const [bid, ask] = [bids[0], asks[0]];
+            if (!bid || !ask) return;
+            topOfBook.textContent =
+                `Best bid ${bid.price.toLocaleString()} (${bid.qty.toFixed(4)})   ` +
+                `Best ask ${ask.price.toLocaleString()} (${ask.qty.toFixed(4)})   Spread ${(ask.price - bid.price).toFixed(2)}`;
+        });
+
+    const financeChartPanel = await SciFinanceChartPanel.create(document.getElementById("chart"), {
+        exchangeName: CoinbaseExchange.name,
+        symbol: "BTC-USD",
+        interval: CandleInterval.ONE_MINUTE,
+        period: "1H",
+        studies: [new OHLCStudy(), new VolumeStudy()],
+    });
+
+    // When the page goes away: subscription.unsubscribe(); depth.destroy(); financeChartPanel.cleanup();
+    return { financeChartPanel, depth, subscription };
+}
+
+// The toolbar uses SciTrader's UI colours: its --st-ui-* CSS variables, with the stylesheet's defaults
+const toolbarStyle: Partial<CSSStyleDeclaration> = {
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: "8px 16px",
+    padding: "8px",
+    background: "var(--st-ui-background, #2b2839)",
+    borderBottom: "1px solid var(--st-ui-divider, rgba(255,255,255,0.1))",
+    color: "var(--st-ui-text-muted, #9da2bc)",
+    fontSize: "13px",
+};
+
+createChart();
