@@ -128,6 +128,118 @@ The code for this example is found below.
 | `isEditable` | Whether the user can select, drag and edit it |
 
 <details>
+<summary>The ExtendedLineAnnotation, HorizontalTrendLineAnnotation and AxisAlignedTrendLineAnnotationBase classes, with their TSDoc</summary>
+
+````ts
+/**
+ * @summary The {@link ExtendedLineAnnotation} provides a {@link MultiPointAnnotationBase | multi-point annotation}
+ * which draws a two-point trend line over the {@link SciChartSurface}.
+ * @description
+ * To add an {@link ExtendedLineAnnotation} to a {@link SciChartSurface}, use the following code:
+ * ```ts
+ * const sciChartSurface: SciChartSurface;
+ * const extendedLineAnnotation = new ExtendedLineAnnotation({
+ *     points: [
+ *          new Point(0, 5),  // can also be written as "{ x: 0, y: 5 }"
+ *          new Point(10, 7)
+ *     ],
+ *     stroke: "#3B82F6",
+ *     strokeThickness: 2,
+ *     strokeDashArray: [4, 2],
+ *     extendStart: false,
+ *     extendEnd: true
+ * });
+ * sciChartSurface.annotations.add(extendedLineAnnotation);
+ * ```
+ * Use `extendStart` and `extendEnd` to project the line beyond its endpoints.
+ */
+class ExtendedLineAnnotation extends MultiPointAnnotationBase {
+    /** @inheritDoc */
+    readonly type: EAnnotationType;
+    /** @inheritDoc */
+    readonly surfaceTypes: ESurfaceType[];
+    constructor(options?: IExtendedLineAnnotationOptions);
+    /** Gets or sets stroke color. */
+    get stroke(): string;
+    set stroke(value: string);
+    /** Gets or sets stroke thickness. */
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    /** Gets or sets stroke dash array. */
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    /** Gets or sets whether line extends before the first point. */
+    get extendStart(): boolean;
+    set extendStart(value: boolean);
+    /** Gets or sets whether line extends after the second point. */
+    get extendEnd(): boolean;
+    set extendEnd(value: boolean);
+    /** @inheritDoc */
+    delete(): void;
+    /** @inheritDoc */
+    onAttach(scs: SciChartSurface): void;
+    /** @inheritDoc */
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    /** @inheritDoc */
+    onDpiChanged(args: TDpiChangedEventArgs): void;
+    /** @inheritDoc */
+    svgStringAdornerTemplate(): string;
+    /** @inheritDoc */
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+
+/**
+ * Draws a horizontal trend line anchored at a single movable point.
+ */
+class HorizontalTrendLineAnnotation extends AxisAlignedTrendLineAnnotationBase {
+    /** @inheritDoc */
+    readonly type: EAnnotationType;
+    /** @inheritDoc */
+    readonly surfaceTypes: ESurfaceType[];
+    constructor(options?: IHorizontalTrendLineAnnotationOptions);
+}
+
+/**
+ * Shared class for 1-point axis-aligned trend lines.
+ */
+abstract class AxisAlignedTrendLineAnnotationBase extends MultiPointAnnotationBase {
+    /** Gets or sets the stroke color. */
+    get stroke(): string;
+    set stroke(value: string);
+    /** Gets or sets the stroke thickness. */
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    /** Gets or sets the dash pattern for the trend line. */
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    /** Gets or sets whether the line extends before the anchor point. */
+    get extendStart(): boolean;
+    set extendStart(value: boolean);
+    /** Gets or sets whether the line extends after the anchor point. */
+    get extendEnd(): boolean;
+    set extendEnd(value: boolean);
+    /** @inheritDoc */
+    delete(): void;
+    /** @inheritDoc */
+    onAttach(scs: SciChartSurface): void;
+    /** @inheritDoc */
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    /** @inheritDoc */
+    svgStringAdornerTemplate(): string;
+    /** @inheritDoc */
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+````
+
+</details>
+
+<details>
 <summary>The IExtendedLineAnnotationOptions, IAxisAlignedTrendLineAnnotationBaseOptions and IPolyLineAnnotationOptions interfaces, with their TSDoc</summary>
 
 ```ts

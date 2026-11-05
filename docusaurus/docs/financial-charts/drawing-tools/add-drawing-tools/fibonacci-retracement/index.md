@@ -117,6 +117,103 @@ The code for this example is found below.
 | `isEditable` | Whether the user can select, drag and edit it |
 
 <details>
+<summary>The FibonacciRetracementAnnotation class and its base class FibonacciAnnotationBase, with their TSDoc</summary>
+
+```ts
+/**
+ * Draws Fibonacci retracement levels from two or three placement points.
+ * @remarks
+ * In vertical-only mode, point 1 and point 2 define the price move and horizontal retracement levels are drawn between them.
+ *
+ * In skewed mode, points 1 and 2 define the baseline and point 3 defines the retracement direction for parallel levels.
+ */
+class FibonacciRetracementAnnotation extends FibonacciAnnotationBase {
+    /** @inheritDoc */
+    readonly surfaceTypes: ESurfaceType[];
+    /** @inheritDoc */
+    readonly type: EAnnotationType;
+    /** Creates a {@link FibonacciRetracementAnnotation}. */
+    constructor(options?: IFibonacciRetracementAnnotationOptions);
+    /** Gets or sets non-skewed mode (horizontal levels + vertical connector). */
+    get verticalOnly(): boolean;
+    set verticalOnly(value: boolean);
+    /** @inheritDoc */
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    /** @inheritDoc */
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+
+/**
+ * Base class for Fibonacci annotations.
+ * @remarks
+ * Provides shared threshold, region fill, connector line and level-label behaviour for
+ * line-based Fibonacci annotations and arc-based Fibonacci annotations.
+ */
+abstract class FibonacciAnnotationBase extends MultiPointAnnotationBase {
+    /** Gets or sets stroke thickness for Fibonacci level lines or arcs. */
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    /** Gets or sets the dash pattern for Fibonacci level lines or arcs. */
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    /** Gets or sets whether level lines extend before their first point. */
+    get extendStart(): boolean;
+    set extendStart(value: boolean);
+    /** Gets or sets whether level lines extend after their second point. */
+    get extendEnd(): boolean;
+    set extendEnd(value: boolean);
+    /** Gets or sets threshold values used to calculate Fibonacci levels and labels. */
+    get thresholds(): number[];
+    set thresholds(value: number[]);
+    /** Gets or sets region colors used for bands between consecutive thresholds. */
+    get regionColors(): string[];
+    set regionColors(value: string[]);
+    /** Gets or sets fill opacity for Fibonacci regions. */
+    get fillOpacity(): number;
+    set fillOpacity(value: number);
+    /** Gets or sets whether connector lines between placement points are visible. */
+    get showConnectorLine(): boolean;
+    set showConnectorLine(value: boolean);
+    /** Gets or sets the connector line stroke color. */
+    get connectorLineStroke(): string;
+    set connectorLineStroke(value: string);
+    /** Gets or sets the connector line dash pattern. */
+    get connectorLineStrokeDashArray(): number[];
+    set connectorLineStrokeDashArray(value: number[]);
+    /** Gets or sets where Fibonacci level labels are placed. */
+    get fibonacciLabelPlacement(): EFibonacciLabelPlacement;
+    set fibonacciLabelPlacement(value: EFibonacciLabelPlacement);
+    /** Gets or sets whether labels use per-level colors or a single color. */
+    get fibonacciLabelColorMode(): EFibonacciLabelColorMode;
+    set fibonacciLabelColorMode(value: EFibonacciLabelColorMode);
+    /** Gets or sets the label color used in `SingleColor` mode. */
+    get fibonacciLabelColor(): string;
+    set fibonacciLabelColor(value: string);
+    /** Gets or sets Fibonacci label font size in CSS pixels. */
+    get fibonacciLabelFontSize(): number | undefined;
+    set fibonacciLabelFontSize(value: number | undefined);
+    /** Gets or sets extra spacing between Fibonacci labels and their level geometry. */
+    get fibonacciLabelLinePadding(): number;
+    set fibonacciLabelLinePadding(value: number);
+    /** Gets or sets the custom formatter used for Fibonacci level labels. */
+    get formatFibonacciLabel(): TFibonacciLevelLabelFormatter | undefined;
+    set formatFibonacciLabel(value: TFibonacciLevelLabelFormatter | string | undefined);
+    delete(): void;
+    onAttach(scs: SciChartSurface): void;
+    onDpiChanged(args: TDpiChangedEventArgs): void;
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+```
+
+</details>
+
+<details>
 <summary>The IFibonacciRetracementAnnotationOptions and IFibonacciAnnotationBaseOptions interfaces, with their TSDoc</summary>
 
 ```ts

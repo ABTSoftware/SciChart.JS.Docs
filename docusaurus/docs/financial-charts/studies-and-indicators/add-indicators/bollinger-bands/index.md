@@ -114,6 +114,36 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `BollingerBandsStudy` | `period`, `stdDev` | `upperBandColor`, `lowerBandColor`, `middleBandColor`, `bandFillColor`, `strokeThickness` |
 
 <details>
+<summary>The BollingerBandsStudy class, with its TSDoc</summary>
+
+```ts
+class BollingerBandsStudy extends StudyBase<number> {
+    period: number;
+    stdDev: number;
+    getRequiredWarmup(): number;
+    readonly upperBandOptions: IFastLineRenderableSeriesOptions;
+    readonly lowerBandOptions: IFastLineRenderableSeriesOptions;
+    readonly middleBandOptions: IFastLineRenderableSeriesOptions;
+    readonly bandFillOptions: IBaseBandRenderableSeriesOptions;
+    constructor(options?: IBollingerBandsOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IBollingerBandsOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}.
+     *  Note: BollingerBandsStudy is currently disabled at the registration
+     *  level (CLAUDE.md) due to a pre-existing crash; the live-apply path
+     *  lands now so it's ready when the underlying issue is fixed. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /** @inheritDoc */
+    getLegendColor(outputId: DataSourceId): string | undefined;
+    createRenderableSeries(): IRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IBollingerBandsOptions interface, with its TSDoc</summary>
 
 ```ts

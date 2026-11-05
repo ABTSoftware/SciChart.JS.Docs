@@ -114,6 +114,30 @@ VWAP has no inputs to set. Users can change its line in the [Settings Form](/fin
 | `VWAPStudy` | (none) | `strokeColor`, `strokeThickness`, `strokeStyle` |
 
 <details>
+<summary>The VWAPStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Volume Weighted Average Price — cumulative overlay on the price pane (shares
+ * the OHLC y-axis). H/L/C/V input, no period; resets on Replace (a new
+ * instrument starts a fresh cumulative window). Warm-up is 0.
+ */
+class VWAPStudy extends StudyBase<number> {
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: IVWAPOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IVWAPOptions;
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): FastLineRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IVWAPOptions interface, with its TSDoc</summary>
 
 ```ts

@@ -143,7 +143,90 @@ The code for this example is found below.
 | `stroke`, `strokeThickness`, `fill` | The line, and the shading between the legs |
 | `isEditable` | Whether the user can select, drag and edit it |
 
-The [Elliott Wave](/financial-charts/drawing-tools/add-drawing-tools/elliott-wave/) page has the full `IPolyLineAnnotationOptions` TSDoc.
+<details>
+<summary>The PolyLineAnnotation class, with its TSDoc</summary>
+
+```ts
+/**
+ * Native WebGL polyline annotation defined by two or more points.
+ *
+ * `PolyLineAnnotation` is the simplest concrete {@link MultiPointAnnotationBase}
+ * implementation. It renders straight segments through its `points` array and
+ * inherits the shared multi-point behavior: editable vertex grips, whole-shape
+ * dragging, data-point snapping, point/segment/axis labels, label formatters and
+ * placement-modifier support. Set `fill` to draw the closed polygon as a triangle
+ * strip; leave it `null` for line-only drawing.
+ */
+class PolyLineAnnotation extends MultiPointAnnotationBase {
+    /** @inheritDoc */
+    readonly type: EAnnotationType;
+    /** @inheritDoc */
+    readonly surfaceTypes: ESurfaceType[];
+    constructor(options?: IPolyLineAnnotationOptions);
+    /** Gets or sets stroke color. */
+    get stroke(): string;
+    set stroke(value: string);
+    /** Gets or sets stroke thickness. */
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    /** Gets or sets stroke dash array. */
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    /** Gets or sets fill color. */
+    get fill(): string | null;
+    set fill(value: string | null);
+    /** Gets or sets the number of points required during placement. */
+    get placementPointCount(): number;
+    set placementPointCount(value: number);
+    /** @inheritDoc */
+    delete(): void;
+    /** @inheritDoc */
+    onAttach(scs: SciChartSurface): void;
+    /** @inheritDoc */
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    /** @inheritDoc */
+    onDpiChanged(args: TDpiChangedEventArgs): void;
+    /** @inheritDoc */
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+```
+
+</details>
+
+<details>
+<summary>The IPolyLineAnnotationOptions interface, with its TSDoc</summary>
+
+```ts
+/** Options for {@link PolyLineAnnotation}. */
+interface IPolyLineAnnotationOptions extends IMultiPointAnnotationBaseOptions {
+    /**
+     * Number of points required when using {@link MultiPointAnnotationPlacementModifier}.
+     * Default `2`.
+     */
+    placementPointCount?: number;
+    /** Stroke color. */
+    stroke?: string;
+    /** Stroke thickness of the line annotation.
+     * Default `2`
+    */
+    strokeThickness?: number;
+    /**
+     * The strokeDashArray for the {@link LineAnnotation}
+     */
+    strokeDashArray?: number[];
+    /**
+     * The primitive triangle fill as an HTML color string.
+     * Default `null` -> triangles do NOT draw at all.
+    */
+    fill?: string | null;
+}
+```
+
+</details>
+
 
 ## Where to read next
 

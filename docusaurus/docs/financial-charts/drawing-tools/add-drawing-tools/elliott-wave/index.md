@@ -142,6 +142,59 @@ The code for this example is found below.
 | `isEditable` | Whether the user can select, drag and edit it |
 
 <details>
+<summary>The PolyLineAnnotation class, with its TSDoc</summary>
+
+```ts
+/**
+ * Native WebGL polyline annotation defined by two or more points.
+ *
+ * `PolyLineAnnotation` is the simplest concrete {@link MultiPointAnnotationBase}
+ * implementation. It renders straight segments through its `points` array and
+ * inherits the shared multi-point behavior: editable vertex grips, whole-shape
+ * dragging, data-point snapping, point/segment/axis labels, label formatters and
+ * placement-modifier support. Set `fill` to draw the closed polygon as a triangle
+ * strip; leave it `null` for line-only drawing.
+ */
+class PolyLineAnnotation extends MultiPointAnnotationBase {
+    /** @inheritDoc */
+    readonly type: EAnnotationType;
+    /** @inheritDoc */
+    readonly surfaceTypes: ESurfaceType[];
+    constructor(options?: IPolyLineAnnotationOptions);
+    /** Gets or sets stroke color. */
+    get stroke(): string;
+    set stroke(value: string);
+    /** Gets or sets stroke thickness. */
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    /** Gets or sets stroke dash array. */
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    /** Gets or sets fill color. */
+    get fill(): string | null;
+    set fill(value: string | null);
+    /** Gets or sets the number of points required during placement. */
+    get placementPointCount(): number;
+    set placementPointCount(value: number);
+    /** @inheritDoc */
+    delete(): void;
+    /** @inheritDoc */
+    onAttach(scs: SciChartSurface): void;
+    /** @inheritDoc */
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    /** @inheritDoc */
+    onDpiChanged(args: TDpiChangedEventArgs): void;
+    /** @inheritDoc */
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+```
+
+</details>
+
+<details>
 <summary>The IPolyLineAnnotationOptions interface, with its TSDoc</summary>
 
 ```ts

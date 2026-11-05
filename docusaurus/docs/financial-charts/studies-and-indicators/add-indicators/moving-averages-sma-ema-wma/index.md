@@ -130,6 +130,64 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `WMAStudy` | `period` | `strokeColor`, `strokeThickness`, `strokeStyle` |
 
 <details>
+<summary>The SMAStudy, EMAStudy and WMAStudy classes, with their TSDoc</summary>
+
+```ts
+class SMAStudy extends StudyBase<number> {
+    length: number;
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: ISMAOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): ISMAOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): FastLineRenderableSeries[];
+}
+
+/**
+ * Exponential Moving Average overlay. Shares the price pane's y-axis (like
+ * SMA) and follows the canonical Close-only line-study pattern.
+ */
+class EMAStudy extends StudyBase<number> {
+    length: number;
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: IEMAOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IEMAOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): FastLineRenderableSeries[];
+}
+
+/**
+ * Weighted Moving Average overlay. Shares the price pane's y-axis and follows
+ * the canonical Close-only line-study pattern (identical to {@link EMAStudy}
+ * but using the `WMA` calculator and a distinct default stroke).
+ */
+class WMAStudy extends StudyBase<number> {
+    length: number;
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: IWMAOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IWMAOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): FastLineRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The ISMAOptions, IEMAOptions and IWMAOptions interfaces, with their TSDoc</summary>
 
 ```ts

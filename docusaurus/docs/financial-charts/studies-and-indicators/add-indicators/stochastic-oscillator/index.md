@@ -113,6 +113,41 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `StochasticStudy` | `period`, `signalPeriod` | `strokeK`, `strokeD`, `strokeThickness` |
 
 <details>
+<summary>The StochasticStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Stochastic Oscillator — %K and %D lines (0–100) on their own pane. HLC input.
+ * Two outputs, so the output ids are created with distinct names (mirroring
+ * MACD) — the {@link StudyBase.createOutputSourceId} helper is single-output
+ * only (it would collide both ids on the same key).
+ */
+class StochasticStudy extends StudyBase<number> {
+    /** Indicator pane — small relative weight (price pane defaults to 3×). */
+    readonly paneSizeConfig: {
+        grow: number;
+    };
+    length: number;
+    signalPeriod: number;
+    strokeK: string;
+    strokeD: string;
+    strokeThickness: number;
+    getRequiredWarmup(): number;
+    constructor(options?: IStochasticOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IStochasticOptions;
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /** @inheritDoc */
+    getLegendColor(outputId: DataSourceId): string | undefined;
+    createRenderableSeries(): IRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IStochasticOptions interface, with its TSDoc</summary>
 
 ```ts

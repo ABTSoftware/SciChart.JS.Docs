@@ -122,6 +122,61 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `MACDStudy` | `fast`, `slow`, `signal` | `histogramAboveZero`, `histogramBelowZero`, `bandMacdColor`, `bandSignalColor`, `fillMacdAboveSignal`, `fillMacdBelowSignal`, `strokeThickness` |
 
 <details>
+<summary>The MACDStudy class, with its TSDoc</summary>
+
+```ts
+class MACDStudy extends StudyBase<number> {
+    /** Indicator pane — small relative weight (price pane defaults to 3×). */
+    readonly paneSizeConfig: {
+        grow: number;
+    };
+    fast: number;
+    slow: number;
+    signal: number;
+    /**
+     * MACD output is a signal-EMA on top of the (slow EMA − fast EMA) line.
+     * The slow EMA needs `slow` inputs before it stabilises, and the signal
+     * EMA stacks `signal` more on top — so the first fully-valid signal
+     * value lands roughly at index `slow + signal - 1`. Returning
+     * `slow + signal` over-pads by one to keep the formula simple.
+     */
+    getRequiredWarmup(): number;
+    readonly bandOptions: IBandRenderableSeriesOptions;
+    readonly columnOptions: IColumnRenderableSeriesOptions;
+    histogramAboveZero: string;
+    histogramBelowZero: string;
+    inputId: DataSourceId;
+    constructor(options?: IMACDOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IMACDOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /**
+     * @inheritDoc
+     *
+     * The histogram flips about zero, so it takes the same `yValue >= 0` test
+     * {@link MacdHistogramPaletteProvider} paints the columns with.
+     *
+     * The two lines share one `XyyDataSeries`, filled as
+     * `appendRange(x, signalPadded, macdPadded)` — signal in Y, MACD in Y1. A band
+     * series paints Y with `stroke` and Y1 with `strokeY1`, so those are the strokes
+     * the legend reads, and the rows match the lines on screen.
+     *
+     * `stroke` paints y (MACD) and `strokeY1` paints y1 (Signal), matching what the
+     * two pickers are labelled. The band series used to be filled signal-first, which
+     * inverted both — the legend compensated by reading the opposite property, so the
+     * colours agreed with the pixels but neither agreed with the label.
+     */
+    getLegendColor(outputId: DataSourceId, xIndex?: number): string | undefined;
+    createRenderableSeries(): IRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IMACDOptions interface, with its TSDoc</summary>
 
 ```ts

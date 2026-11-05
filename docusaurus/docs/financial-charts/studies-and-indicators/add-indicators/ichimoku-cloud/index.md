@@ -127,6 +127,69 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `IchimokuCloudStudy` | `conversionPeriod`, `basePeriod`, `spanPeriod`, `displacement` | `tenkanColor`, `kijunColor`, `senkouAColor`, `senkouBColor`, `chikouColor`, `cloudBullishColor`, `cloudBearishColor`, `strokeThickness` |
 
 <details>
+<summary>The IchimokuCloudStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Ichimoku Cloud — full price-pane overlay. Five lines + a shaded cloud:
+ *   • Tenkan-sen (conversion)  • Kijun-sen (base)  — plotted at the candle.
+ *   • Senkou Span A/B + cloud  — plotted `displacement` bars INTO THE FUTURE.
+ *   • Chikou (lagging close)   — plotted `displacement` bars INTO THE PAST.
+ *
+ * Component values are computed candle-aligned and stored in the DataManager;
+ * displacement is applied to the render series' x-values. Forward x-slots beyond
+ * the last candle are synthesised (`lastX + k·span`) — the price pane's CategoryAxis
+ * aligns series by x-value and reserves forward space via `forwardHeadroomSec`.
+ */
+class IchimokuCloudStudy extends StudyBase<number> {
+    conversionPeriod: number;
+    basePeriod: number;
+    spanPeriod: number;
+    displacement: number;
+    readonly tenkanOptions: IFastLineRenderableSeriesOptions;
+    readonly kijunOptions: IFastLineRenderableSeriesOptions;
+    readonly senkouAOptions: IFastLineRenderableSeriesOptions;
+    readonly senkouBOptions: IFastLineRenderableSeriesOptions;
+    readonly chikouOptions: IFastLineRenderableSeriesOptions;
+    /**
+     * Cloud shading. `fill` paints where y < y1 and `fillY1` where y1 < y — verified on
+     * the chart, and what `IBaseBandRenderableSeriesOptions` documents. (Its sibling
+     * `applyTheme` calls them up/down band colours, which reads the other way round.)
+     * The series is filled `(x, senkouA, senkouB)`, so:
+     *
+     *   `fill`   → Senkou A BELOW B → bearish
+     *   `fillY1` → Senkou A ABOVE B → bullish
+     *
+     * These two started out teal-on-`fill` / red-on-`fillY1`, which painted the bearish
+     * half green and the bullish half red — inverted since the study was written.
+     *
+     * `stroke` / `strokeY1` are pinned transparent because an unset band stroke is not
+     * "no line": SciChart's constructor defaults it to a theme colour, and the cloud
+     * would then draw two edge lines directly under Senkou A and Senkou B that no
+     * descriptor control can reach.
+     */
+    readonly cloudFillOptions: IBaseBandRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: IIchimokuCloudOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IIchimokuCloudOptions;
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /**
+     * @inheritDoc
+     *
+     * Chikou has a line but no output column, and the cloud fill has neither, so
+     * both are simply absent here.
+     */
+    getLegendColor(outputId: DataSourceId): string | undefined;
+    createRenderableSeries(): IRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IIchimokuCloudOptions interface, with its TSDoc</summary>
 
 ```ts

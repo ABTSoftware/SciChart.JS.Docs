@@ -135,6 +135,40 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `ADXStudy` | `period` | `adxColor`, `pdiColor`, `mdiColor`, `strokeThickness` |
 
 <details>
+<summary>The ADXStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Average Directional Index — three lines (ADX, +DI, -DI), 0–100, on their own
+ * pane. HLC input. Three distinctly-named outputs (the single-output
+ * {@link StudyBase.createOutputSourceId} helper would collide their ids).
+ */
+class ADXStudy extends StudyBase<number> {
+    /** Indicator pane — small relative weight (price pane defaults to 3×). */
+    readonly paneSizeConfig: {
+        grow: number;
+    };
+    length: number;
+    adxColor: string;
+    pdiColor: string;
+    mdiColor: string;
+    strokeThickness: number;
+    getRequiredWarmup(): number;
+    constructor(options?: IADXOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IADXOptions;
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /** @inheritDoc */
+    getLegendColor(outputId: DataSourceId): string | undefined;
+    createRenderableSeries(): IRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IADXOptions interface, with its TSDoc</summary>
 
 ```ts

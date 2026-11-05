@@ -114,6 +114,42 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `VolumeProfileStudy` | `binCount`, `rangeMode` | `fill`, `widthPercent`, `dataPointWidth`, `side`, `showPointOfControl`, `pointOfControlColor` |
 
 <details>
+<summary>The VolumeProfileStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Volume Profile (a.k.a. Market Footprint) — a histogram of traded volume by PRICE,
+ * drawn sideways on the price pane so each bar lines up with the price band it
+ * represents.
+ */
+class VolumeProfileStudy extends StudyBase<number> {
+    binCount: number;
+    rangeMode: TVolumeProfileRange;
+    side: TVolumeProfileSide;
+    widthFraction: number;
+    showPointOfControl: boolean;
+    pointOfControlColor: string;
+    readonly renderOptions: IColumnRenderableSeriesOptions;
+    constructor(options?: IVolumeProfileOptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IVolumeProfileOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    /**
+     * Creates BOTH transposed axes and adds them to the surface directly, then returns
+     * `[]` so `StudyBase` doesn't route either through `ChartPane`'s y-axis registry. Runs before {@link createRenderableSeries}, so the
+     * ids the column series binds to already resolve.
+     */
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): IRenderableSeries[];
+    onDetach(): void;
+}
+```
+
+</details>
+
+<details>
 <summary>The IVolumeProfileOptions interface, with its TSDoc</summary>
 
 ```ts

@@ -118,6 +118,60 @@ The code for this example is found below.
 | `isEditable` | Whether the user can select, drag and edit it |
 
 <details>
+<summary>The StopLossTakeProfitAnnotation class, with its TSDoc</summary>
+
+````ts
+/**
+ * @summary The {@link StopLossTakeProfitAnnotation} provides a {@link MultiPointAnnotationBase | multi-point annotation}
+ * which draws a stop-loss or take-profit zone over the {@link SciChartSurface}.
+ * @description
+ * To add a {@link StopLossTakeProfitAnnotation} to a {@link SciChartSurface}, use the following code:
+ * ```ts
+ * const sciChartSurface: SciChartSurface;
+ * const stopLossTakeProfitAnnotation = new StopLossTakeProfitAnnotation({
+ *     points: [
+ *          new Point(0, 5),  // can also be written as "{ x: 0, y: 5 }"
+ *          new Point(10, 7)
+ *     ],
+ *     strokeThickness: 1,
+ *     strokeDashArray: [4, 2],
+ *     takeProfitColor: "#16A34A",
+ *     stopLossColor: "#DC2626",
+ *     fillOpacity: 0.18
+ * });
+ * sciChartSurface.annotations.add(stopLossTakeProfitAnnotation);
+ * ```
+ * The second point chooses the take-profit or stop-loss color.
+ */
+class StopLossTakeProfitAnnotation extends MultiPointAnnotationBase {
+    readonly type: EAnnotationType;
+    readonly surfaceTypes: ESurfaceType[];
+    constructor(options?: IStopLossTakeProfitAnnotationOptions);
+    get strokeThickness(): number;
+    set strokeThickness(value: number);
+    get strokeDashArray(): number[];
+    set strokeDashArray(value: number[]);
+    get takeProfitColor(): string;
+    set takeProfitColor(value: string);
+    get stopLossColor(): string;
+    set stopLossColor(value: string);
+    get fillOpacity(): number;
+    set fillOpacity(value: number);
+    delete(): void;
+    onAttach(scs: SciChartSurface): void;
+    drawWithContext(renderContext: IRenderContext2D, xCalc: CoordinateCalculatorBase, yCalc: CoordinateCalculatorBase, seriesViewRect: Rect, surfaceViewRect: Rect, chartViewRect: Rect): void;
+    onDpiChanged(args: TDpiChangedEventArgs): void;
+    svgStringAdornerTemplate(): string;
+    toJSON(): {
+        type: EAnnotationType;
+        options: Required<Omit<IAnnotationBaseOptions, never>>;
+    };
+}
+````
+
+</details>
+
+<details>
 <summary>The IStopLossTakeProfitAnnotationOptions interface, with its TSDoc</summary>
 
 ```ts

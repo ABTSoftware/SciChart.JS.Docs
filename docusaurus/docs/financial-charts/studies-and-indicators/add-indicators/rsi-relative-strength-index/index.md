@@ -128,6 +128,48 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `RSIStudy` | `period`, `overbought`, `oversold` | `strokeColor`, `strokeThickness`, `strokeStyle`, `thresholdFills`, `overboughtFill`, `oversoldFill` |
 
 <details>
+<summary>The RSIStudy class, with its TSDoc</summary>
+
+```ts
+class RSIStudy extends StudyBase<number> {
+    /** Indicator pane — small relative weight (price pane defaults to 3×). */
+    readonly paneSizeConfig: {
+        grow: number;
+    };
+    length: number;
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    inputId: DataSourceId;
+    overbought: number;
+    oversold: number;
+    overboughtFill: string;
+    oversoldFill: string;
+    thresholdFills: TRsiThresholdFills;
+    getRequiredWarmup(): number;
+    constructor(options?: IRsiOptions);
+    /**
+     * Re-instantiate options from an edited descriptor — used by the
+     * studies-edit menu's apply flow via `studyProvider.getStudy`.
+     */
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IRsiOptions;
+    /** Opts in to the in-place apply pipeline — see {@link onDescriptorApplied}. */
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    /**
+     * The fills come before the line so they draw behind it: a surface paints its series in
+     * collection order.
+     */
+    createRenderableSeries(): IRenderableSeries[];
+    /** The line's stroke. The default reads it only off a study with one series, and RSI has three. */
+    getLegendColor(_outputId: DataSourceId, _xIndex?: number): string | undefined;
+    createAnnotation(): void;
+}
+```
+
+</details>
+
+<details>
 <summary>The IRsiOptions interface, with its TSDoc</summary>
 
 ```ts

@@ -111,6 +111,35 @@ Users can change the same settings in the [Settings Form](/financial-charts/ui-c
 | `ATRStudy` | `period` | `strokeColor`, `strokeThickness`, `strokeStyle` |
 
 <details>
+<summary>The ATRStudy class, with its TSDoc</summary>
+
+```ts
+/**
+ * Average True Range — volatility oscillator over High/Low/Close, on its own
+ * pane. Canonical HLC line-study pattern: `onDataChanged` reads the update type
+ * from the Close entry (guaranteed present for HLC studies).
+ */
+class ATRStudy extends StudyBase<number> {
+    /** Indicator pane — small relative weight (price pane defaults to 3×). */
+    readonly paneSizeConfig: {
+        grow: number;
+    };
+    length: number;
+    readonly renderOptions: IFastLineRenderableSeriesOptions;
+    getRequiredWarmup(): number;
+    constructor(options?: IATROptions);
+    static getOptionsFromDescriptor(descriptor: TStudyDescriptor): IATROptions;
+    get supportsLiveApply(): boolean;
+    createInputOutputIds(): void;
+    createDataSeries(): void;
+    createAxes(): AxisBase2D[];
+    createRenderableSeries(): FastLineRenderableSeries[];
+}
+```
+
+</details>
+
+<details>
 <summary>The IATROptions interface, with its TSDoc</summary>
 
 ```ts
