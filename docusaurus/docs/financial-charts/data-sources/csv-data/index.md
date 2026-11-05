@@ -104,9 +104,9 @@ The examples on these pages use real Binance candles for BTCUSDT, ETHUSDT and SO
 
 | File | Contents |
 | --- | --- |
-| [`crypto-1h.csv`](https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data/crypto-1h.csv) | 90 days of hourly candles, 3 symbols: `symbol,time,open,high,low,close,volume` |
-| [`crypto-1d.csv`](https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data/crypto-1d.csv) | 4 years of daily candles, 3 symbols |
-| [`btcusdt-1d.json`](https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data/btcusdt-1d.json) | BTCUSDT's daily candles as JSON; see [JSON Data](/financial-charts/data-sources/json-data/) |
+| [`crypto-1h.csv`](pathname:///financial-charts/data/crypto-1h.csv) | 90 days of hourly candles, 3 symbols: `symbol,time,open,high,low,close,volume` |
+| [`crypto-1d.csv`](pathname:///financial-charts/data/crypto-1d.csv) | 4 years of daily candles, 3 symbols |
+| [`btcusdt-1d.json`](pathname:///financial-charts/data/btcusdt-1d.json) | BTCUSDT's daily candles as JSON; see [JSON Data](/financial-charts/data-sources/json-data/) |
 
 ## TypeScript Example: A Candlestick Chart from CSV Files
 

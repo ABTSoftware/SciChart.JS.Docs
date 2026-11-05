@@ -8,7 +8,7 @@ import { CandleInterval, createCSVServices, CSVExchange, OHLCStudy, SciFinanceCh
 // </div>
 
 // The sample price history: real Binance candles for BTCUSDT, ETHUSDT and SOLUSDT, served by jsDelivr
-const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data";
+const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@0c19782c/docusaurus/static/financial-charts/data";
 
 async function createChart() {
     const toolbar = document.getElementById("toolbar");

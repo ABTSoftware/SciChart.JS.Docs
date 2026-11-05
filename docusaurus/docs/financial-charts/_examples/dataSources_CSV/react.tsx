@@ -13,7 +13,7 @@ import {
 import { SciFinanceChartView } from "scichart-scitrader-react";
 
 // The sample price history: real Binance candles for BTCUSDT, ETHUSDT and SOLUSDT, served by jsDelivr
-const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data";
+const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@0c19782c/docusaurus/static/financial-charts/data";
 
 // 1. Load the CSV files, once. Each row is "symbol,time,open,high,low,close,volume", so one exchange
 // serves all three symbols. CSVExchange serves every interval the data can make: the hourly file

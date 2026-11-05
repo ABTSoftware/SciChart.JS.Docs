@@ -3,7 +3,7 @@ import * as React from "react";
 import { CandleInterval, createCSVServices, CSVExchange, OHLCStudy, VolumeStudy, } from "scichart-scitrader";
 import { SciFinanceChartView } from "scichart-scitrader-react";
 // The sample price history: real Binance candles for BTCUSDT, ETHUSDT and SOLUSDT, served by jsDelivr
-const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@v6.x-scitrader/docusaurus/static/financial-charts/data";
+const SAMPLE_DATA = "https://cdn.jsdelivr.net/gh/ABTSoftware/SciChart.JS.Docs@0c19782c/docusaurus/static/financial-charts/data";
 // 1. Load the CSV files, once. Each row is "symbol,time,open,high,low,close,volume", so one exchange
 // serves all three symbols. CSVExchange serves every interval the data can make: the hourly file
 // gives 1h to 12h, the daily file 1d, 1w and 1M. It moves the dates so the data ends now.

@@ -82,7 +82,7 @@ Pages:
 - [x] **Replace the four old examples** (`dataSources_LiveExchanges`, `dataSources_CSV`, `dataSources_CustomExchange`, `dataSources_OrderBook`), which have screenshots instead of live pens and use Binance, with standalone live pens.
 - [ ] **Cross-links:** done for Sparklines, Market Depth, Chart Config, Changing the Symbol, Periods, Studies, Creating Custom Studies and the Overview. Still to do: Save and Restore (what of the data source is saved: `exchangeName`, symbol, interval).
   - Was: Sparklines (`WatchListDataManager`), Market Depth, Save and Restore, Chart Config (`exchangeName`, `services`), Changing the Symbol (`createDataFeed`), Periods (the fetch plan).
-- [ ] **Sample data URLs:** the examples load `static/financial-charts/data/` from jsDelivr pinned to `@v6.x-scitrader`. Switch the `SAMPLE_DATA` constant in every `dataSources_*` example (and the CodePens) to `@master` once this branch is merged. The CSV and JSON pens fail until the files are pushed.
+- [ ] **Sample data URLs:** the CSV and JSON examples load `static/financial-charts/data/` from jsDelivr pinned to commit `@0c19782c` (CodePen needs jsDelivr's CORS headers; scichart.com sends none). A branch pin can't work: jsDelivr reads `@v6.x-scitrader` as a semver range. Switch `SAMPLE_DATA` in `dataSources_CSV` and `dataSources_JSON` to `@master` once this branch is merged. The CSV Data page's download links use the docs site's own copy.
 - [ ] **SEO:** an Ahrefs pass for searches such as "load JSON into a candlestick chart", "CSV candlestick chart JavaScript", "real-time crypto chart", "Coinbase/Binance/Kraken API chart". Shape page titles and headings to them, as for the indicator pages.
 
 ## 5. Expand Saving and Restoring
