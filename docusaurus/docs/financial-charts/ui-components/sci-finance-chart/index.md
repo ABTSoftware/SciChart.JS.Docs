@@ -40,11 +40,13 @@ The code for this example is found below.
 
 ## React Example: Creating a Chart
 
-`<SciFinanceChartView>` takes the same config, and fills its parent, so give the parent a height. It is in the React package, `scichart-scitrader-react`, along with React versions of the other UI components. Add it to an app that has the [core packages](/financial-charts/installation/#install-the-packages):
+`<SciFinanceChartView>` takes the same config, and fills its parent, so give the parent a height. It is in the React package, `scichart-scitrader-react`, along with React versions of the other UI components. It needs the core package and its peer dependencies too:
 
 ```bash
-npm install scichart-scitrader-react react react-dom
+npm install scichart-scitrader-react scichart-scitrader scichart scichart-financial-tools rxjs react react-dom
 ```
+
+See [Installation](/financial-charts/installation/#install-the-packages) for the versions, the stylesheet and serving SciChart's WebAssembly.
 
 <LiveDocSnippet maxWidth={"100%"} height={680} includeSciTrader reactComponent="TradingChart" name="../../_examples/gettingStarted_CreateChartReact/react" />
 
