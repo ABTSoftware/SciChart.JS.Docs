@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 3
 sidebar_label: Coinbase and Binance
 title: "Coinbase API and Binance API Data in a JavaScript or React Financial Chart | SciTrader.js"
 description: "Chart live crypto market data from the Coinbase API and Binance API in a JavaScript or React financial chart with SciTrader.js: the built-in CoinbaseExchange and BinanceExchange, their symbols, intervals, limits and live streams."
@@ -103,17 +103,6 @@ const financeChartPanel = await SciFinanceChartPanel.create(document.getElementB
 ## CoinbaseExchange and BinanceExchange API
 
 Both are `IRemoteExchange` objects; [Building a Custom Exchange](/financial-charts/data-sources/custom-exchange/#iremoteexchange) documents every member.
-
-<details>
-<summary>CoinbaseExchange and BinanceExchange, with their TSDoc</summary>
-
-```ts
-const CoinbaseExchange: IRemoteExchange;
-
-const BinanceExchange: IRemoteExchange;
-```
-
-</details>
 
 ## Where to read next
 

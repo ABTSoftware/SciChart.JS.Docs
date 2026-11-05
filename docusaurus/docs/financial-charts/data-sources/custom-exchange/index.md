@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 sidebar_label: Building a Custom Exchange
 title: "Build a Custom Data Feed: a Kraken API Exchange Adapter for a JavaScript Chart | SciTrader.js"
 description: "Connect any market data API to a SciTrader.js JavaScript or React financial chart by implementing IRemoteExchange, step by step, with a complete Kraken API adapter: historical candles over REST, and live candles, trades and tickers over WebSocket."

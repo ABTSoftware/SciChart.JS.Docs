@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 1
 sidebar_label: JSON Data
 title: "Load OHLCV Data from JSON or a JavaScript Object into a Candlestick Chart | SciTrader.js"
 description: "Chart OHLCV candles from JSON, a JavaScript array or your own REST API in a JavaScript or React candlestick chart with SciTrader.js, including time formats and every coarser interval."

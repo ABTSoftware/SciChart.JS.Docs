@@ -35,10 +35,10 @@ Order books are separate: an `IOrderBookSource` per exchange, which the Market D
 
 | Data source | Class | History | Live updates |
 | --- | --- | --- | --- |
+| [JSON or JavaScript objects](/financial-charts/data-sources/json-data/) | `CSVExchange`, for now | The objects | No |
+| [CSV files or text](/financial-charts/data-sources/csv-data/) | `CSVExchange` | The file's rows, at every coarser interval | No |
 | [Coinbase](/financial-charts/data-sources/coinbase-and-binance/) | `CoinbaseExchange` | Yes, back to listing | Yes: candles, trades, tickers |
 | [Binance](/financial-charts/data-sources/coinbase-and-binance/) | `BinanceExchange` | Yes, back to listing | Yes: candles, trades, tickers |
-| [CSV files or text](/financial-charts/data-sources/csv-data/) | `CSVExchange` | The file's rows, at every coarser interval | No |
-| [JSON or JavaScript objects](/financial-charts/data-sources/json-data/) | `CSVExchange`, for now | The objects | No |
 | [Any market data API](/financial-charts/data-sources/custom-exchange/) | your own `IRemoteExchange` | As the API allows | If the API streams |
 | [Order books](/financial-charts/data-sources/order-book-data/) | your own `IOrderBookSource` | Recorded heatmap history, if you have it | Yes: the live book |
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 sidebar_label: Candle Stores and Caching
 title: "Caching Candles in IndexedDB: Candle Stores for Financial Charts | SciTrader.js"
 description: "How SciTrader.js caches market data: candles kept in memory and in IndexedDB with idbPriceStore, per-interval caps, clearing the cache, nullCandleStore, and writing your own candle store, e.g. backed by your server."
