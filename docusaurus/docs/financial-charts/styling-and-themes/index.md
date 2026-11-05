@@ -8,7 +8,7 @@ keywords: ["trading chart theme", "dark theme candlestick chart", "light theme f
 
 # Styling and Themes
 
-Every colour SciTrader draws with comes from one **theme**: an `ISciTraderTheme` object. One theme styles the chart, its candles and indicators, the drawings, the market depth ladder, and every toolbar and control around them, so they always match.
+Every colour SciTrader draws with comes from one **theme**: an [`ISciTraderTheme`](/financial-charts/styling-and-themes/custom-themes/#theme-reference) object. One theme styles the chart, its candles and indicators, the drawings, the market depth ladder, and every toolbar and control around them, so they always match.
 
 <CenteredImageWrapper src={require("./themes.jpg").default} title="SciTrader's three built-in themes, Dark, Light and Ocean, on a candlestick chart with an order book heatmap, RSI and a market depth ladder" />
 
@@ -108,7 +108,7 @@ React.useEffect(() => api?.financeApi.setTheme(theme), [api, theme]);
 - **`useSciTraderTheme()`** gives the theme to components that need a colour in code.
 - **A theme picker:** give the provider `onThemeChange` (and `themes`, which defaults to the three built-in ones). Inside it, `useSciTraderThemeSwitch()` returns the current theme, the themes on offer and `setTheme`, as the example's picker uses.
 
-**With MUI.** The SDK doesn't use MUI. If your app does, build its MUI theme from the same `ISciTraderTheme`, mapping the background, paper, text, accent and light or dark mode, so both match.
+**With MUI.** The SDK doesn't use MUI. If your app does, build its MUI theme from the same [`ISciTraderTheme`](/financial-charts/styling-and-themes/custom-themes/#theme-reference), mapping the background, paper, text, accent and light or dark mode, so both match.
 
 <details>
 <summary>SciTraderThemeProvider, useSciTraderTheme and useSciTraderThemeSwitch, with their TSDoc</summary>
@@ -180,7 +180,7 @@ const theme = saved ?? SCITRADER_DARK_THEME;
 | `drawing` | The default colours of drawings. Worked out from `ui` and `chart` unless you set them |
 | `isDark`, `fontFamily` | Whether the theme is dark, for colours that differ on dark and light backgrounds; the font of the HTML controls |
 
-[Creating a Custom Theme](/financial-charts/styling-and-themes/custom-themes/#theme-reference) has the full `ISciTraderTheme` declaration.
+The [`ISciTraderTheme` interface reference](/financial-charts/styling-and-themes/custom-themes/#theme-reference) on Creating a Custom Theme has every member, with its TSDoc.
 
 ## Pages in This Section
 

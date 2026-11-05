@@ -62,7 +62,7 @@ const config: ISciFinanceChartPanelConfig = {
 | [`paneSizing`](#panesizing) | `Record<string, IPaneSizeConfig>` | Each study's own size |
 | [`paneControls`](#panecontrols) | `IPaneControlOptions` | Bar shown, mouse layout |
 | [`loading`](#loading) | `IPaneLoadingOptions` | Skeleton and overlay |
-| [`theme`](#theme) | `ISciTraderTheme` | `SCITRADER_DARK_THEME` |
+| [`theme`](#theme) | [`ISciTraderTheme`](/financial-charts/styling-and-themes/custom-themes/#theme-reference) | `SCITRADER_DARK_THEME` |
 | [`axisDefaults`](#axisdefaults) | `IChartAxisDefaults` | None |
 | [`surfaceConfig`](#surfaceconfig) | `TSurfaceConfigurationFunction` | None |
 
@@ -623,88 +623,11 @@ interface IPaneLoadingOptions {
 theme?: ISciTraderTheme;
 ```
 
-Every colour the chart draws with: surfaces, axes, legend, crosshair, and each study's defaults. `SCITRADER_LIGHT_THEME` is the built-in alternative.
+Every colour the chart draws with, as an [`ISciTraderTheme`](/financial-charts/styling-and-themes/custom-themes/#theme-reference): surfaces, axes, legend, crosshair, and each study's defaults. `SCITRADER_LIGHT_THEME` and `SCITRADER_OCEAN_THEME` are the other built-in themes.
 
 **Later:** `financeApi.setTheme(theme)`. See [Styling and themes](/financial-charts/styling-and-themes/).
 
-<details>
-<summary>The ISciTraderTheme interface, with its TSDoc</summary>
-
-```ts
-/**
- * A SciTrader theme: every colour the SDK and its React components draw with, in one object.
- *
- * - **Charts** take a theme as the `theme` option (`SciFinanceChartPanel.create`,
- *   `SciFinanceChart.createWithStudies`, `<SciFinanceChartView config>`), and switch a live chart with
- *   `SciFinanceChart.setTheme`. WebGL can't read CSS, so the chart applies the colours itself.
- * - **HTML and CSS** (the vanilla SDK toolbars and overlays, and the React components) read the theme
- *   as CSS custom properties. `SciTraderThemeProvider`, and each chart view on its own container,
- *   writes them. Every colour in the `chart`, `candles`, `market` and `ui` groups becomes one variable,
- *   named `--st-<group>-<property in kebab case>`: `ui.textMuted` is `--st-ui-text-muted`. Study colours
- *   are not written as variables.
- *
- * The SDK ships three themes, `SCITRADER_DARK_THEME` (the default), `SCITRADER_LIGHT_THEME` and
- * `SCITRADER_OCEAN_THEME`, listed in picker order by `SCITRADER_THEMES`. Build a
- * custom theme with `createSciTraderTheme(base, overrides)` rather than from scratch, so colours added
- * to the SDK later still have a value.
- *
- * **Colour values** are CSS colour strings: `#rgb`, `#rrggbb`, `#rrggbbaa`, `rgb(…)` / `rgba(…)` or a
- * colour name. Values drawn by WebGL (everything in `chart`, `candles` and `studies`) must be a form
- * SciChart parses: hex, `rgb(…)`, `rgba(…)` or a colour name. `var(…)`, `color-mix(…)` and gradients
- * work only in the groups that are applied as CSS (`ui`, and `market` where noted).
- *
- * **Explicit settings win over the theme.** A theme supplies defaults. A colour passed explicitly (in
- * `axisDefaults`, `surfaceConfig`, a study's constructor options, or edited in a study's settings
- * form) is kept, including across `setTheme`.
- */
-interface ISciTraderTheme {
-    /**
-     * Display name, e.g. `"SciTrader Dark"`. Used to label the theme in pickers, and written to the
-     * `data-scitrader-theme` attribute of `SciTraderThemeProvider`'s element for CSS selectors and
-     * tests. Give each theme a distinct name.
-     */
-    name: string;
-    /**
-     * `true` for a theme with a dark background. `createMuiThemeFromSciTrader` reads it to set MUI's
-     * palette `mode`, which decides MUI's own light or dark defaults for colours this theme does
-     * not set. Make it agree with the colours: {@link ISciTraderUiColors.overlayRgb} in particular
-     * should be white on a dark theme and black on a light one.
-     */
-    isDark: boolean;
-    /**
-     * CSS `font-family` for HTML text. It is set on `SciTraderThemeProvider`'s element (so the React
-     * components inherit it), written as `--st-font-family` (read by the vanilla drawing-tools flyout),
-     * and passed to MUI's typography by `createMuiThemeFromSciTrader`. The chart legend and crosshair
-     * labels use their own font and do not read it. Axis tick labels are drawn by WebGL and do not
-     * use it either. To change their font, register one with SciChart
-     * (`sciChartSurface.registerFont`) and set `labelStyle.fontFamily` in `axisDefaults`.
-     */
-    fontFamily: string;
-    /** The chart itself: surface, axes, gridlines, crosshair, legend and in-chart overlays. */
-    chart: ISciTraderChartColors;
-    /** Price-series colours that are not settings-form controls: line and mountain types, point & figure. */
-    candles: ISciTraderCandleColors;
-    /** Order-book colours: bid and ask, for the market-depth panel and order-book studies. */
-    market: ISciTraderMarketColors;
-    /**
-     * The default colours of each study, keyed by `EStudyType`, then by the study's own colour-control
-     * name. The keys are exactly the controls the study's settings form shows, so a theme sets what
-     * the form would. See {@link ISciTraderStudyColors}.
-     */
-    studies: ISciTraderStudyColors;
-    /** Application chrome: panels, text, buttons, toolbars, menus, scrollbars, for HTML components. */
-    ui: ISciTraderUiColors;
-    /**
-     * Default colours of the drawing tools: lines, fills, labels, grips and the selection outline,
-     * for any drawing whose tool doesn't give it a colour of its own. The built-in themes derive
-     * them from their text, selection and background colours (see `deriveDrawingColors`), and
-     * `createSciTraderTheme` re-derives them when an override changes those.
-     */
-    drawing: ISciTraderDrawingColors;
-}
-```
-
-</details>
+The [`ISciTraderTheme` interface, with its TSDoc](/financial-charts/styling-and-themes/custom-themes/#theme-reference), is on Creating a Custom Theme.
 
 ### ISciFinanceChartPanelConfig.axisDefaults {#axisdefaults}
 

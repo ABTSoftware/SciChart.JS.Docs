@@ -15,13 +15,13 @@ The theme colours the chart. Beyond colours, the chart has options for its axes,
 | Candle colours | The theme's `studies.OHLC`; see [Creating a Custom Theme](/financial-charts/styling-and-themes/custom-themes/#in-code) |
 | One indicator's colours | Its constructor's colours, or the theme's `studies.<type>` for every chart; [below](#indicator-colours) |
 | Axis gridlines, bands, labels and fonts | [`axisDefaults`, `applyAxisStyle`](#axes) |
-| The legend and crosshair | [`FinChartLegendModifier`'s setters](#legend-and-crosshair) |
+| The legend and crosshair | The theme's `chart` colours, and [`FinChartLegendModifier`'s setters](#legend-and-crosshair) |
 | The background | The theme's `chart.background`, or [`surfaceConfig`](#background) |
 | Drawings and the order book heatmap | The theme; [below](#drawings) |
 
 ## TypeScript Example: Styling the Chart
 
-BTC-USD with an orange SMA, its colour passed to the study, and `axisDefaults` turning off the axis bands and minor gridlines. The buttons switch theme, turn the gridlines on and off with `applyAxisStyle`, enlarge the axis labels and legend, and dash the crosshair (move the mouse over the chart). Switch theme after the others: the orange SMA and your axis options stay.
+BTC-USD with an orange SMA, its colour passed to the study, and `axisDefaults` turning off the axis bands and minor gridlines. The buttons switch theme, turn the gridlines on and off with `applyAxisStyle`, and enlarge the axis labels and legend. Switch theme after the others: the orange SMA and your axis options stay.
 
 <LiveDocSnippet maxWidth={"100%"} height={650} includeSciTrader name="../../_examples/styling_Chart/vanilla" html={`<div style="display: flex; flex-direction: column; height: 100%"><div id="toolbar"></div><div id="chart" style="flex: 1; min-height: 0"></div></div>`} />
 
@@ -77,15 +77,15 @@ financeChartPanel.financeApi.applyAxisStyle({ drawMajorGridLines: false });
 
 ## The Legend and Crosshair {#legend-and-crosshair}
 
-The theme sets their colours and the legend's size (`chart.legendFontSize`). `FinChartLegendModifier`, which draws both, has setters for everything else:
+The theme sets their colours: `chart.crosshair`, `crosshairDot`, `crosshairLabelBackground`, `crosshairLabelText` and `legendText`, and the legend's size, `chart.legendFontSize`. The crosshair is a thin dashed line. `FinChartLegendModifier`, which draws both, has setters for the legend and the crosshair's axis labels:
 
 ```ts
 const legend = financeChartPanel.financeApi.finChartModifiers
     .asArray()
     .find((m): m is FinChartLegendModifier => m instanceof FinChartLegendModifier);
 
-legend.setCrosshairStrokeDashArray([4, 4]); // a dashed crosshair
 legend.setLegendFontSize(15);
+legend.setAxisLabelFont(15); // the crosshair's labels on the axes
 legend.legendOffsetX = 12; // move the legend
 ```
 
@@ -94,22 +94,10 @@ legend.legendOffsetX = 12; // move the legend
 - **To hide the crosshair and legend,** e.g. on a touch screen, call `setCursorEnabled(false)`; see [Mobile and Desktop Modes](/financial-charts/sci-finance-chart/mobile-and-desktop-modes/#crosshair).
 
 <details>
-<summary>The styling members of FinChartLegendModifier, with their TSDoc</summary>
+<summary>The legend styling members of FinChartLegendModifier, with their TSDoc</summary>
 
 ```ts
 class FinChartLegendModifier {
-    /**
-     * Updates the crosshair stroke color on every already-attached pane's
-     * x/y line annotations. Without walking the annotation maps, mutating
-     * `this.crosshairStroke` alone has no visible effect — the constructor
-     * stamps the value into each LineAnnotation at attach time and never
-     * re-reads it.
-     */
-    setCrosshairStroke(value: string): void;
-    /** Live-updates the dash pattern on all attached panes' crosshair lines. */
-    setCrosshairStrokeDashArray(value: number[]): void;
-    /** Live-updates the dot fill on all attached panes' crosshair-intersection markers. */
-    setCrosshairDotFill(value: string): void;
     /**
      * Colours of the crosshair's axis labels (the price and time tags on the axes). The labels
      * are baked into their annotations when created, so this rebuilds the crosshair on every pane.

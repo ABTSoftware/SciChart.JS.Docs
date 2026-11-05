@@ -106,6 +106,7 @@ Pages:
 ## 7. Styling and Themes
 
 - [x] `styling-and-themes/` is a section (2026-11-05): an overview with the three built-in themes, applying, switching, React and remembering the user's theme; then The CSS Stylesheet, Creating a Custom Theme (in code and from CSS variables), Styling the Chart, Styling the UI Components (toolbars, market depth) and Mobile and Responsive Styling. Each has live TS and React examples.
+- [ ] **SDK bug, crosshair setters:** in the default `crosshairRenderMode` ("html"), `FinChartLegendModifier.setCrosshairStrokeDashArray`, `setCrosshairStroke` and `setCrosshairDotFill` only update the WebGL-mode line annotations, so they don't change a crosshair already drawn. (Theme switches recolour it only because `setAxisLabelColors` rebuilds the crosshair afterwards.) Styling the Chart no longer shows these setters, and its example has no dashed-crosshair button; add them back once fixed. Not yet logged in YouTrack.
 - [ ] **SDK bug, legend font size on setTheme:** switching to a theme with a different `chart.legendFontSize` sets the legend's size property, but the legend keeps drawing at the old size until `setLegendFontSize` is called again. The Mobile and Chart examples call it after `setTheme`, and Styling the Chart says to. Remove those once fixed. Not yet logged in YouTrack.
 
 ## 8. Market calendars

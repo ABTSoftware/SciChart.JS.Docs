@@ -28,14 +28,13 @@ async function createChart() {
         ],
     });
     const chart = financeChartPanel.financeApi;
-    // 3. The legend and crosshair are drawn by FinChartLegendModifier: its setters style them
+    // 3. The legend is drawn by FinChartLegendModifier: its setters style it
     const legend = chart.finChartModifiers
         .asArray()
         .find((m) => m instanceof FinChartLegendModifier);
     let theme = SCITRADER_DARK_THEME;
     let gridLines = true;
     let largeText = false;
-    let dashed = false;
     const actions = [
         // A theme switch restyles the chart, but keeps axisDefaults, applyAxisStyle and the orange SMA
         ["Dark", theme === SCITRADER_DARK_THEME, () => setTheme(SCITRADER_DARK_THEME)],
@@ -58,14 +57,6 @@ async function createChart() {
                 chart.applyAxisStyle({ labelStyle: { fontSize } }); // axis labels
                 legend?.setLegendFontSize(largeText ? 15 : theme.chart.legendFontSize); // the legend
                 legend?.setAxisLabelFont(fontSize); // the crosshair's labels on the axes
-            },
-        ],
-        [
-            "Dashed crosshair",
-            dashed,
-            () => {
-                dashed = !dashed;
-                legend?.setCrosshairStrokeDashArray(dashed ? [4, 4] : []);
             },
         ],
     ];
@@ -95,7 +86,6 @@ async function createChart() {
         Light: theme === SCITRADER_LIGHT_THEME,
         Gridlines: gridLines,
         "Large text": largeText,
-        "Dashed crosshair": dashed,
     })[label];
     applyThemeCssVariables(document.body, theme);
     renderToolbar();

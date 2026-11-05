@@ -26,7 +26,6 @@ export function ChartStylingChart() {
     const [theme, setTheme] = React.useState<ISciTraderTheme>(SCITRADER_DARK_THEME);
     const [gridLines, setGridLines] = React.useState(true);
     const [largeText, setLargeText] = React.useState(false);
-    const [dashed, setDashed] = React.useState(false);
 
     // Create the config once per mounted chart: studies are live objects bound to one chart
     const config = React.useMemo<ISciFinanceChartPanelConfig>(
@@ -58,7 +57,7 @@ export function ChartStylingChart() {
     // applyAxisStyle changes axis options on a live chart
     React.useEffect(() => api?.financeApi.applyAxisStyle({ drawMajorGridLines: gridLines }), [api, gridLines]);
 
-    // 3. The legend and crosshair are drawn by FinChartLegendModifier: its setters style them
+    // 3. The legend is drawn by FinChartLegendModifier: its setters style it
     React.useEffect(() => {
         if (!api) return;
         const chart = api.financeApi;
@@ -69,8 +68,7 @@ export function ChartStylingChart() {
         chart.applyAxisStyle({ labelStyle: { fontSize } }); // axis labels
         legend?.setLegendFontSize(largeText ? 15 : theme.chart.legendFontSize); // the legend
         legend?.setAxisLabelFont(fontSize); // the crosshair's labels on the axes
-        legend?.setCrosshairStrokeDashArray(dashed ? [4, 4] : []);
-    }, [api, largeText, dashed, theme]);
+    }, [api, largeText, theme]);
 
     return (
         // The provider gives the toolbar the theme's CSS variables
@@ -81,7 +79,6 @@ export function ChartStylingChart() {
                     <Toggle text="Light" on={theme === SCITRADER_LIGHT_THEME} onClick={() => setTheme(SCITRADER_LIGHT_THEME)} />
                     <Toggle text="Gridlines" on={gridLines} onClick={() => setGridLines(!gridLines)} />
                     <Toggle text="Large text" on={largeText} onClick={() => setLargeText(!largeText)} />
-                    <Toggle text="Dashed crosshair" on={dashed} onClick={() => setDashed(!dashed)} />
                 </div>
                 <div style={{ flex: 1, minHeight: 0 }}>
                     <SciFinanceChartView config={config} onInit={setApi} />

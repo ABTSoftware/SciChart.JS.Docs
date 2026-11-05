@@ -8,7 +8,7 @@ keywords: ["custom chart theme", "trading chart brand colours", "createSciTrader
 
 # Creating a Custom Theme
 
-A custom theme is a built-in theme with some colours changed. It works everywhere a built-in theme does: in the chart's config, in `setTheme`, in `SciTraderThemeProvider`, and as CSS variables for the controls.
+A custom theme is a built-in theme with some colours changed: an [`ISciTraderTheme`](#theme-reference), like the built-in ones. It works everywhere a built-in theme does: in the chart's config, in `setTheme`, in `SciTraderThemeProvider`, and as CSS variables for the controls.
 
 ## In Code: createSciTraderTheme {#in-code}
 
@@ -115,7 +115,23 @@ A theme needn't list drawing colours. `deriveDrawingColors(theme)` gives:
 The built-in themes use exactly that, and `createSciTraderTheme` re-derives them from the new theme's colours. Any drawing colour set by hand, in the base theme or the overrides, is kept.
 
 
-## Theme Reference {#theme-reference}
+## ISciTraderTheme Interface Reference {#theme-reference}
+
+Every theme is an `ISciTraderTheme`. Each colour group is an interface of its own, listed in the collapsed declaration below.
+
+| ISciTraderTheme member | Type | What it holds |
+| --- | --- | --- |
+| `name` | `string` | The name theme pickers show |
+| `isDark` | `boolean` | Whether the theme is dark, for colours that differ on dark and light backgrounds, such as the order book heatmap's |
+| `fontFamily` | `string` | The font of the HTML controls. Axis labels are WebGL, see [Styling the Chart](/financial-charts/styling-and-themes/styling-the-chart/#axes) |
+| `chart` | `ISciTraderChartColors` | Background, axes, gridlines, axis bands, crosshair, legend, current-price line, loading tint; and the axis label and legend font sizes |
+| `candles` | `ISciTraderCandleColors` | The line and mountain candle types, and point & figure X and O |
+| `studies` | `ISciTraderStudyColors` | Each study's default colours, by study type: `studies.OHLC` for the candles, `studies.RSI`, `studies.MACD` and so on |
+| `market` | `ISciTraderMarketColors` | The market depth ladder |
+| `ui` | `ISciTraderUiColors` | The HTML controls, through their CSS variables |
+| `drawing` | `ISciTraderDrawingColors` | The default colours of drawings |
+
+`createSciTraderTheme` takes a `TSciTraderThemeOverrides`: the same shape, with every member optional.
 
 <details>
 <summary>createSciTraderTheme, with its TSDoc</summary>
