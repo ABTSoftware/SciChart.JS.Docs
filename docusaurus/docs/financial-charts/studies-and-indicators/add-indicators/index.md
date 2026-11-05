@@ -16,12 +16,9 @@ Technical indicators are studies (see [Technical Indicators and Studies](/financ
 
 Each has TypeScript and React examples with live CodePens.
 
-For the most popular indicators, a page of their own explains what the indicator is, how it is calculated and how traders read it, and how to add it to a JavaScript or React financial chart:
-
-- [RSI (Relative Strength Index)](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/)
-- [MACD (Moving Average Convergence/Divergence)](/financial-charts/studies-and-indicators/add-indicators/macd/)
-- [Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/)
-- [Moving Averages (SMA, EMA, WMA)](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/)
+:::info
+The SciTrader SDK has 32 built-in technical indicators and studies. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). The most popular indicators have a page of their own, listed under this page in the sidebar: what the indicator is, how it is calculated, how traders read it, and how to add it to a JavaScript or React financial chart.
+:::
 
 ## Adding Technical Indicators When the Chart Is Created {#add-indicators}
 
@@ -50,8 +47,8 @@ const financeChartPanel = await SciFinanceChartPanel.create(document.getElementB
 });
 ```
 
-- **Overlays** ([moving averages](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/), [Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/) and other bands and channels, PSAR, VWAP, Ichimoku) share the price pane and its price axis.
-- **Oscillators** ([RSI](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/), [MACD](/financial-charts/studies-and-indicators/add-indicators/macd/) and the rest) have their own scale, so the chart adds a pane for each one below the price pane. The price pane is three times the height of an indicator pane; to change that, use [`paneSizing`](/financial-charts/finance-chart-api/chart-config/#panesizing).
+- **Overlays** ([moving averages](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/), [Bollinger Bands](/financial-charts/studies-and-indicators/add-indicators/bollinger-bands/) and other bands and channels, PSAR, [VWAP](/financial-charts/studies-and-indicators/add-indicators/vwap-volume-weighted-average-price/), [Ichimoku](/financial-charts/studies-and-indicators/add-indicators/ichimoku-cloud/)) share the price pane and its price axis.
+- **Oscillators** ([RSI](/financial-charts/studies-and-indicators/add-indicators/rsi-relative-strength-index/), [MACD](/financial-charts/studies-and-indicators/add-indicators/macd/), [Stochastic](/financial-charts/studies-and-indicators/add-indicators/stochastic-oscillator/), [ADX](/financial-charts/studies-and-indicators/add-indicators/adx-average-directional-index/), [ATR](/financial-charts/studies-and-indicators/add-indicators/atr-average-true-range/) and the rest) have their own scale, so the chart adds a pane for each one below the price pane. The price pane is three times the height of an indicator pane; to change that, use [`paneSizing`](/financial-charts/finance-chart-api/chart-config/#panesizing).
 - **Constructor options** set a study's inputs (lengths, levels) and styles (colours, thickness). Options left out take their defaults; the [overview](/financial-charts/studies-and-indicators/#the-catalogue) lists each study's options. The user can change all of them later in the [Settings Form](/financial-charts/studies-and-indicators/altering-study-settings/).
 
 In React, pass the same `studies` in the `config` of `SciFinanceChartView`. Create them in a `useMemo`, once per mounted chart: a study is a live object, bound to one chart.

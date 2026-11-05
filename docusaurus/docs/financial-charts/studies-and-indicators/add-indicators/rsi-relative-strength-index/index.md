@@ -10,6 +10,10 @@ keywords: ["RSI indicator", "relative strength index", "RSI JavaScript", "RSI Re
 
 The **RSI (Relative Strength Index)** is one of the most widely used technical indicators. This page explains what the RSI indicator is, how it is calculated and how traders read it, and shows how to add an RSI indicator to a JavaScript or React financial chart with SciTrader.js's `RSIStudy`, with live examples you can edit in CodePen.
 
+:::info
+The RSI is one of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
+:::
+
 ## What Is the RSI Indicator?
 
 The RSI is a **momentum oscillator**, developed by J. Welles Wilder Jr. It measures how strongly price has been rising compared to how strongly it has been falling over recent candles, on a scale from 0 to 100:

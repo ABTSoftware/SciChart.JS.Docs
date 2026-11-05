@@ -10,6 +10,10 @@ keywords: ["MACD indicator", "moving average convergence divergence", "MACD Java
 
 The **MACD (Moving Average Convergence/Divergence)** indicator shows the trend and momentum of price in one pane. This page explains what MACD is, how its line, signal line and histogram are calculated and how traders read them, and shows how to add a MACD indicator to a JavaScript or React financial chart with SciTrader.js's `MACDStudy`, with live examples you can edit in CodePen.
 
+:::info
+MACD is one of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
+:::
+
 ## What Is the MACD Indicator?
 
 MACD, developed by Gerald Appel, tracks the gap between a fast and a slow moving average of the close. It has three parts:

@@ -10,6 +10,10 @@ keywords: ["moving average indicator", "SMA", "EMA", "WMA", "simple moving avera
 
 **Moving averages** smooth price into a line, so the trend is easier to see. SciTrader.js has three: the **SMA** (simple), the **EMA** (exponential) and the **WMA** (weighted). This page explains what each is, how each is calculated and how traders use them, and shows how to add moving averages to a JavaScript or React financial chart with SciTrader.js, with live examples you can edit in CodePen.
 
+:::info
+The SMA, EMA and WMA are three of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
+:::
+
 ## What Is a Moving Average?
 
 A moving average is the average close over the last `length` candles, recalculated at every candle, so it "moves" along the chart. It follows price with a lag: the longer the length, the smoother the line and the later it turns.
