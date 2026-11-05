@@ -83,16 +83,15 @@ Pages:
 - [ ] **Cross-links:** done for Sparklines, Market Depth, Chart Config, Changing the Symbol, Periods, Studies, Creating Custom Studies and the Overview. Still to do: Save and Restore (what of the data source is saved: `exchangeName`, symbol, interval).
   - Was: Sparklines (`WatchListDataManager`), Market Depth, Save and Restore, Chart Config (`exchangeName`, `services`), Changing the Symbol (`createDataFeed`), Periods (the fetch plan).
 - [ ] **Sample data URLs:** the CSV and JSON examples load `static/financial-charts/data/` from jsDelivr pinned to commit `@0c19782c` (CodePen needs jsDelivr's CORS headers; scichart.com sends none). A branch pin can't work: jsDelivr reads `@v6.x-scitrader` as a semver range. Switch `SAMPLE_DATA` in `dataSources_CSV` and `dataSources_JSON` to `@master` once this branch is merged. The CSV Data page's download links use the docs site's own copy.
-- [ ] **Monthly (1M) candles don't load in a chart:** an SDK bug. The exchange client's in-memory cache (`CandleRangeSet.mergeRun`, JS/main and JS/scitrader-js-2.1) expects every month to be 30 days long, so calendar months (February: 28 days) throw "non-contiguous merged candles". `OHLCVDataFeed.loadInitialData` swallows the error, and `changeInterval("1M")` leaves the chart as it was. This affects `CSVExchange` and Binance. The CSV and JSON examples leave 1M out of their interval buttons; add it back, and remove the notes on both pages, once it's fixed. Not yet logged in YouTrack.
+- [ ] **Monthly (1M) candles don't load in a chart:** an SDK bug. The exchange client's in-memory cache (`CandleRangeSet.mergeRun`, JS/main and JS/scitrader-js-2.1) expects every month to be 30 days long, so calendar months (February: 28 days) throw "non-contiguous merged candles". `OHLCVDataFeed.loadInitialData` swallows the error, and `changeInterval("1M")` leaves the chart as it was. This affects `CSVExchange` and Binance. The CSV and JSON examples leave 1M out of their interval buttons; add it back, and remove the notes on both pages, once it's fixed. Logged as SCT-939.
 - [ ] **SEO:** an Ahrefs pass for searches such as "load JSON into a candlestick chart", "CSV candlestick chart JavaScript", "real-time crypto chart", "Coinbase/Binance/Kraken API chart". Shape page titles and headings to them, as for the indicator pages.
 
 ## 5. Expand Saving and Restoring
 
-- [ ] Expand `save-and-restore/` on serialisation, `toJSON` / `fromJSON`:
-  - examples of the saved JSON, and the entire schema (`ISciFinanceChartPanelState`, `IStudyState`, `ISerializedAnnotation`, layout state);
-  - what is saved and loaded between sessions, and what isn't;
-  - where it is saved by default;
-  - how to control this: redirect where it is saved. Customers may not want to save and restore to local app storage, but to their own servers.
+- [x] `save-and-restore/` is a section (2026-11-05): an overview (toJSON, fromJSON, React restoreState, what is and isn't saved), The Saved JSON Format (a real saved chart, the schema, editing state, versions) and Saving to Your Own Storage or Server (a store interface, localStorage, IndexedDB, a REST server with Express, files, auto-save, loading safely, app settings beside the chart). Live TS and React examples for the overview and storage pages; the storage example calls a mocked REST API in the browser.
+- [ ] **SDK, drawings on restore:** `fromJSON` silently skips drawings unless `registerDrawingTools()` ran first, which a page-load restore never has (`DrawingToolsController.attach` comes after). The docs say to call it at startup. Consider registering the built-in tools in `fromJSON`, or warning. Logged as SCT-944.
+- [ ] **SDK, React restore with a selected drawing:** remounting `SciFinanceChartView` (new `key`) while a drawing is selected throws `Cannot read properties of undefined (reading 'deselectAnnotation')` from `useDrawingTools`' detach, which runs after the chart is gone, and unmounts the React tree. The examples call `controller.clearSelection()` first. Logged as SCT-945.
+- [ ] **SDK TSDoc:** `ISciFinanceChartPanelState` says the selected drawing tool is saved (it isn't), and refers to an internal backlog; `IVisibleRangeState` / `visibleRanges` say index space, but the saved values are times in seconds; `IStudyState.descriptor` and `ISerializedAnnotation` carry history and a PR reference. The docs show rewritten comments. Logged as SCT-946.
 
 ## 6. Layout, Panes and PaneGroup under the finance chart UI component
 
@@ -106,8 +105,8 @@ Pages:
 ## 7. Styling and Themes
 
 - [x] `styling-and-themes/` is a section (2026-11-05): an overview with the three built-in themes, applying, switching, React and remembering the user's theme; then The CSS Stylesheet, Creating a Custom Theme (in code and from CSS variables), Styling the Chart, Styling the UI Components (toolbars, market depth) and Mobile and Responsive Styling. Each has live TS and React examples.
-- [ ] **SDK bug, crosshair setters:** in the default `crosshairRenderMode` ("html"), `FinChartLegendModifier.setCrosshairStrokeDashArray`, `setCrosshairStroke` and `setCrosshairDotFill` only update the WebGL-mode line annotations, so they don't change a crosshair already drawn. (Theme switches recolour it only because `setAxisLabelColors` rebuilds the crosshair afterwards.) Styling the Chart no longer shows these setters, and its example has no dashed-crosshair button; add them back once fixed. Not yet logged in YouTrack.
-- [ ] **SDK bug, legend font size on setTheme:** switching to a theme with a different `chart.legendFontSize` sets the legend's size property, but the legend keeps drawing at the old size until `setLegendFontSize` is called again. The Mobile and Chart examples call it after `setTheme`, and Styling the Chart says to. Remove those once fixed. Not yet logged in YouTrack.
+- [ ] **SDK bug, crosshair setters:** in the default `crosshairRenderMode` ("html"), `FinChartLegendModifier.setCrosshairStrokeDashArray`, `setCrosshairStroke` and `setCrosshairDotFill` only update the WebGL-mode line annotations, so they don't change a crosshair already drawn. (Theme switches recolour it only because `setAxisLabelColors` rebuilds the crosshair afterwards.) Styling the Chart no longer shows these setters, and its example has no dashed-crosshair button; add them back once fixed. Logged as SCT-941.
+- [ ] **SDK bug, legend font size on setTheme:** switching to a theme with a different `chart.legendFontSize` sets the legend's size property, but the legend keeps drawing at the old size until `setLegendFontSize` is called again. The Mobile and Chart examples call it after `setTheme`, and Styling the Chart says to. Remove those once fixed. Logged as SCT-940.
 
 ## 8. Market calendars
 
@@ -115,4 +114,4 @@ Pages:
 
 ## Related SDK tickets
 
-Drawing tools: SCT-928, SCT-929, SCT-930, SCT-931. Indicators: SCT-923 to SCT-927. Data sources: SCT-917, SCT-918, SCT-932. See `seo/financial-charts-indicator-pages.md` for the full list and the pages each affects.
+Drawing tools: SCT-928, SCT-929, SCT-930, SCT-931. Indicators: SCT-923 to SCT-927. Data sources: SCT-917, SCT-918, SCT-932. SDK issues found writing the docs: SCT-939 (monthly candles), SCT-940 (legend font size on setTheme), SCT-941 (crosshair setters), SCT-942 (pane sizing), SCT-943 (PaneId lookups), SCT-944 (drawings on restore), SCT-945 (React restore with a selected drawing), SCT-946 (serialization TSDoc). See `seo/financial-charts-indicator-pages.md` for the full list and the pages each affects.

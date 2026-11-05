@@ -1156,7 +1156,7 @@ The state is an `ISciFinanceChartPanelState`:
 | `layout` | `IPaneApiState` | Pane order, sizes, visibility, the maximised pane and axis sync |
 | `useSubCharts` | `boolean` (optional) | Whether the chart used sub-charts when it was saved |
 
-The zoom and pan position is saved in `finance.visibleRanges` but isn't restored. See [What is not restored](/financial-charts/save-and-restore/#what-is-not-restored).
+The zoom and pan position is saved in `finance.visibleRanges` but isn't restored. See [What is not restored](/financial-charts/save-and-restore/#what-isnt-saved).
 
 <details>
 <summary>The ISciFinanceChartPanelState, ISciFinanceChartState and IPaneApiState interfaces, with their TSDoc</summary>
