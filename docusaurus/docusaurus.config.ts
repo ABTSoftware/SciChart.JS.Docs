@@ -3,6 +3,9 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import CustomCopyPlugin from "./custom-plugins/webpackCustomConfigPlugin";
 import remarkCodeSnippets from "remark-code-snippets";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import remarkTableCodeBreaks from "./custom-plugins/remarkTableCodeBreaks";
 import { baseUrl } from "./config";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
@@ -61,11 +64,15 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl: gitHubUrl,
-                    remarkPlugins: [remarkCodeSnippets]
+                    // remarkMath + rehypeKatex: $inline$ and $$block$$ maths, rendered by KaTeX at build time
+                    // remarkTableCodeBreaks: long code in Financial Charts tables wraps on phones
+                    remarkPlugins: [remarkCodeSnippets, remarkMath, [remarkTableCodeBreaks, { include: /financial-charts/ }]],
+                    rehypePlugins: [rehypeKatex]
                 },
                 blog: false,
                 theme: {
-                    customCss: "./src/css/custom.css"
+                    // KaTeX's stylesheet is bundled with the site's CSS, not loaded from a CDN
+                    customCss: ["./src/css/custom.css", require.resolve("katex/dist/katex.min.css")]
                 },
                 sitemap: {
                     lastmod: "datetime",
@@ -99,6 +106,7 @@ const config: Config = {
                     label: "3D Docs",
                     position: "left"
                 },
+                { to: "/financial-charts/overview", label: "Financial Docs", position: "left" },
                 {
                     href: "https://www.scichart.com/documentation/js/current/typedoc/index.html",
                     label: "API Docs",

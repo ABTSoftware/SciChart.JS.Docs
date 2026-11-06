@@ -13,7 +13,7 @@ or [submit a support request](https://www.scichart.com/contact-us#tech-support) 
 :::
 
 :::tip On ASP.NET Core?
-There's a drop-in NuGet package: [**`SciChart.AspNetCore.SimpleLicensing`**](./aspnet-core) gives you a token service, a `<scichart-license />` tag helper for the layout, and a `MapSciChartLicenseEndpoint()` extension &mdash; the cross-language guidance below is still worth reading, but you won't need to write the HMAC code yourself.
+There's a drop-in NuGet package: [**`SciChart.AspNetCore.SimpleLicensing`**](/user-manual/licensing-scichart-js/simple-server-validation/aspnet-core) gives you a token service, a `<scichart-license />` tag helper for the layout, and a `MapSciChartLicenseEndpoint()` extension &mdash; the cross-language guidance below is still worth reading, but you won't need to write the HMAC code yourself.
 :::
 
 ## When to use this
@@ -160,7 +160,7 @@ app.get("/api/license", (req, res) => {
 ```
 
 :::tip ASP.NET Core users
-Skip the hand-written snippets below and use the drop-in [**`SciChart.AspNetCore.SimpleLicensing`**](./aspnet-core) package: one line of DI registration, a `<scichart-license />` tag helper for the layout, and a `MapSciChartLicenseEndpoint()` extension. It also handles the inline meta-tag delivery so SciChart validates without an XHR on initial page load. The snippets below remain accurate if you'd rather hand-roll the controller in an existing project.
+Skip the hand-written snippets below and use the drop-in [**`SciChart.AspNetCore.SimpleLicensing`**](/user-manual/licensing-scichart-js/simple-server-validation/aspnet-core) package: one line of DI registration, a `<scichart-license />` tag helper for the layout, and a `MapSciChartLicenseEndpoint()` extension. It also handles the inline meta-tag delivery so SciChart validates without an XHR on initial page load. The snippets below remain accurate if you'd rather hand-roll the controller in an existing project.
 :::
 
 ### .NET (C#) — Minimal API
@@ -404,7 +404,7 @@ Full working projects for each stack are in the [SciChart.JS.Examples GitHub rep
 
 | Folder                                                                                                                                                | Stack                      | Mode                              |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------- | --------------------------------- |
-| [`SciChart.AspNetCore.SimpleLicensing`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/SciChart.AspNetCore.SimpleLicensing)     | ASP.NET Core (package)     | Inline meta tag + round-trip endpoint &mdash; see [ASP.NET Core](./aspnet-core) |
+| [`SciChart.AspNetCore.SimpleLicensing`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/SciChart.AspNetCore.SimpleLicensing)     | ASP.NET Core (package)     | Inline meta tag + round-trip endpoint &mdash; see [ASP.NET Core](/user-manual/licensing-scichart-js/simple-server-validation/aspnet-core) |
 | [`nodejs-simple-server-licensing`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/nodejs-simple-server-licensing)             | Node.js + Express          | Inline + round-trip               |
 | [`dotnet-simple-server-licensing`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/dotnet-simple-server-licensing)             | ASP.NET Core Minimal API   | Inline + round-trip               |
 | [`dotnet-mvc-simple-server-licensing`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/dotnet-mvc-simple-server-licensing)     | ASP.NET Core MVC (consumes the package) | Inline + round-trip               |

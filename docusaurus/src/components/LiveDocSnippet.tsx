@@ -3,10 +3,80 @@ import { CodePenLauncher } from "./CodePenLauncher";
 import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import financialToolsPackage from "scichart-financial-tools/package.json";
 
 const USE_LOCAL_PACKAGE = false; // for testing purposes
 
-const financialToolsVersion = libraryVersion;
+// scichart-financial-tools is versioned on its own (e.g. 6.0.14 beside scichart 6.0.15): use its installed version
+const financialToolsVersion: string = financialToolsPackage.version;
+
+// SciTrader (scichart-scitrader) has no browser bundle yet, so it loads from jsDelivr's "+esm" build.
+// That build imports its peers from pinned jsDelivr URLs, which the import map below points at the
+// scichart-financial-tools browser bundle, so the page has one copy of SciChart. That bundle includes
+// SciChart; SciChartSurface.useWasmFromCDN() loads the WebAssembly for that same version.
+// If you change SCITRADER_VERSION, re-check which URLs its +esm build imports:
+// https://cdn.jsdelivr.net/npm/scichart-scitrader@<version>/+esm
+const SCITRADER_VERSION = "0.0.4";
+const SCITRADER_FINTOOLS_VERSION = "6.0.14"; // its browser bundle contains scichart 6.0.14
+const SCITRADER_ESM_PEER_URLS = [
+    "https://cdn.jsdelivr.net/npm/scichart@6.0.15/+esm",
+    "https://cdn.jsdelivr.net/npm/scichart-financial-tools@6.0.14/+esm"
+];
+// The jsDelivr +esm builds import each other by root-relative path, e.g. "/npm/rxjs@7.8.2/+esm". Those
+// should resolve against cdn.jsdelivr.net, but in a CodePen preview some browsers (seen in Safari)
+// resolve them against the pen's base, codepen.io, and the import 404s. A key starting with "/" is
+// resolved against the page's base too, so mapping each path to its full jsDelivr URL catches that
+// case, and is never matched otherwise. The scichart and fin-tools paths go to the one bundle, as above.
+// This is the whole graph below scichart-scitrader(-react)@0.0.4: re-check it if a version changes.
+const SCITRADER_ESM_PATHS = [
+    "/npm/scichart-scitrader@0.0.4/+esm",
+    "/npm/rxjs@7.8.2/+esm",
+    "/npm/rxjs@7.8.2/operators/+esm",
+    "/npm/idb@7.1.1/+esm",
+    "/npm/technicalindicators@3.1.0/+esm",
+    "/npm/tslib@2.8.1/+esm"
+];
+const SCITRADER_REACT_ESM_PATHS = ["/npm/react@19.3.1/+esm", "/npm/react-dom@19.3.1/+esm", "/npm/scheduler@0.28.0/+esm"];
+const SCITRADER_FINTOOLS_BUNDLE = `https://cdn.jsdelivr.net/npm/scichart-financial-tools@${SCITRADER_FINTOOLS_VERSION}/scichart-financial-tools.browser.mjs`;
+// SciTrader samples use the dark theme: give the page its background, so it isn't white while the
+// bundles load (a couple of seconds), and its font, for any text a sample doesn't style itself.
+const SCITRADER_PAGE_STYLE = `body { background: #2b2839; color: #ffffff; font-family: "DM Sans", sans-serif; }`;
+const SCITRADER_CSS = `https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/styles/scitrader.css`;
+// scichart-scitrader-react's +esm build imports react@REACT_VERSION and react-dom@REACT_VERSION. Map
+// "react" to that same URL, so the sample and the wrapper share one copy of React.
+const REACT_VERSION = "19.3.1";
+const REACT_IMPORTS = [
+    `"react": "https://cdn.jsdelivr.net/npm/react@${REACT_VERSION}/+esm"`,
+    `"react-dom/client": "https://cdn.jsdelivr.net/npm/react-dom@${REACT_VERSION}/client/+esm"`,
+    `"scichart-scitrader-react": "https://cdn.jsdelivr.net/npm/scichart-scitrader-react@${SCITRADER_VERSION}/+esm"`
+];
+
+/** Code appended to a React sample to render `component` into `#root`. The sample must import React as `React`. */
+const reactMountTs = (component: string) => `
+// Render the component into the page
+import { createRoot } from "react-dom/client";
+createRoot(document.getElementById("root")!).render(<${component} />);
+`;
+const reactMountJs = (component: string) => `
+import { createRoot } from "react-dom/client";
+createRoot(document.getElementById("root")).render(React.createElement(${component}));
+`;
+
+/** Remove `import "….css";` lines: a browser can't import CSS as a module, so the page links the stylesheet instead. */
+const stripCssImports = (source?: string) => source?.replace(/^import\s+["'][^"']+\.css["'];?[ \t]*\r?\n/gm, "");
+
+/**
+ * Fetch a snippet's source file. The dev server answers a file it doesn't serve with the site's HTML
+ * page and a 200, which would otherwise end up in the iframe and in CodePen as the "code".
+ */
+const fetchSource = async (url: string) => {
+    const res = await fetch(url);
+    const text = await res.text();
+    if (!res.ok || /^\s*<!doctype html/i.test(text)) {
+        throw new Error(`LiveDocSnippet: ${url} was not found (got ${res.status}${res.ok ? ", an HTML page" : ""})`);
+    }
+    return text;
+};
 
 enum EHtmlType {
     Default = "Default",
@@ -21,6 +91,17 @@ type Props = {
     extraJSPaths?: string[];
     htmlType?: EHtmlType;
     includeFinTools?: boolean;
+    /** Load scichart-scitrader (and its peers) from jsDelivr, with its stylesheet. */
+    includeSciTrader?: boolean;
+    /** The page's HTML. Default: a `#scichart-root` div, or a `#root` div for a React sample. */
+    html?: string;
+    /**
+     * Render a React sample: the name of the component it exports. The sample is `${name}.tsx`, and the
+     * component is rendered into `#root`. Needs `includeSciTrader`.
+     */
+    reactComponent?: string;
+    /** A fixed height for the snippet, instead of a 3:2 aspect ratio. */
+    height?: string | number;
 };
 
 type ExtraJs = { path: string; content: string };
@@ -30,22 +111,28 @@ export default function LiveDocSnippet(props?: Props) {
     const cssUrl = props?.cssPath;
     const htmlUrl = props?.htmlPath;
     const extraJSPaths = props?.extraJSPaths ?? [];
-    const tsUrl = `${filenameBase}.ts`;
+    const reactComponent = props?.reactComponent;
+    const tsUrl = `${filenameBase}.${reactComponent ? "tsx" : "ts"}`;
     const jsUrl = `${filenameBase}.js`;
 
     const [files, setFiles] = useState<{ html?: string; ts?: string; js?: string; css?: string; extraJs?: ExtraJs[] }>({});
     const [isLoading, setIsLoading] = useState(false);
 
-    let htmlString = `<div id="scichart-root" ></div>`;
+    let htmlString = props.html ?? (reactComponent ? `<div id="root" style="height: 100%"></div>` : `<div id="scichart-root" ></div>`);
     if (props.htmlType === EHtmlType.WithResult) {
         htmlString = `<div><div id="scichart-root" ></div><div id="result" style="height: 20px; color: red"></div><div>`
     }
 
     const htmlTemplate = files?.html ?? htmlString;
     const cssTemplate = files?.css ?? "";
-    const inlineJs = files.extraJs?.length && files.js ? inlineExtraJs(files.js, files.extraJs) : undefined;
-    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools, inlineJs);
-    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools);
+    const sciTrader = props.includeSciTrader;
+    const withMount = (source: string | undefined, mount: (component: string) => string) =>
+        source && reactComponent ? source + mount(reactComponent) : source;
+    const jsSource = withMount(sciTrader ? stripCssImports(files.js) : files.js, reactMountJs);
+    const tsSource = withMount(sciTrader ? stripCssImports(files.ts) : files.ts, reactMountTs);
+    const inlineJs = files.extraJs?.length && jsSource ? inlineExtraJs(jsSource, files.extraJs) : sciTrader ? jsSource : undefined;
+    const htmlContent = getIframeSrc(htmlTemplate, filenameBase, cssUrl, props.htmlType, props.includeFinTools, inlineJs, sciTrader, !!reactComponent);
+    const sandboxHtml = getSandboxSrc(htmlTemplate, props.htmlType, props.includeFinTools, sciTrader, !!reactComponent);
 
     useEffect(() => {
         const fetchFiles = async () => {
@@ -53,10 +140,10 @@ export default function LiveDocSnippet(props?: Props) {
 
             const [html, ts, js, css, ...extraJs] = await Promise.all([
                 htmlUrl ? fetch(htmlUrl).then(res => res.text()) : null,
-                fetch(tsUrl).then(res => res.text()),
-                fetch(jsUrl).then(res => res.text()),
-                cssUrl ? fetch(cssUrl).then(res => res.text()) : null,
-                ...extraJSPaths.map(path => fetch(path).then(res => res.text()))
+                fetchSource(tsUrl),
+                fetchSource(jsUrl),
+                cssUrl ? fetchSource(cssUrl) : null,
+                ...extraJSPaths.map(path => fetchSource(path))
             ]);
 
             setFiles({ html, ts, js, css, extraJs: extraJSPaths.map((path, index) => ({ path, content: extraJs[index] })) });
@@ -70,17 +157,33 @@ export default function LiveDocSnippet(props?: Props) {
     }, []);
 
     return (
-        <div style={{ width: "100%", maxWidth: props?.maxWidth, aspectRatio: 3 / 2, display: "flex", flexDirection: "column", marginBottom: '1rem', background: "#8881" }}>
-            <CodePenLauncher js={inlineJs ?? files.ts} html={sandboxHtml} css={files.css} />
+        <div style={{ width: "100%", maxWidth: props?.maxWidth, ...(props?.height ? { height: props.height } : { aspectRatio: 3 / 2 }), display: "flex", flexDirection: "column", marginBottom: '1rem', background: "#8881" }}>
+            <CodePenLauncher js={files.extraJs?.length ? inlineJs : tsSource} html={sandboxHtml} css={files.css} />
             <BrowserOnly>
-                {() => <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
+                {() => (sciTrader && !inlineJs) ? null : <iframe width="100%" height="100%" srcDoc={htmlContent}></iframe>}
             </BrowserOnly>
         </div>
     );
 }
 
-const getImportMap = (includeFinTools?: boolean) => {
+const getImportMap = (includeFinTools?: boolean, includeSciTrader?: boolean, includeReact?: boolean) => {
     const imports = [];
+
+    if (includeSciTrader) {
+        imports.push(
+            `"scichart": "${SCITRADER_FINTOOLS_BUNDLE}"`,
+            `"scichart-financial-tools": "${SCITRADER_FINTOOLS_BUNDLE}"`,
+            `"scichart-scitrader": "https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/+esm"`,
+            // Samples that import rxjs themselves (e.g. an IOrderBookSource) get the same copy SciTrader uses
+            `"rxjs": "https://cdn.jsdelivr.net/npm/rxjs@7.8.2/+esm"`,
+            ...SCITRADER_ESM_PEER_URLS.map((url) => `"${url}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
+            ...SCITRADER_ESM_PEER_URLS.map((url) => `"${new URL(url).pathname}": "${SCITRADER_FINTOOLS_BUNDLE}"`),
+            ...SCITRADER_ESM_PATHS.map((path) => `"${path}": "https://cdn.jsdelivr.net${path}"`),
+            ...(includeReact ? REACT_IMPORTS : []),
+            ...(includeReact ? SCITRADER_REACT_ESM_PATHS.map((path) => `"${path}": "https://cdn.jsdelivr.net${path}"`) : [])
+        );
+        return imports.join(",\n\t\t\t\t\t\t");
+    }
 
     if (USE_LOCAL_PACKAGE) { // for testing purposes
         if (!includeFinTools) {
@@ -111,7 +214,7 @@ const getImportMap = (includeFinTools?: boolean) => {
     return imports.join(",\n\t\t\t\t\t\t");
 };
 
-const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean, inlineJs?: string) => {
+const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlType: EHtmlType, includeFinTools?: boolean, inlineJs?: string, includeSciTrader?: boolean, includeReact?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -124,10 +227,11 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
         <script type="importmap">
             {
                 "imports": {
-                    ${getImportMap(includeFinTools)}
+                    ${getImportMap(includeFinTools, includeSciTrader, includeReact)}
                 }
             }
         </script>
+        ${includeSciTrader ? `<link rel="stylesheet" href="${SCITRADER_CSS}">` : ""}
         <script type="module">
             import {SciChartSurface, SciChartDefaults} from "scichart";
 
@@ -136,10 +240,12 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             // From v6 one wasm module serves both 2D and 3D, and its side modules (charting3d) are
             // fetched lazily from the same directory. Do not also call SciChart3DSurface.configure()
             // here - in v6 the second call overwrites the first.
-            SciChartSurface.configure({
+            ${includeSciTrader
+                ? `SciChartSurface.useWasmFromCDN(); // matches the SciChart version in the bundle`
+                : `SciChartSurface.configure({
                 wasmUrl: "${baseUrl}scichart.wasm",
                 wasmNoSimdUrl: "${baseUrl}scichart-nosimd.wasm"
-            });
+            });`}
             SciChartDefaults.performanceWarnings = false;
         </script>
         ${inlineJs ? `<script type="module">${inlineJs}</script>` : `<script type="module" src=${jsUrl}.js></script>`}
@@ -148,6 +254,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
             iframe { border: 0; }
             body { margin: 0; }
             #scichart-root { width: 100%; height: ${height}; }
+            ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
         </style>
     </head>
     <body>
@@ -185,7 +292,7 @@ const inlineExtraJs = (mainJs: string, extraJs: ExtraJs[]) => {
     return `${externalImports}\n${body}`;
 };
 
-const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean) => {
+const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTools?: boolean, includeSciTrader?: boolean, includeReact?: boolean) => {
     let height = "100vh";
     if (htmlType === EHtmlType.WithResult) {
         height = `calc(100vh - 20px)`;
@@ -200,18 +307,17 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
             <script type="importmap">
                     {
                         "imports": {
-                            ${getImportMap(includeFinTools)}
+                            ${getImportMap(includeFinTools, includeSciTrader, includeReact)}
                         }
                     }
             </script>
+            ${includeSciTrader ? `<link rel="stylesheet" href="${SCITRADER_CSS}">` : ""}
             <script type="module">
                 import {SciChartSurface, SciChartDefaults} from "scichart";
 
                 SciChartSurface.UseCommunityLicense();
-                SciChartSurface.configure({
-                    wasmUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart.wasm",
-                    wasmNoSimdUrl: "https://cdn.jsdelivr.net/npm/scichart@${libraryVersion}/_wasm/scichart-nosimd.wasm"
-                });
+                // Load the WebAssembly from jsDelivr, matching the SciChart version in use
+                SciChartSurface.useWasmFromCDN();
                 SciChartDefaults.performanceWarnings = false;
             </script>
 
@@ -219,6 +325,7 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
                 iframe { border: 0; }
                 body { margin: 0; }
                 #scichart-root { width: 100%; height: ${height}; }
+                ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
 
             </style>
         </head>

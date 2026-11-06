@@ -6,7 +6,7 @@ title: ASP.NET Core (drop-in package)
 # Simple Server Validation in ASP.NET Core
 
 :::info
-ASP.NET Core is the only stack with a pre-packaged SciChart integration. The [`SciChart.AspNetCore.SimpleLicensing`](https://www.nuget.org/packages/SciChart.AspNetCore.SimpleLicensing) NuGet package replaces the hand-written controller, HMAC code, and per-view ceremony with a service registration, a tag helper, and an endpoint mapper. For other stacks see the cross-language [Simple Server Validation](.) page.
+ASP.NET Core is the only stack with a pre-packaged SciChart integration. The [`SciChart.AspNetCore.SimpleLicensing`](https://www.nuget.org/packages/SciChart.AspNetCore.SimpleLicensing) NuGet package replaces the hand-written controller, HMAC code, and per-view ceremony with a service registration, a tag helper, and an endpoint mapper. For other stacks see the cross-language [Simple Server Validation](/user-manual/licensing-scichart-js/simple-server-validation) page.
 :::
 
 The package gives you three pieces:
@@ -37,7 +37,7 @@ dotnet add package SciChart.AspNetCore.SimpleLicensing
 }
 ```
 
-For production, override via the standard ASP.NET Core configuration sources (user secrets, environment variables, Azure Key Vault, etc.). Find your Server Secret in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Runtime License Key**, in the **Server Secret** section — see "What you need" on the [main Simple Server Validation page](.).
+For production, override via the standard ASP.NET Core configuration sources (user secrets, environment variables, Azure Key Vault, etc.). Find your Server Secret in [SciChart MyAccount](https://www.scichart.com/my-account/) under **Orders & Keys → Manage Licenses → Runtime License Key**, in the **Server Secret** section — see "What you need" on the [main Simple Server Validation page](/user-manual/licensing-scichart-js/simple-server-validation).
 
 ## Register the service and endpoint
 
@@ -163,4 +163,4 @@ The service throws `InvalidOperationException` on first resolution if `ServerSec
 - **Source:** [`AdvancedLicensing/SciChart.AspNetCore.SimpleLicensing/`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/SciChart.AspNetCore.SimpleLicensing) in the SciChart.JS.Examples repository
 - **Runnable example:** [`AdvancedLicensing/dotnet-mvc-simple-server-licensing/`](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/AdvancedLicensing/dotnet-mvc-simple-server-licensing) — a complete ASP.NET Core MVC app that consumes the package via `ProjectReference`
 
-If you'd rather hand-roll the controller (for instance, to embed the HMAC code in an existing project without taking a dependency), the **.NET (C#) — MVC Controller** snippet on the [main Simple Server Validation page](.) is functionally equivalent to what the package does internally.
+If you'd rather hand-roll the controller (for instance, to embed the HMAC code in an existing project without taking a dependency), the **.NET (C#) — MVC Controller** snippet on the [main Simple Server Validation page](/user-manual/licensing-scichart-js/simple-server-validation) is functionally equivalent to what the package does internally.

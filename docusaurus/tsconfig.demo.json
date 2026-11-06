@@ -25,5 +25,5 @@
         "lib": ["es2021", "dom"]
     },
     "include": ["docs/**/*.ts"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "docs/financial-charts/**"]
 }

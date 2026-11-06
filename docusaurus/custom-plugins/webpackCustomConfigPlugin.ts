@@ -17,7 +17,7 @@ export default function () {
                             // directory so adding a module needs no change here.
                             { from: "node_modules/scichart/_wasm/", to: "" },
                             {
-                                from: "docs/**/*.@(ts|html|js|css)",
+                                from: "docs/**/*.@(ts|tsx|html|js|css)",
                                 to({ context, absoluteFilename }) {
                                     const relativePath = path.relative(path.join(context, "docs"), absoluteFilename);
                                     return relativePath;

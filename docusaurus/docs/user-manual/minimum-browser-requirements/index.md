@@ -18,6 +18,7 @@ Are you new to SciChart? Check out our most popular pages to get started below:
 * [Styling and Themeing](/2d-charts/styling-and-theming/theme-manager-api/)
 * [Chart Synchronization APIs](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/)
 * [3D charts Basics](/3d-charts/scichart-3d-basics/scichart-3d-basics-overview/)
+* [Financial & Trading Charts (SciTrader.js)](/financial-charts/overview/)
 :::
 
 SciChart.js is a cutting-edge next-generation JavaScript Chart Library. As a result, we are using the latest technologies to draw our fast, real-time and interactive JavaScript charts.
