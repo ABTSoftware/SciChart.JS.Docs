@@ -71,6 +71,48 @@ SciTrader is built on [SciChart.js](/intro/), so every chart is drawn by SciChar
 
 <CenteredImageWrapper src="https://www.scichart.com/wp-content/uploads/2026/10/scitrader-react-financial-charts.jpg" title="SciTrader.js React financial charts: a candlestick trading chart with volume, indicators and drawing tools" />
 
+## Demo
+
+See the SciTrader SDK in action in the live **Web**, **iOS** and **Android** demos at [scitrader.io](https://scitrader.io). The web demo below is a full React trading app built with SciTrader.js: candlestick charts with an order book heatmap, technical indicators, drawing tools, market depth and a watchlist, on live market data. Try it here:
+
+<div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "0.2rem", textAlign: "center", marginTop: "1.75rem" }}>
+    <div style={{ position: "relative", width: "100%" }}>
+        <iframe
+            src="https://staging.scitrader.io/finance-react"
+            title="SciTrader.js live demo: a React trading app with candlestick charts, indicators, drawing tools, market depth and a watchlist"
+            loading="lazy"
+            allow="fullscreen; clipboard-write"
+            style={{ display: "block", width: "100%", height: "min(80vh, 720px)", border: "1px solid var(--ifm-color-emphasis-300)", borderRadius: "8px" }}
+        />
+        <a
+            href="https://staging.scitrader.io/finance-react?interval=1m"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+                position: "absolute",
+                top: 0,
+                right: "1rem",
+                transform: "translateY(-75%)",
+                padding: "0.35rem 0.9rem",
+                borderRadius: "999px",
+                background: "rgba(20, 20, 30, 0.7)",
+                backdropFilter: "blur(4px)",
+                border: "1px solid rgba(255, 255, 255, 0.25)",
+                color: "#ffffff",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                textDecoration: "none",
+                boxShadow: "0 2px 8px rgba(0, 0, 0, 0.25)",
+            }}
+        >
+            Open in Full Screen ↗
+        </a>
+    </div>
+    <p>SciTrader.js React financial charts: create fully featured trading apps in your browser. See full demo at <a href="https://scitrader.io" target="_blank" rel="noopener noreferrer">https://scitrader.io</a></p>
+</div>
+
+## Packages
+
 ```js
 # JavaScript / TypeScript
 npm install scichart-scitrader scichart scichart-financial-tools rxjs
@@ -79,8 +121,6 @@ npm install scichart-scitrader scichart scichart-financial-tools rxjs
 npm install scichart-scitrader-react react react-dom
 ```
 
-## Packages
-
 SciTrader ships as two npm packages:
 
 | Package | Contents | Peer dependencies |
@@ -88,7 +128,7 @@ SciTrader ships as two npm packages:
 | `scichart-scitrader` | The framework-agnostic SDK: charts, studies, data feeds, exchange connectors, layouts, drawing tools, themes, UI components in plain DOM, and a plain-CSS stylesheet | `scichart`, `scichart-financial-tools`, `rxjs` 7.5.5+ |
 | `scichart-scitrader-react` | React bindings: `SciFinanceChartView`, `MarketDepthView`, the toolbar controls, the study settings, the drawing toolbar and list, `PaneProgressDots`, `CandleCounter`, `SciTraderIcon`, `useDrawingTools`, `SciTraderThemeProvider`. Each mounts the SDK's vanilla equivalent | `scichart-scitrader`, `react`, `react-dom` |
 
-Every code sample in this section is self-contained and shown in TypeScript and React, with live Binance data.
+Every code sample in this section is self-contained and shown in TypeScript and React, with live Coinbase data.
 
 ## What you can build with SciTrader.js
 
