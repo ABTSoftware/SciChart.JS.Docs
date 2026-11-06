@@ -3,10 +3,12 @@ import { CodePenLauncher } from "./CodePenLauncher";
 import { libraryVersion } from "scichart";
 import { useEffect, useState } from "react";
 import BrowserOnly from '@docusaurus/BrowserOnly';
+import financialToolsPackage from "scichart-financial-tools/package.json";
 
 const USE_LOCAL_PACKAGE = false; // for testing purposes
 
-const financialToolsVersion = libraryVersion;
+// scichart-financial-tools is versioned on its own (e.g. 6.0.14 beside scichart 6.0.15): use its installed version
+const financialToolsVersion: string = financialToolsPackage.version;
 
 // SciTrader (scichart-scitrader) has no browser bundle yet, so it loads from jsDelivr's "+esm" build.
 // That build imports its peers from pinned jsDelivr URLs, which the import map below points at the

@@ -55,7 +55,7 @@ async function createChart() {
         b.onclick = () => {
             // sectionFilter shows only that section. hideSectionLabels drops its heading: the tab says it
             form.update({ sectionFilter: [section], hideSectionLabels: true });
-            [...tabs.children].forEach((t: HTMLElement) => (t.style.fontWeight = t === b ? "700" : "400"));
+            Array.from(tabs.children as HTMLCollectionOf<HTMLElement>).forEach((t) => (t.style.fontWeight = t === b ? "700" : "400"));
         };
         return b;
     };

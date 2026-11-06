@@ -44,8 +44,8 @@
         "rehype-katex": "^7.0.1",
         "remark-code-snippets": "^1.1.0",
         "remark-math": "^6.0.0",
-        "scichart": "6.0.0-alpha.193",
-        "scichart-financial-tools": "6.0.0-alpha.193",
+        "scichart": "6.0.15",
+        "scichart-financial-tools": "6.0.14",
         "url": "^0.11.4"
     },
     "devDependencies": {
@@ -54,6 +54,9 @@
         "@docusaurus/types": "^3.8.1",
         "copy-webpack-plugin": "^13.0.0",
         "gray-matter": "^4.0.3",
+        "rxjs": "7.8.2",
+        "scichart-scitrader": "0.0.4",
+        "scichart-scitrader-react": "0.0.4",
         "typescript": "~5.6.2"
     },
     "browserslist": {
