@@ -120,16 +120,7 @@ Use a scatter plot when you have **two measured values for each item** and want 
 | [Bubble chart](/learn/bubble-chart/) | A scatter plot that also shows a third value as the size of each bubble |
 | [Heatmap](/learn/heatmap/) | Very dense data, where colour showing how many points fall in each cell is clearer than individual dots |
 
-## Common scatter plot mistakes
-
-- **Reading cause into correlation.** Ice-cream sales and sunburn rise together because hot weather drives both, not because one causes the other.
-- **Joining the dots.** A line between scatter points implies an order that doesn't exist. Use a [line chart](/learn/line-chart/) when the order matters.
-- **Squashed or stretched axes.** Axis ranges that crop the data, or don't start where they should, can make a weak relationship look strong. Leave a small margin around the data and label both axes with units.
-- **Extending the trend line too far.** A trend line describes the range you measured. It says nothing reliable about values well outside that range.
-- **Deleting outliers without checking them.** An outlier may be a data-entry error, or the most important point on the chart.
-- **Overplotting.** With thousands of points, dots pile on top of each other and hide where most of the data really is. See the next section.
-
-### Scatter plots with large datasets
+## Scatter plots with large datasets
 
 When a scatter plot has tens of thousands of points or more, dots overlap until whole areas look like a solid block. Three fixes:
 - **smaller, semi-transparent dots,** so overlapping dots build up into brighter, denser areas;
@@ -139,6 +130,15 @@ When a scatter plot has tens of thousands of points or more, dots overlap until 
 The chart below has 100,000 points in two groups, each in its own colour: a rising group (blue) and a falling group (orange) that cross in the middle. With small, semi-transparent dots you can see both trends and where they're densest. The orange group is drawn more transparent, so the blue shows through where they cross. Untick a group in the legend to see the other one on its own. Scroll to zoom into the dense areas.
 
 <LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
+
+## Common scatter plot mistakes
+
+- **Reading cause into correlation.** Ice-cream sales and sunburn rise together because hot weather drives both, not because one causes the other.
+- **Joining the dots.** A line between scatter points implies an order that doesn't exist. Use a [line chart](/learn/line-chart/) when the order matters.
+- **Squashed or stretched axes.** Axis ranges that crop the data, or don't start where they should, can make a weak relationship look strong. Leave a small margin around the data and label both axes with units.
+- **Extending the trend line too far.** A trend line describes the range you measured. It says nothing reliable about values well outside that range.
+- **Deleting outliers without checking them.** An outlier may be a data-entry error, or the most important point on the chart.
+- **Overplotting.** With thousands of points, dots pile on top of each other and hide where most of the data really is. See [Scatter plots with large datasets](#scatter-plots-with-large-datasets) above.
 
 ## How to create a scatter plot in JavaScript, React or Angular
 

@@ -40,6 +40,10 @@ const SCITRADER_REACT_ESM_PATHS = ["/npm/react@19.3.1/+esm", "/npm/react-dom@19.
 const SCITRADER_FINTOOLS_BUNDLE = `https://cdn.jsdelivr.net/npm/scichart-financial-tools@${SCITRADER_FINTOOLS_VERSION}/scichart-financial-tools.browser.mjs`;
 // SciTrader samples use the dark theme: give the page its background, so it isn't white while the
 // bundles load (a couple of seconds), and its font, for any text a sample doesn't style itself.
+// The page around every live snippet and CodePen gets a sans-serif font, so HTML inside a chart (the legend,
+// tooltips) doesn't fall back to the browser's default serif (Times New Roman). Matches the docs' system font stack.
+// SCITRADER_PAGE_STYLE, added after it, overrides it for SciTrader samples.
+const PAGE_FONT_STYLE = `body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif; }`;
 const SCITRADER_PAGE_STYLE = `body { background: #2b2839; color: #ffffff; font-family: "DM Sans", sans-serif; }`;
 const SCITRADER_CSS = `https://cdn.jsdelivr.net/npm/scichart-scitrader@${SCITRADER_VERSION}/styles/scitrader.css`;
 // scichart-scitrader-react's +esm build imports react@REACT_VERSION and react-dom@REACT_VERSION. Map
@@ -253,6 +257,7 @@ const getIframeSrc = (htmlTemplate: string, jsUrl: string, cssUrl: string, htmlT
         <style>
             iframe { border: 0; }
             body { margin: 0; }
+            ${PAGE_FONT_STYLE}
             #scichart-root { width: 100%; height: ${height}; }
             ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
         </style>
@@ -324,6 +329,7 @@ const getSandboxSrc = (htmlTemplate: string, htmlType: EHtmlType, includeFinTool
             <style>
                 iframe { border: 0; }
                 body { margin: 0; }
+                ${PAGE_FONT_STYLE}
                 #scichart-root { width: 100%; height: ${height}; }
                 ${includeSciTrader ? SCITRADER_PAGE_STYLE : ""}
 
