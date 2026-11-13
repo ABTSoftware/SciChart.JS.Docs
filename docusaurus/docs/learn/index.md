@@ -17,6 +17,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | [Line chart](/learn/line-chart/) | How a value changes over time, as points joined by a line |
 | [Area chart](/learn/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
 | [Bar chart](/learn/bar-chart/) | Values compared across categories as bars or columns, including stacked bars |
+| [Pareto chart](/learn/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 
 ## Parts of a whole
 
