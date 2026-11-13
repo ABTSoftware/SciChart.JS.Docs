@@ -74,6 +74,19 @@
     transform: translateY(-1px);
 }
 
+/* Text that is part of a link (read by screen readers and search engines) but not shown */
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .docsLink {
     color: #9fd8ff !important;
     font-weight: 600;

@@ -5,13 +5,18 @@ import styles from "./LearnCta.module.css";
 // Calls to action for the learning center (docs/learn/). Use one near the top of each page, after the live
 // demo, and one at the end:
 //   <LearnCta position="top" chart="candlestick chart" demo="candlestick-chart"
-//       docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="Candlestick series" />
+//       docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" />
 //   <LearnCta position="bottom" ...same props />
 // - chart: the chart name as it reads in a sentence.
 // - demo: the chart's slug in the demo app; links go to /demo/javascript|react|angular/<demo>.
-// - docs, docsLabel: the chart's API documentation page (a docs path) and its link text.
+// - docs: the chart's API documentation page (a docs path). docsLabel overrides its link text, which is
+//   otherwise "SciChart.js <chart> documentation".
 // All are optional, for pages about no single chart (the hub). Rules for learn pages: docs/learn/CLAUDE.md.
 // Each link carries data-cta, so Google Tag Manager can count clicks per position and button.
+//
+// SEO: Google reads a link's text (its anchor text), not its title attribute. The demo pills show a short
+// label ("React") but their full link text is "React candlestick chart": the rest is visually hidden, read
+// by screen readers and search engines. That text matches the search the demo page targets.
 
 const GET_STARTED_URL = "https://www.scichart.com/getting-started/scichart-javascript/";
 const DEMO_BASE_URL = "https://www.scichart.com/demo/";
@@ -43,10 +48,11 @@ function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
                             <a
                                 className={styles.chip}
                                 href={`${DEMO_BASE_URL}${f.key}/${demo}`}
-                                title={chart ? `${f.label} ${chart} demo` : `${f.label} demo`}
+                                title={chart ? `${f.label} ${chart}` : `${f.label} chart demos`}
                                 data-cta={`learn-${position}-demo-${f.key}`}
                             >
                                 {f.label}
+                                {chart && <span className={styles.visuallyHidden}> {chart}</span>}
                             </a>
                         </React.Fragment>
                     ))}
@@ -54,12 +60,9 @@ function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
             )}
             {demo && docs && <span className={styles.separator}>|</span>}
             {docs && (
-                <>
-                    <span className={styles.linksLabel}>API docs:</span>{" "}
-                    <Link className={styles.docsLink} to={docs} data-cta={`learn-${position}-docs`}>
-                        {docsLabel ?? "Documentation"}
-                    </Link>
-                </>
+                <Link className={styles.docsLink} to={docs} data-cta={`learn-${position}-docs`}>
+                    {docsLabel ?? (chart ? `SciChart.js ${chart} documentation` : "SciChart.js documentation")}
+                </Link>
             )}
         </p>
     );
