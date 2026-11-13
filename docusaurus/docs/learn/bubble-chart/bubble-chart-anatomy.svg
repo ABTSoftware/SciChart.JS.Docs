@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a bubble chart</title>
+  <desc id="desc">A bubble chart with five bubbles. Each bubble's horizontal position shows the first value (x), its vertical position shows the second value (y), and its size shows a third value. Colour can show a group. An inset shows that a value four times as large should have four times the area, which is only twice the width.</desc>
+  <rect width="700" height="400" rx="12" fill="#ffffff"/>
+
+  <!-- Axes -->
+  <g stroke="#333" stroke-width="2">
+    <line x1="70" y1="30" x2="70" y2="320"/>
+    <line x1="70" y1="320" x2="440" y2="320"/>
+  </g>
+  <text x="255" y="352" text-anchor="middle" fill="#333">x axis: first value</text>
+  <text x="30" y="175" text-anchor="middle" fill="#333" transform="rotate(-90 30 175)">y axis: second value</text>
+
+  <!-- Bubbles: two groups -->
+  <g fill-opacity="0.6">
+    <circle cx="140" cy="250" r="22" fill="#2a7fb8"/>
+    <circle cx="215" cy="200" r="36" fill="#2a7fb8"/>
+    <circle cx="300" cy="215" r="16" fill="#F48420"/>
+    <circle cx="350" cy="110" r="44" fill="#F48420"/>
+    <circle cx="190" cy="95" r="12" fill="#2a7fb8"/>
+  </g>
+
+  <!-- Guides to the highlighted bubble's x and y -->
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="350" y1="110" x2="350" y2="320"/>
+    <line x1="70" y1="110" x2="350" y2="110"/>
+  </g>
+  <circle cx="350" cy="110" r="3" fill="#333"/>
+  <text x="350" y="338" text-anchor="middle" fill="#666" font-size="13">x</text>
+  <text x="60" y="114" text-anchor="end" fill="#666" font-size="13">y</text>
+
+  <!-- Size label -->
+  <line x1="306" y1="110" x2="394" y2="110" stroke="#b35f0f" stroke-width="2"/>
+  <text x="400" y="60" fill="#b35f0f" font-weight="bold">Size = third value</text>
+  <line x1="420" y1="66" x2="385" y2="85" stroke="#b35f0f" stroke-width="1.5"/>
+
+  <!-- Colour label -->
+  <text x="300" y="275" fill="#555" font-size="13">Colour (optional):</text>
+  <text x="300" y="292" fill="#555" font-size="13">a group or category</text>
+
+  <!-- Inset: scale area, not width -->
+  <rect x="470" y="160" width="210" height="190" rx="8" fill="#f6f6f8" stroke="#ddd"/>
+  <text x="575" y="186" text-anchor="middle" fill="#333" font-weight="bold" font-size="14">Scale area, not width</text>
+  <circle cx="525" cy="260" r="15" fill="#2a7fb8" fill-opacity="0.6"/>
+  <circle cx="615" cy="260" r="30" fill="#2a7fb8" fill-opacity="0.6"/>
+  <text x="525" y="312" text-anchor="middle" fill="#333" font-size="13">value 1</text>
+  <text x="615" y="312" text-anchor="middle" fill="#333" font-size="13">value 4</text>
+  <text x="575" y="334" text-anchor="middle" fill="#666" font-size="12">4× the area is only 2× the width</text>
+</svg>

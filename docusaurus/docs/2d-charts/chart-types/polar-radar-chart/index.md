@@ -6,6 +6,10 @@ sidebar_position: 105
 
 The Radar chart (or Spider chart) type displays data in a circular layout, where each axis represents a different variable, most often a category. The axes are connected drawn to form a polygon, allowing for easy comparison of multiple variables.
 
+:::tip
+New to radar charts? Read our guide: [Radar Chart (Spider Chart): what it is and how to read it](/learn/radar-chart/), covering how to read one, when to use it, and the pitfalls to avoid.
+:::
+
 The data is usually plotted using the [PolarLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarlinerenderableseries.html) or [PolarMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/polarmountainrenderableseries.html) classes, which are specialized for polar coordinates.
 
 <ChartFromSciChartDemo 

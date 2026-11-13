@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of an area chart and a stacked area chart</title>
+  <desc id="desc">Left: an area chart, where a line shows the values and the space between the line and a baseline at zero is filled. Right: a stacked area chart with three series, where each band's thickness is that series' value and the top edge shows the total of all three.</desc>
+  <rect width="700" height="400" rx="12" fill="#ffffff"/>
+
+  <text x="185" y="34" text-anchor="middle" fill="#333" font-weight="bold" font-size="17">Area chart</text>
+  <text x="525" y="34" text-anchor="middle" fill="#333" font-weight="bold" font-size="17">Stacked area chart</text>
+
+  <!-- left: single area -->
+  <path d="M50,220 L95,190 L140,205 L185,150 L230,165 L275,120 L320,135 L320,310 L275,310 L230,310 L185,310 L140,310 L95,310 L50,310 Z" fill="#2a7fb8" fill-opacity="0.35"/>
+  <polyline points="50,220 95,190 140,205 185,150 230,165 275,120 320,135" fill="none" stroke="#2a7fb8" stroke-width="3" stroke-linejoin="round"/>
+  <line x1="40" y1="310" x2="330" y2="310" stroke="#333" stroke-width="2"/>
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="140" y1="90" x2="182" y2="146"/>
+  </g>
+  <text x="70" y="82" fill="#333">Line: the values</text>
+  <text x="185" y="255" fill="#1d5f8a" font-weight="bold" text-anchor="middle">Filled area</text>
+  <text x="185" y="335" fill="#333" text-anchor="middle">Baseline (usually zero)</text>
+  <text x="185" y="355" fill="#666" font-size="13" text-anchor="middle">The fill makes the size of each value easy to see</text>
+
+  <!-- right: stacked areas -->
+  <path d="M390,250 L435,240 L480,245 L525,230 L570,235 L615,225 L660,220 L660,310 L615,310 L570,310 L525,310 L480,310 L435,310 L390,310 Z" fill="#882B91" fill-opacity="0.85"/>
+  <path d="M390,200 L435,185 L480,185 L525,175 L570,170 L615,155 L660,145 L660,220 L615,225 L570,235 L525,230 L480,245 L435,240 L390,250 Z" fill="#29aade" fill-opacity="0.85"/>
+  <path d="M390,170 L435,150 L480,155 L525,135 L570,135 L615,115 L660,100 L660,145 L615,155 L570,170 L525,175 L480,185 L435,185 L390,200 Z" fill="#F48420" fill-opacity="0.85"/>
+  <polyline points="390,170 435,150 480,155 525,135 570,135 615,115 660,100" fill="none" stroke="#333" stroke-width="2.5" stroke-linejoin="round"/>
+  <line x1="380" y1="310" x2="670" y2="310" stroke="#333" stroke-width="2"/>
+  <g fill="#ffffff" font-weight="bold" text-anchor="middle" font-size="14">
+    <text x="525" y="272">Series A</text>
+    <text x="525" y="200">Series B</text>
+    <text x="525" y="161">Series C</text>
+  </g>
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="460" y1="90" x2="478" y2="151"/>
+  </g>
+  <text x="400" y="82" fill="#333">Top edge: the total</text>
+  <text x="525" y="335" fill="#333" text-anchor="middle">Each band's thickness is</text>
+  <text x="525" y="355" fill="#333" text-anchor="middle">that series' own value</text>
+</svg>

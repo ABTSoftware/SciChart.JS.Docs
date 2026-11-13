@@ -7,6 +7,10 @@ sidebar_position: 25
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
+New to bubble charts? Read our guide: [Bubble Chart: what it is and how to read it](/learn/bubble-chart/), covering how to read position and bubble size, sizing bubbles honestly, and when to use one.
+:::
+
+:::tip
 The [JavaScript Bubble Chart Example](https://www.scichart.com/demo/javascript-bubble-chart) can be found in the [SciChart.Js Examples Suite > Bubble Series](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/BubbleChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/bubble-chart).
 :::
 

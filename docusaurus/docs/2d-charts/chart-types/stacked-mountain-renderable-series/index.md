@@ -7,6 +7,10 @@ sidebar_position: 41
 Stacked Mountain Charts can be created by a combination of the [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountainrenderableseries.html) and [StackedMountainCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountaincollection.html) types. [StackedMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedmountainrenderableseries.html) share many properties with the added feature that columns automatically stack vertically or side by side.
 
 :::tip
+New to stacked area charts? Read our guide: [Area Chart: what it is and how to read it](/learn/area-chart/), including how to read a stacked area chart and 100% stacked area charts.
+:::
+
+:::tip
 The [JavaScript Stacked Mountain Chart Example](https://www.scichart.com/demo/javascript/stacked-mountain-chart) can be found in the [SciChart.Js Examples Suite > Stacked Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/StackedMountainChart) on Github
 :::
 

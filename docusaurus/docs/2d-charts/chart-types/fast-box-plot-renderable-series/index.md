@@ -6,6 +6,10 @@ sidebar_position: 65
 
 A box plot (also called a box-and-whisker plot) is a statistical visualization that displays the distribution of a dataset through five key statistical measures. It's one of the most effective ways to show data distribution, identify outliers, and compare multiple datasets. The Box Plot Series Type is a powerful visualization tool that displays the distribution of data based on a five-number summary: minimum, first quartile (Q1), median (Q2), third quartile (Q3), and maximum. It is particularly useful for identifying outliers and understanding the spread of data.
 
+:::tip
+New to box plots? Read our guide: [Box Plot (Box and Whisker Plot): what it is and how to read it](/learn/box-plot/), covering the five-number summary, the interquartile range, whiskers, outliers, and comparing groups.
+:::
+
 ## Key Configuration Options
 
 ### Data Point Width Modes

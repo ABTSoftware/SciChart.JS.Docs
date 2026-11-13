@@ -7,6 +7,10 @@ sidebar_position: 1
 Uniform Heatmaps can be created using the [UniformHeatmapRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmaprenderableseries.html) type.
 
 :::tip
+New to heatmaps or spectrograms? Read our guides: [Heatmap: what it is and how to read it](/learn/heatmap/), covering colour scales, legends and when to use one, and [Spectrogram: what it is and how to read it](/learn/spectrogram/), covering time, frequency and how a spectrogram is made with an FFT.
+:::
+
+:::tip
 The [JavaScript Heatmap Chart Example](https://www.scichart.com/demo/javascript/heatmap-chart) can be found in the [SciChart.Js Examples Suite > Heatmap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/HeatmapChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/heatmap-chart).
 :::
 

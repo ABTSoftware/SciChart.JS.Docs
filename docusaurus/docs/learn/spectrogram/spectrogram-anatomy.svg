@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" width="700" height="420" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a spectrogram</title>
+  <desc id="desc">A spectrogram plots time along the horizontal axis and frequency up the vertical axis. Colour shows how loud each frequency is at each moment, from quiet (black) to loud (pale yellow), as the colour scale on the right shows. A steady tone draws a horizontal line, a sweep (chirp) draws a rising diagonal line, and a short click draws a vertical line across many frequencies.</desc>
+  <rect width="700" height="420" rx="12" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="scale" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#000004"/>
+      <stop offset="0.2" stop-color="#420A68"/>
+      <stop offset="0.4" stop-color="#932667"/>
+      <stop offset="0.6" stop-color="#DD513A"/>
+      <stop offset="0.8" stop-color="#FCA50A"/>
+      <stop offset="1" stop-color="#FCFFA4"/>
+    </linearGradient>
+    <linearGradient id="tone" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#420A68"/>
+      <stop offset="0.5" stop-color="#FCA50A"/>
+      <stop offset="1" stop-color="#420A68"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Plot area -->
+  <rect x="90" y="40" width="400" height="260" fill="#14061f"/>
+  <!-- Steady tone (horizontal) -->
+  <rect x="90" y="222" width="400" height="12" fill="url(#tone)"/>
+  <!-- Sweep / chirp (diagonal) -->
+  <line x1="130" y1="280" x2="330" y2="70" stroke="#FCA50A" stroke-width="7" stroke-linecap="round"/>
+  <line x1="130" y1="280" x2="330" y2="70" stroke="#FCFFA4" stroke-width="2" stroke-linecap="round"/>
+  <!-- Click (vertical, broadband) -->
+  <rect x="408" y="40" width="7" height="260" fill="#DD513A"/>
+
+  <!-- Axes -->
+  <line x1="90" y1="300" x2="490" y2="300" stroke="#333" stroke-width="1.5"/>
+  <line x1="90" y1="40" x2="90" y2="300" stroke="#333" stroke-width="1.5"/>
+  <text x="290" y="328" text-anchor="middle" fill="#333" font-weight="bold">Time →</text>
+  <text x="56" y="170" text-anchor="middle" fill="#333" font-weight="bold" transform="rotate(-90 56 170)">Frequency (pitch) →</text>
+  <g fill="#666" font-size="12" text-anchor="end">
+    <text x="84" y="304">low</text>
+    <text x="84" y="48">high</text>
+  </g>
+
+  <!-- Callouts -->
+  <g fill="#333" font-size="14">
+    <text x="300" y="262" fill="#ffffff" text-anchor="middle">Steady tone: a horizontal line</text>
+    <text x="104" y="96" fill="#ffffff">Sweep (chirp):</text>
+    <text x="104" y="114" fill="#ffffff">a rising line</text>
+    <text x="400" y="170" fill="#ffffff" text-anchor="end">Click: a vertical line</text>
+  </g>
+
+  <!-- Colour scale -->
+  <rect x="560" y="40" width="28" height="260" fill="url(#scale)" stroke="#999"/>
+  <g fill="#333" font-size="14">
+    <text x="596" y="50">Loud</text>
+    <text x="596" y="300">Quiet</text>
+  </g>
+  <text x="574" y="328" text-anchor="middle" font-weight="bold" fill="#333">Colour = level</text>
+  <text x="574" y="346" text-anchor="middle" fill="#666" font-size="13">(often in dB)</text>
+
+  <text x="40" y="384" fill="#333" font-size="14">Each vertical slice is one moment's spectrum: how strong each frequency was.</text>
+  <text x="40" y="404" fill="#666" font-size="13">Brighter = louder at that frequency and time; dark = quiet.</text>
+</svg>

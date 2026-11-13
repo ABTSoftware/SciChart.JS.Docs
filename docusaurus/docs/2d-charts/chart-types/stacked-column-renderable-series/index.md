@@ -6,6 +6,10 @@ sidebar_position: 40
 
 Stacked Column Charts can be created by a combination of the [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html)  and [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumncollection.html)  type. StackedColumnRenderableSeries share many properties with the added feature that columns automatically stack vertically or side by side.
 
+:::tip
+New to stacked bar charts? Read our guide: [Bar Chart: what it is and how to read it](/learn/bar-chart/), covering bar vs column charts, stacked and grouped bars, and when to use one.
+:::
+
 <LiveDocSnippet name="./basic-example/demo" />
 
 - We created 5 [StackedColumnRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumnrenderableseries.html) and added them to a [StackedColumnCollection:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/stackedcolumncollection.html)

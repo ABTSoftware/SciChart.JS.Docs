@@ -7,6 +7,10 @@ sidebar_position: 10
 Line Series can be created using the [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) type.
 
 :::tip
+New to line charts? Read our guide: [Line Chart (Line Graph): what it is and how to read it](/learn/line-chart/), with the types of line chart and when to use a line graph instead of a bar graph.
+:::
+
+:::tip
 The [JavaScript Line Chart Example](https://www.scichart.com/demo/javascript/line-chart) can be found in the [SciChart.Js Examples Suite > Line Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/LineChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/line-chart).
 :::
 

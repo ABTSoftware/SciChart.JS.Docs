@@ -7,6 +7,10 @@ sidebar_position: 12
 Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) type.
 
 :::tip
+New to scatter plots? Read our guide: [Scatter Plot: what it is and how to read it](/learn/scatter-plot/), covering correlation, outliers, clusters, trend lines, and when to use one.
+:::
+
+:::tip
 The [JavaScript Scatter Chart Example](https://www.scichart.com/demo/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/scatter-chart).
 :::
 

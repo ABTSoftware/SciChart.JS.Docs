@@ -50,7 +50,7 @@ export async function simpleRadarChart (rootElement) {
     // Radar / Spider Charts may also work with `PolarLineRenderableSeries`
     const polarMountain = new PolarMountainRenderableSeries(wasmContext, {
         dataSeries: new XyDataSeries(wasmContext, {
-            xValues: [...xValues, xValues[xValues.length] + 1], // + 1 to close the loop
+            xValues: [...xValues, xValues[xValues.length - 1] + 1], // + 1 to close the loop
             yValues: [...yValues, yValues[0]], // re-plot first point to close the loop
             dataSeriesName: "Golden State Warriors",
         }),

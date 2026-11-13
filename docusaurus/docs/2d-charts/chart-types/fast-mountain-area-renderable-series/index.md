@@ -7,6 +7,10 @@ sidebar_position: 13
 Mountain (or Area) Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 
 :::tip
+New to area charts? Read our guide: [Area Chart: what it is and how to read it](/learn/area-chart/), including how to read a stacked area chart and when to use an area chart instead of a line chart.
+:::
+
+:::tip
 The [JavaScript Mountain Chart Example](https://www.scichart.com/demo/javascript/mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/MountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/mountain-chart).
 :::
 

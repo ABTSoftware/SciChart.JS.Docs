@@ -6,6 +6,10 @@ sidebar_position: 38
 
 A histogram visualizes the distribution of a dataset by grouping values into contiguous bins and displaying each bin as a bar whose height represents the count (or frequency) within that range. Typical use cases include frequency distributions, population statistics, and scientific data analysis.
 
+:::tip
+New to histograms? Read our guide: [Histogram: what it is and how to read it](/learn/histogram/), covering bins, frequency, distribution shapes, and how a histogram differs from a bar chart.
+:::
+
 SciChart.js has no dedicated histogram series type. Histograms are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) with [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyxydataseries.html), using [EColumnMode.StartEnd:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/enums/ecolumnmode.html#startend) to place each bar between explicit bin boundaries on the X axis.
 
 :::tip

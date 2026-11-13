@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 570" width="700" height="570" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="14">
+  <title id="title">Bar chart, column chart, stacked column chart and grouped column chart compared</title>
+  <desc id="desc">Four small charts of the same kind of data. A bar chart draws horizontal bars with the categories down the side. A column chart draws vertical bars with the categories along the bottom. A stacked column chart piles each category's parts on top of each other so the full height is the total. A grouped column chart puts each category's parts side by side so they are easy to compare.</desc>
+  <rect width="700" height="570" rx="12" fill="#ffffff"/>
+  <!-- Bar chart: horizontal bars -->
+  <text x="20" y="32" font-weight="bold" font-size="16" fill="#222">Bar chart (horizontal)</text>
+  <g stroke="#555" stroke-width="1.5"><line x1="90" y1="50" x2="90" y2="222"/><line x1="90" y1="222" x2="320" y2="222"/></g>
+  <rect x="90" y="58" width="200" height="28" fill="#2f80c8"/>
+  <text x="82" y="77" text-anchor="end" fill="#333">North</text>
+  <rect x="90" y="100" width="160" height="28" fill="#2f80c8"/>
+  <text x="82" y="119" text-anchor="end" fill="#333">South</text>
+  <rect x="90" y="142" width="120" height="28" fill="#2f80c8"/>
+  <text x="82" y="161" text-anchor="end" fill="#333">East</text>
+  <rect x="90" y="184" width="70" height="28" fill="#2f80c8"/>
+  <text x="82" y="203" text-anchor="end" fill="#333">West</text>
+  <text x="205" y="244" text-anchor="middle" fill="#666" font-size="13">value (length of the bar)</text>
+  <!-- Column chart: vertical bars -->
+  <text x="370" y="32" font-weight="bold" font-size="16" fill="#222">Column chart (vertical)</text>
+  <g stroke="#555" stroke-width="1.5"><line x1="390" y1="50" x2="390" y2="200"/><line x1="390" y1="200" x2="670" y2="200"/></g>
+  <rect x="410" y="60" width="40" height="140" fill="#2f80c8"/>
+  <text x="430" y="218" text-anchor="middle" fill="#333">North</text>
+  <rect x="475" y="88" width="40" height="112" fill="#2f80c8"/>
+  <text x="495" y="218" text-anchor="middle" fill="#333">South</text>
+  <rect x="540" y="116" width="40" height="84" fill="#2f80c8"/>
+  <text x="560" y="218" text-anchor="middle" fill="#333">East</text>
+  <rect x="605" y="151" width="40" height="49" fill="#2f80c8"/>
+  <text x="625" y="218" text-anchor="middle" fill="#333">West</text>
+  <text x="530" y="244" text-anchor="middle" fill="#666" font-size="13">value (height of the column)</text>
+  <!-- Stacked column chart -->
+  <text x="20" y="300" font-weight="bold" font-size="16" fill="#222">Stacked column chart</text>
+  <g stroke="#555" stroke-width="1.5"><line x1="40" y1="318" x2="40" y2="500"/><line x1="40" y1="500" x2="320" y2="500"/></g>
+  <rect x="60" y="440" width="40" height="60" fill="#2f80c8" stroke="#fff" stroke-width="1"/>
+  <rect x="60" y="400" width="40" height="40" fill="#8e44ad" stroke="#fff" stroke-width="1"/>
+  <rect x="60" y="370" width="40" height="30" fill="#f39c12" stroke="#fff" stroke-width="1"/>
+  <text x="80" y="364" text-anchor="middle" fill="#333" font-size="13">130</text>
+  <text x="80" y="518" text-anchor="middle" fill="#333">North</text>
+  <rect x="125" y="450" width="40" height="50" fill="#2f80c8" stroke="#fff" stroke-width="1"/>
+  <rect x="125" y="400" width="40" height="50" fill="#8e44ad" stroke="#fff" stroke-width="1"/>
+  <rect x="125" y="360" width="40" height="40" fill="#f39c12" stroke="#fff" stroke-width="1"/>
+  <text x="145" y="354" text-anchor="middle" fill="#333" font-size="13">140</text>
+  <text x="145" y="518" text-anchor="middle" fill="#333">South</text>
+  <rect x="190" y="460" width="40" height="40" fill="#2f80c8" stroke="#fff" stroke-width="1"/>
+  <rect x="190" y="430" width="40" height="30" fill="#8e44ad" stroke="#fff" stroke-width="1"/>
+  <rect x="190" y="410" width="40" height="20" fill="#f39c12" stroke="#fff" stroke-width="1"/>
+  <text x="210" y="404" text-anchor="middle" fill="#333" font-size="13">90</text>
+  <text x="210" y="518" text-anchor="middle" fill="#333">East</text>
+  <rect x="255" y="430" width="40" height="70" fill="#2f80c8" stroke="#fff" stroke-width="1"/>
+  <rect x="255" y="395" width="40" height="35" fill="#8e44ad" stroke="#fff" stroke-width="1"/>
+  <rect x="255" y="350" width="40" height="45" fill="#f39c12" stroke="#fff" stroke-width="1"/>
+  <text x="275" y="344" text-anchor="middle" fill="#333" font-size="13">150</text>
+  <text x="275" y="518" text-anchor="middle" fill="#333">West</text>
+  <text x="180" y="540" text-anchor="middle" fill="#666" font-size="13">full height = the total; each band = one part</text>
+  <!-- Grouped (clustered) column chart -->
+  <text x="370" y="300" font-weight="bold" font-size="16" fill="#222">Grouped column chart</text>
+  <g stroke="#555" stroke-width="1.5"><line x1="390" y1="318" x2="390" y2="500"/><line x1="390" y1="500" x2="670" y2="500"/></g>
+  <rect x="398" y="392" width="16" height="108" fill="#2f80c8"/>
+  <rect x="416" y="428" width="16" height="72" fill="#8e44ad"/>
+  <rect x="434" y="446" width="16" height="54" fill="#f39c12"/>
+  <text x="425" y="518" text-anchor="middle" fill="#333">North</text>
+  <rect x="466" y="410" width="16" height="90" fill="#2f80c8"/>
+  <rect x="484" y="410" width="16" height="90" fill="#8e44ad"/>
+  <rect x="502" y="428" width="16" height="72" fill="#f39c12"/>
+  <text x="493" y="518" text-anchor="middle" fill="#333">South</text>
+  <rect x="534" y="428" width="16" height="72" fill="#2f80c8"/>
+  <rect x="552" y="446" width="16" height="54" fill="#8e44ad"/>
+  <rect x="570" y="464" width="16" height="36" fill="#f39c12"/>
+  <text x="561" y="518" text-anchor="middle" fill="#333">East</text>
+  <rect x="602" y="374" width="16" height="126" fill="#2f80c8"/>
+  <rect x="620" y="437" width="16" height="63" fill="#8e44ad"/>
+  <rect x="638" y="419" width="16" height="81" fill="#f39c12"/>
+  <text x="629" y="518" text-anchor="middle" fill="#333">West</text>
+  <text x="530" y="540" text-anchor="middle" fill="#666" font-size="13">parts side by side, from the same baseline</text>
+  <g font-size="13" fill="#333">
+    <rect x="230" y="553" width="12" height="12" fill="#2f80c8"/><text x="248" y="564">Part A</text>
+    <rect x="320" y="553" width="12" height="12" fill="#8e44ad"/><text x="338" y="564">Part B</text>
+    <rect x="410" y="553" width="12" height="12" fill="#f39c12"/><text x="428" y="564">Part C</text>
+  </g>
+</svg>
