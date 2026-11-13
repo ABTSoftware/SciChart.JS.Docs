@@ -64,7 +64,7 @@ image: /img/learn/scatter-plot-og.png
 
 A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its **x value** sets how far along it sits and its **y value** sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
 
-![A scatter plot of the height and weight of 200 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
+![A scatter plot of the height and weight of 200 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-hero.png)
 
 *A scatter plot of height against weight for 200 people (sample data), with a trend line. [Try the interactive version](#how-to-create-a-scatter-plot-in-javascript-react-or-angular).*
 
@@ -136,7 +136,7 @@ When a scatter plot has tens of thousands of points or more, dots overlap until 
 - **zooming in** on a region to see individual points;
 - switching to a **[heatmap](/learn/heatmap/)** that counts how many points fall in each cell.
 
-The chart below has 100,000 points in two groups: one rising and one falling, crossing in the middle. With small, semi-transparent dots you can see both trends, and the brighter area where they overlap. Scroll to zoom into the dense areas.
+The chart below has 100,000 points in two groups, each in its own colour: a rising group (blue) and a falling group (orange) that cross in the middle. With small, semi-transparent dots you can see both trends and where they're densest. Where they cross, the orange dots hide the blue ones underneath: untick **Falling group** in the legend to see them. Scroll to zoom into the dense areas.
 
 <LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
 
@@ -251,11 +251,6 @@ Key points:
 
 <LearnCta position="top" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />
 
-## Sources
-
-- NIST/SEMATECH, [e-Handbook of Statistical Methods: Scatter Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm). How scatter plots are used in exploratory data analysis.
-- Friendly, M. and Denis, D. (2005), [The early origins and development of the scatterplot](https://doi.org/10.1002/jhbs.20078). *Journal of the History of the Behavioral Sciences*, 41(2). The history of the scatter plot, from Herschel to Galton.
-
 ## Frequently asked questions
 
 ### What is a scatter plot used for?
@@ -281,5 +276,10 @@ Historians of statistics credit the astronomer John Herschel with one of the fir
 ### How do I make a scatter plot in JavaScript?
 
 With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add an `XyScatterRenderableSeries` with an `XyDataSeries` holding your x and y values and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+
+## Sources
+
+- NIST/SEMATECH, [e-Handbook of Statistical Methods: Scatter Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm). How scatter plots are used in exploratory data analysis.
+- Friendly, M. and Denis, D. (2005), [The early origins and development of the scatterplot](https://doi.org/10.1002/jhbs.20078). *Journal of the History of the Behavioral Sciences*, 41(2). The history of the scatter plot, from Herschel to Galton.
 
 <LearnCta position="bottom" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />

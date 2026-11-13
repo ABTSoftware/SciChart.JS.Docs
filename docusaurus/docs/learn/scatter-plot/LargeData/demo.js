@@ -11,17 +11,21 @@ function generateLargeScatterData(count = 100000) {
     // Normally distributed noise (Box-Muller transform)
     const randomNormal = () => Math.sqrt(-2 * Math.log(random())) * Math.cos(2 * Math.PI * random());
 
-    const xValues = new Float64Array(count);
-    const yValues = new Float64Array(count);
+    // Two groups with opposite trends that cross in the middle
+    const rising = { xValues: [], yValues: [] };
+    const falling = { xValues: [], yValues: [] };
     for (let i = 0; i < count; i++) {
-        // Two groups with opposite trends that cross in the middle: where they overlap, only density shows them apart
-        const inGroupA = random() < 0.6;
-        const x = inGroupA ? 40 + randomNormal() * 14 : 60 + randomNormal() * 12;
-        const y = inGroupA ? 0.9 * x + 5 + randomNormal() * 5 : -0.7 * x + 100 + randomNormal() * 5;
-        xValues[i] = x;
-        yValues[i] = y;
+        if (random() < 0.6) {
+            const x = 40 + randomNormal() * 14;
+            rising.xValues.push(x);
+            rising.yValues.push(0.9 * x + 5 + randomNormal() * 5);
+        } else {
+            const x = 60 + randomNormal() * 12;
+            falling.xValues.push(x);
+            falling.yValues.push(-0.7 * x + 100 + randomNormal() * 5);
+        }
     }
-    return { xValues, yValues };
+    return { rising, falling };
 }
 
 async function largeScatterPlot(divElementId) {
@@ -37,7 +41,8 @@ async function largeScatterPlot(divElementId) {
         SciChartJsNavyTheme,
         MouseWheelZoomModifier,
         ZoomPanModifier,
-        ZoomExtentsModifier
+        ZoomExtentsModifier,
+        LegendModifier
     } = SciChart;
 
     const { wasmContext, sciChartSurface } = await SciChartSurface.create(divElementId, {
@@ -46,22 +51,28 @@ async function largeScatterPlot(divElementId) {
     sciChartSurface.xAxes.add(new NumericAxis(wasmContext, { axisTitle: "x", growBy: new NumberRange(0.05, 0.05) }));
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { axisTitle: "y", growBy: new NumberRange(0.05, 0.05) }));
 
-    const { xValues, yValues } = generateLargeScatterData();
-    sciChartSurface.renderableSeries.add(
-        new XyScatterRenderableSeries(wasmContext, {
-            dataSeries: new XyDataSeries(wasmContext, { xValues, yValues }),
-            // Small dots with a low opacity: overlapping dots add up, so dense areas look brighter
-            pointMarker: new EllipsePointMarker(wasmContext, {
-                width: 3,
-                height: 3,
-                strokeThickness: 0,
-                fill: "#50C7E022"
-            })
-        })
-    );
+    const { rising, falling } = generateLargeScatterData();
 
-    // Zoom with the mouse wheel, pan by dragging, double-click to reset
-    sciChartSurface.chartModifiers.add(new MouseWheelZoomModifier(), new ZoomPanModifier(), new ZoomExtentsModifier());
+    // One series per group, each with its own colour. Small dots with a low opacity:
+    // overlapping dots add up, so dense areas look brighter. The series added last is drawn on top.
+    const addGroup = (data, name, colour, legendColour) =>
+        sciChartSurface.renderableSeries.add(
+            new XyScatterRenderableSeries(wasmContext, {
+                dataSeries: new XyDataSeries(wasmContext, { ...data, dataSeriesName: name }),
+                stroke: legendColour, // sets the colour of the series' marker in the legend
+                pointMarker: new EllipsePointMarker(wasmContext, { width: 3, height: 3, strokeThickness: 0, fill: colour })
+            })
+        );
+    addGroup(rising, "Rising group", "#50C7E022", "#50C7E0");
+    addGroup(falling, "Falling group", "#F4842022", "#F48420");
+
+    // Zoom with the mouse wheel, pan by dragging, double-click to reset; the legend names each group
+    sciChartSurface.chartModifiers.add(
+        new MouseWheelZoomModifier(),
+        new ZoomPanModifier(),
+        new ZoomExtentsModifier(),
+        new LegendModifier({ showCheckboxes: true })
+    );
     // #region_A_end
 }
 
