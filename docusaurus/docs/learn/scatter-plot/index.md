@@ -146,6 +146,8 @@ SciChart.js draws scatter plots with WebGL and WebGPU, so they stay smooth to zo
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
+<LearnCta position="top" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />
+
 Here is the code for this chart:
 
 <CodeSnippetBlock labels={["JavaScript", "React", "Angular"]}>
@@ -248,8 +250,6 @@ Key points:
 **See it in the demo app:** [JavaScript scatter chart](https://www.scichart.com/demo/javascript/scatter-chart) · [React scatter chart](https://www.scichart.com/demo/react/scatter-chart) · [Angular scatter chart](https://www.scichart.com/demo/angular/scatter-chart)
 
 **Go deeper:** [SciChart.js scatter plot documentation](/2d-charts/chart-types/xy-scatter-renderable-series/), including point marker types and colouring individual points.
-
-<LearnCta position="top" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />
 
 ## Frequently asked questions
 
