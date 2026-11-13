@@ -27,6 +27,6 @@ Chart-type guides ("What is a candlestick chart?") at `/documentation/js/current
 - `/learn/` is a section of the main docs sidebar, "Learn: Chart Types Guide", straight after "Get Started" (`docs/learn/_category_.json`). The "Learn" link in the top bar opens the hub.
 - Keep the part of the address after `/learn/` short: `/learn/candlestick-chart/`.
 - **Archived versions:** when a new version moves to `/current/`, the old version's copy of `/learn/` may stay in its archive (for example `/documentation/js/v6/learn/`). Like every archived page, each of those pages **must** carry a canonical link to the same path under `/documentation/js/current/learn/`.
-- **Before writing or changing a learn page, read [docusaurus/docs/learn/CLAUDE.md](docusaurus/docs/learn/CLAUDE.md).**
+- **Before writing or changing a learn page, read [docusaurus/docs/learn/CLAUDE.md](docusaurus/docs/learn/CLAUDE.md).** It points to the private rules, which are kept in the git-ignored `private/` folder.
 
-**This repo is public.** Don't add internal planning, research or marketing material to it, including in commit messages, PR descriptions and code comments.
+**This repo is public.** Don't add internal planning, research or marketing material to it, including in commit messages, PR descriptions and code comments. Anything private goes in `/private/`, which is git-ignored: never commit it.
