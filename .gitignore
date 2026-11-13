@@ -3,3 +3,9 @@
 .idea
 .aider*
 /docs/
+
+# Learning center: private material lives in the Marketing repo (learning-center/), never here
+docusaurus/docs/learn/todo.md
+docusaurus/docs/learn/*.csv
+docusaurus/docs/learn/research/
+docusaurus/scripts/learn-*
