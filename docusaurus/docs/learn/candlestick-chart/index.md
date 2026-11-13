@@ -1,18 +1,16 @@
 ---
 sidebar_position: 2
 sidebar_label: Candlestick Chart
-title: "Candlestick Chart: What It Is, How to Read It & JavaScript Examples"
-description: "What a candlestick chart is, how to read open, high, low and close, when to use one, and how to build an interactive candlestick chart in JavaScript, React or Angular with SciChart.js."
+title: "Candlestick Chart: What It Is & How to Read It (With Interactive Examples)"
+description: "What a candlestick chart is, how to read open, high, low and close, the common candlestick patterns, and when to use a candlestick chart instead of an OHLC or line chart. With a live, interactive example."
 keywords:
     [
         "candlestick chart",
         "candlestick",
         "candle chart",
         "how to read a candlestick chart",
-        "candlestick vs ohlc chart",
-        "javascript candlestick chart",
-        "react candlestick chart",
-        "angular candlestick chart"
+        "candlestick patterns",
+        "candlestick vs ohlc chart"
     ]
 image: /img/learn/candlestick-chart-og.png
 ---
@@ -55,13 +53,17 @@ image: /img/learn/candlestick-chart-og.png
 
 # Candlestick Chart
 
+:::info Looking for the SciChart.js API?
+See the [Candlestick series documentation](/2d-charts/chart-types/fast-candlestick-renderable-series/) for `FastCandlestickRenderableSeries`, volume bars and per-candle colouring.
+:::
+
 A **candlestick chart** shows how a price moved over time. Each candle covers one period, such as a minute, a day or a week, and shows four prices: where the price **opened**, its **high**, its **low** and where it **closed**. Traders use candlestick charts for stocks, forex, crypto and commodities because one glance shows both the direction and the range of each period.
 
 Try the interactive chart below. Scroll to zoom, drag to pan, double-click to reset, and hover over a candle to see its values.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="candlestick chart" demo="candlestick-chart" />
+<LearnCta position="top" chart="candlestick chart" demo="candlestick-chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="Candlestick series" />
 
 ## How to read a candlestick chart
 
@@ -188,7 +190,7 @@ Key points:
 - A [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) spaces candles evenly and closes gaps for weekends and holidays. For 24/7 markets such as crypto, a `DateTimeNumericAxis` works too.
 - `brushUp`, `brushDown`, `strokeUp` and `strokeDown` set the bullish and bearish colours.
 
-**See it in the demo app:** [JavaScript candlestick chart](https://www.scichart.com/demo/javascript/candlestick-chart) · [React candlestick chart](https://www.scichart.com/demo/react/candlestick-chart) · [Angular candlestick chart](https://www.scichart.com/demo/angular/candlestick-chart)
+**See it in the demo app:** [JavaScript candlestick chart demo](https://www.scichart.com/demo/javascript/candlestick-chart) · [React candlestick chart demo](https://www.scichart.com/demo/react/candlestick-chart) · [Angular candlestick chart demo](https://www.scichart.com/demo/angular/candlestick-chart)
 
 **Go deeper:** [Candlestick series documentation](/2d-charts/chart-types/fast-candlestick-renderable-series/), including volume bars and colouring individual candles.
 
@@ -218,4 +220,4 @@ With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `Numeri
 
 A doji is a candle whose open and close are almost equal, so its body is a thin line. It shows that buyers and sellers ended the period roughly balanced.
 
-<LearnCta position="bottom" chart="candlestick chart" demo="candlestick-chart" />
+<LearnCta position="bottom" chart="candlestick chart" demo="candlestick-chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="Candlestick series" />

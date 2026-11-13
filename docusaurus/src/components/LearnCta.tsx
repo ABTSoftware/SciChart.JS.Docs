@@ -1,44 +1,89 @@
 import React from "react";
+import Link from "@docusaurus/Link";
 import styles from "./LearnCta.module.css";
 
 // Calls to action for the learning center (docs/learn/). Use one near the top of each page, after the live
 // demo, and one at the end:
-//   <LearnCta position="top" chart="candlestick chart" demo="candlestick-chart" />
-//   <LearnCta position="bottom" chart="candlestick chart" demo="candlestick-chart" />
-// `chart` is the chart name as it reads in a sentence; `demo` is the chart's slug in the demo app
-// (https://www.scichart.com/demo/javascript/<demo>). Both are optional, for pages about no single chart.
+//   <LearnCta position="top" chart="candlestick chart" demo="candlestick-chart"
+//       docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="Candlestick series" />
+//   <LearnCta position="bottom" ...same props />
+// - chart: the chart name as it reads in a sentence.
+// - demo: the chart's slug in the demo app; links go to /demo/javascript|react|angular/<demo>.
+// - docs, docsLabel: the chart's API documentation page (a docs path) and its link text.
+// All are optional, for pages about no single chart (the hub). Rules for learn pages: docs/learn/CLAUDE.md.
 // Each link carries data-cta, so Google Tag Manager can count clicks per position and button.
 
 const GET_STARTED_URL = "https://www.scichart.com/getting-started/scichart-javascript/";
-const DEMOS_URL = "https://www.scichart.com/demo/javascript/";
+const DEMO_BASE_URL = "https://www.scichart.com/demo/";
 const FEATURES_URL = "https://www.scichart.com/javascript-chart-features/";
 const PRICING_URL = "https://www.scichart.com/shop/";
+const FRAMEWORKS = [
+    { key: "javascript", label: "JavaScript" },
+    { key: "react", label: "React" },
+    { key: "angular", label: "Angular" }
+];
 
 type Props = {
     position: "top" | "bottom";
     chart?: string;
     demo?: string;
+    docs?: string;
+    docsLabel?: string;
 };
 
-export default function LearnCta({ position, chart, demo }: Props) {
-    const demoUrl = demo ? `${DEMOS_URL}${demo}` : DEMOS_URL;
+function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
+    if (!demo && !docs) return null;
+    return (
+        <p className={styles.links}>
+            {demo && (
+                <>
+                    <span className={styles.linksLabel}>Live demo:</span>{" "}
+                    {FRAMEWORKS.map((f, i) => (
+                        <React.Fragment key={f.key}>
+                            <a
+                                className={styles.chip}
+                                href={`${DEMO_BASE_URL}${f.key}/${demo}`}
+                                title={chart ? `${f.label} ${chart} demo` : `${f.label} demo`}
+                                data-cta={`learn-${position}-demo-${f.key}`}
+                            >
+                                {f.label}
+                            </a>
+                        </React.Fragment>
+                    ))}
+                </>
+            )}
+            {demo && docs && <span className={styles.separator}>|</span>}
+            {docs && (
+                <>
+                    <span className={styles.linksLabel}>API docs:</span>{" "}
+                    <Link className={styles.docsLink} to={docs} data-cta={`learn-${position}-docs`}>
+                        {docsLabel ?? "Documentation"}
+                    </Link>
+                </>
+            )}
+        </p>
+    );
+}
+
+export default function LearnCta(props: Props) {
+    const { position, chart } = props;
     const what = chart ? `an interactive ${chart}` : "interactive charts";
 
     if (position === "top") {
         return (
             <aside className={`${styles.cta} ${styles.top}`} aria-label="Build this chart with SciChart.js">
-                <p className={styles.text}>
-                    <strong>Build {what}</strong> in JavaScript, React or Angular with SciChart.js, the high-performance
-                    WebGL chart library.
-                </p>
-                <div className={styles.buttons}>
-                    <a className={`${styles.button} ${styles.primary}`} href={GET_STARTED_URL} data-cta="learn-top-get-started">
-                        Get started free
-                    </a>
-                    <a className={`${styles.button} ${styles.secondary}`} href={demoUrl} data-cta="learn-top-demo">
-                        {chart ? "See the live demo" : "Explore the demos"}
-                    </a>
+                <div className={styles.topRow}>
+                    <p className={styles.text}>
+                        <strong>Build {what}</strong> in JavaScript, React or Angular with SciChart.js, the
+                        high-performance WebGL chart library.
+                    </p>
+                    <div className={styles.buttons}>
+                        <a className={`${styles.button} ${styles.primary}`} href={GET_STARTED_URL} data-cta="learn-top-get-started">
+                            Get started free
+                        </a>
+                    </div>
                 </div>
+                <DemoAndDocsLinks {...props} />
             </aside>
         );
     }
@@ -64,10 +109,13 @@ export default function LearnCta({ position, chart, demo }: Props) {
                 <a className={`${styles.button} ${styles.primary} ${styles.large}`} href={GET_STARTED_URL} data-cta="learn-bottom-get-started">
                     Get started free
                 </a>
-                <a className={`${styles.button} ${styles.secondary} ${styles.large}`} href={demoUrl} data-cta="learn-bottom-demo">
-                    {chart ? "See the live demo" : "Explore the demos"}
-                </a>
+                {!props.demo && (
+                    <a className={`${styles.button} ${styles.secondary} ${styles.large}`} href={`${DEMO_BASE_URL}javascript/`} data-cta="learn-bottom-demo">
+                        Explore the demos
+                    </a>
+                )}
             </div>
+            <DemoAndDocsLinks {...props} />
             <p className={styles.small}>
                 <a href={FEATURES_URL} data-cta="learn-bottom-features">
                     All SciChart.js features

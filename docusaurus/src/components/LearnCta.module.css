@@ -21,18 +21,66 @@
 }
 
 .top {
+    padding: 1.25rem 1.5rem;
+}
+
+.topRow {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 1rem 1.5rem;
-    padding: 1.25rem 1.5rem;
 }
 
 .top .text {
     flex: 1 1 22rem;
     margin: 0;
     font-size: 1.05rem;
+}
+
+/* "Live demo: JavaScript React Angular | API docs: ..." row */
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0 0;
+    font-size: 0.95rem;
+}
+
+.linksLabel {
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 600;
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.35);
+    margin: 0 0.5rem;
+}
+
+.chip {
+    display: inline-block;
+    padding: 0.25rem 0.9rem;
+    border-radius: 25px;
+    background: linear-gradient(90deg, #2a6397, #713795, #a0248e);
+    color: #ffffff !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: filter 0.15s ease, transform 0.15s ease;
+}
+
+.chip:hover {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.docsLink {
+    color: #9fd8ff !important;
+    font-weight: 600;
+}
+
+.docsLink:hover {
+    color: #ffffff !important;
 }
 
 .bottom {
