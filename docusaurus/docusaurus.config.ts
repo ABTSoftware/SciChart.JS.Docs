@@ -66,13 +66,9 @@ const config: Config = {
                 theme: {
                     customCss: "./src/css/custom.css"
                 },
-                sitemap: {
-                    lastmod: "datetime",
-                    changefreq: "weekly",
-                    priority: 0.5,
-                    ignorePatterns: ['/tags/**'],
-                    filename: 'sitemap.xml',
-                }
+                // Archived version: every page has a canonical to /documentation/js/current/
+                // (see src/theme/Layout), so no sitemap is published for it.
+                sitemap: false
             } satisfies Preset.Options
         ]
     ],
