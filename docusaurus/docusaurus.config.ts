@@ -61,8 +61,8 @@ const config: Config = {
                     routeBasePath: "/",
                     sidebarPath: "./sidebars.ts",
                     // Docusaurus's default excludes, plus CLAUDE.md files (instructions for Claude Code, e.g.
-                    // docs/learn/CLAUDE.md), which must never be published as pages
-                    exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "**/CLAUDE.md"],
+                    // docs/learn/CLAUDE.md) and to-do lists (todo.md), which must never be published as pages
+                    exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "**/CLAUDE.md", "**/todo.md", "**/TODO.md"],
                     // The learning center (docs/learn/) has its own sidebar (learnSidebar), so leave it out of
                     // the main docs sidebar that is generated from the whole docs folder
                     sidebarItemsGenerator: async ({ defaultSidebarItemsGenerator, ...args }) => {
