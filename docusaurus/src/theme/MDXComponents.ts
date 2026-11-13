@@ -7,6 +7,7 @@ import { CodeSnippetBlock } from "@site/src/components/CodeSnippetBlock";
 import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
 import CenteredImageWrapper from "../components/CenteredImageWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
+import LearnCta from "../components/LearnCta";
 import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
 import MinimizedImageAndTextHeader from "../components/MinimizedImageAndTextHeader";
 import StatusEmoji from "../components/StatusEmoji";
@@ -33,6 +34,7 @@ export default {
     CodeSnippetBlock,
     CenteredImageWrapper,
     LiveDocSnippet,
+    LearnCta,
     DemoExampleWrapper,
     ChartFromSciChartDemo,
     YouTubeVideo,

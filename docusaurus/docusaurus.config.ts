@@ -60,6 +60,18 @@ const config: Config = {
                 docs: {
                     routeBasePath: "/",
                     sidebarPath: "./sidebars.ts",
+                    // The learning center (docs/learn/) has its own sidebar (learnSidebar), so leave it out of
+                    // the main docs sidebar that is generated from the whole docs folder
+                    sidebarItemsGenerator: async ({ defaultSidebarItemsGenerator, ...args }) => {
+                        const items = await defaultSidebarItemsGenerator(args);
+                        if (args.item.dirName !== ".") return items;
+                        const isLearn = (item) =>
+                            (item.type === "doc" && item.id.startsWith("learn/")) ||
+                            (item.type === "category" &&
+                                ((item.link?.type === "doc" && item.link.id.startsWith("learn/")) ||
+                                    (item.items?.length > 0 && item.items.every(isLearn))));
+                        return items.filter((item) => !isLearn(item));
+                    },
                     showLastUpdateTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
@@ -95,6 +107,7 @@ const config: Config = {
                 src: "img/logo.svg"
             },
             items: [
+                { type: "docSidebar", sidebarId: "learnSidebar", label: "Learn", position: "left" },
                 {
                     to: "/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
                     label: "Tutorials",

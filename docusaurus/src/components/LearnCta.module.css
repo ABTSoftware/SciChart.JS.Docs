@@ -1,0 +1,96 @@
+/* SciChart brand colours, taken from www.scichart.com (13 Nov 2026):
+   - hero background: navy to purple, finishing in magenta and pink
+   - "Get Started" / "Buy Now" buttons: cyan to teal pill
+   - "View Demo" / "FREE Trial" buttons: blue to purple to magenta pill
+   The block is dark in both the light and dark docs themes, so it stands out on the page. */
+
+.cta {
+    color: #ffffff;
+    border-radius: 16px;
+    margin: 1.75rem 0;
+    background: linear-gradient(135deg, #150b3b 0%, #2a1a6b 45%, #412d8a 70%, #60479d 85%, #b23d97 100%);
+    box-shadow: 0 8px 24px rgba(21, 11, 59, 0.25);
+}
+
+.small a {
+    color: #9fd8ff;
+}
+
+.small a:hover {
+    color: #ffffff;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+    padding: 1.25rem 1.5rem;
+}
+
+.top .text {
+    flex: 1 1 22rem;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.bottom {
+    padding: 2rem 2.25rem;
+    margin-top: 2.5rem;
+    background: linear-gradient(160deg, #150b3b 20%, #412d8a 65%, #60479d 80%, #b23d97 92%, #e2627c 100%);
+}
+
+.heading {
+    margin-top: 0;
+    color: #ffffff;
+}
+
+.points {
+    margin-bottom: 1.5rem;
+}
+
+.points li + li {
+    margin-top: 0.35rem;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.6rem;
+    border-radius: 25px;
+    color: #ffffff !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    white-space: nowrap;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.primary {
+    background: linear-gradient(90deg, #29aade, #44b6ce, #64c5bb);
+}
+
+.secondary {
+    background: linear-gradient(90deg, #2a6397, #713795, #a0248e);
+}
+
+.large {
+    padding: 0.8rem 2rem;
+    font-size: 1.05rem;
+}
+
+.small {
+    margin: 1.25rem 0 0;
+    font-size: 0.9rem;
+}
