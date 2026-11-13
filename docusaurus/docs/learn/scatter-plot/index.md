@@ -2,15 +2,15 @@
 sidebar_position: 5
 sidebar_label: Scatter Plot
 title: "Scatter Plot: What It Is & How to Read It (With Interactive Examples)"
-description: "What a scatter plot is, how to read correlation, outliers, clusters and trend lines, and when to use a scatter chart instead of a line or bubble chart. With a live, interactive example."
+description: "What a scatter plot is, how to read and describe correlation, outliers and clusters, when to use one, and the mistakes to avoid. With live, interactive examples."
 keywords:
     [
         "scatter plot",
+        "what is a scatter plot",
         "scatter chart",
         "scatter graph",
-        "scatter diagram",
         "how to read a scatter plot",
-        "correlation",
+        "how to describe a scatter plot",
         "positive and negative correlation",
         "scatter plot vs line graph"
     ]
@@ -25,28 +25,28 @@ image: /img/learn/scatter-plot-og.png
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "What is a scatter plot?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A scatter plot is a chart that shows the relationship between two numeric values. Each data point is drawn as a dot, placed by its x value along the horizontal axis and its y value up the vertical axis. It is also called a scatter chart, scatter graph or scatter diagram." }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What does a scatter plot show?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "It shows whether two values move together. If the dots rise from left to right, the values have a positive correlation; if they fall, a negative correlation; if they form a shapeless cloud, there is no clear correlation. It also shows outliers and clusters." }
+                    "name": "What is a scatter plot used for?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A scatter plot is used to see whether two measured values are related, for example height and weight, advertising spend and sales, or temperature and energy use. It shows the direction and strength of the relationship, and picks out outliers and clusters that a table of numbers would hide." }
                 },
                 {
                     "@type": "Question",
                     "name": "How do you describe a scatter plot?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Describe its direction (positive, negative or none), its form (a straight line or a curve), its strength (how tightly the dots follow the pattern), and any outliers or clusters. For example: a strong, positive, linear relationship with one outlier." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Describe four things: the direction (positive, negative or none), the form (linear or curved), the strength (how tightly the dots follow the pattern), and anything unusual such as outliers or clusters. For example: a strong, positive, linear relationship with two outliers." }
                 },
                 {
                     "@type": "Question",
-                    "name": "Does correlation mean causation?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No. A scatter plot can show that two values move together, but not why. One may cause the other, both may be driven by a third factor, or the pattern may be a coincidence. Showing cause needs a controlled experiment or other evidence." }
+                    "name": "What is the difference between a scatter plot and a line graph?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A scatter plot shows separate dots for two measured values and does not join them, because the order of the points has no meaning. A line graph joins points in order along the x axis, usually time, to show how one value changes." }
                 },
                 {
                     "@type": "Question",
-                    "name": "When should you use a scatter plot instead of a line chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Use a scatter plot when both axes are measured values and you want to see how they relate, and the order of the points does not matter. Use a line chart when the x axis is time or another sequence and joining the points in order shows a trend." }
+                    "name": "Does correlation on a scatter plot mean causation?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "No. A scatter plot shows that two values move together, not why. A third factor may drive both, the cause may run the other way, or the pattern may be chance. Showing cause needs a controlled experiment or other evidence." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Who invented the scatter plot?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Historians of statistics credit the astronomer John Herschel with one of the first true scatter plots, drawn in 1833 to study the orbits of double stars. Francis Galton later used scatter plots to study correlation in the 1880s." }
                 },
                 {
                     "@type": "Question",
@@ -60,66 +60,93 @@ image: /img/learn/scatter-plot-og.png
 
 # Scatter Plot
 
-:::info Looking for the SciChart.js API?
-See the [SciChart.js scatter plot documentation](/2d-charts/chart-types/xy-scatter-renderable-series/) for `XyScatterRenderableSeries`, point markers and per-point colouring.
+## What is a scatter plot?
+
+A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its **x value** sets how far along it sits and its **y value** sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
+
+![A scatter plot of the height and weight of 200 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
+
+*A scatter plot of height against weight for 200 people (sample data), with a trend line. [Try the interactive version](#how-to-create-a-scatter-plot-in-javascript-react-or-angular).*
+
+:::tip Key takeaways
+- A scatter plot shows the **relationship between two measured values**, with one dot per item.
+- The pattern shows the **direction**, **strength** and **form** of the relationship, plus any **outliers** and **clusters**.
+- Describe one in a sentence: "a *strong*, *positive*, *linear* relationship with *two outliers*".
+- It shows **correlation, not causation**: two values can move together without one causing the other.
+- With many thousands of points, dots hide each other. Use **small, semi-transparent markers** or a heatmap.
 :::
-
-A **scatter plot** (also called a **scatter chart** or **scatter graph**) shows the relationship between two numeric values. Each data point is drawn as a dot, placed by its **x value** along the horizontal axis and its **y value** up the vertical axis. The pattern the dots make shows whether the two values are related, how strongly, and which points don't fit.
-
-Try the interactive chart below. It plots the height and weight of 200 people (generated sample data). Scroll to zoom, drag to pan, double-click to reset, and hover over a dot to see its values.
-
-<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
-
-<LearnCta position="top" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />
 
 ## How to read a scatter plot
 
 ![Three scatter plots: dots rising from left to right show a positive correlation, with one outlier; dots falling from left to right show a negative correlation; a shapeless cloud of dots shows no correlation](./scatter-plot-correlation.svg)
 
-- **Each dot is one item** you measured, such as one person, one product or one experiment. Its position gives its two values.
-- **The direction** shows the type of **correlation**, the tendency of two values to move together:
-  - **Positive correlation:** the dots rise from left to right. As x goes up, y tends to go up, like height and weight.
-  - **Negative correlation:** the dots fall from left to right. As x goes up, y tends to go down, like a car's age and its resale price.
-  - **No correlation:** the dots form a shapeless cloud. Knowing x tells you little about y.
-- **The strength** is how tightly the dots follow the pattern. Dots close to a line mean a **strong** relationship; a loose, wide band means a **weak** one.
-- **The form** can be a straight line (**linear**) or a curve (**non-linear**), such as values that rise quickly and then level off.
-- **Outliers** are points far from the overall pattern. They may be measurement errors, or the most interesting items in the data, so check them before removing them.
-- **Clusters** are separate groups of dots. They often mean the data mixes different kinds of item, such as two product lines or two species.
+1. **Check the axes.** Find out which value runs along the bottom (x) and which runs up the side (y), and their units. The x value is usually the one you think might explain the other.
+2. **Look at the overall direction.** Dots rising from left to right show a **positive correlation**: as x increases, y tends to increase. Dots falling from left to right show a **negative correlation**. A shapeless cloud shows **no correlation**.
+3. **Judge the strength.** The closer the dots sit to an imaginary line, the **stronger** the relationship. A wide, loose band means a **weak** one.
+4. **Check the form.** The dots may follow a straight line (**linear**) or a curve (**non-linear**), such as values that rise quickly and then level off.
+5. **Look for anything unusual.** **Outliers** are dots far from the rest. They may be errors, or the most interesting items in the data. **Clusters** are separate groups, which often mean the data mixes different kinds of item.
 
-### Trend lines
+A **trend line** (line of best fit), usually calculated by least-squares regression, summarises the direction. The **correlation coefficient**, *r*, measures the strength of a straight-line relationship from −1 (perfect negative) through 0 (none) to +1 (perfect positive).
 
-A **trend line** (or **line of best fit**) is a straight line drawn through the middle of the dots, usually calculated by the **least-squares** method (linear regression). Its slope shows the direction and size of the relationship: in the chart above, the dashed orange line shows how much weight tends to increase per centimetre of height. A trend line summarises the pattern; it doesn't make the relationship any stronger than the dots show.
+## How to describe a scatter plot
 
-The strength of a straight-line relationship is often given as a **correlation coefficient** (r), a number from −1 to +1. Values near +1 or −1 mean the dots lie close to a line; values near 0 mean no straight-line relationship.
+Teachers, analysts and report writers describe scatter plots the same way. Use this template:
 
-### Correlation is not causation
+> There is a **[strong / moderate / weak]**, **[positive / negative]**, **[linear / non-linear]** relationship between **[x]** and **[y]**, **[with / without]** outliers or clusters.
 
-A scatter plot shows that two values move together, not **why**. Ice-cream sales and sunburn cases rise together, but ice cream doesn't cause sunburn: hot, sunny weather drives both. When you see a correlation, ask whether a third factor could explain it, whether the cause could run the other way, or whether it could be chance. Proving cause needs a controlled experiment or other evidence.
+**Worked example,** using the height and weight chart above: "There is a moderate, positive, linear relationship between height and weight. Taller people tend to be heavier, with about 0.9 kg more weight for each extra centimetre of height. Two people don't fit the pattern: a short person who is unusually heavy and a tall person who is unusually light."
 
-| Pattern | What it looks like | What it suggests |
-| --- | --- | --- |
-| Strong positive | Dots close to a rising line | The values rise together, fairly predictably |
-| Weak negative | A loose band falling from left to right | y tends to fall as x rises, with many exceptions |
-| No correlation | A shapeless cloud | No straight-line relationship between the values |
-| Non-linear | Dots follow a curve | A relationship exists, but a straight trend line will misdescribe it |
-| Clusters | Two or more separate groups | The data may contain different kinds of item; consider colouring by group |
+| What you see | How to describe it |
+| --- | --- |
+| Dots tightly packed around a rising line | Strong, positive, linear |
+| A loose band falling from left to right | Weak, negative, linear |
+| Dots following a curve that flattens out | Positive, non-linear |
+| A shapeless cloud | No correlation |
+| Two or more separate groups of dots | Clustered: describe each group, and consider colouring them by group |
 
 ## When to use a scatter plot
 
-Use a scatter plot when you have **two measured values for each item** and want to see whether, and how, they are related. It is the standard chart for spotting correlation, outliers and clusters, and works well from a few dozen points to very large datasets.
+Use a scatter plot when you have **two measured values for each item** and want to know whether, and how, they're related. Typical uses:
+
+- **science and engineering:** checking whether one measurement predicts another, such as temperature and pressure, or dose and response;
+- **quality control:** spotting faulty parts that sit away from the normal pattern;
+- **finance and business:** risk against return, or advertising spend against sales;
+- **data exploration:** a first look at a new dataset before any modelling.
 
 | Chart | Best for |
 | --- | --- |
-| **Scatter plot** | The relationship between two numeric values, one dot per item; order doesn't matter |
+| **Scatter plot** | The relationship between two numeric values, one dot per item; the order of the points doesn't matter |
 | [Line chart](/learn/line-chart/) | How one value changes over time or another sequence, with points joined in order |
-| [Bubble chart](/learn/bubble-chart/) | A scatter plot with a third value shown as the size of each bubble |
-| [Heatmap](/learn/heatmap/) | Very dense data, where dots overlap so much that colour showing density is clearer |
+| [Bubble chart](/learn/bubble-chart/) | A scatter plot that also shows a third value as the size of each bubble |
+| [Heatmap](/learn/heatmap/) | Very dense data, where colour showing how many points fall in each cell is clearer than individual dots |
 
-With many points, dots start to hide each other (**overplotting**). Smaller, semi-transparent dots help, as does zooming in on a region.
+## Common scatter plot mistakes
+
+- **Reading cause into correlation.** Ice-cream sales and sunburn rise together because hot weather drives both, not because one causes the other.
+- **Joining the dots.** A line between scatter points implies an order that doesn't exist. Use a [line chart](/learn/line-chart/) when the order matters.
+- **Squashed or stretched axes.** Axis ranges that crop the data, or don't start where they should, can make a weak relationship look strong. Leave a small margin around the data and label both axes with units.
+- **Extending the trend line too far.** A trend line describes the range you measured. It says nothing reliable about values well outside that range.
+- **Deleting outliers without checking them.** An outlier may be a data-entry error, or the most important point on the chart.
+- **Overplotting.** With thousands of points, dots pile on top of each other and hide where most of the data really is. See the next section.
+
+### Scatter plots with large datasets
+
+When a scatter plot has tens of thousands of points or more, dots overlap until whole areas look like a solid block. Three fixes:
+- **smaller, semi-transparent dots,** so overlapping dots build up into brighter, denser areas;
+- **zooming in** on a region to see individual points;
+- switching to a **[heatmap](/learn/heatmap/)** that counts how many points fall in each cell.
+
+The chart below has 100,000 points in two groups: one rising and one falling, crossing in the middle. With small, semi-transparent dots you can see both trends, and the brighter area where they overlap. Scroll to zoom into the dense areas.
+
+<LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
 
 ## How to create a scatter plot in JavaScript, React or Angular
 
-SciChart.js draws scatter plots with WebGL and WebGPU, so they stay smooth to zoom and pan with large numbers of points and live updates. Here is the code for the chart above:
+SciChart.js draws scatter plots with WebGL and WebGPU, so they stay smooth to zoom and pan with large numbers of points and live updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a dot to see its values.
+
+<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
+
+Here is the code for this chart:
 
 <CodeSnippetBlock labels={["JavaScript", "React", "Angular"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -213,36 +240,43 @@ SciChart.js draws scatter plots with WebGL and WebGPU, so they stay smooth to zo
 
 Key points:
 
-- An [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) holds your data: one x value and one y value per point. Unlike a line chart, the x values don't need to be sorted.
-- An [XyScatterRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) draws a marker at each point and no line between them.
-- The `pointMarker` sets the dot's shape and colour. `EllipsePointMarker` draws circles; square, triangle, cross and custom image markers are also available (see [point markers](/2d-charts/chart-types/common-series-apis/drawing-point-markers/)).
-- The trend line in the demo is a `FastLineRenderableSeries` with two points, calculated with a simple least-squares fit.
+- An [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) holds one x value and one y value per point. Unlike a line chart, the x values don't need to be sorted.
+- An [XyScatterRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) draws a marker at each point, with no line between them.
+- The `pointMarker` sets each dot's shape and colour. `EllipsePointMarker` draws circles; square, triangle, cross and custom image markers are also available (see [point markers](/2d-charts/chart-types/common-series-apis/drawing-point-markers/)).
+- The trend line is a `FastLineRenderableSeries` with two points, calculated with a least-squares fit.
 
 **See it in the demo app:** [JavaScript scatter chart](https://www.scichart.com/demo/javascript/scatter-chart) · [React scatter chart](https://www.scichart.com/demo/react/scatter-chart) · [Angular scatter chart](https://www.scichart.com/demo/angular/scatter-chart)
 
 **Go deeper:** [SciChart.js scatter plot documentation](/2d-charts/chart-types/xy-scatter-renderable-series/), including point marker types and colouring individual points.
 
+<LearnCta position="top" chart="scatter plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" />
+
+## Sources
+
+- NIST/SEMATECH, [e-Handbook of Statistical Methods: Scatter Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/scatterp.htm). How scatter plots are used in exploratory data analysis.
+- Friendly, M. and Denis, D. (2005), [The early origins and development of the scatterplot](https://doi.org/10.1002/jhbs.20078). *Journal of the History of the Behavioral Sciences*, 41(2). The history of the scatter plot, from Herschel to Galton.
+
 ## Frequently asked questions
 
-### What is a scatter plot?
+### What is a scatter plot used for?
 
-A scatter plot is a chart that shows the relationship between two numeric values. Each data point is drawn as a dot, placed by its x value along the horizontal axis and its y value up the vertical axis. It is also called a scatter chart, scatter graph or scatter diagram.
-
-### What does a scatter plot show?
-
-It shows whether two values move together. If the dots rise from left to right, the values have a positive correlation; if they fall, a negative correlation; if they form a shapeless cloud, there is no clear correlation. It also shows outliers and clusters.
+A scatter plot is used to see whether two measured values are related, for example height and weight, advertising spend and sales, or temperature and energy use. It shows the direction and strength of the relationship, and picks out outliers and clusters that a table of numbers would hide.
 
 ### How do you describe a scatter plot?
 
-Describe its direction (positive, negative or none), its form (a straight line or a curve), its strength (how tightly the dots follow the pattern), and any outliers or clusters. For example: a strong, positive, linear relationship with one outlier.
+Describe four things: the direction (positive, negative or none), the form (linear or curved), the strength (how tightly the dots follow the pattern), and anything unusual such as outliers or clusters. For example: a strong, positive, linear relationship with two outliers.
 
-### Does correlation mean causation?
+### What is the difference between a scatter plot and a line graph?
 
-No. A scatter plot can show that two values move together, but not why. One may cause the other, both may be driven by a third factor, or the pattern may be a coincidence. Showing cause needs a controlled experiment or other evidence.
+A scatter plot shows separate dots for two measured values and does not join them, because the order of the points has no meaning. A line graph joins points in order along the x axis, usually time, to show how one value changes.
 
-### When should you use a scatter plot instead of a line chart?
+### Does correlation on a scatter plot mean causation?
 
-Use a scatter plot when both axes are measured values and you want to see how they relate, and the order of the points does not matter. Use a line chart when the x axis is time or another sequence and joining the points in order shows a trend.
+No. A scatter plot shows that two values move together, not why. A third factor may drive both, the cause may run the other way, or the pattern may be chance. Showing cause needs a controlled experiment or other evidence.
+
+### Who invented the scatter plot?
+
+Historians of statistics credit the astronomer John Herschel with one of the first true scatter plots, drawn in 1833 to study the orbits of double stars. Francis Galton later used scatter plots to study correlation in the 1880s.
 
 ### How do I make a scatter plot in JavaScript?
 
