@@ -49,6 +49,7 @@ async function areaChart(divElementId) {
     sciChartSurface.yAxes.add(
         new NumericAxis(wasmContext, {
             axisTitle: "Visitors per day",
+            labelPrecision: 0,
             visibleRange: new NumberRange(0, 2000),
             zoomExtentsToInitialRange: true // double-click returns to this range
         })

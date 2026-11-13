@@ -24,7 +24,11 @@ async function barChart(divElementId) {
         CursorModifier,
         MouseWheelZoomModifier,
         ZoomPanModifier,
-        ZoomExtentsModifier
+        ZoomExtentsModifier,
+        GradientParams,
+        Point,
+        PaletteFactory,
+        WaveAnimation
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
 
@@ -47,7 +51,7 @@ async function barChart(divElementId) {
             drawMajorGridLines: false,
             drawMinorGridLines: false,
             drawMajorBands: false,
-            growBy: new NumberRange(0.05, 0.05)
+            growBy: new NumberRange(0.05, 0.25) // extra space below the last bar keeps it clear of the chart's bottom corner
         })
     );
     // The value (Y) axis goes along the top. flippedCoordinates makes values grow left to right
@@ -68,15 +72,27 @@ async function barChart(divElementId) {
                 yValues: unitsSold,
                 dataSeriesName: "Units sold"
             }),
-            fill: "#29aade",
-            stroke: "#29aade",
-            strokeThickness: 1,
+            fill: "#E4F5FC77",
+            stroke: "#E4F5FC",
+            strokeThickness: 2,
             dataPointWidth: 0.7,
-            cornerRadius: 4,
+            cornerRadius: 8,
+            // Colour each bar by its position: orange, through sky blue, to teal
+            paletteProvider: PaletteFactory.createGradient(
+                wasmContext,
+                new GradientParams(new Point(0, 0), new Point(1, 1), [
+                    { offset: 0, color: "#F48420" },
+                    { offset: 0.67, color: "#50C7E0" },
+                    { offset: 1, color: "#30BC9A" }
+                ]),
+                { enableFill: true }
+            ),
+            // Bars grow in a wave when the chart first appears
+            animation: new WaveAnimation({ duration: 1000 }),
             // Show each bar's value at its end
             dataLabels: {
                 color: "#ffffff",
-                style: { fontSize: 13, fontFamily: "Arial" },
+                style: { fontSize: 18, fontFamily: "Arial" },
                 precision: 0,
                 positionMode: EColumnDataLabelPosition.Outside
             }

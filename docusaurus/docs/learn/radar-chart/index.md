@@ -2,14 +2,15 @@
 sidebar_position: 11
 sidebar_label: Radar Chart
 title: "Radar Chart (Spider Chart): What It Is & How to Read It (With Interactive Examples)"
-description: "What a radar chart (spider chart) is, how to read one, when to use it to compare items across several variables, and the pitfalls to avoid. With a live example."
+description: "What a radar chart (spider chart) is, how to read and describe one, when to use it instead of a bar chart, and why axis order and area can mislead. With a live example."
 keywords:
     [
         "radar chart",
         "spider chart",
+        "what is a radar chart",
         "radar graph",
         "spider plot",
-        "radar plot",
+        "star plot",
         "how to read a radar chart",
         "what is a radar chart used for",
         "radar chart vs bar chart"
@@ -30,8 +31,8 @@ image: /img/learn/radar-chart-og.png
                 },
                 {
                     "@type": "Question",
-                    "name": "What is the difference between a radar chart and a spider chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "There is none. Radar chart, spider chart, spider plot, web chart and star plot are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The name spider chart comes from the web-like look of the axes and scale rings." }
+                    "name": "Is a spider chart the same as a radar chart?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Radar chart, spider chart, spider plot, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The name spider chart comes from the web-like look of the spokes and scale rings." }
                 },
                 {
                     "@type": "Question",
@@ -41,7 +42,12 @@ image: /img/learn/radar-chart-og.png
                 {
                     "@type": "Question",
                     "name": "When should you not use a radar chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Avoid a radar chart when you have more than three or four items, when the variables use different units or scales, when there is a natural order such as time, or when readers need to compare exact values. A grouped bar chart is usually easier to read in those cases." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Avoid a radar chart when you have more than three or four items, when the variables use different units or scales, when the variables have a natural order such as months, or when readers need to compare exact values. A grouped bar chart is usually easier to read in those cases." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Who invented the radar chart?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "The German statistician Georg von Mayr is credited with the first radar chart, or star plot, in 1877. Star plots later became a standard technique of exploratory data analysis for showing many variables per item." }
                 },
                 {
                     "@type": "Question",
@@ -55,54 +61,101 @@ image: /img/learn/radar-chart-og.png
 
 # Radar Chart (Spider Chart)
 
-:::info Looking for the SciChart.js API?
-See the [SciChart.js radar chart documentation](/2d-charts/chart-types/polar-radar-chart/) for `SciChartPolarSurface`, polygon gridlines and the polar series used to draw radar charts.
+## What is a radar chart?
+
+A **radar chart** (also called a spider chart, web chart or star plot) compares items across three or more variables. Each variable gets its own axis, radiating from a centre like spokes. An item's values are marked on those axes and joined into a polygon, so its shape shows where it is strong and where it is weak.
+
+![A radar chart comparing two phones on six features scored out of 10: a blue shape for Phone A reaches furthest on battery life and value for money, an orange shape for Phone B reaches furthest on camera, screen, performance and storage](/img/learn/radar-chart-og.png)
+
+*A radar chart comparing two phones on six features, each scored out of 10 (sample data). [Try the interactive version](#how-to-create-a-radar-chart-in-javascript-react-or-angular).*
+
+:::tip Key takeaways
+- A radar chart shows **one item as one shape**, across several variables that share a scale.
+- **Far from the centre is high, near the centre is low.** Spikes are strengths; dents are weaknesses.
+- Describe one in a sentence: "*Phone A* leads on *battery life* and *value for money*; *Phone B* leads on the other *four* features."
+- **Spoke order and polygon area can mislead.** Reordering the spokes changes the shape, and area exaggerates differences.
+- With more than three items, or when exact values matter, a **grouped bar chart** is usually clearer.
 :::
-
-A **radar chart**, also called a **spider chart**, compares items across several variables at once. Each variable gets its own **axis**, radiating from the centre like the spokes of a wheel. An item's value on each axis is plotted as a point, and the points are joined into a **polygon**. The shape shows the item's profile: where it is strong, where it is weak, and how it differs from the others.
-
-Try the interactive chart below. It compares two phones on six features, each scored out of 10. Hover over a spoke to see both scores, scroll to zoom, double-click to reset, and use the legend to show or hide a phone.
-
-<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
-
-<LearnCta position="top" chart="radar chart" demo="polar-radar-chart" docs="/2d-charts/chart-types/polar-radar-chart/" />
 
 ## How to read a radar chart
 
 ![Anatomy of a radar chart: five axes radiating from a centre at zero, pentagon-shaped scale rings, one item's scores plotted on each axis and joined into a filled polygon](./radar-chart-anatomy.svg)
 
-- **Each axis (spoke) is one variable,** such as battery life or price. The variable's name sits at the end of its spoke.
-- **The centre is the lowest value** and the outer edge the highest. All axes normally share the same scale.
-- **The scale rings** (also called gridlines) join the same value on every axis. They form the web that gives the spider chart its name.
-- **Each item is one polygon.** Read a value where the polygon crosses a spoke. Points near the edge are strengths; points near the centre are weaknesses.
-- **Compare shapes, not just sizes.** A round, even shape is an all-rounder. A spiky shape is strong in some areas and weak in others. In the chart above, Phone A wins on battery life and value for money; Phone B wins on camera, screen, performance and storage.
+1. **Find the variables.** Each spoke (axis) is one variable, named at its outer end. Most radar charts have between 4 and 10 spokes.
+2. **Check the scale.** The centre is the lowest value and the rim the highest. The rings (gridlines) join the same value on every spoke and form the "web". Check that every spoke uses the same scale, and that higher means better on all of them.
+3. **Read one shape at a time.** Where an item's polygon crosses a spoke is its value for that variable. Points out near the rim are its strengths; points pulled in towards the centre are its weaknesses.
+4. **Judge the overall shape.** A large, round shape is an all-rounder that scores well everywhere. A small round shape is consistently weak. A spiky or lopsided shape means the item is a specialist.
+5. **Compare shapes spoke by spoke.** Where one shape sits outside another, that item leads. Where two outlines cross, the lead switches from one item to the other.
 
-## Radar chart pitfalls
+## How to describe a radar chart
 
-Radar charts are popular, but they are easy to misread. Watch for these:
+A radar chart is a comparison, so describe it as one. This template works for reports, exam answers and slide notes:
 
-| Pitfall | Why it matters | What to do |
-| --- | --- | --- |
-| **Axis order changes the shape** | The same data looks different when you reorder the spokes, so a shape can suggest a pattern that isn't there | Group related variables next to each other, and keep the order the same across charts |
-| **Area exaggerates differences** | The area of the polygon grows faster than the values: doubling every value quadruples the area, so bigger shapes look more impressive than they are | Compare the values on each spoke, not the overall size of the shapes |
-| **Too many items clutter the chart** | Overlapping filled polygons hide each other after three or four items | Show two or three items per chart, use semi-transparent fills, or draw one small chart per item |
-| **Mixed scales or directions** | If one axis runs 0 to 10 and another 0 to 1,000, or "higher is better" on one axis and "lower is better" on another, the shape means nothing | Put every variable on the same scale and make higher mean better on every axis (e.g. "value for money", not "price") |
-| **Precise values are hard to read** | Each value sits on its own angled axis rather than a shared baseline, so values are harder to compare than bars | Add a tooltip or a table when exact values matter |
+> **[Item A]** leads on **[variables]**, and **[Item B]** leads on **[variables]**. **[Item A]**'s shape is **[balanced / lopsided]**, with its weakest score on **[variable]**.
+
+**Worked example,** using the phone chart above (scores out of 10):
+
+| Feature | Phone A | Phone B | Leader |
+| --- | --- | --- | --- |
+| Battery life | 9 | 5 | A |
+| Camera | 6 | 9 | B |
+| Screen | 7 | 9 | B |
+| Performance | 5 | 9 | B |
+| Storage | 6 | 8 | B |
+| Value for money | 8 | 3 | A |
+| **Average** | **6.8** | **7.2** | |
+
+"Phone A leads on battery life and value for money, and Phone B leads on the other four features. Phone A's shape is fairly balanced, never dropping below 5. Phone B's is lopsided: it is the stronger phone overall, but it scores only 3 for value for money."
+
+Notice what the description doesn't say: "Phone B is better". Which phone is better depends on which features matter to the reader, and the chart deliberately leaves that judgement to them.
 
 ## When to use a radar chart
 
-Use a radar chart to **compare a few items across several variables** (roughly 4 to 10) that share a scale: products across features, players across skills, candidates across criteria, or one item against a target profile.
+Use a radar chart to **compare the overall profile of two or three items** across several variables on one scale. Typical uses:
 
-| Chart | Best for |
+- **products and suppliers:** comparing features, or scoring bids against selection criteria;
+- **sport:** a player's skills against another player or a league average;
+- **people and teams:** skills assessments and performance reviews against a target profile;
+- **engineering and quality:** a design measured against several requirements at once.
+
+Choose the chart by what the reader needs to do:
+
+| If the reader needs to… | Use |
 | --- | --- |
-| **Radar chart** | The overall profile of two or three items across several variables on one scale |
-| [Bar chart](/learn/bar-chart/) | Comparing exact values, or many items; a grouped bar chart shows the same data as a radar chart and is easier to read precisely |
-| [Parallel coordinate plot](/2d-charts/chart-types/parallel-coordinate-plot/) | Many items (dozens or more) across several variables, each with its own scale |
-| [Line chart](/learn/line-chart/) | Variables with a natural order, such as time; a radar chart's circular layout would wrongly join the last value to the first |
+| See the overall profile of 2 or 3 items across 4 to 10 variables on one scale | **Radar chart** |
+| Compare exact values, or more than 3 items | [Grouped bar chart](/learn/bar-chart/) |
+| Compare dozens of items across variables with different units | [Parallel coordinate plot](/2d-charts/chart-types/parallel-coordinate-plot/) |
+| Follow a variable with a natural order, such as months | [Line chart](/learn/line-chart/): a radar chart would wrongly join the last month back to the first |
+| Compare many items' profiles | One small radar chart per item, side by side, all on the same scale |
+
+## Radar chart mistakes to avoid
+
+| Mistake | Why it matters | What to do |
+| --- | --- | --- |
+| **Spoke order chosen at random** | The same data makes a different shape when you reorder the spokes, so a shape can suggest a pattern that isn't there | Put related variables next to each other, and keep the same order in every chart you compare |
+| **Judging by area** | Area grows with the square of the values: doubling every score makes the shape four times as big | Compare values spoke by spoke, not the size of the shapes |
+| **Too many items** | Filled polygons hide each other after three or four items | Show two or three items per chart, use semi-transparent fills, or draw one small chart per item |
+| **Mixed scales or directions** | If one spoke runs 0 to 10 and another 0 to 1,000, or "lower is better" on some spokes, the shape means nothing | Put every variable on the same scale (for example, a score out of 10) and make higher mean better on every spoke, such as "value for money" rather than "price" |
+| **No values to check** | Each value sits on its own angled axis, so readers can't line values up against a shared baseline | Add tooltips, value labels or a table when exact values matter |
+| **A centre that isn't zero** | If the scale starts above zero, small differences look large and low scores vanish into the middle | Start every spoke at zero, unless you say clearly that it doesn't |
+
+### Worked example: how area and spoke order mislead
+
+Take the phones above. Phone B's scores add up to 43 and Phone A's to 41, so Phone B is about **5% higher** in total. But in the chart above, Phone B's shape covers about **13% more area** than Phone A's, because area rewards high scores on neighbouring spokes.
+
+Now keep the data the same and only change the order of the six spokes. Depending on the order, Phone B's area changes by about **10%** between its smallest and largest arrangement. The order in the chart above happens to be the one that gives Phone B its largest shape. Nothing about the phones has changed; only the drawing has.
+
+The lesson: read the values on the spokes, and treat the size of a shape as a rough impression only.
 
 ## How to create a radar chart in JavaScript, React or Angular
 
-SciChart.js draws radar charts on a polar chart surface, with the same WebGL and WebGPU rendering, tooltips and zooming as its other charts. Here is the code for the chart above:
+SciChart.js draws radar charts on a polar chart surface, with the same WebGL and WebGPU rendering, tooltips and zooming as its other charts. Try the chart below: hover over a spoke to see both phones' scores, scroll to zoom, double-click to reset, and use the legend to show or hide a phone.
+
+<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
+
+<LearnCta position="top" chart="radar chart" demo="polar-radar-chart" docs="/2d-charts/chart-types/polar-radar-chart/" />
+
+Here is the code for this chart:
 
 <CodeSnippetBlock labels={["JavaScript", "React", "Angular"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -238,13 +291,12 @@ Key points:
 
 - A radar chart is a polar chart. [SciChartPolarSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpolarsurface.html) replaces `SciChartSurface`, with an angular axis around the edge and a radial axis from the centre outwards.
 - A [PolarCategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/polarcategoryaxis.html) with `labels` gives one spoke per variable. `startAngle: Math.PI / 2` puts the first spoke at 12 o'clock and `flippedCoordinates: true` runs the spokes clockwise.
-- `gridlineMode: EPolarGridlineMode.Polygons` on the radial `PolarNumericAxis` draws straight-sided scale rings: the radar or spider-web look. Without it you get circles.
-- Each item is a [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/polarmountainrenderableseries.html) (filled) or `PolarLineRenderableSeries` (outline only). Repeat the first value at the end so the polygon closes.
-- Polar charts use their own modifiers: `PolarCursorModifier` for the tooltip, `PolarMouseWheelZoomModifier`, `PolarZoomExtentsModifier` and `PolarLegendModifier`.
+- `gridlineMode: EPolarGridlineMode.Polygons` on the radial `PolarNumericAxis` draws straight-sided rings: the radar or spider-web look. Without it you get circles.
+- Each item is a [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/polarmountainrenderableseries.html) (filled) or a `PolarLineRenderableSeries` (outline only). Repeat the first value at the end so the polygon closes. The tooltip comes from `PolarCursorModifier`; polar charts have their own zoom and legend modifiers too.
 
 **See it in the demo app:** [JavaScript radar chart](https://www.scichart.com/demo/javascript/polar-radar-chart) · [React radar chart](https://www.scichart.com/demo/react/polar-radar-chart) · [Angular radar chart](https://www.scichart.com/demo/angular/polar-radar-chart)
 
-**Go deeper:** [SciChart.js radar chart documentation](/2d-charts/chart-types/polar-radar-chart/), and the other polar chart types it builds on, such as [polar line](/2d-charts/chart-types/polar-line-renderable-series/) and [polar mountain](/2d-charts/chart-types/polar-mountain-renderable-series/) series.
+**Go deeper:** [SciChart.js radar chart documentation](/2d-charts/chart-types/polar-radar-chart/), and the polar series it builds on: [polar line](/2d-charts/chart-types/polar-line-renderable-series/) and [polar mountain](/2d-charts/chart-types/polar-mountain-renderable-series/).
 
 ## Frequently asked questions
 
@@ -252,9 +304,9 @@ Key points:
 
 A radar chart compares a few items across several variables measured on the same scale, such as products across features, players across skills or candidates across criteria. Each item becomes a shape, so you can see its strengths and weaknesses, and how it differs from the others, at a glance.
 
-### What is the difference between a radar chart and a spider chart?
+### Is a spider chart the same as a radar chart?
 
-There is none. Radar chart, spider chart, spider plot, web chart and star plot are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The name spider chart comes from the web-like look of the axes and scale rings.
+Yes. Radar chart, spider chart, spider plot, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The name spider chart comes from the web-like look of the spokes and scale rings.
 
 ### How do you read a radar chart?
 
@@ -262,10 +314,20 @@ Each spoke is one variable, with low values at the centre and high values at the
 
 ### When should you not use a radar chart?
 
-Avoid a radar chart when you have more than three or four items, when the variables use different units or scales, when there is a natural order such as time, or when readers need to compare exact values. A grouped bar chart is usually easier to read in those cases.
+Avoid a radar chart when you have more than three or four items, when the variables use different units or scales, when the variables have a natural order such as months, or when readers need to compare exact values. A grouped bar chart is usually easier to read in those cases.
+
+### Who invented the radar chart?
+
+The German statistician Georg von Mayr is credited with the first radar chart, or star plot, in 1877. Star plots later became a standard technique of exploratory data analysis for showing many variables per item.
 
 ### How do I make a radar chart in JavaScript?
 
 With SciChart.js, create a `SciChartPolarSurface`, add a `PolarCategoryAxis` as the angular axis with one label per variable, and a `PolarNumericAxis` as the radial axis with `gridlineMode` set to `EPolarGridlineMode.Polygons`. Then add a `PolarMountainRenderableSeries` or `PolarLineRenderableSeries` for each item, repeating the first point at the end to close the shape. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+
+## Sources
+
+- NIST/SEMATECH, [e-Handbook of Statistical Methods: Star Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/starplot.htm). How star plots (radar charts) are used to compare items across many variables.
+- Wikipedia, [Radar chart](https://en.wikipedia.org/wiki/Radar_chart). Other names for the chart, its history from Georg von Mayr (1877), and its limitations.
+- Holtz, Y. and Healy, C., [The Radar chart and its caveats](https://www.data-to-viz.com/caveat/spider.html), data-to-viz.com. Why spoke order, scales and overplotting make radar charts hard to read, with alternatives.
 
 <LearnCta position="bottom" chart="radar chart" demo="polar-radar-chart" docs="/2d-charts/chart-types/polar-radar-chart/" />

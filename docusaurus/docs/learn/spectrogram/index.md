@@ -2,12 +2,13 @@
 sidebar_position: 10
 sidebar_label: Spectrogram
 title: "Spectrogram: What It Is & How to Read It (With Interactive Examples)"
-description: "What a spectrogram is, how to read time, frequency and colour, how it is made with an FFT, how window size trades time against frequency detail, and where spectrograms are used. With a live, real-time example."
+description: "What a spectrogram is, how to read its time, frequency and colour, what each shape means, how it is made with an FFT, and the mistakes to avoid. With a live, real-time example."
 keywords:
     [
         "spectrogram",
         "what is a spectrogram",
         "how to read a spectrogram",
+        "what does a spectrogram show",
         "audio spectrogram",
         "mel spectrogram",
         "spectrogram vs spectrum",
@@ -24,8 +25,8 @@ image: /img/learn/spectrogram-og.png
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "What is a spectrogram?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A spectrogram is a picture of how the frequencies in a signal change over time. Time runs along the horizontal axis, frequency runs up the vertical axis, and the colour of each point shows how strong that frequency was at that moment, often in decibels." }
+                    "name": "What is a spectrogram used for?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A spectrogram is used to see how the frequencies in a signal change over time. Audio engineers use it to find hum, clicks and noise; speech scientists to study voices; biologists to identify bird, bat and whale calls; engineers to spot machine faults from vibration; and radio, radar and sonar operators to watch signals and targets." }
                 },
                 {
                     "@type": "Question",
@@ -44,8 +45,8 @@ image: /img/learn/spectrogram-og.png
                 },
                 {
                     "@type": "Question",
-                    "name": "What is the difference between a spectrogram and a spectrum?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A spectrum (or FFT plot) shows the strength of each frequency at one moment, as a line chart of level against frequency. A spectrogram stacks many spectra side by side over time and shows level as colour, so you can see how the frequencies change." }
+                    "name": "What is the difference between a spectrogram, a spectrum and a spectrograph?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A spectrum shows the strength of each frequency at one moment, as a line of level against frequency. A spectrogram stacks many spectra side by side over time and shows level as colour. A spectrograph is an instrument that produces a spectrum or spectrogram, such as the sound spectrograph used for speech or an optical spectrograph that splits light." }
                 },
                 {
                     "@type": "Question",
@@ -59,44 +60,67 @@ image: /img/learn/spectrogram-og.png
 
 # Spectrogram
 
-:::info Looking for the SciChart.js API?
-A spectrogram in SciChart.js is a real-time heatmap. See the [SciChart.js spectrogram documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/) for `UniformHeatmapRenderableSeries`, colour maps and real-time updates.
+## What is a spectrogram?
+
+A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the frequencies in a signal change over time. Time runs along the horizontal axis and frequency up the vertical axis. The colour of each point shows how strong that frequency was at that moment, usually in decibels (dB).
+
+![A spectrogram of a test signal: two steady horizontal lines at 1,000 Hz and 3,000 Hz, a dashed line at 5,500 Hz, and bright diagonal lines sweeping up from 500 Hz to 7,000 Hz, over a dark speckled background of noise](/img/learn/spectrogram-og.png)
+
+*A live spectrogram of a test signal (sample data): two steady tones, a tone that pulses on and off, and a sweep that repeats every four seconds, over background noise. [Try the interactive version](#how-to-create-a-spectrogram-in-javascript-react-or-angular).*
+
+:::tip Key takeaways
+- A spectrogram shows **frequency against time**, with **colour for strength**, usually in decibels.
+- **Each shape has a meaning:** flat lines are steady tones, stacked lines are harmonics, slopes are changing pitch, vertical lines are clicks, and speckle is noise.
+- It is built from many short **Fourier transforms** (the short-time Fourier transform, or STFT). The **window length** trades detail in time against detail in frequency.
+- The highest frequency it can show is **half the sample rate** (the Nyquist frequency).
+- It is used in audio, speech, wildlife sound, machine monitoring, radar, sonar, radio and medicine.
 :::
-
-A **spectrogram** shows how the **frequencies** in a signal change over **time**. Time runs along the horizontal axis, frequency (pitch, for sound) runs up the vertical axis, and the **colour** of each point shows how strong that frequency was at that moment, usually in **decibels (dB)**. It turns sound, vibration or radio signals into a picture you can read at a glance.
-
-The spectrogram below is generated live: two steady tones, a tone that pulses on and off, and a sweep that rises from 500 Hz to 7,000 Hz every four seconds, over a background of noise. Scroll to zoom into a frequency band, drag up or down to pan, double-click to reset, and hover to read the level.
-
-<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
-
-<LearnCta position="top" chart="spectrogram" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />
 
 ## How to read a spectrogram
 
 ![Anatomy of a spectrogram: time on the horizontal axis, frequency on the vertical axis, colour from quiet (black) to loud (pale yellow), with a steady tone as a horizontal line, a sweep as a rising line and a click as a vertical line](./spectrogram-anatomy.svg)
 
-- **Start with the colour scale.** It tells you which colours are loud and which are quiet. Levels are usually in decibels, a logarithmic scale, so quiet detail and loud tones fit on one chart.
-- **Each vertical slice is one moment.** Reading up a slice tells you which frequencies were present then, and how strong each was.
-- **Horizontal lines are steady tones.** A hum, a whistle or a machine running at constant speed draws a flat line at its frequency. In the demo, the tones at 1,000 Hz and 3,000 Hz are flat lines.
-- **Stacked parallel lines are harmonics.** Voices, instruments and rotating machinery produce a **fundamental** frequency plus harmonics at whole-number multiples of it.
-- **Sloping lines are changing pitch.** A rising line is a sweep or **chirp**, like the diagonal lines in the demo; birdsong and sirens look like this.
-- **Vertical lines are short, sharp sounds** such as clicks, knocks or drum hits, which contain many frequencies at once.
-- **Speckle is noise.** Broadband noise, such as hiss, fills many frequencies with low, random levels.
+1. **Check the colour scale.** It tells you which colours are loud and which are quiet. Levels are usually in decibels, a logarithmic scale, so quiet detail and loud tones fit on one chart. The darkest colour is usually the **noise floor**: the level of the background when nothing else is happening.
+2. **Check the axes.** Time usually runs left to right; in a scrolling **waterfall** display it may run top to bottom. Note whether the frequency axis is evenly spaced (linear) or squeezed at the top (logarithmic or mel), and where it stops.
+3. **Read one vertical slice.** A slice is one moment in time. Reading up it tells you which frequencies were present then, and how strong each one was.
+4. **Follow the shapes across time.** Lines and patches that persist, move or repeat are the sounds or signals. The table below says what each shape usually is.
+5. **Compare against the noise floor.** Anything only slightly brighter than the background may be noise; a feature well above it is a real signal.
+
+## Spectrogram patterns: what each shape means
+
+| What you see | What it is | Examples |
+| --- | --- | --- |
+| A flat horizontal line | A steady tone at one frequency | Mains hum at 50 or 60 Hz, a whistle, a fan or motor running at constant speed |
+| A stack of evenly spaced parallel lines | A **fundamental** frequency and its **harmonics**, at whole-number multiples of it | A sung or spoken vowel, a violin note, a rotating machine |
+| A rising or falling line | A frequency that changes over time: a sweep or **chirp** | A siren, birdsong, an engine speeding up, a test sweep |
+| A dashed line | A tone that switches on and off | An alarm beep, Morse code, the 5,500 Hz tone in the chart above |
+| A thin vertical line | A short, sharp sound containing many frequencies at once | A click, knock, drum hit or footstep |
+| A speckled haze over many frequencies | Broadband noise | Hiss, wind, rain, air conditioning |
+| Broad, darker bands that shift in speech | **Formants**: resonances of the mouth and throat | Vowels; each vowel has its own formant pattern |
+| A gap from top to bottom | Silence or a dropout | A pause in speech, a break in a recording |
+
+### How to describe a spectrogram
+
+To write up what a spectrogram shows, describe each feature in turn with this template:
+
+> There is **[a steady tone / harmonics / a sweep / a burst / noise]** at **[frequency or range]**, at about **[level]** dB, which **[lasts throughout / repeats every … / rises from … to …]**.
+
+**Worked example,** using the chart above: "There is a noise floor of about −80 dB across the whole band. Two steady tones last throughout: a strong one at 1,000 Hz, at about −25 dB, and a weaker one at 3,000 Hz, at about −40 dB. A third tone at 5,500 Hz switches on for one second in every two. A sweep rises from 500 Hz to 7,000 Hz every four seconds, then jumps back down and starts again."
 
 ## How a spectrogram is made
 
 You don't need the maths to read a spectrogram, but knowing how it is made explains what it can and can't show.
 
 1. **Cut the signal into short windows,** for example 1,024 samples each, usually overlapping.
-2. **Taper each window** with a window function (such as a Hann window), so the cut edges don't add false frequencies.
+2. **Taper each window** with a window function, such as a Hann window, so the cut edges don't add false frequencies.
 3. **Take a Fourier transform of each window.** In practice this is a fast Fourier transform (**FFT**). It measures how strong each frequency is in that window. Together, these steps are the **short-time Fourier transform** (STFT).
-4. **Convert to decibels and colour it.** Each window's result becomes one column of the spectrogram; each frequency band becomes one row.
+4. **Convert to decibels and colour it.** Each window's result becomes one column of the spectrogram, and each frequency band becomes one row.
 
-The highest frequency a spectrogram can show is half the signal's sample rate (the **Nyquist frequency**): 22,050 Hz for audio sampled at 44,100 Hz.
+The highest frequency a spectrogram can show is half the signal's sample rate, the **Nyquist frequency**: 22,050 Hz for audio sampled at 44,100 Hz. Before computers, spectrograms were drawn by an analogue machine, the sound spectrograph, described by researchers at Bell Telephone Laboratories in 1946.
 
-### Window size: time detail versus frequency detail
+### Window length: time detail against frequency detail
 
-The window length sets a trade-off you can't avoid. A long window separates frequencies finely but blurs when things happened; a short window shows timing sharply but blurs frequencies together.
+The window length sets a trade-off you can't avoid. A long window separates close frequencies but blurs when things happened; a short window shows timing sharply but merges nearby frequencies.
 
 | Window (at 44,100 samples per second) | Time per column | Frequency band width | Good for |
 | --- | --- | --- | --- |
@@ -104,41 +128,57 @@ The window length sets a trade-off you can't avoid. A long window separates freq
 | 1,024 samples | about 23 ms | about 43 Hz | General audio and speech |
 | 4,096 samples | about 93 ms | about 11 Hz | Separating close musical notes or steady machine tones |
 
-Band width is the sample rate divided by the window length; time per column is the window length divided by the sample rate (overlapping windows add columns more often, but don't sharpen the time detail).
+Band width is the sample rate divided by the window length; time per column is the window length divided by the sample rate. Overlapping windows add columns more often, but they don't sharpen the time detail.
 
-### Variants
+## Types of spectrogram
 
-| Variant | What changes | Typical use |
+| Type | What changes | Typical use |
 | --- | --- | --- |
-| **Linear spectrogram** | Frequency axis evenly spaced, as in the demo | Engineering, vibration, radio |
+| **Linear spectrogram** | Frequency axis evenly spaced, as in the chart above | Engineering, vibration, radio |
 | **Log-frequency spectrogram** | Frequency axis on a logarithmic scale, so each octave takes the same height | Music analysis |
 | **Mel spectrogram** | Frequency axis on the mel scale, which spaces frequencies roughly as people hear pitch | Speech recognition and audio machine learning |
-| **Waterfall display** | A spectrogram that scrolls as new data arrives, often top to bottom | Radio and software-defined radio (SDR), sonar |
+| **Waterfall display** | A spectrogram that scrolls as new data arrives, often from top to bottom | Radio and software-defined radio (SDR), sonar |
 
 ## When to use a spectrogram
 
-Use a spectrogram when **the frequencies in a signal change over time** and you need to see when each one starts, stops or moves. Spectrograms are used in:
+Use a spectrogram when **the frequencies in a signal change over time** and you need to see when each one starts, stops or moves. Common uses:
 
-- **Audio and music:** finding noise, hum and clipping, checking mixes, analysing notes and harmonics.
-- **Speech:** phonetics and voice analysis, where vowels show as bands called formants.
-- **Bioacoustics:** identifying birdsong and bat, whale and dolphin calls.
-- **Vibration and condition monitoring:** spotting a bearing or gear fault as a new tone appearing or drifting.
-- **Radar and sonar:** seeing targets and their movement (for example, micro-Doppler signatures).
-- **Medicine:** time-frequency analysis of EEG (brain wave) signals.
-- **Radio:** watching which channels are busy, on spectrum analysers and SDR waterfall displays.
+- **audio and music:** finding hum, clicks, noise and clipping, checking mixes, and analysing notes and harmonics;
+- **speech:** phonetics and voice analysis, where vowels show as formant bands;
+- **wildlife sound:** identifying birdsong and bat, whale and dolphin calls;
+- **vibration and condition monitoring:** spotting a bearing or gear fault as a new tone appearing or drifting;
+- **radar and sonar:** detecting targets and how they move;
+- **medicine:** time-frequency analysis of EEG (brain wave) signals;
+- **radio:** watching which channels are busy, on spectrum analysers and SDR waterfall displays.
 
 | Chart | Best for |
 | --- | --- |
-| **Spectrogram** | How frequencies change over time |
-| Waveform ([line chart](/learn/line-chart/)) | The raw signal: amplitude against time; good for loudness and timing, poor for pitch |
-| Spectrum (FFT plot) | Level against frequency at one moment; precise levels, but no history |
-| [Heatmap](/learn/heatmap/) | Any grid of values; a spectrogram is a heatmap with time and frequency as its axes |
+| **Spectrogram** | How the frequencies in a signal change over time |
+| Waveform ([line chart](/learn/line-chart/)) | The raw signal, amplitude against time: good for loudness and timing, poor for pitch |
+| Spectrum (FFT plot) | Level against frequency at one moment: precise levels, but no history |
+| [Heatmap](/learn/heatmap/) | Any grid of values. A spectrogram is a heatmap whose axes are time and frequency |
 
-Many tools show a waveform, a spectrum and a spectrogram together, as in the SciChart audio analyser demo.
+Many tools show a waveform, a spectrum and a spectrogram together, as in the SciChart audio analyser demo linked below.
+
+## Common spectrogram mistakes
+
+- **Choosing the wrong window length.** Too long and clicks smear across time; too short and close tones merge into one band. Match it to what you're looking for (see the table above).
+- **Skipping the window function.** Without tapering, energy from a strong tone leaks into the bands either side of it, which can hide quieter signals nearby.
+- **Plotting raw amplitude instead of decibels.** On a linear scale only the loudest sounds show; everything else is lost in the darkest colour.
+- **Setting the colour range badly.** Set the bottom of the range near the noise floor and the top just above the loudest signal. Too wide a range makes everything look dark; too narrow a range turns noise into false detail and flattens the loud parts.
+- **Ignoring the Nyquist limit.** Frequencies above half the sample rate don't vanish: they fold back down as false lines (**aliasing**). Filter out high frequencies before sampling.
+- **Using a linear frequency axis for music or speech.** Most of the interest is in the low frequencies, which a linear axis squeezes into the bottom of the chart. Use a logarithmic or mel axis.
+- **Comparing spectrograms made with different settings.** A different window length, colour range or decibel reference can make the same signal look different. Keep the settings the same when you compare.
 
 ## How to create a spectrogram in JavaScript, React or Angular
 
-In SciChart.js a spectrogram is a real-time, scrolling heatmap: you compute each new spectrum (for example with an FFT of the latest samples), and SciChart.js draws it with WebGL and WebGPU, so the chart keeps up with live data. Here is the code for the chart above:
+In SciChart.js a spectrogram is a real-time, scrolling heatmap. You compute each new spectrum, for example with an FFT of the latest samples, and SciChart.js draws it with WebGL and WebGPU, so the chart keeps up with live data. The spectrogram below is generated live: scroll to zoom into a frequency band, drag up or down to pan, double-click to reset, and hover to read the level.
+
+<LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
+
+<LearnCta position="top" chart="spectrogram" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />
+
+Here is the code for this chart:
 
 <CodeSnippetBlock labels={["JavaScript", "React", "Angular"]}>
     ```ts showLineNumbers file=./Basic/demo.ts start=#region_A_start end=#region_A_end
@@ -289,7 +329,7 @@ Key points:
 - A [UniformHeatmapDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformheatmapdataseries.html) holds the spectrogram as a 2D array, `zValues[frequency band][time column]`. `yStep` is the width of each frequency band (sample rate divided by FFT size) and `xStep` is the time between spectra.
 - To scroll, drop the oldest column, add the newest, call `setZValues()` and move `xStart` on. An x-axis with `autoRange: EAutoRange.Always` follows the newest data.
 - A [HeatmapColorMap](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) with `minimum` and `maximum` in decibels sets the colour scale; a [HeatmapLegend](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html) shows it.
-- SciChart.js draws the chart; the FFT is up to you. The audio analyser demo below includes an FFT, a microphone input, a waveform and a spectrum alongside its spectrogram.
+- SciChart.js draws the chart; the FFT is up to you. The audio analyser in the demo app includes an FFT, a microphone input, a waveform and a spectrum alongside its spectrogram.
 
 **See it in the demo app:** [JavaScript spectrogram](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React spectrogram](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular spectrogram](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
 
@@ -297,9 +337,9 @@ Key points:
 
 ## Frequently asked questions
 
-### What is a spectrogram?
+### What is a spectrogram used for?
 
-A spectrogram is a picture of how the frequencies in a signal change over time. Time runs along the horizontal axis, frequency runs up the vertical axis, and the colour of each point shows how strong that frequency was at that moment, often in decibels.
+A spectrogram is used to see how the frequencies in a signal change over time. Audio engineers use it to find hum, clicks and noise; speech scientists to study voices; biologists to identify bird, bat and whale calls; engineers to spot machine faults from vibration; and radio, radar and sonar operators to watch signals and targets.
 
 ### How do you read a spectrogram?
 
@@ -313,12 +353,19 @@ The signal is cut into short, usually overlapping windows. A Fourier transform (
 
 A mel spectrogram is a spectrogram whose frequency axis uses the mel scale, which spaces frequencies roughly the way people hear pitch: more detail at low frequencies, less at high ones. Mel spectrograms are widely used as the input to speech recognition and other audio machine-learning models.
 
-### What is the difference between a spectrogram and a spectrum?
+### What is the difference between a spectrogram, a spectrum and a spectrograph?
 
-A spectrum (or FFT plot) shows the strength of each frequency at one moment, as a line chart of level against frequency. A spectrogram stacks many spectra side by side over time and shows level as colour, so you can see how the frequencies change.
+A spectrum shows the strength of each frequency at one moment, as a line of level against frequency. A spectrogram stacks many spectra side by side over time and shows level as colour. A spectrograph is an instrument that produces a spectrum or spectrogram, such as the sound spectrograph used for speech or an optical spectrograph that splits light.
 
 ### How do I make a spectrogram in JavaScript?
 
-Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a `UniformHeatmapDataSeries`, one column per time step and one row per frequency band, draw it with a `UniformHeatmapRenderableSeries` and a `HeatmapColorMap` in decibels, and call `setZValues()` as new columns arrive so the chart scrolls. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a `UniformHeatmapDataSeries`, one column per time step and one row per frequency band, draw it with a `UniformHeatmapRenderableSeries` and a `HeatmapColorMap` in decibels, and call `setZValues()` as new columns arrive so the chart scrolls. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+
+## Sources
+
+- Koenig, W., Dunn, H. K. and Lacy, L. Y. (1946), [The Sound Spectrograph](https://doi.org/10.1121/1.1916342). *The Journal of the Acoustical Society of America*, 18(1). The Bell Telephone Laboratories instrument that first made spectrograms practical.
+- Harris, F. J. (1978), [On the use of windows for harmonic analysis with the discrete Fourier transform](https://doi.org/10.1109/PROC.1978.10837). *Proceedings of the IEEE*, 66(1). Window functions and spectral leakage.
+- Stevens, S. S., Volkmann, J. and Newman, E. B. (1937), [A Scale for the Measurement of the Psychological Magnitude Pitch](https://doi.org/10.1121/1.1915893). *The Journal of the Acoustical Society of America*, 8(3). The origin of the mel scale.
+- SciPy, [scipy.signal.spectrogram](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.spectrogram.html). A reference implementation of the STFT spectrogram, with its window, overlap and scaling options.
 
 <LearnCta position="bottom" chart="spectrogram" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />

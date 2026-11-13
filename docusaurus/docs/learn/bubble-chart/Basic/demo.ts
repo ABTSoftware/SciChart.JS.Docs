@@ -82,9 +82,18 @@ async function bubbleChart(divElementId) {
         );
     }
 
-    // Zoom with the mouse wheel, pan by dragging, double-click to reset, and hover for values
+    // Zoom with the mouse wheel, pan by dragging, double-click to reset, and hover for values.
+    // The tooltip shows the number of customers, not the bubble's size in pixels
     sciChartSurface.chartModifiers.add(
-        new CursorModifier({ showTooltip: true }),
+        new CursorModifier({
+            showTooltip: true,
+            tooltipDataTemplate: (seriesInfos) =>
+                seriesInfos.map((info) => {
+                    const region = regions.find((r) => r.name === info.seriesName);
+                    const customers = region ? region.customers[info.dataSeriesIndex] : 0;
+                    return `${info.seriesName}: $${info.xValue.toFixed(0)}k spend, $${info.yValue.toFixed(0)}k sales, ${customers} customers`;
+                })
+        }),
         new MouseWheelZoomModifier(),
         new ZoomPanModifier(),
         new ZoomExtentsModifier()
