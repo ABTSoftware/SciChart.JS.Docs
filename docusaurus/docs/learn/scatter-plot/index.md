@@ -136,7 +136,7 @@ When a scatter plot has tens of thousands of points or more, dots overlap until 
 - **zooming in** on a region to see individual points;
 - switching to a **[heatmap](/learn/heatmap/)** that counts how many points fall in each cell.
 
-The chart below has 100,000 points in two groups, each in its own colour: a rising group (blue) and a falling group (orange) that cross in the middle. With small, semi-transparent dots you can see both trends and where they're densest. Where they cross, the orange dots hide the blue ones underneath: untick **Falling group** in the legend to see them. Scroll to zoom into the dense areas.
+The chart below has 100,000 points in two groups, each in its own colour: a rising group (blue) and a falling group (orange) that cross in the middle. With small, semi-transparent dots you can see both trends and where they're densest. The orange group is drawn more transparent, so the blue shows through where they cross. Untick a group in the legend to see the other one on its own. Scroll to zoom into the dense areas.
 
 <LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
 

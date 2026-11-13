@@ -64,7 +64,7 @@ async function largeScatterPlot(divElementId) {
             })
         );
     addGroup(rising, "Rising group", "#50C7E022", "#50C7E0");
-    addGroup(falling, "Falling group", "#F4842022", "#F48420");
+    addGroup(falling, "Falling group", "#F484200D", "#F48420"); // more transparent, so the blue shows through where they cross
 
     // Zoom with the mouse wheel, pan by dragging, double-click to reset; the legend names each group
     sciChartSurface.chartModifiers.add(
