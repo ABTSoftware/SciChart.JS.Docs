@@ -30,9 +30,6 @@ async function paretoChart(divElementId) {
         MouseWheelZoomModifier,
         ZoomPanModifier,
         ZoomExtentsModifier,
-        GradientParams,
-        Point,
-        PaletteFactory,
         WaveAnimation
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
@@ -108,21 +105,11 @@ async function paretoChart(divElementId) {
                 yValues: sortedTickets,
                 dataSeriesName: "Tickets"
             }),
-            fill: "#E4F5FC77",
-            stroke: "#E4F5FC",
+            fill: "#50C7E0CC", // one colour: here colour carries no meaning
+            stroke: "#50C7E0",
             strokeThickness: 2,
             dataPointWidth: 0.7,
             cornerRadius: 8,
-            // Colour each column by its position: orange, through sky blue, to teal
-            paletteProvider: PaletteFactory.createGradient(
-                wasmContext,
-                new GradientParams(new Point(0, 0), new Point(1, 1), [
-                    { offset: 0, color: "#F48420" },
-                    { offset: 0.67, color: "#50C7E0" },
-                    { offset: 1, color: "#30BC9A" }
-                ]),
-                { enableFill: true }
-            ),
             // Columns grow in a wave when the chart first appears
             animation: new WaveAnimation({ duration: 1000 }),
             // Show each column's count above it

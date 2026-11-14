@@ -4,10 +4,14 @@ sidebar_position: 34
 
 # The Treemap Chart Type
 
-Treemap Charts can be within with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
+Treemap charts can be created with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
 
 :::tip
-The [JavaScript Treemap Chart Example](https://www.scichart.com/demo/javascript-treemap-chart) can be found in the [SciChart.Js Examples Suite > Treemap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/release_v4.0/Examples/src/components/Examples/Charts2D/BasicChartTypes/TreemapChart) on Github
+New to treemaps? Read our guide: [Treemap: what it is and how to read it](/learn/treemap/), covering groups, areas and what the colours mean, how the squarified layout works, and a live treemap with a reusable layout helper and hover tooltips from the hit-test API.
+:::
+
+:::tip
+The [JavaScript Treemap Chart Example](https://www.scichart.com/demo/javascript/treemap-chart) can be found in the [SciChart.Js Examples Suite > Treemap Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/v4Charts/TreemapChart) on Github
 ::: 
 
 <ChartFromSciChartDemo 

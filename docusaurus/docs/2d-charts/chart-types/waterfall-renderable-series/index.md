@@ -6,6 +6,10 @@ sidebar_position: 33
 
 A Waterfall Chart visualizes how individual positive and negative values contribute to a running total. Each bar starts where the previous one ended, making it easy to see which categories drive gains or losses. Commonly used in financial analysis, budget reporting, and business performance dashboards.
 
+:::tip
+New to waterfall charts? Read our guide: [Waterfall Chart: what it is and how to read it](/learn/waterfall-chart/), covering rising and falling steps, subtotals and totals, a worked profit example and the mistakes to avoid.
+:::
+
 In SciChart.js, Waterfall Charts are assembled from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) with [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyxydataseries.html), using `EColumnYMode.TopBottom` to position each bar between its accumulated start and end values.
 
 :::tip

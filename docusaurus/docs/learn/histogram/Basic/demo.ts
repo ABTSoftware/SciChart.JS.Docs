@@ -50,8 +50,6 @@ async function histogram(divElementId) {
         MouseWheelZoomModifier,
         ZoomPanModifier,
         ZoomExtentsModifier,
-        PaletteFactory,
-        GradientParams,
         Point
     } = SciChart;
     // or, for npm, import { SciChartSurface, ... } from "scichart"
@@ -84,20 +82,10 @@ async function histogram(divElementId) {
             }),
             columnXMode: EColumnMode.StartEnd,
             columnYMode: EColumnYMode.TopBottom,
-            fill: "#E4F5FC77",
-            stroke: "#E4F5FC",
+            fill: "#50C7E0CC", // one colour: here colour carries no meaning
+            stroke: "#50C7E0",
             strokeThickness: 1,
             topCornerRadius: 6,
-            // Colour each bar by its position: orange on the left, through sky blue, to teal on the right
-            paletteProvider: PaletteFactory.createGradient(
-                wasmContext,
-                new GradientParams(new Point(0, 0), new Point(1, 1), [
-                    { offset: 0, color: "#F48420" },
-                    { offset: 0.67, color: "#50C7E0" },
-                    { offset: 1, color: "#30BC9A" }
-                ]),
-                { enableFill: true }
-            ),
             // Show each bin's count above its bar
             dataLabels: {
                 color: "#ffffff",

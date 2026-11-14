@@ -25,7 +25,9 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | --- | --- |
 | [Pie chart](/learn/pie-chart/) | How a total splits into parts, as slices of a circle |
 | [Donut chart](/learn/donut-chart/) | A pie chart with a hole in the middle, often used to show the total |
+| [Sunburst chart](/learn/sunburst-chart/) | A total broken down over several levels, as rings around a centre: each ring is one level, and each segment's angle is its share |
 | [Sankey diagram](/learn/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
+| [Treemap](/learn/treemap/) | How a total splits into parts and groups, as nested rectangles with each area matching its value |
 
 ## Stacked charts
 
@@ -60,6 +62,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | Chart | What it shows |
 | --- | --- |
 | [Candlestick chart](/learn/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+| [Waterfall chart](/learn/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
 
 ## Chart examples
 
