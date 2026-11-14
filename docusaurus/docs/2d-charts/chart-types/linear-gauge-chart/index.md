@@ -7,6 +7,10 @@ sidebar_position: 98
 Linear Gauge Charts visualize a single value against a scale — ideal for dashboards, KPI panels, and instrument displays. SciChart.js does not have a dedicated gauge series type; instead linear gauges are composed from [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) combined with [annotations](/2d-charts/annotations-api/annotations-api-overview/) for value indicators and labels.
 
 :::tip
+New to bullet charts? Read our guide: [Bullet Chart: what it is and how to read it](/learn/bullet-chart/), covering the bar, the target line and the shaded ranges, the design rules and variants, and a live chart of several bullets stacked on one scale, built from rectangle series.
+:::
+
+:::tip
 The [JavaScript Linear Gauges](https://www.scichart.com/demo/react/linear-gauges) example can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples/blob/master/Examples/src/components/Examples/Charts2D/v4Charts/LinearGauges) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/linear-gauges).
 :::
 

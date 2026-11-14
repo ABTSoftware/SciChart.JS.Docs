@@ -64,9 +64,9 @@ image: /img/learn/population-pyramid-og.png
 
 A **population pyramid** (also called an age-sex pyramid or age structure diagram) is a chart that shows how many people of each age and sex live in a place. Age groups are stacked from youngest at the bottom to oldest at the top. Each group has two horizontal bars back to back: males on the left, females on the right.
 
-![A population pyramid of an imaginary country of 9.1 million people: eighteen five-year age groups from 0–4 at the bottom to 85+ at the top, with blue male bars to the left and orange female bars to the right. The bars are narrower at the bottom than in the middle, widest at ages 50 to 59, and the female bars are longer than the male bars at the oldest ages](/img/learn/population-pyramid-og.png)
+![The population pyramid of Japan in 2023, 124 million people: twenty-one five-year age groups from 0–4 at the bottom to 100+ at the top, with blue male bars to the left and orange female bars to the right. The bars are narrowest at the bottom below age 85, widest at ages 45 to 54 with a second bulge at 70 to 74, and the female bars are far longer than the male bars at the oldest ages](/img/learn/population-pyramid-og.png)
 
-*A population pyramid of an imaginary country, in thousands of people (sample data). [Try the interactive version](#how-to-create-a-population-pyramid-in-javascript-react-or-angular).*
+*The population pyramid of Japan on 1 July 2023, in thousands of people. Data: UN World Population Prospects 2024. [Try the interactive version](#how-to-create-a-population-pyramid-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A population pyramid shows a population's **age and sex structure at one moment**: one pair of bars per age group, males left and females right.
@@ -78,7 +78,7 @@ A **population pyramid** (also called an age-sex pyramid or age structure diagra
 
 ## How to read a population pyramid
 
-![The parts of a population pyramid: age groups run up the middle from 0–4 to 85+, male bars extend left in blue and female bars right in orange against a shared scale in thousands. Labels mark the base (the youngest people, set by recent births), a notch at ages 40 to 44 (a smaller generation), a bulge at ages 50 to 59 (a baby boom), the apex (the oldest survivors) and the wider female bars at the top, because women live longer on average](./population-pyramid-anatomy.svg)
+![The parts of a population pyramid, shown on Japan's 2023 pyramid: age groups run up the middle from 0–4 to 100+, male bars extend left in blue and female bars right in orange against a shared scale in thousands. Labels mark the base (the youngest people, set by recent births), a bulge at ages 45 to 54 and another at 70 to 74 (generations born in baby booms), a notch at ages 65 to 69 (a smaller generation between them), the apex (the oldest survivors) and the much wider female bars at the top, because women live longer on average](./population-pyramid-anatomy.svg)
 
 1. **Check the units and the date.** The bars show either a **count** of people (often in thousands) or a **percentage** of the whole population. A pyramid is a snapshot of one year, for one place.
 2. **Find the centre line.** Each bar starts at zero in the middle. Males are usually on the left and females on the right, and the two sides share one scale, so equal lengths mean equal numbers.
@@ -99,7 +99,7 @@ Most population pyramids fit one of three shapes. Each one reflects how many bab
 | **Stationary** (stable) | Straight sides, like a column or a beehive, until it tapers at the oldest ages | A population that is staying about the same size | Few births and few deaths until old age |
 | **Constrictive** | Narrower at the base than in the middle | An ageing population, which may shrink unless people move in | Births have fallen below earlier levels; most people live long lives |
 
-**Expansive** pyramids are typical of countries where families are large and many people die young. **Constrictive** pyramids are typical of countries where families have become smaller and people live long lives. A population's pyramid changes shape slowly over decades, so the same country can move from one type to another.
+**Expansive** pyramids are typical of countries where families are large and many people die young. **Constrictive** pyramids are typical of countries where families have become smaller and people live long lives. A population's pyramid changes shape slowly over decades, so the same country can move from one type to another. Japan's pyramid, at the top of this page, is a clear example of the constrictive type.
 
 ### Population pyramids and the demographic transition
 
@@ -119,24 +119,26 @@ Stage 5 is the least settled part of the model: births may stay low, fall furthe
 
 There's no ideal shape, only trade-offs. A very wide base means many children who depend on the adults around them, and often many deaths in childhood. A very narrow base means fewer future workers to support a growing number of older people, which puts pressure on pensions and health care. A stationary shape is the easiest to plan for: each generation is about the same size, so the balance between age groups changes slowly.
 
-## A worked example: reading the pyramid at the top
+## A worked example: reading Japan's population pyramid
 
-Here is the chart at the top of this page, grouped into the three age bands demographers use most often:
+Here is the chart at the top of this page, Japan in 2023, grouped into the three age bands demographers use most often:
 
 | Age band | People (thousands) | Share of the population |
 | --- | --- | --- |
-| Children (0 to 14) | 1,317 | 14.4% |
-| Working age (15 to 64) | 6,019 | 66.0% |
-| Older people (65 and over) | 1,779 | 19.5% |
-| **Total** | **9,115** | **100%** |
+| Children (0 to 14) | 14,488 | 11.6% |
+| Working age (15 to 64) | 73,116 | 58.8% |
+| Older people (65 and over) | 36,766 | 29.6% |
+| **Total** | **124,371** | **100%** |
+
+Figures are UN estimates for 1 July 2023, rounded to the nearest thousand.
 
 What the chart tells you:
 
-- **It is constrictive.** The youngest group, 0 to 4, has 410,000 people. The largest, 55 to 59, has 750,000: almost twice as many. Fewer babies are being born now than 55 years ago.
-- **It has a bulge at 50 to 59,** a baby-boom generation. In ten to fifteen years it will move into the 65-and-over band, so the number of older people will rise quickly.
-- **It has a notch at 40 to 44,** a generation smaller than those either side of it.
-- **Women outnumber men at the oldest ages.** In the 85+ group there are 110,000 women and 50,000 men.
-- **The dependency ratio is 51.** The **age dependency ratio** compares the people of an age to depend on others (under 15 and 65 and over) with the people of working age (15 to 64): (1,317 + 1,779) ÷ 6,019 × 100 = 51.4. So there are about 51 children and older people for every 100 people of working age. Older people make up more of that (29.6) than children do (21.9).
+- **It is constrictive.** The youngest group, 0 to 4, has 4.1 million people. The largest, 50 to 54, has 9.6 million: more than twice as many. Far fewer babies are born in Japan now than 50 years ago.
+- **It has two bulges.** The bigger one, at 45 to 54, is people born between about 1969 and 1978, which takes in Japan's baby boom of the early 1970s. The other, at 70 to 74, is people born around the post-war baby boom of 1947 to 1949. Each bulge is the size of a generation at birth, moving up the chart.
+- **It has a notch at 65 to 69,** people born in the mid-1950s, after births had fallen from their post-war peak. It is smaller than the groups on either side of it.
+- **Women far outnumber men at the oldest ages.** Aged 85 and over there are 4.5 million women and 2.2 million men. Among people aged 100 and over, there are about six women for every man.
+- **The dependency ratio is 70.** The **age dependency ratio** compares the people of an age to depend on others (under 15 and 65 and over) with the people of working age (15 to 64): (14,488 + 36,766) ÷ 73,116 × 100 = 70.1. So there are about 70 children and older people for every 100 people of working age. Most of that is older people (50.3) rather than children (19.8).
 
 ### How to describe a population pyramid
 
@@ -144,7 +146,7 @@ Use this template when you write about a population pyramid:
 
 > In **[year]**, **[place]**'s population pyramid is **[expansive / stationary / constrictive]**. The largest age group is **[age group]**, and **[children / people of working age / people aged 65 and over]** make up **[share]** of the population. **[Note any bulge, notch or difference between the sexes, and what it means for the future.]**
 
-**Worked example:** "This country's population pyramid is constrictive. The largest age group is 55 to 59, and people aged 65 and over make up 19.5% of the population, more than children under 15 (14.4%). A large generation now in its fifties will reach retirement age over the next fifteen years, so the share of older people will keep rising."
+**Worked example:** "In 2023, Japan's population pyramid is constrictive. The largest age group is 50 to 54, and people aged 65 and over make up 29.6% of the population, more than two and a half times the share of children under 15 (11.6%). A large generation now in its late forties and early fifties will reach 65 over the next 10 to 20 years, while the generations below it are smaller, so the share of older people is set to keep rising."
 
 ## When to use a population pyramid
 
@@ -401,7 +403,8 @@ Put the age groups on a vertical axis and draw two sets of horizontal bars that 
 
 ## Sources
 
-- United Nations, Department of Economic and Social Affairs, Population Division (2024), [World Population Prospects 2024](https://population.un.org/wpp/). Population estimates and projections by age and sex for every country, the data behind most published population pyramids.
+- United Nations, Department of Economic and Social Affairs, Population Division (2024), [World Population Prospects 2024](https://population.un.org/wpp/). Population estimates and projections by age and sex for every country. The Japan data on this page are its estimates for 1 July 2023, from the file of population by five-year age group and sex (Medium variant file, which holds the 1950 to 2023 estimates).
+- Wikipedia, [Demographics of Japan](https://en.wikipedia.org/wiki/Demographics_of_Japan). Japan's post-war baby boom of 1947 to 1949, the smaller baby boom of the early 1970s and the long fall in its birth rate.
 - U.S. Census Bureau, [International Database (IDB)](https://www.census.gov/data-tools/demo/idb/). Population pyramids and age-sex data for countries and areas of the world.
 - Roser, M., [Demographic transition: why is rapid population growth a temporary phenomenon?](https://ourworldindata.org/demographic-transition) Our World in Data. The five stages of the demographic transition and how the population pyramid changes through them.
 - Ritchie, H. and Roser, M., [Gender ratio](https://ourworldindata.org/gender-ratio). Our World in Data. The expected sex ratio at birth of about 105 boys per 100 girls, and why women outnumber men at older ages.

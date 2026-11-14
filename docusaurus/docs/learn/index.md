@@ -59,6 +59,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | --- | --- |
 | [Heatmap](/learn/heatmap/) | A grid of values shown as colours |
 | [Contour plot](/learn/contour-plot/) | Lines of equal value across two dimensions, showing peaks, saddles and steep areas |
+| [3D surface plot](/learn/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
 | [Spectrogram](/learn/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
 | [Radar chart](/learn/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
 
@@ -67,12 +68,14 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | Chart | What it shows |
 | --- | --- |
 | [Gauge chart](/learn/gauge-chart/) | One value on a dial between a minimum and a maximum, with a needle and coloured bands showing whether it's good, borderline or bad |
+| [Bullet chart](/learn/bullet-chart/) | One measure as a dark bar against a short target line and grey bands for poor, satisfactory and good, compact enough to stack many on one dashboard |
 
 ## Financial charts
 
 | Chart | What it shows |
 | --- | --- |
 | [Candlestick chart](/learn/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+| [OHLC chart](/learn/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
 | [Waterfall chart](/learn/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
 
 ## Chart examples

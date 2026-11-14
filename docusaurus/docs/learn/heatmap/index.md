@@ -148,7 +148,7 @@ Use a heatmap when your data is a **grid**: two dimensions, such as rows and col
 | [Scatter plot](/learn/scatter-plot/) | Individual items with two numeric values each; the relationship between two variables |
 | [Bar chart](/learn/bar-chart/) | A few categories where exact values and rankings matter |
 | [Contour plot](/learn/contour-plot/) | A smooth surface shown as lines of equal value; reading exact levels, like elevation lines on a map |
-| [3D surface plot](/3d-charts/chart-types/surface-mesh-3d/) | The same grid drawn as a 3D landscape; the shape is clearer, but values behind peaks are hidden |
+| [3D surface plot](/learn/3d-surface-plot/) | The same grid drawn as a 3D landscape; the shape is clearer, but values behind peaks are hidden |
 
 ## Common heatmap mistakes
 

@@ -7,7 +7,11 @@ sidebar_position: 20
 Ohlc Series or JavaScript Stock Charts can be created using the **FastOhlcRenderableSeries** type.
 
 :::tip
-The [JavaScript Ohlc Chart Example](https://www.scichart.com/demo/javascript/candlestick-chart) can be found in the [SciChart.Js Examples Suite > OHLC Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/OhlcChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/ohlc-chart).
+New to OHLC charts? Read our guide: [OHLC Chart: what it is and how to read it](/learn/ohlc-chart/), covering the open and close ticks, OHLC bars vs candlesticks and HLC bars, and when traders prefer bars.
+:::
+
+:::tip
+The [JavaScript Ohlc Chart Example](https://www.scichart.com/demo/javascript/ohlc-chart) can be found in the [SciChart.Js Examples Suite > OHLC Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/OhlcChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/ohlc-chart).
 :::
 
 :::tip

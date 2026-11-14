@@ -142,12 +142,12 @@ Traders give names to candles and small groups of candles with a recognisable sh
 
 ## When to use a candlestick chart
 
-Use a candlestick chart when your data has an **open, high, low and close for each period**, and the reader cares about how the price moved within each period, not just where it ended. Candlestick charts are standard for stocks, forex, crypto and commodities, and are often shown with **volume bars** underneath and **technical indicators** such as moving averages on top.
+Use a candlestick chart when your data has an **open, high, low and close for each period**, and the reader cares about how the price moved within each period, not just where it ended. Candlestick charts are standard for stocks, forex, crypto and commodities, and are often shown with **volume bars** underneath and **technical indicators** such as moving averages on top. If you'd rather see the same four prices as thin bars with open and close ticks, read [OHLC chart vs candlestick chart](/learn/ohlc-chart/#ohlc-chart-vs-candlestick-chart).
 
 | If the reader needs to… | Use |
 | --- | --- |
 | See the direction and range of each period, and spot patterns | **Candlestick chart** |
-| See the same four prices in a thinner, more compact form, with many periods on screen | [OHLC chart](/2d-charts/chart-types/fast-ohlc-renderable-series/) |
+| See the same four prices in a thinner, more compact form, with many periods on screen | [OHLC chart](/learn/ohlc-chart/) |
 | Follow the long-term trend, or compare several prices on one chart | [Line chart](/learn/line-chart/) of the closing price |
 | Compare the spread of measured values across groups (not prices over time) | [Box plot](/learn/box-plot/), which looks similar but shows quartiles, not open and close |
 

@@ -73,7 +73,7 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 - A gauge chart answers one question: **is this one value OK right now?**
 - **The bands carry the meaning.** Set them from real limits or targets, and label them in words, not by colour alone.
 - **The angle is the value.** A reading is the share of the way round the scale, from the minimum to the maximum.
-- Gauges show **no history** and take a lot of space. For trends use a line chart; to compare many values use bullet charts or bars.
+- Gauges show **no history** and take a lot of space. For trends use a line chart; to compare many values use [bullet charts](/learn/bullet-chart/) or bars.
 - Gauges work best for **live readings**, where a moving needle is easy to follow.
 :::
 
@@ -100,7 +100,7 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 | **Linear gauge** | A straight horizontal or vertical bar with bands and a marker, like a thermometer or a tank level | Narrow spaces, and stacks of gauges that need to line up |
 | **Multi-gauge panel** | Several small gauges side by side | Watching a few related readings at once, such as the cores of one machine |
 
-A **bullet chart** is a compact linear gauge designed for dashboards: one bar for the value, shaded bands for the ranges and a short line for the target. It does the same job as a gauge in far less space.
+A **[bullet chart](/learn/bullet-chart/)** is a compact linear gauge designed for dashboards: one bar for the value, shaded bands for the ranges and a short line for the target. It does the same job as a gauge in far less space.
 
 ## How to set the bands: a worked example
 
@@ -147,7 +147,7 @@ Use a gauge chart when **one value matters right now**, it has **known limits or
 | Chart | Best for |
 | --- | --- |
 | **Gauge chart** | One current value against its limits, especially a live reading |
-| **Bullet chart** (a compact [linear gauge](/2d-charts/chart-types/linear-gauge-chart/)) | The same information in a small space, and several measures stacked for comparison |
+| [Bullet chart](/learn/bullet-chart/) (a compact linear gauge) | The same information in a small space, and several measures stacked for comparison |
 | [Line chart](/learn/line-chart/) | How the value changed over time, and whether it is rising or falling |
 | [Bar chart](/learn/bar-chart/) | Comparing the same measure across many items, such as CPU load on 20 servers |
 | [Donut chart](/learn/donut-chart/) | How one total splits into a few parts, rather than how far a single value has got |

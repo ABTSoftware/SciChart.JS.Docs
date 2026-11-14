@@ -1,14 +1,21 @@
 import * as SciChart from "scichart";
 
-// Example data: the population of an imaginary country by five-year age group and sex, in thousands.
-// These are illustrative numbers, not real statistics.
+// Data: the population of Japan on 1 July 2023 by five-year age group and sex, in thousands (rounded).
+// Source: United Nations, Department of Economic and Social Affairs, Population Division (2024),
+// World Population Prospects 2024, estimates (https://population.un.org/wpp/).
 function getPopulationData() {
     const ageGroups = [
-        "0–4", "5–9", "10–14", "15–19", "20–24", "25–29", "30–34", "35–39", "40–44",
-        "45–49", "50–54", "55–59", "60–64", "65–69", "70–74", "75–79", "80–84", "85+"
+        "0–4", "5–9", "10–14", "15–19", "20–24", "25–29", "30–34", "35–39", "40–44", "45–49", "50–54",
+        "55–59", "60–64", "65–69", "70–74", "75–79", "80–84", "85–89", "90–94", "95–99", "100+"
     ];
-    const male = [210, 225, 240, 250, 262, 275, 290, 300, 270, 312, 360, 372, 330, 280, 220, 150, 90, 50];
-    const female = [200, 214, 228, 238, 252, 266, 284, 296, 268, 312, 362, 378, 342, 302, 252, 190, 135, 110];
+    const male = [
+        2123, 2538, 2780, 2917, 3112, 3104, 3136, 3492, 3867, 4672, 4874,
+        4131, 3790, 3642, 4173, 3562, 2602, 1462, 580, 127, 17
+    ];
+    const female = [
+        2020, 2403, 2626, 2753, 2960, 2982, 3015, 3385, 3790, 4596, 4775,
+        4019, 3745, 3741, 4572, 4241, 3539, 2505, 1422, 479, 103
+    ];
     return { ageGroups, male, female };
 }
 

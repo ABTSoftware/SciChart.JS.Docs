@@ -5,6 +5,10 @@ sidebar_position: 3
 # The SurfaceMesh 3D Chart Type
 
 :::tip
+New to 3D surface plots? Read our guide: [3D Surface Plot: what it is and how to read it](/learn/3d-surface-plot/), covering peaks, saddles and slopes, lighting and colour, how it compares with heatmaps, contour plots and 3D scatter plots, and a live surface updating in real time.
+:::
+
+:::tip
 Examples for the Surface Mesh 3D Chart can be found in the SciChart.js Demo app which can be viewed on our website, or downloaded from SciChart.Js.Examples Github Repository
 
 *   [SciChart.js Demo app](https://www.scichart.com/demo/javascript-3d-surface-mesh-chart)
