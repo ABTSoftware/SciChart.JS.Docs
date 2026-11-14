@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 500" width="780" height="500" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">The parts of a parallel coordinates plot</title>
+  <desc id="d">Four vertical axes for price, battery size, range and 0 to 100 km/h time, each with its own scale. Three lines, one per car, cross every axis at that car's value. Numbered markers show that each axis is one variable, each line is one record, lines running parallel between two axes mean the values rise together, and lines crossing in an X mean one value rises as the other falls. Colour shows the type of car.</desc>
+  <rect width="780" height="500" fill="#FFFFFF"/>
+
+  <!-- axis titles -->
+  <g font-size="15" font-weight="600" fill="#1F2937" text-anchor="middle">
+    <text x="120" y="36">Price ($k)</text>
+    <text x="300" y="36">Battery (kWh)</text>
+    <text x="480" y="36">Range (km)</text>
+    <text x="660" y="36">0–100 km/h (s)</text>
+  </g>
+
+  <!-- axes -->
+  <g stroke="#374151" stroke-width="2">
+    <line x1="120" y1="60" x2="120" y2="320"/>
+    <line x1="300" y1="60" x2="300" y2="320"/>
+    <line x1="480" y1="60" x2="480" y2="320"/>
+    <line x1="660" y1="60" x2="660" y2="320"/>
+  </g>
+  <!-- scale ends -->
+  <g font-size="13" fill="#4B5563">
+    <text x="128" y="66">100</text><text x="128" y="324">20</text>
+    <text x="308" y="66">100</text><text x="308" y="324">30</text>
+    <text x="488" y="66">600</text><text x="488" y="324">200</text>
+    <text x="668" y="66">12</text><text x="668" y="324">3</text>
+  </g>
+
+  <!-- records: one polyline each -->
+  <g fill="none" stroke-width="3" stroke-linejoin="round">
+    <polyline points="120,287.5 300,264.4 480,235.5 660,103.4" stroke="#2B8CC4"/>
+    <polyline points="120,99 300,115.6 480,112 660,233.4" stroke="#C8285A"/>
+    <polyline points="120,141.3 300,152.8 480,144.5 660,276.6" stroke="#E07B00" stroke-width="4"/>
+  </g>
+  <!-- the values of the orange record -->
+  <g fill="#E07B00">
+    <circle cx="120" cy="141.3" r="5"/><circle cx="300" cy="152.8" r="5"/><circle cx="480" cy="144.5" r="5"/><circle cx="660" cy="276.6" r="5"/>
+  </g>
+  <g font-size="13" font-weight="600" fill="#9A5200" text-anchor="end">
+    <text x="112" y="137">75</text>
+    <text x="292" y="148">75</text>
+    <text x="472" y="138">470</text>
+    <text x="652" y="292">4.5</text>
+  </g>
+
+  <!-- numbered markers -->
+  <g font-size="14" font-weight="700" text-anchor="middle">
+    <circle cx="96" cy="210" r="13" fill="#1F2937"/><text x="96" y="215" fill="#FFFFFF">1</text>
+    <circle cx="210" cy="148" r="13" fill="#1F2937"/><text x="210" y="153" fill="#FFFFFF">2</text>
+    <circle cx="390" cy="104" r="13" fill="#1F2937"/><text x="390" y="109" fill="#FFFFFF">3</text>
+    <circle cx="545" cy="224" r="13" fill="#1F2937"/><text x="545" y="229" fill="#FFFFFF">4</text>
+  </g>
+
+  <!-- key -->
+  <line x1="40" y1="350" x2="740" y2="350" stroke="#E5E7EB" stroke-width="1"/>
+  <g font-size="14" fill="#1F2937">
+    <circle cx="52" cy="378" r="11" fill="#1F2937"/><text x="52" y="383" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text>
+    <text x="72" y="383"><tspan font-weight="600">Axis:</tspan> one variable, with its own scale</text>
+    <circle cx="52" cy="410" r="11" fill="#1F2937"/><text x="52" y="415" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text>
+    <text x="72" y="415"><tspan font-weight="600">Line:</tspan> one record (here, one car), joining its values</text>
+    <circle cx="420" cy="378" r="11" fill="#1F2937"/><text x="420" y="383" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text>
+    <text x="440" y="383"><tspan font-weight="600">Lines run parallel:</tspan> the values rise together</text>
+    <circle cx="420" cy="410" r="11" fill="#1F2937"/><text x="420" y="415" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text>
+    <text x="440" y="415"><tspan font-weight="600">Lines cross in an X:</tspan> one rises as the other falls</text>
+  </g>
+  <g font-size="14" fill="#1F2937">
+    <text x="40" y="462" font-weight="600">Colour = type of car:</text>
+    <line x1="200" y1="457" x2="228" y2="457" stroke="#2B8CC4" stroke-width="4"/><text x="236" y="462">City car</text>
+    <line x1="320" y1="457" x2="348" y2="457" stroke="#E07B00" stroke-width="4"/><text x="356" y="462">Saloon (values labelled)</text>
+    <line x1="540" y1="457" x2="568" y2="457" stroke="#C8285A" stroke-width="4"/><text x="576" y="462">SUV</text>
+  </g>
+</svg>

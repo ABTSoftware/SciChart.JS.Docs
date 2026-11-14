@@ -47,15 +47,18 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | --- | --- |
 | [Scatter plot](/learn/scatter-plot/) | The relationship between two values, one dot per data point |
 | [Bubble chart](/learn/bubble-chart/) | A scatter plot where bubble size shows a third value |
+| [Parallel coordinates plot](/learn/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
 | [Histogram](/learn/histogram/) | How values are distributed, counted into ranges (bins) |
 | [Population pyramid](/learn/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
 | [Box plot](/learn/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
+| [Error bars](/learn/error-bars/) | The uncertainty or spread around a value, usually a mean: standard deviation, standard error or a confidence interval |
 
 ## Scientific and engineering charts
 
 | Chart | What it shows |
 | --- | --- |
 | [Heatmap](/learn/heatmap/) | A grid of values shown as colours |
+| [Contour plot](/learn/contour-plot/) | Lines of equal value across two dimensions, showing peaks, saddles and steep areas |
 | [Spectrogram](/learn/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
 | [Radar chart](/learn/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
 

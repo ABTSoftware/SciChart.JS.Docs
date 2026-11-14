@@ -6,6 +6,10 @@ sidebar_position: 39
 
 The **Parallel Coordinate Plot** (PCP) is a way to visualize multivariate data — datasets where every record has many dimensions. One vertical axis is drawn per dimension, and each record becomes a polyline crossing every axis at its own value, which makes correlations, clusters and outliers between the dimensions easy to spot.
 
+:::tip
+New to parallel coordinates plots? Read our guide: [Parallel Coordinates Plot: what it is and how to read it](/learn/parallel-coordinates-plot/), covering the axes, the line patterns between them and brushing, with a live plot built from line series and inner axes.
+:::
+
 This chart type is not a single series. It is a composition of standard SciChart.js building blocks: one inner [`NumericAxis`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/numericaxis.html) per dimension positioned by a custom layout strategy, one [`FastLineRenderableSeries`:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) per record, and a set of [custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/) for the interactions.
 
 :::tip
