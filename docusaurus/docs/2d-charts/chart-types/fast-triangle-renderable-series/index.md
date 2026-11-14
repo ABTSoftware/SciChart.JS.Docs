@@ -6,6 +6,10 @@ sidebar_position: 31
 
 The FastTriangleRenderableSeries is designed to plot data points as triangles, often used for custom scatter plots, mesh visualizations, or highlighting specific data points with a triangle marker. It supports full customization, including stroke, fill, and point marker options.
 
+:::tip
+New to Sankey diagrams? Read our guide: [Sankey Diagram: what it is and how to read it](/learn/sankey-diagram/), covering nodes, links and how to read the flows, with a live Sankey diagram built from triangle series, including hover highlights from the hit-test API.
+:::
+
 Triangle Series can be created using the [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) type.
 
 The FastTriangleRenderableSeries class in SciChart.js is a specialized renderable series used for visualizing data as a series of triangles on a 2D chart. It extends the base BaseRenderableSeries class and provides additional properties and methods tailored for rendering triangle shapes.

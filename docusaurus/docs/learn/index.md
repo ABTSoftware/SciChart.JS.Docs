@@ -25,6 +25,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | --- | --- |
 | [Pie chart](/learn/pie-chart/) | How a total splits into parts, as slices of a circle |
 | [Donut chart](/learn/donut-chart/) | A pie chart with a hole in the middle, often used to show the total |
+| [Sankey diagram](/learn/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
 
 ## Relationships and distributions
 
