@@ -6,6 +6,10 @@ sidebar_position: 13
 
 SubCharts API gives an ability to create multiple charts while providing a great rendering performance. All the charts on a SubChart use a single, shared WebGL context. This means 100s of charts can be placed on screen and update very fast.
 
+:::tip
+New to sparklines? Read our guide: [Sparkline: what it is and how to read it](/learn/sparkline/). It builds a live table of 40 sparklines with the SubCharts API.
+:::
+
 :::info
 SciChart supports unlimited charts on a page at different locations in the HTML DOM via our innovative, Shared WebGL context technology. See the section on [SciChartSurface.create() vs. createSingle()](/2d-charts/surface/new-scichart-surface/) for more background information about WebGL context limits.
 :::

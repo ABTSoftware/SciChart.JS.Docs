@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="390" viewBox="0 0 780 390" role="img" aria-labelledby="t d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title id="t">The same three numbers drawn three ways</title>
+<desc id="d">Three drawings of 1,000 visitors, 500 sign-ups and 50 buyers. A decorative funnel with a fixed taper makes the buyers band look almost half the size of the top band, when buyers are 5% of visitors. A funnel tapered by value gives the sign-ups band 37% of the top band's area although sign-ups are 50% of visitors. Centred bars give lengths of 100%, 50% and 5%, matching the data.</desc>
+<rect width="780" height="390" fill="#FFFFFF"/>
+<text x="130" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#1B2A4A">Decorative funnel</text>
+<polygon points="20.0,78 240.0,78 213.3,139 46.7,139" fill="#9AA5B1"/>
+<text x="130" y="114.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">1,000</text>
+<polygon points="46.7,142 213.3,142 186.7,203 73.3,203" fill="#9AA5B1"/>
+<text x="130" y="178.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">500</text>
+<polygon points="73.3,206 186.7,206 160.0,267 100.0,267" fill="#9AA5B1"/>
+<text x="130" y="242.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">50</text>
+<text x="130" y="306" text-anchor="middle" font-size="13" fill="#4A5568">The taper is fixed, not drawn from</text>
+<text x="130" y="325" text-anchor="middle" font-size="13" fill="#4A5568">the data. Buyers look almost half</text>
+<text x="130" y="344" text-anchor="middle" font-size="13" fill="#4A5568">the top band; they are 5% of it.</text>
+<text x="390" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#1B2A4A">Funnel tapered by value</text>
+<polygon points="280.0,78 500.0,78 445.0,139 335.0,139" fill="#2B8FB3" fill-opacity="0.75"/>
+<text x="390.0" y="114.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">1,000</text>
+<polygon points="335.0,142 445.0,142 395.5,203 384.5,203" fill="#2B8FB3" fill-opacity="0.75"/>
+<text x="390.0" y="178.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">500</text>
+<polygon points="384.5,206 395.5,206 395.5,267 384.5,267" fill="#2B8FB3" fill-opacity="0.75"/>
+<text x="403.5" y="242.0" text-anchor="start" font-size="14" font-weight="600" fill="#1B2A4A">50</text>
+<text x="390" y="306" text-anchor="middle" font-size="13" fill="#4A5568">Each band runs from one stage's</text>
+<text x="390" y="325" text-anchor="middle" font-size="13" fill="#4A5568">value to the next, so its area mixes</text>
+<text x="390" y="344" text-anchor="middle" font-size="13" fill="#4A5568">two stages: Sign-ups get 37% of the</text>
+<text x="390" y="363" text-anchor="middle" font-size="13" fill="#4A5568">top band's area for 50% of the people.</text>
+<text x="650" y="40" text-anchor="middle" font-size="17" font-weight="700" fill="#1B2A4A">Centred bars</text>
+<rect x="540.0" y="90" width="220.0" height="40" rx="3" fill="#2B8FB3"/>
+<text x="650.0" y="115.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">1,000</text>
+<rect x="595.0" y="154" width="110.0" height="40" rx="3" fill="#2B8FB3"/>
+<text x="650.0" y="179.0" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">500</text>
+<rect x="644.5" y="218" width="11.0" height="40" rx="3" fill="#2B8FB3"/>
+<text x="663.5" y="243.0" text-anchor="start" font-size="14" font-weight="600" fill="#1B2A4A">50</text>
+<text x="650" y="306" text-anchor="middle" font-size="13" fill="#4A5568">Each bar's length is its value:</text>
+<text x="650" y="325" text-anchor="middle" font-size="13" fill="#4A5568">100%, 50% and 5%. Easy to compare,</text>
+<text x="650" y="344" text-anchor="middle" font-size="13" fill="#4A5568">with nothing to misjudge.</text>
+<text x="390" y="62" text-anchor="middle" font-size="13" fill="#4A5568">Top to bottom: 1,000 visitors, 500 sign-ups, 50 buyers</text>
+<line x1="260" y1="78" x2="260" y2="340" stroke="#E2E8F0"/><line x1="520" y1="78" x2="520" y2="340" stroke="#E2E8F0"/>
+</svg>

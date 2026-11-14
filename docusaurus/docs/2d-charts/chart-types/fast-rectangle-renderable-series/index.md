@@ -6,6 +6,10 @@ sidebar_position: 30
 
 The Rectangle Series Type in SciChart.js provides a highly configurable and performant way to visualize rectangular data, supporting a variety of charting scenarios where rectangles, bars, or ranges are required. Its flexible data and rendering options make it suitable for both simple and advanced data visualization needs.
 
+:::tip
+New to funnel charts? Read our guide: [Funnel Chart: what it is and how to read it](/learn/funnel-chart/), covering step and overall conversion rates and when a bar chart is the better choice, with a live funnel built from centred rectangle series.
+:::
+
 Rectangle Series can be created using the [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) type.
 
 Here is a simple Rectangle Series made using [XyxyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyxydataseries.html):

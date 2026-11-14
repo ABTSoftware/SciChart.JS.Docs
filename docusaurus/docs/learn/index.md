@@ -15,10 +15,12 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | Chart | What it shows |
 | --- | --- |
 | [Line chart](/learn/line-chart/) | How a value changes over time, as points joined by a line |
+| [Sparkline](/learn/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
 | [Area chart](/learn/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
 | [Bar chart](/learn/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging |
 | [Pareto chart](/learn/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 | [Combo chart](/learn/combo-chart/) | Two related measures on one chart, usually columns and a line, often with a second y-axis for the line (a dual axis chart) |
+| [Lollipop chart](/learn/lollipop-chart/) | Values compared across many categories as thin stems with a dot at the end: a bar chart with less ink, best when the values are close |
 
 ## Parts of a whole
 
@@ -69,6 +71,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | --- | --- |
 | [Gauge chart](/learn/gauge-chart/) | One value on a dial between a minimum and a maximum, with a needle and coloured bands showing whether it's good, borderline or bad |
 | [Bullet chart](/learn/bullet-chart/) | One measure as a dark bar against a short target line and grey bands for poor, satisfactory and good, compact enough to stack many on one dashboard |
+| [Funnel chart](/learn/funnel-chart/) | How many people or items reach each step of a process, as centred bars that narrow from stage to stage, with the conversion rate between steps |
 
 ## Financial charts
 

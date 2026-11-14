@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title id="t">A stem plot of a sampled signal</title>
+<desc id="d">A stem plot of 24 samples of a decaying oscillation. Each sample is a vertical stem from the zero line to its value, with an open circle at the end. Stems point up for positive values and down for negative ones, and shrink towards zero as the signal dies away.</desc>
+<rect width="760" height="360" fill="#ffffff"/>
+<line x1="80" y1="300.0" x2="720" y2="300.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="70" y="305.0" font-size="14" fill="#5b6773" text-anchor="end">-1</text>
+<line x1="80" y1="235.0" x2="720" y2="235.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="70" y="240.0" font-size="14" fill="#5b6773" text-anchor="end">-0.5</text>
+<line x1="80" y1="170.0" x2="720" y2="170.0" stroke="#1b2633" stroke-width="2"/>
+<text x="70" y="175.0" font-size="14" fill="#5b6773" text-anchor="end">0</text>
+<line x1="80" y1="105.0" x2="720" y2="105.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="70" y="110.0" font-size="14" fill="#5b6773" text-anchor="end">0.5</text>
+<line x1="80" y1="40.0" x2="720" y2="40.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="70" y="45.0" font-size="14" fill="#5b6773" text-anchor="end">1</text>
+<line x1="93.33333333333333" y1="170.0" x2="93.33333333333333" y2="40.0" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="93.33333333333333" cy="40.0" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="93.33333333333333" y="322" font-size="14" fill="#5b6773" text-anchor="middle">0</text>
+<line x1="120.0" y1="170.0" x2="120.0" y2="103.73637738234717" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="120.0" cy="103.73637738234717" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="146.66666666666669" y1="170.0" x2="146.66666666666669" y2="189.86018950131214" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="146.66666666666669" cy="189.86018950131214" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="173.33333333333331" y1="170.0" x2="173.33333333333331" y2="234.80193834395618" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="173.33333333333331" cy="234.80193834395618" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="200.0" y1="170.0" x2="200.0" y2="222.70771915341493" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="200.0" cy="222.70771915341493" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="200.0" y="322" font-size="14" fill="#5b6773" text-anchor="middle">4</text>
+<line x1="226.66666666666666" y1="170.0" x2="226.66666666666666" y2="180.1595522116642" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="226.66666666666666" cy="180.1595522116642" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="253.33333333333334" y1="170.0" x2="253.33333333333334" y2="144.91638708306002" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="253.33333333333334" cy="144.91638708306002" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="280.0" y1="170.0" x2="280.0" y2="137.5974700126402" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="280.0" cy="137.5974700126402" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="306.66666666666663" y1="170.0" x2="306.66666666666663" y2="153.833774880126" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="306.66666666666663" cy="153.833774880126" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="306.66666666666663" y="322" font-size="14" fill="#5b6773" text-anchor="middle">8</text>
+<line x1="333.33333333333337" y1="170.0" x2="333.33333333333337" y2="175.3069590020338" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="333.33333333333337" cy="175.3069590020338" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="360.0" y1="170.0" x2="360.0" y2="186.2802979022667" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="360.0" cy="186.2802979022667" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="386.6666666666667" y1="170.0" x2="386.6666666666667" y2="183.02839332547504" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="386.6666666666667" cy="183.02839332547504" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="413.3333333333333" y1="170.0" x2="413.3333333333333" y2="172.33479751564852" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="413.3333333333333" cy="172.33479751564852" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="413.3333333333333" y="322" font-size="14" fill="#5b6773" text-anchor="middle">12</text>
+<line x1="440.0" y1="170.0" x2="440.0" y2="163.61989511972857" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="440.0" cy="163.61989511972857" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="466.6666666666667" y1="170.0" x2="466.6666666666667" y2="161.92594581128787" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="466.6666666666667" cy="161.92594581128787" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="493.3333333333333" y1="170.0" x2="493.3333333333333" y2="166.05896590987453" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="493.3333333333333" cy="166.05896590987453" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="520.0" y1="170.0" x2="520.0" y2="171.41134487231497" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="520.0" cy="171.41134487231497" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="520.0" y="322" font-size="14" fill="#5b6773" text-anchor="middle">16</text>
+<line x1="546.6666666666667" y1="170.0" x2="546.6666666666667" y2="174.0887332299302" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="546.6666666666667" cy="174.0887332299302" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="573.3333333333333" y1="170.0" x2="573.3333333333333" y2="173.21923133450696" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="573.3333333333333" cy="173.21923133450696" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="600.0" y1="170.0" x2="600.0" y2="170.532550088021" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="600.0" cy="170.532550088021" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="626.6666666666666" y1="170.0" x2="626.6666666666666" y2="168.37829189771782" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="626.6666666666666" cy="168.37829189771782" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="626.6666666666666" y="322" font-size="14" fill="#5b6773" text-anchor="middle">20</text>
+<line x1="653.3333333333334" y1="170.0" x2="653.3333333333334" y2="167.9886786487283" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="653.3333333333334" cy="167.9886786487283" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="680.0" y1="170.0" x2="680.0" y2="169.04001438976692" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="680.0" cy="169.04001438976692" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<line x1="706.6666666666666" y1="170.0" x2="706.6666666666666" y2="170.37376441205873" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="706.6666666666666" cy="170.37376441205873" r="6.5" fill="#ffffff" stroke="#1f8fb3" stroke-width="3"/>
+<text x="400.0" y="348" font-size="15" fill="#1b2633" text-anchor="middle">Sample number n</text>
+<text transform="translate(26 170.0) rotate(-90)" font-size="15" fill="#1b2633" text-anchor="middle">Amplitude h[n]</text>
+</svg>
