@@ -190,7 +190,11 @@ Here is the code for this chart:
         const { wasmContext, sciChartSurface } = await SciChartSurface.create(rootElement, {
             theme: new SciChartJsNavyTheme()
         });
-        sciChartSurface.xAxes.add(new CategoryAxis(wasmContext));
+        const xAxis = new CategoryAxis(wasmContext);
+        // Show dates as day and month, e.g. "21 Jan"
+        xAxis.labelProvider.formatLabel = (unixSeconds) =>
+            new Date(unixSeconds * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+        sciChartSurface.xAxes.add(xAxis);
         sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { labelPrefix: "$", labelPrecision: 2 }));
 
         const { xValues, openValues, highValues, lowValues, closeValues } = getYourOhlcData();
@@ -235,7 +239,11 @@ Here is the code for this chart:
             const { wasmContext, sciChartSurface } = await SciChartSurface.create(rootElement, {
                 theme: new SciChartJsNavyTheme()
             });
-            sciChartSurface.xAxes.add(new CategoryAxis(wasmContext));
+            const xAxis = new CategoryAxis(wasmContext);
+            // Show dates as day and month, e.g. "21 Jan"
+            xAxis.labelProvider.formatLabel = (unixSeconds) =>
+                new Date(unixSeconds * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+            sciChartSurface.xAxes.add(xAxis);
             sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { labelPrefix: "$", labelPrecision: 2 }));
 
             const { xValues, openValues, highValues, lowValues, closeValues } = getYourOhlcData();
@@ -257,7 +265,7 @@ Here is the code for this chart:
 Key points:
 
 - An [OhlcDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/ohlcdataseries.html) holds your data: one x value (a Unix timestamp in seconds) plus open, high, low and close values per candle.
-- A [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) spaces candles evenly and closes gaps for weekends and holidays. For 24/7 markets such as crypto, a `DateTimeNumericAxis` works too.
+- A [CategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/categoryaxis.html) spaces candles evenly and closes gaps for weekends and holidays. Its `labelProvider.formatLabel` sets how the dates read, here day and month ("21 Jan"). For 24/7 markets such as crypto, a `DateTimeNumericAxis` works too.
 - A [FastCandlestickRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html) draws the candles. `brushUp`, `brushDown`, `strokeUp` and `strokeDown` set the bullish and bearish colours, and `dataPointWidth` sets how much of each slot a candle fills.
 - `CursorModifier` adds the tooltip; `MouseWheelZoomModifier`, `ZoomPanModifier` and `ZoomExtentsModifier` add zooming, panning and the double-click reset.
 
@@ -293,12 +301,12 @@ Both show the open, high, low and close for each period. An OHLC chart draws eac
 
 ### How do I make a candlestick chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastCandlestickRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastCandlestickRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 
 - Wikipedia, [Candlestick chart](https://en.wikipedia.org/wiki/Candlestick_chart). Other names for the chart, how bodies and wicks are defined, and its history from Japanese rice trading to Steve Nison's *Japanese Candlestick Charting Techniques* (1991).
 - Wikipedia, [Open-high-low-close chart](https://en.wikipedia.org/wiki/Open-high-low-close_chart). The bar-and-tick alternative that shows the same four prices.
-- Marshall, B. R., Young, M. R. and Rose, L. C. (2006), [Candlestick technical trading strategies: Can they create value for investors?](https://doi.org/10.1016/j.jbankfin.2005.08.001) *Journal of Banking & Finance*, 30(8). A test of candlestick trading rules on large US stocks.
+- Marshall, B. R., Young, M. R. and Rose, L. C. (2006), [Candlestick technical trading strategies: Can they create value for investors?](https://doi.org/10.1016/j.jbankfin.2005.08.001) *Journal of Banking & Finance*, 30(8), 2303–2323. A test of candlestick trading strategies on the Dow Jones Industrial Average stocks from 1992 to 2002, which found that they did not create value for investors.
 
 <LearnCta position="bottom" chart="candlestick chart" demo="candlestick-chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" />

@@ -39,12 +39,11 @@ async function radarChart(divElementId) {
     );
 
     // The value scale, from the centre (0) out to the edge (10)
-    sciChartSurface.yAxes.add(
-        new PolarNumericAxis(wasmContext, {
+    const radialAxis = new PolarNumericAxis(wasmContext, {
             polarAxisMode: EPolarAxisMode.Radial,
             gridlineMode: EPolarGridlineMode.Polygons, // straight-sided rings: the radar / spider web look
             visibleRange: new NumberRange(0, 10),
-            startAngle: Math.PI / 3, // value labels run between the first two spokes, clear of the spoke labels
+            startAngle: Math.PI / 2, // rings line up with the spokes; value labels sit on the first spoke
             autoTicks: false,
             majorDelta: 2, // label every second value: 0, 2, 4 … 10
             labelPrecision: 0,
@@ -52,8 +51,10 @@ async function radarChart(divElementId) {
             drawMinorGridLines: false,
             drawMajorTickLines: false,
             drawMinorTickLines: false
-        })
-    );
+        });
+    // Hide the "10" label: it would sit on top of the first spoke's name
+    radialAxis.labelProvider.formatLabel = (value: number) => (value >= 10 ? "" : value.toFixed(0));
+    sciChartSurface.yAxes.add(radialAxis);
 
     // Your data: one score per variable for each item you are comparing (higher is better on every spoke)
     const items = [

@@ -38,7 +38,7 @@ image: /img/learn/pie-chart-og.png
                 {
                     "@type": "Question",
                     "name": "How do you calculate the angle of a pie chart slice?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Angle = (value ÷ total) × 360°. For example, £1,200 of housing costs in a £3,000 budget is 1,200 ÷ 3,000 = 0.4, or 40%, and 0.4 × 360° = 144°. Every slice's angle together makes 360°." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Angle = (value ÷ total) × 360°. For example, £1,200 of housing costs in a £3,000 budget is 1,200 ÷ 3,000 = 0.4, or 40%, and 0.4 × 360° = 144°. All the slices' angles together make 360°." }
                 },
                 {
                     "@type": "Question",
@@ -259,6 +259,16 @@ Key points:
 
 **Go deeper:** [SciChart.js pie chart documentation](/2d-charts/chart-types/pie-chart-type/), including label formatting, gradient fills and animated updates.
 
+## Pie chart examples
+
+Here are three pie chart examples using real-world shares. Each picture opens the live, interactive chart in the SciChart.js demo app, where you can select slices and see the code.
+
+| Example | What it shows |
+| --- | --- |
+| <a href="https://www.scichart.com/demo/javascript/pie-chart"><img src={require("@site/static/img/learn/examples/javascript-pie-chart.jpg").default} alt="A pie chart of mobile phone makers' market share in 2022, with two large slices of about 29% each, many thin slices and a legend" width="240" /></a> | **Market share: a pie chart with many slices.** The share of mobile phones sold by each maker in 2022. Two makers hold about 29% each, which the pie shows well; the thin slices further round show why many charts group small categories into "Other". [JavaScript pie chart](https://www.scichart.com/demo/javascript/pie-chart) |
+| <a href="https://www.scichart.com/demo/javascript/donut-chart"><img src={require("@site/static/img/learn/examples/javascript-donut-chart.jpg").default} alt="A donut chart of web browser market share in 2022, where one browser takes about two thirds of the ring" width="240" /></a> | **Browser use: a donut chart.** The market share of web browsers in 2022. One browser takes about two thirds of the ring, the kind of single dominant share a pie or donut chart makes obvious at a glance. [JavaScript donut chart](https://www.scichart.com/demo/javascript/donut-chart) |
+| <a href="https://www.scichart.com/demo/javascript/polar-pie-chart"><img src={require("@site/static/img/learn/examples/javascript-polar-pie-chart.jpg").default} alt="A pie chart of the most popular JavaScript frameworks in 2024, with each slice labelled inside" width="240" /></a> | **Framework popularity: a labelled pie chart.** The most popular JavaScript frameworks in 2024, as shares of one whole. Each slice carries its name, so readers don't have to match colours to a legend. [JavaScript polar pie chart](https://www.scichart.com/demo/javascript/polar-pie-chart) |
+
 ## Frequently asked questions
 
 ### What is a pie chart used for?
@@ -271,7 +281,7 @@ Add up the values to get the total. Divide each value by the total to get its sh
 
 ### How do you calculate the angle of a pie chart slice?
 
-Angle = (value ÷ total) × 360°. For example, £1,200 of housing costs in a £3,000 budget is 1,200 ÷ 3,000 = 0.4, or 40%, and 0.4 × 360° = 144°. Every slice's angle together makes 360°.
+Angle = (value ÷ total) × 360°. For example, £1,200 of housing costs in a £3,000 budget is 1,200 ÷ 3,000 = 0.4, or 40%, and 0.4 × 360° = 144°. All the slices' angles together make 360°.
 
 ### How many slices should a pie chart have?
 

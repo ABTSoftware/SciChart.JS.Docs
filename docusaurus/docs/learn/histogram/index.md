@@ -12,6 +12,8 @@ keywords:
         "how to make a histogram",
         "how to describe a histogram",
         "histogram vs bar chart",
+        "histogram vs bar graph",
+        "difference between histogram and bar graph",
         "frequency histogram"
     ]
 image: /img/learn/histogram-og.png
@@ -46,7 +48,7 @@ image: /img/learn/histogram-og.png
                 {
                     "@type": "Question",
                     "name": "Who invented the histogram?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician Karl Pearson gave the histogram its name. He introduced the word in the 1890s and used it in print in 1895, in a paper on skewed distributions. Charts of grouped counts had been drawn before, but Pearson's term is the one that stuck." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician Karl Pearson gave the histogram its name. He introduced the word in an 1891 lecture and used it in print in 1895, in a paper on skewed distributions. Charts of grouped counts had been drawn before, but Pearson's term is the one that stuck." }
                 },
                 {
                     "@type": "Question",
@@ -102,7 +104,7 @@ Statistics courses teach the same four points for describing a distribution: **s
 
 > The distribution of **[variable]** is **[symmetric / right-skewed / left-skewed / bimodal]**, centred around **[value]**. Most values lie between **[low]** and **[high]**, and **[there are no outliers / a few values stand apart at …]**.
 
-**Worked example,** using the heights chart above: "The distribution of height is roughly symmetric and bell-shaped, centred around 170 cm, with the tallest bar from 170 to 175 cm (243 people). Most people, 900 of the 1,000, are between 155 and 185 cm. A handful of values stand apart at the edges: four people under 145 cm and one between 205 and 210 cm."
+**Worked example,** using the heights chart at the top of the page: "The distribution of height is roughly symmetric and bell-shaped, centred around 170 cm, with the tallest bar from 170 to 175 cm (243 people). Most people, 900 of the 1,000, are between 155 and 185 cm. A handful of values stand apart at the edges: four people under 145 cm and one between 205 and 210 cm."
 
 ## How to make a histogram, step by step
 
@@ -170,11 +172,21 @@ Use a histogram when you have **many values of one numeric variable** and want t
 | [Box plot](/learn/box-plot/) | A compact summary of a distribution (median, quartiles, range and outliers), and comparing many distributions side by side |
 | [Scatter plot](/learn/scatter-plot/) | The relationship between two numeric variables |
 
-### Histogram vs bar chart
+## Histogram vs bar graph
 
-They look alike, but they answer different questions.
+A histogram and a bar graph (bar chart) look alike, but they answer different questions. The difference between a histogram and a bar graph is the kind of data on the horizontal axis: a histogram counts **numbers** into ranges, while a bar graph compares separate **categories**.
 
-| | Histogram | Bar chart |
+The picture below draws the same 20 deliveries both ways (example data). The histogram uses the delivery times from the [step-by-step example](#how-to-make-a-histogram-step-by-step) above; the bar graph counts the same deliveries by the area they went to.
+
+![The same 20 deliveries drawn two ways. Left: a histogram of delivery time in 10-minute bins from 10 to 60 minutes, with touching bars of 4, 10, 4, 1 and 1 deliveries. Right: a bar graph of the same deliveries by area, with separate bars sorted largest first: North 7, Centre 6, East 4 and West 3](./histogram-vs-bar-graph.svg)
+
+Three things give a histogram away:
+
+- **The bars touch.** Each bin carries on where the last one stopped, so there's no gap unless a bin is empty. A bar graph leaves gaps, because "North" and "Centre" aren't neighbours on any scale.
+- **The order is fixed.** Moving the 50 to 60 minute bar to the front would break the shape. The bar graph's areas can go in any order; here they're sorted largest first.
+- **The axis has numbers, not names.** You can read a histogram's horizontal axis like a ruler. A bar graph's axis is a list of labels.
+
+| | Histogram | Bar graph |
 | --- | --- | --- |
 | **Data** | One numeric (continuous) variable | Separate categories |
 | **Each bar is** | A range of values (a bin) | One category |
@@ -182,6 +194,8 @@ They look alike, but they answer different questions.
 | **Gaps between bars** | No: the bins are continuous | Yes: the categories are separate |
 | **Order of bars** | Fixed, in numeric order | Any order, often sorted by size |
 | **Answers** | "How are the values distributed?" | "Which category is bigger?" |
+
+**A quick test:** if you could rename the bars or shuffle them without losing meaning, it's a bar graph. If each bar is a slice of one number line, it's a histogram. For more on bar graphs and their types, see the [bar chart guide](/learn/bar-chart/).
 
 ## Common histogram mistakes
 
@@ -338,11 +352,11 @@ A skewed histogram has a long tail on one side. Right-skewed (positively skewed)
 
 ### Who invented the histogram?
 
-The statistician Karl Pearson gave the histogram its name. He introduced the word in the 1890s and used it in print in 1895, in a paper on skewed distributions. Charts of grouped counts had been drawn before, but Pearson's term is the one that stuck.
+The statistician Karl Pearson gave the histogram its name. He introduced the word in an 1891 lecture and used it in print in 1895, in a paper on skewed distributions. Charts of grouped counts had been drawn before, but Pearson's term is the one that stuck.
 
 ### How do I make a histogram in JavaScript?
 
-With SciChart.js, count your values into bins, then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries` holding each bin's start, end and count. Set `columnXMode` to `EColumnMode.StartEnd` so each bar fills exactly its bin. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, count your values into bins, then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries` holding each bin's start, end and count. Set `columnXMode` to `EColumnMode.StartEnd` so each bar fills exactly its bin. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

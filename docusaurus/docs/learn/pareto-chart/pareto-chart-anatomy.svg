@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="960" height="520" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
 <title id="t">Anatomy of a Pareto chart</title>
-<desc id="d">A Pareto chart with six bars sorted from largest to smallest, labelled A to E and Other. A cumulative percentage line rises against a right-hand axis from 0 to 100 percent and crosses a dashed 80 percent reference line after the third bar. The first three causes are marked as the vital few, giving 82 percent of the total; the rest are marked as the useful many.</desc>
+<desc id="d">A Pareto chart with six bars sorted from largest to smallest, labelled A to E and Other. A cumulative percentage line rises against a right-hand axis from 0 to 100 percent and reaches a dashed 80 percent reference line at the third bar. The first three causes are marked as the vital few, giving 82 percent of the total; the rest are marked as the useful many.</desc>
 <rect width="960" height="520" fill="#ffffff"/>
 <text x="480.0" y="34.0" font-size="21" text-anchor="middle" fill="#1c2333" font-weight="700" >Anatomy of a Pareto chart</text>
 <line x1="90" y1="400.0" x2="610" y2="400.0" stroke="#e3e7ee" stroke-width="1"/>

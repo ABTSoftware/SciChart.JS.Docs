@@ -16,7 +16,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | --- | --- |
 | [Line chart](/learn/line-chart/) | How a value changes over time, as points joined by a line |
 | [Area chart](/learn/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
-| [Bar chart](/learn/bar-chart/) | Values compared across categories as bars or columns, including stacked bars |
+| [Bar chart](/learn/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging |
 | [Pareto chart](/learn/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 
 ## Parts of a whole
@@ -26,6 +26,17 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | [Pie chart](/learn/pie-chart/) | How a total splits into parts, as slices of a circle |
 | [Donut chart](/learn/donut-chart/) | A pie chart with a hole in the middle, often used to show the total |
 | [Sankey diagram](/learn/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
+
+## Stacked charts
+
+A **stacked chart** shows a total and the parts that make it up, by drawing each part on top of the one before. The top edge is the total; each band or segment is one part.
+
+| Chart | What it shows |
+| --- | --- |
+| [Stacked bar chart](/learn/bar-chart/#stacked-bar-chart) | Totals compared across categories, with each bar split into its parts; drawn upright, it's a stacked column chart |
+| [100% stacked bar chart](/learn/bar-chart/#100-stacked-bar-chart) | Every bar the same length, so you compare each category's mix of parts rather than its total |
+| [Stacked area chart](/learn/area-chart/#how-to-read-a-stacked-area-chart) | How a total and its parts change over time, as bands stacked on top of each other |
+| [100% stacked area chart](/learn/area-chart/#stacked-vs-100-stacked-area-chart) | How the share of each part changes over time |
 
 ## Relationships and distributions
 
@@ -49,5 +60,11 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | Chart | What it shows |
 | --- | --- |
 | [Candlestick chart](/learn/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+
+## Chart examples
+
+Each guide includes a live, interactive chart you can zoom, pan and hover over. For charts from real-world settings, such as sports rankings, market share, patient monitors and climate data, see the [bar graph examples](/learn/bar-chart/#bar-graph-examples), [pie chart examples](/learn/pie-chart/#pie-chart-examples) and [line chart examples](/learn/line-chart/#line-chart-examples).
+
+For the full gallery, browse the [JavaScript chart examples](https://www.scichart.com/demo/) in the SciChart.js demo app. Each example shows the code behind it, with versions for JavaScript, React and Angular.
 
 <LearnCta position="bottom" />

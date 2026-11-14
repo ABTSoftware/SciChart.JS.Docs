@@ -96,7 +96,7 @@ A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the f
 | A dashed line | A tone that switches on and off | An alarm beep, Morse code, the 5,500 Hz tone in the chart above |
 | A thin vertical line | A short, sharp sound containing many frequencies at once | A click, knock, drum hit or footstep |
 | A speckled haze over many frequencies | Broadband noise | Hiss, wind, rain, air conditioning |
-| Broad, darker bands that shift in speech | **Formants**: resonances of the mouth and throat | Vowels; each vowel has its own formant pattern |
+| Broad bands of energy that shift in speech | **Formants**: resonances of the mouth and throat | Vowels; each vowel has its own formant pattern |
 | A gap from top to bottom | Silence or a dropout | A pause in speech, a break in a recording |
 
 ### How to describe a spectrogram

@@ -49,7 +49,13 @@ async function candlestickChart(divElementId) {
     });
 
     // A CategoryAxis spaces candles evenly, closing gaps for weekends and holidays
-    sciChartSurface.xAxes.add(new CategoryAxis(wasmContext));
+    const xAxis = new CategoryAxis(wasmContext);
+    // Show dates day first: "21 Jan" on the axis and "21 Jan 2025" in the tooltip (x values are Unix timestamps in seconds)
+    xAxis.labelProvider.formatLabel = (unixSeconds) =>
+        new Date(unixSeconds * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short", timeZone: "UTC" });
+    xAxis.labelProvider.formatCursorLabel = (unixSeconds) =>
+        new Date(unixSeconds * 1000).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+    sciChartSurface.xAxes.add(xAxis);
     sciChartSurface.yAxes.add(new NumericAxis(wasmContext, { labelPrefix: "$", labelPrecision: 2 }));
 
     // Your data: one open, high, low and close value per period

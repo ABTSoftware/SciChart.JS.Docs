@@ -12,6 +12,8 @@ keywords:
         "how to describe a line graph",
         "when to use a line graph",
         "multiple line graph",
+        "trend graph",
+        "line chart example",
         "line graph vs bar graph"
     ]
 image: /img/learn/line-chart-og.png
@@ -32,6 +34,11 @@ image: /img/learn/line-chart-og.png
                     "@type": "Question",
                     "name": "Is a line chart the same as a line graph?",
                     "acceptedAnswer": { "@type": "Answer", "text": "Yes. Line graph and line chart are two names for the same chart, and line plot usually means the same thing too. One exception: in some school maths courses, a line plot is a different chart that stacks crosses above a number line to count values." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Is a trend graph a line graph?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. A trend graph is any chart drawn to show the overall direction of a value over time, and that is almost always a line graph with time along the x-axis. Don't confuse it with a trend line: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading." }
                 },
                 {
                     "@type": "Question",
@@ -122,7 +129,7 @@ Lead with the overall trend, then give the highest and lowest values with their 
 
 ## When to use a line graph
 
-Use a line graph when the x values have a **natural order**, most often time, and the reader cares about **how the value moves** from one point to the next.
+Use a line graph when the x values have a **natural order**, most often time, and the reader cares about **how the value moves** from one point to the next. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart: the slope of the line is the trend.
 
 | Your question | Best chart |
 | --- | --- |
@@ -258,6 +265,17 @@ Key points:
 
 **Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), including point markers, gaps in the line and colouring individual segments.
 
+## Line chart examples
+
+Here are four line chart examples, three of them from science, medicine and engineering, where line charts often have to draw thousands of points as they arrive. Each picture opens the live, interactive chart in the SciChart.js demo app.
+
+| Example | What it shows |
+| --- | --- |
+| <a href="https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example"><img src={require("@site/static/img/learn/examples/javascript-vital-signs-ecg-medical-chart-example.jpg").default} alt="A patient monitor with four scrolling line charts: ECG, blood pressure, stroke volume and blood oxygen" width="240" /></a> | **Patient monitor: real-time line charts.** An ECG trace and three other vital signs drawn as lines that sweep across the screen, as on a hospital monitor, with the latest readings beside each one. [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) |
+| <a href="https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart"><img src={require("@site/static/img/learn/examples/javascript-realtime-ghosted-traces-oscilloscope-chart.jpg").default} alt="An oscilloscope-style line chart of ten noisy sine-wave traces drawn on top of each other, older traces fading out" width="240" /></a> | **Oscilloscope: overlaid line traces.** Repeated sweeps of a noisy signal drawn on top of one another, with older traces fading like the phosphor of an analogue oscilloscope, so the signal's typical shape stands out from the noise. [JavaScript oscilloscope chart](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) |
+| <a href="https://www.scichart.com/demo/javascript/polar-line-multi-cycle"><img src={require("@site/static/img/learn/examples/javascript-polar-line-temperature.jpg").default} alt="A polar line chart of mean surface temperature by month, one line per year from 1995 to 2024, wrapped around a circle of twelve months" width="240" /></a> | **Climate data: a line chart wrapped into a circle.** Mean surface temperature for each month, one line per year over 30 years. Bending the months into a circle lets December join January, so each year's cycle reads as one loop. [JavaScript polar line chart](https://www.scichart.com/demo/javascript/polar-line-multi-cycle) |
+| <a href="https://www.scichart.com/demo/javascript/line-chart"><img src={require("@site/static/img/learn/examples/javascript-line-chart.jpg").default} alt="Nine small line charts showing different line chart styles: simple, step, tooltips, dashed, gradient, hover, gaps, vertical and thresholds" width="240" /></a> | **Line chart styles side by side.** Nine variations in one view: simple, step (digital), dashed, gradient-coloured, with tooltips, with gaps, vertical, and with high and low warning thresholds that change the line's colour. [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) |
+
 ## Frequently asked questions
 
 ### What is a line graph used for?
@@ -267,6 +285,10 @@ A line graph is used to show how a value changes across an ordered sequence, usu
 ### Is a line chart the same as a line graph?
 
 Yes. Line graph and line chart are two names for the same chart, and line plot usually means the same thing too. One exception: in some school maths courses, a line plot is a different chart that stacks crosses above a number line to count values.
+
+### Is a trend graph a line graph?
+
+Usually, yes. A trend graph is any chart drawn to show the overall direction of a value over time, and that is almost always a line graph with time along the x-axis. Don't confuse it with a trend line: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 ### What is the difference between a line graph and a bar graph?
 
@@ -282,7 +304,7 @@ Scientists such as Johann Heinrich Lambert drew line charts of measurements in t
 
 ### How do I make a line chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface`, add a `DateTimeNumericAxis` or `NumericAxis` for x and a `NumericAxis` for y, then add a `FastLineRenderableSeries` with an `XyDataSeries` holding your x and y values. Add one series per line. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface`, add a `DateTimeNumericAxis` or `NumericAxis` for x and a `NumericAxis` for y, then add a `FastLineRenderableSeries` with an `XyDataSeries` holding your x and y values. Add one series per line. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

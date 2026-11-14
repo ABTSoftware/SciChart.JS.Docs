@@ -31,12 +31,12 @@ image: /img/learn/pareto-chart-og.png
                 {
                     "@type": "Question",
                     "name": "What is the 80/20 rule in a Pareto chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The 80/20 rule, or Pareto principle, says that a small share of causes often produces most of an effect, for example 20% of causes giving 80% of the problems. On a Pareto chart, the categories to the left of the point where the cumulative line crosses 80% are the vital few. The split is a rule of thumb: real data might be 70/30 or 90/10." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The 80/20 rule, or Pareto principle, says that a small share of causes often produces most of an effect, for example 20% of causes giving 80% of the problems. On a Pareto chart, the categories up to the point where the cumulative line reaches about 80% are the vital few. The split is a rule of thumb: real data might be 70/30 or 90/10." }
                 },
                 {
                     "@type": "Question",
                     "name": "How do you interpret a Pareto chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Read the bars from left to right: the tallest bar is the biggest category. Then follow the cumulative line against the right-hand axis to see what share of the total the first few bars account for. Where the line crosses 80%, the bars to its left are the few categories worth fixing first. A line that rises steeply then flattens means a few causes dominate." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Read the bars from left to right: the tallest bar is the biggest category. Then follow the cumulative line against the right-hand axis to see what share of the total the first few bars account for. Where the line reaches about 80%, the bars up to that point are the few categories worth fixing first. A line that rises steeply then flattens means a few causes dominate." }
                 },
                 {
                     "@type": "Question",
@@ -71,7 +71,7 @@ A **Pareto chart** (also called a Pareto diagram) is a bar chart with its bars s
 :::tip Key takeaways
 - A Pareto chart **ranks categories from largest to smallest** and adds a **cumulative percentage line** on a second, right-hand axis.
 - It answers one question: **which few causes make up most of the problem?**
-- The categories to the left of where the line crosses **80%** are the **vital few**: fix those first.
+- The categories up to where the line reaches about **80%** are the **vital few**: fix those first.
 - The **80/20 rule** is a rule of thumb, not a law. Your data might split 70/30 or 90/10.
 - Ranking by **count** and ranking by **cost** can give different priorities. Choose the measure that matches your goal.
 :::
@@ -83,7 +83,7 @@ A **Pareto chart** (also called a Pareto diagram) is a bar chart with its bars s
 1. **Check what is being counted.** The left axis is usually a count (defects, complaints, failures) but can be a cost, time or another measure. Note the period the data covers.
 2. **Read the bars from left to right.** The tallest bar, on the left, is the largest category. Each bar to its right is smaller. A catch-all **Other** bar goes last, whatever its size.
 3. **Follow the cumulative line.** Each point shows the share of the total from that bar plus every bar to its left, read against the **right-hand axis**, which runs from 0% to 100%. The last point always reaches 100%.
-4. **Find the cut-off.** Where the line crosses the **80% reference line**, the bars to its left are the **vital few**. In the diagram, causes A, B and C add up to 82% of the total.
+4. **Find the cut-off.** Where the line reaches the **80% reference line**, the bars up to that point are the **vital few**. In the diagram, causes A, B and C add up to 82% of the total.
 5. **Look at the shape of the line.** A line that climbs steeply and then flattens means a few causes dominate. A line that rises at a steady slope, close to a straight diagonal, means the problem is spread evenly and there is no obvious place to start.
 
 ## The 80/20 rule (Pareto principle)
@@ -364,11 +364,11 @@ A Pareto chart is used to decide which problems or causes to tackle first. It ra
 
 ### What is the 80/20 rule in a Pareto chart?
 
-The 80/20 rule, or Pareto principle, says that a small share of causes often produces most of an effect, for example 20% of causes giving 80% of the problems. On a Pareto chart, the categories to the left of the point where the cumulative line crosses 80% are the vital few. The split is a rule of thumb: real data might be 70/30 or 90/10.
+The 80/20 rule, or Pareto principle, says that a small share of causes often produces most of an effect, for example 20% of causes giving 80% of the problems. On a Pareto chart, the categories up to the point where the cumulative line reaches about 80% are the vital few. The split is a rule of thumb: real data might be 70/30 or 90/10.
 
 ### How do you interpret a Pareto chart?
 
-Read the bars from left to right: the tallest bar is the biggest category. Then follow the cumulative line against the right-hand axis to see what share of the total the first few bars account for. Where the line crosses 80%, the bars to its left are the few categories worth fixing first. A line that rises steeply then flattens means a few causes dominate.
+Read the bars from left to right: the tallest bar is the biggest category. Then follow the cumulative line against the right-hand axis to see what share of the total the first few bars account for. Where the line reaches about 80%, the bars up to that point are the few categories worth fixing first. A line that rises steeply then flattens means a few causes dominate.
 
 ### What is the difference between a Pareto chart and a histogram?
 
@@ -380,7 +380,7 @@ A Pareto chart is a special kind of bar chart. Its bars are always sorted from l
 
 ### How do I make a Pareto chart in JavaScript?
 
-With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a `FastColumnRenderableSeries` for the counts on the left y-axis, then a second `NumericAxis` on the right from 0 to 100% and a `FastLineRenderableSeries` for the cumulative percentages, linked to it with `yAxisId`. A `HorizontalLineAnnotation` draws the 80% line. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a `FastColumnRenderableSeries` for the counts on the left y-axis, then a second `NumericAxis` on the right from 0 to 100% and a `FastLineRenderableSeries` for the cumulative percentages, linked to it with `yAxisId`. A `HorizontalLineAnnotation` draws the 80% line. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

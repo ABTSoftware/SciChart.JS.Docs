@@ -82,7 +82,7 @@ A **heatmap** (also written **heat map**) is a chart that shows a table of numbe
 ![Anatomy of a heatmap: a grid of coloured cells with labelled rows and columns, one cell highlighted, and a colour scale from low (dark purple) to high (yellow)](./heatmap-anatomy.svg)
 
 1. **Find the colour scale** (the legend) before anything else. It tells you which colour is high and which is low, and over what range. Without it you can only say that one cell is higher than another, not by how much.
-2. **Check what the rows and columns are.** In the chart above, rows are days of the week and columns are hours. Each cell is one combination: Thursday, 19:00 to 20:00, for example.
+2. **Check what the rows and columns are.** In the energy chart at the top of the page, rows are days of the week and columns are hours. Each cell is one combination: Thursday, 19:00 to 20:00, for example.
 3. **Look at the whole grid for bands and blocks.** A bright vertical band means one column is high in every row. A bright block means a group of rows and columns are high together.
 4. **Read along one row, then down one column.** A row compares one category across all the columns (one day across 24 hours); a column compares one column across all the rows (one hour across seven days).
 5. **Look for cells that don't fit.** A single bright cell in a dark area, or a dark gap in a bright band, is often a fault, a special event or a data problem worth checking.

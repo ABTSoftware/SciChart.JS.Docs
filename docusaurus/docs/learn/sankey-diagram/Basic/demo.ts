@@ -88,8 +88,8 @@ function computeSankeyLayout(data, options) {
         x1: 0,
         y0: 0, // top of the bar (measured down from the top of the box while laying out)
         y1: 0, // bottom of the bar
-        sourceLinks: [], // links leaving this node
-        targetLinks: [] // links arriving at this node
+        sourceLinks: [] as any[], // links leaving this node
+        targetLinks: [] as any[] // links arriving at this node
     }));
     const nodeById = new Map();
     nodes.forEach((node) => nodeById.set(node.id, node));
@@ -98,7 +98,7 @@ function computeSankeyLayout(data, options) {
         const source = nodeById.get(link.source);
         const target = nodeById.get(link.target);
         if (!source || !target) throw new Error(`Unknown node in link ${link.source} -> ${link.target}`);
-        const layoutLink = { index, source, target, value: link.value, width: 0, sourceY: 0, targetY: 0, xValues: [], yValues: [] };
+        const layoutLink = { index, source, target, value: link.value, width: 0, sourceY: 0, targetY: 0, xValues: [] as number[], yValues: [] as number[] };
         source.sourceLinks.push(layoutLink);
         target.targetLinks.push(layoutLink);
         source.valueOut += link.value;
@@ -197,7 +197,7 @@ function computeSankeyLayout(data, options) {
 // One FastTriangleRenderableSeries per band and per bar, so each can be coloured, faded and hit-tested on its own.
 function addSankeySeries(sciChartSurface, wasmContext, layout, options) {
     const { linkOpacity = 0.45, units = "" } = options || {};
-    const items = [];
+    const items: { kind: string; data: any; series: any }[] = [];
 
     layout.links.forEach((link) => {
         const series = new FastTriangleRenderableSeries(wasmContext, {
@@ -287,7 +287,7 @@ class SankeyHoverModifier extends CustomChartModifier2D {
     tooltip;
     hovered = null;
     selected = null;
-    mouseDownPoint = null;
+    mouseDownPoint: { x: number; y: number } | null = null;
 
     constructor(sankey) {
         super();

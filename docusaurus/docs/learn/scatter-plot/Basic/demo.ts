@@ -71,7 +71,8 @@ async function scatterPlot(divElementId) {
         new NumericAxis(wasmContext, { axisTitle: "Height (cm)", labelPrecision: 0, growBy: new NumberRange(0.05, 0.05) })
     );
     sciChartSurface.yAxes.add(
-        new NumericAxis(wasmContext, { axisTitle: "Weight (kg)", labelPrecision: 0, growBy: new NumberRange(0.05, 0.05) })
+        // Extra space at the bottom keeps the lowest dots clear of the chart's bottom-left corner
+        new NumericAxis(wasmContext, { axisTitle: "Weight (kg)", labelPrecision: 0, growBy: new NumberRange(0.15, 0.05) })
     );
 
     // Your data: one x value and one y value per point

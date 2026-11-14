@@ -78,7 +78,7 @@ A **donut chart** (also spelled **doughnut chart**) is a [pie chart](/learn/pie-
 
 ## How to read a donut chart
 
-![Anatomy of a donut chart: four segments of sales by region around a ring, with the arc length, ring, hole and centre label showing the total labelled](./donut-chart-anatomy.svg)
+![Anatomy of a donut chart: four segments of sales by region around a ring, with labels for the arc length, the ring, the hole and the centre label, which shows the total](./donut-chart-anatomy.svg)
 
 1. **Read the centre first.** It usually tells you what the whole ring adds up to ("£4.2m total sales") or gives the one number the chart is about.
 2. **Match each segment to its category,** using the label on the segment or the legend.

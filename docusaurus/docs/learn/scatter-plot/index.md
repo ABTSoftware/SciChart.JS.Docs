@@ -64,9 +64,9 @@ image: /img/learn/scatter-plot-og.png
 
 A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its **x value** sets how far along it sits and its **y value** sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
 
-![A scatter plot of the height and weight of 200 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
+![A scatter plot of the height and weight of 202 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
 
-*A scatter plot of height against weight for 200 people (sample data), with a trend line. [Try the interactive version](#how-to-create-a-scatter-plot-in-javascript-react-or-angular).*
+*A scatter plot of height against weight for 202 people (sample data), two of them outliers, with a trend line. [Try the interactive version](#how-to-create-a-scatter-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A scatter plot shows the **relationship between two measured values**, with one dot per item.
@@ -275,7 +275,7 @@ Historians of statistics credit the astronomer John Herschel with one of the fir
 
 ### How do I make a scatter plot in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add an `XyScatterRenderableSeries` with an `XyDataSeries` holding your x and y values and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add an `XyScatterRenderableSeries` with an `XyDataSeries` holding your x and y values and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

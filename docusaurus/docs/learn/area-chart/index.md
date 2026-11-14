@@ -293,7 +293,7 @@ A 100% stacked area chart rescales each point in time so the stack always fills 
 
 ### How do I make an area chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with an x-axis and a y-axis, then add a `FastMountainRenderableSeries` with an `XyDataSeries` holding your x and y values. For a stacked area chart, add one `StackedMountainRenderableSeries` per layer to a `StackedMountainCollection`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface` with an x-axis and a y-axis, then add a `FastMountainRenderableSeries` with an `XyDataSeries` holding your x and y values. For a stacked area chart, add one `StackedMountainRenderableSeries` per layer to a `StackedMountainCollection`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

@@ -66,7 +66,7 @@ A **box plot** (also called a box and whisker plot) is a chart that summarises h
 
 ![Box plots of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
 
-*Box plots comparing exam scores for five classes of 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
+*Box plots comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A box plot draws the **five-number summary**: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
@@ -124,7 +124,7 @@ When you describe a box plot, or compare two, cover four things: the **centre** 
 
 > The median of **[group]** is **[value]**, **[higher / lower]** than **[other group]**. Its scores are **[more / less]** spread out (IQR **[value]**), the distribution is **[symmetric / right-skewed / left-skewed]**, and there **[are / are no]** outliers.
 
-**Worked example,** comparing Class D and Class E in the chart above: "Class E's median score is 78, much higher than Class D's 48. Class E's scores are also far more consistent, with an IQR of about 7 against about 25 for Class D. Class D is right-skewed: half of its students scored below 49, with a long tail of higher marks. Class E has one low outlier, at 52."
+**Worked example,** comparing Class D and Class E in the chart above: "Class E's median score is 78, much higher than Class D's 48. Class E's scores are also far more consistent, with an IQR of about 7 against about 25 for Class D. Class D is right-skewed: half of its students scored below about 48, with a long tail of higher marks. Class E has one low outlier, at 52."
 
 ## When to use a box plot
 
@@ -307,7 +307,7 @@ Use a histogram to see the full shape of one dataset, including gaps and whether
 
 ### How do I make a box plot in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

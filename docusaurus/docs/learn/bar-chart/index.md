@@ -9,9 +9,13 @@ keywords:
         "what is a bar chart",
         "bar graph",
         "column chart",
+        "column graph",
+        "clustered bar chart",
         "stacked bar chart",
+        "stacked column chart",
         "segmented bar chart",
         "horizontal bar chart",
+        "bar graph examples",
         "how to describe a bar chart",
         "bar chart vs column chart"
     ]
@@ -42,7 +46,7 @@ image: /img/learn/bar-chart-og.png
                 {
                     "@type": "Question",
                     "name": "Is a histogram a bar graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See histogram vs bar graph for the same data drawn both ways." }
                 },
                 {
                     "@type": "Question",
@@ -99,9 +103,19 @@ The **gaps between bars** are a clue: they show that each bar is a separate cate
 | 100% stacked bar chart | Every bar the same length, split by percentage | How does the mix of parts differ between categories? |
 | Diverging bar chart | Bars going left and right from a centre line | How far above or below a target, or zero, is each category? |
 
+Each of these can be drawn upright (columns) or on its side (bars), so a "stacked column chart" and a "stacked bar chart" are the same idea turned through 90 degrees.
+
+### Column chart (column graph)
+
+A **column chart**, or column graph, is a bar chart with vertical bars: the categories run along the bottom and the values go up the side. It's the natural choice when the categories have an order of their own, such as months, years or age groups, because readers follow them from left to right like a timeline. Keep it to a dozen or so columns; beyond that the labels get cramped.
+
+### Horizontal bar chart
+
+A **horizontal bar chart** lays the bars on their side: the categories run down the left and the values along the bottom or top. Long names such as product titles or survey answers fit on one line without being tilted, and a long list sorted by size reads like a ranking, top to bottom. The units-sold chart at the top of this page is a horizontal bar chart.
+
 ### Bar chart vs column chart
 
-A **column chart** is a bar chart with vertical bars. Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. The choice is about readability.
+Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. The choice is about readability.
 
 | | Horizontal bar chart | Column chart (vertical) |
 | --- | --- | --- |
@@ -109,6 +123,22 @@ A **column chart** is a bar chart with vertical bars. Spreadsheet tools often us
 | **Values** | Along the bottom or top | Up the side |
 | **Best when** | Labels are long, or there are many categories | Categories have a natural order, such as months or years |
 | **Reads like** | A ranked list, top to bottom | A sequence, left to right |
+
+### Clustered (grouped) bar chart
+
+A **clustered bar chart**, also called a grouped bar chart, places several bars side by side in each category, one per series: for example, food, drinks and other sales in each shop. Drawn upright it's a **clustered column chart**. Every bar starts from the same baseline, so any two bars can be compared accurately, within a group or across groups. Give each series one colour throughout, and keep to three or four series per group, or the clusters blur together. You can try one in the [live clustered chart below](#clustered-vs-stacked-bar-chart).
+
+### Stacked bar chart and stacked column chart {#stacked-bar-chart}
+
+A **stacked bar graph**, also called a segmented bar chart, splits each bar into bands placed end to end, one for each part, so the length of the whole bar is the category's total. Drawn upright it's a **stacked column chart**. It answers two questions at once: how big each total is, and roughly what it's made of. Only the bottom band and the total share a baseline, though, so the bands in between are hard to compare (see the worked example below).
+
+### 100% stacked bar chart
+
+In a **100% stacked bar chart** every bar is the same length, standing for 100%, and the bands show each part's share. Use it when the mix matters more than the size, for example the share of agree, neutral and disagree answers in each age group. It hides the totals, so give them in a label or a note if a small group could be mistaken for a large one.
+
+### Diverging bar chart
+
+A **diverging bar chart** runs bars left and right (or up and down) from a centre line, usually zero or a target. Use it for values that can fall on either side of a reference point: profit and loss by month, change since last year, or the share of people who agree against the share who disagree. Mark the centre line clearly and use one colour for each side.
 
 ### Reading a stacked bar chart: a worked example
 
@@ -120,6 +150,18 @@ Two shops each sell £80,000 a month, split across three product lines (example 
 | Shop B | £30k | £27k | £23k | £80k |
 
 Drawn as stacked bars, both bars are the same length, so the totals are easy to compare. **Food** sits on the baseline, so Shop A's lead is easy to see too. **Drinks** is the hard one: its band starts at £40k in Shop A and at £30k in Shop B, so the eye has to compare two lengths that start at different points. Shop B sells slightly more drinks, but most readers can't tell from the chart. When the middle parts matter, use a grouped chart, or label each band with its value.
+
+## Clustered vs stacked bar chart: the same data both ways {#clustered-vs-stacked-bar-chart}
+
+Here are the same two shops drawn as a clustered column chart. Every product line now has its own bar, starting from zero, so Shop B's slightly higher drinks sales (£27k against £25k) are easy to see. What you lose is the total: you'd have to add three bars in your head to see that both shops sell £80k. Hover over a bar to see its value, scroll to zoom and double-click to reset.
+
+<LiveDocSnippet maxWidth={'100%'} name="./Clustered/demo" />
+
+| If the reader needs to… | Use |
+| --- | --- |
+| Compare the totals, and see roughly what each is made of | **Stacked** bar or column chart |
+| Compare the parts accurately, within and across categories | **Clustered** (grouped) bar or column chart |
+| Compare the mix of parts, whatever the totals | **100% stacked** bar or column chart |
 
 ## How to describe a bar chart
 
@@ -286,13 +328,24 @@ Key points:
 - A [FastColumnRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) draws the bars. Its [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) holds one x value per category (0, 1, 2, …) and one y value per bar. `dataPointWidth` sets how much of each slot a bar fills.
 - A [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on a `NumericAxis` shows a category name at each x value.
 - For **horizontal bars**, set the X axis `axisAlignment` to `Left` and the Y axis to `Top`, and set `flippedCoordinates` on the Y axis so values grow from left to right. See [vertical charts](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/). Leave both out for an ordinary column chart.
-- For **stacked or grouped bars**, add [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series/) to a `StackedColumnCollection`. Series with the same `stackedGroupId` stack; series with different ids sit side by side. Set `isOneHundredPercent` on the collection for a 100% stacked chart.
+- For **stacked or grouped bars**, add [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series/) to a `StackedColumnCollection`. Series with the same `stackedGroupId` stack; series with different ids sit side by side, as in the clustered chart above. Set `isOneHundredPercent` on the collection for a 100% stacked chart.
 
 **See it in the demo app:** [JavaScript column chart](https://www.scichart.com/demo/javascript/column-chart) · [React column chart](https://www.scichart.com/demo/react/column-chart) · [Angular column chart](https://www.scichart.com/demo/angular/column-chart)
 
 **Stacked bars:** [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) · [React stacked column chart](https://www.scichart.com/demo/react/stacked-column-chart) · [Angular stacked column chart](https://www.scichart.com/demo/angular/stacked-column-chart)
 
 **Go deeper:** [SciChart.js bar chart documentation](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/), including gaps, data labels and colouring individual bars, and the [SciChart.js stacked column chart documentation](/2d-charts/chart-types/stacked-column-renderable-series/).
+
+## Bar graph examples
+
+Here are four bar graph examples from real-world settings. Each picture opens the live, interactive chart in the SciChart.js demo app, where you can zoom, pan and see the code.
+
+| Example | What it shows |
+| --- | --- |
+| <a href="https://www.scichart.com/demo/javascript/animated-columns"><img src={require("@site/static/img/learn/examples/atp-top-ten-animation.jpg").default} alt="A horizontal bar chart ranking the 2016 year-end top 10 men's tennis players, one bar per player" width="240" /></a> | **Sports rankings: a horizontal bar chart.** The year-end top 10 men's tennis players for 2016, one bar per player. The live version animates the ranking year by year from 1990. Sorted by length, the chart reads as a ranking from top to bottom. [JavaScript animated column chart](https://www.scichart.com/demo/javascript/animated-columns) |
+| <a href="https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side"><img src={require("@site/static/img/learn/examples/javascript-stacked-grouped-column-chart.jpg").default} alt="A clustered column chart of tonnes of tomatoes, peppers and cucumbers sold each year from 1997 to 2003, three columns per year" width="240" /></a> | **Produce sales: a clustered column chart.** Tonnes of tomatoes, peppers and cucumbers sold each year, with three columns per year. Each crop keeps its colour, so you can follow one crop across the years or compare all three within a year. [JavaScript grouped column chart](https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side) |
+| <a href="https://www.scichart.com/demo/javascript/stacked-column-chart"><img src={require("@site/static/img/learn/examples/javascript-stacked-column-chart.jpg").default} alt="A stacked column chart of yearly sales from 1992 to 2003, each column split into five coloured product lines with a value label on each band" width="240" /></a> | **Sales by product line: a stacked column chart.** Yearly sales split into five product lines, with a switch to 100% mode. The full columns compare the yearly totals; in 100% mode they compare the mix. [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) |
+| <a href="https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example"><img src={require("@site/static/img/learn/examples/javascript-audio-analyzer-bars-fft-example.jpg").default} alt="An audio spectrum analyser: a real-time column chart of sound levels in ten frequency bands from 62 Hz to 22 kHz" width="240" /></a> | **Audio spectrum analyser: a real-time column chart.** Sound from your microphone split into ten frequency bands, from 62 Hz to 22 kHz, with each column rising and falling as the sound changes. It asks for microphone permission. [JavaScript audio analyzer bars](https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example) |
 
 ## Frequently asked questions
 
@@ -310,7 +363,7 @@ A stacked bar chart, also called a segmented bar chart, splits each bar into seg
 
 ### Is a histogram a bar graph?
 
-No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order.
+No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [histogram vs bar graph](/learn/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
 
 ### Does a bar chart have to start at zero?
 
@@ -318,7 +371,7 @@ Yes, the value axis of a bar chart should start at zero. Readers judge a bar by 
 
 ### How do I make a bar chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastColumnRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per bar. A `TextLabelProvider` shows the category names. For horizontal bars, put the X axis on the left. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastColumnRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per bar. A `TextLabelProvider` shows the category names. For horizontal bars, put the X axis on the left. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

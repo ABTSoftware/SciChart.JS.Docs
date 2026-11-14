@@ -110,7 +110,7 @@ Use this template when you report a Sankey diagram:
 
 > Of the **[total and unit]** that entered **[the system]** in **[period]**, **[amount or share]** went to **[main destination]**, and **[amount or share]** ended as **[loss or other end point]**. The largest single flow was **[source] to [target]**, at **[value]**.
 
-**Worked example:** "Of the 100 TWh of energy this country used in the year, 49 TWh did useful work and 51 TWh was lost as heat. The largest single flow was fuels used directly into transport, at 27 TWh, and transport turned only 30% of its energy into useful work."
+**Worked example:** "Of the 100 TWh of energy this country used in the year, 49 TWh did useful work and 51 TWh was lost as heat. The largest single flow was oil into fuels used directly, at 28 TWh, and transport turned only 30% of its energy into useful work."
 
 ## How does a Sankey diagram work?
 
@@ -293,7 +293,7 @@ An alluvial diagram is a kind of Sankey diagram. Its columns are usually the sam
 
 ### How do I make a Sankey diagram in JavaScript?
 
-Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a `FastTriangleRenderableSeries` in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`. See the code above.
+Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a `FastTriangleRenderableSeries` in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 
