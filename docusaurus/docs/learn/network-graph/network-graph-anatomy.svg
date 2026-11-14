@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" width="900" height="580" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title id="t">The parts of a network graph</title>
+<desc id="d">Two clusters of nodes, blue on the left and orange on the right, joined by a single bridge node. Callouts mark a node, an edge, a hub with many connections, the bridge, a thick weighted edge, an isolated node with no connections, and each cluster.</desc>
+<rect width="900" height="580" fill="#ffffff"/>
+<ellipse cx="212" cy="305" rx="140" ry="150" fill="#2F80C0" fill-opacity="0.06" stroke="#2F80C0" stroke-width="1.5" stroke-dasharray="6 5"/>
+<ellipse cx="640" cy="308" rx="125" ry="145" fill="#E07B24" fill-opacity="0.06" stroke="#E07B24" stroke-width="1.5" stroke-dasharray="6 5"/>
+<line x1="235" y1="300" x2="150" y2="215" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="235" y1="300" x2="118" y2="318" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="235" y1="300" x2="178" y2="405" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="235" y1="300" x2="290" y2="205" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="235" y1="300" x2="305" y2="395" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="150" y1="215" x2="118" y2="318" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="118" y1="318" x2="178" y2="405" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="150" y1="215" x2="290" y2="205" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="178" y1="405" x2="305" y2="395" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="235" y1="300" x2="440" y2="300" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="440" y1="300" x2="600" y2="300" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="600" y1="300" x2="660" y2="215" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="600" y1="300" x2="655" y2="405" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="660" y1="215" x2="565" y2="210" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="600" y1="300" x2="565" y2="210" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="720" y1="320" x2="655" y2="405" stroke="#9AA6B8" stroke-width="2.2" stroke-linecap="round"/>
+<line x1="660" y1="215" x2="720" y2="320" stroke="#9AA6B8" stroke-width="8" stroke-linecap="round"/>
+<circle cx="235" cy="300" r="21" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="150" cy="215" r="12" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="118" cy="318" r="12" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="178" cy="405" r="12" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="290" cy="205" r="12" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="305" cy="395" r="12" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="440" cy="300" r="13" fill="#2F80C0" stroke="#ffffff" stroke-width="2"/>
+<circle cx="600" cy="300" r="16" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<circle cx="660" cy="215" r="12" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<circle cx="720" cy="320" r="12" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<circle cx="655" cy="405" r="12" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<circle cx="565" cy="210" r="12" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<circle cx="830" cy="470" r="11" fill="#E07B24" stroke="#ffffff" stroke-width="2"/>
+<line x1="130" y1="80" x2="222" y2="282" stroke="#64748B" stroke-width="1.4"/><circle cx="222" cy="282" r="3" fill="#64748B"/>
+<text x="40" y="52" font-size="17" fill="#1F2937" text-anchor="start"><tspan font-weight="700">Hub</tspan><tspan x="40" dy="21" font-size="15" fill="#475569">many connections (high degree)</tspan></text>
+<line x1="330" y1="120" x2="432" y2="288" stroke="#64748B" stroke-width="1.4"/><circle cx="432" cy="288" r="3" fill="#64748B"/>
+<text x="320" y="52" font-size="17" fill="#1F2937" text-anchor="start"><tspan font-weight="700">Bridge</tspan><tspan x="320" dy="21" font-size="15" fill="#475569">the only link between the two clusters</tspan></text>
+<line x1="745" y1="120" x2="690" y2="266" stroke="#64748B" stroke-width="1.4"/><circle cx="690" cy="266" r="3" fill="#64748B"/>
+<text x="640" y="52" font-size="17" fill="#1F2937" text-anchor="start"><tspan font-weight="700">Weighted edge</tspan><tspan x="640" dy="21" font-size="15" fill="#475569">thicker = stronger or more frequent</tspan></text>
+<line x1="120" y1="500" x2="175" y2="418" stroke="#64748B" stroke-width="1.4"/><circle cx="175" cy="418" r="3" fill="#64748B"/>
+<text x="40" y="525" font-size="17" fill="#1F2937" text-anchor="start"><tspan font-weight="700">Node</tspan><tspan x="40" dy="21" font-size="15" fill="#475569">one item: a person, a computer, a page</tspan></text>
+<line x1="380" y1="495" x2="340" y2="300" stroke="#64748B" stroke-width="1.4"/><circle cx="340" cy="300" r="3" fill="#64748B"/>
+<text x="340" y="525" font-size="17" fill="#1F2937" text-anchor="start"><tspan font-weight="700">Edge (link)</tspan><tspan x="340" dy="21" font-size="15" fill="#475569">a connection between two nodes</tspan></text>
+<line x1="800" y1="500" x2="826" y2="481" stroke="#64748B" stroke-width="1.4"/><circle cx="826" cy="481" r="3" fill="#64748B"/>
+<text x="890" y="525" font-size="17" fill="#1F2937" text-anchor="end"><tspan font-weight="700">Isolate</tspan><tspan x="890" dy="21" text-anchor="end" font-size="15" fill="#475569">no connections</tspan></text>
+<text x="80" y="170" font-size="15" font-weight="600" fill="#2F80C0">Cluster</text>
+<text x="752" y="200" font-size="15" font-weight="600" fill="#E07B24">Cluster</text>
+</svg>

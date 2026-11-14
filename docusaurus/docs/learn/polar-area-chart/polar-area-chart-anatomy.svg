@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520" role="img" aria-labelledby="t d">
+<title id="t">The parts of a polar area chart</title>
+<desc id="d">A polar area chart of support tickets by day of the week, with seven equal wedges starting at the centre. Callouts mark the rings, which are labelled with real values and are not evenly spaced in value, the equal angle of every wedge, and the largest wedge, whose radius is the square root of its value so that its area matches the value.</desc>
+<rect width="760" height="520" fill="#ffffff"/>
+<text x="380.0" y="32.0" font-size="18" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Support tickets by day of the week (sample data)</text>
+<circle cx="250" cy="275" r="52.0" fill="none" stroke="#d5dae3" stroke-width="1"/>
+<circle cx="250" cy="275" r="104.0" fill="none" stroke="#d5dae3" stroke-width="1"/>
+<circle cx="250" cy="275" r="156.0" fill="none" stroke="#d5dae3" stroke-width="1"/>
+<circle cx="250" cy="275" r="208.0" fill="none" stroke="#d5dae3" stroke-width="1"/>
+<path d="M250.0,275.0 L251.1,171.0 A104.0,104.0 0 0 1 330.6,209.3 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="349.8" y="72.8" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Mon</text>
+<text x="278.0" y="221.9" font-size="14" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">16</text>
+<path d="M250.0,275.0 L352.5,195.0 A130.0,130.0 0 0 1 377.0,302.6 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="474.2" y="228.8" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Tue</text>
+<text x="328.6" y="262.1" font-size="14" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">25</text>
+<path d="M250.0,275.0 L427.0,317.4 A182.0,182.0 0 0 1 330.7,438.1 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="429.8" y="423.4" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Wed</text>
+<text x="338.2" y="350.4" font-size="14" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">49</text>
+<path d="M250.0,275.0 L316.2,416.3 A156.0,156.0 0 0 1 183.8,416.3 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="250.0" y="510.0" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Thu</text>
+<text x="250.0" y="376.7" font-size="14" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">36</text>
+<path d="M250.0,275.0 L215.4,344.9 A78.0,78.0 0 0 1 174.1,293.2 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="70.2" y="423.4" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Fri</text>
+<text x="212.2" y="310.2" font-size="14" text-anchor="middle" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">9</text>
+<path d="M250.0,275.0 L199.2,286.0 A52.0,52.0 0 0 1 209.0,243.0 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="25.8" y="228.8" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Sat</text>
+<path d="M250.0,275.0 L229.8,258.6 A26.0,26.0 0 0 1 249.7,249.0 Z" fill="#50C7E0B3" stroke="#1F7FA8" stroke-width="1.5" />
+<text x="150.2" y="72.8" font-size="15" text-anchor="middle" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Sun</text>
+<rect x="228.9" y="214.6" width="26" height="16" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+<text x="241.9" y="227.6" font-size="12" text-anchor="middle" fill="#5b6475" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">4</text>
+<rect x="220.7" y="163.3" width="26" height="16" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+<text x="233.7" y="176.3" font-size="12" text-anchor="middle" fill="#5b6475" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">16</text>
+<rect x="212.6" y="111.9" width="26" height="16" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+<text x="225.6" y="124.9" font-size="12" text-anchor="middle" fill="#5b6475" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">36</text>
+<rect x="204.5" y="60.6" width="26" height="16" rx="3" fill="#ffffff" fill-opacity="0.9"/>
+<text x="217.5" y="73.6" font-size="12" text-anchor="middle" fill="#5b6475" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">64</text>
+<line x1="321.1" y1="79.5" x2="522.0" y2="75.0" stroke="#C2410C" stroke-width="1.5"/>
+<circle cx="321.1" cy="79.5" r="3.5" fill="#C2410C"/>
+<text x="530.0" y="80.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Rings show real values</text>
+<text x="530.0" y="99.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">4, 16, 36, 64: evenly spaced</text>
+<text x="530.0" y="118.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">rings, unevenly spaced values</text>
+<line x1="335.4" y1="206.9" x2="522.0" y2="180.0" stroke="#C2410C" stroke-width="1.5"/>
+<circle cx="335.4" cy="206.9" r="3.5" fill="#C2410C"/>
+<text x="530.0" y="185.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Equal angles from the centre</text>
+<text x="530.0" y="204.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">7 days, so every wedge</text>
+<text x="530.0" y="223.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">gets 360° ÷ 7 ≈ 51°</text>
+<line x1="353.4" y1="377.5" x2="522.0" y2="325.0" stroke="#C2410C" stroke-width="1.5"/>
+<circle cx="353.4" cy="377.5" r="3.5" fill="#C2410C"/>
+<text x="530.0" y="330.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="bold" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Area = value</text>
+<text x="530.0" y="349.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Wed: 49 tickets. Its radius is</text>
+<text x="530.0" y="368.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">√49 = 7, so its area is 49 times</text>
+<text x="530.0" y="387.0" font-size="15" text-anchor="start" fill="#1d2433" font-weight="normal" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif">that of a 1-ticket wedge (Sun)</text>
+</svg>

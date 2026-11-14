@@ -21,6 +21,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | [Pareto chart](/learn/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 | [Combo chart](/learn/combo-chart/) | Two related measures on one chart, usually columns and a line, often with a second y-axis for the line (a dual axis chart) |
 | [Lollipop chart](/learn/lollipop-chart/) | Values compared across many categories as thin stems with a dot at the end: a bar chart with less ink, best when the values are close |
+| [Dumbbell chart](/learn/dumbbell-chart/) | Two values per category, such as before and after, as two dots joined by a line, so the gap and its direction stand out |
 
 ## Parts of a whole
 
@@ -50,6 +51,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Scatter plot](/learn/scatter-plot/) | The relationship between two values, one dot per data point |
 | [Bubble chart](/learn/bubble-chart/) | A scatter plot where bubble size shows a third value |
 | [Parallel coordinates plot](/learn/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
+| [Network graph](/learn/network-graph/) | How things are connected: items as dots (nodes) and links as lines (edges), showing hubs, clusters and the bridges between them |
 | [Histogram](/learn/histogram/) | How values are distributed, counted into ranges (bins) |
 | [Population pyramid](/learn/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
 | [Box plot](/learn/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
@@ -64,6 +66,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [3D surface plot](/learn/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
 | [Spectrogram](/learn/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
 | [Radar chart](/learn/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
+| [Polar area chart](/learn/polar-area-chart/) | Equal-angle wedges whose area shows each value, for cycles such as months or directions (Nightingale rose) |
 
 ## Dashboards and KPIs
 
