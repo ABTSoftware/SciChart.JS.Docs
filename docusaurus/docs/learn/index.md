@@ -18,6 +18,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | [Area chart](/learn/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
 | [Bar chart](/learn/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging |
 | [Pareto chart](/learn/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
+| [Combo chart](/learn/combo-chart/) | Two related measures on one chart, usually columns and a line, often with a second y-axis for the line (a dual axis chart) |
 
 ## Parts of a whole
 
@@ -47,6 +48,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Scatter plot](/learn/scatter-plot/) | The relationship between two values, one dot per data point |
 | [Bubble chart](/learn/bubble-chart/) | A scatter plot where bubble size shows a third value |
 | [Histogram](/learn/histogram/) | How values are distributed, counted into ranges (bins) |
+| [Population pyramid](/learn/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
 | [Box plot](/learn/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
 
 ## Scientific and engineering charts
@@ -56,6 +58,12 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Heatmap](/learn/heatmap/) | A grid of values shown as colours |
 | [Spectrogram](/learn/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
 | [Radar chart](/learn/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
+
+## Dashboards and KPIs
+
+| Chart | What it shows |
+| --- | --- |
+| [Gauge chart](/learn/gauge-chart/) | One value on a dial between a minimum and a maximum, with a needle and coloured bands showing whether it's good, borderline or bad |
 
 ## Financial charts
 

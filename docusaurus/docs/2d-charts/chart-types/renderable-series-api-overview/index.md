@@ -6,6 +6,10 @@ sidebar_position: 1
 
 The RenderableSeries in SciChart are visual representations of **X,Y Numeric** or **Date** data. Other libraries call them 'Chart Types'.
 
+:::tip
+New to combo charts? Read our guide: [Combo Chart: what it is and how to read it](/learn/combo-chart/), covering how to read columns and a line on one or two y-axes, when a dual axis chart misleads, and how to build one by adding several series to one chart.
+:::
+
 Some RenderableSeries render simple X,Y values (2D points in space), while some render additional information (such as X,Y0,Y1 values, or X,Y,Z values).
 
 Chart Types in SciChart.js

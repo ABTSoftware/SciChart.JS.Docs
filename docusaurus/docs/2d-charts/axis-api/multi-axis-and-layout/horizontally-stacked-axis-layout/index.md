@@ -6,6 +6,10 @@ sidebar_position: 6
 
 The Stacked Axis feature in SciChart allows you to specify the layout of the axis panel. Normally when you have multiple XAxis, they are stacked vertically. However, you can switch this to stack horizontally. Custom and complex layouts are possible allowing for all kinds of chart scenarios.
 
+:::tip
+New to population pyramids? Read our guide: [Population Pyramid: what it is and how to read it](/learn/population-pyramid/), which builds one from two horizontally stacked value axes on a vertical chart.
+:::
+
 :::warning
 [Polar Charts](/2d-charts/surface/scichart-polar-surface-type/) do not support stacked axes yet
 :::

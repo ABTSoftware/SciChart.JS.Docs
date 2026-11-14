@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 300" width="900" height="300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Types of gauge chart</title>
+<desc id="d">Four gauges showing the same value, 62 out of 100, with bands at 0 to 50, 50 to 80 and 80 to 100: a semicircular gauge with a 180 degree scale, a dial gauge with a 240 degree scale, a full-circle progress ring with no bands, and a horizontal linear gauge with a marker.</desc>
+<rect width="900" height="300" fill="#FFFFFF"/>
+<path d="M27.0,165.0 A88,88 0 0 1 115.0,77.0 L115.0,103.0 A62,62 0 0 0 53.0,165.0 Z" fill="#C9D2DE" stroke="#FFFFFF" stroke-width="2"/><path d="M115.0,77.0 A88,88 0 0 1 186.2,113.3 L165.2,128.6 A62,62 0 0 0 115.0,103.0 Z" fill="#9DAABB" stroke="#FFFFFF" stroke-width="2"/><path d="M186.2,113.3 A88,88 0 0 1 203.0,165.0 L177.0,165.0 A62,62 0 0 0 165.2,128.6 Z" fill="#6E7D92" stroke="#FFFFFF" stroke-width="2"/><path d="M109.4,162.8 L148.1,81.3 L120.6,167.2 Z" fill="#1F2A3C"/><circle cx="115" cy="165" r="8" fill="#1F2A3C"/><text x="115.0" y="255.0" font-size="16" text-anchor="middle" fill="#1F2A3C" font-weight="bold">Semicircle</text><text x="115.0" y="277.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">180° scale</text>
+<path d="M258.8,194.0 A88,88 0 0 1 335.0,62.0 L335.0,88.0 A62,62 0 0 0 281.3,181.0 Z" fill="#C9D2DE" stroke="#FFFFFF" stroke-width="2"/><path d="M335.0,62.0 A88,88 0 0 1 418.7,122.8 L394.0,130.8 A62,62 0 0 0 335.0,88.0 Z" fill="#9DAABB" stroke="#FFFFFF" stroke-width="2"/><path d="M418.7,122.8 A88,88 0 0 1 411.2,194.0 L388.7,181.0 A62,62 0 0 0 394.0,130.8 Z" fill="#6E7D92" stroke="#FFFFFF" stroke-width="2"/><path d="M329.7,147.1 L378.4,71.1 L340.3,152.9 Z" fill="#1F2A3C"/><circle cx="335" cy="150" r="8" fill="#1F2A3C"/><text x="335.0" y="255.0" font-size="16" text-anchor="middle" fill="#1F2A3C" font-weight="bold">Dial (speedometer)</text><text x="335.0" y="277.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">240° scale</text>
+<circle cx="555" cy="135" r="73.0" fill="none" stroke="#E3E8EF" stroke-width="22"/><path d="M555.0,51.0 A84,84 0 1 1 497.5,196.2 L512.6,180.2 A62,62 0 1 0 555.0,73.0 Z" fill="#2F6FDB" /><text x="555.0" y="144.0" font-size="26" text-anchor="middle" fill="#1F2A3C" font-weight="bold">62%</text><text x="555.0" y="255.0" font-size="16" text-anchor="middle" fill="#1F2A3C" font-weight="bold">Progress ring</text><text x="555.0" y="277.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">360°, no bands</text>
+<rect x="690.0" y="120" width="90.0" height="34" fill="#C9D2DE" stroke="#FFFFFF" stroke-width="2"/>
+<rect x="780.0" y="120" width="54.0" height="34" fill="#9DAABB" stroke="#FFFFFF" stroke-width="2"/>
+<rect x="834.0" y="120" width="36.0" height="34" fill="#6E7D92" stroke="#FFFFFF" stroke-width="2"/>
+<path d="M793.6,104 L809.6,104 L801.6,118 Z" fill="#1F2A3C"/>
+<line x1="801.6" y1="118" x2="801.6" y2="154" stroke="#1F2A3C" stroke-width="3"/>
+<text x="690.0" y="176.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">0</text>
+<text x="780.0" y="176.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">50</text>
+<text x="870.0" y="176.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">100</text>
+<text x="780.0" y="255.0" font-size="16" text-anchor="middle" fill="#1F2A3C" font-weight="bold">Linear gauge</text>
+<text x="780.0" y="277.0" font-size="13" text-anchor="middle" fill="#5B6779" font-weight="normal">horizontal or vertical</text>
+</svg>
