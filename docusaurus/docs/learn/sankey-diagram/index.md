@@ -8,6 +8,9 @@ keywords:
         "sankey diagram",
         "sankey chart",
         "sankey graph",
+        "sankey charts",
+        "sankey plot",
+        "sankey flow diagram",
         "what is a sankey diagram",
         "flow diagram",
         "how to read a sankey diagram",
@@ -57,7 +60,7 @@ image: /img/learn/sankey-diagram-og.png
 
 ## What is a Sankey diagram?
 
-A **Sankey diagram** (also called a Sankey chart or Sankey graph) is a flow diagram that shows how a quantity moves from its sources, through stages, to where it ends up. Each source, stage or end point is a bar called a **node**. Each flow is a band called a **link**, drawn as wide as the amount it carries.
+A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) is a flow diagram that shows how a quantity moves from its sources, through stages, to where it ends up. Each source, stage or end point is a bar called a **node**. Each flow is a band called a **link**, drawn as wide as the amount it carries.
 
 ![A Sankey diagram of 100 TWh of energy in an imaginary country: four sources on the left (wind and solar, natural gas, biomass, oil) flow into electricity and fuels used directly, then into homes, industry, transport and power station losses, and finally into useful energy (49 TWh) and wasted heat (38 TWh)](/img/learn/sankey-diagram-og.png)
 
@@ -73,7 +76,7 @@ A **Sankey diagram** (also called a Sankey chart or Sankey graph) is a flow diag
 
 ## How to read a Sankey diagram
 
-![The parts of a Sankey diagram: three columns of nodes labelled A to F, from sources on the left to end points on the right. Curved links join them, each as wide as its value; callouts mark a link worth 45, a middle node D with 30 in and 30 out, and an end node](./sankey-diagram-anatomy.svg)
+![The parts of a Sankey flow diagram: three columns of nodes labelled A to F, from sources on the left to end points on the right. Curved links join them, each as wide as its value; callouts mark a link worth 45, a middle node D with 30 in and 30 out, and an end node](./sankey-diagram-anatomy.svg)
 
 1. **Check what is flowing.** Find the unit (kilowatt-hours, dollars, tonnes, people) and the period. Every band on the diagram uses the same unit.
 2. **Read from left to right.** The left column holds the **sources**. Each column to the right is a later stage, and the right-hand column holds the **end points**. Some end points, such as losses, can sit in a middle column.
@@ -114,7 +117,7 @@ Use this template when you report a Sankey diagram:
 
 ## How does a Sankey diagram work?
 
-A Sankey diagram is drawn in four steps. Most tools do them for you; knowing them helps you fix a diagram that looks wrong.
+A Sankey diagram is drawn in four steps. Most tools that make Sankey charts do them for you; knowing them helps you fix a diagram that looks wrong.
 
 1. **Give each node a column.** Sources go in the first column. Every other node goes one column to the right of the furthest-right node that feeds it.
 2. **Choose one scale for the whole diagram.** A flow of 10 units must be equally wide everywhere. The busiest column sets the scale, so it fills the height with gaps between its nodes.

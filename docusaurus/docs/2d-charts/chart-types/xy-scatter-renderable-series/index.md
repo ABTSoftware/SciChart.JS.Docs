@@ -11,6 +11,10 @@ New to scatter plots? Read our guide: [Scatter Plot: what it is and how to read 
 :::
 
 :::tip
+New to ternary plots? Read our guide: [Ternary Plot: what it is and how to read it](/learn/ternary-plot/), covering how to read the three scales, with a live soil texture triangle built from scatter, line segment and triangle series.
+:::
+
+:::tip
 The [JavaScript Scatter Chart Example](https://www.scichart.com/demo/javascript/scatter-chart) can be found in the [SciChart.Js Examples Suite > Scatter Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/ScatterChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/scatter-chart).
 :::
 

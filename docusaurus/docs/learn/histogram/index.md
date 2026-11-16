@@ -14,6 +14,9 @@ keywords:
         "histogram vs bar chart",
         "histogram vs bar graph",
         "difference between histogram and bar graph",
+        "bar graph vs histogram",
+        "bar chart vs histogram",
+        "difference between bar chart and histogram",
         "frequency histogram"
     ]
 image: /img/learn/histogram-og.png
@@ -163,7 +166,7 @@ The median of the raw data behind the chart is 170.1 cm, so the estimate is with
 
 ## When to use a histogram
 
-Use a histogram when you have **many values of one numeric variable** and want to see its **distribution**: where the values cluster, how spread out they are and whether the shape is symmetric, skewed or has more than one peak. It's a standard first step in quality control and in exploring any new dataset.
+Use a histogram when you have **many values of one numeric variable** and want to see its **distribution**: where the values cluster, how spread out they are and whether the shape is symmetric, skewed or has more than one peak. It's a standard first step in quality control and in exploring any new dataset. For a smooth version of a histogram that doesn't depend on bin edges, and is easier to compare across groups, see the [density plot](/learn/density-plot/).
 
 | Chart | Best for |
 | --- | --- |
@@ -172,7 +175,7 @@ Use a histogram when you have **many values of one numeric variable** and want t
 | [Box plot](/learn/box-plot/) | A compact summary of a distribution (median, quartiles, range and outliers), and comparing many distributions side by side |
 | [Scatter plot](/learn/scatter-plot/) | The relationship between two numeric variables |
 
-## Histogram vs bar graph
+## Bar graph vs histogram: what's the difference? {#histogram-vs-bar-graph}
 
 A histogram and a bar graph (bar chart) look alike, but they answer different questions. The difference between a histogram and a bar graph is the kind of data on the horizontal axis: a histogram counts **numbers** into ranges, while a bar graph compares separate **categories**.
 
@@ -195,7 +198,7 @@ Three things give a histogram away:
 | **Order of bars** | Fixed, in numeric order | Any order, often sorted by size |
 | **Answers** | "How are the values distributed?" | "Which category is bigger?" |
 
-**A quick test:** if you could rename the bars or shuffle them without losing meaning, it's a bar graph. If each bar is a slice of one number line, it's a histogram. For more on bar graphs and their types, see the [bar chart guide](/learn/bar-chart/).
+**A quick test for bar chart vs histogram:** if you could rename the bars or shuffle them without losing meaning, it's a bar graph. If each bar is a slice of one number line, it's a histogram. For more on bar graphs and their types, see the [bar chart guide](/learn/bar-chart/).
 
 ## Common histogram mistakes
 

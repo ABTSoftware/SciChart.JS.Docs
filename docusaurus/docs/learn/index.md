@@ -32,6 +32,7 @@ Which chart should you use, and how do you read it? Each guide explains one char
 | [Sunburst chart](/learn/sunburst-chart/) | A total broken down over several levels, as rings around a centre: each ring is one level, and each segment's angle is its share |
 | [Sankey diagram](/learn/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
 | [Treemap](/learn/treemap/) | How a total splits into parts and groups, as nested rectangles with each area matching its value |
+| [Ternary plot](/learn/ternary-plot/) | Mixtures of three parts that add up to 100%, such as soil texture, rock types and phase diagrams |
 
 ## Stacked charts
 
@@ -53,8 +54,10 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Parallel coordinates plot](/learn/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
 | [Network graph](/learn/network-graph/) | How things are connected: items as dots (nodes) and links as lines (edges), showing hubs, clusters and the bridges between them |
 | [Histogram](/learn/histogram/) | How values are distributed, counted into ranges (bins) |
+| [Density plot](/learn/density-plot/) | The smooth shape of a distribution: peaks, spread and tails, drawn as a curve; compare groups by overlaying them or stacking them as a ridgeline |
 | [Population pyramid](/learn/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
 | [Box plot](/learn/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
+| [Violin plot](/learn/violin-plot/) | The full shape of several groups side by side: a box plot plus a mirrored density curve that shows peaks, gaps and skew |
 | [Error bars](/learn/error-bars/) | The uncertainty or spread around a value, usually a mean: standard deviation, standard error or a confidence interval |
 
 ## Scientific and engineering charts
@@ -83,6 +86,18 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Candlestick chart](/learn/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
 | [OHLC chart](/learn/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
 | [Waterfall chart](/learn/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
+
+## Time and events
+
+| Chart | What it shows |
+| --- | --- |
+| [Timeline chart](/learn/timeline-chart/) | When events happened and how long states lasted, on a time axis: points for events, bands in lanes for states such as running, idle or fault |
+
+## Axes and scales
+
+| Topic | What it shows |
+| --- | --- |
+| [Log scale graph](/learn/log-scale-graph/) | Data on a logarithmic axis, where each step multiplies the value (1, 10, 100, 1,000), so values across many orders of magnitude fit on one chart and steady percentage growth is a straight line |
 
 ## Chart examples
 

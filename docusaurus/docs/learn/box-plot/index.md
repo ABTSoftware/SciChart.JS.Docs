@@ -7,6 +7,12 @@ keywords:
     [
         "box plot",
         "box and whisker plot",
+        "what is a box and whisker plot",
+        "box whisker plot",
+        "box and whisker diagram",
+        "box and whisker chart",
+        "box and whisker graph",
+        "box diagram",
         "what is a box plot",
         "how to read a box plot",
         "how to make a box plot",
@@ -25,8 +31,8 @@ image: /img/learn/box-plot-og.png
             "mainEntity": [
                 {
                     "@type": "Question",
-                    "name": "What does a box plot show?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A box plot shows how a set of numbers is spread out: where the middle value (the median) lies, how spread out the middle half of the values is (the box), how far the rest reach (the whiskers), and which values are unusually high or low (the outliers). It is most useful for comparing several groups side by side." }
+                    "name": "What is a box and whisker plot, and what does it show?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "A box and whisker plot, or box plot, shows how a set of numbers is spread out: where the middle value (the median) lies, how spread out the middle half of the values is (the box), how far the rest reach (the whiskers), and which values are unusually high or low (the outliers). It is most useful for comparing several groups side by side." }
                 },
                 {
                     "@type": "Question",
@@ -62,11 +68,11 @@ image: /img/learn/box-plot-og.png
 
 ## What is a box plot?
 
-A **box plot** (also called a box and whisker plot) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach out to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
+A **box plot** (also called a **box and whisker plot**, **box and whisker diagram**, **box whisker plot** or **box diagram**) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
 
-![Box plots of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
+![A box and whisker graph of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
 
-*Box plots comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
+*A box and whisker chart comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A box plot draws the **five-number summary**: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
@@ -134,6 +140,7 @@ Use a box plot to **compare the distribution of a value across several groups**:
 | --- | --- |
 | **Box plot** | Comparing the median, spread and outliers of several groups side by side |
 | [Histogram](/learn/histogram/) | The full shape of one dataset, including gaps and more than one peak, which a box plot hides |
+| [Violin plot](/learn/violin-plot/) | The same group comparison plus each group's full shape, including two peaks a box plot hides |
 | [Bar chart](/learn/bar-chart/) | One summary number per group, such as an average or a total, when the spread doesn't matter |
 | [Scatter plot](/learn/scatter-plot/) | Every individual value, when there are few enough points to see them all |
 
@@ -147,7 +154,7 @@ The dots tell a different story. At Clinic A, waits are spread evenly from about
 
 <LiveDocSnippet maxWidth={'100%'} name="./Distribution/demo" />
 
-To avoid being misled, plot the individual points over the box (with a small sideways "jitter" so they don't overlap) when there are few enough of them, or check each group's [histogram](/learn/histogram/) before relying on its box plot.
+To avoid being misled, plot the individual points over the box (with a small sideways "jitter" so they don't overlap) when there are few enough of them, or check each group's [histogram](/learn/histogram/) before relying on its box plot. A [violin plot](/learn/violin-plot/) solves this by drawing each group's shape around a slim box plot.
 
 ## Common box plot mistakes
 
@@ -285,9 +292,9 @@ Key points:
 
 ## Frequently asked questions
 
-### What does a box plot show?
+### What is a box and whisker plot, and what does it show?
 
-A box plot shows how a set of numbers is spread out: where the middle value (the median) lies, how spread out the middle half of the values is (the box), how far the rest reach (the whiskers), and which values are unusually high or low (the outliers). It is most useful for comparing several groups side by side.
+A box and whisker plot, or box plot, shows how a set of numbers is spread out: where the middle value (the median) lies, how spread out the middle half of the values is (the box), how far the rest reach (the whiskers), and which values are unusually high or low (the outliers). It is most useful for comparing several groups side by side.
 
 ### What are the 5 points on a box and whisker plot?
 

@@ -9,6 +9,8 @@ keywords:
         "surface plot",
         "3d surface graph",
         "surface chart",
+        "3d plot",
+        "3d data visualization",
         "what is a surface plot",
         "how to read a 3d surface plot",
         "surface plot vs contour plot",
@@ -135,7 +137,7 @@ A good description moves from the biggest feature to the smallest. Fill in this 
 
 ## When to use a 3D surface plot
 
-Choose a 3D surface plot when two continuous inputs together decide one output, so that the data forms a **surface**, and the reader needs its **overall shape**: where the peaks and valleys are, and how they connect. It works best on screen, where the reader can rotate it.
+Choose a 3D surface plot when two continuous inputs together decide one output, so that the data forms a **surface**, and the reader needs its **overall shape**: where the peaks and valleys are, and how they connect. Like any 3D plot, it works best on screen, where the reader can rotate it.
 
 | Chart | Best for |
 | --- | --- |

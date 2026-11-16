@@ -7,6 +7,7 @@ keywords:
     [
         "pareto chart",
         "what is a pareto chart",
+        "what is pareto chart",
         "pareto diagram",
         "pareto analysis",
         "80/20 rule",

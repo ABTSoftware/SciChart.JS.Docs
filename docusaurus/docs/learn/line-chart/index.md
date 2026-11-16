@@ -7,6 +7,11 @@ keywords:
     [
         "line graph",
         "line chart",
+        "line plot",
+        "linechart",
+        "time series line chart",
+        "spline chart",
+        "bar graph vs line graph",
         "what is a line graph",
         "how to read a line graph",
         "how to describe a line graph",
@@ -34,11 +39,6 @@ image: /img/learn/line-chart-og.png
                     "@type": "Question",
                     "name": "Is a line chart the same as a line graph?",
                     "acceptedAnswer": { "@type": "Answer", "text": "Yes. Line graph and line chart are two names for the same chart, and line plot usually means the same thing too. One exception: in some school maths courses, a line plot is a different chart that stacks crosses above a number line to count values." }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Is a trend graph a line graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Usually, yes. A trend graph is any chart drawn to show the overall direction of a value over time, and that is almost always a line graph with time along the x-axis. Don't confuse it with a trend line: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading." }
                 },
                 {
                     "@type": "Question",
@@ -103,7 +103,7 @@ The points themselves are the real measurements. The straight segments between t
 | Simple line graph | One line | The trend of a single value, such as a city's monthly rainfall |
 | Multiple line graph | Two or more lines sharing the same axes | Comparing several series, such as sales in three regions |
 | Line graph with markers | A dot on every data point | Short series, where readers need to see each actual measurement |
-| [Smoothed (spline) line graph](/2d-charts/chart-types/spline-line-renderable-series/) | A curve through the points instead of straight segments | A softer look; the curve between points is drawn, not measured |
+| [Smoothed line graph (spline chart)](/2d-charts/chart-types/spline-line-renderable-series/) | A curve through the points instead of straight segments | A softer look; the curve between points is drawn, not measured |
 | [Step line graph](/2d-charts/chart-types/fast-line-digital-renderable-series/) | Flat runs joined by vertical jumps | Values that change suddenly and then hold, such as interest rates or on/off states |
 | [Area chart](/learn/area-chart/) | A line with the space beneath it filled in | A trend where the size of the total matters |
 
@@ -129,7 +129,7 @@ Lead with the overall trend, then give the highest and lowest values with their 
 
 ## When to use a line graph
 
-Use a line graph when the x values have a **natural order**, most often time, and the reader cares about **how the value moves** from one point to the next. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart: the slope of the line is the trend.
+Use a line graph when the x values have a **natural order**, most often time, and the reader cares about **how the value moves** from one point to the next. With dates or times on the x axis, it is a **time series line chart**, the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart: the slope of the line is the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 | Your question | Best chart |
 | --- | --- |
@@ -139,7 +139,7 @@ Use a line graph when the x values have a **natural order**, most often time, an
 | How does a total over time split into parts? | [Stacked area chart](/learn/area-chart/) |
 | Are two measured values related, with no order to the points? | [Scatter plot](/learn/scatter-plot/) |
 
-**A quick test:** if you could shuffle the x values without changing the meaning (products, countries, teams), use a bar graph. If shuffling them would destroy the story (months, seconds, distance), use a line graph. Many points also favour lines: a year of daily values is 365 thin bars, but one clear line.
+**A quick test for bar graph vs line graph:** if you could shuffle the x values without changing the meaning (products, countries, teams), use a bar graph. If shuffling them would destroy the story (months, seconds, distance), use a line graph. Many points also favour lines: a year of daily values is 365 thin bars, but one clear line.
 
 ## Line graphs with many data points
 
@@ -285,10 +285,6 @@ A line graph is used to show how a value changes across an ordered sequence, usu
 ### Is a line chart the same as a line graph?
 
 Yes. Line graph and line chart are two names for the same chart, and line plot usually means the same thing too. One exception: in some school maths courses, a line plot is a different chart that stacks crosses above a number line to count values.
-
-### Is a trend graph a line graph?
-
-Usually, yes. A trend graph is any chart drawn to show the overall direction of a value over time, and that is almost always a line graph with time along the x-axis. Don't confuse it with a trend line: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 ### What is the difference between a line graph and a bar graph?
 

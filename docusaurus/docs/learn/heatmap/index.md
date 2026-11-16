@@ -9,6 +9,10 @@ keywords:
         "heat map",
         "what is a heat map",
         "heatmap chart",
+        "heat maps",
+        "heat map chart",
+        "heatmap graph",
+        "heat chart",
         "how to read a heat map",
         "how to interpret a heat map",
         "heat map examples",
@@ -63,7 +67,7 @@ image: /img/learn/heatmap-og.png
 
 ## What is a heatmap?
 
-A **heatmap** (also written **heat map**) is a chart that shows a table of numbers as a grid of coloured cells. Each row and column stands for a category or a range of values, and each cell's colour shows the value where they meet. A colour scale turns colours back into numbers, so highs, lows and patterns stand out.
+A **heatmap** (also written **heat map**, and also called a **heat map chart**, **heatmap graph** or **heat chart**) is a chart that shows a table of numbers as a grid of coloured cells. Each cell's colour shows the value where its row and column meet. A colour scale turns colours back into numbers, so highs, lows and patterns stand out.
 
 ![A heatmap of hourly energy use over one week: seven rows from Monday to Sunday, 24 columns for the hours of the day, with dark purple cells overnight and bright yellow cells on weekday evenings](/img/learn/heatmap-og.png)
 
@@ -121,7 +125,7 @@ The colour scale (also called a **colour map** or palette) decides what the read
 
 Also decide the **range** the scale covers. Stretching it from the data's minimum to its maximum uses every colour. Fixing it, say from 0 to 100%, keeps the colours meaning the same thing across several heatmaps. Perceptually uniform scales such as viridis change brightness evenly from end to end, so equal steps in value look like equal steps in colour, and they stay readable for most people with colour-vision deficiencies.
 
-## Types of heatmap and heat map examples
+## Types of heat maps and heat map examples {#types-of-heatmap-and-heat-map-examples}
 
 | Type | What the grid shows | Example |
 | --- | --- | --- |

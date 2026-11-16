@@ -7,6 +7,7 @@ keywords:
     [
         "gauge chart",
         "gauge graph",
+        "gauge charts",
         "speedometer chart",
         "dial chart",
         "meter chart",
@@ -156,7 +157,7 @@ A good pattern is to pair them: a gauge for the value now, and a small line char
 
 ## Common gauge chart mistakes
 
-- **Too many gauges.** A wall of dials uses a lot of space and is hard to scan. If you are comparing values, use bars or bullet charts; keep gauges for the few readings that matter most.
+- **Too many gauges.** A wall of dials uses a lot of space and is hard to scan. If you are comparing values, use bars or bullet charts; keep gauge charts for the few readings that matter most.
 - **Bands that mean nothing.** Equal thirds coloured green, amber and red look tidy but tell the reader nothing. Set each band from a real limit, target or specification.
 - **Colour as the only signal.** The most common kind of colour blindness makes red and green hard to tell apart. Label the bands in words ("Normal", "High", "Critical"), and show the status as text next to the number.
 - **A scale that hides the story.** A 0 to 1,000 scale for a value that stays between 40 and 60 leaves the needle barely moving. Choose limits that suit the real range of values, and say so if the scale doesn't start at zero.

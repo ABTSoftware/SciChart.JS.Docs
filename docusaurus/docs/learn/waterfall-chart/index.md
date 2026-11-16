@@ -10,6 +10,7 @@ keywords:
         "waterfall diagram",
         "bridge chart",
         "cascade chart",
+        "stacked waterfall chart",
         "how to read a waterfall chart",
         "waterfall chart vs stacked bar chart",
         "profit and loss waterfall"
@@ -125,7 +126,7 @@ Use this template when you report a waterfall chart:
 | **Budget against actual** (variance) | Starts at the budget, then each over- or underspend, ending at the actual figure | Planned spend → overruns and savings → actual spend |
 | **Running balance** | A balance moving through additions and withdrawals over time | Cash at the start of the month → income and payments → cash at the end |
 | **Horizontal waterfall** | The same chart with the bars running across the page | Useful when step names are long |
-| **Stacked waterfall** | Each step split into coloured parts, such as regions or products | A revenue bridge split by region |
+| **Stacked waterfall chart** | Each step split into coloured parts, such as regions or products | A revenue bridge split by region |
 
 ## When to use a waterfall chart
 

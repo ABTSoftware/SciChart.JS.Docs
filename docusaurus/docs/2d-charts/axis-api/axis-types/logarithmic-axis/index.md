@@ -6,6 +6,9 @@ sidebar_position: 4
 
 The [LogarithicAxis:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/logarithmicaxis.html) is a Value axis similar to the normal NumericAxis, but where the tick values increase exponentially. Plotting data on such an axis is equivalent to plotting the log of that data. You can set the logarithmic base using the logBase property. eg logBase: 10 (the default) will result in ticks like 1, 10, 100, 1000. logBase 2 will result in ticks like 2, 4, 8, 16, 32.
 
+:::tip New to log scales? Read our guide: [Log scale graph: what it is and how to read it](/learn/log-scale-graph/). It covers reading log gridlines, semi-log vs log-log graphs and when to use a log scale, with a live chart that switches each axis between linear and log.
+:::
+
 :::info
 Learn more about the [commonalities between axis here](/2d-charts/axis-api/axis-types/common-axis-base-type/).
 :::

@@ -8,6 +8,7 @@ keywords:
         "sunburst chart",
         "sunburst diagram",
         "sunburst graph",
+        "sunburst plot",
         "what is a sunburst chart",
         "multi-level pie chart",
         "ring chart",

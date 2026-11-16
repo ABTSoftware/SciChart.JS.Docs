@@ -7,6 +7,7 @@ keywords:
     [
         "bullet chart",
         "bullet graph",
+        "bullet graphs",
         "what is a bullet chart",
         "how to read a bullet chart",
         "bullet chart example",
@@ -35,7 +36,7 @@ image: /img/learn/bullet-chart-og.png
                 {
                     "@type": "Question",
                     "name": "Is a bullet graph the same as a bullet chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Bullet graph is the name its designer, Stephen Few, used, and bullet chart is the name most charting tools use. Both mean the same thing: a bar for the actual value, a short line for the target and shaded bands for the qualitative ranges." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Bullet graph is the name its designer, Stephen Few, used, and bullet chart is the name most charting tools use. Bullet graphs and bullet charts are the same thing: a bar for the actual value, a short line for the target and shaded bands for the qualitative ranges." }
                 },
                 {
                     "@type": "Question",
@@ -369,7 +370,7 @@ Both show one value against qualitative ranges and a target. A gauge draws the s
 
 ### Is a bullet graph the same as a bullet chart?
 
-Yes. Bullet graph is the name its designer, Stephen Few, used, and bullet chart is the name most charting tools use. Both mean the same thing: a bar for the actual value, a short line for the target and shaded bands for the qualitative ranges.
+Yes. Bullet graph is the name its designer, Stephen Few, used, and bullet chart is the name most charting tools use. Bullet graphs and bullet charts are the same thing: a bar for the actual value, a short line for the target and shaded bands for the qualitative ranges.
 
 ### Who invented the bullet chart?
 

@@ -17,7 +17,13 @@ keywords:
         "horizontal bar chart",
         "bar graph examples",
         "how to describe a bar chart",
-        "bar chart vs column chart"
+        "bar chart vs column chart",
+        "column chart vs bar chart",
+        "bar chart examples",
+        "types of bar charts",
+        "stacked bar plot",
+        "clustered stacked bar chart",
+        "bar chart vs histogram"
     ]
 image: /img/learn/bar-chart-og.png
 ---
@@ -46,7 +52,7 @@ image: /img/learn/bar-chart-og.png
                 {
                     "@type": "Question",
                     "name": "Is a histogram a bar graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See histogram vs bar graph for the same data drawn both ways." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. The difference between bar chart and histogram bars is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See bar graph vs histogram for the same data drawn both ways." }
                 },
                 {
                     "@type": "Question",
@@ -93,7 +99,7 @@ A **bar chart** (also called a bar graph, or a column chart when the bars stand 
 
 The **gaps between bars** are a clue: they show that each bar is a separate category. Bars that touch usually mean a [histogram](/learn/histogram/), where each bar is a range of numbers.
 
-## Types of bar chart
+## Types of bar charts {#types-of-bar-chart}
 
 | Type | What it looks like | The question it answers |
 | --- | --- | --- |
@@ -102,6 +108,7 @@ The **gaps between bars** are a clue: they show that each bar is a separate cate
 | Stacked (segmented) bar chart | Each bar split into bands, one per part, end to end | How big is each total, and roughly what is it made of? |
 | 100% stacked bar chart | Every bar the same length, split by percentage | How does the mix of parts differ between categories? |
 | Diverging bar chart | Bars going left and right from a centre line | How far above or below a target, or zero, is each category? |
+| Clustered stacked bar chart | Stacked bars placed side by side in each category | How do the totals and their parts compare across two groupings, such as shop and year? |
 
 Each of these can be drawn upright (columns) or on its side (bars), so a "stacked column chart" and a "stacked bar chart" are the same idea turned through 90 degrees.
 
@@ -115,7 +122,7 @@ A **horizontal bar chart** lays the bars on their side: the categories run down 
 
 ### Bar chart vs column chart
 
-Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. The choice is about readability.
+Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. So column chart vs bar chart is not a choice about meaning; it is about readability.
 
 | | Horizontal bar chart | Column chart (vertical) |
 | --- | --- | --- |
@@ -130,7 +137,7 @@ A **clustered bar chart**, also called a grouped bar chart, places several bars 
 
 ### Stacked bar chart and stacked column chart {#stacked-bar-chart}
 
-A **stacked bar graph**, also called a segmented bar chart, splits each bar into bands placed end to end, one for each part, so the length of the whole bar is the category's total. Drawn upright it's a **stacked column chart**. It answers two questions at once: how big each total is, and roughly what it's made of. Only the bottom band and the total share a baseline, though, so the bands in between are hard to compare (see the worked example below).
+A **stacked bar graph**, also called a segmented bar chart or stacked bar plot, splits each bar into bands placed end to end, one for each part, so the length of the whole bar is the category's total. Drawn upright it's a **stacked column chart**. It answers two questions at once: how big each total is, and roughly what it's made of. Only the bottom band and the total share a baseline, though, so the bands in between are hard to compare (see the worked example below).
 
 ### 100% stacked bar chart
 
@@ -336,9 +343,9 @@ Key points:
 
 **Go deeper:** [SciChart.js bar chart documentation](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/), including gaps, data labels and colouring individual bars, and the [SciChart.js stacked column chart documentation](/2d-charts/chart-types/stacked-column-renderable-series/).
 
-## Bar graph examples
+## Bar chart examples {#bar-graph-examples}
 
-Here are four bar graph examples from real-world settings. Each picture opens the live, interactive chart in the SciChart.js demo app, where you can zoom, pan and see the code.
+Here are four bar graph examples from real-world settings. Each bar chart example opens the live, interactive chart in the SciChart.js demo app, where you can zoom, pan and see the code.
 
 | Example | What it shows |
 | --- | --- |
@@ -363,7 +370,7 @@ A stacked bar chart, also called a segmented bar chart, splits each bar into seg
 
 ### Is a histogram a bar graph?
 
-No, although they look alike. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [histogram vs bar graph](/learn/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
+No, although they look alike. The difference between bar chart and histogram bars is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [bar graph vs histogram](/learn/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
 
 ### Does a bar chart have to start at zero?
 

@@ -9,6 +9,9 @@ keywords:
         "candlestick",
         "what is a candlestick chart",
         "candle chart",
+        "candlestick graph",
+        "candle graph",
+        "candle stick chart",
         "how to read a candlestick chart",
         "candlestick patterns",
         "doji candlestick",
@@ -62,7 +65,7 @@ image: /img/learn/candlestick-chart-og.png
 
 ## What is a candlestick chart?
 
-A **candlestick chart** (also called a Japanese candlestick chart or K-line chart) is a price chart in which each "candle" sums up one period (say, a day) with four prices: the **open**, **high**, **low** and **close**. The body spans the open and close, the wicks reach the high and low, and the colour shows whether the price rose or fell.
+A **candlestick chart** (also called a candlestick graph, candle graph, Japanese candlestick chart or K-line chart) is a price chart in which each "candle" sums up one period (say, a day) with four prices: the **open**, **high**, **low** and **close**. The body spans the open and close, the wicks reach the high and low, and the colour shows whether the price rose or fell.
 
 ![A candlestick chart of five months of daily prices: green rising candles and red falling candles drift down from $100 to about $92, climb to about $117 and then ease back to $110](/img/learn/candlestick-chart-og.png)
 

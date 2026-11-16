@@ -11,6 +11,10 @@ New to area charts? Read our guide: [Area Chart: what it is and how to read it](
 :::
 
 :::tip
+New to density plots? Read our guide: [Density Plot: what it is and how to read it](/learn/density-plot/), including kernel density estimation, bandwidth and ridgeline layouts.
+:::
+
+:::tip
 The [JavaScript Mountain Chart Example](https://www.scichart.com/demo/javascript/mountain-chart) can be found in the [SciChart.Js Examples Suite > Mountain Chart](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/master/Examples/src/components/Examples/Charts2D/BasicChartTypes/MountainChart) on Github, or our live demo at [scichart.com/demo](https://www.scichart.com/demo/javascript/mountain-chart).
 :::
 

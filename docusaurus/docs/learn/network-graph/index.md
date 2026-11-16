@@ -9,6 +9,10 @@ keywords:
         "network diagram",
         "network chart",
         "graph visualization",
+        "network graph visualization",
+        "graph network",
+        "network graphic",
+        "force graph",
         "node graph",
         "force-directed graph",
         "node-link diagram",
@@ -32,7 +36,7 @@ image: /img/learn/network-graph-og.png
                 {
                     "@type": "Question",
                     "name": "What is a force-directed graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A force-directed graph is a network graph whose layout comes from a simple physics simulation. Every pair of nodes pushes apart, every edge pulls the two nodes it joins together like a spring, and the simulation runs until the nodes settle. Linked nodes end up close together, so clusters form groups on the screen. The x and y positions themselves carry no units or meaning." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A force-directed graph, or force graph for short, is a network graph whose layout comes from a simple physics simulation. Every pair of nodes pushes apart, every edge pulls the two nodes it joins together like a spring, and the simulation runs until the nodes settle. Linked nodes end up close together, so clusters form groups on the screen. The x and y positions themselves carry no units or meaning." }
                 },
                 {
                     "@type": "Question",
@@ -60,7 +64,7 @@ image: /img/learn/network-graph-og.png
 
 A **network graph** (also called a network diagram, network chart, node-link diagram or graph visualisation) is a chart that shows how things are connected. Each thing is a dot called a **node**, and each connection is a line called an **edge** or link. It reveals groups, central players and the links between groups.
 
-![A network graph of 60 people in four teams of an imaginary company: Engineering, Sales, Marketing and Support each form a tight cluster of coloured dots, a few lines join the clusters, larger dots mark the people with the most connections, and one person sits alone in a corner with no connections](/img/learn/network-graph-og.png)
+![A network graphic of 60 people in four teams of an imaginary company: Engineering, Sales, Marketing and Support each form a tight cluster of coloured dots, a few lines join the clusters, larger dots mark the people with the most connections, and one person sits alone in a corner with no connections](/img/learn/network-graph-og.png)
 
 *A network graph of who works with whom in an imaginary company of 60 people (sample data). Colour shows each person's team; dot size shows how many connections they have. [Try the interactive version](#how-to-create-a-network-graph-in-javascript-react-or-angular).*
 
@@ -340,7 +344,7 @@ A network graph is used to show how things are connected and to find the structu
 
 ### What is a force-directed graph?
 
-A force-directed graph is a network graph whose layout comes from a simple physics simulation. Every pair of nodes pushes apart, every edge pulls the two nodes it joins together like a spring, and the simulation runs until the nodes settle. Linked nodes end up close together, so clusters form groups on the screen. The x and y positions themselves carry no units or meaning.
+A force-directed graph, or force graph for short, is a network graph whose layout comes from a simple physics simulation. Every pair of nodes pushes apart, every edge pulls the two nodes it joins together like a spring, and the simulation runs until the nodes settle. Linked nodes end up close together, so clusters form groups on the screen. The x and y positions themselves carry no units or meaning.
 
 ### What is the difference between a network graph and a network diagram?
 

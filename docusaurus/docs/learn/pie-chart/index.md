@@ -7,6 +7,11 @@ keywords:
     [
         "pie chart",
         "pie charts",
+        "piechart",
+        "pie chart design",
+        "nested pie chart",
+        "half pie chart",
+        "half donut chart",
         "pie chart examples",
         "what is a pie chart",
         "how to read a pie chart",
@@ -128,7 +133,8 @@ For a report, a caption or a class answer, lead with the biggest share and then 
 | [Donut chart](/learn/donut-chart/) | A pie chart with a hole in the middle | You want a total or label in the centre, or a lighter look on a dashboard |
 | Exploded pie chart | One or more slices pulled out from the centre | You want to draw attention to one slice (click a slice in the live chart below to try it) |
 | 3D pie chart | A pie tilted and given depth | Rarely: the perspective makes front slices look bigger than equal slices at the back |
-| Multi-level pie chart ([sunburst](/2d-charts/chart-types/polar-sunburst-chart/)) | Rings of slices, where each outer ring splits the slice inside it | Your data is a hierarchy, such as region, then country |
+| Multi-level or nested pie chart ([sunburst](/2d-charts/chart-types/polar-sunburst-chart/)) | Rings of slices, where each outer ring splits the slice inside it | Your data is a hierarchy, such as region, then country |
+| Half pie chart or half donut chart | Only the top half of a circle or ring, like a dial | Space is tight, such as a dashboard tile. The half circle stands for 100%, so readers have to rescale what they see |
 | Pie of pie, bar of pie | A main pie with its smallest slices broken out into a second, smaller chart | Several tiny slices need a closer look |
 
 ## When to use a pie chart
@@ -164,7 +170,7 @@ That's the core trade-off. A pie chart makes **"part of a whole"** obvious, beca
 
 ## Common pie chart mistakes
 
-Use this as a checklist before you publish a pie chart:
+Good pie chart design is mostly a matter of avoiding these mistakes. Use this as a checklist before you publish a pie chart:
 
 - **Too many slices.** Thin slivers can't be compared or labelled. Group small categories into "Other", placed last, or switch to a bar chart.
 - **Slices that don't make a whole.** If people could pick more than one answer, or a category is missing, the slices don't sum to 100% and the chart misleads.

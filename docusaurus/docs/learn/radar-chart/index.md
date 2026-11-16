@@ -12,7 +12,10 @@ keywords:
         "radar plot",
         "spider plot",
         "spider web diagram",
+        "radar diagram",
+        "spider charts",
         "radial chart",
+        "radial graph",
         "star plot",
         "how to read a radar chart",
         "what is a radar chart used for",
@@ -35,7 +38,7 @@ image: /img/learn/radar-chart-og.png
                 {
                     "@type": "Question",
                     "name": "Is a spider chart the same as a radar chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Radar chart, radar plot, spider chart, spider plot, spider web diagram, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The spider names come from the web-like look of the spokes and scale rings. A radar chart is also one kind of radial chart, the wider family of charts laid out around a centre." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. Radar chart, radar graph, radar plot, radar diagram, spider chart, spider plot, spider web diagram, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. Spider charts get their name from the web-like look of the spokes and scale rings. A radar chart is also one kind of radial chart, or radial graph: the wider family of charts laid out around a centre." }
                 },
                 {
                     "@type": "Question",
@@ -311,7 +314,7 @@ A radar chart compares a few items across several variables measured on the same
 
 ### Is a spider chart the same as a radar chart?
 
-Yes. Radar chart, radar plot, spider chart, spider plot, spider web diagram, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. The spider names come from the web-like look of the spokes and scale rings. A radar chart is also one kind of radial chart, the wider family of charts laid out around a centre.
+Yes. Radar chart, radar graph, radar plot, radar diagram, spider chart, spider plot, spider web diagram, web chart, star plot and Kiviat diagram are all names for the same chart: values on axes that radiate from a centre, joined into a polygon. Spider charts get their name from the web-like look of the spokes and scale rings. A radar chart is also one kind of radial chart, or radial graph: the wider family of charts laid out around a centre.
 
 ### How do you read a radar chart?
 

@@ -7,6 +7,7 @@ keywords:
     [
         "funnel chart",
         "funnel graph",
+        "funnel charts",
         "sales funnel chart",
         "conversion funnel chart",
         "what is a funnel chart",
@@ -163,7 +164,7 @@ Use a funnel chart when the stages are **sequential** (they happen in a fixed or
 - **Showing only percentages, or only counts.** Readers need both: the count shows scale, and the rate shows performance. Label each stage with its number, and each step with its conversion rate.
 - **Too many stages.** A long funnel squeezes the lower stages into slivers too thin to read. Combine minor steps, or switch to a bar chart.
 - **Using a funnel for categories without an order.** Sales by region, or product categories, aren't stages. Use a bar chart.
-- **Comparing funnels by width.** Two funnels with different starting sizes can't be compared by eye. Compare their step conversion rates in a table or a grouped bar chart.
+- **Comparing funnels by width.** Two funnel charts with different starting sizes can't be compared by eye. Compare their step conversion rates in a table or a grouped bar chart.
 
 ## How to create a funnel chart in JavaScript, React or Angular
 
