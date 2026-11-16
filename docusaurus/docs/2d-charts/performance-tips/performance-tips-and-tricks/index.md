@@ -6,6 +6,9 @@ sidebar_position: 1
 
 SciChart.js is a High Performance WebGL / WebAssembly chart library. Out of the box SciChart.js can achieve incredible performance vs. other JavaScript Chart Libraries on the market, capable of rendering millions of datapoints.
 
+:::tip New to big data charts? Read our guide: [Big data visualization: what it is and how to visualize large datasets](/learn/big-data/big-data-visualization/), with SVG vs Canvas vs WebGL explained and a live test that times both in your browser.
+:::
+
 If you've hit performance problems in your application and want to get the best possible performance out of SciChart.js, the following is a comprehensive list of optimisations you can use in your application code in order to make our charts the fastest possible. You don't need to do all of them, our recommendation would be to apply some when needed.
 
 ## 1. DataSeries Optimizations

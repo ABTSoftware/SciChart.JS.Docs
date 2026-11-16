@@ -2,7 +2,7 @@
 sidebar_position: 8.7
 sidebar_label: Network Graph
 title: "Network Graph: What It Is & How to Read It (With Interactive Examples)"
-description: "What a network graph is, how to read its nodes and edges, how to spot hubs, clusters and bridges, how force-directed layouts work, and the mistakes to avoid. With a live, interactive example."
+description: "What a network graph is, how to read its nodes and edges, how to spot hubs, clusters and bridges, how a force-directed graph is laid out, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
         "network graph",
@@ -71,7 +71,7 @@ A **network graph** (also called a network diagram, network chart, node-link dia
 :::tip Key takeaways
 - A network graph shows **connections**: nodes are the items, edges are the links between them.
 - Look for three things: **hubs** (nodes with many links), **clusters** (groups linked mostly to each other) and **bridges** (the few links that join groups).
-- In most layouts, **a node's position has no units.** Only which nodes are close, and what's linked to what, means something.
+- In a **force-directed graph**, the most common kind, **a node's position has no units.** Only which nodes are close, and what's linked to what, means something.
 - Use colour for a group and size for a measure such as the number of connections, and **say what each one means**.
 - Above a few hundred nodes, a network graph turns into a tangle. Filter, group or zoom rather than drawing everything.
 :::
@@ -145,9 +145,9 @@ Use this template when you report a network graph:
 
 **Worked example:** "The company network has 60 people and 127 working relationships. They form four clusters, one for each team, joined by only eight cross-team links. Grace, the Sales lead, has the most connections (14), and Tom in Engineering is the main bridge from Engineering to the other three teams."
 
-## How does a force-directed layout work?
+## How a force-directed graph layout works
 
-A network has no natural x and y, so a **layout** method has to place the nodes. The most common is the **force-directed layout**, which treats the network as a set of physical objects:
+A network has no natural x and y, so a **layout** method has to place the nodes. The most common is the **force-directed layout**, which treats the network as a set of physical objects. A network drawn this way is called a **force-directed graph**, or a **force graph** for short. The layout takes five steps:
 
 1. **Start anywhere.** Each node gets a starting position, often random. A fixed random seed makes the result the same every time.
 2. **Every pair of nodes pushes apart,** like magnets of the same pole. The push is strongest when they are close, so nodes don't overlap.

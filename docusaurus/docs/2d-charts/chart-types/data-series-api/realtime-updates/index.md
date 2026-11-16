@@ -51,6 +51,10 @@ Scrolling Data
 
 Scrolling data can be achieved by appending then removing data so that a fixed number of points remains in the dataSeries. This can be achieved via [dataSeries.removeRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#removeRange) then [dataSeries.appendRange():blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html#appendRange) but also you can use the new fifoCapacity flag available in SciChart.js v3.2.
 
+:::tip New to strip charts?
+Read our guide: [Strip chart: what it is and how to read it](/learn/real-time/strip-chart/). It explains scrolling and sweeping displays, with a live multi-channel example built with `fifoCapacity` and `fifoSweeping`.
+:::
+
 Below we have an example of each:
 
 ### Scrolling using appendRange() removeRange()
@@ -105,4 +109,4 @@ Note: Sweeping requires a few special conditions. **fifoCapacity** must be set a
 
 You can use **NumericAxis** but you must modulate your data. X must range from 0...fifoCapacity. In the example above we set **xValue\[i\] = i % fifoCapacity**
 
-See a worked example at the [ECG/Vital Signs monitor demo](https://www.scichart.com/demo/javascript-vital-signs-ecg-medical-chart-example).
+See a worked example at the [ECG/Vital Signs monitor demo](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example).

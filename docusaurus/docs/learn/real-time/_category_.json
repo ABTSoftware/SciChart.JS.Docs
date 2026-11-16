@@ -1,0 +1,9 @@
+{
+  "label": "Real-Time Charts",
+  "position": 4,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "learn/real-time/index"
+  }
+}

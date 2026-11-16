@@ -13,7 +13,9 @@ keywords:
         "multi-level pie chart",
         "ring chart",
         "how to read a sunburst chart",
-        "sunburst chart vs treemap"
+        "sunburst chart vs treemap",
+        "icicle chart",
+        "icicle plot"
     ]
 image: /img/learn/sunburst-chart-og.png
 ---
@@ -43,6 +45,11 @@ image: /img/learn/sunburst-chart-og.png
                     "@type": "Question",
                     "name": "How many levels should a sunburst chart have?",
                     "acceptedAnswer": { "@type": "Answer", "text": "Two to four levels is usually the most a sunburst chart can show clearly. Each extra ring makes the outer segments thinner and harder to label. If the hierarchy is deeper, show the top few levels and let readers click a segment to zoom into that branch." }
+                },
+                {
+                    "@type": "Question",
+                    "name": "What is an icicle chart?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "An icicle chart, or icicle plot, is a sunburst chart unrolled into rows of rectangles. The whole is a bar across the top, each level of the hierarchy is a row below it, and each item sits under its parent, with a width in proportion to its value. Exact sizes and long labels are easier to read than on a sunburst chart, but the chart needs more room." }
                 },
                 {
                     "@type": "Question",
@@ -138,6 +145,7 @@ Use a sunburst chart when a total **breaks down over several levels** and you wa
 | --- | --- |
 | **Sunburst chart** | A total split over two to four levels, when the structure matters as much as the sizes |
 | [Treemap](/learn/chart-types/complex/treemap/) | Many items in a hierarchy, packed into a rectangle; better for comparing sizes, weaker at showing levels |
+| [Icicle chart](#icicle-chart) | The same hierarchy as rows of rectangles: sizes and labels are easier to read, but it needs a wider space |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) or [pie chart](/learn/chart-types/radial/pie-chart/) | One total split into a few parts, with no deeper levels |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/#stacked-bar-chart) (stacked) | Comparing several totals and their parts side by side, with exact values easy to read |
 | [Sankey diagram](/learn/chart-types/complex/sankey-diagram/) | A total that flows through stages, splitting and merging, rather than a fixed hierarchy |
@@ -145,6 +153,22 @@ Use a sunburst chart when a total **breaks down over several levels** and you wa
 ### Sunburst chart vs treemap
 
 Both show the same kind of data: a total broken down into a hierarchy, with size showing value. A treemap nests rectangles inside rectangles; a sunburst chart puts each level in its own ring. In a 2000 study that compared the two for finding and comparing files and folders, people tended to answer more questions correctly with the sunburst, especially when they first used it, and strongly preferred it because it showed the structure better (Stasko and colleagues, see Sources). A treemap wastes no space, so it suits hierarchies with hundreds of items, where a sunburst's outer rings would be too thin to read.
+
+### Icicle chart: the sunburst chart unrolled {#icicle-chart}
+
+An **icicle chart** (also called an icicle plot or icicle diagram) shows the same hierarchy as a sunburst chart, but with rectangles instead of rings. Cut the rings at 12 o'clock and straighten them out: the centre becomes a bar across the top, each ring becomes a row below it, and each item sits directly under its parent, as wide as its share of the total. Hanging down from the top, the rows look like icicles. The icicle plot was first described in 1983, as a way to show the results of hierarchical clustering (Kruskal and Landwehr, see Sources).
+
+![The example data drawn two ways. On the left, a sunburst chart with All (100) in the centre and three rings around it, with a dashed line at 12 o'clock where the rings are cut. On the right, the same data as an icicle chart: All across the top, then A, B and C in the next row, then A1, A2, B1 and B2, then a and b, each item under its parent and as wide as its value](./icicle-chart-vs-sunburst.svg)
+
+An icicle chart is often easier to read than a sunburst chart:
+
+- **Sizes are widths on one straight scale.** Readers compare lengths more accurately than angles, and an item of a given value is the same width on every row. On a sunburst chart, an outer segment covers more area than an inner one of the same value.
+- **Labels fit.** Text runs straight along each rectangle instead of round a curve. Turn the chart on its side, with the root on the left and one column per level, and long names get the full width of a column.
+- **Deep hierarchies stay readable.** Every level gets a row of the same height, and the chart can grow downwards or scroll, while a sunburst chart has to squeeze every level into one circle.
+
+A sunburst chart is still the more compact choice. It fits a square space, such as a dashboard tile, and its rings make the whole-to-part structure stand out at a glance. An icicle chart needs a wide or tall space to give small items room.
+
+Both charts come from the same layout: each item has a start and an end on a scale from zero to the total, and its level picks the ring or the row. To draw an icicle chart, plot each item as a rectangle from its start to its end, one row per level, in the same way the [treemap guide](/learn/chart-types/complex/treemap/) draws its boxes with a rectangle series.
 
 ## Common sunburst chart mistakes
 
@@ -291,6 +315,10 @@ Each is better at something different. A sunburst chart makes the levels of a hi
 
 Two to four levels is usually the most a sunburst chart can show clearly. Each extra ring makes the outer segments thinner and harder to label. If the hierarchy is deeper, show the top few levels and let readers click a segment to zoom into that branch.
 
+### What is an icicle chart?
+
+An icicle chart, or icicle plot, is a sunburst chart unrolled into rows of rectangles. The whole is a bar across the top, each level of the hierarchy is a row below it, and each item sits under its parent, with a width in proportion to its value. Exact sizes and long labels are easier to read than on a sunburst chart, but the chart needs more room.
+
 ### How do I make a sunburst chart in JavaScript?
 
 Store the data as a tree, where each item has a name and either a value or a list of children. A layout step walks the tree and gives every item a start and end on a scale from zero to the total, ring by ring. With SciChart.js you draw each ring as a PolarColumnRenderableSeries on a polar chart, with a palette provider for the colours and the series' hit-test for hover and click. The same code works in React with scichart-react and in Angular with scichart-angular.
@@ -299,5 +327,8 @@ Store the data as a tree, where each item has a name and either a value or a lis
 
 - Stasko, J., Catrambone, R., Guzdial, M. and McDonald, K. (2000), [An evaluation of space-filling information visualizations for depicting hierarchical structures](https://doi.org/10.1006/ijhc.2000.0420). *International Journal of Human-Computer Studies*, 53(5), 663–694. The study that compared a Sunburst tool with a treemap on file and folder tasks; an earlier version is a [Georgia Tech technical report](http://repository.gatech.edu/bitstreams/458e585d-4573-4e24-b9c5-b7c7d3078601/download).
 - Stasko, J. and Zhang, E. (2000), [Focus+context display and navigation techniques for enhancing radial, space-filling hierarchy visualizations](https://doi.org/10.1109/INFVIS.2000.885091). *IEEE Symposium on Information Visualization 2000*, 57–65. Techniques for exploring the outer levels of a sunburst display.
+
+- Kruskal, J. B. and Landwehr, J. M. (1983), [Icicle plots: better displays for hierarchical clustering](https://doi.org/10.1080/00031305.1983.10482733). *The American Statistician*, 37(2), 162–168. The paper that introduced the icicle plot.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. The experiments showing that people judge positions and lengths more accurately than angles or areas.
 
 <LearnCta position="bottom" chart="sunburst chart" demo="polar-sunburst-chart" docs="/2d-charts/chart-types/polar-sunburst-chart/" />

@@ -23,7 +23,9 @@ keywords:
         "types of bar charts",
         "stacked bar plot",
         "clustered stacked bar chart",
-        "bar chart vs histogram"
+        "bar chart vs histogram",
+        "bar chart race",
+        "race chart"
     ]
 image: /img/learn/bar-chart-og.png
 ---
@@ -109,6 +111,7 @@ The **gaps between bars** are a clue: they show that each bar is a separate cate
 | 100% stacked bar chart | Every bar the same length, split by percentage | How does the mix of parts differ between categories? |
 | Diverging bar chart | Bars going left and right from a centre line | How far above or below a target, or zero, is each category? |
 | Clustered stacked bar chart | Stacked bars placed side by side in each category | How do the totals and their parts compare across two groupings, such as shop and year? |
+| [Bar chart race](#bar-chart-race) | Ranked horizontal bars that re-sort as an animation steps through time | How did the ranking change, and who overtook whom? |
 
 Each of these can be drawn upright (columns) or on its side (bars), so a "stacked column chart" and a "stacked bar chart" are the same idea turned through 90 degrees.
 
@@ -190,6 +193,25 @@ Use a bar chart when you want to **compare one value across separate categories*
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | How a value changes over time, especially with many time points or more than one series |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | How one numeric variable is distributed, with its values counted into ranges (bins) |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | One whole split into a few parts; with more than five parts, or parts of similar size, a bar chart is easier to read |
+
+## Bar chart race {#bar-chart-race}
+
+A **bar chart race** (also called a racing bar chart or race chart) is an animated, ranked horizontal bar chart. Each frame shows one moment in time, such as a year. As the values change, the bars grow and shrink and swap places, so items climb or fall down the ranking, with the date shown in large type.
+
+The race below shows the ten most populous countries each year from 1960 to 2024, using World Bank figures, with each bar coloured by region. Watch Nigeria and Pakistan climb, Germany, the UK and Japan drop out of the top ten, and India pass China in 2021. Click the chart to pause it, and hover over a bar for its exact value.
+
+<LiveDocSnippet maxWidth={'100%'} name="./Race/demo" />
+
+**When a bar chart race works:** when the story is the ranking itself (who leads, who overtakes whom, and when) and the audience is watching rather than studying. That's why the format is popular in presentations, news stories and social media videos. It suits a few dozen time steps and a ranking that actually changes; if the order barely moves, a static bar chart says the same thing faster.
+
+**When it misleads:** a bar chart race is good for engagement and poor for analysis.
+
+- **Exact values are hard to read.** Each frame is on screen for a fraction of a second, and the value axis usually rescales to fit the leader, so the same bar length means a different number from one year to the next.
+- **You can't compare two moments.** Seeing how 1980 differs from 2020 means remembering one frame while watching another.
+- **Movement looks like data.** The frames between two data points are interpolated: the smooth glide is drawn, not measured.
+- **What drops out disappears.** An item just outside the top ten is invisible, however close it is.
+
+To analyse the same data, plot it as a [line chart](/learn/chart-types/cartesian/line-chart/), with one line per item and every year visible at once, and keep the race for telling the story.
 
 ## Common bar chart mistakes
 
@@ -335,6 +357,7 @@ Key points:
 - A [FastColumnRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) draws the bars. Its [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) holds one x value per category (0, 1, 2, …) and one y value per bar. `dataPointWidth` sets how much of each slot a bar fills.
 - A [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on a `NumericAxis` shows a category name at each x value.
 - For **horizontal bars**, set the X axis `axisAlignment` to `Left` and the Y axis to `Top`, and set `flippedCoordinates` on the Y axis so values grow from left to right. See [vertical charts](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/). Leave both out for an ordinary column chart.
+- For a **bar chart race**, update each series' data on every animation frame, with the rank on the X axis and the value on the Y axis. Use `dataPointWidthMode: EDataPointWidthMode.Range` so the bars keep the same thickness while they move between ranks.
 - For **stacked or grouped bars**, add [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series/) to a `StackedColumnCollection`. Series with the same `stackedGroupId` stack; series with different ids sit side by side, as in the clustered chart above. Set `isOneHundredPercent` on the collection for a 100% stacked chart.
 
 **See it in the demo app:** [JavaScript column chart](https://www.scichart.com/demo/javascript/column-chart) · [React column chart](https://www.scichart.com/demo/react/column-chart) · [Angular column chart](https://www.scichart.com/demo/angular/column-chart)
@@ -383,6 +406,7 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, the
 ## Sources
 
 - Government Analysis Function (UK), [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Official guidance on bar, stacked and clustered bar charts, including ranking bars and starting the axis at zero.
+- World Bank, [Population, total (SP.POP.TOTL)](https://data.worldbank.org/indicator/SP.POP.TOTL), World Development Indicators. The population figures in the bar chart race, retrieved November 2026.
 - Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). The experiments showing that people compare positions and lengths on a common scale more accurately than angles or areas.
 
 <LearnCta position="bottom" chart="bar chart" demo="column-chart" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" />

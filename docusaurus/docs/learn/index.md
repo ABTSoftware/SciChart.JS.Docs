@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: Learning Center
 title: "Learning Center: A Guide to Data Visualisation (With Interactive Examples)"
-description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, and how chart axes and scales work, with live, interactive examples."
+description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, and how to chart big data fast, with live, interactive examples."
 keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
 ---
 
@@ -12,7 +12,7 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 37 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 38 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 | Group | Charts |
 | --- | --- |
@@ -22,6 +22,7 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 | [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area |
 | [Dashboards and KPIs](/learn/chart-types/#dashboards-and-kpis) | Gauge, bullet, funnel |
 | [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, waterfall |
+| [Maps and geographic data](/learn/chart-types/#maps-and-geographic-data) | Choropleth map |
 | [Time and events](/learn/chart-types/#time-and-events) | Timeline |
 
 ## Axes and scales
@@ -30,6 +31,25 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 
 | Topic | What it shows |
 | --- | --- |
+| [Cartesian graph](/learn/axes-and-scales/cartesian-graph/) | The x-y grid behind almost every chart: axes, origin, coordinates and quadrants |
 | [Log scale graph](/learn/axes-and-scales/log-scale-graph/) | Values across many orders of magnitude on one chart, where steady percentage growth is a straight line |
+| [XYZ graph (3D axes)](/learn/axes-and-scales/xyz-graph/) | The x, y and z axes of a 3D chart, which one is up, and how to read a point in 3D |
+
+## Real-time charts
+
+[**Real-time charts**](/learn/real-time/): charts that update as new data arrives.
+
+| Chart | What it shows |
+| --- | --- |
+| [Strip chart](/learn/real-time/strip-chart/) | Live readings over a moving time window, one lane per signal, scrolling or sweeping |
+
+## Big data and performance
+
+[**Big data and performance**](/learn/big-data/): how to chart millions of points and keep the chart fast.
+
+| Topic | What it covers |
+| --- | --- |
+| [Big data visualization](/learn/big-data/big-data-visualization/) | What makes data big for a chart, and SVG vs Canvas vs WebGL, with a live test in your browser |
+| [Downsampling](/learn/big-data/downsampling/) | How downsampling methods compare, and which keep the spikes |
 
 <LearnCta position="bottom" />

@@ -17,7 +17,7 @@ Which chart should you use, and how do you read it? This guide covers the main t
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | How a value changes over time, as points joined by a line |
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
 | [Area chart](/learn/chart-types/cartesian/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
-| [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/chart-types/cartesian/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging |
+| [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/chart-types/cartesian/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging, and the animated [bar chart race](/learn/chart-types/cartesian/bar-chart/#bar-chart-race) |
 | [Pareto chart](/learn/chart-types/cartesian/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 | [Combo chart](/learn/chart-types/cartesian/combo-chart/) | Two related measures on one chart, usually columns and a line, often with a second y-axis for the line (a dual axis chart) |
 | [Lollipop chart](/learn/chart-types/cartesian/lollipop-chart/) | Values compared across many categories as thin stems with a dot at the end: a bar chart with less ink, best when the values are close |
@@ -29,7 +29,7 @@ Which chart should you use, and how do you read it? This guide covers the main t
 | --- | --- |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | How a total splits into parts, as slices of a circle |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) | A pie chart with a hole in the middle, often used to show the total |
-| [Sunburst chart](/learn/chart-types/radial/sunburst-chart/) | A total broken down over several levels, as rings around a centre: each ring is one level, and each segment's angle is its share |
+| [Sunburst chart](/learn/chart-types/radial/sunburst-chart/) | A total broken down over several levels, as rings around a centre: each ring is one level, and each segment's angle is its share. Also covers its unrolled form, the [icicle chart](/learn/chart-types/radial/sunburst-chart/#icicle-chart) |
 | [Sankey diagram](/learn/chart-types/complex/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
 | [Treemap](/learn/chart-types/complex/treemap/) | How a total splits into parts and groups, as nested rectangles with each area matching its value |
 | [Ternary plot](/learn/chart-types/complex/ternary-plot/) | Mixtures of three parts that add up to 100%, such as soil texture, rock types and phase diagrams |
@@ -86,6 +86,12 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
 | [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
 | [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
+
+## Maps and geographic data
+
+| Chart | What it shows |
+| --- | --- |
+| [Choropleth map](/learn/chart-types/complex/choropleth-map/) | A value per area, such as a rate per state or country, shown by shading each area on a map, with a legend for the colour classes |
 
 ## Time and events
 
