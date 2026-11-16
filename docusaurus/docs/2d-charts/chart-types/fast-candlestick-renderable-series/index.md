@@ -7,7 +7,7 @@ sidebar_position: 19
 Candlestick Series or JavaScript Stock Charts can be created using the [FastCandlestickRenderableSeries type:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcandlestickrenderableseries.html).
 
 :::tip
-New to candlestick charts? Read our guide: [Candlestick Chart: what it is and how to read it](/learn/chart-types/candlestick-chart/), covering open, high, low and close, common patterns, and when to use one.
+New to candlestick charts? Read our guide: [Candlestick Chart: what it is and how to read it](/learn/chart-types/cartesian/candlestick-chart/), covering open, high, low and close, common patterns, and when to use one.
 :::
 
 :::tip

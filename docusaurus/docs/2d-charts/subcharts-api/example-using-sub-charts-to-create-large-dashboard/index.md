@@ -7,7 +7,7 @@ sidebar_position: 13
 SubCharts API gives an ability to create multiple charts while providing a great rendering performance. All the charts on a SubChart use a single, shared WebGL context. This means 100s of charts can be placed on screen and update very fast.
 
 :::tip
-New to sparklines? Read our guide: [Sparkline: what it is and how to read it](/learn/chart-types/sparkline/). It builds a live table of 40 sparklines with the SubCharts API.
+New to sparklines? Read our guide: [Sparkline: what it is and how to read it](/learn/chart-types/cartesian/sparkline/). It builds a live table of 40 sparklines with the SubCharts API.
 :::
 
 :::info

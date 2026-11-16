@@ -7,7 +7,7 @@ sidebar_position: 34
 Treemap charts can be created with SciChart.js by using our [FastRectangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastrectanglerenderableseries.html) series type, with the added calculations of the: position / size / coloring of each rectangle to create a treemap-like appearance.
 
 :::tip
-New to treemaps? Read our guide: [Treemap: what it is and how to read it](/learn/chart-types/treemap/), covering groups, areas and what the colours mean, how the squarified layout works, and a live treemap with a reusable layout helper and hover tooltips from the hit-test API.
+New to treemaps? Read our guide: [Treemap: what it is and how to read it](/learn/chart-types/complex/treemap/), covering groups, areas and what the colours mean, how the squarified layout works, and a live treemap with a reusable layout helper and hover tooltips from the hit-test API.
 :::
 
 :::tip

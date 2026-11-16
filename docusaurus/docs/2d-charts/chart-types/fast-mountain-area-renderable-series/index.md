@@ -7,11 +7,11 @@ sidebar_position: 13
 Mountain (or Area) Series can be created using the [FastMountainRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastmountainrenderableseries.html) type.
 
 :::tip
-New to area charts? Read our guide: [Area Chart: what it is and how to read it](/learn/chart-types/area-chart/), including how to read a stacked area chart and when to use an area chart instead of a line chart.
+New to area charts? Read our guide: [Area Chart: what it is and how to read it](/learn/chart-types/cartesian/area-chart/), including how to read a stacked area chart and when to use an area chart instead of a line chart.
 :::
 
 :::tip
-New to density plots? Read our guide: [Density Plot: what it is and how to read it](/learn/chart-types/density-plot/), including kernel density estimation, bandwidth and ridgeline layouts.
+New to density plots? Read our guide: [Density Plot: what it is and how to read it](/learn/chart-types/cartesian/density-plot/), including kernel density estimation, bandwidth and ridgeline layouts.
 :::
 
 :::tip

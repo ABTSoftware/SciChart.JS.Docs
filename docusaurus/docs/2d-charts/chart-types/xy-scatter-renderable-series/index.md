@@ -7,11 +7,11 @@ sidebar_position: 12
 Scatter Series can be created using the [XyScatterRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xyscatterrenderableseries.html) type.
 
 :::tip
-New to scatter plots? Read our guide: [Scatter Plot: what it is and how to read it](/learn/chart-types/scatter-plot/), covering correlation, outliers, clusters, trend lines, and when to use one.
+New to scatter plots? Read our guide: [Scatter Plot: what it is and how to read it](/learn/chart-types/cartesian/scatter-plot/), covering correlation, outliers, clusters, trend lines, and when to use one.
 :::
 
 :::tip
-New to ternary plots? Read our guide: [Ternary Plot: what it is and how to read it](/learn/chart-types/ternary-plot/), covering how to read the three scales, with a live soil texture triangle built from scatter, line segment and triangle series.
+New to ternary plots? Read our guide: [Ternary Plot: what it is and how to read it](/learn/chart-types/complex/ternary-plot/), covering how to read the three scales, with a live soil texture triangle built from scatter, line segment and triangle series.
 :::
 
 :::tip

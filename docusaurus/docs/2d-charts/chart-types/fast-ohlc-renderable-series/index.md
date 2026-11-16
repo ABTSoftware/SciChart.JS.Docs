@@ -7,7 +7,7 @@ sidebar_position: 20
 Ohlc Series or JavaScript Stock Charts can be created using the **FastOhlcRenderableSeries** type.
 
 :::tip
-New to OHLC charts? Read our guide: [OHLC Chart: what it is and how to read it](/learn/chart-types/ohlc-chart/), covering the open and close ticks, OHLC bars vs candlesticks and HLC bars, and when traders prefer bars.
+New to OHLC charts? Read our guide: [OHLC Chart: what it is and how to read it](/learn/chart-types/cartesian/ohlc-chart/), covering the open and close ticks, OHLC bars vs candlesticks and HLC bars, and when traders prefer bars.
 :::
 
 :::tip

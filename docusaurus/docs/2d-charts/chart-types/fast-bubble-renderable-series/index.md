@@ -7,7 +7,7 @@ sidebar_position: 25
 Bubble Series can be created using the [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) type.
 
 :::tip
-New to bubble charts? Read our guide: [Bubble Chart: what it is and how to read it](/learn/chart-types/bubble-chart/), covering how to read position and bubble size, sizing bubbles honestly, and when to use one.
+New to bubble charts? Read our guide: [Bubble Chart: what it is and how to read it](/learn/chart-types/cartesian/bubble-chart/), covering how to read position and bubble size, sizing bubbles honestly, and when to use one.
 :::
 
 :::tip

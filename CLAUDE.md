@@ -24,9 +24,9 @@ The site's `baseUrl` is set in `docusaurus/config.ts`. TeamCity builds each bran
 
 Guides to data visualisation ("What is a candlestick chart?", "How to read a log scale") at `/documentation/js/current/learn/`, in `docusaurus/docs/learn/`. Branch: `v6.x-learning-center`, off `v6.x`.
 
-- `/learn/` is the Learning Center hub. It is organised in sections, each a folder with its own hub page and `_category_.json`: `chart-types/` ("Types of Charts and Graphs") and `axes-and-scales/`. A page's address is `/learn/<section>/<slug>/`, for example `/learn/chart-types/candlestick-chart/`.
+- `/learn/` is the Learning Center hub. It is organised in sections, each a folder with its own hub page and `_category_.json`: `chart-types/` ("Types of Charts and Graphs", grouped into `cartesian/`, `radial/`, `complex/` and `3d/`) and `axes-and-scales/`. A page's address follows its folder, for example `/learn/chart-types/cartesian/candlestick-chart/`. Don't override it with a `slug`: live demos load their code relative to the page address.
 - The Learning Center is a section of the main docs sidebar, straight after "Get Started" (`docs/learn/_category_.json`). The "Learn" link in the top bar opens the hub.
-- Keep slugs short and link between learn pages with the full path (`/learn/chart-types/histogram/`).
+- Keep slugs short and link between learn pages with the full path (`/learn/chart-types/cartesian/histogram/`).
 - **Archived versions:** when a new version moves to `/current/`, the old version's copy of `/learn/` may stay in its archive (for example `/documentation/js/v6/learn/`). Like every archived page, each of those pages **must** carry a canonical link to the same path under `/documentation/js/current/learn/`.
 - **Before writing or changing a learn page, read [docusaurus/docs/learn/CLAUDE.md](docusaurus/docs/learn/CLAUDE.md).** It points to the private rules, which are kept in the git-ignored `private/` folder.
 

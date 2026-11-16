@@ -7,7 +7,7 @@ sidebar_position: 1
 SciChart.js supports **unlimited, multiple X or Y axis** which can be aligned to the Right, Left, Top, Bottom sides of a chart.
 
 :::tip
-New to Pareto charts? Read our guide: [Pareto Chart: what it is and how to read it](/learn/chart-types/pareto-chart/), covering the cumulative percentage line, the 80/20 rule and how to build one with a column series and a secondary y-axis.
+New to Pareto charts? Read our guide: [Pareto Chart: what it is and how to read it](/learn/chart-types/cartesian/pareto-chart/), covering the cumulative percentage line, the 80/20 rule and how to build one with a column series and a secondary y-axis.
 :::
 
 <ChartFromSciChartDemo src="https://www.scichart.com/demo/iframe/javascript-chart-with-multiple-x-axis" title="Multiple X Axes" description="" />

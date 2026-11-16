@@ -7,11 +7,11 @@ sidebar_position: 32
 Line segment is a part of a straight line that is bounded by two distinct endpoints. [FastLineSegmentRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinesegmentrenderableseries.html) defines a line-series or line chart type in the SciChart's High Performance Real-time JavaScript Charts
 
 :::tip New to dumbbell charts?
-Read our guide: [Dumbbell Chart: what it is and how to read it](/learn/chart-types/dumbbell-chart/). It shows how to build one from a line segment series and two scatter series, how to sort the rows, and when to use one instead of clustered bars.
+Read our guide: [Dumbbell Chart: what it is and how to read it](/learn/chart-types/cartesian/dumbbell-chart/). It shows how to build one from a line segment series and two scatter series, how to sort the rows, and when to use one instead of clustered bars.
 :::
 
 :::tip New to network graphs?
-Read our guide: [Network Graph: what it is and how to read it](/learn/chart-types/network-graph/), covering nodes and edges, hubs, clusters and bridges, and how force-directed layouts work.
+Read our guide: [Network Graph: what it is and how to read it](/learn/chart-types/complex/network-graph/), covering nodes and edges, hubs, clusters and bridges, and how force-directed layouts work.
 :::
 
 Here is a simple Line Segment Series made using [XyDataSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) 

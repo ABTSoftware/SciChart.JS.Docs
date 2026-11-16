@@ -5,7 +5,7 @@ sidebar_position: 3
 # The SurfaceMesh 3D Chart Type
 
 :::tip
-New to 3D surface plots? Read our guide: [3D Surface Plot: what it is and how to read it](/learn/chart-types/3d-surface-plot/), covering peaks, saddles and slopes, lighting and colour, how it compares with heatmaps, contour plots and 3D scatter plots, and a live surface updating in real time.
+New to 3D surface plots? Read our guide: [3D Surface Plot: what it is and how to read it](/learn/chart-types/3d/3d-surface-plot/), covering peaks, saddles and slopes, lighting and colour, how it compares with heatmaps, contour plots and 3D scatter plots, and a live surface updating in real time.
 :::
 
 :::tip

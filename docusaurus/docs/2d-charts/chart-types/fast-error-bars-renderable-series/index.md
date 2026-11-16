@@ -7,7 +7,7 @@ sidebar_position: 22
 Error Bars can be added to a SciChart.js chart using the [FastErrorBarsRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasterrorbarsrenderableseries.html) type.
 
 :::tip
-New to error bars? Read our guide: [Error Bars: what they mean and how to read them](/learn/chart-types/error-bars/), covering standard deviation vs standard error vs confidence interval bars, how to calculate them and what overlapping error bars do and don't mean.
+New to error bars? Read our guide: [Error Bars: what they mean and how to read them](/learn/chart-types/cartesian/error-bars/), covering standard deviation vs standard error vs confidence interval bars, how to calculate them and what overlapping error bars do and don't mean.
 :::
 
 :::tip

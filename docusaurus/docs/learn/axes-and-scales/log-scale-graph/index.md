@@ -142,9 +142,9 @@ Stay with a linear scale when the audience needs to compare **amounts** (which m
 | Chart | Best for |
 | --- | --- |
 | **Log scale graph** | Values across several orders of magnitude, percentage change, exponential growth and power laws |
-| [Line chart](/learn/chart-types/line-chart/) with a linear axis | How a value changes over time when you care about the actual amounts and the range is modest |
-| [Scatter plot](/learn/chart-types/scatter-plot/) on log-log axes | The relationship between two measured variables that both span wide ranges |
-| [Spectrogram](/learn/chart-types/spectrogram/) | How the frequencies in a signal change over time, often with a log frequency axis and colour in decibels |
+| [Line chart](/learn/chart-types/cartesian/line-chart/) with a linear axis | How a value changes over time when you care about the actual amounts and the range is modest |
+| [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) on log-log axes | The relationship between two measured variables that both span wide ranges |
+| [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, often with a log frequency axis and colour in decibels |
 
 ## Log base: 10, 2 or e?
 

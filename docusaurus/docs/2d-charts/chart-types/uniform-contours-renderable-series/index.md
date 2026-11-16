@@ -7,7 +7,7 @@ sidebar_position: 18
 Contour maps or Contour-plots can be created using the [UniformContoursRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/uniformcontoursrenderableseries.html) type.
 
 :::tip
-New to contour plots? Read our guide: [Contour Plot: what it is and how to read it](/learn/chart-types/contour-plot/), covering lines of equal value, peaks, saddles and spacing, filled contours and contours over a heatmap, and when to use one.
+New to contour plots? Read our guide: [Contour Plot: what it is and how to read it](/learn/chart-types/cartesian/contour-plot/), covering lines of equal value, peaks, saddles and spacing, filled contours and contours over a heatmap, and when to use one.
 :::
 
 :::tip
