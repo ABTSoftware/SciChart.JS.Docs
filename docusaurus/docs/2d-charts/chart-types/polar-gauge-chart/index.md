@@ -7,7 +7,7 @@ sidebar_position: 99
 The Polar Gauge Chart is used to visualize data in a polar coordinate system as a circular gauge or meter, where values are represented by angular position and radial distance. This chart type is ideal for displaying progress indicators, performance metrics, or any data that benefits from a circular visualization.
 
 :::tip
-New to gauge charts? Read our guide: [Gauge Chart: what it is and how to read it](/learn/gauge-chart/), covering the scale, needle and bands, how to set the bands, gauges vs bullet and line charts, and a live gauge you can drag.
+New to gauge charts? Read our guide: [Gauge Chart: what it is and how to read it](/learn/chart-types/gauge-chart/), covering the scale, needle and bands, how to set the bands, gauges vs bullet and line charts, and a live gauge you can drag.
 :::
 
 :::tip

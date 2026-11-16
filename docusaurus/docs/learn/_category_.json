@@ -1,6 +1,9 @@
 {
-  "label": "Learn: Chart Types Guide",
+  "label": "Learning Center",
   "position": 2.5,
   "collapsed": true,
-  "link": { "type": "doc", "id": "learn/index" }
+  "link": {
+    "type": "doc",
+    "id": "learn/index"
+  }
 }

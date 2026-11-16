@@ -8,7 +8,7 @@ The [PolarColumnRenderableSeries:blue_book:](https://www.scichart.com/documentat
 This chart type is ideal for visualizing cyclic data or data with angular relationships.
 
 :::tip
-New to polar area charts (Nightingale rose or coxcomb charts)? Read our guide: [Polar Area Chart: what it is and how to read it](/learn/polar-area-chart/), covering how to read one, why the radius must be the square root of the value, Florence Nightingale's diagram, and common mistakes.
+New to polar area charts (Nightingale rose or coxcomb charts)? Read our guide: [Polar Area Chart: what it is and how to read it](/learn/chart-types/polar-area-chart/), covering how to read one, why the radius must be the square root of the value, Florence Nightingale's diagram, and common mistakes.
 :::
 
 :::tip

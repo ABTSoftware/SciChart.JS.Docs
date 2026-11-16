@@ -7,7 +7,7 @@ sidebar_position: 21
 Lollipop Charts, otherwise known as Impulse or Stem charts, can be created using the [FastImpulseRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastimpulserenderableseries.html) type.
 
 :::tip New to lollipop charts?
-Read our guide: [Lollipop Chart: what it is and how to read it](/learn/lollipop-chart/). It covers how to read a lollipop chart, how it compares with a bar chart, dumbbell charts and stem plots, and the mistakes to avoid.
+Read our guide: [Lollipop Chart: what it is and how to read it](/learn/chart-types/lollipop-chart/). It covers how to read a lollipop chart, how it compares with a bar chart, dumbbell charts and stem plots, and the mistakes to avoid.
 :::
 
 :::tip

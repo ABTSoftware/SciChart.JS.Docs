@@ -7,7 +7,7 @@ sidebar_position: 23
 A Band Series, or High-Low Fill between two lines can be created using the [FastBandRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbandrenderableseries.html) type.
 
 :::tip New to violin plots?
-Read our guide: [Violin Plot: what it is and how to read it](/learn/violin-plot/). It shows how to draw each violin as a band series, mirroring a kernel density estimate either side of the group's position, with a slim box plot inside.
+Read our guide: [Violin Plot: what it is and how to read it](/learn/chart-types/violin-plot/). It shows how to draw each violin as a band series, mirroring a kernel density estimate either side of the group's position, with a slim box plot inside.
 :::
 
 :::tip
