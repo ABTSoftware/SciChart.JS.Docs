@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 430" width="960" height="430" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title id="t">Anatomy of a bullet chart</title>
+<desc id="d">One horizontal bullet chart for monthly sign-ups in thousands, on a scale from 0 to 10. Three grey bands mark the qualitative ranges: dark grey for poor from 0 to 5, mid grey for satisfactory from 5 to 7.5 and light grey for good from 7.5 to 10. A dark bar shows the actual value, 6.8 thousand, and a short vertical line shows the target, 8 thousand. Numbered callouts name the qualitative ranges, the text label, the quantitative scale, the featured measure and the comparative measure.</desc>
+<rect width="960" height="430" fill="#ffffff"/>
+<text x="480.0" y="36.0" font-size="22" text-anchor="middle" fill="#1c2333" font-weight="700">Anatomy of a bullet chart</text>
+<rect x="250.0" y="130.0" width="315.0" height="66.0" fill="#999999" />
+<rect x="565.0" y="130.0" width="157.5" height="66.0" fill="#BFBFBF" />
+<rect x="722.5" y="130.0" width="157.5" height="66.0" fill="#E6E6E6" />
+<rect x="250.0" y="152.0" width="428.4" height="22.0" fill="#111111" />
+<rect x="752.0" y="140.6" width="4.0" height="44.9" fill="#111111" />
+<line x1="250.0" y1="196.0" x2="250.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="250.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">0k</text>
+<line x1="376.0" y1="196.0" x2="376.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="376.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">2k</text>
+<line x1="502.0" y1="196.0" x2="502.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="502.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">4k</text>
+<line x1="628.0" y1="196.0" x2="628.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="628.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">6k</text>
+<line x1="754.0" y1="196.0" x2="754.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="754.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">8k</text>
+<line x1="880.0" y1="196.0" x2="880.0" y2="203.0" stroke="#9ca3af" stroke-width="1.5"/>
+<text x="880.0" y="220.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">10k</text>
+<text x="232.0" y="160.0" font-size="19" text-anchor="end" fill="#1c2333" font-weight="700">Sign-ups</text>
+<text x="232.0" y="182.0" font-size="14" text-anchor="end" fill="#4b5563" font-weight="400">thousands, this month</text>
+<path d="M253.0,122 v-8 H562.0 v8" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+<text x="407.5" y="106.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="400">Poor</text>
+<path d="M568.0,122 v-8 H719.5 v8" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+<text x="643.8" y="106.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="400">Satisfactory</text>
+<path d="M725.5,122 v-8 H877.0 v8" fill="none" stroke="#4b5563" stroke-width="1.5"/>
+<text x="801.2" y="106.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="400">Good</text>
+<circle cx="220.0" cy="96.0" r="12" fill="#C2185B"/><text x="220.0" y="101.0" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">1</text>
+<text x="200.0" y="101.0" font-size="16" text-anchor="end" fill="#C2185B" font-weight="700">Qualitative ranges</text>
+<line x1="160.0" y1="190.0" x2="160.0" y2="284.0" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"/>
+<circle cx="160.0" cy="300.0" r="12" fill="#C2185B"/><text x="160.0" y="305.0" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">2</text>
+<text x="160.0" y="332.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="700">Text label</text>
+<text x="160.0" y="352.0" font-size="14" text-anchor="middle" fill="#4b5563" font-weight="400">what is measured</text>
+<line x1="439.0" y1="228.0" x2="439.0" y2="284.0" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"/>
+<circle cx="439.0" cy="300.0" r="12" fill="#C2185B"/><text x="439.0" y="305.0" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">3</text>
+<text x="439.0" y="332.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="700">Quantitative scale</text>
+<text x="439.0" y="352.0" font-size="14" text-anchor="middle" fill="#4b5563" font-weight="400">starts at zero</text>
+<line x1="653.2" y1="171.0" x2="653.2" y2="284.0" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"/>
+<circle cx="653.2" cy="300.0" r="12" fill="#C2185B"/><text x="653.2" y="305.0" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">4</text>
+<text x="653.2" y="332.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="700">Featured measure</text>
+<text x="653.2" y="352.0" font-size="14" text-anchor="middle" fill="#4b5563" font-weight="400">actual: 6.8k</text>
+<line x1="754.0" y1="185.4" x2="823.3" y2="284.0" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="4 3"/>
+<circle cx="823.3" cy="300.0" r="12" fill="#C2185B"/><text x="823.3" y="305.0" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="700">5</text>
+<text x="823.3" y="332.0" font-size="16" text-anchor="middle" fill="#1c2333" font-weight="700">Comparative measure</text>
+<text x="823.3" y="352.0" font-size="14" text-anchor="middle" fill="#4b5563" font-weight="400">target: 8k</text>
+<text x="480.0" y="416.0" font-size="15" text-anchor="middle" fill="#4b5563" font-weight="400">Darker grey = worse. The bar shows the result; the short line shows the target.</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 420" width="700" height="420" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a heatmap</title>
+  <desc id="desc">A heatmap is a grid of cells. Rows run across the chart and columns run down it; each row and column is labelled on its axis. Each cell's colour shows one value, and a colour scale beside the grid shows which colour stands for which value, from low (dark purple) to high (yellow).</desc>
+  <rect width="700" height="420" rx="12" fill="#ffffff"/>
+
+  <!-- Grid: 6 columns x 4 rows, cells 56 x 56, origin (110, 50) -->
+  <g stroke="#ffffff" stroke-width="2">
+    <rect x="110" y="50" width="56" height="56" fill="#3B528B"/>
+    <rect x="166" y="50" width="56" height="56" fill="#21918C"/>
+    <rect x="222" y="50" width="56" height="56" fill="#5EC962"/>
+    <rect x="278" y="50" width="56" height="56" fill="#FDE725"/>
+    <rect x="334" y="50" width="56" height="56" fill="#5EC962"/>
+    <rect x="390" y="50" width="56" height="56" fill="#21918C"/>
+
+    <rect x="110" y="106" width="56" height="56" fill="#440154"/>
+    <rect x="166" y="106" width="56" height="56" fill="#3B528B"/>
+    <rect x="222" y="106" width="56" height="56" fill="#21918C"/>
+    <rect x="278" y="106" width="56" height="56" fill="#5EC962"/>
+    <rect x="334" y="106" width="56" height="56" fill="#21918C"/>
+    <rect x="390" y="106" width="56" height="56" fill="#3B528B"/>
+
+    <rect x="110" y="162" width="56" height="56" fill="#440154"/>
+    <rect x="166" y="162" width="56" height="56" fill="#440154"/>
+    <rect x="222" y="162" width="56" height="56" fill="#3B528B"/>
+    <rect x="278" y="162" width="56" height="56" fill="#21918C"/>
+    <rect x="334" y="162" width="56" height="56" fill="#3B528B"/>
+    <rect x="390" y="162" width="56" height="56" fill="#440154"/>
+
+    <rect x="110" y="218" width="56" height="56" fill="#3B528B"/>
+    <rect x="166" y="218" width="56" height="56" fill="#21918C"/>
+    <rect x="222" y="218" width="56" height="56" fill="#21918C"/>
+    <rect x="278" y="218" width="56" height="56" fill="#5EC962"/>
+    <rect x="334" y="218" width="56" height="56" fill="#5EC962"/>
+    <rect x="390" y="218" width="56" height="56" fill="#21918C"/>
+  </g>
+
+  <!-- Highlight one row and one cell -->
+  <rect x="108" y="104" width="340" height="60" fill="none" stroke="#d6336c" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <rect x="278" y="50" width="56" height="56" fill="none" stroke="#111" stroke-width="3"/>
+
+  <!-- Row labels -->
+  <g fill="#333" text-anchor="end" font-size="14">
+    <text x="100" y="83">Row A</text>
+    <text x="100" y="139">Row B</text>
+    <text x="100" y="195">Row C</text>
+    <text x="100" y="251">Row D</text>
+  </g>
+  <!-- Column labels -->
+  <g fill="#333" text-anchor="middle" font-size="14">
+    <text x="138" y="296">1</text>
+    <text x="194" y="296">2</text>
+    <text x="250" y="296">3</text>
+    <text x="306" y="296">4</text>
+    <text x="362" y="296">5</text>
+    <text x="418" y="296">6</text>
+  </g>
+  <text x="278" y="322" text-anchor="middle" fill="#333">Columns: one category or x value each</text>
+
+  <!-- Callouts -->
+  <g fill="#333">
+    <text x="306" y="32" text-anchor="middle" font-weight="bold">Cell: its colour shows one value</text>
+    <text x="40" y="370" fill="#d6336c" font-weight="bold">Dashed outline = one row: one category or y value</text>
+    <text x="40" y="392" fill="#666" font-size="13">Read along a row to compare its columns; read down a column to compare rows.</text>
+  </g>
+  <line x1="306" y1="38" x2="306" y2="50" stroke="#111" stroke-width="1.5"/>
+
+  <!-- Colour scale -->
+  <defs>
+    <linearGradient id="scale" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#440154"/>
+      <stop offset="0.25" stop-color="#3B528B"/>
+      <stop offset="0.5" stop-color="#21918C"/>
+      <stop offset="0.75" stop-color="#5EC962"/>
+      <stop offset="1" stop-color="#FDE725"/>
+    </linearGradient>
+  </defs>
+  <rect x="520" y="50" width="28" height="224" fill="url(#scale)" stroke="#999"/>
+  <g fill="#333" font-size="14">
+    <text x="556" y="60">High</text>
+    <text x="556" y="166">Middle</text>
+    <text x="556" y="274">Low</text>
+  </g>
+  <text x="534" y="322" text-anchor="middle" font-weight="bold" fill="#333">Colour scale</text>
+  <text x="534" y="342" text-anchor="middle" fill="#666" font-size="13">(legend): colour → value</text>
+</svg>

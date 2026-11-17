@@ -1,0 +1,9 @@
+{
+  "label": "Learning Center",
+  "position": 2.5,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "learn/index"
+  }
+}

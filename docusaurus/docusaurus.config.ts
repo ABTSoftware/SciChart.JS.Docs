@@ -6,11 +6,22 @@ import remarkCodeSnippets from "remark-code-snippets";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import remarkTableCodeBreaks from "./custom-plugins/remarkTableCodeBreaks";
+import learnGuidesPlugin from "./custom-plugins/learnGuidesPlugin";
 import { baseUrl } from "./config";
+import {
+    CHANGELOG_URL,
+    CONTACT_URL,
+    DEMOS_URL,
+    GET_STARTED_URL,
+    PRICING_URL,
+    PRODUCTS,
+    SCICHART_HOME_URL
+} from "./src/data/scichartSite";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const gitHubUrl = "https://github.com/ABTSoftware/SciChart.JS.Docs/tree/dev/docusaurus";
+const apiDocsUrl = "https://www.scichart.com/documentation/js/current/typedoc/index.html";
 
 const config: Config = {
     title: "SciChart JS Docs",
@@ -60,6 +71,9 @@ const config: Config = {
                 docs: {
                     routeBasePath: "/",
                     sidebarPath: "./sidebars.ts",
+                    // Docusaurus's default excludes, plus CLAUDE.md files (instructions for Claude Code, e.g.
+                    // docs/learn/CLAUDE.md) and to-do lists (todo.md), which must never be published as pages
+                    exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "**/CLAUDE.md", "**/todo.md", "**/TODO.md"],
                     showLastUpdateTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
@@ -95,6 +109,8 @@ const config: Config = {
                 src: "img/logo.svg"
             },
             items: [
+                // Opens the Chart Types Guide; the main sidebar expands the Learn section on its own
+                { type: "doc", docId: "learn/index", label: "Learn", position: "left" },
                 {
                     to: "/get-started/tutorials-js-npm-webpack/tutorial-01-setting-up-npm-project-with-scichart-js",
                     label: "Tutorials",
@@ -108,76 +124,80 @@ const config: Config = {
                 },
                 { to: "/financial-charts/overview", label: "Financial Docs", position: "left" },
                 {
-                    href: "https://www.scichart.com/documentation/js/current/typedoc/index.html",
+                    href: apiDocsUrl,
                     label: "API Docs",
                     position: "left"
                 },
+                // Right: the main site (products, demos), older docs versions, GitHub and the "Get started free" pill.
+                // Product links are shared with the footer and the card beside the TOC (src/data/scichartSite.ts)
                 {
-                    href: "https://www.scichart.com/documentation/js/v5/intro",
-                    label: "Docs v5",
-                    position: "right"
+                    type: "dropdown",
+                    label: "Products",
+                    position: "right",
+                    items: [
+                        { label: "SciChart home", href: SCICHART_HOME_URL, "data-cta": "nav-products-home" },
+                        ...PRODUCTS.map((p) => ({ label: p.label, href: p.url, "data-cta": `nav-products-${p.key}` }))
+                    ]
                 },
+                { href: DEMOS_URL, label: "Demos", position: "right", "data-cta": "nav-demos" },
                 {
-                    href: "https://www.scichart.com/documentation/js/v4/intro",
-                    label: "Docs v4",
-                    position: "right"
-                },
-                {
-                    href: "https://www.scichart.com/documentation/js/v3/webframe.html",
-                    label: "Docs v3",
-                    position: "right"
+                    type: "dropdown",
+                    label: "Versions",
+                    position: "right",
+                    items: [
+                        { label: "v6 (current)", to: "/intro" },
+                        { label: "v5", href: "https://www.scichart.com/documentation/js/v5/intro" },
+                        { label: "v4", href: "https://www.scichart.com/documentation/js/v4/intro" },
+                        { label: "v3", href: "https://www.scichart.com/documentation/js/v3/webframe.html" }
+                    ]
                 },
                 {
                     href: gitHubUrl,
-                    label: "GitHub",
-                    position: "right"
+                    position: "right",
+                    className: "navbar-github-link",
+                    "aria-label": "SciChart.js Docs on GitHub"
+                },
+                {
+                    href: GET_STARTED_URL,
+                    label: "Get started free",
+                    position: "right",
+                    className: "navbar-cta-pill",
+                    "data-cta": "nav-get-started"
                 }
             ]
         },
+        // Columns modelled on the main site's footer. Link text is what each target page is about
         footer: {
             style: "dark",
             links: [
                 {
-                    title: "Docs",
+                    title: "Products",
+                    items: PRODUCTS.map((p) => ({ label: p.label, href: p.url, "data-cta": `footer-products-${p.key}` }))
+                },
+                {
+                    title: "Learn and develop",
                     items: [
-                        {
-                            label: "Home",
-                            to: "/intro"
-                        },
-                        {
-                            label: "API Documentation",
-                            href: "https://www.scichart.com/documentation/js/current/typedoc/index.html"
-                        }
+                        { label: "Learning Center", to: "/learn/" },
+                        { label: "Demos", href: DEMOS_URL },
+                        { label: "Getting started", href: GET_STARTED_URL },
+                        { label: "API documentation", href: apiDocsUrl },
+                        { label: "Forum", href: "https://www.scichart.com/questions" },
+                        { label: "Stack Overflow", href: "https://stackoverflow.com/questions/tagged/scichart" },
+                        { label: "GitHub", href: "https://github.com/ABTSoftware" },
+                        { label: "Changelog", href: CHANGELOG_URL }
                     ]
                 },
                 {
-                    title: "Community",
+                    title: "Company",
                     items: [
-                        {
-                            label: "SciChart Forum",
-                            href: "https://www.scichart.com/questions"
-                        },
-                        {
-                            label: "Stack Overflow",
-                            href: "https://stackoverflow.com/questions/tagged/scichart"
-                        }
-                    ]
-                },
-                {
-                    title: "More",
-                    items: [
-                        {
-                            label: "SciChart website",
-                            href: "https://www.scichart.com"
-                        },
-                        {
-                            label: "SciChart GitHub",
-                            href: "https://github.com/ABTSoftware"
-                        }
+                        { label: "Contact us", href: CONTACT_URL },
+                        { label: "Pricing and licensing", href: PRICING_URL },
+                        { label: "Get started free", href: GET_STARTED_URL, "data-cta": "footer-get-started" },
+                        { label: "SciChart home", href: SCICHART_HOME_URL }
                     ]
                 }
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} SciChart. Built with Docusaurus.`
+            copyright: `Copyright © ${new Date().getFullYear()} SciChart.`
         },
         prism: {
             theme: prismThemes.vsLight,
@@ -206,6 +226,8 @@ const config: Config = {
             };
         },
         CustomCopyPlugin,
+        // Front matter of every learning center guide, for the "Related guides" cards (see the plugin's comments)
+        learnGuidesPlugin,
         [
             require.resolve("@cmfcmf/docusaurus-search-local"),
             {

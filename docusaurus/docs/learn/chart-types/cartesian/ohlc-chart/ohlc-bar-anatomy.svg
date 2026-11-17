@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 390" width="700" height="390" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of an OHLC bar</title>
+  <desc id="desc">Two OHLC bars. Each is a vertical line from the low to the high of the period, with a short tick to the left at the opening price and a short tick to the right at the closing price. On the green up bar the right tick is higher than the left tick; on the red down bar the right tick is lower.</desc>
+  <rect width="700" height="390" rx="12" fill="#ffffff"/>
+
+  <!-- Up bar: high 50, low 320, open 250 (left), close 110 (right) -->
+  <g stroke="#26a69a" stroke-width="5" stroke-linecap="square">
+    <line x1="200" y1="50" x2="200" y2="320"/>
+    <line x1="160" y1="250" x2="200" y2="250"/>
+    <line x1="200" y1="110" x2="240" y2="110"/>
+  </g>
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="206" y1="50" x2="262" y2="50"/>
+    <line x1="246" y1="110" x2="262" y2="110"/>
+    <line x1="92" y1="250" x2="154" y2="250"/>
+    <line x1="206" y1="320" x2="262" y2="320"/>
+  </g>
+  <g fill="#333">
+    <text x="268" y="55">High</text>
+    <text x="268" y="106">Close:</text>
+    <text x="268" y="125">right tick</text>
+    <text x="86" y="236" text-anchor="end">Open:</text>
+    <text x="86" y="255" text-anchor="end">left tick</text>
+    <text x="268" y="325">Low</text>
+  </g>
+  <g fill="#666" font-size="13">
+    <text x="214" y="178">vertical line:</text>
+    <text x="214" y="195">the period's range</text>
+  </g>
+  <text x="200" y="362" text-anchor="middle" fill="#1b7f75" font-weight="bold">Up bar: right tick above left tick</text>
+
+  <!-- Down bar: high 70, low 300, open 100 (left), close 240 (right) -->
+  <g stroke="#ef5350" stroke-width="5" stroke-linecap="square">
+    <line x1="530" y1="70" x2="530" y2="300"/>
+    <line x1="490" y1="100" x2="530" y2="100"/>
+    <line x1="530" y1="240" x2="570" y2="240"/>
+  </g>
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="430" y1="70" x2="524" y2="70"/>
+    <line x1="430" y1="100" x2="484" y2="100"/>
+    <line x1="576" y1="240" x2="600" y2="240"/>
+    <line x1="430" y1="300" x2="524" y2="300"/>
+  </g>
+  <g fill="#333" text-anchor="end">
+    <text x="424" y="75">High</text>
+    <text x="424" y="96">Open:</text>
+    <text x="424" y="115">left tick</text>
+    <text x="424" y="305">Low</text>
+  </g>
+  <text x="606" y="236" fill="#333">Close:</text>
+  <text x="606" y="255" fill="#333">right tick</text>
+  <text x="530" y="362" text-anchor="middle" fill="#c62828" font-weight="bold">Down bar: right tick below left tick</text>
+</svg>

@@ -6,6 +6,9 @@ sidebar_position: 4
 
 Placing Axis in the center the chart, like an oscilloscope or spectrum analyzer is possible with SciChart.js.
 
+:::tip New to Cartesian graphs? Read our guide: [Cartesian graph: what it is and how to read it](/learn/axes-and-scales/cartesian-graph/). It covers the x and y axes, the origin, ordered pairs and the four quadrants, with a live chart whose axes cross at (0, 0) and points you can drag to read their coordinates.
+:::
+
 To do this, use the [CentralAxesLayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/centralaxeslayoutmanager.html) applied to the [SciChartSurface.LayoutManager:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartsurface.html#layoutmanager) property.
 
 Here's a code sample:

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 430" width="700" height="430" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a donut chart</title>
+  <desc id="desc">A donut chart of sales by region split into four segments: Europe 40%, North America 30%, Asia-Pacific 20% and Rest of world 10%. The hole in the middle shows the total, £4.2m. Each segment is read by the length of its arc around the ring, and a legend names each segment.</desc>
+  <rect width="700" height="430" rx="12" fill="#ffffff"/>
+  <path d="M220.0,65.0 A150,150 0 0 1 308.2,336.4 L271.7,286.2 A88,88 0 0 0 220.0,127.0 Z" fill="#2b9fc0" stroke="#ffffff" stroke-width="3"/>
+  <path d="M308.2,336.4 A150,150 0 0 1 77.3,261.4 L136.3,242.2 A88,88 0 0 0 271.7,286.2 Z" fill="#f48420" stroke="#ffffff" stroke-width="3"/>
+  <path d="M77.3,261.4 A150,150 0 0 1 131.8,93.6 L168.3,143.8 A88,88 0 0 0 136.3,242.2 Z" fill="#30bc9a" stroke="#ffffff" stroke-width="3"/>
+  <path d="M131.8,93.6 A150,150 0 0 1 220.0,65.0 L220.0,127.0 A88,88 0 0 0 168.3,143.8 Z" fill="#8e9bae" stroke="#ffffff" stroke-width="3"/>
+  <text x="333" y="184" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">40%</text>
+  <text x="183" y="334" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">30%</text>
+  <text x="107" y="184" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">20%</text>
+  <text x="183" y="108" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">10%</text>
+  <text x="470" y="40" fill="#333" font-weight="bold">Legend</text>
+  <rect x="470" y="56" width="16" height="16" rx="3" fill="#2b9fc0"/>
+  <text x="496" y="69" fill="#333">Europe</text>
+  <rect x="470" y="82" width="16" height="16" rx="3" fill="#f48420"/>
+  <text x="496" y="95" fill="#333">North America</text>
+  <rect x="470" y="108" width="16" height="16" rx="3" fill="#30bc9a"/>
+  <text x="496" y="121" fill="#333">Asia-Pacific</text>
+  <rect x="470" y="134" width="16" height="16" rx="3" fill="#8e9bae"/>
+  <text x="496" y="147" fill="#333">Rest of world</text>
+  <text x="220" y="213" text-anchor="middle" fill="#14233c" font-weight="bold" font-size="30">£4.2m</text>
+  <text x="220" y="237" text-anchor="middle" fill="#666" font-size="14">total sales</text>
+  <path d="M220.0,53.0 A162,162 0 0 1 315.2,346.1" fill="none" stroke="#14233c" stroke-width="3"/>
+  <line x1="335" y1="100" x2="462" y2="185" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="335" y1="184" x2="462" y2="240" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="272" y1="221" x2="462" y2="295" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="265" y1="269" x2="462" y2="350" stroke="#999" stroke-dasharray="4 4"/>
+  <text x="470" y="190" fill="#333" font-weight="bold">Arc length</text>
+  <text x="470" y="209" fill="#666" font-size="13">read a segment by its length</text>
+  <text x="470" y="245" fill="#333" font-weight="bold">Ring</text>
+  <text x="470" y="264" fill="#666" font-size="13">the segments: they add up to 100%</text>
+  <text x="470" y="300" fill="#333" font-weight="bold">Centre label</text>
+  <text x="470" y="319" fill="#666" font-size="13">a total or headline figure</text>
+  <text x="470" y="355" fill="#333" font-weight="bold">Hole</text>
+  <text x="470" y="374" fill="#666" font-size="13">the empty centre of the ring</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 380" width="700" height="380" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a box plot (box and whisker plot)</title>
+  <desc id="desc">A horizontal box plot. The box runs from the first quartile (Q1) to the third quartile (Q3), a distance called the interquartile range (IQR), with a line inside at the median. Whiskers reach out to the minimum and the maximum (the lowest and highest values that are not outliers), and a dot beyond the right whisker marks an outlier. Each of the four sections between minimum, Q1, median, Q3 and maximum holds about a quarter of the values.</desc>
+  <rect width="700" height="380" rx="12" fill="#ffffff"/>
+
+  <!-- Whiskers and caps: minimum 110, Q1 250, median 340, Q3 450, maximum 540 -->
+  <g stroke="#2a5d8a" stroke-width="3">
+    <line x1="110" y1="170" x2="250" y2="170"/>
+    <line x1="450" y1="170" x2="540" y2="170"/>
+    <line x1="110" y1="148" x2="110" y2="192"/>
+    <line x1="540" y1="148" x2="540" y2="192"/>
+  </g>
+  <!-- Box from Q1 to Q3, with the median line -->
+  <rect x="250" y="135" width="200" height="70" fill="#4682b4" fill-opacity="0.35" stroke="#2a5d8a" stroke-width="3"/>
+  <line x1="340" y1="135" x2="340" y2="205" stroke="#e08a00" stroke-width="5"/>
+  <!-- Outlier -->
+  <circle cx="650" cy="170" r="7" fill="#ef5350" stroke="#ffffff" stroke-width="1.5"/>
+
+  <!-- Labels above -->
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="110" y1="88" x2="110" y2="146"/>
+    <line x1="340" y1="88" x2="340" y2="133"/>
+    <line x1="540" y1="88" x2="540" y2="146"/>
+    <line x1="650" y1="88" x2="650" y2="161"/>
+  </g>
+  <g fill="#333" font-weight="bold" text-anchor="middle">
+    <text x="110" y="60">Minimum</text>
+    <text x="340" y="60">Median</text>
+    <text x="540" y="60">Maximum</text>
+    <text x="650" y="60">Outlier</text>
+  </g>
+  <g fill="#666" font-size="12" text-anchor="middle">
+    <text x="110" y="78">lowest non-outlier</text>
+    <text x="340" y="78">middle value</text>
+    <text x="540" y="78">highest non-outlier</text>
+    <text x="650" y="78">unusual value</text>
+  </g>
+  <g fill="#666" font-size="13" text-anchor="middle">
+    <text x="180" y="160">whisker</text>
+    <text x="495" y="160">whisker</text>
+  </g>
+
+  <!-- Quartile labels below the box -->
+  <g fill="#333" font-weight="bold" text-anchor="middle">
+    <text x="250" y="228">Q1</text>
+    <text x="450" y="228">Q3</text>
+  </g>
+  <g fill="#666" font-size="12" text-anchor="middle">
+    <text x="250" y="244">lower quartile</text>
+    <text x="450" y="244">upper quartile</text>
+  </g>
+
+  <!-- IQR bracket -->
+  <g stroke="#2a5d8a" stroke-width="2" fill="none">
+    <path d="M250 258 V268 H450 V258"/>
+  </g>
+  <text x="350" y="290" fill="#2a5d8a" font-weight="bold" text-anchor="middle">Interquartile range (IQR) = Q3 − Q1</text>
+
+  <!-- Each section holds about 25% of the values -->
+  <g stroke="#bbb" stroke-width="1">
+    <line x1="110" y1="312" x2="110" y2="332"/>
+    <line x1="250" y1="312" x2="250" y2="332"/>
+    <line x1="340" y1="312" x2="340" y2="332"/>
+    <line x1="450" y1="312" x2="450" y2="332"/>
+    <line x1="540" y1="312" x2="540" y2="332"/>
+    <line x1="110" y1="322" x2="540" y2="322"/>
+  </g>
+  <g fill="#ffffff">
+    <rect x="160" y="313" width="40" height="18"/>
+    <rect x="275" y="313" width="40" height="18"/>
+    <rect x="375" y="313" width="40" height="18"/>
+    <rect x="475" y="313" width="40" height="18"/>
+  </g>
+  <g fill="#333" font-size="13" text-anchor="middle">
+    <text x="180" y="327">25%</text>
+    <text x="295" y="327">25%</text>
+    <text x="395" y="327">25%</text>
+    <text x="495" y="327">25%</text>
+  </g>
+  <text x="340" y="358" fill="#666" font-size="13" text-anchor="middle">Each section holds about a quarter of the values (outliers aside)</text>
+</svg>

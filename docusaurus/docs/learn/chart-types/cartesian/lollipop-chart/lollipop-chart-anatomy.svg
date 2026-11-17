@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title id="t">The parts of a lollipop chart</title>
+<desc id="d">A lollipop chart of orders by region for six regions, sorted from North (42) to Islands (15). Callouts on the Islands lollipop label the dot, whose centre marks the value; the stem, a thin line from zero to the value; the baseline at zero; and the sorted category axis.</desc>
+<rect width="760" height="470" fill="#ffffff"/>
+<text x="270.0" y="32" font-size="20" font-weight="600" fill="#1b2633" text-anchor="middle">Orders by region (sample data)</text>
+<line x1="90" y1="390.0" x2="520" y2="390.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="395.0" font-size="15" fill="#5b6773" text-anchor="end">0</text>
+<line x1="90" y1="324.0" x2="520" y2="324.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="329.0" font-size="15" fill="#5b6773" text-anchor="end">10</text>
+<line x1="90" y1="258.0" x2="520" y2="258.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="263.0" font-size="15" fill="#5b6773" text-anchor="end">20</text>
+<line x1="90" y1="192.0" x2="520" y2="192.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="197.0" font-size="15" fill="#5b6773" text-anchor="end">30</text>
+<line x1="90" y1="126.0" x2="520" y2="126.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="131.0" font-size="15" fill="#5b6773" text-anchor="end">40</text>
+<line x1="90" y1="60.0" x2="520" y2="60.0" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80" y="65.0" font-size="15" fill="#5b6773" text-anchor="end">50</text>
+<text transform="translate(32 225.0) rotate(-90)" font-size="16" fill="#1b2633" text-anchor="middle">Orders</text>
+<line x1="125.83333333333334" y1="390" x2="125.83333333333334" y2="112.80000000000001" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="125.83333333333334" cy="112.80000000000001" r="11" fill="#1f8fb3"/>
+<text x="125.83333333333334" y="414" font-size="15" fill="#1b2633" text-anchor="middle">North</text>
+<line x1="197.5" y1="390" x2="197.5" y2="152.4" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="197.5" cy="152.4" r="11" fill="#1f8fb3"/>
+<text x="197.5" y="414" font-size="15" fill="#1b2633" text-anchor="middle">East</text>
+<line x1="269.1666666666667" y1="390" x2="269.1666666666667" y2="185.4" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="269.1666666666667" cy="185.4" r="11" fill="#1f8fb3"/>
+<text x="269.1666666666667" y="414" font-size="15" fill="#1b2633" text-anchor="middle">South</text>
+<line x1="340.83333333333337" y1="390" x2="340.83333333333337" y2="211.8" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="340.83333333333337" cy="211.8" r="11" fill="#1f8fb3"/>
+<text x="340.83333333333337" y="414" font-size="15" fill="#1b2633" text-anchor="middle">West</text>
+<line x1="412.5" y1="390" x2="412.5" y2="244.8" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="412.5" cy="244.8" r="11" fill="#1f8fb3"/>
+<text x="412.5" y="414" font-size="15" fill="#1b2633" text-anchor="middle">Central</text>
+<line x1="484.1666666666667" y1="390" x2="484.1666666666667" y2="291.0" stroke="#1f8fb3" stroke-width="4"/>
+<circle cx="484.1666666666667" cy="291.0" r="11" fill="#1f8fb3"/>
+<text x="484.1666666666667" y="414" font-size="15" fill="#1b2633" text-anchor="middle">Islands</text>
+<line x1="90" y1="390" x2="520" y2="390" stroke="#1b2633" stroke-width="2.5"/>
+<line x1="557" y1="145" x2="496.1666666666667" y2="291.0" stroke="#d6336c" stroke-width="1.5"/>
+<circle cx="496.1666666666667" cy="291.0" r="3.5" fill="#d6336c"/>
+<text x="565" y="150" font-size="16" font-weight="600" fill="#1b2633">Dot (head)</text>
+<text x="565" y="170" font-size="14" fill="#5b6773">Its centre marks the value:</text>
+<text x="565" y="188" font-size="14" fill="#5b6773">Islands has 15 orders</text>
+<line x1="557" y1="240" x2="487.1666666666667" y2="355.5" stroke="#d6336c" stroke-width="1.5"/>
+<circle cx="487.1666666666667" cy="355.5" r="3.5" fill="#d6336c"/>
+<text x="565" y="245" font-size="16" font-weight="600" fill="#1b2633">Stem</text>
+<text x="565" y="265" font-size="14" fill="#5b6773">A thin line from zero</text>
+<text x="565" y="283" font-size="14" fill="#5b6773">to the value</text>
+<line x1="557" y1="330" x2="514" y2="390" stroke="#d6336c" stroke-width="1.5"/>
+<circle cx="514" cy="390" r="3.5" fill="#d6336c"/>
+<text x="565" y="335" font-size="16" font-weight="600" fill="#1b2633">Baseline at zero</text>
+<text x="565" y="355" font-size="14" fill="#5b6773">Stem length shows the value,</text>
+<text x="565" y="373" font-size="14" fill="#5b6773">so the axis must start at 0</text>
+<line x1="557" y1="420" x2="514.1666666666667" y2="410" stroke="#d6336c" stroke-width="1.5"/>
+<circle cx="514.1666666666667" cy="410" r="3.5" fill="#d6336c"/>
+<text x="565" y="425" font-size="16" font-weight="600" fill="#1b2633">Categories, sorted</text>
+<text x="565" y="445" font-size="14" fill="#5b6773">Largest to smallest makes</text>
+<text x="565" y="463" font-size="14" fill="#5b6773">the ranking easy to read</text>
+</svg>

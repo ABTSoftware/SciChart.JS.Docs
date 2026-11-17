@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-labelledby="t d" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<title id="t">The same data as a bar chart and as a lollipop chart</title>
+<desc id="d">Ten quiz scores between 74 and 88, sorted from highest to lowest, drawn twice from a zero baseline. On the left as thick horizontal bars, which form a dense block of colour; on the right as thin stems with a dot at each end, which use less ink and make the end points stand out.</desc>
+<rect width="760" height="430" fill="#ffffff"/>
+<text x="220.0" y="36" font-size="19" font-weight="600" fill="#1b2633" text-anchor="middle">Bar chart</text>
+<line x1="80.0" y1="70" x2="80.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="80.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">0</text>
+<line x1="150.0" y1="70" x2="150.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="150.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">25</text>
+<line x1="220.0" y1="70" x2="220.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="220.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">50</text>
+<line x1="290.0" y1="70" x2="290.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="290.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">75</text>
+<line x1="360.0" y1="70" x2="360.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="360.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">100</text>
+<text x="70" y="90.5" font-size="15" fill="#1b2633" text-anchor="end">Ana</text>
+<rect x="80" y="73.72" width="246.39999999999998" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="121.5" font-size="15" fill="#1b2633" text-anchor="end">Ben</text>
+<rect x="80" y="104.72" width="240.8" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="152.5" font-size="15" fill="#1b2633" text-anchor="end">Cleo</text>
+<rect x="80" y="135.72" width="238.0" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="183.5" font-size="15" fill="#1b2633" text-anchor="end">Dev</text>
+<rect x="80" y="166.72" width="232.39999999999998" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="214.5" font-size="15" fill="#1b2633" text-anchor="end">Eli</text>
+<rect x="80" y="197.72" width="229.60000000000002" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="245.5" font-size="15" fill="#1b2633" text-anchor="end">Fay</text>
+<rect x="80" y="228.72" width="224.0" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="276.5" font-size="15" fill="#1b2633" text-anchor="end">Gus</text>
+<rect x="80" y="259.72" width="221.2" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="307.5" font-size="15" fill="#1b2633" text-anchor="end">Hana</text>
+<rect x="80" y="290.72" width="215.60000000000002" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="338.5" font-size="15" fill="#1b2633" text-anchor="end">Ivo</text>
+<rect x="80" y="321.72" width="212.8" height="23.56" fill="#1f8fb3"/>
+<text x="70" y="369.5" font-size="15" fill="#1b2633" text-anchor="end">Jun</text>
+<rect x="80" y="352.72" width="207.2" height="23.56" fill="#1f8fb3"/>
+<line x1="80" y1="64" x2="80" y2="380" stroke="#1b2633" stroke-width="2"/>
+<text x="220.0" y="424" font-size="15" fill="#1b2633" text-anchor="middle">Quiz score (out of 100)</text>
+<text x="600.0" y="36" font-size="19" font-weight="600" fill="#1b2633" text-anchor="middle">Lollipop chart</text>
+<line x1="460.0" y1="70" x2="460.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="460.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">0</text>
+<line x1="530.0" y1="70" x2="530.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="530.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">25</text>
+<line x1="600.0" y1="70" x2="600.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="600.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">50</text>
+<line x1="670.0" y1="70" x2="670.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="670.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">75</text>
+<line x1="740.0" y1="70" x2="740.0" y2="380" stroke="#c9d3dc" stroke-width="1"/>
+<text x="740.0" y="402" font-size="14" fill="#5b6773" text-anchor="middle">100</text>
+<text x="450" y="90.5" font-size="15" fill="#1b2633" text-anchor="end">Ana</text>
+<line x1="460" y1="85.5" x2="706.4" y2="85.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="706.4" cy="85.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="121.5" font-size="15" fill="#1b2633" text-anchor="end">Ben</text>
+<line x1="460" y1="116.5" x2="700.8" y2="116.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="700.8" cy="116.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="152.5" font-size="15" fill="#1b2633" text-anchor="end">Cleo</text>
+<line x1="460" y1="147.5" x2="698.0" y2="147.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="698.0" cy="147.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="183.5" font-size="15" fill="#1b2633" text-anchor="end">Dev</text>
+<line x1="460" y1="178.5" x2="692.4" y2="178.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="692.4" cy="178.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="214.5" font-size="15" fill="#1b2633" text-anchor="end">Eli</text>
+<line x1="460" y1="209.5" x2="689.6" y2="209.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="689.6" cy="209.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="245.5" font-size="15" fill="#1b2633" text-anchor="end">Fay</text>
+<line x1="460" y1="240.5" x2="684.0" y2="240.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="684.0" cy="240.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="276.5" font-size="15" fill="#1b2633" text-anchor="end">Gus</text>
+<line x1="460" y1="271.5" x2="681.2" y2="271.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="681.2" cy="271.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="307.5" font-size="15" fill="#1b2633" text-anchor="end">Hana</text>
+<line x1="460" y1="302.5" x2="675.6" y2="302.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="675.6" cy="302.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="338.5" font-size="15" fill="#1b2633" text-anchor="end">Ivo</text>
+<line x1="460" y1="333.5" x2="672.8" y2="333.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="672.8" cy="333.5" r="8" fill="#1f8fb3"/>
+<text x="450" y="369.5" font-size="15" fill="#1b2633" text-anchor="end">Jun</text>
+<line x1="460" y1="364.5" x2="667.2" y2="364.5" stroke="#1f8fb3" stroke-width="3"/>
+<circle cx="667.2" cy="364.5" r="8" fill="#1f8fb3"/>
+<line x1="460" y1="64" x2="460" y2="380" stroke="#1b2633" stroke-width="2"/>
+<text x="600.0" y="424" font-size="15" fill="#1b2633" text-anchor="middle">Quiz score (out of 100)</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 430" width="700" height="430" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a pie chart</title>
+  <desc id="desc">A pie chart of a household budget split into four slices: Housing 40%, Food 25%, Transport 20% and Other 15%. The slices start at 12 o'clock and run clockwise, largest first. Each slice's angle is its share of 360 degrees, the slices add up to 100%, and a legend names each slice.</desc>
+  <rect width="700" height="430" rx="12" fill="#ffffff"/>
+  <path d="M220,215 L220.0,65.0 A150,150 0 0 1 308.2,336.4 Z" fill="#2b9fc0" stroke="#ffffff" stroke-width="3"/>
+  <path d="M220,215 L308.2,336.4 A150,150 0 0 1 98.6,303.2 Z" fill="#f48420" stroke="#ffffff" stroke-width="3"/>
+  <path d="M220,215 L98.6,303.2 A150,150 0 0 1 98.6,126.8 Z" fill="#30bc9a" stroke="#ffffff" stroke-width="3"/>
+  <path d="M220,215 L98.6,126.8 A150,150 0 0 1 220.0,65.0 Z" fill="#8e9bae" stroke="#ffffff" stroke-width="3"/>
+  <text x="308" y="192" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">40%</text>
+  <text x="205" y="313" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">25%</text>
+  <text x="127" y="221" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">20%</text>
+  <text x="178" y="138" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="18">15%</text>
+  <text x="470" y="40" fill="#333" font-weight="bold">Legend</text>
+  <rect x="470" y="56" width="16" height="16" rx="3" fill="#2b9fc0"/>
+  <text x="496" y="69" fill="#333">Housing</text>
+  <rect x="470" y="82" width="16" height="16" rx="3" fill="#f48420"/>
+  <text x="496" y="95" fill="#333">Food</text>
+  <rect x="470" y="108" width="16" height="16" rx="3" fill="#30bc9a"/>
+  <text x="496" y="121" fill="#333">Transport</text>
+  <rect x="470" y="134" width="16" height="16" rx="3" fill="#8e9bae"/>
+  <text x="496" y="147" fill="#333">Other</text>
+  <path d="M220.0,175.0 A40,40 0 0 1 243.5,247.4" fill="none" stroke="#14233c" stroke-width="2"/>
+  <line x1="220" y1="43" x2="220" y2="61" stroke="#999" stroke-dasharray="4 4"/>
+  <text x="220" y="37" text-anchor="middle" fill="#666" font-size="13">starts at 12 o'clock, runs clockwise</text>
+  <line x1="330" y1="151" x2="462" y2="185" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="258" y1="221" x2="462" y2="295" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="330" y1="190" x2="462" y2="240" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="169" y1="356" x2="169" y2="383" stroke="#999" stroke-dasharray="4 4"/>
+  <line x1="169" y1="383" x2="462" y2="383" stroke="#999" stroke-dasharray="4 4"/>
+  <text x="470" y="190" fill="#333" font-weight="bold">Slice</text>
+  <text x="470" y="209" fill="#666" font-size="13">one category (Housing)</text>
+  <text x="470" y="245" fill="#333" font-weight="bold">Label</text>
+  <text x="470" y="264" fill="#666" font-size="13">the slice's share, as a percentage</text>
+  <text x="470" y="300" fill="#333" font-weight="bold">Angle</text>
+  <text x="470" y="319" fill="#666" font-size="13">40% of 360° = 144°</text>
+  <text x="470" y="388" fill="#333" font-weight="bold">Whole circle</text>
+  <text x="470" y="407" fill="#666" font-size="13">all slices add up to 100%</text>
+</svg>

@@ -7,6 +7,10 @@ sidebar_position: 35
 Choropleth Maps visualize geographic regions colored by a data metric — population, density, area, or any continuous value — making spatial patterns immediately visible. SciChart.js has no dedicated map series; instead, choropleth maps are composed from [FastTriangleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fasttrianglerenderableseries.html) for filled regions, [FastLineRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastlinerenderableseries.html) for boundary outlines, and [FastBubbleRenderableSeries:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) for point-of-interest markers.
 
 :::tip
+New to choropleth maps? Read our guide: [Choropleth Map: what it is and how to read it](/learn/chart-types/complex/choropleth-map/), covering why to map rates rather than counts, how classification and colour schemes change the picture, and when to use another map, with a live map of US population density built from GeoJSON with triangle series and hover tooltips.
+:::
+
+:::tip
 The [JavaScript Choropleth Map Example](https://www.scichart.com/demo/react/map-example) can be found in the [SciChart.JS Examples Suite](https://github.com/ABTSoftware/SciChart.JS.Examples) on GitHub, or in the live demo at [scichart.com/demo](https://www.scichart.com/demo/react/map-example).
 :::
 

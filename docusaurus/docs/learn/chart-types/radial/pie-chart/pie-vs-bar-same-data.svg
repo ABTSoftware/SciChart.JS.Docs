@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" width="760" height="420" role="img" aria-labelledby="t d" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title id="t">The same four values shown as a pie chart and as a bar chart</title>
+<desc id="d">Survey answers for favourite season: Spring 23%, Summer 26%, Autumn 27%, Winter 24%. In the unlabelled pie chart on the left the four slices look almost the same size and it is hard to tell which is largest. In the bar chart on the right, sorted largest first against a percentage axis, Autumn is clearly the largest and Spring the smallest.</desc>
+<rect width="760" height="420" fill="#ffffff"/>
+<text x="190" y="40" text-anchor="middle" font-size="19" font-weight="700" fill="#14233C">As a pie chart</text>
+<text x="190" y="62" text-anchor="middle" font-size="14" fill="#4A5568">No labels: which slice is biggest?</text>
+<text x="545" y="40" text-anchor="middle" font-size="19" font-weight="700" fill="#14233C">As a bar chart</text>
+<text x="545" y="62" text-anchor="middle" font-size="14" fill="#4A5568">Sorted bars: the order is obvious</text>
+<path d="M190,215 L190.0,75.0 A140,140 0 0 1 328.9,197.5 Z" fill="#50C7E0" stroke="#ffffff" stroke-width="2"/>
+<text x="245.6" y="157.0" text-anchor="middle" font-size="16" font-weight="700" fill="#14233C">Spring</text>
+<path d="M190,215 L328.9,197.5 A140,140 0 0 1 198.8,354.7 Z" fill="#F48420" stroke="#ffffff" stroke-width="2"/>
+<text x="254.7" y="273.5" text-anchor="middle" font-size="16" font-weight="700" fill="#14233C">Summer</text>
+<path d="M190,215 L198.8,354.7 A140,140 0 0 1 50.3,206.2 Z" fill="#30BC9A" stroke="#ffffff" stroke-width="2"/>
+<text x="130.6" y="279.4" text-anchor="middle" font-size="16" font-weight="700" fill="#14233C">Autumn</text>
+<path d="M190,215 L50.3,206.2 A140,140 0 0 1 190.0,75.0 Z" fill="#EC0F6C" stroke="#ffffff" stroke-width="2"/>
+<text x="132.5" y="158.8" text-anchor="middle" font-size="16" font-weight="700" fill="#14233C">Winter</text>
+<line x1="470.0" y1="87" x2="470.0" y2="349" stroke="#D5DBE3" stroke-width="1"/>
+<text x="470.0" y="367" text-anchor="middle" font-size="13" fill="#4A5568">0%</text>
+<line x1="553.3" y1="87" x2="553.3" y2="349" stroke="#D5DBE3" stroke-width="1"/>
+<text x="553.3" y="367" text-anchor="middle" font-size="13" fill="#4A5568">10%</text>
+<line x1="636.7" y1="87" x2="636.7" y2="349" stroke="#D5DBE3" stroke-width="1"/>
+<text x="636.7" y="367" text-anchor="middle" font-size="13" fill="#4A5568">20%</text>
+<line x1="720.0" y1="87" x2="720.0" y2="349" stroke="#D5DBE3" stroke-width="1"/>
+<text x="720.0" y="367" text-anchor="middle" font-size="13" fill="#4A5568">30%</text>
+<rect x="470" y="95" width="225.0" height="46" fill="#30BC9A"/>
+<text x="462" y="123.0" text-anchor="end" font-size="15" font-weight="700" fill="#14233C">Autumn</text>
+<rect x="470" y="161" width="216.7" height="46" fill="#F48420"/>
+<text x="462" y="189.0" text-anchor="end" font-size="15" font-weight="700" fill="#14233C">Summer</text>
+<rect x="470" y="227" width="200.0" height="46" fill="#EC0F6C"/>
+<text x="462" y="255.0" text-anchor="end" font-size="15" font-weight="700" fill="#14233C">Winter</text>
+<rect x="470" y="293" width="191.7" height="46" fill="#50C7E0"/>
+<text x="462" y="321.0" text-anchor="end" font-size="15" font-weight="700" fill="#14233C">Spring</text>
+<text x="380" y="406" text-anchor="middle" font-size="13" fill="#4A5568">Illustrative survey data: favourite season. Spring 23%, Summer 26%, Autumn 27%, Winter 24%</text>
+</svg>

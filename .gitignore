@@ -3,3 +3,10 @@
 .idea
 .aider*
 /docs/
+
+# Learning center: private rules, research and scripts. A local copy goes in /private/ (see docusaurus/docs/learn/CLAUDE.md); never commit it
+/private/
+docusaurus/docs/learn/todo.md
+docusaurus/docs/learn/*.csv
+docusaurus/docs/learn/research/
+docusaurus/scripts/learn-*

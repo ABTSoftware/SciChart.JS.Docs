@@ -10,6 +10,9 @@ sidebar_position: 5
 
 By default, SciChart.js uses resampling of data to ensure the minimum viable data-set is displayed on the screen. SciChart.js resampling algorithms are sophisticated time-series simplification algorithms which result in **visually imperceptible changes to the chart**, but hugely improved performance. They improve performance by allowing you to draw datasets with millions, or tens of millions of points in a JavaScript Chart.
 
+:::tip New to downsampling? Read our guide: [Downsampling: what it is, LTTB vs min-max, and how to choose](/learn/big-data/downsampling/), with a live comparison of five methods on a million points.
+:::
+
 Effect of Resampling on Visual Output
 -------------------------------------
 

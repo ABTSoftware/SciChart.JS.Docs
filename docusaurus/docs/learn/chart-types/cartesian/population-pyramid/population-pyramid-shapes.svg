@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 460" width="960" height="460" font-family="system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif" role="img" aria-labelledby="t d">
+<title id="t">The three main shapes of population pyramid</title>
+<desc id="d">Three simplified population pyramids side by side. Expansive: a wide base that narrows quickly towards the top, like a triangle, showing many births and a growing, young population. Stationary: bars of similar width up to old age, then tapering, showing low birth and death rates and a population that is roughly stable. Constrictive: the base is narrower than the middle, showing falling births and an ageing population that may shrink.</desc>
+<rect width="960" height="460" fill="#ffffff"/>
+<text x="200" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1F2937">Expansive</text>
+<rect x="85.5" y="344" width="110.5" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="344" width="110.5" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="104.4" y="327" width="91.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="327" width="91.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="120.1" y="310" width="75.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="310" width="75.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="133.0" y="293" width="63.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="293" width="63.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="143.8" y="276" width="52.2" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="276" width="52.2" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="152.7" y="259" width="43.3" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="259" width="43.3" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="160.1" y="242" width="35.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="242" width="35.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="166.3" y="225" width="29.7" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="225" width="29.7" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="171.3" y="208" width="24.7" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="208" width="24.7" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="175.6" y="191" width="20.4" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="191" width="20.4" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="179.1" y="174" width="16.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="174" width="16.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="182.0" y="157" width="14.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="157" width="14.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="184.4" y="140" width="11.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="140" width="11.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="186.3" y="123" width="9.7" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="123" width="9.7" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="188.0" y="106" width="8.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="106" width="8.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="189.4" y="89" width="6.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="89" width="6.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="190.5" y="72" width="5.5" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="204.0" y="72" width="5.5" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<line x1="200" y1="66" x2="200" y2="361" stroke="#6B7280" stroke-width="1"/>
+<text x="200" y="387" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937">Wide base, narrows fast</text>
+<text x="200" y="407" text-anchor="middle" font-size="13" fill="#6B7280">Many births, shorter lives:</text>
+<text x="200" y="425" text-anchor="middle" font-size="13" fill="#6B7280">young and growing</text>
+<text x="500" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1F2937">Stationary</text>
+<rect x="429.7" y="344" width="66.3" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="344" width="66.3" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="429.7" y="327" width="66.3" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="327" width="66.3" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="429.7" y="310" width="66.3" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="310" width="66.3" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="429.8" y="293" width="66.2" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="293" width="66.2" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="429.9" y="276" width="66.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="276" width="66.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="430.3" y="259" width="65.7" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="259" width="65.7" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="430.9" y="242" width="65.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="242" width="65.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="431.9" y="225" width="64.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="225" width="64.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="433.5" y="208" width="62.5" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="208" width="62.5" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="435.8" y="191" width="60.2" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="191" width="60.2" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="439.0" y="174" width="57.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="174" width="57.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="443.4" y="157" width="52.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="157" width="52.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="449.1" y="140" width="46.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="140" width="46.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="456.4" y="123" width="39.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="123" width="39.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="465.6" y="106" width="30.4" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="106" width="30.4" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="477.0" y="89" width="19.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="89" width="19.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="490.9" y="72" width="5.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="504.0" y="72" width="5.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<line x1="500" y1="66" x2="500" y2="361" stroke="#6B7280" stroke-width="1"/>
+<text x="500" y="387" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937">Similar widths until old age</text>
+<text x="500" y="407" text-anchor="middle" font-size="13" fill="#6B7280">Low births and deaths:</text>
+<text x="500" y="425" text-anchor="middle" font-size="13" fill="#6B7280">roughly stable</text>
+<text x="800" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1F2937">Constrictive</text>
+<rect x="753.5" y="344" width="42.5" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="344" width="42.5" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="746.4" y="327" width="49.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="327" width="49.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="739.7" y="310" width="56.3" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="310" width="56.3" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="734.1" y="293" width="61.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="293" width="61.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="729.8" y="276" width="66.2" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="276" width="66.2" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="727.2" y="259" width="68.8" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="259" width="68.8" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="726.6" y="242" width="69.4" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="242" width="69.4" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="728.0" y="225" width="68.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="225" width="68.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="731.4" y="208" width="64.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="208" width="64.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="736.9" y="191" width="59.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="191" width="59.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="744.1" y="174" width="51.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="174" width="51.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="752.9" y="157" width="43.1" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="157" width="43.1" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="762.0" y="140" width="34.0" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="140" width="34.0" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="766.1" y="123" width="29.9" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="123" width="29.9" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="771.8" y="106" width="24.2" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="106" width="24.2" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="779.4" y="89" width="16.6" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="89" width="16.6" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<rect x="789.2" y="72" width="6.8" height="13" rx="2" fill="#2F9FBF" fill-opacity="0.85"/>
+<rect x="804.0" y="72" width="6.8" height="13" rx="2" fill="#E8892B" fill-opacity="0.85"/>
+<line x1="800" y1="66" x2="800" y2="361" stroke="#6B7280" stroke-width="1"/>
+<text x="800" y="387" text-anchor="middle" font-size="14" font-weight="700" fill="#1F2937">Base narrower than the middle</text>
+<text x="800" y="407" text-anchor="middle" font-size="13" fill="#6B7280">Fewer births, longer lives:</text>
+<text x="800" y="425" text-anchor="middle" font-size="13" fill="#6B7280">ageing, may shrink</text>
+<text x="10" y="78" font-size="12" fill="#6B7280">Oldest</text>
+<text x="10" y="359" font-size="12" fill="#6B7280">Youngest</text>
+<text x="948" y="452" text-anchor="end" font-size="11" fill="#6B7280">Simplified shapes, share of population in each age group; male left, female right</text>
+</svg>

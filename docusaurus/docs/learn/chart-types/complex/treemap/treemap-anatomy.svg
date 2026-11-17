@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title>The parts of a treemap</title>
+<desc>A treemap of a total of 100 split into two groups. Group A (60) holds leaves A1 (30), A2 (18) and A3 (12); group B (40) holds B1 (22), B2 (12) and B3 (6). Callouts mark a group rectangle and its header, a leaf whose area matches its value, colour showing the group, and a small leaf whose label is left out.</desc>
+<rect width="780" height="400" fill="#ffffff"/>
+<text x="30" y="34" font-size="17" font-weight="700" fill="#1d2a3a">A treemap of a total of 100</text>
+<rect x="33.0" y="63.0" width="258.0" height="294.0" fill="#2E9CB8" fill-opacity="0.16" stroke="#2E9CB8" stroke-width="1.5"/>
+<text x="41.0" y="82.0" font-size="15" font-weight="700" fill="#1d2a3a">Group A  (60)</text>
+<rect x="37.0" y="91.0" width="250.0" height="131.0" fill="#2E9CB8" stroke="#ffffff" stroke-width="2"/>
+<text x="162.0" y="154.5" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">A1</text>
+<text x="162.0" y="172.5" font-size="14" fill="#ffffff" text-anchor="middle">30</text>
+<rect x="37.0" y="222.0" width="150.0" height="131.0" fill="#2E9CB8" stroke="#ffffff" stroke-width="2"/>
+<text x="112.0" y="285.5" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">A2</text>
+<text x="112.0" y="303.5" font-size="14" fill="#ffffff" text-anchor="middle">18</text>
+<rect x="187.0" y="222.0" width="100.0" height="131.0" fill="#2E9CB8" stroke="#ffffff" stroke-width="2"/>
+<text x="237.0" y="285.5" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">A3</text>
+<text x="237.0" y="303.5" font-size="14" fill="#ffffff" text-anchor="middle">12</text>
+<rect x="297.0" y="63.0" width="170.0" height="294.0" fill="#E07A1F" fill-opacity="0.16" stroke="#E07A1F" stroke-width="1.5"/>
+<text x="305.0" y="82.0" font-size="15" font-weight="700" fill="#1d2a3a">Group B  (40)</text>
+<rect x="301.0" y="91.0" width="162.0" height="144.1" fill="#E07A1F" stroke="#ffffff" stroke-width="2"/>
+<text x="382.0" y="161.1" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">B1</text>
+<text x="382.0" y="179.1" font-size="14" fill="#ffffff" text-anchor="middle">22</text>
+<rect x="301.0" y="235.1" width="108.0" height="117.9" fill="#E07A1F" stroke="#ffffff" stroke-width="2"/>
+<text x="355.0" y="292.1" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">B2</text>
+<text x="355.0" y="310.1" font-size="14" fill="#ffffff" text-anchor="middle">12</text>
+<rect x="409.0" y="235.1" width="54.0" height="117.9" fill="#E07A1F" stroke="#ffffff" stroke-width="2"/>
+<line x1="407.0" y1="75.0" x2="497" y2="73" stroke="#55657a" stroke-width="1.2"/>
+<circle cx="407.0" cy="75.0" r="3.5" fill="#1d2a3a"/>
+<text x="505" y="78" font-size="15" font-weight="700" fill="#1d2a3a">Group (parent)</text>
+<text x="505" y="96" font-size="14"  fill="#3c4a5c">Its area is the group total, 40</text>
+<text x="505" y="114" font-size="14"  fill="#3c4a5c">Header: name and total</text>
+<line x1="449.0" y1="183.1" x2="497" y2="163" stroke="#55657a" stroke-width="1.2"/>
+<circle cx="449.0" cy="183.1" r="3.5" fill="#1d2a3a"/>
+<text x="505" y="168" font-size="15" font-weight="700" fill="#1d2a3a">Leaf rectangle</text>
+<text x="505" y="186" font-size="14"  fill="#3c4a5c">Area matches its value:</text>
+<text x="505" y="204" font-size="14"  fill="#3c4a5c">B1 is 22% of the whole</text>
+<line x1="467.0" y1="245.3" x2="497" y2="253" stroke="#55657a" stroke-width="1.2"/>
+<circle cx="467.0" cy="245.3" r="3.5" fill="#1d2a3a"/>
+<text x="505" y="258" font-size="15" font-weight="700" fill="#1d2a3a">Colour shows the group</text>
+<text x="505" y="276" font-size="14"  fill="#3c4a5c">All of group B is orange</text>
+<line x1="436.0" y1="323.5" x2="497" y2="323" stroke="#55657a" stroke-width="1.2"/>
+<circle cx="436.0" cy="323.5" r="3.5" fill="#1d2a3a"/>
+<text x="505" y="328" font-size="15" font-weight="700" fill="#1d2a3a">Small leaf (B3, 6)</text>
+<text x="505" y="346" font-size="14"  fill="#3c4a5c">Label left out: hover or</text>
+<text x="505" y="364" font-size="14"  fill="#3c4a5c">zoom in to read it</text>
+</svg>

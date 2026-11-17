@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400" width="700" height="400" role="img" aria-labelledby="title desc" font-family="Helvetica, Arial, sans-serif" font-size="15">
+  <title id="title">Anatomy of a line chart</title>
+  <desc id="desc">A line chart with a y-axis for the value and an x-axis for time (January to August). Eight data points are joined by a line in order. The line slopes upward while values rise, reaches a peak in June, then slopes downward as values fall.</desc>
+  <rect width="700" height="400" rx="12" fill="#ffffff"/>
+
+  <!-- gridlines -->
+  <g stroke="#eeeeee">
+    <line x1="100" y1="80" x2="650" y2="80"/>
+    <line x1="100" y1="140" x2="650" y2="140"/>
+    <line x1="100" y1="200" x2="650" y2="200"/>
+    <line x1="100" y1="260" x2="650" y2="260"/>
+  </g>
+  <!-- axes -->
+  <g stroke="#333" stroke-width="2">
+    <line x1="100" y1="40" x2="100" y2="320"/>
+    <line x1="100" y1="320" x2="650" y2="320"/>
+  </g>
+  <g fill="#666" font-size="13" text-anchor="end">
+    <text x="92" y="84">40</text>
+    <text x="92" y="144">30</text>
+    <text x="92" y="204">20</text>
+    <text x="92" y="264">10</text>
+    <text x="92" y="324">0</text>
+  </g>
+  <g fill="#666" font-size="13" text-anchor="middle">
+    <text x="130" y="340">Jan</text>
+    <text x="200" y="340">Feb</text>
+    <text x="270" y="340">Mar</text>
+    <text x="340" y="340">Apr</text>
+    <text x="410" y="340">May</text>
+    <text x="480" y="340">Jun</text>
+    <text x="550" y="340">Jul</text>
+    <text x="620" y="340">Aug</text>
+  </g>
+  <text x="30" y="180" fill="#333" font-weight="bold" text-anchor="middle" transform="rotate(-90 30 180)">Y-axis: the value measured</text>
+  <text x="375" y="372" fill="#333" font-weight="bold" text-anchor="middle">X-axis: usually time, in order</text>
+
+  <!-- the line and its data points -->
+  <path d="M130,285 L200,255 L270,222 L340,198 L410,128 L480,100 L550,152 L620,190" fill="none" stroke="#2a7fb8" stroke-width="3" stroke-linejoin="round"/>
+  <g fill="#ffffff" stroke="#2a7fb8" stroke-width="2.5">
+    <circle cx="130" cy="285" r="5"/>
+    <circle cx="200" cy="255" r="5"/>
+    <circle cx="270" cy="222" r="5"/>
+    <circle cx="340" cy="198" r="5"/>
+    <circle cx="410" cy="128" r="5"/>
+    <circle cx="480" cy="100" r="5"/>
+    <circle cx="550" cy="152" r="5"/>
+    <circle cx="620" cy="190" r="5"/>
+  </g>
+
+  <!-- annotations -->
+  <g stroke="#999" stroke-dasharray="4 4">
+    <line x1="300" y1="262" x2="276" y2="228"/>
+    <line x1="480" y1="70" x2="480" y2="92"/>
+  </g>
+  <text x="302" y="276" fill="#333">Data point: one x value and one y value</text>
+  <text x="480" y="62" fill="#333" text-anchor="middle">Peak (highest value)</text>
+  <text x="150" y="190" fill="#1b7f75" font-weight="bold">Slopes up: values rising</text>
+  <text x="640" y="110" fill="#c62828" font-weight="bold" text-anchor="end">Slopes down:</text>
+  <text x="640" y="128" fill="#c62828" font-weight="bold" text-anchor="end">values falling</text>
+</svg>

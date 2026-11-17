@@ -6,6 +6,9 @@ sidebar_position: 1
 
 SciChart.js 3D shares the same [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) as SciChart.js 2D. Many features such as **Text Formatting**, **Autorange** (zooming to fit) and **Styling** **are** **shared**. For your convenience, some of the documentation has been duplicated here, with some referring to other sections of the user manual.
 
+:::tip New to 3D axes? Read our guide: [XYZ graph: what the x, y and z axes are and how to read them](/learn/axes-and-scales/xyz-graph/), covering which axis is up, right- vs left-handed axes and perspective vs orthographic views, with a live example.
+:::
+
 The Axis Types in SciChart all inherit from [AxisCore:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axiscore.html) and 3D axis inherit [AxisBase3D:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/axisbase3d.html). Below you can find an inheritance diagram. In the next section we're going to go over the main properties, types and what you can do with SciChart.js 3D Axis.
 
 ```mermaid
