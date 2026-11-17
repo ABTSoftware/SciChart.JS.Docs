@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13.7
+sidebar_position: 60
 sidebar_label: Sunburst Chart
 title: "Sunburst Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a sunburst chart is, how to read its rings, a worked example, when to use one instead of a treemap or donut chart, and the mistakes to avoid. With a live example."
@@ -18,6 +18,7 @@ keywords:
         "icicle plot"
     ]
 image: /img/learn/sunburst-chart-og.png
+related: [treemap, donut-chart, pie-chart, sankey-diagram]
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4.6
+sidebar_position: 70
 sidebar_label: Combo Chart
 title: "Combo Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a combo chart is, how to read columns and a line on one or two y-axes, when a dual axis chart helps or misleads, and the mistakes to avoid. With a live, interactive example."
@@ -15,6 +15,7 @@ keywords:
         "combo chart vs dual axis chart"
     ]
 image: /img/learn/combo-chart-og.png
+related: [bar-chart, line-chart, pareto-chart, area-chart]
 ---
 
 <head>

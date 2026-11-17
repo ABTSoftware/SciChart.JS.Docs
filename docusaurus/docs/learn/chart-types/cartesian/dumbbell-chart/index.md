@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4.8
+sidebar_position: 100
 sidebar_label: Dumbbell Chart
 title: "Dumbbell Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a dumbbell chart (dumbbell plot or connected dot plot) is, how to read it, how to sort it, when to use one instead of clustered bars, and the mistakes to avoid."
@@ -16,6 +16,7 @@ keywords:
         "dumbbell chart vs clustered bar chart"
     ]
 image: /img/learn/dumbbell-chart-og.png
+related: [lollipop-chart, bar-chart, scatter-plot, population-pyramid]
 ---
 
 <head>

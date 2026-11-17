@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4.5
+sidebar_position: 170
 sidebar_label: Pareto Chart
 title: "Pareto Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a Pareto chart is, how to read the bars and cumulative line, the 80/20 rule, how to make one step by step, and the mistakes to avoid. With a live, interactive example."
@@ -16,6 +16,7 @@ keywords:
         "pareto chart vs histogram"
     ]
 image: /img/learn/pareto-chart-og.png
+related: [bar-chart, combo-chart, histogram, waterfall-chart]
 ---
 
 <head>

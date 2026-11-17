@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 30
 sidebar_label: Box Plot
 title: "Box Plot (Box and Whisker Plot): What It Is & How to Read It (With Interactive Examples)"
 description: "What a box plot (box and whisker plot) shows, how to read the median, quartiles, whiskers and outliers, how to work one out by hand, and what it can hide. With live examples."
@@ -21,6 +21,7 @@ keywords:
         "box plot vs histogram"
     ]
 image: /img/learn/box-plot-og.png
+related: [violin-plot, histogram, density-plot, error-bars]
 ---
 
 <head>

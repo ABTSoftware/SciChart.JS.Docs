@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 210
 sidebar_label: Spectrogram
 title: "Spectrogram: What It Is & How to Read It (With Interactive Examples)"
 description: "What a spectrogram is, how to read its time, frequency and colour, what each shape means, how it is made with an FFT, and the mistakes to avoid. With a live, real-time example."
@@ -15,6 +15,7 @@ keywords:
         "waterfall plot"
     ]
 image: /img/learn/spectrogram-og.png
+related: [heatmap, strip-chart, 3d-surface-plot, big-data-visualization]
 ---
 
 <head>

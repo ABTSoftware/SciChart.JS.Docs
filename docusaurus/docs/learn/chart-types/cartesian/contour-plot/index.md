@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9.5
+sidebar_position: 80
 sidebar_label: Contour Plot
 title: "Contour Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a contour plot is, how to read its lines of equal value, peaks, saddles and spacing, how it compares with a heatmap and a 3D surface, and the mistakes to avoid. With a live example."
@@ -15,6 +15,7 @@ keywords:
         "contour plot vs surface plot"
     ]
 image: /img/learn/contour-plot-og.png
+related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
 ---
 
 <head>

@@ -15,6 +15,7 @@ keywords:
         "linear vs logarithmic scale"
     ]
 image: /img/learn/log-scale-graph-og.png
+related: [cartesian-graph, line-chart, spectrogram, scatter-plot]
 ---
 
 <head>

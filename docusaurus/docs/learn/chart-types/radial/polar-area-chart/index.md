@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11.3
+sidebar_position: 40
 sidebar_label: Polar Area Chart
 title: "Polar Area Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a polar area chart (Nightingale rose or coxcomb chart) is, how to read it, why its radius must be the square root of the value, and how it differs from pie and radar charts."
@@ -15,6 +15,7 @@ keywords:
         "polar area chart vs pie chart"
     ]
 image: /img/learn/polar-area-chart-og.png
+related: [radar-chart, pie-chart, bar-chart, sunburst-chart]
 ---
 
 <head>

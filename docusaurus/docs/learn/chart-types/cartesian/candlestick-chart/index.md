@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 60
 sidebar_label: Candlestick Chart
 title: "Candlestick Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a candlestick chart is, how to read open, high, low and close, how timeframes change the candles, common patterns, and when to use one instead of an OHLC or line chart."
@@ -18,6 +18,7 @@ keywords:
         "candlestick vs ohlc chart"
     ]
 image: /img/learn/candlestick-chart-og.png
+related: [ohlc-chart, line-chart, combo-chart, big-data-visualization]
 ---
 
 <head>

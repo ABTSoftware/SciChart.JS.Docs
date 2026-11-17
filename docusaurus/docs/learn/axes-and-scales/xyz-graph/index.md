@@ -15,6 +15,7 @@ keywords:
         "right-handed vs left-handed coordinate system"
     ]
 image: /img/learn/xyz-graph-og.png
+related: [cartesian-graph, 3d-surface-plot, bubble-chart, log-scale-graph]
 ---
 
 <head>

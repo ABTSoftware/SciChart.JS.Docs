@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15.7
+sidebar_position: 20
 sidebar_label: Funnel Chart
 title: "Funnel Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a funnel chart is, how to read stage counts and conversion rates, how to work out drop-off between steps, when a bar chart is the better choice, and the mistakes to avoid."
@@ -16,6 +16,7 @@ keywords:
         "funnel chart vs bar chart"
     ]
 image: /img/learn/funnel-chart-og.png
+related: [sankey-diagram, bar-chart, waterfall-chart, pie-chart]
 ---
 
 <head>

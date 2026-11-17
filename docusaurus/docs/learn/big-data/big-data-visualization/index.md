@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 10
 sidebar_label: Big Data Visualization
 title: "Big Data Visualization: What It Is & How to Visualize Large Datasets"
 description: "What big data visualization is, when a dataset is too big for a chart, SVG vs Canvas vs WebGL, and the techniques that keep millions of points fast. With live tests you can run."
@@ -15,6 +15,7 @@ keywords:
         "how to visualize big data"
     ]
 image: /img/learn/big-data-visualization-og.png
+related: [downsampling, strip-chart, scatter-plot, heatmap]
 ---
 
 <head>

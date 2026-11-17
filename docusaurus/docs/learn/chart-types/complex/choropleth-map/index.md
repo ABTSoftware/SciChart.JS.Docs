@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13.9
+sidebar_position: 10
 sidebar_label: Choropleth Map
 title: "Choropleth Map: What It Is & How to Read It (With Interactive Examples)"
 description: "What a choropleth map is, how to read one, why it should show rates rather than counts, how classes and colours change the picture, and when to use another map."
@@ -16,6 +16,7 @@ keywords:
         "filled map"
     ]
 image: /img/learn/choropleth-map-og.png
+related: [heatmap, treemap, bubble-chart]
 ---
 
 <head>

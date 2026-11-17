@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+sidebar_position: 10
 sidebar_label: Area Chart
 title: "Area Chart & Stacked Area Chart: What They Are & How to Read Them (With Interactive Examples)"
 description: "What an area chart is, how to read and describe a stacked area chart, stacked vs 100% stacked, when to use one instead of a line chart, and the mistakes to avoid."
@@ -15,6 +15,7 @@ keywords:
         "mountain chart"
     ]
 image: /img/learn/area-chart-og.png
+related: [line-chart, bar-chart, density-plot, strip-chart]
 ---
 
 <head>

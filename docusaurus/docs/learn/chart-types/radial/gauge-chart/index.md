@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15.5
+sidebar_position: 20
 sidebar_label: Gauge Chart
 title: "Gauge Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a gauge chart (speedometer or dial chart) is, how to read its needle and bands, how to set the bands, when to use one, and the mistakes to avoid."
@@ -17,6 +17,7 @@ keywords:
         "gauge chart vs bullet chart"
     ]
 image: /img/learn/gauge-chart-og.png
+related: [bullet-chart, donut-chart, polar-area-chart]
 ---
 
 <head>

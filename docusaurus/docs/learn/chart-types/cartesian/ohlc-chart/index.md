@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14.2
+sidebar_position: 160
 sidebar_label: OHLC Chart
 title: "OHLC Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What an OHLC chart is, how to read the open and close ticks on each bar, how OHLC bars compare with candlesticks and HLC bars, and when traders prefer bars."
@@ -15,6 +15,7 @@ keywords:
         "hlc bar chart"
     ]
 image: /img/learn/ohlc-chart-og.png
+related: [candlestick-chart, line-chart, big-data-visualization]
 ---
 
 <head>

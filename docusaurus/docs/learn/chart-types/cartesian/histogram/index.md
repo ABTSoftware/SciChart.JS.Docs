@@ -1,5 +1,5 @@
 ---
-sidebar_position: 7
+sidebar_position: 130
 sidebar_label: Histogram
 title: "Histogram: What It Is & How to Read It (With Interactive Examples)"
 description: "What a histogram is, how to read and describe one, how to make one step by step, how to choose bins, and how it differs from a bar chart. With a live, interactive example."
@@ -20,6 +20,7 @@ keywords:
         "frequency histogram"
     ]
 image: /img/learn/histogram-og.png
+related: [density-plot, box-plot, bar-chart, violin-plot]
 ---
 
 <head>

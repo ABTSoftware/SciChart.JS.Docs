@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13
+sidebar_position: 10
 sidebar_label: Donut Chart
 title: "Donut Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a donut (doughnut) chart is, how to read its ring and centre label, how it differs from a pie chart, and when a bar chart is better. With a live example."
@@ -15,6 +15,7 @@ keywords:
         "multi-ring donut chart"
     ]
 image: /img/learn/donut-chart-og.png
+related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
 ---
 
 <head>

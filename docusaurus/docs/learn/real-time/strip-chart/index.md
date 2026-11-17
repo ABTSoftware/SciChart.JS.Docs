@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 10
 sidebar_label: Strip Chart
 title: "Strip Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a strip chart is, how to read one, scrolling vs sweeping displays, when to use it, and the strip plot (jitter dot plot) that shares its name. With a live, real-time example."
@@ -16,6 +16,7 @@ keywords:
         "strip chart vs line chart"
     ]
 image: /img/learn/strip-chart-og.png
+related: [line-chart, big-data-visualization, sparkline, spectrogram]
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8.2
+sidebar_position: 230
 sidebar_label: Violin Plot
 title: "Violin Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a violin plot (violin chart) shows, how to read its width, median and box, what a violin reveals that a box plot hides, and the mistakes to avoid. With live examples."
@@ -15,6 +15,7 @@ keywords:
         "bimodal distribution"
     ]
 image: /img/learn/violin-plot-og.png
+related: [box-plot, density-plot, histogram]
 ---
 
 <head>

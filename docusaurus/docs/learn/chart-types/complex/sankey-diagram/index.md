@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13.5
+sidebar_position: 50
 sidebar_label: Sankey Diagram
 title: "Sankey Diagram: What It Is & How to Read It (With Interactive Examples)"
 description: "What a Sankey diagram is, how to read its nodes and flows, a worked energy example, when to use one instead of a bar or pie chart, and the mistakes to avoid. With a live, interactive example."
@@ -18,6 +18,7 @@ keywords:
         "sankey vs alluvial diagram"
     ]
 image: /img/learn/sankey-diagram-og.png
+related: [funnel-chart, network-graph, treemap, sunburst-chart]
 ---
 
 <head>

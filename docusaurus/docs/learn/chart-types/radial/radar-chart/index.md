@@ -1,5 +1,5 @@
 ---
-sidebar_position: 11
+sidebar_position: 50
 sidebar_label: Radar Chart
 title: "Radar Chart (Spider Chart): What It Is & How to Read It (With Interactive Examples)"
 description: "What a radar chart (spider chart) is, how to read and describe one, when to use it instead of a bar chart, and why axis order and area can mislead. With a live example."
@@ -22,6 +22,7 @@ keywords:
         "radar chart vs bar chart"
     ]
 image: /img/learn/radar-chart-og.png
+related: [polar-area-chart, parallel-coordinates-plot, bar-chart]
 ---
 
 <head>
