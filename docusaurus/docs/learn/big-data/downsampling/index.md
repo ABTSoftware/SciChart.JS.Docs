@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 20
 sidebar_label: Downsampling
 title: "Downsampling: What It Is, LTTB vs Min-Max, and How to Choose (With Interactive Examples)"
 description: "What downsampling is, why charts need it, and how every-nth, average, min-max, M4 and LTTB compare on spikes, with decimation and aliasing explained. Live demos."
@@ -17,6 +17,7 @@ keywords:
         "downsampling vs decimation"
     ]
 image: /img/learn/downsampling-og.png
+related: [big-data-visualization, line-chart, strip-chart, sparkline]
 ---
 
 <head>

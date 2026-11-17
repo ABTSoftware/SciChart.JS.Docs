@@ -1,5 +1,5 @@
 ---
-sidebar_position: 15.6
+sidebar_position: 50
 sidebar_label: Bullet Chart
 title: "Bullet Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a bullet chart (bullet graph) is, how to read its bar, target line and shaded ranges, the design rules, common variants and when to use one instead of a gauge."
@@ -15,6 +15,7 @@ keywords:
         "kpi chart"
     ]
 image: /img/learn/bullet-chart-og.png
+related: [gauge-chart, bar-chart, lollipop-chart]
 ---
 
 <head>

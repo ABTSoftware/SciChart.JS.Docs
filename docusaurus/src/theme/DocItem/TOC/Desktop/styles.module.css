@@ -1,0 +1,31 @@
+.column {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 1rem);
+    /* Ends above the chat button fixed in the bottom-right corner, so it never covers the card */
+    max-height: calc(100vh - (var(--ifm-navbar-height) + 6.5rem));
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* The TOC is no longer sticky on its own: it fills the space the card leaves, and scrolls */
+.column :global(.theme-doc-toc-desktop) {
+    position: static;
+    flex: 0 1 auto;
+    min-height: 4rem;
+    max-height: none;
+    overflow-y: auto;
+}
+
+@media (max-width: 996px) {
+    .column {
+        display: none;
+    }
+}
+
+/* On short windows the card would leave too little room for the TOC: show the TOC alone */
+@media (max-height: 680px) {
+    .column > aside {
+        display: none;
+    }
+}

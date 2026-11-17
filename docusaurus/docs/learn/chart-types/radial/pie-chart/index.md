@@ -1,5 +1,5 @@
 ---
-sidebar_position: 12
+sidebar_position: 30
 sidebar_label: Pie Chart
 title: "Pie Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a pie chart is, how to read and calculate its slices, when a bar chart works better, and the mistakes to avoid. With a live, interactive example."
@@ -22,6 +22,7 @@ keywords:
         "pie chart vs bar chart"
     ]
 image: /img/learn/pie-chart-og.png
+related: [donut-chart, bar-chart, treemap, sunburst-chart]
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 13.8
+sidebar_position: 60
 sidebar_label: Ternary Plot
 title: "Ternary Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a ternary plot is, how to read its three scales step by step, where ternary diagrams are used (soil texture, geology, phase diagrams) and the mistakes to avoid. With a live, interactive example."
@@ -15,6 +15,7 @@ keywords:
         "ternary plot vs stacked bar chart"
     ]
 image: /img/learn/ternary-plot-og.png
+related: [scatter-plot, cartesian-graph, parallel-coordinates-plot]
 ---
 
 <head>

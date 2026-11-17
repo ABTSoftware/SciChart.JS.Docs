@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+sidebar_position: 190
 sidebar_label: Scatter Plot
 title: "Scatter Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a scatter plot is, how to read and describe correlation, outliers and clusters, when to use one, and the mistakes to avoid. With live, interactive examples."
@@ -15,6 +15,7 @@ keywords:
         "scatter plot vs line graph"
     ]
 image: /img/learn/scatter-plot-og.png
+related: [bubble-chart, line-chart, error-bars, cartesian-graph]
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2.5
+sidebar_position: 200
 sidebar_label: Sparkline
 title: "Sparkline: What It Is & How to Read It (With Interactive Examples)"
 description: "What a sparkline is, how to read one, the main types, whether rows should share a scale, and the mistakes to avoid. With a live table of 40 sparklines."
@@ -16,6 +16,7 @@ keywords:
         "sparkline vs line chart"
     ]
 image: /img/learn/sparkline-og.png
+related: [line-chart, strip-chart, bullet-chart, area-chart]
 ---
 
 <head>

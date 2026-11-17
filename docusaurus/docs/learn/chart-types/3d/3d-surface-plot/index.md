@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9.7
+sidebar_position: 10
 sidebar_label: 3D Surface Plot
 title: "3D Surface Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a 3D surface plot is, how to read its peaks, saddles and slopes, how it compares with a heatmap, a contour plot and a 3D scatter plot, and the mistakes to avoid. With live examples."
@@ -17,6 +17,7 @@ keywords:
         "3d surface plot vs 3d scatter plot"
     ]
 image: /img/learn/3d-surface-plot-og.png
+related: [contour-plot, heatmap, xyz-graph, spectrogram]
 ---
 
 <head>

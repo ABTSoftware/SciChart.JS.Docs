@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4.7
+sidebar_position: 150
 sidebar_label: Lollipop Chart
 title: "Lollipop Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a lollipop chart is, how to read it, how it compares with a bar chart, when to use one and the mistakes to avoid, plus stem plots. With a live, interactive example."
@@ -15,6 +15,7 @@ keywords:
         "stem plot"
     ]
 image: /img/learn/lollipop-chart-og.png
+related: [bar-chart, dumbbell-chart, bullet-chart]
 ---
 
 <head>

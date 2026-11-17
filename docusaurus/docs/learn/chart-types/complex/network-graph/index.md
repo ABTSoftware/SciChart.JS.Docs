@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8.7
+sidebar_position: 30
 sidebar_label: Network Graph
 title: "Network Graph: What It Is & How to Read It (With Interactive Examples)"
 description: "What a network graph is, how to read its nodes and edges, how to spot hubs, clusters and bridges, how a force-directed graph is laid out, and the mistakes to avoid. With a live, interactive example."
@@ -20,6 +20,7 @@ keywords:
         "how to read a network graph"
     ]
 image: /img/learn/network-graph-og.png
+related: [sankey-diagram, treemap, parallel-coordinates-plot]
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 9
+sidebar_position: 120
 sidebar_label: Heatmap
 title: "Heatmap (Heat Map): What It Is & How to Read It (With Interactive Examples)"
 description: "What a heatmap is, how to read and describe its coloured grid, how to choose a colour scale, the mistakes to avoid and when to use a heat map. With a live, interactive example."
@@ -20,6 +20,7 @@ keywords:
         "risk heat map"
     ]
 image: /img/learn/heatmap-og.png
+related: [contour-plot, spectrogram, choropleth-map, 3d-surface-plot]
 ---
 
 <head>

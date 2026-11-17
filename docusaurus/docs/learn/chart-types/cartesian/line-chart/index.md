@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 140
 sidebar_label: Line Chart
 title: "Line Graph (Line Chart): What It Is & How to Read It (With Interactive Examples)"
 description: "What a line graph (line chart) is, how to read and describe one, the main types, when to use it instead of a bar graph, and the mistakes to avoid. With live examples."
@@ -22,6 +22,7 @@ keywords:
         "line graph vs bar graph"
     ]
 image: /img/learn/line-chart-og.png
+related: [area-chart, sparkline, strip-chart, scatter-plot]
 ---
 
 <head>

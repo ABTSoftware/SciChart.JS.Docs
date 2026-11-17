@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 20
 sidebar_label: Bar Chart
 title: "Bar Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a bar chart is, how to read and describe one, column vs bar, stacked and grouped bars, which type to choose and the mistakes to avoid. With a live, interactive example."
@@ -28,6 +28,7 @@ keywords:
         "race chart"
     ]
 image: /img/learn/bar-chart-og.png
+related: [lollipop-chart, pareto-chart, histogram, combo-chart]
 ---
 
 <head>

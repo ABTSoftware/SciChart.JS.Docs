@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 40
 sidebar_label: Bubble Chart
 title: "Bubble Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a bubble chart is, how to read and describe one, why bubble size must show area rather than width, when to use it instead of a scatter plot, and mistakes to avoid."
@@ -15,6 +15,7 @@ keywords:
         "bubble chart vs scatter plot"
     ]
 image: /img/learn/bubble-chart-og.png
+related: [scatter-plot, heatmap, treemap, xyz-graph]
 ---
 
 <head>
