@@ -93,7 +93,7 @@ const HIDDEN_Y_RANGE = new NumberRange(-0.16, 1.1);
 // 1. ONE VERTICAL AXIS PER DIMENSION
 // A layout strategy that places inner axis number i at x = i, and squeezes it to the 0 to 1 band of the
 // hidden scale, so each axis's own range (e.g. 20 to 100) lines up exactly with the normalised lines.
-class ParallelAxesLayoutStrategy extends LeftAlignedInnerAxisLayoutStrategy {
+class ParallelCoordinatesInnerAxisLayoutStrategy extends LeftAlignedInnerAxisLayoutStrategy {
     constructor(options) {
         super(options);
         this.layoutAxisPartsStrategy = layoutAxisPartsLeftStrategy; // axis line on the left, labels to its right
@@ -334,7 +334,7 @@ function addParallelCoordinates(sciChartSurface, wasmContext, data) {
     );
 
     // One visible axis per dimension, with its own range and labels, placed by the layout strategy
-    sciChartSurface.layoutManager.leftInnerAxesLayoutStrategy = new ParallelAxesLayoutStrategy({ orthogonalAxisId: xAxis.id });
+    sciChartSurface.layoutManager.leftInnerAxesLayoutStrategy = new ParallelCoordinatesInnerAxisLayoutStrategy({ orthogonalAxisId: xAxis.id });
     dimensions.forEach((dimension, i) => {
         sciChartSurface.yAxes.add(
             new NumericAxis(wasmContext, {
