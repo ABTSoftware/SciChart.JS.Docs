@@ -148,21 +148,26 @@ What to look for:
 
 - **At 1,000 points** both are quick. For small charts, SVG's convenience usually wins.
 - **At 10,000 and 100,000 points** the SVG time grows with the point count, because every circle is a new element the browser must style, lay out and paint. The page may freeze while it works.
-- **At 1,000,000 points** the SVG panel is skipped, so the page stays usable; the WebGL panel still draws, and still zooms and pans.
+- **At 1,000,000 points** SVG has a million elements to create, and the page may freeze for several seconds; on a phone or a low-memory device the tab may even crash. The WebGL panel still draws quickly, and still zooms and pans.
 - Times vary between devices and browsers, and the first run includes some one-off setup. Run each size twice.
 
-For comparison, here are the times we measured with this test on a MacBook Pro (Apple M5):
+For comparison, here are the times measured with this test on two very different machines:
 
-| Points | SVG (one `<circle>` per point) | SciChart.js (WebGL / WebGPU) |
-|---|---|---|
-| 1,000 | 6 ms | 4 ms |
-| 10,000 | 51 ms | 1 ms |
-| 100,000 | 162 ms | 3 ms |
-| 1,000,000 | Skipped | 8 ms |
+- **Mac:** MacBook Pro laptop, Apple M5.
+- **PC:** Windows desktop, AMD Ryzen 7 7800X3D, AMD Radeon RX 7900 XTX, 32 GB RAM.
 
-At 1,000 points the two are close. From 10,000 points the SVG time climbs with every point added, while the WebGL / WebGPU time stays in single-digit milliseconds, even at a million points. A frame at 60 frames per second has about 16 ms, so 51 ms and 162 ms mean visible stutter or a frozen page. Your numbers will differ on other hardware and browsers; the gap is what to look for.
+| Points | SVG, Mac | SVG, PC | WebGL / WebGPU, Mac | WebGL / WebGPU, PC |
+|---|---|---|---|---|
+| 1,000 | 6 ms | 9 ms | 4 ms | 3 ms |
+| 10,000 | 51 ms | 57 ms | 1 ms | 3 ms |
+| 100,000 | 162 ms | 356 ms | 3 ms | 11 ms |
+| 1,000,000 | 1,434 ms | 3,495 ms | 8 ms | 13 ms |
 
-A fair note: an SVG **line** chart can draw all its points as a single `<path>` element, which is much lighter than one circle per point. The path still has to be rebuilt and repainted whenever the data or the zoom changes, so the same limits appear with real-time data.
+At 1,000 points SVG and WebGL are close on both machines. From 10,000 points the SVG time climbs with every point added, and from 100,000 points it differs by more than two times between the machines. At a million points SVG takes 1.4 to 3.5 seconds, while the WebGL / WebGPU time stays under 16 ms on both. That matters because a frame at 60 frames per second has about 16 ms, so the SVG times of 51 ms and more mean visible stutter or a frozen page. Your numbers will differ on other hardware and browsers; the gap between SVG and WebGL is what to look for.
+
+:::info A fair note
+An SVG **line** chart can draw all its points as a single `<path>` element, which is much lighter than one circle per point. The path still has to be rebuilt and repainted whenever the data or the zoom changes, so the same limits appear with real-time data.
+:::
 
 ## Techniques for visualising large datasets
 

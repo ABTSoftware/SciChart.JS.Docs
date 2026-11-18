@@ -22,6 +22,15 @@ function makePoints(count) {
 // Resolves after the browser has run its next frame (style, layout and paint)
 const afterNextPaint = () => new Promise((resolve) => requestAnimationFrame(() => setTimeout(resolve, 0)));
 
+// Resolves once the browser has caught up: waits until it is idle (or up to 2 seconds), then a little longer.
+// Used before each timed draw, so one test's leftover work (such as clearing a million SVG elements) isn't timed in the next.
+const settle = () =>
+    new Promise((resolve) => {
+        const pause = () => setTimeout(resolve, 200);
+        if (window.requestIdleCallback) window.requestIdleCallback(pause, { timeout: 2000 });
+        else setTimeout(pause, 300);
+    });
+
 // A minimal SVG scatter chart: one <circle> element per point, the way SVG charts usually draw markers
 function drawSvgScatter(svg, xValues, yValues) {
     const width = svg.clientWidth;
@@ -65,7 +74,8 @@ function createLayout(root) {
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("fill", "#50C7E0");
     svg.setAttribute("fill-opacity", "0.2");
-    svg.style.cssText = "flex:1; min-height:0; width:100%; background:#1C2E4A; border-radius:4px;";
+    // contain:strict keeps the circles' layout and paint inside this box, so they don't slow down the rest of the page
+    svg.style.cssText = "flex:1; min-height:0; width:100%; background:#1C2E4A; border-radius:4px; contain:strict;";
     svgPanel.panel.append(svg);
     const glPanel = makePanel("WebGL / WebGPU: SciChart.js");
     const chartDiv = document.createElement("div");
@@ -119,7 +129,6 @@ async function svgVsWebgl(divElementId) {
             sciChartSurface.invalidateElement(); // ask for a redraw, in case nothing else did
         });
 
-    const svgLimit = 100000; // above this, the SVG panel is skipped to keep the page responsive
     const buttons = [];
 
     async function run(count) {
@@ -127,29 +136,30 @@ async function svgVsWebgl(divElementId) {
         const { xValues, yValues } = makePoints(count);
         const label = count.toLocaleString();
 
-        // 1. SVG: clear the old circles first (not timed), then create one element per point and wait for the paint
+        // Clear both panels first (not timed), and let the browser finish that work before timing anything
         layout.svg.replaceChildren();
-        layout.svgResult.textContent = "Drawing…";
-        await afterNextPaint();
-        if (count <= svgLimit) {
-            const svgStart = performance.now();
-            drawSvgScatter(layout.svg, xValues, yValues);
-            await afterNextPaint();
-            const svgTime = Math.round(performance.now() - svgStart);
-            layout.svgResult.textContent = `${label} points drawn in ${svgTime.toLocaleString()} ms`;
-        } else {
-            layout.svgResult.textContent = `Skipped: ${label} SVG elements could freeze this page`;
-        }
-
-        // 2. WebGL / WebGPU: clear the old points (not timed), then append the new ones and wait for the draw
         dataSeries.clear();
         layout.glResult.textContent = "Drawing…";
+        // Above 100,000 elements the browser may freeze for several seconds, so warn before starting
+        layout.svgResult.textContent =
+            count > 100000 ? `Waiting: ${label} SVG elements may freeze the page for a while…` : "Waiting…";
         await waitForChartDraw();
+        await settle();
+
+        // 1. WebGL / WebGPU first, so the SVG test's heavy work can't slow it down: append the points, wait for the draw
         const glStart = performance.now();
         dataSeries.appendRange(xValues, yValues);
         await waitForChartDraw();
         const glTime = Math.round(performance.now() - glStart);
         layout.glResult.textContent = `${label} points drawn in ${glTime.toLocaleString()} ms`;
+        await settle();
+
+        // 2. SVG: create one element per point and wait for the paint
+        const svgStart = performance.now();
+        drawSvgScatter(layout.svg, xValues, yValues);
+        await afterNextPaint();
+        const svgTime = Math.round(performance.now() - svgStart);
+        layout.svgResult.textContent = `${label} points drawn in ${svgTime.toLocaleString()} ms`;
 
         buttons.forEach((button) => (button.disabled = false));
     }
