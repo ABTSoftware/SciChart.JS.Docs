@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: Learning Center
 title: "Learning Center: A Guide to Data Visualisation (With Interactive Examples)"
-description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, and how to chart big data fast, with live, interactive examples."
+description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data fast, and signal processing basics, with live, interactive examples."
 keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
 ---
 
@@ -51,5 +51,17 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 | --- | --- |
 | [Big data visualization](/learn/big-data/big-data-visualization/) | What makes data big for a chart, and SVG vs Canvas vs WebGL, with a live test in your browser |
 | [Downsampling](/learn/big-data/downsampling/) | How downsampling methods compare, and which keep the spikes |
+
+## Signal processing
+
+[**Signal processing**](/learn/signal-processing/): how to see what frequencies a signal contains, and how to filter it, with live examples.
+
+| Topic | What it covers |
+| --- | --- |
+| [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
+| [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
+| [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
+| [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Convolution](/learn/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
 
 <LearnCta position="bottom" />

@@ -15,7 +15,7 @@ keywords:
         "waterfall plot"
     ]
 image: /img/learn/spectrogram-og.png
-related: [heatmap, strip-chart, 3d-surface-plot, big-data-visualization]
+related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
 ---
 
 <head>
