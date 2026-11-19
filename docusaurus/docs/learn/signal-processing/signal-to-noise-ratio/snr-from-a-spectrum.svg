@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14">
+<title>How to measure SNR from a power spectrum</title>
+<desc>A sketch of a power spectrum: a flat, ragged noise floor and one tall signal peak. The signal power is the sum of the bins in the peak. The noise power is the noise density times the measurement bandwidth, shaded between two frequencies. The SNR is the signal power divided by that noise power. A note warns that the height of the peak above the floor is not the SNR, because the floor drops as the bins get narrower.</desc>
+<rect width="760" height="430" fill="#ffffff"/>
+<text x="80" y="40" font-weight="700" font-size="16" fill="#1f2a44">Measuring SNR from a power spectrum</text>
+<rect x="80" y="70" width="480" height="260" fill="#f6f8fb" stroke="#c9d2e0"/>
+<rect x="170" y="70" width="300" height="260" fill="#2a8c7e" fill-opacity="0.12"/>
+<line x1="170" y1="70" x2="170" y2="330" stroke="#2a8c7e" stroke-dasharray="5 4"/>
+<line x1="470" y1="70" x2="470" y2="330" stroke="#2a8c7e" stroke-dasharray="5 4"/>
+<line x1="170" y1="352" x2="470" y2="352" stroke="#2a8c7e" stroke-width="2"/>
+<path d="M170 352 l8 -5 v10 z M470 352 l-8 -5 v10 z" fill="#2a8c7e"/>
+<text x="320.0" y="372" text-anchor="middle" fill="#2a8c7e" font-weight="700">Measurement bandwidth B</text>
+<text x="320.0" y="400" text-anchor="middle" font-size="13" fill="#4a5568">Frequency</text>
+<text x="66" y="200.0" text-anchor="middle" font-size="13" fill="#4a5568" transform="rotate(-90 66 200.0)">Power (dB)</text>
+<polyline fill="none" stroke="#1f6fb2" stroke-width="1.6" points="80,255.9 84,263.9 88,267.0 92,259.4 96,255.4 100,261.7 104,264.4 108,267.5 112,255.9 116,255.5 120,265.5 124,264.4 128,269.7 132,266.9 136,261.5 140,260.6 144,274.9 148,260.6 152,258.1 156,256.3 160,262.5 164,262.7 168,260.3 172,261.7 176,263.4 180,265.5 184,267.5 188,263.0 192,253.1 196,265.5 200,254.9 204,261.1 208,254.6 212,262.0 216,258.1 220,263.1 224,278.5 228,261.8 232,266.2 236,255.4 240,260.6 244,265.3 248,261.5 252,263.9 256,262.5 260,257.0 264,264.8 268,257.9 272,271.4 276,259.5 280,265.4 284,262.0 288,266.8 292,258.8 296,263.9 300,239.3 304,186.8 308,108.4 312,106.0 316,176.6 320,243.8 324,261.2 328,270.0 332,260.1 336,264.8 340,264.5 344,263.4 348,263.0 352,262.9 356,259.0 360,256.9 364,260.0 368,265.0 372,269.6 376,266.9 380,267.3 384,265.9 388,265.5 392,262.9 396,265.9 400,270.9 404,260.4 408,258.5 412,271.8 416,263.2 420,266.9 424,266.4 428,256.3 432,274.2 436,270.9 440,262.9 444,265.8 448,262.6 452,257.6 456,261.4 460,263.9 464,267.6 468,265.5 472,262.3 476,268.8 480,258.2 484,266.0 488,267.6 492,260.5 496,253.0 500,257.5 504,263.2 508,264.6 512,269.7 516,257.0 520,262.0 524,265.2 528,261.2 532,250.2 536,266.0 540,273.6 544,267.0 548,257.4 552,259.9 556,263.1 560,274.4"/>
+<line x1="80" y1="262" x2="560" y2="262" stroke="#e08a1e" stroke-width="2" stroke-dasharray="7 4"/>
+<text x="554" y="290" text-anchor="end" fill="#e08a1e" font-weight="700" font-size="13">Noise floor: density N₀ per Hz</text>
+<text x="326" y="102" fill="#1f2a44" font-weight="700" font-size="13">Signal peak</text>
+<text x="326" y="120" fill="#4a5568" font-size="13">Pₛ = sum of its bins</text>
+<line x1="270" y1="94" x2="270" y2="258" stroke="#4a5568" stroke-dasharray="3 3"/>
+<path d="M270 92 l-5 9 h10 z M270 260 l-5 -9 h10 z" fill="#4a5568"/>
+<text x="262" y="172" text-anchor="end" fill="#4a5568" font-size="13">peak-to-floor</text>
+<text x="262" y="189" text-anchor="end" fill="#4a5568" font-size="13">height</text>
+<rect x="585" y="70" width="160" height="64" rx="8" fill="#f6f8fb" stroke="#c9d2e0"/>
+<text x="595" y="94" font-weight="700" fill="#1f2a44">1. Signal power</text>
+<text x="595" y="112" font-size="12" fill="#4a5568">Pₛ = sum of the</text>
+<text x="595" y="127" font-size="12" fill="#4a5568">peak's bins</text>
+<rect x="585" y="148" width="160" height="64" rx="8" fill="#f6f8fb" stroke="#c9d2e0"/>
+<text x="595" y="172" font-weight="700" fill="#2a8c7e">2. Noise power</text>
+<text x="595" y="190" font-size="12" fill="#4a5568">Pₙ = N₀ × B</text>
+<rect x="585" y="226" width="160" height="64" rx="8" fill="#f6f8fb" stroke="#c9d2e0"/>
+<text x="595" y="250" font-weight="700" fill="#1f6fb2">3. SNR</text>
+<text x="595" y="268" font-size="12" fill="#4a5568">Pₛ / Pₙ, or</text>
+<text x="595" y="283" font-size="12" fill="#4a5568">10 log₁₀(Pₛ / Pₙ) dB</text>
+<rect x="585" y="304" width="160" height="84" rx="8" fill="#fff4e5" stroke="#e08a1e"/>
+<text x="595" y="326" font-size="12" fill="#1f2a44" font-weight="700">Peak-to-floor height</text>
+<text x="595" y="343" font-size="12" fill="#1f2a44">is not the SNR: the</text>
+<text x="595" y="360" font-size="12" fill="#1f2a44">floor drops 3 dB each</text>
+<text x="595" y="377" font-size="12" fill="#1f2a44">time the bins halve</text>
+</svg>

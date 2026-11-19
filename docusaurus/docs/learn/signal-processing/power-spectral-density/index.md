@@ -21,7 +21,7 @@ keywords:
         "grms from psd"
     ]
 image: /img/learn/power-spectral-density-og.png
-related: [fast-fourier-transform, spectrogram, autocorrelation, nyquist-and-aliasing]
+related: [fast-fourier-transform, spectrogram, autocorrelation, signal-to-noise-ratio]
 ---
 
 <head>
@@ -129,7 +129,7 @@ The unit of a PSD is the square of the signal's unit, per hertz. Plots often sho
 A PSD plot (also called a PSD curve or PSD graph) has frequency along the horizontal axis and power density up the vertical axis, nearly always on a log or dB scale.
 
 1. **Check the units on the vertical axis.** V²/Hz, g²/Hz or dB/Hz means a density. If it's V, V² or dB with no "/Hz", it's an amplitude or power spectrum, and noise levels won't compare across settings.
-2. **Read the noise floor.** The broad level between peaks is the background noise density. On a dB/Hz scale, a 3 dB step is a doubling of power density.
+2. **Read the noise floor.** The broad level between peaks is the background noise density, which sets the [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/). On a dB/Hz scale, a 3 dB step is a doubling of power density.
 3. **Look at its slope.** A flat floor is **white noise**. One that falls 3 dB per octave (10 dB per decade) is **pink noise**, or 1/f noise, common in electronics, music and nature. A 6 dB per octave fall is **brown (red) noise**, which looks like a random walk. Plot frequency on a log axis to see slopes as straight lines.
 4. **Find the peaks.** A narrow peak is a tone: a hum, a rotating part or a clock. A wider hump is a resonance, such as a structure's natural frequency. Remember a narrow peak's height depends on the bin width.
 5. **Read power in a band** as the area under the curve between two frequencies, not as a height. That's how EEG band power (for example, the alpha band around 8 to 13 Hz) and vibration Grms are found.

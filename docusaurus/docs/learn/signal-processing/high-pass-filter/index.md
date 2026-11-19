@@ -21,7 +21,7 @@ keywords:
         "high pass vs low pass filter"
     ]
 image: /img/learn/high-pass-filter-og.png
-related: [fourier-transform, low-pass-filter, bode-plot, convolution]
+related: [fourier-transform, low-pass-filter, band-pass-filter, notch-filter]
 ---
 
 <head>
@@ -167,7 +167,7 @@ The filter is gentle: 40 Hz still gets through at 45%. For a sharper cut, use a 
 
 ## Digital high-pass filters
 
-In software, a filter is a rule for computing each output sample from input samples. There are three common ways to build a digital high-pass filter. The [live demo below](#how-to-apply-a-high-pass-filter-in-javascript-react-or-angular) runs the first and third, and its code includes both.
+In software, a filter is a rule for computing each output sample from input samples. There are three common ways to build a digital high-pass filter (for how FIR and IIR designs compare in general, see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/)). The [live demo below](#how-to-apply-a-high-pass-filter-in-javascript-react-or-angular) runs the first and third, and its code includes both.
 
 **1. First-order IIR high-pass (the DC blocker).** The digital version of the RC circuit. Each output depends on the previous output, which makes it an **infinite impulse response (IIR)** filter:
 
@@ -204,8 +204,8 @@ The four basic filter types differ only in which frequencies they keep:
 | --- | --- | --- | --- | --- |
 | **High-pass** | Above the cutoff | Below the cutoff | Remove offset, drift, rumble or slow trends | ECG baseline wander, vocal low cut |
 | **[Low-pass](/learn/signal-processing/low-pass-filter/)** | Below the cutoff | Above the cutoff | Smooth out fast noise, or stop aliasing before sampling | Sensor smoothing, anti-aliasing |
-| **Band-pass** | Between two cutoffs | Below and above the band | Keep one range of frequencies | A radio channel, or one band of a vibration signal |
-| **Band-stop (notch)** | Below and above the band | Between two cutoffs | Remove one narrow interference | 50 or 60 Hz mains hum |
+| **[Band-pass](/learn/signal-processing/band-pass-filter/)** | Between two cutoffs | Below and above the band | Keep one range of frequencies | A radio channel, or one band of a vibration signal |
+| **[Band-stop (notch)](/learn/signal-processing/notch-filter/)** | Below and above the band | Between two cutoffs | Remove one narrow interference | 50 or 60 Hz mains hum |
 
 A band-pass filter is a high-pass and a low-pass in a row. A band-stop filter is the original minus a band-pass. A **high-shelf** or **low-shelf** EQ is a gentler cousin: it turns a range up or down by a fixed amount instead of removing it.
 

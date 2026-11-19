@@ -21,7 +21,7 @@ keywords:
         "dft vs fft"
     ]
 image: /img/learn/fast-fourier-transform-og.png
-related: [fourier-transform, spectrogram, power-spectral-density, nyquist-and-aliasing]
+related: [fourier-transform, spectrogram, power-spectral-density, audio-spectrum-analyzer]
 ---
 
 <head>
@@ -69,7 +69,7 @@ related: [fourier-transform, spectrogram, power-spectral-density, nyquist-and-al
 
 ## What is an FFT?
 
-The **FFT** (**fast Fourier transform**) is an algorithm that splits a block of signal samples into the sine waves it contains, and measures how strong each frequency is. It computes the discrete Fourier transform (DFT) far faster than the direct method, which is why spectrum analysers, audio tools and vibration monitors can show a signal's frequencies in real time.
+The **FFT** (**fast Fourier transform**) is an algorithm that splits a block of signal samples into the sine waves it contains, and measures how strong each frequency is. It computes the discrete Fourier transform (DFT) far faster than the direct method, which is why [spectrum analysers](/learn/signal-processing/audio-spectrum-analyzer/), audio tools and vibration monitors can show a signal's frequencies in real time.
 
 ![An FFT spectrum analyser in a dark navy theme: a signal of three tones plus noise at the top, and its FFT magnitude spectrum in decibels at the bottom, with peaks at 50 Hz and about 120 Hz and a small peak at 160 Hz above a noise floor](/img/learn/fast-fourier-transform-og.png)
 
@@ -166,7 +166,7 @@ Read it in this order:
 1. **Check the frequency axis.** It runs from 0 Hz to the **Nyquist frequency**, half the sample rate ($f_s / 2$). Nothing above that can be measured; it would have shown up as a false, lower frequency ([aliasing](/learn/signal-processing/nyquist-and-aliasing/)) when the signal was sampled.
 2. **Check the vertical scale.** On a **linear** scale, a peak's height is the tone's amplitude. On a **decibel (dB)** scale, each 20 dB is a factor of 10 in amplitude: $L = 20 \log_{10}(A)$, so amplitude 1 is 0 dB, 0.5 is about -6 dB, 0.1 is -20 dB and 0.001 is -60 dB. Use dB when you need to see weak tones next to strong ones.
 3. **Find the peaks.** Each narrow peak is a steady tone. Evenly spaced peaks (for example 50, 100, 150 Hz) are a fundamental and its harmonics, usually a sign that the waveform isn't a pure sine.
-4. **Find the noise floor**, the uneven level between the peaks. A peak only means something if it stands clearly above it.
+4. **Find the noise floor**, the uneven level between the peaks. A peak only means something if it stands clearly above it (see [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/)).
 5. **Look at the shape of each peak.** A wide skirt around a peak is usually leakage from the window, not real content (see [windowing](#windowing-and-spectral-leakage)).
 
 **One-sided spectrum.** For a real signal (any measurement from a sensor or microphone), the FFT's output is symmetric: bins above $N/2$ mirror the ones below, as negative frequencies. So FFT plots show only bins 0 to $N/2$, and double those amplitudes (except at 0 Hz and at the Nyquist frequency) so each tone's energy is counted once.

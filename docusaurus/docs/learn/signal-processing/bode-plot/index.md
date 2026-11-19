@@ -19,7 +19,7 @@ keywords:
         "bode plot vs nyquist plot"
     ]
 image: /img/learn/bode-plot-og.png
-related: [low-pass-filter, high-pass-filter, fourier-transform, power-spectral-density]
+related: [low-pass-filter, high-pass-filter, band-pass-filter, notch-filter]
 ---
 
 <head>

@@ -18,7 +18,7 @@ keywords:
         "low pass vs high pass filter"
     ]
 image: /img/learn/low-pass-filter-og.png
-related: [fourier-transform, high-pass-filter, bode-plot, nyquist-and-aliasing]
+related: [fourier-transform, high-pass-filter, fir-vs-iir-filters, band-pass-filter]
 ---
 
 <head>
@@ -217,7 +217,7 @@ It is also called **exponential smoothing** or an exponential moving average (EM
 
 ### Butterworth and other digital IIR filters
 
-Higher-order analogue designs such as Butterworth, Chebyshev and Bessel can be turned into digital IIR filters, usually with the **bilinear transform**. They are normally built as a chain of second-order sections (**biquads**), which keeps them numerically stable. A 4th-order digital Butterworth filter uses two biquads, about ten multiplications per sample, to get a roll-off a short FIR filter can't match.
+Higher-order analogue designs such as Butterworth, Chebyshev and Bessel can be turned into digital IIR filters, usually with the **bilinear transform**. They are normally built as a chain of second-order sections (**biquads**), which keeps them numerically stable. A 4th-order digital Butterworth filter uses two biquads, about ten multiplications per sample, to get a roll-off a short FIR filter can't match. For both designs side by side, see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/).
 
 ## Which low-pass filter should you use?
 
@@ -256,7 +256,7 @@ A [high-pass filter](/learn/signal-processing/high-pass-filter/) is the mirror i
 | **Effect on a signal** | Smooths it | Keeps the detail and centres it on zero |
 | **Typical use** | Sensor smoothing, anti-aliasing, a subwoofer feed | Removing baseline drift, tweeter feeds, AC coupling |
 
-Put one after the other and you get a **band-pass filter**, which keeps only the band between the two cutoffs. To see what a filter does to each frequency in a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/).
+Put one after the other and you get a **[band-pass filter](/learn/signal-processing/band-pass-filter/)**, which keeps only the band between the two cutoffs. To see what a filter does to each frequency in a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/).
 
 ## Common low-pass filter mistakes
 

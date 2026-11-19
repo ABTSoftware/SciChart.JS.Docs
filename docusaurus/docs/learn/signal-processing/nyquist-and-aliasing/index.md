@@ -199,7 +199,7 @@ because adding a whole number of turns, $2\pi k n$, changes nothing. The two sin
 
 ## Anti-aliasing filters and oversampling
 
-The standard defence is an **anti-aliasing filter**: an analogue [low-pass filter](/learn/signal-processing/low-pass-filter/) placed in front of the ADC, which removes everything above the Nyquist frequency before it can fold.
+The standard defence is an **anti-aliasing filter**: an analogue [low-pass filter](/learn/signal-processing/low-pass-filter/) placed in front of the ADC, which removes everything above the Nyquist frequency before it can fold. In software, the same job is done by a digital filter before downsampling (see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/) for the two ways to build one).
 
 ![A signal chain: an analogue signal with fast noise passes through an anti-aliasing low-pass filter that cuts above half the sample rate, then an ADC that takes a sample every 1/fs, giving digital samples to analyse, plot or play back](./sampling-chain-anti-aliasing.svg)
 
