@@ -218,6 +218,10 @@ Direct correlation of $N$ samples at every lag takes about $N^2$ multiplications
 
 For cross-correlation, multiply $\overline{X(f)}$ by $Y(f)$ in step 3. That costs on the order of $N \log N$ operations instead of $N^2$.
 
+![Two routes from the mean-removed signal x[n] (N = 9 samples, the example above) to the same lag sums 18, −10, −5, 12, −7, −2, 6, −4 and 1 at lags 0 to 8. Route 1, direct: c[k] = Σ x[n] · x[n + k], about N² multiplications. Route 2, fast correlation: zero-pad to length L of at least 2N − 1 (here 32), take the FFT X[k], multiply each bin by its complex conjugate to get |X[k]|² (highlighted, the one step that differs from fast convolution; for cross-correlation multiply X*[k] by Y[k]), then take the inverse FFT and keep lags 0 to N − 1. Adapted from Burnett-Thompson (2007)](./correlation-direct-vs-fft.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources). Compare the same pipeline for [convolution](/learn/signal-processing/convolution/#the-convolution-theorem): only step 3 changes.*
+
 **The zero-padding matters.** Without it the FFT treats the signal as if it repeated forever, so the copy wraps around: the end of the signal is compared with its start, and every lag picks up products that don't belong. Padding to $2N - 1$ leaves enough empty space for the largest lag.
 
 Step 3 is also the **Wiener–Khinchin theorem** at work: the autocorrelation and the power spectrum are a Fourier transform pair (see [power spectral density](/learn/signal-processing/power-spectral-density/)). So the autocorrelation carries the same information as the power spectrum, read in time rather than frequency, and you can estimate either one from the other.
@@ -456,5 +460,6 @@ Subtract the mean, then for each lag k add up x[n] times x[n + k] over every n w
 - Rabiner, L. R. (1977), [On the Use of Autocorrelation Analysis for Pitch Detection](https://doi.org/10.1109/TASSP.1977.1162905). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 25(1), 24–33.
 - Knapp, C. H. and Carter, G. C. (1976), [The Generalized Correlation Method for Estimation of Time Delay](https://doi.org/10.1109/TASSP.1976.1162830). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 24(4), 320–327.
 - Bendat, J. S. and Piersol, A. G., *Random Data: Analysis and Measurement Procedures*, 4th ed., Wiley, 2010. Correlation functions, the Wiener–Khinchin relation and time-delay measurement.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The direct-versus-FFT correlation diagram on this page is adapted from it.
 
 <LearnCta position="bottom" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

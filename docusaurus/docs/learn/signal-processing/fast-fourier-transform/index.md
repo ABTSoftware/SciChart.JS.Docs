@@ -103,6 +103,35 @@ The FFT avoids most of that work by reusing it. The best-known version, publishe
 2. **Transform each half.** Each is a DFT of half the length, and each of those splits again, down to blocks of one sample.
 3. **Combine** each pair of half-size results with a **butterfly**: two outputs, $a + w\,b$ and $a - w\,b$, where $w$ is a fixed complex number called a **twiddle factor**.
 
+**The split is only a reordering.** Splitting into even and odd samples, then splitting each half the same way, ends with the samples in **bit-reversed order**: write each position as a binary number, read the bits backwards, and that's the sample that lands there. In a 16-sample block, position 1 (0001) gets sample 8 (1000). Code does the whole split in one pass, swapping pairs of samples in place.
+
+![Five rows show 16 samples being split. One block of samples 0 to 15 splits into the even samples 0, 2, 4 … 14 and the odd samples 1, 3, 5 … 15, then into four blocks of 4, eight blocks of 2 and finally sixteen single samples in the order 0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15. Worked bit reversals: position 1 = 0001 holds sample 1000 = 8, position 2 = 0010 holds 4, position 3 = 0011 holds 12, position 6 = 0110 holds 6, and position 11 = 1011 holds 13. Adapted from Burnett-Thompson (2007)](./fft-bit-reversal-decomposition.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources).*
+
+**Transforming a single sample costs nothing.** The DFT of one sample is that sample, so the reordered list is already $N$ one-point spectra. All the work is in combining them.
+
+**Each butterfly combines two values.** It multiplies the lower one by a twiddle factor and outputs their sum and their difference:
+
+![A radix-2 butterfly. Inputs a and b come from the previous stage; b is multiplied by the twiddle factor w; the upper output is a + w·b and the lower output is a − w·b. The twiddle factor is W_N^R = e^(−i2πR/N) = cos(2πR/N) − i sin(2πR/N), and for N = 8 the values are W⁰ = 1, W¹ = (1 − i)/√2, W² = −i and W³ = −(1 + i)/√2. Adapted from Burnett-Thompson (2007)](./fft-butterfly.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources).*
+
+The twiddle factors $W_N^R = e^{-2\pi i R / N}$ are the DFT's own test waves, points spaced evenly around the unit circle. The FFT computes each product $w\,b$ once and uses it twice, once added and once subtracted, and that reuse is where the saving comes from. Stage 1 pairs values next to each other, stage 2 pairs values 2 apart, stage 3 pairs values 4 apart, and so on, doubling until one $N$-point spectrum is left.
+
+**Worked example: an 8-point FFT.** Sample one cycle of a sine wave 8 times, $x_n = \sin(2\pi n / 8)$, which gives $[0, \tfrac{\sqrt{2}}{2}, 1, \tfrac{\sqrt{2}}{2}, 0, -\tfrac{\sqrt{2}}{2}, -1, -\tfrac{\sqrt{2}}{2}]$.
+
+![An 8-point FFT flow graph with three stages of butterflies, worked for x = sin(2πn/8). Input in bit-reversed order: x0 = 0, x4 = 0, x2 = 1, x6 = −1, x1 = √2/2, x5 = −√2/2, x3 = √2/2, x7 = −√2/2. After stage 1: 0, 0, 0, 2, 0, √2, 0, √2. After stage 2: 0, −2i, 0, 2i, 0, √2 − √2i, 0, √2 + √2i. Output in natural order: X0 = 0, X1 = −4i, X2 to X6 = 0, X7 = 4i. Adapted from Burnett-Thompson (2007)](./fft-8-point-flow-graph.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources).*
+
+1. **Reorder.** In bit-reversed order ($x_0, x_4, x_2, x_6, x_1, x_5, x_3, x_7$) the input is $[0, 0, 1, -1, \tfrac{\sqrt{2}}{2}, -\tfrac{\sqrt{2}}{2}, \tfrac{\sqrt{2}}{2}, -\tfrac{\sqrt{2}}{2}]$.
+2. **Stage 1** combines neighbours with $W^0 = 1$, so each pair becomes its sum and its difference: $[0, 0, 0, 2, 0, \sqrt{2}, 0, \sqrt{2}]$. These are four 2-point spectra.
+3. **Stage 2** combines values 2 apart with $W^0 = 1$ and $W^2 = -i$. The second butterfly, for example, takes $0$ and $2$ and gives $0 + (-i)(2) = -2i$ and $0 - (-i)(2) = 2i$. The result is two 4-point spectra, $[0, -2i, 0, 2i]$ and $[0, \sqrt{2} - \sqrt{2}i, 0, \sqrt{2} + \sqrt{2}i]$.
+4. **Stage 3** combines values 4 apart with $W^0$ to $W^3$. Bin 1 is $-2i + W^1(\sqrt{2} - \sqrt{2}i) = -2i + (1 - i)^2 = -4i$, and bin 5, the same butterfly's difference, is $-2i - (-2i) = 0$. Bin 7 is $2i - W^3(\sqrt{2} + \sqrt{2}i) = 2i + 2i = 4i$.
+
+The output comes out in natural order and is zero everywhere except $X_1 = -4i$ and $X_7 = 4i$: one wave at one cycle per block, plus its mirror image in bin $N - 1$. Its amplitude is $2\lvert X_1 \rvert / N = 2 \times 4 / 8 = 1$, and the $-i$ marks a sine rather than a cosine. A direct DFT gives the same eight numbers with 64 multiplications; the FFT used 12 butterflies.
+
 There are $\log_2 N$ levels of splitting and $N/2$ butterflies per level, so the total work grows as $N \log_2 N$ rather than $N^2$. The answer is the same as the direct DFT. If anything, the FFT's rounding errors are smaller, because each result passes through fewer operations.
 
 | Block size $N$ | Direct DFT ($N^2$ multiplications) | Radix-2 FFT ($\tfrac{N}{2}\log_2 N$ butterflies) | About how many times less work |
@@ -114,6 +143,17 @@ There are $\log_2 N$ levels of splitting and $N/2$ butterflies per level, so the
 | 1,048,576 | about 1.1 trillion | 10,485,760 | 100,000 |
 
 That gap is the whole reason the FFT matters: it made spectrum analysis cheap enough to run continuously, on everything from lab instruments to phones. Other FFT algorithms (mixed-radix, split-radix, Bluestein's) handle block sizes that aren't powers of 2, and FFT libraries pick between them for you.
+
+### The inverse FFT
+
+The inverse DFT differs from the forward one only in the sign of the exponent and a factor of $1/N$. So the same FFT code can run it backwards, in four steps:
+
+1. **Conjugate** the spectrum: flip the sign of every imaginary part.
+2. **Run the forward FFT** on the result.
+3. **Divide** every output by $N$.
+4. **Conjugate** again. For a real signal the imaginary parts left over are zero, apart from rounding errors.
+
+It works because conjugating the input and the output of a sum of complex exponentials flips the sign of the exponent: $\overline{\sum_k \overline{X_k}\, e^{-2\pi i kn/N}} = \sum_k X_k\, e^{2\pi i kn/N}$. Put the spectrum from the 8-point example through these steps and the eight sine samples come back. Some texts and libraries put the $1/N$ on the forward transform instead of the inverse, so check which convention a library uses before comparing amplitudes.
 
 ## How to read an FFT plot
 
@@ -400,5 +440,6 @@ Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0
 - Harris, F. J. (1978), [On the Use of Windows for Harmonic Analysis with the Discrete Fourier Transform](https://doi.org/10.1109/PROC.1978.10837). *Proceedings of the IEEE*, 66(1), 51–83. Window side lobes, scalloping loss and bandwidth.
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 8, The Discrete Fourier Transform](https://www.dspguide.com/ch8.htm), [chapter 9, Applications of the DFT](https://www.dspguide.com/ch9.htm) (windows, resolution and zero padding) and [chapter 12, The Fast Fourier Transform](https://www.dspguide.com/ch12.htm).
 - Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Windows, zero padding and spectrum analysis in depth.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The bit-reversal, butterfly and 8-point flow-graph diagrams on this page are adapted from it.
 
 <LearnCta position="bottom" chart="FFT spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

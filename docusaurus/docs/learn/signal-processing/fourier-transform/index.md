@@ -140,6 +140,29 @@ $$
 
 Each output $X[k]$ is a **frequency bin**. Bin $k$ is the frequency $f_k = k \, f_s / N$, so the bins are spaced $f_s / N$ apart, and the highest frequency you can measure is half the sample rate (the **Nyquist frequency**). Calculating every bin directly takes about $N^2$ multiplications. The **[fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/)** gets exactly the same numbers in about $N \log_2 N$, which is why every spectrum analyser uses it.
 
+This page puts the $1/N$ on the inverse DFT, as NumPy and MATLAB do; some texts put it on the forward transform instead, so check the convention before comparing numbers.
+
+**The real DFT: cosine and sine amplitudes.** The formula above is the **complex DFT**: $N$ complex values in, $N$ complex values out. A measured signal is usually real, and then half of that output is redundant, because bin $N - k$ is the complex conjugate of bin $k$. The **real DFT** keeps the useful half, bins $0$ to $N/2$ (for even $N$), and writes each bin as two real numbers:
+
+$$
+\operatorname{Re}X[k] = \sum_{n=0}^{N-1} x[n] \cos\!\left(\frac{2\pi k n}{N}\right), \qquad
+\operatorname{Im}X[k] = -\sum_{n=0}^{N-1} x[n] \sin\!\left(\frac{2\pi k n}{N}\right)
+$$
+
+Since $e^{-i\theta} = \cos\theta - i \sin\theta$, these are just the real and imaginary parts of the complex $X[k]$. In plain words, **each bin says how much cosine and how much sine the signal holds at that frequency.**
+
+![Two rows of boxes for N = 8. Real DFT: 8 real samples x[n], numbered 0 to N − 1, go in; two arrays of N/2 + 1 = 5 values come out, Re X[k] (the cosine amplitudes) and Im X[k] (the sine amplitudes), numbered 0 to N/2. Complex DFT: 8 complex samples (real part and imaginary part, all zeros for a real signal) go in; 8 complex values come out, numbered 0 to N − 1, and for a real signal bins 5 to 7 mirror bins 3 to 1, so Re X is symmetric about N/2 and Im X is antisymmetric. Adapted from Burnett-Thompson (2007)](./real-vs-complex-dft.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources).*
+
+To rebuild the signal, add up a cosine and a sine for every bin:
+
+$$
+x[n] = \sum_{k=0}^{N/2} \left[ a_k \cos\!\left(\frac{2\pi k n}{N}\right) + b_k \sin\!\left(\frac{2\pi k n}{N}\right) \right]
+$$
+
+where the wave amplitudes are $a_k = \tfrac{2}{N}\operatorname{Re}X[k]$ and $b_k = -\tfrac{2}{N}\operatorname{Im}X[k]$, except at the two ends: $a_0 = \operatorname{Re}X[0]/N$ and $a_{N/2} = \operatorname{Re}X[N/2]/N$. The factor of 2 is there because each of the other bins shares its wave with its mirror bin in the complex DFT; bins $0$ and $N/2$ have no mirror, so they get half the weight. Their sine terms are always zero. In the four-sample example above, $\operatorname{Im}X[1] = -2$, so $b_1 = -\tfrac{2}{4} \times (-2) = 1$: one sine wave of amplitude 1.
+
 ## Magnitude and phase
 
 Each value of a Fourier transform is a **complex number**, $X = a + ib$. It holds two facts about one frequency:
@@ -385,5 +408,6 @@ Compute the discrete Fourier transform of your samples with a short DFT or FFT f
 - Smith, J. O., [*Mathematics of the Discrete Fourier Transform (DFT)*](https://ccrma.stanford.edu/~jos/mdft/), Stanford CCRMA. The DFT, orthogonality of sinusoids and the DFT theorems.
 - Cooley, J. W. and Tukey, J. W. (1965), [An algorithm for the machine calculation of complex Fourier series](https://doi.org/10.1090/S0025-5718-1965-0178586-1). *Mathematics of Computation*, 19(90). The paper that made the FFT widely known.
 - Oppenheim, A. V. and Schafer, R. W., *Discrete-Time Signal Processing*, 3rd edition, Pearson (2010). The standard textbook reference for the DFT, sampling and aliasing.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The real and complex DFT diagram on this page is adapted from it.
 
 <LearnCta position="bottom" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />

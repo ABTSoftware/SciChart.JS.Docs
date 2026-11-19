@@ -180,6 +180,10 @@ This explains what filters do. The Fourier transform of a kernel is its **freque
 3. Multiply the two spectra, bin by bin.
 4. Take the inverse FFT, and keep the first $N + M - 1$ samples.
 
+![Two routes from the input x[n] = [1, 2, 3] (N = 3) and the kernel h[n] = [0, 1, 0.5] (M = 3) to the same output y[n] = [0, 1, 2.5, 4, 1.5] of N + M − 1 = 5 samples. Route 1, direct: the convolution sum y[n] = Σ x[k] h[n − k], about N × M multiplications. Route 2, fast convolution: zero-pad both to length L of at least N + M − 1 (here 8), take the FFT of each, multiply bin by bin to get Y[k] = X[k] · H[k], then take the inverse FFT and keep the first N + M − 1 samples, about L log₂ L operations. Adapted from Burnett-Thompson (2007)](./convolution-direct-vs-fft.svg)
+
+*Adapted from [Burnett-Thompson (2007)](#sources).*
+
 That costs on the order of $L \log L$ operations instead of $N \times M$, so the saving grows with the kernel's length. In Smith's measurements, FFT convolution overtook direct convolution once the kernel was about 40 to 80 samples long, depending on the hardware. For signals that never end, such as live audio, the **overlap-add** method splits the input into blocks, convolves each with the FFT and adds the overlapping tails.
 
 **The zero-padding matters.** Multiplying DFTs (the discrete Fourier transform an FFT computes) gives **circular convolution**: the output wraps around, and the tail that should run past the end lands on top of the start. Padding to at least $N + M - 1$ samples leaves room for the tail, so circular convolution gives the same answer as ordinary (linear) convolution.
@@ -461,6 +465,7 @@ Write two nested loops: for each output index n from 0 to N + M − 2, add up x[
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 6, Convolution](https://www.dspguide.com/ch6.htm), [chapter 7, Properties of Convolution](https://www.dspguide.com/ch7.htm) and [chapter 18, FFT Convolution](https://www.dspguide.com/ch18/3.htm), including the measured crossover between direct and FFT convolution.
 - Smith, J. O., *Mathematics of the Discrete Fourier Transform*, Stanford CCRMA: [Convolution](https://ccrma.stanford.edu/~jos/mdft/Convolution.html) and [the Convolution Theorem](https://ccrma.stanford.edu/~jos/mdft/Convolution_Theorem.html).
 - Oppenheim, A. V. and Schafer, R. W., *Discrete-Time Signal Processing*, 3rd ed., Pearson, 2010, chapter 2 (linear time-invariant systems and the convolution sum) and chapter 8 (circular convolution and the DFT).
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The direct-versus-FFT convolution diagram on this page is adapted from it.
 - MIT OpenCourseWare, 6.003 Signals and Systems, [Lecture 8: Convolution](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/).
 - PyTorch documentation, [Conv2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html), which defines its "convolution" layer as cross-correlation.
 
