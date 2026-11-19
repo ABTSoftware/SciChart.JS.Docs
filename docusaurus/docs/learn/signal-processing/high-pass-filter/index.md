@@ -21,7 +21,7 @@ keywords:
         "high pass vs low pass filter"
     ]
 image: /img/learn/high-pass-filter-og.png
-related: [fourier-transform, low-pass-filter, convolution, fast-fourier-transform]
+related: [fourier-transform, low-pass-filter, bode-plot, convolution]
 ---
 
 <head>
@@ -102,7 +102,7 @@ The image case works on space rather than time: a high-pass filter applied acros
 
 ## How a high-pass filter works
 
-A high-pass filter is described by its **frequency response**: how much it scales each frequency, usually shown as a **Bode plot** of gain in decibels (dB) against frequency on a log scale.
+A high-pass filter is described by its **frequency response**: how much it scales each frequency, usually shown as a **[Bode plot](/learn/signal-processing/bode-plot/)** of gain in decibels (dB) against frequency on a log scale.
 
 ![On the left, a first-order RC high-pass circuit: a capacitor C in series from input to output and a resistor R from output to ground, with fc = 1 / (2 pi R C). On the right, its frequency response: the gain rises at 20 dB per decade up to the cutoff, is 3 dB down at the cutoff, and is flat at 0 dB above it](./rc-high-pass-filter-response.svg)
 

@@ -16,7 +16,7 @@ keywords:
         "fourier series vs fourier transform"
     ]
 image: /img/learn/fourier-transform-og.png
-related: [fast-fourier-transform, spectrogram, convolution, low-pass-filter]
+related: [fast-fourier-transform, spectrogram, convolution, bode-plot]
 ---
 
 <head>
@@ -214,7 +214,7 @@ The live demo below makes the link between the first and third rows concrete. It
 ## Common Fourier transform mistakes
 
 - **Expecting perfect spikes from real data.** A spike is only clean when the signal fits a whole number of cycles into the window. Otherwise its energy **leaks** into neighbouring bins. A **window function** such as Hann reduces the leakage; the [FFT guide](/learn/signal-processing/fast-fourier-transform/) shows it live.
-- **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they **alias**, folding back and appearing as false lower frequencies. Filter them out before sampling.
+- **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they **[alias](/learn/signal-processing/nyquist-and-aliasing/)**, folding back and appearing as false lower frequencies. Filter them out before sampling.
 - **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude.
 - **Forgetting the scale factor.** Raw DFT values grow with $N$. Divide by $N/2$ to get amplitudes in the signal's own units.
 - **Confusing frequency resolution with accuracy.** The bin spacing is $f_s / N$. To separate two close frequencies you need a **longer recording**, not just more zero padding.

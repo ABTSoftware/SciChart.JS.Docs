@@ -58,10 +58,14 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 
 | Topic | What it covers |
 | --- | --- |
+| [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
 | [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
 | [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
+| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
 | [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
 | [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Bode plot](/learn/signal-processing/bode-plot/) | Reading a filter's frequency response: gain and phase |
 | [Convolution](/learn/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
+| [Autocorrelation](/learn/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
 
 <LearnCta position="bottom" />

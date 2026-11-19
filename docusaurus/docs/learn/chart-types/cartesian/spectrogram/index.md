@@ -157,6 +157,7 @@ Use a spectrogram when **the frequencies in a signal change over time** and you 
 | **Spectrogram** | How the frequencies in a signal change over time |
 | Waveform ([line chart](/learn/chart-types/cartesian/line-chart/)) | The raw signal, amplitude against time: good for loudness and timing, poor for pitch |
 | Spectrum (FFT plot) | Level against frequency at one moment: precise levels, but no history |
+| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Noise power per hertz averaged over a long stretch: a steady, comparable level, but no history |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | Any grid of values. A spectrogram is a heatmap whose axes are time and frequency |
 
 Many tools show a waveform, a spectrum and a spectrogram together, as in the SciChart audio analyser demo linked below.

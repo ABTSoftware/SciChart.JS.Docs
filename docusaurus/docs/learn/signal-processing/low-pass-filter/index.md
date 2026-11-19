@@ -18,7 +18,7 @@ keywords:
         "low pass vs high pass filter"
     ]
 image: /img/learn/low-pass-filter-og.png
-related: [fourier-transform, high-pass-filter, convolution, fast-fourier-transform]
+related: [fourier-transform, high-pass-filter, bode-plot, nyquist-and-aliasing]
 ---
 
 <head>
@@ -107,7 +107,7 @@ Low-pass filters are everywhere that a slow signal needs to be separated from fa
 
 - **audio:** the low-pass control on a synthesiser or equaliser darkens the sound by removing treble; a subwoofer's crossover sends it only the bass, often below about 80 to 120 Hz;
 - **sensor smoothing:** temperature, pressure, accelerometer and load-cell readings carry electrical noise that is much faster than the quantity being measured;
-- **anti-aliasing:** before an analogue-to-digital converter samples a signal, a low-pass filter removes anything above half the sample rate (the Nyquist frequency), which would otherwise fold back as false low frequencies;
+- **anti-aliasing:** before an analogue-to-digital converter samples a signal, a low-pass filter removes anything above half the sample rate (the [Nyquist frequency](/learn/signal-processing/nyquist-and-aliasing/)), which would otherwise fold back as false low frequencies;
 - **downsampling:** the same rule applies in software. Filter before you keep every Mth sample (see [decimation and anti-aliasing](/learn/big-data/downsampling/#downsampling-in-signal-processing-decimation-and-anti-aliasing));
 - **power supplies:** an RC or LC filter smooths the ripple left after rectifying AC into DC;
 - **trading and analytics:** a moving average of a price is a low-pass filter on the price series, showing the trend under the day-to-day swings;
@@ -165,7 +165,7 @@ $$
 |H(f)| = \frac{1}{\sqrt{1 + (f/f_c)^2}}, \qquad \varphi(f) = -\arctan(f/f_c)
 $$
 
-At $f = f_c$, the magnitude is $1/\sqrt{2} \approx 0.707$ (−3 dB) and the output lags the input by 45°. Far above the cutoff, doubling the frequency halves the output: −6 dB per octave, or −20 dB per decade. Plotted on log axes, gain and phase against frequency make a **Bode plot**, the usual way to show a filter's response.
+At $f = f_c$, the magnitude is $1/\sqrt{2} \approx 0.707$ (−3 dB) and the output lags the input by 45°. Far above the cutoff, doubling the frequency halves the output: −6 dB per octave, or −20 dB per decade. Plotted on log axes, gain and phase against frequency make a **[Bode plot](/learn/signal-processing/bode-plot/)**, the usual way to show a filter's response.
 
 ## First-order, second-order and Butterworth low-pass filters
 

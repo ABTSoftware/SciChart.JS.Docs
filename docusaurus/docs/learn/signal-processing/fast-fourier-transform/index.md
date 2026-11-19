@@ -21,7 +21,7 @@ keywords:
         "dft vs fft"
     ]
 image: /img/learn/fast-fourier-transform-og.png
-related: [fourier-transform, spectrogram, low-pass-filter, convolution]
+related: [fourier-transform, spectrogram, power-spectral-density, nyquist-and-aliasing]
 ---
 
 <head>
@@ -52,8 +52,8 @@ related: [fourier-transform, spectrogram, low-pass-filter, convolution]
                 },
                 {
                     "@type": "Question",
-                    "name": "How do I compute an FFT in Python or MATLAB?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "In Python, use numpy.fft.rfft(x) or scipy.fft.rfft(x) for a real signal, with numpy.fft.rfftfreq(len(x), 1/fs) for the frequency of each bin. In MATLAB, use fft(x) and keep the first half of the result. In both, multiply x by a window such as Hann first, and divide the magnitudes by the window's sum to get amplitudes." }
+                    "name": "Does a JavaScript FFT give the same result as NumPy or MATLAB?",
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the conventions match. A standard JavaScript FFT, numpy.fft.fft and MATLAB fft(x) all compute the same unnormalised DFT with the same sign, so bin k is identical to within rounding when you use 64-bit numbers (Float64Array). numpy.fft.rfft returns only bins 0 to N/2, the same half you plot; in MATLAB, keep fft(x)(1:N/2+1), since MATLAB counts from 1. Differences usually come from the window: numpy.hanning(N) and MATLAB hann(N) are symmetric, while hann(N, 'periodic') and scipy.signal.get_window('hann', N) are periodic, so use the same one on both sides. Scale amplitudes the same way too: 2|X[k]| divided by the window's sum, except at bin 0 and bin N/2." }
                 },
                 {
                     "@type": "Question",
@@ -123,7 +123,7 @@ An FFT plot (also called an FFT spectrum or FFT graph) has **frequency** along t
 
 Read it in this order:
 
-1. **Check the frequency axis.** It runs from 0 Hz to the **Nyquist frequency**, half the sample rate ($f_s / 2$). Nothing above that can be measured; it would have shown up as a false, lower frequency (aliasing) when the signal was sampled.
+1. **Check the frequency axis.** It runs from 0 Hz to the **Nyquist frequency**, half the sample rate ($f_s / 2$). Nothing above that can be measured; it would have shown up as a false, lower frequency ([aliasing](/learn/signal-processing/nyquist-and-aliasing/)) when the signal was sampled.
 2. **Check the vertical scale.** On a **linear** scale, a peak's height is the tone's amplitude. On a **decibel (dB)** scale, each 20 dB is a factor of 10 in amplitude: $L = 20 \log_{10}(A)$, so amplitude 1 is 0 dB, 0.5 is about -6 dB, 0.1 is -20 dB and 0.001 is -60 dB. Use dB when you need to see weak tones next to strong ones.
 3. **Find the peaks.** Each narrow peak is a steady tone. Evenly spaced peaks (for example 50, 100, 150 Hz) are a fundamental and its harmonics, usually a sign that the waveform isn't a pure sine.
 4. **Find the noise floor**, the uneven level between the peaks. A peak only means something if it stands clearly above it.
@@ -131,7 +131,7 @@ Read it in this order:
 
 **One-sided spectrum.** For a real signal (any measurement from a sensor or microphone), the FFT's output is symmetric: bins above $N/2$ mirror the ones below, as negative frequencies. So FFT plots show only bins 0 to $N/2$, and double those amplitudes (except at 0 Hz and at the Nyquist frequency) so each tone's energy is counted once.
 
-**Amplitude, power or power spectral density?** An **amplitude spectrum** (as here) reads the size of each tone directly. A **power spectrum** shows the square of it. A **power spectral density** (PSD) divides power by the bin width, so random noise reads the same whatever the FFT size; vibration and noise measurements often use it.
+**Amplitude, power or power spectral density?** An **amplitude spectrum** (as here) reads the size of each tone directly. A **power spectrum** shows the square of it. A **[power spectral density](/learn/signal-processing/power-spectral-density/)** (PSD) divides power by the bin width, so random noise reads the same whatever the FFT size; vibration and noise measurements often use it.
 
 ## FFT resolution: bins, bin width and FFT size
 
@@ -216,7 +216,7 @@ To actually separate close frequencies, record more samples.
 - **Forgetting to scale.** Raw FFT magnitudes grow with $N$. Divide by the sum of the window (and double the one-sided bins) to read amplitudes.
 - **Mixing up 10 and 20 log.** Use $20 \log_{10}$ for amplitude and $10 \log_{10}$ for power, or every level is off by a factor of two in dB.
 - **Expecting zero padding to add resolution.** It interpolates. Only more real samples narrow the bins.
-- **Aliasing before the FFT.** Frequencies above $f_s / 2$ fold back into the spectrum as false peaks. Filter them out with an analogue or [low-pass filter](/learn/signal-processing/low-pass-filter/) before sampling or downsampling.
+- **[Aliasing](/learn/signal-processing/nyquist-and-aliasing/) before the FFT.** Frequencies above $f_s / 2$ fold back into the spectrum as false peaks. Filter them out with an analogue or [low-pass filter](/learn/signal-processing/low-pass-filter/) before sampling or downsampling.
 - **Leaving in the DC offset.** A constant offset makes a large 0 Hz bin, and its leakage can swamp low frequencies. Subtract the mean first.
 - **Reading a single FFT of noise as fact.** Noise in one FFT is ragged. Average the spectra of several blocks (Welch's method) for a steady estimate.
 
@@ -383,9 +383,11 @@ FFT size is the number of samples N in each block. It sets the bin width, which 
 
 For a real signal, the FFT's second half mirrors the first: bins above N/2 are the negative frequencies. Plot only bins 0 to N/2, which run from 0 Hz to the Nyquist frequency, and double their amplitude (except the first and last) to get the one-sided spectrum.
 
-### How do I compute an FFT in Python or MATLAB?
+### Does a JavaScript FFT give the same result as NumPy or MATLAB?
 
-In Python, use `numpy.fft.rfft(x)` or `scipy.fft.rfft(x)` for a real signal, with `numpy.fft.rfftfreq(len(x), 1/fs)` for the frequency of each bin. In MATLAB, use `fft(x)` and keep the first half of the result. In both, multiply `x` by a window such as Hann first, and divide the magnitudes by the window's sum to get amplitudes.
+Yes, if the conventions match. A standard JavaScript FFT, `numpy.fft.fft` and MATLAB `fft(x)` all compute the same unnormalised DFT with the same sign, so bin $k$ is identical to within rounding when you use 64-bit numbers (`Float64Array`). `numpy.fft.rfft` returns only bins 0 to $N/2$, the same half you plot; in MATLAB, keep `fft(x)(1:N/2+1)`, since MATLAB counts from 1.
+
+When the numbers don't match, the window is the usual cause. `numpy.hanning(N)` and MATLAB `hann(N)` are symmetric, while `hann(N, 'periodic')` and `scipy.signal.get_window('hann', N)` are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: $2|X[k]|$ divided by the window's sum, except at bin 0 and bin $N/2$. This makes it easy to prototype an analysis in Python or MATLAB and then plot it live in the browser.
 
 ### How do I plot an FFT in JavaScript?
 

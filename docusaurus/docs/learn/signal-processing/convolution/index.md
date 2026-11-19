@@ -18,7 +18,7 @@ keywords:
         "convolution vs cross-correlation"
     ]
 image: /img/learn/convolution-og.png
-related: [fourier-transform, low-pass-filter, high-pass-filter, fast-fourier-transform]
+related: [fourier-transform, autocorrelation, low-pass-filter, high-pass-filter]
 ---
 
 <head>
@@ -195,7 +195,7 @@ That costs on the order of $L \log L$ operations instead of $N \times M$, so the
 | Answers | What does this system do to this signal? | Where, and at what delay, does this pattern appear? | What do FFT products give, unpadded? |
 | Used for | Filters, smoothing, echo, blur, system modelling | Template matching, time-delay estimation, radar, sonar | Fast convolution via the FFT, periodic signals |
 
-For a **symmetric** kernel, such as a moving average or a Gaussian, the flip changes nothing, so convolution and cross-correlation give the same result. For an asymmetric one they differ: cross-correlating $[1, 2, 3]$ with $[0, 1, 0.5]$ gives $[0.5, 2, 3.5, 3, 0]$ at lags $-2$ to $2$, not the convolution's $[0, 1, 2.5, 4, 1.5]$. Cross-correlating a signal with itself is **autocorrelation**, which reveals repeating patterns.
+For a **symmetric** kernel, such as a moving average or a Gaussian, the flip changes nothing, so convolution and cross-correlation give the same result. For an asymmetric one they differ: cross-correlating $[1, 2, 3]$ with $[0, 1, 0.5]$ gives $[0.5, 2, 3.5, 3, 0]$ at lags $-2$ to $2$, not the convolution's $[0, 1, 2.5, 4, 1.5]$. Cross-correlating a signal with itself is **[autocorrelation](/learn/signal-processing/autocorrelation/)**, which reveals repeating patterns.
 
 ## What convolution is used for
 
