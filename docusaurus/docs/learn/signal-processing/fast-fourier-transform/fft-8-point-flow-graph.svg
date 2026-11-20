@@ -1,0 +1,201 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 580" width="760" height="580" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">An 8-point radix-2 FFT, worked through for one cycle of a sine wave</title>
+  <desc id="d">An 8-point decimation-in-time FFT flow graph with three stages of butterflies. The input is x[n] = sin(2πn/8), fed in bit-reversed order: x0 = 0, x4 = 0, x2 = 1, x6 = −1, x1 = √2/2, x5 = −√2/2, x3 = √2/2, x7 = −√2/2. After stage 1 (pairs 1 apart, twiddle W0) the values are 0, 0, 0, 2, 0, √2, 0, √2. After stage 2 (pairs 2 apart, twiddles W0 and W2 = −i) they are 0, −2i, 0, 2i, 0, √2 − √2i, 0, √2 + √2i. After stage 3 (pairs 4 apart, twiddles W0 to W3) the outputs in natural order are X0 = 0, X1 = −4i, X2 to X6 = 0 and X7 = 4i. Adapted from Burnett-Thompson (2007).</desc>
+  <rect x="0" y="0" width="760" height="580" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+  </defs>
+  <text x="380" y="28" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a2e">8-point FFT of x[n] = sin(2πn/8), one full cycle</text>
+  <text x="118" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#444">Input, bit-reversed</text>
+  <text x="298" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#444">After stage 1</text>
+  <text x="478" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#444">After stage 2</text>
+  <text x="658" y="70" text-anchor="middle" font-size="13" font-weight="700" fill="#444">Output, in order</text>
+  <line x1="157" y1="96" x2="193" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="157" y1="150" x2="193" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="96" x2="259" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="96" x2="259" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="150" x2="259" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="150" x2="259" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="175" y="145" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="253" y="165" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="157" y1="204" x2="193" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="157" y1="258" x2="193" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="204" x2="259" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="204" x2="259" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="258" x2="259" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="258" x2="259" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="175" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="253" y="273" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="157" y1="312" x2="193" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="157" y1="366" x2="193" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="312" x2="259" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="312" x2="259" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="366" x2="259" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="366" x2="259" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="175" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="253" y="381" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="157" y1="420" x2="193" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="157" y1="474" x2="193" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="420" x2="259" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="420" x2="259" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="474" x2="259" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="193" y1="474" x2="259" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="175" y="469" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="253" y="489" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="337" y1="96" x2="373" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="337" y1="204" x2="373" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="96" x2="439" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="96" x2="439" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="204" x2="439" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="204" x2="439" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="355" y="199" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="433" y="219" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="337" y1="150" x2="373" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="337" y1="258" x2="373" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="150" x2="439" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="150" x2="439" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="258" x2="439" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="258" x2="439" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="355" y="253" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">2</tspan></text>
+  <text x="433" y="273" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="337" y1="312" x2="373" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="337" y1="420" x2="373" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="312" x2="439" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="312" x2="439" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="420" x2="439" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="420" x2="439" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="355" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="433" y="435" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="337" y1="366" x2="373" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="337" y1="474" x2="373" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="366" x2="439" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="366" x2="439" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="474" x2="439" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="373" y1="474" x2="439" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="355" y="469" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">2</tspan></text>
+  <text x="433" y="489" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="517" y1="96" x2="553" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="517" y1="312" x2="553" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="96" x2="619" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="96" x2="619" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="312" x2="619" y2="96" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="312" x2="619" y2="312" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="535" y="307" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">0</tspan></text>
+  <text x="613" y="327" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="517" y1="150" x2="553" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="517" y1="366" x2="553" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="150" x2="619" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="150" x2="619" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="366" x2="619" y2="150" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="366" x2="619" y2="366" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="535" y="361" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">1</tspan></text>
+  <text x="613" y="381" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="517" y1="204" x2="553" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="517" y1="420" x2="553" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="204" x2="619" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="204" x2="619" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="420" x2="619" y2="204" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="420" x2="619" y2="420" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="535" y="415" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">2</tspan></text>
+  <text x="613" y="435" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <line x1="517" y1="258" x2="553" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="517" y1="474" x2="553" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="258" x2="619" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="258" x2="619" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="474" x2="619" y2="258" stroke="#8a94a6" stroke-width="1.3"/>
+  <line x1="553" y1="474" x2="619" y2="474" stroke="#8a94a6" stroke-width="1.3"/>
+  <text x="535" y="469" text-anchor="middle" font-size="11" font-weight="700" fill="#C2610C">×W<tspan font-size="8" baseline-shift="super">3</tspan></text>
+  <text x="613" y="489" text-anchor="end" font-size="11" font-weight="700" fill="#B42318">−</text>
+  <rect x="79" y="83" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="101" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="79" y="137" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="79" y="191" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="209" text-anchor="middle" font-size="13" fill="#1a1a2e">1</text>
+  <rect x="79" y="245" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="263" text-anchor="middle" font-size="13" fill="#1a1a2e">−1</text>
+  <rect x="79" y="299" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="317" text-anchor="middle" font-size="13" fill="#1a1a2e">√2/2</text>
+  <rect x="79" y="353" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="371" text-anchor="middle" font-size="13" fill="#1a1a2e">−√2/2</text>
+  <rect x="79" y="407" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="425" text-anchor="middle" font-size="13" fill="#1a1a2e">√2/2</text>
+  <rect x="79" y="461" width="78" height="26" rx="5" fill="#DCEEFB" stroke="#2B8CBE"/>
+  <text x="118" y="479" text-anchor="middle" font-size="13" fill="#1a1a2e">−√2/2</text>
+  <rect x="259" y="83" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="101" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="259" y="137" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="259" y="191" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="209" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="259" y="245" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="263" text-anchor="middle" font-size="13" fill="#1a1a2e">2</text>
+  <rect x="259" y="299" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="317" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="259" y="353" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="371" text-anchor="middle" font-size="13" fill="#1a1a2e">√2</text>
+  <rect x="259" y="407" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="425" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="259" y="461" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="298" y="479" text-anchor="middle" font-size="13" fill="#1a1a2e">√2</text>
+  <rect x="439" y="83" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="101" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="439" y="137" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e">−2i</text>
+  <rect x="439" y="191" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="209" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="439" y="245" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="263" text-anchor="middle" font-size="13" fill="#1a1a2e">2i</text>
+  <rect x="439" y="299" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="317" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="439" y="353" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="371" text-anchor="middle" font-size="13" fill="#1a1a2e">√2 − √2i</text>
+  <rect x="439" y="407" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="425" text-anchor="middle" font-size="13" fill="#1a1a2e">0</text>
+  <rect x="439" y="461" width="78" height="26" rx="5" fill="#EEE5F8" stroke="#6B3FA0"/>
+  <text x="478" y="479" text-anchor="middle" font-size="13" fill="#1a1a2e">√2 + √2i</text>
+  <rect x="619" y="83" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="101" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="137" width="78" height="26" rx="5" fill="#E3F4EA" stroke="#2E8B57"/>
+  <text x="658" y="155" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">−4i</text>
+  <rect x="619" y="191" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="209" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="245" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="263" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="299" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="317" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="353" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="371" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="407" width="78" height="26" rx="5" fill="#F3F3F3" stroke="#BBBBBB"/>
+  <text x="658" y="425" text-anchor="middle" font-size="13" fill="#666">0</text>
+  <rect x="619" y="461" width="78" height="26" rx="5" fill="#E3F4EA" stroke="#2E8B57"/>
+  <text x="658" y="479" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">4i</text>
+  <text x="71" y="101" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₀</text>
+  <text x="705" y="101" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₀</text>
+  <text x="71" y="155" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₄</text>
+  <text x="705" y="155" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₁</text>
+  <text x="71" y="209" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₂</text>
+  <text x="705" y="209" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₂</text>
+  <text x="71" y="263" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₆</text>
+  <text x="705" y="263" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₃</text>
+  <text x="71" y="317" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₁</text>
+  <text x="705" y="317" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₄</text>
+  <text x="71" y="371" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₅</text>
+  <text x="705" y="371" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₅</text>
+  <text x="71" y="425" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₃</text>
+  <text x="705" y="425" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₆</text>
+  <text x="71" y="479" text-anchor="end" font-size="14" font-weight="700" fill="#1F6FA8">x₇</text>
+  <text x="705" y="479" text-anchor="start" font-size="14" font-weight="700" fill="#1E6B41">X₇</text>
+  <path d="M161,504 L161,510 L255,510 L255,504" fill="none" stroke="#9ca3af"/>
+  <text x="208" y="528" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">Stage 1</text>
+  <text x="208" y="545" text-anchor="middle" font-size="12" fill="#666">pairs 1 apart, W⁰</text>
+  <path d="M341,504 L341,510 L435,510 L435,504" fill="none" stroke="#9ca3af"/>
+  <text x="388" y="528" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">Stage 2</text>
+  <text x="388" y="545" text-anchor="middle" font-size="12" fill="#666">pairs 2 apart, W⁰ and W²</text>
+  <path d="M521,504 L521,510 L615,510 L615,504" fill="none" stroke="#9ca3af"/>
+  <text x="568" y="528" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a2e">Stage 3</text>
+  <text x="568" y="545" text-anchor="middle" font-size="12" fill="#666">pairs 4 apart, W⁰ to W³</text>
+  <text x="20" y="568" font-size="12" fill="#444">×W: multiply by the twiddle factor W₈ᴿ before the butterfly.  −: that path is subtracted.  Values are exact (√2 ≈ 1.414).</text>
+</svg>

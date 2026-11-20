@@ -70,23 +70,23 @@ A **strip chart** (also called a scrolling chart, rolling chart or chart recorde
 
 *A five-channel strip chart of simulated patient-monitor signals, 1,000 readings a second per channel. [Try the interactive version](#how-to-create-a-strip-chart-in-javascript-react-or-angular), and switch it between scrolling and sweeping.*
 
-In statistics, "strip chart" has a second meaning: a **strip plot**, a dot plot of individual values along one axis. That is covered [further down](#strip-plot-the-other-strip-chart).
+In statistics, "strip chart" has a second meaning: a strip plot, a dot plot of individual values along one axis. That is covered [further down](#strip-plot-the-other-strip-chart).
 
 :::tip Key takeaways
-- A strip chart shows **live data over a fixed time window**: new readings come in at one edge and old ones leave at the other.
-- The name comes from **paper chart recorders**, which drew readings with a pen on a moving strip of paper.
-- It can **scroll** (the trace moves, newest at the right) or **sweep** (the trace stays still and is redrawn from left to right).
-- Read it from the **"now" edge backwards**, giving each lane its own scale, and line up events across lanes.
-- A **strip plot**, the statistical chart that shares the name, shows the distribution of values as dots, not change over time.
+- A strip chart shows live data over a fixed time window: new readings come in at one edge and old ones leave at the other.
+- The name comes from paper chart recorders, which drew readings with a pen on a moving strip of paper.
+- It can scroll (the trace moves, newest at the right) or sweep (the trace stays still and is redrawn from left to right).
+- Read it from the "now" edge backwards, giving each lane its own scale, and line up events across lanes.
+- A strip plot, the statistical chart that shares the name, shows the distribution of values as dots, not change over time.
 :::
 
 ## Where the name comes from: the strip chart recorder
 
 Before screens, live measurements were recorded on paper. A **strip chart recorder** has one or more pens that move across a roll of paper while a motor pulls the paper past at a steady speed. Distance along the paper is time, and each pen's position across it is a value. What comes out is a long strip with the history of every signal on it, which is where the name comes from.
 
-- **Early examples.** Charles Babbage fitted a recorder with about a dozen pens to a railway test carriage he built in 1838 or 1839. In the 1840s the physiologist Carl Ludwig's **kymograph** recorded blood pressure on a turning drum of smoked paper.
-- **Industry.** Recorders became standard for temperatures, pressures and flows in plants. Some had a faster second speed, to follow a process closely while it was being adjusted or had gone wrong.
-- **Medicine.** An ECG is still printed at a standard **25 mm per second**, so each 1 mm square is 40 milliseconds. At that speed, a 10-second window is 250 mm of paper.
+- Early examples: Charles Babbage fitted a recorder with about a dozen pens to a railway test carriage he built in 1838 or 1839. In the 1840s the physiologist Carl Ludwig's **kymograph** recorded blood pressure on a turning drum of smoked paper.
+- Industry: recorders became standard for temperatures, pressures and flows in plants. Some had a faster second speed, to follow a process closely while it was being adjusted or had gone wrong.
+- Medicine: an ECG is still printed at a standard 25 mm per second, so each 1 mm square is 40 milliseconds. At that speed, a 10-second window is 250 mm of paper.
 
 Software strip charts copy the same idea onto a screen. The **chart speed** of a paper recorder becomes the **time window** (how many seconds fit across the chart), and the pen becomes the newest point of the trace. Data loggers and on-screen charts have now replaced most paper recorders.
 
@@ -94,18 +94,20 @@ Software strip charts copy the same idea onto a screen. The **chart speed** of a
 
 ![A strip chart with three stacked lanes, temperature, pressure and flow, over the last 60 seconds. The now edge is on the right. A dashed line marks a high alarm limit on the temperature lane. A vertical dashed line marks the moment pressure jumps, flow drops and temperature starts to climb towards the limit](./strip-chart-anatomy.svg)
 
-1. **Find "now".** In a scrolling chart the newest reading is at the right-hand edge. In a sweeping chart it's the moving write point, usually marked by a dot or a gap. Read the chart backwards in time from there.
-2. **Check the time window.** Look at the time axis to see how much history is on screen: 10 seconds and 10 minutes look similar, but mean very different things. A spike that's one pixel wide may last a millisecond or a minute.
-3. **Read each lane on its own scale.** Multi-channel strip charts give each signal its own lane and y-axis, so the lines don't cross. Compare the shape of the lines, not their heights against each other.
-4. **Look for changes,** not just values: a step (a sudden new level), a drift (a slow change), a spike, a change in rhythm, or a flat line, which can mean a disconnected sensor rather than a steady value.
-5. **Line events up across lanes.** A vertical line through every lane is a single moment. In the diagram, pressure jumps, flow drops and temperature starts to climb at the same time, which hints that they are linked.
-6. **Check limits and markers.** Horizontal lines often show alarm limits or a target. Shaded areas or labels may mark events such as an alarm, an operator action or a change of setting.
+1. Find "now". In a scrolling chart the newest reading is at the right-hand edge. In a sweeping chart it's the moving write point, usually marked by a dot or a gap. Read the chart backwards in time from there.
+2. Check the time window. Look at the time axis to see how much history is on screen: 10 seconds and 10 minutes look similar, but mean very different things. A spike that's one pixel wide may last a millisecond or a minute.
+3. Read each lane on its own scale. Multi-channel strip charts give each signal its own lane and y-axis, so the lines don't cross. Compare the shape of the lines, not their heights against each other.
+4. Look for changes, not just values: a step (a sudden new level), a drift (a slow change), a spike, a change in rhythm, or a flat line, which can mean a disconnected sensor rather than a steady value.
+5. Line events up across lanes. A vertical line through every lane is a single moment. In the diagram, pressure jumps, flow drops and temperature starts to climb at the same time, which hints that they are linked.
+6. Check limits and markers. Horizontal lines often show alarm limits or a target. Shaded areas or labels may mark events such as an alarm, an operator action or a change of setting.
 
-**How to describe it:** use this template when reporting what a strip chart shows.
+### How to describe a strip chart
 
-> Over the last **[time window]**, **[signal]** was **[steady / drifting / cycling]** around **[value]**, until **[time]**, when it **[jumped / dropped / started to rise]** to **[value]**, at the same time as **[other signal]**.
+Use this template when reporting what a strip chart shows:
 
-**Worked example,** using the diagram above: "Over the last 60 seconds, flow was steady at about 30 L/min until 17 seconds ago, when it dropped to about 20 L/min. At the same moment pressure jumped for about 7 seconds and temperature started to rise. Temperature is now just under its high alarm limit."
+> Over the last [time window], [signal] was [steady / drifting / cycling] around [value], until [time], when it [jumped / dropped / started to rise] to [value], at the same time as [other signal].
+
+For example, using the diagram above: "Over the last 60 seconds, flow was steady at about 30 L/min until 17 seconds ago, when it dropped to about 20 L/min. At the same moment pressure jumped for about 7 seconds and temperature started to rise. Temperature is now just under its high alarm limit."
 
 ## Scrolling vs sweeping strip charts
 
@@ -115,11 +117,11 @@ A strip chart can move its data in two ways. Both show the same time window; the
 
 | | Scrolling (rolling) | Sweeping (wrap-around) |
 | --- | --- | --- |
-| **What moves** | The whole trace moves left; the newest reading is always at the right-hand edge | The trace stays still; a write point moves left to right, then jumps back to the left |
-| **Time axis** | Labels change continuously (for example, the last 10 seconds up to now) | Fixed (for example, 0 to 10 seconds), restarting at each sweep |
-| **Old data** | Drops off the left-hand edge | Overwritten just ahead of the write point, usually with a small gap |
-| **Easiest to read** | Trends and slow changes; comparing "now" with the recent past | Repeating signals: each beat or cycle stays in the same place long enough to study |
-| **Typical use** | Process control, server and network monitoring, telemetry, trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
+| What moves | The whole trace moves left; the newest reading is always at the right-hand edge | The trace stays still; a write point moves left to right, then jumps back to the left |
+| Time axis | Labels change continuously (for example, the last 10 seconds up to now) | Fixed (for example, 0 to 10 seconds), restarting at each sweep |
+| Old data | Drops off the left-hand edge | Overwritten just ahead of the write point, usually with a small gap |
+| Easiest to read | Trends and slow changes; comparing "now" with the recent past | Repeating signals: each beat or cycle stays in the same place long enough to study |
+| Typical use | Process control, server and network monitoring, telemetry, trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
 
 A sweeping display is easier on the eye for fast signals, because nothing slides across the screen. A scrolling display is better when you need "now" in the same place and want to compare the latest values with the ones just before.
 
@@ -137,17 +139,17 @@ The display also has to redraw smoothly, ideally about 60 times a second, while 
 
 ## When to use a strip chart
 
-Use a strip chart when readings arrive continuously and people need to see **what is happening now in the context of the last few moments**. Typical uses:
+Use a strip chart when readings arrive continuously and people need to see what is happening now in the context of the last few moments. Typical uses:
 
-- **medical monitoring:** ECG, blood pressure, oxygen saturation and breathing on a bedside monitor;
-- **process control:** temperatures, pressures, flows and levels in plants, labs and food production;
-- **test and measurement:** oscilloscopes, data acquisition systems, vibration and acoustic testing;
-- **telemetry:** vehicles, motorsport, aircraft, satellites and robots;
-- **IT operations:** CPU load, network traffic and response times on servers.
+- medical monitoring: ECG, blood pressure, oxygen saturation and breathing on a bedside monitor;
+- process control: temperatures, pressures, flows and levels in plants, labs and food production;
+- test and measurement: oscilloscopes, data acquisition systems, vibration and acoustic testing;
+- telemetry: vehicles, motorsport, aircraft, satellites and robots;
+- IT operations: CPU load, network traffic and response times on servers.
 
 | Chart | Best for |
 | --- | --- |
-| **Strip chart** | Live readings over a moving time window, one lane per signal |
+| Strip chart | Live readings over a moving time window, one lane per signal |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | A fixed period of history, such as a day or a year, that doesn't update while you read it |
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | The recent trend of many values at once, small enough to sit in a table row |
 | [Gauge chart](/learn/chart-types/radial/gauge-chart/) | The current value only, against its range and limits, when the history doesn't matter |
@@ -155,19 +157,18 @@ Use a strip chart when readings arrive continuously and people need to see **wha
 
 ## Strip plot: the other "strip chart"
 
-In statistics, a **strip plot** (also called a strip chart, jitter plot or one-dimensional scatter plot) shows every value in a group as a dot along a single value axis, with one strip of dots per group. R's `stripchart()` function and the seaborn Python library's `stripplot()` make this chart. It has nothing to do with time: it shows how values are **distributed**.
+In statistics, a **strip plot** (also called a strip chart, jitter plot or one-dimensional scatter plot) shows every value in a group as a dot along a single value axis, with one strip of dots per group. R's `stripchart()` function and the seaborn Python library's `stripplot()` make this chart. It has nothing to do with time: it shows how values are distributed.
 
 ![Two strip plots of battery life in hours for 28 phones of each of three models. Without jitter, the dots sit on one line per model and hide each other. With jitter, each dot is moved a small random distance sideways, so every phone can be seen](./strip-plot-jitter.svg)
 
 - **Jitter** moves each dot a small random distance sideways. Without it, equal or rounded values land on top of each other and the plot hides how many there are (left). With it, every value can be seen (right). The sideways position means nothing.
-- **Best for small samples,** up to a few dozen values per group, where a summary alone would hide the detail.
-- **With more data,** dots merge into a block. Use a [box plot](/learn/chart-types/cartesian/box-plot/) to summarise the spread, or a [violin plot](/learn/chart-types/cartesian/violin-plot/) to show its shape. Many analysts draw a strip plot on top of a box plot to show both the summary and the raw values.
-- **Strip plot vs [scatter plot](/learn/chart-types/cartesian/scatter-plot/):** a scatter plot places each dot by two numeric values. A strip plot uses one numeric value and a group.
+- Best for small samples, up to a few dozen values per group, where a summary alone would hide the detail.
+- With more data, dots merge into a block. Use a [box plot](/learn/chart-types/cartesian/box-plot/) to summarise the spread, or a [violin plot](/learn/chart-types/cartesian/violin-plot/) to show its shape. Many analysts draw a strip plot on top of a box plot to show both the summary and the raw values.
+- Strip plot vs [scatter plot](/learn/chart-types/cartesian/scatter-plot/): a scatter plot places each dot by two numeric values. A strip plot uses one numeric value and a group.
 
 ## Common strip chart mistakes
 
 - **A y-axis that rescales on every update.** If the axis zooms to fit the data each frame, the trace jumps about and a large change can look small. Give each signal a fixed range that covers its normal values and limits.
-- **Every signal on one axis.** Signals with different units or sizes squash each other flat. Give each one its own lane and scale.
 - **The wrong time window.** Too short, and slow drifts are invisible; too long, and fast events shrink to a pixel. Let users change it, as paper recorders let operators change chart speed.
 - **No way to stop and look.** A chart that keeps moving while someone tries to read it is frustrating. Provide pause, and zoom on paused data.
 - **Hiding a lost signal.** A flat line or a gap can mean a disconnected sensor. Show a break in the line rather than joining across missing data, and mark it clearly.

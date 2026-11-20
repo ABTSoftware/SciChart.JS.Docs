@@ -6,6 +6,10 @@ sidebar_position: 4
 
 The XyMovingAverageFilter performs a simple moving average with a specified period length, resulting in a smoothed waveform derived from your data.
 
+:::tip New to low-pass filters?
+A moving average is the simplest low-pass filter. Read our guide: [Low-pass filter: what it is and how it works](/learn/signal-processing/low-pass-filter/), with an interactive filter, the cutoff frequency, and how a moving average compares with other low-pass filters.
+:::
+
 Applying a Moving Average to Chart Data
 ---------------------------------------
 

@@ -8,7 +8,7 @@ keywords: ["big data visualization", "chart performance", "large dataset visuali
 
 # Big Data and Performance
 
-How do you chart millions of data points and keep the chart fast? Each guide here explains one part of the answer in plain language, with a live, interactive example you can test in your own browser and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+How do you chart millions of data points and keep the chart fast? Each guide here explains one part of the answer in plain language, with a live, interactive example you can test in your own browser and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 | Topic | What it covers |
 | --- | --- |

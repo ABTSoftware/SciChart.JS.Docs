@@ -70,23 +70,23 @@ A **combo chart** (also called a combination chart or bar and line chart) draws 
 *A combo chart of one warehouse's shipments (columns, left axis) and average dispatch time (line, right axis) over a year (sample data). [Try the interactive version](#how-to-create-a-combo-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A combo chart puts **two kinds of mark on one plot**, most often **columns for amounts** and **a line for a rate, average or target**, sharing one x-axis.
-- If both series use the **same units**, keep **one y-axis**. If they use **different units**, give the line a **second y-axis** on the right: a **dual axis chart**.
-- On a dual axis chart, compare the **shapes and timing** of the two series, not their heights. **Where the line crosses the columns means nothing.**
-- The range chosen for the right-hand axis can make a change look small or dramatic. **Start the column axis at zero**, and choose the line's range for a reason.
-- If readers need to compare the two series directly, **index both to a common starting value** or use two charts stacked on the same x-axis.
+- A combo chart puts two kinds of mark on one plot, most often columns for amounts and a line for a rate, average or target, sharing one x-axis.
+- If both series use the same units, keep one y-axis. If they use different units, give the line a second y-axis on the right, making it a dual axis chart.
+- On a dual axis chart, compare the shapes and timing of the two series, not their heights. Where the line crosses the columns means nothing.
+- The range chosen for the right-hand axis can make a change look small or dramatic. Start the column axis at zero, and choose the line's range for a reason.
+- If readers need to compare the two series directly, index both to a common starting value or use two charts stacked on the same x-axis.
 :::
 
 ## How to read a combo chart
 
 ![The parts of a combo chart: monthly shipment columns read against a left axis that starts at zero, an orange dispatch-time line read against a right axis in hours, a shared month axis, a legend naming which axis each series uses, and a circled point where the line meets a column, marked as having no meaning](./combo-chart-anatomy.svg)
 
-1. **Start with the shared x-axis.** Both series are measured over the same months, dates or categories. Each column and the line point above it belong to the same period.
-2. **Match each series to its axis.** The legend, the axis titles and the colours tell you which scale belongs to which series. In the diagram, cyan labels on the left go with the columns, and orange labels on the right go with the line.
-3. **Read the columns against the left axis.** Compare column heights with each other, just as in a [bar chart](/learn/chart-types/cartesian/bar-chart/). This axis should start at zero.
-4. **Read the line against the right axis.** Follow its slope to see whether the measure is rising, falling or flat.
-5. **Compare the patterns, not the heights.** Ask whether the two series rise and fall together, whether one leads the other, and where they diverge. In the diagram, dispatch time barely moves while shipments vary between 3,000 and 3,700, then climbs once volume passes about 4,000.
-6. **Ignore where the line crosses the columns.** With two independent scales, the line sitting above or below a column says nothing about which value is bigger. Move either axis range and the crossing moves too.
+1. Start with the shared x-axis. Both series are measured over the same months, dates or categories. Each column and the line point above it belong to the same period.
+2. Match each series to its axis. The legend, the axis titles and the colours tell you which scale belongs to which series. In the diagram, cyan labels on the left go with the columns, and orange labels on the right go with the line.
+3. Read the columns against the left axis. Compare column heights with each other, as in a [bar chart](/learn/chart-types/cartesian/bar-chart/). This axis should start at zero.
+4. Read the line against the right axis. Follow its slope to see whether the measure is rising, falling or flat.
+5. Compare the patterns, not the heights. Ask whether the two series rise and fall together, whether one leads the other, and where they diverge. In the diagram, dispatch time barely moves while shipments vary between 3,000 and 3,700, then climbs once volume passes about 4,000.
+6. Ignore where the line crosses the columns. With two independent scales, the line sitting above or below a column says nothing about which value is bigger. Move either axis range and the crossing moves too.
 
 ## Types of combo chart
 
@@ -94,58 +94,58 @@ Columns plus a line is the most common combo chart, but any mix of series that s
 
 | Combination | What each part shows | Axes | Typical example |
 | --- | --- | --- | --- |
-| **Columns and a line, one axis** | Columns for actual values, a line for a target or an average | One: same units | Monthly sales against the sales target |
-| **Columns and a line, two axes** | Columns for an amount, a line for a rate or a different measure | Two: different units | Shipments per month and dispatch time in hours |
-| **Stacked columns and a line** | Columns split into parts, a line for the total or a goal | Usually one | Energy use by source, with a line for the monthly limit |
-| **Area and a line** | A shaded range or baseline behind a measured value | One | A patient's heart rate against the normal range |
-| **Markers and a line** | Measured points, with a fitted trend or model as a line | One | Lab measurements and the curve a model predicts |
-| [**Pareto chart**](/learn/chart-types/cartesian/pareto-chart/) | Columns sorted from largest to smallest, a line for the cumulative percentage | Two: count and % | Support tickets by cause, with the running share of the total |
+| Columns and a line, one axis | Columns for actual values, a line for a target or an average | One: same units | Monthly sales against the sales target |
+| Columns and a line, two axes | Columns for an amount, a line for a rate or a different measure | Two: different units | Shipments per month and dispatch time in hours |
+| Stacked columns and a line | Columns split into parts, a line for the total or a goal | Usually one | Energy use by source, with a line for the monthly limit |
+| Area and a line | A shaded range or baseline behind a measured value | One | A patient's heart rate against the normal range |
+| Markers and a line | Measured points, with a fitted trend or model as a line | One | Lab measurements and the curve a model predicts |
+| [Pareto chart](/learn/chart-types/cartesian/pareto-chart/) | Columns sorted from largest to smallest, a line for the cumulative percentage | Two: count and % | Support tickets by cause, with the running share of the total |
 
-A **Pareto chart** is a special combo chart with fixed rules: sorted columns, a cumulative percentage line and a right-hand axis from 0% to 100%. See the [Pareto chart guide](/learn/chart-types/cartesian/pareto-chart/) for how to read and build one.
+A Pareto chart is a special combo chart with fixed rules: sorted columns, a cumulative percentage line and a right-hand axis from 0% to 100%. See the [Pareto chart guide](/learn/chart-types/cartesian/pareto-chart/) for how to read and build one.
 
 ## One axis or two? Reading a dual axis chart honestly
 
-A **dual axis chart** (also called a secondary axis chart) has two y-axes: one on the left and one on the right, each with its own scale. A combo chart only needs one when its series have **different units**, such as a count and a number of hours. Two series in the same units, such as actual and target sales, belong on **one axis**, so readers can compare them directly.
+A **dual axis chart** (also called a secondary axis chart) has two y-axes: one on the left and one on the right, each with its own scale. A combo chart only needs one when its series have different units, such as a count and a number of hours. Two series in the same units, such as actual and target sales, belong on one axis, so readers can compare them directly.
 
-A second axis solves one problem and creates another. The two scales are set independently, so **the chart's maker decides how the line sits against the columns.** The same data can tell different stories:
+The two scales are set independently, so the chart's maker decides how the line sits against the columns, and the same data can tell different stories:
 
 ![The same shipment and dispatch-time data drawn three ways. A: with the right axis from 0 to 40 hours, the line rises gently. B: with the right axis from 16 to 34 hours, the same line starts near the bottom, runs through the columns and climbs steeply. C: with both series indexed to January equals 100 on one axis, shipments end at 196 and dispatch time at 179](./combo-chart-axis-scales.svg)
 
-- **Chart A** starts both axes at zero. Dispatch time grows from 18.5 to 33.1 hours, about 79%, and because the axis starts at zero, the line ends 79% higher than it starts.
-- **Chart B** uses identical data, but the right axis runs from 16 to 34 hours. The flat months now sit low inside the columns, the line then shoots above them, and the year-end rise looks about twice as steep.
-- **Chart C** drops the second axis. Each value is divided by its January value and multiplied by 100 (an **index**), so both series share one scale. Now the comparison is fair: shipments grew 96% and dispatch time 79%, and where the lines meet does mean something.
+- Chart A starts both axes at zero. Dispatch time grows from 18.5 to 33.1 hours, about 79%, and because the axis starts at zero, the line ends 79% higher than it starts.
+- Chart B uses identical data, but the right axis runs from 16 to 34 hours. The flat months now sit low inside the columns, the line then shoots above them, and the year-end rise looks about twice as steep.
+- Chart C drops the second axis. Each value is divided by its January value and multiplied by 100 (an **index**), so both series share one scale. Now the comparison is fair: shipments grew 96% and dispatch time 79%, and where the lines meet does mean something.
 
 To keep a dual axis chart honest:
 
-- **Start the column axis at zero.** A column's height is its value. Cutting the axis exaggerates differences between columns.
-- **Choose the right-hand range for a reason,** such as starting at zero or a fixed range like 0% to 100%. Don't stretch it to make the line fill the plot.
-- **Colour each axis like its series,** and put the units in both axis titles.
-- **Draw grid lines from one axis only.** Two sets of grid lines that don't line up are hard to read.
-- **Don't read meaning into crossings or gaps** between the line and the columns, and don't let your readers do so: say what the chart shows in a caption.
-- **Consider an alternative** when the comparison matters more than the compact layout: an indexed chart like C, or two charts stacked on the same x-axis.
+- Start the column axis at zero. A column's height is its value. Cutting the axis exaggerates differences between columns.
+- Choose the right-hand range for a reason, such as starting at zero or a fixed range like 0% to 100%. Don't stretch it to make the line fill the plot.
+- Colour each axis like its series, and put the units in both axis titles.
+- Draw grid lines from one axis only. Two sets of grid lines that don't line up are hard to read.
+- Say what the chart shows in a caption, so readers don't read meaning into crossings or gaps between the line and the columns.
+- Consider an alternative when the comparison matters more than the compact layout: an indexed chart like C, or two charts stacked on the same x-axis.
 
 ## How to describe a combo chart
 
 Describe each series against its own axis, then the relationship between them:
 
-> Over **[period]**, **[column measure]** **[rose / fell / stayed flat]** from **[start]** to **[end]**, while **[line measure]** **[changed]** from **[start]** to **[end]**. The two **[moved together / diverged]** **[when or where]**.
+> Over [period], [column measure] [rose / fell / stayed flat] from [start] to [end], while [line measure] [changed] from [start] to [end]. The two [moved together / diverged] [when or where].
 
-**Worked example:** "Over the year, monthly shipments almost doubled, from 3,120 in January to 6,130 in December, while average dispatch time rose from 18.5 to 33.1 hours. Dispatch time stayed under 21 hours until September, then climbed steeply once volume passed 4,000 a month in October."
+Worked example: "Over the year, monthly shipments almost doubled, from 3,120 in January to 6,130 in December, while average dispatch time rose from 18.5 to 33.1 hours. Dispatch time stayed under 21 hours until September, then climbed steeply once volume passed 4,000 a month in October."
 
 Avoid sentences like "in December, dispatch time was below shipments". The two use different units, so they can't be compared that way.
 
 ## When to use a combo chart
 
-Use a combo chart when **two related measures share the same periods or categories**, and the question is how one moves with the other. Typical uses:
+Use a combo chart when two related measures share the same periods or categories, and the question is how one moves with the other. Typical uses:
 
-- **operations:** volume against a time or a rate, such as orders and delivery time, or calls and average wait;
-- **performance against a goal:** actual values as columns, a target or budget as a line;
-- **science and engineering:** measurements as markers and a fitted model as a line, or a signal against its normal range;
-- **finance:** price as a line or candles, with trading volume as columns (often on a separate pane below).
+- operations: volume against a time or a rate, such as orders and delivery time, or calls and average wait;
+- performance against a goal: actual values as columns, a target or budget as a line;
+- science and engineering: measurements as markers and a fitted model as a line, or a signal against its normal range;
+- finance: price as a line or candles, with trading volume as columns (often on a separate pane below).
 
 | Chart | Best for |
 | --- | --- |
-| **Combo chart** | Two related measures over the same periods or categories, where different chart forms help tell them apart |
+| Combo chart | Two related measures over the same periods or categories, where different chart forms help tell them apart |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | One or more measures in the same units over time; index different measures to a common start to compare them on one axis |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/#types-of-bar-chart) | Comparing amounts in the same units across categories, side by side as clustered bars |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Whether two measures are related, one dot per period or item, without the time order |
@@ -154,9 +154,7 @@ Use a combo chart when **two related measures share the same periods or categori
 ## Common combo chart mistakes
 
 - **A second axis for the same units.** If both series are in dollars or both are counts, put them on one axis. Two axes in the same units hide the real difference in size.
-- **A column axis that doesn't start at zero.** Columns are read by their height, so a cut axis makes small differences look large.
 - **A stretched right-hand axis.** Setting the line's range to fill the plot exaggerates its changes (chart B above). Pick the range for a reason and keep it fixed when you compare charts.
-- **Reading crossings and gaps.** On a dual axis chart, the line being above a column means nothing.
 - **Unlabelled axes or units.** Readers can't tell which scale belongs to which series. Colour and title each axis to match its series.
 - **Too many series.** Two or three series are readable. Beyond that, use separate charts that share an x-axis.
 - **Two lines on two axes, styled the same.** If the series look alike, readers assume they share a scale. A different form (columns and a line) or a different colour per series makes the split clear.
@@ -346,14 +344,14 @@ Here is the code for this chart:
 
 Key points:
 
-- Every series you add to `sciChartSurface.renderableSeries` draws on the same chart, so a combo chart is just a [FastColumnRenderableSeries](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/) plus a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/). Series draw in the order you add them, so add the line last to keep it on top. Any other [series type](/2d-charts/chart-types/renderable-series-api-overview/), such as a mountain (area), scatter or stacked column series, can be mixed in the same way.
+- Every series you add to `sciChartSurface.renderableSeries` draws on the same chart, so a combo chart is a [FastColumnRenderableSeries](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/) plus a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/). Series draw in the order you add them, so add the line last to keep it on top. Any other [series type](/2d-charts/chart-types/renderable-series-api-overview/), such as a mountain (area), scatter or stacked column series, can be mixed in the same way.
 - For a dual axis chart, add a second `NumericAxis` with `axisAlignment: EAxisAlignment.Right` and an `id`, and set the line's `yAxisId` to the same value. `autoRange: EAutoRange.Never` with a fixed `visibleRange` stops the axis rescaling to fill the plot. See [secondary and multiple axes](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/).
 - `labelStyle` and `axisTitleStyle` colour each axis to match its series, and `drawMajorGridLines: false` on the right axis leaves one set of grid lines.
 - A [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) shows a month or category name at each x value (0, 1, 2, …). The `LegendModifier` names each series and lets readers hide one; the `CursorModifier` tooltip shows both values for the period under the mouse.
 
 **See it in the demo app:** [JavaScript chart with a secondary y-axis](https://www.scichart.com/demo/javascript/chart-with-secondary-y-axis) · [React chart with a secondary y-axis](https://www.scichart.com/demo/react/chart-with-secondary-y-axis) · [Angular chart with a secondary y-axis](https://www.scichart.com/demo/angular/chart-with-secondary-y-axis)
 
-**Columns and a line in one chart:** [JavaScript chart with multi-style series](https://www.scichart.com/demo/javascript/multi-style-series) · [React chart with multi-style series](https://www.scichart.com/demo/react/multi-style-series) · [Angular chart with multi-style series](https://www.scichart.com/demo/angular/multi-style-series)
+Columns and a line in one chart: [JavaScript chart with multi-style series](https://www.scichart.com/demo/javascript/multi-style-series) · [React chart with multi-style series](https://www.scichart.com/demo/react/multi-style-series) · [Angular chart with multi-style series](https://www.scichart.com/demo/angular/multi-style-series)
 
 **Go deeper:** [SciChart.js chart types documentation](/2d-charts/chart-types/renderable-series-api-overview/), listing every series type you can combine, and the [SciChart.js secondary and multiple axes documentation](/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/).
 

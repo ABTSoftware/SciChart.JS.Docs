@@ -75,22 +75,22 @@ A **histogram** (also called a frequency histogram) is a chart that shows how th
 *A histogram of the heights of 1,000 simulated adults, counted into 5 cm bins. [Try the interactive version](#how-to-create-a-histogram-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A histogram shows the **distribution of one numeric variable**: values are counted into ranges called **bins**.
-- Read it for **shape**, **centre**, **spread** and **outliers**: "symmetric, centred near 170 cm, mostly 155 to 185 cm".
-- Its bars **touch** and stay in **numeric order**; a bar chart's bars are separate categories.
-- The **bin width** changes the picture. Start with √n or Sturges' rule, then try a few widths.
-- You can **estimate the median** from a histogram alone, using the counts in each bin.
+- A histogram shows the distribution of one numeric variable: values are counted into ranges called bins.
+- Read it for shape, centre, spread and outliers: "symmetric, centred near 170 cm, mostly 155 to 185 cm".
+- Its bars touch and stay in numeric order; a bar chart's bars are separate categories.
+- The bin width changes the picture. Start with √n or Sturges' rule, then try a few widths.
+- You can estimate the median from a histogram alone, using the counts in each bin.
 :::
 
 ## How to read a histogram
 
 ![Anatomy of a histogram: equal-width bins on the horizontal axis, frequency on the vertical axis and touching bars, with four common shapes below: normal, right-skewed, left-skewed and bimodal](./histogram-anatomy.svg)
 
-1. **Read the horizontal axis.** It shows the measured value, such as height, price or response time, split into **bins**. Each bin is a range, such as 170 to 175 cm, and the bins are usually all the same width.
-2. **Read the vertical axis.** It shows the **frequency**: how many values fall into each bin. Some histograms show a percentage of the total instead (relative frequency).
-3. **Find the peak.** The tallest bar is the most common range of values, called the **modal class**.
-4. **Judge the spread.** How far the bars stretch either side of the peak shows how much the values vary.
-5. **Check the shape and the edges.** Is it symmetric, or does it trail off to one side? Bars standing apart from the rest may be **outliers**, values worth checking. A gap means no values fell in that range.
+1. Read the horizontal axis. It shows the measured value, such as height, price or response time, split into bins. Each bin is a range, such as 170 to 175 cm, and the bins are usually all the same width.
+2. Read the vertical axis. It shows the **frequency**: how many values fall into each bin. Some histograms show a percentage of the total instead (relative frequency).
+3. Find the peak. The tallest bar is the most common range of values, called the **modal class**.
+4. Judge the spread. How far the bars stretch either side of the peak shows how much the values vary.
+5. Check the shape and the edges. Is it symmetric, or does it trail off to one side? Bars standing apart from the rest may be **outliers**, values worth checking. A gap means no values fell in that range.
 
 ### Common histogram shapes
 
@@ -104,11 +104,11 @@ A **histogram** (also called a frequency histogram) is a chart that shows how th
 
 ## How to describe a histogram
 
-Statistics courses teach the same four points for describing a distribution: **shape, centre, spread and unusual values**. Use this template:
+Statistics courses teach the same four points for describing a distribution: shape, centre, spread and unusual values. Use this template:
 
-> The distribution of **[variable]** is **[symmetric / right-skewed / left-skewed / bimodal]**, centred around **[value]**. Most values lie between **[low]** and **[high]**, and **[there are no outliers / a few values stand apart at …]**.
+> The distribution of [variable] is [symmetric / right-skewed / left-skewed / bimodal], centred around [value]. Most values lie between [low] and [high], and [there are no outliers / a few values stand apart at …].
 
-**Worked example,** using the heights chart at the top of the page: "The distribution of height is roughly symmetric and bell-shaped, centred around 170 cm, with the tallest bar from 170 to 175 cm (243 people). Most people, 900 of the 1,000, are between 155 and 185 cm. A handful of values stand apart at the edges: four people under 145 cm and one between 205 and 210 cm."
+For example, describing the heights chart at the top of the page: "The distribution of height is roughly symmetric and bell-shaped, centred around 170 cm, with the tallest bar from 170 to 175 cm (243 people). Most people, 900 of the 1,000, are between 155 and 185 cm. A handful of values stand apart at the edges: four people under 145 cm and one between 205 and 210 cm."
 
 ## How to make a histogram, step by step
 
@@ -116,11 +116,11 @@ Here are 20 delivery times, in minutes (example data):
 
 > 12, 15, 17, 18, 21, 22, 22, 24, 25, 26, 27, 27, 28, 29, 31, 33, 34, 38, 41, 52
 
-1. **Find the range.** The smallest value is 12 and the largest is 52, a range of 40 minutes.
-2. **Choose the number of bins.** The square root of 20 is about 4.5, so aim for about five bins.
-3. **Choose a bin width.** 40 ÷ 5 = 8 minutes. Round to a friendly number: **10 minutes**, with bins starting at 10.
-4. **Decide the edges.** Each bin includes its lower edge and excludes its upper edge, so 20 goes in the 20 to 30 bin, not the 10 to 20 bin. That way every value is counted exactly once.
-5. **Count the values in each bin** to make a frequency table:
+1. Find the range. The smallest value is 12 and the largest is 52, a range of 40 minutes.
+2. Choose the number of bins. The square root of 20 is about 4.5, so aim for about five bins.
+3. Choose a bin width. 40 ÷ 5 = 8 minutes. Round up to 10 minutes, a friendlier number, with bins starting at 10.
+4. Decide the edges. Each bin includes its lower edge and excludes its upper edge, so 20 goes in the 20 to 30 bin, not the 10 to 20 bin. That way every value is counted exactly once.
+5. Count the values in each bin to make a frequency table:
 
 | Bin (minutes) | Values | Frequency |
 | --- | --- | --- |
@@ -129,15 +129,15 @@ Here are 20 delivery times, in minutes (example data):
 | 30 to under 40 | 31, 33, 34, 38 | 4 |
 | 40 to under 50 | 41 | 1 |
 | 50 to under 60 | 52 | 1 |
-| **Total** | | **20** |
+| Total | | 20 |
 
-6. **Draw the bars.** Put the bins along the horizontal axis and the frequency up the side, starting at zero. Draw one bar per bin, touching its neighbours, with a height equal to its count.
+6. Draw the bars. Put the bins along the horizontal axis and the frequency up the side, starting at zero. Draw one bar per bin, touching its neighbours, with a height equal to its count.
 
-The result has a peak at 20 to 30 minutes and a tail to the right: a **right-skewed** distribution, with 52 minutes as a possible outlier worth checking.
+The result peaks at 20 to 30 minutes and has a tail to the right, so the distribution is right-skewed, with 52 minutes as a possible outlier worth checking.
 
 ### Choosing the number of bins
 
-The bin width changes the picture. **Too few bins** lump everything together and hide the shape; **too many** leave most bins with only a few values, so the chart looks noisy. Two common starting points:
+Too few bins lump everything together and hide the shape; too many leave most bins with only a few values, so the chart looks noisy. Two common starting points:
 
 - the **square-root rule:** about √n bins for n values;
 - **Sturges' rule:** 1 + log₂(n) bins, which suits data that is roughly bell-shaped.
@@ -153,32 +153,32 @@ For the 1,000 heights above, these suggest about 32 and 11 bins. The chart uses 
 
 ## How to find the median from a histogram
 
-A histogram doesn't show the individual values, but you can **estimate the median** (the middle value) from the counts. Add up the bars from the left until you pass half the total, then work out how far into that bin the halfway point falls:
+A histogram doesn't show the individual values, but you can estimate the median (the middle value) from the counts. Add up the bars from the left until you pass half the total, then work out how far into that bin the halfway point falls:
 
 > median ≈ L + ((n ÷ 2 − F) ÷ f) × w
 
-where **L** is the lower edge of the bin holding the middle value, **n** is the total count, **F** is the count of all bins before it, **f** is that bin's count and **w** is the bin width.
+where *L* is the lower edge of the bin holding the middle value, *n* is the total count, *F* is the count of all bins before it, *f* is that bin's count and *w* is the bin width.
 
-**Worked example,** using the 1,000 heights in the chart above. Half of 1,000 is 500. Adding the bars from the left, the bins up to 170 cm hold 491 people, and the 170 to 175 cm bin holds 243, so the 500th person is in that bin:
+For the 1,000 heights in the chart above, half of 1,000 is 500. Adding the bars from the left, the bins up to 170 cm hold 491 people, and the 170 to 175 cm bin holds 243, so the 500th person is in that bin:
 
-> median ≈ 170 + ((500 − 491) ÷ 243) × 5 ≈ 170 + 0.19 = **170.2 cm**
+> median ≈ 170 + ((500 − 491) ÷ 243) × 5 ≈ 170 + 0.19 = 170.2 cm
 
 The median of the raw data behind the chart is 170.1 cm, so the estimate is within a tenth of a centimetre. The method assumes values are spread evenly inside each bin, so it works best with narrow bins.
 
 ## When to use a histogram
 
-Use a histogram when you have **many values of one numeric variable** and want to see its **distribution**: where the values cluster, how spread out they are and whether the shape is symmetric, skewed or has more than one peak. It's a standard first step in quality control and in exploring any new dataset. For a smooth version of a histogram that doesn't depend on bin edges, and is easier to compare across groups, see the [density plot](/learn/chart-types/cartesian/density-plot/).
+Use a histogram when you have many values of one numeric variable and want to see its distribution: where the values cluster, how spread out they are and whether the shape is symmetric, skewed or has more than one peak. It's a standard first step in quality control and in exploring any new dataset. For a smooth version of a histogram that doesn't depend on bin edges, and is easier to compare across groups, see the [density plot](/learn/chart-types/cartesian/density-plot/).
 
 | Chart | Best for |
 | --- | --- |
-| **Histogram** | The shape of one numeric variable's distribution, counted into ranges |
+| Histogram | The shape of one numeric variable's distribution, counted into ranges |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values across separate categories, such as sales by region |
 | [Box plot](/learn/chart-types/cartesian/box-plot/) | A compact summary of a distribution (median, quartiles, range and outliers), and comparing many distributions side by side |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two numeric variables |
 
 ## Bar graph vs histogram: what's the difference? {#histogram-vs-bar-graph}
 
-A histogram and a bar graph (bar chart) look alike, but they answer different questions. The difference between a histogram and a bar graph is the kind of data on the horizontal axis: a histogram counts **numbers** into ranges, while a bar graph compares separate **categories**.
+A histogram and a bar graph (bar chart) look alike, but they answer different questions. The difference between a histogram and a bar graph is the kind of data on the horizontal axis: a histogram counts numbers into ranges, while a bar graph compares separate categories.
 
 The picture below draws the same 20 deliveries both ways (example data). The histogram uses the delivery times from the [step-by-step example](#how-to-make-a-histogram-step-by-step) above; the bar graph counts the same deliveries by the area they went to.
 
@@ -186,26 +186,25 @@ The picture below draws the same 20 deliveries both ways (example data). The his
 
 Three things give a histogram away:
 
-- **The bars touch.** Each bin carries on where the last one stopped, so there's no gap unless a bin is empty. A bar graph leaves gaps, because "North" and "Centre" aren't neighbours on any scale.
-- **The order is fixed.** Moving the 50 to 60 minute bar to the front would break the shape. The bar graph's areas can go in any order; here they're sorted largest first.
-- **The axis has numbers, not names.** You can read a histogram's horizontal axis like a ruler. A bar graph's axis is a list of labels.
+- The bars touch. Each bin carries on where the last one stopped, so there's no gap unless a bin is empty. A bar graph leaves gaps, because "North" and "Centre" aren't neighbours on any scale.
+- The order is fixed. Moving the 50 to 60 minute bar to the front would break the shape. The bar graph's areas can go in any order; here they're sorted largest first.
+- The axis has numbers, not names. You can read a histogram's horizontal axis like a ruler. A bar graph's axis is a list of labels.
 
 | | Histogram | Bar graph |
 | --- | --- | --- |
-| **Data** | One numeric (continuous) variable | Separate categories |
-| **Each bar is** | A range of values (a bin) | One category |
-| **Bar height** | How many values fall in the range | The category's value |
-| **Gaps between bars** | No: the bins are continuous | Yes: the categories are separate |
-| **Order of bars** | Fixed, in numeric order | Any order, often sorted by size |
-| **Answers** | "How are the values distributed?" | "Which category is bigger?" |
+| Data | One numeric (continuous) variable | Separate categories |
+| Each bar is | A range of values (a bin) | One category |
+| Bar height | How many values fall in the range | The category's value |
+| Gaps between bars | No: the bins are continuous | Yes: the categories are separate |
+| Order of bars | Fixed, in numeric order | Any order, often sorted by size |
+| Answers | "How are the values distributed?" | "Which category is bigger?" |
 
-**A quick test for bar chart vs histogram:** if you could rename the bars or shuffle them without losing meaning, it's a bar graph. If each bar is a slice of one number line, it's a histogram. For more on bar graphs and their types, see the [bar chart guide](/learn/chart-types/cartesian/bar-chart/).
+To tell them apart quickly, ask whether you could rename or shuffle the bars without losing meaning. If you could, it's a bar graph; if each bar is a slice of one number line, it's a histogram. For more on bar graphs and their types, see the [bar chart guide](/learn/chart-types/cartesian/bar-chart/).
 
 ## Common histogram mistakes
 
 Check a histogram against this list before you publish it:
 
-- **The bars touch.** Gaps between the bars make it look like a bar chart of categories. A gap should only mean an empty bin.
 - **The bins are equal width,** or the chart is a density histogram. With unequal bins and plain counts, the wide bins look bigger than they are.
 - **The bin edges are clear.** Say whether a value on an edge (exactly 20 minutes) goes in the lower or the upper bin, and apply it every time.
 - **More than one bin width was tried.** One width can hide a second peak or invent one; check that the shape holds up.

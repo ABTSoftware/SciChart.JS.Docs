@@ -63,28 +63,28 @@ related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
 
 ## What is a donut chart?
 
-A **donut chart** (also spelled **doughnut chart**) is a [pie chart](/learn/chart-types/radial/pie-chart/) with its centre cut out. A **ring** is divided into **segments**, each showing one category's **share of a whole**, and together the segments make **100%**. The empty centre usually holds a **total** or a headline figure.
+A **donut chart** (also spelled **doughnut chart**) is a [pie chart](/learn/chart-types/radial/pie-chart/) with its centre cut out. A ring is divided into **segments**, each showing one category's share of a whole, and together the segments make 100%. The empty centre usually holds a total or a headline figure.
 
 ![A donut chart of £4.2m annual sales by region: Europe 40%, North America 30%, Asia-Pacific 20% and Rest of world 10%, with the total shown in the centre of the ring](/img/learn/donut-chart-og.png)
 
 *A donut chart of annual sales by region (sample data), with the total in the centre. [Try the interactive version](#how-to-create-a-donut-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A donut chart shows **parts of one whole** as segments of a ring that add up to 100%.
-- You read each segment by **how far it runs round the ring** (its arc length). A quarter of the ring is 25%.
-- The **centre** is its one real advantage over a pie: use it for the total or the key figure.
-- Research found donut charts are read **about as accurately as pie charts**. Both are less precise than bars.
-- Keep to **about five segments**, and avoid multi-ring donuts for comparing groups.
+- A donut chart shows parts of one whole as segments of a ring that add up to 100%.
+- You read each segment by how far it runs round the ring (its arc length). A quarter of the ring is 25%.
+- The centre is its one real advantage over a pie: use it for the total or the key figure.
+- Research found donut charts are read about as accurately as pie charts. Both are less precise than bars.
+- Keep to about five segments, and avoid multi-ring donuts for comparing groups.
 :::
 
 ## How to read a donut chart
 
 ![Anatomy of a donut chart: four segments of sales by region around a ring, with labels for the arc length, the ring, the hole and the centre label, which shows the total](./donut-chart-anatomy.svg)
 
-1. **Read the centre first.** It usually tells you what the whole ring adds up to ("£4.2m total sales") or gives the one number the chart is about.
-2. **Match each segment to its category,** using the label on the segment or the legend.
-3. **Judge each segment by its arc length:** how far it runs round the ring. With the centre gone, there's no point where the slices meet, so you compare lengths along the ring instead.
-4. **Read the labels for exact values.** As with a pie chart, readers can only estimate segment sizes without percentages.
+1. Read the centre first. It usually tells you what the whole ring adds up to ("£4.2m total sales") or gives the one number the chart is about.
+2. Match each segment to its category, using the label on the segment or the legend.
+3. Judge each segment by its **arc length**, how far it runs round the ring. With the centre gone, there's no point where the slices meet, so you compare lengths along the ring instead.
+4. Read the labels for exact values. As with a pie chart, readers can only estimate segment sizes without percentages.
 
 ### The clock-face trick
 
@@ -112,14 +112,16 @@ A donut chart is a pie chart with the middle removed, so the two show exactly th
 | Reading accuracy | About the same as a donut, in controlled tests | About the same as a pie, in controlled tests |
 | Small shares | Thin wedges that are hard to label | Thin arcs; a thicker ring makes them easier to see |
 
-**Are donut charts harder to read?** A common claim is that removing the centre makes a donut harder to read, because you lose the angle. A 2016 study by Drew Skau and Robert Kosara tested this directly. It found that readers rely mainly on **arc length and area**, not the centre angle, and that donut charts were read **about as accurately** as pie charts. So choose between them on design grounds: a donut if you'll use the centre, a pie if you won't.
+### Does the missing centre make a donut harder to read?
+
+A common claim is that removing the centre makes a donut harder to read, because you lose the angle. A 2016 study by Drew Skau and Robert Kosara tested this directly. It found that readers rely mainly on arc length and area, not the centre angle, and that donut charts were read about as accurately as pie charts. So choose between them on design grounds: a donut if you'll use the centre, a pie if you won't.
 
 ## Types of donut chart
 
 | Variant | What it looks like | Watch out for |
 | --- | --- | --- |
 | Single-ring donut | One ring split into segments, often with a total in the centre | Too many segments, or a ring so thin the segments are hard to compare |
-| Exploded donut | One or more segments pulled out from the ring | Pull out one segment at most, or the emphasis is lost (click a segment in the live chart below to try it) |
+| Exploded donut | One or more segments pulled out from the ring | Pull out one segment at most, or the emphasis is lost |
 | Multi-ring (nested) donut | Two or more rings, one inside the other, e.g. this year outside and last year inside | Inner rings are shorter than outer ones, so the same percentage looks smaller on an inner ring. A [bar chart](/learn/chart-types/cartesian/bar-chart/) or [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) usually compares groups more clearly |
 | Sunburst | Nested rings where each outer ring splits the segment inside it (region, then country) | Fine for showing a hierarchy, but small outer segments get very thin. See the [sunburst chart documentation](/2d-charts/chart-types/polar-sunburst-chart/) |
 | Single-value (progress) donut | One coloured segment against a grey track, e.g. "72% complete" | Shows one percentage only; a [gauge chart](/2d-charts/chart-types/polar-gauge-chart/) or a plain number may be clearer |
@@ -127,11 +129,11 @@ A donut chart is a pie chart with the middle removed, so the two show exactly th
 
 ## When to use a donut chart
 
-Use a donut chart for the same data as a pie chart, **a few parts of one whole**, when you want to **show a total or label in the centre**, or when a lighter, ring-shaped chart suits a dashboard. If readers need to **compare segments of similar size**, or there are **many categories**, use a bar chart.
+Use a donut chart for the same data as a pie chart, a few parts of one whole, when you want to show a total or label in the centre, or when a lighter, ring-shaped chart suits a dashboard. If readers need to compare segments of similar size, or there are many categories, use a bar chart.
 
 | Chart | Best for |
 | --- | --- |
-| **Donut chart** | A few parts of one whole, with a total or headline figure in the centre |
+| Donut chart | A few parts of one whole, with a total or headline figure in the centre |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | A few parts of one whole, when you don't need the centre |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values accurately, many categories, or values that don't add up to a whole |
 | [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) | Comparing how the split of a whole changes across several groups or periods, instead of a multi-ring donut |
@@ -140,10 +142,10 @@ Use a donut chart for the same data as a pie chart, **a few parts of one whole**
 
 The hole is the reason to pick a donut over a pie, so give it a job. Good choices:
 
-- **The total** the ring adds up to, with its unit: "£4.2m total sales", "1,240 responses".
-- **The headline share**, when the chart is about one segment: "40% Europe".
-- **The selected segment's value,** on an interactive chart: update the centre when the reader hovers over or clicks a segment.
-- **Progress towards a target,** on a single-value donut: "72% complete".
+- The total the ring adds up to, with its unit: "£4.2m total sales", "1,240 responses".
+- The headline share, when the chart is about one segment: "40% Europe".
+- The selected segment's value, on an interactive chart: update the centre when the reader hovers over or clicks a segment.
+- Progress towards a target, on a single-value donut: "72% complete".
 
 Keep it to one number and a short label. If the centre has nothing useful to say, a pie chart is the simpler choice.
 
@@ -151,11 +153,9 @@ Keep it to one number and a short label. If the centre has nothing useful to say
 
 Use this as a checklist before you publish a donut chart:
 
-- **An empty hole.** Without a centre label, a donut is a pie chart with less to look at.
 - **A centre number that doesn't match the ring.** If the centre shows a total, it must be the total of the segments, in the same unit.
 - **A ring that's too thin.** Thin rings make small segments hard to see and label. Keep the ring thick enough to hold its labels.
 - **Too many segments.** Keep to about five; group the rest into a grey "Other" segment, placed last.
-- **Comparing groups with nested rings.** The same percentage looks smaller on an inner ring. Use side-by-side bars or a 100% stacked column chart instead.
 - **Segments that don't make a whole,** such as multiple-choice survey answers that add up to more than 100%.
 - **3D effects and random order.** Keep it flat, and sort segments largest first from 12 o'clock.
 

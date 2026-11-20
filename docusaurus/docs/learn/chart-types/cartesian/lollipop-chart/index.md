@@ -70,30 +70,30 @@ A **lollipop chart** (also called a lollipop graph or lollipop plot) is a bar ch
 *A lollipop chart of survey results for 12 product features (sample data). [Try the interactive version](#how-to-create-a-lollipop-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A lollipop chart shows **one value per category** as a **stem from zero with a dot at the end**: a bar chart drawn with less ink.
-- It works best with **many categories of similar size**, where thick bars would form a heavy block of colour.
-- **Start the value axis at zero.** The stem's length is part of the reading, just as a bar's is.
-- **Sort the lollipops** by value and use **one colour**, unless colour carries a meaning.
-- Two values per category make a **dumbbell chart**. In engineering, a lollipop chart of samples is called a **stem plot**.
+- A lollipop chart shows one value per category as a stem from zero with a dot at the end, like a bar chart drawn with less ink.
+- It works best with many categories of similar size, where thick bars would form a heavy block of colour.
+- Start the value axis at zero. The stem's length is part of the reading, just as a bar's is.
+- Sort the lollipops by value and use one colour, unless colour carries a meaning.
+- Two values per category make a dumbbell chart. In engineering, a lollipop chart of samples is called a stem plot.
 :::
 
 ## How to read a lollipop chart
 
 ![The parts of a lollipop chart: six upright lollipops for orders by region, sorted from North (42) to Islands (15), with callouts labelling the dot, the stem, the zero baseline and the sorted categories](./lollipop-chart-anatomy.svg)
 
-1. **Check what each lollipop stands for.** The category axis names them: regions, products, people. Read the value axis title for what is measured and in what unit.
-2. **Read the value at the centre of the dot.** The dot sits on the value, so read it against the value axis or its data label. Half of a large dot reaches past the value, so don't read from its outer edge.
-3. **Compare the stems.** Longer stems mean larger values. Because every stem starts at zero, a stem twice as long means a value twice as large.
-4. **Look at the order.** Most lollipop charts are sorted, so the first and last lollipops are the largest and smallest. Look for gaps where the values drop sharply, and for groups of near-equal values.
-5. **Check for negative values.** If some stems go the other way from the baseline, those values are below zero, or below whatever reference line the chart uses (see [diverging lollipop chart](#types-of-lollipop-chart) below).
+1. Check what each lollipop stands for. The category axis names them: regions, products, people. Read the value axis title for what is measured and in what unit.
+2. Read the value at the centre of the dot. The dot sits on the value, so read it against the value axis or its data label. Half of a large dot reaches past the value, so don't read from its outer edge.
+3. Compare the stems. Longer stems mean larger values. Because every stem starts at zero, a stem twice as long means a value twice as large.
+4. Look at the order. Most lollipop charts are sorted, so the first and last lollipops are the largest and smallest. Look for gaps where the values drop sharply, and for groups of near-equal values.
+5. Check for negative values. If some stems go the other way from the baseline, those values are below zero, or below whatever reference line the chart uses (see [diverging lollipop chart](#types-of-lollipop-chart) below).
 
 ### How to describe a lollipop chart
 
 Use this template when you report a lollipop chart:
 
-> **[Top category]** has the highest **[measure]** at **[value]**, and **[bottom category]** the lowest at **[value]**. **[Pattern: most values are close together / there's a clear gap after the top few / a few categories stand out]**.
+> [Top category] has the highest [measure] at [value], and [bottom category] the lowest at [value]. [Pattern: most values are close together / there's a clear gap after the top few / a few categories stand out].
 
-**Worked example,** from the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two fall clearly below the rest."
+For example, describing the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two fall clearly below the rest."
 
 ## Lollipop chart vs bar chart
 
@@ -105,56 +105,58 @@ In the bar chart above, ten scores between 74 and 88 make a near-solid block of 
 
 | | Bar chart | Lollipop chart |
 | --- | --- | --- |
-| **Shows** | One value per category, as a bar's length | One value per category, as a stem's length with a dot at the end |
-| **Ink used** | A lot: every bar is a solid block | Little: a thin line and a dot |
-| **Best with** | A few categories, or values that differ a lot | Many categories with similar values |
-| **Reading exact values** | Easier: the bar's end is a sharp edge | Slightly harder: read the centre of the dot |
-| **Familiar to readers** | Very | Less so, but easy to grasp |
-| **Axis starts at zero** | Yes | Yes |
+| Shows | One value per category, as a bar's length | One value per category, as a stem's length with a dot at the end |
+| Ink used | A lot: every bar is a solid block | Little: a thin line and a dot |
+| Best with | A few categories, or values that differ a lot | Many categories with similar values |
+| Reading exact values | Easier: the bar's end is a sharp edge | Slightly harder: read the centre of the dot |
+| Familiar to readers | Very | Less so, but easy to grasp |
+| Axis starts at zero | Yes | Yes |
 
-**Rule of thumb:** with a handful of categories, a [bar chart](/learn/chart-types/cartesian/bar-chart/) is the safe choice. With a dozen or more similar values, a lollipop chart is usually easier on the eye. The data and the axis rules are the same, so switching between them costs nothing.
+As a rule of thumb, with a handful of categories, a [bar chart](/learn/chart-types/cartesian/bar-chart/) is the safe choice. With a dozen or more similar values, a lollipop chart is usually easier on the eye. The data and the axis rules are the same, so switching between them costs nothing.
 
 ## Types of lollipop chart
 
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
-| **Vertical lollipop chart** | Upright stems, categories along the bottom | Short category names, or categories with a natural order such as years |
-| **Horizontal lollipop chart** | Stems pointing right, categories down the left side | Long category names and rankings; the most common layout |
-| **Diverging lollipop chart** | Stems go both ways from a central baseline | Values above and below zero (profit and loss, change on last year), or above and below a target or average |
-| **Lollipop chart with highlights** | One or a few dots in a second colour | Picking out one category, such as your team or your product, against the rest |
-| **Dumbbell chart** | Two dots per category joined by a line | Comparing two values per category, such as before and after; see the [dumbbell chart](/learn/chart-types/cartesian/dumbbell-chart/) |
-| **Dot plot** (Cleveland dot plot) | Dots only, no stems | Values in a narrow range, where the axis doesn't need to start at zero |
+| Vertical lollipop chart | Upright stems, categories along the bottom | Short category names, or categories with a natural order such as years |
+| Horizontal lollipop chart | Stems pointing right, categories down the left side | Long category names and rankings; the most common layout |
+| Diverging lollipop chart | Stems go both ways from a central baseline | Values above and below zero (profit and loss, change on last year), or above and below a target or average |
+| Lollipop chart with highlights | One or a few dots in a second colour | Picking out one category, such as your team or your product, against the rest |
+| Dumbbell chart | Two dots per category joined by a line | Comparing two values per category, such as before and after; see the [dumbbell chart](/learn/chart-types/cartesian/dumbbell-chart/) |
+| Dot plot (Cleveland dot plot) | Dots only, no stems | Values in a narrow range, where the axis doesn't need to start at zero |
 
-The **dumbbell chart** is the lollipop chart's two-value cousin. Instead of a stem from zero, a line joins two dots, so the line's length shows the **gap** between the two values rather than a value itself. Use it when the change or difference matters more than the values.
+The **dumbbell chart** is the lollipop chart's two-value cousin. Instead of a stem from zero, a line joins two dots, so the line's length shows the gap between the two values rather than a value itself. Use it when the change or difference matters more than the values.
 
-In a **diverging lollipop chart** the baseline can be zero or a reference value. If it isn't zero, label it clearly ("difference from the target"), because readers will assume it is.
+In a diverging lollipop chart the baseline can be zero or a reference value. If it isn't zero, label it clearly ("difference from the target"), because readers will assume it is.
 
 ## Stem plots in signal processing
 
-In engineering and science, the lollipop chart has another name: the **stem plot**. Plotting tools for technical work, such as MATLAB's and Matplotlib's `stem` functions, draw it, and SciChart.js calls it an **impulse** series.
+In engineering and science, a lollipop chart is called a **stem plot**. Plotting tools for technical work, such as MATLAB's and Matplotlib's `stem` functions, draw it, and SciChart.js calls it an **impulse** series.
 
 ![A stem plot of 24 samples of a decaying oscillation, numbered 0 to 23. Each sample is a vertical stem from the zero line to its value, with an open circle at the end; stems point up for positive values and down for negative ones, and shrink towards zero as the signal dies away](./stem-plot.svg)
 
 A stem plot shows a **discrete signal**: a sequence of separate samples, numbered 0, 1, 2 and so on, rather than a continuous curve. Each stem rises or drops from the zero line to the sample's value. Drawing stems instead of joining the points with a line makes it clear that there's nothing between the samples. It's used for:
 
-- **sampled signals,** such as audio or sensor readings, looked at sample by sample;
-- **impulse responses:** how a filter or system responds to a single, short input pulse, as in the diagram above;
-- **filter coefficients and spectra** computed at separate frequencies.
+- sampled signals, such as audio or sensor readings, looked at sample by sample;
+- impulse responses: how a filter or system responds to a single, short input pulse, as in the diagram above;
+- filter coefficients and spectra computed at separate frequencies.
 
-**Don't confuse it with a stem-and-leaf plot.** In statistics teaching, "stem plot" often means a **stem-and-leaf plot**: a table of digits that shows a distribution, a bit like a [histogram](/learn/chart-types/cartesian/histogram/) made of numbers. It has nothing to do with lollipops.
+### Is a stem plot the same as a stem-and-leaf plot?
+
+No. In statistics teaching, "stem plot" often means a **stem-and-leaf plot**: a table of digits that shows a distribution, a bit like a [histogram](/learn/chart-types/cartesian/histogram/) made of numbers.
 
 ## When to use a lollipop chart
 
-Use a lollipop chart when you have **one value for each of many categories** and want readers to compare them or see the ranking. Typical uses:
+Use a lollipop chart when you have one value for each of many categories and want readers to compare them or see the ranking. Typical uses:
 
-- **rankings:** scores by person, sales by product, results by country;
-- **survey results:** the share of respondents choosing each option, across many options;
-- **dashboards:** a light, compact alternative to a bar chart where space is tight;
-- **sampled signals and impulse responses,** as a stem plot.
+- rankings: scores by person, sales by product, results by country;
+- survey results: the share of respondents choosing each option, across many options;
+- dashboards: a light, compact alternative to a bar chart where space is tight;
+- sampled signals and impulse responses, as a stem plot.
 
 | Chart | Best for |
 | --- | --- |
-| **Lollipop chart** | Comparing one value across many categories, especially when the values are similar |
+| Lollipop chart | Comparing one value across many categories, especially when the values are similar |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing one value across a few categories, or several values per category (clustered or stacked bars) |
 | [Dumbbell chart](/learn/chart-types/cartesian/dumbbell-chart/) | Comparing two values per category, such as before and after, and the gap between them |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two numeric values, rather than a value per category |
@@ -166,9 +168,7 @@ Use a lollipop chart when you have **one value for each of many categories** and
 - **Dots too big.** A large dot hides where the value is, and dots on neighbouring lollipops can overlap. Keep the dots just big enough to stand out from the stems.
 - **Not sorting.** An unsorted lollipop chart hides the ranking. Sort by value, unless the categories have a natural order such as months or age groups.
 - **A different colour for each lollipop.** Colour suggests a meaning the data doesn't have. Use one colour, and a second only to highlight something.
-- **Too few categories.** With three or four values, a lollipop chart's lighter look gains little, and a bar chart is more familiar.
 - **Using it for continuous data over time.** Stems for every point of a smooth time series look like a comb. Use a [line chart](/learn/chart-types/cartesian/line-chart/) unless the samples are separate on purpose, as in a stem plot.
-- **Two values on one stem.** Two dots on one stem is a dumbbell chart, and needs its own explanation and legend.
 
 ## How to create a lollipop chart in JavaScript, React or Angular
 

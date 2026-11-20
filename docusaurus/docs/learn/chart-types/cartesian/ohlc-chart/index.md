@@ -42,7 +42,7 @@ related: [candlestick-chart, line-chart, big-data-visualization]
                 {
                     "@type": "Question",
                     "name": "Why do some traders prefer OHLC bars to candlesticks?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "OHLC bars take up less space, so a long history fits on one screen. Their open and close are marked by position, not colour, so they still work in black and white. The thin bars leave room for moving averages and other lines drawn on top. Many traders also simply learned on bar charts and find them faster to read." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "OHLC bars take up less space, so a long history fits on one screen. Their open and close are marked by position, not colour, so they still work in black and white. The thin bars leave room for moving averages and other lines drawn on top. Many traders also learned on bar charts and find them faster to read." }
                 },
                 {
                     "@type": "Question",
@@ -70,37 +70,37 @@ An **OHLC chart** (open-high-low-close chart, also called an OHLC bar chart or, 
 *An OHLC chart of 80 trading days (sample data), with green bars for days that closed above their open and red for days that closed below. [Try the interactive version](#how-to-create-an-ohlc-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- Each bar shows **four prices for one period**: open, high, low and close.
-- The **vertical line** is the range from low to high. The **left tick** is the open; the **right tick** is the close.
-- **Right tick above left tick** means the price rose during the period; below means it fell. Colour usually repeats this, but the ticks say it on their own.
-- An OHLC chart shows **the same data as a [candlestick chart](/learn/chart-types/cartesian/candlestick-chart/)**, drawn more thinly, so more periods fit on screen.
-- A bar can be **green yet lower than the day before**, if the price opened lower and recovered part of the way. Compare closes across bars to see the trend.
+- Each bar shows four prices for one period: open, high, low and close.
+- The vertical line is the range from low to high. The left tick is the open; the right tick is the close.
+- Right tick above left tick means the price rose during the period; below means it fell. Colour usually repeats this, but the ticks say it on their own.
+- An OHLC chart shows the same data as a [candlestick chart](/learn/chart-types/cartesian/candlestick-chart/), drawn more thinly, so more periods fit on screen.
+- A bar can be green yet lower than the day before, if the price opened lower and recovered part of the way. Compare closes across bars to see the trend.
 :::
 
 ## How to read an OHLC chart
 
 ![Anatomy of an OHLC bar: a green up bar and a red down bar, each with the high, low, open (left tick) and close (right tick) labelled](./ohlc-bar-anatomy.svg)
 
-1. **Check the timeframe.** Every bar covers the same length of time: a minute, an hour, a day or a week. The axis labels or the chart settings say which.
-2. **Find the range.** The top of the vertical line is the **high**, the highest price traded in the period. The bottom is the **low**. A tall bar means the price swung a lot; a short bar means a quiet period.
-3. **Find the open: the left tick.** It points back in time, towards the bars before it, which is an easy way to remember it.
-4. **Find the close: the right tick.** It points forward, towards the next bar. For most analysis the close is the most important price, because it is where the period settled.
-5. **Compare the two ticks.** Right tick higher than the left: an **up bar**, the price rose during the period. Right tick lower: a **down bar**. Many charts also colour up bars green and down bars red, but some draw every bar in one colour.
-6. **Read across the bars.** Follow the right ticks from bar to bar. Closes stepping higher make an uptrend; closes stepping lower make a downtrend.
+1. Check the timeframe. Every bar covers the same length of time: a minute, an hour, a day or a week. The axis labels or the chart settings say which.
+2. Find the range. The top of the vertical line is the high, the highest price traded in the period. The bottom is the low. A tall bar means the price swung a lot; a short bar means a quiet period.
+3. Find the open, the left tick. It points back in time, towards the bars before it, which is an easy way to remember it.
+4. Find the close, the right tick. It points forward, towards the next bar. For most analysis the close is the most important price, because it is where the period settled.
+5. Compare the two ticks. Right tick higher than the left: an **up bar**, the price rose during the period. Right tick lower: a **down bar**. Many charts also colour up bars green and down bars red, but some draw every bar in one colour.
+6. Read across the bars. Follow the right ticks from bar to bar. Closes stepping higher make an uptrend; closes stepping lower make a downtrend.
 
 ## How to describe an OHLC bar
 
 Each bar can be put into words with one template. Include the previous close, because it shows whether the period finished above or below the one before:
 
-> The price opened at **[open]**, traded between **[low]** and **[high]**, and closed at **[close]**: **[up / down]** on the period and **[up / down] [amount]** from the previous close of **[previous close]**.
+> The price opened at [open], traded between [low] and [high], and closed at [close]: [up / down] on the period and [up / down] [amount] from the previous close of [previous close].
 
-**Worked example:** five trading days, drawn as OHLC bars in the first panel of the diagram further down.
+Here are five trading days, drawn as OHLC bars in the first panel of the diagram further down.
 
 | Day | Open | High | Low | Close | On the day (close − open) | From previous close |
 | --- | --- | --- | --- | --- | --- | --- |
 | 1 | 100 | 104 | 98 | 103 | +3, up bar | – |
 | 2 | 103 | 106 | 101 | 105 | +2, up bar | +2 |
-| 3 | 101 | 104 | 99 | 102 | +1, up bar | **−3** |
+| 3 | 101 | 104 | 99 | 102 | +1, up bar | −3 |
 | 4 | 102 | 103 | 96 | 97 | −5, down bar | −5 |
 | 5 | 97 | 101 | 96 | 100 | +3, up bar | +3 |
 
@@ -131,29 +131,29 @@ The same five days can be drawn four ways. OHLC bars and candlesticks keep all f
 
 ![The same five days drawn four ways: OHLC bars with open and close ticks, HLC bars with only a close tick in a single colour, candlesticks with filled bodies, and a line joining the five closing prices](./ohlc-vs-hlc-vs-candlestick-vs-line.svg)
 
-- **OHLC bars** show all four prices. Day 3 shows its gap down: its left tick sits well below day 2's right tick.
+- OHLC bars show all four prices. Day 3 shows its gap down: its left tick sits well below day 2's right tick.
 - **HLC bars** (high-low-close) drop the open tick. They show the range and where the period settled, which is enough for many analyses and suits data where the opening price is missing or unreliable. Without an open there is no "up" or "down" for the period, so HLC bars are usually drawn in one colour.
-- **Candlesticks** show the same four prices as OHLC bars, with a filled body between the open and close.
-- **A line of closes** keeps one price per period. The range and the open are gone, so day 3's gap and recovery disappear. In exchange the trend is easiest to see, and several prices can share one chart. See the [line chart guide](/learn/chart-types/cartesian/line-chart/).
+- Candlesticks show the same four prices as OHLC bars, with a filled body between the open and close.
+- A line of closes keeps one price per period. The range and the open are gone, so day 3's gap and recovery disappear. In exchange the trend is easiest to see, and several prices can share one chart. See the [line chart guide](/learn/chart-types/cartesian/line-chart/).
 
 ## When to use an OHLC chart
 
-Use an OHLC chart when your data has an **open, high, low and close for each period** and the reader wants to see both the range and where each period closed. Stocks, futures, forex and crypto are the usual cases, often with a volume chart underneath and indicators such as moving averages on top.
+Use an OHLC chart when your data has an open, high, low and close for each period and the reader wants to see both the range and where each period closed. Stocks, futures, forex and crypto are the usual cases, often with a volume chart underneath and indicators such as moving averages on top.
 
 | If the reader needs to… | Use |
 | --- | --- |
-| See a long history of prices, with the range and close of every period, and lines such as moving averages drawn on top | **OHLC chart** |
+| See a long history of prices, with the range and close of every period, and lines such as moving averages drawn on top | OHLC chart |
 | See the direction and size of each period's move at a glance, or read candlestick patterns | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) |
-| See the range and close only, for data with no reliable opening price | **HLC bar chart** (an OHLC chart without the open tick) |
+| See the range and close only, for data with no reliable opening price | HLC bar chart (an OHLC chart without the open tick) |
 | Follow the long-term trend, or compare several prices on one chart | [Line chart](/learn/chart-types/cartesian/line-chart/) of the closing price |
 
-**Why some traders prefer bars to candlesticks:**
+### Why do some traders prefer bars to candlesticks?
 
-- **More history fits.** A bar is a line and two short ticks, so it needs less width than a candle. More periods fit on screen before the chart gets cramped.
-- **Indicators stay visible.** Moving averages, bands and trend lines drawn over thin bars are easier to follow than over solid bodies.
-- **No colour needed.** The left and right ticks show the open and close by position, so the chart reads the same in print, in black and white, or for readers who can't tell red from green.
-- **Closes line up.** The right ticks form a row of closing prices from bar to bar, which makes close-to-close moves, like day 3 above, easy to spot.
-- **Habit.** Many traders learned on bar charts and read them faster. It's a preference, not a rule: both charts show the same data.
+- More history fits. A bar is a line and two short ticks, so it needs less width than a candle. More periods fit on screen before the chart gets cramped.
+- Indicators stay visible. Moving averages, bands and trend lines drawn over thin bars are easier to follow than over solid bodies.
+- No colour needed. The left and right ticks show the open and close by position, so the chart reads the same in print, in black and white, or for readers who can't tell red from green.
+- Closes line up. The right ticks form a row of closing prices from bar to bar, which makes close-to-close moves, like day 3 above, easy to spot.
+- Habit. Many traders learned on bar charts and read them faster.
 
 ## OHLC chart mistakes to avoid
 
@@ -299,7 +299,7 @@ They show exactly the same four prices. An OHLC chart marks the open and close w
 
 ### Why do some traders prefer OHLC bars to candlesticks?
 
-OHLC bars take up less space, so a long history fits on one screen. Their open and close are marked by position, not colour, so they still work in black and white. The thin bars leave room for moving averages and other lines drawn on top. Many traders also simply learned on bar charts and find them faster to read.
+OHLC bars take up less space, so a long history fits on one screen. Their open and close are marked by position, not colour, so they still work in black and white. The thin bars leave room for moving averages and other lines drawn on top. Many traders also learned on bar charts and find them faster to read.
 
 ### Can I turn a line chart into an OHLC chart?
 

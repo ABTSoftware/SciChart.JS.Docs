@@ -77,22 +77,22 @@ A **radar chart** (also called a spider chart, radar plot, spider plot or star p
 *A radar chart comparing two phones on six features, each scored out of 10 (sample data). [Try the interactive version](#how-to-create-a-radar-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A radar chart shows **one item as one shape**, across several variables that share a scale.
-- **Far from the centre is high, near the centre is low.** Spikes are strengths; dents are weaknesses.
+- A radar chart shows one item as one shape, across several variables that share a scale.
+- Far from the centre is high, near the centre is low. Spikes are strengths; dents are weaknesses.
 - Describe one in a sentence: "*Phone A* leads on *battery life* and *value for money*; *Phone B* leads on the other *four* features."
-- **Spoke order and polygon area can mislead.** Reordering the spokes changes the shape, and area exaggerates differences.
-- With more than three or four items, or when exact values matter, a **grouped bar chart** is usually clearer.
+- Spoke order and polygon area can mislead. Reordering the spokes changes the shape, and area exaggerates differences.
+- With more than three or four items, or when exact values matter, a grouped bar chart is usually clearer.
 :::
 
 ## How to read a radar chart
 
 ![Anatomy of a radar chart: five axes radiating from a centre at zero, pentagon-shaped scale rings, one item's scores plotted on each axis and joined into a filled polygon](./radar-chart-anatomy.svg)
 
-1. **Find the variables.** Each spoke (axis) is one variable, named at its outer end. Most radar charts have between 4 and 10 spokes.
-2. **Check the scale.** The centre is the lowest value and the rim the highest. The rings (gridlines) join the same value on every spoke and form the "web" that gives the chart its other names, spider chart and spider web diagram. Check that every spoke uses the same scale, and that higher means better on all of them.
-3. **Read one shape at a time.** Where an item's polygon crosses a spoke is its value for that variable. Points out near the rim are its strengths; points pulled in towards the centre are its weaknesses.
-4. **Judge the overall shape.** A large, round shape is an all-rounder that scores well everywhere. A small round shape is consistently weak. A spiky or lopsided shape means the item is a specialist.
-5. **Compare shapes spoke by spoke.** Where one shape sits outside another, that item leads. Where two outlines cross, the lead switches from one item to the other.
+1. Find the variables. Each spoke (axis) is one variable, named at its outer end. Most radar charts have between 4 and 10 spokes.
+2. Check the scale. The centre is the lowest value and the rim the highest. The rings (gridlines) join the same value on every spoke and form the "web" that gives the chart its other names, spider chart and spider web diagram. Check that every spoke uses the same scale, and that higher means better on all of them.
+3. Read one shape at a time. Where an item's polygon crosses a spoke is its value for that variable. Points out near the rim are its strengths; points pulled in towards the centre are its weaknesses.
+4. Judge the overall shape. A large, round shape is an all-rounder that scores well everywhere. A small round shape is consistently weak. A spiky or lopsided shape means the item is a specialist.
+5. Compare shapes spoke by spoke. Where one shape sits outside another, that item leads. Where two outlines cross, the lead switches from one item to the other.
 
 Because its axes radiate from a centre, a radar chart is one of the **radial charts**, a family that also includes radial bar charts, polar area charts and pie charts. What sets the radar chart apart is that each spoke is a different variable, and the values are joined into a shape.
 
@@ -100,9 +100,9 @@ Because its axes radiate from a centre, a radar chart is one of the **radial cha
 
 A radar chart is a comparison, so describe it as one. This template works for reports, exam answers and slide notes:
 
-> **[Item A]** leads on **[variables]**, and **[Item B]** leads on **[variables]**. **[Item A]**'s shape is **[balanced / lopsided]**, with its weakest score on **[variable]**.
+> [Item A] leads on [variables], and [Item B] leads on [variables]. [Item A]'s shape is [balanced / lopsided], with its weakest score on [variable].
 
-**Worked example,** using the phone chart above (scores out of 10):
+Worked example, using the phone chart above (scores out of 10):
 
 | Feature | Phone A | Phone B | Leader |
 | --- | --- | --- | --- |
@@ -112,26 +112,26 @@ A radar chart is a comparison, so describe it as one. This template works for re
 | Performance | 5 | 9 | B |
 | Storage | 6 | 8 | B |
 | Value for money | 8 | 3 | A |
-| **Average** | **6.8** | **7.2** | |
+| Average | 6.8 | 7.2 | |
 
 "Phone A leads on battery life and value for money, and Phone B leads on the other four features. Phone A's shape is fairly balanced, never dropping below 5. Phone B's is lopsided: it has the higher average score (7.2 against 6.8), but it scores only 3 for value for money."
 
-Notice what the description doesn't say: "Phone B is better". Which phone is better depends on which features matter to the reader, and the chart deliberately leaves that judgement to them.
+The description doesn't say "Phone B is better". Which phone is better depends on which features matter to the reader, and the chart leaves that judgement to them.
 
 ## When to use a radar chart
 
-Use a radar chart to **compare the overall profile of no more than three or four items** across several variables on one scale. Typical uses:
+Use a radar chart to compare the overall profile of no more than three or four items across several variables on one scale. Typical uses:
 
-- **products and suppliers:** comparing features, or scoring bids against selection criteria;
-- **sport:** a player's skills against another player or a league average;
-- **people and teams:** skills assessments and performance reviews against a target profile;
-- **engineering and quality:** a design measured against several requirements at once.
+- products and suppliers: comparing features, or scoring bids against selection criteria;
+- sport: a player's skills against another player or a league average;
+- people and teams: skills assessments and performance reviews against a target profile;
+- engineering and quality: a design measured against several requirements at once.
 
 Choose the chart by what the reader needs to do:
 
 | If the reader needs to… | Use |
 | --- | --- |
-| See the overall profile of no more than 3 or 4 items across 4 to 10 variables on one scale | **Radar chart** |
+| See the overall profile of no more than 3 or 4 items across 4 to 10 variables on one scale | Radar chart |
 | Compare exact values, or more than 3 items | [Grouped bar chart](/learn/chart-types/cartesian/bar-chart/) |
 | Compare dozens of items across variables with different units | [Parallel coordinate plot](/2d-charts/chart-types/parallel-coordinate-plot/) |
 | Follow a variable with a natural order, such as months | [Line chart](/learn/chart-types/cartesian/line-chart/): a radar chart would wrongly join the last month back to the first |
@@ -150,11 +150,9 @@ Choose the chart by what the reader needs to do:
 
 ### Worked example: how area and spoke order mislead
 
-Take the phones above. Phone B's scores add up to 43 and Phone A's to 41, so Phone B is about **5% higher** in total. But in the chart above, Phone B's shape covers about **13% more area** than Phone A's, because area rewards high scores on neighbouring spokes.
+Take the phones above. Phone B's scores add up to 43 and Phone A's to 41, so Phone B is about 5% higher in total. But in the chart above, Phone B's shape covers about 13% more area than Phone A's, because area rewards high scores on neighbouring spokes.
 
-Now keep the data the same and only change the order of the six spokes. Depending on the order, Phone B's area changes by about **10%** between its smallest and largest arrangement. The order in the chart above happens to be the one that gives Phone B its largest shape. Nothing about the phones has changed; only the drawing has.
-
-The lesson: read the values on the spokes, and treat the size of a shape as a rough impression only.
+Now keep the data the same and only change the order of the six spokes. Depending on the order, Phone B's area changes by about 10% between its smallest and largest arrangement. The order in the chart above happens to be the one that gives Phone B its largest shape.
 
 ## How to create a radar chart in JavaScript, React or Angular
 
@@ -300,7 +298,7 @@ Key points:
 
 - A radar chart is a polar chart. [SciChartPolarSurface](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartpolarsurface.html) replaces `SciChartSurface`, with an angular axis around the edge and a radial axis from the centre outwards.
 - A [PolarCategoryAxis](https://www.scichart.com/documentation/js/current/typedoc/classes/polarcategoryaxis.html) with `labels` gives one spoke per variable. `startAngle: Math.PI / 2` puts the first spoke at 12 o'clock and `flippedCoordinates: true` runs the spokes clockwise.
-- `gridlineMode: EPolarGridlineMode.Polygons` on the radial `PolarNumericAxis` draws straight-sided rings: the radar or spider-web look. Without it you get circles.
+- `gridlineMode: EPolarGridlineMode.Polygons` on the radial `PolarNumericAxis` draws straight-sided rings, which give the radar or spider-web look. Without it you get circles.
 - Each item is a [PolarMountainRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/polarmountainrenderableseries.html) (filled) or a `PolarLineRenderableSeries` (outline only). Repeat the first value at the end so the polygon closes. The tooltip comes from `PolarCursorModifier`; polar charts have their own zoom and legend modifiers too.
 
 **See it in the demo app:** [JavaScript radar chart](https://www.scichart.com/demo/javascript/polar-radar-chart) · [React radar chart](https://www.scichart.com/demo/react/polar-radar-chart) · [Angular radar chart](https://www.scichart.com/demo/angular/polar-radar-chart)

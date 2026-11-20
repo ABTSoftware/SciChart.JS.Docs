@@ -6,6 +6,10 @@ sidebar_position: 6
 
 As well as several filters out of the box, such as Moving Average, Linear Trendline, Scale & Offset and Ratio filter, you can also create custom filters or data transforms in SciChart.js
 
+:::tip Filtering signals?
+Our signal processing guides show custom filters at work, each with an interactive example: [low-pass filter](/learn/signal-processing/low-pass-filter/), [high-pass filter](/learn/signal-processing/high-pass-filter/) and [convolution](/learn/signal-processing/convolution/).
+:::
+
 There are two levels of filter customization, simple and advanced:
 
 *   If you just need to apply a transformation or filter function to each data point, use a simple **Custom Filter** by creating an instance of one of the CustomFilter types, and set your filter function.

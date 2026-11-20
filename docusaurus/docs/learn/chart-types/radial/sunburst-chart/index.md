@@ -73,23 +73,23 @@ A **sunburst chart** (also called a sunburst diagram, sunburst graph, ring chart
 *A sunburst chart of the space used on a laptop drive, by folder, in gigabytes (sample data). [Try the interactive version](#how-to-create-a-sunburst-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A sunburst chart shows **a total broken down level by level**, as rings around a centre.
-- **Angle is value:** a segment that spans a quarter of the circle is a quarter of the total.
-- **Each child sits just outside its parent** and fills no more than the parent's angle, so you can trace any branch outwards.
-- **Colour usually marks the top-level branch,** getting lighter further out.
-- Keep it to **two to four levels**, and add hover or click-to-zoom for the small outer segments. A one-ring sunburst is a [donut chart](/learn/chart-types/radial/donut-chart/).
+- A sunburst chart shows a total broken down level by level, as rings around a centre.
+- A segment's angle is its share: one that spans a quarter of the circle is a quarter of the total.
+- Each child sits just outside its parent and fills no more than the parent's angle, so you can trace any branch outwards.
+- Colour usually marks the top-level branch, getting lighter further out.
+- Keep it to two to four levels, and add hover or click-to-zoom for the small outer segments. A one-ring sunburst is a [donut chart](/learn/chart-types/radial/donut-chart/).
 :::
 
 ## How to read a sunburst chart
 
 ![The parts of a sunburst chart: a total of 100 in the centre, a first ring split into A (50), B (30) and C (20), and outer rings splitting A and B further. Callouts mark the centre, the first ring, a segment's angle, children outside their parent, a branch with no children, and colour by branch](./sunburst-chart-anatomy.svg)
 
-1. **Start at the centre.** It stands for the whole: all the disk space, the whole budget, every visitor. Many charts print the total there.
-2. **Read the first ring.** These are the top-level groups. Together they go all the way round, because together they make up the total.
-3. **Compare angles, not areas.** A segment's angle is its share of the total. A segment in an outer ring covers more area than an inner one with the same value, because the ring is bigger, so judge size by how far round the circle it reaches.
-4. **Work outwards along a branch.** Each segment's children sit directly outside it and share its angle between them. If a segment has no ring outside it, it has no children: that branch ends there.
-5. **Use colour to keep your place.** Most sunburst charts give each top-level branch its own colour and use lighter shades of it further out, as the charts on this page do. Check the key, because some charts use colour for something else, such as growth or a category.
-6. **Hover or click for detail.** Small outer segments rarely have room for a label. On an interactive chart, hovering shows the exact value and share, and clicking a segment zooms into that branch.
+1. Start at the centre. It stands for the whole: all the disk space, the whole budget, every visitor. Many charts print the total there.
+2. Read the first ring. These are the top-level groups. Together they go all the way round, because together they make up the total.
+3. Compare angles, not areas. A segment's angle is its share of the total. A segment in an outer ring covers more area than an inner one with the same value, because the ring is bigger, so judge size by how far round the circle it reaches.
+4. Work outwards along a branch. Each segment's children sit directly outside it and share its angle between them. If a segment has no ring outside it, it has no children: that branch ends there.
+5. Use colour to keep your place. Most sunburst charts give each top-level branch its own colour and use lighter shades of it further out, as the charts on this page do. Check the key, because some charts use colour for something else, such as growth or a category.
+6. Hover or click for detail. Small outer segments rarely have room for a label. On an interactive chart, hovering shows the exact value and share, and clicking a segment zooms into that branch.
 
 ## A worked example: what's filling a laptop drive
 
@@ -102,13 +102,13 @@ The chart at the top of this page shows 640 GB of used space on a 1 TB laptop dr
 | Apps | 110 | 17% | Games 70, Creative 25, Utilities 15 |
 | System | 100 | 16% | OS 45, Caches 30, Swap 25 |
 | Documents | 60 | 9% | Work 35 (Reports 20, Data 15); Personal 25 |
-| **Total** | **640** | **100%** (rounded) | |
+| Total | 640 | 100% (rounded) | |
 
 Three things stand out from the rings:
 
-- **Videos and photos take more than half the drive.** Together they hold 370 of the 640 GB, 58%.
-- **Equal values can look unequal.** Games (70 GB, in the second ring) and the 2024 family videos (70 GB, in the third ring) are the same size. Their angles match even though the outer one covers more area, which is why you compare angles, not areas.
-- **Documents are small.** At 60 GB, they are under a tenth of the used space.
+- Videos and photos take more than half the drive. Together they hold 370 of the 640 GB, 58%.
+- Equal values can look unequal. Games (70 GB, in the second ring) and the 2024 family videos (70 GB, in the third ring) are the same size. Their angles match even though the outer one covers more area.
+- Documents are small. At 60 GB, they are under a tenth of the used space.
 
 The table is better for looking up one number. The chart shows the shape of the whole hierarchy in one look: which branches are big, how deep each goes, and where the space sits within each one.
 
@@ -116,9 +116,9 @@ The table is better for looking up one number. The chart shows the shape of the 
 
 Use this template when you report a sunburst chart:
 
-> Of the **[total and unit]** in **[the whole]**, **[largest group]** makes up **[share]**, mostly **[its largest part]** at **[value]**. **[Second group]** follows at **[share]**, and **[smallest group]** is only **[share]**.
+> Of the [total and unit] in [the whole], [largest group] makes up [share], mostly [its largest part] at [value]. [Second group] follows at [share], and [smallest group] is only [share].
 
-**Worked example:** "Of the 640 GB used on this drive, videos make up 34%, mostly family videos at 120 GB. Photos follow at 23%, and documents are only 9%."
+Worked example: "Of the 640 GB used on this drive, videos make up 34%, mostly family videos at 120 GB. Photos follow at 23%, and documents are only 9%."
 
 ## How does a sunburst chart work?
 
@@ -126,25 +126,25 @@ A sunburst chart is a tree of data drawn in a circle. Most tools do the layout f
 
 ![How a tree of data becomes a sunburst chart: on the left, the example data as a tree with All (100) at the root, A, B and C at level 1, A1, A2, B1 and B2 at level 2, and a and b at level 3; on the right, the same data as rings, one ring per level](./sunburst-tree-to-rings.svg)
 
-1. **Total each branch.** Only the outermost items (the leaves) need a value. Each parent's value is the sum of its children: A1 is a + b = 30, and A is A1 + A2 = 50.
-2. **Give each level a ring.** The root goes in the centre, level 1 in the first ring, level 2 in the second, and so on. Every ring is the same width.
-3. **Share out the angle.** The full circle stands for the root's total. Going round from the top, each item gets an angle in proportion to its value, starting where the item before it ended.
-4. **Keep children inside their parent's angle.** A's children start where A starts and together end where A ends. That is what lines each branch up from the centre outwards.
+1. Total each branch. Only the outermost items (the leaves) need a value. Each parent's value is the sum of its children: A1 is a + b = 30, and A is A1 + A2 = 50.
+2. Give each level a ring. The root goes in the centre, level 1 in the first ring, level 2 in the second, and so on. Every ring is the same width.
+3. Share out the angle. The full circle stands for the root's total. Going round from the top, each item gets an angle in proportion to its value, starting where the item before it ended.
+4. Keep children inside their parent's angle. A's children start where A starts and together end where A ends. That is what lines each branch up from the centre outwards.
 
-Because every item has a start and an end on one scale from zero to the total, a sunburst chart can be drawn as **columns on a polar chart**: one column per item, with its start and end giving its angle, and its level giving its distance from the centre. The live example on this page is built that way.
+Because every item has a start and an end on one scale from zero to the total, a sunburst chart can be drawn as columns on a polar chart: one column per item, with its start and end giving its angle, and its level giving its distance from the centre.
 
 ## When to use a sunburst chart
 
-Use a sunburst chart when a total **breaks down over several levels** and you want to show **both the shares and the structure**. Typical uses:
+Use a sunburst chart when a total breaks down over several levels and you want to show both the shares and the structure. Typical uses:
 
-- **storage and files:** disk space by folder and subfolder;
-- **money:** a budget by department, team and cost type, or revenue by region, country and product;
-- **websites and apps:** visits by section and page, or time spent by feature;
-- **classifications:** a population split by group, subgroup and type.
+- storage and files: disk space by folder and subfolder;
+- money: a budget by department, team and cost type, or revenue by region, country and product;
+- websites and apps: visits by section and page, or time spent by feature;
+- classifications: a population split by group, subgroup and type.
 
 | Chart | Best for |
 | --- | --- |
-| **Sunburst chart** | A total split over two to four levels, when the structure matters as much as the sizes |
+| Sunburst chart | A total split over two to four levels, when the structure matters as much as the sizes |
 | [Treemap](/learn/chart-types/complex/treemap/) | Many items in a hierarchy, packed into a rectangle; better for comparing sizes, weaker at showing levels |
 | [Icicle chart](#icicle-chart) | The same hierarchy as rows of rectangles: sizes and labels are easier to read, but it needs a wider space |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) or [pie chart](/learn/chart-types/radial/pie-chart/) | One total split into a few parts, with no deeper levels |
@@ -163,9 +163,9 @@ An **icicle chart** (also called an icicle plot or icicle diagram) shows the sam
 
 An icicle chart is often easier to read than a sunburst chart:
 
-- **Sizes are widths on one straight scale.** Readers compare lengths more accurately than angles, and an item of a given value is the same width on every row. On a sunburst chart, an outer segment covers more area than an inner one of the same value.
-- **Labels fit.** Text runs straight along each rectangle instead of round a curve. Turn the chart on its side, with the root on the left and one column per level, and long names get the full width of a column.
-- **Deep hierarchies stay readable.** Every level gets a row of the same height, and the chart can grow downwards or scroll, while a sunburst chart has to squeeze every level into one circle.
+- Sizes are widths on one straight scale. Readers compare lengths more accurately than angles, and an item of a given value is the same width on every row. On a sunburst chart, an outer segment covers more area than an inner one of the same value.
+- Labels fit. Text runs straight along each rectangle instead of round a curve. Turn the chart on its side, with the root on the left and one column per level, and long names get the full width of a column.
+- Deep hierarchies stay readable. Every level gets a row of the same height, and the chart can grow downwards or scroll, while a sunburst chart has to squeeze every level into one circle.
 
 A sunburst chart is still the more compact choice. It fits a square space, such as a dashboard tile, and its rings make the whole-to-part structure stand out at a glance. An icicle chart needs a wide or tall space to give small items room.
 
@@ -174,12 +174,11 @@ Both charts come from the same layout: each item has a start and an end on a sca
 ## Common sunburst chart mistakes
 
 - **Too many levels.** Each extra ring splits the segments into thinner slivers. Show two to four levels, and let readers click to zoom into deeper branches.
-- **Comparing areas across rings.** An outer segment looks bigger than an inner one with the same value. Tell readers to compare angles, label the values, or add a tooltip.
 - **Children that don't add up.** If a parent's children add up to more than the parent, the chart can't be drawn honestly. If they add up to less, the gap is unexplained. Add an "Other" item so every branch adds up.
 - **Negative values.** An angle can't be negative, so a sunburst chart can't show losses or refunds. Use a bar chart for data that goes below zero.
 - **Colour that means nothing.** Random colours on every segment hide the branches. Colour by top-level branch and shade it outwards, or colour by one clear measure, and say which.
 - **Labels on every slice.** Small outer segments have no room for text. Label only the segments wide enough to hold it, and show the rest on hover.
-- **A flat list in rings.** If the data has only one level, a sunburst chart is just a [donut chart](/learn/chart-types/radial/donut-chart/), and a sorted [bar chart](/learn/chart-types/cartesian/bar-chart/) is usually clearer still.
+- **A flat list in rings.** If the data has only one level, a sunburst chart is a [donut chart](/learn/chart-types/radial/donut-chart/), and a sorted [bar chart](/learn/chart-types/cartesian/bar-chart/) is usually clearer still.
 
 ## How to create a sunburst chart in JavaScript, React or Angular
 

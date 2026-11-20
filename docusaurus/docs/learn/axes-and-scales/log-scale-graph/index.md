@@ -70,23 +70,23 @@ A **log scale graph** (also called a logarithmic graph or log chart) is a chart 
 *Two growth curves on a semi-log graph: the exponential (cyan) is a straight line, the power law (orange) bends over (illustrative data). [Try the interactive version](#how-to-create-a-log-scale-graph-in-javascript-react-or-angular) and switch either axis between linear and log.*
 
 :::tip Key takeaways
-- On a log scale, **each step along the axis multiplies the value** by the same factor (×10 on a base-10 axis), instead of adding the same amount.
-- It fits **small and large values on one chart** and shows **percentage change**: a rise from 10 to 20 looks the same as a rise from 1,000 to 2,000.
-- A **semi-log graph** (one log axis) turns steady percentage growth into a straight line. A **log-log graph** (both axes log) turns a power law into a straight line.
-- A log axis **has no zero and no negative values**. Plan for them before you switch.
-- Label log axes clearly: readers used to linear charts **misread slopes and gaps** on them.
+- On a log scale, each step along the axis multiplies the value by the same factor (×10 on a base-10 axis), instead of adding the same amount.
+- It fits small and large values on one chart and shows percentage change: a rise from 10 to 20 looks the same as a rise from 1,000 to 2,000.
+- A semi-log graph (one log axis) turns steady percentage growth into a straight line. A log-log graph (both axes log) turns a power law into a straight line.
+- A log axis has no zero and no negative values. Plan for them before you switch.
+- Label log axes clearly: readers used to linear charts misread slopes and gaps on them.
 :::
 
 ## How to read a log scale graph
 
 ![An annotated base-10 logarithmic axis from 1 to 1,000. The major ticks 1, 10, 100 and 1,000 are equally spaced, and each gap is marked ×10. Minor ticks for 2 to 9 times each power of ten get closer together towards the next power. Arrows from 2 to 4 and from 50 to 100 are the same length, both ×2. A point halfway between 10 and 100 reads about 32, and a point on the second minor tick after 100 reads 300](./log-axis-anatomy.svg)
 
-1. **Check which axes are logarithmic.** Look at the labels: if they go up by multiplying (1, 10, 100, 1K) rather than adding (0, 20, 40, 60), that axis is a log scale. It may be one axis or both.
-2. **Find the major gridlines.** On a base-10 axis, each labelled line is ten times the one before. The gap between two of them is one **decade** (an order of magnitude), and every decade is the same width.
-3. **Read the minor gridlines.** Between 10 and 100, the unlabelled lines are 20, 30, 40 and so on up to 90. They bunch up towards the top of each decade, because 90 to 100 is a much smaller ratio than 10 to 20.
-4. **Read a point's value.** Find the major line below it, then count minor lines: the second line above 100 is 300. Between lines, estimate in ratios, not distances. The point halfway between 10 and 100 is about 32 (the square root of 10 × 100), not 55.
-5. **Compare points by ratio.** The same vertical distance means the same ratio anywhere on the chart. A gap of one decade between two lines means one is ten times the other, whether they sit at 1 and 10 or at 100,000 and 1,000,000.
-6. **Read the slope as a rate.** On a log y-axis, a steeper line means faster **percentage** growth, not a bigger increase in amount. A straight line means the rate is constant.
+1. Check which axes are logarithmic. Look at the labels: if they go up by multiplying (1, 10, 100, 1K) rather than adding (0, 20, 40, 60), that axis is a log scale. It may be one axis or both.
+2. Find the major gridlines. On a base-10 axis, each labelled line is ten times the one before. The gap between two of them is one **decade** (an order of magnitude), and every decade is the same width.
+3. Read the minor gridlines. Between 10 and 100, the unlabelled lines are 20, 30, 40 and so on up to 90. They bunch up towards the top of each decade, because 90 to 100 is a much smaller ratio than 10 to 20.
+4. Read a point's value. Find the major line below it, then count minor lines: the second line above 100 is 300. Between lines, estimate in ratios, not distances. The point halfway between 10 and 100 is about 32 (the square root of 10 × 100), not 55.
+5. Compare points by ratio. The same vertical distance means the same ratio anywhere on the chart. A gap of one decade between two lines means one is ten times the other, whether they sit at 1 and 10 or at 100,000 and 1,000,000.
+6. Read the slope as a rate. On a log y-axis, a steeper line means faster percentage growth, not a bigger increase in amount. A straight line means the rate is constant.
 
 ## Linear vs log scale
 
@@ -96,7 +96,7 @@ A **linear scale** adds the same amount at each step (0, 25,000, 50,000). A **lo
 
 | | Linear scale | Log scale |
 | --- | --- | --- |
-| Equal distances mean | The same **difference** (+25,000) | The same **ratio** (×10) |
+| Equal distances mean | The same difference (+25,000) | The same ratio (×10) |
 | Steady percentage growth looks like | A curve that bends sharply upwards | A straight line |
 | Small values next to large ones | Squashed flat against zero | Spread out and readable |
 | Zero and negative values | Shown as normal | Can't be shown |
@@ -110,39 +110,41 @@ A **semi-log graph** (sometimes called a **half log** graph) has one logarithmic
 
 | Graph | Log axis | A straight line means | Slope tells you | Typical uses |
 | --- | --- | --- | --- | --- |
-| **Semi-log** (log y) | Y only | **Exponential** change: the same percentage each step | The growth (or decay) rate per step | Compound growth, epidemics in their early stage, radioactive decay, long-term price charts |
-| **Semi-log** (log x) | X only | A **logarithmic** relationship: equal gains for each tenfold increase in x | The gain per decade of x | Frequency sweeps, dose-response curves, learning curves |
-| **Log-log** | Both | A **power law**: y is proportional to x to some power | The power (exponent) | Physics and engineering scaling laws, city sizes, frequency response (Bode plots) |
+| Semi-log (log y) | Y only | Exponential change: the same percentage each step | The growth (or decay) rate per step | Compound growth, epidemics in their early stage, radioactive decay, long-term price charts |
+| Semi-log (log x) | X only | A logarithmic relationship: equal gains for each tenfold increase in x | The gain per decade of x | Frequency sweeps, dose-response curves, learning curves |
+| Log-log | Both | A power law: y is proportional to x to some power | The power (exponent) | Physics and engineering scaling laws, city sizes, frequency response (Bode plots) |
 
-**Worked example**, from the chart at the top of the page (try it in the [live demo](#how-to-create-a-log-scale-graph-in-javascript-react-or-angular)):
+### Example: exponential and power-law growth on log axes
 
-- **On the semi-log graph,** the cyan curve is a straight line, so its growth rate is constant. It goes from about 164 at step 20 to about 2,680 at step 40: roughly ×16 every 20 steps, which is 15% per step.
-- **Switch the x-axis to log as well,** and the cyan line bends but the orange curve becomes straight. It goes from 1,000 at step 10 to 1,000,000 at step 100: three decades up for one decade across, so its slope is 3 and it follows the cube of the step number.
-- **On a linear y-axis,** both curves hug the bottom for the first 60 steps, and you can't tell which kind of growth either one is.
+The chart at the top of the page shows both kinds of curve (try it in the [live demo](#how-to-create-a-log-scale-graph-in-javascript-react-or-angular)):
+
+- On the semi-log graph, the cyan curve is a straight line, so its growth rate is constant. It goes from about 164 at step 20 to about 2,680 at step 40: roughly ×16 every 20 steps, which is 15% per step.
+- Switch the x-axis to log as well, and the cyan line bends but the orange curve becomes straight. It goes from 1,000 at step 10 to 1,000,000 at step 100: three decades up for one decade across, so its slope is 3 and it follows the cube of the step number.
+- On a linear y-axis, both curves hug the bottom for the first 60 steps, and you can't tell which kind of growth either one is.
 
 ### How to describe a log scale graph
 
 When you report a chart with a log axis, say so, and give the change as a ratio or rate:
 
-> On a **[log / semi-log / log-log]** scale, **[what was measured]** rose from **[start value]** to **[end value]** over **[period]**: about **[×factor or % per period]**, **[steady / speeding up / slowing down]**.
+> On a [log / semi-log / log-log] scale, [what was measured] rose from [start value] to [end value] over [period]: about [×factor or % per period], [steady / speeding up / slowing down].
 
-**Worked example:** "On a semi-log scale, the value rose from about 164 at step 20 to about 43,800 at step 60: roughly ×16 every 20 steps (15% per step), at a steady rate."
+For example: "On a semi-log scale, the value rose from about 164 at step 20 to about 43,800 at step 60: roughly ×16 every 20 steps (15% per step), at a steady rate."
 
 ## When to use a log scale
 
 Use a log scale when one of these is true:
 
-- **The values span several orders of magnitude,** for example from 10 to 10 million. On a linear axis, everything below the largest values is squashed against zero.
-- **You care about percentage change, not absolute change.** Prices, populations, sales growth and infection counts are often compared this way. A 10% rise looks the same at any level.
-- **You suspect exponential growth or decay.** On a semi-log graph it becomes a straight line, and a change in the rate shows up as a bend.
-- **You're testing for a power law.** On a log-log graph a power law is a straight line, and its slope is the exponent.
-- **The measurement is already logarithmic,** or engineers expect it to be. Frequency response charts (Bode plots) use a log frequency axis with gain in **decibels**, itself a log unit (every +10 dB is ten times the power). Earthquake magnitudes and pH work the same way: each whole step on the magnitude scale is a tenfold increase in measured shaking amplitude, and each pH unit is a tenfold change in acidity.
+- The values span several orders of magnitude, for example from 10 to 10 million. On a linear axis, everything below the largest values is squashed against zero.
+- You care about percentage change, not absolute change. Prices, populations, sales growth and infection counts are often compared this way. A 10% rise looks the same at any level.
+- You suspect exponential growth or decay. On a semi-log graph it becomes a straight line, and a change in the rate shows up as a bend.
+- You're testing for a power law. On a log-log graph a power law is a straight line, and its slope is the exponent.
+- The measurement is already logarithmic, or engineers expect it to be. Frequency response charts (Bode plots) use a log frequency axis with gain in **decibels**, itself a log unit (every +10 dB is ten times the power). Earthquake magnitudes and pH work the same way: each whole step on the magnitude scale is a tenfold increase in measured shaking amplitude, and each pH unit is a tenfold change in acidity.
 
-Stay with a linear scale when the audience needs to compare **amounts** (which month sold the most), when the data includes **zero or negative values**, or when the range is small (say, 40 to 90), where a log axis looks almost linear and only adds confusion.
+Stay with a linear scale when the audience needs to compare amounts (which month sold the most), when the data includes zero or negative values, or when the range is small (say, 40 to 90), where a log axis looks almost linear and only adds confusion.
 
 | Chart | Best for |
 | --- | --- |
-| **Log scale graph** | Values across several orders of magnitude, percentage change, exponential growth and power laws |
+| Log scale graph | Values across several orders of magnitude, percentage change, exponential growth and power laws |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) with a linear axis | How a value changes over time when you care about the actual amounts and the range is modest |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) on log-log axes | The relationship between two measured variables that both span wide ranges |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, often with a log frequency axis and colour in decibels |
@@ -151,17 +153,16 @@ Stay with a linear scale when the audience needs to compare **amounts** (which m
 
 The **base** is the factor between one major gridline and the next.
 
-- **Base 10** (the common logarithm) is the default for most charts, because its gridlines land on round numbers: 1, 10, 100, 1,000.
-- **Base 2** suits data that doubles: memory sizes (1, 2, 4, 8 GB), cell counts, or any chart where "how many doublings?" is the question.
-- **Base e** (about 2.718, the natural logarithm) appears in maths and science, but its gridlines fall on awkward numbers, so charts rarely use it for labels.
+- Base 10 (the common logarithm) is the default for most charts, because its gridlines land on round numbers: 1, 10, 100, 1,000.
+- Base 2 suits data that doubles: memory sizes (1, 2, 4, 8 GB), cell counts, or any chart where "how many doublings?" is the question.
+- Base e (about 2.718, the natural logarithm) appears in maths and science, but its gridlines fall on awkward numbers, so charts rarely use it for labels.
 
-The base changes only the labels and gridlines. **The shape of the data is identical in any base,** so a straight line in base 10 is a straight line in base 2.
+The base changes only the labels and gridlines. The shape of the data is identical in any base, so a straight line in base 10 is a straight line in base 2.
 
 ## Common log scale mistakes
 
 - **Zero or negative values.** The log of zero or of a negative number doesn't exist, so those points can't be drawn. Don't quietly drop them or replace them with a tiny number. Choose instead: plot only the positive values and say so; add a constant to every value (such as plotting x + 1) and label the axis to match; plot the negative values on a separate, mirrored axis; or use a linear axis.
-- **Reading slopes as amounts.** A steep line on a log axis means fast **percentage** growth, not a large increase. A line that flattens on a log axis can still be adding more each step than ever before.
-- **Mixing linear and log intuitions.** Distances on a log axis aren't differences: the gap from 1 to 10 is as wide as from 100,000 to 1,000,000. Estimating between gridlines as if they were linear gives answers that are far off (55 instead of 32 halfway between 10 and 100).
+- **Reading slopes as amounts.** A steep line on a log axis means fast percentage growth, not a large increase. A line that flattens on a log axis can still be adding more each step than ever before.
 - **Bars on a log axis.** A bar's length depends on where the axis happens to start, so on a log axis bar lengths mean nothing. Use points or lines, or a linear axis for bars.
 - **An unlabelled log axis.** Readers assume linear unless told otherwise. Put "log scale" in the axis title, and label the gridlines with real values (100, 1K, 10K), not just exponents, for a general audience.
 - **Small differences made to look large, or large ones small.** Log scales compress big values. Two lines that look close near the top of a log chart can differ by millions. Quote the actual numbers next to the chart when they matter.
@@ -339,7 +340,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript chart with logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis) · [React chart with logarithmic axis](https://www.scichart.com/demo/react/chart-logarithmic-axis) · [Angular chart with logarithmic axis](https://www.scichart.com/demo/angular/chart-logarithmic-axis)
 
-**In 3D:** [JavaScript 3D log-log scatter chart](https://www.scichart.com/demo/javascript/3d-log-log-scatter-chart) · [React 3D log-log scatter chart](https://www.scichart.com/demo/react/3d-log-log-scatter-chart) · [Angular 3D log-log scatter chart](https://www.scichart.com/demo/angular/3d-log-log-scatter-chart)
+In 3D: [JavaScript 3D log-log scatter chart](https://www.scichart.com/demo/javascript/3d-log-log-scatter-chart) · [React 3D log-log scatter chart](https://www.scichart.com/demo/react/3d-log-log-scatter-chart) · [Angular 3D log-log scatter chart](https://www.scichart.com/demo/angular/3d-log-log-scatter-chart)
 
 **Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), including base-2 axes for financial charts and the tick modes, and [gridline and label spacing](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/).
 

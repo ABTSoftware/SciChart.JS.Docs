@@ -69,18 +69,18 @@ related: [violin-plot, histogram, density-plot, error-bars]
 
 ## What is a box plot?
 
-A **box plot** (also called a **box and whisker plot**, **box and whisker diagram**, **box whisker plot** or **box diagram**) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
+A **box plot** (also called a **box and whisker plot**, box and whisker diagram, box whisker plot or box diagram) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
 
 ![A box and whisker graph of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
 
 *A box and whisker chart comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A box plot draws the **five-number summary**: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
-- The **box** holds the middle 50% of values. Its length is the **interquartile range (IQR)**.
-- Values more than **1.5 × IQR** beyond the box are usually drawn as separate **outlier** dots.
-- Box plots are best for **comparing several groups** side by side.
-- A box plot **hides the shape** of the data: two very different datasets can have the same box.
+- A box plot draws the five-number summary: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
+- The box holds the middle 50% of values. Its length is the interquartile range (IQR).
+- Values more than 1.5 × IQR beyond the box are usually drawn as separate outlier dots.
+- Box plots are best for comparing several groups side by side.
+- A box plot hides the shape of the data: two very different datasets can have the same box.
 :::
 
 ## How to read a box plot
@@ -89,10 +89,10 @@ A **box plot** (also called a **box and whisker plot**, **box and whisker diagra
 
 Read a box plot from the middle outwards:
 
-1. **The median** is the line inside the box. Half the values are above it and half below.
-2. **The box** runs from the **first quartile (Q1)**, below which a quarter of the values fall, to the **third quartile (Q3)**, below which three-quarters fall. So the box holds the middle 50% of the values. Its length, Q3 − Q1, is the **interquartile range (IQR)**: a short box means the values are close together, a long one means they are spread out.
-3. **The whiskers** show how far the rest of the values reach. In the simplest form they go to the minimum and maximum. In the most common form, introduced by the statistician John Tukey, they stop at the furthest value within 1.5 × IQR of the box. The charts on this page use this rule.
-4. **Outliers** are the dots beyond the whiskers. Check them: they may be mistakes in the data, or the most interesting values in it.
+1. The median is the line inside the box. Half the values are above it and half below.
+2. The box runs from the **first quartile (Q1)**, below which a quarter of the values fall, to the **third quartile (Q3)**, below which three-quarters fall. So the box holds the middle 50% of the values. Its length, Q3 − Q1, is the **interquartile range (IQR)**: a short box means the values are close together, a long one means they are spread out.
+3. The whiskers show how far the rest of the values reach. In the simplest form they go to the minimum and maximum. In the most common form, introduced by the statistician John Tukey, they stop at the furthest value within 1.5 × IQR of the box. The charts on this page use this rule.
+4. Outliers are the dots beyond the whiskers. Check them: they may be mistakes in the data, or the most interesting values in it.
 
 Each of the four parts (lower whisker, lower half of the box, upper half of the box, upper whisker) holds about a quarter of the values. A part that looks longer doesn't hold more values; it means those values are more spread out.
 
@@ -100,12 +100,12 @@ Each of the four parts (lower whisker, lower half of the box, upper half of the 
 
 | What you see | What it means | In the chart above |
 | --- | --- | --- |
-| Median near the middle of the box, whiskers about equal | The values are roughly **symmetric** | Class E |
-| Median near the bottom of the box, longer upper whisker | **Right-skewed** (positively skewed): most values are low, with a tail of high ones | Class D |
-| Median near the top of the box, longer lower whisker | **Left-skewed** (negatively skewed): most values are high, with a tail of low ones | |
+| Median near the middle of the box, whiskers about equal | The values are roughly symmetric | Class E |
+| Median near the bottom of the box, longer upper whisker | Right-skewed (positively skewed): most values are low, with a tail of high ones | Class D |
+| Median near the top of the box, longer lower whisker | Left-skewed (negatively skewed): most values are high, with a tail of low ones | |
 | One box much higher than another | That group's values are generally higher | Class E against Class D |
 | One box much longer than another | That group's values are more spread out | Class D against Class E |
-| Dots beyond the whiskers | **Outliers**: unusually high or low values | Classes A, B, C and E |
+| Dots beyond the whiskers | Outliers: unusually high or low values | Classes A, B, C and E |
 
 ## How to make a box plot: a worked example
 
@@ -113,45 +113,45 @@ Here is how to work out a box plot by hand. Take the number of minutes 11 delive
 
 > 13, 5, 9, 35, 7, 12, 3, 18, 8, 15, 11
 
-1. **Sort the values:** 3, 5, 7, 8, 9, **11**, 12, 13, 15, 18, 35.
-2. **Find the median.** With 11 values, it is the 6th: **11**.
-3. **Find the quartiles.** Q1 is the median of the lower half (3, 5, 7, 8, 9): **7**. Q3 is the median of the upper half (12, 13, 15, 18, 35): **15**.
-4. **Work out the IQR:** 15 − 7 = **8**.
-5. **Set the outlier limits (fences):** 1.5 × 8 = 12, so the lower fence is 7 − 12 = −5 and the upper fence is 15 + 12 = 27.
-6. **Draw the whiskers** to the furthest values inside the fences: **3** and **18**.
-7. **Mark outliers:** 35 is above 27, so it is drawn as a dot.
+1. Sort the values: 3, 5, 7, 8, 9, 11, 12, 13, 15, 18, 35.
+2. Find the median. With 11 values, it is the 6th: 11.
+3. Find the quartiles. Q1 is the median of the lower half (3, 5, 7, 8, 9): 7. Q3 is the median of the upper half (12, 13, 15, 18, 35): 15.
+4. Work out the IQR: 15 − 7 = 8.
+5. Set the outlier limits, called **fences**: 1.5 × 8 = 12, so the lower fence is 7 − 12 = −5 and the upper fence is 15 + 12 = 27.
+6. Draw the whiskers to the furthest values inside the fences: 3 and 18.
+7. Mark outliers: 35 is above 27, so it is drawn as a dot.
 
 The five-number summary is 3, 7, 11, 15, 18, with one outlier at 35. Without the outlier rule, the upper whisker would stretch to 35 and make the deliveries look far less reliable than most of them were.
 
-Software often calculates quartiles a little differently, by interpolating between values. For this data that gives Q1 = 7.5 and Q3 = 14. Both are correct; there are several accepted methods, and the difference shrinks as the dataset grows.
+Software often calculates quartiles a little differently, by interpolating between values. For this data that gives Q1 = 7.5 and Q3 = 14. There are several accepted methods, and the difference shrinks as the dataset grows.
 
 ## How to describe a box plot
 
-When you describe a box plot, or compare two, cover four things: the **centre** (median), the **spread** (IQR or box length), the **shape** (symmetric or skewed) and any **outliers**. Use this template:
+When you describe a box plot, or compare two, cover four things: the centre (median), the spread (IQR or box length), the shape (symmetric or skewed) and any outliers. Use this template:
 
-> The median of **[group]** is **[value]**, **[higher / lower]** than **[other group]**. Its scores are **[more / less]** spread out (IQR **[value]**), the distribution is **[symmetric / right-skewed / left-skewed]**, and there **[are / are no]** outliers.
+> The median of [group] is [value], [higher / lower] than [other group]. Its scores are [more / less] spread out (IQR [value]), the distribution is [symmetric / right-skewed / left-skewed], and there [are / are no] outliers.
 
-**Worked example,** comparing Class D and Class E in the chart above: "Class E's median score is 78, much higher than Class D's 48. Class E's scores are also far more consistent, with an IQR of about 7 against about 25 for Class D. Class D is right-skewed: half of its students scored below about 48, with a long tail of higher marks. Class E has one low outlier, at 52."
+A worked example, comparing Class D and Class E in the chart above: "Class E's median score is 78, much higher than Class D's 48. Class E's scores are also far more consistent, with an IQR of about 7 against about 25 for Class D. Class D is right-skewed: half of its students scored below about 48, with a long tail of higher marks. Class E has one low outlier, at 52."
 
 ## When to use a box plot
 
-Use a box plot to **compare the distribution of a value across several groups**: test scores by class, response times by server, measurements by production batch, salaries by department.
+Use a box plot to compare the distribution of a value across several groups: test scores by class, response times by server, measurements by production batch, salaries by department.
 
 | Chart | Best for |
 | --- | --- |
-| **Box plot** | Comparing the median, spread and outliers of several groups side by side |
+| Box plot | Comparing the median, spread and outliers of several groups side by side |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | The full shape of one dataset, including gaps and more than one peak, which a box plot hides |
 | [Violin plot](/learn/chart-types/cartesian/violin-plot/) | The same group comparison plus each group's full shape, including two peaks a box plot hides |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | One summary number per group, such as an average or a total, when the spread doesn't matter |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Every individual value, when there are few enough points to see them all |
 
-A box plot works best with **at least a few dozen values per group**. With only a handful, quartiles mean little, so plot the individual points instead, or on top of the boxes.
+A box plot works best with at least a few dozen values per group. With only a handful, quartiles mean little, so plot the individual points instead, or on top of the boxes.
 
 ## What a box plot can hide
 
 A box plot boils a whole dataset down to five numbers, so very different data can produce the same box. The chart below shows waiting times for 120 patients at each of two clinics (sample data). The two box plots are almost identical: both medians are about 32 minutes, with similar boxes and whiskers.
 
-The dots tell a different story. At Clinic A, waits are spread evenly from about 8 to 58 minutes. Clinic B has two kinds of patient: those with appointments wait about 18 minutes and walk-ins about 48. Almost nobody at Clinic B waits the median time. Untick **Individual patients** in the legend to see how much the boxes alone hide.
+The individual waits are very different. At Clinic A, waits are spread evenly from about 8 to 58 minutes. Clinic B has two kinds of patient: those with appointments wait about 18 minutes and walk-ins about 48. Almost nobody at Clinic B waits the median time. Untick **Individual patients** in the legend to see how much the boxes alone hide.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Distribution/demo" />
 
@@ -160,8 +160,6 @@ To avoid being misled, plot the individual points over the box (with a small sid
 ## Common box plot mistakes
 
 - **Not saying what the whiskers mean.** Some charts draw whiskers to the minimum and maximum, others to 1.5 × IQR, others to percentiles. State the rule in a note.
-- **Too few values.** With fewer than about 20 values per group, quartiles jump around. Show the individual points as well.
-- **Treating outliers as errors.** Check them before removing them. An outlier may be the most important value in the data.
 - **Reading a skew from the box alone.** A long whisker can come from one extreme value. Look at where the median sits in the box as well.
 - **Assuming overlapping boxes mean "no difference", or separate boxes mean a real one.** A box plot shows spread, not statistical significance; test the difference if it matters.
 - **Hiding group sizes.** A box from 5 values looks as solid as one from 5,000. Add the count (n) to each label.

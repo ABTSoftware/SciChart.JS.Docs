@@ -65,11 +65,11 @@ A **timeline chart** (also called a timeline graph) shows events and periods in 
 *An event timeline of one shift on a batch reactor line (sample data). [Try the interactive version](#how-to-create-a-timeline-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A timeline chart puts **when** on the horizontal axis. **Points** are instants; **bands** are periods, and a band's width is its duration.
-- **Lanes** (rows) let you line up machines, people or processes, so you can see what was happening everywhere at one moment.
-- There are four main kinds: **event timelines**, **state (swimlane) timelines**, **Gantt charts** for project plans, and **editor tracks** in video and audio software.
-- In industry, colour carries meaning: **green running, amber idle or waiting, red fault**. Keep it consistent and give a key.
-- Short events vanish when you look at a whole day. A useful timeline lets you **zoom from hours down to seconds**.
+- A timeline chart puts when on the horizontal axis. Points are instants; bands are periods, and a band's width is its duration.
+- Lanes (rows) let you line up machines, people or processes, so you can see what was happening everywhere at one moment.
+- There are four main kinds: event timelines, state (swimlane) timelines, Gantt charts for project plans, and editor tracks in video and audio software.
+- In industry, colour carries meaning: green running, amber idle or waiting, red fault. Keep it consistent and give a key.
+- Short events vanish when you look at a whole day. A useful timeline lets you zoom from hours down to seconds.
 :::
 
 ## Types of timeline chart
@@ -80,43 +80,43 @@ A **timeline chart** (also called a timeline graph) shows events and periods in 
 
 | Type | What it shows | Where you see it |
 | --- | --- | --- |
-| **Event timeline** | Dated points on one line, each with a short label | Histories, incident reports, release notes, biographies |
-| **State timeline** (swimlane, status history) | One lane per machine or process, filled with bands for each state it was in | Industrial process control, equipment monitoring, network and server uptime |
-| **Gantt chart** | Planned tasks as bars, with start and end dates, dependencies and progress | Project management and scheduling |
-| **Editor tracks** | Clips laid end to end on stacked tracks, read against a moving playhead | Video and audio editing software |
-| **Trace or log timeline** | Nested spans showing how long each step of a request or job took | Software logging, monitoring and performance tracing |
+| Event timeline | Dated points on one line, each with a short label | Histories, incident reports, release notes, biographies |
+| State timeline (swimlane, status history) | One lane per machine or process, filled with bands for each state it was in | Industrial process control, equipment monitoring, network and server uptime |
+| Gantt chart | Planned tasks as bars, with start and end dates, dependencies and progress | Project management and scheduling |
+| Editor tracks | Clips laid end to end on stacked tracks, read against a moving playhead | Video and audio editing software |
+| Trace or log timeline | Nested spans showing how long each step of a request or job took | Software logging, monitoring and performance tracing |
 
-The first two **record what happened**. A Gantt chart **plans what should happen**. Editor tracks and trace timelines are the same picture used as a working tool: you read them, and in an editor you also drag clips around on them.
+The first two record what happened. A Gantt chart plans what should happen. Editor tracks and trace timelines are the same picture used as a working tool: you read them, and in an editor you also drag clips around on them.
 
-The idea is old: Joseph Priestley's *Chart of Biography* (1765) laid out about two thousand lives across three thousand years on one time scale. What has changed is the data. A plant or a server farm now logs thousands of state changes a day, time-stamped to the second or better, so a timeline has to zoom.
+Joseph Priestley's *Chart of Biography* (1765) already laid out about two thousand lives across three thousand years on one time scale. A plant or a server farm today logs thousands of state changes a day, time-stamped to the second or better, so a timeline has to zoom.
 
 ## How to read a timeline chart
 
 ![The parts of a timeline chart: lanes for Mixer M-1, Conveyor C-2 and Alarms; a time axis from 08:00 to 12:00; a green state band whose width is how long the state lasted; a short red fault that shows as a hairline; triangle markers for point events; and a colour key](./timeline-chart-anatomy.svg)
 
-1. **Check the time axis first.** Note the start, the end and the unit: years, days, hours or seconds. Every lane shares this one scale.
-2. **Read the lane labels.** Each row is one thing: a machine, a process step, a person or a source of events.
-3. **Read across one lane** to follow its history. A band starts when the state changed and ends at the next change, so its **width is its duration**. Long, unbroken bands mean stable running; lots of thin bands mean frequent stops and starts.
-4. **Read down the chart** at one moment to see what everything was doing then. Lining up a fault in one lane with a change in another is often how a cause is found.
-5. **Look for point events.** Markers such as triangles or dots have no width: they are instants, such as an alarm, an operator action or a milestone.
-6. **Use the colour key.** Colours should mean the same thing in every lane, for example green for running and red for a fault.
+1. Check the time axis first. Note the start, the end and the unit: years, days, hours or seconds. Every lane shares this one scale.
+2. Read the lane labels. Each row is one thing: a machine, a process step, a person or a source of events.
+3. Read across one lane to follow its history. A band starts when the state changed and ends at the next change, so its width is its duration. Long, unbroken bands mean stable running; lots of thin bands mean frequent stops and starts.
+4. Read down the chart at one moment to see what everything was doing then. Lining up a fault in one lane with a change in another is often how a cause is found.
+5. Look for point events. Markers such as triangles or dots have no width: they are instants, such as an alarm, an operator action or a milestone.
+6. Use the colour key. Colours should mean the same thing in every lane, for example green for running and red for a fault.
 
-Then **zoom in on anything that looks crowded**. At a whole-shift view, a fault lasting a few seconds is thinner than one pixel, and several alarms a few seconds apart draw as one marker.
+Then zoom in on anything that looks crowded. At a whole-shift view, a fault lasting a few seconds is thinner than one pixel, and several alarms a few seconds apart draw as one marker.
 
 ## Worked example: one shift on a batch reactor line
 
 Industrial plants record every state change and alarm with a time stamp in a database called a **historian**. A timeline chart turns those records into a picture that operators, process engineers and maintenance teams can read at a glance. The chart at the top of this page shows one eight-hour shift (06:00 to 14:00) on a batch reactor line, in four lanes:
 
-- **Batch phase:** the recipe step each batch is in (charge, heat, react, cool, discharge, clean). These are names, not good or bad states, so they share one colour and carry text labels.
-- **Reactor R-101** and **Feed pump P-201:** what each piece of equipment was doing (running, idle, cleaning or fault).
-- **Alarms and events:** alarms as red triangles, and batch starts and operator actions as white dots.
+- Batch phase: the recipe step each batch is in (charge, heat, react, cool, discharge, clean). These are names, not good or bad states, so they share one colour and carry text labels.
+- Reactor R-101 and Feed pump P-201: what each piece of equipment was doing (running, idle, cleaning or fault).
+- Alarms and events: alarms as red triangles, and batch starts and operator actions as white dots.
 
-At the full-shift view, something clearly went wrong just before 12:00: the pump turns red, the reactor drops to idle and the batch shows a Hold. Zoomed in to a two-minute window, the sequence is clear:
+At the full-shift view, something went wrong just before 12:00. The pump turns red, the reactor drops to idle and the batch shows a Hold. Zoomed in, the sequence is clear:
 
 | Time | Lane | What happened |
 | --- | --- | --- |
 | 11:47:30 | Feed pump P-201 | Starts a dosing run |
-| 11:52:00 | Feed pump P-201 | **First alarm:** motor overload; the pump trips to Fault |
+| 11:52:00 | Feed pump P-201 | First alarm: motor overload; the pump trips to Fault |
 | 11:52:04 | Alarms | Low feed flow (a consequence of the trip) |
 | 11:52:11 | Alarms | Reactor level low (also a consequence) |
 | 11:52:14 | Reactor R-101 and batch phase | An interlock holds the batch; the reactor goes idle |
@@ -124,43 +124,43 @@ At the full-shift view, something clearly went wrong just before 12:00: the pump
 | 11:54:40 | Feed pump P-201 | Fault clears; the pump is idle, waiting for a reset |
 | 11:58:40 | Reactor R-101 and batch phase | Operator resets the pump and the batch resumes after a 6 min 26 s hold |
 
-Three things stand out that a list of alarms alone would hide:
+The timeline shows three things a list of alarms alone would hide:
 
-- **The first alarm points to the cause.** Four alarms arrived within 90 seconds, but only the first, the pump overload, is the cause; the others followed from it. Recording the exact order of events like this is the job of a **sequence of events recorder** in power and process plants.
-- **There was an earlier warning.** The same pump tripped for **18 seconds at 07:31:12** and reset itself. At the full-shift view it is a hairline; zoom in on 07:31 in the live chart to find it.
-- **The totals tell a different story from the picture.** Over the shift the reactor ran for 7 h 9 min (89% of the time), was cleaned for 30 min and idle for 21 min. The pump was in fault for under 3 minutes in total (0.6%), yet that was enough to hold a batch.
+- The first alarm points to the cause. Four alarms arrived within 90 seconds, but only the first, the pump overload, is the cause; the others followed from it. Recording the exact order of events like this is the job of a **sequence of events recorder** in power and process plants.
+- There was an earlier warning. The same pump tripped for 18 seconds at 07:31:12 and reset itself. At the full-shift view it is a hairline; zoom in on 07:31 in the live chart to find it.
+- The totals tell a different story from the picture. Over the shift the reactor ran for 7 h 9 min (89% of the time), was cleaned for 30 min and idle for 21 min. The pump was in fault for under 3 minutes in total (0.6%), yet that was enough to hold a batch.
 
 ### How to describe a timeline chart
 
 Use this template when you report what a timeline shows:
 
-> **[Lane]** was **[state]** for **[duration]**, from **[start]** to **[end]**. It began with **[first event]** at **[time]**, and **[what else changed at the same time]**.
+> [Lane] was [state] for [duration], from [start] to [end]. It began with [first event] at [time], and [what else changed at the same time].
 
-**Worked example:** "Batch B-1043 was held for 6 min 26 s, from 11:52:14 to 11:58:40. It began with a motor overload trip on feed pump P-201 at 11:52:00, and the reactor went idle while three further alarms followed within 90 seconds."
+For example: "Batch B-1043 was held for 6 min 26 s, from 11:52:14 to 11:58:40. It began with a motor overload trip on feed pump P-201 at 11:52:00, and the reactor went idle while three further alarms followed within 90 seconds."
 
 ## Timeline chart vs Gantt chart
 
-A **Gantt chart** is a timeline chart made for planning projects. Its bars are **tasks with planned dates**, and it usually adds dependencies (this task can't start until that one ends), percent complete and a "today" line. It is named after Henry Gantt, who designed it in the 1910s.
+A **Gantt chart** is a timeline chart made for planning projects. Its bars are tasks with planned dates, and it usually adds dependencies (this task can't start until that one ends), percent complete and a "today" line. It is named after Henry Gantt, who designed it in the 1910s.
 
-Most other timelines show **what actually happened**: when each event occurred and how long each state lasted, often measured to the second and recorded automatically. If your bars are a plan, use a Gantt chart. If they are a record of states or events, use an event or state timeline.
+Most other timelines show what actually happened: when each event occurred and how long each state lasted, often measured to the second and recorded automatically. If your bars are a plan, use a Gantt chart. If they are a record of states or events, use an event or state timeline.
 
 ## When to use a timeline chart
 
-Use a timeline chart when the question is **when** and **for how long**, and when **things happening at the same time** matter. Typical uses:
+Use a timeline chart when the question is when and for how long, and when things happening at the same time matter. Typical uses:
 
-- **industrial process control:** equipment states, batch phases, alarms and operator actions over a shift;
-- **monitoring and logging:** service uptime, job runs and errors, or each step of a slow request;
-- **media editing:** clips, effects and audio laid out against a playhead;
-- **histories and reports:** the key dates in a project, an incident or a company's past.
+- industrial process control: equipment states, batch phases, alarms and operator actions over a shift;
+- monitoring and logging: service uptime, job runs and errors, or each step of a slow request;
+- media editing: clips, effects and audio laid out against a playhead;
+- histories and reports: the key dates in a project, an incident or a company's past.
 
 | Chart | Best for |
 | --- | --- |
-| **Timeline chart** | When events happened, how long states lasted, and what overlapped |
+| Timeline chart | When events happened, how long states lasted, and what overlapped |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | A measured value that changes continuously over time, such as a temperature or a price |
 | [Gantt chart](/2d-charts/chart-types/fast-rectangle-renderable-series/) | A project plan: tasks, planned dates and dependencies |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A value for every time slot across many rows, such as load per hour per machine |
 
-In process monitoring the two are often stacked: **line charts** for the measured values (temperature, flow, pressure) above a **state timeline** for the equipment states and alarms, sharing one time axis so they zoom together.
+In process monitoring the two are often stacked: line charts for the measured values (temperature, flow, pressure) above a state timeline for the equipment states and alarms, sharing one time axis so they zoom together.
 
 ## Common timeline chart mistakes
 
@@ -380,7 +380,7 @@ Here is the code for this chart:
 
 Key points:
 
-- Historians and logs usually store **state changes**, not bands. Turn each change into a band that runs until the next change (step 1 in the code), with times in seconds since 1970 (UTC), which is what the [DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis/) expects. Its labels switch from hours to minutes to seconds as you zoom.
+- Historians and logs usually store state changes, not bands. Turn each change into a band that runs until the next change (step 1 in the code), with times in seconds since 1970 (UTC), which is what the [DateTimeNumericAxis](/2d-charts/axis-api/axis-types/date-time-numeric-axis/) expects. Its labels switch from hours to minutes to seconds as you zoom.
 - A [FastRectangleRenderableSeries](/2d-charts/chart-types/fast-rectangle-renderable-series/) with an `XyxyDataSeries` draws each band from `x` to `x1` (start and end time) and from `y` to `y1` (top and bottom of its lane), set by `columnXMode: EColumnMode.StartEnd` and `columnYMode: EColumnYMode.TopBottom`. One series per state gives each state one colour and one legend entry.
 - The lanes are rows on a `NumericAxis` with a [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) for the lane names, fixed with `autoRange: EAutoRange.Never`. Setting `xyDirection: EXyDirection.XDirection` on the zoom modifiers makes zooming stretch time only.
 - Point events are an [XyScatterRenderableSeries](/2d-charts/chart-types/xy-scatter-renderable-series/) with a triangle or dot marker. For a handful of events, or ones users should drag, [annotations](/2d-charts/annotations-api/annotations-api-overview/) such as vertical lines also work. Put the text for each tooltip in the data series' `metadata`.

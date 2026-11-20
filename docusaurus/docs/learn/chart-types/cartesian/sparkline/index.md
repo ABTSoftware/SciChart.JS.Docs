@@ -71,41 +71,41 @@ A **sparkline** (also called a sparkline chart or spark line) is a tiny line cha
 *A table of 40 sparklines, one per sensor channel, each showing its last 300 readings (simulated data). [Try the live version](#how-to-create-sparklines-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A sparkline is a **word-sized line chart with no axes**. You read its **shape**, then the **number** printed beside it.
-- The name comes from **Edward Tufte**, who described sparklines as "data-intense, design-simple, word-sized graphics" in *Beautiful Evidence* (2006).
-- Small extras do most of the work: a **dot and number for the latest value**, dots for the **lowest and highest**, and a **grey band for the normal range**.
-- In a table, decide whether each row gets **its own scale** (to show each shape) or **one shared scale** (to compare sizes of change), and say which.
-- Sparklines are at their best **in quantity**: dozens of rows read at a glance, where full charts wouldn't fit.
+- A sparkline is a word-sized line chart with no axes. You read its shape, then the number printed beside it.
+- The name comes from Edward Tufte, who described sparklines as "data-intense, design-simple, word-sized graphics" in *Beautiful Evidence* (2006).
+- Small extras do most of the work: a dot and number for the latest value, dots for the lowest and highest, and a grey band for the normal range.
+- In a table, decide whether each row gets its own scale (to show each shape) or one shared scale (to compare sizes of change), and say which.
+- Sparklines are at their best in quantity: dozens of rows read at a glance, where full charts wouldn't fit.
 :::
 
 ## How to read a sparkline
 
 ![The parts of a sparkline: an enlarged line of a tank's temperature over 24 hours, with the label Tank 3 temp on the left and the latest value, 71.8 °C, in red on the right. A grey band marks the normal range of 62 to 74 °C, blue dots mark the lowest and highest readings, and a red dot marks the latest reading. Below, the same sparkline at actual size inside a sentence](./sparkline-anatomy.svg)
 
-1. **Start with the label.** It tells you what is measured, and often the period: the last 24 hours, the last 12 months.
-2. **Read the line from left to right.** The oldest reading is on the left and the newest on the right. Look for the overall direction, the size of the swings and any spike or sudden change.
-3. **Read the number, not the height.** There is no axis, so you can't read exact values off the line. The latest value is printed beside it, often in the same colour as the dot at the end of the line.
-4. **Check the markers.** Dots at the lowest and highest points show where the extremes fell in time. Without them, a reader can't tell a 1% wobble from a 50% swing.
-5. **Compare with the band.** A grey band, where there is one, marks the normal or target range. A line that leaves the band is the thing to look at. Tufte's first example was a patient's glucose readings, with a grey band showing the normal range.
-6. **Check the scale before comparing rows.** In a table, each row usually has its own vertical scale, so two lines of the same height may show very different amounts of change (see [Own scale or shared scale?](#sparklines-in-a-table-own-scale-or-shared-scale) below).
+1. Start with the label. It tells you what is measured, and often the period: the last 24 hours, the last 12 months.
+2. Read the line from left to right. The oldest reading is on the left and the newest on the right. Look for the overall direction, the size of the swings and any spike or sudden change.
+3. Read the number, not the height. There is no axis, so you can't read exact values off the line. The latest value is printed beside it, often in the same colour as the dot at the end of the line.
+4. Check the markers. Dots at the lowest and highest points show where the extremes fell in time, and their values, where printed, show how big the swing was.
+5. Compare with the band. A grey band, where there is one, marks the normal or target range. A line that leaves the band is the thing to look at.
+6. Check the scale before comparing rows. In a table, each row usually has its own vertical scale, so two lines of the same height may show very different amounts of change (see [Own scale or shared scale?](#sparklines-in-a-table-own-scale-or-shared-scale) below).
 
 ### How to describe a sparkline
 
 Use this template when you report what a sparkline shows:
 
-> **[What is measured]** is **[latest value]**, **[up / down / flat]** over **[period]**, and **[inside / above / below]** its normal range. It ranged from **[lowest]** to **[highest]**.
+> [What is measured] is [latest value], [up / down / flat] over [period], and [inside / above / below] its normal range. It ranged from [lowest] to [highest].
 
-**Worked example** (the diagram above): "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 63 °C to 78 °C, with one short spike above the range."
+For example, from the diagram above: "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 63 °C to 78 °C, with one short spike above the range."
 
 ## Where sparklines come from
 
-The statistician and information designer **Edward Tufte** named and defined the sparkline in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart doesn't need to be a big, separate figure with a caption and a frame: it can sit wherever a word or a number can, at the resolution of type.
+The statistician and information designer Edward Tufte named and defined the sparkline in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart can sit wherever a word or a number can, at the resolution of type, instead of being a big, separate figure with a caption and a frame.
 
 His examples set out most of what sparklines still look like today:
 
-- a patient's glucose readings with a **grey band for the normal range**, so readings outside it stand out;
-- tables of exchange rates with a sparkline in every row, using **red for the first and last values and blue for the low and high**;
-- advice on shape: sparklines should look **"lumpy", not spiky and not flat**, following William Cleveland's method of choosing a chart's width-to-height ratio so that slopes average about 45°.
+- a patient's glucose readings with a grey band for the normal range, so readings outside it stand out;
+- tables of exchange rates with a sparkline in every row, using red for the first and last values and blue for the low and high;
+- advice on shape: sparklines should look "lumpy", not spiky and not flat, following William Cleveland's method of choosing a chart's width-to-height ratio so that slopes average about 45°.
 
 Small charts embedded in text existed before 2006, but the name and the design rules come from Tufte. Spreadsheet apps such as Excel and Google Sheets now have sparklines built in; their help pages cover the menus and formulas.
 
@@ -113,12 +113,12 @@ Small charts embedded in text existed before 2006, but the name and the design r
 
 | Type | What it shows | Use it for |
 | --- | --- | --- |
-| **Line sparkline** | How a value moves over time, as a thin line | Prices, temperatures, traffic, sensor readings: anything continuous |
-| **Area sparkline** | A line sparkline with the space below it filled | The same data as a line, with more visual weight in a dashboard tile |
-| **Column (bar) sparkline** | Each period's value as a small bar | Counts per day, week or month, where each period stands on its own |
-| **Win/loss sparkline** | Only whether each result was positive or negative, as bars above or below a centre line | Results, targets met or missed, up or down days |
+| Line sparkline | How a value moves over time, as a thin line | Prices, temperatures, traffic, sensor readings: anything continuous |
+| Area sparkline | A line sparkline with the space below it filled | The same data as a line, with more visual weight in a dashboard tile |
+| Column (bar) sparkline | Each period's value as a small bar | Counts per day, week or month, where each period stands on its own |
+| Win/loss sparkline | Only whether each result was positive or negative, as bars above or below a centre line | Results, targets met or missed, up or down days |
 
-Spreadsheet apps offer the **line, column and win/loss** types, which is why they're often called "the three types of sparklines". The rest of this page is about line sparklines, the original and most common kind.
+Spreadsheet apps offer the line, column and win/loss types, which is why they're often called "the three types of sparklines". The rest of this page is about line sparklines, the original and most common kind.
 
 ## Sparklines in a table: own scale or shared scale?
 
@@ -126,23 +126,23 @@ When sparklines sit in a table, each row can have **its own vertical scale**, st
 
 ![The same three pumps' flow rates drawn twice. On the left, each row has its own scale: Pump A, which rose by 4 L/min, looks the same as Pump B, which rose by 40, and Pump C's small random wobble looks like a dramatic zigzag. On the right, all rows share one scale: Pump B's rise stands out and Pumps A and C are almost flat](./sparkline-own-vs-shared-scale.svg)
 
-- **Own scale per row** shows the **shape** of each series clearly: when it peaked, whether it's rising or falling, whether it's steady. But it makes small changes look as big as large ones, and it blows up random noise into what looks like a trend (Pump C above).
-- **One shared scale** shows **how much** each series changed, so rows can be compared. But it only works when every row has the same unit and a similar size, and quiet rows flatten into straight lines.
+- Own scale per row shows the shape of each series clearly: when it peaked, whether it's rising or falling, whether it's steady. But it makes small changes look as big as large ones, and it blows up random noise into what looks like a trend (Pump C above).
+- One shared scale shows how much each series changed, so rows can be compared. But it only works when every row has the same unit and a similar size, and quiet rows flatten into straight lines.
 
 Most sparkline tables use their own scale per row, because their rows have different units or sizes (as in the sensor table at the top of this page). If you do that, print the latest value beside each line, mark the lowest and highest points, and consider a band for the normal range, so the reader isn't left judging change from the height of the line.
 
 ## When to use a sparkline
 
-Use a sparkline when you have **many series** and want to show **the recent trend of each one next to its current value**, in less space than a chart would need. Typical uses:
+Use a sparkline when you have many series and want to show the recent trend of each one next to its current value, in less space than a chart would need. Typical uses:
 
-- **watchlists and tables:** a column of trends beside prices, KPIs or account balances;
-- **monitoring:** dozens or hundreds of sensor channels, servers or patients, each with a normal range, where the job is to spot the ones that move outside it;
-- **dashboard tiles:** a big number with a small trend line under it;
-- **text:** a trend set inside a sentence of a report.
+- watchlists and tables: a column of trends beside prices, KPIs or account balances;
+- monitoring: dozens or hundreds of sensor channels, servers or patients, each with a normal range, where the job is to spot the ones that move outside it;
+- dashboard tiles: a big number with a small trend line under it;
+- text: a trend set inside a sentence of a report.
 
 | Chart | Best for |
 | --- | --- |
-| **Sparkline** | The shape of many series at a glance, each next to its label and latest value |
+| Sparkline | The shape of many series at a glance, each next to its label and latest value |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | One or a few series in detail, with axes for reading values and dates |
 | [Small multiples](/2d-charts/subcharts-api/subcharts-api-overview/) | A grid of small charts, each with its own axes, for comparing several series more precisely |
 | A single number | When only the current value matters, and its history doesn't |
@@ -151,7 +151,6 @@ Use a sparkline when you have **many series** and want to show **the recent tren
 
 - **No number beside the line.** A sparkline has no axis, so readers can't get a value from it. Print the latest value next to the line.
 - **Comparing rows on different scales without saying so.** If every row has its own scale, readers can't compare the heights of the lines. Say so in the column header, or use one scale.
-- **Mistaking noise for a trend.** A row on its own scale stretches any wobble to the full height. Mark the lowest and highest values, or add a normal-range band, so small wobbles look small.
 - **Too few points.** A line through 4 or 5 values says little. Show the numbers, or use a column sparkline.
 - **The wrong shape.** A tall, narrow sparkline makes every change look spiky, and a long, flat one hides changes. Aim for a ribbon wider than it is tall, with slopes around 45° where you can.
 - **Decoration.** Axes, gridlines, heavy cell borders, shadows and many colours compete with a line a few pixels high. Keep one line colour and use colour only for markers that mean something.
@@ -159,7 +158,7 @@ Use a sparkline when you have **many series** and want to show **the recent tren
 
 ## How to create sparklines in JavaScript, React or Angular
 
-SciChart.js has no separate sparkline series: a sparkline is a line series on a chart with its axes hidden. The interesting part is having **many** of them. Instead of one chart per table cell, the table below is **one** SciChart.js chart, and each sparkline is a sub-chart drawn with the same WebGL context. Each of its 40 sparklines shows a simulated sensor's last 300 readings and gets a new reading every 50 milliseconds. There is nothing to click: watch the lines scroll, and the values turn amber with a HIGH or LOW flag when a channel leaves its grey normal range.
+SciChart.js has no separate sparkline series: a sparkline is a line series on a chart with its axes hidden. The table below is one SciChart.js chart rather than one chart per cell, and each sparkline is a sub-chart drawn with the same WebGL context. Each of its 40 sparklines shows a simulated sensor's last 300 readings and gets a new reading every 50 milliseconds. There is nothing to click. Watch the lines scroll; a value turns amber with a HIGH or LOW flag when its channel leaves the grey normal range.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
@@ -314,7 +313,7 @@ Key points:
 
 **See it in the demo app** (64 small charts with hidden axes, updating live in one SubCharts grid): [JavaScript multi-chart dashboard](https://www.scichart.com/demo/javascript/multiple-chart-dashboard-performance-demo) · [React multi-chart dashboard](https://www.scichart.com/demo/react/multiple-chart-dashboard-performance-demo) · [Angular multi-chart dashboard](https://www.scichart.com/demo/angular/multiple-chart-dashboard-performance-demo)
 
-**One line, full size:** [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) · [React line chart](https://www.scichart.com/demo/react/line-chart) · [Angular line chart](https://www.scichart.com/demo/angular/line-chart)
+For one line at full size: [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) · [React line chart](https://www.scichart.com/demo/react/line-chart) · [Angular line chart](https://www.scichart.com/demo/angular/line-chart)
 
 **Go deeper:** [SciChart.js sparkline documentation](/2d-charts/subcharts-api/subcharts-api-overview/) (the SubCharts API), and the [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/).
 

@@ -70,55 +70,55 @@ A **Cartesian graph** (also called a Cartesian plane, coordinate plane or x-y gr
 *Four points, one in each quadrant, with dashed guides showing how each one's x and y are read off the axes. [Try the interactive version](#how-to-create-a-cartesian-graph-in-javascript-react-or-angular) and drag the points.*
 
 :::tip Key takeaways
-- A Cartesian graph locates every point with **two numbers, (x, y)**: the distance across from the origin, then the distance up.
-- **The order matters:** x always comes first. (2, 5) and (5, 2) are different points.
-- The axes split the plane into **four quadrants**, numbered I to IV anticlockwise from the top right. The signs of x and y tell you which one a point is in.
-- **Almost every data chart is a Cartesian graph:** line charts, scatter plots, bar charts and heatmaps all place values on an x-axis and a y-axis. Usually only the top-right quadrant is shown.
-- The main alternative is **polar coordinates** (a distance and an angle), used by radar and polar area charts.
+- A Cartesian graph locates every point with two numbers, (x, y): the distance across from the origin, then the distance up.
+- The x value always comes first, so (2, 5) and (5, 2) are different points.
+- The axes split the plane into four quadrants, numbered I to IV anticlockwise from the top right. The signs of x and y tell you which one a point is in.
+- Almost every data chart is a Cartesian graph. Line charts, scatter plots, bar charts and heatmaps all place values on an x-axis and a y-axis. Usually only the top-right quadrant is shown.
+- The main alternative is polar coordinates (a distance and an angle), used by radar and polar area charts.
 :::
 
 ## How to read a Cartesian graph
 
 ![An annotated Cartesian plane with an x-axis from minus 8 to 8 and a y-axis from minus 6 to 6, crossing at the origin O (0, 0). The four quadrants are shaded and labelled with their signs: I (+, +) top right, II (−, +) top left, III (−, −) bottom left, IV (+, −) bottom right. Point P (−3, 2) is reached by two orange arrows, first 3 left along the x-axis, then 2 up. Point Q (4, −2) is in quadrant IV, with dashed lines to both axes. A note says one grid square is one unit across and up](./cartesian-plane-anatomy.svg)
 
-A Cartesian graph has four parts. Learn them once and you can read any x-y chart.
+A Cartesian graph has four parts.
 
 | Part | What it is | Good to know |
 | --- | --- | --- |
-| **x-axis** | The horizontal number line | Values grow to the right. Left of the origin they're negative |
-| **y-axis** | The vertical number line | Values grow upwards. Below the origin they're negative |
-| **Origin** | Where the axes cross, at (0, 0) | Every position is measured from here |
-| **Ordered pair** (x, y) | A point's two **coordinates** | The x-coordinate is also called the **abscissa**, the y-coordinate the **ordinate** |
+| x-axis | The horizontal number line | Values grow to the right. Left of the origin they're negative |
+| y-axis | The vertical number line | Values grow upwards. Below the origin they're negative |
+| Origin | Where the axes cross, at (0, 0) | Every position is measured from here |
+| Ordered pair (x, y) | A point's two coordinates | The x-coordinate is also called the abscissa, the y-coordinate the ordinate |
 
-**To plot a point,** such as P (−3, 2):
+To plot a point, such as P (−3, 2):
 
-1. **Start at the origin.**
-2. **Move along the x-axis by the first number.** Positive means right, negative means left. For −3, go 3 units left.
-3. **Then move parallel to the y-axis by the second number.** Positive means up, negative means down. For 2, go 2 units up.
-4. **Mark the point and label it** with its name and coordinates: P (−3, 2).
+1. Start at the origin.
+2. Move along the x-axis by the first number. Positive means right, negative means left. For −3, go 3 units left.
+3. Then move parallel to the y-axis by the second number. Positive means up, negative means down. For 2, go 2 units up.
+4. Mark the point and label it with its name and coordinates: P (−3, 2).
 
-**To read a point that's already plotted,** do it in reverse: drop a line straight down (or up) from the point to the x-axis and read the x value, then go straight across to the y-axis and read the y value. The dashed guides in the diagram and the live demo do exactly this.
+To read a point that's already plotted, do it in reverse: drop a line straight down (or up) from the point to the x-axis and read the x value, then go straight across to the y-axis and read the y value. The dashed guides in the diagram and the live demo do exactly this.
 
 ### How to describe a point on a Cartesian graph
 
 When you write or say where a point is, give its name, its coordinates and the moves from the origin:
 
-> Point **[name]** is at **([x], [y])**: **[x] units [left / right]** of the origin and **[y] units [up / down]**, in quadrant **[I / II / III / IV]**.
+> Point [name] is at ([x], [y]): [x] units [left / right] of the origin and [y] units [up / down], in quadrant [I / II / III / IV].
 
-**Worked example:** "Point P is at (−3, 2): 3 units left of the origin and 2 units up, in quadrant II."
+For example: "Point P is at (−3, 2): 3 units left of the origin and 2 units up, in quadrant II."
 
 ## The four quadrants
 
-The two axes cut the plane into four regions called **quadrants**. They're numbered with Roman numerals, **anticlockwise, starting at the top right**. A point's signs tell you its quadrant without drawing anything.
+The two axes cut the plane into four regions called **quadrants**. They're numbered with Roman numerals, anticlockwise, starting at the top right. A point's signs tell you its quadrant without drawing anything.
 
 | Quadrant | Position | Sign of x | Sign of y | Example | In a data chart, this could be… |
 | --- | --- | --- | --- | --- | --- |
-| **I** | Top right | + | + | (3, 4) | Sales over time, height against weight: most charts live here |
-| **II** | Top left | − | + | (−5, 2) | A value before a reference time, such as a sensor reading 5 seconds before a trigger |
-| **III** | Bottom left | − | − | (−4, −3) | Two changes that both fell, such as a stock's return against the market's on a bad day |
-| **IV** | Bottom right | + | − | (6, −5) | A loss or a temperature below zero, plotted against time |
+| I | Top right | + | + | (3, 4) | Sales over time, height against weight: most charts live here |
+| II | Top left | − | + | (−5, 2) | A value before a reference time, such as a sensor reading 5 seconds before a trigger |
+| III | Bottom left | − | − | (−4, −3) | Two changes that both fell, such as a stock's return against the market's on a bad day |
+| IV | Bottom right | + | − | (6, −5) | A loss or a temperature below zero, plotted against time |
 
-A point that sits **on an axis is in no quadrant.** (0, 3) is on the y-axis, (−2, 0) is on the x-axis, and the origin is on both.
+A point that sits on an axis is in no quadrant. (0, 3) is on the y-axis, (−2, 0) is on the x-axis, and the origin is on both.
 
 Quadrants matter in data charts too. On a scatter plot of two changes, such as this year's growth against last year's, each quadrant is a different story: up both years, down both years, or a reversal. That's why some charts draw their axes through the middle of the data, or through its averages, instead of along the edges.
 
@@ -126,15 +126,15 @@ Quadrants matter in data charts too. On a scatter plot of two changes, such as t
 
 The **scale** of an axis is the value of each step between gridlines. The **units** are what is being measured: seconds, metres, euros, °C.
 
-- **Equal spacing.** On an ordinary (linear) axis, every step is the same size. The jump from 2 to 4 is as wide as from 8 to 10.
-- **The two axes can use different scales,** and in data charts they almost always do: an x-axis in days and a y-axis in thousands of visitors. On a maths graph, both axes usually use the same scale, so that shapes keep their true proportions.
-- **Read the labels before the shape.** A line that looks steep may rise only a little if the y-axis steps are small. Check the step size and units on both axes before you compare slopes.
-- **The axes don't have to start at zero, or cross at it.** Data charts usually put the axes along the bottom and left edges and zoom to the range of the data, so the origin may be off the chart altogether. That's fine for lines and points, but not for bars (see the mistakes below).
-- **Not every axis is linear.** On a [log scale graph](/learn/axes-and-scales/log-scale-graph/), each step multiplies the value (1, 10, 100, 1,000) instead of adding to it, which fits data that spans many orders of magnitude.
+- On an ordinary (linear) axis, every step is the same size. The jump from 2 to 4 is as wide as from 8 to 10.
+- The two axes can use different scales, and in data charts they almost always do: an x-axis in days and a y-axis in thousands of visitors. On a maths graph, both axes usually use the same scale, so that shapes keep their true proportions.
+- Read the labels before the shape. A line that looks steep may rise only a little if the y-axis steps are small. Check the step size and units on both axes before you compare slopes.
+- The axes don't have to start at zero, or cross at it. Data charts usually put the axes along the bottom and left edges and zoom to the range of the data, so the origin may be off the chart altogether. That's fine for lines and points, but not for bars (see the mistakes below).
+- Not every axis is linear. On a [log scale graph](/learn/axes-and-scales/log-scale-graph/), each step multiplies the value (1, 10, 100, 1,000) instead of adding to it, which fits data that spans many orders of magnitude.
 
 ## From the Cartesian plane to data charts
 
-Most of the charts you meet are Cartesian graphs with the maths taken out: the axes stand for real quantities, and only the part of the plane that holds the data is drawn, usually the top-right quadrant. What changes from chart to chart is **what x and y stand for** and **how each data point is drawn**.
+Most of the charts you meet are Cartesian graphs with the maths taken out: the axes stand for real quantities, and only the part of the plane that holds the data is drawn, usually the top-right quadrant. What changes from chart to chart is what x and y stand for and how each data point is drawn.
 
 | Chart | x-axis | y-axis | Each data point is drawn as |
 | --- | --- | --- | --- |
@@ -146,24 +146,24 @@ Most of the charts you meet are Cartesian graphs with the maths taken out: the a
 
 So "x and y" on a data chart mean the same as on a maths graph: x is the **independent** variable (what you choose or what time it is), and y is the **dependent** one (what you measure). A few charts aren't Cartesian, such as pie, radar and Sankey charts. All the others are listed in the [types of charts and graphs](/learn/chart-types/) guide.
 
-**Add a third axis, z,** at right angles to x and y, and each point needs three coordinates (x, y, z). That's how 3D charts such as a [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) place their data.
+Add a third axis, z, at right angles to x and y, and each point needs three coordinates (x, y, z). That's how 3D charts such as a [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) place their data.
 
 ## Cartesian vs polar coordinates
 
-Cartesian coordinates aren't the only way to describe a position. **Polar coordinates** give a point as a distance from the centre, **r**, and an angle, **θ** (theta), measured anticlockwise from the horizontal axis. Both describe the same point; they just measure it differently.
+Cartesian coordinates aren't the only way to describe a position. **Polar coordinates** give a point as a distance from the centre, r, and an angle, θ (theta), measured anticlockwise from the horizontal axis. Both describe the same point.
 
 ![Two panels show the same point. Left, on a Cartesian grid, the point (3, 4) is reached with x = 3 across and y = 4 up. Right, on a polar grid of quarter circles and spokes every 15 degrees, the same point is reached with a line of length r = 5 at an angle of about 53.1 degrees. A note gives r = √(3² + 4²) = 5 and θ = arctan(4 ÷ 3) ≈ 53.1°](./cartesian-vs-polar.svg)
 
-**To convert** (the [Sources](#sources) give the formulas):
+To convert (the [Sources](#sources) give the formulas):
 
 | From | To | Formula | Example |
 | --- | --- | --- | --- |
 | Cartesian (x, y) | Polar (r, θ) | r = √(x² + y²), θ = arctan(y ÷ x), adjusted for the quadrant | (3, 4) → r = 5, θ ≈ 53.1° |
 | Polar (r, θ) | Cartesian (x, y) | x = r cos θ, y = r sin θ | r = 2, θ = 90° → (0, 2) |
 
-The "adjusted for the quadrant" step matters: arctan(4 ÷ 3) and arctan(−4 ÷ −3) give the same answer, but (3, 4) is in quadrant I and (−3, −4) is in quadrant III, so the second angle is 180° larger (about 233.1°). Most programming languages have an `atan2(y, x)` function that does this for you.
+On its own, arctan can't tell opposite quadrants apart: arctan(4 ÷ 3) and arctan(−4 ÷ −3) both give about 53.1°, but (3, 4) is in quadrant I and (−3, −4) is in quadrant III, so the second angle is 180° larger (about 233.1°). Most programming languages have an `atan2(y, x)` function that does this for you.
 
-**Which one should a chart use?**
+### When to use a Cartesian chart or a polar chart
 
 | Use a Cartesian chart when… | Use a polar chart when… |
 | --- | --- |
@@ -177,8 +177,7 @@ Cartesian charts are easier to read precisely, because people judge positions al
 ## Common mistakes with Cartesian graphs
 
 - **Swapping x and y.** (2, 5) is not (5, 2). Across first, then up: x comes before y, as in the alphabet.
-- **Numbering the quadrants the wrong way.** They go **anticlockwise** from the top right: I, II, III, IV. Counting clockwise puts II and IV in the wrong places.
-- **Putting a point on an axis into a quadrant.** (0, 4) is on the y-axis and belongs to no quadrant.
+- **Numbering the quadrants the wrong way.** They go anticlockwise from the top right: I, II, III, IV. Counting clockwise puts II and IV in the wrong places.
 - **Uneven steps on an axis.** Gridlines at 0, 5, 10, 20, 50 look tidy but bend every line drawn through them. Keep steps equal, or use a [log scale](/learn/axes-and-scales/log-scale-graph/) on purpose and label it.
 - **Different scales on the two axes when shape matters.** If one unit across is longer than one unit up, a circle looks like an oval and a 45° line looks flatter. For maths graphs, maps and anything geometric, use equal scales.
 - **Bars on an axis that doesn't start at zero.** A bar's length stands for its value, so cutting off the bottom of the axis exaggerates the differences. Lines and points don't have this problem.

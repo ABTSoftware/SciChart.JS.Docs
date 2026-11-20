@@ -59,30 +59,30 @@ related: [sunburst-chart, pie-chart, sankey-diagram, bar-chart]
 
 ## What is a treemap?
 
-A **treemap** (also called a tree map or treemap chart) is a chart that shows how a total splits into parts and groups, as nested rectangles. Each item is a rectangle with an **area that matches its value**, and items in the same group sit together inside their group's rectangle. Colour usually shows the group, or a second value.
+A **treemap** (also called a tree map or treemap chart) is a chart that shows how a total splits into parts and groups, as nested rectangles. Each item is a rectangle with an area that matches its value, and items in the same group sit together inside their group's rectangle. Colour usually shows the group, or a second value.
 
 ![A treemap of one year's sales for an imaginary online shop, \$100 million in total: four departments (electronics \$38M, home and garden \$24M, fashion \$21M, sports \$17M), each split into product categories, with phones the largest at \$14M](/img/learn/treemap-og.png)
 
 *A treemap of one year's sales for an imaginary online shop, in millions of dollars (sample data). Area shows sales; colour shows the department. [Try the interactive version](#how-to-create-a-treemap-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A treemap shows **parts of a whole that sit in groups** (a hierarchy), as rectangles inside rectangles.
-- **Area is the value.** The biggest items are the biggest rectangles, so they stand out at once.
-- **Colour has a job:** it shows the group, or a second value such as growth. Say which in a legend or caption.
-- Treemaps fit **hundreds of items** in one rectangle, but they're poor for exact comparisons: label the main values.
-- If there's **no hierarchy**, or only a few items, a bar chart is clearer.
+- A treemap shows parts of a whole that sit in groups (a hierarchy), as rectangles inside rectangles.
+- Area is the value. The biggest items are the biggest rectangles, so they stand out at once.
+- Colour shows the group, or a second value such as growth. Say which in a legend or caption.
+- Treemaps fit hundreds of items in one rectangle, but they're poor for exact comparisons: label the main values.
+- If there's no hierarchy, or only a few items, a bar chart is clearer.
 :::
 
 ## How to read a treemap
 
 ![The parts of a treemap: a total of 100 split into group A (60) and group B (40), each holding three leaf rectangles. Callouts mark a group rectangle with its header, a leaf whose area matches its value, colour showing the group, and a small leaf whose label is left out](./treemap-anatomy.svg)
 
-1. **Check what the area measures.** Find the value and its unit: sales in dollars, file sizes in gigabytes, population in people. The whole chart is the total.
-2. **Find the groups.** The large outlined blocks are the top level of the hierarchy, usually with a header showing the group's name and total. A group's area is the sum of everything inside it.
-3. **Compare the rectangles by area.** A rectangle with twice the area holds twice the value. Rectangles of different shapes are hard to compare by eye, so use the labels or a tooltip for exact numbers.
-4. **Find out what the colour means.** It either repeats the group (each group has its own colour) or shows a second value on a colour scale (for example, red for falling and green for rising). Check the legend or caption.
-5. **Look for the big and the small.** Note which few items fill most of the chart, and which groups are made of many small pieces.
-6. **Zoom in, or hover, for the small ones.** Tiny rectangles have no room for a label. On an interactive treemap, hover to see their values, or zoom in until the labels appear.
+1. Check what the area measures. Find the value and its unit: sales in dollars, file sizes in gigabytes, population in people. The whole chart is the total.
+2. Find the groups. The large outlined blocks are the top level of the hierarchy, usually with a header showing the group's name and total. A group's area is the sum of everything inside it.
+3. Compare the rectangles by area. A rectangle with twice the area holds twice the value. Rectangles of different shapes are hard to compare by eye, so use the labels or a tooltip for exact numbers.
+4. Find out what the colour means. It either repeats the group (each group has its own colour) or shows a second value on a colour scale (for example, red for falling and green for rising). Check the legend or caption.
+5. Look for the big and the small. Note which few items fill most of the chart, and which groups are made of many small pieces.
+6. Zoom in, or hover, for the small ones. Tiny rectangles have no room for a label. On an interactive treemap, hover to see their values, or zoom in until the labels appear.
 
 ## A worked example: an online shop's sales
 
@@ -94,13 +94,13 @@ The treemap at the top of this page shows one year's sales for an imaginary onli
 | Home and garden | 24 | Furniture 9, kitchen 6, garden 4, lighting 3, bedding 2 |
 | Fashion | 21 | Women's clothing 8, men's clothing 5, shoes 5, bags 2, jewellery 1 |
 | Sports | 17 | Fitness 6, bikes 5, camping 3, team sports 2, water sports 1 |
-| **Total** | **100** | 20 categories |
+| Total | 100 | 20 categories |
 
-Three things stand out once the rectangles are drawn:
+Three things stand out:
 
-- **Electronics is the biggest department,** with 38% of sales, more than twice the size of sports (17%).
-- **Phones alone (\$14M) are almost as big as the whole sports department (\$17M).** That's easy to see in the treemap, and easy to miss in a list of departments.
-- **The long tail is small.** The five smallest categories (jewellery, water sports, bedding, bags and team sports) add up to only \$8M, or 8% of sales.
+- Electronics is the biggest department, with 38% of sales, more than twice the size of sports (17%).
+- Phones alone (\$14M) are almost as big as the whole sports department (\$17M). That's easy to see in the treemap, and easy to miss in a list of departments.
+- The long tail is small. The five smallest categories (jewellery, water sports, bedding, bags and team sports) add up to only \$8M, or 8% of sales.
 
 The table is better for looking up one number. The treemap shows the structure, the biggest items and the long tail in one look.
 
@@ -108,9 +108,9 @@ The table is better for looking up one number. The treemap shows the structure, 
 
 Use this template when you report a treemap:
 
-> Of the **[total and unit]** in **[the data]**, the largest group was **[group]**, with **[value or share]**. The largest single item was **[item]** in **[its group]**, at **[value or share]**, and the **[number]** smallest items together made up only **[value or share]**.
+> Of the [total and unit] in [the data], the largest group was [group], with [value or share]. The largest single item was [item] in [its group], at [value or share], and the [number] smallest items together made up only [value or share].
 
-**Worked example:** "Of the shop's \$100M of sales last year, the largest department was electronics, with 38%. The largest single category was phones, at \$14M, and the five smallest categories together made up only 8%."
+Worked example: "Of the shop's \$100M of sales last year, the largest department was electronics, with 38%. The largest single category was phones, at \$14M, and the five smallest categories together made up only 8%."
 
 ## What colour means in a treemap
 
@@ -118,9 +118,9 @@ Size always shows the main value. Colour is free for one more job, and a treemap
 
 | Colour shows | How it's coloured | Good for | Example |
 | --- | --- | --- | --- |
-| **The group** | One colour per top-level group | Seeing which group each small item belongs to, at a glance | The shop treemap on this page |
-| **A second value** | A colour scale, often diverging (red, through grey, to green) | Showing size and change together | A stock market map: size is company value, colour is today's price change |
-| **Nothing** | One colour for everything | When the groups' outlines are enough and colour would distract | A disk-space treemap of one folder |
+| The group | One colour per top-level group | Seeing which group each small item belongs to, at a glance | The shop treemap on this page |
+| A second value | A colour scale, often diverging (red, through grey, to green) | Showing size and change together | A stock market map: size is company value, colour is today's price change |
+| Nothing | One colour for everything | When the groups' outlines are enough and colour would distract | A disk-space treemap of one folder |
 
 When colour shows a second value, add a legend with the scale. When it shows the group, label the groups. Colour that means nothing, such as a random colour per rectangle, makes readers look for a pattern that isn't there.
 
@@ -128,27 +128,27 @@ When colour shows a second value, add a legend with the scale. When it shows the
 
 A treemap is drawn by a **layout algorithm** that turns the hierarchy into rectangles. Most tools do it for you; knowing the steps helps you understand why a treemap looks the way it does.
 
-1. **Add up the values.** Each group's value is the sum of its children, all the way up to the total.
-2. **Give the whole chart to the top level.** The total fills the chart's rectangle. Each group gets a share of the area that matches its share of the total.
-3. **Split each rectangle among its children,** the same way, leaving room for the group's header and a small gap.
-4. **Keep the rectangles close to square.** The simplest layout, slice and dice, cuts each rectangle into strips, which makes small items into thin slivers. The **squarified** layout sorts the items from largest to smallest and places them in rows along the shorter side, adding an item to the current row only if that makes the row's rectangles more square.
+1. Add up the values. Each group's value is the sum of its children, all the way up to the total.
+2. Give the whole chart to the top level. The total fills the chart's rectangle. Each group gets a share of the area that matches its share of the total.
+3. Split each rectangle among its children, the same way, leaving room for the group's header and a small gap.
+4. Keep the rectangles close to square. The simplest layout, slice and dice, cuts each rectangle into strips, which makes small items into thin slivers. The **squarified** layout sorts the items from largest to smallest and places them in rows along the shorter side, adding an item to the current row only if that makes the row's rectangles more square.
 
 ![The same seven values (6, 6, 4, 3, 2, 2 and 1) laid out two ways. Cut into strips, the smallest rectangle is 16 times taller than it is wide. Squarified, in three rows, no rectangle is more than 2.8 times longer than it is wide](./treemap-layout-strips-vs-squarified.svg)
 
-Near-square rectangles are easier to compare, easier to label and easier to point at. The cost is that the squarified layout orders items by size, not by name or date, so the same item can move when the data changes.
+Near-square rectangles are easier to compare, easier to label and easier to point at. But the squarified layout orders items by size, not by name or date, so the same item can move when the data changes.
 
 ## When to use a treemap
 
-Use a treemap when your data is a **total split into parts that sit in groups**, and the most important question is **which parts are biggest**. Typical uses:
+Use a treemap when your data is a total split into parts that sit in groups, and the most important question is which parts are biggest. Typical uses:
 
-- **money:** sales by department and product, a budget by department and line item, a portfolio by sector and holding;
-- **storage and software:** disk space by folder and file, code size by module and file;
-- **markets:** a stock market by sector and company, sized by company value and coloured by price change;
-- **any long list of parts** that would need hundreds of bars, where you want the big items and the groups to stand out.
+- money: sales by department and product, a budget by department and line item, a portfolio by sector and holding;
+- storage and software: disk space by folder and file, code size by module and file;
+- markets: a stock market by sector and company, sized by company value and coloured by price change;
+- any long list of parts that would need hundreds of bars, where you want the big items and the groups to stand out.
 
 | Chart | Best for |
 | --- | --- |
-| **Treemap** | Many parts of a total in groups, using all the space; the biggest items stand out |
+| Treemap | Many parts of a total in groups, using all the space; the biggest items stand out |
 | [Sunburst chart](/learn/chart-types/radial/sunburst-chart/) | The same kind of data as rings around a centre, which shows the levels of the hierarchy more clearly but fits fewer items |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values exactly, when there's no hierarchy or only a few items |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | One total split into a few parts, with no groups |
@@ -160,7 +160,6 @@ Use a treemap when your data is a **total split into parts that sit in groups**,
 - **Negative or zero values.** An area can't be negative. Show losses or falls with colour, or use a different chart, such as a waterfall or a bar chart.
 - **Expecting exact comparisons.** Readers judge area far less precisely than length, and different shapes make it harder still. Label the main values, add tooltips, or give the numbers in a table.
 - **Too many levels.** Beyond two or three levels, the groups become hard to tell apart. Show the top levels and let readers zoom or click into the rest.
-- **Colour without a key.** If colour shows a second value, add a legend with the scale. If it shows the group, label the groups. Never let colour be decoration.
 - **Labels that don't fit.** Text cut off at the edge of a rectangle is worse than no label. Hide labels that don't fit and show them on hover or when zoomed in.
 - **Forgetting the gaps.** Headers and padding take a little space from each group, so the areas are slightly smaller than the values say. Keep the padding small, or leave headers out when exact areas matter.
 

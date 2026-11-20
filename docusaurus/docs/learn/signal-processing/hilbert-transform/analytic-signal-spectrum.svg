@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" width="720" height="500" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">What the Hilbert transform and the analytic signal do to a spectrum</title>
+  <desc id="d">Three spectra of one tone at frequency f0 with amplitude A. 1: the real signal x(t) has two lines, A/2 at minus f0 and A/2 at plus f0. 2: the Hilbert transform multiplies by minus i sgn(f): the positive line is turned by minus 90 degrees and the negative line by plus 90 degrees, and both keep their height A/2. 3: the analytic signal z = x + iH{x} keeps one line of height A at plus f0 and nothing at minus f0. Below, z(t) drawn as a rotating arrow in the complex plane: its length is the envelope A(t), its angle is the instantaneous phase phi(t), and the rate it turns, divided by 2 pi, is the instantaneous frequency.</desc>
+  <rect x="0" y="0" width="720" height="500" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#555"/>
+    </marker>
+    <marker id="spike" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" font-size="16" fill="#1a1a2e" text-anchor="middle" font-weight="700">One tone, three spectra: why the analytic signal has no negative frequencies</text>
+  <rect x="20" y="46" width="220" height="214" rx="8" fill="#f7f8fb" stroke="#e1e4ea"/>
+  <text x="130" y="68" font-size="13.5" fill="#1a1a2e" text-anchor="middle" font-weight="700">1. Real signal x(t)</text>
+  <text x="130" y="86" font-size="12.5" fill="#444" text-anchor="middle" font-weight="400" font-style="italic">X(f)</text>
+  <line x1="32" y1="210" x2="228" y2="210" stroke="#555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="130" y1="214" x2="130" y2="100" stroke="#bbb" stroke-dasharray="3 3"/>
+  <text x="220" y="228" font-size="12" fill="#444" text-anchor="start" font-weight="400" font-style="italic">f</text>
+  <text x="130" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">0</text>
+  <text x="70" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">−f₀</text>
+  <text x="190" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">+f₀</text>
+  <line x1="70" y1="210" x2="70" y2="168.0" stroke="#2B8CBE" stroke-width="3.5"/>
+  <path d="M64,169.0 L70,160.0 L76,169.0 Z" fill="#2B8CBE"/>
+  <text x="70" y="153.0" font-size="12.5" fill="#2B8CBE" text-anchor="middle" font-weight="700">A/2</text>
+  <line x1="190" y1="210" x2="190" y2="168.0" stroke="#2B8CBE" stroke-width="3.5"/>
+  <path d="M184,169.0 L190,160.0 L196,169.0 Z" fill="#2B8CBE"/>
+  <text x="190" y="153.0" font-size="12.5" fill="#2B8CBE" text-anchor="middle" font-weight="700">A/2</text>
+  <text x="130" y="250" font-size="12" fill="#444" text-anchor="middle" font-weight="400">two mirror-image lines</text>
+  <line x1="242" y1="146" x2="253" y2="146" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="255" y="46" width="220" height="214" rx="8" fill="#f7f8fb" stroke="#e1e4ea"/>
+  <text x="365" y="68" font-size="13.5" fill="#1a1a2e" text-anchor="middle" font-weight="700">2. Hilbert transform H{x}</text>
+  <text x="365" y="86" font-size="12.5" fill="#444" text-anchor="middle" font-weight="400" font-style="italic">−i·sgn(f)·X(f)</text>
+  <line x1="267" y1="210" x2="463" y2="210" stroke="#555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="365" y1="214" x2="365" y2="100" stroke="#bbb" stroke-dasharray="3 3"/>
+  <text x="455" y="228" font-size="12" fill="#444" text-anchor="start" font-weight="400" font-style="italic">f</text>
+  <text x="365" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">0</text>
+  <text x="305" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">−f₀</text>
+  <text x="425" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">+f₀</text>
+  <line x1="305" y1="210" x2="305" y2="168.0" stroke="#E07B17" stroke-width="3.5"/>
+  <path d="M299,169.0 L305,160.0 L311,169.0 Z" fill="#E07B17"/>
+  <text x="305" y="153.0" font-size="12.5" fill="#E07B17" text-anchor="middle" font-weight="700">+90°</text>
+  <line x1="425" y1="210" x2="425" y2="168.0" stroke="#E07B17" stroke-width="3.5"/>
+  <path d="M419,169.0 L425,160.0 L431,169.0 Z" fill="#E07B17"/>
+  <text x="425" y="153.0" font-size="12.5" fill="#E07B17" text-anchor="middle" font-weight="700">−90°</text>
+  <text x="365" y="250" font-size="12" fill="#444" text-anchor="middle" font-weight="400">same heights, phases turned</text>
+  <line x1="477" y1="146" x2="488" y2="146" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="490" y="46" width="220" height="214" rx="8" fill="#f7f8fb" stroke="#e1e4ea"/>
+  <text x="600" y="68" font-size="13.5" fill="#1a1a2e" text-anchor="middle" font-weight="700">3. Analytic signal z = x + iH{x}</text>
+  <text x="600" y="86" font-size="12.5" fill="#444" text-anchor="middle" font-weight="400" font-style="italic">Z(f)</text>
+  <line x1="502" y1="210" x2="698" y2="210" stroke="#555" stroke-width="1.3" marker-end="url(#arrow)"/>
+  <line x1="600" y1="214" x2="600" y2="100" stroke="#bbb" stroke-dasharray="3 3"/>
+  <text x="690" y="228" font-size="12" fill="#444" text-anchor="start" font-weight="400" font-style="italic">f</text>
+  <text x="600" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">0</text>
+  <text x="540" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">−f₀</text>
+  <text x="660" y="228" font-size="12" fill="#444" text-anchor="middle" font-weight="400">+f₀</text>
+  <line x1="660" y1="210" x2="660" y2="118.0" stroke="#6B3FA0" stroke-width="3.5"/>
+  <path d="M654,119.0 L660,110.0 L666,119.0 Z" fill="#6B3FA0"/>
+  <text x="660" y="103.0" font-size="12.5" fill="#6B3FA0" text-anchor="middle" font-weight="700">A</text>
+  <text x="540" y="202" font-size="13" fill="#B42318" text-anchor="middle" font-weight="700">0</text>
+  <text x="600" y="250" font-size="12" fill="#444" text-anchor="middle" font-weight="400">negative side gone, positive doubled</text>
+  <text x="20" y="292" font-size="15" fill="#1a1a2e" text-anchor="start" font-weight="700">The analytic signal as a rotating arrow</text>
+  <line x1="55" y1="398" x2="255" y2="398" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <line x1="150" y1="480" x2="150" y2="308" stroke="#555" stroke-width="1.2" marker-end="url(#arrow)"/>
+  <text x="250" y="416" font-size="12" fill="#444" text-anchor="end" font-weight="400">real: x(t)</text>
+  <text x="158" y="318" font-size="12" fill="#444" text-anchor="start" font-weight="400">imaginary: H{x}(t)</text>
+  <circle cx="150" cy="398" r="66" fill="none" stroke="#c9b8e6" stroke-dasharray="4 3"/>
+  <line x1="150" y1="398" x2="191.4" y2="363.3" stroke="#6B3FA0" stroke-width="3"/>
+  <path d="M200.6,355.6 L195.2,367.9 L187.5,358.7 Z" fill="#6B3FA0"/>
+  <line x1="200.6" y1="355.6" x2="200.6" y2="398" stroke="#E07B17" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="150" y1="398" x2="200.6" y2="398" stroke="#2B8CBE" stroke-width="3"/>
+  <path d="M176.0,398.0 L175.9,396.2 L175.7,394.4 L175.4,392.6 L175.0,390.8 L174.4,389.1 L173.8,387.4 L173.0,385.8 L172.0,384.2 L171.0,382.7 L169.9,381.3" fill="none" stroke="#B8860B" stroke-width="1.5"/>
+  <text x="180" y="394" font-size="13" fill="#B8860B" text-anchor="start" font-weight="700">φ(t)</text>
+  <text x="206.55893324585256" y="349.5760177606884" font-size="13" fill="#6B3FA0" text-anchor="start" font-weight="700">z(t)</text>
+  <text x="170" y="364" font-size="12.5" fill="#6B3FA0" text-anchor="end" font-weight="700">|z| = A(t)</text>
+  <text x="330" y="322" font-size="12.5" fill="#444" text-anchor="start" font-weight="400">Envelope (instantaneous amplitude)</text>
+  <text x="330" y="340" font-size="14.5" fill="#6B3FA0" text-anchor="start" font-weight="700">A(t) = |z(t)| = √(x² + H{x}²)</text>
+  <text x="330" y="362" font-size="12.5" fill="#444" text-anchor="start" font-weight="400">Instantaneous phase</text>
+  <text x="330" y="380" font-size="14.5" fill="#B8860B" text-anchor="start" font-weight="700">φ(t) = arg z(t) = atan2(H{x}, x)</text>
+  <text x="330" y="402" font-size="12.5" fill="#444" text-anchor="start" font-weight="400">Instantaneous frequency</text>
+  <text x="330" y="420" font-size="14.5" fill="#1a1a2e" text-anchor="start" font-weight="700">f(t) = (1 / 2π) · dφ/dt</text>
+  <text x="330" y="442" font-size="12.5" fill="#444" text-anchor="start" font-weight="400">Back to the signal</text>
+  <text x="330" y="460" font-size="14.5" fill="#2B8CBE" text-anchor="start" font-weight="700">x(t) = Re z(t) = A(t) cos φ(t)</text>
+</svg>

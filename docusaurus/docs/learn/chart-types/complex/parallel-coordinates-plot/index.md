@@ -65,26 +65,26 @@ A **parallel coordinates plot** (also called a parallel coordinates chart or par
 *A parallel coordinates plot of 150 electric cars of three types (sample data). [Try the interactive version](#how-to-create-a-parallel-coordinates-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A parallel coordinates plot shows **many records across many variables**: one vertical axis per variable, one line per record.
-- **Lines that run parallel** between two axes mean those variables rise together. **Lines that cross in an X** mean one falls as the other rises.
-- **Colour** marks groups, and lines that leave their group's band are **outliers**.
-- **Only neighbouring axes compare directly,** so the order of the axes changes what you can see.
-- With many lines, use **transparency and brushing** (filtering on an axis) to keep the plot readable.
+- A parallel coordinates plot shows many records across many variables: one vertical axis per variable, one line per record.
+- Lines that run parallel between two axes mean those variables rise together. Lines that cross in an X mean one falls as the other rises.
+- Colour marks groups, and lines that leave their group's band are outliers.
+- Only neighbouring axes compare directly, so the order of the axes changes what you can see.
+- With many lines, use transparency and brushing (filtering on an axis) to keep the plot readable.
 :::
 
 ## How to read a parallel coordinates plot
 
 ![The parts of a parallel coordinates plot: four vertical axes for price, battery size, range and 0 to 100 km/h time, each with its own scale, and three lines, one per car. Numbered markers show an axis, a line with its four values labelled, lines running parallel between battery and range, and lines crossing in an X between range and acceleration time](./parallel-coordinates-anatomy.svg)
 
-1. **Read the axes first.** Each vertical axis is one variable, with its own name, unit and scale. Check where each scale starts and ends: two axes at the same height can mean very different numbers.
-2. **Follow one line.** A line is one record, such as one car, one patient or one test run. Where it crosses an axis is that record's value for that variable. In the diagram, the orange saloon costs \$75k, has a 75 kWh battery and 470 km of range, and reaches 100 km/h in 4.5 seconds.
-3. **Look at the space between each pair of axes.** The slopes there show how the two variables relate. Lines that run roughly parallel mean the two rise and fall together. Lines that cross in an X mean that high values on one axis go with low values on the other.
-4. **Look for bands and colours.** Lines that travel together form a group. When colour marks a category, check whether each colour keeps to its own band; where it does, that variable separates the groups.
-5. **Spot the outliers.** A line that leaves its band, or reaches the far end of an axis on its own, is a record worth a closer look.
+1. Read the axes first. Each vertical axis is one variable, with its own name, unit and scale. Check where each scale starts and ends: two axes at the same height can mean very different numbers.
+2. Follow one line. A line is one record, such as one car, one patient or one test run. Where it crosses an axis is that record's value for that variable. In the diagram, the orange saloon costs \$75k, has a 75 kWh battery and 470 km of range, and reaches 100 km/h in 4.5 seconds.
+3. Look at the space between each pair of axes. The slopes there show how the two variables relate. Lines that run roughly parallel mean the two rise and fall together. Lines that cross in an X mean that high values on one axis go with low values on the other.
+4. Look for bands and colours. Lines that travel together form a group. When colour marks a category, check whether each colour keeps to its own band; where it does, that variable separates the groups.
+5. Spot the outliers. A line that leaves its band, or reaches the far end of an axis on its own, is a record worth a closer look.
 
 ### Brushing and reordering axes
 
-On an interactive plot, you can **brush** an axis: drag along it to select a range of values. Lines that pass through the range stay bright and the rest fade, so you can ask questions such as "what else do the cars with the biggest batteries have in common?" Brush two or more axes and only lines that pass through every range stay bright. Many tools also let you **drag an axis** to a new position, so that two variables you want to compare sit next to each other.
+On an interactive plot, you can **brush** an axis: drag along it to select a range of values. Lines that pass through the range stay bright and the rest fade, so you can ask questions such as "what else do the cars with the biggest batteries have in common?" Brush two or more axes and only lines that pass through every range stay bright. Many tools also let you drag an axis to a new position, so that two variables you want to compare sit next to each other.
 
 ## Patterns between two axes
 
@@ -94,13 +94,13 @@ Each pair of neighbouring axes works like a small scatter plot, drawn in a diffe
 
 | Pattern between two axes | What it means | Scatter plot equivalent |
 | --- | --- | --- |
-| Lines run roughly parallel | **Positive relationship:** the two variables rise and fall together | Dots climbing from bottom left to top right |
-| Lines cross near one point, in an X | **Negative relationship:** one rises as the other falls | Dots falling from top left to bottom right |
-| Lines cross at random | **No clear relationship** | A shapeless cloud |
-| Lines split into separate bands | **Groups:** records fall into clusters on these variables | Separate clumps of dots |
-| One line far from the others | **Outlier:** a record unlike the rest | A dot far from the cloud |
+| Lines run roughly parallel | Positive relationship: the two variables rise and fall together | Dots climbing from bottom left to top right |
+| Lines cross near one point, in an X | Negative relationship: one rises as the other falls | Dots falling from top left to bottom right |
+| Lines cross at random | No clear relationship | A shapeless cloud |
+| Lines split into separate bands | Groups: records fall into clusters on these variables | Separate clumps of dots |
+| One line far from the others | Outlier: a record unlike the rest | A dot far from the cloud |
 
-The "cross near one point" pattern surprises most readers: a strong negative relationship looks like an X, not like lines sloping downhill. Flipping one of the two axes (putting its highest value at the bottom) turns the X into parallel lines, which is why some tools let you flip axes.
+A strong negative relationship looks like an X where the lines cross near one point, rather than lines sloping downhill. Flipping one of the two axes (putting its highest value at the bottom) turns the X into parallel lines, which is why some tools let you flip axes.
 
 ## A worked example: comparing electric cars
 
@@ -114,10 +114,10 @@ The chart at the top of this page compares 150 electric cars of three types (50 
 
 Reading the plot from left to right:
 
-- **Price and battery:** the lines run nearly parallel. The more a car costs, the bigger its battery.
-- **Range and 0–100 km/h time:** the lines cross in an X. Cars with more range tend to be quicker, so a long range sits opposite a short acceleration time.
-- **Weight and energy use:** the three colours separate into bands. SUVs are the heaviest and use the most energy per kilometre.
-- **The insight that needs several axes at once:** SUVs carry bigger batteries than saloons (82 against 73 kWh on average), yet go less far (393 against 449 km). Their weight and energy use explain why. A single scatter plot of battery against range would show the gap but not the reason.
+- Price and battery: the lines run nearly parallel. The more a car costs, the bigger its battery.
+- Range and 0–100 km/h time: the lines cross in an X. Cars with more range tend to be quicker, so a long range sits opposite a short acceleration time.
+- Weight and energy use: the three colours separate into bands. SUVs are the heaviest and use the most energy per kilometre.
+- Battery, range, weight and energy use together: SUVs carry bigger batteries than saloons (82 against 73 kWh on average), yet go less far (393 against 449 km). Their weight and energy use explain why. A single scatter plot of battery against range would show the gap but not the reason.
 
 The table holds the averages; the plot holds all 150 cars, so it also shows the spread within each type and the cars that don't fit their group.
 
@@ -125,28 +125,28 @@ The table holds the averages; the plot holds all 150 cars, so it also shows the 
 
 Use this template when you report a parallel coordinates plot:
 
-> In **[data set]**, **[variable A]** and **[variable B]** rise together, while **[variable C]** falls as **[variable D]** rises. **[Group]** stands apart on **[variables]**, and **[record]** is an outlier on **[variable]**.
+> In [data set], [variable A] and [variable B] rise together, while [variable C] falls as [variable D] rises. [Group] stands apart on [variables], and [record] is an outlier on [variable].
 
-**Worked example:** "In this sample of 150 electric cars, price and battery size rise together, while quicker cars tend to have more range. SUVs stand apart on weight and energy use: they carry bigger batteries than saloons but go less far, because they are heavier and use more energy per kilometre."
+Worked example: "In this sample of 150 electric cars, price and battery size rise together, while quicker cars tend to have more range. SUVs stand apart on weight and energy use: they carry bigger batteries than saloons but go less far, because they are heavier and use more energy per kilometre."
 
 ## When to use a parallel coordinates plot
 
-Use a parallel coordinates plot when you have **many records measured on several numeric variables** and want to see them all at once:
+Use a parallel coordinates plot when you have many records measured on several numeric variables and want to see them all at once:
 
-- **comparing products or designs** on several specifications, as in the car example;
-- **finding trade-offs** in engineering and optimisation, for example which designs are both light and strong;
-- **tuning machine learning models,** with one axis per setting and one for the score, to see which settings give the best results;
-- **checking sensor and test data,** to find runs that behave differently from the rest;
-- **profiling customers or patients** across many measurements to find groups.
+- comparing products or designs on several specifications, as in the car example;
+- finding trade-offs in engineering and optimisation, for example which designs are both light and strong;
+- tuning machine learning models, with one axis per setting and one for the score, to see which settings give the best results;
+- checking sensor and test data, to find runs that behave differently from the rest;
+- profiling customers or patients across many measurements to find groups.
 
 | Chart | Best for |
 | --- | --- |
-| **Parallel coordinates plot** | Many records across many variables (roughly 4 to 15): groups, trade-offs and outliers |
+| Parallel coordinates plot | Many records across many variables (roughly 4 to 15): groups, trade-offs and outliers |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two variables, shown in detail |
 | [Radar chart](/learn/chart-types/radial/radar-chart/) | A few records (one to five) compared on the same variables, as shapes round a circle |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A grid of records and variables shown as colours, when you need the overall picture more than individual records |
 
-A **radar chart** is the circular cousin of a parallel coordinates plot: bend the row of axes into a circle and join the ends, and each record becomes a closed shape. That works well for a few records but becomes a tangle with many. A **scatter plot matrix**, a grid of scatter plots for every pair of variables, shows each pair in full but takes much more space.
+A radar chart is the circular cousin of a parallel coordinates plot: bend the row of axes into a circle and join the ends, and each record becomes a closed shape. That works well for a few records but becomes a tangle with many. A **scatter plot matrix**, a grid of scatter plots for every pair of variables, shows each pair in full but takes much more space.
 
 ## Common parallel coordinates plot mistakes
 
@@ -260,11 +260,11 @@ Here is the code for this plot. The data is plain JSON: a list of dimensions (on
 
 Key points:
 
-- **One line per record.** Every value is scaled to between 0 and 1 on its own axis, and each record is drawn as a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) through its scaled values, against one hidden 0 to 1 axis. Its colour comes from the record's type.
-- **One axis per variable.** Each variable has its own `NumericAxis` with `isInnerAxis: true` and a fixed range, so its labels show real values. `ParallelCoordinatesInnerAxisLayoutStrategy` extends `LeftAlignedInnerAxisLayoutStrategy` to place axis number *i* at x = *i* and line it up with the 0 to 1 band of the hidden axis ([inner axis layout](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout/)).
-- **Hover and brushing.** `ParallelCoordinatesModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)). On mouse move it finds the line nearest the mouse and draws it on top; a drag on an axis draws a `BoxAnnotation` and fades every line outside it. Setting `args.handled = true` stops the pan modifier from also acting on that drag.
-- **Zoom and pan sideways only** (`EXyDirection.XDirection`), so every axis keeps the scale its labels show. Axis titles, the legend and the tooltip are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/).
-- **A reusable version.** The [SciChart.js parallel coordinates documentation](/2d-charts/chart-types/parallel-coordinate-plot/) wraps the same approach in a reusable `ParallelCoordinateDataSource` class, with the same layout strategy, plus axis reordering, smooth curves and a single-series mode for very large datasets.
+- One line per record. Every value is scaled to between 0 and 1 on its own axis, and each record is drawn as a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) through its scaled values, against one hidden 0 to 1 axis. Its colour comes from the record's type.
+- One axis per variable. Each variable has its own `NumericAxis` with `isInnerAxis: true` and a fixed range, so its labels show real values. `ParallelCoordinatesInnerAxisLayoutStrategy` extends `LeftAlignedInnerAxisLayoutStrategy` to place axis number *i* at x = *i* and line it up with the 0 to 1 band of the hidden axis ([inner axis layout](/2d-charts/axis-api/multi-axis-and-layout/inner-axis-layout/)).
+- Hover and brushing. `ParallelCoordinatesModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)). On mouse move it finds the line nearest the mouse and draws it on top; a drag on an axis draws a `BoxAnnotation` and fades every line outside it. Setting `args.handled = true` stops the pan modifier from also acting on that drag.
+- Zoom and pan sideways only (`EXyDirection.XDirection`), so every axis keeps the scale its labels show. Axis titles, the legend and the tooltip are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/).
+- A reusable version. The [SciChart.js parallel coordinates documentation](/2d-charts/chart-types/parallel-coordinate-plot/) wraps the same approach in a reusable `ParallelCoordinateDataSource` class, with the same layout strategy, plus axis reordering, smooth curves and a single-series mode for very large datasets.
 
 **See it in the demo app:** [JavaScript parallel coordinates plot](https://www.scichart.com/demo/javascript/parallel-coordinates-chart) · [React parallel coordinates plot](https://www.scichart.com/demo/react/parallel-coordinates-chart) · [Angular parallel coordinates plot](https://www.scichart.com/demo/angular/parallel-coordinates-chart)
 

@@ -70,11 +70,11 @@ An **XYZ graph** (also called a 3D graph, an XYZ axis graph or a three-axis plot
 *A cloud of points on x, y and z axes, with one point, P = (7, 6, 3), and its shadows on the floor and walls (illustrative data). [Try the interactive version](#how-to-create-an-xyz-graph-in-javascript-react-or-angular): rotate it, and switch to straight-on front, top and side views.*
 
 :::tip Key takeaways
-- The **x, y and z axes** are three number lines at right angles. A point's position is three numbers, **(x, y, z)**, always in that order.
-- **Which axis is up depends on the tool:** maths and most scientific plotting put **z up**; many 3D graphics and charting tools, SciChart.js among them, put **y up**. Read the axis titles first.
-- Read a point by **dropping it to the floor** and reading the two floor axes, then reading its height. Its **shadows** on the walls give each pair of values.
-- A **perspective** view looks natural but distorts distances; an **orthographic** view keeps them true, so it is better for reading values.
-- One angled view can hide depth. **Rotate the chart, or look straight down each axis**, before drawing conclusions.
+- The x, y and z axes are three number lines at right angles. A point's position is three numbers, (x, y, z), always in that order.
+- Which axis is up depends on the tool: maths and most scientific plotting put z up; many 3D graphics and charting tools, SciChart.js among them, put y up. Read the axis titles first.
+- Read a point by dropping it to the floor and reading the two floor axes, then reading its height. Its shadows on the walls give each pair of values.
+- A perspective view looks natural but distorts distances; an orthographic view keeps them true, so it is better for reading values.
+- One angled view can hide depth. Rotate the chart, or look straight down each axis, before drawing conclusions.
 :::
 
 ## What are the x, y and z axes?
@@ -83,9 +83,9 @@ A 2D chart has two axes: x across and y up. A 3D graph adds a third, **z**, at r
 
 | Axis | Usual direction on a 3D chart | Also called |
 | --- | --- | --- |
-| **x** | Across, left to right | The horizontal axis; abscissa |
-| **y** | Up (graphics and charting tools) or back into the scene (maths) | The vertical axis on 2D charts; ordinate |
-| **z** | Back into the scene (graphics and charting tools) or up (maths) | The depth axis; applicate |
+| x | Across, left to right | The horizontal axis; abscissa |
+| y | Up (graphics and charting tools) or back into the scene (maths) | The vertical axis on 2D charts; ordinate |
+| z | Back into the scene (graphics and charting tools) or up (maths) | The depth axis; applicate |
 
 Each pair of axes forms a flat **plane**: the x–y plane, the x–z plane and the z–y plane. On a 3D chart these planes are drawn as the floor and walls of a box, with gridlines, so you can read values off them.
 
@@ -93,16 +93,16 @@ Each pair of axes forms a flat **plane**: the x–y plane, the x–z plane and t
 
 ![An annotated XYZ axis box drawn like the corner of a room. The x axis runs across from 0 to 10, the y axis points up from 0 to 10 and the z axis runs back from 0 to 10, all starting at the origin (0, 0, 0). Point P at (7, 6, 3) is reached in three steps: 7 across along x, 3 back along z, then 6 up along y. Dashed lines run from P to its shadows: on the floor at x 7 and z 3, on the back wall at x 7 and y 6, and on the side wall at z 3 and y 6](./xyz-axis-anatomy.svg)
 
-1. **Read the axis titles first.** Find which axis is up, what each axis measures and its units. Don't assume y is up: on many 3D charts it isn't.
-2. **Find the origin and the direction of each axis.** Values grow away from the origin. Check that the numbers increase the way you expect along each edge of the box; a rotated chart can put an axis's zero on the far side.
-3. **Read a point's floor position.** Follow a line straight down (along the up axis) to the floor, then read the two floor axes there: in the diagram, x = 7 and z = 3.
-4. **Read its height.** Read across from the point to the up axis, or use the gridlines on a wall: y = 6. The point is (7, 6, 3).
-5. **Use the shadows.** Where a line from the point meets a wall at right angles is its **projection** on that wall. Each wall shows two of the three values, read like an ordinary 2D chart.
-6. **Check depth by moving the view.** From one angle, a point near the front and a point far back can look as if they're in the same place. Rotate the chart, hover for a tooltip, or switch to a straight-on view.
+1. Read the axis titles first. Find which axis is up, what each axis measures and its units. Don't assume y is up: on many 3D charts it isn't.
+2. Find the origin and the direction of each axis. Values grow away from the origin. Check that the numbers increase the way you expect along each edge of the box; a rotated chart can put an axis's zero on the far side.
+3. Read a point's floor position. Follow a line straight down (along the up axis) to the floor, then read the two floor axes there: in the diagram, x = 7 and z = 3.
+4. Read its height. Read across from the point to the up axis, or use the gridlines on a wall: y = 6. The point is (7, 6, 3).
+5. Use the shadows. Where a line from the point meets a wall at right angles is its **projection** on that wall. Each wall shows two of the three values, read like an ordinary 2D chart.
+6. Check depth by moving the view. From one angle, a point near the front and a point far back can look as if they're in the same place. Rotate the chart, hover for a tooltip, or switch to a straight-on view.
 
 ## How to plot and read a point (x, y, z)
 
-To **plot** a point, start at the origin and move along each axis in turn: x across, then the depth axis, then the up axis. The order in which you move doesn't matter, but the order in which you **write** the values does: always (x, y, z).
+To plot a point, start at the origin and move along each axis in turn: x across, then the depth axis, then the up axis. The order in which you move doesn't matter, but the order in which you write the values does: always (x, y, z).
 
 The clearest way to check a 3D point is to look at it straight down each axis. Each view is a flat 2D chart, and each one shows two of the three values:
 
@@ -110,32 +110,34 @@ The clearest way to check a 3D point is to look at it straight down each axis. E
 
 | View | Looking along | You see | P reads as | Hidden |
 | --- | --- | --- | --- | --- |
-| **Front** | z | x across, y up | (7, 6) | z: how far back |
-| **Top** | y (down) | x across, z up the page | (7, 3) | y: how high |
-| **Side** | x | z across, y up | (3, 6) | x: how far across |
+| Front | z | x across, y up | (7, 6) | z: how far back |
+| Top | y (down) | x across, z up the page | (7, 3) | y: how high |
+| Side | x | z across, y up | (3, 6) | x: how far across |
 
-**Any two views give all three values**, because each value appears in two of them. That is why engineering drawings use front, top and side views, and why a 3D chart that can snap to those views is easier to read than one fixed angle.
+Any two views give all three values, because each value appears in two of them. That is why engineering drawings use front, top and side views, and why a 3D chart that can snap to those views is easier to read than one fixed angle.
 
-**Worked example,** from the [live chart](#how-to-create-an-xyz-graph-in-javascript-react-or-angular) (switch to **Orthographic**, then try each view):
+### Example: a pattern only one view shows
 
-- **Front (x–y):** the cloud of 250 points looks like a shapeless rectangle of dots. Nothing links x and y.
-- **Top (x–z):** still a shapeless square. Nothing links x and z either.
-- **Side (z–y):** the same points collapse into a thin, rising band. Y climbs by about 0.7 for every 1 along z, and x plays no part. The cloud is a flat, tilted sheet, which no other view shows.
+In the [live chart](#how-to-create-an-xyz-graph-in-javascript-react-or-angular), switch to Orthographic, then try each view:
+
+- Front (x–y): the cloud of 250 points looks like a shapeless rectangle of dots. Nothing links x and y.
+- Top (x–z): still a shapeless square. Nothing links x and z either.
+- Side (z–y): the same points collapse into a thin, rising band. Y climbs by about 0.7 for every 1 along z, and x plays no part. The cloud is a flat, tilted sheet, which no other view shows.
 
 ### How to describe a point or pattern on an XYZ graph
 
 When you report a 3D chart, say which axis is which, then give positions as (x, y, z):
 
-> On axes of **[x quantity]**, **[y quantity]** and **[z quantity]** (**[which axis]** up), **[the point or group]** sits at about **([x], [y], [z])**. Seen from **[the view]**, **[the pattern]**: **[the relationship, with its size]**.
+> On axes of [x quantity], [y quantity] and [z quantity] ([which axis] up), [the point or group] sits at about ([x], [y], [z]). Seen from [the view], [the pattern]: [the relationship, with its size].
 
-**Worked example:** "On x, y and z axes from 0 to 10 (y up), the highlighted point sits at (7, 6, 3). Seen from the side, the point cloud is a thin band: y rises by about 0.7 for each unit of z, and doesn't depend on x."
+For example: "On x, y and z axes from 0 to 10 (y up), the highlighted point sits at (7, 6, 3). Seen from the side, the point cloud is a thin band: y rises by about 0.7 for each unit of z, and doesn't depend on x."
 
 ## Which axis is up: y or z?
 
-There is no single answer. Two conventions are both common, and mixing them up is the most frequent source of confusion with 3D axes.
+There is no single answer. Two conventions are both common, and mixing them up is a common source of confusion with 3D axes.
 
-- **Z up.** Maths textbooks, engineering, surveying, CAD and most scientific plotting libraries treat the x–y plane as the ground and z as height. A 2D map gets a third dimension by adding elevation.
-- **Y up.** Many 3D graphics systems, game engines and 3D charting libraries keep y as the vertical axis, as on a 2D chart or a screen, and add z as depth into the scene.
+- Z up: maths textbooks, engineering, surveying, CAD and most scientific plotting libraries treat the x–y plane as the ground and z as height. A 2D map gets a third dimension by adding elevation.
+- Y up: many 3D graphics systems, game engines and 3D charting libraries keep y as the vertical axis, as on a 2D chart or a screen, and add z as depth into the scene.
 
 | Convention | Up axis | Handedness | Examples |
 | --- | --- | --- | --- |
@@ -145,18 +147,18 @@ There is no single answer. Two conventions are both common, and mixing them up i
 | Unreal Engine | z | Left-handed | Game engine |
 | SciChart.js 3D | y | Left-handed | X and Z form the floor; Y is up, as on a 2D chart |
 
-**What to do about it:**
+### How to avoid mixing up y-up and z-up data
 
-- **Label every axis,** including which one is up. "Height (m)" on the vertical axis settles it for the reader.
-- **When you move 3D data between tools,** check both the up axis and the handedness. Data from a z-up tool shown in a y-up chart lies on its side unless you swap y and z.
-- **Swapping two axes also flips the handedness,** so after swapping y and z you may need to negate one axis to stop the data appearing mirrored.
+- Label every axis, including which one is up. "Height (m)" on the vertical axis settles it for the reader.
+- When you move 3D data between tools, check both the up axis and the handedness. Data from a z-up tool shown in a y-up chart lies on its side unless you swap y and z.
+- Swapping two axes also flips the handedness, so after swapping y and z you may need to negate one axis to stop the data appearing mirrored.
 
 ## Right-handed vs left-handed axes
 
 Once x and y are fixed, z can point one of two ways. The two choices are mirror images, and no rotation turns one into the other.
 
-- **Right-handed:** point the fingers of your right hand along x and curl them towards y. Your thumb points along +z. With x to the right and y up, z comes **out of the screen**, towards you. Maths, physics and most engineering use this.
-- **Left-handed:** do the same with your left hand. With x to the right and y up, z goes **into the screen**, away from you. Some 3D graphics tools use this, because depth then grows the further away something is.
+- **Right-handed:** point the fingers of your right hand along x and curl them towards y. Your thumb points along +z. With x to the right and y up, z comes out of the screen, towards you. Maths, physics and most engineering use this.
+- **Left-handed:** do the same with your left hand. With x to the right and y up, z goes into the screen, away from you. Some 3D graphics tools use this, because depth then grows the further away something is.
 
 | | Right-handed | Left-handed |
 | --- | --- | --- |
@@ -164,11 +166,11 @@ Once x and y are fixed, z can point one of two ways. The two choices are mirror 
 | x right, z up: y points | Away from you, into the screen | Towards you, out of the screen |
 | Typical users | Maths, physics, engineering, CAD, glTF | Some game engines and 3D charting libraries |
 
-For reading a chart, handedness only matters when you compare charts from different tools, or load data from one into another: the same numbers drawn in the other system come out **mirrored**, front to back.
+For reading a chart, handedness only matters when you compare charts from different tools, or load data from one into another: the same numbers drawn in the other system come out mirrored, front to back.
 
 ## Perspective vs orthographic projection
 
-A screen is flat, so a 3D chart has to **project** the 3D box onto 2D. There are two ways to do it:
+A screen is flat, so a 3D chart has to project the 3D box onto 2D. There are two ways to do it:
 
 | | Perspective | Orthographic |
 | --- | --- | --- |
@@ -177,15 +179,15 @@ A screen is flat, so a 3D chart has to **project** the 3D box onto 2D. There are
 | Good for | Seeing the overall shape; a natural sense of depth | Reading values, comparing sizes, straight-on views |
 | Watch out for | Reading values off the axes: the front and back edges of the box have different scales | Depth is harder to judge at an angle: near and far can look alike |
 
-In the [live chart](#how-to-create-an-xyz-graph-in-javascript-react-or-angular), choose **Front (X–Y)** in **Perspective**: the floor and back wall show as nested boxes, and the orange point no longer lines up with 7 on the front x-axis, because it sits further back than the front edge of the box, where that axis is drawn. Switch to **Orthographic** and it sits exactly on x = 7 and y = 6.
+In the [live chart](#how-to-create-an-xyz-graph-in-javascript-react-or-angular), choose Front (X–Y) in Perspective. The floor and back wall show as nested boxes, and the orange point no longer lines up with 7 on the front x-axis, because it sits further back than the front edge of the box, where that axis is drawn. Switch to Orthographic and it sits exactly on x = 7 and y = 6.
 
 ## When to use an XYZ graph
 
-Use a 3D graph when three numeric values per item matter **together** and readers can interact with the chart: rotate it, zoom it and hover for values. If the chart will be printed or seen at a glance, a 2D chart with colour or size for the third value is usually easier to read.
+Use a 3D graph when three numeric values per item matter together and readers can interact with the chart: rotate it, zoom it and hover for values. If the chart will be printed or seen at a glance, a 2D chart with colour or size for the third value is usually easier to read.
 
 | Chart | Best for |
 | --- | --- |
-| **XYZ graph, as a 3D scatter plot (point cloud)** | Separate items, each with its own x, y and z: clusters, outliers and shapes in three measured variables; LiDAR scans and 3D measurements |
+| XYZ graph, as a 3D scatter plot (point cloud) | Separate items, each with its own x, y and z: clusters, outliers and shapes in three measured variables; LiDAR scans and 3D measurements |
 | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | A value measured over a regular grid of x and z, shown as a height: terrain, temperature across a plate, a function of two variables |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) or [contour plot](/learn/chart-types/cartesian/contour-plot/) | The same grid data in 2D, with colour or contour lines for the third value: exact positions, no hidden areas |
 | [Bubble chart](/learn/chart-types/cartesian/bubble-chart/) | Three values per item in 2D, with the third as bubble size: good for small numbers of items |
@@ -195,24 +197,22 @@ Use a 3D graph when three numeric values per item matter **together** and reader
 
 The same three axes hold different kinds of 3D chart:
 
-- **3D scatter plot:** one marker per data point at its (x, y, z). A very large scatter from a scanner is a **point cloud**: see the [LiDAR point cloud and contour visualisation](https://www.scichart.com/blog/lidar-uav-point-cloud-and-contour-mapping-with-scichart/) post.
-- **3D surface or mesh:** a sheet stretched over a grid of points, with height (and often colour) showing the value. See the [3D surface plot guide](/learn/chart-types/3d/3d-surface-plot/).
-- **3D line:** points joined in order, for a path through space such as a trajectory, or a set of spectra in a waterfall.
-- **3D columns and bubbles:** a column of height y at each (x, z), or a sphere whose size is a fourth value.
+- 3D scatter plot: one marker per data point at its (x, y, z). A very large scatter from a scanner is a **point cloud**: see the [LiDAR point cloud and contour visualisation](https://www.scichart.com/blog/lidar-uav-point-cloud-and-contour-mapping-with-scichart/) post.
+- 3D surface or mesh: a sheet stretched over a grid of points, with height (and often colour) showing the value. See the [3D surface plot guide](/learn/chart-types/3d/3d-surface-plot/).
+- 3D line: points joined in order, for a path through space such as a trajectory, or a set of spectra in a waterfall.
+- 3D columns and bubbles: a column of height y at each (x, z), or a sphere whose size is a fourth value.
 
 ## Common XYZ graph mistakes
 
 - **Assuming which axis is up.** Readers of a z-up chart who expect y-up (or the other way round) misread every value. Title every axis, and say which is vertical.
-- **Reading values off a perspective view.** In perspective, the front and back edges of the box have different scales, so lining a point up with an axis gives the wrong value. Hover for the value, or switch to orthographic.
 - **Occlusion.** Points and surfaces in front hide those behind them. Use smaller or partly transparent markers, let users rotate, or show the data as 2D views as well.
-- **Depth you can't see.** From one angle, a near point and a far point can overlap exactly. Add drop lines to the floor, a tooltip, or straight-on views.
 - **Too much rotation, or a bad default angle.** Spinning charts and steep angles make the box hard to read. Start from a view slightly above and to one side, with all three axes' labels readable, and give a reset (in the live chart, double-click).
 - **Unequal axis scales without saying so.** If one unit on x is twice as long as one unit on z, shapes and slopes look different from the data. Use the same scale where the units match, and say when they don't.
 - **3D for 2D data.** A 3D bar or pie chart adds depth that carries no data and makes values harder to compare. Use 3D only when the third axis is a real variable.
 
 ## How to create an XYZ graph in JavaScript, React or Angular
 
-SciChart.js draws 3D charts with WebGL and WebAssembly, so a 3D scatter or surface stays smooth while you rotate and zoom it, even with large point clouds. In SciChart.js 3D, **y is the up axis** and x and z make the floor. Try the chart below: drag to rotate, scroll to zoom, double-click to reset, and hover a point to read its x, y and z. Use the buttons to look straight along each axis, and to switch between perspective and orthographic.
+SciChart.js draws 3D charts with WebGL and WebAssembly, so a 3D scatter or surface stays smooth while you rotate and zoom it, even with large point clouds. In SciChart.js 3D, y is the up axis and x and z make the floor. Try the chart below: drag to rotate, scroll to zoom, double-click to reset, and hover a point to read its x, y and z. Use the buttons to look straight along each axis, and to switch between perspective and orthographic.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 

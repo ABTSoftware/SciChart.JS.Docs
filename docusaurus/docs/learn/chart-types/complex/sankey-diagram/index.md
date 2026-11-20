@@ -68,23 +68,23 @@ A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) i
 *A Sankey diagram of one year's energy use in an imaginary country, in terawatt-hours (sample data). [Try the interactive version](#how-to-create-a-sankey-diagram-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A Sankey diagram shows **where a total comes from and where it goes**, as bands flowing between bars.
-- **A band's width is its value,** so the biggest flows are the first thing you see.
-- At every middle node, **what flows in equals what flows out**. Anything lost on the way gets its own band and node.
-- Use one when something **moves through stages**: energy, money, materials, people. When nothing flows, a bar or pie chart is clearer.
-- Keep it readable: **few nodes, few crossings,** and small flows grouped together.
+- A Sankey diagram shows where a total comes from and where it goes, as bands flowing between bars.
+- A band's width is its value, so the biggest flows are the first thing you see.
+- At every middle node, what flows in equals what flows out. Anything lost on the way gets its own band and node.
+- Use one when something moves through stages: energy, money, materials, people. When nothing flows, a bar or pie chart is clearer.
+- Keep it readable: few nodes, few crossings, and small flows grouped together.
 :::
 
 ## How to read a Sankey diagram
 
 ![The parts of a Sankey flow diagram: three columns of nodes labelled A to F, from sources on the left to end points on the right. Curved links join them, each as wide as its value; callouts mark a link worth 45, a middle node D with 30 in and 30 out, and an end node](./sankey-diagram-anatomy.svg)
 
-1. **Check what is flowing.** Find the unit (kilowatt-hours, dollars, tonnes, people) and the period. Every band on the diagram uses the same unit.
-2. **Read from left to right.** The left column holds the **sources**. Each column to the right is a later stage, and the right-hand column holds the **end points**. Some end points, such as losses, can sit in a middle column.
-3. **Compare the widths of the bands.** A band twice as wide carries twice as much. The height of each node is its total. Use the labels or a tooltip for exact numbers: widths are good for ranking flows, not for reading precise values.
-4. **Follow a band from end to end.** Pick a source and trace where its bands go. On an interactive Sankey diagram, hovering over a node or band highlights the whole path.
-5. **Check the balance at each middle node.** What flows in should equal what flows out. In the diagram above, node D takes in 15 from A and 15 from B, and sends 5 to E and 25 to F: 30 in, 30 out.
-6. **Look at the end points.** They answer the question the diagram was drawn for: how much became useful, how much was spent on each item, how many people finished.
+1. Check what is flowing. Find the unit (kilowatt-hours, dollars, tonnes, people) and the period. Every band on the diagram uses the same unit.
+2. Read from left to right. The left column holds the **sources**. Each column to the right is a later stage, and the right-hand column holds the **end points**. Some end points, such as losses, can sit in a middle column.
+3. Compare the widths of the bands. A band twice as wide carries twice as much. The height of each node is its total. Use the labels or a tooltip for exact numbers: widths are good for ranking flows, not for reading precise values.
+4. Follow a band from end to end. Pick a source and trace where its bands go. On an interactive Sankey diagram, hovering over a node or band highlights the whole path.
+5. Check the balance at each middle node. What flows in should equal what flows out. In the diagram above, node D takes in 15 from A and 15 from B, and sends 5 to E and 25 to F: 30 in, 30 out.
+6. Look at the end points. They answer the question the diagram was drawn for: how much became useful, how much was spent on each item, how many people finished.
 
 ## A worked example: where a country's energy goes
 
@@ -102,9 +102,9 @@ The diagram at the top of this page follows 100 terawatt-hours (TWh) of energy t
 
 Three things stand out once the flows are drawn:
 
-- **About half the energy does useful work.** 49 of the 100 TWh ends as useful energy; the other 51 TWh is lost as heat.
-- **Transport is the least efficient sector.** Only 9 of its 30 TWh does useful work, against 21 of 30 in homes.
-- **Making electricity has a cost.** 13 of the 41 TWh that goes into making electricity is lost before it reaches anyone.
+- About half the energy does useful work. 49 of the 100 TWh ends as useful energy; the other 51 TWh is lost as heat.
+- Transport is the least efficient sector. Only 9 of its 30 TWh does useful work, against 21 of 30 in homes.
+- Making electricity loses energy. 13 of the 41 TWh that goes into making electricity is lost before it reaches anyone.
 
 The table and the diagram hold the same numbers. The table is better for checking a single value; the diagram shows the structure and the big flows in one look.
 
@@ -112,18 +112,18 @@ The table and the diagram hold the same numbers. The table is better for checkin
 
 Use this template when you report a Sankey diagram:
 
-> Of the **[total and unit]** that entered **[the system]** in **[period]**, **[amount or share]** went to **[main destination]**, and **[amount or share]** ended as **[loss or other end point]**. The largest single flow was **[source] to [target]**, at **[value]**.
+> Of the [total and unit] that entered [the system] in [period], [amount or share] went to [main destination], and [amount or share] ended as [loss or other end point]. The largest single flow was [source] to [target], at [value].
 
-**Worked example:** "Of the 100 TWh of energy this country used in the year, 49 TWh did useful work and 51 TWh was lost as heat. The largest single flow was oil into fuels used directly, at 28 TWh, and transport turned only 30% of its energy into useful work."
+Worked example: "Of the 100 TWh of energy this country used in the year, 49 TWh did useful work and 51 TWh was lost as heat. The largest single flow was oil into fuels used directly, at 28 TWh, and transport turned only 30% of its energy into useful work."
 
 ## How does a Sankey diagram work?
 
 A Sankey diagram is drawn in four steps. Most tools that make Sankey charts do them for you; knowing them helps you fix a diagram that looks wrong.
 
-1. **Give each node a column.** Sources go in the first column. Every other node goes one column to the right of the furthest-right node that feeds it.
-2. **Choose one scale for the whole diagram.** A flow of 10 units must be equally wide everywhere. The busiest column sets the scale, so it fills the height with gaps between its nodes.
-3. **Stack the links on each node.** The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That keeps crossings to a minimum.
-4. **Draw each link as an S-shaped band** from its place on the source node to its place on the target node. It leaves and arrives horizontally, and its vertical thickness is the same all the way across.
+1. Give each node a column. Sources go in the first column. Every other node goes one column to the right of the furthest-right node that feeds it.
+2. Choose one scale for the whole diagram. A flow of 10 units must be equally wide everywhere. The busiest column sets the scale, so it fills the height with gaps between its nodes.
+3. Stack the links on each node. The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That keeps crossings to a minimum.
+4. Draw each link as an S-shaped band from its place on the source node to its place on the target node. It leaves and arrives horizontally, and its vertical thickness is the same all the way across.
 
 ![How a Sankey link is drawn: first as a smooth S-shaped band whose height is the same at every point, then the same band cut into eight slices with each slice split into two triangles](./sankey-link-geometry.svg)
 
@@ -131,21 +131,21 @@ To put a band on screen, it is cut into thin slices, and each slice is split int
 
 ## When to use a Sankey diagram
 
-Use a Sankey diagram when a quantity **moves through stages** and you want to show **how it splits, merges and where it ends up**. Typical uses:
+Use a Sankey diagram when a quantity moves through stages and you want to show how it splits, merges and where it ends up. Typical uses:
 
-- **energy and materials:** fuels to electricity, end uses and losses; raw material to product, scrap and recycling;
-- **money:** income to spending categories, or a company's revenue to costs and profit;
-- **people:** visitors through a sign-up process, or applicants through a hiring process, including where they drop out;
-- **any process with losses,** where showing what leaves at each stage matters as much as what arrives.
+- energy and materials: fuels to electricity, end uses and losses; raw material to product, scrap and recycling;
+- money: income to spending categories, or a company's revenue to costs and profit;
+- people: visitors through a sign-up process, or applicants through a hiring process, including where they drop out;
+- any process with losses, where showing what leaves at each stage matters as much as what arrives.
 
 | Chart | Best for |
 | --- | --- |
-| **Sankey diagram** | How a total flows through stages, splits and merges, with losses shown |
+| Sankey diagram | How a total flows through stages, splits and merges, with losses shown |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) (stacked) | Comparing totals and their parts across categories, when nothing flows between them |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | How one total splits into a few parts, at a single stage |
-| [Treemap](/2d-charts/chart-types/tree-map-type/) | Parts of a total nested in groups (a hierarchy), with no flow from one stage to the next |
+| [Treemap](/learn/chart-types/complex/treemap/) | Parts of a total nested in groups (a hierarchy), with no flow from one stage to the next |
 
-Two close relatives: an **alluvial diagram** is a Sankey diagram whose columns show the same categories at different times, to show how items move between them. A **chord diagram** arranges the groups round a circle, which suits flows that go in both directions between the same groups.
+The Sankey diagram has two close relatives. An **alluvial diagram** is a Sankey diagram whose columns show the same categories at different times, to show how items move between them. A **chord diagram** arranges the groups round a circle, which suits flows that go in both directions between the same groups.
 
 ## Common Sankey diagram mistakes
 
@@ -155,7 +155,6 @@ Two close relatives: an **alluvial diagram** is a Sankey diagram whose columns s
 - **Flows that loop back.** A Sankey diagram runs one way, from left to right. If something returns to an earlier stage (recycling, for example), show it as a separate node in a later column rather than a band that runs backwards.
 - **Mixed units.** Every band must use the same unit. Don't mix tonnes with dollars, or energy in different units, in one diagram.
 - **Colour that means nothing.** Colour bands by their source or by the type of flow, and say which. Random colours make paths harder to follow.
-- **Expecting precise comparisons.** Readers rank band widths well but can't read exact values from them. Label the main flows, add tooltips, or give the numbers in a table.
 
 ## How to create a Sankey diagram in JavaScript, React or Angular
 

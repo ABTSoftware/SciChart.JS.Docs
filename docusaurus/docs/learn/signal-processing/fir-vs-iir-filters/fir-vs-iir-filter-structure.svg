@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 565" width="760" height="565" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">FIR and IIR filter structures</title>
+<desc id="d">Top: an FIR filter as a tapped delay line. The input passes through a chain of one-sample delays, each delayed copy is multiplied by a coefficient b0 to b3, and the products are added to give the output, with no path back from the output. Bottom: a second-order IIR section (biquad). The input side is the same, but the output is also delayed, multiplied by minus a1 and minus a2, and fed back into the sum, so the output depends on its own past values.</desc>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>
+<rect width="760" height="565" fill="#ffffff"/>
+<text x="24" y="32" text-anchor="start" font-size="17" font-weight="700" fill="#1b3a6b">FIR: feed-forward only</text>
+<text x="24" y="52" text-anchor="start" font-size="14" font-weight="400" fill="#444">y[n] = b₀x[n] + b₁x[n−1] + b₂x[n−2] + b₃x[n−3]</text>
+<text x="30" y="105" text-anchor="start" font-size="15" font-weight="600" fill="#222">x[n]</text>
+<line x1="68" y1="100" x2="130" y2="100" stroke="#333" stroke-width="1.6"/>
+<circle cx="130" cy="100" r="3.5" fill="#333"/>
+<line x1="130" y1="100" x2="185.0" y2="100" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="187.0" y="85.0" width="46" height="30" rx="5" fill="#eef3fb" stroke="#2a6fdb" stroke-width="1.5"/>
+<text x="210.0" y="105" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="233.0" y1="100" x2="290" y2="100" stroke="#333" stroke-width="1.6"/>
+<circle cx="290" cy="100" r="3.5" fill="#333"/>
+<line x1="290" y1="100" x2="345.0" y2="100" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="347.0" y="85.0" width="46" height="30" rx="5" fill="#eef3fb" stroke="#2a6fdb" stroke-width="1.5"/>
+<text x="370.0" y="105" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="393.0" y1="100" x2="450" y2="100" stroke="#333" stroke-width="1.6"/>
+<circle cx="450" cy="100" r="3.5" fill="#333"/>
+<line x1="450" y1="100" x2="505.0" y2="100" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="507.0" y="85.0" width="46" height="30" rx="5" fill="#eef3fb" stroke="#2a6fdb" stroke-width="1.5"/>
+<text x="530.0" y="105" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="553.0" y1="100" x2="610" y2="100" stroke="#333" stroke-width="1.6"/>
+<line x1="130" y1="100" x2="130" y2="144" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="130" cy="160" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="130" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₀</text>
+<line x1="130" y1="175" x2="130" y2="201" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="290" y1="100" x2="290" y2="144" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="290" cy="160" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="290" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₁</text>
+<line x1="290" y1="175" x2="290" y2="201" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="450" y1="100" x2="450" y2="144" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="450" cy="160" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="450" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₂</text>
+<line x1="450" y1="175" x2="450" y2="201" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="610" y1="100" x2="610" y2="144" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="610" cy="160" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="610" y="165" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₃</text>
+<line x1="610" y1="175" x2="610" y2="201" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="130" cy="215" r="13" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<text x="130" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#222">+</text>
+<line x1="143" y1="215" x2="276" y2="215" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="290" cy="215" r="13" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<text x="290" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#222">+</text>
+<line x1="303" y1="215" x2="436" y2="215" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="450" cy="215" r="13" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<text x="450" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#222">+</text>
+<line x1="463" y1="215" x2="596" y2="215" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="610" cy="215" r="13" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<text x="610" y="220" text-anchor="middle" font-size="17" font-weight="700" fill="#222">+</text>
+<line x1="623" y1="215" x2="700" y2="215" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="706" y="220" text-anchor="start" font-size="15" font-weight="600" fill="#222">y[n]</text>
+<text x="24" y="262" text-anchor="start" font-size="13" font-weight="400" fill="#555">Finite memory: an impulse at x[n] has left the delay line after 4 samples, so the output returns to exactly 0.</text>
+<line x1="20" x2="740" y1="282" y2="282" stroke="#d5d9e0"/>
+<text x="24" y="312" text-anchor="start" font-size="17" font-weight="700" fill="#8a3d00">IIR: feed-forward plus feedback (one biquad)</text>
+<text x="24" y="332" text-anchor="start" font-size="14" font-weight="400" fill="#444">y[n] = b₀x[n] + b₁x[n−1] + b₂x[n−2] − a₁y[n−1] − a₂y[n−2]</text>
+<text x="24" y="377" text-anchor="start" font-size="15" font-weight="600" fill="#222">x[n]</text>
+<line x1="62" y1="372" x2="100" y2="372" stroke="#333" stroke-width="1.6"/>
+<circle cx="100" cy="372" r="3.5" fill="#333"/>
+<line x1="100" y1="372" x2="100" y2="413" stroke="#333" stroke-width="1.6"/>
+<rect x="77.0" y="413.0" width="46" height="30" rx="5" fill="#eef3fb" stroke="#2a6fdb" stroke-width="1.5"/>
+<text x="100" y="433" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="100" y1="443" x2="100" y2="469" stroke="#333" stroke-width="1.6"/>
+<rect x="77.0" y="469.0" width="46" height="30" rx="5" fill="#eef3fb" stroke="#2a6fdb" stroke-width="1.5"/>
+<text x="100" y="489" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="100" y1="372" x2="205" y2="372" stroke="#333" stroke-width="1.6"/>
+<circle cx="220" cy="372" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="220" y="377" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₀</text>
+<line x1="235" y1="372" x2="366" y2="372" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<line x1="123" y1="428" x2="205" y2="428" stroke="#333" stroke-width="1.6"/>
+<circle cx="220" cy="428" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="220" y="433" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₁</text>
+<line x1="235" y1="428" x2="300" y2="428" stroke="#333" stroke-width="1.6"/>
+<line x1="123" y1="484" x2="205" y2="484" stroke="#333" stroke-width="1.6"/>
+<circle cx="220" cy="484" r="15" fill="#ffffff" stroke="#2a6fdb" stroke-width="1.8"/>
+<text x="220" y="489" text-anchor="middle" font-size="13" font-weight="600" fill="#2a6fdb">b₂</text>
+<line x1="235" y1="484" x2="300" y2="484" stroke="#333" stroke-width="1.6"/>
+<line x1="300" y1="428" x2="300" y2="484" stroke="#333" stroke-width="1.6"/>
+<line x1="300" y1="428" x2="370" y2="381" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<circle cx="380" cy="372" r="15" fill="#ffffff" stroke="#333" stroke-width="1.6"/>
+<text x="380" y="378" text-anchor="middle" font-size="18" font-weight="700" fill="#222">+</text>
+<line x1="395" y1="372" x2="700" y2="372" stroke="#333" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="706" y="377" text-anchor="start" font-size="15" font-weight="600" fill="#222">y[n]</text>
+<circle cx="620" cy="372" r="3.5" fill="#333"/>
+<line x1="620" y1="372" x2="620" y2="413" stroke="#333" stroke-width="1.6"/>
+<rect x="597.0" y="413.0" width="46" height="30" rx="5" fill="#fff2e6" stroke="#e07a1f" stroke-width="1.5"/>
+<text x="620" y="433" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="620" y1="443" x2="620" y2="469" stroke="#333" stroke-width="1.6"/>
+<rect x="597.0" y="469.0" width="46" height="30" rx="5" fill="#fff2e6" stroke="#e07a1f" stroke-width="1.5"/>
+<text x="620" y="489" text-anchor="middle" font-size="14" fill="#1b3a6b">z⁻¹</text>
+<line x1="597" y1="428" x2="535" y2="428" stroke="#333" stroke-width="1.6"/>
+<circle cx="520" cy="428" r="15" fill="#ffffff" stroke="#e07a1f" stroke-width="1.8"/>
+<text x="520" y="433" text-anchor="middle" font-size="13" font-weight="600" fill="#e07a1f">−a₁</text>
+<line x1="505" y1="428" x2="460" y2="428" stroke="#333" stroke-width="1.6"/>
+<line x1="597" y1="484" x2="535" y2="484" stroke="#333" stroke-width="1.6"/>
+<circle cx="520" cy="484" r="15" fill="#ffffff" stroke="#e07a1f" stroke-width="1.8"/>
+<text x="520" y="489" text-anchor="middle" font-size="13" font-weight="600" fill="#e07a1f">−a₂</text>
+<line x1="505" y1="484" x2="460" y2="484" stroke="#333" stroke-width="1.6"/>
+<line x1="460" y1="428" x2="460" y2="484" stroke="#333" stroke-width="1.6"/>
+<line x1="460" y1="428" x2="390" y2="381" stroke="#e07a1f" stroke-width="1.6" marker-end="url(#ar)"/>
+<text x="560" y="518" text-anchor="middle" font-size="13" font-weight="600" fill="#e07a1f">feedback path: past outputs</text>
+<text x="24" y="550" text-anchor="start" font-size="13" font-weight="400" fill="#555">Infinite memory: each output is fed back in, so an impulse dies away gradually but never ends exactly.</text>
+</svg>

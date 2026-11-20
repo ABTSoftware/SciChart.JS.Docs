@@ -2,13 +2,13 @@
 sidebar_position: 1
 sidebar_label: Learning Center
 title: "Learning Center: A Guide to Data Visualisation (With Interactive Examples)"
-description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, and how to chart big data fast, with live, interactive examples."
+description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data fast, and signal processing basics, with live, interactive examples."
 keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
 ---
 
 # Learning Center
 
-**A guide to data visualisation.** Which chart should you use, how do you read it, and how do its axes work? These guides explain each topic in plain language, and every one comes with a live, interactive example and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+A guide to data visualisation. Which chart should you use, how do you read it, and how do its axes work? These guides explain each topic in plain language, and every one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Types of charts and graphs
 
@@ -51,5 +51,30 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 | --- | --- |
 | [Big data visualization](/learn/big-data/big-data-visualization/) | What makes data big for a chart, and SVG vs Canvas vs WebGL, with a live test in your browser |
 | [Downsampling](/learn/big-data/downsampling/) | How downsampling methods compare, and which keep the spikes |
+
+## Signal processing
+
+[**Signal processing**](/learn/signal-processing/): how to see what frequencies a signal contains, and how to filter it, with live examples.
+
+| Topic | What it covers |
+| --- | --- |
+| [Audio spectrum analyzer](/learn/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one |
+| [Autocorrelation](/learn/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
+| [Band-pass filter](/learn/signal-processing/band-pass-filter/) | Keeping one band of frequencies |
+| [Bode plot](/learn/signal-processing/bode-plot/) | Reading a filter's frequency response: gain and phase |
+| [Convolution](/learn/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
+| [Envelope detector circuit](/learn/signal-processing/envelope-detector-circuit/) | Recovering an AM signal's envelope with a diode and an RC filter |
+| [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
+| [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/) | Windowed-sinc and Butterworth design compared |
+| [Fourier series](/learn/signal-processing/fourier-series/) | Building a repeating wave from harmonics |
+| [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
+| [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Hilbert transform](/learn/signal-processing/hilbert-transform/) | Envelope detection, and instantaneous phase and frequency |
+| [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
+| [Notch filter](/learn/signal-processing/notch-filter/) | Removing mains hum and other single tones |
+| [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
+| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
+| [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
+| [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
 
 <LearnCta position="bottom" />

@@ -70,37 +70,37 @@ related: [donut-chart, bar-chart, treemap, sunburst-chart]
 
 ## What is a pie chart?
 
-A **pie chart** (also called a pie graph or circle chart) is a circular chart divided into **slices**, where each slice shows one category's **share of a whole**. The slices always add up to **100%**, and each slice's angle, arc and area grow with its value, so the biggest share gets the biggest slice.
+A **pie chart** (also called a pie graph or circle chart) is a circular chart divided into **slices**, where each slice shows one category's share of a whole. The slices always add up to 100%, and each slice's angle, arc and area grow with its value, so the biggest share gets the biggest slice.
 
 ![A pie chart of a £3,000 monthly household budget in five slices: Housing 40%, Food 18%, Transport 13%, Savings 12% and Other 17%, with a legend naming each slice](/img/learn/pie-chart-og.png)
 
 *A pie chart of a monthly household budget (sample data). [Try the interactive version](#how-to-create-a-pie-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A pie chart shows **parts of one whole**: the slices must add up to 100%.
-- Each slice's angle is its share of 360°: **angle = value ÷ total × 360°**.
-- It works best with **about five slices or fewer** and one clear message, such as "housing is 40% of the budget".
-- When parts are **close in size**, or you need to **rank or compare** them, a bar chart is easier to read.
-- Avoid **3D**, unsorted slices and pies that don't sum to a meaningful total.
+- A pie chart shows parts of one whole: the slices must add up to 100%.
+- Each slice's angle is its share of 360°: angle = value ÷ total × 360°.
+- It works best with about five slices or fewer and one clear message, such as "housing is 40% of the budget".
+- When parts are close in size, or you need to rank or compare them, a bar chart is easier to read.
+- Avoid 3D, unsorted slices and pies that don't sum to a meaningful total.
 :::
 
 ## How to read a pie chart
 
 ![Anatomy of a pie chart: four slices of a household budget, with the slice, its percentage label, its angle, the legend and the whole circle labelled](./pie-chart-anatomy.svg)
 
-1. **Find the whole.** The full circle is the total: all of the budget, all of the votes or all of the sales. Check the title to see what that total is.
-2. **Match each slice to its category,** using the label on the slice or the legend.
-3. **Judge the size of each slice.** A half-circle is 50% and a quarter is 25%. Research on pie charts suggests readers judge a slice mostly by the length of its outer edge (its arc) and its area, rather than the angle at the centre.
-4. **Read the labels for exact values.** People estimate angles and areas less accurately than lengths, so without percentage labels most readers can only guess at anything that isn't close to a quarter or a half.
-5. **Note the order.** Most well-made pie charts start at 12 o'clock and run clockwise, largest slice first, so the biggest share is the first one you see.
+1. Find the whole. The full circle is the total: all of the budget, all of the votes or all of the sales. Check the title to see what that total is.
+2. Match each slice to its category, using the label on the slice or the legend.
+3. Judge the size of each slice. A half-circle is 50% and a quarter is 25%. Research on pie charts suggests readers judge a slice mostly by the length of its outer edge (its arc) and its area, rather than the angle at the centre.
+4. Read the labels for exact values. People estimate angles and areas less accurately than lengths, so without percentage labels most readers can only guess at anything that isn't close to a quarter or a half.
+5. Note the order. Most well-made pie charts start at 12 o'clock and run clockwise, largest slice first, so the biggest share is the first one you see.
 
 ## How to calculate pie chart slices
 
 To draw a pie chart, or to check one, turn each value into a percentage and an angle:
 
-> **Share** = value ÷ total · **Percentage** = share × 100 · **Angle** = share × 360°
+> Share = value ÷ total · Percentage = share × 100 · Angle = share × 360°
 
-**Worked example,** using the £3,000 monthly budget in the chart above:
+Worked example, using the £3,000 monthly budget in the chart above:
 
 | Category | Value | Share of total | Angle |
 | --- | ---: | ---: | ---: |
@@ -109,12 +109,12 @@ To draw a pie chart, or to check one, turn each value into a percentage and an a
 | Transport | £400 | 13.3% | 48° |
 | Savings | £350 | 11.7% | 42° |
 | Other | £500 | 16.7% | 60° |
-| **Total** | **£3,000** | **100%** | **360°** |
+| Total | £3,000 | 100% | 360° |
 
 Two things to check before you draw it:
 
-- **The angles add up to 360°** and the percentages to 100%. If they don't, a category is missing or the parts overlap.
-- **Rounding can make labels add up to 99% or 101%.** Here, the rounded labels (40, 18, 13, 12 and 17) happen to sum to 100. If yours don't, show one decimal place or add a note that figures are rounded.
+- The angles add up to 360° and the percentages to 100%. If they don't, a category is missing or the parts overlap.
+- Rounding can make labels add up to 99% or 101%. Here, the rounded labels (40, 18, 13, 12 and 17) happen to sum to 100. If yours don't, show one decimal place or add a note that figures are rounded.
 
 A charting library does this arithmetic for you: you pass the raw values (£1,200, £550 and so on) and it sizes the slices.
 
@@ -122,9 +122,9 @@ A charting library does this arithmetic for you: you pass the raw values (£1,20
 
 For a report, a caption or a class answer, lead with the biggest share and then put the rest in context:
 
-> The largest share of **[the whole]** is **[category]**, at **[x]%**, followed by **[category]** at **[y]%**. Together they make up **[x + y]%**. The smallest share is **[category]**, at **[z]%**.
+> The largest share of [the whole] is [category], at [x]%, followed by [category] at [y]%. Together they make up [x + y]%. The smallest share is [category], at [z]%.
 
-**Worked example:** "Housing takes the largest share of the £3,000 monthly budget, at 40%, followed by food at 18%. Together they make up 58% of spending. Savings is the smallest share, at 12%."
+Worked example: "Housing takes the largest share of the £3,000 monthly budget, at 40%, followed by food at 18%. Together they make up 58% of spending. Savings is the smallest share, at 12%."
 
 ## Types of pie chart
 
@@ -132,7 +132,7 @@ For a report, a caption or a class answer, lead with the biggest share and then 
 | --- | --- | --- |
 | Standard pie chart | A full circle split into slices | You have a few parts of one whole |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) | A pie chart with a hole in the middle | You want a total or label in the centre, or a lighter look on a dashboard |
-| Exploded pie chart | One or more slices pulled out from the centre | You want to draw attention to one slice (click a slice in the live chart below to try it) |
+| Exploded pie chart | One or more slices pulled out from the centre | You want to draw attention to one slice |
 | 3D pie chart | A pie tilted and given depth | Rarely: the perspective makes front slices look bigger than equal slices at the back |
 | Multi-level or nested pie chart ([sunburst](/2d-charts/chart-types/polar-sunburst-chart/)) | Rings of slices, where each outer ring splits the slice inside it | Your data is a hierarchy, such as region, then country |
 | Half pie chart or half donut chart | Only the top half of a circle or ring, like a dial | Space is tight, such as a dashboard tile. The half circle stands for 100%, so readers have to rescale what they see |
@@ -140,11 +140,11 @@ For a report, a caption or a class answer, lead with the biggest share and then 
 
 ## When to use a pie chart
 
-Use a pie chart when you have **one total split into a few parts**, and the main message is **how big one part is compared with the whole**: "housing is 40% of the budget", "most respondents said yes".
+Use a pie chart when you have one total split into a few parts, and the main message is how big one part is compared with the whole: "housing is 40% of the budget", "most respondents said yes".
 
 | Chart | Best for |
 | --- | --- |
-| **Pie chart** | A few parts of one whole, with one or two dominant shares |
+| Pie chart | A few parts of one whole, with one or two dominant shares |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) | The same as a pie chart, with room for a total or label in the centre |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values accurately, many categories, or values that don't add up to a whole |
 | [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) | Comparing how the split of a whole changes across several groups or periods |
@@ -155,11 +155,11 @@ Answer each question. If any answer is "no", the right-hand column suggests a be
 
 | Question | If the answer is no |
 | --- | --- |
-| Do the values add up to **one meaningful whole**, with no overlap? (Multiple-choice survey answers usually don't.) | Use a [bar chart](/learn/chart-types/cartesian/bar-chart/) |
-| Are all the values **positive**? A pie can't show a negative share, and zero values vanish. | Use a bar chart |
-| Are there **about five categories or fewer**, after grouping the smallest into "Other"? | Use a bar chart, sorted largest first |
-| Are the shares **clearly different** in size, with one or two that stand out? | Use a bar chart: close values are hard to rank in a pie |
-| Is this **one snapshot**, not a comparison of several groups or a change over time? | Use a [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) or a [line chart](/learn/chart-types/cartesian/line-chart/) |
+| Do the values add up to one meaningful whole, with no overlap? (Multiple-choice survey answers usually don't.) | Use a [bar chart](/learn/chart-types/cartesian/bar-chart/) |
+| Are all the values positive? A pie can't show a negative share, and zero values vanish. | Use a bar chart |
+| Are there about five categories or fewer, after grouping the smallest into "Other"? | Use a bar chart, sorted largest first |
+| Are the shares clearly different in size, with one or two that stand out? | Use a bar chart: close values are hard to rank in a pie |
+| Is this one snapshot, not a comparison of several groups or a change over time? | Use a [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) or a [line chart](/learn/chart-types/cartesian/line-chart/) |
 
 ## Pie chart vs bar chart: the same data both ways
 
@@ -167,19 +167,16 @@ The picture below shows the same four survey results twice. In the pie chart, wi
 
 ![The same four values shown twice. Left: an unlabelled pie chart of favourite seasons, where the four slices (Spring 23%, Summer 26%, Autumn 27%, Winter 24%) look almost equal. Right: a sorted bar chart of the same data, where Autumn is clearly longest and Spring shortest](./pie-vs-bar-same-data.svg)
 
-That's the core trade-off. A pie chart makes **"part of a whole"** obvious, because the slices visibly fill one circle. A bar chart makes **"which is bigger, and by how much"** obvious, because people compare lengths along a common baseline more accurately than angles or areas.
+A pie chart makes "part of a whole" obvious, because the slices visibly fill one circle. A bar chart makes "which is bigger, and by how much" obvious, because people compare lengths along a common baseline more accurately than angles or areas.
 
 ## Common pie chart mistakes
 
-Good pie chart design is mostly a matter of avoiding these mistakes. Use this as a checklist before you publish a pie chart:
+Use this as a checklist before you publish a pie chart:
 
 - **Too many slices.** Thin slivers can't be compared or labelled. Group small categories into "Other", placed last, or switch to a bar chart.
-- **Slices that don't make a whole.** If people could pick more than one answer, or a category is missing, the slices don't sum to 100% and the chart misleads.
-- **3D or tilted pies.** Perspective distorts the slices, so a front slice looks bigger than an equal one at the back.
 - **Random order.** Sort the slices largest first, starting at 12 o'clock, unless the categories have a natural order (such as age groups).
 - **Colour-only matching.** A legend forces readers to match colours back and forth. Label slices directly where they fit, and don't rely on colour alone for readers with colour-vision deficiency.
 - **No percentages.** Without labels, readers can only estimate. Add the percentage, and the value if it matters.
-- **Several pies side by side.** Comparing slices across separate pies is hard. A 100% stacked column chart or a grouped bar chart compares groups more clearly.
 
 ## How to create a pie chart in JavaScript, React or Angular
 
@@ -272,9 +269,9 @@ Here are three pie chart examples using real-world shares. Each picture opens th
 
 | Example | What it shows |
 | --- | --- |
-| <a href="https://www.scichart.com/demo/javascript/pie-chart"><img src={require("@site/static/img/learn/examples/javascript-pie-chart.jpg").default} alt="A pie chart of mobile phone makers' market share in 2022, with two large slices of about 29% each, many thin slices and a legend" width="240" /></a> | **Market share: a pie chart with many slices.** The share of mobile phones sold by each maker in 2022. Two makers hold about 29% each, which the pie shows well; the thin slices further round show why many charts group small categories into "Other". [JavaScript pie chart](https://www.scichart.com/demo/javascript/pie-chart) |
-| <a href="https://www.scichart.com/demo/javascript/donut-chart"><img src={require("@site/static/img/learn/examples/javascript-donut-chart.jpg").default} alt="A donut chart of web browser market share in 2022, where one browser takes about two thirds of the ring" width="240" /></a> | **Browser use: a donut chart.** The market share of web browsers in 2022. One browser takes about two thirds of the ring, the kind of single dominant share a pie or donut chart makes obvious at a glance. [JavaScript donut chart](https://www.scichart.com/demo/javascript/donut-chart) |
-| <a href="https://www.scichart.com/demo/javascript/polar-pie-chart"><img src={require("@site/static/img/learn/examples/javascript-polar-pie-chart.jpg").default} alt="A pie chart of the most popular JavaScript frameworks in 2024, with each slice labelled inside" width="240" /></a> | **Framework popularity: a labelled pie chart.** The most popular JavaScript frameworks in 2024, as shares of one whole. Each slice carries its name, so readers don't have to match colours to a legend. [JavaScript polar pie chart](https://www.scichart.com/demo/javascript/polar-pie-chart) |
+| <a href="https://www.scichart.com/demo/javascript/pie-chart"><img src={require("@site/static/img/learn/examples/javascript-pie-chart.jpg").default} alt="A pie chart of mobile phone makers' market share in 2022, with two large slices of about 29% each, many thin slices and a legend" width="240" /></a> | Market share: a pie chart with many slices. The share of mobile phones sold by each maker in 2022. Two makers hold about 29% each, which the pie shows well; the thin slices further round show why many charts group small categories into "Other". [JavaScript pie chart](https://www.scichart.com/demo/javascript/pie-chart) |
+| <a href="https://www.scichart.com/demo/javascript/donut-chart"><img src={require("@site/static/img/learn/examples/javascript-donut-chart.jpg").default} alt="A donut chart of web browser market share in 2022, where one browser takes about two thirds of the ring" width="240" /></a> | Browser use: a donut chart. The market share of web browsers in 2022. One browser takes about two thirds of the ring, the kind of single dominant share a pie or donut chart makes obvious at a glance. [JavaScript donut chart](https://www.scichart.com/demo/javascript/donut-chart) |
+| <a href="https://www.scichart.com/demo/javascript/polar-pie-chart"><img src={require("@site/static/img/learn/examples/javascript-polar-pie-chart.jpg").default} alt="A pie chart of the most popular JavaScript frameworks in 2024, with each slice labelled inside" width="240" /></a> | Framework popularity: a labelled pie chart. The most popular JavaScript frameworks in 2024, as shares of one whole. Each slice carries its name, so readers don't have to match colours to a legend. [JavaScript polar pie chart](https://www.scichart.com/demo/javascript/polar-pie-chart) |
 
 ## Frequently asked questions
 
