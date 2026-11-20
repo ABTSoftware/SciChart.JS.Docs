@@ -1,5 +1,5 @@
 ---
-sidebar_position: 46
+sidebar_position: 80
 sidebar_label: FIR vs IIR Filters
 title: "FIR vs IIR Filters: Differences, Windowed-Sinc and Butterworth Design (With Interactive Examples)"
 description: "What FIR and IIR digital filters are, how they differ, how to design a windowed-sinc FIR filter and a Butterworth IIR filter, and which to choose. Live demo."
@@ -68,18 +68,18 @@ related: [low-pass-filter, high-pass-filter, band-pass-filter, bode-plot]
 
 ## What are FIR and IIR filters?
 
-**FIR** (finite impulse response) and **IIR** (infinite impulse response) filters are the two families of **digital filter**. An FIR filter computes each output only from recent inputs, so its memory of any input ends. An IIR filter also feeds back its own past outputs, so its memory fades but never ends. FIR filters are always stable; IIR filters need fewer calculations.
+**FIR** (finite impulse response) and **IIR** (infinite impulse response) filters are the two families of digital filter. An FIR filter computes each output only from recent inputs, so its memory of any input ends. An IIR filter also feeds back its own past outputs, so its memory fades but never ends. FIR filters are always stable; IIR filters need fewer calculations.
 
 ![Four charts comparing a windowed-sinc FIR filter and a Butterworth IIR filter with the same cutoff: magnitude response in dB against log frequency, group delay, impulse response, and a noisy pulse after each filter](/img/learn/fir-vs-iir-filters-og.png)
 
 *A windowed-sinc FIR filter (blue) and a Butterworth IIR filter (orange) with the same cutoff: magnitude, group delay, impulse response and the effect on a pulse. [Try the interactive version](#how-to-apply-fir-and-iir-filters-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- **FIR = feed-forward only.** Its impulse response is a finite list of taps, it is always stable, and a symmetric kernel gives **linear phase** (every frequency is delayed equally).
-- **IIR = feedback.** Its impulse response decays for ever. It reaches a given sharpness with **far fewer multiplications**, but its delay changes with frequency.
-- The **windowed-sinc** method designs an FIR filter in four steps: sinc, truncate, window, normalise. High-pass and band-pass filters come from the same recipe.
-- A **Butterworth** filter is maximally flat, −3 dB at the cutoff, and rolls off at **20 dB per decade per order**. Digitally, it is built from **biquads** via the bilinear transform.
-- **Choose FIR** when phase matters or the filter must adapt; **choose IIR** for low cost and low latency on live data.
+- FIR = feed-forward only. Its impulse response is a finite list of taps, it is always stable, and a symmetric kernel gives linear phase (every frequency is delayed equally).
+- IIR = feedback. Its impulse response decays for ever. It reaches a given sharpness with far fewer multiplications, but its delay changes with frequency.
+- The windowed-sinc method designs an FIR filter in four steps: sinc, truncate, window, normalise. High-pass and band-pass filters come from the same recipe.
+- A Butterworth filter is maximally flat, −3 dB at the cutoff, and rolls off at 20 dB per decade per order. Digitally, it is built from biquads via the bilinear transform.
+- Choose FIR when phase matters or the filter must adapt; choose IIR for low cost and low latency on live data.
 :::
 
 ## How FIR and IIR filters work
@@ -98,12 +98,41 @@ The $b_k$ are the **feed-forward** coefficients and the $a_k$ the **feedback** c
 
 The names come from what each does with a single unit pulse (an **impulse**) at the input:
 
-- **FIR:** the pulse walks down the delay line, picking up each weight in turn, and is gone after $M+1$ samples. The output is the list of weights itself, so an FIR filter's **impulse response is its coefficients**, and applying it is a [convolution](/learn/signal-processing/convolution/) of the signal with those taps.
+- **FIR:** the pulse walks down the delay line, picking up each weight in turn, and is gone after $M+1$ samples. The output is the list of weights itself, so an FIR filter's impulse response is its coefficients, and applying it is a [convolution](/learn/signal-processing/convolution/) of the signal with those taps.
 - **IIR:** the pulse comes out, is fed back in, comes out again a little smaller, and so on. The response decays like a ringing bell but, mathematically, never reaches exactly zero.
 
-In the z-domain, the transfer function is $H(z) = B(z)/A(z)$. The roots of $B(z)$ are the filter's **zeros** and the roots of $A(z)$ its **poles**. An FIR filter has only zeros (all its poles are at the origin), which is why it can't become unstable. An IIR filter is stable only if every pole lies **inside the unit circle**; a pole on or outside it makes the output ring for ever or grow without limit.
+In the z-domain (the algebra of sampled signals, in which $z^{-1}$ stands for a one-sample delay), the transfer function is $H(z) = B(z)/A(z)$. The roots of $B(z)$ are the filter's **zeros**, values of $z$ where $H$ is zero, and the roots of $A(z)$ its **poles**, values where $H$ becomes infinite. An FIR filter has only zeros (all its poles are at the origin), so it can't become unstable. An IIR filter is stable only if every pole lies inside the **unit circle**, the circle of radius 1 on which each frequency, from 0 Hz up to the sample rate, is a point; a pole on or outside it makes the output ring for ever or grow without limit.
 
 To see what a filter does to each frequency, evaluate $H$ around the unit circle and plot the gain and phase: the [Bode plot](/learn/signal-processing/bode-plot/) of the filter.
+
+## FIR vs IIR filter: which should you use?
+
+| | FIR filter | IIR filter |
+| --- | --- | --- |
+| Structure | Feed-forward only | Feed-forward plus feedback |
+| Impulse response | Finite: exactly $M + 1$ samples | Infinite: decays, never quite ends |
+| Stability | Always stable | Stable only if every pole is inside the unit circle |
+| Phase | Linear phase with a symmetric kernel: no phase distortion | Non-linear: different frequencies are delayed by different amounts |
+| Delay (latency) | $M/2$ samples, the same at every frequency; long for sharp filters | Short at low frequencies, peaking near the cutoff |
+| Multiplications per sample | One per tap (about half with a symmetric kernel); tens to hundreds, more as the transition narrows | About five per biquad, so 10 to 20 for common orders; fewest with Chebyshev and elliptic designs |
+| Numerical sensitivity | Low; quantised taps only add small ripples | Higher; needs biquads, and care in fixed point |
+| Design | Windowed-sinc, least squares, Parks–McClellan; any shape | From analogue prototypes (Butterworth, Chebyshev, elliptic, Bessel) |
+| Adaptive filtering | The usual choice (e.g. LMS echo cancellers), since it can't go unstable | Rarely used |
+| Analogue equivalent | Tapped delay lines and surface acoustic wave (SAW) filters, mainly at radio frequencies | RC, LC and op-amp filters, which IIR designs model directly |
+| Best for | Audio and measurement where shape and phase matter; offline analysis; adaptive filters | Real-time control, sensors, microcontrollers, audio EQ; anything on a tight budget |
+
+Anti-aliasing filters are a common case where the choice is made for you: the filter in front of an analogue-to-digital converter has to be analogue, so it is usually a Butterworth, Chebyshev, elliptic or Bessel design. Inside the digital part of an oversampling converter, the decimation filters are usually FIR. See [anti-aliasing filters and oversampling](/learn/signal-processing/nyquist-and-aliasing/#anti-aliasing-filters-and-oversampling).
+
+### Worked comparison
+
+Take a 1 kHz sample rate, a low-pass with −3 dB at 50 Hz, and at least 40 dB of rejection from 100 Hz up:
+
+| Design | Size | Multiplications per sample | Delay |
+| --- | --- | --- | --- |
+| FIR, windowed-sinc, Hamming window | 39 taps | 39 (20 using symmetry) | 19 ms at every frequency |
+| IIR, 7th-order Butterworth | 3 biquads + 1 first-order section | 18 | 14 ms at low frequencies, rising to about 25 ms near the cutoff |
+
+For a gentle spec like this, the two are close. Tighten it to −60 dB from 60 Hz and the FIR filter needs about 305 taps with a Blackman window, a 152 ms delay; a Butterworth filter would need order 38, and that is where Chebyshev and elliptic IIR designs, with far lower orders, win. These figures come from the demo's design code.
 
 ## What is a sinc function?
 
@@ -113,15 +142,15 @@ $$
 \operatorname{sinc}(x) = \frac{\sin(\pi x)}{\pi x}, \qquad \operatorname{sinc}(0) = 1
 $$
 
-It matters to filter design because it is the Fourier transform of a rectangle. An **ideal low-pass filter** has a rectangular frequency response: gain 1 up to the cutoff $f_c$ and 0 above it. Transform that rectangle back to the time domain and you get the filter's impulse response, a sinc:
+It is the Fourier transform of a rectangle, so it describes the ideal filter. An ideal low-pass filter has a rectangular frequency response: gain 1 up to the cutoff $f_c$ and 0 above it. Transform that rectangle back to the time domain and you get the filter's impulse response, a sinc:
 
 $$
 h[k] = 2 f_c \operatorname{sinc}(2 f_c k) = \frac{\sin(2\pi f_c k)}{\pi k}
 $$
 
-with $f_c$ given as a fraction of the sample rate (between 0 and 0.5). The same shape turns up in reverse, too: the spectrum of a short rectangular pulse is a sinc, which is why a rectangular window leaks into its neighbours in an [FFT](/learn/signal-processing/fast-fourier-transform/#windowing-and-spectral-leakage). A **sinc filter** in a delta-sigma converter is a related idea: a moving-average stage whose frequency response has the shape of a (periodic) sinc.
+with $f_c$ given as a fraction of the sample rate (between 0 and 0.5). The same shape turns up in reverse, too: the spectrum of a short rectangular pulse is a sinc, so a rectangular window leaks into its neighbours in an [FFT](/learn/signal-processing/fast-fourier-transform/#windowing-and-spectral-leakage). A sinc filter in a delta-sigma converter is a related idea: a moving-average stage whose frequency response has the shape of a (periodic) sinc.
 
-The catch is that the ideal sinc runs from minus infinity to plus infinity, and half of it comes before the impulse. No real filter can use it as it is, which is where windowing comes in. The [low-pass filter guide](/learn/signal-processing/low-pass-filter/#windowed-sinc-fir-filter) shows the result as one formula; the next section takes it step by step.
+The ideal sinc is infinite and non-causal (half of it comes before the impulse), so it must be truncated and windowed. The [low-pass filter guide](/learn/signal-processing/low-pass-filter/#windowed-sinc-fir-filter) shows the result as one formula; the next section takes it step by step.
 
 ## How to design an FIR filter: the windowed-sinc method
 
@@ -150,11 +179,11 @@ $$
 
 | Window | Stopband attenuation | Transition width (roughly) | Use it when |
 | --- | --- | --- | --- |
-| Rectangular (plain truncation) | About 21 dB | $0.9/M$ of the sample rate | Never for filtering, except to see why windows exist |
+| Rectangular (plain truncation) | About 21 dB | $0.9/M$ of the sample rate | Not for filtering |
 | Hamming | About 53 dB | $3.1/M$ | A good balance of sharpness and rejection |
-| Blackman | About 74 dB | $4.6/M$ | Deep rejection, at the cost of a wider transition |
+| Blackman | About 74 dB | $4.6/M$ | Deep rejection, with a wider transition |
 
-The transition widths are a guide (they depend on how you define the band edges), but the pattern holds: for the same number of taps, the window decides between a narrow transition and a deep stopband. With the windowed-sinc recipe, $f_c$ is the **half-amplitude point (−6 dB)** of the finished filter, not the −3 dB point a Butterworth filter uses. Switch the window in the demo below and watch the stopband ripples drop from about −20 dB to below −70 dB.
+The transition widths are a guide (they depend on how you define the band edges). For the same number of taps, the window decides between a narrow transition and a deep stopband. With the windowed-sinc recipe, $f_c$ is the half-amplitude point (−6 dB) of the finished filter, not the −3 dB point a Butterworth filter uses. Switch the window in the demo below and watch the stopband ripples drop from about −20 dB to below −70 dB.
 
 ### High-pass, band-pass and band-stop from the same recipe
 
@@ -167,22 +196,22 @@ Every other response comes from low-pass kernels of the same length:
 
 A windowed-sinc kernel is symmetric about its centre, so it has **linear phase**: it delays every frequency by exactly $M/2$ samples. Run offline and centred on each sample, it doesn't delay the signal at all.
 
-Other FIR design methods exist, such as **least-squares** and the **Parks–McClellan** (equiripple) algorithm, which get a given spec with fewer taps. The windowed-sinc method is the one to learn first: it fits in a dozen lines of code, and it's easy to see why it works.
+Other FIR design methods exist, such as least-squares and the Parks–McClellan (equiripple) algorithm, which get a given spec with fewer taps. The windowed-sinc method is the one to learn first: it fits in a dozen lines of code, and it's easy to see why it works.
 
 ## What is a Butterworth filter?
 
-A **Butterworth filter** is a filter designed to have the **flattest possible passband**, with no ripple at all, for its order. Stephen Butterworth described it in 1930. Its magnitude response, for order $n$ and cutoff $f_c$, is:
+A **Butterworth filter** is a filter designed to have the flattest possible passband, with no ripple at all, for its order. Stephen Butterworth described it in 1930. Its magnitude response, for order $n$ and cutoff $f_c$, is:
 
 $$
 |H(f)|^2 = \frac{1}{1 + (f/f_c)^{2n}}
 $$
 
-- At $f = f_c$ the gain is $1/\sqrt{2}$, **−3 dB, whatever the order**.
-- Far above the cutoff, the gain falls by **20n dB per decade** (about 6n dB per octave). A 2nd-order filter falls at 40 dB per decade, a 4th-order at 80.
+- At $f = f_c$ the gain is $1/\sqrt{2}$, −3 dB, whatever the order.
+- Far above the cutoff, the gain falls by 20n dB per decade (about 6n dB per octave). A 2nd-order filter falls at 40 dB per decade, a 4th-order at 80.
 - Below the cutoff, the first $2n - 1$ derivatives of $|H|^2$ are zero at 0 Hz. That is what "**maximally flat**" means.
-- Its poles sit evenly spaced on a half circle in the left half of the s-plane, at the angles $\pi(2k + n - 1)/(2n)$ for $k = 1 \dots n$.
+- Its poles sit evenly spaced on a half circle in the left half of the s-plane (the complex-frequency plane used for analogue filters), at the angles $\pi(2k + n - 1)/(2n)$ for $k = 1 \dots n$.
 
-Each pair of those poles is a **second-order section** with a quality factor $Q$. A 2nd-order Butterworth filter is one section with $Q = 1/\sqrt{2} \approx 0.7071$; a 4th-order filter is two sections, with $Q \approx 0.5412$ and $Q \approx 1.3066$. An odd order adds one first-order section.
+Each pair of those poles is a second-order section with a quality factor $Q$. A 2nd-order Butterworth filter is one section with $Q = 1/\sqrt{2} \approx 0.7071$; a 4th-order filter is two sections, with $Q \approx 0.5412$ and $Q \approx 1.3066$. An odd order adds one first-order section.
 
 ### How to choose a Butterworth filter's order
 
@@ -192,9 +221,9 @@ $$
 n \ge \frac{\log_{10}\left(10^{A/10} - 1\right)}{2 \log_{10}\left(f_{stop}/f_c\right)}
 $$
 
-rounded up. **Worked example:** for −40 dB at twice the cutoff, $n \ge \log_{10}(9999) / (2 \log_{10} 2) = 4.0/0.602 = 6.6$, so a **7th-order** filter. For a digital filter, use the prewarped ratio $\tan(\pi f_{stop}/f_s) / \tan(\pi f_c/f_s)$ instead of $f_{stop}/f_c$ (explained below). At a 1 kHz sample rate with $f_c = 50$ Hz and $f_{stop} = 100$ Hz, that gives 6.4, so order 7 again.
+rounded up. For example, for −40 dB at twice the cutoff, $n \ge \log_{10}(9999) / (2 \log_{10} 2) = 4.0/0.602 = 6.6$, so a 7th-order filter. For a digital filter, use the prewarped ratio $\tan(\pi f_{stop}/f_s) / \tan(\pi f_c/f_s)$ instead of $f_{stop}/f_c$ (explained below). At a 1 kHz sample rate with $f_c = 50$ Hz and $f_{stop} = 100$ Hz, that gives 6.4, so order 7 again.
 
-**Chebyshev**, **elliptic** and **Bessel** filters are the alternatives, with different trade-offs:
+Chebyshev, elliptic and Bessel filters are the alternatives, with different trade-offs:
 
 - **Chebyshev type I** allows ripple in the passband (type II in the stopband) for a steeper transition at the same order.
 - **Elliptic** (Cauer) filters ripple in both bands and give the steepest transition for a given order.
@@ -208,7 +237,7 @@ $$
 s = 2 f_s \, \frac{1 - z^{-1}}{1 + z^{-1}}
 $$
 
-It maps the whole analogue frequency axis onto the digital one from 0 to $f_s/2$, so a stable analogue filter always gives a stable digital filter, and nothing aliases. The price is that frequencies are squeezed, more so near $f_s/2$: an analogue frequency $\Omega$ lands at a digital frequency $f$ where $\Omega = 2 f_s \tan(\pi f / f_s)$. **Prewarping** corrects for that at the frequency that matters: design the analogue filter with its cutoff at $2 f_s \tan(\pi f_c / f_s)$, and the digital filter's −3 dB point lands exactly on $f_c$.
+It maps the whole analogue frequency axis onto the digital one from 0 to $f_s/2$, so a stable analogue filter always gives a stable digital filter, and nothing aliases. Frequencies are squeezed in the process, more so near $f_s/2$: an analogue frequency $\Omega$ lands at a digital frequency $f$ where $\Omega = 2 f_s \tan(\pi f / f_s)$. **Prewarping** corrects for that at the frequency that matters: design the analogue filter with its cutoff at $2 f_s \tan(\pi f_c / f_s)$, and the digital filter's −3 dB point lands exactly on $f_c$.
 
 For one second-order section with quality factor $Q$, writing $K = \tan(\pi f_c / f_s)$, the low-pass coefficients come out as:
 
@@ -216,57 +245,33 @@ $$
 b_0 = b_2 = \frac{K^2}{D}, \quad b_1 = 2b_0, \quad a_1 = \frac{2(K^2 - 1)}{D}, \quad a_2 = \frac{1 - K/Q + K^2}{D}, \quad D = 1 + K/Q + K^2
 $$
 
-and for a high-pass, $b_0 = b_2 = 1/D$ and $b_1 = -2/D$ with the same $a_1$ and $a_2$. **Worked example:** a 2nd-order Butterworth low-pass at 100 Hz, sampled at 1 kHz, has $K = \tan(0.1\pi) = 0.3249$ and gives
+and for a high-pass, $b_0 = b_2 = 1/D$ and $b_1 = -2/D$ with the same $a_1$ and $a_2$. For example, a 2nd-order Butterworth low-pass at 100 Hz, sampled at 1 kHz, has $K = \tan(0.1\pi) = 0.3249$ and gives
 
 $$
 b = [0.067455,\ 0.134911,\ 0.067455], \qquad a = [1,\ -1.142981,\ 0.412802]
 $$
 
-the same coefficients as the widely used audio-EQ "cookbook" formulas for $Q = 0.7071$.
+the same coefficients as the *Audio EQ Cookbook* formulas for $Q = 0.7071$.
 
-**Build higher orders as a chain of biquads.** Each pole pair becomes one second-order section (a **biquad**), and the sections run one after another, the output of one feeding the next. Expanding them into a single high-order difference equation is mathematically the same, but it isn't numerically: the roots of a long polynomial are extremely sensitive to rounding in its coefficients, and a high-order filter in that "direct form" can end up with a pole outside the unit circle. Cascaded second-order sections keep each pole pair's coefficients separate and well behaved.
+### Building higher-order IIR filters from biquads
 
-## FIR vs IIR filter: which should you use?
-
-| | FIR filter | IIR filter |
-| --- | --- | --- |
-| **Structure** | Feed-forward only | Feed-forward plus feedback |
-| **Impulse response** | Finite: exactly $M + 1$ samples | Infinite: decays, never quite ends |
-| **Stability** | Always stable | Stable only if every pole is inside the unit circle |
-| **Phase** | Linear phase with a symmetric kernel: no phase distortion | Non-linear: different frequencies are delayed by different amounts |
-| **Delay (latency)** | $M/2$ samples, the same at every frequency; long for sharp filters | Short at low frequencies, peaking near the cutoff |
-| **Multiplications per sample** | One per tap (about half with a symmetric kernel); tens to hundreds | About five per biquad, so 10 to 20 for common orders |
-| **Taps or order for a sharp cutoff** | Many; grows as the transition narrows | Few, especially for Chebyshev and elliptic designs |
-| **Numerical sensitivity** | Low; quantised taps only add small ripples | Higher; needs biquads, and care in fixed point |
-| **Design** | Windowed-sinc, least squares, Parks–McClellan; any shape | From analogue prototypes (Butterworth, Chebyshev, elliptic, Bessel) |
-| **Adaptive filtering** | The usual choice (e.g. LMS echo cancellers), since it can't go unstable | Rarely used |
-| **Analogue equivalent** | None | Yes: it models RC, LC and op-amp filters |
-| **Best for** | Audio and measurement where shape and phase matter; offline analysis; adaptive filters | Real-time control, sensors, microcontrollers, audio EQ; anything on a tight budget |
-
-**A worked comparison with real numbers.** Take a 1 kHz sample rate, a low-pass with −3 dB at 50 Hz, and at least 40 dB of rejection from 100 Hz up:
-
-| Design | Size | Multiplications per sample | Delay |
-| --- | --- | --- | --- |
-| FIR, windowed-sinc, Hamming window | 39 taps | 39 (20 using symmetry) | 19 ms at every frequency |
-| IIR, 7th-order Butterworth | 3 biquads + 1 first-order section | 18 | 14 ms at low frequencies, rising to about 25 ms near the cutoff |
-
-For a gentle spec like this, the two are close. Tighten it to −60 dB from 60 Hz and the FIR filter needs about 305 taps with a Blackman window, a 152 ms delay; a Butterworth filter would need order 38, and that is where Chebyshev and elliptic IIR designs, with far lower orders, win. These figures come from the same design code as the demo below; try the settings yourself.
-
-**Anti-aliasing filters** are a common case where the choice is made for you: the filter in front of an analogue-to-digital converter has to be analogue, so it is a Butterworth, Chebyshev, elliptic or Bessel design with no FIR equivalent. Inside the digital part of an oversampling converter, the decimation filters are usually FIR. See [anti-aliasing filters and oversampling](/learn/signal-processing/nyquist-and-aliasing/#anti-aliasing-filters-and-oversampling).
+Each pole pair becomes one second-order section (a **biquad**), and the sections run one after another, the output of one feeding the next. Expanding them into a single high-order difference equation is mathematically the same, but it isn't numerically: the roots of a long polynomial are extremely sensitive to rounding in its coefficients, and a high-order filter in that "direct form" can end up with a pole outside the unit circle. Cascaded second-order sections keep each pole pair's coefficients separate and well behaved.
 
 ## Phase, group delay and linear phase
 
 Every causal filter delays the signal. The useful measure is the **group delay**: how long the filter holds up the energy at each frequency, $\tau(f) = -\frac{1}{2\pi}\frac{d\varphi}{df}$, where $\varphi$ is the phase.
 
-- **A symmetric FIR filter has a constant group delay** of $M/2$ samples. Every frequency arrives together, so a pulse comes out the same shape, just later. That is **linear phase**.
-- **An IIR filter's group delay varies with frequency.** For a Butterworth low-pass it is smallest at low frequencies and peaks near the cutoff, and the peak grows with the order. At a 1 kHz sample rate and a 50 Hz cutoff, the delay at 1 Hz is about 3.2 ms (1st order), 4.5 ms (2nd), 8.3 ms (4th) and 16.2 ms (8th); the 4th-order filter's peaks at about 12.6 ms near the cutoff, and the 8th-order's at about 30 ms.
+- A symmetric FIR filter has a constant group delay of $M/2$ samples. Every frequency arrives together, so a pulse comes out the same shape, just later. That is linear phase.
+- An IIR filter's group delay varies with frequency. For a Butterworth low-pass it is smallest at low frequencies and peaks near the cutoff, and the peak grows with the order. At a 1 kHz sample rate and a 50 Hz cutoff, the delay at 1 Hz is about 3.2 ms (1st order), 4.5 ms (2nd), 8.3 ms (4th) and 16.2 ms (8th); the 4th-order filter's peaks at about 12.6 ms near the cutoff, and the 8th-order's at about 30 ms.
 
-Unequal delay is **phase distortion**. You can see it in the step response: the frequencies near the cutoff arrive late and pile up, so a Butterworth low-pass overshoots a step by about 4% at 2nd order, 11% at 4th and 16.5% at 8th. A windowed-sinc filter rings too, but symmetrically, before and after the edge. Watch the filtered pulse in the demo: the FIR output is the same shape on both edges; the IIR output is lopsided.
+Unequal delay is **phase distortion**. You can see it in the step response: the frequencies near the cutoff arrive late and pile up, so a Butterworth low-pass overshoots a step by about 4% at 2nd order, 11% at 4th and 16.5% at 8th. A windowed-sinc filter rings too, but symmetrically, before and after the edge. On a filtered pulse, the FIR output is the same shape on both edges, and the IIR output is lopsided.
 
-**Zero-phase filtering offline.** When the whole recording is available, you can remove the delay altogether:
+### Zero-phase filtering offline
+
+When the whole recording is available, you can remove the delay altogether:
 
 - **Forward-backward filtering** (`filtfilt` in MATLAB and SciPy): run an IIR filter forwards, then run it again backwards over the result. The phase shifts cancel exactly. The magnitude is applied twice, so the attenuation doubles in dB and the −3 dB point becomes −6 dB.
-- **Shift a symmetric FIR output** back by $M/2$ samples, or compute each output from the samples centred on it.
+- Shift a symmetric FIR output back by $M/2$ samples, or compute each output from the samples centred on it.
 
 Neither works in real time, because both need samples from the future.
 
@@ -276,7 +281,7 @@ Neither works in real time, because both need samples from the future.
 - **Forgetting phase distortion.** An IIR filter changes the shape of pulses, steps and heartbeats. If shape or timing matters (ECG, seismic picking, measuring edges), use a linear-phase FIR filter or zero-phase filtering.
 - **Using `filtfilt` and expecting the designed cutoff.** Forward-backward filtering doubles the attenuation, so the −3 dB point moves. Design for −1.5 dB at the cutoff, or correct for it.
 - **Too few taps.** A short windowed-sinc kernel can't make a sharp transition: the transition width is several times $f_s/M$. Check the response; don't trust the cutoff you typed.
-- **Comparing cutoffs defined differently.** A windowed-sinc $f_c$ is the −6 dB point, a Butterworth $f_c$ the −3 dB point, and some tools take the cutoff as a fraction of half the sample rate. The demo below reports each filter's measured −3 dB point.
+- **Comparing cutoffs defined differently.** A windowed-sinc $f_c$ is the −6 dB point, a Butterworth $f_c$ the −3 dB point, and some tools take the cutoff as a fraction of half the sample rate. Measure the −3 dB point of the finished filter.
 - **No window, or the wrong one.** Plain truncation leaves ripples only about 21 dB down, whatever the length. Use Hamming or Blackman.
 - **Forgetting the start-up transient.** Both kinds start from zero memory, so the first $M$ outputs of an FIR filter, and the first few time constants of an IIR filter, are not yet valid. Trim them, or start the filter from the first sample's value.
 - **Asking for a cutoff the sample rate can't support.** Cutoffs must be below $f_s/2$, and a bilinear-transform design warps badly near it. Leave a margin, or raise the sample rate.
@@ -482,7 +487,7 @@ Here is the code for this example. The JavaScript tab has the full windowed-sinc
 Key points:
 
 - **One design, many responses:** `windowedSincLowPass` builds the kernel; spectral inversion makes the high-pass, and the difference of two low-pass kernels the band-pass. `butterworthSections` returns one biquad per pole pair (plus a first-order section for an odd order), with the prewarped bilinear-transform coefficients.
-- **Your own filter on chart data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point in index order, from index 0 when it recalculates everything (on creation, or when `filterFunction` is set) and only for new points when data is appended. That suits both kinds: the FIR filter reads past inputs from the source series, and the IIR filter carries each biquad's state from one call to the next. If you **update** a single point of the source, `filterFunction` is called for that index alone, so set `filterFunction` again to recalculate the whole output.
+- **Your own filter on chart data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point in index order, from index 0 when it recalculates everything (on creation, or when `filterFunction` is set) and only for new points when data is appended. That suits both kinds: the FIR filter reads past inputs from the source series, and the IIR filter carries each biquad's state from one call to the next. If you update a single point of the source, `filterFunction` is called for that index alone, so set `filterFunction` again to recalculate the whole output.
 - **The response charts are plain JavaScript:** `responseAt` evaluates each section's polynomials at $e^{-j\omega k}$ to get the gain in dB and the group delay, drawn on a [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) like a Bode plot. The impulse responses are the FIR taps and the IIR filter's output for a single 1.
 - **Live updates:** each control calls `update()`, which redesigns both filters, refills the `XyDataSeries` with `clear()` and `appendRange()`, and sets new filter functions, so all four charts redraw at once.
 

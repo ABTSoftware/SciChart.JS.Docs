@@ -1,5 +1,5 @@
 ---
-sidebar_position: 80
+sidebar_position: 20
 sidebar_label: Autocorrelation and Cross-Correlation
 title: "Autocorrelation and Cross-Correlation: What They Are & How to Read Them (With Interactive Examples)"
 description: "Autocorrelation and cross-correlation explained: the formulas, a worked example, how to read an ACF plot, finding a period or a time delay, and fast correlation with the FFT. Live example."
@@ -77,28 +77,28 @@ related: [convolution, power-spectral-density, fast-fourier-transform, hilbert-t
 *A noisy 125 Hz voice-like signal (top) and its autocorrelation (bottom): the first peak after lag 0 sits at its period, 8 ms. [Try the interactive version](#how-to-calculate-and-chart-autocorrelation-in-javascript-react-or-angular), where you can change the pitch, the noise and the lag, or switch to finding a delay.*
 
 :::tip Key takeaways
-- Correlation answers one question at every lag: **how well do these two series match when one is shifted by this much?**
-- **Autocorrelation** finds repetition: a signal's **period**, a voice's **pitch**, a heart rate or a seasonal cycle.
-- **Cross-correlation** finds **delay**: the peak's lag is how far one signal trails the other, which is how sonar, GPS and echo location measure distance.
-- An **ACF plot** (correlogram) shows the autocorrelation at each lag, with a band of about $\pm 1.96/\sqrt{N}$ that pure noise stays inside.
-- It's convolution without the flip, so the **FFT** can compute it fast, and the autocorrelation's Fourier transform is the **power spectrum**.
+- Correlation answers one question at every lag: how well do these two series match when one is shifted by this much?
+- Autocorrelation finds repetition: a signal's period, a voice's pitch, a heart rate or a seasonal cycle.
+- Cross-correlation finds delay: the peak's lag is how far one signal trails the other, which is how sonar, GPS and echo location measure distance.
+- An ACF plot (correlogram) shows the autocorrelation at each lag, with a band of about $\pm 1.96/\sqrt{N}$ that pure noise stays inside.
+- It's convolution without the flip, so the FFT can compute it fast, and the autocorrelation's Fourier transform is the power spectrum.
 :::
 
 ## How autocorrelation and cross-correlation work: shift, multiply and sum
 
 Take a signal and lay a copy of it on top. At a lag of zero the two are identical, so every product is a value times itself, and the sum is as large as it can be. Now slide the copy along by one sample and do it again: multiply each value by the value now underneath it, and add the products. Repeat for lag 2, lag 3 and so on.
 
-- Where the peaks of the copy land on peaks of the original, the products are large and positive, and the sum is high: **a match**.
-- Where peaks land on troughs, the products are negative: **an anti-match**.
-- Where the two have nothing to do with each other, positive and negative products cancel out, and the sum is **near zero**.
+- Where the peaks of the copy land on peaks of the original, the products are large and positive, and the sum is high: a match.
+- Where peaks land on troughs, the products are negative: an anti-match.
+- Where the two have nothing to do with each other, positive and negative products cancel out, and the sum is near zero.
 
-A repeating signal matches itself again each time the copy has moved by a whole period, so its autocorrelation rises to a new peak at the period, twice the period and so on. That's how you read a period off the chart: it's the lag of the first peak after lag 0.
+A repeating signal matches itself again each time the copy has moved by a whole period, so its autocorrelation rises to a new peak at the period, twice the period and so on. The period is the lag of the first peak after lag 0.
 
 ![Three panels: a signal of three spikes three samples apart, a copy of it shifted by three samples whose spikes line up with the original, and the autocorrelation at lags 0 to 8, which is 1 at lag 0, negative at lags 1 and 2, and peaks at lag 3 and again at lag 6](./autocorrelation-shift-multiply-sum.svg)
 
-**Cross-correlation** slides a different signal along instead. If $y$ is a recording that contains a delayed copy of $x$, sliding $x$ along $y$ gives a peak at the lag where the copy sits. That lag is the delay.
+Cross-correlation slides a different signal along instead. If $y$ is a recording that contains a delayed copy of $x$, sliding $x$ along $y$ gives a peak at the lag where the copy sits. That lag is the delay.
 
-**Like convolution, without the flip.** [Convolution](/learn/signal-processing/convolution/) also slides, multiplies and sums, but it reverses the kernel first. Correlation leaves it the right way round, because the question is different: convolution models what a system does to a signal, while correlation measures how alike two signals are at each shift.
+Correlation is [convolution](/learn/signal-processing/convolution/) without the flip. Convolution also slides, multiplies and sums, but it reverses the kernel first. Correlation leaves it the right way round, because the question is different: convolution models what a system does to a signal, while correlation measures how alike two signals are at each shift.
 
 ## The autocorrelation formula
 
@@ -114,17 +114,19 @@ $$
 r_k = \frac{c_k}{c_0}
 $$
 
-**Biased or unbiased?** The formula above divides by $N$ at every lag, even though fewer products are summed as the lag grows. This is the **biased** estimate, the standard one in statistics and the one an ACF plot normally shows. Because it divides by more than the number of products, it shrinks towards zero at large lags. The **unbiased** estimate divides by $N - k$ instead, which removes the taper but makes large lags noisy, since they average only a few products. Use lags up to about $N/4$ with either.
+### Biased vs unbiased autocorrelation
 
-**Cross-correlation** of a reference $x$ with a second signal $y$ uses the same sum with two different series. In the convention used on this page, lag $\ell$ means "$y$ shifted back by $\ell$":
+The formula above divides by $N$ at every lag, even though fewer products are summed as the lag grows. This is the **biased** estimate, the standard one in statistics and the one an ACF plot normally shows. Because it divides by more than the number of products, it shrinks towards zero at large lags. The **unbiased** estimate divides by $N - k$ instead, which removes the taper but makes large lags noisy, since they average only a few products. Use lags up to about $N/4$ with either.
+
+Cross-correlation of a reference $x$ with a second signal $y$ uses the same sum with two different series. In the convention used on this page, lag $\ell$ means "$y$ shifted back by $\ell$":
 
 $$
 r_{xy}[\ell] = \sum_{n} x[n]\, y[n+\ell]
 $$
 
-If $y$ is $x$ delayed by $D$ samples, this peaks at $\ell = D$. Dividing by $\sqrt{\sum x^2 \sum y^2}$, after removing the means, scales it from $-1$ to $1$. When you search for a short pattern in a long recording, the **normalised cross-correlation** used in the live example goes one step further: at each lag it computes the Pearson correlation coefficient between the pattern and the stretch of signal underneath it, so a quiet echo and a loud one both score near 1 if their shapes match.
+If $y$ is $x$ delayed by $D$ samples, this peaks at $\ell = D$. Dividing by $\sqrt{\sum x^2 \sum y^2}$, after removing the means, scales it from $-1$ to $1$. When you search for a short pattern in a long recording, the **normalised cross-correlation** goes one step further: at each lag it computes the Pearson correlation coefficient between the pattern and the stretch of signal underneath it, so a quiet echo and a loud one both score near 1 if their shapes match.
 
-**Continuous signals.** For a function of continuous time, the sum becomes an integral: $R_{xx}(\tau) = \int x(t)\, x(t+\tau)\, dt$, where $\tau$ is the lag. For a random process, it is defined as an expected value instead, $E[x(t)\, x(t+\tau)]$; the formulas above estimate it from one recording.
+For a function of continuous time, the sum becomes an integral: $R_{xx}(\tau) = \int x(t)\, x(t+\tau)\, dt$, where $\tau$ is the lag. For a random process, it is defined as an expected value instead, $E[x(t)\, x(t+\tau)]$; the formulas above estimate it from one recording.
 
 ## Autocorrelation example, step by step
 
@@ -132,19 +134,19 @@ Take nine samples with a spike every three: $x = [0, 3, 0, 0, 3, 0, 0, 3, 0]$. I
 
 | Lag k | Pairs summed (N − k) | Sum of products | Biased r[k] (sum ÷ 18) | Unbiased r[k] |
 | --- | --- | --- | --- | --- |
-| 0 | 9 | 18 | **1.00** | 1.00 |
+| 0 | 9 | 18 | 1.00 | 1.00 |
 | 1 | 8 | −10 | −0.56 | −0.63 |
 | 2 | 7 | −5 | −0.28 | −0.36 |
-| 3 | 6 | 12 | **0.67** | **1.00** |
+| 3 | 6 | 12 | 0.67 | 1.00 |
 | 4 | 5 | −7 | −0.39 | −0.70 |
 | 5 | 4 | −2 | −0.11 | −0.25 |
 | 6 | 3 | 6 | 0.33 | 1.00 |
 
 The unbiased column divides each sum by its own number of pairs, then by the lag-0 value on the same basis (18 ÷ 9 = 2). So at lag 3 it is $(12 \div 6) \div 2 = 1$.
 
-**Reading it:** the ACF is 1 at lag 0, goes negative while the spikes are out of step, and peaks at lag 3: **the period is 3 samples**. It peaks again at lag 6, at twice the period.
+The ACF is 1 at lag 0, goes negative while the spikes are out of step, and peaks at lag 3, so the period is 3 samples. It peaks again at lag 6, at twice the period.
 
-**Biased vs unbiased in action:** the signal repeats perfectly, so the unbiased estimate gives exactly 1 at every multiple of the period, while the biased one tapers (0.67, then 0.33) because it divides 6 and then 3 products by 9. The taper is why the first repeat stands out in a biased ACF, and why the biased version is used for finding periods.
+The signal repeats perfectly, so the unbiased estimate gives exactly 1 at every multiple of the period, while the biased one tapers (0.67, then 0.33) because it divides 6 and then 3 products by 9. The biased version is still the usual choice for finding periods and estimating spectra: it is less noisy at large lags, and it always gives a valid (positive semi-definite) autocorrelation, which the unbiased one does not.
 
 ## Properties of autocorrelation
 
@@ -168,44 +170,50 @@ $$
 
 which is where 95% of the bars would fall if the series were pure white noise. For 400 observations that's about $\pm 0.1$. Bars outside the band are unlikely to be chance. Some tools widen the band at larger lags, using Bartlett's formula, to allow for the bars before them.
 
+Reading the bars assumes the series is **stationary**: its mean and variance don't change over time.
+
 | What you see | What it suggests |
 | --- | --- |
-| One bar at lag 0, everything else inside the band | **White noise**: no memory, nothing left to model |
-| High at lag 1 and decaying slowly over many lags | A **trend** or a slowly wandering (non-stationary) series. Difference it (take each value minus the one before) and look again |
-| Peaks repeating at a regular lag, such as 12 for monthly data or 7 for daily | **Seasonality** or a **period**: the lag of the peaks is the cycle length |
-| Positive at lag 1, then dying away quickly | **Positive autocorrelation**: values come in runs (an AR-type process) |
-| Negative at lag 1, signs alternating | **Negative autocorrelation**: the series zigzags, each high followed by a low |
+| One bar at lag 0, everything else inside the band | White noise: no memory, nothing left to model |
+| High at lag 1 and decaying slowly over many lags | A trend or a slowly wandering (non-stationary) series. Difference it (take each value minus the one before) and look again |
+| Peaks repeating at a regular lag, such as 12 for monthly data or 7 for daily | Seasonality or a period: the lag of the peaks is the cycle length |
+| Positive at lag 1, then dying away quickly | Positive autocorrelation: values come in runs (an autoregressive, or AR, process) |
+| Negative at lag 1, signs alternating | Negative autocorrelation: the series zigzags, each high followed by a low |
 | A few significant lags, then a sharp cut to zero after lag q | A moving-average process of order q, MA(q) |
 
-**Stationarity first.** The ACF assumes the series' mean and variance don't change over time, called **stationarity**. A trend dominates the plot and hides everything else, so remove it before reading the ACF for anything subtler.
+A trend breaks that assumption: it dominates the plot and hides everything else, so remove it before reading the ACF for anything subtler.
 
-**The partial autocorrelation (PACF)** measures the link between values $k$ steps apart after removing the effect of the lags in between. A PACF that cuts off sharply after lag $p$ points to an autoregressive model of order $p$, AR(p). Time-series modellers read the ACF and PACF together to choose an ARIMA model.
+### Partial autocorrelation (PACF)
 
-**Formal tests.** The **Ljung–Box test** checks whether a group of lags is, taken together, larger than noise would give. The **Durbin–Watson statistic**, used on regression residuals, runs from 0 to 4 and is roughly $2(1 - r_1)$: about 2 means no lag-1 autocorrelation, near 0 strong positive, near 4 strong negative.
+The partial autocorrelation (PACF) measures the link between values $k$ steps apart after removing the effect of the lags in between. A PACF that cuts off sharply after lag $p$ points to an autoregressive model of order $p$, AR(p). Time-series modellers read the ACF and PACF together to choose an ARIMA model.
+
+### Ljung–Box and Durbin–Watson tests
+
+The **Ljung–Box test** checks whether a group of lags is, taken together, larger than noise would give. The **Durbin–Watson statistic**, used on regression residuals, runs from 0 to 4 and is roughly $2(1 - r_1)$: about 2 means no lag-1 autocorrelation, near 0 strong positive, near 4 strong negative.
 
 ## Cross-correlation and time-delay estimation
 
 To measure a delay, cross-correlate the signal you sent, or recorded at one point, with the signal received later, or recorded at another. The lag of the highest peak is the delay. Multiply it by the speed of the wave and you have a distance.
 
-- **Sonar, radar and ultrasound** send a known pulse, often a **chirp** that sweeps through a range of frequencies, and cross-correlate the echo with it. A chirp's autocorrelation has one narrow main peak, so its echoes give sharp, unambiguous peaks. Taking the [envelope](/learn/signal-processing/hilbert-transform/) of the correlation output turns each echo's ripple into one smooth peak that is easy to time.
-- **GPS** receivers correlate the incoming signal with a local copy of each satellite's code. The lag of the peak gives the signal's travel time, and from several satellites, the receiver's position.
-- **Microphone arrays and leak detectors** cross-correlate two sensors. The delay between them shows which side a sound came from, or where along a pipe a leak is.
-- **Finding a known pattern in noise.** Cross-correlating a recording with the pattern you expect is a **matched filter**. For a known shape in white noise, it gives the highest possible peak-to-noise ratio, which is why it's used in radar, communications and the detection of gravitational waves.
+- Sonar, radar and ultrasound send a known pulse, often a **chirp** that sweeps through a range of frequencies, and cross-correlate the echo with it. A chirp's autocorrelation has one narrow main peak, so its echoes give sharp, unambiguous peaks. Taking the [envelope](/learn/signal-processing/hilbert-transform/) of the correlation output turns each echo's ripple into one smooth peak that is easy to time.
+- GPS receivers correlate the incoming signal with a local copy of each satellite's code. The lag of the peak gives the signal's travel time, and from several satellites, the receiver's position.
+- Microphone arrays and leak detectors cross-correlate two sensors. The delay between them shows which side a sound came from, or where along a pipe a leak is.
+- Finding a known pattern in noise: cross-correlating a recording with the pattern you expect is a **matched filter**. For a known shape in white noise, it gives the highest possible peak-to-noise ratio, which is why it's used in radar, communications and the detection of gravitational waves.
 
-**Watch the sign.** Whether a delay shows up at $+D$ or $-D$ depends on which signal you shift, and libraries differ (see the FAQ). Test with a signal you have delayed on purpose before trusting the direction.
+Whether a delay shows up at $+D$ or $-D$ depends on which signal you shift, and libraries differ (see the FAQ). Test with a signal you have delayed on purpose before trusting the direction.
 
-**Sub-sample accuracy.** The peak's lag is a whole number of samples. Fitting a parabola through the highest point and its two neighbours estimates where the true peak lies between samples, as the live example does for the period.
+The peak's lag is a whole number of samples. For sub-sample accuracy, fit a parabola through the highest point and its two neighbours: its vertex estimates where the true peak lies between samples.
 
 ## What autocorrelation and cross-correlation are used for
 
-- **Pitch detection.** A voiced sound repeats once per vocal-fold cycle, so the first autocorrelation peak gives the pitch. Many tuners and speech tools use autocorrelation or a close variant.
-- **Heart rate.** An ECG repeats once per beat. The lag of the first autocorrelation peak is the time between beats, and 60 divided by it (in seconds) is beats per minute.
-- **Seasonality in time series.** Sales, energy use, web traffic and temperatures repeat daily, weekly or yearly, and the ACF shows at which lags.
-- **Checking a model.** If a forecast's errors are still autocorrelated, the model has missed a pattern.
-- **Vibration and machine monitoring.** Autocorrelation picks a rotating part's period out of noisy vibration data.
-- **Time delay and position.** Sonar, radar, GPS, seismology and acoustic source location, by cross-correlation.
-- **Image matching.** Normalised cross-correlation finds where a small template image appears in a larger one, and how far an image has moved between frames.
-- **Spectral analysis.** The Fourier transform of the autocorrelation is the power spectrum, one of the classic ways to estimate it.
+- Pitch detection: a voiced sound repeats once per vocal-fold cycle, so the first autocorrelation peak gives the pitch. [Rabiner (1977)](#sources) describes autocorrelation pitch detection for speech.
+- Heart rate: an ECG repeats once per beat. The lag of the first autocorrelation peak is the time between beats, and 60 divided by it (in seconds) is beats per minute.
+- Seasonality in time series: sales, energy use, web traffic and temperatures repeat daily, weekly or yearly, and the ACF shows at which lags.
+- Checking a model: if a forecast's errors are still autocorrelated, the model has missed a pattern.
+- Vibration and machine monitoring: autocorrelation picks a rotating part's period out of noisy vibration data.
+- Time delay and position: sonar, radar, GPS, seismology and acoustic source location, by cross-correlation.
+- Image matching: normalised cross-correlation finds where a small template image appears in a larger one, and how far an image has moved between frames.
+- Spectral analysis: the Fourier transform of the autocorrelation is the power spectrum, one of the classic ways to estimate it.
 
 ## Fast correlation with the FFT
 
@@ -222,7 +230,7 @@ For cross-correlation, multiply $\overline{X(f)}$ by $Y(f)$ in step 3. That cost
 
 *Adapted from [Burnett-Thompson (2007)](#sources). Compare the same pipeline for [convolution](/learn/signal-processing/convolution/#the-convolution-theorem): only step 3 changes.*
 
-**The zero-padding matters.** Without it the FFT treats the signal as if it repeated forever, so the copy wraps around: the end of the signal is compared with its start, and every lag picks up products that don't belong. Padding to $2N - 1$ leaves enough empty space for the largest lag.
+Zero-pad the signal, or the copy wraps around. Without padding, the FFT treats the signal as if it repeated forever, so the end of the signal is compared with its start, and every lag picks up products that don't belong. Padding to $2N - 1$ leaves enough empty space for the largest lag.
 
 Step 3 is also the **Wiener–Khinchin theorem** at work: the autocorrelation and the power spectrum are a Fourier transform pair (see [power spectral density](/learn/signal-processing/power-spectral-density/)). So the autocorrelation carries the same information as the power spectrum, read in time rather than frequency, and you can estimate either one from the other.
 
@@ -236,7 +244,7 @@ Step 3 is also the **Wiener–Khinchin theorem** at work: the autocorrelation an
 | Answers | Does it repeat, and how far back does it remember? | How far apart are these two, or where is this pattern? | What does this system do to this signal? | How strongly do these two move together? |
 | Typical use | Period, pitch, heart rate, seasonality, residual checks | Time delay, echo location, template matching, GPS | Filtering, smoothing, reverb, blurring | Comparing two variables, such as height and weight |
 
-The four are closely related. The autocorrelation at one lag is almost the Pearson correlation between a series and its shifted self; the difference is that the ACF uses the whole series' mean and variance for both parts. Cross-correlation is convolution with one signal reversed. And autocorrelation is cross-correlation of a signal with itself.
+The autocorrelation at one lag is almost the Pearson correlation between a series and its shifted self; the difference is that the ACF uses the whole series' mean and variance for both parts. Cross-correlation is convolution with one signal reversed. And autocorrelation is cross-correlation of a signal with itself.
 
 ## Common autocorrelation and cross-correlation mistakes
 

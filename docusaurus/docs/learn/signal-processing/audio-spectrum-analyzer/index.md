@@ -1,5 +1,5 @@
 ---
-sidebar_position: 75
+sidebar_position: 10
 sidebar_label: Audio Spectrum Analyzer
 title: "Audio Spectrum Analyzer: How It Works and How to Read One (With Interactive Examples)"
 description: "What a spectrum analyzer shows and measures, how a real-time FFT analyzer works, how to read dB and log frequency axes, 1/3-octave bands, and analyzer vs oscilloscope. Live demo."
@@ -70,31 +70,31 @@ related: [fast-fourier-transform, spectrogram, power-spectral-density, signal-to
 
 An **audio spectrum analyzer** (spelled analyser in British English) is a tool that shows how loud a sound is at each frequency, updated live. Frequency runs along the horizontal axis, usually on a log scale from 20 Hz to 20 kHz, and level in decibels runs up the vertical axis. Peaks are tones and their harmonics; the low, ragged floor beneath them is noise.
 
-![A real-time audio spectrum analyser in a dark navy theme: the live FFT spectrum of an A major chord as a blue mountain on a logarithmic frequency axis from 20 Hz to 20 kHz, with sharp peaks at each note and its harmonics, an orange peak-hold line above, and level in dBFS from -120 to 0](/img/learn/audio-spectrum-analyzer-og.png)
+![A real-time audio spectrum analyser in a dark navy theme: the live FFT spectrum of an A major chord as a blue mountain on a logarithmic frequency axis from 20 Hz to 20 kHz, with sharp peaks at each note and its harmonics, an orange peak-hold line above, and level in decibels relative to digital full scale (dBFS) from -120 to 0](/img/learn/audio-spectrum-analyzer-og.png)
 
 *The live spectrum of an A major chord, with peak hold, sample data. [Try the interactive analyser](#how-to-build-an-audio-spectrum-analyzer-in-javascript-react-or-angular), with test signals or your own microphone.*
 
 :::tip Key takeaways
-- A spectrum analyser plots **level against frequency**; an oscilloscope plots level against time.
-- Software (FFT) analysers cut the sound into blocks, **window** each one, run an **FFT**, convert to **decibels**, then **average** and **peak-hold** the result.
-- **FFT size sets the trade-off:** bigger blocks separate closer frequencies but react more slowly.
-- Audio analysers use a **log frequency axis** because each octave matters equally to the ear; **1/3-octave bands** group the FFT bins to match.
-- Pink noise **slopes down 3 dB per octave in FFT bins** but looks **flat in 1/3-octave bands**. Both are correct.
+- A spectrum analyser plots level against frequency; an oscilloscope plots level against time.
+- Software (FFT) analysers cut the sound into blocks, window each one, run an FFT, convert to decibels, then average and peak-hold the result.
+- A bigger FFT size separates closer frequencies but reacts more slowly.
+- Audio analysers use a log frequency axis because each octave matters equally to the ear; 1/3-octave bands group the FFT bins to match.
+- Pink noise slopes down 3 dB per octave in FFT bins but looks flat in 1/3-octave bands.
 :::
 
 ## What does a spectrum analyzer measure?
 
-A spectrum analyser measures the **level of a signal at each frequency**. Any sound can be described as a sum of sine waves (the idea behind the [Fourier transform](/learn/signal-processing/fourier-transform/)); the analyser estimates how strong each of those sine waves is, and redraws the result many times a second.
+A spectrum analyser measures the level of a signal at each frequency. Any sound can be described as a sum of sine waves (the idea behind the [Fourier transform](/learn/signal-processing/fourier-transform/)); the analyser estimates how strong each of those sine waves is, and redraws the result many times a second.
 
 From that one picture you can read:
 
-- **tones and pitches:** a whistle, a note or a hum shows as a narrow peak at its frequency;
-- **harmonics:** a musical note or a distorted tone shows a row of peaks at 2, 3, 4… times its fundamental frequency;
-- **the noise floor:** the level of the background hiss between the peaks, which sets the quietest thing you can see;
-- **tonal balance:** whether the energy sits mostly in the bass, the midrange or the treble;
-- **bandwidth:** how wide a range of frequencies a signal occupies.
+- tones and pitches: a whistle, a note or a hum shows as a narrow peak at its frequency;
+- harmonics: a musical note or a distorted tone shows a row of peaks at 2, 3, 4… times its fundamental frequency;
+- the noise floor: the level of the background hiss between the peaks, which sets the quietest thing you can see;
+- tonal balance: whether the energy sits mostly in the bass, the midrange or the treble;
+- bandwidth: how wide a range of frequencies a signal occupies.
 
-It does not show **when** something happens within a block, or the **phase** of each component. For changes over time, use a [spectrogram](#the-spectrogram-a-spectrum-analyzer-with-history); for timing and waveform shape, use an [oscilloscope](#spectrum-analyzer-vs-oscilloscope).
+It does not show when something happens within a block, or the phase of each component. For changes over time, use a [spectrogram](#the-spectrogram-a-spectrum-analyzer-with-history); for timing and waveform shape, use an [oscilloscope](#spectrum-analyzer-vs-oscilloscope).
 
 ## How an FFT spectrum analyzer works
 
@@ -102,14 +102,14 @@ Almost every audio analyser, whether a plug-in, a phone app or a measurement sys
 
 ![The signal chain of an FFT spectrum analyser, from left to right: capture at 48,000 samples per second, a block of N samples, a Hann window, the FFT, magnitude squared converted to decibels, averaging and peak hold, and the display on a log frequency axis. Below, the numbers for N = 4,096: each block lasts 85 ms, the bins are 11.7 Hz apart, and the result has 2,048 bins](./fft-analyser-signal-chain.svg)
 
-1. **Capture a block.** Take the latest $N$ samples, for example $N = 4{,}096$ at a sample rate $f_s$ of 48,000 samples per second: 85 ms of sound.
-2. **Window it.** Multiply the block by a **window**, such as Hann, that tapers both ends to zero. Without it, the abrupt edges of the block smear every tone across the spectrum (**spectral leakage**). The [FFT guide](/learn/signal-processing/fast-fourier-transform/#windowing-and-spectral-leakage) shows why.
-3. **Run the FFT.** The [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) turns the block into $N/2$ frequency **bins**, spaced $\Delta f = f_s / N$ apart (11.7 Hz here).
-4. **Convert to decibels.** Square each bin's magnitude to get power, scale it, and take $10 \log_{10}$, so a sine of amplitude $A$ reads $20 \log_{10} A$ (the formula is below).
-5. **Average and hold.** A single block of music or noise is jumpy. **Averaging** several blocks steadies the reading; **peak hold** keeps the highest level seen at each frequency.
-6. **Display.** Draw the levels against frequency, usually on a log axis, as a line, a filled "mountain" or bars.
+1. Capture a block. Take the latest $N$ samples, for example $N = 4{,}096$ at a sample rate $f_s$ of 48,000 samples per second: 85 ms of sound.
+2. Window it. Multiply the block by a **window**, such as Hann, that tapers both ends to zero. Without it, the abrupt edges of the block smear every tone across the spectrum (**spectral leakage**). The [FFT guide](/learn/signal-processing/fast-fourier-transform/#windowing-and-spectral-leakage) shows why.
+3. Run the FFT. The [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) turns the block into $N/2$ frequency **bins**, spaced $\Delta f = f_s / N$ apart (11.7 Hz here).
+4. Convert to decibels. Square each bin's magnitude to get power, scale it, and take $10 \log_{10}$, so a sine of amplitude $A$ reads $20 \log_{10} A$ (the formula is below).
+5. Average and hold. A single block of music or noise is jumpy. **Averaging** several blocks steadies the reading; **peak hold** keeps the highest level seen at each frequency.
+6. Display. Draw the levels against frequency, usually on a log axis, as a line, a filled "mountain" or bars.
 
-The level of bin $k$ in step 4, with $X[k]$ the FFT output and $w[n]$ the window, is:
+The level of bin $k$ in step 4, in dBFS (decibels relative to digital full scale, where 0 dBFS is the largest sine the system can store), with $X[k]$ the FFT output and $w[n]$ the window, is:
 
 $$
 L_k = 10 \log_{10}\!\left(\frac{4\,|X[k]|^2}{\left(\sum_n w[n]\right)^2}\right) \ \text{dBFS}
@@ -117,20 +117,7 @@ $$
 
 The factor of 4 and the window's sum undo the FFT's scaling and the window's loss, so a full-scale sine reads 0 dBFS whatever the FFT size or window.
 
-A **real-time analyser** (RTA) is one that processes every sample, with no gaps between blocks, so a short click or burst can't slip through unseen. Analysers usually **overlap** the blocks (50% or 75%) too, so that the parts of the signal near the tapered ends of one block sit in the middle of the next. For audio, that's an easy load for a modern computer, even in plain JavaScript, as the demo below shows.
-
-## Swept-tuned vs FFT spectrum analyzers
-
-The first spectrum analysers were **swept-tuned**. A single narrow filter, set by the **resolution bandwidth** (RBW), is swept across the frequency range, and the display traces the level that comes through it. Radio-frequency analysers still use this design, often with a **superheterodyne** front end that mixes the input down to a fixed intermediate frequency.
-
-| | Swept-tuned analyser | FFT analyser |
-| --- | --- | --- |
-| **How it measures** | One narrow filter sweeps across the span, a frequency at a time | Captures a block of samples and computes every frequency at once |
-| **Speed** | Slow sweeps for narrow RBWs; misses events at frequencies it isn't tuned to at that moment | Every frequency in each block; real-time with no gaps if processing keeps up |
-| **Frequency range** | Hertz up to tens of gigahertz | Limited by the converter's sample rate (half of it, the Nyquist frequency) |
-| **Typical use** | Radio, microwave and telecoms | Audio, acoustics, vibration, and the digital back end of modern RF analysers |
-
-For sound, the range of interest is only 20 Hz to 20 kHz, and a sound card or audio interface samples fast enough to capture all of it ([why 44.1 and 48 kHz](/learn/signal-processing/nyquist-and-aliasing/#common-sampling-rates-and-why-they-were-chosen)). So audio analysers are FFT analysers.
+A **real-time analyser** (RTA) is one that processes every sample, with no gaps between blocks, so a short click or burst can't slip through unseen. Analysers usually overlap the blocks (50% or 75%) too, so that the parts of the signal near the tapered ends of one block sit in the middle of the next. For audio, that's an easy load for a modern computer, even in plain JavaScript.
 
 ## How to read an audio spectrum analyzer
 
@@ -140,68 +127,83 @@ The vertical axis is in **decibels**, a log scale where every 20 dB is a factor 
 
 | Unit | Reference (0 dB) | Where you'll see it |
 | --- | --- | --- |
-| **dBFS** | Digital full scale: a full-scale sine wave, the loudest clean tone a digital system can store | Software analysers, DAWs, plug-ins, the demo below. Values are 0 or negative |
-| **dBV** | 1 volt RMS | Measurement interfaces and analogue test gear |
-| **dBu** | 0.775 volt RMS | Professional audio line levels (+4 dBu is a common nominal level) |
-| **dB SPL** | 20 µPa of sound pressure, about the threshold of hearing at 1 kHz | Calibrated measurement microphones, sound level meters, room acoustics |
+| dBFS | Digital full scale: a full-scale sine wave, the loudest clean tone a digital system can store | Software analysers, DAWs, plug-ins. Values are 0 or negative |
+| dBV | 1 volt RMS | Measurement interfaces and analogue test gear |
+| dBu | 0.775 volt RMS | Professional audio line levels (+4 dBu is a common nominal level) |
+| dB SPL | 20 µPa of sound pressure, about the threshold of hearing at 1 kHz | Calibrated measurement microphones, sound level meters, room acoustics |
 
-A software analyser that has not been **calibrated** against a known level can only show dBFS: it doesn't know your microphone's sensitivity or your interface's gain. Its readings are still useful for comparing frequencies with each other, which is most of what EQ and troubleshooting need.
+A software analyser that has not been calibrated against a known level can only show dBFS: it doesn't know your microphone's sensitivity or your interface's gain. Its readings are still useful for comparing frequencies with each other, which is most of what EQ and troubleshooting need.
 
 ### The frequency axis: why a log scale
 
-Each **octave** (a doubling of frequency) sounds like the same size of step to the ear, whether it's 50 to 100 Hz or 5,000 to 10,000 Hz. On a **logarithmic frequency axis**, every octave gets the same width, so bass, midrange and treble each get a fair share of the screen. On a linear axis, the octave from 10 to 20 kHz takes up half of the chart and everything a voice or bass guitar does is squeezed into the left-hand edge. Switch the demo's **Frequency axis** between Log and Linear to see it. (The [log scale guide](/learn/axes-and-scales/log-scale-graph/) covers log axes in general.)
+Each **octave** (a doubling of frequency) sounds like the same size of step to the ear, whether it's 50 to 100 Hz or 5,000 to 10,000 Hz. On a logarithmic frequency axis, every octave gets the same width, so bass, midrange and treble each get a fair share of the screen. On a linear axis, the octave from 10 to 20 kHz takes up half of the chart and everything a voice or bass guitar does is squeezed into the left-hand edge. (The [log scale guide](/learn/axes-and-scales/log-scale-graph/) covers log axes in general.)
 
 Linear axes still have their uses: spotting evenly spaced harmonics, or reading vibration and electrical signals where the frequencies of interest are evenly spaced.
 
 ### FFT bins vs octave and 1/3-octave bands
 
-An FFT gives **bins of equal width in hertz**. On a log axis that's very uneven: at $N = 4{,}096$ and 48 kHz, the octave from 31.5 to 63 Hz contains only about three bins, while the octave from 8 to 16 kHz contains about 680. The bass is coarse and the treble is a dense comb.
+An FFT gives bins of equal width in hertz. On a log axis that's very uneven: at $N = 4{,}096$ and 48 kHz, the octave from 31.5 to 63 Hz contains only about three bins, while the octave from 8 to 16 kHz contains about 680. The bass is coarse and the treble is a dense comb.
 
 **Octave** and **1/3-octave bands** fix this by adding up the power of all the bins inside each band. Each band is a fixed fraction of an octave wide, so the bands are evenly spaced on a log axis. The 1/3-octave bands have standard centre frequencies: 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800 Hz, 1, 1.25, 1.6, 2, 2.5, 3.15, 4, 5, 6.3, 8, 10, 12.5, 16 and 20 kHz (the preferred frequencies of ISO 266; filter edges as in IEC 61260-1). There are 30 of them across the range of hearing, and each spans about 23% of its centre frequency.
 
 ![Two panels about FFT bins and 1/3-octave bands on a logarithmic frequency axis from 20 Hz to 20 kHz. Top: tick marks for FFT bins at a spacing of 11.7 Hz, sparse in the bass and so dense in the treble that they merge, with counts per octave from about 3 at 31.5 Hz to about 680 at 8 kHz. Bottom: the spectrum of pink noise, falling 3 dB per octave as an FFT line but level as 1/3-octave bars](./fft-bins-vs-third-octave-bands.svg)
 
-This is why **pink noise**, which has equal power in every octave, looks different in the two views:
+So **pink noise**, which has equal power in every octave, looks different in the two views:
 
-- in **FFT bins**, it **falls by 3 dB per octave** (10 dB per decade), because each bin is the same width but the power per hertz halves with every octave;
-- in **1/3-octave bands**, it is **flat**, because each band is twice as wide as the band an octave below it and catches twice as much power.
+- in FFT bins, it falls by 3 dB per octave (10 dB per decade), because each bin is the same width but the power per hertz halves with every octave;
+- in 1/3-octave bands, it is flat, because each band is twice as wide as the band an octave below it and catches twice as much power.
 
-**White noise** does the opposite: flat in FFT bins, rising 3 dB per octave in bands. Neither view is wrong; they answer different questions. Bands match how we hear and are the norm for room tuning and noise measurement. FFT bins resolve individual tones, such as a 50 Hz hum and its harmonics. The [power spectral density guide](/learn/signal-processing/power-spectral-density/) explains how noise levels depend on bandwidth.
+White noise does the opposite: flat in FFT bins, rising 3 dB per octave in bands. Bands match how we hear and are the norm for room tuning and noise measurement. FFT bins resolve individual tones, such as a 50 Hz hum and its harmonics. The [power spectral density guide](/learn/signal-processing/power-spectral-density/) explains how noise levels depend on bandwidth.
 
-Choose **Pink noise** and switch **Display** between FFT bins and 1/3-octave bands in the demo. At small FFT sizes, some of the lowest bands are narrower than the bin spacing and contain no bin at all, so they stay empty: the analyser has no information there. Bands holding just one or two bins are only rough estimates.
+At small FFT sizes, some of the lowest bands are narrower than the bin spacing and contain no bin at all, so they stay empty: the analyser has no information there. Bands holding just one or two bins are only rough estimates.
 
 ## Spectrum analyzer settings: resolution, averaging and peak hold
 
-Every analyser, hardware or software, exposes the same handful of settings. Each one trades something for something else.
-
 | Setting | What it does | Trade-off |
 | --- | --- | --- |
-| **FFT size** ($N$) | Sets the bin spacing, $f_s / N$, and the block length, $N / f_s$ | Bigger $N$: finer frequency detail and a lower noise floor per bin, but a slower, smeared response to change. At 48 kHz: 1,024 gives 46.9 Hz bins every 21 ms; 16,384 gives 2.9 Hz bins every 341 ms |
-| **Window** | Tapers the block to reduce leakage | Hann suits most audio. Flat-top reads tone levels accurately but widens peaks; rectangular gives the sharpest peaks but the worst leakage |
-| **Overlap** | How much each block shares with the previous one | More overlap: smoother updates and no lost events, at more computation |
-| **Averaging** | Combines several spectra: **exponential** (each new spectrum nudges a running average) or **linear** (the mean of the last $M$) | More averaging: a steadier noise floor and clearer tones, but it hides short events and responds slowly |
-| **Peak hold** | Keeps the highest level reached at each frequency | Catches brief peaks such as feedback or a transient; must be reset to see the current state |
-| **Weighting** | Applies a frequency-dependent correction such as A-weighting | Matches hearing at moderate levels; hides low-frequency rumble you might need to see |
+| FFT size ($N$) | Sets the bin spacing, $f_s / N$, and the block length, $N / f_s$ | Bigger $N$: finer frequency detail and a lower noise floor per bin, but a slower, smeared response to change. At 48 kHz: 1,024 gives 46.9 Hz bins every 21 ms; 16,384 gives 2.9 Hz bins every 341 ms |
+| Window | Tapers the block to reduce leakage | Hann suits most audio. Flat-top reads tone levels accurately but widens peaks; rectangular gives the sharpest peaks but the worst leakage |
+| Overlap | How much each block shares with the previous one | More overlap: smoother updates and no lost events, at more computation |
+| Averaging | Combines several spectra: exponential (each new spectrum nudges a running average) or linear (the mean of the last $M$) | More averaging: a steadier noise floor and clearer tones, but it hides short events and responds slowly |
+| Peak hold | Keeps the highest level reached at each frequency | Catches brief peaks such as feedback or a transient; must be reset to see the current state |
+| Weighting | Applies a frequency-dependent correction such as A-weighting | Matches hearing at moderate levels; hides low-frequency rumble you might need to see |
 
-**Resolution bandwidth.** In a swept analyser, the RBW is the width of its filter. In an FFT analyser, the equivalent is the bin width times the window's **equivalent noise bandwidth**: about 1.5 bins for Hann and 1 for rectangular (Harris, 1978). At $N = 4{,}096$ and 48 kHz with Hann, that's $1.5 \times 11.7 \approx 17.6$ Hz. Two tones closer than about two or three bins merge into one peak. Pick **Two close tones** (1,000 and 1,020 Hz) in the demo, which zooms in around 1 kHz: at FFT sizes up to 4,096 you see one peak, and from 8,192 you see two.
+With exponential averaging, a smoothing factor $\alpha$ applied at $r$ updates per second makes the average forget old spectra with a time constant of about $-1/(r \ln \alpha)$. At 30 updates a second, $\alpha = 0.8$ is about 0.15 s and $\alpha = 0.95$ is about 0.65 s. The same $\alpha$ gives a different time constant if the display updates at a different rate.
 
-**The noise floor.** The displayed noise floor depends on the RBW, not just the noise: for broadband noise, each **doubling of the FFT size lowers the floor by 3 dB**, while a steady tone keeps its level. So a bigger FFT lets you see weaker tones buried in noise, at the cost of a slower response. Averaging doesn't lower the floor's average level; it makes it smoother, so small tones stand out of it. How far a signal sits above the floor is its [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/).
+### Resolution bandwidth (RBW)
 
-**Exponential averaging and time.** With a smoothing factor $\alpha$ applied at $r$ updates per second, the average forgets old spectra with a time constant of about $-1/(r \ln \alpha)$. At 30 updates a second, $\alpha = 0.8$ is about 0.15 s and $\alpha = 0.95$ is about 0.65 s. The same $\alpha$ gives a different time constant if the display updates at a different rate.
+**Resolution bandwidth** (RBW) is the width of the filter that each point on the display measures through. In a swept analyser, it is the width of the one filter that sweeps across the range. In an FFT analyser, the equivalent is the bin width times the window's **equivalent noise bandwidth**: about 1.5 bins for Hann and 1 for rectangular (Harris, 1978). At $N = 4{,}096$ and 48 kHz with Hann, that's $1.5 \times 11.7 \approx 17.6$ Hz. Two tones closer than about two or three bins merge into one peak.
+
+### Noise floor and FFT size
+
+The displayed noise floor depends on the RBW as well as the noise. For broadband noise, each doubling of the FFT size lowers the floor by 3 dB, while a steady tone keeps its level. So a bigger FFT lets you see weaker tones buried in noise, at the cost of a slower response. Averaging doesn't lower the floor's average level; it makes it smoother, so small tones stand out of it. How far a signal sits above the floor is its [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/).
 
 ### A-weighting
 
 **A-weighting** is a standard correction curve (IEC 61672-1) that approximates the ear's lower sensitivity to bass and extreme treble at moderate levels. It is 0 dB at 1 kHz, about −16 dB at 125 Hz and −39 dB at 31.5 Hz, and close to 0 dB from 1 to 6 kHz. Sound levels quoted in **dB(A)** use it. It is the right choice for judging how loud noise sounds and for regulations, but the wrong one for finding a 50 Hz hum or a rumbling fan, which it hides: switch weighting off (Z-weighting) for troubleshooting.
 
+## Swept-tuned vs FFT spectrum analyzers
+
+The first spectrum analysers were **swept-tuned**. A single narrow filter, one resolution bandwidth (RBW) wide, is swept across the frequency range, and the display traces the level that comes through it. Radio-frequency analysers still use this design, often with a **superheterodyne** front end, which mixes the input with a tunable oscillator so that each frequency in turn is shifted down to one fixed intermediate frequency, where the filter does the measuring.
+
+| | Swept-tuned analyser | FFT analyser |
+| --- | --- | --- |
+| How it measures | One narrow filter sweeps across the span, a frequency at a time | Captures a block of samples and computes every frequency at once |
+| Speed | Slow sweeps for narrow RBWs; misses events at frequencies it isn't tuned to at that moment | Every frequency in each block; real-time with no gaps if processing keeps up |
+| Frequency range | Hertz up to tens of gigahertz | Limited by the converter's sample rate (half of it, the Nyquist frequency) |
+| Typical use | Radio, microwave and telecoms | Audio, acoustics, vibration, and the digital back end of modern RF analysers |
+
+For sound, the range of interest is only 20 Hz to 20 kHz, and a sound card or audio interface samples fast enough to capture all of it ([why 44.1 and 48 kHz](/learn/signal-processing/nyquist-and-aliasing/#common-sampling-rates-and-why-they-were-chosen)), so audio analysers are FFT analysers.
+
 ## What is a spectrum analyzer used for?
 
-- **Mixing and EQ:** spotting where instruments overlap and pile up energy (often in the low mids), finding a harsh resonance to cut, and comparing a mix's tonal balance with a reference track.
-- **Room acoustics:** playing pink noise through the speakers and reading a 1/3-octave **RTA** at the listening position reveals room modes: the bass peaks and dips caused by the room's dimensions.
-- **Hum and buzz:** mains hum shows as a peak at 50 Hz (60 Hz in North America) with harmonics at 100, 150, 200 Hz…. A soft hum has few harmonics; a harsh buzz has many. Choose **50 Hz hum** in the demo to see the pattern. A [notch filter](/learn/signal-processing/notch-filter/) can remove it.
-- **Feedback:** in live sound, a feedback squeal is a single peak that grows; peak hold catches the frequency so it can be cut with a narrow EQ.
-- **Loudspeakers and headphones:** a sine sweep or noise signal shows the frequency response, its peaks and dips, and where the output falls away at each end (a [Bode plot](/learn/signal-processing/bode-plot/) shows the same response with phase).
-- **Machine noise and vibration:** a rotating part makes peaks at its running speed and its multiples; a growing peak can be an early sign of wear in a bearing or gear.
-- **Electronics and radio:** checking amplifier distortion (harmonics of a pure tone), measuring a circuit's noise floor, and checking that a transmitter stays inside its channel.
+- Mixing and EQ: spotting where instruments overlap and pile up energy (often in the low mids), finding a harsh resonance to cut, and comparing a mix's tonal balance with a reference track.
+- Room acoustics: playing pink noise through the speakers and reading a 1/3-octave RTA at the listening position reveals room modes: the bass peaks and dips caused by the room's dimensions.
+- Hum and buzz: mains hum shows as a peak at 50 Hz (60 Hz in North America) with harmonics at 100, 150, 200 Hz…. A soft hum has few harmonics; a harsh buzz has many. A [notch filter](/learn/signal-processing/notch-filter/) can remove it.
+- Feedback: in live sound, a feedback squeal is a single peak that grows; peak hold catches the frequency so it can be cut with a narrow EQ.
+- Loudspeakers and headphones: a sine sweep or noise signal shows the frequency response, its peaks and dips, and where the output falls away at each end (a [Bode plot](/learn/signal-processing/bode-plot/) shows the same response with phase).
+- Machine noise and vibration: a rotating part makes peaks at its running speed and its multiples; a growing peak can be an early sign of wear in a bearing or gear.
+- Electronics and radio: checking amplifier distortion (harmonics of a pure tone), measuring a circuit's noise floor, and checking that a transmitter stays inside its channel.
 
 ## Spectrum analyzer vs oscilloscope
 
@@ -209,14 +211,12 @@ An oscilloscope and a spectrum analyser look at the same signal from two sides: 
 
 | | Oscilloscope | Spectrum analyser |
 | --- | --- | --- |
-| **Horizontal axis** | Time | Frequency |
-| **Vertical axis** | Voltage (linear) | Level, usually in dB (log) |
-| **Shows best** | Waveform shape, timing, rise time, glitches, clipping | Tones, harmonics, noise floor, bandwidth, interference |
-| **Dynamic range** | Small signals are hard to see next to large ones on a linear scale | A dB scale shows signals thousands of times weaker side by side |
-| **Typical questions** | "When does it happen? What shape is it?" | "Which frequencies are in it, and how strong is each?" |
-| **Overlap** | Many have an FFT or "math" mode | "Zero span" mode shows level against time at one fixed frequency |
-
-Use the oscilloscope when timing or shape matters, and the spectrum analyser when you need to find, identify or measure frequencies, especially weak ones next to strong ones.
+| Horizontal axis | Time | Frequency |
+| Vertical axis | Voltage (linear) | Level, usually in dB (log) |
+| Shows best | Waveform shape, timing, rise time, glitches, clipping | Tones, harmonics, noise floor, bandwidth, interference |
+| Dynamic range | Small signals are hard to see next to large ones on a linear scale | A dB scale shows signals thousands of times weaker side by side |
+| Typical questions | "When does it happen? What shape is it?" | "Which frequencies are in it, and how strong is each?" |
+| Overlap | Many have an FFT or "math" mode | "Zero span" mode shows level against time at one fixed frequency |
 
 ## The spectrogram: a spectrum analyzer with history
 
@@ -226,7 +226,6 @@ An analyser shows only the latest spectrum. A **spectrogram** (or waterfall) kee
 
 - **Reading the noise floor as the noise level.** The floor in FFT bins depends on the FFT size and window; double $N$ and it drops 3 dB. Compare noise across settings with a [PSD](/learn/signal-processing/power-spectral-density/) or fixed bands.
 - **Using a linear frequency axis for audio.** Everything below 1 kHz ends up crammed into a few pixels. Use a log axis.
-- **Judging pink noise as "tilted".** In FFT bins it should slope down 3 dB per octave; in 1/3-octave bands it should be flat.
 - **Too small an FFT for bass.** At 1,024 points and 48 kHz, the bins are 47 Hz apart, wider than the whole octave from 40 to 80 Hz. Use 8,192 or more to resolve low notes.
 - **Too much averaging for live work.** Heavy averaging hides feedback and transients. Use a short average with peak hold, or a spectrogram.
 - **Leaving voice processing on.** Browsers and phones apply echo cancellation, noise suppression and automatic gain to microphones by default; they reshape the spectrum. Turn them off for measurement.
@@ -240,6 +239,8 @@ SciChart.js draws spectra, spectrograms and waveforms with WebGL and WebGPU, fas
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
 <LearnCta position="top" chart="audio spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+
+**Things to try:** switch **Frequency axis** between Log and Linear and watch the bass squeeze into the left-hand edge. Choose **Pink noise** and switch **Display** between FFT bins and 1/3-octave bands: the downward slope levels out in bands. Pick **Two close tones** (1,000 and 1,020 Hz), which zooms in around 1 kHz: at FFT sizes up to 4,096 you see one peak, and from 8,192 you see two. Choose **50 Hz hum** to see the row of harmonics.
 
 Here is the code. The JavaScript tab is the demo itself: test signals, a Hann window, a plain JavaScript FFT, averaging, peak hold and 1/3-octave bands, animated with `requestAnimationFrame`. The React and Angular tabs show the shortest route, the browser's built-in `AnalyserNode`, on live microphone input:
 
@@ -444,17 +445,17 @@ Key points:
 - The spectrum is an `XyDataSeries` of frequencies and levels drawn by a `FastMountainRenderableSeries`, with a peak-hold `FastLineRenderableSeries` on top. For bands, a `FastRectangleRenderableSeries` with an `XyxyDataSeries` draws each bar from its lower to its upper band edge (`EColumnMode.StartEnd`), so the bars sit exactly on the band edges on a log axis.
 - A [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) with `logBase: 10` gives one major gridline per decade (100 Hz, 1 kHz, 10 kHz) and minor gridlines at 2, 3, 4… times each. Swap it for a `NumericAxis` to get a linear frequency axis. Skip bin 0 (0 Hz): a log axis can't show it.
 - Animate with `requestAnimationFrame`, and update the series with `clear()` and `appendRange()` each frame. A fixed y-axis range (`autoRange: EAutoRange.Never`) stops the axis jumping. Register a `delete` callback with `sciChartSurface.addDeletable()` to stop the loop and release the microphone when the chart goes away.
-- For the microphone, `getUserMedia` works only in a **secure context** (HTTPS or `localhost`), and the browser asks the user's permission. Turn off `echoCancellation`, `noiseSuppression` and `autoGainControl`, which are meant for calls and reshape the spectrum. Inside an iframe on another site, the frame also needs `allow="microphone"`.
+- For the microphone, `getUserMedia` works only in a secure context (HTTPS or `localhost`), and the browser asks the user's permission. Turn off `echoCancellation`, `noiseSuppression` and `autoGainControl`, which are meant for calls and reshape the spectrum. Inside an iframe on another site, the frame also needs `allow="microphone"`.
 
 ### Web Audio AnalyserNode or your own FFT?
 
-The browser's **`AnalyserNode`** (part of the Web Audio API) runs the FFT for you. Set `fftSize` (a power of 2 from 32 to 32,768) and `smoothingTimeConstant` (its exponential averaging, 0.8 by default), and `getFloatFrequencyData()` fills an array with one level in dB per bin. It's the fastest way to a live display. Its fixed choices are worth knowing:
+The browser's `AnalyserNode` (part of the Web Audio API) runs the FFT for you. Set `fftSize` (a power of 2 from 32 to 32,768) and `smoothingTimeConstant` (its exponential averaging, 0.8 by default), and `getFloatFrequencyData()` fills an array with one level in dB per bin. It's the fastest way to a live display. `AnalyserNode` fixes three things:
 
-- it always uses a **Blackman window**;
+- it always uses a Blackman window;
 - its levels are relative: a full-scale sine reads about −14 dB rather than 0 dBFS, because of the window's gain and the FFT's scaling, so add an offset if you need dBFS;
-- its smoothing is applied **each time you call it**, so the effective averaging time depends on how often you ask for data.
+- its smoothing is applied each time you call it, so the effective averaging time depends on how often you ask for data.
 
-**Your own FFT** on `getFloatTimeDomainData()` (as in the JavaScript tab) gives you the window, the dB scaling, linear or exponential averaging, overlap, peak hold, bands and weighting. Use it when the numbers have to be right, not just look right.
+Your own FFT on `getFloatTimeDomainData()` (as in the JavaScript tab) gives you the window, the dB scaling, linear or exponential averaging, overlap, peak hold, bands and weighting. Use it when you need calibrated dBFS, bands or weighting.
 
 **See it in the demo app:** [JavaScript audio spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, with a waveform, an FFT spectrum and a spectrogram. SciChart also has audio analyzer examples for [Android](https://www.scichart.com/example/android-chart/android-audio-analyzer-chart-example/), [iOS](https://www.scichart.com/example/ios-chart/ios-audio-analyzer-chart-example/) and [WPF](https://www.scichart.com/example/wpf-chart/wpf-chart-audio-analyzer-example/).
 

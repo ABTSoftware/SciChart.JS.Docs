@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 100
 sidebar_label: Fourier Transform
 title: "Fourier Transform: What It Is, the Formula & Examples (With an Interactive Demo)"
 description: "What the Fourier transform is, how it splits a signal into sine waves, its formula and inverse, the DFT, magnitude and phase, key pairs and properties. Live demo."
@@ -33,7 +33,7 @@ related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
                 {
                     "@type": "Question",
                     "name": "What is the Fourier transform used for?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "It is used wherever the frequencies in a signal matter: audio analysis and equalisers, removing noise and hum, finding faults from machine vibration, radio and mobile communications, MRI and other medical imaging, JPEG and MP3 compression, spectroscopy, and solving differential equations in physics and engineering." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "It is used wherever the frequencies in a signal matter: audio analysis, removing noise and hum, finding machine faults from vibration, radio and mobile communications, and MRI scanning. Close relatives of it compress MP3 audio and JPEG images." }
                 },
                 {
                     "@type": "Question",
@@ -64,17 +64,17 @@ related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
 
 ## What is a Fourier transform?
 
-A **Fourier transform** is a mathematical tool that breaks a signal into the sine waves it is made of. It takes a signal measured over **time** and returns its **frequency spectrum**: how much of each frequency the signal contains (the amplitude) and where each wave starts in its cycle (the phase). The inverse transform puts the waves back together.
+A **Fourier transform** is a mathematical tool that breaks a signal into the sine waves it is made of. It takes a signal measured over time and returns its **frequency spectrum**: how much of each frequency the signal contains (the amplitude) and where each wave starts in its cycle (the phase). The inverse transform puts the waves back together.
 
 ![A Fourier transform of a square wave: the top chart shows four sine waves at 5, 15, 25 and 35 Hz and their sum, a wave with flat tops; the bottom chart shows four spikes at those frequencies, getting shorter as the frequency rises](/img/learn/fourier-transform-og.png)
 
 *Four sine waves add up to an approximate square wave (top). The Fourier transform of that sum finds each wave again as a spike at its frequency (bottom). [Try the interactive version](#how-to-compute-and-plot-a-fourier-transform-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- Any practical signal can be written as a **sum of sine waves**. The Fourier transform finds their **frequencies, amplitudes and phases**.
-- It moves a signal from the **time domain** (value against time) to the **frequency domain** (strength against frequency). The **inverse Fourier transform** moves it back, with nothing lost.
-- For sampled data, computers use the **discrete Fourier transform (DFT)**, almost always calculated with the fast algorithm, the **FFT**.
-- The **convolution theorem** makes filtering easy in the frequency domain: convolution in time becomes multiplication in frequency.
+- Any practical signal can be written as a sum of sine waves. The Fourier transform finds their frequencies, amplitudes and phases.
+- It moves a signal from the time domain (value against time) to the frequency domain (strength against frequency). The inverse Fourier transform moves it back, with nothing lost.
+- For sampled data, computers use the discrete Fourier transform (DFT), almost always calculated with the fast algorithm, the FFT.
+- The convolution theorem makes filtering easy in the frequency domain: convolution in time becomes multiplication in frequency.
 - It is behind audio analysers, noise filters, vibration monitoring, radio, MRI scanners and, through close relatives, MP3 and JPEG compression.
 :::
 
@@ -84,12 +84,12 @@ Think of a chord played on a piano. Your ear hears one sound, but it is three or
 
 ![Left: a 3 Hz sine wave of amplitude 1 and an 8 Hz sine wave of amplitude 0.5 add up to a wavy signal. Right: its Fourier transform is two spikes, height 1 at 3 Hz and height 0.5 at 8 Hz. Arrows show the transform going from the signal to the spectrum and the inverse transform coming back](./time-and-frequency-domain.svg)
 
-It works by **testing the signal against one frequency at a time**:
+It works by testing the signal against one frequency at a time:
 
-1. **Pick a test frequency,** say 3 Hz, and make a sine wave and a cosine wave at that frequency.
-2. **Multiply the signal by each test wave, point by point, and add up the results.** If the signal contains 3 Hz, its peaks line up with the test wave's peaks again and again, and the total grows large. If it doesn't, the products are positive about as often as negative and cancel out to nearly zero.
-3. **Read off amplitude and phase.** The size of the two totals together gives the amplitude at 3 Hz. Their ratio (how much matched the cosine and how much the sine) gives the phase.
-4. **Repeat for every frequency.** The list of results is the spectrum.
+1. Pick a test frequency, say 3 Hz, and make a sine wave and a cosine wave at that frequency.
+2. Multiply the signal by each test wave, point by point, and add up the results. If the signal contains 3 Hz, its peaks line up with the test wave's peaks again and again, and the total grows large. If it doesn't, the products are positive about as often as negative and cancel out to nearly zero.
+3. Read off amplitude and phase. The size of the two totals together gives the amplitude at 3 Hz. Their ratio (how much matched the cosine and how much the sine) gives the phase.
+4. Repeat for every frequency. The list of results is the spectrum.
 
 This test works because sine waves of different frequencies are **orthogonal**: over a whole number of cycles, multiplying two of them together and adding up gives exactly zero. Each test frequency picks out its own ingredient and ignores the rest.
 
@@ -108,7 +108,7 @@ The transform finds one wave, of amplitude 1, at bin 1, which is exactly what we
 
 ## The Fourier transform formula
 
-For a signal $x(t)$ that varies with time $t$ (in seconds), the **Fourier transform** gives a function $X(f)$ of frequency $f$ (in hertz):
+For a signal $x(t)$ that varies with time $t$ (in seconds), the Fourier transform gives a function $X(f)$ of frequency $f$ (in hertz):
 
 $$
 X(f) = \int_{-\infty}^{\infty} x(t)\, e^{-i 2\pi f t}\, dt
@@ -132,24 +132,26 @@ $$
 X[k] = \sum_{n=0}^{N-1} x[n]\, e^{-i 2\pi k n / N}, \qquad k = 0, 1, \ldots, N-1
 $$
 
-and the **inverse DFT** is:
+and the inverse DFT is:
 
 $$
 x[n] = \frac{1}{N} \sum_{k=0}^{N-1} X[k]\, e^{i 2\pi k n / N}
 $$
 
-Each output $X[k]$ is a **frequency bin**. Bin $k$ is the frequency $f_k = k \, f_s / N$, so the bins are spaced $f_s / N$ apart, and the highest frequency you can measure is half the sample rate (the **Nyquist frequency**). Calculating every bin directly takes about $N^2$ multiplications. The **[fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/)** gets exactly the same numbers in about $N \log_2 N$, which is why every spectrum analyser uses it.
+Each output $X[k]$ is a **frequency bin**. Bin $k$ is the frequency $f_k = k \, f_s / N$, so the bins are spaced $f_s / N$ apart, and the highest frequency you can measure is half the sample rate (the **Nyquist frequency**). Calculating every bin directly takes about $N^2$ multiplications. The [fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/) gets exactly the same numbers in about $N \log_2 N$, which is why FFT analysers can update in real time.
 
 This page puts the $1/N$ on the inverse DFT, as NumPy and MATLAB do; some texts put it on the forward transform instead, so check the convention before comparing numbers.
 
-**The real DFT: cosine and sine amplitudes.** The formula above is the **complex DFT**: $N$ complex values in, $N$ complex values out. A measured signal is usually real, and then half of that output is redundant, because bin $N - k$ is the complex conjugate of bin $k$. The **real DFT** keeps the useful half, bins $0$ to $N/2$ (for even $N$), and writes each bin as two real numbers:
+### The real DFT: cosine and sine amplitudes
+
+The formula above is the **complex DFT**: $N$ complex values in, $N$ complex values out. A measured signal is usually real, and then half of that output is redundant, because bin $N - k$ is the complex conjugate of bin $k$. The **real DFT** keeps the useful half, bins $0$ to $N/2$ (for even $N$), and writes each bin as two real numbers:
 
 $$
 \operatorname{Re}X[k] = \sum_{n=0}^{N-1} x[n] \cos\!\left(\frac{2\pi k n}{N}\right), \qquad
 \operatorname{Im}X[k] = -\sum_{n=0}^{N-1} x[n] \sin\!\left(\frac{2\pi k n}{N}\right)
 $$
 
-Since $e^{-i\theta} = \cos\theta - i \sin\theta$, these are just the real and imaginary parts of the complex $X[k]$. In plain words, **each bin says how much cosine and how much sine the signal holds at that frequency.**
+Since $e^{-i\theta} = \cos\theta - i \sin\theta$, these are just the real and imaginary parts of the complex $X[k]$. Each bin says how much cosine and how much sine the signal holds at that frequency.
 
 ![Two rows of boxes for N = 8. Real DFT: 8 real samples x[n], numbered 0 to N − 1, go in; two arrays of N/2 + 1 = 5 values come out, Re X[k] (the cosine amplitudes) and Im X[k] (the sine amplitudes), numbered 0 to N/2. Complex DFT: 8 complex samples (real part and imaginary part, all zeros for a real signal) go in; 8 complex values come out, numbered 0 to N − 1, and for a real signal bins 5 to 7 mirror bins 3 to 1, so Re X is symmetric about N/2 and Im X is antisymmetric. Adapted from Burnett-Thompson (2007)](./real-vs-complex-dft.svg)
 
@@ -167,16 +169,16 @@ where the wave amplitudes are $a_k = \tfrac{2}{N}\operatorname{Re}X[k]$ and $b_k
 
 Each value of a Fourier transform is a **complex number**, $X = a + ib$. It holds two facts about one frequency:
 
-- **Magnitude** (or amplitude), $\lvert X \rvert = \sqrt{a^2 + b^2}$: how strong that frequency is. A chart of magnitude against frequency is the **magnitude spectrum**, the chart most people mean by "the Fourier transform". Squared, it is the **power spectrum**; on a log scale, in **decibels**, it is $20 \log_{10} \lvert X \rvert$.
+- **Magnitude** (or amplitude), $\lvert X \rvert = \sqrt{a^2 + b^2}$: how strong that frequency is. A chart of magnitude against frequency is the **magnitude spectrum**, the chart most people mean by "the Fourier transform". Squared, it is the **power spectrum**; on a log scale, in decibels, it is $20 \log_{10} \lvert X \rvert$.
 - **Phase**, $\varphi = \operatorname{atan2}(b, a)$: where that wave is in its cycle at time zero, in degrees or radians.
 
-Most charts show only the magnitude, because that answers "what frequencies are in here?". But the phase matters too. Two signals with the same magnitude spectrum and different phases can look completely different over time: a single click and a burst of white noise both have a roughly flat magnitude spectrum. You need both to run the inverse transform.
+Most charts show only the magnitude, because that answers "what frequencies are in here?". Two signals with the same magnitude spectrum and different phases can look completely different over time: a single click and a burst of white noise both have a roughly flat magnitude spectrum. You need both to run the inverse transform.
 
-**Scaling a DFT to real units:** to make a sine wave of amplitude $A$ show as a bar of height $A$, multiply $\lvert X[k] \rvert$ by $2/N$ (and the zero-frequency bin, the average, by $1/N$). Libraries differ in where they put the $1/N$, so a spectrum that is 512 times too tall usually means a missing scale factor.
+To scale a DFT to real units, so that a sine wave of amplitude $A$ shows as a bar of height $A$, multiply $\lvert X[k] \rvert$ by $2/N$ (and the zero-frequency bin, the average, by $1/N$). Libraries differ in where they put the $1/N$, so a spectrum that is 512 times too tall usually means a missing scale factor.
 
 ## Common Fourier transform pairs
 
-A **transform pair** is a signal and its Fourier transform. These come up again and again, and they explain a lot about how signals behave. All use the convention above, with $f$ in hertz.
+A **transform pair** is a signal and its Fourier transform. All use the convention above, with $f$ in hertz.
 
 | Signal $x(t)$ | Fourier transform $X(f)$ | What it tells you |
 | --- | --- | --- |
@@ -190,7 +192,7 @@ A **transform pair** is a signal and its Fourier transform. These come up again 
 | Decaying exponential $e^{-at} u(t)$, $a > 0$ | $\dfrac{1}{a + i 2\pi f}$ | The frequency response of a simple RC [low-pass filter](/learn/signal-processing/low-pass-filter/) |
 | Square wave (period $T$) | Spikes at odd multiples of $1/T$, height falling as $1/k$ | A periodic signal has a line spectrum: its Fourier series |
 
-The rectangle and sinc pair shows a rule that runs through all of signal processing: **the shorter or sharper a signal is in time, the wider its spectrum**, and the reverse. This is the time–frequency uncertainty principle, and it is why a [spectrogram](/learn/chart-types/cartesian/spectrogram/) must trade detail in time against detail in frequency.
+The rectangle and sinc pair shows that the shorter or sharper a signal is in time, the wider its spectrum, and the reverse. This is the **time–frequency uncertainty principle**, and it is why a [spectrogram](/learn/chart-types/cartesian/spectrogram/) must trade detail in time against detail in frequency.
 
 ## Fourier transform properties
 
@@ -208,7 +210,7 @@ These rules let you work out new transforms from known ones without integrating.
 | Duality | $X(t)$ | $x(-f)$ | Every pair also works the other way round |
 | Parseval's theorem | $\int \lvert x(t) \rvert^2 dt$ | $\int \lvert X(f) \rvert^2 df$ | The total energy is the same in both domains |
 
-The **convolution theorem** is the most useful of these. [Convolution](/learn/signal-processing/convolution/) is how a filter, an echo or a blur acts on a signal, and it is slow to compute directly. In the frequency domain it is a simple multiplication, so large filters are often applied by transforming, multiplying and transforming back. For the DFT, the theorem holds for **circular** convolution, which is why fast convolution pads the signals with zeros first.
+The **convolution theorem** turns convolution in time into multiplication in frequency. [Convolution](/learn/signal-processing/convolution/) is how a filter, an echo or a blur acts on a signal, and it is slow to compute directly, so large filters are often applied by transforming, multiplying and transforming back. For the DFT, the theorem holds for circular convolution, which is why fast convolution pads the signals with zeros first.
 
 ## Fourier series vs Fourier transform vs DFT vs FFT
 
@@ -216,32 +218,30 @@ Four names cover closely related ideas. They differ in the kind of signal they t
 
 | Tool | Input | Output | Use it when |
 | --- | --- | --- | --- |
-| [**Fourier series**](/learn/signal-processing/fourier-series/) | A periodic signal (one that repeats forever) | Separate lines at whole-number multiples of the repeat frequency (harmonics) | You are analysing or building a repeating waveform: a square wave, a musical note, a rotating machine |
-| **Fourier transform** | Any continuous signal, repeating or not | A continuous spectrum | You are working with formulas on paper: deriving filter responses, solving equations, proving results |
-| **Discrete Fourier transform (DFT)** | $N$ samples | $N$ frequency bins, spaced $f_s / N$ apart | You have real, sampled data: audio, sensor readings, prices. This is what a computer calculates |
-| **Fast Fourier transform (FFT)** | Same as the DFT | Same as the DFT | Always, in practice: it is an algorithm that computes the DFT quickly. See the [FFT guide](/learn/signal-processing/fast-fourier-transform/) |
+| [Fourier series](/learn/signal-processing/fourier-series/) | A periodic signal (one that repeats forever) | Separate lines at whole-number multiples of the repeat frequency (harmonics) | You are analysing or building a repeating waveform: a square wave, a musical note, a rotating machine |
+| Fourier transform | Any continuous signal, repeating or not | A continuous spectrum | You are working with formulas on paper: deriving filter responses, solving equations, proving results |
+| Discrete Fourier transform (DFT) | $N$ samples | $N$ frequency bins, spaced $f_s / N$ apart | You have real, sampled data: audio, sensor readings, prices. This is what a computer calculates |
+| Fast Fourier transform (FFT) | Same as the DFT | Same as the DFT | Always, in practice: it is an algorithm that computes the DFT quickly. See the [FFT guide](/learn/signal-processing/fast-fourier-transform/) |
 
-The live demo below makes the link between the first and third rows concrete. Its square, sawtooth and triangle presets are the first four terms of each wave's **Fourier series**, and the chart under them is a **DFT** of the summed samples, which finds each term again.
+In the live demo below, the square, sawtooth and triangle presets are the first four terms of each wave's Fourier series, and the chart under them is a DFT of the summed samples, which finds each term again.
 
 ## What is the Fourier transform used for?
 
-- **Audio and music:** spectrum analysers, equalisers, pitch detection and noise reduction. MP3 and AAC compression use a close relative, the modified discrete cosine transform.
-- **Vibration and machine monitoring:** a worn bearing or an unbalanced shaft shows up as a spike at a known frequency long before it fails.
-- **Filtering:** removing mains hum, smoothing sensor data or separating signals, either by designing a [low-pass](/learn/signal-processing/low-pass-filter/) or [high-pass filter](/learn/signal-processing/high-pass-filter/) from its frequency response or by filtering in the frequency domain directly.
-- **Communications:** Wi-Fi and 4G/5G mobile networks use OFDM, which sends data on many closely spaced frequencies at once and is built on the FFT and inverse FFT.
-- **Imaging:** MRI scanners record their data in the frequency domain and use an inverse Fourier transform to make the picture. JPEG compression uses a close relative, the discrete cosine transform.
-- **Science and spectroscopy:** Fourier-transform infrared (FTIR) spectroscopy, X-ray crystallography and radio astronomy all recover their results with Fourier transforms.
-- **Mathematics and physics:** solving the heat equation (the problem Joseph Fourier was working on), the wave equation and quantum mechanics.
-- **Time–frequency charts:** a [spectrogram](/learn/chart-types/cartesian/spectrogram/) runs many short Fourier transforms one after another to show how frequencies change over time.
+- Audio and music: spectrum analysers, equalisers, pitch detection and noise reduction. MP3 and AAC compression use a close relative, the modified discrete cosine transform.
+- Vibration and machine monitoring: a worn bearing or an unbalanced shaft shows up as a spike at a known frequency long before it fails.
+- Filtering: removing mains hum, smoothing sensor data or separating signals, either by designing a [low-pass](/learn/signal-processing/low-pass-filter/) or [high-pass filter](/learn/signal-processing/high-pass-filter/) from its frequency response or by filtering in the frequency domain directly.
+- Communications: Wi-Fi and 4G/5G mobile networks use OFDM, which sends data on many closely spaced frequencies at once and is built on the FFT and inverse FFT.
+- Imaging: MRI scanners record their data in the frequency domain and use an inverse Fourier transform to make the picture. JPEG compression uses a close relative, the discrete cosine transform.
+- Science and spectroscopy: Fourier-transform infrared (FTIR) spectroscopy, X-ray crystallography and radio astronomy all recover their results with Fourier transforms.
+- Mathematics and physics: solving the heat equation (the problem Joseph Fourier was working on), the wave equation and quantum mechanics.
+- Time–frequency charts: a [spectrogram](/learn/chart-types/cartesian/spectrogram/) runs many short Fourier transforms one after another to show how frequencies change over time.
 
 ## Common Fourier transform mistakes
 
-- **Expecting perfect spikes from real data.** A spike is only clean when the signal fits a whole number of cycles into the window. Otherwise its energy **leaks** into neighbouring bins. A **window function** such as Hann reduces the leakage; the [FFT guide](/learn/signal-processing/fast-fourier-transform/) shows it live.
-- **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they **[alias](/learn/signal-processing/nyquist-and-aliasing/)**, folding back and appearing as false lower frequencies. Filter them out before sampling.
+- **Expecting perfect spikes from real data.** A spike is only clean when the signal fits a whole number of cycles into the window. Otherwise its energy leaks into neighbouring bins. A [window function](/learn/signal-processing/window-functions/) such as Hann reduces the leakage; the [FFT guide](/learn/signal-processing/fast-fourier-transform/) shows it live.
+- **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they [alias](/learn/signal-processing/nyquist-and-aliasing/), folding back and appearing as false lower frequencies. Filter them out before sampling.
 - **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude.
-- **Forgetting the scale factor.** Raw DFT values grow with $N$. Divide by $N/2$ to get amplitudes in the signal's own units.
-- **Confusing frequency resolution with accuracy.** The bin spacing is $f_s / N$. To separate two close frequencies you need a **longer recording**, not just more zero padding.
-- **Throwing the phase away and then trying to invert.** The magnitude alone can't rebuild the signal.
+- **Confusing frequency resolution with accuracy.** The bin spacing is $f_s / N$. To separate two close frequencies you need a longer recording; zero padding doesn't add detail.
 - **Using one transform for a signal that changes.** A single Fourier transform averages over the whole recording, so a rising siren and a chord can look alike. Use a [spectrogram](/learn/chart-types/cartesian/spectrogram/) for signals whose frequencies change over time.
 
 ## How to compute and plot a Fourier transform in JavaScript, React or Angular
@@ -383,7 +383,7 @@ A Fourier transform takes a signal recorded over time and works out which freque
 
 ### What is the Fourier transform used for?
 
-It is used wherever the frequencies in a signal matter: audio analysis and equalisers, removing noise and hum, finding faults from machine vibration, radio and mobile communications, MRI and other medical imaging, JPEG and MP3 compression, spectroscopy, and solving differential equations in physics and engineering.
+It is used wherever the frequencies in a signal matter: audio analysis, removing noise and hum, finding machine faults from vibration, radio and mobile communications, and MRI scanning. Close relatives of it compress MP3 audio and JPEG images.
 
 ### What is the difference between a Fourier series and a Fourier transform?
 

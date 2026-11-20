@@ -1,5 +1,5 @@
 ---
-sidebar_position: 42
+sidebar_position: 30
 sidebar_label: Band-Pass Filter
 title: "Band-Pass Filter: How It Works, Bandwidth and Q (With Interactive Examples)"
 description: "What a band-pass filter is, how to work out its centre frequency, bandwidth and Q, passive, RLC and active circuits, the transfer function and digital designs. Live demo."
@@ -76,11 +76,11 @@ A **band-pass filter** (BPF, also written bandpass) is a filter that lets throug
 *A signal with tones at 2, 10, 22 and 50 Hz plus noise, before and after a band-pass filter set to 8–13 Hz (top), and the filter's frequency response (bottom). [Try the interactive version](#how-to-build-a-band-pass-filter-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A band-pass filter **keeps a band between two cutoffs** and removes slower and faster changes. It behaves like a high-pass and a low-pass filter in a row.
-- **Bandwidth** is $f_H - f_L$. The **centre frequency** is the geometric mean, $f_0 = \sqrt{f_L f_H}$, not the average.
-- **Q** $= f_0 / \text{bandwidth}$. A high Q means a narrow band and more ringing.
-- A second-order band-pass falls at **20 dB per decade on each side**. Higher orders fall faster.
-- In code, the usual designs are the **biquad**, a **Butterworth high-pass plus low-pass**, and the **windowed-sinc FIR**.
+- A band-pass filter keeps a band between two cutoffs and removes slower and faster changes. It behaves like a high-pass and a low-pass filter in a row.
+- Bandwidth is $f_H - f_L$. The centre frequency is the geometric mean, $f_0 = \sqrt{f_L f_H}$.
+- Q $= f_0 / \text{bandwidth}$. A high Q means a narrow band and more ringing.
+- A second-order band-pass falls at 20 dB per decade on each side. Higher orders fall faster.
+- In code, the usual designs are the biquad, a Butterworth high-pass plus low-pass, and the windowed-sinc FIR.
 :::
 
 ## How a band-pass filter works
@@ -91,34 +91,34 @@ Any signal can be split into sine waves of different frequencies (the idea behin
 
 | Term | What it means |
 | --- | --- |
-| **Lower cutoff** ($f_L$) | The bottom edge of the band, where the gain has fallen to −3 dB (about 71% of the amplitude, half the power) |
-| **Upper cutoff** ($f_H$) | The top edge of the band, also at −3 dB |
-| **Passband** | The frequencies between $f_L$ and $f_H$ |
-| **Stopbands** | The frequencies the filter is meant to block: one below the band and one above it |
-| **Centre frequency** ($f_0$) | The middle of the band on a log scale, where a simple band-pass has its peak gain. Also called the resonant frequency |
-| **Bandwidth** (BW) | $f_H - f_L$, in hertz |
-| **Q** (quality factor) | $f_0 / \text{BW}$: how narrow the band is compared with its centre |
-| **Roll-off** | How fast the gain falls outside the band, in dB per decade (each tenfold change in frequency) |
+| Lower cutoff ($f_L$) | The bottom edge of the band, where the gain has fallen to −3 dB (about 71% of the amplitude, half the power) |
+| Upper cutoff ($f_H$) | The top edge of the band, also at −3 dB |
+| Passband | The frequencies between $f_L$ and $f_H$ |
+| Stopbands | The frequencies the filter is meant to block: one below the band and one above it |
+| Centre frequency ($f_0$) | The middle of the band on a log scale, where a simple band-pass has its peak gain. Also called the resonant frequency |
+| Bandwidth (BW) | $f_H - f_L$, in hertz |
+| Q (quality factor) | $f_0 / \text{BW}$: how narrow the band is compared with its centre |
+| Roll-off | How fast the gain falls outside the band, in dB per decade (each tenfold change in frequency) |
 
 ### Centre frequency, bandwidth and Q
 
-The centre of a band-pass filter is the **geometric mean** of its cutoffs, because a filter's response is symmetrical on a log frequency scale, not a linear one:
+The centre of a band-pass filter is the geometric mean of its cutoffs, because a filter's response is symmetrical on a log frequency scale, not a linear one:
 
 $$
 f_0 = \sqrt{f_L \, f_H}, \qquad \text{BW} = f_H - f_L, \qquad Q = \frac{f_0}{\text{BW}}
 $$
 
-**Worked example: the EEG alpha band.** Brain rhythms between 8 and 13 Hz are called alpha waves. A filter for that band has $\text{BW} = 13 - 8 = 5$ Hz and $f_0 = \sqrt{8 \times 13} = \sqrt{104} \approx 10.2$ Hz, so $Q \approx 10.2 / 5 = 2.04$. The average of 8 and 13 is 10.5 Hz, which is not the centre.
+As a worked example, take the EEG alpha band. Brain rhythms between 8 and 13 Hz are called alpha waves. A filter for that band has $\text{BW} = 13 - 8 = 5$ Hz and $f_0 = \sqrt{8 \times 13} = \sqrt{104} \approx 10.2$ Hz, so $Q \approx 10.2 / 5 = 2.04$. The average of 8 and 13 is 10.5 Hz, which is not the centre. The gap grows with the band: for 300 Hz to 3.4 kHz, the centre is about 1 kHz but the average is 1.85 kHz.
 
-**Working backwards** from a centre and a Q, the cutoffs are:
+Working backwards from a centre and a Q, the cutoffs are:
 
 $$
 f_{L,H} = f_0 \left( \sqrt{1 + \frac{1}{4Q^2}} \mp \frac{1}{2Q} \right)
 $$
 
-For $f_0 = 1$ kHz and $Q = 1$, that gives 618 Hz and 1,618 Hz, as in the diagram above. The demo below shows the cutoffs, centre, bandwidth and Q together, and updates them as you move the controls.
+For $f_0 = 1$ kHz and $Q = 1$, that gives 618 Hz and 1,618 Hz, as in the diagram above.
 
-**Another example: octave bands.** Sound level meters and graphic equalisers split audio into standard octave or third-octave bands. An octave band's edges are $f_0/\sqrt{2}$ and $f_0\sqrt{2}$, so the 1 kHz octave band runs from about 707 Hz to 1,414 Hz, with $Q \approx 1.41$. A third-octave band is narrower: about 891 Hz to 1,122 Hz at 1 kHz, with $Q \approx 4.3$.
+Octave bands are another example. Sound level meters and graphic equalisers split audio into standard octave or third-octave bands. An octave band's edges are $f_0/\sqrt{2}$ and $f_0\sqrt{2}$, so the 1 kHz octave band runs from about 707 Hz to 1,414 Hz, with $Q \approx 1.41$. A third-octave band is narrower: about 891 Hz to 1,122 Hz at 1 kHz, with $Q \approx 4.3$.
 
 ### Wideband and narrowband filters
 
@@ -126,6 +126,15 @@ There is no single boundary between the two, but they behave and are built diffe
 
 - **Wideband (low Q).** The cutoffs are far apart, say an octave or more ($Q$ below about 1.4). The filter is usually built as a separate high-pass and low-pass, each with its own cutoff, and its passband is close to flat. A telephone voice channel, roughly 300 Hz to 3.4 kHz, is a wideband band-pass.
 - **Narrowband (high Q).** The band is a small fraction of the centre frequency. The filter is built around a resonance: an inductor and capacitor, a crystal, a resonant op-amp circuit or a single digital biquad. Its response is a peak rather than a plateau. Radio receivers and tone detectors use narrowband filters.
+
+## What band-pass filters are used for
+
+- Radio and wireless: every receiver uses band-pass filters to select one channel and reject its neighbours. FM radios commonly filter at a 10.7 MHz intermediate frequency with a band roughly 200 kHz wide; mobile phones have band-pass filters for each frequency band they support.
+- Audio: a graphic equaliser is a bank of band-pass filters on standard octave or third-octave centres; a three-way loudspeaker crossover feeds the midrange driver through a band-pass; and a synthesiser's band-pass mode gives a thin, nasal tone.
+- Speech: telephone networks pass roughly 300 Hz to 3.4 kHz, enough for speech to be understood.
+- Brain and body signals: EEG analysis splits brain activity into conventional bands, roughly delta (below 4 Hz), theta (4–8 Hz), alpha (8–13 Hz), beta (13–30 Hz) and gamma (above 30 Hz). ECG and EMG monitors band-pass their signals to remove both baseline drift and high-frequency noise.
+- Vibration and machine monitoring: a damaged rolling bearing gives repeated small impacts that excite a high-frequency resonance of the machine. [Envelope analysis](/learn/signal-processing/hilbert-transform/) band-passes the vibration around that resonance, then looks for the impact rate in the envelope's spectrum.
+- Measuring one tone: before measuring the amplitude or phase of a test tone in a noisy signal, a narrow band-pass around it removes most of the noise.
 
 ## Band-pass filter transfer function
 
@@ -141,16 +150,14 @@ $$
 |H(j\omega)| = \frac{1}{\sqrt{1 + Q^2 \left( \dfrac{\omega}{\omega_0} - \dfrac{\omega_0}{\omega} \right)^2}}
 $$
 
-Reading it:
-
-- **At $\omega = \omega_0$** the bracket is zero, so the gain is 1 (0 dB) and the phase shift is zero.
-- **The gain is −3 dB** where $Q(\omega/\omega_0 - \omega_0/\omega) = \pm 1$. Those two frequencies are $f_L$ and $f_H$, and they satisfy $f_L f_H = f_0^2$ and $f_H - f_L = f_0/Q$.
-- **Far below $f_0$** the gain rises at **+20 dB per decade**, and **far above** it falls at **−20 dB per decade**. A second-order band-pass has one order on each side.
-- **The phase** goes from +90° well below the band, through 0° at $f_0$, to −90° well above it, and the change is sharper when Q is higher.
+- At $\omega = \omega_0$ the bracket is zero, so the gain is 1 (0 dB) and the phase shift is zero.
+- The gain is −3 dB where $Q(\omega/\omega_0 - \omega_0/\omega) = \pm 1$. Those two frequencies are $f_L$ and $f_H$, and they satisfy $f_L f_H = f_0^2$ and $f_H - f_L = f_0/Q$.
+- Far below $f_0$ the gain rises at +20 dB per decade, and far above it falls at −20 dB per decade. A second-order band-pass has one order on each side.
+- The phase goes from +90° well below the band, through 0° at $f_0$, to −90° well above it, and the change is sharper when Q is higher.
 
 Plotted on log axes, gain and phase against frequency make a [Bode plot](/learn/signal-processing/bode-plot/): the usual way to show a band-pass filter's response. On a Bode plot, a second-order band-pass looks like a tent, with straight sides at ±20 dB per decade meeting near the peak.
 
-**Higher orders.** A band-pass of order $2n$ has $n$ orders on each side, so it falls at $20n$ dB per decade on each side, and its top is flatter. A **Butterworth band-pass** is designed from a Butterworth low-pass by replacing $s$ with $(s^2 + \omega_0^2)/(s \cdot \text{BW})$: it keeps the flattest possible passband, and doubles the order.
+A band-pass of order $2n$ has $n$ orders on each side, so it falls at $20n$ dB per decade on each side, and its top is flatter. A **Butterworth band-pass** is designed from a Butterworth low-pass by replacing $s$ with $(s^2 + \omega_0^2)/(s \cdot \text{BW})$: it keeps the flattest possible passband, and doubles the order.
 
 ## Band-pass filter circuits
 
@@ -162,9 +169,9 @@ $$
 f_L = \frac{1}{2\pi R_1 C_1}, \qquad f_H = \frac{1}{2\pi R_2 C_2}
 $$
 
-This works well when **$f_L$ is much lower than $f_H$**. With $f_H = 10 f_L$ and a buffer between the stages, the peak is only 0.8 dB down and the −3 dB points land within about 1% of the two cutoffs. The roll-off is 20 dB per decade on each side.
+This works well when $f_L$ is much lower than $f_H$. With $f_H = 10 f_L$ and a buffer between the stages, the peak is only 0.8 dB down and the −3 dB points land within about 1% of the two cutoffs. The roll-off is 20 dB per decade on each side.
 
-Two things go wrong as the cutoffs move closer:
+As the cutoffs move closer, the stages overlap and load each other:
 
 - **The stages overlap.** Each stage is already 3 dB down at its own cutoff. With $f_L = f_H$ and a buffer, the peak is −6 dB (half the amplitude), and the "band" has $Q = 0.5$: a cascade of first-order stages can never be narrower than that.
 - **Loading.** Without a buffer, the second stage draws current from the first and changes its response. Two identical RC stages connected directly give a peak of only 1/3 of the input (−9.5 dB) and $Q = 1/3$. Make the second stage's impedance about ten times the first's, or put an op-amp follower between them.
@@ -181,14 +188,14 @@ $$
 f_0 = \frac{1}{2\pi\sqrt{LC}}, \qquad \text{BW} = \frac{R}{2\pi L}, \qquad Q = \frac{1}{R}\sqrt{\frac{L}{C}}
 $$
 
-**Worked example.** With $L = 10$ mH, $C = 100$ nF and $R = 100\ \Omega$:
+For example, with $L = 10$ mH, $C = 100$ nF and $R = 100\ \Omega$:
 
 - $f_0 = 1 / \big(2\pi\sqrt{0.01 \times 10^{-7}}\big) = 1/(2\pi \times 3.162 \times 10^{-5}) \approx 5{,}033$ Hz;
 - $\text{BW} = 100 / (2\pi \times 0.01) \approx 1{,}592$ Hz;
 - $Q = \sqrt{0.01 / 10^{-7}} / 100 = 316.2 / 100 \approx 3.16$;
 - the −3 dB edges are at about 4,300 Hz and 5,891 Hz, and $4{,}300 \times 5{,}891 \approx 5{,}033^2$.
 
-Lower $R$ narrows the band without moving the centre. In a real circuit, the inductor's own winding resistance and the source and load resistances add to $R$, so the Q you measure is lower than the one you calculated. The same idea, with a parallel LC "tank" circuit, is how radio receivers have selected stations for a century.
+Lower $R$ narrows the band without moving the centre. In a real circuit, the inductor's own winding resistance and the source and load resistances add to $R$, so the Q you measure is lower than the one you calculated.
 
 ### Active band-pass filters
 
@@ -202,15 +209,17 @@ At radio frequencies, op-amps run out of speed, so RF band-pass filters are pass
 
 ## Digital band-pass filters
 
-In software, a filter works on samples taken at a **sample rate**, $f_s$, and both cutoffs must be below half of it (the [Nyquist frequency](/learn/signal-processing/nyquist-and-aliasing/)). The [live demo below](#how-to-build-a-band-pass-filter-in-javascript-react-or-angular) runs all three of these designs:
+In software, a filter works on samples taken at a **sample rate**, $f_s$, and both cutoffs must be below half of it (the [Nyquist frequency](/learn/signal-processing/nyquist-and-aliasing/)). The [live demo below](#how-to-build-a-band-pass-filter-in-javascript-react-or-angular) runs all three of these designs.
 
-**1. The band-pass biquad (2nd-order IIR).** A **biquad** is a second-order recursive section with five coefficients:
+### Band-pass biquad (second-order IIR)
+
+A **biquad** is a second-order recursive section with five coefficients:
 
 $$
 y[n] = b_0 x[n] + b_1 x[n-1] + b_2 x[n-2] - a_1 y[n-1] - a_2 y[n-2]
 $$
 
-The widely used *Audio EQ Cookbook* gives the band-pass version of the transfer function above, converted to digital with the bilinear transform. With $\omega_0 = 2\pi f_0/f_s$ and $\alpha = \sin(\omega_0)/(2Q)$:
+The *Audio EQ Cookbook* gives the band-pass version of the transfer function above, converted to digital with the bilinear transform. With $\omega_0 = 2\pi f_0/f_s$ and $\alpha = \sin(\omega_0)/(2Q)$:
 
 $$
 b_0 = \frac{\alpha}{1+\alpha}, \quad b_1 = 0, \quad b_2 = \frac{-\alpha}{1+\alpha}, \quad a_1 = \frac{-2\cos\omega_0}{1+\alpha}, \quad a_2 = \frac{1-\alpha}{1+\alpha}
@@ -218,9 +227,15 @@ $$
 
 Five multiplications per sample and four stored values. It is the usual choice for a tone detector, a resonant synthesiser filter or a live data feed. Like the analogue circuit, it only falls at 20 dB per decade on each side, and when $f_0$ approaches $f_s/2$ the band is squeezed slightly by the bilinear transform's frequency warping.
 
-**2. Butterworth high-pass followed by Butterworth low-pass (IIR).** For a wide band with steep sides, chain a Butterworth high-pass at $f_L$ and a Butterworth low-pass at $f_H$, each built from biquads. Two biquads on each side give 40 dB per decade per side. This is the digital version of the RC cascade, with the same weakness: when the cutoffs are close, the two filters overlap and the peak drops below 0 dB.
+### Butterworth high-pass followed by Butterworth low-pass (IIR)
 
-**3. Windowed-sinc band-pass (FIR).** An FIR filter is a list of weights, its **kernel**, slid along the signal by [convolution](/learn/signal-processing/convolution/). For a band-pass kernel, design two windowed-sinc low-pass kernels of the same length, one at $f_H$ and one at $f_L$, and subtract the second from the first: what passes the wider low-pass but not the narrower one is the band. With a symmetric kernel, every frequency is delayed by the same time (**linear phase**), so waveform shapes survive, and the stopband can be extremely deep. The price is length: the transition at each edge is about $4/M$ of the sample rate wide for a Blackman window of $M + 1$ taps, so a narrow band at a low frequency needs a long kernel. Note that a windowed-sinc's edge frequency is where the gain is −6 dB, not −3 dB.
+For a wide band with steep sides, chain a Butterworth high-pass at $f_L$ and a Butterworth low-pass at $f_H$, each built from biquads. Two biquads on each side give 40 dB per decade per side. This is the digital version of the RC cascade, with the same weakness: when the cutoffs are close, the two filters overlap and the peak drops below 0 dB.
+
+### Windowed-sinc band-pass filter (FIR)
+
+An FIR filter is a list of weights, its **kernel**, slid along the signal by [convolution](/learn/signal-processing/convolution/). For a band-pass kernel, design two windowed-sinc low-pass kernels of the same length, one at $f_H$ and one at $f_L$, and subtract the second from the first: what passes the wider low-pass but not the narrower one is the band. With a symmetric kernel, every frequency is delayed by the same time (**linear phase**), so waveform shapes survive, and the stopband can be extremely deep. The price is length: the transition at each edge is about $4/M$ of the sample rate wide for a Blackman window of $M + 1$ taps, so a narrow band at a low frequency needs a long kernel. A windowed-sinc's edge frequency is where the gain is −6 dB, not −3 dB.
+
+### How the three designs compare
 
 For the demo's alpha-band setting (8 to 13 Hz at 250 samples per second), the three designs compare like this:
 
@@ -232,30 +247,19 @@ For the demo's alpha-band setting (8 to 13 Hz at 250 samples per second), the th
 
 The biquad lets about a tenth of the 2 Hz and 50 Hz tones through, and over a quarter of the nearby 22 Hz tone. The FIR filter removes all three, but at 250 samples per second, its 257 taps span just over a second of signal.
 
-## What band-pass filters are used for
-
-- **Radio and wireless:** every receiver uses band-pass filters to select one channel and reject its neighbours. FM radios commonly filter at a 10.7 MHz intermediate frequency with a band roughly 200 kHz wide; mobile phones have band-pass filters for each frequency band they support.
-- **Audio:** a graphic equaliser is a bank of band-pass filters on standard octave or third-octave centres; a three-way loudspeaker crossover feeds the midrange driver through a band-pass; and a synthesiser's band-pass mode gives a thin, nasal tone.
-- **Speech:** telephone networks pass roughly 300 Hz to 3.4 kHz, enough for speech to be understood.
-- **Brain and body signals:** EEG analysis splits brain activity into conventional bands, roughly delta (below 4 Hz), theta (4–8 Hz), alpha (8–13 Hz), beta (13–30 Hz) and gamma (above 30 Hz). ECG and EMG monitors band-pass their signals to remove both baseline drift and high-frequency noise.
-- **Vibration and machine monitoring:** a damaged rolling bearing gives repeated small impacts that excite a high-frequency resonance of the machine. [Envelope analysis](/learn/signal-processing/hilbert-transform/) band-passes the vibration around that resonance, then looks for the impact rate in the envelope's spectrum.
-- **Measuring one tone:** before measuring the amplitude or phase of a test tone in a noisy signal, a narrow band-pass around it removes most of the noise. Lock-in amplifiers take this idea to the extreme.
-- **Seismology and sonar:** band-passing picks out the frequencies where a particular wave or echo has most of its energy.
-
 ## Band-pass vs low-pass vs high-pass vs band-stop filters
 
 | Filter | Keeps | Removes | Use it when you want to… | Example |
 | --- | --- | --- | --- | --- |
-| **Band-pass** | The band between $f_L$ and $f_H$ | Below and above the band | Keep one range of frequencies | A radio channel, the EEG alpha band |
-| **[Low-pass](/learn/signal-processing/low-pass-filter/)** | Below the cutoff | Above the cutoff | Smooth out fast noise, or prevent aliasing | Sensor smoothing, anti-aliasing |
-| **[High-pass](/learn/signal-processing/high-pass-filter/)** | Above the cutoff | Below the cutoff | Remove drift, DC offset or rumble | ECG baseline wander, a vocal low cut |
-| **[Band-stop (notch)](/learn/signal-processing/notch-filter/)** | Below and above the band | The band between its cutoffs | Remove one narrow interference and keep the rest | 50 or 60 Hz mains hum |
+| Band-pass | The band between $f_L$ and $f_H$ | Below and above the band | Keep one range of frequencies | A radio channel, the EEG alpha band |
+| [Low-pass](/learn/signal-processing/low-pass-filter/) | Below the cutoff | Above the cutoff | Smooth out fast noise, or prevent aliasing | Sensor smoothing, anti-aliasing |
+| [High-pass](/learn/signal-processing/high-pass-filter/) | Above the cutoff | Below the cutoff | Remove drift, DC offset or rumble | ECG baseline wander, a vocal low cut |
+| [Band-stop (notch)](/learn/signal-processing/notch-filter/) | Below and above the band | The band between its cutoffs | Remove one narrow interference and keep the rest | 50 or 60 Hz mains hum |
 
-The four are related. A band-pass is a high-pass and a low-pass in series. A band-stop is the original signal minus a band-pass (or a low-pass and a high-pass in parallel). To check what any of them does to a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/) or a [power spectral density](/learn/signal-processing/power-spectral-density/) plot.
+A band-pass is a high-pass and a low-pass in series. A band-stop is the original signal minus a band-pass (or a low-pass and a high-pass in parallel). To check what any of them does to a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/) or a [power spectral density](/learn/signal-processing/power-spectral-density/) plot.
 
 ## Common band-pass filter mistakes
 
-- **Using the average as the centre frequency.** The centre is $\sqrt{f_L f_H}$, not $(f_L + f_H)/2$. The two are close for a narrow band, but for 300 Hz to 3.4 kHz the geometric centre is about 1 kHz while the average is 1.85 kHz.
 - **Expecting a narrow band from two first-order stages.** A first-order high-pass and low-pass in a row can't have a Q above 0.5, even with a buffer; with the cutoffs close together, the peak sinks below −3 dB and the band never reaches it. For a narrow band, use a resonant design: an RLC circuit, an active band-pass, or a biquad. Try it in the demo: choose **High-pass + low-pass Butterworth** with order 2, then the **Narrow** preset.
 - **Ignoring ringing at high Q.** A narrow filter stores energy, so after a sudden change it keeps oscillating at $f_0$. For a second-order band-pass, the ringing decays with a time constant of $Q/(\pi f_0)$: for $Q = 10$ at 10 Hz, that's about 0.32 s, so it takes around a second to settle. Short bursts get smeared out, and the start of the data shows a slow build-up. The demo's **Narrow** preset shows both.
 - **Forgetting the delay and phase shift.** IIR band-pass filters shift the phase by up to ±90° near the edges of the band, so peaks in the output line up differently from peaks in the input. If timing matters, use a symmetric FIR filter, or run the IIR filter forwards and then backwards over recorded data (zero-phase filtering).
@@ -403,9 +407,9 @@ Here is the code for this chart. The filter design is plain JavaScript, and SciC
 
 Key points:
 
-- Every filter in the demo is a **chain of sections**, each a difference equation with feed-forward weights $b$ and feedback weights $a$. The biquad is one section, the Butterworth cascade is several, and the windowed-sinc filter is one long FIR section with no feedback.
-- **Your own filter on chart data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point, in index order: from index 0 when it recalculates everything, and only for new points when data is appended. That's why an IIR filter can keep its memory between calls, resetting it at index 0. Setting `filterFunction` again reruns the whole series; the demo does that whenever a control moves.
-- The demo's FIR filter is **centred** on each sample, reading neighbours from the source series, so its output isn't delayed. It suits recorded data; on live data, the newest outputs would need samples that haven't arrived yet.
+- Every filter in the demo is a chain of sections, each a difference equation with feed-forward weights $b$ and feedback weights $a$. The biquad is one section, the Butterworth cascade is several, and the windowed-sinc filter is one long FIR section with no feedback.
+- **Your own filter on chart data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point, in index order: from index 0 when it recalculates everything, and only for new points when data is appended. So an IIR filter can keep its memory between calls, resetting it at index 0. Setting `filterFunction` again reruns the whole series; the demo does that whenever a control moves.
+- The demo's FIR filter is centred on each sample, reading neighbours from the source series, so its output isn't delayed. It suits recorded data; on live data, the newest outputs would need samples that haven't arrived yet.
 - The frequency response is calculated in plain JavaScript from the coefficients and drawn against a `LogarithmicAxis`, the layout of a [Bode plot](/learn/signal-processing/bode-plot/). `VerticalLineAnnotation`s mark $f_L$, $f_0$, $f_H$ and the test tones; a `HorizontalLineAnnotation` marks −3 dB.
 
 **See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with moving average, trendline and ratio filters applied live. For a live signal and its spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example).

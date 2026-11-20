@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 130
 sidebar_label: Low-Pass Filter
 title: "Low-Pass Filter: What It Does, Cutoff Frequency & Types (With Interactive Examples)"
 description: "What a low-pass filter is and does, how to calculate an RC filter's cutoff frequency, and how moving average, FIR, IIR and Butterworth filters compare. Live demo."
@@ -45,12 +45,12 @@ related: [fourier-transform, high-pass-filter, fir-vs-iir-filters, band-pass-fil
                 {
                     "@type": "Question",
                     "name": "Is a moving average a low-pass filter?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. A moving average replaces each sample with the mean of the last M samples, which is a simple FIR low-pass filter. It is excellent at reducing random noise while keeping sharp steps, but it is a poor frequency separator: its response has ripples above the cutoff that let some high frequencies through." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. A moving average replaces each sample with the mean of the last M samples, which is a simple FIR low-pass filter. It is the optimal filter for reducing random white noise while keeping the sharpest step response, but it is a poor frequency separator: its response has ripples above the cutoff that let some high frequencies through." }
                 },
                 {
                     "@type": "Question",
                     "name": "What is a Butterworth low-pass filter?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A Butterworth low-pass filter has the flattest possible passband: no ripple, with the gain falling smoothly to -3 dB at the cutoff. Its roll-off above the cutoff is 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade. It is a common default for analogue and digital IIR filters." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A Butterworth low-pass filter has the flattest possible passband, with no ripple and a gain of -3 dB at the cutoff whatever its order. Above the cutoff its gain falls by 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade." }
                 },
                 {
                     "@type": "Question",
@@ -73,11 +73,11 @@ A **low-pass filter** (LPF, also written lowpass) is a filter that lets the low 
 *A noisy signal before and after a low-pass filter (top), and the filter's frequency response (bottom). [Try the interactive version](#how-to-build-a-low-pass-filter-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A low-pass filter **keeps slow changes and removes fast ones**: it smooths noise, hum and hiss.
-- The **cutoff frequency** is where the output has dropped by **3 dB** (to about 71%). For an RC circuit, $f_c = 1/(2\pi RC)$.
-- Above the cutoff, the gain falls by **20 dB per decade for each order** of the filter.
-- In code, the common types are the **moving average**, the **windowed-sinc FIR** and the **single-pole IIR** (exponential smoothing).
-- Every causal low-pass filter **delays** the signal. Sharper filters usually delay it more.
+- A low-pass filter keeps slow changes and removes fast ones: it smooths noise, hum and hiss.
+- The cutoff frequency is where the output has dropped by 3 dB (half the power, about 71% of the amplitude). For an RC circuit, $f_c = 1/(2\pi RC)$.
+- Above the cutoff, the gain falls by 20 dB per decade for each order of the filter.
+- In code, the common types are the moving average, the windowed-sinc FIR and the single-pole IIR (exponential smoothing).
+- Every causal low-pass filter delays the signal. Sharper filters usually delay it more.
 :::
 
 ## How a low-pass filter works
@@ -90,28 +90,28 @@ The terms you'll meet on every data sheet and filter design tool:
 
 | Term | What it means |
 | --- | --- |
-| **Passband** | The low frequencies the filter lets through, ideally with a gain of 1 (0 dB) |
-| **Cutoff frequency** ($f_c$) | The edge of the passband, usually where the gain is −3 dB: the output has half the power and about 71% of the amplitude of the input. Also called the corner or −3 dB frequency |
-| **Transition band** | The frequencies between the passband and the stopband, where the gain is falling |
-| **Stopband** | The high frequencies the filter is meant to block, reduced by at least a stated amount, such as −60 dB (0.1%) |
-| **Roll-off** | How fast the gain falls above the cutoff, in dB per decade (each tenfold rise in frequency) or dB per octave (each doubling) |
-| **Order** | How many energy-storing parts (capacitors, inductors) or feedback terms the filter has. Each order adds 20 dB per decade (about 6 dB per octave) of roll-off |
+| Passband | The low frequencies the filter lets through, ideally with a gain of 1 (0 dB) |
+| Cutoff frequency ($f_c$) | The edge of the passband, usually where the gain is −3 dB: the output has half the power and about 71% of the amplitude of the input. Also called the corner or −3 dB frequency |
+| Transition band | The frequencies between the passband and the stopband, where the gain is falling |
+| Stopband | The high frequencies the filter is meant to block, reduced by at least a stated amount, such as −60 dB (0.1%) |
+| Roll-off | How fast the gain falls above the cutoff, in dB per decade (each tenfold rise in frequency) or dB per octave (each doubling) |
+| Order | How many energy-storing parts (capacitors, inductors) or feedback terms the filter has. Each order adds 20 dB per decade (about 6 dB per octave) of roll-off |
 
 **Decibels** make the numbers easier to read: −3 dB is 71% of the amplitude, −20 dB is 10%, −40 dB is 1% and −60 dB is 0.1%. Gain in dB is $20 \log_{10}(A_{out}/A_{in})$.
 
-An **ideal** low-pass filter would pass everything below the cutoff and nothing above it, a "brick wall". No real filter can, because that would need the filter to react to input it hasn't received yet. Real filters trade off three things: how steep the transition is, how flat the passband stays, and how much they delay and distort the signal's shape.
+An ideal low-pass filter would pass everything below the cutoff and nothing above it, a "brick wall". No real filter can, because that would need the filter to react to input it hasn't received yet. Real filters trade off three things: how steep the transition is, how flat the passband stays, and how much they delay and distort the signal's shape.
 
 ## What low-pass filters are used for
 
-Low-pass filters are everywhere that a slow signal needs to be separated from fast noise:
+Common uses:
 
-- **audio:** the low-pass control on a synthesiser or equaliser darkens the sound by removing treble; a subwoofer's crossover sends it only the bass, often below about 80 to 120 Hz;
-- **sensor smoothing:** temperature, pressure, accelerometer and load-cell readings carry electrical noise that is much faster than the quantity being measured;
-- **anti-aliasing:** before an analogue-to-digital converter samples a signal, a low-pass filter removes anything above half the sample rate (the [Nyquist frequency](/learn/signal-processing/nyquist-and-aliasing/)), which would otherwise fold back as false low frequencies;
-- **downsampling:** the same rule applies in software. Filter before you keep every Mth sample (see [decimation and anti-aliasing](/learn/big-data/downsampling/#downsampling-in-signal-processing-decimation-and-anti-aliasing));
-- **power supplies:** an RC or LC filter smooths the ripple left after rectifying AC into DC;
-- **trading and analytics:** a moving average of a price is a low-pass filter on the price series, showing the trend under the day-to-day swings;
-- **images:** blurring is a two-dimensional low-pass filter, and some cameras put an optical low-pass filter in front of the sensor to prevent moiré patterns.
+- audio: the low-pass control on a synthesiser or equaliser darkens the sound by removing treble; a subwoofer's crossover sends it only the bass, often below about 80 to 120 Hz;
+- sensor smoothing: temperature, pressure, accelerometer and load-cell readings carry electrical noise that is much faster than the quantity being measured;
+- anti-aliasing: before an analogue-to-digital converter samples a signal, a low-pass filter removes anything above half the sample rate (the [Nyquist frequency](/learn/signal-processing/nyquist-and-aliasing/)), which would otherwise fold back as false low frequencies;
+- downsampling: the same rule applies in software. Filter before you keep every Mth sample (see [decimation and anti-aliasing](/learn/big-data/downsampling/#downsampling-in-signal-processing-decimation-and-anti-aliasing));
+- power supplies: an RC or LC filter smooths the ripple left after rectifying AC into DC;
+- trading and analytics: a moving average of a price is a low-pass filter on the price series, showing the trend under the day-to-day swings;
+- images: blurring is a two-dimensional low-pass filter, and some cameras put an optical low-pass filter in front of the sensor to prevent moiré patterns.
 
 ## The RC low-pass filter circuit
 
@@ -129,7 +129,7 @@ $$
 
 with $R$ in ohms, $C$ in farads and $f_c$ in hertz. $RC$ is the circuit's **time constant**, $\tau$: after a sudden step at the input, the output covers about 63% of the step in one time constant.
 
-**Worked example.** With $R = 1\ \text{k}\Omega$ and $C = 220\ \text{nF}$:
+For example, with $R = 1\ \text{k}\Omega$ and $C = 220\ \text{nF}$:
 
 $$
 f_c = \frac{1}{2\pi \times 1000 \times 220 \times 10^{-9}} = \frac{1}{0.001382} \approx 723\ \text{Hz}
@@ -137,7 +137,7 @@ $$
 
 The time constant is $1000 \times 220 \times 10^{-9} = 0.22$ ms. At a tenth of the cutoff (72 Hz) the gain is −0.04 dB, almost exactly 1. At the cutoff it is −3 dB. At ten times the cutoff (7.2 kHz) it is −20 dB, a tenth of the amplitude.
 
-**Working backwards** from a cutoff you want: pick a convenient capacitor, then $R = 1/(2\pi f_c C)$. For 1 kHz with a 100 nF capacitor, $R = 1/(2\pi \times 1000 \times 10^{-7}) \approx 1.59\ \text{k}\Omega$. The nearest standard value of 1.5 kΩ gives about 1.06 kHz.
+To work backwards from a cutoff you want, pick a convenient capacitor, then $R = 1/(2\pi f_c C)$. For 1 kHz with a 100 nF capacitor, $R = 1/(2\pi \times 1000 \times 10^{-7}) \approx 1.59\ \text{k}\Omega$. The nearest standard value of 1.5 kΩ gives about 1.06 kHz.
 
 Some example pairs, worked out with the formula above:
 
@@ -149,7 +149,7 @@ Some example pairs, worked out with the formula above:
 | 1.6 kΩ | 10 nF | 16 µs | 9.95 kHz | Taming hiss on a voice or audio line |
 | 330 Ω | 22 nF | 7.3 µs | 21.9 kHz | Just above the range of human hearing |
 
-The live demo [below](#how-to-build-a-low-pass-filter-in-javascript-react-or-angular) has a small **low-pass filter calculator**: type R and C, and it works out $f_c$ and can apply it as the cutoff of a digital filter.
+The live demo [below](#how-to-build-a-low-pass-filter-in-javascript-react-or-angular) has a small low-pass filter calculator: type R and C, and it works out $f_c$ and can apply it as the cutoff of a digital filter.
 
 ### The RC filter's transfer function
 
@@ -165,14 +165,14 @@ $$
 |H(f)| = \frac{1}{\sqrt{1 + (f/f_c)^2}}, \qquad \varphi(f) = -\arctan(f/f_c)
 $$
 
-At $f = f_c$, the magnitude is $1/\sqrt{2} \approx 0.707$ (−3 dB) and the output lags the input by 45°. Far above the cutoff, doubling the frequency halves the output: −6 dB per octave, or −20 dB per decade. Plotted on log axes, gain and phase against frequency make a **[Bode plot](/learn/signal-processing/bode-plot/)**, the usual way to show a filter's response.
+At $f = f_c$, the magnitude is $1/\sqrt{2} \approx 0.707$ (−3 dB) and the output lags the input by 45°. Far above the cutoff, doubling the frequency halves the output: −6 dB per octave, or −20 dB per decade. Plotted on log axes, gain and phase against frequency make a [Bode plot](/learn/signal-processing/bode-plot/), the usual way to show a filter's response.
 
 ## First-order, second-order and Butterworth low-pass filters
 
 A first-order filter's gentle 20 dB per decade often isn't enough. If the noise is only five times the cutoff frequency, a first-order filter reduces it to about 20% (−14 dB). Higher orders roll off faster:
 
 - **Second-order** filters (an RLC circuit, or an active filter built around an op-amp) fall at 40 dB per decade. They have a **quality factor**, Q, which sets how sharp the corner is: a high Q gives a peak just before the cutoff.
-- **Butterworth** filters have the flattest possible passband, with no ripple, for a given order. Their magnitude is $|H(f)| = 1/\sqrt{1 + (f/f_c)^{2n}}$ for order $n$, so every Butterworth filter is −3 dB at the cutoff, whatever its order. A 2nd-order Butterworth filter is a second-order filter with $Q = 1/\sqrt{2} \approx 0.707$.
+- **Butterworth** filters have the flattest possible passband, with no ripple, for a given order, and are −3 dB at the cutoff whatever the order. A 2nd-order Butterworth filter is a second-order filter with $Q \approx 0.707$. For the formula and how to choose the order, see [what is a Butterworth filter?](/learn/signal-processing/fir-vs-iir-filters/#what-is-a-butterworth-filter)
 - **Chebyshev** and **elliptic** filters accept ripple in the passband or stopband in return for a steeper transition.
 - **Bessel** filters roll off more gently but delay all low frequencies by nearly the same time, so a pulse or step keeps its shape.
 
@@ -203,7 +203,7 @@ $$
 h[i] = \frac{\sin\big(2\pi f_c (i - M/2)\big)}{i - M/2} \, w[i], \qquad i = 0 \dots M
 $$
 
-then the weights are scaled to add up to 1. The transition band is about $4/M$ of the sample rate wide with a Blackman window, so a longer kernel gives a sharper filter. Its stopband can be very deep: with a Blackman window, below −70 dB. The price is computation and delay: a symmetric kernel delays the signal by $M/2$ samples.
+then the weights are scaled to add up to 1. The transition band is about $4/M$ of the sample rate wide with a Blackman window, so a longer kernel gives a sharper filter. Its stopband can be very deep: with a Blackman window, below −70 dB. It costs $M+1$ multiplications per sample and $M/2$ samples of delay.
 
 ### Single-pole IIR filter (exponential smoothing)
 
@@ -217,22 +217,22 @@ It is also called **exponential smoothing** or an exponential moving average (EM
 
 ### Butterworth and other digital IIR filters
 
-Higher-order analogue designs such as Butterworth, Chebyshev and Bessel can be turned into digital IIR filters, usually with the **bilinear transform**. They are normally built as a chain of second-order sections (**biquads**), which keeps them numerically stable. A 4th-order digital Butterworth filter uses two biquads, about ten multiplications per sample, to get a roll-off a short FIR filter can't match. For both designs side by side, see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/).
+Higher-order analogue designs such as Butterworth, Chebyshev and Bessel can be turned into digital IIR filters, usually with the **bilinear transform**, a substitution that maps the analogue filter's frequency axis onto the digital one. They are normally built as a chain of second-order sections (**biquads**, small IIR filters with two feedback terms each), which keeps them numerically stable. A 4th-order digital Butterworth filter uses two biquads, about ten multiplications per sample, to get a roll-off a short FIR filter can't match. For both designs side by side, see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/).
 
 ## Which low-pass filter should you use?
 
 | Filter | Type | Roll-off and stopband | Delay | Best for |
 | --- | --- | --- | --- | --- |
-| **RC circuit** | Analogue, 1st order | 20 dB/decade | Phase lag, 45° at $f_c$ | Anti-aliasing before an ADC, simple hardware smoothing |
-| **Moving average** | FIR | Weak: lobes let some high frequencies through | $(M-1)/2$ samples | Smoothing noisy data while keeping steps sharp; easiest to explain |
-| **Windowed-sinc** | FIR | Sharp, with a stopband below −70 dB | $M/2$ samples, the same for every frequency | Separating close frequencies; offline analysis where delay doesn't matter |
-| **Single pole (EMA)** | IIR, 1st order | About 20 dB/decade | Small at low frequencies | Live data, microcontrollers, trends with little lag |
-| **Butterworth** | Analogue or IIR, any order | 20 dB/decade per order, flat passband | Grows with order; not the same for every frequency | A general-purpose sharp filter with little computation |
-| **Bessel** | Analogue or IIR | Gentle | Nearly the same for every low frequency | Pulses and waveforms whose shape must be kept |
+| RC circuit | Analogue, 1st order | 20 dB/decade | Phase lag, 45° at $f_c$ | Anti-aliasing before an ADC, simple hardware smoothing |
+| Moving average | FIR | Weak: lobes let some high frequencies through | $(M-1)/2$ samples | Smoothing noisy data while keeping steps sharp; easiest to explain |
+| Windowed-sinc | FIR | Sharp, with a stopband below −70 dB | $M/2$ samples, the same for every frequency | Separating close frequencies; offline analysis where delay doesn't matter |
+| Single pole (EMA) | IIR, 1st order | About 20 dB/decade | Small at low frequencies | Live data, microcontrollers, trends with little lag |
+| Butterworth | Analogue or IIR, any order | 20 dB/decade per order, flat passband | Grows with order; not the same for every frequency | A general-purpose sharp filter with little computation |
+| Bessel | Analogue or IIR | Gentle | Nearly the same for every low frequency | Pulses and waveforms whose shape must be kept |
 
-## Phase delay: the hidden cost of filtering
+## Delay and phase lag
 
-A low-pass filter that runs in real time can only use samples it has already seen, so it always **lags** the input. The smoother or sharper you make it, the more past samples it relies on, and the longer the lag. You can see it in the demo below: the orange filtered line sits slightly to the right of the dashed slow wave.
+A low-pass filter that runs in real time can only use samples it has already seen, so it always lags the input. The smoother or sharper you make it, the more past samples it relies on, and the longer the lag.
 
 For the demo's settings (a 500 Hz sample rate, a cutoff of 10 Hz and 50 Hz mains hum), the three digital filters compare like this:
 
@@ -242,7 +242,7 @@ For the demo's settings (a 500 Hz sample rate, a cutoff of 10 Hz and 50 Hz mains
 | 201-tap windowed-sinc | 200 ms | Below −70 dB (gone) |
 | Single pole, $\alpha = 0.118$ | 15 ms at low frequencies | −14 dB (about 20% left) |
 
-The windowed-sinc filter removes the hum completely but is ten times slower to respond than the others. That's fine when you analyse a recording, and a problem in a control loop or an alarm. **Offline**, you can remove the delay altogether: shift a symmetric FIR filter's output back by $M/2$ samples, or run any filter forwards and then backwards over the data (zero-phase filtering).
+The windowed-sinc filter removes the hum completely but is ten times slower to respond than the others. That's fine when you analyse a recording, and a problem in a control loop or an alarm. Offline, you can remove the delay altogether: shift a symmetric FIR filter's output back by $M/2$ samples, or run any filter forwards and then backwards over the data (zero-phase filtering).
 
 ## Low-pass vs high-pass filter
 
@@ -250,13 +250,13 @@ A [high-pass filter](/learn/signal-processing/high-pass-filter/) is the mirror i
 
 | | Low-pass filter | High-pass filter |
 | --- | --- | --- |
-| **Passes** | Frequencies below the cutoff | Frequencies above the cutoff |
-| **Removes** | Noise, hiss, hum and fast jitter | Drift, DC offset and slow wander |
-| **RC circuit** | Resistor in series, capacitor to ground | Capacitor in series, resistor to ground |
-| **Effect on a signal** | Smooths it | Keeps the detail and centres it on zero |
-| **Typical use** | Sensor smoothing, anti-aliasing, a subwoofer feed | Removing baseline drift, tweeter feeds, AC coupling |
+| Passes | Frequencies below the cutoff | Frequencies above the cutoff |
+| Removes | Noise, hiss, hum and fast jitter | Drift, DC offset and slow wander |
+| RC circuit | Resistor in series, capacitor to ground | Capacitor in series, resistor to ground |
+| Effect on a signal | Smooths it | Keeps the detail and centres it on zero |
+| Typical use | Sensor smoothing, anti-aliasing, a subwoofer feed | Removing baseline drift, tweeter feeds, AC coupling |
 
-Put one after the other and you get a **[band-pass filter](/learn/signal-processing/band-pass-filter/)**, which keeps only the band between the two cutoffs. To see what a filter does to each frequency in a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/).
+Put one after the other and you get a [band-pass filter](/learn/signal-processing/band-pass-filter/), which keeps only the band between the two cutoffs. To see what a filter does to each frequency in a real signal, compare its spectrum before and after with an [FFT](/learn/signal-processing/fast-fourier-transform/).
 
 ## Common low-pass filter mistakes
 
@@ -421,7 +421,7 @@ Here is the code for this chart. The live demo runs each filter on the chart's d
 Key points:
 
 - Each filter is a **difference equation**, $y[n] = \sum_k b_k \, x[n-k] + a_1 \, y[n-1]$: a moving average and a windowed-sinc are just different weights $b$, and the single-pole filter adds the feedback term $a_1$.
-- **Your own filter on live data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point, in index order. It starts from index 0 when it recalculates everything (when the series is created or `filterFunction` is set), and runs only the new points when data is appended. That's why the function can read earlier samples from the source series and keep the last output for the single-pole filter's feedback. In the demo, each control change sets a new `filterFunction`, and the chart redraws.
+- **Your own filter on live data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point, in index order. It starts from index 0 when it recalculates everything (when the series is created or `filterFunction` is set), and runs only the new points when data is appended. So the function can read earlier samples from the source series and keep the last output for the single-pole filter's feedback. In the demo, each control change sets a new `filterFunction`, and the chart redraws.
 - **The zero-code option:** for a plain moving average, the built-in [XyMovingAverageFilter](/2d-charts/chart-types/data-filters-api/moving-average-filter/) takes your `XyDataSeries` and a `length`. It is a trailing average (the first `length − 1` points are left empty), it needs x values in ascending order, and it also updates itself as data is appended.
 - The frequency response is calculated in plain JavaScript from the filter's weights. It uses a `LogarithmicAxis` for frequency and a gain axis in dB, the layout of a Bode plot; a `VerticalLineAnnotation` marks the cutoff and a `HorizontalLineAnnotation` marks −3 dB.
 
@@ -445,11 +445,11 @@ A low-pass filter keeps frequencies below its cutoff and reduces those above it,
 
 ### Is a moving average a low-pass filter?
 
-Yes. A moving average replaces each sample with the mean of the last M samples, which is a simple FIR low-pass filter. It is excellent at reducing random noise while keeping sharp steps, but it is a poor frequency separator: its response has ripples above the cutoff that let some high frequencies through.
+Yes. A moving average replaces each sample with the mean of the last M samples, which is a simple FIR low-pass filter. It is the optimal filter for reducing random white noise while keeping the sharpest step response, but it is a poor frequency separator: its response has ripples above the cutoff that let some high frequencies through.
 
 ### What is a Butterworth low-pass filter?
 
-A Butterworth low-pass filter has the flattest possible passband: no ripple, with the gain falling smoothly to -3 dB at the cutoff. Its roll-off above the cutoff is 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade. It is a common default for analogue and digital IIR filters.
+A Butterworth low-pass filter has the flattest possible passband, with no ripple and a gain of −3 dB at the cutoff whatever its order. Above the cutoff its gain falls by 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade.
 
 ### How do I make a low-pass filter in JavaScript?
 

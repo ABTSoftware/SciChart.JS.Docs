@@ -58,22 +58,23 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 
 | Topic | What it covers |
 | --- | --- |
-| [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
-| [Fourier series](/learn/signal-processing/fourier-series/) | Building a repeating wave from harmonics |
-| [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
-| [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
-| [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
-| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
 | [Audio spectrum analyzer](/learn/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one |
-| [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
-| [Hilbert transform](/learn/signal-processing/hilbert-transform/) | Envelope detection, and instantaneous phase and frequency |
-| [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
-| [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Autocorrelation](/learn/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
 | [Band-pass filter](/learn/signal-processing/band-pass-filter/) | Keeping one band of frequencies |
-| [Notch filter](/learn/signal-processing/notch-filter/) | Removing mains hum and other single tones |
-| [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/) | Windowed-sinc and Butterworth design compared |
 | [Bode plot](/learn/signal-processing/bode-plot/) | Reading a filter's frequency response: gain and phase |
 | [Convolution](/learn/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
-| [Autocorrelation](/learn/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
+| [Envelope detector circuit](/learn/signal-processing/envelope-detector-circuit/) | Recovering an AM signal's envelope with a diode and an RC filter |
+| [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
+| [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/) | Windowed-sinc and Butterworth design compared |
+| [Fourier series](/learn/signal-processing/fourier-series/) | Building a repeating wave from harmonics |
+| [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
+| [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Hilbert transform](/learn/signal-processing/hilbert-transform/) | Envelope detection, and instantaneous phase and frequency |
+| [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
+| [Notch filter](/learn/signal-processing/notch-filter/) | Removing mains hum and other single tones |
+| [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
+| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
+| [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
+| [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
 
 <LearnCta position="bottom" />

@@ -73,31 +73,33 @@ related: [fourier-transform, autocorrelation, low-pass-filter, high-pass-filter]
 *A noisy sine convolved with a seven-sample moving average: the input (top), the kernel slid to one position (middle) and the smoothed output (bottom). [Try the interactive calculator](#how-to-calculate-and-chart-a-convolution-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- Convolution is a **sliding weighted sum**: flip the kernel, slide it, multiply, add.
-- A system's **impulse response** is its kernel: convolve any input with it to get the system's output.
-- Convolving N samples with M samples gives **N + M − 1** output samples.
-- The **convolution theorem**: convolution in time is multiplication in frequency, which is why the **FFT** makes long convolutions fast.
-- **Cross-correlation** is the same calculation without the flip; it finds patterns rather than modelling systems.
+- Convolution is a sliding weighted sum: flip the kernel, slide it, multiply, add.
+- A system's impulse response is its kernel: convolve any input with it to get the system's output.
+- Convolving N samples with M samples gives N + M − 1 output samples.
+- The convolution theorem: convolution in time is multiplication in frequency, so the FFT makes long convolutions fast.
+- Cross-correlation is the same calculation without the flip; it finds patterns rather than modelling systems.
 :::
 
 ## How convolution works: flip, slide, multiply and sum
 
 Think of the kernel as a set of weights, and the output as a weighted average of the input around each point. Four steps give one output sample, $y[n]$:
 
-1. **Flip** the kernel, so its first sample is on the right.
-2. **Slide** it along the input until its last sample sits under position $n$.
-3. **Multiply** each kernel value by the input value directly above it.
-4. **Sum** the products. That total is $y[n]$.
+1. Flip the kernel, so its first sample is on the right.
+2. Slide it along the input until its last sample sits under position $n$.
+3. Multiply each kernel value by the input value directly above it.
+4. Sum the products. That total is $y[n]$.
 
 Then move one sample to the right and repeat, for every position where the kernel and the input overlap.
 
 ![The kernel h = [0, 1, 0.5] is flipped to [0.5, 1, 0], slid under the input x = [1, 2, 3] so it ends at k = 2, multiplied to give 0.5, 2 and 0, and summed to give y[2] = 2.5](./convolution-flip-slide-multiply-sum.svg)
 
-**Why flip?** Because of what the kernel usually is: an **impulse response**, the output a system gives when the input is a single spike of height 1 (a unit impulse). Its first sample, $h[0]$, is the system's immediate reaction, $h[1]$ is what's left one sample later, and so on. The output now, $y[n]$, is the present input times $h[0]$, plus the previous input times $h[1]$, plus the one before that times $h[2]$. Writing that as a sum over the inputs puts the kernel in reverse order, and that reversal is the flip.
+### Why is the kernel flipped?
 
-This gives convolution its central job. Any **linear, time-invariant (LTI)** system, such as an audio filter, a spring and damper, a room's acoustics or an RC circuit, is completely described by its impulse response. Measure that once, and you can work out the output for any input by convolution.
+Because the kernel is usually an **impulse response**: the output a system gives when the input is a single spike of height 1 (a unit impulse). Its first sample, $h[0]$, is the system's immediate reaction, $h[1]$ is what's left one sample later, and so on. The output now, $y[n]$, is the present input times $h[0]$, plus the previous input times $h[1]$, plus the one before that times $h[2]$. Writing that as a sum over the inputs puts the kernel in reverse order, and that reversal is the flip.
 
-**A familiar case: the moving average.** A kernel of five equal weights, each 1/5, replaces every sample with the mean of it and the four before it. That's a convolution, and it's why moving averages smooth noise: each output blends several noisy inputs. Change the weights and you change the filter: a bell-shaped (Gaussian) kernel smooths more gently, a decaying kernel favours recent samples, and a kernel of $[1, -1]$ subtracts each sample's neighbour, which picks out sudden jumps.
+Any **linear, time-invariant (LTI)** system, such as an audio filter, a spring and damper, a room's acoustics or an RC circuit, is completely described by its impulse response. Measure that once, and you can work out the output for any input by convolution.
+
+The moving average is a familiar case. A kernel of five equal weights, each 1/5, replaces every sample with the mean of it and the four before it. That's a convolution, and it's why moving averages smooth noise: each output blends several noisy inputs. Change the weights and you change the filter: a bell-shaped (Gaussian) kernel smooths more gently, a decaying kernel favours recent samples, and a kernel of $[1, -1]$ subtracts each sample's neighbour, which picks out sudden jumps.
 
 ## The convolution formula
 
@@ -117,15 +119,15 @@ $$
 
 It's the same idea with an integral in place of the sum: $g$ is flipped, shifted by $t$, multiplied by $f$, and the area under the product is the output at $t$. The dummy variable $\tau$ plays the role of $k$.
 
-**Output length.** If $x$ has $N$ samples and $h$ has $M$, the full convolution has
+If $x$ has $N$ samples and $h$ has $M$, the full convolution has
 
 $$
 N + M - 1
 $$
 
-samples. The output starts as soon as the kernel's leading edge touches the input, and ends when its trailing edge leaves it. A 1,000-sample signal and a 31-tap filter give 1,030 output samples.
+samples. The output starts as soon as the kernel's leading edge touches the input, and ends when its trailing edge leaves it. A 1,000-sample signal and a filter with 31 coefficients (or taps) give 1,030 output samples.
 
-**Edges.** Near the ends, the kernel overhangs the input, and the missing samples are treated as zeros. Libraries usually offer three output sizes: **full** (all $N + M - 1$ samples), **same** (the middle $N$, aligned with the input) and **valid** (only the $N - M + 1$ samples where the kernel lies entirely over real data).
+Near the ends, the kernel overhangs the input, and the missing samples are treated as zeros. Libraries usually offer three output sizes: **full** (all $N + M - 1$ samples), **same** (the middle $N$, aligned with the input) and **valid** (only the $N - M + 1$ samples where the kernel lies entirely over real data).
 
 ## Convolution example, step by step
 
@@ -133,19 +135,17 @@ Convolve $x = [1, 2, 3]$ with $h = [0, 1, 0.5]$. Both have 3 samples, so the out
 
 | n | Flipped kernel lined up under x | Products | y[n] |
 | --- | --- | --- | --- |
-| 0 | only h[0] overlaps x[0] | 1 × 0 | **0** |
-| 1 | h[1] under x[0], h[0] under x[1] | 1 × 1 + 2 × 0 | **1** |
-| 2 | h[2] under x[0], h[1] under x[1], h[0] under x[2] | 1 × 0.5 + 2 × 1 + 3 × 0 | **2.5** |
-| 3 | h[2] under x[1], h[1] under x[2] | 2 × 0.5 + 3 × 1 | **4** |
-| 4 | only h[2] overlaps x[2] | 3 × 0.5 | **1.5** |
+| 0 | only h[0] overlaps x[0] | 1 × 0 | 0 |
+| 1 | h[1] under x[0], h[0] under x[1] | 1 × 1 + 2 × 0 | 1 |
+| 2 | h[2] under x[0], h[1] under x[1], h[0] under x[2] | 1 × 0.5 + 2 × 1 + 3 × 0 | 2.5 |
+| 3 | h[2] under x[1], h[1] under x[2] | 2 × 0.5 + 3 × 1 | 4 |
+| 4 | only h[2] overlaps x[2] | 3 × 0.5 | 1.5 |
 
 So $[1, 2, 3] * [0, 1, 0.5] = [0, 1, 2.5, 4, 1.5]$.
 
-Two quick checks catch most mistakes:
-- **Sum check:** the output's total equals the product of the inputs' totals. Here $6 \times 1.5 = 9$, and $0 + 1 + 2.5 + 4 + 1.5 = 9$.
-- **Shape check:** this kernel is "nothing now, all of it one sample later, half of it two samples later". The output is the input delayed by one sample, plus half of it delayed by two.
-
-You can type these numbers into the calculator below (choose **Your numbers** for both) and press **Play** to watch each row of the table happen.
+Two quick checks:
+- Sum check: the output's total equals the product of the inputs' totals. Here $6 \times 1.5 = 9$, and $0 + 1 + 2.5 + 4 + 1.5 = 9$.
+- Shape check: this kernel is "nothing now, all of it one sample later, half of it two samples later". The output is the input delayed by one sample, plus half of it delayed by two.
 
 ## Properties of convolution
 
@@ -169,11 +169,13 @@ $$
 \mathcal{F}\{x * h\} = \mathcal{F}\{x\} \cdot \mathcal{F}\{h\}
 $$
 
-**Convolution in time is multiplication in frequency**, and the reverse holds too: multiplication in time is convolution in frequency.
+Convolution in time is multiplication in frequency, and the reverse holds too: multiplication in time is convolution in frequency.
 
-This explains what filters do. The Fourier transform of a kernel is its **frequency response**: how much it lets through at each frequency. Convolving with the kernel multiplies the signal's spectrum by that response. A moving-average kernel has a response that is high at low frequencies and small at high ones, so it acts as a [low-pass filter](/learn/signal-processing/low-pass-filter/). A difference kernel such as $[1, -1]$ does the opposite, a simple [high-pass filter](/learn/signal-processing/high-pass-filter/).
+The Fourier transform of a kernel is its **frequency response**: how much it lets through at each frequency. Convolving with the kernel multiplies the signal's spectrum by that response. A moving-average kernel has a response that is high at low frequencies and small at high ones, so it acts as a [low-pass filter](/learn/signal-processing/low-pass-filter/). A difference kernel such as $[1, -1]$ does the opposite, a simple [high-pass filter](/learn/signal-processing/high-pass-filter/).
 
-**It also makes long convolutions fast.** Direct convolution needs about $N \times M$ multiplications. With the [fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/), you can instead:
+### Fast convolution with the FFT
+
+Direct convolution needs about $N \times M$ multiplications. With the [fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/), you can instead:
 
 1. Zero-pad $x$ and $h$ to the same length $L$, at least $N + M - 1$ (usually rounded up to a power of 2).
 2. Take the FFT of both.
@@ -186,7 +188,7 @@ This explains what filters do. The Fourier transform of a kernel is its **freque
 
 That costs on the order of $L \log L$ operations instead of $N \times M$, so the saving grows with the kernel's length. In Smith's measurements, FFT convolution overtook direct convolution once the kernel was about 40 to 80 samples long, depending on the hardware. For signals that never end, such as live audio, the **overlap-add** method splits the input into blocks, convolves each with the FFT and adds the overlapping tails.
 
-**The zero-padding matters.** Multiplying DFTs (the discrete Fourier transform an FFT computes) gives **circular convolution**: the output wraps around, and the tail that should run past the end lands on top of the start. Padding to at least $N + M - 1$ samples leaves room for the tail, so circular convolution gives the same answer as ordinary (linear) convolution.
+Zero-pad both signals, or the output wraps around. Multiplying DFTs (the discrete Fourier transform an FFT computes) gives **circular convolution**, in which the tail that should run past the end lands on top of the start. Padding to at least $N + M - 1$ samples leaves room for the tail, so circular convolution gives the same answer as ordinary (linear) convolution.
 
 ## Convolution vs cross-correlation and circular convolution
 
@@ -196,20 +198,20 @@ That costs on the order of $L \log L$ operations instead of $N \times M$, so the
 | Kernel flipped? | Yes | No | Yes |
 | Commutative? | Yes | No: swapping the signals reverses the result | Yes |
 | Output length | $N + M - 1$ | $N + M - 1$ lags | $L$ (wraps around) |
-| Answers | What does this system do to this signal? | Where, and at what delay, does this pattern appear? | What do FFT products give, unpadded? |
+| Answers | What does this system do to this signal? | Where, and at what delay, does this pattern appear? | The result of multiplying unpadded FFTs |
 | Used for | Filters, smoothing, echo, blur, system modelling | Template matching, time-delay estimation, radar, sonar | Fast convolution via the FFT, periodic signals |
 
-For a **symmetric** kernel, such as a moving average or a Gaussian, the flip changes nothing, so convolution and cross-correlation give the same result. For an asymmetric one they differ: cross-correlating $[1, 2, 3]$ with $[0, 1, 0.5]$ gives $[0.5, 2, 3.5, 3, 0]$ at lags $-2$ to $2$, not the convolution's $[0, 1, 2.5, 4, 1.5]$. Cross-correlating a signal with itself is **[autocorrelation](/learn/signal-processing/autocorrelation/)**, which reveals repeating patterns.
+For a symmetric kernel, such as a moving average or a Gaussian, the flip changes nothing, so convolution and cross-correlation give the same result. For an asymmetric one they differ: cross-correlating $[1, 2, 3]$ with $[0, 1, 0.5]$ gives $[0.5, 2, 3.5, 3, 0]$ at lags $-2$ to $2$, not the convolution's $[0, 1, 2.5, 4, 1.5]$. Cross-correlating a signal with itself is [autocorrelation](/learn/signal-processing/autocorrelation/), which reveals repeating patterns.
 
 ## What convolution is used for
 
-- **Filtering.** Every FIR (finite impulse response) filter is a convolution with its kernel. [Low-pass filters](/learn/signal-processing/low-pass-filter/) remove noise; [high-pass filters](/learn/signal-processing/high-pass-filter/) remove drift.
-- **Smoothing.** Moving averages, Gaussian smoothing and exponential smoothing of sensor data, prices and measurements.
-- **Echo and reverb.** An echo is a kernel with a spike now and a smaller one later. Convolution reverb records a real room's impulse response and convolves dry audio with it.
-- **Images.** The same operation in two dimensions, with a small grid of weights: a 3 × 3 grid of 1/9 blurs; kernels with positive and negative weights find edges or sharpen.
-- **Neural networks.** Convolutional neural networks (CNNs) slide many small 2D kernels over images and learn the weights. It's the same sliding multiply-and-sum, though most libraries skip the flip and compute cross-correlation.
-- **Probability.** Add two independent random quantities, such as two dice, and the distribution of the total is their two distributions convolved. Repeat it many times and the result tends to a bell curve.
-- **Physics and engineering.** The response of any LTI system, such as a circuit, a sensor or a building in an earthquake, is its input convolved with its impulse response. Instruments blur what they measure in the same way, and deconvolution tries to undo it.
+- Filtering: every FIR (finite impulse response) filter is a convolution with its kernel. [Low-pass filters](/learn/signal-processing/low-pass-filter/) remove noise; [high-pass filters](/learn/signal-processing/high-pass-filter/) remove drift.
+- Smoothing: moving averages, Gaussian smoothing and exponential smoothing of sensor data, prices and measurements.
+- Echo and reverb: an echo is a kernel with a spike now and a smaller one later. Convolution reverb records a real room's impulse response and convolves dry audio with it.
+- Images: the same operation in two dimensions, with a small grid of weights: a 3 × 3 grid of 1/9 blurs; kernels with positive and negative weights find edges or sharpen.
+- Neural networks: convolutional neural networks (CNNs) slide many small 2D kernels over images and learn the weights. It's the same sliding multiply-and-sum, though most libraries skip the flip and compute cross-correlation.
+- Probability: add two independent random quantities, such as two dice, and the distribution of the total is their two distributions convolved. Repeat it many times and the result tends to a bell curve.
+- Physics and engineering: the response of any LTI system, such as a circuit, a sensor or a building in an earthquake, is its input convolved with its impulse response. Instruments blur what they measure in the same way, and deconvolution tries to undo it.
 
 ## Common convolution mistakes
 
@@ -227,7 +229,7 @@ SciChart.js charts the input, the kernel and the result of a convolution togethe
 
 - Pick an **input** and a **kernel**, and set the kernel's **width** (for the echo, its delay).
 - Move **Slide n**, or press **Play**, to slide the flipped kernel along the input: the ringed output sample is the sum shown above the chart.
-- Choose **Your numbers** to convolve any two short sequences: the full result is listed when it has 16 values or fewer.
+- Choose **Your numbers** to convolve any two short sequences, such as the worked example above: the full result is listed when it has 16 values or fewer.
 - Hover for values, scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={620} name="./Basic/demo" />
@@ -374,7 +376,7 @@ Here is the code for this chart. The convolution itself is the `convolveAt` func
 
 Key points:
 
-- `XyCustomFilter` is a data series computed from another one. SciChart.js calls its `filterFunction(index, y)` for every sample when the filter is created, when the function is replaced or when the input is cleared and refilled, and **only for the new samples** when you append. A causal kernel only looks back, so appended data is filtered correctly without recomputing the rest.
+- `XyCustomFilter` is a data series computed from another one. SciChart.js calls its `filterFunction(index, y)` for every sample when the filter is created, when the function is replaced or when the input is cleared and refilled, and only for the new samples when you append. A causal kernel only looks back, so appended data is filtered correctly without recomputing the rest.
 - `FastImpulseRenderableSeries` draws **stems**, one line and dot per sample, the usual way to show discrete signals and kernels.
 - `LeftAlignedOuterVerticallyStackedAxisLayoutStrategy` stacks the y-axes into **lanes**, so the input, kernel and output share one x-axis and line up sample for sample.
 - Returning `NaN` from a filter function leaves a gap, which is how the demo shows the output "still to come" in a fainter colour.
@@ -427,8 +429,6 @@ function convolve(x, h) {
 
 convolve([1, 2, 3], [0, 1, 0.5]); // [0, 1, 2.5, 4, 1.5]
 ```
-
-For kernels longer than a few dozen samples, FFT convolution needs far fewer operations.
 
 **See it in the demo app:** [JavaScript moving average chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React moving average chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular moving average chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with SciChart.js trendline, moving average and ratio filters. For live signal processing, see the [JavaScript audio analyzer with FFT](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
 
