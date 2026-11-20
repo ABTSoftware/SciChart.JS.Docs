@@ -1,5 +1,5 @@
 ---
-sidebar_position: 120
+sidebar_position: 150
 sidebar_label: Stress-Strain Curve
 title: "Stress-Strain Curve: How to Read It (Yield Strength, Modulus and UTS, With an Interactive Example)"
 description: "How to read a stress-strain curve: Young's modulus, 0.2% offset yield strength, UTS, necking, ductile vs brittle, true stress and S-N curves, with a live tensile test."
@@ -240,7 +240,7 @@ Choose a **Material**, and switch the **Curve** between engineering stress, true
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="stress-strain curve" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="top" chart="stress-strain curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this chart. The test analysis (modulus fit, offset yield, true stress and areas) is plain JavaScript; SciChart.js draws the curves, the offset line, the shaded areas and the labelled points.
 
@@ -455,4 +455,4 @@ Convert the test machine's force and extension readings to stress (force over or
 - Roylance, D., *Mechanics of Materials*, MIT, on LibreTexts: [Stress-strain curves](https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Mechanics_of_Materials_(Roylance)/01%3A_Tensile_Response_of_Materials/1.04%3A_Stress-Strain_Curves). Engineering and true stress, Considère's construction and strain energy.
 - Budynas, R. G. and Nisbett, J. K. (2020), *Shigley's Mechanical Engineering Design*, 11th edition, McGraw-Hill. Chapter 6: S-N curves, the endurance limit estimate and the fatigue strength fraction at 1,000 cycles. ASTM E466 and E739 cover fatigue testing and the statistical analysis of S-N data.
 
-<LearnCta position="bottom" chart="stress-strain curve" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="bottom" chart="stress-strain curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

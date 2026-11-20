@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 80
 sidebar_label: Mass Spectrum
 title: "Mass Spectrum: How to Read a Mass Spectrometry Graph (m/z, Base Peak and Isotope Patterns, With an Interactive Example)"
 description: "How to read a mass spectrum: the m/z axis, relative abundance, the molecular ion and base peak, fragments, chlorine and bromine isotope patterns, ESI charge states, resolution and ppm accuracy, with a live example."
@@ -268,7 +268,7 @@ Pick a **Compound** and an **Ionisation**: EI shows fragments for the small mole
 
 <LiveDocSnippet maxWidth={'100%'} height={600} name="./Basic/demo" />
 
-<LearnCta position="top" chart="mass spectrum" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
+<LearnCta position="top" chart="mass spectrum" demo="impulse-chart" demoLabel="impulse chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
 
 Here is the code for this chart. The isotope maths is plain JavaScript; SciChart.js draws the sticks with impulse series, the profile with a mountain series and the peak labels with annotations.
 
@@ -488,4 +488,4 @@ Put the m/z values on a numeric x-axis and the intensities, divided by the large
 - Gross, J. H. (2017), *Mass Spectrometry: A Textbook*, 3rd edition, Springer. Ionisation methods, mass analysers, resolution and accurate mass.
 - Fenn, J. B. et al. (1989), [Electrospray ionization for mass spectrometry of large biomolecules](https://doi.org/10.1126/science.2675315). *Science*, 246(4926). Multiply charged ions and the charge-state calculation.
 
-<LearnCta position="bottom" chart="mass spectrum" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
+<LearnCta position="bottom" chart="mass spectrum" demo="impulse-chart" demoLabel="impulse chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />

@@ -88,7 +88,10 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | Chart | What it shows |
 | --- | --- |
 | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+| [Footprint chart](/learn/chart-types/cartesian/footprint-chart/) | Bid and ask volume at each price inside each bar, with delta and imbalances |
 | [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
+| [Renko chart](/learn/chart-types/cartesian/renko-chart/) | Fixed-size price bricks that ignore time and show the trend |
+| [Tick chart](/learn/chart-types/cartesian/tick-chart/) | Bars that close after a set number of trades instead of a set time |
 | [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
 
 ## Maps and geographic data

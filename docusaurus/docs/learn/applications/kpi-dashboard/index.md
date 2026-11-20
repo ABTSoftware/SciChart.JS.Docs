@@ -1,5 +1,5 @@
 ---
-sidebar_position: 60
+sidebar_position: 70
 sidebar_label: KPI Dashboard
 title: "KPI Dashboard: What to Put on One and How to Design It (Examples and an Interactive Demo)"
 description: "What a KPI dashboard is, how to choose KPIs, which chart suits each one, how to show targets and lay it out, with examples by team and a live sales dashboard to try."
@@ -221,7 +221,7 @@ Use **Period** to show December, the fourth quarter or the whole year, and **Com
 
 <LiveDocSnippet maxWidth={'100%'} height={800} name="./Basic/demo" />
 
-<LearnCta position="top" chart="multi-chart dashboard" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" docsLabel="SciChart.js column series documentation" />
+<LearnCta position="top" chart="KPI dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" docsLabel="SciChart.js column series documentation" />
 
 Here is the code for this dashboard. The KPI calculations and the controls are plain JavaScript; SciChart.js draws the sparklines, the trend, the bullet chart and the waterfall. The React and Angular versions show the core of it: the monthly revenue trend against target, with off-target months coloured.
 
@@ -453,4 +453,4 @@ Compute each KPI and its comparison from your data in plain JavaScript, then lay
 - ISO 22400-2:2014, *Automation systems and integration: Key performance indicators (KPIs) for manufacturing operations management, Part 2: Definitions and descriptions*. Includes overall equipment effectiveness.
 - Strathern, M. (1997), "Improving ratings: audit in the British University system", *European Review*, 5(3), pp. 305–321. The common wording of Goodhart's law.
 
-<LearnCta position="bottom" chart="multi-chart dashboard" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" docsLabel="SciChart.js column series documentation" />
+<LearnCta position="bottom" chart="KPI dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" docsLabel="SciChart.js column series documentation" />

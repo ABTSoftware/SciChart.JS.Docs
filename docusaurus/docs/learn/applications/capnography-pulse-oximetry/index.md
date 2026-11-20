@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 20
 sidebar_label: Capnography and Pulse Oximetry
 title: "Capnography and Pulse Oximetry Waveforms: How to Read a Capnogram and Pleth Trace (With Interactive Examples)"
 description: "How to read a capnogram and a pleth (pulse oximetry) waveform: the four capnography phases, normal EtCO2, shark fin and other abnormal shapes, perfusion index, motion artefact and sweep speeds, with a live simulated monitor."
@@ -273,7 +273,7 @@ Change **Breathing** to see a shark fin, rebreathing, hypoventilation or apnoea 
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="patient monitor" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="top" chart="patient monitor" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this chart. The monitor algorithms are plain JavaScript; SciChart.js draws the two sweeping traces.
 
@@ -433,7 +433,7 @@ Key points:
 - The CO₂ y-axis has a fixed `visibleRange` in mmHg; the pleth y-axis uses `EAutoRange.Always`, the chart's equivalent of a monitor's auto-gain.
 - The capnometer and oximeter functions show how the numbers come from the waveforms: breath detection with two thresholds, EtCO₂ as the peak of each breath, and SpO₂ from the ratio of the red and infrared pulse heights.
 
-**See it in the demo app:** [JavaScript vital signs monitor](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React vital signs monitor](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular vital signs monitor](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example).
+**See it in the demo app:** [JavaScript ECG vital signs chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG vital signs chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG vital signs chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example).
 
 **Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/) and [real-time updates documentation](/2d-charts/chart-types/data-series-api/realtime-updates/), which covers sweeping FIFO series. For how medical device makers and researchers use SciChart, see [SciChart for medical charts and dashboards](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/) and [SciChart for telehealth](https://www.scichart.com/telehealth/).
 
@@ -479,4 +479,4 @@ Use a line series with a first-in, first-out data buffer sized to one screen of 
 - Sjoding, M. W., Dickson, R. P., Iwashyna, T. J., Gay, S. E. and Valley, T. S. (2020), [Racial bias in pulse oximetry measurement](https://doi.org/10.1056/NEJMc2029240). *New England Journal of Medicine*, 383.
 - National Institute of Standards and Technology, [How do you measure blood oxygen levels?](https://www.nist.gov/how-do-you-measure-it/how-do-you-measure-blood-oxygen-levels) Normal saturation range and the effect of skin pigmentation.
 
-<LearnCta position="bottom" chart="patient monitor" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="bottom" chart="patient monitor" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

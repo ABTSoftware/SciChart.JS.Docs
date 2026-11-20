@@ -451,7 +451,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript Smith chart](https://www.scichart.com/demo/javascript/smith-chart) · [React Smith chart](https://www.scichart.com/demo/react/smith-chart) · [Angular Smith chart](https://www.scichart.com/demo/angular/smith-chart), with impedance and admittance grids, markers, VSWR circles and matching chains.
 
-**Go deeper:** [SciChart.js polar line chart documentation](/2d-charts/chart-types/polar-line-renderable-series/) for circular charts in general, the [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [custom chart modifiers documentation](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/).
+**Go deeper:** [SciChart.js polar line chart documentation](/2d-charts/chart-types/polar-line-renderable-series/) for circular charts in general, the [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [custom chart modifiers documentation](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/). For the far-field side of antenna design, see [antenna radiation patterns](/learn/applications/antenna-radiation-pattern/).
 
 ## Frequently asked questions
 

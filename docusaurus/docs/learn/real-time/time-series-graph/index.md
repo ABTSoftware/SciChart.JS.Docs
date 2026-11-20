@@ -276,7 +276,7 @@ The demo has the 21 days of building power demand from this guide. Switch the **
 
 <LiveDocSnippet maxWidth={'100%'} height={600} name="./Basic/demo" />
 
-<LearnCta position="top" chart="time series chart" demo="chart-realtime-performance-demo" docs="/2d-charts/axis-api/axis-types/date-time-numeric-axis/" docsLabel="SciChart.js date-time axis documentation" />
+<LearnCta position="top" chart="time series chart" demo="chart-realtime-performance-demo" demoLabel="real-time line chart" docs="/2d-charts/axis-api/axis-types/date-time-numeric-axis/" docsLabel="SciChart.js date-time axis documentation" />
 
 Here is the code for this time series explorer. The meter simulation and the HTML controls are plain JavaScript; SciChart.js draws the date-time axis, the readings with their gaps, the moving average and the annotations.
 
@@ -472,4 +472,4 @@ Store each time as a Unix timestamp and plot the values against a date-time axis
 - ISO, [ISO 8601 date and time format](https://www.iso.org/iso-8601-date-and-time-format.html). The year-month-day notation.
 - MDN Web Docs, [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date). JavaScript time values as milliseconds since 1 January 1970 UTC.
 
-<LearnCta position="bottom" chart="time series chart" demo="chart-realtime-performance-demo" docs="/2d-charts/axis-api/axis-types/date-time-numeric-axis/" docsLabel="SciChart.js date-time axis documentation" />
+<LearnCta position="bottom" chart="time series chart" demo="chart-realtime-performance-demo" demoLabel="real-time line chart" docs="/2d-charts/axis-api/axis-types/date-time-numeric-axis/" docsLabel="SciChart.js date-time axis documentation" />

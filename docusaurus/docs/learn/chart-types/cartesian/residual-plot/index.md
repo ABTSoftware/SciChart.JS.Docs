@@ -1,5 +1,5 @@
 ---
-sidebar_position: 200
+sidebar_position: 220
 sidebar_label: Residual Plot and Q-Q Plot
 title: "Residual Plot and Q-Q Plot: How to Read Them and Check a Regression (With Interactive Examples)"
 description: "What a residual plot and a Q-Q plot show, how to read residuals vs fitted, funnel and curve patterns, Q-Q plot shapes, leverage, and what to fix next. With a live example."
@@ -248,7 +248,7 @@ Pick the **True relationship** (straight or curved), the **Noise** (normal, funn
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="residual plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter chart documentation" />
+<LearnCta position="top" chart="residual plot" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter chart documentation" />
 
 Here is the code for these charts. The regression and the statistics are plain JavaScript; SciChart.js draws each chart as scatter and line series with a zero-line annotation.
 
@@ -423,4 +423,4 @@ Fit the regression in plain JavaScript (least squares), compute each residual as
 - Blom, G. (1958), *Statistical Estimates and Transformed Beta-Variables*, Wiley. The (i − 3/8) / (n + 1/4) plotting positions.
 - Durbin, J. and Watson, G. S. (1950), Testing for serial correlation in least squares regression. *Biometrika*, 37(3–4), 409–428.
 
-<LearnCta position="bottom" chart="residual plot" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter chart documentation" />
+<LearnCta position="bottom" chart="residual plot" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter chart documentation" />

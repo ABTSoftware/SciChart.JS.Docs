@@ -1,5 +1,5 @@
 ---
-sidebar_position: 40
+sidebar_position: 50
 sidebar_label: HMI and SCADA
 title: "HMI and SCADA: What They Are, How They Work and Examples of SCADA Trend Charts (With Interactive Examples)"
 description: "What SCADA and HMI mean, how a SCADA system is built, SCADA vs DCS, what is on an HMI screen, and how to read trend charts, alarm limits and deadbands, with a live example."
@@ -235,7 +235,7 @@ Drag any dashed **HI** or **LO** line to move that limit, and watch the alarm li
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="HMI trend chart" demo="vertically-stacked-axes" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="HMI trend chart" demo="vertically-stacked-axes" demoLabel="vertically stacked axes chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
 
 Here is the code for this chart. The process simulation and the alarm logic are plain JavaScript; SciChart.js draws the stacked trend, the limit lines, the colour change at each limit and the shading.
 
@@ -436,7 +436,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript chart with vertically stacked axes](https://www.scichart.com/demo/javascript/vertically-stacked-axes) · [React chart with vertically stacked axes](https://www.scichart.com/demo/react/vertically-stacked-axes) · [Angular chart with vertically stacked axes](https://www.scichart.com/demo/angular/vertically-stacked-axes). For draggable limits, see the [React chart with a draggable threshold](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and the [React line chart with threshold colouring](https://www.scichart.com/demo/react/line-splitting-thresholds); for faceplate bars, the [React linear gauges](https://www.scichart.com/demo/react/linear-gauges); and for a full industrial screen, the [React oil and gas dashboard](https://www.scichart.com/demo/react/oil-and-gas-dashboard-showcase).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [vertically stacked axis layout](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/), [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), [palette provider](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/), [render data transforms](/2d-charts/chart-types/render-data-transforms-api/), [band series](/2d-charts/chart-types/fast-band-renderable-series/) and [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/). For where SciChart is used in industry, see the [HMI and SCADA page](https://www.scichart.com/scada-big-data/), and our guide to [big data visualisation](/learn/big-data/big-data-visualization/) for long histories.
+**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [vertically stacked axis layout](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/), [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), [palette provider](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/), [render data transforms](/2d-charts/chart-types/render-data-transforms-api/), [band series](/2d-charts/chart-types/fast-band-renderable-series/) and [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/). For where SciChart is used in industry, see the [HMI and SCADA page](https://www.scichart.com/scada-big-data/), and our guide to [big data visualisation](/learn/big-data/big-data-visualization/) for long histories. For electrical networks, see [power quality and harmonics](/learn/applications/power-quality/).
 
 ## Frequently asked questions
 
@@ -477,4 +477,4 @@ Use a charting library that handles real-time data. In SciChart.js, give each pr
 - EEMUA Publication 191, [Alarm systems: a guide to design, management and procurement](https://eemua.org/products/publications/print/eemua-publication-191).
 - Protocol specifications: [Modbus Organization](https://www.modbus.org/), [IEEE 1815 (DNP3)](https://standards.ieee.org/ieee/1815/5414/), [IEC 61850](https://webstore.iec.ch/en/publication/6028) and the [OPC Foundation's OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/).
 
-<LearnCta position="bottom" chart="HMI trend chart" demo="vertically-stacked-axes" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="HMI trend chart" demo="vertically-stacked-axes" demoLabel="vertically stacked axes chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

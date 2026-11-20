@@ -12,7 +12,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 42 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 45 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 | Group | Charts |
 | --- | --- |
@@ -21,7 +21,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, correlation matrix, residual and Q-Q plots, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
 | [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart, point cloud |
 | [Dashboards and KPIs](/learn/chart-types/#dashboards-and-kpis) | Gauge, bullet, funnel |
-| [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, waterfall |
+| [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, footprint, Renko, tick, waterfall |
 | [Maps and geographic data](/learn/chart-types/#maps-and-geographic-data) | Choropleth map |
 | [Time and events](/learn/chart-types/#time-and-events) | Timeline |
 
@@ -86,6 +86,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 | Topic | What it covers |
 | --- | --- |
+| [Antenna radiation pattern](/learn/applications/antenna-radiation-pattern/) | Reading polar and 3D antenna patterns |
 | [Capnography and pulse oximetry](/learn/applications/capnography-pulse-oximetry/) | Reading capnogram and pleth waveforms |
 | [Chromatogram](/learn/applications/chromatogram/) | Reading retention time, peaks and resolution in HPLC and GC |
 | [ECG](/learn/applications/ecg/) | ECG leads and how to read an ECG strip |
@@ -95,10 +96,19 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Mass spectrum](/learn/applications/mass-spectrum/) | How to read a mass spectrometry graph |
 | [Motorsport telemetry](/learn/applications/motorsport-telemetry/) | Reading lap traces and comparing laps |
 | [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope |
-| [ROC curve](/learn/applications/roc-curve/) | ROC and precision-recall curves and what AUC means |
+| [PID control](/learn/applications/pid-control/) | Tuning a PID controller from the step response |
+| [Power quality](/learn/applications/power-quality/) | Harmonics, THD, sags and power factor |
 | [Spectroscopy](/learn/applications/spectroscopy/) | Reading IR, Raman and UV-Vis spectra |
 | [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test curve |
 | [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |
 | [Vibration analysis](/learn/applications/vibration-analysis/) | Finding machine faults in vibration spectra |
+
+## Machine learning
+
+[**Machine learning**](/learn/machine-learning/): classifiers, clustering and model evaluation explained with live charts.
+
+| Topic | What it covers |
+| --- | --- |
+| [ROC curve](/learn/machine-learning/roc-curve/) | ROC and precision-recall curves and what AUC means |
 
 <LearnCta position="bottom" />

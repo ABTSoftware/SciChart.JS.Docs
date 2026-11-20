@@ -266,7 +266,7 @@ Change **Colour by** to see the same points by height, intensity, class and retu
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
-<LearnCta position="top" chart="LiDAR point cloud" demo="3d-lidar-visualization" docs="/3d-charts/chart-types/scatter-3d-chart/" docsLabel="SciChart.js 3D scatter chart documentation" />
+<LearnCta position="top" chart="LiDAR point cloud" demo="3d-lidar-visualization" demoLabel="3D LiDAR chart" docs="/3d-charts/chart-types/scatter-3d-chart/" docsLabel="SciChart.js 3D scatter chart documentation" />
 
 Here is the code for this point cloud. The scene simulation and the HTML controls are plain JavaScript; SciChart.js draws the 3D points and the top-down heatmap.
 
@@ -407,7 +407,7 @@ Key points:
 - In SciChart.js 3D the Y axis is vertical, so map elevation to Y and the two ground directions to X and Z. `worldDimensions` sets the box size and so the vertical exaggeration.
 - The top-down view is a 2D `UniformHeatmapRenderableSeries` with one cell per square metre; `containsNaN` draws empty cells as transparent, so no-data stays visible.
 
-**See it in the demo app:** [JavaScript LiDAR point cloud](https://www.scichart.com/demo/javascript/3d-lidar-visualization) · [React LiDAR point cloud](https://www.scichart.com/demo/react/3d-lidar-visualization) · [Angular LiDAR point cloud](https://www.scichart.com/demo/angular/3d-lidar-visualization). Related: the [React real-time 3D surface mesh](https://www.scichart.com/demo/react/realtime-3d-surface-mesh-chart) and the [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart).
+**See it in the demo app:** [JavaScript 3D LiDAR chart](https://www.scichart.com/demo/javascript/3d-lidar-visualization) · [React 3D LiDAR chart](https://www.scichart.com/demo/react/3d-lidar-visualization) · [Angular 3D LiDAR chart](https://www.scichart.com/demo/angular/3d-lidar-visualization). Related: the [React real-time 3D surface mesh](https://www.scichart.com/demo/react/realtime-3d-surface-mesh-chart) and the [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart).
 
 **Go deeper:** [SciChart.js 3D scatter chart documentation](/3d-charts/chart-types/scatter-3d-chart/), the [3D bubble chart](/3d-charts/chart-types/bubble-3d-chart/) for per-point sizes, and the learning center guides to the [3D surface plot](/learn/chart-types/3d/3d-surface-plot/), [heatmap](/learn/chart-types/cartesian/heatmap/) and [big data visualization](/learn/big-data/big-data-visualization/). For the industry, see SciChart for [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/).
 
@@ -446,4 +446,4 @@ Use a WebGL-based 3D chart that can draw hundreds of thousands to millions of po
 - ASTM, [E2807 Standard Specification for 3D Imaging Data Exchange](https://www.astm.org/e2807-11r19e01.html). The E57 file format.
 - NASA, [ICESat-2: how it works](https://icesat-2.gsfc.nasa.gov/how-it-works). The ATLAS laser altimeter measuring surface height from orbit.
 
-<LearnCta position="bottom" chart="LiDAR point cloud" demo="3d-lidar-visualization" docs="/3d-charts/chart-types/scatter-3d-chart/" docsLabel="SciChart.js 3D scatter chart documentation" />
+<LearnCta position="bottom" chart="LiDAR point cloud" demo="3d-lidar-visualization" demoLabel="3D LiDAR chart" docs="/3d-charts/chart-types/scatter-3d-chart/" docsLabel="SciChart.js 3D scatter chart documentation" />

@@ -1,11 +1,13 @@
 ---
-sidebar_position: 100
+sidebar_position: 999
 sidebar_label: ROC Curve
 title: "ROC Curve and Precision-Recall Curve: How to Read Them and What AUC Means (With an Interactive Example)"
 description: "What a ROC curve is, how it is built from a confusion matrix by sweeping the threshold, what AUC means, when to use a precision-recall curve instead, and how to choose a threshold. With a live example."
 keywords:
     [
         "roc curve",
+        "f1 score",
+        "precision and recall",
         "roc auc",
         "auc roc curve",
         "what is a roc curve",
@@ -51,6 +53,7 @@ related: [residual-plot, correlation-matrix, histogram, scatter-plot]
                     "name": "What is the difference between sensitivity and specificity?",
                     "acceptedAnswer": { "@type": "Answer", "text": "Sensitivity is the share of real positives that a test or model correctly flags as positive: TP / (TP + FN). It is the same as recall and the true positive rate. Specificity is the share of real negatives correctly cleared as negative: TN / (TN + FP). The false positive rate on a ROC curve is 1 minus the specificity. Lowering the threshold raises sensitivity and lowers specificity." }
                 },
+                { "@type": "Question", "name": "What is the F1 score?", "acceptedAnswer": { "@type": "Answer", "text": "The F1 score is the harmonic mean of precision and recall, 2PR / (P + R). It is high only when both are high, ignores true negatives, and depends on the threshold you choose. Use it to compare models at one operating point when positives are rare; use the precision-recall curve to see every threshold at once." } },
                 {
                     "@type": "Question",
                     "name": "Can AUC be below 0.5?",
@@ -132,7 +135,31 @@ The ROC curve plots TPR against FPR. The precision-recall curve plots precision 
 
 Recall answers "of all the real positives, how many did we catch?". Precision answers "of everything we flagged, how much was real?". Recall divides by the actual positives; precision divides by the predicted positives. A spam filter that lets some spam through has low recall; one that sends real mail to the spam folder has low precision.
 
-Lowering the threshold usually raises recall and lowers precision. The F1 score, $2PR / (P + R)$, is their harmonic mean, and is 0.67 for the example at 0.5.
+Lowering the threshold usually raises recall and lowers precision. The F1 score combines the two into one number.
+
+### F1 score
+
+The **F1 score** is the harmonic mean of precision $P$ and recall $R$:
+
+$$
+F_1 = \frac{2PR}{P + R} = \frac{2\,TP}{2\,TP + FP + FN}
+$$
+
+At a threshold of 0.5 the example has $P = 0.60$ and $R = 0.75$, so $F_1 = 2 \times 0.60 \times 0.75 / 1.35 = 0.67$. The harmonic mean punishes imbalance between the two: a model with precision 1.0 and recall 0.01 has an arithmetic mean of 0.505 but an F1 of only 0.02.
+
+F1 depends on the threshold. For the ten cases:
+
+| Threshold | Predicted positive | TP | FP | FN | Precision | Recall | F1 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 0.70 | cases 1–3 | 2 | 1 | 2 | 0.67 | 0.50 | 0.57 |
+| 0.60 | cases 1–4 | 3 | 1 | 1 | 0.75 | 0.75 | 0.75 |
+| 0.50 | cases 1–5 | 3 | 2 | 1 | 0.60 | 0.75 | 0.67 |
+| 0.35 | cases 1–7 | 4 | 3 | 0 | 0.57 | 1.00 | 0.73 |
+
+The best F1 here is at 0.60. Two things to know when you use it:
+
+- F1 ignores true negatives, so it says nothing about how well the model rejects negatives. That suits rare-positive problems, and it is why the precision-recall curve, not the ROC curve, is its natural companion.
+- When recall matters more than precision (or the other way round), use the $F_\beta$ score, $(1 + \beta^2) PR / (\beta^2 P + R)$: $\beta = 2$ weights recall twice as heavily, $\beta = 0.5$ favours precision.
 
 ## How a ROC curve is built: a worked example
 
@@ -274,7 +301,7 @@ Drag the **Threshold** slider, or the dashed line on the histogram, to move the 
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="ROC curve" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="top" chart="ROC curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this chart. The ROC, AUC, precision-recall and confusion-matrix maths are plain JavaScript; SciChart.js draws the histograms as step mountain series, the curves as line series and the operating points as scatter markers.
 
@@ -459,6 +486,10 @@ Use a precision-recall curve when the positive class is rare and you care mainly
 
 Sensitivity is the share of real positives that a test or model correctly flags as positive: TP / (TP + FN). It is the same as recall and the true positive rate. Specificity is the share of real negatives correctly cleared as negative: TN / (TN + FP). The false positive rate on a ROC curve is 1 minus the specificity. Lowering the threshold raises sensitivity and lowers specificity.
 
+### What is the F1 score?
+
+The F1 score is the harmonic mean of precision and recall, 2PR / (P + R). It is high only when both are high, ignores true negatives, and depends on the threshold you choose. Use it to compare models at one operating point when positives are rare; use the precision-recall curve to see every threshold at once.
+
 ### Can AUC be below 0.5?
 
 Yes. An AUC below 0.5 means the model ranks negatives above positives more often than the reverse. On a test set it is usually a bug, such as swapped labels or a score that rises for the wrong class, or chance when the model has no skill and the test set is small. Reversing the scores of a model with an AUC of 0.3 gives an AUC of 0.7.
@@ -478,4 +509,4 @@ Sort the test cases by score from highest to lowest, then walk down the list cou
 - Hosmer, D. W. and Lemeshow, S. (2000), *Applied Logistic Regression*, 2nd edition, Wiley. Rule of thumb for AUC values.
 - scikit-learn, [Metrics and scoring: classification metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics) (ROC, average precision, confusion matrix) and [probability calibration](https://scikit-learn.org/stable/modules/calibration.html).
 
-<LearnCta position="bottom" chart="ROC curve" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="bottom" chart="ROC curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

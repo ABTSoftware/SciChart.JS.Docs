@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 30
 sidebar_label: Chromatogram
 title: "Chromatogram: What It Is and How to Read One (Retention Time, Peaks and Resolution, With an Interactive Example)"
 description: "What a chromatogram is and how to read one: retention time, dead time, peak height and area, resolution and plate number, HPLC vs GC, and a live chromatogram you can integrate."
@@ -230,7 +230,7 @@ Move the **column temperature** to shift the peaks: compounds B and C move at di
 
 <LiveDocSnippet maxWidth={'100%'} height={620} name="./Basic/demo" />
 
-<LearnCta position="top" chart="chromatogram" demo="mountain-chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />
+<LearnCta position="top" chart="chromatogram" demo="mountain-chart" demoLabel="mountain chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />
 
 Here is the code for this chart. Peak finding and integration are plain JavaScript; SciChart.js draws the signal, shades the integrated areas with band series and labels the peaks with annotations.
 
@@ -467,4 +467,4 @@ Load the detector readings as time and response arrays into a line series, with 
 - International Council for Harmonisation (2023), *ICH Q2(R2): Validation of Analytical Procedures*. Signal-to-noise ratios of about 3 for detection and 10 for quantitation.
 - Lieber, C. A. and Mahadevan-Jansen, A. (2003), [Automated method for subtraction of fluorescence from biological Raman spectra](https://doi.org/10.1366/000370203322554518). *Applied Spectroscopy*, 57(11). The iterative polynomial baseline used by the demo's peak finder.
 
-<LearnCta position="bottom" chart="chromatogram" demo="mountain-chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />
+<LearnCta position="bottom" chart="chromatogram" demo="mountain-chart" demoLabel="mountain chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />

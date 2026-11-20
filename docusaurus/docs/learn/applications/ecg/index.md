@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 40
 sidebar_label: ECG
 title: "ECG Leads and How to Read an ECG Strip: Waves, Intervals and the 12-Lead ECG (With an Interactive Example)"
 description: "What an ECG records, the 12 ECG leads and where the electrodes go, the P-QRS-T waveform and normal intervals, ECG paper and heart rate, and a step-by-step way to read a strip, with a live ECG."
@@ -319,7 +319,7 @@ Choose the **Layout**: a 4-second rhythm strip of one lead, about what a monitor
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
 
 Here is the code for this chart. The heart model, the rhythms and the measurements are plain JavaScript; SciChart.js draws the ECG paper grid, the sweeping traces and the calipers. The React and Angular versions show the core of it: one lead sweeping across ECG paper, fed by your own data.
 
@@ -516,7 +516,7 @@ Key points:
 - The calipers are `BoxAnnotation`s with `TextAnnotation` labels, moved to the latest complete beat on each update.
 - For a monitor fed by a device, `fifoCapacity` with `fifoSweeping` gives the sweeping display with no buffer code of your own, as in the React and Angular versions.
 
-**See it in the demo app:** [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), and for several live signals at once, [JavaScript real-time chart performance](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo).
+**See it in the demo app:** [JavaScript ECG vital signs chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG vital signs chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG vital signs chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), and for several live signals at once, [JavaScript real-time chart performance](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo).
 
 **Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [real-time updates and FIFO sweeping](/2d-charts/chart-types/data-series-api/realtime-updates/) and the [box annotation documentation](/2d-charts/annotations-api/box-annotation/). For how SciChart is used in patient monitoring and medical research software, see [SciChart for medical charts and dashboards](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/) and [SciChart for telehealth](https://www.scichart.com/telehealth/).
 
@@ -556,4 +556,4 @@ Plot the samples in millivolts against time with a line series, on fixed axes wi
 - Resuscitation Council UK, *Advanced Life Support*, 8th edition (2021), chapter on monitoring and rhythm recognition. The structured approach to reading rhythm strips.
 - Joglar, J. A. et al. (2024), [2023 ACC/AHA/ACCP/HRS guideline for the diagnosis and management of atrial fibrillation](https://doi.org/10.1161/CIR.0000000000001193). *Circulation*, 149(1). The ECG features of atrial fibrillation.
 
-<LearnCta position="bottom" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

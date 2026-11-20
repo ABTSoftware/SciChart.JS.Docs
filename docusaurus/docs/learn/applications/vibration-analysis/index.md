@@ -1,5 +1,5 @@
 ---
-sidebar_position: 140
+sidebar_position: 170
 sidebar_label: Vibration Analysis
 title: "Vibration Analysis: How to Read Vibration Spectra and Find Machine Faults (With an Interactive Example)"
 description: "What vibration analysis is, how sensors, units and ISO 20816 severity zones work, how to read a time waveform and FFT spectrum, and the signatures of imbalance, misalignment, looseness and bearing faults."
@@ -289,7 +289,7 @@ Change the **Shaft speed** and watch the order markers and bearing frequencies m
 
 <LiveDocSnippet maxWidth={'100%'} height={860} name="./Basic/demo" />
 
-<LearnCta position="top" chart="vibration spectrum" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="vibration spectrum" demo="audio-analyzer-fft-example" demoLabel="audio analyzer" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
 
 Here is the code for this demo. The machine simulation, the FFT and the envelope analysis are plain JavaScript; SciChart.js draws the waveform, the two spectra and the frequency markers.
 
@@ -462,7 +462,7 @@ Key points:
 - The waveform and velocity spectrum y-axes use `EAutoRange.Always`, so they rescale to each new reading, while the x-axes keep the band you zoomed to. The envelope spectrum's y-axis has a floor of 0.05 g, so a machine with no impacts shows a flat noise floor instead of noise scaled up to fill the chart. A `ZoomExtentsModifier` with an `onZoomExtents` callback resets each chart to its default band.
 - The FFT, the velocity conversion and the envelope analysis are a few dozen lines of plain JavaScript. For a live feed, compute a new spectrum per block of samples and replace the data series' values.
 
-**See it in the demo app:** [JavaScript vibration spectrum](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React vibration spectrum](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular vibration spectrum](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). Related techniques: the [React interactive waterfall chart](https://www.scichart.com/demo/react/interactive-waterfall-chart), [React 3D waterfall spectral chart](https://www.scichart.com/demo/react/interactive-3d-waterfall-spectral-chart), [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart) and [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart).
+**See it in the demo app:** [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). Related techniques: the [React interactive waterfall chart](https://www.scichart.com/demo/react/interactive-waterfall-chart), [React 3D waterfall spectral chart](https://www.scichart.com/demo/react/interactive-3d-waterfall-spectral-chart), [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart) and [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart).
 
 **Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [mountain (area) chart](/2d-charts/chart-types/fast-mountain-area-renderable-series/), the [vertical line annotation](/2d-charts/annotations-api/vertical-line-annotation/), the [uniform heatmap for spectrograms](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/), [window functions](/learn/signal-processing/window-functions/), [power spectral density](/learn/signal-processing/power-spectral-density/) and the [Hilbert transform](/learn/signal-processing/hilbert-transform/). For the industries, see SciChart for [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/), [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/) and [HMI and SCADA](https://www.scichart.com/scada-big-data/).
 
@@ -500,4 +500,4 @@ Compute the spectrum with an FFT of a windowed block of samples, scale it to the
 - NASA (2008), [Reliability-Centered Maintenance Guide for Facilities and Collateral Equipment](https://www.nasa.gov/wp-content/uploads/2023/06/nasa-rcmguide.pdf). Vibration monitoring and analysis within predictive testing and inspection.
 - Case Western Reserve University, [Bearing Data Center](https://engineering.case.edu/bearingdatacenter). Public vibration recordings from a motor with seeded faults in 6205-size bearings.
 
-<LearnCta position="bottom" chart="vibration spectrum" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="vibration spectrum" demo="audio-analyzer-fft-example" demoLabel="audio analyzer" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

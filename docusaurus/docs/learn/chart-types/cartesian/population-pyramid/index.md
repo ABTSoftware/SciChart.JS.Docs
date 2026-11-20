@@ -1,5 +1,5 @@
 ---
-sidebar_position: 190
+sidebar_position: 200
 sidebar_label: Population Pyramid
 title: "Population Pyramid: What It Is & How to Read It (With Interactive Examples)"
 description: "What a population pyramid (age-sex pyramid) is, how to read it, the expansive, stationary and constrictive types, a worked example and the mistakes to avoid. With a live, interactive example."

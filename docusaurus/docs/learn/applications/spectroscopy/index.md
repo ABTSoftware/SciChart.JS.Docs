@@ -1,5 +1,5 @@
 ---
-sidebar_position: 110
+sidebar_position: 140
 sidebar_label: Spectroscopy
 title: "Spectroscopy Plots: How to Read IR, Raman and UV-Vis Spectra (With an Interactive Example)"
 description: "What a spectrum shows and how to read IR, Raman and UV-Vis spectra: wavenumber axes, transmittance vs absorbance, the fingerprint region, Beer–Lambert, baseline correction and a live example."
@@ -268,7 +268,7 @@ Choose a **Technique** and a **Compound**: an alcohol, a ketone and a carboxylic
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="spectrum chart" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="top" chart="spectrum chart" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this chart. Smoothing, baseline correction and peak picking are plain JavaScript; SciChart.js draws the spectrum, flips the axis for IR and labels the peaks with annotations.
 
@@ -486,4 +486,4 @@ Load the spectrum as two arrays, the x-axis values (wavenumber, Raman shift or w
 - Lieber, C. A. and Mahadevan-Jansen, A. (2003), [Automated method for subtraction of fluorescence from biological Raman spectra](https://doi.org/10.1366/000370203322554518). *Applied Spectroscopy*, 57(11). The iterated polynomial baseline used in the demo.
 - ASTM E1840, *Standard Guide for Raman Shift Standards for Spectrometer Calibration*, ASTM International.
 
-<LearnCta position="bottom" chart="spectrum chart" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
+<LearnCta position="bottom" chart="spectrum chart" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

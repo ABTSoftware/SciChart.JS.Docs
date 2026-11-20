@@ -1,0 +1,9 @@
+{
+  "label": "Machine Learning",
+  "position": 8,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "learn/machine-learning/index"
+  }
+}

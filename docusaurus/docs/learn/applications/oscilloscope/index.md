@@ -1,5 +1,5 @@
 ---
-sidebar_position: 90
+sidebar_position: 100
 sidebar_label: Oscilloscope
 title: "How to Use an Oscilloscope: Reading the Display, Triggering and Measurements (With an Interactive Software Oscilloscope)"
 description: "How to use and read an oscilloscope: volts and time per division, probes, coupling, triggering, measurements, bandwidth and sample rate, software oscilloscopes, and scope vs logic analyzer."
@@ -244,7 +244,7 @@ Change the generator's **Waveform**, **Frequency**, **Amplitude** and **DC offse
 
 <LiveDocSnippet maxWidth={'100%'} height={680} name="./Basic/demo" />
 
-<LearnCta position="top" chart="oscilloscope display" demo="realtime-ghosted-traces-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="oscilloscope display" demo="realtime-ghosted-traces-chart" demoLabel="real-time ghosted traces chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
 
 Here is the code for this oscilloscope. The signal generator, the trigger search, the measurements and the HTML controls are plain JavaScript; SciChart.js draws the graticule, the trace, the persistence traces and the trigger markers.
 
@@ -475,7 +475,7 @@ Key points:
 - Persistence is a ring of extra line series under the live trace. Each sweep, the oldest is overwritten with the previous trace, and every ghost's `opacity` falls with its age.
 - The trigger level is an editable `HorizontalLineAnnotation`: drag it and its `dragDelta` event updates the trigger. A `VerticalLineAnnotation` marks the trigger point.
 
-**See it in the demo app:** [JavaScript oscilloscope display](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) · [React oscilloscope display](https://www.scichart.com/demo/react/realtime-ghosted-traces-chart) · [Angular oscilloscope display](https://www.scichart.com/demo/angular/realtime-ghosted-traces-chart). Related techniques: the [React audio analyzer with FFT](https://www.scichart.com/demo/react/audio-analyzer-fft-example), [React real-time chart performance](https://www.scichart.com/demo/react/chart-realtime-performance-demo), [React draggable threshold line](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and [React real-time zoom and pan](https://www.scichart.com/demo/react/zoom-pan-realtime-javascript-chart).
+**See it in the demo app:** [JavaScript real-time ghosted traces chart](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) · [React real-time ghosted traces chart](https://www.scichart.com/demo/react/realtime-ghosted-traces-chart) · [Angular real-time ghosted traces chart](https://www.scichart.com/demo/angular/realtime-ghosted-traces-chart). Related techniques: the [React audio analyzer with FFT](https://www.scichart.com/demo/react/audio-analyzer-fft-example), [React real-time chart performance](https://www.scichart.com/demo/react/chart-realtime-performance-demo), [React draggable threshold line](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and [React real-time zoom and pan](https://www.scichart.com/demo/react/zoom-pan-realtime-javascript-chart).
 
 **Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [gridline and label spacing](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/), the [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/) and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) and [Nyquist and aliasing](/learn/signal-processing/nyquist-and-aliasing/). For the industries, see SciChart for [design, emulation and test](https://www.scichart.com/design-emulation-test/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/).
 
@@ -512,4 +512,4 @@ Draw each acquisition as a line series on a chart whose axes have fixed ranges a
 - Kester, W., [Taking the Mystery out of the Infamous Formula, "SNR = 6.02N + 1.76dB"](https://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf), Analog Devices tutorial MT-001, Rev. A (2008). The ideal signal-to-noise ratio of an N-bit converter.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Oscilloscopes, probes, grounding and measurement practice.
 
-<LearnCta position="bottom" chart="oscilloscope display" demo="realtime-ghosted-traces-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="oscilloscope display" demo="realtime-ghosted-traces-chart" demoLabel="real-time ghosted traces chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

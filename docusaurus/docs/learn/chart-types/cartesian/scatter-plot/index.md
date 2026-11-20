@@ -1,5 +1,5 @@
 ---
-sidebar_position: 210
+sidebar_position: 230
 sidebar_label: Scatter Plot
 title: "Scatter Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a scatter plot is, how to read and describe correlation, outliers and clusters, when to use one, and the mistakes to avoid. With live, interactive examples."

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 80
+sidebar_position: 90
 sidebar_label: Motorsport Telemetry
 title: "Motorsport Telemetry: How to Read Lap Traces and Compare Laps (With an Interactive Example)"
 description: "What motorsport and sim racing telemetry records, why lap traces are plotted against distance, how to read braking, throttle and the time-delta trace, and how to compare two laps."
@@ -210,7 +210,7 @@ The demo below is a small subset of that dashboard, with the two real laps from 
 
 <LiveDocSnippet maxWidth={'100%'} height={900} name="./Basic/demo" />
 
-<LearnCta position="top" chart="racing telemetry dashboard" demo="sync-multi-chart" docs="/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/" docsLabel="SciChart.js chart synchronisation documentation" />
+<LearnCta position="top" chart="racing telemetry dashboard" demo="sync-multi-chart" demoLabel="synchronised multi-chart" docs="/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/" docsLabel="SciChart.js chart synchronisation documentation" />
 
 Here is the code. The lap data is stored as compact binary columns in base64 (about 53 KB for both laps) and decoded into typed arrays; SciChart.js draws the panes, the map and the polar charts.
 
@@ -450,4 +450,4 @@ Interpolate each lap's channels onto lap distance, compute the time delta at eac
 - Milliken, W. F. and Milliken, D. L., [Race Car Vehicle Dynamics](https://saemobilus.sae.org/content/R-146). SAE International. The g-g diagram and the friction circle.
 - Postel, J. (1980), [RFC 768: User Datagram Protocol](https://www.rfc-editor.org/rfc/rfc768). The UDP packets racing simulators use to send telemetry.
 
-<LearnCta position="bottom" chart="racing telemetry dashboard" demo="sync-multi-chart" docs="/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/" docsLabel="SciChart.js chart synchronisation documentation" />
+<LearnCta position="bottom" chart="racing telemetry dashboard" demo="sync-multi-chart" demoLabel="synchronised multi-chart" docs="/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/" docsLabel="SciChart.js chart synchronisation documentation" />

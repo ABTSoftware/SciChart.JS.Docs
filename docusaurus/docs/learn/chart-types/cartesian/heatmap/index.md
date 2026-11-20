@@ -1,5 +1,5 @@
 ---
-sidebar_position: 130
+sidebar_position: 140
 sidebar_label: Heatmap
 title: "Heatmap (Heat Map): What It Is & How to Read It (With Interactive Examples)"
 description: "What a heatmap is, how to read and describe its coloured grid, how to choose a colour scale, the mistakes to avoid and when to use a heat map. With a live, interactive example."

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 60
 sidebar_label: HR Diagram
 title: "Hertzsprung–Russell (HR) Diagram: How to Read It, With an Interactive Star Chart"
 description: "What a Hertzsprung–Russell diagram plots, why temperature runs backwards, the main sequence, giants and white dwarfs, spectral classes, cluster ages from the turn-off, and a live HR diagram."
@@ -233,7 +233,7 @@ Use **Stars** to switch between stars near the Sun and a star cluster, then drag
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="HR diagram" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter series documentation" />
+<LearnCta position="top" chart="HR diagram" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter series documentation" />
 
 Here is the code for this chart. The star simulation and unit conversions are plain JavaScript; SciChart.js draws the stars, the heatmap, the radius lines and the labels. The React and Angular versions show a plain HR diagram on logarithmic axes.
 
@@ -420,4 +420,4 @@ Put the stars in a scatter series with temperature on the x-axis and luminosity 
 - European Space Agency, [Hipparcos](https://www.cosmos.esa.int/web/hipparcos) (118,218 stars) and [Gaia Data Release 2 HR diagrams](https://www.cosmos.esa.int/web/gaia/gaiadr2_hrd); Gaia Collaboration, Babusiaux, C. et al. (2018), [Gaia Data Release 2: Observational Hertzsprung-Russell diagrams](https://doi.org/10.1051/0004-6361/201832843), *Astronomy & Astrophysics*, 616, A10.
 - Pecaut, M. J. and Mamajek, E. E. (2013), [Intrinsic colors, temperatures, and bolometric corrections of pre-main-sequence stars](https://doi.org/10.1088/0067-0049/208/1/9), *Astrophysical Journal Supplement*, 208, 9, and its online table of main-sequence colours and temperatures: the colour-temperature relation in the demo. Torres, G. (2010), [On the use of empirical bolometric corrections for stars](https://doi.org/10.1088/0004-6256/140/5/1158), *Astronomical Journal*, 140, 1158: the bolometric corrections in the demo.
 
-<LearnCta position="bottom" chart="HR diagram" demo="scatter-chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter series documentation" />
+<LearnCta position="bottom" chart="HR diagram" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter series documentation" />

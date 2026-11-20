@@ -1,5 +1,5 @@
 ---
-sidebar_position: 130
+sidebar_position: 160
 sidebar_label: Telemetry
 title: "Telemetry: What It Is, How Telemetry Data Works and How to Visualise It (With an Interactive Dashboard)"
 description: "What telemetry is, how a telemetry system measures, frames, sends and decodes data from aircraft, rockets, cars and remote sites, and how to read a live telemetry dashboard."
@@ -229,7 +229,7 @@ Use **Pause** and **Replay from liftoff**, and change the **Playback speed**. Mo
 
 <LiveDocSnippet maxWidth={'100%'} height={820} name="./Basic/demo" />
 
-<LearnCta position="top" chart="real-time telemetry dashboard" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="real-time telemetry dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
 
 Here is the code for this dashboard. The flight simulation and the HTML controls are plain JavaScript; SciChart.js draws the panes, the event markers, the alarm limit and the coloured trace.
 
@@ -438,7 +438,7 @@ Key points:
 - The alarm colour comes from a palette provider: `overrideStrokeArgb` returns red for any point above the limit. A `BoxAnnotation` shades the alarm band, and an editable `HorizontalLineAnnotation` lets you drag the limit.
 - Event markers are `VerticalLineAnnotation`s, shown as playback passes each event. For a live feed, use `fifoCapacity` on each data series to keep a fixed window of the newest samples.
 
-**See it in the demo app:** [JavaScript real-time telemetry dashboard](https://www.scichart.com/demo/javascript/multiple-chart-dashboard-performance-demo) · [React real-time telemetry dashboard](https://www.scichart.com/demo/react/multiple-chart-dashboard-performance-demo) · [Angular real-time telemetry dashboard](https://www.scichart.com/demo/angular/multiple-chart-dashboard-performance-demo). Related techniques: the [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart), [React real-time chart performance](https://www.scichart.com/demo/react/chart-realtime-performance-demo), [React line chart with threshold colours](https://www.scichart.com/demo/react/line-splitting-thresholds), [React draggable threshold line](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and [React linear gauges](https://www.scichart.com/demo/react/linear-gauges).
+**See it in the demo app:** [JavaScript multi-chart dashboard](https://www.scichart.com/demo/javascript/multiple-chart-dashboard-performance-demo) · [React multi-chart dashboard](https://www.scichart.com/demo/react/multiple-chart-dashboard-performance-demo) · [Angular multi-chart dashboard](https://www.scichart.com/demo/angular/multiple-chart-dashboard-performance-demo). Related techniques: the [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart), [React real-time chart performance](https://www.scichart.com/demo/react/chart-realtime-performance-demo), [React line chart with threshold colours](https://www.scichart.com/demo/react/line-splitting-thresholds), [React draggable threshold line](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and [React linear gauges](https://www.scichart.com/demo/react/linear-gauges).
 
 **Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [synchronising multiple charts](/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/), [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/), the [palette provider API](/2d-charts/chart-types/palette-provider-api/palette-provider-api-overview/) and the [learning center guides to strip charts](/learn/real-time/strip-chart/) and [big data visualization](/learn/big-data/big-data-visualization/). For the industries, see SciChart for [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/) and [HMI and SCADA](https://www.scichart.com/scada-big-data/).
 
@@ -478,4 +478,4 @@ Give each group of channels its own chart pane with a fixed y-range, and line th
 - OpenTelemetry, [Signals](https://opentelemetry.io/docs/concepts/signals/). The traces, metrics and logs of software telemetry.
 - Wiktionary, [telemetry](https://en.wiktionary.org/wiki/telemetry), [tele-](https://en.wiktionary.org/wiki/tele-) and [-metry](https://en.wiktionary.org/wiki/-metry). The word's origin in the Greek for "far" and "measure".
 
-<LearnCta position="bottom" chart="real-time telemetry dashboard" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="real-time telemetry dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

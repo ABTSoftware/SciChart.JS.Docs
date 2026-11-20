@@ -11,6 +11,8 @@ import styles from "./LearnCta.module.css";
 // - demo: the chart's slug in the demo app; links go to /demo/javascript|react|angular/<demo>.
 // - docs: the chart's API documentation page (a docs path). docsLabel overrides its link text, which is
 //   otherwise "SciChart.js <chart> documentation".
+// - demoLabel: the demo's own chart name, when the demo is a different chart from the page's (e.g. a Renko
+//   guide whose closest demo is the candlestick chart). Used for the demo pills' link text; defaults to chart.
 // All are optional, for pages about no single chart (the hub). Rules for learn pages: docs/learn/CLAUDE.md.
 // Each link carries data-cta, so Google Tag Manager can count clicks per position and button.
 //
@@ -34,10 +36,12 @@ type Props = {
     demo?: string;
     docs?: string;
     docsLabel?: string;
+    demoLabel?: string;
 };
 
-function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
+function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel, demoLabel }: Props) {
     if (!demo && !docs) return null;
+    const demoName = demoLabel ?? chart;
     return (
         <p className={styles.links}>
             {demo && (
@@ -48,11 +52,11 @@ function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
                             <a
                                 className={styles.chip}
                                 href={`${DEMO_BASE_URL}${f.key}/${demo}`}
-                                title={chart ? `${f.label} ${chart}` : `${f.label} chart demos`}
+                                title={demoName ? `${f.label} ${demoName}` : `${f.label} chart demos`}
                                 data-cta={`learn-${position}-demo-${f.key}`}
                             >
                                 {f.label}
-                                {chart && <span className={styles.visuallyHidden}> {chart}</span>}
+                                {demoName && <span className={styles.visuallyHidden}> {demoName}</span>}
                             </a>
                         </React.Fragment>
                     ))}
