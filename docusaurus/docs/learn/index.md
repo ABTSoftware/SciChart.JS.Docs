@@ -12,14 +12,14 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 40 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 42 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 | Group | Charts |
 | --- | --- |
 | [Trends and comparisons](/learn/chart-types/#trends-and-comparisons) | Line, sparkline, area, bar, Pareto, combo, lollipop, dumbbell |
 | [Parts of a whole](/learn/chart-types/#parts-of-a-whole) | Pie, donut, sunburst, Sankey, treemap, ternary |
-| [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, correlation matrix, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
-| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart |
+| [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, correlation matrix, residual and Q-Q plots, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
+| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart, point cloud |
 | [Dashboards and KPIs](/learn/chart-types/#dashboards-and-kpis) | Gauge, bullet, funnel |
 | [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, waterfall |
 | [Maps and geographic data](/learn/chart-types/#maps-and-geographic-data) | Choropleth map |
@@ -41,7 +41,9 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 | Chart | What it shows |
 | --- | --- |
+| [Real-time dashboard](/learn/real-time/real-time-dashboard/) | How live dashboards work and how to design one |
 | [Strip chart](/learn/real-time/strip-chart/) | Live readings over a moving time window, one lane per signal, scrolling or sweeping |
+| [Time series graph](/learn/real-time/time-series-graph/) | Reading and charting time series, live or historical |
 
 ## Big data and performance
 
@@ -51,6 +53,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | --- | --- |
 | [Big data visualization](/learn/big-data/big-data-visualization/) | What makes data big for a chart, and SVG vs Canvas vs WebGL, with a live test in your browser |
 | [Downsampling](/learn/big-data/downsampling/) | How downsampling methods compare, and which keep the spikes |
+| [Time series data formats](/learn/big-data/time-series-data-formats/) | Binary, columnar and compressed formats that load fast into a chart |
 
 ## Signal processing
 
@@ -83,8 +86,19 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 | Topic | What it covers |
 | --- | --- |
+| [Capnography and pulse oximetry](/learn/applications/capnography-pulse-oximetry/) | Reading capnogram and pleth waveforms |
 | [Chromatogram](/learn/applications/chromatogram/) | Reading retention time, peaks and resolution in HPLC and GC |
+| [ECG](/learn/applications/ecg/) | ECG leads and how to read an ECG strip |
 | [HMI and SCADA](/learn/applications/hmi-scada/) | What SCADA and HMI are, and how to read trend charts and alarm limits |
+| [HR diagram](/learn/applications/hr-diagram/) | Reading the Hertzsprung–Russell diagram of stars |
+| [KPI dashboard](/learn/applications/kpi-dashboard/) | What to put on a KPI dashboard and how to design it |
+| [Mass spectrum](/learn/applications/mass-spectrum/) | How to read a mass spectrometry graph |
+| [Motorsport telemetry](/learn/applications/motorsport-telemetry/) | Reading lap traces and comparing laps |
+| [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope |
+| [ROC curve](/learn/applications/roc-curve/) | ROC and precision-recall curves and what AUC means |
+| [Spectroscopy](/learn/applications/spectroscopy/) | Reading IR, Raman and UV-Vis spectra |
+| [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test curve |
 | [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |
+| [Vibration analysis](/learn/applications/vibration-analysis/) | Finding machine faults in vibration spectra |
 
 <LearnCta position="bottom" />

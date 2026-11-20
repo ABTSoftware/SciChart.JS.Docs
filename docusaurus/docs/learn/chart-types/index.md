@@ -58,6 +58,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Network graph](/learn/chart-types/complex/network-graph/) | How things are connected: items as dots (nodes) and links as lines (edges), showing hubs, clusters and the bridges between them |
 | [Parallel coordinates plot](/learn/chart-types/complex/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
 | [Population pyramid](/learn/chart-types/cartesian/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
+| [Residual plot and Q-Q plot](/learn/chart-types/cartesian/residual-plot/) | Checking a regression: patterns in the residuals and whether they are normal |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two values, one dot per data point |
 | [Violin plot](/learn/chart-types/cartesian/violin-plot/) | The full shape of several groups side by side: a box plot plus a mirrored density curve that shows peaks, gaps and skew |
 
@@ -68,6 +69,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
 | [Contour plot](/learn/chart-types/cartesian/contour-plot/) | Lines of equal value across two dimensions, showing peaks, saddles and steep areas |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A grid of values shown as colours |
+| [Point cloud](/learn/chart-types/3d/point-cloud/) | Millions of 3D points, such as a LiDAR scan, coloured by height, intensity or class |
 | [Polar area chart](/learn/chart-types/radial/polar-area-chart/) | Equal-angle wedges whose area shows each value, for cycles such as months or directions (Nightingale rose) |
 | [Radar chart](/learn/chart-types/radial/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
 | [Smith chart](/learn/chart-types/complex/smith-chart/) | Impedance and reflection on one circular chart, for RF and antenna matching |

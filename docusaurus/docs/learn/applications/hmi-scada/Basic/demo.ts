@@ -139,7 +139,7 @@ async function hmiTrendChart(divElementId) {
 
     // One pen per process tag, each with its own axis range and alarm limits (engineering units)
     const pens = [
-        { tag: "LT-101", name: "Tank level", unit: "%", min: 0, max: 100, lo: 20, hi: 85, color: "#50C7E0" },
+        { tag: "LT-101", name: "Tank level", unit: "%", min: 0, max: 100, lo: 20, hi: 75, color: "#50C7E0" },
         { tag: "FT-102", name: "Inlet flow", unit: "m³/h", min: 0, max: 250, lo: 60, hi: 175, color: "#3BD16F" },
         { tag: "PT-103", name: "Discharge pressure", unit: "bar", min: 0, max: 10, lo: 0.5, hi: 7.5, color: "#F6E05E" },
         { tag: "TT-104", name: "Temperature", unit: "°C", min: 0, max: 100, lo: 30, hi: 72, color: "#C3B4F0" }

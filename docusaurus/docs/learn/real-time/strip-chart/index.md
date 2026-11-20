@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 20
 sidebar_label: Strip Chart
 title: "Strip Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a strip chart is, how to read one, scrolling vs sweeping displays, when to use it, and the strip plot (jitter dot plot) that shares its name. With a live, real-time example."
@@ -153,6 +153,7 @@ Use a strip chart when readings arrive continuously and people need to see what 
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | A fixed period of history, such as a day or a year, that doesn't update while you read it |
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | The recent trend of many values at once, small enough to sit in a table row |
 | [Gauge chart](/learn/chart-types/radial/gauge-chart/) | The current value only, against its range and limits, when the history doesn't matter |
+| [Real-time dashboard](/learn/real-time/real-time-dashboard/) | Several live charts on one page, with synchronised time axes |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a fast signal, such as sound or vibration, change over time |
 
 ## Strip plot: the other "strip chart"

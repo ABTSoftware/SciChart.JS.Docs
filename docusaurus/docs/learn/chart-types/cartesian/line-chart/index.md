@@ -130,7 +130,7 @@ Lead with the overall trend, then give the highest and lowest values with their 
 
 ## When to use a line graph
 
-Use a line graph when the x values have a natural order, most often time, and the reader cares about how the value moves from one point to the next. With dates or times on the x axis, it is a **time series line chart**, the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart, because the slope of the line shows the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
+Use a line graph when the x values have a natural order, most often time, and the reader cares about how the value moves from one point to the next. With dates or times on the x axis, it is a **time series line chart** (see the [time series graph](/learn/real-time/time-series-graph/) guide), the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart, because the slope of the line shows the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 | Your question | Best chart |
 | --- | --- |

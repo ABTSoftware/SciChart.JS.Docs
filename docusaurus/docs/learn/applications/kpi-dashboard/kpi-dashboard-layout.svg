@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 495" width="900" height="495" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>KPI dashboard layout and the parts of a KPI tile</title>
+  <desc>Left: a wireframe of a KPI dashboard in four zones read in order. Zone 1, the headline KPI tiles, runs across the top, starting top-left with the most important KPI. Zone 2, a trend against target, sits below it. Zone 3, a breakdown by region or product, and zone 4, the variance or drill-down, share the bottom row. A dashed path shows the eye scanning the top row, then down the left side. Right: one KPI tile enlarged, with callouts for the name and period, the current value, the comparison with the target, the status in words, the sparkline and the dashed target line.</desc>
+  <rect width="900" height="495" fill="#ffffff"/>
+
+  <!-- Left: dashboard wireframe -->
+  <text x="20" y="30" font-size="17" font-weight="600" fill="#1f2a44">Layout: most important first, top-left</text>
+  <rect x="20" y="45" width="470" height="405" rx="8" fill="#f3f5f9" stroke="#c9d1df"/>
+
+  <!-- Zone 1: tiles -->
+  <g font-size="12" fill="#1f2a44">
+    <rect x="34" y="60" width="104" height="70" rx="5" fill="#dbeaf6" stroke="#2f7fb8" stroke-width="2"/>
+    <rect x="146" y="60" width="104" height="70" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+    <rect x="258" y="60" width="104" height="70" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+    <rect x="370" y="60" width="106" height="70" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+    <text x="44" y="80" font-weight="600">KPI 1</text>
+    <text x="44" y="96" fill="#41506b">most important</text>
+    <text x="156" y="80" font-weight="600">KPI 2</text>
+    <text x="268" y="80" font-weight="600">KPI 3</text>
+    <text x="380" y="80" font-weight="600">KPI 4</text>
+    <polyline points="44,120 60,114 76,117 92,108 108,110 126,100" fill="none" stroke="#2f7fb8" stroke-width="2"/>
+    <polyline points="156,118 172,121 188,112 204,115 220,108 238,111" fill="none" stroke="#7d8aa3" stroke-width="1.5"/>
+    <polyline points="268,112 284,116 300,110 316,118 332,114 350,120" fill="none" stroke="#7d8aa3" stroke-width="1.5"/>
+    <polyline points="380,119 396,115 412,117 428,109 444,112 464,104" fill="none" stroke="#7d8aa3" stroke-width="1.5"/>
+  </g>
+
+  <!-- Zone 2: trend -->
+  <rect x="34" y="142" width="442" height="140" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+  <g fill="#b9d3ea">
+    <rect x="60" y="222" width="22" height="48"/><rect x="92" y="216" width="22" height="54"/><rect x="124" y="226" width="22" height="44"/>
+    <rect x="156" y="210" width="22" height="60"/><rect x="188" y="214" width="22" height="56"/><rect x="220" y="204" width="22" height="66"/>
+    <rect x="252" y="208" width="22" height="62"/><rect x="284" y="198" width="22" height="72"/><rect x="316" y="202" width="22" height="68"/>
+    <rect x="348" y="190" width="22" height="80"/><rect x="380" y="186" width="22" height="84"/><rect x="412" y="172" width="22" height="98"/>
+  </g>
+  <polyline points="71,214 103,210 135,208 167,204 199,200 231,198 263,194 295,190 327,188 359,184 391,180 423,168" fill="none" stroke="#c48a00" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="46" y="164" font-size="13" font-weight="600" fill="#1f2a44">2  Trend vs target and last period</text>
+
+  <!-- Zone 3 and 4 -->
+  <rect x="34" y="294" width="216" height="144" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+  <text x="46" y="316" font-size="13" font-weight="600" fill="#1f2a44">3  Breakdown</text>
+  <text x="46" y="333" font-size="12" fill="#41506b">by region, product, team</text>
+  <g fill="#9aa8bf"><rect x="50" y="348" width="150" height="14"/><rect x="50" y="370" width="118" height="14"/><rect x="50" y="392" width="170" height="14"/><rect x="50" y="414" width="96" height="14"/></g>
+  <g stroke="#1f2a44" stroke-width="3"><line x1="176" y1="345" x2="176" y2="365"/><line x1="160" y1="367" x2="160" y2="387"/><line x1="182" y1="389" x2="182" y2="409"/><line x1="130" y1="411" x2="130" y2="431"/></g>
+  <rect x="260" y="294" width="216" height="144" rx="5" fill="#ffffff" stroke="#9aa8bf"/>
+  <text x="272" y="316" font-size="13" font-weight="600" fill="#1f2a44">4  Variance and detail</text>
+  <text x="272" y="333" font-size="12" fill="#41506b">why the number moved</text>
+  <line x1="276" y1="400" x2="462" y2="400" stroke="#7d8aa3"/>
+  <rect x="284" y="352" width="30" height="48" fill="#2f7fb8"/>
+  <rect x="326" y="352" width="30" height="40" fill="#d9661f"/>
+  <rect x="368" y="392" width="30" height="0.1" fill="#2f7fb8"/>
+  <rect x="368" y="380" width="30" height="12" fill="#2f7fb8"/>
+  <rect x="410" y="380" width="30" height="20" fill="#9aa8bf"/>
+
+  <!-- Reading path -->
+  <path d="M 27 136 L 476 136 M 27 136 L 27 444 M 27 288 L 250 288" fill="none" stroke="#d9661f" stroke-width="2.5" stroke-dasharray="7 5" opacity="0.85"/>
+  <circle cx="27" cy="136" r="5" fill="#d9661f"/>
+  <text x="20" y="470" font-size="12.5" fill="#1f2a44">1 headline KPIs  ·  2 trend  ·  3 breakdown  ·  4 variance and detail</text>
+  <text x="20" y="488" font-size="12.5" fill="#d9661f">dashed line: the F-shaped scan path, across the top, then down the left with shorter sweeps</text>
+  <circle cx="126" cy="60" r="11" fill="#1f2a44"/><text x="126" y="64.5" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+
+  <!-- Right: tile anatomy -->
+  <text x="525" y="30" font-size="17" font-weight="600" fill="#1f2a44">Anatomy of a KPI tile</text>
+  <rect x="560" y="70" width="230" height="180" rx="8" fill="#ffffff" stroke="#9aa8bf" stroke-width="1.5"/>
+  <rect x="560" y="70" width="6" height="180" fill="#d9661f"/>
+  <text x="580" y="96" font-size="14" fill="#41506b">Gross margin · Q4</text>
+  <text x="580" y="136" font-size="34" font-weight="700" fill="#1f2a44">46.1%</text>
+  <text x="580" y="162" font-size="14" fill="#d9661f">▼ −1.3 pts vs target</text>
+  <rect x="580" y="172" width="78" height="20" rx="3" fill="#d9661f"/>
+  <text x="619" y="186" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">Off target</text>
+  <line x1="580" y1="212" x2="770" y2="212" stroke="#7d8aa3" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <polyline points="580,226 597,220 614,229 631,214 648,222 665,210 682,218 699,224 716,215 733,226 750,230 768,236" fill="none" stroke="#2f7fb8" stroke-width="2.5"/>
+
+  <g font-size="12.5" fill="#1f2a44">
+    <line x1="700" y1="92" x2="810" y2="92" stroke="#9aa8bf"/><text x="814" y="88">name and</text><text x="814" y="103">period</text>
+    <line x1="690" y1="128" x2="810" y2="128" stroke="#9aa8bf"/><text x="814" y="132">value</text>
+    <line x1="738" y1="158" x2="810" y2="158" stroke="#9aa8bf"/><text x="814" y="155">comparison,</text><text x="814" y="169">with a symbol</text>
+    <line x1="662" y1="182" x2="810" y2="186" stroke="#9aa8bf"/><text x="814" y="190">status in</text><text x="814" y="204">words</text>
+    <line x1="772" y1="212" x2="810" y2="222" stroke="#9aa8bf"/><text x="814" y="226">target line</text>
+    <line x1="768" y1="236" x2="810" y2="244" stroke="#9aa8bf"/><text x="814" y="248">12-month</text><text x="814" y="262">sparkline</text>
+    <line x1="563" y1="250" x2="540" y2="280" stroke="#9aa8bf"/><text x="525" y="296">colour bar: a second cue, never the only one</text>
+  </g>
+
+  <g font-size="13" fill="#41506b">
+    <text x="525" y="340">A tile answers three questions at a glance:</text>
+    <text x="525" y="364">• Where are we? (the value)</text>
+    <text x="525" y="386">• Compared with what? (target, last period)</text>
+    <text x="525" y="408">• Getting better or worse? (the sparkline)</text>
+  </g>
+</svg>

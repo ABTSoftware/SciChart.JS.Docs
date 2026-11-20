@@ -181,7 +181,7 @@ The renderer sets how many points you can draw. These techniques cut how many yo
 | Aggregation and binning | Replaces raw points with summaries: averages per minute, counts per grid cell, candles per period | Dashboards, scatter data, prices | Averages hide spikes; show the minimum and maximum too |
 | Level of detail | Shows a coarse summary zoomed out and loads more detail as you zoom in | Very long histories, maps | Needs pre-computed summaries at several zoom levels |
 | Progressive loading | Draws a first view quickly, then fills in or streams the rest | Slow networks, huge files | Show that the chart is still loading |
-| Background processing | Parses and reduces data in a web worker, off the page's main thread | Parsing large files, heavy calculations | Transfer data as typed arrays (such as `Float64Array`) to avoid copying |
+| Background processing | Parses and reduces data in a web worker, off the page's main thread | Parsing large files, heavy calculations | Transfer data as typed arrays (such as `Float64Array`) to avoid copying; see [time series data formats](/learn/big-data/time-series-data-formats/) |
 | Server-side reduction | Queries return data already aggregated or downsampled for the current view | Data that lives in a database or data warehouse | A round trip to the server on every zoom |
 
 Downsampling is the one that matters most for line charts. Algorithms such as min-max (keep each pixel column's lowest and highest point) and LTTB (Largest-Triangle-Three-Buckets, which picks the points that best keep the line's shape) reduce millions of points to a few thousand that look the same. The [downsampling guide](/learn/big-data/downsampling/) compares them in detail.

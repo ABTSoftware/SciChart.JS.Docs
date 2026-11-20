@@ -196,7 +196,7 @@ For audio sampled at 48,000 samples a second:
 | 1,024 | 46.9 Hz | 21 ms | Fast-moving level meters and real-time displays |
 | 4,096 | 11.7 Hz | 85 ms | General audio analysis |
 | 16,384 | 2.9 Hz | 341 ms | Separating close musical notes or mains harmonics |
-| 65,536 | 0.73 Hz | 1.4 s | Fine detail on steady signals, such as machine vibration |
+| 65,536 | 0.73 Hz | 1.4 s | Fine detail on steady signals, such as [machine vibration](/learn/applications/vibration-analysis/) |
 
 The trade-off is between detail in frequency and detail in time. A long block gives narrow bins but blurs anything that changes within it. To follow a signal that changes, take many short FFTs one after another and draw them as a [spectrogram](/learn/chart-types/cartesian/spectrogram/).
 

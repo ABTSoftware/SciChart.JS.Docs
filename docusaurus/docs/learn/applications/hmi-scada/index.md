@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 40
 sidebar_label: HMI and SCADA
 title: "HMI and SCADA: What They Are, How They Work and Examples of SCADA Trend Charts (With Interactive Examples)"
 description: "What SCADA and HMI mean, how a SCADA system is built, SCADA vs DCS, what is on an HMI screen, and how to read trend charts, alarm limits and deadbands, with a live example."
@@ -266,7 +266,7 @@ Here is the code for this chart. The process simulation and the alarm logic are 
 
     // One pen per tag, each with a fixed range and HI/LO alarm limits
     const pens = [
-        { tag: "LT-101", unit: "%", min: 0, max: 100, lo: 20, hi: 85, color: "#50C7E0" },
+        { tag: "LT-101", unit: "%", min: 0, max: 100, lo: 20, hi: 75, color: "#50C7E0" },
         { tag: "PT-103", unit: "bar", min: 0, max: 10, lo: 0.5, hi: 7.5, color: "#F6E05E" }
     ];
 
@@ -355,7 +355,7 @@ Here is the code for this chart. The process simulation and the alarm logic are 
 
     // One pen per tag, each with a fixed range and HI/LO alarm limits
     const pens = [
-        { tag: "LT-101", unit: "%", min: 0, max: 100, lo: 20, hi: 85, color: "#50C7E0" },
+        { tag: "LT-101", unit: "%", min: 0, max: 100, lo: 20, hi: 75, color: "#50C7E0" },
         { tag: "PT-103", unit: "bar", min: 0, max: 10, lo: 0.5, hi: 7.5, color: "#F6E05E" }
     ];
 

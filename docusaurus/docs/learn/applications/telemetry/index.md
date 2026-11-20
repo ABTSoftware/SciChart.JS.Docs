@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 130
 sidebar_label: Telemetry
 title: "Telemetry: What It Is, How Telemetry Data Works and How to Visualise It (With an Interactive Dashboard)"
 description: "What telemetry is, how a telemetry system measures, frames, sends and decodes data from aircraft, rockets, cars and remote sites, and how to read a live telemetry dashboard."
@@ -24,7 +24,7 @@ keywords:
         "IRIG 106"
     ]
 image: /img/learn/telemetry-og.png
-related: [hmi-scada, strip-chart, downsampling, nyquist-and-aliasing]
+related: [motorsport-telemetry, hmi-scada, strip-chart, time-series-data-formats]
 ---
 
 <head>
@@ -119,7 +119,7 @@ Every telemetry system, from a model rocket to a deep-space probe, follows the s
 5. Transmission. A transmitter sends the bit stream over a radio link, through a satellite relay, or along a cable or fibre. On a test range, aircraft and missile telemetry uses dedicated bands; in the USA, 1435 to 1525 MHz in L-band is set aside for aeronautical telemetry.
 6. Reception and decommutation. The ground station's receiver recovers the bits, a frame synchroniser locks on to the sync pattern, and a decommutator splits the frame back into channels.
 7. Conversion. Raw counts become engineering units (°C, bar, g, metres) through each sensor's calibration, and every sample gets its time.
-8. Display and storage. The values feed live displays and alarms, and every frame is archived, so the test can be replayed and analysed later.
+8. Display and storage. The values feed live displays and alarms, and every frame is archived, so the test can be replayed and analysed later. Storing and sending the channels as compressed binary columns keeps both fast (see [time series data formats](/learn/big-data/time-series-data-formats/)).
 
 ### Telemetry frames: PCM and IRIG 106
 
@@ -165,7 +165,7 @@ Three properties make telemetry data harder to chart than ordinary time series:
 | Aircraft flight test | Structural loads, flutter, engine parameters, flight controls, air data | PCM over L-, S- or C-band radio to a test range |
 | Rockets and launch vehicles | Trajectory, engine pressures, temperatures, vibration, stage events | Radio to ground stations along the track, and satellite relay |
 | Satellites and space probes | Health and status of every subsystem, plus science data | CCSDS packets via ground station networks |
-| Motorsport | Engine, gearbox, tyres, brakes, suspension, aerodynamics | Short-range radio from car to pit, plus a full download after the session |
+| [Motorsport](/learn/applications/motorsport-telemetry/) | Engine, gearbox, tyres, brakes, suspension, aerodynamics | Short-range radio from car to pit, plus a full download after the session |
 | Oil, gas, water and power networks | Flows, pressures, levels, valve states at remote stations | Radio, cellular or satellite into a [SCADA system](/learn/applications/hmi-scada/) |
 | Weather and science | Temperature, humidity and pressure from radiosondes; animal movements from tags | Radio and satellite |
 

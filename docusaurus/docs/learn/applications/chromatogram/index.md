@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 20
 sidebar_label: Chromatogram
 title: "Chromatogram: What It Is and How to Read One (Retention Time, Peaks and Resolution, With an Interactive Example)"
 description: "What a chromatogram is and how to read one: retention time, dead time, peak height and area, resolution and plate number, HPLC vs GC, and a live chromatogram you can integrate."

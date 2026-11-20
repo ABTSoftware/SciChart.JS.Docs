@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360" font-family="Helvetica, Arial, sans-serif">
+<title>Moving a time series from a server to a browser chart, fast</title>
+<desc>Three stages. On the server or database: the data is stored as columns, in a columnar time series database, Arrow or Parquet; timestamps become deltas of deltas and values become deltas of scaled integers; the deltas are zig-zag mapped and written as varints, or packed bit by bit Gorilla-style; the frame may then be compressed with gzip, Brotli or zstd. Over the network: one binary WebSocket frame or HTTP response per batch. In the browser: a Web Worker receives the ArrayBuffer and decodes it into one Float64Array per column, then transfers the buffers to the main thread without copying; the main thread calls appendRange once per channel and the chart draws the new data on the GPU. Each stage notes what it avoids: no text parsing, no per-sample objects, no work on the main thread beyond appending.</desc>
+<defs>
+<marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker>
+</defs>
+<rect width="760" height="360" fill="#ffffff"/>
+
+<rect x="12" y="12" width="236" height="336" rx="12" fill="#fdf6ef" stroke="#e8b98c" stroke-dasharray="5 4"/>
+<text x="130" y="38" font-size="15" font-weight="bold" fill="#b35c12" text-anchor="middle">Server or database</text>
+<rect x="512" y="12" width="236" height="336" rx="12" fill="#f3f8fc" stroke="#9cc3dc" stroke-dasharray="5 4"/>
+<text x="630" y="38" font-size="15" font-weight="bold" fill="#1f6f94" text-anchor="middle">Browser</text>
+<text x="380" y="38" font-size="15" font-weight="bold" fill="#5b4a8a" text-anchor="middle">Network</text>
+
+<g font-size="12" fill="#2d3748" text-anchor="middle">
+<rect x="28" y="54" width="204" height="54" rx="8" fill="#ffffff" stroke="#d08a1d" stroke-width="2"/>
+<text x="130" y="76" font-weight="bold">1. Stored as columns</text>
+<text x="130" y="94">columnar database, Arrow, Parquet</text>
+<rect x="28" y="124" width="204" height="70" rx="8" fill="#ffffff" stroke="#d08a1d" stroke-width="2"/>
+<text x="130" y="146" font-weight="bold">2. Encode differences</text>
+<text x="130" y="164">time: delta of delta</text>
+<text x="130" y="180">values: delta of scaled integers</text>
+<rect x="28" y="210" width="204" height="54" rx="8" fill="#ffffff" stroke="#d08a1d" stroke-width="2"/>
+<text x="130" y="232" font-weight="bold">3. Pack small numbers</text>
+<text x="130" y="250">zig-zag varint, or Gorilla bits</text>
+<rect x="28" y="280" width="204" height="54" rx="8" fill="#ffffff" stroke="#d08a1d" stroke-width="2" stroke-dasharray="4 3"/>
+<text x="130" y="302" font-weight="bold">4. Optional: gzip, Brotli, zstd</text>
+<text x="130" y="320">helps text formats most</text>
+<line x1="130" y1="108" x2="130" y2="122" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+<line x1="130" y1="194" x2="130" y2="208" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+<line x1="130" y1="264" x2="130" y2="278" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+
+<rect x="282" y="150" width="196" height="76" rx="8" fill="#f4f0fb" stroke="#7b5ea7" stroke-width="2"/>
+<text x="380" y="174" font-weight="bold">Binary WebSocket frame</text>
+<text x="380" y="192">or HTTP response body:</text>
+<text x="380" y="210">an ArrayBuffer per batch</text>
+<line x1="232" y1="300" x2="270" y2="300" stroke="#4a5568" stroke-width="2"/>
+<line x1="270" y1="300" x2="270" y2="188" stroke="#4a5568" stroke-width="2"/>
+<line x1="270" y1="188" x2="280" y2="188" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+<line x1="478" y1="188" x2="526" y2="110" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+
+<rect x="528" y="54" width="204" height="88" rx="8" fill="#ffffff" stroke="#2e86ab" stroke-width="2"/>
+<text x="630" y="76" font-weight="bold">5. Web Worker decodes</text>
+<text x="630" y="94">bytes → one Float64Array</text>
+<text x="630" y="110">per column, off the</text>
+<text x="630" y="126">main thread</text>
+<rect x="528" y="158" width="204" height="70" rx="8" fill="#ffffff" stroke="#2e86ab" stroke-width="2"/>
+<text x="630" y="180" font-weight="bold">6. Transfer, don't copy</text>
+<text x="630" y="198">postMessage with the</text>
+<text x="630" y="214">buffers in the transfer list</text>
+<rect x="528" y="244" width="204" height="90" rx="8" fill="#ffffff" stroke="#2e86ab" stroke-width="2"/>
+<text x="630" y="266" font-weight="bold">7. appendRange, then draw</text>
+<text x="630" y="284">dataSeries.appendRange(</text>
+<text x="630" y="300">  times, values)</text>
+<text x="630" y="318">once per channel per batch</text>
+<line x1="630" y1="142" x2="630" y2="156" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+<line x1="630" y1="228" x2="630" y2="242" stroke="#4a5568" stroke-width="2" marker-end="url(#arr2)"/>
+</g>
+<g font-size="11.5" fill="#4a5568" text-anchor="middle">
+<text x="380" y="262">Avoids: text parsing,</text>
+<text x="380" y="278">field names on every sample,</text>
+<text x="380" y="294">one object per point,</text>
+<text x="380" y="310">decoding on the UI thread</text>
+</g>
+</svg>

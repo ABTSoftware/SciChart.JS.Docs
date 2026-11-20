@@ -90,7 +90,7 @@ Picture a three-bladed ceiling fan filmed at 25 frames a second. If it turns jus
 
 ## Sampling and the sampling rate
 
-**Sampling** turns a continuous (analogue) signal into a list of numbers by measuring it at regular moments. An **analogue-to-digital converter** (ADC) in a sound card, a data logger, an oscilloscope or a sensor does this.
+**Sampling** turns a continuous (analogue) signal into a list of numbers by measuring it at regular moments. An **analogue-to-digital converter** (ADC) in a sound card, a data logger, an [oscilloscope](/learn/applications/oscilloscope/) or a sensor does this.
 
 The **sampling rate** (also called the sample rate or sampling frequency), $f_s$, is how many samples are taken each second. It is given in hertz (Hz) or samples per second (S/s), and the time between samples, the **sampling interval**, is its reciprocal:
 
