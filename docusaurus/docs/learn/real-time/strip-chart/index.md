@@ -121,7 +121,7 @@ A strip chart can move its data in two ways. Both show the same time window; the
 | Time axis | Labels change continuously (for example, the last 10 seconds up to now) | Fixed (for example, 0 to 10 seconds), restarting at each sweep |
 | Old data | Drops off the left-hand edge | Overwritten just ahead of the write point, usually with a small gap |
 | Easiest to read | Trends and slow changes; comparing "now" with the recent past | Repeating signals: each beat or cycle stays in the same place long enough to study |
-| Typical use | Process control, server and network monitoring, telemetry, trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
+| Typical use | Process control ([HMI and SCADA trends](/learn/applications/hmi-scada/)), server and network monitoring, [telemetry](/learn/applications/telemetry/), trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
 
 A sweeping display is easier on the eye for fast signals, because nothing slides across the screen. A scrolling display is better when you need "now" in the same place and want to compare the latest values with the ones just before.
 

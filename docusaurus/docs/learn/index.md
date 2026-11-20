@@ -12,14 +12,14 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 38 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 40 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 | Group | Charts |
 | --- | --- |
 | [Trends and comparisons](/learn/chart-types/#trends-and-comparisons) | Line, sparkline, area, bar, Pareto, combo, lollipop, dumbbell |
 | [Parts of a whole](/learn/chart-types/#parts-of-a-whole) | Pie, donut, sunburst, Sankey, treemap, ternary |
-| [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
-| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area |
+| [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, correlation matrix, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
+| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart |
 | [Dashboards and KPIs](/learn/chart-types/#dashboards-and-kpis) | Gauge, bullet, funnel |
 | [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, waterfall |
 | [Maps and geographic data](/learn/chart-types/#maps-and-geographic-data) | Choropleth map |
@@ -76,5 +76,15 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
 | [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
 | [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
+
+## Applications
+
+[**Applications**](/learn/applications/): how engineers and scientists chart data from real instruments and systems, with live examples.
+
+| Topic | What it covers |
+| --- | --- |
+| [Chromatogram](/learn/applications/chromatogram/) | Reading retention time, peaks and resolution in HPLC and GC |
+| [HMI and SCADA](/learn/applications/hmi-scada/) | What SCADA and HMI are, and how to read trend charts and alarm limits |
+| [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |
 
 <LearnCta position="bottom" />

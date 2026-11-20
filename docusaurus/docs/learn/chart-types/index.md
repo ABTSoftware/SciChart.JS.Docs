@@ -40,10 +40,10 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 | Chart | What it shows |
 | --- | --- |
-| [Stacked area chart](/learn/chart-types/cartesian/area-chart/#how-to-read-a-stacked-area-chart) | How a total and its parts change over time, as bands stacked on top of each other |
 | [100% stacked area chart](/learn/chart-types/cartesian/area-chart/#stacked-vs-100-stacked-area-chart) | How the share of each part changes over time |
-| [Stacked bar chart](/learn/chart-types/cartesian/bar-chart/#stacked-bar-chart) | Totals compared across categories, with each bar split into its parts; drawn upright, it's a stacked column chart |
 | [100% stacked bar chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) | Every bar the same length, so you compare each category's mix of parts rather than its total |
+| [Stacked area chart](/learn/chart-types/cartesian/area-chart/#how-to-read-a-stacked-area-chart) | How a total and its parts change over time, as bands stacked on top of each other |
+| [Stacked bar chart](/learn/chart-types/cartesian/bar-chart/#stacked-bar-chart) | Totals compared across categories, with each bar split into its parts; drawn upright, it's a stacked column chart |
 
 ## Relationships and distributions
 
@@ -51,6 +51,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | --- | --- |
 | [Box plot](/learn/chart-types/cartesian/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
 | [Bubble chart](/learn/chart-types/cartesian/bubble-chart/) | A scatter plot where bubble size shows a third value |
+| [Correlation matrix](/learn/chart-types/cartesian/correlation-matrix/) | How strongly every pair of variables moves together, as a grid of coefficients |
 | [Density plot](/learn/chart-types/cartesian/density-plot/) | The smooth shape of a distribution: peaks, spread and tails, drawn as a curve; compare groups by overlaying them or stacking them as a ridgeline |
 | [Error bars](/learn/chart-types/cartesian/error-bars/) | The uncertainty or spread around a value, usually a mean: standard deviation, standard error or a confidence interval |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | How values are distributed, counted into ranges (bins) |
@@ -69,6 +70,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A grid of values shown as colours |
 | [Polar area chart](/learn/chart-types/radial/polar-area-chart/) | Equal-angle wedges whose area shows each value, for cycles such as months or directions (Nightingale rose) |
 | [Radar chart](/learn/chart-types/radial/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
+| [Smith chart](/learn/chart-types/complex/smith-chart/) | Impedance and reflection on one circular chart, for RF and antenna matching |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
 
 ## Dashboards and KPIs

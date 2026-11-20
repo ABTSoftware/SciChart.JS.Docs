@@ -1,5 +1,5 @@
 ---
-sidebar_position: 120
+sidebar_position: 130
 sidebar_label: Heatmap
 title: "Heatmap (Heat Map): What It Is & How to Read It (With Interactive Examples)"
 description: "What a heatmap is, how to read and describe its coloured grid, how to choose a colour scale, the mistakes to avoid and when to use a heat map. With a live, interactive example."
@@ -130,7 +130,7 @@ Also decide the range the scale covers. Stretching it from the data's minimum to
 
 | Type | What the grid shows | Example |
 | --- | --- | --- |
-| Matrix heatmap | Rows and columns are categories | A correlation matrix, where each cell is the correlation between two variables, on a diverging scale |
+| Matrix heatmap | Rows and columns are categories | A [correlation matrix](/learn/chart-types/cartesian/correlation-matrix/), where each cell is the correlation between two variables, on a diverging scale |
 | Clustered heatmap | A matrix heatmap with similar rows and columns moved next to each other | Gene expression across samples, often with a tree diagram (dendrogram) along each edge |
 | Calendar or time heatmap | Time on one or both axes | Hour of day by day of week, as in the chart above; daily activity across a year |
 | Risk heat map | Likelihood against impact | A business risk register, from green (low risk) to red (high risk) |

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 240
+sidebar_position: 250
 sidebar_label: Waterfall Chart
 title: "Waterfall Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a waterfall chart is, how to read its rising and falling bars, subtotals and totals, a worked profit example, when to use one, and the mistakes to avoid. With a live, interactive example."

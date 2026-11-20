@@ -1,5 +1,5 @@
 ---
-sidebar_position: 110
+sidebar_position: 120
 sidebar_label: Error Bars
 title: "Error Bars: What They Mean & How to Read Them (With Interactive Examples)"
 description: "What error bars show, how to read them, standard deviation vs standard error vs confidence interval bars, and what overlapping error bars do and don't mean."

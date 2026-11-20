@@ -1,5 +1,5 @@
 ---
-sidebar_position: 190
+sidebar_position: 200
 sidebar_label: Scatter Plot
 title: "Scatter Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a scatter plot is, how to read and describe correlation, outliers and clusters, when to use one, and the mistakes to avoid. With live, interactive examples."
@@ -87,7 +87,7 @@ A **scatter plot** (also called a scatter chart, scatter graph or scatter diagra
 4. Check the form. The dots may follow a straight line (**linear**) or a curve (**non-linear**), such as values that rise quickly and then level off.
 5. Look for anything unusual. **Outliers** are dots far from the rest. They may be errors, or the most interesting items in the data. **Clusters** are separate groups, which often mean the data mixes different kinds of item.
 
-A **trend line** (line of best fit), usually calculated by least-squares regression, summarises the direction. The **correlation coefficient**, *r*, measures the strength of a straight-line relationship from −1 (perfect negative) through 0 (none) to +1 (perfect positive).
+A **trend line** (line of best fit), usually calculated by least-squares regression, summarises the direction. The **correlation coefficient**, *r*, measures the strength of a straight-line relationship from −1 (perfect negative) through 0 (none) to +1 (perfect positive). To compare many pairs of variables at once, use a [correlation matrix](/learn/chart-types/cartesian/correlation-matrix/).
 
 ## How to describe a scatter plot
 
