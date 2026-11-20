@@ -134,7 +134,7 @@ $$
 h[i] = \frac{\sin\big(2\pi f_c (i - M/2)\big)}{i - M/2}, \qquad i = 0 \dots M, \qquad h[M/2] = 2\pi f_c
 $$
 
-3. **Multiply by a window** $w[i]$, which tapers the ends to zero. Cutting the sinc off abruptly (a rectangular window) leaves large ripples in the frequency response; tapering trades a wider transition for a much deeper stopband.
+3. **Multiply by a [window](/learn/signal-processing/window-functions/)** $w[i]$, which tapers the ends to zero. Cutting the sinc off abruptly (a rectangular window) leaves large ripples in the frequency response; tapering trades a wider transition for a much deeper stopband.
 4. **Normalise:** divide every tap by their sum, so the gain at 0 Hz is exactly 1 (0 dB). This also absorbs the constant $\pi$ factor dropped in step 2.
 
 The two classic windows, for $i = 0 \dots M$:

@@ -16,7 +16,7 @@ keywords:
         "fourier series vs fourier transform"
     ]
 image: /img/learn/fourier-transform-og.png
-related: [fast-fourier-transform, spectrogram, convolution, bode-plot]
+related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
 ---
 
 <head>
@@ -216,7 +216,7 @@ Four names cover closely related ideas. They differ in the kind of signal they t
 
 | Tool | Input | Output | Use it when |
 | --- | --- | --- | --- |
-| **Fourier series** | A periodic signal (one that repeats forever) | Separate lines at whole-number multiples of the repeat frequency (harmonics) | You are analysing or building a repeating waveform: a square wave, a musical note, a rotating machine |
+| [**Fourier series**](/learn/signal-processing/fourier-series/) | A periodic signal (one that repeats forever) | Separate lines at whole-number multiples of the repeat frequency (harmonics) | You are analysing or building a repeating waveform: a square wave, a musical note, a rotating machine |
 | **Fourier transform** | Any continuous signal, repeating or not | A continuous spectrum | You are working with formulas on paper: deriving filter responses, solving equations, proving results |
 | **Discrete Fourier transform (DFT)** | $N$ samples | $N$ frequency bins, spaced $f_s / N$ apart | You have real, sampled data: audio, sensor readings, prices. This is what a computer calculates |
 | **Fast Fourier transform (FFT)** | Same as the DFT | Same as the DFT | Always, in practice: it is an algorithm that computes the DFT quickly. See the [FFT guide](/learn/signal-processing/fast-fourier-transform/) |

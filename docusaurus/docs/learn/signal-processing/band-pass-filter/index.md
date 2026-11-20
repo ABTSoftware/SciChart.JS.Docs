@@ -238,7 +238,7 @@ The biquad lets about a tenth of the 2 Hz and 50 Hz tones through, and over a qu
 - **Audio:** a graphic equaliser is a bank of band-pass filters on standard octave or third-octave centres; a three-way loudspeaker crossover feeds the midrange driver through a band-pass; and a synthesiser's band-pass mode gives a thin, nasal tone.
 - **Speech:** telephone networks pass roughly 300 Hz to 3.4 kHz, enough for speech to be understood.
 - **Brain and body signals:** EEG analysis splits brain activity into conventional bands, roughly delta (below 4 Hz), theta (4–8 Hz), alpha (8–13 Hz), beta (13–30 Hz) and gamma (above 30 Hz). ECG and EMG monitors band-pass their signals to remove both baseline drift and high-frequency noise.
-- **Vibration and machine monitoring:** a damaged rolling bearing gives repeated small impacts that excite a high-frequency resonance of the machine. Envelope analysis band-passes the vibration around that resonance, then looks for the impact rate in the envelope's spectrum.
+- **Vibration and machine monitoring:** a damaged rolling bearing gives repeated small impacts that excite a high-frequency resonance of the machine. [Envelope analysis](/learn/signal-processing/hilbert-transform/) band-passes the vibration around that resonance, then looks for the impact rate in the envelope's spectrum.
 - **Measuring one tone:** before measuring the amplitude or phase of a test tone in a noisy signal, a narrow band-pass around it removes most of the noise. Lock-in amplifiers take this idea to the extreme.
 - **Seismology and sonar:** band-passing picks out the frequencies where a particular wave or echo has most of its energy.
 

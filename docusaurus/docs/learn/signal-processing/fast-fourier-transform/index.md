@@ -21,7 +21,7 @@ keywords:
         "dft vs fft"
     ]
 image: /img/learn/fast-fourier-transform-og.png
-related: [fourier-transform, spectrogram, power-spectral-density, audio-spectrum-analyzer]
+related: [fourier-transform, window-functions, power-spectral-density, audio-spectrum-analyzer]
 ---
 
 <head>
@@ -165,7 +165,7 @@ Read it in this order:
 
 1. **Check the frequency axis.** It runs from 0 Hz to the **Nyquist frequency**, half the sample rate ($f_s / 2$). Nothing above that can be measured; it would have shown up as a false, lower frequency ([aliasing](/learn/signal-processing/nyquist-and-aliasing/)) when the signal was sampled.
 2. **Check the vertical scale.** On a **linear** scale, a peak's height is the tone's amplitude. On a **decibel (dB)** scale, each 20 dB is a factor of 10 in amplitude: $L = 20 \log_{10}(A)$, so amplitude 1 is 0 dB, 0.5 is about -6 dB, 0.1 is -20 dB and 0.001 is -60 dB. Use dB when you need to see weak tones next to strong ones.
-3. **Find the peaks.** Each narrow peak is a steady tone. Evenly spaced peaks (for example 50, 100, 150 Hz) are a fundamental and its harmonics, usually a sign that the waveform isn't a pure sine.
+3. **Find the peaks.** Each narrow peak is a steady tone. Evenly spaced peaks (for example 50, 100, 150 Hz) are a fundamental and its [harmonics](/learn/signal-processing/fourier-series/), usually a sign that the waveform isn't a pure sine.
 4. **Find the noise floor**, the uneven level between the peaks. A peak only means something if it stands clearly above it (see [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/)).
 5. **Look at the shape of each peak.** A wide skirt around a peak is usually leakage from the window, not real content (see [windowing](#windowing-and-spectral-leakage)).
 
@@ -205,7 +205,7 @@ Leakage does two kinds of harm:
 - **It hides weak tones.** The skirts of a strong peak can be higher than a small peak nearby.
 - **It lowers the peak.** A tone exactly halfway between two bins reads about 3.9 dB too low with no window. This is called **scalloping loss**.
 
-A **window function** fixes most of this. Before the FFT, each sample is multiplied by a weight that is largest in the middle of the block and falls towards the ends, so the jump at the join disappears. The price is a wider central peak (less frequency detail) and a lower overall level, which the amplitude scaling corrects.
+A [**window function**](/learn/signal-processing/window-functions/) fixes most of this. Before the FFT, each sample is multiplied by a weight that is largest in the middle of the block and falls towards the ends, so the jump at the join disappears. The price is a wider central peak (less frequency detail) and a lower overall level, which the amplitude scaling corrects.
 
 ![Left: the rectangular, Hann, Hamming and Blackman windows across one block of samples. Right: four small charts of the spectrum each window gives one tone, with highest side lobes of -13, -31, -43 and -58 dB](./window-functions-compared.svg)
 
@@ -216,7 +216,7 @@ A **window function** fixes most of this. Before the FFT, each sample is multipl
 | Hamming | $0.54 - 0.46\cos\frac{2\pi n}{N}$ | -43 dB | ±2 bins | 1.8 dB | Lower close-in leakage than Hann, often used in speech processing |
 | Blackman | $0.42 - 0.5\cos\frac{2\pi n}{N} + 0.08\cos\frac{4\pi n}{N}$ | -58 dB | ±3 bins | 1.1 dB | Finding weak tones near strong ones |
 
-We measured these figures with the FFT code on this page. They match the standard values in Harris (1978); see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a **flat-top** window, with almost no peak drop but a very wide peak.
+We measured these figures with the FFT code on this page. They match the standard values in Harris (1978); see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a [**flat-top**](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing) window, with almost no peak drop but a very wide peak.
 
 **Try it in the [live example](#how-to-plot-an-fft-in-javascript-react-or-angular):** with the moving tone at 120.5 Hz, switch the window to **Rectangular**. Its skirt rises over the weak 160 Hz tone. Switch back to **Hann** or **Blackman** and the small peak reappears. Then move the tone to exactly 120.0 Hz: with a rectangular window the leakage vanishes, because the tone now fits the block.
 

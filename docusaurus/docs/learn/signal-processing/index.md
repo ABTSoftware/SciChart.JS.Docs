@@ -2,8 +2,8 @@
 sidebar_position: 1
 sidebar_label: Signal Processing
 title: "Signal Processing: A Visual Guide (With Interactive Examples)"
-description: "Signal processing explained visually: sampling and aliasing, the Fourier transform and FFT, power spectral density, spectrum analysers, signal-to-noise ratio, low-pass, high-pass, band-pass and notch filters, FIR vs IIR, Bode plots, convolution and correlation, each with a live, interactive example you can change in your browser."
-keywords: ["signal processing", "digital signal processing", "dsp", "fourier transform", "fft", "power spectral density", "low pass filter", "high pass filter", "bode plot", "convolution", "autocorrelation", "nyquist frequency", "aliasing", "signal to noise ratio", "band pass filter", "notch filter", "fir filter", "iir filter", "audio spectrum analyzer"]
+description: "Signal processing explained visually: sampling and aliasing, Fourier series, the Fourier transform and FFT, window functions, power spectral density, spectrum analysers, signal-to-noise ratio, low-pass, high-pass, band-pass and notch filters, FIR vs IIR, Bode plots, convolution and correlation, the Hilbert transform and envelope detection, each with a live, interactive example you can change in your browser."
+keywords: ["signal processing", "digital signal processing", "dsp", "fourier transform", "fft", "power spectral density", "low pass filter", "high pass filter", "bode plot", "convolution", "autocorrelation", "nyquist frequency", "aliasing", "signal to noise ratio", "band pass filter", "notch filter", "fir filter", "iir filter", "audio spectrum analyzer", "fourier series", "window function", "hann window", "hamming window", "spectral leakage", "hilbert transform", "envelope detection"]
 ---
 
 # Signal Processing
@@ -20,12 +20,15 @@ keywords: ["signal processing", "digital signal processing", "dsp", "fourier tra
 
 | Guide | What it covers |
 | --- | --- |
+| [Fourier series](/learn/signal-processing/fourier-series/) | How a repeating wave is built from harmonics, with an interactive grapher |
 | [Fourier transform](/learn/signal-processing/fourier-transform/) | How any signal can be split into sine waves, and what its frequency spectrum shows |
 | [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind every spectrum analyser: bins, resolution, windowing and leakage |
+| [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming, Blackman and flat-top windows, and how they control spectral leakage |
 | [Power spectral density](/learn/signal-processing/power-spectral-density/) | Noise and vibration power per hertz, Welch averaging and RMS from the spectrum |
 | [Audio spectrum analyzer](/learn/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one, with a real-time demo |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How a signal's frequencies change over time, as a chart |
 | [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring SNR in decibels, and improving it with filtering and averaging |
+| [Hilbert transform and envelope detection](/learn/signal-processing/hilbert-transform/) | The analytic signal, a signal's envelope, and its instantaneous phase and frequency |
 
 ## Filters
 

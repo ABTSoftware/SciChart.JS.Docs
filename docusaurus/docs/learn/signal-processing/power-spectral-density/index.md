@@ -21,7 +21,7 @@ keywords:
         "grms from psd"
     ]
 image: /img/learn/power-spectral-density-og.png
-related: [fast-fourier-transform, spectrogram, autocorrelation, signal-to-noise-ratio]
+related: [fast-fourier-transform, window-functions, autocorrelation, signal-to-noise-ratio]
 ---
 
 <head>
@@ -149,7 +149,7 @@ $$
 Each part of the scaling has a job:
 
 - **$\sum w_n^2$** (the window's power) undoes the power the window removes. With no window it equals $L$.
-- **$f_s$** turns power per bin into power per hertz. Together with $\sum w_n^2$, it divides by the window's **equivalent noise bandwidth**, which is 1 bin for no window and 1.5 bins for Hann.
+- **$f_s$** turns power per bin into power per hertz. Together with $\sum w_n^2$, it divides by the window's [**equivalent noise bandwidth**](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing), which is 1 bin for no window and 1.5 bins for Hann.
 - **$c_k = 2$** for every bin except 0 Hz and the Nyquist frequency ($c_k = 1$). A real signal's spectrum is mirrored at negative frequencies; doubling folds that power into the one-sided PSD you plot.
 
 ### Step 2: why one periodogram isn't enough
