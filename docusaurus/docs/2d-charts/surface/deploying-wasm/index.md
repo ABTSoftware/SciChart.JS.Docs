@@ -11,7 +11,7 @@ In v6 there is **one wasm payload: the `_wasm` directory**. The separate 2D and 
 | Files | Role |
 |---|---|
 | `scichart.wasm`, `scichart-nosimd.wasm`, `scichart-64.wasm` | The engine cores. Exactly one is fetched, chosen by browser capability |
-| `scichart-data{,-nosimd,-64}.wasm` | The `data` module — the native data-series layer, loaded with every chart |
+| `scichart-data{,-nosimd,-64}.wasm` | The `data` module. Fetched only when a chart asks for it; most apps never load it |
 | `scichart-charting3d{,-nosimd,-64}.wasm` | The `charting3d` module — the 3D engine, fetched lazily at the first `SciChart3DSurface` |
 
 The SIMD files carry no suffix, `-nosimd` is the fallback for browsers without wasm SIMD, and `-64` is the optional [64-bit (Memory64) build](/2d-charts/surface/larger-datasets-with-wasm64/). Serve the whole directory and none of the variants can be missing.
@@ -121,6 +121,35 @@ export async function initSciChart() {
 :::note
 `SciChartSurface.useWasmFromCDN()` still works and does the same thing, but the name breaks the eslint `react-hooks/rules-of-hooks` rule in React apps, so `loadWasmFromCDN()` is preferred.
 :::
+
+## Faster loading
+
+How you serve the wasm files has a large effect on how quickly the first chart appears, particularly on a first visit.
+
+**Compression.** The engine cores compress to roughly half their size with brotli or gzip. Most CDNs and hosting platforms compress automatically. If you serve the files yourself, enable compression for `.wasm` and check that responses carry a `Content-Encoding: br` or `gzip` header.
+
+**MIME type.** Serve `.wasm` files as `Content-Type: application/wasm`. The browser then compiles the engine while it is still downloading (streaming compilation). With any other type SciChart still loads, but compilation waits for the whole file.
+
+**Caching.** Give the wasm files a long cache lifetime (for example `Cache-Control: public, max-age=31536000, immutable`) on a URL that changes with each SciChart version, such as a path containing the version number or a hashed file name from your bundler. Returning visitors then load the engine from cache without a network request, and the browser can reuse its compiled code.
+
+**Preloading.** Call `preloadWasm()` early in your app, after `SciChartSurface.configure()` or `loadWasmFromCDN()` if you use them, so the download starts before the first chart is created:
+
+```ts
+import { SciChartSurface, preloadWasm } from "scichart";
+
+SciChartSurface.loadWasmFromCDN();
+preloadWasm(); // no need to await; the first SciChartSurface.create() reuses it
+```
+
+Alternatively, a preload hint in your HTML `<head>` starts the download before any JavaScript runs:
+
+```html
+<link rel="preload" href="/scichart.wasm" as="fetch" crossorigin="anonymous" />
+```
+
+The `crossorigin` attribute is required, even for files on your own origin, or the browser downloads the file a second time. A hint names one exact file, so it only helps when that variant is the one used: `preloadWasm()` chooses the SIMD, no-SIMD or 64-bit variant for you. Apps whose first screen shows a 3D chart can add a second hint for `scichart-charting3d.wasm`, which is otherwise fetched when the first 3D chart is created.
+
+See [Startup Time Optimizations](/2d-charts/performance-tips/performance-tips-and-tricks/#5-startup-time-optimizations) for more ways to shorten startup.
 
 Loading Wasm files offline
 --------------------------
