@@ -8,7 +8,7 @@ keywords: ["chart axes", "chart scales", "axis scale", "cartesian graph", "x and
 
 # Axes and Scales
 
-The axes of a chart decide how its values are mapped to positions, and so what the shapes on the chart mean. Each guide here explains one kind of axis or scale in plain language: how it works, how to read it and when to use it, with a live, interactive example and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+The axes of a chart decide how its values are mapped to positions, and so what the shapes on the chart mean. Each guide here explains one kind of axis or scale in plain language: how it works, how to read it and when to use it, with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 | Topic | What it shows |
 | --- | --- |

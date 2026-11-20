@@ -70,10 +70,10 @@ A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the f
 *A live spectrogram of a test signal (sample data): two steady tones, a tone that pulses on and off, and a sweep that repeats every four seconds, over background noise. [Try the interactive version](#how-to-create-a-spectrogram-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A spectrogram shows **frequency against time**, with **colour for strength**, usually in decibels.
-- **Each shape has a meaning:** flat lines are steady tones, stacked lines are harmonics, slopes are changing pitch, vertical lines are clicks, and speckle is noise.
-- It is built from many short **Fourier transforms** (the short-time Fourier transform, or STFT). The **window length** trades detail in time against detail in frequency.
-- The highest frequency it can show is **half the sample rate** (the Nyquist frequency).
+- A spectrogram shows frequency against time, with colour for strength, usually in decibels.
+- Each shape has a meaning. Flat lines are steady tones, stacked lines are harmonics, slopes are changing pitch, vertical lines are clicks, and speckle is noise.
+- It is built from many short Fourier transforms (the short-time Fourier transform, or STFT). The window length trades detail in time against detail in frequency.
+- The highest frequency it can show is half the sample rate (the Nyquist frequency).
 - It is used in audio, speech, wildlife sound, machine monitoring, radar, sonar, radio and medicine.
 :::
 
@@ -81,47 +81,47 @@ A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the f
 
 ![Anatomy of a spectrogram: time on the horizontal axis, frequency on the vertical axis, colour from quiet (black) to loud (pale yellow), with a steady tone as a horizontal line, a sweep as a rising line and a click as a vertical line](./spectrogram-anatomy.svg)
 
-1. **Check the colour scale.** It tells you which colours are loud and which are quiet. Levels are usually in decibels, a logarithmic scale, so quiet detail and loud tones fit on one chart. The darkest colour is usually the **noise floor**: the level of the background when nothing else is happening.
-2. **Check the axes.** Time usually runs left to right; in a scrolling **waterfall** display it may run top to bottom. Note whether the frequency axis is evenly spaced (linear) or squeezed at the top (logarithmic or mel), and where it stops.
-3. **Read one vertical slice.** A slice is one moment in time. Reading up it tells you which frequencies were present then, and how strong each one was.
-4. **Follow the shapes across time.** Lines and patches that persist, move or repeat are the sounds or signals. The table below says what each shape usually is.
-5. **Compare against the noise floor.** Anything only slightly brighter than the background may be noise; a feature well above it is a real signal.
+1. Check the colour scale. It tells you which colours are loud and which are quiet. Levels are usually in decibels, a logarithmic scale, so quiet detail and loud tones fit on one chart. The darkest colour is usually the **noise floor**: the level of the background when nothing else is happening.
+2. Check the axes. Time usually runs left to right; in a scrolling **waterfall** display it may run top to bottom. Note whether the frequency axis is evenly spaced (linear) or squeezed at the top (logarithmic or mel), and where it stops.
+3. Read one vertical slice. A slice is one moment in time. Reading up it tells you which frequencies were present then, and how strong each one was.
+4. Follow the shapes across time. Lines and patches that persist, move or repeat are the sounds or signals. The table below says what each shape usually is.
+5. Compare against the noise floor. Anything only slightly brighter than the background may be noise; a feature well above it is a real signal.
 
 ## Spectrogram patterns: what each shape means
 
 | What you see | What it is | Examples |
 | --- | --- | --- |
 | A flat horizontal line | A steady tone at one frequency | Mains hum at 50 or 60 Hz, a whistle, a fan or motor running at constant speed |
-| A stack of evenly spaced parallel lines | A **fundamental** frequency and its **harmonics**, at whole-number multiples of it | A sung or spoken vowel, a violin note, a rotating machine |
-| A rising or falling line | A frequency that changes over time: a sweep or **chirp** | A siren, birdsong, an engine speeding up, a test sweep |
+| A stack of evenly spaced parallel lines | A fundamental frequency and its harmonics, at whole-number multiples of it | A sung or spoken vowel, a violin note, a rotating machine |
+| A rising or falling line | A frequency that changes over time: a sweep or chirp | A siren, birdsong, an engine speeding up, a test sweep |
 | A dashed line | A tone that switches on and off | An alarm beep, Morse code, the 5,500 Hz tone in the chart above |
 | A thin vertical line | A short, sharp sound containing many frequencies at once | A click, knock, drum hit or footstep |
 | A speckled haze over many frequencies | Broadband noise | Hiss, wind, rain, air conditioning |
-| Broad bands of energy that shift in speech | **Formants**: resonances of the mouth and throat | Vowels; each vowel has its own formant pattern |
+| Broad bands of energy that shift in speech | Formants: resonances of the mouth and throat | Vowels; each vowel has its own formant pattern |
 | A gap from top to bottom | Silence or a dropout | A pause in speech, a break in a recording |
 
 ### How to describe a spectrogram
 
 To write up what a spectrogram shows, describe each feature in turn with this template:
 
-> There is **[a steady tone / harmonics / a sweep / a burst / noise]** at **[frequency or range]**, at about **[level]** dB, which **[lasts throughout / repeats every … / rises from … to …]**.
+> There is [a steady tone / harmonics / a sweep / a burst / noise] at [frequency or range], at about [level] dB, which [lasts throughout / repeats every … / rises from … to …].
 
-**Worked example,** using the chart above: "There is a noise floor of about −80 dB across the whole band. Two steady tones last throughout: a strong one at 1,000 Hz, at about −25 dB, and a weaker one at 3,000 Hz, at about −40 dB. A third tone at 5,500 Hz switches on for one second in every two. A sweep rises from 500 Hz to 7,000 Hz every four seconds, then jumps back down and starts again."
+For example, using the chart above: "There is a noise floor of about −80 dB across the whole band. Two steady tones last throughout: a strong one at 1,000 Hz, at about −25 dB, and a weaker one at 3,000 Hz, at about −40 dB. A third tone at 5,500 Hz switches on for one second in every two. A sweep rises from 500 Hz to 7,000 Hz every four seconds, then jumps back down and starts again."
 
 ## How a spectrogram is made
 
 You don't need the maths to read a spectrogram, but knowing how it is made explains what it can and can't show.
 
-1. **Cut the signal into short windows,** for example 1,024 samples each, usually overlapping.
-2. **Taper each window** with a window function, such as a Hann window, so the cut edges don't add false frequencies.
-3. **Take a Fourier transform of each window.** In practice this is a fast Fourier transform (**FFT**). It measures how strong each frequency is in that window. Together, these steps are the **short-time Fourier transform** (STFT).
-4. **Convert to decibels and colour it.** Each window's result becomes one column of the spectrogram, and each frequency band becomes one row.
+1. Cut the signal into short windows, for example 1,024 samples each, usually overlapping.
+2. Taper each window with a window function, such as a Hann window, so the cut edges don't add false frequencies.
+3. Take a Fourier transform of each window. In practice this is a fast Fourier transform (FFT). It measures how strong each frequency is in that window. Together, these steps are the **short-time Fourier transform** (STFT).
+4. Convert to decibels and colour it. Each window's result becomes one column of the spectrogram, and each frequency band becomes one row.
 
 The highest frequency a spectrogram can show is half the signal's sample rate, the **Nyquist frequency**: 22,050 Hz for audio sampled at 44,100 Hz. Before computers, spectrograms were drawn by an analogue machine, the sound spectrograph, described by researchers at Bell Telephone Laboratories in 1946.
 
 ### Window length: time detail against frequency detail
 
-The window length sets a trade-off you can't avoid. A long window separates close frequencies but blurs when things happened; a short window shows timing sharply but merges nearby frequencies.
+A long window separates close frequencies but blurs when things happened; a short window shows timing sharply but merges nearby frequencies.
 
 | Window (at 44,100 samples per second) | Time per column | Frequency band width | Good for |
 | --- | --- | --- | --- |
@@ -135,26 +135,26 @@ Band width is the sample rate divided by the window length; time per column is t
 
 | Type | What changes | Typical use |
 | --- | --- | --- |
-| **Linear spectrogram** | Frequency axis evenly spaced, as in the chart above | Engineering, vibration, radio |
-| **Log-frequency spectrogram** | Frequency axis on a logarithmic scale, so each octave takes the same height | Music analysis |
-| **Mel spectrogram** | Frequency axis on the mel scale, which spaces frequencies roughly as people hear pitch | Speech recognition and audio machine learning |
-| **Waterfall display** | A spectrogram that scrolls as new data arrives, often from top to bottom | Radio and software-defined radio (SDR), sonar |
+| Linear spectrogram | Frequency axis evenly spaced, as in the chart above | Engineering, vibration, radio |
+| Log-frequency spectrogram | Frequency axis on a logarithmic scale, so each octave takes the same height | Music analysis |
+| Mel spectrogram | Frequency axis on the mel scale, which spaces frequencies roughly as people hear pitch | Speech recognition and audio machine learning |
+| Waterfall display | A spectrogram that scrolls as new data arrives, often from top to bottom | Radio and software-defined radio (SDR), sonar |
 
 ## When to use a spectrogram
 
-Use a spectrogram when **the frequencies in a signal change over time** and you need to see when each one starts, stops or moves. Common uses:
+Use a spectrogram when the frequencies in a signal change over time and you need to see when each one starts, stops or moves. Common uses:
 
-- **audio and music:** finding hum, clicks, noise and clipping, checking mixes, and analysing notes and harmonics;
-- **speech:** phonetics and voice analysis, where vowels show as formant bands;
-- **wildlife sound:** identifying birdsong and bat, whale and dolphin calls;
-- **vibration and condition monitoring:** spotting a bearing or gear fault as a new tone appearing or drifting;
-- **radar and sonar:** detecting targets and how they move;
-- **medicine:** time-frequency analysis of EEG (brain wave) signals;
-- **radio:** watching which channels are busy, on spectrum analysers and SDR waterfall displays.
+- audio and music: finding hum, clicks, noise and clipping, checking mixes, and analysing notes and harmonics;
+- speech: phonetics and voice analysis, where vowels show as formant bands;
+- wildlife sound: identifying birdsong and bat, whale and dolphin calls;
+- vibration and condition monitoring: spotting a bearing or gear fault as a new tone appearing or drifting;
+- radar and sonar: detecting targets and how they move;
+- medicine: time-frequency analysis of EEG (brain wave) signals;
+- radio: watching which channels are busy, on spectrum analysers and SDR waterfall displays.
 
 | Chart | Best for |
 | --- | --- |
-| **Spectrogram** | How the frequencies in a signal change over time |
+| Spectrogram | How the frequencies in a signal change over time |
 | Waveform ([line chart](/learn/chart-types/cartesian/line-chart/)) | The raw signal, amplitude against time: good for loudness and timing, poor for pitch |
 | Spectrum (FFT plot) | Level against frequency at one moment: precise levels, but no history |
 | [Power spectral density](/learn/signal-processing/power-spectral-density/) | Noise power per hertz averaged over a long stretch: a steady, comparable level, but no history |
@@ -164,7 +164,6 @@ Many tools show a waveform, a spectrum and a spectrogram together, as in the Sci
 
 ## Common spectrogram mistakes
 
-- **Choosing the wrong window length.** Too long and clicks smear across time; too short and close tones merge into one band. Match it to what you're looking for (see the table above).
 - **Skipping the window function.** Without tapering, energy from a strong tone leaks into the bands either side of it, which can hide quieter signals nearby.
 - **Plotting raw amplitude instead of decibels.** On a linear scale only the loudest sounds show; everything else is lost in the darkest colour.
 - **Setting the colour range badly.** Set the bottom of the range near the noise floor and the top just above the loudest signal. Too wide a range makes everything look dark; too narrow a range turns noise into false detail and flattens the loud parts.

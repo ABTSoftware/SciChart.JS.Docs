@@ -73,30 +73,30 @@ A **candlestick chart** (also called a candlestick graph, candle graph, Japanese
 *A candlestick chart of 150 days of prices (sample data), with green candles for rising days and red for falling days. [Try the interactive version](#how-to-create-a-candlestick-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- Each candle shows **four prices for one period**: open, high, low and close.
-- The **body** runs from open to close; the **wicks** reach the high and low. **Green** means the price closed higher, **red** that it closed lower.
+- Each candle shows four prices for one period: open, high, low and close.
+- The body runs from open to close; the wicks reach the high and low. Green means the price closed higher, red that it closed lower.
 - Describe a candle in a sentence: "opened at *\$100*, traded between *\$98* and *\$108*, and closed *up* at *\$106*".
-- **The timeframe changes the picture:** four hourly candles merge into one four-hour candle that can look completely different.
-- Candlestick **patterns describe what happened**. They are not reliable predictions on their own.
+- The timeframe changes the picture. Four hourly candles merge into one four-hour candle that can look completely different.
+- Candlestick patterns describe what happened. They are not reliable predictions on their own.
 :::
 
 ## How to read a candlestick chart
 
 ![Anatomy of a candlestick: a green bullish candle and a red bearish candle, with the open, high, low, close, body and wicks labelled](./candlestick-anatomy.svg)
 
-1. **Check the timeframe.** Each candle covers one period: a minute, an hour, a day or a week. The time axis or the chart's settings tell you which.
-2. **Read the colour.** A **green** (bullish) candle closed above its open, so the price rose. A **red** (bearish) candle closed below its open, so it fell. Some charts use hollow (rising) and filled (falling) candles instead.
-3. **Read the body.** It spans the open and the close. On a green candle the open is at the bottom of the body and the close at the top; on a red candle it's the other way round. A **long body** means a strong move in one direction; a **short body** means little net change.
-4. **Read the wicks.** The thin lines above and below the body, also called **shadows**, reach the period's **high** and **low**. A **long wick** means the price got that far but was pushed back before the period ended.
-5. **Read the sequence.** Follow the candles from left to right. A run of mostly green candles stepping upwards is an uptrend; mostly red candles stepping down is a downtrend.
+1. Check the timeframe. Each candle covers one period: a minute, an hour, a day or a week. The time axis or the chart's settings tell you which.
+2. Read the colour. A green (**bullish**) candle closed above its open, so the price rose. A red (**bearish**) candle closed below its open, so it fell. Some charts use hollow (rising) and filled (falling) candles instead.
+3. Read the body. It spans the open and the close. On a green candle the open is at the bottom of the body and the close at the top; on a red candle it's the other way round. A long body means a strong move in one direction; a short body means little net change.
+4. Read the wicks. The thin lines above and below the body, also called **shadows**, reach the period's high and low. A long wick means the price got that far but was pushed back before the period ended.
+5. Read the sequence. Follow the candles from left to right. A run of mostly green candles stepping upwards is an uptrend; mostly red candles stepping down is a downtrend.
 
 ## How to describe a candlestick
 
 Every candle can be put into words with the same template:
 
-> The price opened at **[open]**, traded between **[low]** and **[high]**, and closed **[up / down]** at **[close]**: a **[bullish / bearish]** candle with a **[long / short]** body and **[long / short]** wicks.
+> The price opened at [open], traded between [low] and [high], and closed [up / down] at [close]: a [bullish / bearish] candle with a [long / short] body and [long / short] wicks.
 
-**Worked example:** a day with open \$100, high \$108, low \$98 and close \$106.
+A worked example: a day with open \$100, high \$108, low \$98 and close \$106.
 
 | Measure | Calculation | Value |
 | --- | --- | --- |
@@ -114,12 +114,12 @@ Comparing the body with the range is the quickest way to classify a candle. A bo
 
 The same prices look different depending on how long each candle covers. A longer candle is built from the shorter ones inside it:
 
-- **open:** the open of the first short candle;
-- **high:** the highest high of all of them;
-- **low:** the lowest low of all of them;
-- **close:** the close of the last short candle.
+- open: the open of the first short candle;
+- high: the highest high of all of them;
+- low: the lowest low of all of them;
+- close: the close of the last short candle.
 
-**Worked example:** four one-hour candles merged into one four-hour candle.
+For example, here are four one-hour candles merged into one four-hour candle.
 
 | Candle | Open | High | Low | Close | Direction |
 | --- | --- | --- | --- | --- | --- |
@@ -127,9 +127,9 @@ The same prices look different depending on how long each candle covers. A longe
 | 10:00–11:00 | 102 | 104 | 100 | 101 | Down |
 | 11:00–12:00 | 101 | 102 | 97 | 98 | Down |
 | 12:00–13:00 | 98 | 101 | 96 | 100 | Up |
-| **09:00–13:00 (merged)** | **100** | **104** | **96** | **100** | **Unchanged: a doji** |
+| 09:00–13:00 (merged) | 100 | 104 | 96 | 100 | Unchanged: a doji |
 
-On the hourly chart there is a rise, a two-hour fall and a recovery. On the four-hour chart the same morning is a single doji with long wicks on both sides. Neither view is wrong, but a pattern seen on one timeframe may not exist on another. Always say which timeframe you're looking at.
+On the hourly chart there is a rise, a two-hour fall and a recovery. On the four-hour chart the same morning is a single doji with long wicks on both sides. A pattern seen on one timeframe may not exist on another, so always say which timeframe you're looking at.
 
 ## Common candlestick patterns
 
@@ -146,22 +146,20 @@ Traders give names to candles and small groups of candles with a recognisable sh
 
 ## When to use a candlestick chart
 
-Use a candlestick chart when your data has an **open, high, low and close for each period**, and the reader cares about how the price moved within each period, not just where it ended. Candlestick charts are standard for stocks, forex, crypto and commodities, and are often shown with **volume bars** underneath and **technical indicators** such as moving averages on top. If you'd rather see the same four prices as thin bars with open and close ticks, read [OHLC chart vs candlestick chart](/learn/chart-types/cartesian/ohlc-chart/#ohlc-chart-vs-candlestick-chart).
+Use a candlestick chart when your data has an open, high, low and close for each period, and the reader cares about how the price moved within each period, not just where it ended. Candlestick charts are standard for stocks, forex, crypto and commodities, and are often shown with volume bars underneath and technical indicators such as moving averages on top. If you'd rather see the same four prices as thin bars with open and close ticks, read [OHLC chart vs candlestick chart](/learn/chart-types/cartesian/ohlc-chart/#ohlc-chart-vs-candlestick-chart).
 
 | If the reader needs to… | Use |
 | --- | --- |
-| See the direction and range of each period, and spot patterns | **Candlestick chart** |
+| See the direction and range of each period, and spot patterns | Candlestick chart |
 | See the same four prices in a thinner, more compact form, with many periods on screen | [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) |
 | Follow the long-term trend, or compare several prices on one chart | [Line chart](/learn/chart-types/cartesian/line-chart/) of the closing price |
 | Compare the spread of measured values across groups (not prices over time) | [Box plot](/learn/chart-types/cartesian/box-plot/), which looks similar but shows quartiles, not open and close |
 
 ## Candlestick chart mistakes to avoid
 
-- **Mixing timeframes.** A "hammer" on a 5-minute chart and a hammer on a weekly chart describe very different things. Check the timeframe before reading any pattern.
 - **Assuming the colours.** Green-up, red-down is common but not universal. Some platforms and markets use other colours or hollow candles, so check the chart's key.
 - **Gaps on the time axis.** A plain date axis leaves empty spaces for weekends and holidays when markets are closed. An axis that spaces candles evenly by index closes those gaps.
 - **Reading one candle in isolation.** A single candle says what happened in one period. Its meaning depends on the trend before it, the volume behind it and the timeframe.
-- **Treating patterns as predictions.** Patterns are labels for shapes, not forecasts. Test any trading idea on historical data before relying on it.
 - **Too many candles on screen.** With years of daily data, candles shrink to slivers and the bodies disappear. Zoom in, or switch to a longer timeframe or a line chart for the long view.
 
 ## How to create a candlestick chart in JavaScript, React or Angular

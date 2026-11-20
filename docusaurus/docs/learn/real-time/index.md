@@ -8,7 +8,7 @@ keywords: ["real time chart", "real-time charts", "streaming chart", "live chart
 
 # Real-Time Charts
 
-Real-time charts update as new data arrives, from patient monitors and industrial sensors to telemetry and trading screens. Each guide here explains one kind of real-time chart in plain language, with a live, streaming example and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+Real-time charts update as new data arrives, from patient monitors and industrial sensors to telemetry and trading screens. Each guide here explains one kind of real-time chart in plain language, with a live, streaming example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 | Chart | What it shows |
 | --- | --- |

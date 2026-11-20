@@ -70,11 +70,11 @@ A **violin plot** (also called a violin chart or violin graph) is a chart that s
 *Violin plots comparing page load times for four servers, 400 requests each (sample data). [Try the interactive version](#how-to-create-a-violin-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A violin plot is a **box plot plus the shape of the data**: a smoothed curve, mirrored on both sides, shows where values cluster.
-- **Wide means common, thin means rare.** Two bulges mean the group holds two clusters of values.
-- The white dot is the **median** and the dark bar is the box from the **first to the third quartile**.
-- A violin shows **peaks, gaps and skew that a box plot hides**: two very different groups can share the same box.
-- The shape is an **estimate**. It depends on a smoothing setting (the bandwidth) and needs a few dozen values per group to be trusted.
+- A violin plot is a box plot plus the shape of the data: a smoothed curve, mirrored on both sides, shows where values cluster.
+- Wide means common, thin means rare. Two bulges mean the group holds two clusters of values.
+- The white dot is the median and the dark bar is the box from the first to the third quartile.
+- A violin shows peaks, gaps and skew that a box plot hides: two very different groups can share the same box.
+- The shape is an estimate. It depends on a smoothing setting (the bandwidth) and needs a few dozen values per group to be trusted.
 :::
 
 ## How to read a violin plot
@@ -83,42 +83,42 @@ A **violin plot** (also called a violin chart or violin graph) is a chart that s
 
 Read a violin plot from the inside out:
 
-1. **Find the median.** The white dot marks the middle value: half the group is above it and half below.
-2. **Read the box.** The thick bar runs from the **first quartile (Q1)** to the **third quartile (Q3)**, so it holds the middle half of the values. The thin line (the whisker) reaches out to the furthest typical values, as on a [box plot](/learn/chart-types/cartesian/box-plot/).
-3. **Read the width.** The outline is a **density curve**: a smoothed version of a histogram, drawn on both sides so the shape is easy to see. The widest point is the most common value. Where the violin is thin, few values fall.
-4. **Count the bulges.** One bulge means one cluster of values. Two bulges with a narrow waist between them mean the group is really two groups mixed together.
-5. **Look at the ends.** A long, thin tail means a few values reach far from the rest. On most violin plots, including the ones on this page, the outline stops at the lowest and highest values.
+1. Find the median. The white dot marks the middle value: half the group is above it and half below.
+2. Read the box. The thick bar runs from the first quartile (Q1) to the third quartile (Q3), so it holds the middle half of the values. The thin line (the whisker) reaches out to the furthest typical values, as on a [box plot](/learn/chart-types/cartesian/box-plot/).
+3. Read the width. The outline is a **density curve**: a smoothed version of a histogram, drawn on both sides so the shape is easy to see. The widest point is the most common value. Where the violin is thin, few values fall.
+4. Count the bulges. One bulge means one cluster of values. Two bulges with a narrow waist between them mean the group is two groups mixed together.
+5. Look at the ends. A long, thin tail means a few values reach far from the rest. On most violin plots, including the ones on this page, the outline stops at the lowest and highest values.
 
 Then compare the groups: which sits higher, which is more spread out, and which have a different shape.
 
-**What the width doesn't tell you:** how many values each group has. Most charts, including this one, scale every violin to the same maximum width, so a group of 50 values and a group of 5,000 look equally solid. Add the count to each group's label when it differs.
+The width doesn't tell you how many values each group has. Most charts, including this one, scale every violin to the same maximum width, so a group of 50 values and a group of 5,000 look equally solid. Add the count to each group's label when it differs.
 
 ### What the shape of a violin tells you
 
 | Shape | What it means | In the chart above |
 | --- | --- | --- |
 | One bulge, roughly symmetric | Values cluster around one typical value | Server A |
-| Bulge near the bottom, long thin tail upwards | **Right-skewed**: most values are low, with a few much higher | Server B |
-| Two bulges with a narrow waist | **Bimodal**: two clusters, such as two kinds of request or customer | Server C |
-| About the same width from end to end | Values are **spread evenly** across the range | Server D |
+| Bulge near the bottom, long thin tail upwards | Right-skewed: most values are low, with a few much higher | Server B |
+| Two bulges with a narrow waist | Bimodal: two clusters, such as two kinds of request or customer | Server C |
+| About the same width from end to end | Values are spread evenly across the range | Server D |
 | Short and wide | Values are consistent: close together | Server A |
 | Tall and thin | Values vary a lot | Server B |
 
 ## How to describe a violin plot
 
-Describe four things: the **centre** (median), the **spread** (the box and the overall height), the **shape** (one peak or more, skewed or symmetric) and anything unusual in the **tails**. Use this template:
+Describe four things: the centre (median), the spread (the box and the overall height), the shape (one peak or more, skewed or symmetric) and anything unusual in the tails. Use this template:
 
-> **[Group]** has a median of **[value]** and its middle half runs from **[Q1]** to **[Q3]**. Its shape is **[one peak / two peaks at … and … / skewed towards high values / flat]**, and **[there is / there is no]** long tail.
+> [Group] has a median of [value] and its middle half runs from [Q1] to [Q3]. Its shape is [one peak / two peaks at … and … / skewed towards high values / flat], and [there is / there is no] long tail.
 
-**Worked example,** from the chart at the top: "Server C's median load time is 433 ms and its middle half runs from 301 to 625 ms. But its shape has two peaks, at about 300 and 620 ms, with a narrow waist between them: requests are either fast or slow, and almost none take the median time. Server D has a similar median and box, but its violin is almost flat: load times are spread evenly from 140 to 780 ms."
+For example, from the chart at the top: "Server C's median load time is 433 ms and its middle half runs from 301 to 625 ms. But its shape has two peaks, at about 300 and 620 ms, with a narrow waist between them: requests are either fast or slow, and almost none take the median time. Server D has a similar median and box, but its violin is almost flat: load times are spread evenly from 140 to 780 ms."
 
 ## Violin plot vs box plot
 
-A box plot sums each group up in five numbers. A violin plot keeps those numbers and adds the shape between them. That matters whenever the shape is not a single, tidy hump.
+A box plot sums each group up in five numbers. A violin plot keeps those numbers and adds the shape between them. The two differ whenever the shape is not a single, tidy hump.
 
 ![Two datasets with the same box plot: one has two peaks with almost nothing at the median, the other is spread evenly. Their box plots are identical; their violin plots are an hourglass and a rectangle](./violin-vs-box-plot.svg)
 
-The live chart on this page has the same pattern. **Servers C and D have almost the same box:** medians of 433 and 455 ms, first quartiles of about 300 ms and third quartiles of about 600 to 625 ms. Their violins are completely different. Not one of Server C's 400 requests took within 25 ms of its median, because its requests come in two kinds, perhaps fast responses served from a cache and slow ones that miss it. Server D's requests are spread evenly. A box plot alone would report the two servers as alike.
+The live chart on this page has the same pattern. Servers C and D have almost the same box, with medians of 433 and 455 ms, first quartiles of about 300 ms and third quartiles of about 600 to 625 ms. Their violins are completely different. Not one of Server C's 400 requests took within 25 ms of its median, because its requests come in two kinds, perhaps fast responses served from a cache and slow ones that miss it. Server D's requests are spread evenly. A box plot alone would report the two servers as alike.
 
 | | Box plot | Violin plot |
 | --- | --- | --- |
@@ -130,11 +130,11 @@ The live chart on this page has the same pattern. **Servers C and D have almost 
 
 ## When to use a violin plot
 
-Use a violin plot to **compare the shape of a value across several groups**, each with at least a few dozen values: response times by server, test scores by school, gene expression by cell type, delivery times by route.
+Use a violin plot to compare the shape of a value across several groups, each with at least a few dozen values: response times by server, test scores by school, gene expression by cell type, delivery times by route.
 
 | Chart | Best for |
 | --- | --- |
-| **Violin plot** | Comparing several groups when the shape matters: peaks, gaps, skew |
+| Violin plot | Comparing several groups when the shape matters: peaks, gaps, skew |
 | [Box plot](/learn/chart-types/cartesian/box-plot/) | Comparing the median, spread and outliers of many groups compactly, or groups with few values |
 | [Density plot](/learn/chart-types/cartesian/density-plot/) | The shape of one group, or two or three groups overlaid on the same axis |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | The shape of one group with actual counts, and no smoothing to choose |
@@ -146,11 +146,11 @@ A violin is a [density plot](/learn/chart-types/cartesian/density-plot/) turned 
 
 Each violin is drawn in three steps:
 
-1. **Estimate the density.** For every group, a **kernel density estimate** (KDE) puts a small bell-shaped curve on every value and adds them up. Where values crowd together, the curves pile up into a bulge. The [density plot guide](/learn/chart-types/cartesian/density-plot/) explains the method in detail.
-2. **Mirror it.** The curve is drawn on both sides of the group's position, so the shape is symmetric, and scaled so the widest violin fits its slot.
-3. **Add the box.** The median, quartiles and whiskers are worked out from the raw values, exactly as for a box plot.
+1. Estimate the density. For every group, a **kernel density estimate** (KDE) puts a small bell-shaped curve on every value and adds them up. Where values crowd together, the curves pile up into a bulge. The [density plot guide](/learn/chart-types/cartesian/density-plot/) explains the method in detail.
+2. Mirror it. The curve is drawn on both sides of the group's position, so the shape is symmetric, and scaled so the widest violin fits its slot.
+3. Add the box. The median, quartiles and whiskers are worked out from the raw values, exactly as for a box plot.
 
-**A tiny worked example.** Take five values, 2, 3, 3, 7 and 8, and a bell curve with a bandwidth (width) of 1. The density at any point is the average height of the five bell curves there:
+As a tiny worked example, take five values, 2, 3, 3, 7 and 8, and a bell curve with a bandwidth (width) of 1. The density at any point is the average height of the five bell curves there:
 
 | At value | Density | Violin width |
 | --- | --- | --- |
@@ -168,9 +168,9 @@ The chart below draws Server C's 400 load times three times, with three bandwidt
 
 <LiveDocSnippet maxWidth={'100%'} name="./Bandwidth/demo" />
 
-- **Too narrow** (11 ms, a quarter of Silverman's rule): the outline is lumpy. Each lump is noise in this particular sample, not something you would see again.
-- **Silverman's rule** (45 ms): two clear peaks and an empty waist, which is the real shape of the data.
-- **Too wide** (181 ms, four times the rule): the two peaks melt into one round bulge. This violin hides the two kinds of request as completely as a box plot does.
+- Too narrow (11 ms, a quarter of Silverman's rule): the outline is lumpy. Each lump is noise in this particular sample, not something you would see again.
+- Silverman's rule (45 ms): two clear peaks and an empty waist, which is the real shape of the data.
+- Too wide (181 ms, four times the rule): the two peaks melt into one round bulge. This violin hides the two kinds of request as completely as a box plot does.
 
 If your software doesn't say which bandwidth it used, try a smaller and a larger one. A peak that survives both is real.
 
@@ -180,7 +180,6 @@ If your software doesn't say which bandwidth it used, try a smaller and a larger
 - **Not saying how the shape was smoothed.** State the bandwidth, or the rule used to pick it, in a note. Different software picks different defaults.
 - **Letting the outline run past the data.** Some tools extend each violin beyond the lowest and highest values, which can show impossible values, such as negative times. Trim the outline to the data, or say that you didn't.
 - **Rounding off hard edges.** A density estimate always tapers, so data that stops abruptly, at 0% or 100% or at a fixed limit, gets soft ends that aren't in the data. Server D's violin narrows a little at both ends for this reason.
-- **Comparing widths across groups.** Each violin is usually scaled to the same maximum width, so a wider violin doesn't mean more values. Show the count (n) in each label.
 - **A different colour per violin** when the colours mean nothing. Use one colour, and a second only to highlight a group.
 
 ## How to create a violin plot in JavaScript, React or Angular

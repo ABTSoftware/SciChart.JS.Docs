@@ -8,7 +8,7 @@ keywords: ["data visualisation guide", "data visualization guide", "types of cha
 
 # Learning Center
 
-**A guide to data visualisation.** Which chart should you use, how do you read it, and how do its axes work? These guides explain each topic in plain language, and every one comes with a live, interactive example and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+A guide to data visualisation. Which chart should you use, how do you read it, and how do its axes work? These guides explain each topic in plain language, and every one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Types of charts and graphs
 

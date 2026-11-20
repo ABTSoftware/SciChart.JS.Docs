@@ -208,9 +208,9 @@ Choose the **carrier** frequency, the **message frequency**, the **modulation de
 Things to try:
 
 - Start from the worked example (1 MHz, 5 kHz, 80%, 10 kΩ, 2.2 nF), then move **C** up to 3.3 nF and watch the troughs clip.
-- Drop **C** to 220 pF ($RC = 2.2$ µs): the output loses about a third of its value between carrier peaks.
-- Set **Diode** to 0.7 V with a 1 V **amplitude**: the troughs drop out. Raise the amplitude to 5 V and the troughs return, but the drop now deepens the modulation enough to clip at 22 µs.
-- Set the **carrier** to 455 kHz with the same R and C, and compare the ripple.
+- Drop C to 220 pF ($RC = 2.2$ µs): the output loses about a third of its value between carrier peaks.
+- Set **Diode** to 0.7 V with a 1 V amplitude: the troughs drop out. Raise the amplitude to 5 V and the troughs return, but the drop now deepens the modulation enough to clip at 22 µs.
+- Set the carrier to 455 kHz with the same R and C, and compare the ripple.
 
 Here is the code for this simulator. The circuit model is plain JavaScript; the charts are ordinary SciChart.js line series.
 

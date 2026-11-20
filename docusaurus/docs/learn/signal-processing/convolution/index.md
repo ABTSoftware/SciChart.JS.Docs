@@ -103,7 +103,7 @@ The moving average is a familiar case. A kernel of five equal weights, each 1/5,
 
 ## The convolution formula
 
-**Discrete convolution**, for sampled signals such as audio, sensor readings or prices:
+Discrete convolution, for sampled signals such as audio, sensor readings or prices:
 
 $$
 y[n] = (x * h)[n] = \sum_{k=-\infty}^{\infty} x[k]\, h[n-k]
@@ -111,7 +111,7 @@ $$
 
 The sum runs over every $k$, but in practice only the values of $k$ where both $x[k]$ and $h[n-k]$ exist contribute. Here $h[n-k]$ is the kernel flipped (the $-k$) and shifted by $n$.
 
-**Continuous convolution**, the **convolution integral**, for functions of continuous time:
+Continuous convolution, the **convolution integral**, for functions of continuous time:
 
 $$
 (f * g)(t) = \int_{-\infty}^{\infty} f(\tau)\, g(t-\tau)\, d\tau
@@ -377,8 +377,8 @@ Here is the code for this chart. The convolution itself is the `convolveAt` func
 Key points:
 
 - `XyCustomFilter` is a data series computed from another one. SciChart.js calls its `filterFunction(index, y)` for every sample when the filter is created, when the function is replaced or when the input is cleared and refilled, and only for the new samples when you append. A causal kernel only looks back, so appended data is filtered correctly without recomputing the rest.
-- `FastImpulseRenderableSeries` draws **stems**, one line and dot per sample, the usual way to show discrete signals and kernels.
-- `LeftAlignedOuterVerticallyStackedAxisLayoutStrategy` stacks the y-axes into **lanes**, so the input, kernel and output share one x-axis and line up sample for sample.
+- `FastImpulseRenderableSeries` draws stems, one line and dot per sample, the usual way to show discrete signals and kernels.
+- `LeftAlignedOuterVerticallyStackedAxisLayoutStrategy` stacks the y-axes into lanes, so the input, kernel and output share one x-axis and line up sample for sample.
 - Returning `NaN` from a filter function leaves a gap, which is how the demo shows the output "still to come" in a fainter colour.
 
 ### Apply a kernel to live data

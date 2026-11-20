@@ -70,10 +70,10 @@ A **network graph** (also called a network diagram, network chart, node-link dia
 *A network graph of who works with whom in an imaginary company of 60 people (sample data). Colour shows each person's team; dot size shows how many connections they have. [Try the interactive version](#how-to-create-a-network-graph-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A network graph shows **connections**: nodes are the items, edges are the links between them.
-- Look for three things: **hubs** (nodes with many links), **clusters** (groups linked mostly to each other) and **bridges** (the few links that join groups).
-- In a **force-directed graph**, the most common kind, **a node's position has no units.** Only which nodes are close, and what's linked to what, means something.
-- Use colour for a group and size for a measure such as the number of connections, and **say what each one means**.
+- A network graph shows connections: nodes are the items, edges are the links between them.
+- Look for three things: hubs (nodes with many links), clusters (groups linked mostly to each other) and bridges (the few links that join groups).
+- In a force-directed graph, the most common kind, a node's position has no units. Only which nodes are close, and what's linked to what, means something.
+- Use colour for a group and size for a measure such as the number of connections, and say what each one means.
 - Above a few hundred nodes, a network graph turns into a tangle. Filter, group or zoom rather than drawing everything.
 :::
 
@@ -81,13 +81,13 @@ A **network graph** (also called a network diagram, network chart, node-link dia
 
 ![The parts of a network graph: a blue cluster on the left and an orange cluster on the right, joined by one bridge node. Callouts mark a node, an edge, a large hub with many connections, the bridge, a thick weighted edge, an isolated node with no connections, and the two clusters](./network-graph-anatomy.svg)
 
-1. **Find out what the nodes and edges are.** A node might be a person, an airport, a web page or a gene. An edge might mean "emailed", "flies to", "links to" or "interacts with". Everything else depends on this.
-2. **Check what colour, size and line thickness mean.** Colour usually shows a group, such as a team or a type of item. Node size often shows the number of connections. A thicker edge usually means a stronger or more frequent link (a **weighted edge**). An arrow on an edge means the link has a direction (a **directed graph**), such as "follows" or "cites".
-3. **Look for clusters.** A **cluster** (or **community**) is a group of nodes with many links among themselves and few to the rest. On most layouts they show up as tight knots of dots.
-4. **Find the hubs.** A **hub** is a node with many more connections than most. The number of connections a node has is its **degree**.
-5. **Find the bridges.** A **bridge** is a node or edge that joins two clusters. Remove it and the groups lose touch, so bridges often matter more than their number of connections suggests.
-6. **Check the edges of the chart.** Nodes with one link sit on the outside, and an **isolate**, a node with no links at all, floats on its own.
-7. **Don't read the x and y positions as values.** In a force-directed layout there are no axes. Linked nodes are drawn close together, but a node on the left is not "less" than one on the right.
+1. Find out what the nodes and edges are. A node might be a person, an airport, a web page or a gene. An edge might mean "emailed", "flies to", "links to" or "interacts with".
+2. Check what colour, size and line thickness mean. Colour usually shows a group, such as a team or a type of item. Node size often shows the number of connections. A thicker edge usually means a stronger or more frequent link (a **weighted edge**). An arrow on an edge means the link has a direction (a **directed graph**), such as "follows" or "cites".
+3. Look for clusters. A **cluster** (or **community**) is a group of nodes with many links among themselves and few to the rest. On most layouts they show up as tight knots of dots.
+4. Find the hubs. A **hub** is a node with many more connections than most. The number of connections a node has is its **degree**.
+5. Find the bridges. A **bridge** is a node or edge that joins two clusters. Remove it and the groups lose touch, so bridges often matter more than their number of connections suggests.
+6. Check the edges of the chart. Nodes with one link sit on the outside, and an **isolate**, a node with no links at all, floats on its own.
+7. Don't read the x and y positions as values. In a force-directed layout there are no axes. Linked nodes are drawn close together, but a node on the left is not "less" than one on the right.
 
 ## Patterns to look for in a network graph
 
@@ -97,12 +97,12 @@ The same few shapes turn up again and again, whatever the network is about:
 
 | Pattern | What it looks like | What it usually means |
 | --- | --- | --- |
-| **Hub and spoke** | One large node with lines to many small ones | Everything goes through one person, server or airport: efficient, but a single point of failure |
-| **Clusters** | Tight knots of nodes with only a few lines between them | Teams, friend groups, topics or modules that mostly keep to themselves |
-| **Bridge** | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose touch |
-| **Chain** | Nodes in a line, each linked only to the next | Long paths: information or traffic takes many steps, and one broken link splits the network |
-| **Core and periphery** | A dense centre with loosely attached nodes around it | An inner group that does most of the work, with occasional contributors on the outside |
-| **Isolate** | A node with no lines | Someone or something not yet connected: a new starter, an unused page, an error in the data |
+| Hub and spoke | One large node with lines to many small ones | Everything goes through one person, server or airport: efficient, but a single point of failure |
+| Clusters | Tight knots of nodes with only a few lines between them | Teams, friend groups, topics or modules that mostly keep to themselves |
+| Bridge | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose touch |
+| Chain | Nodes in a line, each linked only to the next | Long paths: information or traffic takes many steps, and one broken link splits the network |
+| Core and periphery | A dense centre with loosely attached nodes around it | An inner group that does most of the work, with occasional contributors on the outside |
+| Isolate | A node with no lines | Someone or something not yet connected: a new starter, an unused page, an error in the data |
 
 ### Network graph measures: degree, betweenness and density
 
@@ -110,23 +110,23 @@ Patterns you see by eye have numbers behind them. These are the ones most often 
 
 | Measure | What it counts | What a high value suggests |
 | --- | --- | --- |
-| **Degree** | The number of edges a node has | A hub: well connected, often busy |
-| **Betweenness centrality** | How often a node sits on the shortest route between two other nodes | A bridge or broker that controls the flow between groups |
-| **Closeness centrality** | How few steps a node needs, on average, to reach every other node | A node that can reach the whole network quickly |
-| **Density** | The share of all possible edges that exist | A tightly knit network; low density means a sparse one |
-| **Path length** | The number of edges on the shortest route between two nodes | How many steps information takes to spread |
+| Degree | The number of edges a node has | A hub: well connected, often busy |
+| Betweenness centrality | How often a node sits on the shortest route between two other nodes | A bridge or broker that controls the flow between groups |
+| Closeness centrality | How few steps a node needs, on average, to reach every other node | A node that can reach the whole network quickly |
+| Density | The share of all possible edges that exist | A tightly knit network; low density means a sparse one |
+| Path length | The number of edges on the shortest route between two nodes | How many steps information takes to spread |
 
 ## A worked example: who works with whom
 
 The network graph at the top of this page shows an imaginary company of 60 people in four teams of 15. An edge joins two people who work together regularly. The data is made up but has the shape real organisations often have: each team has a lead, and a few people work across teams.
 
-- **60 nodes and 127 edges.** Of the 1,770 possible pairs of people, 127 work together, a **density** of about 7%.
-- **The average person has about 4 connections.** The team leads have 11 to 14.
-- **Only 8 of the 127 edges cross between teams.** That is why the four teams form four clear clusters.
-- **Any two connected people are 3.5 steps apart on average**, and never more than 7.
-- **Jon has no connections.** He has just joined Support, so he is an isolate.
+- 60 nodes and 127 edges. Of the 1,770 possible pairs of people, 127 work together, a density of about 7%.
+- The average person has about 4 connections. The team leads have 11 to 14.
+- Only 8 of the 127 edges cross between teams. That is why the four teams form four clear clusters.
+- Any two connected people are 3.5 steps apart on average, and never more than 7.
+- Jon has no connections. He has just joined Support, so he is an isolate.
 
-The table compares five people by **degree** and by **betweenness**, shown here as the share of shortest routes between other pairs of people that pass through them:
+The table compares five people by degree and by betweenness, shown here as the share of shortest routes between other pairs of people that pass through them:
 
 | Person | Team | Connections (degree) | Shortest routes through them (betweenness) |
 | --- | --- | --- | --- |
@@ -136,30 +136,30 @@ The table compares five people by **degree** and by **betweenness**, shown here 
 | Priya | Engineering (lead) | 13 | 29% |
 | Marco | Support (lead) | 12 | 27% |
 
-Priya has the second-highest number of connections, but every one of them is inside Engineering. Tom has only five connections, yet 44% of shortest routes run through him, because three of his five links go to other teams. On the chart Tom is the small blue dot in the middle, with lines out to Sales, Marketing and Support. **A count of connections finds the hubs; betweenness finds the bridges.** Hover over Tom in the [live example below](#how-to-create-a-network-graph-in-javascript-react-or-angular) to see it.
+Priya has the second-highest number of connections, but every one of them is inside Engineering. Tom has only five connections, yet 44% of shortest routes run through him, because three of his five links go to other teams. On the chart Tom is the small blue dot in the middle, with lines out to Sales, Marketing and Support. A count of connections finds the hubs; betweenness finds the bridges. Hover over Tom in the [live example below](#how-to-create-a-network-graph-in-javascript-react-or-angular) to see it.
 
 ### How to describe a network graph
 
 Use this template when you report a network graph:
 
-> The network has **[number] [nodes]** and **[number] [links]**. They form **[number] main clusters**, which match **[groups, or what they have in common]**. The most connected node is **[name]**, with **[degree]** links, and **[name]** is the main bridge between **[cluster]** and **[cluster]**.
+> The network has [number] [nodes] and [number] [links]. They form [number] main clusters, which match [groups, or what they have in common]. The most connected node is [name], with [degree] links, and [name] is the main bridge between [cluster] and [cluster].
 
-**Worked example:** "The company network has 60 people and 127 working relationships. They form four clusters, one for each team, joined by only eight cross-team links. Grace, the Sales lead, has the most connections (14), and Tom in Engineering is the main bridge from Engineering to the other three teams."
+Worked example: "The company network has 60 people and 127 working relationships. They form four clusters, one for each team, joined by only eight cross-team links. Grace, the Sales lead, has the most connections (14), and Tom in Engineering is the main bridge from Engineering to the other three teams."
 
 ## How a force-directed graph layout works
 
-A network has no natural x and y, so a **layout** method has to place the nodes. The most common is the **force-directed layout**, which treats the network as a set of physical objects. A network drawn this way is called a **force-directed graph**, or a **force graph** for short. The layout takes five steps:
+A network has no natural x and y, so a **layout** method has to place the nodes. The most common is the **force-directed layout**, which treats the network as a set of physical objects. A network drawn this way is called a **force-directed graph**, or a force graph for short. The layout takes five steps:
 
-1. **Start anywhere.** Each node gets a starting position, often random. A fixed random seed makes the result the same every time.
-2. **Every pair of nodes pushes apart,** like magnets of the same pole. The push is strongest when they are close, so nodes don't overlap.
-3. **Every edge pulls its two nodes together,** like a spring. The further apart they are, the harder it pulls.
-4. **Move each node a little in the direction of its total force,** then repeat. Each round, nodes are allowed to move a bit less (called **cooling**), so the layout settles instead of shaking forever.
-5. **Stop when nothing moves much.** Linked nodes are now close, groups with many links between them form clusters, and nodes with few links drift to the outside.
+1. Start anywhere. Each node gets a starting position, often random. A fixed random seed makes the result the same every time.
+2. Every pair of nodes pushes apart, like magnets of the same pole. The push is strongest when they are close, so nodes don't overlap.
+3. Every edge pulls its two nodes together, like a spring. The further apart they are, the harder it pulls.
+4. Move each node a little in the direction of its total force, then repeat. Each round, nodes are allowed to move a bit less (called **cooling**), so the layout settles instead of shaking forever.
+5. Stop when nothing moves much. Linked nodes are now close, groups with many links between them form clusters, and nodes with few links drift to the outside.
 
-The Fruchterman–Reingold method (1991) is a well-known version of these steps, and it's what the live example on this page uses, with a weak pull towards the centre so that separate pieces stay in view. Two consequences matter when you read the result:
+The Fruchterman–Reingold method (1991) is a well-known version of these steps, and it's what the live example on this page uses, with a weak pull towards the centre so that separate pieces stay in view. This has two consequences for reading the result:
 
-- **Distances are only roughly meaningful.** Close nodes are usually linked, or share neighbours. The exact distance between two nodes is not a measurement.
-- **The picture can change from run to run.** A different start can mirror, rotate or rearrange the layout. The clusters and links stay the same, so read those, not the positions.
+- Distances are only roughly meaningful. Close nodes are usually linked, or share neighbours. The exact distance between two nodes is not a measurement.
+- The picture can change from run to run. A different start can mirror, rotate or rearrange the layout. The clusters and links stay the same, so read those, not the positions.
 
 Every pair of nodes pushes on every other, so each round takes longer as the network grows. Libraries for very large networks speed this up by treating distant groups of nodes as one.
 
@@ -167,36 +167,34 @@ Other layouts suit other data:
 
 | Layout | Nodes placed by | Best for |
 | --- | --- | --- |
-| **Force-directed** | A simulation of pushing and pulling | Finding clusters and bridges in general networks |
-| **Circular** | Equal spacing round a circle, often sorted by group | Comparing links within and between groups |
-| **Hierarchical (tree)** | Levels, top to bottom | Organisation charts, family trees, dependencies |
-| **Geographic** | Real locations on a map | Flight routes, power grids, delivery networks |
+| Force-directed | A simulation of pushing and pulling | Finding clusters and bridges in general networks |
+| Circular | Equal spacing round a circle, often sorted by group | Comparing links within and between groups |
+| Hierarchical (tree) | Levels, top to bottom | Organisation charts, family trees, dependencies |
+| Geographic | Real locations on a map | Flight routes, power grids, delivery networks |
 
 ## When to use a network graph
 
-Use a network graph when the **connections are the point**: who is linked to whom, which groups form, and who holds them together. Typical uses:
+Use a network graph when the connections are the point: who is linked to whom, which groups form, and who holds them together. Typical uses:
 
-- **people:** social networks, teams and email traffic, fraud rings;
-- **technology:** computers on a network, services that call each other, web pages and their links;
-- **transport and infrastructure:** routes between airports, stations or substations;
-- **science:** citations between papers, interactions between genes or proteins;
-- **knowledge:** topics or keywords that appear together.
+- people: social networks, teams and email traffic, fraud rings;
+- technology: computers on a network, services that call each other, web pages and their links;
+- transport and infrastructure: routes between airports, stations or substations;
+- science: citations between papers, interactions between genes or proteins;
+- knowledge: topics or keywords that appear together.
 
 | Chart | Best for |
 | --- | --- |
-| **Network graph** | Arbitrary links between items, to find hubs, clusters and bridges |
+| Network graph | Arbitrary links between items, to find hubs, clusters and bridges |
 | [Sankey diagram](/learn/chart-types/complex/sankey-diagram/) | A quantity flowing one way through stages, with band widths showing amounts |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) (adjacency matrix) | Large or dense networks: one row and one column per node, with colour showing the link between them. No tangle, but harder to see paths |
 | [Treemap](/learn/chart-types/complex/treemap/) | A strict hierarchy, where every item has exactly one parent |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Items with two real measured values. A network graph's x and y are not values |
 
-A note on the name: in IT, a **network diagram** often means a plan of a computer network, with routers, switches and servers drawn as icons. That plan is a network graph too, but a person lays it out by hand. This page is about network graphs drawn from data.
+In IT, a network diagram often means a plan of a computer network, with routers, switches and servers drawn as icons. That plan is a network graph too, but a person lays it out by hand. This page is about network graphs drawn from data.
 
 ## Common network graph mistakes
 
 - **The hairball.** Draw every node and edge of a large network and you get a dense tangle that shows nothing. Filter to the nodes that matter, group clusters into single nodes, or show one node's neighbourhood at a time.
-- **Reading position as data.** In a force-directed layout, left, right, up and down mean nothing. Don't describe a node as "higher" or "further right" as if it were a value.
-- **Trusting one layout.** A different random start can rearrange the picture. Check that a pattern is in the links, not just in where the nodes happened to land.
 - **Colour or size with no key.** Readers can't guess that colour means team and size means connections. Add a legend, and use colour only for something that matters.
 - **Too many labels.** Labelling every node buries the chart in text. Label the hubs and bridges, and show the rest in a tooltip on hover.
 - **Ignoring direction and weight.** "A follows B" is not "B follows A", and one email is not a thousand. Use arrows for direction and line thickness for weight when they matter.
@@ -204,7 +202,7 @@ A note on the name: in IT, a **network diagram** often means a plan of a compute
 
 ## How to create a network graph in JavaScript, React or Angular
 
-SciChart.js has no separate network series, but a network graph is just lines and circles: all the edges go in one line segment series and the nodes in bubble series, both drawn with WebGL or WebGPU. A short helper works out the layout. Try the graph below: hover over a person to highlight their links and neighbours, drag a person to move them (the network follows), scroll to zoom, drag the background to pan and double-click to reset.
+SciChart.js has no separate network series, but a network graph is lines and circles: all the edges go in one line segment series and the nodes in bubble series, both drawn with WebGL or WebGPU. A short helper works out the layout. Try the graph below: hover over a person to highlight their links and neighbours, drag a person to move them (the network follows), scroll to zoom, drag the background to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 

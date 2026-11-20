@@ -106,7 +106,7 @@ Almost every audio analyser, whether a plug-in, a phone app or a measurement sys
 2. Window it. Multiply the block by a **window**, such as Hann, that tapers both ends to zero. Without it, the abrupt edges of the block smear every tone across the spectrum (**spectral leakage**). The [FFT guide](/learn/signal-processing/fast-fourier-transform/#windowing-and-spectral-leakage) shows why.
 3. Run the FFT. The [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) turns the block into $N/2$ frequency **bins**, spaced $\Delta f = f_s / N$ apart (11.7 Hz here).
 4. Convert to decibels. Square each bin's magnitude to get power, scale it, and take $10 \log_{10}$, so a sine of amplitude $A$ reads $20 \log_{10} A$ (the formula is below).
-5. Average and hold. A single block of music or noise is jumpy. **Averaging** several blocks steadies the reading; **peak hold** keeps the highest level seen at each frequency.
+5. Average and hold. A single block of music or noise is jumpy. Averaging several blocks steadies the reading; **peak hold** keeps the highest level seen at each frequency.
 6. Display. Draw the levels against frequency, usually on a log axis, as a line, a filled "mountain" or bars.
 
 The level of bin $k$ in step 4, in dBFS (decibels relative to digital full scale, where 0 dBFS is the largest sine the system can store), with $X[k]$ the FFT output and $w[n]$ the window, is:
@@ -144,7 +144,7 @@ Linear axes still have their uses: spotting evenly spaced harmonics, or reading 
 
 An FFT gives bins of equal width in hertz. On a log axis that's very uneven: at $N = 4{,}096$ and 48 kHz, the octave from 31.5 to 63 Hz contains only about three bins, while the octave from 8 to 16 kHz contains about 680. The bass is coarse and the treble is a dense comb.
 
-**Octave** and **1/3-octave bands** fix this by adding up the power of all the bins inside each band. Each band is a fixed fraction of an octave wide, so the bands are evenly spaced on a log axis. The 1/3-octave bands have standard centre frequencies: 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800 Hz, 1, 1.25, 1.6, 2, 2.5, 3.15, 4, 5, 6.3, 8, 10, 12.5, 16 and 20 kHz (the preferred frequencies of ISO 266; filter edges as in IEC 61260-1). There are 30 of them across the range of hearing, and each spans about 23% of its centre frequency.
+Octave and **1/3-octave bands** fix this by adding up the power of all the bins inside each band. Each band is a fixed fraction of an octave wide, so the bands are evenly spaced on a log axis. The 1/3-octave bands have standard centre frequencies: 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800 Hz, 1, 1.25, 1.6, 2, 2.5, 3.15, 4, 5, 6.3, 8, 10, 12.5, 16 and 20 kHz (the preferred frequencies of ISO 266; filter edges as in IEC 61260-1). There are 30 of them across the range of hearing, and each spans about 23% of its centre frequency.
 
 ![Two panels about FFT bins and 1/3-octave bands on a logarithmic frequency axis from 20 Hz to 20 kHz. Top: tick marks for FFT bins at a spacing of 11.7 Hz, sparse in the bass and so dense in the treble that they merge, with counts per octave from about 3 at 31.5 Hz to about 680 at 8 kHz. Bottom: the spectrum of pink noise, falling 3 dB per octave as an FFT line but level as 1/3-octave bars](./fft-bins-vs-third-octave-bands.svg)
 
@@ -180,11 +180,11 @@ The displayed noise floor depends on the RBW as well as the noise. For broadband
 
 ### A-weighting
 
-**A-weighting** is a standard correction curve (IEC 61672-1) that approximates the ear's lower sensitivity to bass and extreme treble at moderate levels. It is 0 dB at 1 kHz, about −16 dB at 125 Hz and −39 dB at 31.5 Hz, and close to 0 dB from 1 to 6 kHz. Sound levels quoted in **dB(A)** use it. It is the right choice for judging how loud noise sounds and for regulations, but the wrong one for finding a 50 Hz hum or a rumbling fan, which it hides: switch weighting off (Z-weighting) for troubleshooting.
+**A-weighting** is a standard correction curve (IEC 61672-1) that approximates the ear's lower sensitivity to bass and extreme treble at moderate levels. It is 0 dB at 1 kHz, about −16 dB at 125 Hz and −39 dB at 31.5 Hz, and close to 0 dB from 1 to 6 kHz. Sound levels quoted in dB(A) use it. It is the right choice for judging how loud noise sounds and for regulations, but the wrong one for finding a 50 Hz hum or a rumbling fan, which it hides: switch weighting off (Z-weighting) for troubleshooting.
 
 ## Swept-tuned vs FFT spectrum analyzers
 
-The first spectrum analysers were **swept-tuned**. A single narrow filter, one resolution bandwidth (RBW) wide, is swept across the frequency range, and the display traces the level that comes through it. Radio-frequency analysers still use this design, often with a **superheterodyne** front end, which mixes the input with a tunable oscillator so that each frequency in turn is shifted down to one fixed intermediate frequency, where the filter does the measuring.
+The first spectrum analysers were **swept-tuned**. A single narrow filter, one resolution bandwidth (RBW) wide, is swept across the frequency range, and the display traces the level that comes through it. Radio-frequency analysers still use this design, often with a superheterodyne front end, which mixes the input with a tunable oscillator so that each frequency in turn is shifted down to one fixed intermediate frequency, where the filter does the measuring.
 
 | | Swept-tuned analyser | FFT analyser |
 | --- | --- | --- |
@@ -240,7 +240,7 @@ SciChart.js draws spectra, spectrograms and waveforms with WebGL and WebGPU, fas
 
 <LearnCta position="top" chart="audio spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
 
-**Things to try:** switch **Frequency axis** between Log and Linear and watch the bass squeeze into the left-hand edge. Choose **Pink noise** and switch **Display** between FFT bins and 1/3-octave bands: the downward slope levels out in bands. Pick **Two close tones** (1,000 and 1,020 Hz), which zooms in around 1 kHz: at FFT sizes up to 4,096 you see one peak, and from 8,192 you see two. Choose **50 Hz hum** to see the row of harmonics.
+**Things to try:** switch Frequency axis between Log and Linear and watch the bass squeeze into the left-hand edge. Choose **Pink noise** and switch Display between FFT bins and 1/3-octave bands: the downward slope levels out in bands. Pick **Two close tones** (1,000 and 1,020 Hz), which zooms in around 1 kHz: at FFT sizes up to 4,096 you see one peak, and from 8,192 you see two. Choose **50 Hz hum** to see the row of harmonics.
 
 Here is the code. The JavaScript tab is the demo itself: test signals, a Hann window, a plain JavaScript FFT, averaging, peak hold and 1/3-octave bands, animated with `requestAnimationFrame`. The React and Angular tabs show the shortest route, the browser's built-in `AnalyserNode`, on live microphone input:
 

@@ -170,16 +170,16 @@ For a 50 Hz twin-T, choose $C = 100$ nF. Then $R = 1/(2\pi \times 50 \times 100 
 
 The passive twin-T has two practical limits:
 
-- **Low Q.** A passive twin-T driven from a low-impedance source into a high-impedance load has $Q = 1/4$: the notch is deep but very wide, so it also cuts frequencies an octave or more away.
-- **Depth depends on matching.** The cancellation is only perfect if the components are in exact ratio. With ordinary 5% parts, the null is shallow and slightly off frequency, so precision parts or a trimmer are used.
+- Low Q. A passive twin-T driven from a low-impedance source into a high-impedance load has $Q = 1/4$: the notch is deep but very wide, so it also cuts frequencies an octave or more away.
+- Depth depends on matching. The cancellation is only perfect if the components are in exact ratio. With ordinary 5% parts, the null is shallow and slightly off frequency, so precision parts or a trimmer are used.
 
 ### Active notch filters
 
 An **active notch filter** adds one or more op-amps to fix both limits:
 
-- **Bootstrapped twin-T.** A buffer at the output feeds part of the output back to the twin-T's ground point. This sharpens the notch, and the feedback fraction sets Q.
-- **Fliege notch.** A two-op-amp circuit in which a matched pair of resistors and capacitors sets $f_0$ and a separate resistor ratio sets Q, so the width can be changed without moving the centre.
-- **State-variable and biquad filters.** Op-amp filters with separate low-pass, band-pass and high-pass outputs. Adding the low-pass and high-pass outputs gives a notch. Several of these use ganged potentiometers or digital potentiometers to make a **tunable notch filter**.
+- Bootstrapped twin-T. A buffer at the output feeds part of the output back to the twin-T's ground point. This sharpens the notch, and the feedback fraction sets Q.
+- Fliege notch. A two-op-amp circuit in which a matched pair of resistors and capacitors sets $f_0$ and a separate resistor ratio sets Q, so the width can be changed without moving the centre.
+- State-variable and biquad filters. Op-amp filters with separate low-pass, band-pass and high-pass outputs. Adding the low-pass and high-pass outputs gives a notch. Several of these use ganged potentiometers or digital potentiometers to make a **tunable notch filter**.
 
 ### LC notch filters
 
@@ -247,9 +247,9 @@ If the wanted signal doesn't reach the hum frequency at all, a low-pass filter i
 
 A notch has three side effects:
 
-- **Phase distortion near $f_0$.** Components a few hertz either side of the notch are shifted in time (see [the phase](#notch-filter-transfer-function)), so a sharp feature with energy near $f_0$ changes shape.
-- **Ringing on transients.** A notch filter's output is the input minus a narrow band around $f_0$. A sudden step or spike contains every frequency, so after it, the filter "rings" at $f_0$: a decaying 50 or 60 Hz oscillation that wasn't in the original. The narrower the notch, the longer the ringing (the table above). On an ECG, ringing after the QRS complex can look like real high-frequency activity, and it can distort the ST segment.
-- **Start-up settling.** When a filter starts, it takes several ringing time constants before the hum is fully cancelled: with $Q = 30$ at 50 Hz, the first half-second or so of output still contains hum. Discard it, or start the filter from a steady state.
+- Phase distortion near $f_0$. Components a few hertz either side of the notch are shifted in time (see [the phase](#notch-filter-transfer-function)), so a sharp feature with energy near $f_0$ changes shape.
+- Ringing on transients. A notch filter's output is the input minus a narrow band around $f_0$. A sudden step or spike contains every frequency, so after it, the filter "rings" at $f_0$: a decaying 50 or 60 Hz oscillation that wasn't in the original. The narrower the notch, the longer the ringing (the table above). On an ECG, ringing after the QRS complex can look like real high-frequency activity, and it can distort the ST segment.
+- Start-up settling. When a filter starts, it takes several ringing time constants before the hum is fully cancelled: with $Q = 30$ at 50 Hz, the first half-second or so of output still contains hum. Discard it, or start the filter from a steady state.
 
 Try it in the [live demo](#how-to-remove-mains-hum-with-a-notch-filter-in-javascript-react-or-angular): tick **Add a step**, then raise and lower Q, and zoom in on the time chart just after 2.5 seconds.
 

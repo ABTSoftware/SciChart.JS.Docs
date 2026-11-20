@@ -98,8 +98,8 @@ The $b_k$ are the **feed-forward** coefficients and the $a_k$ the **feedback** c
 
 The names come from what each does with a single unit pulse (an **impulse**) at the input:
 
-- **FIR:** the pulse walks down the delay line, picking up each weight in turn, and is gone after $M+1$ samples. The output is the list of weights itself, so an FIR filter's impulse response is its coefficients, and applying it is a [convolution](/learn/signal-processing/convolution/) of the signal with those taps.
-- **IIR:** the pulse comes out, is fed back in, comes out again a little smaller, and so on. The response decays like a ringing bell but, mathematically, never reaches exactly zero.
+- FIR: the pulse walks down the delay line, picking up each weight in turn, and is gone after $M+1$ samples. The output is the list of weights itself, so an FIR filter's impulse response is its coefficients, and applying it is a [convolution](/learn/signal-processing/convolution/) of the signal with those taps.
+- IIR: the pulse comes out, is fed back in, comes out again a little smaller, and so on. The response decays like a ringing bell but, mathematically, never reaches exactly zero.
 
 In the z-domain (the algebra of sampled signals, in which $z^{-1}$ stands for a one-sample delay), the transfer function is $H(z) = B(z)/A(z)$. The roots of $B(z)$ are the filter's **zeros**, values of $z$ where $H$ is zero, and the roots of $A(z)$ its **poles**, values where $H$ becomes infinite. An FIR filter has only zeros (all its poles are at the origin), so it can't become unstable. An IIR filter is stable only if every pole lies inside the **unit circle**, the circle of radius 1 on which each frequency, from 0 Hz up to the sample rate, is a point; a pole on or outside it makes the output ring for ever or grow without limit.
 
@@ -156,15 +156,15 @@ The ideal sinc is infinite and non-causal (half of it comes before the impulse),
 
 The **windowed-sinc** method turns the ideal sinc into a practical filter of $M + 1$ taps ($M$ even, so there is a centre tap):
 
-1. **Choose the cutoff** $f_c$ as a fraction of the sample rate, and the length $M$. A longer kernel gives a sharper transition.
-2. **Sample the sinc, centred on the middle tap.** Shifting it by $M/2$ makes the filter causal (it only uses samples it has seen):
+1. Choose the cutoff $f_c$ as a fraction of the sample rate, and the length $M$. A longer kernel gives a sharper transition.
+2. Sample the sinc, centred on the middle tap. Shifting it by $M/2$ makes the filter causal (it only uses samples it has seen):
 
 $$
 h[i] = \frac{\sin\big(2\pi f_c (i - M/2)\big)}{i - M/2}, \qquad i = 0 \dots M, \qquad h[M/2] = 2\pi f_c
 $$
 
-3. **Multiply by a [window](/learn/signal-processing/window-functions/)** $w[i]$, which tapers the ends to zero. Cutting the sinc off abruptly (a rectangular window) leaves large ripples in the frequency response; tapering trades a wider transition for a much deeper stopband.
-4. **Normalise:** divide every tap by their sum, so the gain at 0 Hz is exactly 1 (0 dB). This also absorbs the constant $\pi$ factor dropped in step 2.
+3. Multiply by a [window](/learn/signal-processing/window-functions/) $w[i]$, which tapers the ends to zero. Cutting the sinc off abruptly (a rectangular window) leaves large ripples in the frequency response; tapering trades a wider transition for a much deeper stopband.
+4. Normalise: divide every tap by their sum, so the gain at 0 Hz is exactly 1 (0 dB). This also absorbs the constant $\pi$ factor dropped in step 2.
 
 The two classic windows, for $i = 0 \dots M$:
 
@@ -486,10 +486,10 @@ Here is the code for this example. The JavaScript tab has the full windowed-sinc
 
 Key points:
 
-- **One design, many responses:** `windowedSincLowPass` builds the kernel; spectral inversion makes the high-pass, and the difference of two low-pass kernels the band-pass. `butterworthSections` returns one biquad per pole pair (plus a first-order section for an odd order), with the prewarped bilinear-transform coefficients.
-- **Your own filter on chart data:** an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point in index order, from index 0 when it recalculates everything (on creation, or when `filterFunction` is set) and only for new points when data is appended. That suits both kinds: the FIR filter reads past inputs from the source series, and the IIR filter carries each biquad's state from one call to the next. If you update a single point of the source, `filterFunction` is called for that index alone, so set `filterFunction` again to recalculate the whole output.
-- **The response charts are plain JavaScript:** `responseAt` evaluates each section's polynomials at $e^{-j\omega k}$ to get the gain in dB and the group delay, drawn on a [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) like a Bode plot. The impulse responses are the FIR taps and the IIR filter's output for a single 1.
-- **Live updates:** each control calls `update()`, which redesigns both filters, refills the `XyDataSeries` with `clear()` and `appendRange()`, and sets new filter functions, so all four charts redraw at once.
+- One design, many responses: `windowedSincLowPass` builds the kernel; spectral inversion makes the high-pass, and the difference of two low-pass kernels the band-pass. `butterworthSections` returns one biquad per pole pair (plus a first-order section for an odd order), with the prewarped bilinear-transform coefficients.
+- Your own filter on chart data: an [XyCustomFilter](/2d-charts/chart-types/data-filters-api/custom-filter/) wraps a source `XyDataSeries` and calls your `filterFunction(index, y)` for each point in index order, from index 0 when it recalculates everything (on creation, or when `filterFunction` is set) and only for new points when data is appended. That suits both kinds: the FIR filter reads past inputs from the source series, and the IIR filter carries each biquad's state from one call to the next. If you update a single point of the source, `filterFunction` is called for that index alone, so set `filterFunction` again to recalculate the whole output.
+- The response charts are plain JavaScript: `responseAt` evaluates each section's polynomials at $e^{-j\omega k}$ to get the gain in dB and the group delay, drawn on a [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) like a Bode plot. The impulse responses are the FIR taps and the IIR filter's output for a single 1.
+- Live updates: each control calls `update()`, which redesigns both filters, refills the `XyDataSeries` with `clear()` and `appendRange()`, and sets new filter functions, so all four charts redraw at once.
 
 **See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with moving average, trendline and ratio filters applied live. For frequency responses on log axes, see the [JavaScript chart with a logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis).
 

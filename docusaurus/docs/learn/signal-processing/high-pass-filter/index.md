@@ -106,9 +106,9 @@ A high-pass filter is described by its **frequency response**: how much it scale
 
 Three properties describe it:
 
-- **Cutoff frequency ($f_c$).** The boundary between the frequencies the filter blocks (the **stopband**) and those it passes (the **passband**). For most analogue and IIR filters it's the **−3 dB point**, where the output power is half the input power and the amplitude is $1/\sqrt{2}$, about 71%. Windowed-sinc FIR filters are usually specified at the −6 dB point (half amplitude) instead.
-- **Roll-off.** How fast the gain falls below the cutoff. A first-order filter falls by 20 dB per decade (6 dB per octave): every tenfold drop in frequency cuts the amplitude tenfold.
-- **Order.** Each extra order adds another 20 dB per decade. A second-order filter falls at 40 dB per decade, a fourth-order at 80. Higher orders give a sharper boundary, at the cost of more components or computation and more ringing.
+- Cutoff frequency ($f_c$). The boundary between the frequencies the filter blocks (the **stopband**) and those it passes (the **passband**). For most analogue and IIR filters it's the **−3 dB point**, where the output power is half the input power and the amplitude is $1/\sqrt{2}$, about 71%. Windowed-sinc FIR filters are usually specified at the −6 dB point (half amplitude) instead.
+- Roll-off. How fast the gain falls below the cutoff. A first-order filter falls by 20 dB per decade (6 dB per octave): every tenfold drop in frequency cuts the amplitude tenfold.
+- Order. Each extra order adds another 20 dB per decade. A second-order filter falls at 40 dB per decade, a fourth-order at 80. Higher orders give a sharper boundary, at the cost of more components or computation and more ringing.
 
 | Order | Roll-off below the cutoff | Gain one decade below the cutoff (ideal) | Built with |
 | --- | --- | --- | --- |
@@ -161,9 +161,9 @@ How much of each frequency gets through:
 
 ### Active, RL and higher-order high-pass filters
 
-- **Active high-pass filter.** Adds an op-amp to the RC network, so the filter can have gain, drive a load without changing its cutoff, and be cascaded. The **Sallen–Key** circuit is a common second-order active design, and choosing its components for a Butterworth response gives the flattest possible passband.
-- **RL high-pass filter.** A resistor in series and an inductor to ground, with $f_c = R/(2\pi L)$. Inductors are bulky at low frequencies, so RL and LC high-pass filters appear mainly in radio-frequency circuits and loudspeaker crossovers.
-- **Second-order RLC or LC high-pass filter.** Combines a capacitor and an inductor for 40 dB per decade. Near the cutoff, its response can peak, depending on the damping.
+- Active high-pass filter. Adds an op-amp to the RC network, so the filter can have gain, drive a load without changing its cutoff, and be cascaded. The Sallen–Key circuit is a common second-order active design, and choosing its components for a Butterworth response gives the flattest possible passband.
+- RL high-pass filter. A resistor in series and an inductor to ground, with $f_c = R/(2\pi L)$. Inductors are bulky at low frequencies, so RL and LC high-pass filters appear mainly in radio-frequency circuits and loudspeaker crossovers.
+- Second-order RLC or LC high-pass filter. Combines a capacitor and an inductor for 40 dB per decade. Near the cutoff, its response can peak, depending on the damping.
 
 ## Digital high-pass filters
 
@@ -189,7 +189,7 @@ A **finite impulse response (FIR)** filter is a list of weights, its **kernel**,
 
 1. Design a low-pass kernel: a sinc function, $\sin(2\pi f_c k)/(\pi k)$, shaped by a window such as Blackman.
 2. Scale it so its taps add up to 1 (a gain of 1 at 0 Hz).
-3. **Spectral inversion:** negate every tap, then add 1 to the centre tap. The new kernel is "an impulse minus the low-pass", which is the subtraction method written as one kernel.
+3. Spectral inversion: negate every tap, then add 1 to the centre tap. The new kernel is "an impulse minus the low-pass", which is the subtraction method written as one kernel.
 
 A symmetric FIR kernel has **linear phase**: every frequency is delayed by the same amount, so waveform shapes are kept. Applied centred on each sample, offline, it has no delay at all. The cost is length: the transition from stopband to passband is roughly $4/N$ of the sample rate wide for a Blackman window of $N$ taps, so a sharp cutoff at a very low frequency needs a very long kernel. For speed on long kernels, do the convolution with an [FFT](/learn/signal-processing/fast-fourier-transform/).
 

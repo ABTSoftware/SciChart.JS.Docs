@@ -63,29 +63,29 @@ related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
 
 ## What is a contour plot?
 
-A **contour plot** (also called a **contour chart**, **contour graph** or **contour map**) is a chart that shows how a value changes across two dimensions by drawing lines through points of equal value. Each line is one level, such as 40 °C. Where lines bunch together the value changes quickly; where they spread out it changes slowly.
+A **contour plot** (also called a contour chart, contour graph or contour map) is a chart that shows how a value changes across two dimensions by drawing lines through points of equal value. Each line is one level, such as 40 °C. Where lines bunch together the value changes quickly; where they spread out it changes slowly.
 
 ![A contour plot of temperature across a metal plate: white contour lines every 10 °C, labelled with their values, over a colour background from dark purple for cool areas to pale yellow for hot ones, with two hot spots and a cold right-hand edge](/img/learn/contour-plot-og.png)
 
 *Temperature across a 40 × 30 cm metal plate with two heaters and a water-cooled edge (sample data). Lines mark every 10 °C and colour shows the temperature. [Try the interactive version](#how-to-create-a-contour-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A contour plot shows **one value for every point of x and y**, using lines that join points where that value is the same.
-- **Spacing is slope:** lines close together mean a fast change, lines far apart a slow one.
-- **Closed rings** mark a peak or a dip; an **hourglass** shape between two peaks marks a saddle.
-- Adding **colour** between or behind the lines (a filled contour plot, or contours over a heatmap) shows high and low at a glance. Always include a colour scale.
-- A contour map of hills and valleys and a contour plot of data work the same way: only the value being mapped changes.
+- A contour plot shows one value for every point of x and y, using lines that join points where that value is the same.
+- Spacing shows slope: lines close together mean a fast change, lines far apart a slow one.
+- Closed rings mark a peak or a dip; an hourglass shape between two peaks marks a saddle.
+- Adding colour between or behind the lines (a filled contour plot, or contours over a heatmap) shows high and low at a glance. Always include a colour scale.
+- A contour map of hills and valleys and a contour plot of data work the same way; only the value being mapped changes.
 :::
 
 ## How to read a contour plot
 
 ![Anatomy of a contour plot: a surface with two peaks drawn as labelled lines every 10 units over shaded bands, with numbered markers for a contour line, a line label, the highest peak, a lower peak, the saddle between them, lines close together and lines far apart](./contour-plot-anatomy.svg)
 
-1. **Check the three things being shown.** The x and y axes are two inputs or positions; the lines show a third value, often called z. In the plate chart above, x and y are distances across the plate in centimetres and the lines are temperatures.
-2. **Find the interval between lines.** It is usually the same everywhere, for example every 10 °C. That interval is what makes spacing meaningful: two lines always mean the same change in value, wherever they are.
-3. **Work out which way is uphill.** Follow the labels from line to line. The same shape of rings can be a hill or a hollow; only the labels, or the colour scale, tell you which.
-4. **Look at the spacing.** Bunched lines mean a steep change, wide gaps mean a gentle one. The value is not shown between lines, so estimate it: halfway between the 40 and 50 lines is about 45.
-5. **Look for the shapes that matter** (next section): peaks, dips, saddles, ridges and valleys. Their positions are usually the answer the chart was made for, such as the hottest spot or the best combination of two settings.
+1. Check the three things being shown. The x and y axes are two inputs or positions; the lines show a third value, often called z. In the plate chart above, x and y are distances across the plate in centimetres and the lines are temperatures.
+2. Find the interval between lines. It is usually the same everywhere, for example every 10 °C. That interval is what makes spacing meaningful: two lines always mean the same change in value, wherever they are.
+3. Work out which way is uphill. Follow the labels from line to line. The same shape of rings can be a hill or a hollow; only the labels, or the colour scale, tell you which.
+4. Look at the spacing. Bunched lines mean a steep change, wide gaps mean a gentle one. The value is not shown between lines, so estimate it: halfway between the 40 and 50 lines is about 45.
+5. Look for the shapes that matter (next section): peaks, dips, saddles, ridges and valleys. Their positions are usually the answer the chart was made for, such as the hottest spot or the best combination of two settings.
 
 ## How a contour plot works
 
@@ -97,8 +97,8 @@ In practice, software doesn't slice a smooth surface. It starts from a **grid**:
 
 Two things follow:
 
-- **Your data needs to be on a grid.** If your measurements are scattered (weather stations, survey points, sensors placed by hand), they first need to be **interpolated** onto a regular grid. The chart can only be as good as that interpolation.
-- **Grid spacing sets the detail.** A coarse grid gives jagged lines and can miss small features between grid points. A fine grid gives smooth lines but more data to compute.
+- Your data needs to be on a grid. If your measurements are scattered (weather stations, survey points, sensors placed by hand), they first need to be **interpolated** onto a regular grid. The chart can only be as good as that interpolation.
+- Grid spacing sets the detail. A coarse grid gives jagged lines and can miss small features between grid points. A fine grid gives smooth lines but more data to compute.
 
 ## What contour plot shapes mean
 
@@ -106,22 +106,22 @@ The same handful of patterns turn up whether the value is height, temperature, p
 
 | What you see | What it means | Example in the plate chart |
 | --- | --- | --- |
-| Closed rings with values rising inwards | A **peak** (local maximum) | The hotter heater, at 81 °C |
-| Closed rings with values falling inwards | A **dip** or pit (local minimum) | None on this plate |
-| Two sets of rings meeting in an hourglass or X shape | A **saddle**: the low point between two peaks, or the high point between two dips | Between the heaters, at about 43 °C |
-| Lines bunched close together | A **steep** change in value | The water-cooled right-hand edge |
-| Lines spread far apart, or no lines at all | A **gentle** change, or an almost flat area | The left side of the plate, near room temperature |
-| Long, parallel, evenly spaced lines | A **steady slope**: the value changes at a constant rate in one direction | Not on this plate; a plane such as z = x + 2y looks like this |
-| Lines bent into a V or U pointing one way | A **ridge** (the V points downhill) or a **valley** (it points uphill) | The warm ridge running from one heater towards the other |
+| Closed rings with values rising inwards | A peak (local maximum) | The hotter heater, at 81 °C |
+| Closed rings with values falling inwards | A dip or pit (local minimum) | None on this plate |
+| Two sets of rings meeting in an hourglass or X shape | A saddle: the low point between two peaks, or the high point between two dips | Between the heaters, at about 43 °C |
+| Lines bunched close together | A steep change in value | The water-cooled right-hand edge |
+| Lines spread far apart, or no lines at all | A gentle change, or an almost flat area | The left side of the plate, near room temperature |
+| Long, parallel, evenly spaced lines | A steady slope: the value changes at a constant rate in one direction | Not on this plate; a plane such as z = x + 2y looks like this |
+| Lines bent into a V or U pointing one way | A ridge (the V points downhill) or a valley (it points uphill) | The warm ridge running from one heater towards the other |
 | Lines that run off the edge of the chart | The feature continues beyond the data | The lines along the cooled edge |
 
 ### How to describe a contour plot
 
 When you write about a contour plot in a report or a lab notebook, cover the same points each time:
 
-> The value is **highest** at **[where]** (**[value]**) and **lowest** at **[where]** (**[value]**). **[Name the other peaks, dips or saddles.]** The value changes **fastest** near **[where]** and is almost **flat** near **[where]**.
+> The value is highest at [where] ([value]) and lowest at [where] ([value]). [Name the other peaks, dips or saddles.] The value changes fastest near [where] and is almost flat near [where].
 
-**Worked example,** using the plate chart above:
+Worked example, using the plate chart above:
 
 "The plate is hottest above the left-hand heater, at about 81 °C, 11 cm across and 19 cm up. The second heater makes a lower peak of about 64 °C at 27 cm across and 11 cm up, and the two are joined by a saddle at about 43 °C between them. The coolest point is the water-cooled right-hand edge, at about 10 °C, where the temperature drops by about 19 °C over the last 4 cm. The left-hand side of the plate stays close to room temperature, about 24 °C, with widely spaced lines."
 
@@ -129,14 +129,14 @@ When you write about a contour plot in a report or a lab notebook, cover the sam
 
 | Type | What it looks like | Good for |
 | --- | --- | --- |
-| **Line contour plot** | Lines only, often labelled with their values | Reading exact levels; printing in black and white; overlaying on other data |
-| **Filled contour plot** | The bands between lines are filled with colour from a colour scale | Seeing high and low at a glance |
-| **Contours over a heatmap** | A smoothly coloured [heatmap](/learn/chart-types/cartesian/heatmap/) with contour lines drawn on top | Both at once: colour for the overall pattern, lines for exact levels. The chart above is this type |
-| **Coloured contour lines** | Each line takes the colour of its own value, with no background | A lighter look, or lines over a map or an image |
-| **Density contour plot** | Lines of equal point density, drawn from a [scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Showing where points cluster when there are too many to see one by one |
-| **Contour map (topographic)** | Lines of equal height above sea level on a map | Hills, valleys and slopes for walkers, engineers and planners |
+| Line contour plot | Lines only, often labelled with their values | Reading exact levels; printing in black and white; overlaying on other data |
+| Filled contour plot | The bands between lines are filled with colour from a colour scale | Seeing high and low at a glance |
+| Contours over a heatmap | A smoothly coloured [heatmap](/learn/chart-types/cartesian/heatmap/) with contour lines drawn on top | Both at once: colour for the overall pattern, lines for exact levels. The chart above is this type |
+| Coloured contour lines | Each line takes the colour of its own value, with no background | A lighter look, or lines over a map or an image |
+| Density contour plot | Lines of equal point density, drawn from a [scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Showing where points cluster when there are too many to see one by one |
+| Contour map (topographic) | Lines of equal height above sea level on a map | Hills, valleys and slopes for walkers, engineers and planners |
 
-Lines of equal value have special names in some fields. On weather maps, **isobars** join points of equal pressure and **isotherms** points of equal temperature. In general they are called **isolines**. The idea is the same in each case.
+Lines of equal value have special names in some fields. On weather maps, **isobars** join points of equal pressure and **isotherms** points of equal temperature. In general they are called **isolines**.
 
 ## When to use a contour plot
 
@@ -144,7 +144,7 @@ Use a contour plot when your data is a **surface**: one number for every combina
 
 | Chart | Best for |
 | --- | --- |
-| **Contour plot** | Exact levels across a smooth surface; finding peaks, saddles and steep areas; comparing against a threshold |
+| Contour plot | Exact levels across a smooth surface; finding peaks, saddles and steep areas; comparing against a threshold |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A value for every combination of two dimensions, including categories such as day and hour; the overall pattern rather than exact levels |
 | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | The overall shape of a surface as a 3D landscape. Easier to grasp at first sight, but peaks hide what's behind them and values are hard to read |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Individual measurements of two values, before they are gridded into a surface |

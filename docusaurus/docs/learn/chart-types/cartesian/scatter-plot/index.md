@@ -63,39 +63,39 @@ related: [bubble-chart, line-chart, error-bars, cartesian-graph]
 
 ## What is a scatter plot?
 
-A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its **x value** sets how far along it sits and its **y value** sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
+A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its x value sets how far along it sits and its y value sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
 
 ![A scatter plot of the height and weight of 202 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
 
 *A scatter plot of height against weight for 202 people (sample data), two of them outliers, with a trend line. [Try the interactive version](#how-to-create-a-scatter-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A scatter plot shows the **relationship between two measured values**, with one dot per item.
-- The pattern shows the **direction**, **strength** and **form** of the relationship, plus any **outliers** and **clusters**.
+- A scatter plot shows the relationship between two measured values, with one dot per item.
+- The pattern shows the direction, strength and form of the relationship, plus any outliers and clusters.
 - Describe one in a sentence: "a *strong*, *positive*, *linear* relationship with *two outliers*".
-- It shows **correlation, not causation**: two values can move together without one causing the other.
-- With many thousands of points, dots hide each other. Use **small, semi-transparent markers** or a heatmap.
+- It shows correlation, not causation: two values can move together without one causing the other.
+- With many thousands of points, dots hide each other. Use small, semi-transparent markers or a heatmap.
 :::
 
 ## How to read a scatter plot
 
 ![Three scatter plots: dots rising from left to right show a positive correlation, with one outlier; dots falling from left to right show a negative correlation; a shapeless cloud of dots shows no correlation](./scatter-plot-correlation.svg)
 
-1. **Check the axes.** Find out which value runs along the bottom (x) and which runs up the side (y), and their units. The x value is usually the one you think might explain the other.
-2. **Look at the overall direction.** Dots rising from left to right show a **positive correlation**: as x increases, y tends to increase. Dots falling from left to right show a **negative correlation**. A shapeless cloud shows **no correlation**.
-3. **Judge the strength.** The closer the dots sit to an imaginary line, the **stronger** the relationship. A wide, loose band means a **weak** one.
-4. **Check the form.** The dots may follow a straight line (**linear**) or a curve (**non-linear**), such as values that rise quickly and then level off.
-5. **Look for anything unusual.** **Outliers** are dots far from the rest. They may be errors, or the most interesting items in the data. **Clusters** are separate groups, which often mean the data mixes different kinds of item.
+1. Check the axes. Find out which value runs along the bottom (x) and which runs up the side (y), and their units. The x value is usually the one you think might explain the other.
+2. Look at the overall direction. Dots rising from left to right show a **positive correlation**: as x increases, y tends to increase. Dots falling from left to right show a **negative correlation**. A shapeless cloud shows **no correlation**.
+3. Judge the strength. The closer the dots sit to an imaginary line, the stronger the relationship. A wide, loose band means a weak one.
+4. Check the form. The dots may follow a straight line (**linear**) or a curve (**non-linear**), such as values that rise quickly and then level off.
+5. Look for anything unusual. **Outliers** are dots far from the rest. They may be errors, or the most interesting items in the data. **Clusters** are separate groups, which often mean the data mixes different kinds of item.
 
 A **trend line** (line of best fit), usually calculated by least-squares regression, summarises the direction. The **correlation coefficient**, *r*, measures the strength of a straight-line relationship from −1 (perfect negative) through 0 (none) to +1 (perfect positive).
 
 ## How to describe a scatter plot
 
-Teachers, analysts and report writers describe scatter plots the same way. Use this template:
+Describe a scatter plot with this template:
 
-> There is a **[strong / moderate / weak]**, **[positive / negative]**, **[linear / non-linear]** relationship between **[x]** and **[y]**, **[with / without]** outliers or clusters.
+> There is a [strong / moderate / weak], [positive / negative], [linear / non-linear] relationship between [x] and [y], [with / without] outliers or clusters.
 
-**Worked example,** using the height and weight chart above: "There is a moderate, positive, linear relationship between height and weight. Taller people tend to be heavier, with about 0.9 kg more weight for each extra centimetre of height. Two people don't fit the pattern: a short person who is unusually heavy and a tall person who is unusually light."
+For example, using the height and weight chart above: "There is a moderate, positive, linear relationship between height and weight. Taller people tend to be heavier, with about 0.9 kg more weight for each extra centimetre of height. Two people don't fit the pattern: a short person who is unusually heavy and a tall person who is unusually light."
 
 | What you see | How to describe it |
 | --- | --- |
@@ -107,16 +107,16 @@ Teachers, analysts and report writers describe scatter plots the same way. Use t
 
 ## When to use a scatter plot
 
-Use a scatter plot when you have **two measured values for each item** and want to know whether, and how, they're related. Typical uses:
+Use a scatter plot when you have two measured values for each item and want to know whether, and how, they're related. Typical uses:
 
-- **science and engineering:** checking whether one measurement predicts another, such as temperature and pressure, or dose and response;
-- **quality control:** spotting faulty parts that sit away from the normal pattern;
-- **finance and business:** risk against return, or advertising spend against sales;
-- **data exploration:** a first look at a new dataset before any modelling.
+- science and engineering: checking whether one measurement predicts another, such as temperature and pressure, or dose and response;
+- quality control: spotting faulty parts that sit away from the normal pattern;
+- finance and business: risk against return, or advertising spend against sales;
+- data exploration: a first look at a new dataset before any modelling.
 
 | Chart | Best for |
 | --- | --- |
-| **Scatter plot** | The relationship between two numeric values, one dot per item; the order of the points doesn't matter |
+| Scatter plot | The relationship between two numeric values, one dot per item; the order of the points doesn't matter |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | How one value changes over time or another sequence, with points joined in order |
 | [Bubble chart](/learn/chart-types/cartesian/bubble-chart/) | A scatter plot that also shows a third value as the size of each bubble |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | Very dense data, where colour showing how many points fall in each cell is clearer than individual dots |
@@ -124,9 +124,9 @@ Use a scatter plot when you have **two measured values for each item** and want 
 ## Scatter plots with large datasets
 
 When a scatter plot has tens of thousands of points or more, dots overlap until whole areas look like a solid block. Three fixes:
-- **smaller, semi-transparent dots,** so overlapping dots build up into brighter, denser areas;
-- **zooming in** on a region to see individual points;
-- switching to a **[heatmap](/learn/chart-types/cartesian/heatmap/)** that counts how many points fall in each cell.
+- smaller, semi-transparent dots, so overlapping dots build up into brighter, denser areas;
+- zooming in on a region to see individual points;
+- switching to a [heatmap](/learn/chart-types/cartesian/heatmap/) that counts how many points fall in each cell.
 
 The chart below has 100,000 points in two groups, each in its own colour: a rising group (blue) and a falling group (orange) that cross in the middle. With small, semi-transparent dots you can see both trends and where they're densest. The orange group is drawn more transparent, so the blue shows through where they cross. Untick a group in the legend to see the other one on its own. Scroll to zoom into the dense areas.
 
@@ -139,7 +139,6 @@ The chart below has 100,000 points in two groups, each in its own colour: a risi
 - **Squashed or stretched axes.** Axis ranges that crop the data, or don't start where they should, can make a weak relationship look strong. Leave a small margin around the data and label both axes with units.
 - **Extending the trend line too far.** A trend line describes the range you measured. It says nothing reliable about values well outside that range.
 - **Deleting outliers without checking them.** An outlier may be a data-entry error, or the most important point on the chart.
-- **Overplotting.** With thousands of points, dots pile on top of each other and hide where most of the data really is. See [Scatter plots with large datasets](#scatter-plots-with-large-datasets) above.
 
 ## How to create a scatter plot in JavaScript, React or Angular
 

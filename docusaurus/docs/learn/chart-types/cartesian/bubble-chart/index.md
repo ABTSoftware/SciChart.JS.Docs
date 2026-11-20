@@ -63,16 +63,16 @@ related: [scatter-plot, heatmap, treemap, xyz-graph]
 
 ## What is a bubble chart?
 
-A **bubble chart** (also called a bubble graph or bubble plot) is a chart that shows three numeric values for each item. Like a [scatter plot](/learn/chart-types/cartesian/scatter-plot/), two of the values set where each bubble sits across and up the chart. The third sets the **size** of the bubble. Colour can add a fourth, such as a group.
+A **bubble chart** (also called a bubble graph or bubble plot) is a chart that shows three numeric values for each item. Like a [scatter plot](/learn/chart-types/cartesian/scatter-plot/), two of the values set where each bubble sits across and up the chart. The third sets the size of the bubble. Colour can add a fourth, such as a group.
 
 ![A bubble chart of 36 stores in three regions: advertising spend runs across, sales run up, and bubble size shows the number of customers. Light blue bubbles sit bottom left, orange in the middle and purple top right](/img/learn/bubble-chart-og.png)
 
 *A bubble chart of advertising spend, sales and customers for 36 stores in three regions (sample data). [Try the interactive version](#how-to-create-a-bubble-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A bubble chart shows **three values per item**: two as position, one as bubble size.
-- Read **position first**, then **size**, then check where the big bubbles sit.
-- Size bubbles by **area**, not width: make the diameter proportional to the **square root** of the value.
+- A bubble chart shows three values per item: two as position, one as bubble size.
+- Read position first, then size, then check where the big bubbles sit.
+- Size bubbles by area, not width: make the diameter proportional to the square root of the value.
 - Sizes are good for "much bigger" or "about the same", not for exact values.
 - Keep to a few dozen bubbles. With more, use a plain [scatter plot](/learn/chart-types/cartesian/scatter-plot/).
 :::
@@ -81,21 +81,21 @@ A **bubble chart** (also called a bubble graph or bubble plot) is a chart that s
 
 ![Anatomy of a bubble chart: horizontal position shows the first value, vertical position the second, bubble size the third, and colour an optional group. An inset shows that a value four times as large has four times the area but only twice the width](./bubble-chart-anatomy.svg)
 
-1. **Check what each part shows.** Find the value along the bottom (x), the value up the side (y), and what bubble size stands for. A good chart says all three, with units.
-2. **Read the position.** Further right means a larger x value; higher up means a larger y value. Bubbles rising from bottom left to top right show that x and y increase together (a **positive correlation**, explained on the [scatter plot](/learn/chart-types/cartesian/scatter-plot/#how-to-read-a-scatter-plot) page).
-3. **Compare the sizes.** A bigger bubble means a larger third value. Pick out the largest few, as they are usually the items that matter most.
-4. **Look for where big bubbles sit.** If the big bubbles collect in one corner, the third value is related to the other two. If big and small bubbles are mixed everywhere, it isn't.
-5. **Use colour, if there is any,** to compare groups: is one group further right, higher up or bigger than another?
+1. Check what each part shows. Find the value along the bottom (x), the value up the side (y), and what bubble size stands for. A good chart says all three, with units.
+2. Read the position. Further right means a larger x value; higher up means a larger y value. Bubbles rising from bottom left to top right show that x and y increase together (a **positive correlation**, explained on the [scatter plot](/learn/chart-types/cartesian/scatter-plot/#how-to-read-a-scatter-plot) page).
+3. Compare the sizes. A bigger bubble means a larger third value. Pick out the largest few, as they are usually the items that matter most.
+4. Look for where big bubbles sit. If the big bubbles collect in one corner, the third value is related to the other two. If big and small bubbles are mixed everywhere, it isn't.
+5. Use colour, if there is any, to compare groups: is one group further right, higher up or bigger than another?
 
-Treat sizes as rough comparisons. Research on how people read charts has found that we judge position much more accurately than area. Use the tooltip or a table when exact numbers matter.
+Treat sizes as rough comparisons. In Cleveland and McGill's experiments ([sources](#sources)), people judged position much more accurately than area. Use the tooltip or a table when exact numbers matter.
 
 ## How to describe a bubble chart
 
 To summarise a bubble chart in a report or an exam answer, cover the relationship first and the bubble size second:
 
-> There is a **[strong / weak]**, **[positive / negative / no]** relationship between **[x]** and **[y]**. **[Size value]** **[is larger where… / shows no clear pattern]**. **[Name any group or item that stands out.]**
+> There is a [strong / weak], [positive / negative / no] relationship between [x] and [y]. [Size value] [is larger where… / shows no clear pattern]. [Name any group or item that stands out.]
 
-**Worked example,** using the store chart above: "There is a strong, positive relationship between advertising spend and sales: stores that spend more sell more, at about \$3.80 of extra sales for each extra dollar spent. The number of customers shows no clear pattern, as large and small bubbles appear at every level of spend. West stores spend and sell the most, North stores the least."
+A worked example, using the store chart above: "There is a strong, positive relationship between advertising spend and sales: stores that spend more sell more, at about \$3.80 of extra sales for each extra dollar spent. The number of customers shows no clear pattern, as large and small bubbles appear at every level of spend. West stores spend and sell the most, North stores the least."
 
 | What you see | What it means |
 | --- | --- |
@@ -106,11 +106,11 @@ To summarise a bubble chart in a report or an exam answer, cover the relationshi
 
 ## When to use a bubble chart
 
-Use a bubble chart when each item has **three numeric values** and you want to see how two of them relate while also comparing the third. Classic examples are countries by income, life expectancy and population, as made famous by the Gapminder project, and products by price, rating and units sold.
+Use a bubble chart when each item has three numeric values and you want to see how two of them relate while also comparing the third. Classic examples are countries by income, life expectancy and population, as made famous by the Gapminder project, and products by price, rating and units sold.
 
 | Chart | Best for |
 | --- | --- |
-| **Bubble chart** | Three values per item, for up to a few dozen items, when the third value is about size or importance |
+| Bubble chart | Three values per item, for up to a few dozen items, when the third value is about size or importance |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Two values per item, or many points; equal dots are easier to read and overlap less |
 | Scatter plot coloured by the third value | A third value that is a level rather than an amount, such as temperature, and many points |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing one value exactly across items, when the relationship between values doesn't matter |
@@ -120,9 +120,9 @@ If the third value isn't important, a scatter plot is clearer. If you only need 
 
 ## Sizing bubbles: area, not diameter
 
-The most common bubble chart mistake is scaling the bubble's **width** (diameter) to the value. A circle twice as wide covers **four times** the area, and the eye compares circles by area. So a value twice as large looks four times as big, and the differences in the data are exaggerated.
+A common bubble chart mistake is scaling the bubble's width (diameter) to the value. A circle twice as wide covers four times the area, and the eye compares circles by area. So a value twice as large looks four times as big, and the differences in the data are exaggerated.
 
-The fix is to make each bubble's **area** proportional to its value. In practice, set the diameter to the **square root** of the value multiplied by a constant. A value four times as large then gets a bubble twice as wide.
+Instead, make each bubble's area proportional to its value. In practice, set the diameter to the square root of the value multiplied by a constant. A value four times as large then gets a bubble twice as wide.
 
 The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In the top row (area) the 8 looks about eight times the 1. In the bottom row (diameter) it looks about 64 times bigger. Untick a row in the legend to look at the other on its own.
 
@@ -139,7 +139,6 @@ The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In t
 
 Run through this checklist before you publish a bubble chart:
 
-- **Bubbles scaled by width instead of area.** Use the square root of the value for the diameter (see above).
 - **No key for size.** Readers can't tell what a big bubble means. Say what size shows in the title, the legend or a note, and add two or three reference circles if exact sizes matter.
 - **Too many bubbles.** Large bubbles overlap and hide the small ones behind them. Keep to a few dozen, use semi-transparent fills, draw small bubbles on top, or switch to a scatter plot.
 - **Zero or negative values as size.** A circle can't have a negative area. Show the sign with colour, or use a different chart.
@@ -251,7 +250,7 @@ Here is the code for this chart:
 Key points:
 
 - An [XyzDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xyzdataseries.html) holds an x value, a y value and a z value per bubble.
-- A [FastBubbleRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) uses the z value as each bubble's **diameter in pixels**, so pass the square root of your size value. Its `zMultiplier` property scales every bubble at once.
+- A [FastBubbleRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastbubblerenderableseries.html) uses the z value as each bubble's diameter in pixels, so pass the square root of your size value. Its `zMultiplier` property scales every bubble at once.
 - The `pointMarker` sets the bubble's shape and colour. Draw it large (here 64 × 64) with no stroke: SciChart scales it to each bubble, and a stroke would be scaled too.
 - For several groups, add one series per group, each with its own colour, as the demo does. Its tooltip template looks up the number of customers, so readers see the real value rather than the size in pixels.
 

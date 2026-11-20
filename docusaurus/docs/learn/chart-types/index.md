@@ -8,7 +8,7 @@ keywords: ["types of charts", "types of graphs", "types of charts and graphs", "
 
 # Types of Charts and Graphs
 
-Which chart should you use, and how do you read it? This guide covers the main types of charts and graphs. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in **JavaScript, React or Angular** with SciChart.js.
+Which chart should you use, and how do you read it? This guide covers the main types of charts and graphs. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Trends and comparisons
 

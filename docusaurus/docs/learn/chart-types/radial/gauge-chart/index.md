@@ -72,23 +72,23 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 *A gauge chart of a server's CPU load, with Normal, High and Critical bands (sample data). [Try the interactive version](#how-to-create-a-gauge-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A gauge chart answers one question: **is this one value OK right now?**
-- **The bands carry the meaning.** Set them from real limits or targets, and label them in words, not by colour alone.
-- **The angle is the value.** A reading is the share of the way round the scale, from the minimum to the maximum.
-- Gauges show **no history** and take a lot of space. For trends use a line chart; to compare many values use [bullet charts](/learn/chart-types/cartesian/bullet-chart/) or bars.
-- Gauges work best for **live readings**, where a moving needle is easy to follow.
+- A gauge chart answers one question: is this one value OK right now?
+- Set the bands from real limits or targets, and label them in words, not by colour alone.
+- The needle's angle is the value, as a share of the way round the scale from the minimum to the maximum.
+- Gauges show no history and take a lot of space. For trends use a line chart; to compare many values use [bullet charts](/learn/chart-types/cartesian/bullet-chart/) or bars.
+- Gauges work best for live readings, where a moving needle is easy to follow.
 :::
 
 ## How to read a gauge chart
 
 ![The parts of a gauge chart: a semicircular gauge from 0 to 100 showing 68% of orders shipped on time, with callouts for the scale and ticks, the minimum and maximum, three bands, the needle, a target marker at 80 and the value readout with its label](./gauge-chart-anatomy.svg)
 
-1. **Read the label and units first.** They say what is being measured, such as "orders shipped on time, %" or "pressure, bar", and over what period.
-2. **Check the ends of the scale.** The minimum and maximum set what a full sweep means. A needle near the top of a 0 to 100 scale and one near the top of a 0 to 1,000 scale mean very different things.
-3. **Find the needle,** or the end of the filled arc. Its position along the scale is the value. Use the tick marks to estimate it, or read the number in the readout if there is one.
-4. **See which band the value is in.** The bands are what turn a number into a judgement: in the gauge above, 68% sits in the amber band, so the team is close to target but not there.
-5. **Compare it with the target,** if there is a marker. 68% against a target of 80% is a gap of 12 percentage points.
-6. **Remember what the gauge leaves out.** It shows one moment. To know whether 68% is improving or getting worse, you need the history, for example a line chart beside the gauge.
+1. Read the label and units first. They say what is being measured, such as "orders shipped on time, %" or "pressure, bar", and over what period.
+2. Check the ends of the scale. The minimum and maximum set what a full sweep means. A needle near the top of a 0 to 100 scale and one near the top of a 0 to 1,000 scale mean very different things.
+3. Find the needle, or the end of the filled arc. Its position along the scale is the value. Use the tick marks to estimate it, or read the number in the readout if there is one.
+4. See which band the value is in. The bands are what turn a number into a judgement: in the gauge above, 68% sits in the amber band, so the team is close to target but not there.
+5. Compare it with the target, if there is a marker. 68% against a target of 80% is a gap of 12 percentage points.
+6. Remember what the gauge leaves out. It shows one moment. To know whether 68% is improving or getting worse, you need the history, for example a line chart beside the gauge.
 
 ## Types of gauge chart
 
@@ -96,11 +96,11 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 
 | Type | What it looks like | Good for |
 | --- | --- | --- |
-| **Semicircle gauge** | A half circle, from 9 o'clock to 3 o'clock | Business dashboards, where the half-circle shape fits a short, wide tile |
-| **Dial or speedometer gauge** | An arc of about 240 to 270 degrees, with the gap at the bottom | Live readings such as speed, CPU load or pressure, where a longer scale gives finer ticks |
-| **Progress ring** (radial gauge) | A full circle that fills up, usually with no needle or bands | Progress towards 100%, such as a download or a goal |
-| **Linear gauge** | A straight horizontal or vertical bar with bands and a marker, like a thermometer or a tank level | Narrow spaces, and stacks of gauges that need to line up |
-| **Multi-gauge panel** | Several small gauges side by side | Watching a few related readings at once, such as the cores of one machine |
+| Semicircle gauge | A half circle, from 9 o'clock to 3 o'clock | Business dashboards, where the half-circle shape fits a short, wide tile |
+| Dial or speedometer gauge | An arc of about 240 to 270 degrees, with the gap at the bottom | Live readings such as speed, CPU load or pressure, where a longer scale gives finer ticks |
+| Progress ring (radial gauge) | A full circle that fills up, usually with no needle or bands | Progress towards 100%, such as a download or a goal |
+| Linear gauge | A straight horizontal or vertical bar with bands and a marker, like a thermometer or a tank level | Narrow spaces, and stacks of gauges that need to line up |
+| Multi-gauge panel | Several small gauges side by side | Watching a few related readings at once, such as the cores of one machine |
 
 A **[bullet chart](/learn/chart-types/cartesian/bullet-chart/)** is a compact linear gauge designed for dashboards: one bar for the value, shaded bands for the ranges and a short line for the target. It does the same job as a gauge in far less space.
 
@@ -108,7 +108,7 @@ A **[bullet chart](/learn/chart-types/cartesian/bullet-chart/)** is a compact li
 
 The bands are the most important design decision on a gauge. Take them from what the value means for the business or the machine, not from equal thirds of the scale.
 
-**Example: a server's CPU load,** as in the live gauge on this page. The operations team agrees three ranges:
+Take a server's CPU load. The operations team agrees three ranges:
 
 | Band | Range | Why there | What to do |
 | --- | --- | --- | --- |
@@ -118,7 +118,9 @@ The bands are the most important design decision on a gauge. Take them from what
 
 The bands are deliberately uneven: Normal covers 70% of the scale, Critical only 10%. That's correct, because the scale is about the machine, not about making the colours look balanced.
 
-**Turning a value into an angle.** On a gauge, the angle of the needle from the start of the scale is:
+### How to turn a value into a needle angle
+
+On a gauge, the angle of the needle from the start of the scale is:
 
 > angle = (value − minimum) ÷ (maximum − minimum) × sweep
 
@@ -136,19 +138,19 @@ The same sum, run backwards, turns a click or a drag on the gauge into a value, 
 
 Use this template when you report a reading from a gauge:
 
-> **[Measure]** is at **[value and unit]**, in the **[band]** range (**[band limits]**), **[above or below]** **[the target or limit]** by **[gap]**. Over **[period]**, it ranged from **[low]** to **[high]**.
+> [Measure] is at [value and unit], in the [band] range ([band limits]), [above or below] [the target or limit] by [gap]. Over [period], it ranged from [low] to [high].
 
-**Worked example:** "CPU load is at 72%, in the High range (70 to 90%), above the Normal limit of 70% by 2 points. Over the last 30 seconds, it ranged from 58% to 81%."
+Worked example: "CPU load is at 72%, in the High range (70 to 90%), above the Normal limit of 70% by 2 points. Over the last 30 seconds, it ranged from 58% to 81%."
 
 The last sentence is the one most gauges can't support on their own. The live gauge on this page adds a thin white arc that spans the lowest to the highest reading of the last 30 seconds, so the range can be read straight off the dial.
 
 ## When to use a gauge chart
 
-Use a gauge chart when **one value matters right now**, it has **known limits or a target**, and viewers need to judge it **at a glance**: a machine reading on a control screen, a live system metric, or a single headline measure on a dashboard.
+Use a gauge chart when one value matters right now, it has known limits or a target, and viewers need to judge it at a glance: a machine reading on a control screen, a live system metric, or a single headline measure on a dashboard.
 
 | Chart | Best for |
 | --- | --- |
-| **Gauge chart** | One current value against its limits, especially a live reading |
+| Gauge chart | One current value against its limits, especially a live reading |
 | [Bullet chart](/learn/chart-types/cartesian/bullet-chart/) (a compact linear gauge) | The same information in a small space, and several measures stacked for comparison |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | How the value changed over time, and whether it is rising or falling |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing the same measure across many items, such as CPU load on 20 servers |
@@ -159,11 +161,9 @@ A good pattern is to pair them: a gauge for the value now, and a small line char
 ## Common gauge chart mistakes
 
 - **Too many gauges.** A wall of dials uses a lot of space and is hard to scan. If you are comparing values, use bars or bullet charts; keep gauge charts for the few readings that matter most.
-- **Bands that mean nothing.** Equal thirds coloured green, amber and red look tidy but tell the reader nothing. Set each band from a real limit, target or specification.
 - **Colour as the only signal.** The most common kind of colour blindness makes red and green hard to tell apart. Label the bands in words ("Normal", "High", "Critical"), and show the status as text next to the number.
 - **A scale that hides the story.** A 0 to 1,000 scale for a value that stays between 40 and 60 leaves the needle barely moving. Choose limits that suit the real range of values, and say so if the scale doesn't start at zero.
 - **No number.** Readers can't read an angle precisely. Show the value as text, with its units.
-- **No context over time.** A gauge shows a single moment. Add the recent range, a target marker or a small trend chart so readers know whether the value is normal for now.
 - **Decoration over data.** 3D effects, shiny bezels and shadows make the needle harder to read. Keep the dial flat and the needle high-contrast.
 
 ## How to create a gauge chart in JavaScript, React or Angular
@@ -237,9 +237,9 @@ Here is the code for this gauge. Change the `GAUGE` object to set your own scale
 Key points:
 
 - The gauge is a `SciChartPolarSurface` whose angular `PolarNumericAxis` has `totalAngle` set to the sweep (240 degrees here) and `startAngle` set so the gap is centred at the bottom; `flippedCoordinates: true` makes the scale run clockwise. A partial arc like this is a [partial polar chart](/2d-charts/chart-types/polar-partial-chart-type/). The axis draws the ticks and labels; the radial axis is hidden and only sets the radii.
-- Each band is a [PolarColumnRenderableSeries](/2d-charts/chart-types/polar-column-renderable-series/) with an `XyxyDataSeries` running from the band's start value to its end value, with `columnXMode: EColumnMode.StartEnd`. The value arc and the 30-second range are [PolarArcAnnotations](/2d-charts/annotations-api/polar-arc-annotation/), and the needle is a [PolarPointerAnnotation](/2d-charts/annotations-api/polar-pointer-annotation/). Moving the gauge is just setting `x2` on the arc and `x1` on the pointer.
+- Each band is a [PolarColumnRenderableSeries](/2d-charts/chart-types/polar-column-renderable-series/) with an `XyxyDataSeries` running from the band's start value to its end value, with `columnXMode: EColumnMode.StartEnd`. The value arc and the 30-second range are [PolarArcAnnotations](/2d-charts/annotations-api/polar-arc-annotation/), and the needle is a [PolarPointerAnnotation](/2d-charts/annotations-api/polar-pointer-annotation/). To move the gauge, set `x2` on the arc and `x1` on the pointer.
 - `GaugeModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)). Any custom modifier on a polar chart must override `get modifierType()` to return `EModifierType.Chart2DPolarModifier`, or the surface won't accept it. It turns a mouse position into a value with the angular axis's `reverseTransform` and coordinate calculator.
-- **For a linear gauge,** use a normal 2D chart: draw the bands with `FastRectangleRenderableSeries` and the marker with a `LineArrowAnnotation`, as in the [SciChart.js linear gauge documentation](/2d-charts/chart-types/linear-gauge-chart/).
+- For a linear gauge, use a normal 2D chart: draw the bands with `FastRectangleRenderableSeries` and the marker with a `LineArrowAnnotation`, as in the [SciChart.js linear gauge documentation](/2d-charts/chart-types/linear-gauge-chart/).
 
 **See it in the demo app:** [JavaScript gauge chart](https://www.scichart.com/demo/javascript/polar-gauge-chart) · [React gauge chart](https://www.scichart.com/demo/react/polar-gauge-chart) · [Angular gauge chart](https://www.scichart.com/demo/angular/polar-gauge-chart). More examples: [React gauge dashboard with live data](https://www.scichart.com/demo/react/polar-gauge-fifo-dashboard), [React linear gauges](https://www.scichart.com/demo/react/linear-gauges) and the [React partial polar chart](https://www.scichart.com/demo/react/polar-partial-arc).
 

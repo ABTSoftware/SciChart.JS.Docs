@@ -70,30 +70,30 @@ related: [area-chart, sparkline, strip-chart, scatter-plot]
 
 ## What is a line graph?
 
-A **line graph** (also called a line chart or line plot) is a chart that shows how a value changes over time or across another ordered sequence. Each measurement is a point placed by its **x value** and its **y value**, and a line joins the points from left to right, so its slope shows each rise and fall.
+A **line graph** (also called a line chart or line plot) is a chart that shows how a value changes over time or across another ordered sequence. Each measurement is a point placed by its x value and its y value, and a line joins the points from left to right, so its slope shows each rise and fall.
 
 ![A line graph of daily temperatures over one year for two cities: an orange line for City B runs above a blue line for City A, both rising from January to a peak in July and falling again](/img/learn/line-chart-og.png)
 
 *A line graph of daily temperatures in two cities over a year (sample data). [Try the interactive version](#how-to-create-a-line-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A line graph shows **change in one value across an ordered x-axis**, usually time.
-- The **direction** of the line shows rising or falling; its **steepness** shows how fast.
-- Describe one in a sentence: "*[value]* **rose steadily** from *[start]* to a **peak** of *[high]* in *[when]*, then **fell** to *[end]*."
-- Use a line graph when the **order of the x values matters**; use a bar graph for separate categories.
-- For very long or noisy series, a **moving average** line shows the trend through the noise.
+- A line graph shows change in one value across an ordered x-axis, usually time.
+- The direction of the line shows rising or falling; its steepness shows how fast.
+- Describe one in a sentence: "*[value]* rose steadily from *[start]* to a peak of *[high]* in *[when]*, then fell to *[end]*."
+- Use a line graph when the order of the x values matters; use a bar graph for separate categories.
+- For very long or noisy series, a moving average line shows the trend through the noise.
 :::
 
 ## How to read a line graph
 
 ![Anatomy of a line chart: the y-axis shows the value, the x-axis shows time, and data points are joined by a line that slopes up while values rise, peaks, then slopes down as they fall](./line-chart-anatomy.svg)
 
-1. **Read the title and the axes first.** The horizontal **x-axis** is usually time (days, months, years), running left to right. The vertical **y-axis** is the measured value. Note the units on both, and the number the y-axis starts at.
-2. **Match each line to the legend.** On a graph with several lines, colour or line style tells them apart.
-3. **Follow the overall direction.** A line climbing from left to right means the value is going up. A line heading down means it's going down. A flat stretch means it's holding steady.
-4. **Judge the speed from the steepness.** A steep section is a fast change; a gentle slope is a slow one.
-5. **Find the turning points.** **Peaks** (highest points), **troughs** (lowest points) and places where the direction changes are usually the story.
-6. **Compare lines where they matter.** Is one line always above the other? Do they cross? Does the gap between them grow or shrink?
+1. Read the title and the axes first. The horizontal **x-axis** is usually time (days, months, years), running left to right. The vertical **y-axis** is the measured value. Note the units on both, and the number the y-axis starts at.
+2. Match each line to the legend. On a graph with several lines, colour or line style tells them apart.
+3. Follow the overall direction. A line climbing from left to right means the value is going up. A line heading down means it's going down. A flat stretch means it's holding steady.
+4. Judge the speed from the steepness. A steep section is a fast change; a gentle slope is a slow one.
+5. Find the turning points. **Peaks** (highest points), **troughs** (lowest points) and places where the direction changes are usually the story.
+6. Compare lines where they matter. Is one line always above the other? Do they cross? Does the gap between them grow or shrink?
 
 The points themselves are the real measurements. The straight segments between them are a reasonable guess at what happened in between, not extra data.
 
@@ -112,9 +112,9 @@ The points themselves are the real measurements. The straight segments between t
 
 Exam questions (such as IELTS Writing Task 1), lab reports and dashboards all ask for the same thing: a short summary of what the line does. Use this template:
 
-> **[What]** **[rose / fell / stayed level]** **[steadily / sharply / gradually]** from **[start value]** in **[start]** to **[peak or low]** in **[when]**, then **[what happened next]**. Overall, **[the main trend or comparison]**.
+> [What] [rose / fell / stayed level] [steadily / sharply / gradually] from [start value] in [start] to [peak or low] in [when], then [what happened next]. Overall, [the main trend or comparison].
 
-**Worked example,** using the temperature graph above (monthly averages of the sample data): "Both cities follow the same seasonal pattern. Temperatures climb steadily from January, peak in early July and fall back by December. City B is warmer every day of the year, and its swing is bigger: from about 8°C in January to 25.5°C in July, against roughly 4°C to 18°C for City A. The gap between the two cities is narrowest in winter, at about 4°C, and widest in summer, at about 8°C."
+For example, describing the temperature graph above (monthly averages of the sample data): "Both cities follow the same seasonal pattern. Temperatures climb steadily from January, peak in early July and fall back by December. City B is warmer every day of the year, and its swing is bigger: from about 8°C in January to 25.5°C in July, against roughly 4°C to 18°C for City A. The gap between the two cities is narrowest in winter, at about 4°C, and widest in summer, at about 8°C."
 
 | What the line does | Words to use |
 | --- | --- |
@@ -130,26 +130,26 @@ Lead with the overall trend, then give the highest and lowest values with their 
 
 ## When to use a line graph
 
-Use a line graph when the x values have a **natural order**, most often time, and the reader cares about **how the value moves** from one point to the next. With dates or times on the x axis, it is a **time series line chart**, the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart: the slope of the line is the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
+Use a line graph when the x values have a natural order, most often time, and the reader cares about how the value moves from one point to the next. With dates or times on the x axis, it is a **time series line chart**, the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart, because the slope of the line shows the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 | Your question | Best chart |
 | --- | --- |
-| How has this value changed over time? | **Line graph** |
-| How do a few series compare over the same period? | **Line graph** with one line each (up to about five) |
+| How has this value changed over time? | Line graph |
+| How do a few series compare over the same period? | Line graph with one line each (up to about five) |
 | How do amounts compare across separate categories? | [Bar or column chart](/learn/chart-types/cartesian/bar-chart/) |
 | How does a total over time split into parts? | [Stacked area chart](/learn/chart-types/cartesian/area-chart/) |
 | Are two measured values related, with no order to the points? | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) |
 
-**A quick test for bar graph vs line graph:** if you could shuffle the x values without changing the meaning (products, countries, teams), use a bar graph. If shuffling them would destroy the story (months, seconds, distance), use a line graph. Many points also favour lines: a year of daily values is 365 thin bars, but one clear line.
+To choose between a bar graph and a line graph, ask whether you could shuffle the x values without changing the meaning (products, countries, teams). If you could, use a bar graph. If shuffling them would destroy the story (months, seconds, distance), use a line graph. Many points also favour lines: a year of daily values is 365 thin bars, but one clear line.
 
 ## Line graphs with many data points
 
 Sensors, markets and monitoring systems record values every second or faster, so their line graphs can have tens of thousands of points or more. Two problems appear:
 
-- **Noise hides the trend.** Small, fast ups and downs make the line look like a thick, jagged band.
-- **Detail hides in the overview.** At full-day scale, each pixel covers dozens of readings, so short events are squashed together.
+- Noise hides the trend. Small, fast ups and downs make the line look like a thick, jagged band.
+- Detail hides in the overview. At full-day scale, each pixel covers dozens of readings, so short events are squashed together.
 
-The usual fixes are a **moving average**, which replaces each point with the average of the points around it to show the underlying trend, and **zooming in** to see the raw readings.
+The usual fixes are a **moving average**, which replaces each point with the average of the points around it to show the underlying trend, and zooming in to see the raw readings.
 
 The chart below shows a day of temperature readings from one sensor, one per second: 86,400 points (sample data). The blue line is every reading; the orange line is a 10-minute moving average of the same data. Scroll to zoom into any part of the day and the raw line separates into individual readings. Untick a line in the legend to hide it.
 
@@ -272,10 +272,10 @@ Here are four line chart examples, three of them from science, medicine and engi
 
 | Example | What it shows |
 | --- | --- |
-| <a href="https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example"><img src={require("@site/static/img/learn/examples/javascript-vital-signs-ecg-medical-chart-example.jpg").default} alt="A patient monitor with four scrolling line charts: ECG, blood pressure, stroke volume and blood oxygen" width="240" /></a> | **Patient monitor: real-time line charts.** An ECG trace and three other vital signs drawn as lines that sweep across the screen, as on a hospital monitor, with the latest readings beside each one. [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) |
-| <a href="https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart"><img src={require("@site/static/img/learn/examples/javascript-realtime-ghosted-traces-oscilloscope-chart.jpg").default} alt="An oscilloscope-style line chart of ten noisy sine-wave traces drawn on top of each other, older traces fading out" width="240" /></a> | **Oscilloscope: overlaid line traces.** Repeated sweeps of a noisy signal drawn on top of one another, with older traces fading like the phosphor of an analogue oscilloscope, so the signal's typical shape stands out from the noise. [JavaScript oscilloscope chart](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) |
-| <a href="https://www.scichart.com/demo/javascript/polar-line-multi-cycle"><img src={require("@site/static/img/learn/examples/javascript-polar-line-temperature.jpg").default} alt="A polar line chart of mean surface temperature by month, one line per year from 1995 to 2024, wrapped around a circle of twelve months" width="240" /></a> | **Climate data: a line chart wrapped into a circle.** Mean surface temperature for each month, one line per year over 30 years. Bending the months into a circle lets December join January, so each year's cycle reads as one loop. [JavaScript polar line chart](https://www.scichart.com/demo/javascript/polar-line-multi-cycle) |
-| <a href="https://www.scichart.com/demo/javascript/line-chart"><img src={require("@site/static/img/learn/examples/javascript-line-chart.jpg").default} alt="Nine small line charts showing different line chart styles: simple, step, tooltips, dashed, gradient, hover, gaps, vertical and thresholds" width="240" /></a> | **Line chart styles side by side.** Nine variations in one view: simple, step (digital), dashed, gradient-coloured, with tooltips, with gaps, vertical, and with high and low warning thresholds that change the line's colour. [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) |
+| <a href="https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example"><img src={require("@site/static/img/learn/examples/javascript-vital-signs-ecg-medical-chart-example.jpg").default} alt="A patient monitor with four scrolling line charts: ECG, blood pressure, stroke volume and blood oxygen" width="240" /></a> | Patient monitor with real-time line charts. An ECG trace and three other vital signs drawn as lines that sweep across the screen, as on a hospital monitor, with the latest readings beside each one. [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) |
+| <a href="https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart"><img src={require("@site/static/img/learn/examples/javascript-realtime-ghosted-traces-oscilloscope-chart.jpg").default} alt="An oscilloscope-style line chart of ten noisy sine-wave traces drawn on top of each other, older traces fading out" width="240" /></a> | Oscilloscope with overlaid line traces. Repeated sweeps of a noisy signal drawn on top of one another, with older traces fading like the phosphor of an analogue oscilloscope, so the signal's typical shape stands out from the noise. [JavaScript oscilloscope chart](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) |
+| <a href="https://www.scichart.com/demo/javascript/polar-line-multi-cycle"><img src={require("@site/static/img/learn/examples/javascript-polar-line-temperature.jpg").default} alt="A polar line chart of mean surface temperature by month, one line per year from 1995 to 2024, wrapped around a circle of twelve months" width="240" /></a> | Climate data in a line chart wrapped into a circle. Mean surface temperature for each month, one line per year over 30 years. Bending the months into a circle lets December join January, so each year's cycle reads as one loop. [JavaScript polar line chart](https://www.scichart.com/demo/javascript/polar-line-multi-cycle) |
+| <a href="https://www.scichart.com/demo/javascript/line-chart"><img src={require("@site/static/img/learn/examples/javascript-line-chart.jpg").default} alt="Nine small line charts showing different line chart styles: simple, step, tooltips, dashed, gradient, hover, gaps, vertical and thresholds" width="240" /></a> | Line chart styles side by side. Nine variations in one view: simple, step (digital), dashed, gradient-coloured, with tooltips, with gaps, vertical, and with high and low warning thresholds that change the line's colour. [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) |
 
 ## Frequently asked questions
 

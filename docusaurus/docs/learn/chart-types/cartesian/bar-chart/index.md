@@ -83,24 +83,23 @@ A **bar chart** (also called a bar graph, or a column chart when the bars stand 
 *A horizontal bar chart of units sold for eight products (sample data), ranked from most to fewest. [Try the interactive version](#how-to-create-a-bar-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A bar chart **compares one value across categories**; the bar's **length** carries the value.
-- **Bar or column** is only the direction: sideways bars suit long labels, upright columns suit ordered categories such as months.
-- **Stacked** bars show totals and their parts; **grouped** bars compare the parts more accurately.
-- The value axis should **start at zero**, and unordered categories read best **sorted by size**.
-- Describe one in a sentence: the **largest**, the **smallest**, and the **gap or pattern** between them.
+- A bar chart compares one value across categories; the bar's length carries the value.
+- Bar or column is only the direction: sideways bars suit long labels, upright columns suit ordered categories such as months.
+- Stacked bars show totals and their parts; grouped bars compare the parts more accurately.
+- The value axis should start at zero, and unordered categories read best sorted by size.
+- Describe one in a sentence: the largest, the smallest, and the gap or pattern between them.
 :::
 
 ## How to read a bar chart
 
 ![Four small charts: a bar chart with horizontal bars, a column chart with vertical bars, a stacked column chart whose bands add up to a total, and a grouped column chart with parts side by side](./bar-vs-column-chart.svg)
 
-1. **Find the category axis and the value axis.** One axis lists the categories, such as products, regions or survey answers. The other has the numbers, with their units.
-2. **Compare the lengths.** Every bar starts from the same baseline, so the longer bar is the bigger value. Read the exact figure from the value axis or a label at the end of the bar.
-3. **Check the baseline.** The value axis should start at zero. If it starts higher, the bars' lengths are no longer in proportion and the differences look bigger than they are.
-4. **Note the order.** Categories with no natural order are usually sorted by size, so the ranking is the first thing you see. Months, age groups and scores keep their own order.
-5. **Read the segments, if there are any.** In a stacked bar, the whole bar is the total and each coloured band is one part. In a grouped chart, the bars side by side are the parts.
+1. Find the category axis and the value axis. One axis lists the categories, such as products, regions or survey answers. The other has the numbers, with their units.
+2. Compare the lengths. Every bar starts from the same baseline, so the longer bar is the bigger value. Read the exact figure from the value axis or a label at the end of the bar.
+3. Note the order. Categories with no natural order are usually sorted by size, so the ranking is the first thing you see. Months, age groups and scores keep their own order.
+4. Read the segments, if there are any. In a stacked bar, the whole bar is the total and each coloured band is one part. In a grouped chart, the bars side by side are the parts.
 
-The **gaps between bars** are a clue: they show that each bar is a separate category. Bars that touch usually mean a [histogram](/learn/chart-types/cartesian/histogram/), where each bar is a range of numbers.
+Gaps between bars show that each bar is a separate category. Bars that touch usually mean a [histogram](/learn/chart-types/cartesian/histogram/), where each bar is a range of numbers.
 
 ## Types of bar charts {#types-of-bar-chart}
 
@@ -126,14 +125,14 @@ A **horizontal bar chart** lays the bars on their side: the categories run down 
 
 ### Bar chart vs column chart
 
-Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. So column chart vs bar chart is not a choice about meaning; it is about readability.
+Spreadsheet tools often use "bar chart" for horizontal bars and "column chart" for vertical ones, but in everyday use "bar chart" covers both. So the choice between a column chart and a bar chart is about readability.
 
 | | Horizontal bar chart | Column chart (vertical) |
 | --- | --- | --- |
-| **Categories** | Down the side | Along the bottom |
-| **Values** | Along the bottom or top | Up the side |
-| **Best when** | Labels are long, or there are many categories | Categories have a natural order, such as months or years |
-| **Reads like** | A ranked list, top to bottom | A sequence, left to right |
+| Categories | Down the side | Along the bottom |
+| Values | Along the bottom or top | Up the side |
+| Best when | Labels are long, or there are many categories | Categories have a natural order, such as months or years |
+| Reads like | A ranked list, top to bottom | A sequence, left to right |
 
 ### Clustered (grouped) bar chart
 
@@ -160,37 +159,37 @@ Two shops each sell £80,000 a month, split across three product lines (example 
 | Shop A | £40k | £25k | £15k | £80k |
 | Shop B | £30k | £27k | £23k | £80k |
 
-Drawn as stacked bars, both bars are the same length, so the totals are easy to compare. **Food** sits on the baseline, so Shop A's lead is easy to see too. **Drinks** is the hard one: its band starts at £40k in Shop A and at £30k in Shop B, so the eye has to compare two lengths that start at different points. Shop B sells slightly more drinks, but most readers can't tell from the chart. When the middle parts matter, use a grouped chart, or label each band with its value.
+Drawn as stacked bars, both bars are the same length, so the totals are easy to compare. Food sits on the baseline, so Shop A's lead is easy to see too. Drinks is the hard one: its band starts at £40k in Shop A and at £30k in Shop B, so the eye has to compare two lengths that start at different points. Shop B sells slightly more drinks, but most readers can't tell from the chart. When the middle parts matter, use a grouped chart, or label each band with its value.
 
 ## Clustered vs stacked bar chart: the same data both ways {#clustered-vs-stacked-bar-chart}
 
-Here are the same two shops drawn as a clustered column chart. Every product line now has its own bar, starting from zero, so Shop B's slightly higher drinks sales (£27k against £25k) are easy to see. What you lose is the total: you'd have to add three bars in your head to see that both shops sell £80k. Hover over a bar to see its value, scroll to zoom and double-click to reset.
+Here are the same two shops drawn as a clustered column chart. Every product line now has its own bar, starting from zero, so Shop B's slightly higher drinks sales (£27k against £25k) are easy to see. The totals are harder to see: you'd have to add three bars in your head to find that both shops sell £80k. Hover over a bar to see its value, scroll to zoom and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Clustered/demo" />
 
 | If the reader needs to… | Use |
 | --- | --- |
-| Compare the totals, and see roughly what each is made of | **Stacked** bar or column chart |
-| Compare the parts accurately, within and across categories | **Clustered** (grouped) bar or column chart |
-| Compare the mix of parts, whatever the totals | **100% stacked** bar or column chart |
+| Compare the totals, and see roughly what each is made of | Stacked bar or column chart |
+| Compare the parts accurately, within and across categories | Clustered (grouped) bar or column chart |
+| Compare the mix of parts, whatever the totals | 100% stacked bar or column chart |
 
 ## How to describe a bar chart
 
 Reports, exam answers and dashboard captions describe a bar chart in the same few moves. Use this template:
 
-> **[Category]** has the highest **[value]**, at **[number]**, followed by **[category]** at **[number]**. **[Category]** has the lowest, at **[number]**. **[One sentence on the pattern: a big gap, a cluster of similar bars, or the share of the total held by the top few.]**
+> [Category] has the highest [value], at [number], followed by [category] at [number]. [Category] has the lowest, at [number]. [One sentence on the pattern: a big gap, a cluster of similar bars, or the share of the total held by the top few.]
 
-**Worked example,** using the units-sold chart above: "Laptops sold the most units, 482, followed by phones at 415. Speakers sold the fewest, 96, about a fifth as many as laptops. The top three products (laptops, phones and monitors) account for 1,235 of the 2,187 units sold, about 56%."
+A worked example, using the units-sold chart above: "Laptops sold the most units, 482, followed by phones at 415. Speakers sold the fewest, 96, about a fifth as many as laptops. The top three products (laptops, phones and monitors) account for 1,235 of the 2,187 units sold, about 56%."
 
 For a stacked or grouped chart, add one sentence about the parts: which part is largest overall, and which category has an unusual mix.
 
 ## When to use a bar chart
 
-Use a bar chart when you want to **compare one value across separate categories**, and the reader cares about which is bigger and by how much. It's one of the most accurate charts for comparing amounts, because readers judge lengths from a common baseline well.
+Use a bar chart when you want to compare one value across separate categories, and the reader cares about which is bigger and by how much. It's one of the most accurate charts for comparing amounts, because readers judge lengths from a common baseline well.
 
 | Chart | Best for |
 | --- | --- |
-| **Bar or column chart** | Comparing values across categories, ranking them, or showing each total's parts with stacked bars |
+| Bar or column chart | Comparing values across categories, ranking them, or showing each total's parts with stacked bars |
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | How a value changes over time, especially with many time points or more than one series |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | How one numeric variable is distributed, with its values counted into ranges (bins) |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | One whole split into a few parts; with more than five parts, or parts of similar size, a bar chart is easier to read |
@@ -203,14 +202,18 @@ The race below shows the ten most populous countries each year from 1960 to 2024
 
 <LiveDocSnippet maxWidth={'100%'} name="./Race/demo" />
 
-**When a bar chart race works:** when the story is the ranking itself (who leads, who overtakes whom, and when) and the audience is watching rather than studying. That's why the format is popular in presentations, news stories and social media videos. It suits a few dozen time steps and a ranking that actually changes; if the order barely moves, a static bar chart says the same thing faster.
+### When to use a bar chart race
 
-**When it misleads:** a bar chart race is good for engagement and poor for analysis.
+A bar chart race works when the story is the ranking itself (who leads, who overtakes whom, and when) and the audience is watching rather than studying. That's why the format is popular in presentations, news stories and social media videos. It suits a few dozen time steps and a ranking that actually changes; if the order barely moves, a static bar chart says the same thing faster.
 
-- **Exact values are hard to read.** Each frame is on screen for a fraction of a second, and the value axis usually rescales to fit the leader, so the same bar length means a different number from one year to the next.
-- **You can't compare two moments.** Seeing how 1980 differs from 2020 means remembering one frame while watching another.
-- **Movement looks like data.** The frames between two data points are interpolated: the smooth glide is drawn, not measured.
-- **What drops out disappears.** An item just outside the top ten is invisible, however close it is.
+### Why a bar chart race can mislead
+
+A bar chart race is good for engagement and poor for analysis.
+
+- Exact values are hard to read. Each frame is on screen for a fraction of a second, and the value axis usually rescales to fit the leader, so the same bar length means a different number from one year to the next.
+- You can't compare two moments. Seeing how 1980 differs from 2020 means remembering one frame while watching another.
+- Movement looks like data. The frames between two data points are interpolated: the smooth glide is drawn, not measured.
+- What drops out disappears. An item just outside the top ten is invisible, however close it is.
 
 To analyse the same data, plot it as a [line chart](/learn/chart-types/cartesian/line-chart/), with one line per item and every year visible at once, and keep the race for telling the story.
 
@@ -223,7 +226,6 @@ Check a bar chart against this list before you publish it:
 - **One colour, unless colour means something.** A different colour for every bar suggests the colours carry meaning. Use one colour, and a second only to highlight the bar you're talking about.
 - **No 3D bars or shadows.** Perspective changes how long the bars look, and the front face hides where each bar really ends.
 - **No long, tilted labels.** If the category names don't fit under the columns, turn the chart into horizontal bars rather than rotating the text.
-- **No comparing middle segments of stacked bars.** Only the bottom band and the total share a baseline. Use a grouped chart, or label the bands, when the parts matter.
 - **Bars aren't standing in for a line.** Many time points, or several series over time, read better as a [line chart](/learn/chart-types/cartesian/line-chart/). A range of numbers (ages 20 to 29, 30 to 39…) with counts is a [histogram](/learn/chart-types/cartesian/histogram/).
 - **The gaps are narrower than the bars.** Wide gaps make the bars hard to compare; no gaps make it look like a histogram.
 
@@ -357,13 +359,13 @@ Key points:
 
 - A [FastColumnRenderableSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/fastcolumnrenderableseries.html) draws the bars. Its [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html) holds one x value per category (0, 1, 2, …) and one y value per bar. `dataPointWidth` sets how much of each slot a bar fills.
 - A [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) on a `NumericAxis` shows a category name at each x value.
-- For **horizontal bars**, set the X axis `axisAlignment` to `Left` and the Y axis to `Top`, and set `flippedCoordinates` on the Y axis so values grow from left to right. See [vertical charts](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/). Leave both out for an ordinary column chart.
-- For a **bar chart race**, update each series' data on every animation frame, with the rank on the X axis and the value on the Y axis. Use `dataPointWidthMode: EDataPointWidthMode.Range` so the bars keep the same thickness while they move between ranks.
-- For **stacked or grouped bars**, add [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series/) to a `StackedColumnCollection`. Series with the same `stackedGroupId` stack; series with different ids sit side by side, as in the clustered chart above. Set `isOneHundredPercent` on the collection for a 100% stacked chart.
+- For horizontal bars, set the X axis `axisAlignment` to `Left` and the Y axis to `Top`, and set `flippedCoordinates` on the Y axis so values grow from left to right. See [vertical charts](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/). Leave both out for an ordinary column chart.
+- For a bar chart race, update each series' data on every animation frame, with the rank on the X axis and the value on the Y axis. Use `dataPointWidthMode: EDataPointWidthMode.Range` so the bars keep the same thickness while they move between ranks.
+- For stacked or grouped bars, add [StackedColumnRenderableSeries](/2d-charts/chart-types/stacked-column-renderable-series/) to a `StackedColumnCollection`. Series with the same `stackedGroupId` stack; series with different ids sit side by side, as in the clustered chart above. Set `isOneHundredPercent` on the collection for a 100% stacked chart.
 
 **See it in the demo app:** [JavaScript column chart](https://www.scichart.com/demo/javascript/column-chart) · [React column chart](https://www.scichart.com/demo/react/column-chart) · [Angular column chart](https://www.scichart.com/demo/angular/column-chart)
 
-**Stacked bars:** [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) · [React stacked column chart](https://www.scichart.com/demo/react/stacked-column-chart) · [Angular stacked column chart](https://www.scichart.com/demo/angular/stacked-column-chart)
+Stacked bars: [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) · [React stacked column chart](https://www.scichart.com/demo/react/stacked-column-chart) · [Angular stacked column chart](https://www.scichart.com/demo/angular/stacked-column-chart)
 
 **Go deeper:** [SciChart.js bar chart documentation](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/), including gaps, data labels and colouring individual bars, and the [SciChart.js stacked column chart documentation](/2d-charts/chart-types/stacked-column-renderable-series/).
 
@@ -373,10 +375,10 @@ Here are four bar graph examples from real-world settings. Each bar chart exampl
 
 | Example | What it shows |
 | --- | --- |
-| <a href="https://www.scichart.com/demo/javascript/animated-columns"><img src={require("@site/static/img/learn/examples/atp-top-ten-animation.jpg").default} alt="A horizontal bar chart ranking the 2016 year-end top 10 men's tennis players, one bar per player" width="240" /></a> | **Sports rankings: a horizontal bar chart.** The year-end top 10 men's tennis players for 2016, one bar per player. The live version animates the ranking year by year from 1990. Sorted by length, the chart reads as a ranking from top to bottom. [JavaScript animated column chart](https://www.scichart.com/demo/javascript/animated-columns) |
-| <a href="https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side"><img src={require("@site/static/img/learn/examples/javascript-stacked-grouped-column-chart.jpg").default} alt="A clustered column chart of tonnes of tomatoes, peppers and cucumbers sold each year from 1997 to 2003, three columns per year" width="240" /></a> | **Produce sales: a clustered column chart.** Tonnes of tomatoes, peppers and cucumbers sold each year, with three columns per year. Each crop keeps its colour, so you can follow one crop across the years or compare all three within a year. [JavaScript grouped column chart](https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side) |
-| <a href="https://www.scichart.com/demo/javascript/stacked-column-chart"><img src={require("@site/static/img/learn/examples/javascript-stacked-column-chart.jpg").default} alt="A stacked column chart of yearly sales from 1992 to 2003, each column split into five coloured product lines with a value label on each band" width="240" /></a> | **Sales by product line: a stacked column chart.** Yearly sales split into five product lines, with a switch to 100% mode. The full columns compare the yearly totals; in 100% mode they compare the mix. [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) |
-| <a href="https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example"><img src={require("@site/static/img/learn/examples/javascript-audio-analyzer-bars-fft-example.jpg").default} alt="An audio spectrum analyser: a real-time column chart of sound levels in ten frequency bands from 62 Hz to 22 kHz" width="240" /></a> | **Audio spectrum analyser: a real-time column chart.** Sound from your microphone split into ten frequency bands, from 62 Hz to 22 kHz, with each column rising and falling as the sound changes. It asks for microphone permission. [JavaScript audio analyzer bars](https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example) |
+| <a href="https://www.scichart.com/demo/javascript/animated-columns"><img src={require("@site/static/img/learn/examples/atp-top-ten-animation.jpg").default} alt="A horizontal bar chart ranking the 2016 year-end top 10 men's tennis players, one bar per player" width="240" /></a> | Sports rankings: a horizontal bar chart. The year-end top 10 men's tennis players for 2016, one bar per player. The live version animates the ranking year by year from 1990. Sorted by length, the chart reads as a ranking from top to bottom. [JavaScript animated column chart](https://www.scichart.com/demo/javascript/animated-columns) |
+| <a href="https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side"><img src={require("@site/static/img/learn/examples/javascript-stacked-grouped-column-chart.jpg").default} alt="A clustered column chart of tonnes of tomatoes, peppers and cucumbers sold each year from 1997 to 2003, three columns per year" width="240" /></a> | Produce sales: a clustered column chart. Tonnes of tomatoes, peppers and cucumbers sold each year, with three columns per year. Each crop keeps its colour, so you can follow one crop across the years or compare all three within a year. [JavaScript grouped column chart](https://www.scichart.com/demo/javascript/stacked-grouped-column-chart-side-by-side) |
+| <a href="https://www.scichart.com/demo/javascript/stacked-column-chart"><img src={require("@site/static/img/learn/examples/javascript-stacked-column-chart.jpg").default} alt="A stacked column chart of yearly sales from 1992 to 2003, each column split into five coloured product lines with a value label on each band" width="240" /></a> | Sales by product line: a stacked column chart. Yearly sales split into five product lines, with a switch to 100% mode. The full columns compare the yearly totals; in 100% mode they compare the mix. [JavaScript stacked column chart](https://www.scichart.com/demo/javascript/stacked-column-chart) |
+| <a href="https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example"><img src={require("@site/static/img/learn/examples/javascript-audio-analyzer-bars-fft-example.jpg").default} alt="An audio spectrum analyser: a real-time column chart of sound levels in ten frequency bands from 62 Hz to 22 kHz" width="240" /></a> | Audio spectrum analyser: a real-time column chart. Sound from your microphone split into ten frequency bands, from 62 Hz to 22 kHz, with each column rising and falling as the sound changes. It asks for microphone permission. [JavaScript audio analyzer bars](https://www.scichart.com/demo/javascript/audio-analyzer-bars-fft-example) |
 
 ## Frequently asked questions
 

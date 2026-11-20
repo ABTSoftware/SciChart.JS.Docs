@@ -70,33 +70,35 @@ A **ternary plot** (also called a ternary diagram, ternary graph or triangle plo
 *A ternary plot of 40 soil samples from three imaginary fields, on the USDA soil texture triangle (sample data). [Try the interactive version](#how-to-create-a-ternary-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A ternary plot shows **three proportions that add up to 100%** as one point in a triangle.
-- **Each corner is 100% of one component; the side opposite it is 0%.**
-- To read a value, **follow the gridline parallel to the side opposite that component's corner** to its scale. The three readings must add up to 100%.
-- Classic uses: **soil texture, rock classification, and phase diagrams** in chemistry and metallurgy.
-- Only use one when the parts **really add up to a fixed whole**, and show which way each scale runs.
+- A ternary plot shows three proportions that add up to 100% as one point in a triangle.
+- Each corner is 100% of one component; the side opposite it is 0%.
+- To read a value, follow the gridline parallel to the side opposite that component's corner to its scale. The three readings must add up to 100%.
+- Classic uses: soil texture, rock classification, and phase diagrams in chemistry and metallurgy.
+- Only use one when the parts really add up to a fixed whole, and show which way each scale runs.
 :::
 
 ## How to read a ternary plot
 
 ![How to read point P on a ternary plot with sand at the bottom-left corner, silt at the bottom-right and clay at the top: a horizontal line from P to the left side reads 30% clay, a line parallel to the left side up to the right side reads 20% silt, and a line parallel to the right side down to the base reads 50% sand, which add up to 100](./ternary-plot-reading.svg)
 
-1. **Find the three corners.** Each is labelled with one component and stands for 100% of it. In the diagram, the top is 100% clay, the bottom-left 100% sand and the bottom-right 100% silt.
-2. **Find each component's zero.** A component is 0% along the whole side opposite its corner. Clay is 0% along the base, so the closer a point is to the base, the less clay it has.
-3. **Use that component's gridlines.** Its gridlines all run **parallel to its zero side**. Clay's gridlines are horizontal, because clay's zero side is the base.
-4. **Follow the gridline from the point to the scale.** Each side carries the scale for one component. Point P sits on the 30% clay line, the 20% silt line and the 50% sand line.
-5. **Check the total.** 30 + 20 + 50 = 100. If your three readings don't add up to 100, you have read at least one of them along the wrong set of lines.
+1. Find the three corners. Each is labelled with one component and stands for 100% of it. In the diagram, the top is 100% clay, the bottom-left 100% sand and the bottom-right 100% silt.
+2. Find each component's zero. A component is 0% along the whole side opposite its corner. Clay is 0% along the base, so the closer a point is to the base, the less clay it has.
+3. Use that component's gridlines. Its gridlines all run parallel to its zero side. Clay's gridlines are horizontal, because clay's zero side is the base.
+4. Follow the gridline from the point to the scale. Each side carries the scale for one component. Point P sits on the 30% clay line, the 20% silt line and the 50% sand line.
+5. Check the total. 30 + 20 + 50 = 100. If your three readings don't add up to 100, you have read at least one of them along the wrong set of lines.
 
-**The usual confusion: which gridlines belong to which scale?** Three sets of gridlines cross at every point, and each side has numbers on it, so it is easy to follow a line to the wrong side. Two checks help:
+### Which gridlines belong to which scale?
 
-- **Look at the tick marks.** On a well-drawn ternary plot, each tick sticks out of the triangle at the same angle as the gridline it belongs to. Follow the tick inwards and you are on the right line.
-- **Look at the direction of the numbers.** Each scale reaches 100 at its own corner. If the numbers increase towards the wrong corner, you are reading the wrong scale.
+Three sets of gridlines cross at every point, and each side has numbers on it, so it is easy to follow a line to the wrong side. Two checks help:
+
+- Look at the tick marks. On a well-drawn ternary plot, each tick sticks out of the triangle at the same angle as the gridline it belongs to. Follow the tick inwards and you are on the right line.
+- Look at the direction of the numbers. Each scale reaches 100 at its own corner. If the numbers increase towards the wrong corner, you are reading the wrong scale.
 
 Some diagrams number the scales running clockwise round the triangle and some anticlockwise, so the same point can look different on two diagrams. Check the corners and the tick direction every time; don't assume.
 
 ## A worked example: naming soil textures
 
-Soil scientists sort soil into **12 texture classes** by how much sand, silt and clay it contains, as shares of its mineral particles: sand is 0.05 to 2 mm across, silt 0.002 to 0.05 mm, and clay smaller than 0.002 mm. The **soil texture triangle** of the US Department of Agriculture (USDA) draws those classes as regions on a ternary plot, which is what the chart at the top of this page shows.
+Soil scientists sort soil into 12 texture classes by how much sand, silt and clay it contains, as shares of its mineral particles: sand is 0.05 to 2 mm across, silt 0.002 to 0.05 mm, and clay smaller than 0.002 mm. The **soil texture triangle** of the US Department of Agriculture (USDA) draws those classes as regions on a ternary plot, which is what the chart at the top of this page shows.
 
 | Sample | Sand | Silt | Clay | Where it falls | Texture class |
 | --- | --- | --- | --- | --- | --- |
@@ -108,26 +110,26 @@ To place sample B, start on the horizontal 25% clay line. Move along it until yo
 
 Three things the triangle shows that a table doesn't:
 
-- **The classes aren't equal in size.** Anything from 40% to 100% clay with little sand or silt is simply "clay", while near the sand corner a few percent more silt or clay moves a sample from sand to loamy sand to sandy loam.
-- **Groups of samples stand out.** On the chart at the top, the samples form three clusters, one for each field, without any colour coding.
-- **The spread within a group is visible.** The hill slope samples spread across five classes (clay, clay loam, silty clay, loam and silt loam), so one class for the whole field would hide real variation.
+- The classes aren't equal in size. Anything from 40% to 100% clay with little sand or silt is "clay", while near the sand corner a few percent more silt or clay moves a sample from sand to loamy sand to sandy loam.
+- Groups of samples stand out. On the chart at the top, the samples form three clusters, one for each field, without any colour coding.
+- The spread within a group is visible. The hill slope samples spread across five classes (clay, clay loam, silty clay, loam and silt loam), so one class for the whole field would hide real variation.
 
 ### How to describe a ternary plot
 
 Use this template when you report a ternary plot:
 
-> **[Number]** of the **[samples]** contain **[range of component 1]** and **[range of component 2]**, which places them in **[region or class]**. The other **[number]** fall in **[other region]**, because they have more **[component]**.
+> [Number] of the [samples] contain [range of component 1] and [range of component 2], which places them in [region or class]. The other [number] fall in [other region], because they have more [component].
 
-**Worked example:** "Eleven of the 14 valley floor samples contain 57% to 76% silt and 8% to 23% clay, which places them in the silt loam class. The other three fall in silty clay loam, because they have more than 27% clay."
+Worked example: "Eleven of the 14 valley floor samples contain 57% to 76% silt and 8% to 23% clay, which places them in the silt loam class. The other three fall in silty clay loam, because they have more than 27% clay."
 
 ## How does a ternary plot work?
 
 A ternary plot uses **barycentric coordinates**: a point's distance from each side of the triangle is set by its share of the component at the opposite corner. Two steps turn three values into a position you can draw:
 
-1. **Scale the values to a fixed total.** Divide each of the three values by their sum. A mixture of 6 g, 3 g and 1 g becomes 60%, 30% and 10%. This is why a ternary plot shows proportions, not amounts.
-2. **Convert to x and y.** For a triangle with sides of length 1, the bottom-left corner at (0, 0), the bottom-right corner at (1, 0) and the top at (0.5, 0.866):
-   - **x** = right-hand component + ½ × top component
-   - **y** = top component × √3 ⁄ 2 (about 0.866)
+1. Scale the values to a fixed total. Divide each of the three values by their sum. A mixture of 6 g, 3 g and 1 g becomes 60%, 30% and 10%. This is why a ternary plot shows proportions, not amounts.
+2. Convert to x and y. For a triangle with sides of length 1, the bottom-left corner at (0, 0), the bottom-right corner at (1, 0) and the top at (0.5, 0.866):
+   - x = right-hand component + ½ × top component
+   - y = top component × √3 ⁄ 2 (about 0.866)
 
 The left-hand component doesn't appear in the formula: once the other two are known, it is whatever is left. Reading values back works the other way round: top = y ÷ 0.866, right = x − top ÷ 2, and left = 1 − top − right. The interactive example on this page runs this conversion every time you move the mouse.
 
@@ -135,19 +137,19 @@ The same chart has other names in other fields: a **Gibbs triangle** in thermody
 
 ## Where ternary plots are used
 
-- **Soil science:** the soil texture triangle names a soil from its sand, silt and clay content, as in the example above.
-- **Geology and petrology:** sandstones are classified by their quartz, feldspar and rock fragment content, and ultramafic igneous rocks by their olivine, orthopyroxene and clinopyroxene content.
-- **Chemistry and chemical engineering:** a ternary phase diagram shows which phases form when three substances are mixed at a fixed temperature and pressure, such as when one liquid dissolves in a mix of two others. Process engineers use them to design extraction and separation steps.
-- **Metallurgy and materials science:** alloys of three metals, such as the tin, silver and copper of lead-free solders, are mapped on ternary phase diagrams. Polymer blends, and membranes made from a polymer, a solvent and a non-solvent, are designed the same way.
-- **Shares of a whole:** any three shares that add up to 100%, such as a three-way election, how a team splits its time between three kinds of work, or the mix of three energy sources in a country's power supply.
+- Soil science: the soil texture triangle names a soil from its sand, silt and clay content, as in the example above.
+- Geology and petrology: sandstones are classified by their quartz, feldspar and rock fragment content, and ultramafic igneous rocks by their olivine, orthopyroxene and clinopyroxene content.
+- Chemistry and chemical engineering: a ternary phase diagram shows which phases form when three substances are mixed at a fixed temperature and pressure, such as when one liquid dissolves in a mix of two others. Process engineers use them to design extraction and separation steps.
+- Metallurgy and materials science: alloys of three metals, such as the tin, silver and copper of lead-free solders, are mapped on ternary phase diagrams. Polymer blends, and membranes made from a polymer, a solvent and a non-solvent, are designed the same way.
+- Shares of a whole: any three shares that add up to 100%, such as a three-way election, how a team splits its time between three kinds of work, or the mix of three energy sources in a country's power supply.
 
 ## When to use a ternary plot
 
-Use a ternary plot when **each item is a mixture of exactly three parts** that add up to a fixed whole, and you want to compare many items, see clusters or place them in named regions.
+Use a ternary plot when each item is a mixture of exactly three parts that add up to a fixed whole, and you want to compare many items, see clusters or place them in named regions.
 
 | Chart | Best for |
 | --- | --- |
-| **Ternary plot** | Many mixtures of three parts at once, with clusters, trends and classification regions |
+| Ternary plot | Many mixtures of three parts at once, with clusters, trends and classification regions |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) (100% stacked) | A few items, or more than three parts, where exact shares matter more than patterns |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) or [donut chart](/learn/chart-types/radial/donut-chart/) | A single mixture, split into a few parts |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | Two variables that don't have to add up to anything, or two of the three parts when the third doesn't matter |
@@ -155,7 +157,6 @@ Use a ternary plot when **each item is a mixture of exactly three parts** that a
 ## Common ternary plot mistakes
 
 - **Values that don't add up.** Plotting raw values that sum to 97 or 104 puts points in the wrong place. Rescale every point so its three values add up to exactly 100%, and say that you did.
-- **Reading along the wrong gridlines.** The most common mistake. Always follow the gridline parallel to the side opposite the component's corner, and check that the three readings add up to 100.
 - **Unlabelled direction.** Without angled tick marks, arrows or corner labels, readers can't tell which way each scale runs. Label every corner and every side.
 - **Hiding the dropped parts.** If a fourth component was removed before plotting (water, organic matter, other minerals), say so: the plotted shares are of the three parts, not of the whole sample.
 - **Too few points to need a triangle.** For two or three mixtures, a 100% stacked bar chart or a table is clearer.
@@ -336,7 +337,7 @@ Key points:
 
 **Go deeper:** [SciChart.js triangle series documentation](/2d-charts/chart-types/fast-triangle-renderable-series/), including the list, strip and polygon draw modes, and the [SciChart.js scatter chart documentation](/2d-charts/chart-types/xy-scatter-renderable-series/).
 
-**Building a Windows desktop app?** [SciChart WPF has a built-in ternary chart](https://www.scichart.com/documentation/win/current/What%20is%20a%20Ternary%20Chart.html), with ternary scatter, polygon and error bar series.
+If you're building a Windows desktop app, [SciChart WPF has a built-in ternary chart](https://www.scichart.com/documentation/win/current/What%20is%20a%20Ternary%20Chart.html), with ternary scatter, polygon and error bar series.
 
 ## Frequently asked questions
 

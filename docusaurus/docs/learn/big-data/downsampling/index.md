@@ -72,31 +72,31 @@ related: [big-data-visualization, line-chart, strip-chart, sparkline]
 *A signal of 1,000,000 points with 12 short spikes (sample data), drawn with automatic resampling. [Try the interactive version](#how-to-downsample-data-for-a-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
-- A chart can only show as many columns of detail as it has **pixels across**, so drawing more points than that adds work, not information.
-- **Every nth point** and **averaging** are simple but **lose or shrink spikes**. **Min-max**, **M4** and **LTTB** keep them.
-- **Min-max and M4** keep every peak and the full spread of noise; **LTTB** keeps the overall shape with fewer points.
-- In signal processing, downsampling needs a **low-pass (anti-aliasing) filter** first, or fast signals turn into false slow ones.
-- Downsample **only for display**. Keep the full data for zooming, statistics and alerts.
+- A chart can only show as many columns of detail as it has pixels across, so drawing more points than that adds work, not information.
+- Every nth point and averaging are simple but lose or shrink spikes. Min-max, M4 and LTTB keep them.
+- Min-max and M4 keep every peak and the full spread of noise; LTTB keeps the overall shape with fewer points.
+- In signal processing, downsampling needs a low-pass (anti-aliasing) filter first, or fast signals turn into false slow ones.
+- Downsample only for display. Keep the full data for zooming, statistics and alerts.
 :::
 
 ## Why downsample data for a chart?
 
-**Pixels, not points, are the limit.** A line chart 1,000 pixels wide has 1,000 columns. Give it 1,000,000 points and about 1,000 of them land in each column. The screen can only show one vertical stroke per column, from the lowest value in it to the highest, so most of those points change nothing you can see.
+Pixels, not points, are the limit. A line chart 1,000 pixels wide has 1,000 columns. Give it 1,000,000 points and about 1,000 of them land in each column. The screen can only show one vertical stroke per column, from the lowest value in it to the highest, so most of those points change nothing you can see.
 
 Drawing them still costs time. Each point has to be sent, transformed to screen coordinates and drawn, every time the chart redraws. With millions of points, that can make zooming, panning and live updates slow, especially in a browser on an ordinary laptop.
 
-Downsampling cuts the points to roughly what the chart can display, typically one to four per pixel column. Done well, the picture doesn't change. Done badly, it hides exactly the events people are looking for. The rest of this page is about doing it well.
+Downsampling cuts the points to roughly what the chart can display, typically one to four per pixel column. Done well, the picture doesn't change. Done badly, it hides exactly the events people are looking for.
 
 For the wider picture, including rendering technology and server-side aggregation, see [big data visualisation](/learn/big-data/big-data-visualization/) and our blog post [How to Visualize Millions of Data Points Efficiently](https://www.scichart.com/blog/how-to-visualize-millions-of-data-points-efficiently/).
 
 ## What goes wrong with naive downsampling
 
-The obvious approach is to **keep every nth point**: with 1,000,000 points and room for 1,000, keep points 1, 1,001, 2,001 and so on. It's fast, and on smooth data it works. On real data it causes two problems.
+The obvious approach is to keep every nth point: with 1,000,000 points and room for 1,000, keep points 1, 1,001, 2,001 and so on. It's fast, and on smooth data it works. On real data it causes two problems.
 
-- **Missed peaks.** A spike that lasts one or two samples sits between the points you keep, so it vanishes. In monitoring data, that spike is often the fault, the trade or the heartbeat you needed to see.
-- **Aliasing.** If the data repeats faster than the gap between kept points, the kept points can trace a slower pattern that isn't really there. The same effect makes wheels look as if they spin backwards on film. See [Downsampling in signal processing](#downsampling-in-signal-processing-decimation-and-anti-aliasing) below.
+- Missed peaks. A spike that lasts one or two samples sits between the points you keep, so it vanishes. In monitoring data, that spike is often the fault, the trade or the heartbeat you needed to see.
+- Aliasing. If the data repeats faster than the gap between kept points, the kept points can trace a slower pattern that isn't really there. The same effect makes wheels look as if they spin backwards on film. See [Downsampling in signal processing](#downsampling-in-signal-processing-decimation-and-anti-aliasing) below.
 
-Averaging each bucket is the next idea. It does better on noise, but it **shrinks spikes**: a spike of 12 averaged with a neighbour of 5 becomes 8.5, and averaged over a thousand samples it disappears into the line.
+Averaging each bucket is the next idea. It does better on noise, but it shrinks spikes: a spike of 12 averaged with a neighbour of 5 becomes 8.5, and averaged over a thousand samples it disappears into the line.
 
 ### Worked example: 12 points down to about 6
 
@@ -104,19 +104,19 @@ Here is a short series with one spike at point 8, reduced to about half its size
 
 | Point | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Value | 3 | 4 | 3 | 5 | 4 | 4 | 5 | **12** | 4 | 3 | 4 | 3 |
+| Value | 3 | 4 | 3 | 5 | 4 | 4 | 5 | 12 | 4 | 3 | 4 | 3 |
 
 | Method | Points kept (point: value) | Highest value kept | Spike |
 | --- | --- | --- | --- |
-| Every 2nd point | 1: 3, 3: 3, 5: 4, 7: 5, 9: 4, 11: 4 | 5 | **Lost** |
-| Average of each pair | 3.5, 4, 4, 8.5, 3.5, 3.5 | 8.5 | **Shrunk** to 8.5 |
+| Every 2nd point | 1: 3, 3: 3, 5: 4, 7: 5, 9: 4, 11: 4 | 5 | Lost |
+| Average of each pair | 3.5, 4, 4, 8.5, 3.5, 3.5 | 8.5 | Shrunk to 8.5 |
 | Min-max, 3 buckets of 4 | 1: 3, 4: 5, 5: 4, 8: 12, 9: 4, 10: 3 | 12 | Kept |
 | M4, 3 buckets of 4 | 1: 3, 4: 5, 5: 4, 8: 12, 9: 4, 10: 3, 12: 3 | 12 | Kept |
 | LTTB, 6 points | 1: 3, 2: 4, 6: 4, 8: 12, 9: 4, 12: 3 | 12 | Kept |
 
 ![Six small line charts of the same 12 points. Every second point loses the spike, averaging pairs cuts it from 12 to 8.5, and min-max, M4 and LTTB all keep it](./downsampling-methods-compared.svg)
 
-Every method kept about the same number of points. What differs is **which** points: the methods that look at every value in a bucket (min-max, M4, LTTB) find the spike, and the methods that don't (every nth) or that blend values together (average) lose it.
+Every method kept about the same number of points. What differs is which points they keep. The methods that look at every value in a bucket (min-max, M4, LTTB) find the spike, and the methods that don't (every nth) or that blend values together (average) lose it.
 
 ## Downsampling methods for time series
 
@@ -144,7 +144,7 @@ Make one bucket per pixel column and keep the lowest and highest point in each, 
 
 ### M4
 
-M4, from a 2014 paper by Jugel and colleagues, keeps **four** points per pixel column: the first, the lowest, the highest and the last. The extra first and last points make the short lines that join one column to the next land in the right place, so the paper shows the reduced line draws the same pixels as the full data at that chart width. It's a stricter version of min-max, at up to twice the points, and is often run inside a database query so only the reduced data leaves the server.
+M4, from a 2014 paper by Jugel and colleagues, keeps four points per pixel column: the first, the lowest, the highest and the last. The extra first and last points make the short lines that join one column to the next land in the right place, so the paper shows the reduced line draws the same pixels as the full data at that chart width. It's a stricter version of min-max, at up to twice the points, and is often run inside a database query so only the reduced data leaves the server.
 
 ### LTTB (Largest-Triangle-Three-Buckets)
 
@@ -152,14 +152,14 @@ LTTB was described by Sveinn Steinarsson in his 2013 master's thesis at the Univ
 
 1. Always keep the first and the last point.
 2. Split the points between them into equal buckets, one per point you want to keep.
-3. Work through the buckets from left to right. In each one, consider the point you kept in the previous bucket (**A**) and the average of the next bucket (**C**).
-4. Keep the point **B** in the current bucket that makes the **largest triangle** A-B-C. A big triangle means the line turns sharply at B, so peaks, dips and corners win.
+3. Work through the buckets from left to right. In each one, consider the point you kept in the previous bucket (A) and the average of the next bucket (C).
+4. Keep the point B in the current bucket that makes the largest triangle A-B-C. A big triangle means the line turns sharply at B, so peaks, dips and corners win.
 
-LTTB gives a smooth, faithful shape with **one point per bucket**, half as many as min-max. Two trade-offs: when a bucket holds both a high spike and a low one, it can keep only one of them; and on dense, noisy data it can understate how wide the noise is, because one point per bucket can't show both its top and its bottom. Each choice depends on the one before, so it runs as a single pass from left to right.
+LTTB gives a smooth, faithful shape with one point per bucket, half as many as min-max. It has two weaknesses. When a bucket holds both a high spike and a low one, it can keep only one of them; and on dense, noisy data it can understate how wide the noise is, because one point per bucket can't show both its top and its bottom. Each choice depends on the one before, so it runs as a single pass from left to right.
 
 ## See the methods on a million points
 
-The chart below has **1,000,000 points**: 1,000 samples a second for 1,000 seconds, with **12 spikes** that each last one to three samples. The faint blue line is all of the raw data. The orange line is the downsampled copy. Pick a method and a target number of points; the line under the buttons counts how many spikes the orange line still reaches.
+The chart below has 1,000,000 points: 1,000 samples a second for 1,000 seconds, with 12 spikes that each last one to three samples. The faint blue line is all of the raw data. The orange line is the downsampled copy. Pick a method and a target number of points; the line under the buttons counts how many spikes the orange line still reaches.
 
 Things to try:
 - **Every nth** at 1,000 points misses every spike. At 5,000 points it catches one, by luck.
@@ -174,40 +174,41 @@ Things to try:
 
 | If you need… | Use | Why |
 | --- | --- | --- |
-| Every spike and dip, exactly as the full data would draw | **Min-max** or **M4** | They keep each pixel column's extremes, so nothing visible is lost |
-| A small, smooth overview that keeps the shape | **LTTB** | One point per bucket, chosen to keep turns and peaks |
-| A trend, with noise removed on purpose | **Average** or a [moving average](/learn/chart-types/cartesian/line-chart/) | Smoothing is the goal, not a side effect |
-| A quick preview of smooth data | **Every nth point** | Fastest, and fine when nothing happens between samples |
-| A lower sample rate for further signal processing | **Anti-alias filter, then keep every nth** (decimation) | Removes frequencies that would otherwise alias |
+| Every spike and dip, exactly as the full data would draw | Min-max or M4 | They keep each pixel column's extremes, so nothing visible is lost |
+| A small, smooth overview that keeps the shape | LTTB | One point per bucket, chosen to keep turns and peaks |
+| A trend, with noise removed on purpose | Average or a [moving average](/learn/chart-types/cartesian/line-chart/) | Smoothing is the goal, not a side effect |
+| A quick preview of smooth data | Every nth point | Fastest, and fine when nothing happens between samples |
+| A lower sample rate for further signal processing | Anti-alias filter, then keep every nth (decimation) | Removes frequencies that would otherwise alias |
 
-Three rules of thumb:
-- **Size the target to the chart,** not to a round number: about two points per pixel column for min-max, four for M4.
-- **Recompute when the view changes.** A reduction made for the whole range is too coarse once someone zooms in.
-- **Keep the raw data.** Downsampling is for drawing; the full data is for everything else.
+Two rules of thumb:
+- Size the target to the chart, not to a round number: about two points per pixel column for min-max, four for M4.
+- Recompute when the view changes. A reduction made for the whole range is too coarse once someone zooms in.
 
 ## Downsampling in signal processing: decimation and anti-aliasing
 
 In digital signal processing (audio, sensors, radio), **downsampling by a factor M** means keeping every Mth sample, which divides the **sample rate** by M. Recording at 96,000 samples a second and keeping every second sample gives 48,000 samples a second.
 
-The catch is the **[Nyquist limit](/learn/signal-processing/nyquist-and-aliasing/)**: a signal sampled at a rate *f*<sub>s</sub> can only represent frequencies below *f*<sub>s</sub>/2. After downsampling by M, that limit falls to *f*<sub>s</sub>/(2M). Any part of the signal above the new limit doesn't disappear. It **aliases**: it folds back and shows up as a false, lower frequency that can't be told apart from real content.
+Downsampling also lowers the [Nyquist limit](/learn/signal-processing/nyquist-and-aliasing/). A signal sampled at a rate *f*<sub>s</sub> can only represent frequencies below *f*<sub>s</sub>/2. After downsampling by M, that limit falls to *f*<sub>s</sub>/(2M). Any part of the signal above the new limit doesn't disappear. It **aliases**: it folds back and shows up as a false, lower frequency that can't be told apart from real content.
 
 ![Two panels: on the left, a slow wave with a fast ripple sampled once a second with no filter, where the samples trace a false wave with the wrong height and timing; on the right, the same signal filtered first, where the samples follow the real slow wave](./decimation-aliasing.svg)
 
 The fix is to remove those frequencies first, with a **low-pass anti-aliasing filter** whose cutoff is at or below the new Nyquist limit. Filter, then keep every Mth sample. That two-step process is usually called **decimation**.
 
-- **Downsampling** (or subsampling): keep every Mth sample.
-- **Decimation:** low-pass filter, then downsample.
+- Downsampling (or subsampling): keep every Mth sample.
+- Decimation: low-pass filter, then downsample.
 - **Upsampling:** insert samples between the existing ones and fill them in by interpolation.
-- **Changing by a fraction:** upsample by L, filter, then downsample by M. For example, 48 kHz to 44.1 kHz is a factor of 147/160.
+- Changing by a fraction: upsample by L, filter, then downsample by M. For example, 48 kHz to 44.1 kHz is a factor of 147/160.
 
-**How this differs from chart downsampling.** Decimation aims to keep a valid, evenly spaced signal for more processing, so it deliberately removes fast content, spikes included. Chart downsampling aims to keep what the eye should see, so it deliberately keeps spikes. Use decimation before analysis, and min-max, M4 or LTTB for display.
+### How is decimation different from chart downsampling?
+
+Decimation aims to keep a valid, evenly spaced signal for more processing, so it deliberately removes fast content, spikes included. Chart downsampling aims to keep what the eye should see, so it deliberately keeps spikes. Use decimation before analysis, and min-max, M4 or LTTB for display.
 
 ## Downsampling in images and machine learning
 
 The word has two other common meanings:
 
-- **Images:** reducing an image's resolution, for example from 4000 × 3000 pixels to 800 × 600. Blurring slightly before shrinking plays the role of the anti-aliasing filter; without it, fine patterns turn into moiré. In neural networks, pooling and strided layers downsample feature maps in the same sense.
-- **Imbalanced data in machine learning:** reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model is then corrected for the changed proportions.
+- Images: reducing an image's resolution, for example from 4000 × 3000 pixels to 800 × 600. Blurring slightly before shrinking plays the role of the anti-aliasing filter; without it, fine patterns turn into moiré. In neural networks, pooling and strided layers downsample feature maps in the same sense.
+- Imbalanced data in machine learning: reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model is then corrected for the changed proportions.
 
 Both share the idea of keeping fewer samples, but the methods on this page are for time series and charts.
 
@@ -215,9 +216,6 @@ Both share the idea of keeping fewer samples, but the methods on this page are f
 
 - **Using every nth point on spiky data.** It's the default in many quick scripts, and it silently hides short events. Use min-max, M4 or LTTB.
 - **Running statistics on the downsampled copy.** Means, standard deviations, peak counts and thresholds all change. Calculate on the full data, then downsample only to draw.
-- **Downsampling once, for the full range.** Zoomed in, a fixed reduction has too few points and looks blocky or misses detail. Recompute for each view, or use a chart library that does.
-- **Averaging away the outliers you care about.** Averaging and smoothing are fine for trends, but not when the rare spike is the point.
-- **Forgetting the anti-aliasing filter** when lowering a sample rate for further signal processing.
 - **Treating unevenly spaced data as evenly spaced.** Buckets by count assume regular sampling. With gaps or bursts, split buckets by time instead.
 - **Not telling readers.** If a chart shows reduced or smoothed data, say so in the caption or tooltip, especially in reports.
 
@@ -335,7 +333,7 @@ Here is the code for this chart:
 
 Key points:
 
-- Resampling is **on by default** (`resamplingMode: EResamplingMode.Auto`). SciChart.js picks an algorithm from the series type and the data, and runs it again whenever the view changes, so zoomed-in views get full detail.
+- Resampling is on by default (`resamplingMode: EResamplingMode.Auto`). SciChart.js picks an algorithm from the series type and the data, and runs it again whenever the view changes, so zoomed-in views get full detail.
 - Setting `dataIsSortedInX`, `dataEvenlySpacedInX` and `containsNaN` tells SciChart.js how the data is laid out, so it doesn't have to check each time you add data.
 - `resamplingPrecision` raises the number of points kept per pixel, which can look better on very noisy data at some cost in speed. `EResamplingMode.None` turns resampling off for one series.
 - Your statistics, exports and alerts still see every raw point: resampling only affects what is drawn.
