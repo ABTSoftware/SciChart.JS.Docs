@@ -257,7 +257,7 @@ In version 5 we introduced SIMD (Single Instruction, Multiple Data) support. SIM
 
 SIMD enhances performance of CPU intensive tasks like resampling. 
 
-[SciChartDefaults.useWasmSimd:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usewasmsimd) setting is used to manage SIMD mode. By default `Auto` mode is used, which means it is enabled on all devices supporting SIMD. In case a device does not support SIMD instructions, it falls back to NO SIMD scenario and uses `scichart2d-nosimd.wasm` wasm file instead of `scichart2d.wasm`.
+[SciChartDefaults.useWasmSimd:blue_book:](https://www.scichart.com/documentation/js/current/typedoc/classes/scichartdefaults.html#usewasmsimd) setting is used to manage SIMD mode. By default `Auto` mode is used, which means it is enabled on all devices supporting SIMD. In case a device does not support SIMD instructions, it falls back to NO SIMD scenario and uses `scichart-nosimd.wasm` wasm file instead of `scichart.wasm`.
 
 Read more on [SIMD support here](/2d-charts/surface/deploying-wasm/#simd-support).
 
@@ -480,7 +480,65 @@ const { sciChartSurface, wasmContext } = await SciChartSurface.create(divElement
 
 Then you would need to call `wasmContext.TSRRequestDraw()` each time you render.
 
-## 5. Keep Up to Date!
+## 5. Startup Time Optimizations
+
+The time to the first chart on screen is mostly made up of three things: downloading the WebAssembly engine, starting it, and compiling the GPU shaders the chart draws with. The tips below cut or hide each of them.
+
+### 5.1 Preload the WebAssembly engine early
+
+**Impact: Large Improvement to time-to-first-chart, especially on a first visit or a slow network**
+
+By default the engine (`scichart.wasm`) is downloaded and compiled when the first `SciChartSurface.create()` or `createSingle()` runs. If your app only creates its first chart after its own JavaScript has loaded, or after the user navigates to a page, that download sits on the critical path.
+
+Call `preloadWasm()` as early as possible, for example in your app's entry point. It starts the download and compile immediately and caches the result, so the first chart reuses it. It is safe to call more than once, and you don't need to `await` it.
+
+<CodeSnippetBlock labels={["preloadWasm at app startup"]}>
+    ```ts
+    import { SciChartSurface, preloadWasm } from "scichart";
+
+    // In your app's entry point, before any chart is created.
+    // If you configure the wasm location, do that first so preloadWasm fetches the right URL.
+    SciChartSurface.loadWasmFromCDN(); // or SciChartSurface.configure({ wasmUrl: ... })
+    preloadWasm(); // starts the download + compile now; no need to await
+
+    // ... later, when the chart is shown
+    const { sciChartSurface, wasmContext } = await SciChartSurface.create("scichart-root");
+    ```
+</CodeSnippetBlock>
+
+`preloadWasm()` picks the same engine variant `create()` will use (SIMD, no-SIMD or [64-bit](/2d-charts/surface/larger-datasets-with-wasm64/#preloading)), so it never downloads a file the chart won't use.
+
+If you would rather start the download from HTML, before any JavaScript has run, add a preload hint for the core to your page's `<head>`:
+
+```html
+<link rel="preload" href="/scichart.wasm" as="fetch" crossorigin="anonymous" />
+```
+
+:::tip
+A `<link rel="preload">` names one exact file. On the rare browser without WebAssembly SIMD, or if you enable 64-bit wasm, SciChart loads a different variant and the preloaded file is wasted. `preloadWasm()` resolves the variant for you, so prefer it where you can.
+:::
+
+### 5.2 Serve the wasm compressed, with the right MIME type and caching
+
+**Impact: Large Improvement to download time on a first visit; returning visitors skip the download entirely**
+
+- **Compress it.** The engine compresses to roughly half its size with brotli or gzip. Most CDNs and hosts do this automatically; check that the response for `scichart.wasm` has a `Content-Encoding: br` or `gzip` header.
+- **Serve it as `application/wasm`.** The browser then compiles the engine while it downloads (streaming compilation). With any other `Content-Type` SciChart still works, but has to wait for the whole file before compiling.
+- **Cache it.** Give the wasm files a long cache lifetime, with a versioned URL so a new SciChart release is picked up. A returning visitor then loads the engine from the browser cache, and the browser can also reuse its compiled code.
+
+See [Deploying Wasm (WebAssembly) with your app](/2d-charts/surface/deploying-wasm/#faster-loading) for details.
+
+### 5.3 Use SciChartSurface.create() for multiple charts
+
+**Impact: Moderate Improvement to startup time in pages with several charts**
+
+`SciChartSurface.create()` starts the engine once and shares it between all charts on the page, so each further chart is cheap to create. `SciChartSurface.createSingle()` starts a separate engine for every chart, which multiplies the startup cost (and memory). Prefer `create()` unless you need what `createSingle()` gives you; see [2.4 Use One WebGL Context per SciChartSurface](#24-use-one-webgl-context-per-scichartsurface).
+
+### 5.4 The first visit is slower than later visits
+
+The first time a browser shows a SciChart chart, the GPU driver compiles SciChart's shaders. Browsers cache the compiled shaders, so later visits start noticeably faster. Bear this in mind when measuring startup time: measure a first visit (a fresh browser profile) and a returning visit separately, and don't compare one against the other.
+
+## 6. Keep Up to Date!
 
 We are always working on improving performance of the overall charting engine.
 

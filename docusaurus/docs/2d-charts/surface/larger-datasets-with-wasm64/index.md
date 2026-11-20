@@ -150,14 +150,20 @@ The equivalent knob for the non-SIMD fallback is `wasmNoSimdUrl`. See [Deploying
 
 ### Preloading
 
-`preloadWasm()` precompiles the binary before the first chart. It defaults to whichever variant your settings resolve to, so set `useWasm64` first and it follows:
+`preloadWasm()` downloads and compiles the engine before the first chart is created, so that work is off the chart's startup time. It defaults to whichever variant your settings resolve to, so set `useWasm64` (and `SciChartSurface.configure()`, if you use it) first and it follows:
 
 ```ts
 import { SciChartDefaults, EUseWasm64, preloadWasm } from "scichart";
 
 SciChartDefaults.useWasm64 = EUseWasm64.Auto;
-await preloadWasm(); // precompiles scichart-64.wasm or scichart.wasm as resolved
+preloadWasm(); // starts downloading scichart-64.wasm or scichart.wasm, as resolved
 ```
+
+Call it as early as you can, in your app's entry point rather than next to the chart, so the download runs while the rest of your app loads. You don't need to `await` it: the first `SciChartSurface.create()` or `createSingle()` picks up the same download, and later calls reuse the compiled module.
+
+:::tip
+This matters more for wasm64, whose binary is somewhat larger. Avoid a `<link rel="preload">` hint for the core when `useWasm64` is `Auto`: which file loads is only decided in the browser, and `preloadWasm()` makes that decision for you. See [Startup Time Optimizations](/2d-charts/performance-tips/performance-tips-and-tricks/#5-startup-time-optimizations) for more ways to shorten startup.
+:::
 
 ## Verifying which engine loaded
 
