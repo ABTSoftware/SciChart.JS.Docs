@@ -281,7 +281,7 @@ Key points:
 
 More heatmap examples: [JavaScript heatmap chart with contours](https://www.scichart.com/demo/javascript/heatmap-chart-with-contours) · [JavaScript non-uniform heatmap chart](https://www.scichart.com/demo/javascript/non-uniform-heatmap-chart)
 
-**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), including [colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), [real-time updates](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/), [non-uniform heatmaps](/2d-charts/chart-types/non-uniform-heatmap-renderable-series/) and [contours](/2d-charts/chart-types/uniform-contours-renderable-series/).
+**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), including [colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), [real-time updates](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/), [non-uniform heatmaps](/2d-charts/chart-types/non-uniform-heatmap-renderable-series/) and [contours](/2d-charts/chart-types/uniform-contours-renderable-series/). In machine learning, heatmaps draw [decision boundaries](/learn/machine-learning/decision-boundary/); a [Voronoi diagram](/learn/chart-types/complex/voronoi-diagram/) is the nearest-point version.
 
 ## Frequently asked questions
 

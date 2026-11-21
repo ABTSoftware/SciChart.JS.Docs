@@ -1,5 +1,5 @@
 ---
-sidebar_position: 999
+sidebar_position: 80
 sidebar_label: ROC Curve
 title: "ROC Curve and Precision-Recall Curve: How to Read Them and What AUC Means (With an Interactive Example)"
 description: "What a ROC curve is, how it is built from a confusion matrix by sweeping the threshold, what AUC means, when to use a precision-recall curve instead, and how to choose a threshold. With a live example."
@@ -24,7 +24,7 @@ keywords:
         "youden index"
     ]
 image: /img/learn/roc-curve-og.png
-related: [residual-plot, correlation-matrix, histogram, scatter-plot]
+related: [decision-boundary, anomaly-detection, residual-plot, correlation-matrix]
 ---
 
 <head>

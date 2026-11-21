@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-labelledby="title desc" font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'>
+<title id="title">How six kinds of classifier shape a decision boundary</title>
+<desc id="desc">Six schematic panels, each split into a red class region and a blue class region by a dark boundary line. Logistic regression and LDA give a straight line. An RBF support vector machine gives a smooth closed curve. A decision tree gives a staircase of horizontal and vertical steps. A random forest gives a finer staircase that follows a curve, with faint copies showing the averaged trees. k-nearest neighbours with k = 1 gives a jagged line with small islands of the other class. Naive Bayes and QDA give an ellipse.</desc>
+<rect width="900" height="560" fill="#FFFFFF"/>
+<g transform="translate(30,20)">
+<clipPath id="t0"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t0)"><rect width="260" height="180" fill="#F4C7CB"/><path d='M50,0 L260,0 L260,180 L210,180 Z' fill='#C7DAF2'/><path d='M50,0 L210,180' stroke='#1B2A41' stroke-width='2.5' fill='none'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">Logistic regression, LDA</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">a straight line</text>
+</g><g transform="translate(320,20)">
+<clipPath id="t1"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t1)"><rect width="260" height="180" fill="#F4C7CB"/><path d='M70,60 C110,10 205,25 200,80 C196,130 150,105 140,145 C130,185 60,170 55,130 C50,100 40,82 70,60 Z' fill='#C7DAF2'/><path d='M70,60 C110,10 205,25 200,80 C196,130 150,105 140,145 C130,185 60,170 55,130 C50,100 40,82 70,60 Z' stroke='#1B2A41' stroke-width='2.5' fill='none'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">RBF SVM</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">a smooth curve of any shape</text>
+</g><g transform="translate(610,20)">
+<clipPath id="t2"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t2)"><rect width="260" height="180" fill="#F4C7CB"/><path d='M0,125 L95,125 L95,75 L170,75 L170,35 L260,35 L260,180 L0,180 Z' fill='#C7DAF2'/><path d='M0,125 L95,125 L95,75 L170,75 L170,35 L260,35' stroke='#1B2A41' stroke-width='2.5' fill='none'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">Decision tree</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">axis-aligned steps</text>
+</g><g transform="translate(30,285)">
+<clipPath id="t3"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t3)"><rect width="260" height="180" fill="#F4C7CB"/><path d='M0,139 L0,139 L16,139 L16,138 L32,138 L32,137 L48,137 L48,134 L64,134 L64,130 L80,130 L80,126 L96,126 L96,120 L112,120 L112,114 L128,114 L128,106 L144,106 L144,98 L160,98 L160,89 L176,89 L176,79 L192,79 L192,68 L208,68 L208,56 L224,56 L224,43 L240,43 L240,29 L256,29 L256,14 L260,14 L260,180 L0,180 Z' fill='#C7DAF2'/><path d='M0,139 L0,139 L16,139 L16,138 L32,138 L32,137 L48,137 L48,134 L64,134 L64,130 L80,130 L80,126 L96,126 L96,120 L112,120 L112,114 L128,114 L128,106 L144,106 L144,98 L160,98 L160,89 L176,89 L176,79 L192,79 L192,68 L208,68 L208,56 L224,56 L224,43 L240,43 L240,29 L256,29 L256,14 L260,14' transform='translate(0,-10)' stroke='#1B2A41' stroke-opacity='0.25' stroke-width='1.2' fill='none'/><path d='M0,139 L0,139 L16,139 L16,138 L32,138 L32,137 L48,137 L48,134 L64,134 L64,130 L80,130 L80,126 L96,126 L96,120 L112,120 L112,114 L128,114 L128,106 L144,106 L144,98 L160,98 L160,89 L176,89 L176,79 L192,79 L192,68 L208,68 L208,56 L224,56 L224,43 L240,43 L240,29 L256,29 L256,14 L260,14' transform='translate(0,10)' stroke='#1B2A41' stroke-opacity='0.25' stroke-width='1.2' fill='none'/><path d='M0,139 L0,139 L16,139 L16,138 L32,138 L32,137 L48,137 L48,134 L64,134 L64,130 L80,130 L80,126 L96,126 L96,120 L112,120 L112,114 L128,114 L128,106 L144,106 L144,98 L160,98 L160,89 L176,89 L176,79 L192,79 L192,68 L208,68 L208,56 L224,56 L224,43 L240,43 L240,29 L256,29 L256,14 L260,14' stroke='#1B2A41' stroke-width='2.5' fill='none'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">Random forest</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">many small steps, averaged</text>
+</g><g transform="translate(320,285)">
+<clipPath id="t4"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t4)"><rect width="260" height="180" fill="#F4C7CB"/><path d='M0,60 L21,61.349999999999994 L38,95.3 L60,92.0 L72,92.2 L87,109.45 L99,82.65 L112,100.19999999999999 L131,98.85 L149,124.15 L162,130.7 L177,99.94999999999999 L192,131.2 L208,121.80000000000001 L226,127.1 L239,129.64999999999998 L260,168.0 L260,180 L0,180 Z' fill='#C7DAF2'/><path d='M0,60 L21,61.349999999999994 L38,95.3 L60,92.0 L72,92.2 L87,109.45 L99,82.65 L112,100.19999999999999 L131,98.85 L149,124.15 L162,130.7 L177,99.94999999999999 L192,131.2 L208,121.80000000000001 L226,127.1 L239,129.64999999999998 L260,168.0' stroke='#1B2A41' stroke-width='2.5' fill='none'/><path d='M45,140 L62,128 L78,138 L72,156 L52,158 Z' fill='#F4C7CB' stroke='#1B2A41' stroke-width='2'/><path d='M200,40 L214,30 L228,42 L216,56 Z' fill='#C7DAF2' stroke='#1B2A41' stroke-width='2'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">k-nearest neighbours, k = 1</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">jagged, with islands</text>
+</g><g transform="translate(610,285)">
+<clipPath id="t5"><rect width="260" height="180" rx="6"/></clipPath>
+<g clip-path="url(#t5)"><rect width="260" height="180" fill="#F4C7CB"/><ellipse cx='135' cy='92' rx='82' ry='52' transform='rotate(-18 135 92)' fill='#C7DAF2' stroke='#1B2A41' stroke-width='2.5'/></g>
+<rect width="260" height="180" rx="6" fill="none" stroke="#8A97AB" stroke-width="1"/>
+<text x="130.0" y="206" text-anchor="middle" font-size="16" font-weight="600" fill="#1B2A41">Naive Bayes, QDA</text>
+<text x="130.0" y="228" text-anchor="middle" font-size="15" fill="#3C4A60">a curve from two bell shapes</text>
+</g>
+</svg>

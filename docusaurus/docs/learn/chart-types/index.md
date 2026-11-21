@@ -74,6 +74,7 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Radar chart](/learn/chart-types/radial/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
 | [Smith chart](/learn/chart-types/complex/smith-chart/) | Impedance and reflection on one circular chart, for RF and antenna matching |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
+| [Voronoi diagram](/learn/chart-types/complex/voronoi-diagram/) | The area nearest each point, as cells; the dual of a Delaunay triangulation |
 
 ## Dashboards and KPIs
 

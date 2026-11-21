@@ -1,5 +1,5 @@
 ---
-sidebar_position: 160
+sidebar_position: 150
 sidebar_label: Telemetry
 title: "Telemetry: What It Is, How Telemetry Data Works and How to Visualise It (With an Interactive Dashboard)"
 description: "What telemetry is, how a telemetry system measures, frames, sends and decodes data from aircraft, rockets, cars and remote sites, and how to read a live telemetry dashboard."

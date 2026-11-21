@@ -423,7 +423,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript correlation plot](https://www.scichart.com/demo/javascript/correlation-plot) · [React correlation plot](https://www.scichart.com/demo/react/correlation-plot) · [Angular correlation plot](https://www.scichart.com/demo/angular/correlation-plot). For heatmaps in general, see the [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart) and [React heatmap interactions](https://www.scichart.com/demo/react/heatmap-interactions).
 
-**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), [heatmap colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), and how SciChart is used for [semiconductor test and yield data](https://www.scichart.com/semiconductors-big-data-visualization/).
+**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), [heatmap colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), and how SciChart is used for [semiconductor test and yield data](https://www.scichart.com/semiconductors-big-data-visualization/). PCA is built from the correlation (or covariance) matrix: see [dimensionality reduction](/learn/machine-learning/dimensionality-reduction/).
 
 ## Frequently asked questions
 

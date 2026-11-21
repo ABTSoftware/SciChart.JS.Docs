@@ -12,14 +12,14 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 45 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 46 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 | Group | Charts |
 | --- | --- |
 | [Trends and comparisons](/learn/chart-types/#trends-and-comparisons) | Line, sparkline, area, bar, Pareto, combo, lollipop, dumbbell |
 | [Parts of a whole](/learn/chart-types/#parts-of-a-whole) | Pie, donut, sunburst, Sankey, treemap, ternary |
 | [Relationships and distributions](/learn/chart-types/#relationships-and-distributions) | Scatter, bubble, correlation matrix, residual and Q-Q plots, parallel coordinates, network graph, histogram, density, population pyramid, box plot, violin, error bars |
-| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart, point cloud |
+| [Scientific and engineering charts](/learn/chart-types/#scientific-and-engineering-charts) | Heatmap, contour, 3D surface, spectrogram, radar, polar area, Smith chart, point cloud, Voronoi diagram |
 | [Dashboards and KPIs](/learn/chart-types/#dashboards-and-kpis) | Gauge, bullet, funnel |
 | [Financial charts](/learn/chart-types/#financial-charts) | Candlestick, OHLC, footprint, Renko, tick, waterfall |
 | [Maps and geographic data](/learn/chart-types/#maps-and-geographic-data) | Choropleth map |
@@ -109,6 +109,14 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 | Topic | What it covers |
 | --- | --- |
+| [Activation functions](/learn/machine-learning/activation-functions/) | Sigmoid, ReLU, softmax and the rest, with a network trained live |
+| [Anomaly detection](/learn/machine-learning/anomaly-detection/) | Spotting anomalies in a live time series |
+| [Decision boundary](/learn/machine-learning/decision-boundary/) | How classifiers divide data, compared side by side |
+| [Dimensionality reduction](/learn/machine-learning/dimensionality-reduction/) | PCA, t-SNE and UMAP compared |
+| [Hierarchical clustering](/learn/machine-learning/hierarchical-clustering/) | Reading a dendrogram, and DBSCAN |
+| [K-means clustering](/learn/machine-learning/k-means-clustering/) | K-means, the elbow method and silhouette score |
+| [Regularization](/learn/machine-learning/regularization/) | Ridge and lasso regression and overfitting |
 | [ROC curve](/learn/machine-learning/roc-curve/) | ROC and precision-recall curves and what AUC means |
+| [Support vector machine](/learn/machine-learning/support-vector-machine/) | SVMs and the kernel trick in 2D and 3D |
 
 <LearnCta position="bottom" />
