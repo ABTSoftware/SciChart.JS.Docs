@@ -373,7 +373,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript frequency spectrum chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React frequency spectrum chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular frequency spectrum chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
 
-**Go deeper:** [SciChart.js impulse (stem) chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), and the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/) for dense spectra.
+**Go deeper:** [SciChart.js impulse (stem) chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), and the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/) for dense spectra. In number theory, Riemann's explicit formula builds the prime-counting function from a sum of oscillations, one per zeta zero: see [the Riemann Hypothesis, visualised](/learn/applications/riemann-hypothesis/).
 
 ## Frequently asked questions
 

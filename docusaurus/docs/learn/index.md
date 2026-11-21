@@ -98,6 +98,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope |
 | [PID control](/learn/applications/pid-control/) | Tuning a PID controller from the step response |
 | [Power quality](/learn/applications/power-quality/) | Harmonics, THD, sags and power factor |
+| [Riemann Hypothesis](/learn/applications/riemann-hypothesis/) | The zeta zeros, the critical line and the primes, visualised |
 | [Spectroscopy](/learn/applications/spectroscopy/) | Reading IR, Raman and UV-Vis spectra |
 | [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test curve |
 | [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |

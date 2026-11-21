@@ -67,6 +67,7 @@ For more on how SciChart is used in this sector, see [SciChart for medical](http
 | Guide | What it covers |
 | --- | --- |
 | [HR diagram](/learn/applications/hr-diagram/) | How to read the Hertzsprung–Russell diagram of stars: axes, regions, spectral classes and cluster ages |
+| [Riemann Hypothesis](/learn/applications/riemann-hypothesis/) | What the hypothesis says, Hardy's Z function and the zeta zeros, and how the zeros rebuild the primes, computed live |
 
 ## Signal processing
 
