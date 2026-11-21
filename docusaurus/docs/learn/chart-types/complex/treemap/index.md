@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 80
 sidebar_label: Treemap
 title: "Treemap: What It Is & How to Read It (With Interactive Examples)"
 description: "What a treemap is, how to read its nested rectangles, what the colours mean, a worked sales example, when to use one instead of a sunburst, bar or pie chart, and mistakes to avoid."

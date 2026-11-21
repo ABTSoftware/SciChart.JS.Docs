@@ -7,6 +7,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import remarkTableCodeBreaks from "./custom-plugins/remarkTableCodeBreaks";
 import learnGuidesPlugin from "./custom-plugins/learnGuidesPlugin";
+import learnSidebarGenerator from "./custom-plugins/learnSidebarGenerator";
 import { baseUrl } from "./config";
 import {
     CHANGELOG_URL,
@@ -71,6 +72,8 @@ const config: Config = {
                 docs: {
                     routeBasePath: "/",
                     sidebarPath: "./sidebars.ts",
+                    // Groups the learning center's Applications guides by sector in the sidebar (URLs unchanged)
+                    sidebarItemsGenerator: learnSidebarGenerator,
                     // Docusaurus's default excludes, plus CLAUDE.md files (instructions for Claude Code, e.g.
                     // docs/learn/CLAUDE.md) and to-do lists (todo.md), which must never be published as pages
                     exclude: ["**/_*.{js,jsx,ts,tsx,md,mdx}", "**/_*/**", "**/*.test.{js,jsx,ts,tsx}", "**/__tests__/**", "**/CLAUDE.md", "**/todo.md", "**/TODO.md"],

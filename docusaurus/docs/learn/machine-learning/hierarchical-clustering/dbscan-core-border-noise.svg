@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 330" width="800" height="330" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>DBSCAN core, border and noise points with minPts 4</title>
+  <desc>A dense group of eight points, all core points because each has at least four points, itself included, within the radius eps. A circle of radius eps around one core point reaches a ninth point to its right. That point is a border point: it is within eps of a core point, but its own circle holds only two points. A tenth point far away is noise: its circle holds only itself.</desc>
+  <rect width="800" height="330" fill="#ffffff"/>
+  <text x="40" y="34" font-size="16" font-weight="600" fill="#1f2a44">DBSCAN with minPts = 4 (each circle has radius eps)</text>
+
+  <g transform="translate(-40 40)">
+    <!-- eps circles -->
+    <circle cx="245" cy="190" r="50" fill="#2a7fd4" fill-opacity="0.08" stroke="#2a7fd4" stroke-width="1.5"/>
+    <circle cx="290" cy="205" r="50" fill="none" stroke="#e07a10" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <circle cx="400" cy="90" r="50" fill="none" stroke="#8a96ad" stroke-width="1.5" stroke-dasharray="6 4"/>
+    <line x1="245" y1="190" x2="245" y2="140" stroke="#2a7fd4" stroke-width="1.5"/>
+    <text x="250" y="160" font-size="13" fill="#2a7fd4">eps</text>
+    <!-- core points -->
+    <g fill="#2a7fd4" stroke="#ffffff" stroke-width="1.5">
+      <circle cx="170" cy="170" r="7"/><circle cx="200" cy="180" r="7"/><circle cx="190" cy="210" r="7"/><circle cx="225" cy="165" r="7"/>
+      <circle cx="230" cy="200" r="7"/><circle cx="245" cy="190" r="7"/><circle cx="210" cy="145" r="7"/><circle cx="160" cy="200" r="7"/>
+    </g>
+    <!-- border point -->
+    <circle cx="290" cy="205" r="6" fill="#ffffff" stroke="#2a7fd4" stroke-width="3"/>
+    <!-- noise point -->
+    <path d="M393 83 L407 97 M407 83 L393 97" stroke="#5b6780" stroke-width="3"/>
+  </g>
+
+  <!-- Key -->
+  <g font-size="14" fill="#1f2a44">
+    <circle cx="500" cy="110" r="7" fill="#2a7fd4"/>
+    <text x="516" y="106" font-weight="600">Core point</text>
+    <text x="516" y="124">at least minPts points (itself included)</text>
+    <text x="516" y="141">within eps; clusters grow from these</text>
+    <circle cx="500" cy="180" r="6" fill="#ffffff" stroke="#2a7fd4" stroke-width="3"/>
+    <text x="516" y="176" font-weight="600">Border point</text>
+    <text x="516" y="194">within eps of a core point, but its own</text>
+    <text x="516" y="211">circle holds only 2 points</text>
+    <path d="M493 243 L507 257 M507 243 L493 257" stroke="#5b6780" stroke-width="3"/>
+    <text x="516" y="246" font-weight="600">Noise</text>
+    <text x="516" y="264">no core point within eps: left unclustered</text>
+  </g>
+</svg>

@@ -14,6 +14,7 @@ How do you chart millions of data points and keep the chart fast? Each guide her
 | --- | --- |
 | [Big data visualization](/learn/big-data/big-data-visualization/) | What makes a dataset "big" for a chart (points vs pixels), SVG vs Canvas vs WebGL, and the techniques that keep millions of points fast, with a live SVG-vs-WebGL test timed in your browser |
 | [Downsampling](/learn/big-data/downsampling/) | Why charts downsample, and how every-nth, average, min-max, M4 and LTTB compare on spikes, with a live million-point comparison |
+| [Time series data formats](/learn/big-data/time-series-data-formats/) | JSON vs binary columns, delta, varint and Gorilla compression, Arrow and Parquet, and loading data straight into Float64Array |
 
 For the chart types themselves, see [types of charts and graphs](/learn/chart-types/).
 

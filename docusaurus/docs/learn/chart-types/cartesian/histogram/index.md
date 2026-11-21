@@ -1,5 +1,5 @@
 ---
-sidebar_position: 130
+sidebar_position: 150
 sidebar_label: Histogram
 title: "Histogram: What It Is & How to Read It (With Interactive Examples)"
 description: "What a histogram is, how to read and describe one, how to make one step by step, how to choose bins, and how it differs from a bar chart. With a live, interactive example."
@@ -333,7 +333,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript histogram chart](https://www.scichart.com/demo/javascript/histogram-chart) · [React histogram chart](https://www.scichart.com/demo/react/histogram-chart) · [Angular histogram chart](https://www.scichart.com/demo/angular/histogram-chart)
 
-**Go deeper:** [SciChart.js histogram documentation](/2d-charts/chart-types/histogram-chart/), including binning raw data, axis formatting, data labels and texture fills.
+**Go deeper:** [SciChart.js histogram documentation](/2d-charts/chart-types/histogram-chart/), including binning raw data, axis formatting, data labels and texture fills. For a histogram of the gaps between zeta zeros against a random-matrix curve, see [the Riemann Hypothesis](/learn/applications/riemann-hypothesis/).
 
 ## Frequently asked questions
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 90
+sidebar_position: 100
 sidebar_label: Density Plot
 title: "Density Plot: What It Is & How to Read It (With Interactive Examples)"
 description: "What a density plot (kernel density plot) is, how to read the curve and its y-axis, how bandwidth changes it, how it compares with a histogram, and mistakes to avoid. With a live example."

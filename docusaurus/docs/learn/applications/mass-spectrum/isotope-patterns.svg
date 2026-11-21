@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" role="img" aria-labelledby="t d">
+<title id="t">Chlorine and bromine isotope patterns</title>
+<desc id="d">Six small stick spectra showing the molecular-ion cluster for one, two and three chlorine atoms, one and two bromine atoms, and one bromine plus one chlorine. Peaks sit two mass units apart at M, M+2, M+4 and M+6. One chlorine gives 100 to 32; two give 100 to 64 to 10; three give 100 to 96 to 31 to 3; one bromine gives 100 to 97; two give 51 to 100 to 49; bromine plus chlorine gives 77 to 100 to 24.</desc>
+<rect width="760" height="470" fill="#ffffff"/>
+<rect x="15" y="10" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="135.0" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">One Cl</text>
+<line x1="40" y1="165" x2="230" y2="165" stroke="#33415c"/>
+<text x="60.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="60.0" y1="165" x2="60.0" y2="60.0" stroke="#2f8f5b" stroke-width="7"/>
+<text x="110.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="110.0" y1="165" x2="110.0" y2="131.4" stroke="#2f8f5b" stroke-width="7"/>
+<text x="160.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<text x="210.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<text x="135.0" y="209" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">100 : 32</text>
+<rect x="260" y="10" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="380.0" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Two Cl</text>
+<line x1="285" y1="165" x2="475" y2="165" stroke="#33415c"/>
+<text x="305.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="305.0" y1="165" x2="305.0" y2="60.0" stroke="#2f8f5b" stroke-width="7"/>
+<text x="355.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="355.0" y1="165" x2="355.0" y2="97.8" stroke="#2f8f5b" stroke-width="7"/>
+<text x="405.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<line x1="405.0" y1="165" x2="405.0" y2="154.3" stroke="#2f8f5b" stroke-width="7"/>
+<text x="455.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<text x="380.0" y="209" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">100 : 64 : 10</text>
+<rect x="505" y="10" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="625.0" y="34" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Three Cl</text>
+<line x1="530" y1="165" x2="720" y2="165" stroke="#33415c"/>
+<text x="550.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="550.0" y1="165" x2="550.0" y2="60.0" stroke="#2f8f5b" stroke-width="7"/>
+<text x="600.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="600.0" y1="165" x2="600.0" y2="64.2" stroke="#2f8f5b" stroke-width="7"/>
+<text x="650.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<line x1="650.0" y1="165" x2="650.0" y2="132.8" stroke="#2f8f5b" stroke-width="7"/>
+<text x="700.0" y="182" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<line x1="700.0" y1="165" x2="700.0" y2="161.5" stroke="#2f8f5b" stroke-width="7"/>
+<text x="625.0" y="209" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">100 : 96 : 31 : 3</text>
+<rect x="15" y="235" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="135.0" y="259" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">One Br</text>
+<line x1="40" y1="390" x2="230" y2="390" stroke="#33415c"/>
+<text x="60.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="60.0" y1="390" x2="60.0" y2="285.0" stroke="#a0306e" stroke-width="7"/>
+<text x="110.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="110.0" y1="390" x2="110.0" y2="287.8" stroke="#a0306e" stroke-width="7"/>
+<text x="160.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<text x="210.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<text x="135.0" y="434" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">100 : 97</text>
+<rect x="260" y="235" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="380.0" y="259" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Two Br</text>
+<line x1="285" y1="390" x2="475" y2="390" stroke="#33415c"/>
+<text x="305.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="305.0" y1="390" x2="305.0" y2="336.0" stroke="#a0306e" stroke-width="7"/>
+<text x="355.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="355.0" y1="390" x2="355.0" y2="285.0" stroke="#a0306e" stroke-width="7"/>
+<text x="405.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<line x1="405.0" y1="390" x2="405.0" y2="339.0" stroke="#a0306e" stroke-width="7"/>
+<text x="455.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<text x="380.0" y="434" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">51 : 100 : 49</text>
+<rect x="505" y="235" width="240" height="205" rx="8" fill="#f6f8fb" stroke="#d6dde8"/>
+<text x="625.0" y="259" text-anchor="middle" font-size="16" font-weight="600" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">One Br + one Cl</text>
+<line x1="530" y1="390" x2="720" y2="390" stroke="#33415c"/>
+<text x="550.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M</text>
+<line x1="550.0" y1="390" x2="550.0" y2="308.7" stroke="#6a4bb5" stroke-width="7"/>
+<text x="600.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+2</text>
+<line x1="600.0" y1="390" x2="600.0" y2="285.0" stroke="#6a4bb5" stroke-width="7"/>
+<text x="650.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+4</text>
+<line x1="650.0" y1="390" x2="650.0" y2="364.7" stroke="#6a4bb5" stroke-width="7"/>
+<text x="700.0" y="407" text-anchor="middle" font-size="13" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+6</text>
+<text x="625.0" y="434" text-anchor="middle" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">77 : 100 : 24</text>
+<text x="380.0" y="462" text-anchor="middle" font-size="13" fill="#5b6b87" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Heights relative to the tallest peak, from the natural abundances of 35Cl, 37Cl, 79Br and 81Br (carbon-13 peaks left out)</text>
+</svg>

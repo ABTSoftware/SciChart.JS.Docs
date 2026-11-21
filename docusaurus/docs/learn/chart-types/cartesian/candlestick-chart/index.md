@@ -273,7 +273,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript candlestick chart](https://www.scichart.com/demo/javascript/candlestick-chart) · [React candlestick chart](https://www.scichart.com/demo/react/candlestick-chart) · [Angular candlestick chart](https://www.scichart.com/demo/angular/candlestick-chart)
 
-**Go deeper:** [SciChart.js candlestick chart documentation](/2d-charts/chart-types/fast-candlestick-renderable-series/), including volume bars and colouring individual candles.
+**Go deeper:** [SciChart.js candlestick chart documentation](/2d-charts/chart-types/fast-candlestick-renderable-series/), including volume bars and colouring individual candles. Other price charts: the [footprint chart](/learn/chart-types/cartesian/footprint-chart/), [Renko chart](/learn/chart-types/cartesian/renko-chart/) and [tick chart](/learn/chart-types/cartesian/tick-chart/).
 
 ## Building a full trading chart?
 

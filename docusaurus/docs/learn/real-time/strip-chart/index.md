@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 20
 sidebar_label: Strip Chart
 title: "Strip Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a strip chart is, how to read one, scrolling vs sweeping displays, when to use it, and the strip plot (jitter dot plot) that shares its name. With a live, real-time example."
@@ -121,7 +121,7 @@ A strip chart can move its data in two ways. Both show the same time window; the
 | Time axis | Labels change continuously (for example, the last 10 seconds up to now) | Fixed (for example, 0 to 10 seconds), restarting at each sweep |
 | Old data | Drops off the left-hand edge | Overwritten just ahead of the write point, usually with a small gap |
 | Easiest to read | Trends and slow changes; comparing "now" with the recent past | Repeating signals: each beat or cycle stays in the same place long enough to study |
-| Typical use | Process control, server and network monitoring, telemetry, trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
+| Typical use | Process control ([HMI and SCADA trends](/learn/applications/hmi-scada/)), server and network monitoring, [telemetry](/learn/applications/telemetry/), trading | Patient monitors (ECG), oscilloscopes, vibration and other fast periodic signals |
 
 A sweeping display is easier on the eye for fast signals, because nothing slides across the screen. A scrolling display is better when you need "now" in the same place and want to compare the latest values with the ones just before.
 
@@ -153,6 +153,7 @@ Use a strip chart when readings arrive continuously and people need to see what 
 | [Line chart](/learn/chart-types/cartesian/line-chart/) | A fixed period of history, such as a day or a year, that doesn't update while you read it |
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | The recent trend of many values at once, small enough to sit in a table row |
 | [Gauge chart](/learn/chart-types/radial/gauge-chart/) | The current value only, against its range and limits, when the history doesn't matter |
+| [Real-time dashboard](/learn/real-time/real-time-dashboard/) | Several live charts on one page, with synchronised time axes |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a fast signal, such as sound or vibration, change over time |
 
 ## Strip plot: the other "strip chart"

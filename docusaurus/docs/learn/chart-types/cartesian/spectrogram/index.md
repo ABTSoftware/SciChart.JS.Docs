@@ -1,5 +1,5 @@
 ---
-sidebar_position: 210
+sidebar_position: 250
 sidebar_label: Spectrogram
 title: "Spectrogram: What It Is & How to Read It (With Interactive Examples)"
 description: "What a spectrogram is, how to read its time, frequency and colour, what each shape means, how it is made with an FFT, and the mistakes to avoid. With a live, real-time example."
@@ -147,7 +147,7 @@ Use a spectrogram when the frequencies in a signal change over time and you need
 - audio and music: finding hum, clicks, noise and clipping, checking mixes, and analysing notes and harmonics;
 - speech: phonetics and voice analysis, where vowels show as formant bands;
 - wildlife sound: identifying birdsong and bat, whale and dolphin calls;
-- vibration and condition monitoring: spotting a bearing or gear fault as a new tone appearing or drifting;
+- [vibration](/learn/applications/vibration-analysis/) and condition monitoring: spotting a bearing or gear fault as a new tone appearing or drifting;
 - radar and sonar: detecting targets and how they move;
 - medicine: time-frequency analysis of EEG (brain wave) signals;
 - radio: watching which channels are busy, on spectrum analysers and SDR waterfall displays.

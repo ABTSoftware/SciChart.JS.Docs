@@ -12,7 +12,9 @@ Real-time charts update as new data arrives, from patient monitors and industria
 
 | Chart | What it shows |
 | --- | --- |
+| [Real-time dashboard](/learn/real-time/real-time-dashboard/) | How live dashboards work: latency, update and frame rates, which charts suit live data, and many charts on one page |
 | [Strip chart](/learn/real-time/strip-chart/) | Live readings over a moving time window, one lane per signal, scrolling or sweeping; also the name of the strip plot, a one-axis dot plot with jitter |
+| [Time series graph](/learn/real-time/time-series-graph/) | How to read trend, seasonality, gaps and level shifts, and how to chart time series as they stream in |
 
 For charting large datasets, see [big data and performance](/learn/big-data/).
 

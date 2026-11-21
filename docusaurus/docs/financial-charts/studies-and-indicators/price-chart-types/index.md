@@ -10,6 +10,10 @@ keywords: ["SciTrader", "SciTrader.js", "candlestick chart JavaScript", "Heikin-
 
 A SciTrader chart can draw prices in seven ways. Five are **candle types**: styles of the price series itself, which you can switch at any time. Two, **Renko** and **Point & Figure**, plot price moves rather than time, so they are studies, each with a pane of its own.
 
+:::tip
+New to these charts? The learning center explains how to read a [Renko chart](/learn/chart-types/cartesian/renko-chart/) and a [tick chart](/learn/chart-types/cartesian/tick-chart/), with live examples.
+:::
+
 | Price chart | How to get it | Plots |
 | --- | --- | --- |
 | Candlestick | `ECandleType.Candlestick` (the default) | Time: one candle per interval |

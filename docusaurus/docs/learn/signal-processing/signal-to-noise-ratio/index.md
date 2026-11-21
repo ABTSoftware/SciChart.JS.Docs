@@ -134,7 +134,7 @@ A high SNR means a clean signal that is easy to measure or decode. A low SNR mea
 | Field | Threshold | Where it comes from |
 | --- | --- | --- |
 | Seeing a detail in an image | SNR of about 5 (amplitude) | The Rose criterion (Rose, 1948) |
-| Analytical chemistry, chromatography | 3 : 1 (sometimes 2 : 1) to detect a peak; 10 : 1 to quantify it | ICH Q2 guideline: limit of detection (LOD) and limit of quantitation (LOQ) |
+| Analytical chemistry, [chromatography](/learn/applications/chromatogram/) | 3 : 1 (sometimes 2 : 1) to detect a peak; 10 : 1 to quantify it | ICH Q2 guideline: limit of detection (LOD) and limit of quantitation (LOQ) |
 | An ideal 16-bit audio converter (CD) | 98 dB | $6.02 \times 16 + 1.76$ for a full-scale sine (Kester, MT-001) |
 | An ideal 12-bit converter | 74 dB | The same formula |
 | A data link at 0 dB SNR | Up to 1 bit per second per hertz of bandwidth | Shannon capacity, $\log_2(1 + 1)$ |

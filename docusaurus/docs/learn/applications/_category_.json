@@ -1,0 +1,9 @@
+{
+  "label": "Applications",
+  "position": 7,
+  "collapsed": true,
+  "link": {
+    "type": "doc",
+    "id": "learn/applications/index"
+  }
+}

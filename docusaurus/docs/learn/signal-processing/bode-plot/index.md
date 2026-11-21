@@ -443,7 +443,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript chart with a logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis) · [React chart with a logarithmic axis](https://www.scichart.com/demo/react/chart-logarithmic-axis) · [Angular chart with a logarithmic axis](https://www.scichart.com/demo/angular/chart-logarithmic-axis). For a live spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
 
-**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), [synchronizing multiple charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/), the [log scale graph guide](/learn/axes-and-scales/log-scale-graph/), and the filter guides in this section: [low-pass filter](/learn/signal-processing/low-pass-filter/) and [high-pass filter](/learn/signal-processing/high-pass-filter/), whose live demos each draw a filter's frequency response.
+**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), [synchronizing multiple charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/), the [log scale graph guide](/learn/axes-and-scales/log-scale-graph/), and the filter guides in this section: [low-pass filter](/learn/signal-processing/low-pass-filter/) and [high-pass filter](/learn/signal-processing/high-pass-filter/), whose live demos each draw a filter's frequency response. To tune the controller in a feedback loop, see [PID control](/learn/applications/pid-control/).
 
 ## Frequently asked questions
 

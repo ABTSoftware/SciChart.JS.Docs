@@ -1,5 +1,5 @@
 ---
-sidebar_position: 220
+sidebar_position: 270
 sidebar_label: Timeline Chart
 title: "Timeline Chart: What It Is & How to Read It (With Interactive Examples)"
 description: "What a timeline chart is, the main types (event, state and swimlane, Gantt, editor tracks), how to read one and when to use it, with a live, zoomable event timeline."
