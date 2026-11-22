@@ -1,5 +1,5 @@
 ---
-sidebar_position: 100
+sidebar_position: 110
 sidebar_label: Oscilloscope
 title: "How to Use an Oscilloscope: Reading the Display, Triggering and Measurements (With an Interactive Software Oscilloscope)"
 description: "How to use and read an oscilloscope: volts and time per division, probes, coupling, triggering, measurements, bandwidth and sample rate, software oscilloscopes, and scope vs logic analyzer."
@@ -477,7 +477,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript real-time ghosted traces chart](https://www.scichart.com/demo/javascript/realtime-ghosted-traces-chart) · [React real-time ghosted traces chart](https://www.scichart.com/demo/react/realtime-ghosted-traces-chart) · [Angular real-time ghosted traces chart](https://www.scichart.com/demo/angular/realtime-ghosted-traces-chart). Related techniques: the [React audio analyzer with FFT](https://www.scichart.com/demo/react/audio-analyzer-fft-example), [React real-time chart performance](https://www.scichart.com/demo/react/chart-realtime-performance-demo), [React draggable threshold line](https://www.scichart.com/demo/react/chart-drag-horizontal-threshold) and [React real-time zoom and pan](https://www.scichart.com/demo/react/zoom-pan-realtime-javascript-chart).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [gridline and label spacing](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/), the [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/) and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) and [Nyquist and aliasing](/learn/signal-processing/nyquist-and-aliasing/). For the industries, see SciChart for [design, emulation and test](https://www.scichart.com/design-emulation-test/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/).
+**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), [gridline and label spacing](/2d-charts/axis-api/axis-tick-label-interval/gridline-and-label-spacing-interval/), the [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/) and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) and [Nyquist and aliasing](/learn/signal-processing/nyquist-and-aliasing/). For the industries, see SciChart for [design, emulation and test](https://www.scichart.com/design-emulation-test/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/). For ultrasonic A-scans, which look like a triggered oscilloscope trace of echoes, see [non-destructive testing](/learn/applications/non-destructive-testing/).
 
 ## Frequently asked questions
 

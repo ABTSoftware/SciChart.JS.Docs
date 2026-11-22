@@ -1,5 +1,5 @@
 ---
-sidebar_position: 110
+sidebar_position: 120
 sidebar_label: PID Control
 title: "PID Control: How a PID Controller Works and How to Tune It From the Step Response (With an Interactive Simulator)"
 description: "What a PID controller does, what the P, I and D terms mean, how to read a step response (rise time, overshoot, settling time) and how to tune a loop by hand, with Ziegler–Nichols or lambda tuning. With a live simulator."

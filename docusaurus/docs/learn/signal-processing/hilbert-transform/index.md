@@ -387,7 +387,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript audio waveform chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio waveform chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio waveform chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It shows live audio from your microphone as a waveform, an FFT spectrum and a spectrogram.
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for the FFT behind the Hilbert transform.
+**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for the FFT behind the Hilbert transform. Ultrasonic flaw detectors show the envelope of each echo: see [non-destructive testing](/learn/applications/non-destructive-testing/).
 
 ## Frequently asked questions
 

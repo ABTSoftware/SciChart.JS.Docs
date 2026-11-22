@@ -95,6 +95,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [KPI dashboard](/learn/applications/kpi-dashboard/) | What to put on a KPI dashboard and how to design it |
 | [Mass spectrum](/learn/applications/mass-spectrum/) | How to read a mass spectrometry graph |
 | [Motorsport telemetry](/learn/applications/motorsport-telemetry/) | Reading lap traces and comparing laps |
+| [Non-destructive testing](/learn/applications/non-destructive-testing/) | NDT methods and ultrasonic A-, B- and C-scans |
 | [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope |
 | [PID control](/learn/applications/pid-control/) | Tuning a PID controller from the step response |
 | [Power quality](/learn/applications/power-quality/) | Harmonics, THD, sags and power factor |

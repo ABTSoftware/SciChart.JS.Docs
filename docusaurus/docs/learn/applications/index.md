@@ -83,6 +83,7 @@ For more on how SciChart is used in this sector, see [SciChart for test and meas
 
 | Guide | What it covers |
 | --- | --- |
+| [Non-destructive testing](/learn/applications/non-destructive-testing/) | NDT methods compared, ultrasonic testing, thickness gauging, phased array and A-, B- and C-scans |
 | [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope: volts and time per division, triggering, measurements and persistence, with a software oscilloscope |
 | [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test: Young's modulus, yield, UTS, ductile vs brittle, true vs engineering curves |
 | [Vibration analysis](/learn/applications/vibration-analysis/) | Reading vibration spectra to find imbalance, misalignment, looseness and bearing faults, with ISO severity zones |

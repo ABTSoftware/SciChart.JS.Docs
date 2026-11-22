@@ -36,6 +36,7 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     "motorsport-telemetry": "Motorsport",
     "hr-diagram": "Science and Mathematics",
     "riemann-hypothesis": "Science and Mathematics",
+    "non-destructive-testing": "Test and Measurement",
     oscilloscope: "Test and Measurement",
     "stress-strain-curve": "Test and Measurement",
     "vibration-analysis": "Test and Measurement"

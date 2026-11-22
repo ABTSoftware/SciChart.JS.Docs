@@ -1,5 +1,5 @@
 ---
-sidebar_position: 150
+sidebar_position: 160
 sidebar_label: Stress-Strain Curve
 title: "Stress-Strain Curve: How to Read It (Yield Strength, Modulus and UTS, With an Interactive Example)"
 description: "How to read a stress-strain curve: Young's modulus, 0.2% offset yield strength, UTS, necking, ductile vs brittle, true stress and S-N curves, with a live tensile test."
@@ -419,7 +419,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) · [React line chart](https://www.scichart.com/demo/react/line-chart) · [Angular line chart](https://www.scichart.com/demo/angular/line-chart), and for labelled points and lines, [JavaScript chart annotations](https://www.scichart.com/demo/javascript/chart-annotations) · [React chart annotations](https://www.scichart.com/demo/react/chart-annotations) · [Angular chart annotations](https://www.scichart.com/demo/angular/chart-annotations).
 
-**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [mountain (area) series documentation](/2d-charts/chart-types/fast-mountain-area-renderable-series/) and the [scatter series documentation](/2d-charts/chart-types/xy-scatter-renderable-series/). For how test and measurement teams use SciChart in their software, see [SciChart for design, emulation and test](https://www.scichart.com/design-emulation-test/) and [SciChart for instrumentation engineering](https://www.scichart.com/best-instrumentation-engineering-software/).
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [mountain (area) series documentation](/2d-charts/chart-types/fast-mountain-area-renderable-series/) and the [scatter series documentation](/2d-charts/chart-types/xy-scatter-renderable-series/). For how test and measurement teams use SciChart in their software, see [SciChart for design, emulation and test](https://www.scichart.com/design-emulation-test/) and [SciChart for instrumentation engineering](https://www.scichart.com/best-instrumentation-engineering-software/). To inspect parts without breaking them, see [non-destructive testing](/learn/applications/non-destructive-testing/).
 
 ## Frequently asked questions
 

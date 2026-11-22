@@ -1,5 +1,5 @@
 ---
-sidebar_position: 120
+sidebar_position: 130
 sidebar_label: Power Quality
 title: "Power Quality and Harmonics: THD, Sags, Swells and Flicker Explained (With an Interactive Example)"
 description: "What power quality is, the disturbances that spoil it, how harmonics and total harmonic distortion (THD) are measured, IEEE 519 and EN 50160 limits, and how analysers chart it all."
