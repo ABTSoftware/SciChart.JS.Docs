@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Machine Learning
-title: "Machine Learning, Visualised: Classifiers, Clustering and Model Evaluation (With Interactive Examples)"
+title: "Machine Learning, Visualised: Classifiers, Clustering and Evaluation"
 description: "Machine learning explained with live charts: decision boundaries, SVMs, clustering, dimensionality reduction, activation functions and ROC curves, with code."
 keywords: ["machine learning visualization", "decision boundary", "support vector machine", "k means clustering", "dendrogram", "dimensionality reduction", "activation function", "anomaly detection", "roc curve", "ridge regression", "lasso regression"]
 ---

@@ -302,7 +302,7 @@ async function regularizationChart(divElementId) {
     const LAMBDAS = Array.from({ length: 61 }, (_, i) => 10 ** (2 - i / 10)); // largest first, for warm starts
 
     // Fit every λ on the grid: coefficients, training, cross-validation and test RMSE.
-    // Lasso fits warm-start from the previous λ, which keeps the 366 fits fast enough to run on every input.
+    // Lasso fits warm-start from the previous λ, so each lasso fit starts close to its answer.
     function lambdaSweep(data, degree, method) {
         let start;
         let foldStarts;

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: Hierarchical Clustering and Dendrograms
-title: "Dendrogram and Hierarchical Clustering: How to Read a Dendrogram (With an Interactive Example)"
+title: "Dendrogram and Hierarchical Clustering: How to Read a Dendrogram"
 description: "What a dendrogram shows, how agglomerative hierarchical clustering builds one, how linkage methods change it, where to cut it, and how DBSCAN compares. With a live example."
 keywords:
     [
@@ -128,6 +128,8 @@ A horizontal cut at height 4.5 gives three clusters (AB, CD and E) on the comple
 
 ## How to read a dendrogram
 
+Read a dendrogram from the bottom up: the height where two branches join is how far apart the tree says those groups are, and a horizontal cut splits it into clusters.
+
 1. Leaves. Each leaf at the bottom (or the left, if the tree is drawn sideways) is one item: a data point, a gene, a document, a customer.
 2. Joins. Each upside-down U merges two clusters. The two legs lead down to the clusters it merged, and the bar is drawn at the merge height.
 3. Height. The vertical axis is the distance between the two clusters at the moment they merged, measured by the linkage method. A low join means similar items; a high join means the groups were far apart.
@@ -213,6 +215,8 @@ DBSCAN and hierarchical clustering are related. DBSCAN with minPts = 2 gives the
 
 ## Hierarchical clustering vs k-means vs DBSCAN
 
+Hierarchical clustering gives a whole tree and lets you pick the number of clusters afterwards, k-means needs that number up front but scales to millions of points, and DBSCAN finds clusters of any shape and labels outliers as noise.
+
 | | Hierarchical (agglomerative) | K-means | DBSCAN |
 | --- | --- | --- | --- |
 | Number of clusters | Chosen afterwards, by cutting the tree | Set in advance (k) | Follows from eps and minPts |
@@ -227,6 +231,8 @@ The [k-means clustering guide](/learn/machine-learning/k-means-clustering/) cove
 
 ## Where hierarchical clustering is used
 
+Hierarchical clustering is used where the nesting of groups matters as much as the groups themselves.
+
 - Biology. Phylogenetic trees of species and genes are dendrograms, and clustered heatmaps of gene expression are standard in genomics. See how SciChart is used for [diagnostics and life sciences](https://www.scichart.com/why-scichart-diagnostics-lifesciences/) software.
 - Document and text clustering. Grouping articles, support tickets or search results into topics and subtopics, where the hierarchy itself is useful.
 - Customer segmentation. Grouping customers by behaviour, then cutting the tree at the level of detail a team can act on.
@@ -234,6 +240,8 @@ The [k-means clustering guide](/learn/machine-learning/k-means-clustering/) cove
 - Ecology and archaeology. Grouping sites by the species or artefacts found there, with distance measures made for presence and absence data.
 
 ## Common hierarchical clustering mistakes
+
+Most mistakes come from reading the tree the wrong way, from unscaled features, or from trusting one linkage and one cut without checking.
 
 - **Reading leaf order as similarity.** Neighbouring leaves can be far apart. Judge two items by the height where their branches meet.
 - **Clustering unscaled features.** With income in pounds and age in years, income decides every distance. Standardise each feature (subtract the mean, divide by the standard deviation) unless the units are already comparable.
@@ -246,9 +254,9 @@ The [k-means clustering guide](/learn/machine-learning/k-means-clustering/) cove
 
 ## How to make a dendrogram in JavaScript, React or Angular
 
-A dendrogram and its scatter plot need to redraw together every time the cut, the linkage or the data changes. SciChart.js draws with WebGL, so both charts recolour instantly as you drag the cut line, and the same approach stays smooth with thousands of points. The demo clusters 180 to 250 points in the browser, with no machine learning library.
+The demo clusters 180 to 250 points in the browser, with no machine learning library, and recolours the dendrogram and the scatter plot together as you drag the cut line.
 
-Drag the dashed cut line on the dendrogram, or move the **Clusters** slider, to cut the tree and recolour the points. **Linkage** switches between single, complete, average and Ward, and **Dataset** between four blobs, blobs with a trail and outliers, two moons and two rings; the readout shows the cluster sizes and the adjusted Rand index. Set **Method** to DBSCAN to replace the dendrogram with the k-distance plot: drag the line, or move the **eps** and **minPts** sliders, to see core points (filled), border points (rings) and noise (crosses). Scroll to zoom, drag the scatter plot to pan, double-click to reset, and hover for values.
+Drag the dashed cut line on the dendrogram, or move the **Clusters** slider, to cut the tree and recolour the points. **Linkage** switches between single, complete, average and Ward, and **Dataset** between four blobs, blobs with a trail and outliers, two moons and two rings; the readout shows the cluster sizes and the adjusted Rand index. Set **Method** to DBSCAN to replace the dendrogram with the k-distance plot: drag the line, or move the **eps** and **minPts** sliders, to see core points (filled), border points (rings) and noise (crosses). Zoom with the mouse wheel, pan the scatter plot by dragging, double-click to reset, and hover a point for its values.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 

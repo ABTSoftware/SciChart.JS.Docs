@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Activation Functions
-title: "Activation Functions: Sigmoid, Tanh, ReLU, GELU and Softmax Explained (With Interactive Charts)"
+title: "Activation Functions: Sigmoid, Tanh, ReLU, GELU and Softmax"
 description: "What an activation function is, why neural networks need one, and how sigmoid, tanh, ReLU, GELU, Swish and softmax compare: formulas, ranges, derivatives, vanishing gradients and how to choose."
 keywords:
     [
@@ -191,10 +191,12 @@ $e^{1000}$ overflows a 64-bit floating-point number. Softmax doesn't change if y
 
 ## Sigmoid vs tanh vs ReLU vs GELU: choosing an activation function
 
+Use ReLU or GELU in hidden layers, and choose the output activation by task: sigmoid for yes/no, softmax for one class out of many, none for regression.
+
 | Property | Sigmoid | Tanh | ReLU | Leaky ReLU / ELU | GELU / Swish |
 | --- | --- | --- | --- | --- | --- |
 | Zero-centred output | No | Yes | No | Nearly | Nearly |
-| Saturates (flat gradient) | Both ends | Both ends | Left half only (gradient 0) | No | Left side, slowly |
+| Saturates (flat gradient) | Both ends | Both ends | Left half only (gradient 0) | Leaky ReLU: no; ELU: left side, towards $-\alpha$ | Left side, slowly |
 | Can units die? | No | No | Yes | No | Rarely |
 | Smooth at 0 | Yes | Yes | No (a corner) | Leaky: no; ELU: yes | Yes |
 | Cost to compute | An exponential | An exponential | A comparison | A comparison (+ exp for ELU) | An erf or exponential |
@@ -230,6 +232,8 @@ Smooth activations fit this curve with few units, and sigmoid gets there more sl
 
 ## Common activation function mistakes
 
+Most activation bugs come from pairing the function with the wrong loss, task or weight initialisation.
+
 - **Applying softmax twice.** Many loss functions, such as a cross-entropy loss that takes logits, apply softmax themselves. Feeding them probabilities squashes the outputs and slows training. Check whether your loss expects logits or probabilities.
 - **Using softmax for multi-label problems.** Softmax forces the classes to compete for a total of 1. When several labels can be true, use a sigmoid per label.
 - **Squashing a regression output.** A sigmoid or ReLU on the last layer of a regression model can't produce values outside its range: a ReLU output can never predict a negative number. Use a linear output and scale the targets.
@@ -240,9 +244,9 @@ Smooth activations fit this curve with few units, and sigmoid gets there more sl
 
 ## How to plot activation functions in JavaScript, React or Angular
 
-Machine learning work needs charts that keep up: loss curves updating every epoch, predictions redrawn as weights change, and dense curves you can zoom into. SciChart.js draws with WebGL, so all four charts below redraw on every animation frame while the network trains, without slowing the page.
+The demo trains its network 10 epochs per animation frame, up to 5,000, and redraws the fitted curve and the loss chart after each batch.
 
-Tick functions in the top-left chart, or pick a group from **Show**, and tick **Derivatives** to add their slopes as dashed lines. Type three scores into **Cat**, **Dog** and **Bird** and drag **Temperature** to see the softmax change. In the bottom row, choose an **Activation** and a number of **Hidden units**: the network retrains from the same starting weights, and the loss chart keeps the previous run in grey for comparison until you **Clear previous run**. **Pause** and **Reset** control training. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Tick functions in the top-left chart, or pick a group from **Show**, and tick **Derivatives** to add their slopes as dashed lines. Type three scores into **Cat**, **Dog** and **Bird** and drag **Temperature** to see the softmax change. In the bottom row, choose an **Activation** and a number of **Hidden units**: the network retrains from the same starting weights, and the loss chart keeps the previous run in grey for comparison until you **Clear previous run**. **Pause** and **Reset** control training. Each chart zooms with the mouse wheel, pans by dragging and resets on a double-click; hover to read values.
 
 <LiveDocSnippet maxWidth={'100%'} height={820} name="./Basic/demo" />
 

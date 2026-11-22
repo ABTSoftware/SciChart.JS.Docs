@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: K-Means Clustering
-title: "K-Means Clustering: How It Works, the Elbow Method and Silhouette Score (With an Interactive Example)"
+title: "K-Means Clustering: How It Works, Elbow Method and Silhouette Score"
 description: "What k-means clustering is, how the algorithm assigns points and moves centroids, how to choose k with the elbow method and silhouette score, where it fails, and how it differs from k-NN. With a live example."
 keywords:
     [
@@ -59,7 +59,7 @@ related: [hierarchical-clustering, voronoi-diagram, decision-boundary, dimension
                 {
                     "@type": "Question",
                     "name": "How do I visualise k-means clustering in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Run k-means in plain JavaScript (assign each point to its nearest centroid, move each centroid to the mean of its points, repeat until nothing changes), then draw the points as a scatter series coloured by cluster label and the centroids as larger markers. Shading each centroid's region with a heatmap shows the decision boundaries. SciChart.js does this with XyScatterRenderableSeries, MetadataPaletteProvider and UniformHeatmapRenderableSeries in JavaScript, React or Angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Run k-means in plain JavaScript (assign each point to its nearest centroid, move each centroid to the mean of its points, repeat until nothing changes), then draw the points as a scatter series coloured by cluster label and the centroids as larger markers. Shading each centroid's region with a heatmap shows the decision boundaries. In SciChart.js that is an XyScatterRenderableSeries with a MetadataPaletteProvider for the colours and a UniformHeatmapRenderableSeries for the regions, whether you use plain JavaScript, React or Angular." }
                 }
             ]
         })}
@@ -240,6 +240,8 @@ They can work together: k-means can shrink a large training set to a few hundred
 
 ## K-means vs DBSCAN vs hierarchical clustering
 
+K-means suits compact, round groups of similar size; DBSCAN suits irregular shapes and noisy data; hierarchical clustering suits smaller datasets where the nesting of groups matters.
+
 | Method | You choose | Cluster shapes | Outliers | Scales to large data | Best for |
 | --- | --- | --- | --- | --- | --- |
 | K-means | k | Round, convex, similar size | Pulled into clusters | Yes: linear in n per iteration | Quick, compact groups; segmentation; quantisation |
@@ -259,6 +261,8 @@ With two features, a scatter plot coloured by cluster label, with the centroids 
 
 ## Where k-means is used
 
+K-means is used wherever a large set of items needs a handful of representative groups or values.
+
 - Customer and market segmentation: grouping customers by spending, frequency and recency.
 - Colour quantisation and image compression: replacing millions of colours with the k centroid colours.
 - Vector quantisation in signal processing and speech coding, where Lloyd developed the method for pulse-code modulation.
@@ -267,6 +271,8 @@ With two features, a scatter plot coloured by cluster label, with the centroids 
 - As a building block: seeding Gaussian mixture models, building visual vocabularies for images, and picking representative samples from large datasets.
 
 ## Common k-means clustering mistakes
+
+Most k-means mistakes come from unscaled features, a single unlucky start, or trusting the k groups it always returns.
 
 - **Forgetting to scale the features.** A feature measured in thousands swamps one measured in fractions. Standardise (z-scores) or normalise first, unless the units are already comparable.
 - **Trusting a single run.** One unlucky start can merge two real groups. Use k-means++ and keep the best of several runs.
@@ -278,9 +284,9 @@ With two features, a scatter plot coloured by cluster label, with the centroids 
 
 ## How to make a k-means clustering chart in JavaScript, React or Angular
 
-Clustering runs over thousands to millions of points, and watching it work means redrawing every point, every centroid and the region map at each step. SciChart.js draws with WebGL, so the scatter series and the heatmap of regions redraw at once, and the same charts stay smooth with millions of points. The demo runs k-means, the elbow plot and the silhouette score in the browser.
+The demo runs k-means, the elbow plot and the silhouette score in the browser, and redraws the points, the centroids and the shaded regions after every half-iteration, about three times a second while it runs.
 
-Pick a **Dataset** and the number of clusters with **k**, and choose how the centroids **Start**: k-means++ or random points. **Step** runs one half of an iteration at a time (assign, then update), **Run** plays it to convergence, and **New start** tries different starting centroids; press it a few times on the four blobs and some runs settle at about three times the best inertia, with two centroids sharing one group. **Standardise features** rescales both features before clustering. Click on the chart to add a point; **Reset points** removes them. The side charts show the best of 10 starts at each k, with a ring for the current run. Scroll to zoom, drag to pan and double-click to reset.
+Pick a **Dataset** and the number of clusters with **k**, and choose how the centroids **Start**: k-means++ or random points. **Step** runs one half of an iteration at a time (assign, then update), **Run** plays it to convergence, and **New start** tries different starting centroids; press it a few times on the four blobs and some runs settle at about three times the best inertia, with two centroids sharing one group. **Standardise features** rescales both features before clustering. Click on the chart to add a point; **Reset points** removes them. The side charts show the best of 10 starts at each k, with a ring for the current run. The main chart zooms with the wheel, pans when dragged and fits the data again on a double-click.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
@@ -497,7 +503,7 @@ No. Each run of k-means always converges, because neither step can increase the 
 
 ### How do I visualise k-means clustering in JavaScript?
 
-Run k-means in plain JavaScript (assign each point to its nearest centroid, move each centroid to the mean of its points, repeat until nothing changes), then draw the points as a scatter series coloured by cluster label and the centroids as larger markers. Shading each centroid's region with a heatmap shows the decision boundaries. SciChart.js does this with XyScatterRenderableSeries, MetadataPaletteProvider and UniformHeatmapRenderableSeries in JavaScript, React or Angular.
+Run k-means in plain JavaScript (assign each point to its nearest centroid, move each centroid to the mean of its points, repeat until nothing changes), then draw the points as a scatter series coloured by cluster label and the centroids as larger markers. Shading each centroid's region with a heatmap shows the decision boundaries. In SciChart.js that is an XyScatterRenderableSeries with a MetadataPaletteProvider for the colours and a UniformHeatmapRenderableSeries for the regions, whether you use plain JavaScript, React or Angular.
 
 ## Sources
 

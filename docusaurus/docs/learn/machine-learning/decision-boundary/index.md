@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Decision Boundary
-title: "Decision Boundary: How Classifiers Divide Data (k-NN, SVM, Decision Trees and More, With an Interactive Example)"
+title: "Decision Boundary: How Classifiers Divide Data (k-NN, SVM, Trees)"
 description: "What a decision boundary is, how to read one, and how k-nearest neighbours, logistic regression, SVMs, decision trees, random forests and naive Bayes each shape it. With a live comparison grid."
 keywords:
     [
@@ -58,7 +58,7 @@ related: [support-vector-machine, k-means-clustering, roc-curve, heatmap]
                 {
                     "@type": "Question",
                     "name": "How do I plot a decision boundary in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Train the classifier, then evaluate its probability for one class on a grid of points covering the data, for example 100 by 100. Draw the grid as a heatmap with a diverging colour map, draw its 0.5 contour as the boundary line, and overlay the training and test points as scatter series coloured by class. SciChart.js does this with UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries in plain JavaScript, React or Angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Train the classifier, then evaluate its probability for one class on a grid of points covering the data, for example 100 by 100. Draw the grid as a heatmap with a diverging colour map, draw its 0.5 contour as the boundary line, and overlay the training and test points as scatter series coloured by class. With SciChart.js, use UniformHeatmapRenderableSeries for the grid, UniformContoursRenderableSeries for the boundary and XyScatterRenderableSeries for the points; the code is the same in React and Angular." }
                 }
             ]
         })}
@@ -120,7 +120,7 @@ The shape of the boundary comes from the model's assumptions. This is the main r
 | Classifier | Boundary shape | What controls it | Probability output |
 | --- | --- | --- | --- |
 | k-nearest neighbours (k-NN) | Local and jagged at small k; smoother as k grows | k, the number of neighbours that vote; the distance measure | Share of the k neighbours in each class, so it moves in steps of 1/k |
-| Logistic regression | A straight line (hyperplane) | Regularisation strength C; the features you feed it | Smooth S-shaped rise across the line |
+| Logistic regression | A straight line (hyperplane) | Regularization strength C; the features you feed it | Smooth S-shaped rise across the line |
 | Linear SVM | A straight line, placed to maximise the margin | C | A signed distance from the line, not a probability |
 | RBF SVM | Smooth curves of almost any shape, including closed loops | gamma (how local each point's influence is) and C | A signed distance; needs calibrating to become a probability |
 | Decision tree | Axis-aligned steps (rectangles) | Maximum depth, minimum points per leaf | Share of each class in the leaf, so flat within each rectangle |
@@ -137,7 +137,7 @@ Distances depend on the scale of each feature, so standardise the features first
 
 ### Logistic regression and linear SVMs
 
-**Logistic regression** fits a weighted sum of the features, w₀ + w₁x₁ + w₂x₂, and passes it through the logistic (sigmoid) function to get a probability. The boundary is where the weighted sum is zero, which is a straight line. However much data you give it, the boundary stays straight; to get a curve you must add curved features yourself, such as x₁², x₂² or x₁x₂. Regularisation, set by C, shrinks the weights: a small C gives a wide, gentle transition and a large C a sharp one.
+**Logistic regression** fits a weighted sum of the features, w₀ + w₁x₁ + w₂x₂, and passes it through the logistic (sigmoid) function to get a probability. The boundary is where the weighted sum is zero, which is a straight line. However much data you give it, the boundary stays straight; to get a curve you must add curved features yourself, such as x₁², x₂² or x₁x₂. Regularization, set by C, shrinks the weights: a small C gives a wide, gentle transition and a large C a sharp one.
 
 A **linear support vector machine** also draws a straight line, but it places it as far as possible from the nearest points of each class, the **margin**. On cleanly separated data the two lines are often close; they differ in how much attention they pay to points far from the boundary.
 
@@ -205,7 +205,7 @@ Many algorithms come in both forms. A k-NN regressor averages its neighbours' va
 
 ## How to draw a decision boundary
 
-The technique is the same in any language or library, and it works for any model that can make a prediction:
+To draw a decision boundary, ask the model for a class probability at every point of a fine grid, colour the grid by it and trace where it crosses 0.5. This works for any model that can make a prediction, in any language:
 
 1. Pick two features to plot, and train the model (on those two features, or on all of them).
 2. Build a fine grid covering the range of the data plus a margin, for example 100 × 100 points.
@@ -233,6 +233,8 @@ No classifier is best on every dataset, as the grid shows. Some starting points:
 
 ## Common decision boundary mistakes
 
+Most misleading boundary plots come from unscaled features, scores measured on the training points, or colour read as more certain than the model is.
+
 - **Not scaling the features.** k-NN and RBF SVMs measure distance, so a feature with a larger range dominates and the boundary turns into vertical or horizontal bands. Standardise first, using the training set's mean and standard deviation.
 - **Judging a model by its training accuracy.** Every flexible model can draw around its own training points. Plot and score held-out points.
 - **Choosing settings from the test score.** Tuning k, depth or gamma until the test accuracy peaks leaks the test set into training. Tune with cross-validation and keep the test set for the final check.
@@ -244,9 +246,9 @@ No classifier is best on every dataset, as the grid shows. Some starting points:
 
 ## How to plot a decision boundary in JavaScript, React or Angular
 
-A classifier comparison grid is many heatmaps and scatter series redrawn every time a setting changes. SciChart.js draws with WebGL, so all 18 panels of 10,000 cells each, with their contours and points, redraw as you drag the noise slider. Every model in the demo is trained in the browser in plain JavaScript; nothing is precomputed.
+Each change of noise, sample or setting in the demo retrains the models and redraws all 18 panels, each a 100 × 100 heatmap with its contour and points. Every model is trained in the browser in plain JavaScript; nothing is precomputed.
 
-Choose a **Dataset** to show all three rows or one larger set of panels, and drag **Noise** to blur the classes. **New sample** draws fresh points from the same distributions. **Tune** picks a setting (k, C, tree depth, number of trees or the RBF SVM's gamma and C), and the slider beside it changes that setting; the panels it affects are outlined. **Click adds** chooses the class of the point added when you click a panel. Hover a panel to read the model's probability, scroll to zoom, drag to pan and double-click to reset.
+Choose a **Dataset** to show all three rows or one larger set of panels, and drag **Noise** to blur the classes. **New sample** draws fresh points from the same distributions. **Tune** picks a setting (k, C, tree depth, number of trees or the RBF SVM's gamma and C), and the slider beside it changes that setting; the panels it affects are outlined. **Click adds** chooses the class of the point added when you click a panel. Hover a panel to read the model's probability; the mouse wheel zooms a panel, dragging pans it and a double-click resets it.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
@@ -469,7 +471,7 @@ Classification predicts a category, such as spam or not spam, often with a proba
 
 ### How do I plot a decision boundary in JavaScript?
 
-Train the classifier, then evaluate its probability for one class on a grid of points covering the data, for example 100 by 100. Draw the grid as a heatmap with a diverging colour map, draw its 0.5 contour as the boundary line, and overlay the training and test points as scatter series coloured by class. SciChart.js does this with UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries in plain JavaScript, React or Angular.
+Train the classifier, then evaluate its probability for one class on a grid of points covering the data, for example 100 by 100. Draw the grid as a heatmap with a diverging colour map, draw its 0.5 contour as the boundary line, and overlay the training and test points as scatter series coloured by class. With SciChart.js, use UniformHeatmapRenderableSeries for the grid, UniformContoursRenderableSeries for the boundary and XyScatterRenderableSeries for the points; the code is the same in React and Angular.
 
 ## Sources
 

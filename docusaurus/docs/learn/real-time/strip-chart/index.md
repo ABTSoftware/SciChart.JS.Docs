@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Strip Chart
-title: "Strip Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Strip Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a strip chart is, how to read one, scrolling vs sweeping displays, when to use it, and the strip plot (jitter dot plot) that shares its name. With a live, real-time example."
 keywords:
     [
@@ -53,7 +53,7 @@ related: [line-chart, big-data-visualization, sparkline, spectrogram]
                 {
                     "@type": "Question",
                     "name": "How do I make a strip chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, add a FastLineRenderableSeries for each signal, with an XyDataSeries whose fifoCapacity is the number of points in the time window. Append new readings with appendRange and move the x-axis visibleRange to follow them. Set fifoSweeping to true for a sweeping display. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, add a FastLineRenderableSeries for each signal, with an XyDataSeries whose fifoCapacity is the number of points in the time window. Append new readings with appendRange and move the x-axis visibleRange to follow them. Set fifoSweeping to true for a sweeping display. For React, wrap it with scichart-react; for Angular, with scichart-angular." }
                 }
             ]
         })}
@@ -91,6 +91,8 @@ Before screens, live measurements were recorded on paper. A **strip chart record
 Software strip charts copy the same idea onto a screen. The **chart speed** of a paper recorder becomes the **time window** (how many seconds fit across the chart), and the pen becomes the newest point of the trace. Data loggers and on-screen charts have now replaced most paper recorders.
 
 ## How to read a strip chart
+
+Read a strip chart backwards from "now": find the newest reading, check how much time the window covers, then read each lane on its own scale and line events up across lanes.
 
 ![A strip chart with three stacked lanes, temperature, pressure and flow, over the last 60 seconds. The now edge is on the right. A dashed line marks a high alarm limit on the temperature lane. A vertical dashed line marks the moment pressure jumps, flow drops and temperature starts to climb towards the limit](./strip-chart-anatomy.svg)
 
@@ -135,7 +137,7 @@ A software strip chart holds a fixed number of points: the time window multiplie
 | 5 patient-monitor channels | 1,000 per second | 10 seconds | 50,000 |
 | 8 vibration sensors | 10,000 per second | 10 seconds | 800,000 |
 
-The display also has to redraw smoothly, ideally about 60 times a second, while new data keeps arriving. That is why strip charts with many fast channels need a charting library built for real-time data.
+The display also has to redraw at the screen's refresh rate, typically 60 times a second or more, while new data keeps arriving. That is why strip charts with many fast channels need a charting library built for real-time data.
 
 ## When to use a strip chart
 
@@ -169,6 +171,8 @@ In statistics, a **strip plot** (also called a strip chart, jitter plot or one-d
 
 ## Common strip chart mistakes
 
+Most strip chart mistakes make the trace hard to read while it moves, or let the chart do far more work than the screen can show.
+
 - **A y-axis that rescales on every update.** If the axis zooms to fit the data each frame, the trace jumps about and a large change can look small. Give each signal a fixed range that covers its normal values and limits.
 - **The wrong time window.** Too short, and slow drifts are invisible; too long, and fast events shrink to a pixel. Let users change it, as paper recorders let operators change chart speed.
 - **No way to stop and look.** A chart that keeps moving while someone tries to read it is frustrating. Provide pause, and zoom on paused data.
@@ -178,11 +182,11 @@ In statistics, a **strip plot** (also called a strip chart, jitter plot or one-d
 
 ## How to create a strip chart in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, and its data series have a built-in FIFO mode for real-time charts, so strip charts with many fast channels stay smooth. The chart below streams five channels at 1,000 readings a second each. Use the buttons to switch between **Scrolling** and **Sweeping**, and to pause. While paused, scroll to zoom in time, drag to pan and double-click to reset; zooming or dragging pauses it for you. Hover to read the values.
+The demo streams five channels at 1,000 readings a second each into data series that keep exactly 10 seconds, 10,000 points per channel, and drop the oldest point as each new one arrives (SciChart.js's built-in FIFO mode). Use the buttons to switch between **Scrolling** and **Sweeping**, and to pause. While paused, the mouse wheel zooms in time, dragging pans and a double-click resets; zooming or dragging pauses it for you. Hover to read the values.
 
 <LiveDocSnippet maxWidth={'100%'} height={560} name="./Basic/demo" />
 
-<LearnCta position="top" chart="strip chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/data-series-api/realtime-updates/" />
+<LearnCta position="top" chart="strip chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="vital signs ECG chart" docs="/2d-charts/chart-types/data-series-api/realtime-updates/" docsLabel="SciChart.js real-time updates documentation" />
 
 Here is the code for this chart:
 
@@ -365,7 +369,7 @@ Key points:
 - For scrolling, set the x-axis `visibleRange` to the last `WINDOW` seconds after each update; for sweeping, keep it fixed.
 - `LeftAlignedOuterVerticallyStackedAxisLayoutStrategy` stacks one y-axis per signal, so each channel gets its own lane. Fixed `visibleRange` values stop the lanes rescaling on every frame.
 
-**See it in the demo app:** [JavaScript vital signs ECG/EKG medical demo](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React vital signs ECG/EKG medical demo](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular vital signs ECG/EKG medical demo](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), a sweeping multi-channel monitor. For scrolling data, see the [JavaScript realtime chart performance demo](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo) and [zoom and pan a realtime JavaScript chart](https://www.scichart.com/demo/javascript/zoom-pan-realtime-javascript-chart).
+**See it in the demo app:** [JavaScript vital signs ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React vital signs ECG chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular vital signs ECG chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), a sweeping multi-channel monitor. For scrolling data, see the [JavaScript real-time line chart](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo) and [zoom and pan a realtime JavaScript chart](https://www.scichart.com/demo/javascript/zoom-pan-realtime-javascript-chart).
 
 **Go deeper:**
 - [SciChart.js real-time updates documentation](/2d-charts/chart-types/data-series-api/realtime-updates/): appending, scrolling with `fifoCapacity` and sweeping with `fifoSweeping`, each with a live example.
@@ -396,7 +400,7 @@ Wide enough to show several cycles of the pattern you care about, and narrow eno
 
 ### How do I make a strip chart in JavaScript?
 
-With SciChart.js, add a `FastLineRenderableSeries` for each signal, with an `XyDataSeries` whose `fifoCapacity` is the number of points in the time window. Append new readings with `appendRange` and move the x-axis `visibleRange` to follow them. Set `fifoSweeping` to true for a sweeping display. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, add a `FastLineRenderableSeries` for each signal, with an `XyDataSeries` whose `fifoCapacity` is the number of points in the time window. Append new readings with `appendRange` and move the x-axis `visibleRange` to follow them. Set `fifoSweeping` to true for a sweeping display. For React, wrap it with `scichart-react`; for Angular, with `scichart-angular`.
 
 ## Sources
 
@@ -406,4 +410,4 @@ With SciChart.js, add a `FastLineRenderableSeries` for each signal, with an `XyD
 - R Core Team, [stripchart: 1-D Scatter Plots](https://stat.ethz.ch/R-manual/R-devel/library/graphics/html/stripchart.html). The statistical strip chart (strip plot).
 - seaborn, [seaborn.stripplot](https://seaborn.pydata.org/generated/seaborn.stripplot.html). Strip plots with jitter in Python.
 
-<LearnCta position="bottom" chart="strip chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/data-series-api/realtime-updates/" />
+<LearnCta position="bottom" chart="strip chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="vital signs ECG chart" docs="/2d-charts/chart-types/data-series-api/realtime-updates/" docsLabel="SciChart.js real-time updates documentation" />

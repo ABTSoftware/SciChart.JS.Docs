@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Time Series Graph
-title: "Time Series Graph: What It Is, How to Read One and How to Chart Live Time Series Data (With Interactive Examples)"
+title: "Time Series Graph: What It Is, How to Read One and Chart Live Data"
 description: "What a time series graph is, how to read its trend, seasonality, noise, level shifts and gaps, how to handle time axes, smoothing and large data, and how to chart live time series."
 keywords:
     [
@@ -87,7 +87,7 @@ related: [strip-chart, real-time-dashboard, line-chart, downsampling]
 
 ## What is a time series graph?
 
-A **time series graph** (also known as a time series chart or time plot) is a graph of measurements recorded over time, with time on the horizontal x-axis and the measured value on the vertical y-axis. The points are plotted in time order and usually joined by a line, so you can see trends, repeating cycles, sudden changes and unusual values.
+A **time series graph** (also known as a time series chart or time plot) is a graph of measurements recorded over time, with time on the horizontal x-axis and the measured value on the vertical y-axis. The points are usually joined by a line in time order, showing trends, repeating cycles, sudden changes and unusual values.
 
 ![A time series graph in a dark navy theme: three weeks of 15-minute power demand readings for an office building, with a daily peak every weekday afternoon, lower weekends, three red-shaded meter outages, a dashed yellow retrofit marker where demand drops, and an orange 24-hour moving average running through the readings](/img/learn/time-series-graph-og.png)
 
@@ -159,7 +159,7 @@ Here is how to put the example graph into words, with the numbers read from it. 
 | --- | --- |
 | Trend | A slow rise, about 4 kW a week |
 | Seasonal pattern | A daily cycle peaking around 13:00. Weekday afternoons reach about 85 to 98 kW, nights fall to about 45 to 57 kW, and weekends stay low |
-| Level shift | On Sunday 15 March demand steps down. The weekday average falls from 71.6 kW (9 to 13 March) to 65.1 kW (16 to 20 March) |
+| Level shift | On Sunday 15 March demand steps down by about 12 kW. The weekday average falls by less, from 71.6 kW (9 to 13 March) to 65.1 kW (16 to 20 March), because a week of the upward trend adds back about 4 kW and the outages on 10 and 12 March left out some midday peaks from the earlier week |
 | Outliers | Spikes to 107 kW at 12:30 on Saturday 7 March, and to 93 kW at 01:30 on Saturday 21 March, with the readings either side between 55 and 67 kW |
 | Gaps | No readings on 10 March from 10:00 to 16:00, on 12 March from 10:00 to 11:00, and from 21:00 on 21 March to 03:00 on 22 March |
 
@@ -247,6 +247,8 @@ A scrolling real-time graph of measurements is also called a [strip chart](/lear
 
 ## Time series graph vs line chart vs strip chart vs candlestick chart
 
+A time series graph is a line chart whose x-axis is time; a strip chart is one that scrolls with live data, and a candlestick chart summarises each period of prices in one bar.
+
 | | Time series graph | [Line chart](/learn/chart-types/cartesian/line-chart/) | [Strip chart](/learn/real-time/strip-chart/) | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) |
 | --- | --- | --- | --- | --- |
 | x-axis | Dates and times | Any ordered quantity: time, distance, frequency | Time, as a moving window | Time, in equal bars (minute, day) |
@@ -259,6 +261,8 @@ For a tiny time series in a table or a dashboard tile, with no axes, use a [spar
 
 ## Common time series graph mistakes
 
+Most mistakes read a pattern into too little data, or draw something the data doesn't contain, such as a line across a gap.
+
 - **Calling a trend from less than one cycle.** Sales that rise from Monday to Wednesday, in a business that peaks every midweek, are the weekly cycle at work. Compare like with like: the same weekday, the same month last year, or a moving average one season long.
 - **Comparing unlike periods.** A week with a public holiday, a 28-day February against a 31-day March, or a 23-hour daylight-saving day all look like changes in demand. Note them on the graph, or compare daily averages instead of totals.
 - **A y-axis range chosen to dramatise.** A line graph doesn't have to start at zero, but a narrow range makes a 1% wiggle look like a crash. Pick a range that fits the changes that matter, and label it clearly.
@@ -270,9 +274,9 @@ For a tiny time series in a table or a dashboard tile, with no axes, use a [spar
 
 ## How to make a time series graph in JavaScript, React or Angular
 
-In Excel, you select a date column and a value column and insert a line chart with a date axis; this section builds a time series graph in code instead. SciChart.js draws charts with WebGL and WebGPU, so it stays smooth with millions of points, keeps gaps as gaps and appends live data without redrawing everything.
+In Excel, you select a date column and a value column and insert a line chart with a date axis; this section builds a time series graph in code instead. The demo holds the 2,016 readings of building power demand from this guide (21 days at 15-minute intervals), breaks the line where readings are missing, and in live mode appends each new reading while the oldest drops out of the window.
 
-The demo has the 21 days of building power demand from this guide. Switch the **Components** on and off (**Trend**, **Daily and weekly cycle**, **Noise and outliers**, **Level shift**, **Outages**) to build the series up part by part. Set **At gaps** to join the points and watch a straight line cross the shaded outage on 10 March. Drag the **Moving average** slider to 24 h to flatten the daily cycle, and switch from **trailing** to **centred** to see the lag at the retrofit disappear. Press **Go live** to append readings in real time: each new reading pushes the oldest out of the 21-day window. Scroll to zoom in time, drag to pan, double-click to see the whole window, and hover for values.
+Switch the **Components** on and off (**Trend**, **Daily and weekly cycle**, **Noise and outliers**, **Level shift**, **Outages**) to build the series up part by part. Set **At gaps** to join the points and watch a straight line cross the shaded outage on 10 March. Drag the **Moving average** slider to 24 h to flatten the daily cycle, and switch from **trailing** to **centred** to see the lag at the retrofit disappear. Press **Go live** to append readings in real time: each new reading pushes the oldest out of the 21-day window. Zoom in time with the mouse wheel, drag to pan, double-click for the whole window, and hover to read a value.
 
 <LiveDocSnippet maxWidth={'100%'} height={600} name="./Basic/demo" />
 
@@ -433,7 +437,7 @@ Key points:
 - For live data, `fifoCapacity` fixes the number of readings kept, and `appendRange` adds each batch; the oldest readings drop out automatically.
 - `XyMovingAverageFilter` adds a trailing moving average that updates as data is appended. The demo computes its own average instead, so it can skip missing readings and offer a centred window. A `BoxAnnotation` shades each outage, and a `VerticalLineAnnotation` marks the retrofit.
 
-**See it in the demo app:** [JavaScript real-time time series chart](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo) · [React real-time time series chart](https://www.scichart.com/demo/react/chart-realtime-performance-demo) · [Angular real-time time series chart](https://www.scichart.com/demo/angular/chart-realtime-performance-demo). Related techniques: the [React zoom and pan of a real-time chart](https://www.scichart.com/demo/react/zoom-pan-realtime-javascript-chart), [React vertically stacked axes](https://www.scichart.com/demo/react/vertically-stacked-axes), [React synchronised multiple charts](https://www.scichart.com/demo/react/sync-multi-chart) and [React chart with one million points](https://www.scichart.com/demo/react/chart-performance-load-one-million-points).
+**See it in the demo app:** [JavaScript real-time line chart](https://www.scichart.com/demo/javascript/chart-realtime-performance-demo) · [React real-time line chart](https://www.scichart.com/demo/react/chart-realtime-performance-demo) · [Angular real-time line chart](https://www.scichart.com/demo/angular/chart-realtime-performance-demo). Related techniques: the [React zoom and pan of a real-time chart](https://www.scichart.com/demo/react/zoom-pan-realtime-javascript-chart), [React vertically stacked axes](https://www.scichart.com/demo/react/vertically-stacked-axes), [React synchronised multiple charts](https://www.scichart.com/demo/react/sync-multi-chart) and [React chart with one million points](https://www.scichart.com/demo/react/chart-performance-load-one-million-points).
 
 **Go deeper:** [SciChart.js date-time axis documentation](/2d-charts/axis-api/axis-types/date-time-numeric-axis/), the [discontinuous date axis](/2d-charts/axis-api/axis-types/discontinuous-date-axis/) for data with closed hours, [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/), [resampling](/2d-charts/chart-types/data-series-api/resampling/), the [moving average filter](/2d-charts/chart-types/data-filters-api/moving-average-filter/) and [vertically stacked axes](/2d-charts/axis-api/multi-axis-and-layout/vertically-stacked-axis-layout/). For the industries that chart time series at scale, see SciChart for [HMI and SCADA](https://www.scichart.com/scada-big-data/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/).
 

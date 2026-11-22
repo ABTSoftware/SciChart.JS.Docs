@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Real-Time Dashboard
-title: "Real-Time Dashboard: How Live Dashboards Work and How to Design One (With an Interactive Example)"
+title: "Real-Time Dashboard: How Live Dashboards Work and How to Design One"
 description: "What a real-time dashboard is, how live data reaches the screen, update rate vs frame rate, which charts suit live data, layout and performance tips, with a live example."
 keywords:
     [
@@ -124,7 +124,7 @@ Four numbers describe how "live" a dashboard is, and they are easy to mix up:
 
 Take that vibration sensor at 1,000 readings a second and a dashboard updating at 10 Hz. Each update appends about 100 points per channel, and a reading waits up to 100 ms in the buffer before it is drawn. Add the network, any server processing and up to one screen frame (about 17 ms at 60 Hz), and the total latency is a little over a tenth of a second. At a 1 Hz update rate the same reading can wait a full second.
 
-Two limits follow from this. An update rate above the screen's frame rate draws pictures nobody sees, so 60 Hz is a sensible ceiling for a moving trace. And a number on screen that changes many times a second can't be read, so readouts and gauges are often updated more slowly than the traces beside them. Try both in the [live example](#how-to-build-a-real-time-dashboard-in-javascript-react-or-angular): at 1 Hz the traces jump once a second; at 60 Hz they glide.
+Two limits follow from this. An update rate above the screen's frame rate draws pictures nobody sees, so the display's refresh rate is the sensible ceiling for a moving trace. And a number on screen that changes many times a second can't be read, so readouts and gauges are often updated more slowly than the traces beside them. Try both in the [live example](#how-to-build-a-real-time-dashboard-in-javascript-react-or-angular): at 1 Hz the traces jump once a second; at 60 Hz they glide.
 
 ## Which charts work best for live data?
 
@@ -144,12 +144,12 @@ Pie charts and charts that re-sort or rescale on every update work badly live: s
 
 ## How to create a real-time dashboard
 
-These steps work whatever you build it with:
+Start from the decisions the dashboard supports, then choose the signals, charts, update rates and layout that serve them. These steps work whatever you build it with:
 
 1. Write down the decisions the dashboard supports ("stop the line if vibration exceeds 7 mm/s", "page the on-call engineer if errors pass 1%"). Each panel should help with one of them.
 2. List the signals behind those decisions, with each one's data rate, units and normal range.
 3. Choose the transport: MQTT or a cloud IoT service for devices, a WebSocket or server-sent events to the browser, polling only for data that changes every few seconds or less.
-4. Choose an update rate per panel. Smooth traces can follow the screen; readouts, bars and business numbers can update once a second or slower.
+4. Choose an update rate per panel. Moving traces can follow the screen; readouts, bars and business numbers can update once a second or slower.
 5. Pick a chart per signal from the table above, and fix each axis to the signal's normal range plus its alarm limits.
 6. Lay out the screen (below), with alarms and the "last updated" time in fixed places.
 7. Test with the full data rate, the largest number of panels and a slow laptop, not just your development machine.
@@ -169,7 +169,7 @@ When a dashboard has several strip charts, they should share one time window and
 
 ## Many charts on one page: performance
 
-A busy dashboard can have dozens of charts redrawing many times a second. The techniques that keep it smooth are the same whatever the domain:
+A busy dashboard can have dozens of charts redrawing many times a second. The techniques that cut its drawing work are the same whatever the domain:
 
 - Share one drawing context. Browsers allow only a few WebGL contexts per page (often 16 in Chrome and Safari, and 8 in Chrome on Android, according to [our performance tips](/2d-charts/performance-tips/performance-tips-and-tricks/)). A library that draws every chart through one shared context can put far more charts on a page.
 - Append, don't rebuild. Adding the new points to an existing series costs a fraction of re-creating the series or the chart on every update.
@@ -181,6 +181,8 @@ A busy dashboard can have dozens of charts redrawing many times a second. The te
 - Keep small panels simple: fewer gridlines and labels on a sparkline or a small tile cost less to draw and read better.
 
 ## Real-time dashboard examples
+
+Real-time dashboards appear wherever a delay of seconds matters, from factory floors and race cars to trading desks, patient monitors and server rooms.
 
 | Domain | What's on the dashboard | How fast the data is | Read more |
 | --- | --- | --- | --- |
@@ -194,7 +196,9 @@ A busy dashboard can have dozens of charts redrawing many times a second. The te
 
 ## Common real-time dashboard mistakes
 
-- **Updating faster than anyone can read.** Thirty panels all flickering at 60 Hz tire the eye and hide the one change that matters. Update numbers slowly and traces smoothly, and leave static panels static.
+Most real-time dashboard mistakes either show more change than anyone can follow or hide the fact that the data has stopped.
+
+- **Updating faster than anyone can read.** Thirty panels all flickering at 60 Hz tire the eye and hide the one change that matters. Update numbers slowly, let traces follow the screen, and leave static panels static.
 - **No "last updated" indicator.** If the connection drops, a frozen dashboard looks exactly like a calm one. Show the time of the newest data, and grey out or flag panels whose data is stale.
 - **Unsynchronised time axes.** Two charts showing slightly different windows make cause and effect look out of order. Share one window and line up the plot areas.
 - **Colour overload.** When every series, tile and background is brightly coloured, an alarm colour no longer stands out. Use a calm palette and keep strong colours for exceptions.
@@ -204,9 +208,9 @@ A busy dashboard can have dozens of charts redrawing many times a second. The te
 
 ## How to build a real-time dashboard in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, and all charts on a page share one WebGL context, so a dashboard with many live panels and over a million points on screen keeps scrolling smoothly in the browser. The example below simulates a production line: three motor currents and a pump vibration sensor stream in at the data rate you choose, and line speed, station output, utilities and eight oven zones arrive four times a second.
+The demo simulates a production line on up to six panels that all draw through one shared WebGL context. At the highest data rate its strip charts hold up to 1.2 million points, and the readout shows the frame time your device takes to draw them. In the simulation, three motor currents and a pump vibration sensor stream in at the data rate you choose, and line speed, station output, utilities and eight oven zones arrive four times a second.
 
-Use **Update rate** to redraw the dashboard 1, 10 or 60 times a second, and **Data rate** to change how many readings each fast channel sends per second (100 to 10,000, so up to 1.2 million points on the strip charts). **Panels** shows 2, 4 or 6 panels. **Pause** stops the display while data keeps arriving; the readout then shows how far behind live it is. The readout also shows the frame time, the points drawn and the number of charts. Hover a strip chart to read both at once; scrolling or dragging on one pauses the dashboard and zooms or pans both, and double-clicking shows the whole window.
+Use **Update rate** to redraw the dashboard 1, 10 or 60 times a second, and **Data rate** to change how many readings each fast channel sends per second (100 to 10,000, so up to 1.2 million points on the strip charts). **Panels** shows 2, 4 or 6 panels. **Pause** stops the display while data keeps arriving; the readout then shows how far behind live it is. The readout also shows the points drawn and the number of charts. Hover a strip chart to read both at once; scrolling or dragging on one pauses the dashboard and zooms or pans both, and double-clicking shows the whole window.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 

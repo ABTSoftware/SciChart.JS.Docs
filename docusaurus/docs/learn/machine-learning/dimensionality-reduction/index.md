@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Dimensionality Reduction
-title: "Dimensionality Reduction: PCA, t-SNE and UMAP Compared (With an Interactive 3D Example)"
+title: "Dimensionality Reduction: PCA, t-SNE and UMAP Compared"
 description: "What dimensionality reduction is, how PCA, t-SNE and UMAP work, how to read a scree plot and an embedding plot, and which technique to use. With a live 2D and 3D example."
 keywords:
     [
@@ -222,6 +222,8 @@ An **embedding plot** is the scatter chart of the reduced coordinates, usually c
 
 ## Where dimensionality reduction is used
 
+Dimensionality reduction is used wherever each item has too many measurements to plot or model directly, from cells and images to sensor batches and yield curves.
+
 - Biology and medicine. Single-cell genomics routinely shows each cell as a point on a t-SNE or UMAP map, coloured by cell type. Flow cytometry and mass spectrometry use the same maps, and PCA is a standard first look at gene expression and population genetics data. See how SciChart is used in [diagnostics and life sciences](https://www.scichart.com/why-scichart-diagnostics-lifesciences/) software.
 - Machine learning. Embeddings from language and image models have hundreds of dimensions; teams plot them in 2D or 3D to check that similar items land together, and use PCA to compress features before training.
 - Industrial process monitoring. PCA models of normal operation flag a batch or a wafer whose sensor readings fall outside the usual pattern.
@@ -229,6 +231,8 @@ An **embedding plot** is the scatter chart of the reduced coordinates, usually c
 - Images and signals. PCA on faces ("eigenfaces"), compression, and denoising by dropping the smallest components.
 
 ## Common dimensionality reduction mistakes
+
+Most mistakes come from unscaled inputs, from trusting a single run, or from reading a non-linear map as if its distances were measurements.
 
 - **Running PCA on unscaled variables.** A variable measured in grams beside one in kilograms dominates PC1 only because of its units. Standardise when the variables are in different units.
 - **Calling a 2D PCA plot "the data".** In the demo, the first two components keep only 13% of each point's 10 nearest neighbours, against 63% for t-SNE. Put the explained variance in the axis titles.
@@ -241,9 +245,9 @@ An **embedding plot** is the scatter chart of the reduced coordinates, usually c
 
 ## How to plot PCA and t-SNE results in JavaScript, React or Angular
 
-Embedding plots often hold tens of thousands to millions of points, and t-SNE and UMAP produce a new layout at every iteration. SciChart.js draws with WebGL, so a scatter chart or 3D point cloud can redraw every frame while the layout settles. The demo below computes PCA and an exact t-SNE for 800 simulated 8 × 8 digit images (64 dimensions each) in the browser, and draws each iteration as it runs.
+The demo computes PCA and an exact t-SNE for 800 simulated 8 × 8 digit images (64 dimensions each) in the browser. It runs four t-SNE iterations per animation frame, up to 1,000, and redraws the 2D scatter chart or 3D point cloud after each step so you can watch the map form.
 
-Choose the **Method** (t-SNE or PCA) and the **View**: a 2D scatter chart or a 3D point cloud, which reduces to three dimensions. For t-SNE, set the **Perplexity** (applied when you release the slider), choose whether to **Start from** a PCA layout or a random one, and use **Pause** and **Restart t-SNE** to watch the map form. Each restart from a random layout uses a new seed. The readout shows the iteration, the KL divergence and the share of each point's 10 nearest neighbours kept by the map. The side panel shows the PCA scree plot, the first three principal components as images, and the digit under the mouse. Scroll to zoom, drag to pan or rotate, and double-click to reset.
+Choose the **Method** (t-SNE or PCA) and the **View**: a 2D scatter chart or a 3D point cloud, which reduces to three dimensions. For t-SNE, set the **Perplexity** (applied when you release the slider), choose whether to **Start from** a PCA layout or a random one, and use **Pause** and **Restart t-SNE** to watch the map form. Each restart from a random layout uses a new seed. The readout shows the iteration, the KL divergence and the share of each point's 10 nearest neighbours kept by the map. The side panel shows the PCA scree plot, the first three principal components as images, and the digit under the mouse. The mouse wheel zooms, dragging pans the 2D chart or rotates the 3D one, and a double-click resets the view.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 

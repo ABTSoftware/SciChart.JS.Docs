@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Real-Time Charts
-title: "Real-Time Charts: A Guide (With Interactive Examples)"
+title: "Real-Time Charts: A Guide (Interactive Examples)"
 description: "How real-time and streaming charts work and how to read them, starting with strip charts, with live, interactive examples that update as you watch."
 keywords: ["real time chart", "real-time charts", "streaming chart", "live chart", "strip chart"]
 ---

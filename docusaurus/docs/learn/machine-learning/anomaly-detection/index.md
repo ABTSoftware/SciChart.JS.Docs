@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Anomaly Detection
-title: "Anomaly Detection: Algorithms and How to Spot Anomalies in Time Series Data (With a Live Example)"
+title: "Anomaly Detection: Algorithms and How to Spot Anomalies in Time Series"
 description: "What anomaly detection is, the three types of anomaly, how z-scores, the IQR rule, LOF and isolation forest work, how to handle seasonality in time series, and how to measure a detector. With a live example."
 keywords:
     [
@@ -58,7 +58,7 @@ related: [time-series-graph, strip-chart, roc-curve, k-means-clustering]
                 {
                     "@type": "Question",
                     "name": "How do I build a real-time anomaly detection chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Score each new reading as it arrives, using only earlier readings, then append it to the chart. Draw the signal as a line series, the detector's expected range as a band series, flagged readings as red scatter markers and known incidents as shaded box annotations. A second chart shows the anomaly score with a draggable threshold line. SciChart.js does this with FastLineRenderableSeries, FastBandRenderableSeries and XyScatterRenderableSeries, in plain JavaScript, React or Angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Score each new reading as it arrives, using only earlier readings, then append it to the chart. Draw the signal as a line series, the detector's expected range as a band series, flagged readings as red scatter markers and known incidents as shaded box annotations. A second chart shows the anomaly score with a draggable threshold line. In SciChart.js these are FastLineRenderableSeries, FastBandRenderableSeries and XyScatterRenderableSeries, and the same code runs in plain JavaScript, React or Angular." }
                 }
             ]
         })}
@@ -69,7 +69,7 @@ related: [time-series-graph, strip-chart, roc-curve, k-means-clustering]
 
 ## What is anomaly detection?
 
-**Anomaly detection** (also called outlier detection) is the task of finding data points, events or patterns that differ from the expected behaviour of the rest of the data. A detector learns what normal looks like, scores each new observation for how unusual it is, and flags those whose score passes a threshold. It is used to catch faults, fraud and intrusions early.
+**Anomaly detection** (also called outlier detection) is the task of finding data points, events or patterns that differ from the expected behaviour of the rest of the data. A detector learns what normal looks like, scores each new observation and flags those whose score passes a threshold. It is used to catch faults, fraud and intrusions early.
 
 ![A live anomaly detection dashboard in a dark navy theme: a streaming power reading with a daily cycle, a yellow band showing the expected range from a seasonal baseline, red markers on readings flagged as anomalous, and grey shaded boxes labelled spike and level shift marking the injected anomalies; below it, the anomaly score over time with a dashed red threshold line; on the right, an isolation forest anomaly-score heatmap with recent readings plotted on two features](/img/learn/anomaly-detection-og.png)
 
@@ -99,7 +99,7 @@ A **level shift**, where the series jumps to a new level and stays there, and a 
 
 ## How anomaly detection works
 
-Every detector has three parts:
+An anomaly detector learns what normal looks like, scores each new point against it and flags the points whose score passes a threshold. Those are its three parts:
 
 1. A model of normal, learned from past data: a mean and standard deviation, a seasonal profile, the density of nearby points, or a forecast.
 2. An **anomaly score** for each new point: how far it sits from that model.
@@ -116,6 +116,8 @@ Detectors also differ in how much labelled data they need:
 Most real systems are unsupervised or semi-supervised, because anomalies are rare, varied and often new. Labels are still worth collecting, because they are the only way to measure and tune a detector.
 
 ## Anomaly detection algorithms
+
+Anomaly detection algorithms fall into a few families: statistical tests on one variable, distance and density methods, isolation forest, and models of normal such as forecasts and autoencoders.
 
 ### Statistical methods: z-score, robust z-score and the IQR rule
 
@@ -178,6 +180,8 @@ It has two weaknesses. Every cut is parallel to an axis, which leaves stripes in
 - Control charts: Shewhart, CUSUM and EWMA charts from statistical process control. CUSUM and EWMA accumulate small deviations, so they catch slow drifts that point tests miss.
 
 ## Anomaly detection algorithms compared: which to use
+
+Use the simplest method that can see your type of anomaly: limits or robust z-scores for single points, a seasonal baseline for time series with cycles, and isolation forest when there are several features.
 
 | Method | Data it suits | Anomaly types it finds | Strengths | Watch out for |
 | --- | --- | --- | --- | --- |
@@ -247,6 +251,8 @@ A chart is often where an alert is checked, so the visual matters as much as the
 
 ## Where anomaly detection is used
 
+Anomaly detection is used wherever a fault, fraud or attack shows up as unusual data before it does damage.
+
 - Industrial and sensor monitoring: vibration, temperature, pressure and power on pumps, motors and production lines, as part of condition monitoring. See the [vibration analysis guide](/learn/applications/vibration-analysis/), how alarm limits work on [HMI and SCADA trend charts](/learn/applications/hmi-scada/), and SciChart for [HMI and SCADA](https://www.scichart.com/scada-big-data/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/) software.
 - Fraud detection: card payments, insurance claims and account logins that don't match a customer's history.
 - Network and IT security: intrusion detection, unusual traffic, and server metrics such as latency and error rates.
@@ -255,6 +261,8 @@ A chart is often where an alert is checked, so the visual matters as much as the
 - Finance and business metrics: sudden changes in sales, sign-ups or costs.
 
 ## Common anomaly detection mistakes
+
+Most failed detectors were tuned on the wrong baseline, scored with the wrong measure, or never checked against a chart of the data.
 
 - **Fixed thresholds on non-stationary data.** A limit set last month is wrong after the process drifts or the season changes. Test residuals from a model of the current level, not raw values.
 - **Ignoring seasonality.** A rolling z-score on a daily cycle flags every steep rise as an anomaly and misses a normal-looking value at the wrong hour. In the demo it scores 23% precision and catches neither the contextual anomaly nor the flat day.
@@ -267,9 +275,9 @@ A chart is often where an alert is checked, so the visual matters as much as the
 
 ## How to build a real-time anomaly detection chart in JavaScript, React or Angular
 
-Monitoring dashboards stream thousands of readings per sensor and redraw several times a second. SciChart.js draws with WebGL, so the signal, the band, the flags and the score chart stay smooth as data streams in, and the threshold can be dragged while the whole history is re-scored. The demo simulates 28 days of a power reading every 10 minutes: 14 days of clean history to learn from, then 14 streamed days with seven injected anomalies. All three detectors, including a 100-tree isolation forest retrained every simulated day, run in the browser.
+The demo re-checks every streamed reading against the threshold each time you move it, and retrains a 100-tree isolation forest every simulated day, all in the browser. It simulates 28 days of a power reading every 10 minutes: 14 days of clean history to learn from, then 14 streamed days with seven injected anomalies.
 
-Choose a **Detector**: a rolling z-score over the last 6 hours, a seasonal baseline (the median of the same time on the previous 7 days, scaled by the MAD of the history), or an isolation forest on two features. Move the **Threshold** slider, or drag the dashed red line on the score chart, and the flags, the band and the precision and recall readout update at once. **Speed** sets how fast the days stream, **Pause** stops the stream so you can zoom and pan, and **Restart** plays it again. The chart on the right shows the isolation forest's score as a heatmap over its two features, with the last 7 days of readings on top and the newest one ringed. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose a **Detector**: a rolling z-score over the last 6 hours, a seasonal baseline (the median of the same time on the previous 7 days, scaled by the MAD of the history), or an isolation forest on two features. Move the **Threshold** slider, or drag the dashed red line on the score chart, and the flags, the band and the precision and recall readout follow it. **Speed** sets how fast the days stream, **Pause** stops the stream so you can zoom and pan, and **Restart** plays it again. The chart on the right shows the isolation forest's score as a heatmap over its two features, with the last 7 days of readings on top and the newest one ringed. Use the mouse wheel to zoom, drag to pan, double-click to fit all the data, and hover for values.
 
 <LiveDocSnippet maxWidth={'100%'} height={780} name="./Basic/demo" />
 
@@ -506,7 +514,7 @@ Remove the parts of the series you can predict, then look for large leftovers. M
 
 ### How do I build a real-time anomaly detection chart in JavaScript?
 
-Score each new reading as it arrives, using only earlier readings, then append it to the chart. Draw the signal as a line series, the detector's expected range as a band series, flagged readings as red scatter markers and known incidents as shaded box annotations. A second chart shows the anomaly score with a draggable threshold line. SciChart.js does this with FastLineRenderableSeries, FastBandRenderableSeries and XyScatterRenderableSeries, in plain JavaScript, React or Angular.
+Score each new reading as it arrives, using only earlier readings, then append it to the chart. Draw the signal as a line series, the detector's expected range as a band series, flagged readings as red scatter markers and known incidents as shaded box annotations. A second chart shows the anomaly score with a draggable threshold line. In SciChart.js these are FastLineRenderableSeries, FastBandRenderableSeries and XyScatterRenderableSeries, and the same code runs in plain JavaScript, React or Angular.
 
 ## Sources
 

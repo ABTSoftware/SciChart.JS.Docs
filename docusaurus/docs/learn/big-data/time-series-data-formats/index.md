@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Time Series Data Formats
-title: "Time Series Data Formats for Fast Charts: Columnar, Binary and Compressed (JSON vs Protobuf vs Arrow)"
+title: "Time Series Data Formats: JSON vs Protobuf vs Arrow vs Parquet"
 description: "How to send large and streaming time series to a browser chart fast: row vs column order, typed arrays, delta, varint and Gorilla compression, and JSON vs Protobuf vs Arrow vs Parquet."
 keywords:
     [
@@ -96,12 +96,12 @@ A **time series data format** is the way timestamped measurements are laid out a
 
 :::tip Key takeaways
 - JSON is fine for most charts: thousands to tens of thousands of points, updated a few times a second.
-- For the highest performance, keep the data in columns from end to end: stored in a columnar time series database, Arrow or Parquet, and sent as binary columns, never as rows that the browser has to turn into columns.
+- Charts read data as columns, one array per channel, so data stored and sent in columns needs no reshaping in the browser.
 - Time series compression (delta of delta for timestamps, deltas of scaled integers or Gorilla-style XOR for values, packed as varints or bits) cuts the size to a few bytes per sample without losing precision.
 - The browser decompresses each column straight into a `Float64Array` buffer and hands it to the chart in one call, with no per-point objects.
 :::
 
-The same choices apply to telemetry from vehicles and machines, market ticks, sensor networks and lab instruments. There are two honest options: JSON, which is simple and fine for most charts, and a columnar binary path for the highest performance. This guide explains when to use each and how the fast path works.
+The same choices apply to telemetry from vehicles and machines, market ticks, sensor networks and lab instruments. This guide covers both paths, JSON for most charts and binary columns for large or fast data, and when to use each.
 
 ## When is JSON good enough for time series?
 
@@ -114,7 +114,7 @@ At hundreds of thousands or millions of points, or with high update rates, JSON 
 - Allocation. `JSON.parse` builds one JavaScript object per sample. A million samples means a million objects for the garbage collector to track, before the chart has seen a value.
 - Copying. Most charts then copy the values out of those objects into their own arrays, so the data is handled twice.
 
-Converting rows to columns in the browser doesn't fix this: it adds a pass over every object after the parse. For the highest performance, the data should never be in rows at all. Store it as columns (in a columnar time series database, Arrow or Parquet), send binary columns with time series compression, and decompress them on the client straight into `Float64Array` buffers for the chart.
+Converting rows to columns in the browser doesn't fix this: it adds a pass over every object after the parse. The sections below show the alternative, where the data is never in rows at all.
 
 The interactive test further down measures both paths in your browser. On its simulated recording, JSON rows take about 56 bytes per sample against 4 bytes for a delta-varint encoding of the same values.
 
@@ -220,6 +220,8 @@ Web servers can compress any response with **gzip**, **Brotli** or **Zstandard (
 
 ## Time series data formats compared
 
+For most applications, use JSON. For the highest performance, keep the data in a columnar store (a columnar time series database, Arrow or Parquet), send binary columns with time series compression, and decompress them on the client into `Float64Array` buffers.
+
 | Format | Text or binary | Layout | Schema | Numbers | Decode into typed arrays | Use it for |
 | --- | --- | --- | --- | --- | --- | --- |
 | JSON (array of objects) | Text | Rows | None, names in every record | Decimal text | Parse, allocate objects, copy | Small payloads, configuration, APIs |
@@ -232,8 +234,6 @@ Web servers can compress any response with **gzip**, **Brotli** or **Zstandard (
 | Parquet | Binary | Columns in row groups | In the file | Encoded and compressed | Decode with a library | Storage, data lakes, offline analysis |
 | QWP (QuestDB Wire Protocol) | Binary | Columns | Negotiated | Column blocks, delta-encoded timestamps | Query results as Arrow record batches | Ingesting into and querying QuestDB over WebSocket |
 | Custom delta + varint or Gorilla | Binary | Columns | Agreed by both ends | Packed deltas | Short decode loop per column | The smallest live feeds you control end to end |
-
-For most applications, use JSON. For the highest performance, keep the data in a columnar store (a columnar time series database, Arrow or Parquet), send binary columns with time series compression, and decompress them on the client into `Float64Array` buffers.
 
 ### Protobuf vs JSON
 
@@ -261,8 +261,10 @@ On the fast path, the data is columnar from the moment it's stored. The remainin
 
 ## Common mistakes when sending time series to a chart
 
+Most slow data paths come from sending rows of text where columns of numbers would do, or from doing the decoding and appending on the main thread one point at a time.
+
 - **Sending one JSON object per sample at high volume.** It multiplies size and parse time, and creates an object per point. Below tens of thousands of points it rarely matters; above that, send binary columns.
-- **Turning rows into columns in the browser.** Parsing JSON rows and then copying them into arrays does the work twice. If performance matters, keep the data columnar in storage and on the wire, so it arrives in the shape the chart needs.
+- **Turning rows into columns in the browser.** Parsing JSON rows and then copying them into arrays does the work twice. Send columns, so the data arrives in the shape the chart needs.
 - **Appending points one at a time.** A call and a possible redraw per sample is far slower than one call per batch. Collect a batch, then append it.
 - **Delta-encoding raw floating-point decimals.** Subtracting doubles such as 212.41 − 212.37 gives 0.03999… and rounding drifts over millions of samples. Scale decimals to whole numbers first, with one known scale per column.
 - **Misaligned typed array views.** A `Float64Array` on a buffer at an offset that isn't a multiple of 8 throws. Pad the header, or copy with `slice()` when you can't control the layout.
@@ -273,9 +275,9 @@ On the fast path, the data is columnar from the moment it's stored. The remainin
 
 ## How to load binary time series into a chart in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU and stores its data series in WebAssembly memory, so typed arrays go straight in and millions of points stay smooth to zoom and pan. The demo below generates a simulated car telemetry recording (speed, throttle and brake at 1,000 samples per second), encodes it in five formats, and measures each one in your browser. The two JSON options are the easy baseline most applications use; the three binary columnar options are the high-performance path.
+The demo generates a simulated car telemetry recording (speed, throttle and brake at 1,000 samples per second), encodes it in five formats, and times how long each takes to decode and draw in your browser, at up to a million samples; the decoded `Float64Array` columns go into the chart's WebAssembly memory in one call per channel. The two JSON options are the easy baseline most applications use; the three binary columnar options are the high-performance path.
 
-Pick the number of **Samples**, choose a **Format** and press **Decode and draw** to decode that format into `Float64Array` columns and load them into the chart; the status line shows the decode time and the time until the chart is drawn. **Measure again** reruns the table: encoded size, bytes per sample, gzipped size, decode time (the faster of two runs) and whether the round trip was exact. Scroll to zoom in time, drag to pan, double-click to see everything, and hover for values.
+Pick the number of **Samples**, choose a **Format** and press **Decode and draw** to decode that format into `Float64Array` columns and load them into the chart; the status line shows the decode time and the time until the chart is drawn. **Measure again** reruns the table: encoded size, bytes per sample, gzipped size, decode time (the faster of two runs) and whether the round trip was exact. To explore the result, zoom in time with the mouse wheel, drag to pan, double-click to see everything and hover for values.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 

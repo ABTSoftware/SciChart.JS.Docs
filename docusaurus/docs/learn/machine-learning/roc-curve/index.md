@@ -1,7 +1,7 @@
 ---
 sidebar_position: 80
 sidebar_label: ROC Curve
-title: "ROC Curve and Precision-Recall Curve: How to Read Them and What AUC Means (With an Interactive Example)"
+title: "ROC and Precision-Recall Curves: How to Read Them and What AUC Means"
 description: "What a ROC curve is, how it is built from a confusion matrix by sweeping the threshold, what AUC means, when to use a precision-recall curve instead, and how to choose a threshold. With a live example."
 keywords:
     [
@@ -62,7 +62,7 @@ related: [decision-boundary, anomaly-detection, residual-plot, correlation-matri
                 {
                     "@type": "Question",
                     "name": "How do I plot a ROC curve in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the test cases by score from highest to lowest, then walk down the list counting true and false positives. After each distinct score, add a point at (false positive rate, true positive rate), and sum the trapezoids under the points for the AUC. Draw the points as a line series from (0, 0) to (1, 1) with a dashed diagonal for chance. SciChart.js does this with FastLineRenderableSeries and XyDataSeries, in plain JavaScript, React or Angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the test cases by score from highest to lowest, then walk down the list counting true and false positives. After each distinct score, add a point at (false positive rate, true positive rate), and sum the trapezoids under the points for the AUC. Draw the points as a line series from (0, 0) to (1, 1) with a dashed diagonal for chance. SciChart.js draws it with a FastLineRenderableSeries over an XyDataSeries, and its React and Angular wrappers take the same code." }
                 }
             ]
         })}
@@ -73,7 +73,7 @@ related: [decision-boundary, anomaly-detection, residual-plot, correlation-matri
 
 ## What is a ROC curve?
 
-A **ROC curve** (receiver operating characteristic curve) is a chart of how well a binary classifier separates two classes. It plots the true positive rate against the false positive rate at every decision threshold, from the strictest to the most lenient. The area under it, the **AUC**, sums up the curve as a single number from 0.5 (chance) to 1 (perfect).
+A **ROC curve** (receiver operating characteristic curve) is a chart of how well a binary classifier separates two classes. It plots the true positive rate against the false positive rate at every decision threshold. The area under it, the **AUC**, sums the curve up as one number from 0 to 1, where 0.5 is chance and 1 is perfect.
 
 ![Three charts of a simulated classifier in a dark navy theme: overlapping score histograms of negative and positive cases with a dashed threshold line, a ROC curve bowing towards the top-left corner above a dashed diagonal, with its area under the curve in the legend, a precision-recall curve that falls from the top-left towards a low dashed baseline, and the confusion matrix at the threshold](/img/learn/roc-curve-og.png)
 
@@ -276,6 +276,8 @@ A ROC curve measures **discrimination**, how well the model ranks cases. It says
 
 ## Where ROC curves are used
 
+ROC curves are used wherever a yes/no decision trades missed cases against false alarms.
+
 - Radar and signal detection. ROC analysis began with radar operators in the Second World War, judging how well they could tell aircraft from noise. Psychology adopted it as signal detection theory.
 - Medical diagnostic tests. ROC curves compare tests and set cut-offs, for example the level of a blood marker above which a test counts as positive, trading sensitivity against specificity. This page explains how the curves are drawn and read; it is not clinical guidance. See how SciChart is used for [diagnostics and life sciences](https://www.scichart.com/why-scichart-diagnostics-lifesciences/) software.
 - Machine learning. ROC AUC and average precision are standard ways to evaluate classifiers, from spam filters to image classifiers.
@@ -283,6 +285,8 @@ A ROC curve measures **discrimination**, how well the model ranks cases. It says
 - Industrial inspection. Defect detectors and alarm systems trade missed faults against false alarms that waste engineers' time.
 
 ## Common ROC curve mistakes
+
+Most ROC mistakes come from trusting AUC alone: on rare positives, at a deployed threshold, or on data that leaked into training.
 
 - **Trusting AUC when positives are rare.** In the [live demo](#how-to-plot-a-roc-curve-in-javascript-react-or-angular), with a class separation of 2.3 and 1% positives, the AUC is 0.95, yet the average precision is 0.42 and at the best Youden threshold only about 1 flagged case in 20 is a real positive. Moving the positive rate from 5% to 1% at the default separation barely changes the AUC (0.89 to 0.91) but halves the AP (0.42 to 0.23). Check the precision-recall curve, or the precision at the threshold you will deploy.
 - **Quoting a threshold-free metric for a deployed model.** AUC averages over every threshold, including ones you would never use. Report the sensitivity, specificity and precision at the chosen threshold as well.
@@ -295,9 +299,9 @@ A ROC curve measures **discrimination**, how well the model ranks cases. It says
 
 ## How to plot a ROC curve in JavaScript, React or Angular
 
-Model evaluation runs over test sets of thousands to millions of cases, and a ROC curve has one point per distinct score. SciChart.js draws with WebGL, so the histograms and both curves redraw at once on every move of the threshold, even with large test sets. The demo simulates 5,000 test cases scored by two models and computes everything in the browser.
+The demo simulates 5,000 test cases scored by two models, builds both curves in the browser, and recomputes the confusion matrix as you drag the threshold.
 
-Drag the **Threshold** slider, or the dashed line on the histogram, to move the marker along both curves and update the confusion matrix and its rates. **Class separation** sets how far apart the two score distributions are, and **Positive rate** sets the share of positives, from 50% to 1%. **Best Youden's J** jumps to the threshold that maximises TPR − FPR, and **Compare model B** adds a second model with almost the same AUC but a different shape. **Histogram** switches between the share of each class and raw counts, which shows how small the positive class becomes at 1%. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Drag the **Threshold** slider, or the dashed line on the histogram, to move the marker along both curves and update the confusion matrix and its rates. **Class separation** sets how far apart the two score distributions are, and **Positive rate** sets the share of positives, from 50% to 1%. **Best Youden's J** jumps to the threshold that maximises TPR − FPR, and **Compare model B** adds a second model with almost the same AUC but a different shape. **Histogram** switches between the share of each class and raw counts, which shows how small the positive class becomes at 1%. Hover for values, zoom with the mouse wheel, drag to pan and double-click to see everything again.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
@@ -496,7 +500,7 @@ Yes. An AUC below 0.5 means the model ranks negatives above positives more often
 
 ### How do I plot a ROC curve in JavaScript?
 
-Sort the test cases by score from highest to lowest, then walk down the list counting true and false positives. After each distinct score, add a point at (false positive rate, true positive rate), and sum the trapezoids under the points for the AUC. Draw the points as a line series from (0, 0) to (1, 1) with a dashed diagonal for chance. SciChart.js does this with FastLineRenderableSeries and XyDataSeries, in plain JavaScript, React or Angular.
+Sort the test cases by score from highest to lowest, then walk down the list counting true and false positives. After each distinct score, add a point at (false positive rate, true positive rate), and sum the trapezoids under the points for the AUC. Draw the points as a line series from (0, 0) to (1, 1) with a dashed diagonal for chance. SciChart.js draws it with a FastLineRenderableSeries over an XyDataSeries, and its React and Angular wrappers take the same code.
 
 ## Sources
 

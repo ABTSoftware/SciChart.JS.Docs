@@ -1,7 +1,7 @@
 ---
 sidebar_position: 70
 sidebar_label: Regularization (Ridge and Lasso)
-title: "Regularization: Ridge and Lasso Regression Explained (Overfitting, Bias–Variance and an Interactive Example)"
+title: "Regularization: Ridge and Lasso Regression Explained"
 description: "What regularization is, how ridge (L2) and lasso (L1) regression shrink coefficients, why lasso sets some to zero, and how to choose lambda by cross-validation. With a live polynomial example."
 keywords:
     [
@@ -69,7 +69,7 @@ related: [residual-plot, decision-boundary, activation-functions, roc-curve]
 
 ## What is regularization?
 
-**Regularization** (also called shrinkage or penalised regression) is a way to stop a model overfitting by adding a penalty on the size of its coefficients to the error it minimises. **Ridge regression** penalises the squared coefficients (L2) and shrinks them all; **lasso regression** penalises their absolute values (L1) and sets some exactly to zero. A tuning value, λ, sets the strength.
+**Regularization** (also called shrinkage or penalised regression) stops a model overfitting by adding a penalty on the size of its coefficients to the error it minimises. **Ridge regression** penalises the squared coefficients (L2) and shrinks them all; **lasso regression** penalises their absolute values (L1) and sets some exactly to zero. A tuning value, λ, sets its strength.
 
 ![Three charts in a dark navy theme: noisy training points with a dashed true curve and an orange fitted polynomial that follows it smoothly, a coefficient path chart with fifteen coloured lines shrinking towards zero as lambda increases on a log-scale axis with a dashed marker at the chosen lambda, and training, cross-validation and test error curves against lambda with the cross-validation curve dipping to a minimum](/img/learn/regularization-og.png)
 
@@ -225,6 +225,8 @@ The penalty adds up the coefficients' sizes, but a coefficient's size depends on
 
 ## Ridge vs lasso vs elastic net
 
+Use ridge when many features each matter a little, lasso when you want a small model with only a few features, and elastic net when correlated features should be kept or dropped together.
+
 | Method | Penalty | Sets coefficients to zero? | Correlated features | Solution | Best when |
 | --- | --- | --- | --- | --- | --- |
 | Least squares | None | No | Unstable, large offsetting coefficients | Closed form | Few features, plenty of data, no collinearity |
@@ -237,6 +239,8 @@ For neural networks the same ideas appear as weight decay (an L2 penalty), early
 
 ## Common regularization mistakes
 
+Most regularization mistakes come from how λ is chosen and reported, or from reading too much into the features the lasso keeps.
+
 - **Standardising 0/1 features without thinking.** Scaling a dummy variable for a rare category makes its coefficient cheaper or dearer to use, depending on the choice. Decide on purpose, and use the same rule for every dummy.
 - **Quoting the best cross-validation error as the expected error.** λ was chosen because that error was lowest, so it is optimistic. Report the error on a held-out test set, or use nested cross-validation, with λ tuned inside each outer fold.
 - **Searching too narrow a grid.** If the minimum of the validation curve sits at the end of the λ grid, the best value may be beyond it. Extend the grid until the curve turns up on both sides.
@@ -248,9 +252,9 @@ For neural networks the same ideas appear as weight decay (an L2 penalty), early
 
 ## How to plot ridge and lasso regression in JavaScript, React or Angular
 
-Tuning a model means looking at many fits at once: the fitted curve, every coefficient path and the error curves, redrawn as λ moves. SciChart.js draws with WebGL, so all three charts redraw together on every slider move, even though each change of degree or noise refits 366 models in the browser (61 values of λ, each fitted once on all the data and five times for cross-validation). The ridge, lasso and cross-validation maths is plain JavaScript in the demo.
+The demo refits 366 models in the browser each time you change the degree or the noise (61 values of λ, each fitted once on all the data and five times for cross-validation), then redraws the fitted curve, the coefficient paths and the error curves together. The ridge, lasso and cross-validation maths is plain JavaScript.
 
-Choose a **Method**: no penalty, ridge or lasso. **Degree** sets the polynomial degree, from 1 to 15. Drag the **λ** slider, or the dashed line on the coefficient path chart, to change the penalty on a log scale from 0.0001 to 100. **Noise** sets the noise in the data. **Best λ (5-fold CV)** jumps to the λ with the lowest cross-validation error, **Error vs** switches the error chart between λ and degree, and **Resample data** draws a fresh set of points. The readout above the charts gives the training, cross-validation and test RMSE and the number of non-zero coefficients. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose a **Method**: no penalty, ridge or lasso. **Degree** sets the polynomial degree, from 1 to 15. Drag the **λ** slider, or the dashed line on the coefficient path chart, to change the penalty on a log scale from 0.0001 to 100. **Noise** sets the noise in the data. **Best λ (5-fold CV)** jumps to the λ with the lowest cross-validation error, **Error vs** switches the error chart between λ and degree, and **Resample data** draws a fresh set of points. The readout above the charts gives the training, cross-validation and test RMSE and the number of non-zero coefficients. Hover any chart for values; the wheel zooms, a drag pans and a double-click restores the full view.
 
 <LiveDocSnippet maxWidth={'100%'} height={820} name="./Basic/demo" />
 

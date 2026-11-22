@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
 sidebar_label: Learning Center
-title: "Learning Center: A Guide to Data Visualisation (With Interactive Examples)"
-description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data fast, and signal processing basics, with live, interactive examples."
+title: "Learning Center: A Guide to Data Visualisation"
+description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data, and signal processing basics, with live, interactive examples."
 keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
 ---
 
@@ -47,13 +47,13 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Big data and performance
 
-[**Big data and performance**](/learn/big-data/): how to chart millions of points and keep the chart fast.
+[**Big data and performance**](/learn/big-data/): how to chart millions of points: renderers, downsampling and data formats.
 
 | Topic | What it covers |
 | --- | --- |
 | [Big data visualization](/learn/big-data/big-data-visualization/) | What makes data big for a chart, and SVG vs Canvas vs WebGL, with a live test in your browser |
 | [Downsampling](/learn/big-data/downsampling/) | How downsampling methods compare, and which keep the spikes |
-| [Time series data formats](/learn/big-data/time-series-data-formats/) | Binary, columnar and compressed formats that load fast into a chart |
+| [Time series data formats](/learn/big-data/time-series-data-formats/) | Binary, columnar and compressed formats that load straight into a chart's arrays |
 
 ## Signal processing
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 90
 sidebar_label: Support Vector Machine
-title: "Support Vector Machine (SVM) and the Kernel Trick, Visualised in 2D and 3D"
+title: "Support Vector Machine (SVM) and the Kernel Trick in 2D and 3D"
 description: "What a support vector machine is: the maximum-margin hyperplane, support vectors, soft margins and C, and the kernel trick with polynomial and RBF kernels, shown in live 2D and 3D."
 keywords:
     [
@@ -58,7 +58,7 @@ related: [decision-boundary, roc-curve, regularization, point-cloud]
                 {
                     "@type": "Question",
                     "name": "How do I visualise an SVM decision boundary in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Train the SVM, then evaluate its decision function f(x) on a regular grid across the feature space. Draw the grid as a heatmap, with one colour for negative values and another for positive, and draw contour lines at f = 0 for the boundary and f = -1 and +1 for the margins. Plot the training points on top as a scatter series and ring the support vectors. SciChart.js does this with UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries in JavaScript, React or Angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Train the SVM, then evaluate its decision function f(x) on a regular grid across the feature space. Draw the grid as a heatmap, with one colour for negative values and another for positive, and draw contour lines at f = 0 for the boundary and f = -1 and +1 for the margins. Plot the training points on top as a scatter series and ring the support vectors. SciChart.js provides UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries for these layers, in JavaScript, React and Angular alike." }
                 }
             ]
         })}
@@ -181,6 +181,8 @@ The saving grows with the number of dimensions. For the polynomial kernel $K(\ma
 
 ## SVM kernels: linear, polynomial and RBF
 
+The kernel sets the shape of the boundary: a straight line for the linear kernel, curves of a chosen degree for the polynomial kernel, and almost any shape for the RBF kernel, the usual first choice.
+
 | Kernel | Formula | Boundary in 2D | Parameters | Use it when |
 | --- | --- | --- | --- | --- |
 | Linear | $\mathbf{x}^\top \mathbf{x}'$ | Straight line | C | Many features, such as text, or a straight boundary is enough |
@@ -202,7 +204,7 @@ scikit-learn's SVC defaults to C = 1 and sets gamma from the data, as 1 divided 
 
 ## How to read an SVM decision boundary plot
 
-The 2D chart in the demo is the usual way to show a trained classifier with two features:
+An SVM decision boundary plot colours each point of the plane by the SVM's score and draws the boundary and margins as contours. The 2D chart in the demo is laid out like this:
 
 1. The background colour is f(x), the SVM's score, at every point. Orange means class +1 and blue means class −1; the deeper the colour, the further from the boundary.
 2. The thick white contour is the decision boundary, f = 0. Every point on one side gets the same label.
@@ -217,6 +219,8 @@ The score is a signed distance, not a probability. To turn it into one, fit a lo
 An SVM separates two classes, so for more it is run several times. **One-vs-rest** trains one SVM per class against all the others and picks the class whose SVM gives the highest score: k classifiers for k classes. **One-vs-one** trains an SVM for every pair of classes, k(k − 1)/2 in all, and takes a vote; each one trains on only two classes' points, so it is often quicker overall. scikit-learn's SVC uses one-vs-one, and its LinearSVC uses one-vs-rest.
 
 ## SVM vs logistic regression vs k-nearest neighbours
+
+Choose an SVM for a clear margin on small to medium data, logistic regression when you need probabilities or explainable coefficients, and k-NN for a quick baseline in few dimensions.
 
 | Method | Boundary | Uses which training points | Gives probabilities | Training cost | Best for |
 | --- | --- | --- | --- | --- | --- |
@@ -233,6 +237,8 @@ SVMs measure distance. An RBF kernel compares $\lVert \mathbf{x} - \mathbf{x}' \
 
 ## Where support vector machines are used
 
+Support vector machines are used most where there are many features and fairly few labelled examples.
+
 - Text classification: spam filtering and topic labelling, where a linear SVM handles tens of thousands of word features.
 - Handwritten digit recognition. Cortes and Vapnik's 1995 paper tested soft-margin SVMs with polynomial kernels on handwritten digits.
 - Bioinformatics: classifying samples from gene-expression or protein data, where there are far more features than samples.
@@ -242,6 +248,8 @@ SVMs measure distance. An RBF kernel compares $\lVert \mathbf{x} - \mathbf{x}' \
 - Regression. Support vector regression fits a tube of width ε around the data and ignores errors inside it.
 
 ## Common SVM mistakes
+
+Most SVM mistakes come from unscaled features and from settings of C and gamma that let the model memorise its training points.
 
 - **Not scaling the features.** The largest feature dominates the distances and the margin. Fit the scaler on training data only.
 - **Gamma too high.** The model memorises the training points and scores 100% on them. Compare training and test accuracy, as the demo does, and pick C and gamma by cross-validation.
@@ -253,9 +261,9 @@ SVMs measure distance. An RBF kernel compares $\lVert \mathbf{x} - \mathbf{x}' \
 
 ## How to visualise a support vector machine in JavaScript, React or Angular
 
-A trained SVM is easiest to understand as pictures: a heatmap of f(x) with contour lines, and the 3D lift that shows the kernel trick at work. SciChart.js draws the heatmap, contours, scatter points, 3D surfaces and spheres with WebGL, so both charts redraw as you drag a slider while the SVM retrains in the browser. The training code is a compact SMO solver in plain JavaScript, from the same family of algorithms as libsvm.
+The demo retrains the SVM in the browser each time you move a slider, with a compact SMO solver in plain JavaScript from the same family of algorithms as libsvm, then redraws the 2D heatmap and contours and the 3D lift that shows the kernel trick at work.
 
-Choose a **Dataset** (linear, circles or moons) and a **Kernel** (linear, polynomial or RBF), with its **Degree** for the polynomial kernel. **C** and **Gamma** move in powers of ten, and the results line shows the support-vector count and the training and test accuracy, so you can watch overfitting happen. On the right, the 3D chart lifts the same points onto the paraboloid and trains a linear SVM there. Drag **Lift** from 0 to 1, or press **Animate lift**, to raise the points off the floor and watch the plane and its white intersection circle rise with them. Drag the 3D chart to rotate it. Scroll to zoom, drag to pan the 2D chart, double-click to reset, and hover for values.
+Choose a **Dataset** (linear, circles or moons) and a **Kernel** (linear, polynomial or RBF), with its **Degree** for the polynomial kernel. **C** and **Gamma** move in powers of ten, and the results line shows the support-vector count and the training and test accuracy, so you can watch overfitting happen. On the right, the 3D chart lifts the same points onto the paraboloid and trains a linear SVM there. Drag **Lift** from 0 to 1, or press **Animate lift**, to raise the points off the floor and watch the plane and its white intersection circle rise with them. Drag the 3D chart to rotate it. On the 2D chart, the wheel zooms, a drag pans, a double-click resets and hovering shows values.
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
@@ -460,7 +468,7 @@ Neither is better in general. A linear SVM and logistic regression both draw a s
 
 ### How do I visualise an SVM decision boundary in JavaScript?
 
-Train the SVM, then evaluate its decision function f(x) on a regular grid across the feature space. Draw the grid as a heatmap, with one colour for negative values and another for positive, and draw contour lines at f = 0 for the boundary and f = -1 and +1 for the margins. Plot the training points on top as a scatter series and ring the support vectors. SciChart.js does this with UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries in JavaScript, React or Angular.
+Train the SVM, then evaluate its decision function f(x) on a regular grid across the feature space. Draw the grid as a heatmap, with one colour for negative values and another for positive, and draw contour lines at f = 0 for the boundary and f = -1 and +1 for the margins. Plot the training points on top as a scatter series and ring the support vectors. SciChart.js provides UniformHeatmapRenderableSeries, UniformContoursRenderableSeries and XyScatterRenderableSeries for these layers, in JavaScript, React and Angular alike.
 
 ## Sources
 
