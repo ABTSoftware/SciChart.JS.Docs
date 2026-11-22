@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/funnel-chart-og.png
 related: [sankey-diagram, bar-chart, waterfall-chart, pie-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

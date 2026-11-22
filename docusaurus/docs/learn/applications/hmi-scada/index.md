@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/hmi-scada-og.png
 related: [telemetry, strip-chart, gauge-chart, downsampling]
+datePublished: 2026-11-20
 ---
 
 <head>

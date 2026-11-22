@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/timeline-chart-og.png
 related: [bar-chart, dumbbell-chart, line-chart]
+datePublished: 2026-11-16
 ---
 
 <head>

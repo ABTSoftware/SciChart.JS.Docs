@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/dimensionality-reduction-og.png
 related: [k-means-clustering, hierarchical-clustering, point-cloud, correlation-matrix]
+datePublished: 2026-11-21
 ---
 
 <head>

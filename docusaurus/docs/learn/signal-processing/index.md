@@ -4,6 +4,7 @@ sidebar_label: Signal Processing
 title: "Signal Processing: A Visual Guide (Interactive Examples)"
 description: "Signal processing guides with live examples: Fourier transform and FFT, filters, spectral analysis, sampling and correlation, with code to chart each one."
 keywords: ["signal processing", "digital signal processing", "dsp", "fourier transform", "fft", "power spectral density", "low pass filter", "high pass filter", "bode plot", "convolution", "autocorrelation", "nyquist frequency", "aliasing", "signal to noise ratio", "band pass filter", "notch filter", "fir filter", "iir filter", "audio spectrum analyzer", "fourier series", "window function", "hann window", "hamming window", "spectral leakage", "hilbert transform", "envelope detection"]
+datePublished: 2026-11-19
 ---
 
 # Signal Processing

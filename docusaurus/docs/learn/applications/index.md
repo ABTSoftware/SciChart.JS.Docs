@@ -4,6 +4,7 @@ sidebar_label: Applications
 title: "Charts in Science, Engineering, Medicine and Business, With Examples"
 description: "How to read the charts used in science, engineering, medicine and business, from ECGs and spectra to telemetry and KPI dashboards, each with a live example."
 keywords: ["telemetry", "scada", "hmi", "chromatogram", "ecg", "capnography", "spectroscopy", "mass spectrum", "hr diagram", "stress strain curve", "kpi dashboard", "oscilloscope", "vibration analysis", "scientific charts", "engineering charts"]
+datePublished: 2026-11-20
 ---
 
 # Applications

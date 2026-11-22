@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/density-plot-og.png
 related: [histogram, violin-plot, box-plot, area-chart]
+datePublished: 2026-11-16
 ---
 
 <head>

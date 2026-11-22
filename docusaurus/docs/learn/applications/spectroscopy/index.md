@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/spectroscopy-og.png
 related: [mass-spectrum, chromatogram, low-pass-filter, heatmap]
+datePublished: 2026-11-20
 ---
 
 <head>

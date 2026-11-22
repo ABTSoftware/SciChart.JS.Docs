@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/correlation-matrix-og.png
 related: [heatmap, scatter-plot, bubble-chart, parallel-coordinates-plot]
+datePublished: 2026-11-20
 ---
 
 <head>

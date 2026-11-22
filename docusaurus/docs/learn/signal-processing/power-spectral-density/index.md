@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/power-spectral-density-og.png
 related: [fast-fourier-transform, window-functions, autocorrelation, signal-to-noise-ratio]
+datePublished: 2026-11-19
 ---
 
 <head>

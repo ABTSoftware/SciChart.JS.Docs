@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/bullet-chart-og.png
 related: [gauge-chart, bar-chart, lollipop-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

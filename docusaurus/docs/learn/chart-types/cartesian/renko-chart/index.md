@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/renko-chart-og.png
 related: [candlestick-chart, tick-chart, footprint-chart, ohlc-chart]
+datePublished: 2026-11-20
 ---
 
 <head>

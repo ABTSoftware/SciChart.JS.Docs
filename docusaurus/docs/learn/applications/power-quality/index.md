@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/power-quality-og.png
 related: [fast-fourier-transform, hmi-scada, pid-control, window-functions]
+datePublished: 2026-11-20
 ---
 
 <head>

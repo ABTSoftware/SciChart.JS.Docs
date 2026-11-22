@@ -29,6 +29,7 @@ keywords:
     ]
 image: /img/learn/bar-chart-og.png
 related: [lollipop-chart, pareto-chart, histogram, combo-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

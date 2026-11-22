@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/time-series-data-formats-og.png
 related: [big-data-visualization, downsampling, telemetry, motorsport-telemetry]
+datePublished: 2026-11-20
 ---
 
 <head>

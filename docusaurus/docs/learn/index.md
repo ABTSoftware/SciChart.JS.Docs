@@ -4,6 +4,7 @@ sidebar_label: Learning Center
 title: "Learning Center: A Guide to Data Visualisation"
 description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data, and signal processing basics, with live, interactive examples."
 keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
+datePublished: 2026-11-13
 ---
 
 # Learning Center

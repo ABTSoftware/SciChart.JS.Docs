@@ -19,6 +19,7 @@ keywords:
     ]
 image: /img/learn/sankey-diagram-og.png
 related: [funnel-chart, network-graph, treemap, sunburst-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

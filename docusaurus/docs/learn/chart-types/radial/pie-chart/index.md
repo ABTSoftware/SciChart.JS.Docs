@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/pie-chart-og.png
 related: [donut-chart, bar-chart, treemap, sunburst-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

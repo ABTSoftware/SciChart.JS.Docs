@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/waterfall-chart-og.png
 related: [bar-chart, pareto-chart, funnel-chart, combo-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

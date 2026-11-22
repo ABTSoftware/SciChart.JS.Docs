@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/kpi-dashboard-og.png
 related: [real-time-dashboard, bullet-chart, gauge-chart, sparkline]
+datePublished: 2026-11-20
 ---
 
 <head>

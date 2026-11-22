@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/pid-control-og.png
 related: [bode-plot, hmi-scada, power-quality, strip-chart]
+datePublished: 2026-11-20
 ---
 
 <head>

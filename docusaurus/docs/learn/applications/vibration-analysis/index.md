@@ -24,6 +24,7 @@ keywords:
     ]
 image: /img/learn/vibration-analysis-og.png
 related: [fast-fourier-transform, spectrogram, hilbert-transform, power-spectral-density]
+datePublished: 2026-11-20
 ---
 
 <head>

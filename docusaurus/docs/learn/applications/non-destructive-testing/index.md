@@ -26,6 +26,7 @@ keywords:
     ]
 image: /img/learn/non-destructive-testing-og.png
 related: [oscilloscope, vibration-analysis, hilbert-transform, heatmap]
+datePublished: 2026-11-22
 ---
 
 <head>

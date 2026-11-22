@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/strip-chart-og.png
 related: [line-chart, big-data-visualization, sparkline, spectrogram]
+datePublished: 2026-11-16
 ---
 
 <head>

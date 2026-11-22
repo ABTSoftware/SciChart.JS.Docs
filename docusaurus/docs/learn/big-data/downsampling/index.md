@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/downsampling-og.png
 related: [big-data-visualization, line-chart, strip-chart, sparkline]
+datePublished: 2026-11-16
 ---
 
 <head>

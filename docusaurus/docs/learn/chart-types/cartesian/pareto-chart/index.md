@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/pareto-chart-og.png
 related: [bar-chart, combo-chart, histogram, waterfall-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

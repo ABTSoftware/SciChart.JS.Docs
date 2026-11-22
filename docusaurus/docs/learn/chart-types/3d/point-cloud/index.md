@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/point-cloud-og.png
 related: [3d-surface-plot, scatter-plot, heatmap, big-data-visualization]
+datePublished: 2026-11-20
 ---
 
 <head>

@@ -24,6 +24,7 @@ keywords:
     ]
 image: /img/learn/fourier-series-og.png
 related: [fourier-transform, fast-fourier-transform, window-functions, audio-spectrum-analyzer]
+datePublished: 2026-11-20
 ---
 
 <head>

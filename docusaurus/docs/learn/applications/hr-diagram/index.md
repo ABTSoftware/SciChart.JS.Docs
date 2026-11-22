@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/hr-diagram-og.png
 related: [scatter-plot, heatmap, bubble-chart, density-plot, log-scale-graph]
+datePublished: 2026-11-20
 ---
 
 <head>

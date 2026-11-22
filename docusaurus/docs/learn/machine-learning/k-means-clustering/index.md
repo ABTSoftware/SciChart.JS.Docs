@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/k-means-clustering-og.png
 related: [hierarchical-clustering, voronoi-diagram, decision-boundary, dimensionality-reduction]
+datePublished: 2026-11-21
 ---
 
 <head>

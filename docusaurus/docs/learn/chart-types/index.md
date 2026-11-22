@@ -4,6 +4,7 @@ sidebar_label: Types of Charts and Graphs
 title: "Types of Charts and Graphs: A Guide With Interactive Examples"
 description: "A guide to the main types of charts and graphs: what each chart shows, how to read it and when to use it, with a live, interactive example of every chart."
 keywords: ["types of charts", "types of graphs", "types of charts and graphs", "chart types", "graph types", "chart examples", "which chart to use"]
+datePublished: 2026-11-16
 ---
 
 # Types of Charts and Graphs

@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/xyz-graph-og.png
 related: [cartesian-graph, 3d-surface-plot, bubble-chart, log-scale-graph]
+datePublished: 2026-11-16
 ---
 
 <head>

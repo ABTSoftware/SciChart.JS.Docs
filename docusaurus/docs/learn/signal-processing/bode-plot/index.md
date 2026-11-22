@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/bode-plot-og.png
 related: [low-pass-filter, high-pass-filter, band-pass-filter, notch-filter]
+datePublished: 2026-11-19
 ---
 
 <head>

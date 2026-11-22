@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/histogram-og.png
 related: [density-plot, box-plot, bar-chart, violin-plot]
+datePublished: 2026-11-13
 ---
 
 <head>

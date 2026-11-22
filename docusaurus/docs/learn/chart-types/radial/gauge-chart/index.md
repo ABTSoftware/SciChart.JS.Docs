@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/gauge-chart-og.png
 related: [bullet-chart, donut-chart, polar-area-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

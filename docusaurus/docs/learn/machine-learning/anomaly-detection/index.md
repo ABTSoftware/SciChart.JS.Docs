@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/anomaly-detection-og.png
 related: [time-series-graph, strip-chart, roc-curve, k-means-clustering]
+datePublished: 2026-11-21
 ---
 
 <head>

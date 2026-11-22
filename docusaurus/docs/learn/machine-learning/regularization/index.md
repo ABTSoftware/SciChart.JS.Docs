@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/regularization-og.png
 related: [residual-plot, decision-boundary, activation-functions, roc-curve]
+datePublished: 2026-11-21
 ---
 
 <head>

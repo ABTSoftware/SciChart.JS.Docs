@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/box-plot-og.png
 related: [violin-plot, histogram, density-plot, error-bars]
+datePublished: 2026-11-13
 ---
 
 <head>

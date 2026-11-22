@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/fourier-transform-og.png
 related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
+datePublished: 2026-11-19
 ---
 
 <head>

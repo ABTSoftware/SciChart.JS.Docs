@@ -19,6 +19,7 @@ keywords:
     ]
 image: /img/learn/low-pass-filter-og.png
 related: [fourier-transform, high-pass-filter, fir-vs-iir-filters, band-pass-filter]
+datePublished: 2026-11-19
 ---
 
 <head>

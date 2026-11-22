@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/stress-strain-curve-og.png
 related: [line-chart, scatter-plot, error-bars, log-scale-graph]
+datePublished: 2026-11-20
 ---
 
 <head>

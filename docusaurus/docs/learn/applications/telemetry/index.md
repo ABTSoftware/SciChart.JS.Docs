@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/telemetry-og.png
 related: [motorsport-telemetry, hmi-scada, strip-chart, time-series-data-formats]
+datePublished: 2026-11-20
 ---
 
 <head>

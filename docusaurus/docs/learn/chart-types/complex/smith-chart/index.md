@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/smith-chart-og.png
 related: [radar-chart, polar-area-chart, bode-plot, network-graph]
+datePublished: 2026-11-20
 ---
 
 <head>

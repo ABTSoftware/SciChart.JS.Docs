@@ -24,6 +24,7 @@ keywords:
     ]
 image: /img/learn/mass-spectrum-og.png
 related: [spectroscopy, chromatogram, lollipop-chart, heatmap]
+datePublished: 2026-11-20
 ---
 
 <head>

@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/spectrogram-og.png
 related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

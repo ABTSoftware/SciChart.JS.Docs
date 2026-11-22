@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/roc-curve-og.png
 related: [decision-boundary, anomaly-detection, residual-plot, correlation-matrix]
+datePublished: 2026-11-20
 ---
 
 <head>

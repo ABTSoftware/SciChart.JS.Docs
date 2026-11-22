@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/combo-chart-og.png
 related: [bar-chart, line-chart, pareto-chart, area-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/audio-spectrum-analyzer-og.png
 related: [fast-fourier-transform, spectrogram, power-spectral-density, signal-to-noise-ratio]
+datePublished: 2026-11-19
 ---
 
 <head>

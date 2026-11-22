@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/cartesian-graph-og.png
 related: [xyz-graph, log-scale-graph, scatter-plot, line-chart]
+datePublished: 2026-11-16
 ---
 
 <head>

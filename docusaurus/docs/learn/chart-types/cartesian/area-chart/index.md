@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/area-chart-og.png
 related: [line-chart, bar-chart, density-plot, strip-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/notch-filter-og.png
 related: [band-pass-filter, high-pass-filter, fir-vs-iir-filters, bode-plot]
+datePublished: 2026-11-19
 ---
 
 <head>

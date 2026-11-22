@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/lollipop-chart-og.png
 related: [bar-chart, dumbbell-chart, bullet-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

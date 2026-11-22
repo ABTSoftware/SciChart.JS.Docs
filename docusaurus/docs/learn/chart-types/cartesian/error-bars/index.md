@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/error-bars-og.png
 related: [box-plot, scatter-plot, bar-chart, line-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

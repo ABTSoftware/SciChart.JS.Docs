@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/footprint-chart-og.png
 related: [candlestick-chart, tick-chart, renko-chart, ohlc-chart]
+datePublished: 2026-11-20
 ---
 
 <head>

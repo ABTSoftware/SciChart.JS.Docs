@@ -26,6 +26,7 @@ keywords:
     ]
 image: /img/learn/window-functions-og.png
 related: [fast-fourier-transform, power-spectral-density, fir-vs-iir-filters, fourier-series]
+datePublished: 2026-11-20
 ---
 
 <head>

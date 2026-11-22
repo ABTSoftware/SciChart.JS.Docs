@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/envelope-detector-circuit-og.png
 related: [hilbert-transform, low-pass-filter, band-pass-filter, audio-spectrum-analyzer]
+datePublished: 2026-11-20
 ---
 
 <head>

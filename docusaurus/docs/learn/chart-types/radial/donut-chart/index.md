@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/donut-chart-og.png
 related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

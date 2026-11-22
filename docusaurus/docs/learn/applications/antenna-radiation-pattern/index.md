@@ -26,6 +26,7 @@ keywords:
     ]
 image: /img/learn/antenna-radiation-pattern-og.png
 related: [smith-chart, polar-area-chart, radar-chart, point-cloud]
+datePublished: 2026-11-20
 ---
 
 <head>

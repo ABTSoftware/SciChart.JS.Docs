@@ -24,6 +24,7 @@ keywords:
     ]
 image: /img/learn/oscilloscope-og.png
 related: [strip-chart, fast-fourier-transform, nyquist-and-aliasing, vibration-analysis]
+datePublished: 2026-11-20
 ---
 
 <head>

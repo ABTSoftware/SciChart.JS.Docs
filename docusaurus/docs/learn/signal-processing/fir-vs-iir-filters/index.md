@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/fir-vs-iir-filters-og.png
 related: [low-pass-filter, high-pass-filter, band-pass-filter, bode-plot]
+datePublished: 2026-11-19
 ---
 
 <head>

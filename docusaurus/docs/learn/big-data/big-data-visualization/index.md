@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/big-data-visualization-og.png
 related: [downsampling, strip-chart, scatter-plot, heatmap]
+datePublished: 2026-11-16
 ---
 
 <head>

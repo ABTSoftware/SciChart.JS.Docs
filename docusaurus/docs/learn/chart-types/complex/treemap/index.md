@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/treemap-og.png
 related: [sunburst-chart, pie-chart, sankey-diagram, bar-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

@@ -19,6 +19,7 @@ keywords:
     ]
 image: /img/learn/sunburst-chart-og.png
 related: [treemap, donut-chart, pie-chart, sankey-diagram]
+datePublished: 2026-11-14
 ---
 
 <head>

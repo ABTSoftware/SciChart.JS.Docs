@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/contour-plot-og.png
 related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
+datePublished: 2026-11-14
 ---
 
 <head>

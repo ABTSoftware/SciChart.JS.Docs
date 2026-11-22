@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/ternary-plot-og.png
 related: [scatter-plot, cartesian-graph, parallel-coordinates-plot]
+datePublished: 2026-11-16
 ---
 
 <head>

@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/ohlc-chart-og.png
 related: [candlestick-chart, line-chart, big-data-visualization]
+datePublished: 2026-11-14
 ---
 
 <head>

@@ -4,6 +4,7 @@ sidebar_label: Big Data and Performance
 title: "Big Data and Chart Performance: A Guide (Interactive Examples)"
 description: "How to chart large datasets without slowing down: what makes data big for a chart, SVG vs Canvas vs WebGL, and downsampling methods, with live, interactive examples."
 keywords: ["big data visualization", "chart performance", "large dataset visualization", "svg vs canvas", "downsampling"]
+datePublished: 2026-11-16
 ---
 
 # Big Data and Performance

@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/violin-plot-og.png
 related: [box-plot, density-plot, histogram]
+datePublished: 2026-11-16
 ---
 
 <head>

@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/fast-fourier-transform-og.png
 related: [fourier-transform, window-functions, power-spectral-density, audio-spectrum-analyzer]
+datePublished: 2026-11-19
 ---
 
 <head>

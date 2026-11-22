@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/network-graph-og.png
 related: [sankey-diagram, treemap, parallel-coordinates-plot]
+datePublished: 2026-11-14
 ---
 
 <head>

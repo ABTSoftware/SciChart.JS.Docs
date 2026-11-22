@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/residual-plot-og.png
 related: [scatter-plot, roc-curve, histogram, correlation-matrix]
+datePublished: 2026-11-20
 ---
 
 <head>

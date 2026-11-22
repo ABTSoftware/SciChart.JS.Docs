@@ -19,6 +19,7 @@ keywords:
     ]
 image: /img/learn/convolution-og.png
 related: [fourier-transform, autocorrelation, low-pass-filter, high-pass-filter]
+datePublished: 2026-11-19
 ---
 
 <head>

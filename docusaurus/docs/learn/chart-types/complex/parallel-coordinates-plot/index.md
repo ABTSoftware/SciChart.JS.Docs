@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/parallel-coordinates-plot-og.png
 related: [radar-chart, scatter-plot, heatmap, big-data-visualization]
+datePublished: 2026-11-14
 ---
 
 <head>

@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/nyquist-and-aliasing-og.png
 related: [fast-fourier-transform, low-pass-filter, fourier-transform, power-spectral-density]
+datePublished: 2026-11-19
 ---
 
 <head>

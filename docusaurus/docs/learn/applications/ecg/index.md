@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/ecg-og.png
 related: [capnography-pulse-oximetry, strip-chart, notch-filter, high-pass-filter]
+datePublished: 2026-11-20
 ---
 
 <head>

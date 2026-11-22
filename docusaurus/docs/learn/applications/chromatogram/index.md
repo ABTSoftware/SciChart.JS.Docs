@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/chromatogram-og.png
 related: [line-chart, area-chart, signal-to-noise-ratio, low-pass-filter]
+datePublished: 2026-11-20
 ---
 
 <head>

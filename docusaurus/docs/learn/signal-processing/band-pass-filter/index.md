@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/band-pass-filter-og.png
 related: [low-pass-filter, high-pass-filter, notch-filter, fir-vs-iir-filters]
+datePublished: 2026-11-19
 ---
 
 <head>

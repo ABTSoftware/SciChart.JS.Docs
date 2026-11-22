@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/motorsport-telemetry-og.png
 related: [telemetry, strip-chart, time-series-graph, downsampling]
+datePublished: 2026-11-20
 ---
 
 <head>

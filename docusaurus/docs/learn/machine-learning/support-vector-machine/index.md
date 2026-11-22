@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/support-vector-machine-og.png
 related: [decision-boundary, roc-curve, regularization, point-cloud]
+datePublished: 2026-11-21
 ---
 
 <head>

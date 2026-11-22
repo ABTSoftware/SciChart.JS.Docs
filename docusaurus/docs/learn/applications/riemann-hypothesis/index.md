@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/riemann-hypothesis-og.png
 related: [hr-diagram, fourier-transform, histogram, log-scale-graph]
+datePublished: 2026-11-21
 ---
 
 <head>

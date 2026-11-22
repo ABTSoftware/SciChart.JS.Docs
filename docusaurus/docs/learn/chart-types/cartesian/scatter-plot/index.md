@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/scatter-plot-og.png
 related: [bubble-chart, line-chart, error-bars, cartesian-graph]
+datePublished: 2026-11-13
 ---
 
 <head>

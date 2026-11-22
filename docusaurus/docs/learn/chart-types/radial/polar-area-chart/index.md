@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/polar-area-chart-og.png
 related: [radar-chart, pie-chart, bar-chart, sunburst-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

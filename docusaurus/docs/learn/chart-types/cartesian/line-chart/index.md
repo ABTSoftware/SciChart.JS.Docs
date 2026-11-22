@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/line-chart-og.png
 related: [area-chart, sparkline, strip-chart, scatter-plot]
+datePublished: 2026-11-13
 ---
 
 <head>

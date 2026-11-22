@@ -25,6 +25,7 @@ keywords:
     ]
 image: /img/learn/capnography-pulse-oximetry-og.png
 related: [ecg, strip-chart, telemetry, low-pass-filter]
+datePublished: 2026-11-20
 ---
 
 <head>

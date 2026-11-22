@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/sparkline-og.png
 related: [line-chart, strip-chart, bullet-chart, area-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/time-series-graph-og.png
 related: [strip-chart, real-time-dashboard, line-chart, downsampling]
+datePublished: 2026-11-20
 ---
 
 <head>

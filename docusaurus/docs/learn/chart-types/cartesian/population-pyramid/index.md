@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/population-pyramid-og.png
 related: [bar-chart, histogram, dumbbell-chart, funnel-chart]
+datePublished: 2026-11-14
 ---
 
 <head>

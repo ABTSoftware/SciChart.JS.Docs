@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/radar-chart-og.png
 related: [polar-area-chart, parallel-coordinates-plot, bar-chart]
+datePublished: 2026-11-13
 ---
 
 <head>

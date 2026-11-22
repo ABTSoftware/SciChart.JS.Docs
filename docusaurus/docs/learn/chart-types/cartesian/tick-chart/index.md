@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/tick-chart-og.png
 related: [candlestick-chart, renko-chart, footprint-chart, time-series-data-formats]
+datePublished: 2026-11-20
 ---
 
 <head>

@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/choropleth-map-og.png
 related: [heatmap, treemap, bubble-chart]
+datePublished: 2026-11-16
 ---
 
 <head>

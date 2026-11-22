@@ -27,6 +27,7 @@ keywords:
     ]
 image: /img/learn/activation-functions-og.png
 related: [decision-boundary, regularization, roc-curve, line-chart]
+datePublished: 2026-11-21
 ---
 
 <head>

@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/decision-boundary-og.png
 related: [support-vector-machine, k-means-clustering, roc-curve, heatmap]
+datePublished: 2026-11-21
 ---
 
 <head>

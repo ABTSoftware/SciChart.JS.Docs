@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/log-scale-graph-og.png
 related: [cartesian-graph, line-chart, spectrogram, scatter-plot]
+datePublished: 2026-11-16
 ---
 
 <head>

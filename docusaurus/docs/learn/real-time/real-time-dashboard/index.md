@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/real-time-dashboard-og.png
 related: [strip-chart, time-series-graph, gauge-chart, telemetry]
+datePublished: 2026-11-20
 ---
 
 <head>

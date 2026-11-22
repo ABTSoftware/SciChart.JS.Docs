@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/bubble-chart-og.png
 related: [scatter-plot, heatmap, treemap, xyz-graph]
+datePublished: 2026-11-13
 ---
 
 <head>

@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/dumbbell-chart-og.png
 related: [lollipop-chart, bar-chart, scatter-plot, population-pyramid]
+datePublished: 2026-11-14
 ---
 
 <head>

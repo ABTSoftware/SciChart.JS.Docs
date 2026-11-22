@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/high-pass-filter-og.png
 related: [fourier-transform, low-pass-filter, band-pass-filter, notch-filter]
+datePublished: 2026-11-19
 ---
 
 <head>

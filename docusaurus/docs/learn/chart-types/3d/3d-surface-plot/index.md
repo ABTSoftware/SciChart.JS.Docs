@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/3d-surface-plot-og.png
 related: [contour-plot, heatmap, xyz-graph, spectrogram]
+datePublished: 2026-11-14
 ---
 
 <head>

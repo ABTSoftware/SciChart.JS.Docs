@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/autocorrelation-og.png
 related: [convolution, power-spectral-density, fast-fourier-transform, hilbert-transform]
+datePublished: 2026-11-19
 ---
 
 <head>

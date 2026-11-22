@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/heatmap-og.png
 related: [contour-plot, spectrogram, choropleth-map, 3d-surface-plot]
+datePublished: 2026-11-13
 ---
 
 <head>
