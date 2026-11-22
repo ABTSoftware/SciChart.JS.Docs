@@ -23,6 +23,9 @@ import styles from "./LearnCta.module.css";
 const GET_STARTED_URL = "https://www.scichart.com/getting-started/scichart-javascript/";
 const DEMO_BASE_URL = "https://www.scichart.com/demo/";
 const FEATURES_URL = "https://www.scichart.com/javascript-chart-features/";
+// Live demos that show the performance claim in the bottom CTA, so it is backed by something the reader can run
+const MILLION_POINTS_DEMO_URL = "https://www.scichart.com/demo/react/chart-performance-load-one-million-points";
+const REALTIME_DEMO_URL = "https://www.scichart.com/demo/react/chart-realtime-performance-demo";
 const PRICING_URL = "https://www.scichart.com/shop/";
 const FRAMEWORKS = [
     { key: "javascript", label: "JavaScript" },
@@ -82,7 +85,7 @@ export default function LearnCta(props: Props) {
                 <div className={styles.topRow}>
                     <p className={styles.text}>
                         <strong>Build {what}</strong> in JavaScript, React or Angular with SciChart.js, the
-                        high-performance WebGL chart library.
+                        WebGL and WebGPU chart library.
                     </p>
                     <div className={styles.buttons}>
                         <a className={`${styles.button} ${styles.primary}`} href={GET_STARTED_URL} data-cta="learn-top-get-started">
@@ -100,8 +103,15 @@ export default function LearnCta(props: Props) {
             <h2 className={styles.heading}>Build {chart ? `your own ${chart}` : "your own charts"} with SciChart.js</h2>
             <ul className={styles.points}>
                 <li>
-                    <strong>Fast:</strong> WebGL and WebGPU rendering keeps charts smooth with millions of points and
-                    real-time updates.
+                    <strong>Fast:</strong> WebGL and WebGPU rendering. Try it with{" "}
+                    <a href={MILLION_POINTS_DEMO_URL} data-cta="learn-bottom-perf-million">
+                        a million points
+                    </a>{" "}
+                    and{" "}
+                    <a href={REALTIME_DEMO_URL} data-cta="learn-bottom-perf-realtime">
+                        real-time updates
+                    </a>{" "}
+                    in the live demos.
                 </li>
                 <li>
                     <strong>Your stack:</strong> JavaScript, TypeScript, React and Angular, with full source code for every
