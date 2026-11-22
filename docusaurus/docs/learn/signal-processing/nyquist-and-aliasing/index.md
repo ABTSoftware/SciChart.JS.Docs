@@ -1,7 +1,7 @@
 ---
 sidebar_position: 150
 sidebar_label: Nyquist Frequency and Aliasing
-title: "Nyquist Frequency and Aliasing: Sampling Rate Explained (With Interactive Examples)"
+title: "Nyquist Frequency and Aliasing: Sampling Rate Explained"
 description: "What the Nyquist frequency and the Nyquist–Shannon sampling theorem mean, how aliasing folds frequencies, how to choose a sampling rate, and how to prevent aliasing."
 keywords:
     [
@@ -37,7 +37,7 @@ related: [fast-fourier-transform, low-pass-filter, fourier-transform, power-spec
                 {
                     "@type": "Question",
                     "name": "What does the Nyquist theorem say?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The Nyquist–Shannon sampling theorem says that a signal containing no frequencies at or above B hertz can be rebuilt exactly from its samples if you sample faster than 2B samples per second. In short: sample at more than twice the highest frequency in the signal, fs > 2 fmax, and remove anything higher before sampling." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The Nyquist–Shannon sampling theorem says that a signal containing no frequencies above B hertz can be rebuilt exactly from its samples if you sample faster than 2B samples per second. In short: sample at more than twice the highest frequency in the signal, fs > 2 fmax, and remove anything higher before sampling." }
                 },
                 {
                     "@type": "Question",
@@ -104,7 +104,7 @@ For example, 48 kHz audio takes 48,000 samples a second, one every 20.8 µs. A s
 
 The **Nyquist–Shannon sampling theorem** (often just the Nyquist theorem or sampling theorem) answers the question "how often do I need to sample?":
 
-> If a signal contains no frequencies at or above $B$ hertz, it is completely determined by samples taken more than $2B$ times a second.
+> If a signal contains no frequencies above $B$ hertz, it is completely determined by samples taken more than $2B$ times a second.
 
 So the rule is:
 
@@ -215,6 +215,8 @@ The same rule applies in software. **Downsampling** (keeping every $M$th sample)
 
 ## Common sampling rates and why they were chosen
 
+Most standard sample rates are set a little above twice the highest frequency the signal needs, leaving room for the anti-aliasing filter.
+
 | Use | Typical sample rate | Nyquist frequency | Why |
 | --- | --- | --- | --- |
 | Telephone speech (ITU-T G.711) | 8 kHz | 4 kHz | The telephone band is about 300 to 3,400 Hz, so 8 kHz leaves room for the filter |
@@ -257,6 +259,8 @@ The "aliasing" you meet in photography, video and games is the same effect in sp
 
 ## Common sampling and aliasing mistakes
 
+Most aliasing problems come from sampling too close to the limit, or from filtering too late.
+
 - **Sampling at exactly twice the frequency.** The theorem needs more than $2f_{max}$, and real filters need a margin on top. Sampling at $2f$ can miss a sine completely.
 - **Counting only the fundamental.** A square wave, a PWM signal or a clipped waveform has harmonics far above its repetition rate. The highest frequency present, not the one you care about, sets the requirement.
 - **Downsampling by dropping samples.** Keeping every $M$th sample without low-pass filtering first folds everything between the new and old Nyquist frequencies into your data.
@@ -266,11 +270,11 @@ The "aliasing" you meet in photography, video and games is the same effect in sp
 
 ## How to visualise sampling and aliasing in JavaScript, React or Angular
 
-SciChart.js redraws a signal, its samples and its spectrum with WebGL and WebGPU as fast as a slider moves, so you can watch aliasing happen. Drag the **signal frequency** past the dashed Nyquist line and watch the orange "what the samples show" wave slow down, stop at the sample rate and speed up again; or press **Sweep the frequency**. Move the **sample rate** to see the alias move while the true tone stays put, and switch on the **anti-aliasing filter** to see it remove the alias. Hover to read values, scroll to zoom, drag to pan, and double-click to reset.
+The demo draws one second of a tone as a 6,000-point line, samples it at the rate you choose, and works out where the alias lands each time you move a slider. Drag the **signal frequency** past the dashed Nyquist line and watch the orange "what the samples show" wave slow down, stop at the sample rate and speed up again; or press **Sweep the frequency**. Move the **sample rate** to see the alias move while the true tone stays put, and switch on the **anti-aliasing filter** to see it remove the alias. Hover over the stems to read each sample; scroll to zoom, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="impulse (stem) chart" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="top" chart="sampling and aliasing chart" demo="impulse-chart" demoLabel="impulse (stem) chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
 
 Here is the code for this chart. The JavaScript tab contains the sampling and aliasing maths; the React and Angular tabs show your own samples as stems, with the band-limited signal rebuilt between them by sinc interpolation:
 
@@ -441,7 +445,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript impulse (stem) chart](https://www.scichart.com/demo/javascript/impulse-chart) · [React impulse (stem) chart](https://www.scichart.com/demo/react/impulse-chart) · [Angular impulse (stem) chart](https://www.scichart.com/demo/angular/impulse-chart). For a live signal and its spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example).
 
-**Go deeper:** [SciChart.js impulse (stem) chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), [data series resampling](/2d-charts/chart-types/data-series-api/resampling/), and the related guides: [FFT](/learn/signal-processing/fast-fourier-transform/), [low-pass filter](/learn/signal-processing/low-pass-filter/) and [downsampling](/learn/big-data/downsampling/).
+**Go deeper:** [SciChart.js impulse (stem) series documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), [data series resampling](/2d-charts/chart-types/data-series-api/resampling/), and the related guides: [FFT](/learn/signal-processing/fast-fourier-transform/), [low-pass filter](/learn/signal-processing/low-pass-filter/) and [downsampling](/learn/big-data/downsampling/).
 
 ## Frequently asked questions
 
@@ -451,7 +455,7 @@ The Nyquist frequency is half the sampling rate: fN = fs / 2. It is the highest 
 
 ### What does the Nyquist theorem say?
 
-The Nyquist–Shannon sampling theorem says that a signal containing no frequencies at or above B hertz can be rebuilt exactly from its samples if you sample faster than 2B samples per second. In short: sample at more than twice the highest frequency in the signal, fs > 2 fmax, and remove anything higher before sampling.
+The Nyquist–Shannon sampling theorem says that a signal containing no frequencies above B hertz can be rebuilt exactly from its samples if you sample faster than 2B samples per second. In short: sample at more than twice the highest frequency in the signal, fs > 2 fmax, and remove anything higher before sampling.
 
 ### What is the difference between the Nyquist rate and the Nyquist frequency?
 
@@ -479,4 +483,4 @@ Generate or load your samples, then draw them as stems with an impulse series an
 - Kligfield, P. et al. (2007), [Recommendations for the Standardization and Interpretation of the Electrocardiogram, Part I](https://doi.org/10.1161/CIRCULATIONAHA.106.180200). *Circulation*, 115(10), 1306–1324. ECG bandwidth (high-frequency cutoff).
 - Randall, R. B. (1987), *Frequency Analysis*, 3rd edition, Brüel & Kjær. FFT analysers and anti-aliasing filters.
 
-<LearnCta position="bottom" chart="impulse (stem) chart" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="bottom" chart="sampling and aliasing chart" demo="impulse-chart" demoLabel="impulse (stem) chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />

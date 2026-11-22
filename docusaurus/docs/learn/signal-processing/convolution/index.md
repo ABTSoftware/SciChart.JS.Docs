@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: Convolution
-title: "Convolution: What It Is, the Formula & a Step-by-Step Example (With Interactive Calculator)"
+title: "Convolution: Formula and Step-by-Step Example (Interactive Calculator)"
 description: "Convolution explained: flip, slide, multiply and sum, the discrete and continuous formulas, a worked example, its properties and the convolution theorem, with a live calculator."
 keywords:
     [
@@ -149,6 +149,8 @@ Two quick checks:
 
 ## Properties of convolution
 
+Convolution behaves like multiplication: order and grouping don't matter, and it spreads over addition.
+
 | Property | Formula | What it means in practice |
 | --- | --- | --- |
 | Commutative | $x * h = h * x$ | It doesn't matter which one you call the kernel |
@@ -192,6 +194,8 @@ Zero-pad both signals, or the output wraps around. Multiplying DFTs (the discret
 
 ## Convolution vs cross-correlation and circular convolution
 
+Cross-correlation is convolution without the flip, and circular convolution is convolution with the ends wrapped round.
+
 | | Convolution | Cross-correlation | Circular convolution |
 | --- | --- | --- | --- |
 | Formula | $\sum_k x[k]\, h[n-k]$ | $\sum_k x[k+n]\, h[k]$ (one common convention) | Like convolution, with indices wrapped modulo $L$ |
@@ -205,6 +209,8 @@ For a symmetric kernel, such as a moving average or a Gaussian, the flip changes
 
 ## What convolution is used for
 
+Convolution is how any linear, time-invariant system acts on a signal, so it turns up in every kind of filtering.
+
 - Filtering: every FIR (finite impulse response) filter is a convolution with its kernel. [Low-pass filters](/learn/signal-processing/low-pass-filter/) remove noise; [high-pass filters](/learn/signal-processing/high-pass-filter/) remove drift.
 - Smoothing: moving averages, Gaussian smoothing and exponential smoothing of sensor data, prices and measurements.
 - Echo and reverb: an echo is a kernel with a spike now and a smaller one later. Convolution reverb records a real room's impulse response and convolves dry audio with it.
@@ -214,6 +220,8 @@ For a symmetric kernel, such as a moving average or a Gaussian, the flip changes
 - Physics and engineering: the response of any LTI system, such as a circuit, a sensor or a building in an earthquake, is its input convolved with its impulse response. Instruments blur what they measure in the same way, and deconvolution tries to undo it.
 
 ## Common convolution mistakes
+
+Most convolution mistakes are about the flip, the length and edges of the output, or the cost of long kernels.
 
 - **Forgetting the flip.** Sliding the kernel without reversing it computes cross-correlation. With symmetric kernels nobody notices; with an echo or a derivative kernel the result is mirrored.
 - **Expecting the output to be as long as the input.** Full convolution adds $M - 1$ samples. Decide whether you want full, same or valid output before you compare or plot results.
@@ -225,7 +233,7 @@ For a symmetric kernel, such as a moving average or a Gaussian, the flip changes
 
 ## How to calculate and chart a convolution in JavaScript, React or Angular
 
-SciChart.js charts the input, the kernel and the result of a convolution together, with WebGL rendering, stacked axes and live updates as the data changes. In the calculator below, SciChart.js computes the output itself: an `XyCustomFilter` convolves the input series with the kernel and recalculates whenever the input changes.
+The calculator below convolves an input (48 samples for the built-in signals) with the kernel you choose and charts the input, the kernel and the result on stacked axes. SciChart.js computes the output itself: an `XyCustomFilter` convolves the input series with the kernel and recalculates whenever the input changes.
 
 - Pick an **input** and a **kernel**, and set the kernel's **width** (for the echo, its delay).
 - Move **Slide n**, or press **Play**, to slide the flipped kernel along the input: the ringed output sample is the sum shown above the chart.
@@ -234,7 +242,7 @@ SciChart.js charts the input, the kernel and the result of a convolution togethe
 
 <LiveDocSnippet maxWidth={'100%'} height={620} name="./Basic/demo" />
 
-<LearnCta position="top" chart="moving average chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="top" chart="convolution chart" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
 
 Here is the code for this chart. The convolution itself is the `convolveAt` function inside the two `XyCustomFilter`s; the rest builds the lanes and the controls' results line:
 
@@ -430,7 +438,7 @@ function convolve(x, h) {
 convolve([1, 2, 3], [0, 1, 0.5]); // [0, 1, 2.5, 4, 1.5]
 ```
 
-**See it in the demo app:** [JavaScript moving average chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React moving average chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular moving average chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with SciChart.js trendline, moving average and ratio filters. For live signal processing, see the [JavaScript audio analyzer with FFT](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
+**See it in the demo app:** [JavaScript trendline and moving average filters](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React trendline and moving average filters](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular trendline and moving average filters](https://www.scichart.com/demo/angular/trend-ma-ratio), where the moving average is a convolution with a flat kernel. For live signal processing, see the [JavaScript audio analyzer with FFT](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
 
 **Go deeper:** [SciChart.js custom filter documentation](/2d-charts/chart-types/data-filters-api/custom-filter/), the built-in [moving average filter](/2d-charts/chart-types/data-filters-api/moving-average-filter/), and the [impulse (stem) series](/2d-charts/chart-types/fast-impulse-renderable-series/).
 
@@ -465,8 +473,8 @@ Write two nested loops: for each output index n from 0 to N + M − 2, add up x[
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 6, Convolution](https://www.dspguide.com/ch6.htm), [chapter 7, Properties of Convolution](https://www.dspguide.com/ch7.htm) and [chapter 18, FFT Convolution](https://www.dspguide.com/ch18/3.htm), including the measured crossover between direct and FFT convolution.
 - Smith, J. O., *Mathematics of the Discrete Fourier Transform*, Stanford CCRMA: [Convolution](https://ccrma.stanford.edu/~jos/mdft/Convolution.html) and [the Convolution Theorem](https://ccrma.stanford.edu/~jos/mdft/Convolution_Theorem.html).
 - Oppenheim, A. V. and Schafer, R. W., *Discrete-Time Signal Processing*, 3rd ed., Pearson, 2010, chapter 2 (linear time-invariant systems and the convolution sum) and chapter 8 (circular convolution and the DFT).
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The direct-versus-FFT convolution diagram on this page is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The direct-versus-FFT convolution diagram on this page is adapted from it.
 - MIT OpenCourseWare, 6.003 Signals and Systems, [Lecture 8: Convolution](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/).
 - PyTorch documentation, [Conv2d](https://docs.pytorch.org/docs/stable/generated/torch.nn.Conv2d.html), which defines its "convolution" layer as cross-correlation.
 
-<LearnCta position="bottom" chart="moving average chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="bottom" chart="convolution chart" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Bode Plot
-title: "Bode Plot: How to Read and Draw a Frequency Response (With Interactive Examples)"
+title: "Bode Plot: How to Read and Draw a Frequency Response"
 description: "What a Bode plot and frequency response are, how to read and sketch one with the straight-line rules, gain and phase margin, and Bode vs Nyquist plots. Live demo."
 keywords:
     [
@@ -176,7 +176,7 @@ $$
 
 where $\omega_n$ is the **natural frequency** and $\zeta$ (zeta) is the **damping ratio**. Filter designers often use the **quality factor** instead, $Q = 1/(2\zeta)$. Its straight-line magnitude is flat, then falls at 40 dB per decade from $\omega_n$. The exact curve depends strongly on $\zeta$:
 
-![Second-order low-pass magnitude and phase for damping ratios 0.1, 0.3, 0.707 and 1. Lower damping gives a taller peak at the natural frequency (+14 dB for 0.1, +4.4 dB for 0.3) and a sharper phase drop; every curve passes -90 degrees at the natural frequency](./second-order-damping.svg)
+![Second-order low-pass magnitude and phase for damping ratios 0.1, 0.3, 0.707 and 1. Lower damping gives a taller peak and a sharper phase drop; the gain at the natural frequency is +14 dB for 0.1 and +4.4 dB for 0.3; every curve passes -90 degrees at the natural frequency](./second-order-damping.svg)
 
 - At $\omega_n$ the gain is exactly $1/(2\zeta) = Q$, or $-20 \log_{10}(2\zeta)$ dB, and the phase is −90° whatever the damping.
 - Below $\zeta \approx 0.707$ the response peaks before falling. With $\zeta = 0.1$ the peak is about +14 dB, five times the input amplitude. This peak is a **resonance**.
@@ -250,6 +250,8 @@ A Nyquist plot draws $H(j\omega)$ as a path in the complex plane as $\omega$ run
 
 ## Common Bode plot mistakes
 
+Most Bode plot mistakes come from the axes and units, or from reading margins off the wrong curve.
+
 - **Using a linear frequency axis.** Everything below a tenth of the top frequency gets squashed into the left edge, and the straight-line slopes turn into curves. Always use a log axis.
 - **Plotting wrapped phase.** Taking the angle of the complex product with `atan2` gives values between −180° and +180°, so a smooth −200° shows as a jump to +160°. Add up the phase of each factor, or unwrap the phase (add or subtract 360° at each jump), before you read margins from it.
 - **Mixing hertz and radians per second.** $\omega = 2\pi f$, so a corner at 1,000 rad/s is at 159 Hz. Many textbooks and simulation tools use rad/s; many instruments use Hz. Label the axis.
@@ -260,11 +262,11 @@ A Nyquist plot draws $H(j\omega)$ as a path in the complex plane as $\omega$ run
 
 ## How to make a Bode plot in JavaScript, React or Angular
 
-SciChart.js draws both panels with WebGL and WebGPU on true logarithmic axes, so the plot redraws as fast as you move a slider. This Bode plot generator computes the response of the system you choose and draws the exact curves, the straight-line asymptotes and the key points. Pick a system, then drag the corner frequency and the damping (or the loop gain, for the control loop). Lower the damping and watch the error at the corner grow; choose **Control loop** and raise the loop gain $K$ to 8, where both margins reach zero. Hover to read values on both charts at once, scroll to zoom the frequency axis, drag to pan, and double-click to reset.
+This Bode plot generator computes the exact magnitude and phase of the system you choose, adds the straight-line asymptotes and key points, and redraws both panels on true logarithmic frequency axes whenever you drag a control. Pick a system, then drag the corner frequency and the damping (or the loop gain, for the control loop). Lower the damping and watch the error at the corner grow; choose **Control loop** and raise the loop gain $K$ to 8, where both margins reach zero. Hover to read values on both charts at once, scroll to zoom the frequency axis, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="Bode plot" demo="chart-logarithmic-axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="top" chart="Bode plot" demo="chart-logarithmic-axis" demoLabel="chart with a logarithmic axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
 
 Here is the code for this example. The JavaScript tab includes the pole and zero helpers; the React and Angular tabs show the chart setup (two charts with a shared logarithmic frequency axis) for your own magnitude and phase data:
 
@@ -480,4 +482,4 @@ Compute the magnitude in dB and the phase in degrees of your transfer function a
 - Bendat, J. S. and Piersol, A. G. (2010), *Random Data: Analysis and Measurement Procedures*, 4th edition, Wiley. Measuring frequency response functions from noise, and the coherence function.
 - Smith, S. W. (1997), [*The Scientist and Engineer's Guide to Digital Signal Processing*](https://www.dspguide.com/pdfbook.htm), California Technical Publishing. Chapters 5 (linear systems), 6 (convolution) and 14 (introduction to digital filters, including the frequency response).
 
-<LearnCta position="bottom" chart="Bode plot" demo="chart-logarithmic-axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="bottom" chart="Bode plot" demo="chart-logarithmic-axis" demoLabel="chart with a logarithmic axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />

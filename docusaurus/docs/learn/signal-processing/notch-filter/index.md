@@ -1,7 +1,7 @@
 ---
 sidebar_position: 140
 sidebar_label: Notch Filter
-title: "Notch Filter (Band-Stop Filter): How It Works and How to Remove Mains Hum (With Interactive Examples)"
+title: "Notch (Band-Stop) Filter: How It Works and How to Remove Mains Hum"
 description: "What a notch (band-stop) filter is and does: centre frequency, Q and bandwidth, the transfer function, twin-T and digital biquad designs, and a live 50/60 Hz hum removal demo."
 keywords:
     [
@@ -154,6 +154,8 @@ The table shows a digital notch at 50 Hz, sampled at 1,000 samples per second, f
 
 ## Notch filter circuits
 
+An analogue notch filter is built from a twin-T network, an op-amp circuit or an inductor and capacitor.
+
 ### Twin-T notch filter
 
 The **twin-T** is the classic **passive notch filter**: six components and no power supply.
@@ -232,6 +234,8 @@ Check your result in the frequency domain: compute the [power spectral density](
 
 ## Notch vs band-stop vs low-pass filter
 
+A notch removes one narrow band, a band-stop removes a wider one, and a low-pass removes everything above its cutoff.
+
 | Filter | Removes | Use it when… | Example |
 | --- | --- | --- | --- |
 | Notch | One narrow band around $f_0$ | One known tone sits inside the band you need | 50 or 60 Hz hum on an ECG; feedback howl |
@@ -257,23 +261,25 @@ Forward-backward filtering removes the phase distortion of recorded data, and sp
 
 ## Common notch filter mistakes
 
+Most notch problems come from aiming at the wrong frequency, or from a notch that is narrower than the hum's drift.
+
 - **Notching before you look.** Check the spectrum first. If the "hum" is broadband noise, or a peak at a different frequency, a notch at 50 Hz does nothing useful and still distorts the signal.
 - **Using the wrong mains frequency.** A 60 Hz notch on data recorded on a 50 Hz supply removes a slice of the signal and leaves the hum untouched. Data from other countries, or open datasets, may have been recorded on a different supply from yours.
 - **Making Q too high.** A very narrow notch looks clean on a design plot, but the mains frequency drifts, so the hum slides off the side of the notch. Check the attenuation a few tenths of a hertz either side of nominal.
-- **Forgetting the harmonics.** A 50 Hz notch leaves 100, 150 and 250 Hz behind. Notch the harmonics too, or low-pass the signal if it doesn't need those frequencies.
+- **Forgetting the harmonics.** A 50 Hz notch leaves 100, 150, 200 and 250 Hz behind. Notch the harmonics too, or low-pass the signal if it doesn't need those frequencies.
 - **Mistaking ringing for signal.** Decaying oscillations at $f_0$ after a spike or step are made by the filter. Compare with the unfiltered trace before interpreting them.
 - **Designing for the wrong sample rate.** Digital coefficients depend on $f_0 / f_s$. Coefficients designed for 500 samples per second put the notch at the wrong frequency at 1,000.
 - **Hiding a wiring problem.** Strong hum often means a poor electrode contact, an unshielded cable or a ground loop. Fix the wiring or grounding first; a notch also removes any real signal at $f_0$.
 
 ## How to remove mains hum with a notch filter in JavaScript, React or Angular
 
-SciChart.js draws signals with WebGL and WebGPU, so you can filter and redraw thousands of samples every time a control moves. In the demo below, the top chart shows an ECG-like signal covered in mains hum (orange) and the notch-filtered result (blue). The bottom chart shows the spectrum of each, with the filter's gain in yellow on the right-hand axis. The hum in this sample sits 0.2 Hz above the nominal mains frequency, as real mains often does.
+The demo generates 4,096 samples of an ECG-like signal at 1,000 samples per second, adds hum at the mains frequency and four of its harmonics, and refilters and redraws both charts whenever you change a setting. In the demo below, the top chart shows an ECG-like signal covered in mains hum (orange) and the notch-filtered result (blue). The bottom chart shows the spectrum of each, with the filter's gain in yellow on the right-hand axis. The hum in this sample sits 0.2 Hz above the nominal mains frequency, as real mains often does.
 
-Choose **50 or 60 Hz** mains, move the **notch centre** off the hum to see it come back, change **Q**, and set how many **notches** (the fundamental and its harmonics) to use. **Show** switches between the signal before, after, or both, and **Add a step** adds a sudden electrode artefact at 2.5 seconds to show the filter ringing. The readout gives the hum reduction, the notch's −3 dB width and how long it rings. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose **50 or 60 Hz** mains, move the **notch centre** off the hum to see it come back, change **Q**, and set how many **notches** (the fundamental and its harmonics) to use. **Show** switches between the signal before, after, or both, and **Add a step** adds a sudden electrode artefact at 2.5 seconds to show the filter ringing. The readout gives the hum reduction, the notch's −3 dB width and how long it rings. Hover over the spectrum to read the level at each harmonic; scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
-<LearnCta position="top" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="top" chart="notch filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
 
 Here is the code for this chart. The notch design, the filter and the FFT are plain JavaScript, and SciChart.js applies the filter to the chart's data with an `XyCustomFilter`.
 
@@ -450,7 +456,7 @@ Key points:
 - The spectrum chart has two y-axes: amplitude in dB on the left, and the filter's gain in dB on a right-hand axis (`axisAlignment: EAxisAlignment.Left` and `EAxisAlignment.Right`), linked to the gain series by `yAxisId`.
 - The spectrum is a Hann-windowed radix-2 FFT of the 4,096 samples before and after filtering, drawn as two `FastLineRenderableSeries`.
 
-**See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with trendline, moving average and ratio filters. For the signal a notch filter is most often used on, see the [React vital signs ECG/EKG medical chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example).
+**See it in the demo app:** [JavaScript trendline and moving average filters](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React trendline and moving average filters](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular trendline and moving average filters](https://www.scichart.com/demo/angular/trend-ma-ratio), for SciChart.js's built-in data filters. For the signal a notch filter is most often used on, see the [React vital signs ECG/EKG medical chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example).
 
 **Go deeper:** [SciChart.js custom filter documentation](/2d-charts/chart-types/data-filters-api/custom-filter/), and the [Filters API overview](/2d-charts/chart-types/data-filters-api/data-filters-api-overview/).
 
@@ -490,4 +496,4 @@ Compute the coefficients of a second-order IIR notch (a biquad) from the centre 
 - Widrow, B. et al. (1975), [Adaptive noise cancelling: principles and applications](https://doi.org/10.1109/PROC.1975.10036). *Proceedings of the IEEE*, 63(12). Adaptive cancellation of mains interference in ECGs.
 - [The Electricity Safety, Quality and Continuity Regulations 2002, regulation 27](https://www.legislation.gov.uk/uksi/2002/2665/regulation/27) (the ±1% limit on mains frequency in Great Britain), and the IEC's [World Plugs](https://www.iec.ch/world-plugs) list of mains frequencies by country.
 
-<LearnCta position="bottom" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="bottom" chart="notch filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />

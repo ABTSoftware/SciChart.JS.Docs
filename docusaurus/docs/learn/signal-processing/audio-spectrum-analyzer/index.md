@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Audio Spectrum Analyzer
-title: "Audio Spectrum Analyzer: How It Works and How to Read One (With Interactive Examples)"
+title: "Audio Spectrum Analyzer: How It Works and How to Read One"
 description: "What a spectrum analyzer shows and measures, how a real-time FFT analyzer works, how to read dB and log frequency axes, 1/3-octave bands, and analyzer vs oscilloscope. Live demo."
 keywords:
     [
@@ -68,7 +68,7 @@ related: [fast-fourier-transform, spectrogram, power-spectral-density, signal-to
 
 ## What is a spectrum analyzer?
 
-An **audio spectrum analyzer** (spelled analyser in British English) is a tool that shows how loud a sound is at each frequency, updated live. Frequency runs along the horizontal axis, usually on a log scale from 20 Hz to 20 kHz, and level in decibels runs up the vertical axis. Peaks are tones and their harmonics; the low, ragged floor beneath them is noise.
+An **audio spectrum analyzer** (British spelling: analyser) shows how loud a sound is at each frequency, updated live. Frequency runs along the horizontal axis, usually on a log scale from 20 Hz to 20 kHz, and level in decibels runs up the vertical axis. Peaks are tones and their harmonics; the low, ragged floor beneath them is noise.
 
 ![A real-time audio spectrum analyser in a dark navy theme: the live FFT spectrum of an A major chord as a blue mountain on a logarithmic frequency axis from 20 Hz to 20 kHz, with sharp peaks at each note and its harmonics, an orange peak-hold line above, and level in decibels relative to digital full scale (dBFS) from -120 to 0](/img/learn/audio-spectrum-analyzer-og.png)
 
@@ -121,6 +121,8 @@ A **real-time analyser** (RTA) is one that processes every sample, with no gaps 
 
 ## How to read an audio spectrum analyzer
 
+Read the level axis first, then the frequency axis, then the shape of the spectrum.
+
 ### The level axis: dBFS, dBV, dBu and dB SPL
 
 The vertical axis is in **decibels**, a log scale where every 20 dB is a factor of ten in amplitude and 6 dB is roughly a factor of two. A decibel is always relative to a reference, and the unit name tells you which:
@@ -144,7 +146,7 @@ Linear axes still have their uses: spotting evenly spaced harmonics, or reading 
 
 An FFT gives bins of equal width in hertz. On a log axis that's very uneven: at $N = 4{,}096$ and 48 kHz, the octave from 31.5 to 63 Hz contains only about three bins, while the octave from 8 to 16 kHz contains about 680. The bass is coarse and the treble is a dense comb.
 
-Octave and **1/3-octave bands** fix this by adding up the power of all the bins inside each band. Each band is a fixed fraction of an octave wide, so the bands are evenly spaced on a log axis. The 1/3-octave bands have standard centre frequencies: 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800 Hz, 1, 1.25, 1.6, 2, 2.5, 3.15, 4, 5, 6.3, 8, 10, 12.5, 16 and 20 kHz (the preferred frequencies of ISO 266; filter edges as in IEC 61260-1). There are 30 of them across the range of hearing, and each spans about 23% of its centre frequency.
+Octave and **1/3-octave bands** fix this by adding up the power of all the bins inside each band. Each band is a fixed fraction of an octave wide, so the bands are evenly spaced on a log axis. The 1/3-octave bands have standard centre frequencies: 20, 25, 31.5, 40, 50, 63, 80, 100, 125, 160, 200, 250, 315, 400, 500, 630, 800 Hz, 1, 1.25, 1.6, 2, 2.5, 3.15, 4, 5, 6.3, 8, 10, 12.5, 16 and 20 kHz (the preferred frequencies of ISO 266; filter edges as in IEC 61260-1). There are 31 of them across the range of hearing, and each spans about 23% of its centre frequency. The demo below starts at 25 Hz, because at its default FFT size (4,096 samples at 48 kHz) no bin falls inside the 20 Hz band.
 
 ![Two panels about FFT bins and 1/3-octave bands on a logarithmic frequency axis from 20 Hz to 20 kHz. Top: tick marks for FFT bins at a spacing of 11.7 Hz, sparse in the bass and so dense in the treble that they merge, with counts per octave from about 3 at 31.5 Hz to about 680 at 8 kHz. Bottom: the spectrum of pink noise, falling 3 dB per octave as an FFT line but level as 1/3-octave bars](./fft-bins-vs-third-octave-bands.svg)
 
@@ -158,6 +160,8 @@ White noise does the opposite: flat in FFT bins, rising 3 dB per octave in bands
 At small FFT sizes, some of the lowest bands are narrower than the bin spacing and contain no bin at all, so they stay empty: the analyser has no information there. Bands holding just one or two bins are only rough estimates.
 
 ## Spectrum analyzer settings: resolution, averaging and peak hold
+
+The FFT size, the averaging and peak hold decide how much detail you see and how quickly the display reacts.
 
 | Setting | What it does | Trade-off |
 | --- | --- | --- |
@@ -197,6 +201,8 @@ For sound, the range of interest is only 20 Hz to 20 kHz, and a sound card or au
 
 ## What is a spectrum analyzer used for?
 
+A spectrum analyzer is used to see which frequencies are in a sound, and how loud each one is, while it plays.
+
 - Mixing and EQ: spotting where instruments overlap and pile up energy (often in the low mids), finding a harsh resonance to cut, and comparing a mix's tonal balance with a reference track.
 - Room acoustics: playing pink noise through the speakers and reading a 1/3-octave RTA at the listening position reveals room modes: the bass peaks and dips caused by the room's dimensions.
 - Hum and buzz: mains hum shows as a peak at 50 Hz (60 Hz in North America) with harmonics at 100, 150, 200 Hz…. A soft hum has few harmonics; a harsh buzz has many. A [notch filter](/learn/signal-processing/notch-filter/) can remove it.
@@ -224,6 +230,8 @@ An analyser shows only the latest spectrum. A **spectrogram** (or waterfall) kee
 
 ## Common spectrum analyzer mistakes
 
+Most mistakes in reading an analyser come from forgetting what the settings do to the display.
+
 - **Reading the noise floor as the noise level.** The floor in FFT bins depends on the FFT size and window; double $N$ and it drops 3 dB. Compare noise across settings with a [PSD](/learn/signal-processing/power-spectral-density/) or fixed bands.
 - **Using a linear frequency axis for audio.** Everything below 1 kHz ends up crammed into a few pixels. Use a log axis.
 - **Too small an FFT for bass.** At 1,024 points and 48 kHz, the bins are 47 Hz apart, wider than the whole octave from 40 to 80 Hz. Use 8,192 or more to resolve low notes.
@@ -234,7 +242,7 @@ An analyser shows only the latest spectrum. A **spectrogram** (or waterfall) kee
 
 ## How to build an audio spectrum analyzer in JavaScript, React or Angular
 
-SciChart.js draws spectra, spectrograms and waveforms with WebGL and WebGPU, fast enough to redraw thousands of bins every frame. The analyser below runs live in your browser: choose a test **Signal**, change the **FFT size**, **Averaging**, **Peak hold**, **Display** (FFT bins or 1/3-octave bands) and **Frequency axis**, and watch the spectrum react. The line under the controls gives the bin width and block length. Click **Use my microphone** to analyse your own sound; the browser asks for permission first, and nothing is recorded or sent anywhere. Hover to read a level, scroll to zoom, drag to pan and double-click to reset.
+The analyser below runs a Hann-windowed FFT of up to 16,384 samples in your browser, up to 30 times a second, and redraws the spectrum as up to 8,191 bins or 30 bands: choose a test **Signal**, change the **FFT size**, **Averaging**, **Peak hold**, **Display** (FFT bins or 1/3-octave bands) and **Frequency axis**, and watch the spectrum react. The line under the controls gives the bin width and block length. Click **Use my microphone** to analyse your own sound; the browser asks for permission first, and nothing is recorded or sent anywhere. Hover to read a level, scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
@@ -457,7 +465,7 @@ The browser's `AnalyserNode` (part of the Web Audio API) runs the FFT for you. S
 
 Your own FFT on `getFloatTimeDomainData()` (as in the JavaScript tab) gives you the window, the dB scaling, linear or exponential averaging, overlap, peak hold, bands and weighting. Use it when you need calibrated dBFS, bands or weighting.
 
-**See it in the demo app:** [JavaScript audio spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, with a waveform, an FFT spectrum and a spectrogram. SciChart also has audio analyzer examples for [Android](https://www.scichart.com/example/android-chart/android-audio-analyzer-chart-example/), [iOS](https://www.scichart.com/example/ios-chart/ios-audio-analyzer-chart-example/) and [WPF](https://www.scichart.com/example/wpf-chart/wpf-chart-audio-analyzer-example/).
+**See it in the demo app:** [JavaScript audio spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), which adds a waveform and a scrolling spectrogram to the spectrum. SciChart also has audio analyzer examples for [Android](https://www.scichart.com/example/android-chart/android-audio-analyzer-chart-example/), [iOS](https://www.scichart.com/example/ios-chart/ios-audio-analyzer-chart-example/) and [WPF](https://www.scichart.com/example/wpf-chart/wpf-chart-audio-analyzer-example/).
 
 **Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), the [mountain (area) series](/2d-charts/chart-types/fast-mountain-area-renderable-series/) and [rectangle series](/2d-charts/chart-types/fast-rectangle-renderable-series/) documentation, and the guides to the [FFT](/learn/signal-processing/fast-fourier-transform/), [power spectral density](/learn/signal-processing/power-spectral-density/) and the [spectrogram](/learn/chart-types/cartesian/spectrogram/).
 

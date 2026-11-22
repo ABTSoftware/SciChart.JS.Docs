@@ -1,7 +1,7 @@
 ---
 sidebar_position: 180
 sidebar_label: Window Functions
-title: "Window Functions in Signal Processing: Hann, Hamming, Blackman and Spectral Leakage (With Interactive Examples)"
+title: "Window Functions: Hann, Hamming, Blackman and Spectral Leakage"
 description: "What a window function is and why the FFT needs one: spectral leakage, main and side lobes, Hann vs Hamming, Blackman, flat top, measured figures and which window to choose. Live demo."
 keywords:
     [
@@ -227,11 +227,13 @@ The two are the same shape, a raised cosine, with slightly different heights:
 | Scalloping loss | 1.42 dB | 1.75 dB |
 | Typical use | General spectrum analysis, noise, PSD, vibration | Speech and audio frames; FIR filter design; interference close to a tone |
 
-Hann goes all the way to zero at the ends, so the windowed record has no jump in value or slope and its side lobes fall away fast. Hamming stops at 0.08, a small step, and in return its two cosines are balanced so the first side lobe almost cancels. The leftover step is why its side lobes barely fall.
+Hann goes all the way to zero at the ends, so the windowed record has no jump in value or slope and its side lobes fall away fast. Hamming stops at 0.08, a small step, and in return its constant and cosine terms are balanced so the first side lobe almost cancels. The leftover step is why its side lobes barely fall.
 
 Choose Hamming when the interference you care about is within a few bins of a strong tone, and Hann when it could be anywhere in the spectrum, or when you're measuring noise. If you're unsure, Hann is the safer default.
 
 ## Which window should you use?
+
+Use Hann for most work, and switch only when you need accurate amplitudes, deeper side lobes or a transient that fits the block.
 
 | If you need to… | Use | Why |
 | --- | --- | --- |
@@ -277,6 +279,8 @@ Only a window lowers the side lobes, and only a longer record narrows the main l
 
 ## Common windowing mistakes
 
+Most windowing mistakes are forgetting to window, or forgetting to correct for the window afterwards.
+
 - **Using no window by accident.** Taking the FFT of a raw block applies a rectangular window, with side lobes only 13 dB down. Unless the signal fits the block exactly or is a transient, apply Hann at least.
 - **Forgetting to correct the level.** Hann alone lowers every tone by 6 dB. Divide by the window's sum, not by $N$.
 - **Correcting noise with the tone factor.** Amplitude correction makes noise read high by the ENBW. Use power correction, or a PSD, for noise.
@@ -287,13 +291,13 @@ Only a window lowers the side lobes, and only a longer record narrows the main l
 
 ## How to apply a window function in JavaScript, React or Angular
 
-SciChart.js redraws spectra with WebGL and WebGPU fast enough to recompute the FFT every time you move a control, so you can see leakage change. The example below runs the windows and the FFT in your browser with the plain JavaScript functions in the code. The top left chart shows the record (blue), the window (yellow) and the windowed record (orange); the top right chart shows the window's own frequency response; the bottom chart shows the spectrum in dB, with the strong tone's leakage on its own as a dashed line.
+The demo windows a record of one or two tones (1,024 samples by default), takes its FFT and redraws all three charts each time you move a control. It runs the windows and the FFT in your browser with the plain JavaScript functions in the code. The top left chart shows the record (blue), the window (yellow) and the windowed record (orange); the top right chart shows the window's own frequency response; the bottom chart shows the spectrum in dB, with the strong tone's leakage on its own as a dashed line.
 
-Choose a **window**, move the **tone** from bin 40.0 (on a bin, no leakage) to 40.5 (halfway, worst case), switch the **weak tone** 60 dB down on or off and move its **offset**, and change the **FFT size** and the **noise**. The readout gives the peak's error, the highest side lobe, the ENBW, the coherent gain and whether the weak tone can be seen. Hover over a chart to read values, scroll to zoom, drag to pan and double-click to reset.
+Choose a **window**, move the **tone** from bin 40.0 (on a bin, no leakage) to 40.5 (halfway, worst case), switch the **weak tone** 60 dB down on or off and move its **offset**, and change the **FFT size** and the **noise**. The readout gives the peak's error, the highest side lobe, the ENBW, the coherent gain and whether the weak tone can be seen. Hover over the spectrum to read a side lobe's level; scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={800} name="./Basic/demo" />
 
-<LearnCta position="top" chart="FFT spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="window function comparison" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this example. The JavaScript tab includes the FFT, the window functions and the spectrum code; the React and Angular tabs reuse them to plot a Hann-windowed spectrum.
 
@@ -430,9 +434,9 @@ Key points:
 - Each spectrum is an `XyDataSeries` drawn by a `FastLineRenderableSeries`, with `dataIsSortedInX: true` because bins are in order. The example's `update()` calls `clear()` and `appendRange()` whenever a control moves, and SciChart.js redraws on the next frame.
 - A fixed dB range (`autoRange: EAutoRange.Never` with a `visibleRange`) keeps the axis still while you compare windows, so side lobes and the noise floor can be compared by eye.
 
-**See it in the demo app:** [JavaScript FFT spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React FFT spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular FFT spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, with a waveform, an FFT spectrum and a spectrogram.
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), which runs an FFT on live microphone input.
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for bins, resolution and how to read a spectrum.
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for bins, resolution and how to read a spectrum.
 
 ## Frequently asked questions
 
@@ -470,4 +474,4 @@ Build an array of weights, for example w[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI *
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. FIR filter design by windowing, and the windows' stopband attenuation.
 - Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Windows and spectrum analysis in depth.
 
-<LearnCta position="bottom" chart="FFT spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="window function comparison" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

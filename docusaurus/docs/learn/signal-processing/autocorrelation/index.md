@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Autocorrelation and Cross-Correlation
-title: "Autocorrelation and Cross-Correlation: What They Are & How to Read Them (With Interactive Examples)"
+title: "Autocorrelation and Cross-Correlation: How to Read Them"
 description: "Autocorrelation and cross-correlation explained: the formulas, a worked example, how to read an ACF plot, finding a period or a time delay, and fast correlation with the FFT. Live example."
 keywords:
     [
@@ -150,6 +150,8 @@ The signal repeats perfectly, so the unbiased estimate gives exactly 1 at every 
 
 ## Properties of autocorrelation
 
+Autocorrelation is largest at lag 0, symmetric about it, and periodic when the signal is.
+
 | Property | In symbols | What it means in practice |
 | --- | --- | --- |
 | Highest at lag 0 | $\lvert r_k \rvert \le r_0 = 1$ | Nothing matches a signal better than itself, unshifted |
@@ -206,6 +208,8 @@ The peak's lag is a whole number of samples. For sub-sample accuracy, fit a para
 
 ## What autocorrelation and cross-correlation are used for
 
+Autocorrelation finds repeats within one signal; cross-correlation finds where one signal appears in another.
+
 - Pitch detection: a voiced sound repeats once per vocal-fold cycle, so the first autocorrelation peak gives the pitch. [Rabiner (1977)](#sources) describes autocorrelation pitch detection for speech.
 - Heart rate: an ECG repeats once per beat. The lag of the first autocorrelation peak is the time between beats, and 60 divided by it (in seconds) is beats per minute.
 - Seasonality in time series: sales, energy use, web traffic and temperatures repeat daily, weekly or yearly, and the ACF shows at which lags.
@@ -236,6 +240,8 @@ Step 3 is also the **Wiener–Khinchin theorem** at work: the autocorrelation an
 
 ## Autocorrelation vs cross-correlation, convolution and the correlation coefficient
 
+All four multiply two sequences and add up the products; they differ in which sequences, whether one is flipped, and whether the result is one number or a function of lag.
+
 | | Autocorrelation | Cross-correlation | Convolution | Pearson correlation coefficient |
 | --- | --- | --- | --- | --- |
 | Inputs | One signal, against itself | Two signals | A signal and a kernel (impulse response) | Two sets of paired values |
@@ -248,6 +254,8 @@ The autocorrelation at one lag is almost the Pearson correlation between a serie
 
 ## Common autocorrelation and cross-correlation mistakes
 
+Most correlation mistakes come from skipping the preparation (removing the mean, choosing the estimate) or from over-reading noisy peaks.
+
 - **Not removing the mean.** A signal sitting at an offset, such as a temperature around 20 °C, correlates strongly with itself at every lag simply because all the products are positive. Subtract the mean first, or the ACF tells you about the offset rather than the pattern.
 - **Reading a trend as memory.** A rising or falling series gives an ACF that decays slowly over dozens of lags. Remove the trend, or difference the series, before you look for anything else.
 - **Mixing up biased and unbiased estimates.** The biased ACF tapers at large lags; the unbiased one doesn't, but it gets noisy near the end. Two tools disagreeing at large lags often comes down to this.
@@ -259,7 +267,7 @@ The autocorrelation at one lag is almost the Pearson correlation between a serie
 
 ## How to calculate and chart autocorrelation in JavaScript, React or Angular
 
-SciChart.js charts signals and their correlation side by side with WebGL rendering, so you can recompute and redraw them as fast as a slider moves or new samples arrive. In the example below, the correlation is computed in your browser by the plain JavaScript functions in the code.
+The demo takes 1,000-sample signals (125 ms at 8,000 samples per second) and recomputes their correlation at up to 500 lags whenever you move a slider, using the plain JavaScript functions in the code.
 
 - **Autocorrelation: find the period.** Change the voice-like signal's **pitch** and **noise**; the green line marks the detected period, and the line above the chart compares it with the true one. Switch the **estimate** between biased and unbiased to see the taper appear and disappear.
 - **Cross-correlation: find the delay.** A chirp is hidden in noise at the **delay** you set. Raise the **noise** until a noise peak beats the echo and the estimate goes wrong.
@@ -267,7 +275,7 @@ SciChart.js charts signals and their correlation side by side with WebGL renderi
 
 <LiveDocSnippet maxWidth={'100%'} height={680} name="./Basic/demo" />
 
-<LearnCta position="top" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="autocorrelation chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this example. The JavaScript tab includes the correlation, peak-finding and test-signal functions; the React and Angular tabs reuse `autocorrelation` and chart an ACF plot of your own data with its 95% band.
 
@@ -429,9 +437,9 @@ function crossCorrelate(x, y) {
 crossCorrelate([1, 2, 1], [0, 0, 1, 2, 1]); // values [0, 0, 1, 4, 6, 4, 1] at lags -2 to 4: peak at lag 2
 ```
 
-**See it in the demo app:** [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), a real-time vital signs monitor with ECG, blood pressure and oxygen traces: the kind of periodic signal autocorrelation turns into a heart rate. For live audio, see the [JavaScript audio analyzer with FFT](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
+**See it in the demo app:** [JavaScript ECG vital signs chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG vital signs chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG vital signs chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example), a real-time vital signs monitor with ECG, blood pressure and oxygen traces: the kind of periodic signal autocorrelation turns into a heart rate. For live audio, see the [JavaScript audio analyzer with FFT](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [impulse (stem) series](/2d-charts/chart-types/fast-impulse-renderable-series/) for correlograms, and [vertical line annotations](/2d-charts/annotations-api/vertical-line-annotation/) for marking peaks.
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [impulse (stem) series](/2d-charts/chart-types/fast-impulse-renderable-series/) for correlograms, and [vertical line annotations](/2d-charts/annotations-api/vertical-line-annotation/) for marking peaks.
 
 ## Frequently asked questions
 
@@ -468,6 +476,6 @@ Subtract the mean, then for each lag k add up x[n] times x[n + k] over every n w
 - Rabiner, L. R. (1977), [On the Use of Autocorrelation Analysis for Pitch Detection](https://doi.org/10.1109/TASSP.1977.1162905). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 25(1), 24–33.
 - Knapp, C. H. and Carter, G. C. (1976), [The Generalized Correlation Method for Estimation of Time Delay](https://doi.org/10.1109/TASSP.1976.1162830). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 24(4), 320–327.
 - Bendat, J. S. and Piersol, A. G., *Random Data: Analysis and Measurement Procedures*, 4th ed., Wiley, 2010. Correlation functions, the Wiener–Khinchin relation and time-delay measurement.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The direct-versus-FFT correlation diagram on this page is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The direct-versus-FFT correlation diagram on this page is adapted from it.
 
-<LearnCta position="bottom" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="autocorrelation chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

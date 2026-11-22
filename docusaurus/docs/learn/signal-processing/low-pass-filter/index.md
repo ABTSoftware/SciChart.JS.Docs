@@ -1,7 +1,7 @@
 ---
 sidebar_position: 130
 sidebar_label: Low-Pass Filter
-title: "Low-Pass Filter: What It Does, Cutoff Frequency & Types (With Interactive Examples)"
+title: "Low-Pass Filter: What It Does, Cutoff Frequency and Types"
 description: "What a low-pass filter is and does, how to calculate an RC filter's cutoff frequency, and how moving average, FIR, IIR and Butterworth filters compare. Live demo."
 keywords:
     [
@@ -50,7 +50,7 @@ related: [fourier-transform, high-pass-filter, fir-vs-iir-filters, band-pass-fil
                 {
                     "@type": "Question",
                     "name": "What is a Butterworth low-pass filter?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A Butterworth low-pass filter has the flattest possible passband, with no ripple and a gain of -3 dB at the cutoff whatever its order. Above the cutoff its gain falls by 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A Butterworth low-pass filter has the flattest possible passband, with no ripple and a gain of −3 dB at the cutoff whatever its order. Above the cutoff its gain falls by 20 dB per decade for each order, so a 4th-order Butterworth falls at 80 dB per decade." }
                 },
                 {
                     "@type": "Question",
@@ -203,7 +203,7 @@ $$
 h[i] = \frac{\sin\big(2\pi f_c (i - M/2)\big)}{i - M/2} \, w[i], \qquad i = 0 \dots M
 $$
 
-then the weights are scaled to add up to 1. The transition band is about $4/M$ of the sample rate wide with a Blackman window, so a longer kernel gives a sharper filter. Its stopband can be very deep: with a Blackman window, below −70 dB. It costs $M+1$ multiplications per sample and $M/2$ samples of delay.
+then the weights are scaled to add up to 1. The transition band is roughly $4/M$ of the sample rate wide with a Blackman window, so a longer kernel gives a sharper filter. Its stopband can be very deep: with a Blackman window, below −70 dB. It costs $M+1$ multiplications per sample and $M/2$ samples of delay.
 
 ### Single-pole IIR filter (exponential smoothing)
 
@@ -213,13 +213,15 @@ $$
 y[n] = y[n-1] + \alpha \big(x[n] - y[n-1]\big), \qquad \alpha \approx 1 - e^{-2\pi f_c / f_s}
 $$
 
-It is also called **exponential smoothing** or an exponential moving average (EMA). It takes two multiplications per sample and one stored value, which makes it the usual choice on microcontrollers and for live data. Like the RC circuit, it rolls off at about 20 dB per decade.
+It is also called **exponential smoothing** or an exponential moving average (EMA). Written this way, it takes one multiplication per sample and one stored value, which makes it the usual choice on microcontrollers and for live data. Like the RC circuit, it rolls off at about 20 dB per decade.
 
 ### Butterworth and other digital IIR filters
 
 Higher-order analogue designs such as Butterworth, Chebyshev and Bessel can be turned into digital IIR filters, usually with the **bilinear transform**, a substitution that maps the analogue filter's frequency axis onto the digital one. They are normally built as a chain of second-order sections (**biquads**, small IIR filters with two feedback terms each), which keeps them numerically stable. A 4th-order digital Butterworth filter uses two biquads, about ten multiplications per sample, to get a roll-off a short FIR filter can't match. For both designs side by side, see [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/).
 
 ## Which low-pass filter should you use?
+
+Use a moving average for quick smoothing, a single-pole filter for live data on little hardware, and a windowed-sinc or Butterworth filter when the cutoff has to be sharp.
 
 | Filter | Type | Roll-off and stopband | Delay | Best for |
 | --- | --- | --- | --- | --- |
@@ -260,6 +262,8 @@ Put one after the other and you get a [band-pass filter](/learn/signal-processin
 
 ## Common low-pass filter mistakes
 
+Most low-pass mistakes are about where the cutoff sits and what the filter's delay does to the data.
+
 - **Setting the cutoff at the noise frequency.** At the cutoff, 71% of the amplitude still gets through. Put the cutoff well below the noise, so the noise falls in the stopband, and check the gain there.
 - **Forgetting the delay.** A heavily smoothed reading is an old reading. In control loops, alarms and live dashboards, choose the lowest-lag filter that removes enough noise.
 - **Using a moving average to remove a specific frequency.** Its lobes leak. Unless the unwanted frequency sits exactly on one of its nulls, a windowed-sinc or Butterworth filter removes it far better.
@@ -270,11 +274,11 @@ Put one after the other and you get a [band-pass filter](/learn/signal-processin
 
 ## How to build a low-pass filter in JavaScript, React or Angular
 
-SciChart.js charts raw and filtered signals with WebGL and WebGPU, so you can redraw both, and the filter's response, as fast as a slider moves. Choose a filter type, drag the cutoff and watch the orange line and the frequency response change. Try the RC calculator and **Use as cutoff**. Hover to read values, scroll to zoom, drag to pan, and double-click to reset.
+The demo applies a moving average, a windowed-sinc or a single-pole filter to 2 seconds of a 500 Hz-sampled signal with 50 Hz hum, and recomputes the output and the frequency response each time you change the cutoff. Choose a filter type, drag the cutoff and watch the orange line and the frequency response change. Try the RC calculator and **Use as cutoff**. Hover to read values, scroll to zoom, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/moving-average-filter/" docsLabel="SciChart.js moving average filter documentation" />
+<LearnCta position="top" chart="low-pass filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/moving-average-filter/" docsLabel="SciChart.js moving average filter documentation" />
 
 Here is the code for this chart. The live demo runs each filter on the chart's data with an `XyCustomFilter`; the React and Angular versions show the same pattern on live, streaming data, next to the built-in moving average:
 
@@ -425,7 +429,7 @@ Key points:
 - **The zero-code option:** for a plain moving average, the built-in [XyMovingAverageFilter](/2d-charts/chart-types/data-filters-api/moving-average-filter/) takes your `XyDataSeries` and a `length`. It is a trailing average (the first `length − 1` points are left empty), it needs x values in ascending order, and it also updates itself as data is appended.
 - The frequency response is calculated in plain JavaScript from the filter's weights. It uses a `LogarithmicAxis` for frequency and a gain axis in dB, the layout of a Bode plot; a `VerticalLineAnnotation` marks the cutoff and a `HorizontalLineAnnotation` marks −3 dB.
 
-**See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with moving average, trendline and ratio filters applied live. For a live signal and its spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example).
+**See it in the demo app:** [JavaScript trendline and moving average filters](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React trendline and moving average filters](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular trendline and moving average filters](https://www.scichart.com/demo/angular/trend-ma-ratio), which uses the built-in moving average filter, the simplest low-pass. For a live signal and its spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example).
 
 **Go deeper:** [SciChart.js moving average filter documentation](/2d-charts/chart-types/data-filters-api/moving-average-filter/), [creating a custom filter](/2d-charts/chart-types/data-filters-api/custom-filter/), the [data filters API overview](/2d-charts/chart-types/data-filters-api/data-filters-api-overview/), and the next guides in this section: [high-pass filter](/learn/signal-processing/high-pass-filter/), [convolution](/learn/signal-processing/convolution/) and the [FFT](/learn/signal-processing/fast-fourier-transform/).
 
@@ -463,4 +467,4 @@ For a simple low-pass filter, apply exponential smoothing to each sample: y = y 
 - Smith, J. O. (2007), [*Introduction to Digital Filters with Audio Applications*](https://ccrma.stanford.edu/~jos/filters/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Difference equations, transfer functions and frequency response.
 - Oppenheim, A. V. (2011), [*Signals and Systems*, RES.6-007](https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/), MIT OpenCourseWare. Lectures on filtering, the frequency response and Butterworth filters.
 
-<LearnCta position="bottom" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/moving-average-filter/" docsLabel="SciChart.js moving average filter documentation" />
+<LearnCta position="bottom" chart="low-pass filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/moving-average-filter/" docsLabel="SciChart.js moving average filter documentation" />
