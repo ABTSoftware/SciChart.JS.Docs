@@ -1,7 +1,7 @@
 ---
 sidebar_position: 110
 sidebar_label: Oscilloscope
-title: "How to Use an Oscilloscope: Reading the Display, Triggering and Measurements (With an Interactive Software Oscilloscope)"
+title: "How to Use an Oscilloscope: The Display, Triggering and Measurements"
 description: "How to use and read an oscilloscope: volts and time per division, probes, coupling, triggering, measurements, bandwidth and sample rate, software oscilloscopes, and scope vs logic analyzer."
 keywords:
     [
@@ -77,7 +77,7 @@ related: [strip-chart, fast-fourier-transform, nyquist-and-aliasing, vibration-a
                     "name": "How do I make a software oscilloscope in JavaScript?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Draw each acquisition as a line series on a chart whose axes have fixed ranges and one gridline per division. Search each record for the trigger crossing, shift the time values so the trigger is at zero, and replace the data on every update. With SciChart.js, use a FastLineRenderableSeries for the trace, extra series with falling opacity for persistence, and an editable HorizontalLineAnnotation for the trigger level. The same code works in React with scichart-react and in Angular with scichart-angular."
+                        "text": "Draw each acquisition as a line series on a chart whose axes have fixed ranges and one gridline per division. Search each record for the trigger crossing, shift the time values so the trigger is at zero, and replace the data on every update. With SciChart.js, use a FastLineRenderableSeries for the trace, extra series with falling opacity for persistence, and an editable HorizontalLineAnnotation for the trigger level. The chart code is the same in React, with scichart-react, and in Angular, with scichart-angular."
                     }
                 }
             ]
@@ -89,7 +89,7 @@ related: [strip-chart, fast-fourier-transform, nyquist-and-aliasing, vibration-a
 
 ## What is an oscilloscope?
 
-An **oscilloscope** (or scope) is an instrument that draws a voltage as it changes over time: voltage on the vertical axis, time on the horizontal axis, on a grid of divisions. It shows the shape of a signal, so you can measure its amplitude, frequency, rise time and duty cycle, and see noise, glitches and distortion that a multimeter's single number hides.
+An **oscilloscope** (or scope) is an instrument that draws a voltage as it changes over time, with voltage on the vertical axis and time on the horizontal. It shows the shape of a signal, so you can measure its amplitude, frequency, rise time and duty cycle, and see noise, glitches and distortion that a multimeter's single number hides.
 
 ![A software oscilloscope screen in a dark navy theme: a 10 by 8 division grid with a noisy yellow pulse train triggered on a rising edge at the centre, older traces fading behind the live one, and a dashed orange trigger level line](/img/learn/oscilloscope-og.png)
 
@@ -124,6 +124,8 @@ Spread the signal over most of the screen before reading it. A trace that covers
 To describe a scope screen, give the scales, the trigger and what the signal does: "At 0.5 V/div and 0.2 ms/div, triggered on the rising edge at 1.5 V, channel 1 shows a 3 V, 1.25 kHz pulse train with a 25% duty cycle and no visible ringing."
 
 ## How to use an oscilloscope, step by step
+
+Using an oscilloscope comes down to connecting and compensating the probe, scaling the screen to fit the signal, and setting a trigger so the trace stands still.
 
 1. Connect a probe to channel 1, and set the channel's probe setting to match the probe (10× for most passive probes). Many scopes detect the probe; on others you set it by hand.
 2. Compensate the probe. Touch it to the scope's calibration output, a square wave of about 1 kHz, and turn the small trimmer on the probe until the square wave has sharp corners, neither rounded nor overshooting.
@@ -196,7 +198,7 @@ Three display modes change what the screen shows:
 
 - **Persistence.** Instead of erasing each sweep, the scope leaves older traces on screen, fading over a set time or kept forever (infinite persistence). Noise shows as a band, jitter as smeared edges, and a rare glitch stays on screen after it happens. Digital phosphor scopes shade each pixel by how often the signal passed through it.
 - **Roll mode.** At slow time bases the scope stops triggering and scrolls the trace from right to left as samples arrive, like a chart recorder or a [strip chart](/learn/real-time/strip-chart/). It suits slowly changing signals such as a battery discharging or a temperature, where waiting for a full sweep would take seconds.
-- **FFT mode.** The scope runs a [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) on the record and plots amplitude against frequency. It finds the frequency of a hum, the harmonics of a distorted sine or the switching noise of a power supply. An 8-bit scope's FFT is limited to roughly 50 dB of dynamic range (6.02 × 8 + 1.76 dB for an ideal 8-bit converter), much less than a spectrum analyzer's.
+- **FFT mode.** The scope runs a [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/) on the record and plots amplitude against frequency. It finds the frequency of a hum, the harmonics of a distorted sine or the switching noise of a power supply. The familiar figure of about 50 dB for an 8-bit scope (6.02 × 8 + 1.76 dB) is the ideal converter's signal-to-noise ratio, not the FFT's dynamic range. A long FFT spreads the noise over many frequency bins, so the noise floor in each bin sits lower, and the practical limit is usually the converter's distortion spurs, its spurious-free dynamic range (SFDR). Either way, a scope's FFT has much less dynamic range than a spectrum analyzer.
 
 ## Software and PC oscilloscopes
 
@@ -228,6 +230,8 @@ For audio-frequency spectra in the browser, see the [audio spectrum analyzer](/l
 
 ## Common oscilloscope mistakes
 
+The commonest oscilloscope mistakes are in the probe and its ground lead, and they can damage the circuit as well as the reading.
+
 - **Clipping the ground lead to a live point.** On a mains-powered bench scope the probe's ground clip is connected to mains earth. Clipped anywhere other than the circuit's ground, it short-circuits that point to earth, which can destroy the circuit, the probe or the scope. Use a differential probe or an isolated scope to measure between two points that aren't ground.
 - **Not compensating the probe.** An uncompensated 10× probe rounds or overshoots square edges and gets amplitudes wrong at higher frequencies. Compensate it on the calibration output each time you move it to another channel or scope.
 - **A long ground lead on fast edges.** The lead's inductance makes fast edges ring that don't ring in the circuit. Use the short ground spring that comes with the probe.
@@ -238,9 +242,9 @@ For audio-frequency spectra in the browser, see the [audio spectrum analyzer](/l
 
 ## How to build a software oscilloscope in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a software oscilloscope in the browser can replace thousands of points on every sweep, layer persistence traces and stay smooth while you zoom, pan and hover. The demo below simulates a signal generator connected to a scope. Its 10 × 8 division screen, trigger, persistence and measurements work as on a bench scope.
+On every sweep, the demo below acquires a new 2,000-sample record from a simulated signal generator, searches it for the trigger, and draws the live trace over 12 fading persistence traces. Its 10 × 8 division screen, trigger, persistence and measurements work as on a bench scope.
 
-Change the generator's **Waveform**, **Frequency**, **Amplitude** and **DC offset**. On the scope, change **Volts/div** and **Time/div**, switch **Coupling** to AC to remove the offset, untick **Trigger** to see the trace roll, choose a rising or falling **Edge**, and move the trigger **Level** with the slider or by dragging the dashed orange line. Untick **Persistence** to see only the newest trace, and press **Stop** to freeze it. The readouts above the screen measure Vpp, frequency, period, duty cycle and rise time on every sweep. To see aliasing, set a sine wave of about 2.1 kHz and a time base of 50 ms/div: the scope samples at only 2 kS/s, so it draws, and measures, a sine of around 100 Hz that isn't in the signal. Scroll to zoom, drag to pan, and double-click to return to the full screen.
+Change the generator's **Waveform**, **Frequency**, **Amplitude** and **DC offset**. On the scope, change **Volts/div** and **Time/div**, switch **Coupling** to AC to remove the offset, untick **Trigger** to see the trace roll, choose a rising or falling **Edge**, and move the trigger **Level** with the slider or by dragging the dashed orange line. Untick **Persistence** to see only the newest trace, and press **Stop** to freeze it. The readouts above the screen measure Vpp, frequency, period, duty cycle and rise time on every sweep. To see aliasing, set a sine wave of about 2.1 kHz and a time base of 50 ms/div: the scope samples at only 2 kS/s, so it draws, and measures, a sine of around 100 Hz that isn't in the signal. The mouse wheel zooms into the trace, dragging pans it, and a double-click returns to the full screen.
 
 <LiveDocSnippet maxWidth={'100%'} height={680} name="./Basic/demo" />
 
@@ -503,13 +507,13 @@ More than twice the highest frequency in the signal, or it aliases, and in pract
 
 ### How do I make a software oscilloscope in JavaScript?
 
-Draw each acquisition as a line series on a chart whose axes have fixed ranges and one gridline per division. Search each record for the trigger crossing, shift the time values so the trigger is at zero, and replace the data on every update. With SciChart.js, use a `FastLineRenderableSeries` for the trace, extra series with falling opacity for persistence, and an editable `HorizontalLineAnnotation` for the trigger level. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Draw each acquisition as a line series on a chart whose axes have fixed ranges and one gridline per division. Search each record for the trigger crossing, shift the time values so the trigger is at zero, and replace the data on every update. With SciChart.js, use a `FastLineRenderableSeries` for the trace, extra series with falling opacity for persistence, and an editable `HorizontalLineAnnotation` for the trigger level. The chart code is the same in React, with `scichart-react`, and in Angular, with `scichart-angular`.
 
 ## Sources
 
 - Tektronix (2009), [XYZs of Oscilloscopes](https://www.ece.ucdavis.edu/~spencer/195/datasheets/XYZ.pdf), primer 03W-8605-4. The vertical, horizontal and trigger systems, trigger modes and holdoff, 1× and 10× probes, probe compensation, the −3 dB definition of bandwidth and the 5 times rule, rise time = k ÷ bandwidth (k = 0.35 for most scopes under 1 GHz), and sample rates for sin(x)/x and linear interpolation.
 - Tektronix, [XYZs of Logic Analyzers](https://web.mit.edu/6.111/www/s2007/handouts/LA.pdf), primer (course copy hosted by MIT 6.111). How a logic analyzer samples many channels against a threshold, its timing and state modes, and its triggers.
-- Kester, W., [Taking the Mystery out of the Infamous Formula, "SNR = 6.02N + 1.76dB"](https://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf), Analog Devices tutorial MT-001, Rev. A (2008). The ideal signal-to-noise ratio of an N-bit converter.
+- Kester, W., [Taking the Mystery out of the Infamous Formula, "SNR = 6.02N + 1.76dB"](https://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf), Analog Devices tutorial MT-001, Rev. A (2008). The ideal signal-to-noise ratio of an N-bit converter, and the FFT processing gain that lowers the noise floor per bin.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Oscilloscopes, probes, grounding and measurement practice.
 
 <LearnCta position="bottom" chart="oscilloscope display" demo="realtime-ghosted-traces-chart" demoLabel="real-time ghosted traces chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

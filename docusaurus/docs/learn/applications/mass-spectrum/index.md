@@ -1,7 +1,7 @@
 ---
 sidebar_position: 80
 sidebar_label: Mass Spectrum
-title: "Mass Spectrum: How to Read a Mass Spectrometry Graph (m/z, Base Peak and Isotope Patterns, With an Interactive Example)"
+title: "Mass Spectrum: How to Read m/z, the Base Peak and Isotope Patterns"
 description: "How to read a mass spectrum: the m/z axis, relative abundance, the molecular ion and base peak, fragments, chlorine and bromine isotope patterns, ESI charge states, resolution and ppm accuracy, with a live example."
 keywords:
     [
@@ -111,11 +111,13 @@ Other soft sources include chemical ionisation (CI), atmospheric pressure chemic
 
 ## How to read a mass spectrum
 
-![An annotated stick mass spectrum of chlorobenzene: the base peak at m/z 77, the C6H5+ ion, set to 100%; the molecular ion at m/z 112 with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of M, from chlorine-37; a dashed arrow from 112 to 77 marking the loss of 35, a chlorine atom; and a fragment at m/z 51 from the loss of 26, acetylene](./mass-spectrum-anatomy.svg)
+Read a mass spectrum by finding the molecular ion first, then working down through the fragments and isotope peaks to piece the molecule together.
+
+![An annotated stick mass spectrum of chlorobenzene: the molecular ion at m/z 112 is also the base peak, set to 100%, with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of M, from chlorine-37; a dashed arrow from 112 to the C6H5+ fragment at m/z 77, about 60%, marking the loss of 35, a chlorine atom; and a fragment at m/z 51 from the loss of 26, acetylene](./mass-spectrum-anatomy.svg)
 
 - The x-axis is the **mass-to-charge ratio** (m/z): the ion's mass in daltons (Da, also unified atomic mass units, u) divided by its number of charges. Most EI ions carry one charge, so m/z reads as the ion's mass.
 - The y-axis is the relative abundance: the ion count at each m/z, divided by the count of the tallest peak and multiplied by 100. Some software shows raw counts ("intensity") instead; the shape is the same.
-- The **base peak** is the tallest peak, set to 100%. It is the most abundant ion, often a stable fragment rather than the whole molecule.
+- The **base peak** is the tallest peak, set to 100%. It is the most abundant ion. In chlorobenzene it is the molecular ion itself, but in many molecules, such as toluene, it is a stable fragment.
 - The **molecular ion** (M) is the intact molecule with one electron removed, M<sup>+•</sup>. Its m/z is the molecular mass. In EI it is usually at the top end of the spectrum, but can be small or missing for molecules that break up easily, such as many alcohols.
 - Fragment peaks are pieces of the molecular ion. The gap between the molecular ion and a fragment is the mass of the neutral piece that was lost.
 - Isotope peaks (M+1, M+2) are small peaks one and two units above each ion, from molecules containing heavier isotopes such as carbon-13 and chlorine-37.
@@ -233,7 +235,7 @@ $$
 \text{error (ppm)} = \frac{m_{\text{measured}} - m_{\text{theoretical}}}{m_{\text{theoretical}}} \times 10^6
 $$
 
-Protonated caffeine, [C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub> + H]<sup>+</sup>, has a theoretical m/z of 195.0877. A reading of 195.0882 is 2.8 ppm high. Accurate mass narrows the possible formulas: at a few ppm, only a handful of formulas fit a small molecule, and the isotope pattern usually settles which.
+Protonated caffeine, [C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub> + H]<sup>+</sup>, has a theoretical m/z of 195.0877. A reading of 195.0882 is 2.6 ppm high. Accurate mass narrows the possible formulas: at a few ppm, only a handful of formulas fit a small molecule, and the isotope pattern usually settles which.
 
 High resolving power without calibration still gives wrong masses, and good accuracy is impossible on peaks that overlap.
 
@@ -252,6 +254,8 @@ To get the mass spectrum of one compound, pick its peak in the chromatogram and 
 
 ## Common mass spectrum mistakes
 
+Most mass spectrum misreadings mix up which peak is which: the base peak, the molecular ion and its isotope partners.
+
 - **Calling the base peak the molecular ion.** The tallest peak is only the most abundant ion. In toluene it is M − 1; in many alcohols and branched alkanes the molecular ion is tiny or absent.
 - **Taking an isotope peak as M.** The highest m/z in a chlorine or bromine compound is M+2 or M+4, not M. Find the lightest peak of the cluster.
 - **Reading m/z as mass in electrospray.** A peak at m/z 857 may be a 10+ ion of an 8,560 Da protein. Check the isotope spacing before assuming a single charge.
@@ -262,7 +266,7 @@ To get the mass spectrum of one compound, pick its peak in the chromatogram and 
 
 ## How to plot a mass spectrum in JavaScript, React or Angular
 
-A modern mass spectrometer writes thousands of spectra per run, and a profile spectrum can hold hundreds of thousands of points. SciChart.js draws with WebGL and WebGPU, so it stays smooth when you zoom from the full m/z range down to one isotope cluster, and redraws instantly as processing settings change. The demo calculates each spectrum live from the ions' formulas, using the natural isotope abundances; the fragment and charge-state intensities are illustrative.
+A modern mass spectrometer writes thousands of spectra per run, and a profile spectrum can hold hundreds of thousands of points. The demo calculates each spectrum live from the ions' formulas and natural isotope abundances, for six compounds from dichloromethane to the ubiquitin protein, and rebuilds the stick or profile spectrum every time you change a setting; the fragment and charge-state intensities are illustrative.
 
 Pick a **Compound** and an **Ionisation**: EI shows fragments for the small molecules, and ESI shows the peptide's and protein's charge states (each compound offers only the realistic option). **Peaks** switches between a stick and a profile spectrum, and **Resolving power** sets the profile peak width: watch the protein's isotope peaks merge into one envelope below about 10,000. **Zoom to molecular ion** jumps to the molecular-ion cluster, and **Label peaks** marks the tallest peaks in view with their m/z. The line above the chart reads the base peak, the molecular ion, its M+1 and M+2 ratios and what they suggest, or for multiply charged ions, the charge and average mass from the centres of two neighbouring charge states. Scroll to zoom the m/z axis, drag to pan, double-click to reset, and hover for values.
 

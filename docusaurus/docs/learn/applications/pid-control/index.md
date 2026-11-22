@@ -1,7 +1,7 @@
 ---
 sidebar_position: 120
 sidebar_label: PID Control
-title: "PID Control: How a PID Controller Works and How to Tune It From the Step Response (With an Interactive Simulator)"
+title: "PID Control: How a PID Controller Works and How to Tune It"
 description: "What a PID controller does, what the P, I and D terms mean, how to read a step response (rise time, overshoot, settling time) and how to tune a loop by hand, with Ziegler–Nichols or lambda tuning. With a live simulator."
 keywords:
     [
@@ -171,7 +171,7 @@ Change one gain at a time, and give each test long enough to settle. In the simu
 
 ## The Ziegler–Nichols tuning method
 
-The **Ziegler–Nichols method** is the oldest published set of PID tuning rules, from John Ziegler and Nathaniel Nichols of the Taylor Instrument Companies in 1942. Its closed-loop (ultimate gain) version needs one test:
+The **Ziegler–Nichols method** is the best-known set of PID tuning rules, and one of the earliest (Callender, Hartree and Porter published rules in 1936). It comes from John Ziegler and Nathaniel Nichols of the Taylor Instrument Companies in 1942. Its closed-loop (ultimate gain) version needs one test:
 
 1. Set the controller to P only.
 2. Raise $K_p$ until the process variable oscillates with a constant amplitude, neither growing nor dying away. That gain is the **ultimate gain** $K_u$.
@@ -209,6 +209,8 @@ Both start from an open-loop step test. With the controller in manual, step the 
 For the default process, $\lambda = 4$ s gives $K_p = 1.33$ and $K_i = 0.167$ /s; in the simulator the 20% step then rises in 7.9 s with no overshoot and settles in about 16 s. Choosing $\lambda = \tau = 8$ s, a common conservative choice, gives $K_p = 0.80$, $K_i = 0.10$ /s and a settling time of about 32 s.
 
 ## PID tuning methods compared
+
+PID tuning methods differ in the test they need and the response they aim for, from trial and error to model-based rules such as lambda tuning.
 
 | Method | Test needed | Response it aims for | Best for | Watch out for |
 | --- | --- | --- | --- | --- |
@@ -262,6 +264,8 @@ Step tests show how a loop behaves; frequency response shows how close it is to 
 
 ## Where PID control is used
 
+PID control runs most of the feedback loops in industry, from process plants to motor drives and temperature controllers.
+
 - Process plants. Flow, pressure, level and temperature loops in refineries, chemical plants and paper mills. A survey of more than 11,000 controllers in those industries found that 97% used a PID algorithm (Desborough and Miller, 2002). Operators watch the loops on [HMI and SCADA trend charts](/learn/applications/hmi-scada/), and SciChart is used to build [HMI and SCADA](https://www.scichart.com/scada-big-data/) software.
 - Temperature control. Ovens, furnaces, 3D-printer hot ends, incubators, and heating, ventilation and air conditioning. Thermal loops are slow and lag-dominated, so they often use derivative action.
 - Motor speed and position. Drives, conveyors, CNC axes and robot joints, usually with a fast current loop inside a speed loop inside a position loop (a cascade).
@@ -269,6 +273,8 @@ Step tests show how a loop behaves; frequency response shows how close it is to 
 - Test and measurement. Environmental chambers, dynamometers and power supplies hold set conditions while an instrument records data; see SciChart in [instrumentation software](https://www.scichart.com/best-instrumentation-engineering-software/).
 
 ## Common PID tuning mistakes
+
+Many PID tuning problems come from testing the wrong thing or from mixing up controller forms, units and direction.
 
 - **Tuning only for setpoint steps.** Most loops spend their time rejecting disturbances. Test with a load change too: a loop with no setpoint overshoot can still recover slowly from a disturbance.
 - **Copying gains between controllers.** Parallel, standard and series forms use different numbers for the same behaviour, and some controllers use proportional band or repeats per minute. Convert before you copy.
@@ -280,7 +286,7 @@ Step tests show how a loop behaves; frequency response shows how close it is to 
 
 ## How to chart a PID control loop in JavaScript, React or Angular
 
-Tuning a loop means watching several signals move together at once: setpoint, process variable, controller output and its three parts, sampled tens or hundreds of times a second. SciChart.js draws with WebGL, so trend charts like these scroll smoothly while the data streams in, even with many loops on one screen. The demo simulates the process and the controller in the browser and charts them live.
+Tuning a loop means watching several signals move together at once: setpoint, process variable, controller output and its three parts, sampled tens or hundreds of times a second. The demo simulates the process and the controller in the browser every 10 ms of process time, running four times faster than real time, and streams a point every 0.1 s into two scrolling trends: the setpoint and process variable, and the controller output with its P, I and D parts.
 
 Change **Kp**, **Ki** and **Kd** to tune the controller, and **Gain K**, **Time constant τ** and **Dead time θ** to change the process. **Step setpoint** toggles the setpoint between 40% and 60%, and **Add load disturbance** takes 15% off the process input. Lower the **Output limit** and untick **Anti-windup** to see integral windup, and set **D acts on** to error to see derivative kick. **Ziegler–Nichols** finds the ultimate gain and period for the current process and applies the classic PID rule. The readout measures each step's rise time, overshoot and settling time as it happens. Hover for values; scrolling or dragging a chart pauses it so you can zoom and pan, and **Pause** stops or restarts the run.
 
@@ -458,6 +464,7 @@ Write the process as a difference equation (for a first-order process with dead 
 ## Sources
 
 - Ziegler, J. G. and Nichols, N. B. (1942), [Optimum settings for automatic controllers](https://doi.org/10.1115/1.4019264). *Transactions of the ASME*, 64, 759–768. The closed-loop and reaction-curve tuning rules.
+- Callender, A., Hartree, D. R. and Porter, A. (1936), [Time-lag in a control system](https://doi.org/10.1098/rsta.1936.0007). *Philosophical Transactions of the Royal Society A*, 235. Early published tuning rules for controllers with dead time.
 - Åström, K. J. and Murray, R. M. (2021), [*Feedback Systems: An Introduction for Scientists and Engineers*](https://fbswiki.org/wiki/index.php/Feedback_Systems:_An_Introduction_for_Scientists_and_Engineers), 2nd edition, Princeton University Press (free online). Step response specifications, PID control, Ziegler–Nichols tuning, relay feedback, windup, derivative filtering and setpoint weighting.
 - Åström, K. J. and Hägglund, T. (2006), *Advanced PID Control*, ISA. Controller forms, anti-windup, the relay autotuner and tuning rules.
 - Skogestad, S. (2003), [Simple analytic rules for model reduction and PID controller tuning](https://doi.org/10.1016/S0959-1524(02)00062-8). *Journal of Process Control*, 13(4), 291–309. The SIMC (lambda-style) rules for FOPDT models.

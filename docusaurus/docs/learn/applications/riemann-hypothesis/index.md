@@ -49,7 +49,7 @@ related: [hr-diagram, fourier-transform, histogram, log-scale-graph]
                 {
                     "@type": "Question",
                     "name": "Why does the Riemann hypothesis matter for prime numbers?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Riemann's explicit formula writes the prime-counting function exactly as a smooth main term minus one wave for each zero of the zeta function. The real part of a zero sets how fast its wave grows. If every zero has real part 1/2, the primes stray from the logarithmic integral li(x) by no more than about the square root of x times log x, which is the best accuracy anyone could expect. A zero off the line would mean larger, more irregular deviations." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Riemann's explicit formula writes the prime-counting function exactly as a smooth main term minus one wave for each zero of the zeta function. The real part of a zero sets how fast its wave grows. If every zero has real part 1/2, the primes stray from the logarithmic integral li(x) by no more than about the square root of x times log x, which is close to the best accuracy possible. A zero off the line would mean larger, more irregular deviations." }
                 },
                 {
                     "@type": "Question",
@@ -70,7 +70,7 @@ related: [hr-diagram, fourier-transform, histogram, log-scale-graph]
 
 ## What is the Riemann hypothesis?
 
-The **Riemann hypothesis** is the conjecture, made by Bernhard Riemann in 1859, that the Riemann zeta function's non-trivial zeros all have real part exactly 1/2. Drawn on the complex plane, every point inside the critical strip where the function vanishes would lie on one vertical line, the critical line. It is unproven; if true, it pins down how evenly the prime numbers are spread.
+The **Riemann hypothesis** is the conjecture, made by Bernhard Riemann in 1859, that the Riemann zeta function's non-trivial zeros all have real part exactly 1/2. On the complex plane, every zero inside the critical strip would then lie on one vertical line, the critical line. It is unproven; if true, it pins down how evenly the prime numbers are spread.
 
 ![Four charts on a dark navy background. Top left, Hardy's Z function oscillating along the critical line from t = 0 to 100, with 29 orange dots where it crosses zero. Top right, the path of the zeta function in the complex plane for t from 0 to 40, a looping curve that passes through the origin at six orange dots. Bottom left, the step function counting primes up to 100, a dashed logarithmic integral curve and a blue curve rebuilt from 30 zeros that follows the steps. Bottom right, a histogram of normalised gaps between the first 5,000 zeros, matching an orange random-matrix curve rather than a dashed random-points curve](/img/learn/riemann-hypothesis-og.png)
 
@@ -117,6 +117,8 @@ $$
 where $\Gamma$ is the gamma function. It reflects the plane in the line $\sigma = 1/2$, which is why that line is special. A computer evaluates zeta inside the strip with a formula that converges there, such as Euler–Maclaurin summation.
 
 ## Trivial and non-trivial zeros: the critical strip and the critical line
+
+The zeta function has two kinds of zeros: trivial zeros at the negative even integers, and non-trivial zeros inside the critical strip, which the hypothesis places on the critical line.
 
 ![The complex plane of the zeta function. The horizontal axis is the real part sigma from -7 to 3 and the vertical axis the imaginary part t from -30 to 30. Blue dots on the real axis at -2, -4 and -6 are the trivial zeros. A cross at 1 is the pole. A shaded vertical band between 0 and 1 is the critical strip, and a red dashed line down its middle at one half is the critical line. Red dots on that line at heights 14.13, 21.02 and 25.01, with mirror images below the axis, are the first non-trivial zeros. A green region to the right of 1 is where the series converges](./critical-strip.svg)
 
@@ -228,6 +230,8 @@ With no zeros, the formula is a smooth curve close to $\operatorname{li}(x)$. Wi
 
 ## The evidence for the Riemann hypothesis
 
+The evidence for the hypothesis is strong but not a proof: trillions of zeros checked by computer, and theorems that put a large share of all zeros on the critical line.
+
 ### Numerical verification
 
 Each generation of computers has checked more zeros. In 2021 Dave Platt and Tim Trudgian proved, with rigorous interval arithmetic, that every zero up to height $3 \times 10^{12}$ lies on the critical line and is simple: the first 12,363,153,437,138 zeros. Odlyzko's computations have checked large blocks of zeros much higher up, near the $10^{20}$-th zero and beyond.
@@ -252,6 +256,8 @@ Claimed proofs appear from time to time, some now written in proof assistants su
 
 ## Ways to visualise the Riemann hypothesis
 
+Each way of charting the zeta function shows a different side of the hypothesis, from counting zeros to watching them rebuild the primes.
+
 | Chart | What it shows | Best for |
 | --- | --- | --- |
 | Z(t) line chart | Real oscillating curve; zeros are where it crosses the axis | Locating and counting zeros on the critical line |
@@ -265,6 +271,8 @@ The first four are in the live demo below. A $|\zeta|$ heatmap over a rectangle 
 
 ## Common misconceptions about the Riemann hypothesis
 
+Most misconceptions about the hypothesis overstate what is known or confuse the zeros with the primes.
+
 - **"It has been proven."** Not as of November 2026. Claimed proofs appear from time to time; none has been accepted, and the Clay Mathematics Institute lists the problem as unsolved.
 - **"Trillions of verified zeros prove it."** A numerical check covers finitely many zeros out of infinitely many. Other conjectures in number theory held for every case anyone could compute and still turned out false, and the first counterexample to the claim that $\pi(x) < \operatorname{li}(x)$ is known to be far beyond direct computation.
 - **"The zeros are the primes."** They are not. The zeros are complex numbers such as $1/2 + 14.1347i$; the primes are whole numbers. The link is Riemann's explicit formula, where each zero adds one wave to the count of primes.
@@ -274,7 +282,7 @@ The first four are in the live demo below. A $|\zeta|$ heatmap over a rectangle 
 
 ## How to visualise the Riemann hypothesis in JavaScript, React or Angular
 
-Everything here is computed in the browser, from the zeta function up: more than 5,000 zeros at start-up, then 100,000 points of $Z(t)$ when you pick the longest range. SciChart.js draws its line, scatter and rectangle series with WebGL, so each control redraws its chart instantly, even at that size.
+Everything here is computed in the browser, from the zeta function up: more than 5,000 zeros at start-up, then 100,000 points of $Z(t)$ when you pick the longest range. When you move a control, SciChart.js redraws the chart's line, scatter or rectangle series with WebGL and WebGPU; pick the longest range to see how it handles 100,000 points on your device.
 
 Pick a range from **t from 0 to** to draw $Z(t)$ up to 5,000, with every zero marked and counted against the Riemann–von Mangoldt formula. Drag **σ** away from 0.5 and the zeta spiral stops passing through the origin; **t up to** lengthens the path. **Zeros** adds zeros one by one to Riemann's explicit formula, so the steps of the prime staircase sharpen. **First** sets how many zeros go into the gap histogram. Scroll to zoom, drag to pan and double-click to reset.
 
@@ -427,7 +435,7 @@ The first non-trivial zero is at 1/2 + 14.134725...i, so its height on the criti
 
 ### Why does the Riemann hypothesis matter for prime numbers?
 
-Riemann's explicit formula writes the prime-counting function exactly as a smooth main term minus one wave for each zero of the zeta function. The real part of a zero sets how fast its wave grows. If every zero has real part 1/2, the primes stray from the logarithmic integral li(x) by no more than about the square root of x times log x, which is the best accuracy anyone could expect. A zero off the line would mean larger, more irregular deviations.
+Riemann's explicit formula writes the prime-counting function exactly as a smooth main term minus one wave for each zero of the zeta function. The real part of a zero sets how fast its wave grows. If every zero has real part 1/2, the primes stray from the logarithmic integral li(x) by no more than about the square root of x times log x, which is close to the best accuracy possible. A zero off the line would mean larger, more irregular deviations.
 
 ### What is the critical line?
 

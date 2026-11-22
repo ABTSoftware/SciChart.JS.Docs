@@ -1,7 +1,7 @@
 ---
 sidebar_position: 170
 sidebar_label: Telemetry
-title: "Telemetry: What It Is, How Telemetry Data Works and How to Visualise It (With an Interactive Dashboard)"
+title: "Telemetry: What It Is, How It Works and How to Visualise the Data"
 description: "What telemetry is, how a telemetry system measures, frames, sends and decodes data from aircraft, rockets, cars and remote sites, and how to read a live telemetry dashboard."
 keywords:
     [
@@ -78,7 +78,7 @@ related: [motorsport-telemetry, hmi-scada, strip-chart, time-series-data-formats
                     "name": "How do I make a telemetry dashboard in JavaScript?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Give each group of channels its own chart pane with a fixed y-range, and line the panes up on a shared time axis. With SciChart.js, add a FastLineRenderableSeries per channel, append samples with appendRange as they arrive, line the panes up with SciChartVerticalGroup, and link their cursors with a shared modifierGroup. A palette provider turns a trace red above its alarm limit. The same code works in React with scichart-react and in Angular with scichart-angular."
+                        "text": "Give each group of channels its own chart pane with a fixed y-range, and line the panes up on a shared time axis. With SciChart.js, add a FastLineRenderableSeries per channel, append samples with appendRange as they arrive, line the panes up with SciChartVerticalGroup, and link their cursors with a shared modifierGroup. A palette provider turns a trace red above its alarm limit. React and Angular apps use the same code through scichart-react and scichart-angular."
                     }
                 }
             ]
@@ -98,7 +98,7 @@ related: [motorsport-telemetry, hmi-scada, strip-chart, time-series-data-formats
 
 :::tip Key takeaways
 - Telemetry means "measuring at a distance": the word joins the Greek *tele* (far) and *metron* (measure).
-- A telemetry system has eight steps: sensors, signal conditioning, sampling, framing, transmission, reception, conversion to engineering units, then display and archiving.
+- A telemetry system has eight steps around one link: sensors, signal conditioning, sampling and framing on the vehicle, then reception, conversion to engineering units, display and archiving on the ground.
 - Each channel is sampled at its own rate, packed with others into frames or packets with a sync word and a time stamp, and sent over one link.
 - A telemetry dashboard lines up strip charts on one time axis, adds readouts, limits and event markers, and replays recordings.
 - In hospitals, telemetry means wireless heart monitoring; in software, it means logs, metrics and traces. This guide is about the engineering meaning.
@@ -116,10 +116,13 @@ Every telemetry system, from a model rocket to a deep-space probe, follows the s
 2. Signal conditioning. Amplifiers scale each signal to the range of the converter, remove offsets, and an anti-aliasing low-pass filter removes frequencies too high for the sample rate.
 3. Sampling. An analogue-to-digital converter (ADC) turns each voltage into a number of counts. Each channel is sampled only as fast as it needs: more than twice the highest frequency it contains, by the [Nyquist rule](/learn/signal-processing/nyquist-and-aliasing/). A tank temperature changes over seconds; a vibration sensor needs thousands of samples a second.
 4. Framing. The samples from all channels are interleaved into a fixed pattern of words (a frame) or into self-describing packets, with a sync pattern so the receiver can find the start, a counter, and a time stamp.
-5. Transmission. A transmitter sends the bit stream over a radio link, through a satellite relay, or along a cable or fibre. On a test range, aircraft and missile telemetry uses dedicated bands; in the USA, 1435 to 1525 MHz in L-band is set aside for aeronautical telemetry.
-6. Reception and decommutation. The ground station's receiver recovers the bits, a frame synchroniser locks on to the sync pattern, and a decommutator splits the frame back into channels.
-7. Conversion. Raw counts become engineering units (°C, bar, g, metres) through each sensor's calibration, and every sample gets its time.
-8. Display and storage. The values feed live displays and alarms, and every frame is archived, so the test can be replayed and analysed later. Storing and sending the channels as compressed binary columns keeps both fast (see [time series data formats](/learn/big-data/time-series-data-formats/)).
+
+Between steps 4 and 5 sits the link, the downlink in the diagram. A transmitter sends the bit stream over a radio link, through a satellite relay, or along a cable or fibre. On a test range, aircraft and missile telemetry uses dedicated bands; in the USA, 1435 to 1525 MHz in L-band is set aside for aeronautical telemetry.
+
+5. Reception and decommutation. The ground station's receiver recovers the bits, a frame synchroniser locks on to the sync pattern, and a decommutator splits the frame back into channels.
+6. Conversion. Raw counts become engineering units (°C, bar, g, metres) through each sensor's calibration, and every sample gets its time.
+7. Display. The values feed live strip charts, readouts and alarms.
+8. Archiving. Every frame is recorded, so the test can be replayed and analysed later. Storing and sending the channels as compressed binary columns keeps both fast (see [time series data formats](/learn/big-data/time-series-data-formats/)).
 
 ### Telemetry frames: PCM and IRIG 106
 
@@ -159,6 +162,8 @@ Three properties make telemetry data harder to chart than ordinary time series:
 - Gaps and dropouts. Radio links fade when an antenna is masked or the vehicle is far away. Frames are lost, and a chart that joins the points either side of a gap draws data that was never measured.
 
 ## Where is telemetry used?
+
+Telemetry is used wherever something must be measured live from a distance: aircraft and rockets, spacecraft, race cars, utility networks and weather and science stations.
 
 | Field | What is measured | Typical link |
 | --- | --- | --- |
@@ -202,6 +207,8 @@ To describe a moment on a telemetry dashboard, give the time, the event, the cha
 
 ## Telemetry vs data logging vs SCADA vs observability
 
+Telemetry sends measurements live, data logging stores them for later, SCADA also controls the plant it monitors, and software observability applies the same idea to computer systems.
+
 | | Telemetry | Data logging | SCADA | Software observability |
 | --- | --- | --- | --- | --- |
 | What it is | Remote measurement, sent live | Measurements stored on board, read later | Monitoring and control of a plant or network | Telemetry about software: logs, metrics, traces |
@@ -213,6 +220,8 @@ Most real systems mix them. A racing car or a test aircraft sends a subset of it
 
 ## Common telemetry display mistakes
 
+Most telemetry display mistakes distort time: misaligned clocks, aliasing, hidden peaks and invented data across gaps.
+
 - **Plotting channels on unsynchronised time bases.** If one stream is stamped when it was sampled and another when it reached the ground, the panes disagree by the link delay, and causes appear after their effects. Use the on-board time stamp for every channel.
 - **Ignoring aliasing.** A vibration channel sampled too slowly, or without an anti-aliasing filter, shows a slow wobble that isn't there. The fix is upstream, in the sample rate and filter; see [Nyquist and aliasing](/learn/signal-processing/nyquist-and-aliasing/).
 - **Decimating fast channels for display.** Showing every 20th point of a 1,000 samples-per-second channel can make a millisecond shock vanish. Use a min-max [downsampling](/learn/big-data/downsampling/) method that keeps the extremes in each pixel, or draw every point with a renderer that can.
@@ -223,7 +232,7 @@ Most real systems mix them. A racing car or a test aircraft sends a subset of it
 
 ## How to build a telemetry dashboard in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a dashboard can stream hundreds of thousands of samples into several synchronised panes and stay smooth while you zoom, pan and hover. The demo below replays a simulated sounding-rocket flight: altitude and speed, acceleration (100 samples per second), vibration (1,000 samples per second) and nose-cone skin temperature, with the first 70 seconds already received.
+The demo below streams a simulated three-minute sounding-rocket flight into synchronised panes and readouts, about 224,000 samples in all from six channels recorded at 5 to 1,000 samples per second: altitude and speed, acceleration (100 samples per second), vibration (1,000 samples per second), nose-cone skin temperature and chamber pressure, with the first 70 seconds already received.
 
 Use **Pause** and **Replay from liftoff**, and change the **Playback speed**. Move the **Skin temperature limit** slider, or drag the dashed red line, and watch the trace and its readout turn red above it. Switch **Vibration display** to every 20th sample and the 16 g separation shock at T+50 s disappears. Scroll to zoom in time, drag to pan, double-click to see the whole flight again, and hover for values on every pane.
 
@@ -466,7 +475,7 @@ A telemetry dashboard is the screen where live telemetry is read. It usually has
 
 ### How do I make a telemetry dashboard in JavaScript?
 
-Give each group of channels its own chart pane with a fixed y-range, and line the panes up on a shared time axis. With SciChart.js, add a `FastLineRenderableSeries` per channel, append samples with `appendRange` as they arrive, line the panes up with `SciChartVerticalGroup`, and link their cursors with a shared `modifierGroup`. A palette provider turns a trace red above its alarm limit. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Give each group of channels its own chart pane with a fixed y-range, and line the panes up on a shared time axis. With SciChart.js, add a `FastLineRenderableSeries` per channel, append samples with `appendRange` as they arrive, line the panes up with `SciChartVerticalGroup`, and link their cursors with a shared `modifierGroup`. A palette provider turns a trace red above its alarm limit. React and Angular apps use the same code through `scichart-react` and `scichart-angular`.
 
 ## Sources
 

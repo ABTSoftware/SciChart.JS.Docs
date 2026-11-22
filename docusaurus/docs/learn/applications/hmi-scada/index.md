@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: HMI and SCADA
-title: "HMI and SCADA: What They Are, How They Work and Examples of SCADA Trend Charts (With Interactive Examples)"
+title: "HMI and SCADA: What They Are, How They Work and Trend Chart Examples"
 description: "What SCADA and HMI mean, how a SCADA system is built, SCADA vs DCS, what is on an HMI screen, and how to read trend charts, alarm limits and deadbands, with a live example."
 keywords:
     [
@@ -88,7 +88,7 @@ related: [telemetry, strip-chart, gauge-chart, downsampling]
 - The HMI is the part people see. A single machine can have an HMI without SCADA.
 - Control loops run in the PLCs and RTUs on site; SCADA supervises them, so the plant keeps running if a link drops.
 - Trend charts are the main tool on an HMI for seeing what a process is doing and has done.
-- Good HMIs are grey and calm, so colour stands out when something is wrong (ISA-101), and alarms use limits with deadbands so they don't chatter (ISA-18.2).
+- Good HMIs are grey and calm, so colour stands out when something is wrong (the high-performance HMI style), and alarms use limits with deadbands so they don't chatter (ISA-18.2).
 :::
 
 ## What does SCADA stand for?
@@ -195,18 +195,20 @@ A trend can show its pens on one shared axis, on several axes side by side, or i
 
 ### Setpoints, alarm limits and deadbands
 
-An alarm limit is the value at which the SCADA system tells the operator something needs attention. A **deadband** stops a noisy value from raising and clearing an alarm many times while it hovers at the limit, which alarm engineers call chattering. With a HI limit of 80 and a deadband of 5, the alarm is raised above 80 and clears only once the value falls below 75 (the diagram above). Alarm-management guides suggest deadbands of a few percent of a tag's range, larger for noisy signals such as flow and level and smaller for slow ones such as temperature. Some systems add an on-delay too: the value must stay beyond the limit for some seconds before the alarm is raised.
+An alarm limit is the value at which the SCADA system tells the operator something needs attention. A **deadband** stops a noisy value from raising and clearing an alarm many times while it hovers at the limit, which alarm engineers call chattering. With a HI limit of 80 and a deadband of 5, the alarm is raised above 80 and clears only once the value falls below 75 (the diagram above). The 5-degree deadband in the diagram is wider than usual so that it shows clearly. Alarm-management guides start from a few percent of a tag's range, larger for noisy signals such as flow and smaller for slow ones such as temperature, where about 1% is common, then tune it to the signal's noise; ISA-TR18.2.3 covers deadbands and delays in detail. Some systems add an on-delay too: the value must stay beyond the limit for some seconds before the alarm is raised.
 
 ## Alarms and high-performance HMI design
 
 Two standards shape how modern HMIs look and alarm:
 
 - **ANSI/ISA-18.2**, its international counterpart IEC 62682, and the **EEMUA 191** guide cover alarm management: every alarm must need an operator response, have a priority and a documented cause and action. ISA-18.2 treats about one alarm every 10 minutes per operator as very likely to be acceptable in normal running, and uses more than 10 alarms in 10 minutes as the usual measure of an **alarm flood**, when operators can no longer respond to each alarm.
-- **ANSI/ISA-101.01** covers HMI design. Its approach, often called **high-performance HMI**, uses grey backgrounds and muted colours for normal operation and keeps bright colour, red and amber especially, for abnormal states and alarms. It favours analogue indicators that show a value against its normal range, and embeds small trends in overview screens, so operators can see a problem developing before an alarm.
+- **ANSI/ISA-101.01** covers HMI design: the HMI life cycle, the display hierarchy and consistent use of colour. It doesn't prescribe a colour scheme, but it is consistent with the **high-performance HMI** style set out in *The High Performance HMI Handbook* (Hollifield and others, 2008). That style uses grey backgrounds and muted colours for normal operation and keeps bright colour, red and amber especially, for abnormal states and alarms. It favours analogue indicators that show a value against its normal range, and embeds small trends in overview screens, so operators can see a problem developing before an alarm.
 
 Try both styles in the [live example](#how-to-build-an-hmi-trend-chart-in-javascript-react-or-angular). In both, a pen turns red where it crosses a limit and the part beyond the limit is shaded. On the colourful trend that red competes with four other bright pens; on the grey trend it's the only strong colour.
 
 ## Examples of HMI and SCADA screens
+
+Every industry that runs a remote or continuous process uses HMI and SCADA screens, and each one trends the few values its operators watch most.
 
 | Industry | What the screens show | Trend and chart examples |
 | --- | --- | --- |
@@ -219,6 +221,8 @@ SciChart's [HMI and SCADA page](https://www.scichart.com/scada-big-data/) descri
 
 ## Common HMI and SCADA trend chart mistakes
 
+Most trend chart mistakes on HMIs either hide a developing problem or bury it under nuisance alarms and colour.
+
 - **Autoscaling the value axis.** A live axis that rescales to fit the data makes a 1% wobble look like a crash, and the trace jumps about. Give each tag a fixed range that covers its normal values and its limits.
 - **No deadband on alarms.** A tag hovering at its limit produces dozens of alarm and return-to-normal events, which buries real alarms. Set a deadband, and an on-delay for very noisy tags.
 - **Colour everywhere.** When every pen, tank and pipe is brightly coloured, an alarm colour no longer stands out. Keep normal states grey and save strong colours for abnormal ones.
@@ -229,9 +233,9 @@ SciChart's [HMI and SCADA page](https://www.scichart.com/scada-big-data/) descri
 
 ## How to build an HMI trend chart in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so trends with many pens, long histories and live updates stay smooth in a browser HMI. The example below simulates a pumping station: a tank (LT-101) filled by an inlet flow (FT-102) and emptied by a pump that starts and stops on level, its discharge pressure (PT-103) and a temperature (TT-104). It loads an hour of history, then adds a reading per tag every simulated second, running ten times faster than real time, with occasional upsets that raise alarms.
+The example below trends four tags of a simulated pumping station in stacked lanes on one time axis: a tank (LT-101) filled by an inlet flow (FT-102) and emptied by a pump that starts and stops on level, its discharge pressure (PT-103) and a temperature (TT-104). It loads an hour of history, 3,600 readings per tag, then adds a reading per tag every simulated second, running ten times faster than real time, with occasional upsets that raise alarms.
 
-Drag any dashed **HI** or **LO** line to move that limit, and watch the alarm list on the right. Set the **Deadband** to None to see alarms chatter. Each pen turns red exactly where it crosses a limit, and the part beyond the limit is shaded. Switch the **Style** to high-performance (grey) to compare how much that stands out. Change the **Time span** to see 2, 10 or 60 minutes, and use **Pause** to stop the scrolling; scroll to zoom in time, drag to pan, double-click to see all the history, and hover to read every pen.
+Drag any dashed **HI** or **LO** line to move that limit, and watch the alarm list on the right. The draggable limits only illustrate the display: in a real plant, alarm limits come from alarm rationalisation under ISA-18.2, and changing one goes through change control. Set the **Deadband** to None to see alarms chatter. Each pen turns red exactly where it crosses a limit, and the part beyond the limit is shaded. Switch the **Style** to high-performance (grey) to compare how much that stands out. Change the **Time span** to see 2, 10 or 60 minutes, and use **Pause** to stop the scrolling; scroll to zoom in time, drag to pan, double-click to see all the history, and hover to read every pen.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
@@ -474,6 +478,7 @@ Use a charting library that handles real-time data. In SciChart.js, give each pr
 - NIST Computer Security Resource Center glossary: [supervisory control and data acquisition (SCADA)](https://csrc.nist.gov/glossary/term/supervisory_control_and_data_acquisition) and [human machine interface (HMI)](https://csrc.nist.gov/glossary/term/human_machine_interface).
 - International Society of Automation, [ANSI/ISA-18.2, Management of Alarm Systems for the Process Industries](https://www.isa.org/products/ansi-isa-18-2-2016-management-of-alarm-systems-for) (alarm rates, floods, chattering and deadbands); IEC 62682 is its international counterpart.
 - International Society of Automation, [ANSI/ISA-101.01, Human Machine Interfaces for Process Automation Systems](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards) (the HMI life cycle, display hierarchy and use of colour).
+- Hollifield, B., Oliver, D., Nimmo, I. and Habibi, E. (2008), *The High Performance HMI Handbook*, PAS. The grey, low-colour display style and analogue indicators.
 - EEMUA Publication 191, [Alarm systems: a guide to design, management and procurement](https://eemua.org/products/publications/print/eemua-publication-191).
 - Protocol specifications: [Modbus Organization](https://www.modbus.org/), [IEEE 1815 (DNP3)](https://standards.ieee.org/ieee/1815/5414/), [IEC 61850](https://webstore.iec.ch/en/publication/6028) and the [OPC Foundation's OPC UA](https://opcfoundation.org/about/opc-technologies/opc-ua/).
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 130
 sidebar_label: Power Quality
-title: "Power Quality and Harmonics: THD, Sags, Swells and Flicker Explained (With an Interactive Example)"
+title: "Power Quality and Harmonics: THD, Sags, Swells and Flicker Explained"
 description: "What power quality is, the disturbances that spoil it, how harmonics and total harmonic distortion (THD) are measured, IEEE 519 and EN 50160 limits, and how analysers chart it all."
 keywords:
     [
@@ -76,7 +76,7 @@ related: [fast-fourier-transform, hmi-scada, pid-control, window-functions]
                     "name": "How do I plot a harmonic spectrum in JavaScript?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Take an FFT of a window holding a whole number of cycles of the waveform, such as 10 cycles at 50 Hz, read the amplitude at each harmonic's line, and divide by the fundamental to get percentages. With SciChart.js, put the orders and percentages in an XyDataSeries, draw them with a FastColumnRenderableSeries, and add a HorizontalLineAnnotation for the limit. The same code works in React with scichart-react and in Angular with scichart-angular."
+                        "text": "Take an FFT of a window holding a whole number of cycles of the waveform, such as 10 cycles at 50 Hz, read the amplitude at each harmonic's line, and divide by the fundamental to get percentages. With SciChart.js, put the orders and percentages in an XyDataSeries, draw them with a FastColumnRenderableSeries, and add a HorizontalLineAnnotation for the limit. For React or Angular, wrap the same code in scichart-react or scichart-angular."
                     }
                 }
             ]
@@ -88,7 +88,7 @@ related: [fast-fourier-transform, hmi-scada, pid-control, window-functions]
 
 ## What is power quality?
 
-**Power quality** is how closely the electricity at a point in a network matches an ideal supply: a sine wave at the right voltage and frequency, balanced across the three phases and never interrupted. It is measured as the size and shape of the voltage and current, and judged by the disturbances that spoil them, such as sags, harmonics and flicker.
+**Power quality** is how closely the electricity at a point in a network matches an ideal supply: a sine wave at the right voltage and frequency, balanced across the three phases and never interrupted. It is measured from the size and shape of the voltage and current, and judged by disturbances such as sags, harmonics and flicker.
 
 ![A simulated three-phase supply feeding LED drivers in a dark navy theme: phase voltages with a sag on L1, peaky phase currents and a larger neutral current, a phasor diagram, half-cycle RMS traces dipping below the 90% line, and a harmonic bar chart of voltage and current in per cent of the fundamental](/img/learn/power-quality-og.png)
 
@@ -120,6 +120,8 @@ The voltage is mostly the network operator's responsibility. The current is most
 
 ## Power quality disturbances and their causes
 
+Power quality disturbances are grouped by how long they last and how far they move the voltage, from microsecond transients to sustained interruptions.
+
 ![Nine small waveform sketches of power quality disturbances: normal supply, sag, swell, interruption, oscillatory transient, harmonic distortion, flicker, notching and three-phase unbalance](./power-quality-disturbances.svg)
 
 IEEE 1159 sorts disturbances by how long they last and how large they are. The table follows its categories; the thresholds are those used by most analysers.
@@ -128,7 +130,7 @@ IEEE 1159 sorts disturbances by how long they last and how large they are. The t
 | --- | --- | --- | --- |
 | Sag (dip) | RMS voltage falls but stays on | 10% to 90% of nominal, half a cycle to 1 minute | Faults elsewhere on the network, large motors starting, transformer energising |
 | Swell | RMS voltage rises | 110% to 180%, half a cycle to 1 minute | The healthy phases during a fault from one phase to earth; large loads switching off |
-| Interruption | Voltage near zero | Below about 10% of nominal; short (under 1 to 3 minutes) or sustained | Breakers, fuses and reclosers clearing faults; planned outages |
+| Interruption | Voltage near zero | Below about 10% of nominal; up to 1 minute (momentary or temporary), or sustained beyond that. EN 50160 puts the line between short and long interruptions at 3 minutes instead | Breakers, fuses and reclosers clearing faults; planned outages |
 | Under- and overvoltage | RMS steadily too low or too high | Beyond ±10% for over a minute | Overloaded or lightly loaded feeders, wrong transformer taps, solar export on a weak line |
 | Transient | A spike or ring lasting microseconds to milliseconds | Impulsive (lightning) or oscillatory (switching), peaks up to several times normal | Lightning, capacitor bank switching, switching of inductive loads |
 | Harmonics | A repeating, non-sinusoidal waveform | Distortion at whole multiples of 50 or 60 Hz | Non-linear loads: rectifiers, drives, LED drivers, computer power supplies |
@@ -201,6 +203,8 @@ Two related measures are also in use:
 
 ## Triplen harmonics and neutral current
 
+Triplen harmonics, the 3rd, 9th, 15th and other odd multiples of three, add up in the neutral of a three-phase system instead of cancelling.
+
 ![Two panels. Left: the fundamental currents of phases L1, L2 and L3 are 120 degrees apart and add to zero in the neutral. Right: their third harmonics are in step and add to a neutral current three times the size of each](./triplen-harmonics-neutral.svg)
 
 The fundamental currents of a balanced three-phase load are 120° apart and cancel in the neutral. The 3rd harmonic of each phase is shifted by $3 \times 120° = 360°$, a full turn, so all three are in step and add. The same holds for every odd multiple of three: the **triplen harmonics** (3rd, 9th, 15th).
@@ -224,7 +228,7 @@ A worked example: a load with a displacement power factor of 0.95 and a current 
 
 Flicker is the visible flickering of lighting when the voltage fluctuates by a fraction of a per cent at a few hertz. The eye is most sensitive to fluctuations of about 8.8 Hz. IEC 61000-4-15 defines a flickermeter that models a lamp, the eye and the brain, and gives two numbers: the short-term severity $P_{st}$ over 10 minutes, where 1 is the level most people find irritating, and the long-term severity $P_{lt}$ over 2 hours.
 
-Grid frequency, also called utility or mains frequency, is 50 Hz in Europe, most of Asia, Africa and Australia, and 60 Hz in the Americas and part of Japan. It falls when demand exceeds generation and rises when generation exceeds demand, so it is the grid operator's real-time measure of balance. On large interconnected grids it rarely moves more than a few tenths of a hertz; EN 50160 allows ±1% for 99.5% of a year on connected European networks.
+Grid frequency, also called utility or mains frequency, is 50 Hz in Europe, most of Asia, Africa and Australia, and 60 Hz in most of the Americas and part of Japan; Argentina, Chile, Uruguay, Paraguay and Bolivia use 50 Hz. It falls when demand exceeds generation and rises when generation exceeds demand, so it is the grid operator's real-time measure of balance. On large interconnected grids it rarely moves more than a few tenths of a hertz; EN 50160 allows ±1% for 99.5% of a year on connected European networks.
 
 ## Power quality standards: IEEE 519, EN 50160 and IEC 61000
 
@@ -272,6 +276,8 @@ Plain power factor correction capacitors are the one fix that can make harmonics
 
 ## Power quality analyser vs power meter vs oscilloscope
 
+A power quality analyser measures every parameter to a standard, a power meter logs energy and power, and an oscilloscope shows raw waveforms in detail.
+
 | | Power quality analyser | Power meter or energy logger | [Oscilloscope](/learn/applications/oscilloscope/) |
 | --- | --- | --- | --- |
 | Measures | Every power quality parameter, to IEC 61000-4-30 | kWh, power, power factor, sometimes THD | Raw waveforms at high bandwidth |
@@ -281,6 +287,8 @@ Plain power factor correction capacitors are the one fix that can make harmonics
 | Use it when | Investigating trips, failures or a compliance question | Sizing loads, saving energy, billing | Debugging a converter or a circuit, at kHz to MHz |
 
 ## Common power quality measurement mistakes
+
+Most power quality measurement mistakes come from the wrong instrument, the wrong reference or too short a recording.
 
 - **Using an average-responding meter.** A meter that isn't true RMS reads the peaky current of rectifier loads well below its real value. Use a true-RMS meter or an analyser.
 - **Judging current distortion by THD at light load.** A small load current with a high THD can be harmless. IEEE 519 uses TDD, relative to the maximum demand current, for this reason.
@@ -292,9 +300,9 @@ Plain power factor correction capacitors are the one fix that can make harmonics
 
 ## How to build a power quality analyser display in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a web-based power quality tool can show every sample of several channels over long recordings, redraw them as fast as data arrives, and stay smooth while you zoom and pan. The demo below simulates a three-phase, four-wire supply at 256 samples per cycle and computes everything in the browser: the waveforms, the $U_{rms(1/2)}$ event trace, a phasor diagram, and the harmonics of a 10-cycle (50 Hz) or 12-cycle (60 Hz) window as IEC 61000-4-7 specifies.
+Every time you change a setting, the demo below rebuilds the whole record and recomputes its RMS trace, phasors and harmonic spectrum. It simulates a three-phase, four-wire supply at 256 samples per cycle and computes everything in the browser: the waveforms, the $U_{rms(1/2)}$ event trace, a phasor diagram, and the harmonics of a 10-cycle (50 Hz) or 12-cycle (60 Hz) window as IEC 61000-4-7 specifies.
 
-Choose a **Load**: a resistive heater draws a clean sine, a six-pulse drive adds the 5th and 7th, and LED drivers draw narrow pulses with a strong 3rd that piles up in the neutral. Adjust the **3rd**, **5th** and **7th** harmonic sliders, and watch the voltage spectrum cross the IEEE 519 line and the power factor fall. Lower the **L3 load** to unbalance the phases, switch the **Mains** between 50 Hz and 60 Hz, and **Inject event** to see a sag, swell, interruption or capacitor-switching transient in the waveforms and the RMS trace. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose a **Load**: a resistive heater draws a clean sine, a six-pulse drive adds the 5th and 7th, and LED drivers draw narrow pulses with a strong 3rd that piles up in the neutral. Adjust the **3rd**, **5th** and **7th** harmonic sliders, and watch the voltage spectrum cross the IEEE 519 line and the power factor fall. Lower the **L3 load** to unbalance the phases, switch the **Mains** between 50 Hz and 60 Hz, and **Inject event** to see a sag, swell, interruption or capacitor-switching transient in the waveforms and the RMS trace. Hover any chart to read values; the mouse wheel zooms, dragging pans and a double-click resets the view.
 
 <LiveDocSnippet maxWidth={'100%'} height={980} name="./Basic/demo" />
 
@@ -479,7 +487,7 @@ In a sag, also called a dip, the voltage falls but stays on: typically to betwee
 
 ### How do I plot a harmonic spectrum in JavaScript?
 
-Take an FFT of a window holding a whole number of cycles of the waveform, such as 10 cycles at 50 Hz, read the amplitude at each harmonic's line, and divide by the fundamental to get percentages. With SciChart.js, put the orders and percentages in an XyDataSeries, draw them with a FastColumnRenderableSeries, and add a HorizontalLineAnnotation for the limit. The same code works in React with scichart-react and in Angular with scichart-angular.
+Take an FFT of a window holding a whole number of cycles of the waveform, such as 10 cycles at 50 Hz, read the amplitude at each harmonic's line, and divide by the fundamental to get percentages. With SciChart.js, put the orders and percentages in an XyDataSeries, draw them with a FastColumnRenderableSeries, and add a HorizontalLineAnnotation for the limit. For React or Angular, wrap the same code in scichart-react or scichart-angular.
 
 ## Sources
 

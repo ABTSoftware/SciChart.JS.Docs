@@ -1,7 +1,7 @@
 ---
 sidebar_position: 160
 sidebar_label: Stress-Strain Curve
-title: "Stress-Strain Curve: How to Read It (Yield Strength, Modulus and UTS, With an Interactive Example)"
+title: "Stress-Strain Curve: How to Read Yield Strength, Modulus and UTS"
 description: "How to read a stress-strain curve: Young's modulus, 0.2% offset yield strength, UTS, necking, ductile vs brittle, true stress and S-N curves, with a live tensile test."
 keywords:
     [
@@ -69,7 +69,7 @@ related: [line-chart, scatter-plot, error-bars, log-scale-graph]
 
 ## What is a stress-strain curve?
 
-A **stress-strain curve** (also called a stress-strain graph or diagram) plots the stress in a material against its strain as it is stretched, usually in a tensile test until it breaks. Stress is force per unit area; strain is the stretch as a fraction of the original length. Its shape gives a material's stiffness, yield strength, ultimate tensile strength and ductility.
+A **stress-strain curve** (also called a stress-strain graph or diagram) plots the stress in a material against its strain as it is stretched, usually in a tensile test until it breaks. Stress is force per unit area; strain is the stretch per unit of original length. Its shape gives a material's stiffness, yield strength, ultimate tensile strength and ductility.
 
 ![A simulated tensile test of mild steel: engineering stress in MPa against strain in per cent, rising steeply, levelling off at the yield point, climbing through strain hardening to the ultimate tensile strength at 381 MPa and falling to fracture at 25% strain, with a second chart zoomed in on the first 1% of strain showing the dashed 0.2% offset line meeting the curve at the yield strength, in a dark navy theme](/img/learn/stress-strain-curve-og.png)
 
@@ -98,9 +98,11 @@ $$
 
 where $\sigma$ is the engineering stress (in MPa, which is N/mm²), $F$ the force, $A_0$ the original cross-sectional area, $\varepsilon$ the engineering strain and $\Delta L$ the extension. Strain has no units; it is usually shown in per cent.
 
-As an example, take a round aluminium alloy bar 12.5 mm in diameter with a 62.5 mm gauge length (five diameters, the proportional specimen in ASTM E8M and ISO 6892-1). Its area is $\pi \times 6.25^2 \approx 122.7$ mm². A force of 20 kN gives a stress of $20{,}000 / 122.7 \approx 163$ MPa, and an extension of 0.148 mm gives a strain of $0.148 / 62.5 = 0.00236$, or 0.236%. Plotting every pair of readings this way traces the stress-strain curve.
+As an example, take a round aluminium alloy bar 12.5 mm in diameter with a 62.5 mm gauge length (five diameters, the proportional specimen in ASTM E8M and ISO 6892-1). Its area is $\pi \times 6.25^2 \approx 122.7$ mm². A force of 20 kN gives a stress of $20{,}000 / 122.7 \approx 163$ MPa, and an extension of 0.148 mm gives a strain of $0.148 / 62.5 = 0.00237$, or 0.237%. Plotting every pair of readings this way traces the stress-strain curve.
 
 ## How to read a stress-strain curve
+
+A stress-strain curve is read from the origin outwards: a straight elastic region, the yield point, strain hardening up to the ultimate tensile strength, then necking and fracture.
 
 ![An annotated stress-strain curve of a ductile metal, not to scale: a straight elastic region whose slope is Young's modulus up to the proportional limit, a dashed line parallel to it starting at 0.2% strain that meets the curve at the yield strength, a strain hardening region rising to the ultimate tensile strength, and a necking region falling to fracture, with the uniform elongation and the elongation at fracture marked on the strain axis](./stress-strain-curve-anatomy.svg)
 
@@ -218,11 +220,13 @@ A stress-strain curve describes one pull to failure. Parts that are loaded and u
 
 Both axes are almost always on a [log scale](/learn/axes-and-scales/log-scale-graph/), because the lives span several powers of ten. On log-log axes much of the curve is close to a straight line, Basquin's relation $S = a N^b$, with $b$ typically around −0.05 to −0.12 for metals.
 
-- Steels and titanium alloys usually show a knee and then a flat line, the **endurance limit**. Below it, a smooth specimen survives indefinitely. A common first estimate for steels with a UTS up to about 1,400 MPa is an endurance limit of half the UTS, and a fatigue strength at 1,000 cycles of about 0.8 to 0.9 × UTS in bending, depending on strength. The steel line in the diagram uses 0.9.
+- Steels and titanium alloys usually show a knee and then a flat line, the **endurance limit**. Below it, a smooth specimen is expected to survive indefinitely, in normal conditions without corrosion. A common first estimate for steels with a UTS up to about 1,400 MPa is an endurance limit of half the UTS, and a fatigue strength at 1,000 cycles of about 0.8 to 0.9 × UTS in bending, depending on strength. The steel line in the diagram uses 0.9.
 - Aluminium and copper alloys have no knee: the line keeps falling. Their fatigue strength is quoted at a stated life, often $10^7$ or $5 \times 10^8$ cycles.
 - Fatigue lives scatter widely, and can differ by a factor of ten or more at the same stress, so curves are fitted statistically (ASTM E739) and design curves sit well below the average. Surface finish, notches, size and mean stress all lower them further.
 
 ## Common stress-strain curve mistakes
+
+Most stress-strain curve mistakes come from reading the yield in the wrong place or from measuring strain in the wrong way.
 
 - **Reading the yield at the end of the straight line.** The proportional limit is subjective and depends on the resolution of the plot. Use the 0.2% offset, or the lower yield point for steels with a plateau, so results can be compared.
 - **Taking the modulus from the crosshead.** Without an extensometer, the strain includes the stretch of the grips and the machine, and the slope comes out well below the real modulus. The yield and UTS are still usable; the modulus is not.
@@ -234,9 +238,9 @@ Both axes are almost always on a [log scale](/learn/axes-and-scales/log-scale-gr
 
 ## How to plot a stress-strain curve in JavaScript, React or Angular
 
-Test machines sample force and extension hundreds of times a second, and a materials lab compares curves from many specimens and batches. SciChart.js draws with WebGL and WebGPU, so it redraws curves with thousands of points each instantly as you zoom into the elastic region or switch between engineering and true stress, and it draws a test live as the data arrives. The demo below simulates a tensile test on four materials with typical published properties, then works out the modulus, yield strength, UTS and elongation from the data as test software does.
+Test machines sample force and extension hundreds of times a second, and a materials lab compares curves from many specimens and batches. The demo below simulates a tensile test on four materials with typical published properties, about 2,500 readings per test, then works out the modulus, yield strength, UTS and elongation from the data as test software does, and can replay the test point by point as a machine draws it.
 
-Choose a **Material**, and switch the **Curve** between engineering stress, true stress (drawn up to the start of necking) and both. **0.2% offset construction** draws the offset line and marks where it meets the curve; the right-hand chart enlarges the start of the curve, where the modulus and yield are read. **Shade resilience and toughness** fills the areas under the curve, and **Run test** replays the test as a machine would draw it, slowly through the elastic region and faster after it. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose a **Material**, and switch the **Curve** between engineering stress, true stress (drawn up to the start of necking) and both. **0.2% offset construction** draws the offset line and marks where it meets the curve; the right-hand chart enlarges the start of the curve, where the modulus and yield are read. **Shade resilience and toughness** fills the areas under the curve, and **Run test** replays the test as a machine would draw it, slowly through the elastic region and faster after it. Hover for stress and strain; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 

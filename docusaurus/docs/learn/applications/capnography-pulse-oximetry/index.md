@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Capnography and Pulse Oximetry
-title: "Capnography and Pulse Oximetry Waveforms: How to Read a Capnogram and Pleth Trace (With Interactive Examples)"
+title: "Capnography and Pulse Oximetry: Reading Capnogram and Pleth Waveforms"
 description: "How to read a capnogram and a pleth (pulse oximetry) waveform: the four capnography phases, normal EtCO2, shark fin and other abnormal shapes, perfusion index, motion artefact and sweep speeds, with a live simulated monitor."
 keywords:
     [
@@ -117,6 +117,8 @@ The international standard for respiratory gas monitors, ISO 80601-2-55, require
 
 ## The four phases of a normal capnogram
 
+A normal capnogram has four phases: a flat baseline, a steep rise, a slowly rising plateau that ends at the EtCO₂ point, and a steep fall as the next breath starts.
+
 ![An annotated normal capnogram: phase I is a flat baseline at zero while CO2-free gas passes the sensor, phase II is a steep rise as alveolar gas arrives, phase III is a slowly rising plateau ending at the end-tidal CO2 point, normally 35 to 45 mmHg, and phase 0 is the steep fall when inspiration starts. The alpha angle between phases II and III and the beta angle at the end of the plateau are marked, with brackets showing expiration and inspiration](./capnogram-phases.svg)
 
 A normal breath draws the same squared-off shape every time. Reading it from left to right:
@@ -151,6 +153,8 @@ Watch the trend as well as the single breath. A slow EtCO₂ drift over 10 minut
 
 ## Abnormal capnography waveforms
 
+Each common breathing or equipment problem changes the capnogram in its own way, so the shape often points to the cause before the number does.
+
 | Pattern | What the trace looks like | Common causes |
 | --- | --- | --- |
 | Shark fin | Slow, curved rise and a plateau that keeps sloping upwards, so each breath looks like a fin | Bronchospasm, asthma, COPD; a kinked or partly blocked tube |
@@ -179,6 +183,8 @@ $$
 A low $R$ means well-oxygenated blood. Each manufacturer turns $R$ into SpO₂ with a calibration curve measured on healthy volunteers breathing low-oxygen gas mixtures. A commonly quoted straight-line approximation is $\text{SpO}_2 \approx 110 - 25R$, so $R = 0.5$ reads about 97% and $R = 1$ reads about 85%. Because the calibration comes from volunteers whose saturation was taken down only to about 70%, readings below that are less certain.
 
 ## The pleth waveform (photoplethysmogram)
+
+The pleth waveform shows each heartbeat as a pulse of blood volume in the finger, and its shape tells you whether the SpO₂ reading can be trusted.
 
 ![The parts of one pleth pulse: a steep systolic upstroke to the systolic peak, a dicrotic notch, then a smaller diastolic or reflected wave; a vertical arrow marks the pulse amplitude (AC), a horizontal bracket marks the beat-to-beat interval used for the pulse rate, and a box defines the perfusion index as AC divided by DC times 100 per cent](./pleth-pulse-anatomy.svg)
 
@@ -210,6 +216,8 @@ $$
 It measures how strong the pulse is at the sensor, which depends on blood flow to the skin. Warm, well-perfused fingers give a PI of a few per cent; cold, constricted fingers give a fraction of 1%. In one study of critically ill adults, a PI below 1.4 identified patients with poor peripheral perfusion. A low PI also means the signal is small compared with noise, so the SpO₂ and pulse rate become less reliable.
 
 ## Pleth problems: low perfusion, motion artefact and other errors
+
+A poor pleth signal is the commonest reason for a wrong SpO₂ or pulse rate, and each cause leaves a different mark on the trace.
 
 | Problem | What the pleth looks like | Effect on the numbers |
 | --- | --- | --- |
@@ -244,6 +252,8 @@ On a patient monitor the pleth sits under the [ECG](/learn/applications/ecg/), a
 
 ## Capnography vs pulse oximetry vs ECG
 
+Capnography shows breathing, pulse oximetry shows oxygenation and the pulse, and the ECG shows the heart's electrical activity, so a monitor usually draws all three.
+
 | | Capnography | Pulse oximetry | ECG |
 | --- | --- | --- | --- |
 | Measures | CO₂ in exhaled gas | Oxygen saturation of arterial blood, and the pulse | Electrical activity of the heart |
@@ -257,6 +267,8 @@ The two respiratory monitors answer different questions, and each covers the oth
 
 ## Common capnography and pleth mistakes
 
+Most errors in reading these traces come from trusting a number without checking the waveform behind it.
+
 - **Trusting the number without the waveform.** An EtCO₂ value with no proper capnogram behind it, or an SpO₂ with a messy pleth, may be measuring noise. Check the shape first.
 - **Reading a normal SpO₂ as "breathing is fine".** With supplemental oxygen, saturation can stay normal while CO₂ builds up from slow, shallow breathing. The capnogram shows hypoventilation long before the oximeter does.
 - **Taking EtCO₂ as the arterial CO₂.** EtCO₂ is usually a few mmHg lower, and the gap widens with lung disease or low cardiac output. Check it against a blood gas when it matters.
@@ -267,7 +279,7 @@ The two respiratory monitors answer different questions, and each covers the oth
 
 ## How to build a capnography and pleth monitor display in JavaScript, React or Angular
 
-Patient monitors redraw several waveforms at 100 or more samples a second each, around the clock. SciChart.js draws with WebGL and WebGPU, and its data series have a built-in sweeping mode, so monitor-style traces stay smooth even with many channels on one screen. The demo below simulates a patient and runs the samples through the same kind of logic a monitor uses: it finds each breath in the CO₂ signal for EtCO₂, inspired CO₂ and respiratory rate, and works out SpO₂ from the ratio of ratios, the perfusion index and the pulse rate from raw red and infrared light.
+Patient monitors redraw several waveforms at 100 or more samples a second each, around the clock. This demo feeds 100 samples a second into two traces that use SciChart.js's built-in sweeping mode, where new samples overwrite the oldest from left to right as on a bedside monitor. It simulates a patient and runs the samples through the same kind of logic a monitor uses: it finds each breath in the CO₂ signal for EtCO₂, inspired CO₂ and respiratory rate, and works out SpO₂ from the ratio of ratios, the perfusion index and the pulse rate from raw red and infrared light.
 
 Change **Breathing** to see a shark fin, rebreathing, hypoventilation or apnoea (the apnoea alarm fires after 10 seconds, a short setting for the demo). Change **Pleth** to low perfusion or motion artefact, and watch what happens to SpO₂, the pulse rate and the PI. **CO₂ sweep** and **Pleth sweep** set each trace's sweep speed. **Pause** stops the sweep: then scroll to zoom in time, drag to pan, double-click to reset, and hover for values.
 

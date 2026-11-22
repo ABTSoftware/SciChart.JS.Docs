@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Chromatogram
-title: "Chromatogram: What It Is and How to Read One (Retention Time, Peaks and Resolution, With an Interactive Example)"
+title: "Chromatogram: How to Read Retention Time, Peaks and Resolution"
 description: "What a chromatogram is and how to read one: retention time, dead time, peak height and area, resolution and plate number, HPLC vs GC, and a live chromatogram you can integrate."
 keywords:
     [
@@ -98,6 +98,8 @@ Every chromatograph works the same way. A small volume of sample is injected int
 
 ## Parts of a chromatogram
 
+A chromatogram has a few standard parts: the injection point, the dead time, the baseline, and the peaks with their retention times, heights, widths and areas.
+
 ![An annotated chromatogram: the injection at time zero, a small disturbance at the dead time t0, peak 1 with its retention time measured along the time axis from the injection and its height measured from the baseline, peak 2 overlapping peak 1 with a valley between them and its width marked at half height, and a tailing peak 3 whose shaded area tracks the amount of compound](./chromatogram-anatomy.svg)
 
 - **Injection point.** Time zero, when the sample enters the column. Every time on the chromatogram is measured from here.
@@ -170,16 +172,18 @@ Take two peaks on a column with a dead time of 1.00 min:
 - Selectivity: $\alpha = k_2/k_1 = 3.65/3.20 \approx 1.14$.
 - The Purnell equation links the three, $R_s = \tfrac{\sqrt{N}}{4}\cdot\tfrac{\alpha - 1}{\alpha}\cdot\tfrac{k_2}{1 + k_2}$, and gives about 2.0 here, close to the measured value.
 
-The equation shows what to change when peaks overlap. Resolution grows only with the square root of $N$: four times the plates (a column four times longer, or particles half the size) only doubles it. Changing selectivity, through the mobile phase, the column chemistry or the temperature, is usually far more effective, because even a small change in $\alpha$ can move a peak right out of the way. Try both in the [interactive chromatogram](#how-to-plot-a-chromatogram-in-javascript-react-or-angular): raising the column efficiency narrows the peaks, while heating the column from 30 to 45 °C makes two compounds merge and then swap places.
+The equation shows what to change when peaks overlap. Resolution grows only with the square root of $N$: four times the plates (a column four times longer, or particles a quarter the size, since the plate number scales with column length divided by particle size) only doubles it. Changing selectivity, through the mobile phase, the column chemistry or the temperature, is usually far more effective, because even a small change in $\alpha$ can move a peak right out of the way. Try both in the [interactive chromatogram](#how-to-plot-a-chromatogram-in-javascript-react-or-angular): raising the column efficiency narrows the peaks, while heating the column from 30 to 45 °C makes two compounds merge and then swap places.
 
 | $R_s$ | What it looks like | Overlap of two equal Gaussian peaks |
 | --- | --- | --- |
 | below 1.0 | A shoulder or a single merged peak | More than 2% |
-| 1.0 | Two tops with a valley about a quarter of the way down | About 2% |
+| 1.0 | Two tops with a valley that dips to about a quarter of the peak height | About 2% |
 | 1.5 | Back to the baseline between them (baseline resolution) | About 0.1% |
 | 2.0 or more | A clear gap of baseline | Negligible |
 
 ## Types of chromatogram
+
+Chromatograms differ with the separation technique and the detector, but each one plots a detector signal against time.
 
 ### HPLC vs GC chromatogram
 
@@ -214,6 +218,8 @@ Smoothing the trace with a [low-pass filter](/learn/signal-processing/low-pass-f
 
 ## Common chromatogram mistakes
 
+Most chromatogram mistakes come from treating peak heights, areas or a single clean-looking peak as more than they are.
+
 - **Reading height as amount.** Two peaks of the same height can hold very different amounts if one is wider. Compare areas, and use a calibration, not the raw numbers.
 - **Treating area % as weight %.** Detectors respond differently to different compounds. A UV detector barely sees a compound with no chromophore. Area % is only a weight % after correcting each peak by its response factor.
 - **Missing co-elution.** A symmetric single peak can still hold two compounds with the same retention time. Check the peak's purity with a diode-array or mass spectrometer, or run a second method with different selectivity.
@@ -224,9 +230,9 @@ Smoothing the trace with a [low-pass filter](/learn/signal-processing/low-pass-f
 
 ## How to plot a chromatogram in JavaScript, React or Angular
 
-Chromatography data systems record thousands of readings per run, and a GC-MS or LC-MS file holds a full spectrum at each of them. SciChart.js draws with WebGL and WebGPU, so it redraws a whole run instantly as you zoom in on a small peak, or as the processing changes. The demo below simulates an HPLC run of five compounds on a drifting, noisy baseline, finds the peaks, integrates them and labels each retention time.
+Chromatography data systems record thousands of readings per run, and a GC-MS or LC-MS file holds a full spectrum at each of them. The demo below simulates a 12-minute HPLC run of five compounds, 6,000 detector readings on a drifting, noisy baseline, and every time you move a control it regenerates the run, finds the peaks, integrates them and labels each retention time.
 
-Move the **column temperature** to shift the peaks: compounds B and C move at different rates and swap places near 45 °C, passing through complete co-elution. **Column efficiency** sets the plate number, and with it the peak widths. **Peak shape** adds tailing or fronting, **Noise** sets the detector noise, and **Integrate peaks** shades each peak's area down to its baseline and shows the peak table, with retention time, height, area, area % and the resolution to the next peak. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Move the **column temperature** to shift the peaks: compounds B and C move at different rates and swap places near 45 °C, passing through complete co-elution. **Column efficiency** sets the plate number, and with it the peak widths. **Peak shape** adds tailing or fronting, **Noise** sets the detector noise, and **Integrate peaks** shades each peak's area down to its baseline and shows the peak table, with retention time, height, area, area % and the resolution to the next peak. Use the mouse wheel to zoom in on a small peak, drag to pan, double-click to see the whole run, and hover to read the signal.
 
 <LiveDocSnippet maxWidth={'100%'} height={620} name="./Basic/demo" />
 

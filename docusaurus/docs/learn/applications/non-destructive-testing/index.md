@@ -1,7 +1,7 @@
 ---
 sidebar_position: 100
 sidebar_label: Non-Destructive Testing (NDT)
-title: "Non-Destructive Testing (NDT): Ultrasonic Testing, Phased Array and A-, B- and C-Scans (With an Interactive Example)"
+title: "Non-Destructive Testing (NDT): Ultrasonic A-, B- and C-Scans Explained"
 description: "What non-destructive testing is, how the main NDT methods compare, and how ultrasonic testing works: A-scans, B-scans, C-scans, thickness gauging, phased array (PAUT) and TOFD."
 keywords:
     [
@@ -120,6 +120,8 @@ Inspectors work to written procedures and standards, and the person doing the te
 
 ## NDT methods compared
 
+Each NDT method suits different flaws and materials: surface methods are quick and cheap, while radiography and ultrasound look through the whole thickness.
+
 | Method | What it finds | Works on | Strengths | Limitations |
 | --- | --- | --- | --- | --- |
 | Visual testing (VT) | Surface cracks, corrosion, misalignment, weld shape | Anything you can see, directly or with a borescope | Cheapest and quickest; always done first | Surface only; depends on access, lighting and the inspector |
@@ -175,7 +177,7 @@ $$
 d = \frac{v \, t}{2}
 $$
 
-where $v$ is the sound velocity in the material and $t$ is the time of flight. Longitudinal waves travel at about 5,920 m/s (5.92 mm/µs) in low-alloy steel, the value NIST work on steel calibration blocks takes as its reference. Shear waves travel at a little over half that, about 3,200 m/s.
+where $v$ is the sound velocity in the material and $t$ is the time of flight. Longitudinal waves travel at about 5,920 m/s (5.92 mm/µs) in low-alloy steel, the reference velocity that EN 12223 specifies for steel calibration block No. 1, and close to what NIST measured on IIW-type blocks. Shear waves travel at a little over half that, about 3,200 m/s.
 
 A worked example: in a 25 mm steel plate, an echo at 4.05 µs is a reflector 5.92 × 4.05 ÷ 2 = 12.0 mm deep, and the back wall returns at 2 × 25 ÷ 5.92 = 8.45 µs. Each millimetre of steel adds 0.338 µs to the round trip.
 
@@ -203,6 +205,8 @@ The same flaw gives a smaller echo the deeper it is, because the beam spreads an
 
 ## A-scan, B-scan, C-scan and S-scan: ultrasonic data displays
 
+Ultrasonic instruments show the same echoes in four standard views: the A-scan as one trace, and the B-, C- and S-scans as images built from many A-scans.
+
 ![Four panels of the same steel plate. A-scan: one trace of amplitude against time. B-scan: a side-view cross-section with position across and depth down, showing the crack as a short bright line and a gap in the back wall below it. C-scan: a plan view from above with the crack as a bright square and the drilled hole as a vertical stripe. S-scan: a fan-shaped phased-array sector with the back wall as an arc](./ultrasonic-scan-views.svg)
 
 A scanner, encoder or phased array records thousands of A-scans, and each display arranges them differently:
@@ -218,6 +222,8 @@ A scanner, encoder or phased array records thousands of A-scans, and each displa
 A C-scan is in effect a heatmap of the part. When it shows amplitude, a bright patch is a strong reflector; when it shows depth (time of flight), it maps remaining wall thickness, which is how corrosion maps are made. Medical ultrasound images ("B-mode" scans) use the same principle as the industrial B-scan and S-scan, drawing a fan of echo envelopes as a grey-scale image; SciChart's [polar ultrasound heatmap](https://www.scichart.com/demo/javascript/polar-uniform-heatmap-ultrasound) draws one of those sector images.
 
 ## Phased array ultrasonic testing (PAUT), TOFD and other advanced techniques
+
+Phased array and TOFD go beyond a single-element probe: phased array steers and focuses the beam electronically, and TOFD times the waves diffracted from a crack's tips.
 
 ### Phased array ultrasonic testing (PAUT)
 
@@ -274,6 +280,8 @@ Product and acceptance standards (for pipelines, pressure vessels or aircraft) t
 
 ## NDT vs destructive testing
 
+Non-destructive testing checks parts that stay in service, while destructive testing breaks samples to measure properties such as strength.
+
 | | Non-destructive testing | Destructive testing |
 | --- | --- | --- |
 | What happens to the part | Stays in service | Cut, broken, bent or loaded to failure |
@@ -285,6 +293,8 @@ Destructive tests qualify a material or a welding procedure; NDT then checks tha
 
 ## Common ultrasonic testing mistakes
 
+Most ultrasonic testing errors come from calibration, coupling and the near field, not from the instrument.
+
 - **Wrong velocity calibration.** Depth and thickness are only as accurate as the velocity. Calibrate on a block of the same material, and recalibrate when the temperature changes a lot.
 - **Ignoring the near field and the dead zone.** Close to the probe, the beam is uneven: for a 10 mm, 5 MHz probe in steel the near field reaches about $D^2 f / 4v$ = 21 mm, and echo heights there don't follow the usual rules. The ringing of the initial pulse also hides the first few millimetres. Use a dual-element or delay-line probe for near-surface work.
 - **Poor or uneven couplant.** A dry patch or a rough surface lowers every echo, which can look like a flaw (a lost back wall) or hide one. Watch the back-wall echo as a check that sound is getting in.
@@ -294,7 +304,7 @@ Destructive tests qualify a material or a welding procedure; NDT then checks tha
 
 ## How to plot ultrasonic A-scans, B-scans and C-scans in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a browser-based inspection tool can show a full-resolution A-scan, rebuild B-scan, C-scan and sector images of tens of thousands of cells on every control change, and stay smooth while you zoom and pan. The demo below simulates a 5 MHz, 10 mm contact probe on a steel plate with a planar crack and a 3 mm side-drilled hole, and computes all four views in the browser. The physics is simplified: a Gaussian-windowed tone burst, a beam that widens with depth, a small material loss, and grain and electronic noise.
+The demo below recomputes all four views, the A-scan trace and the B-scan, C-scan and sector images, every time you move the probe or change a setting, and SciChart.js redraws the trace and the three heatmaps. It simulates a 5 MHz, 10 mm contact probe on a steel plate with a planar crack and a 3 mm side-drilled hole, all in the browser. The physics is simplified: a Gaussian-windowed tone burst, a beam that widens with depth, a small material loss, and grain and electronic noise.
 
 Drag the **Probe position** across the crack (x = 35 mm) and the hole (x = 70 mm), or press **Scan** to sweep the plate and watch the B-scan and C-scan fill in. Change the **Plate thickness**, **Crack depth**, **Crack size** and **Hole depth**, then move the **Gate start** and **Gate width** to choose what the C-scan maps, and switch **C-scan shows** between amplitude and depth. Turn up the **Gain** until the crack echo saturates, and raise the **Noise** to see grass cross the gate. The readout converts the gated echo's time to depth with d = v·t/2 and gives its height in dB relative to a sound back wall. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
 
@@ -505,6 +515,9 @@ Plot the A-scan as a line chart of amplitude against time of flight, and add a s
 - Lerch, T., Renken, M. C. and Fortunko, C. M. (2008), [Accurate measurements of longitudinal-wave velocity in IIW-type calibration blocks](https://www.nist.gov/node/713321). NIST. The 5,920 m/s reference velocity for low-alloy steel.
 - ISO (2024), [ISO 16810:2024 Non-destructive testing — Ultrasonic testing — General principles](https://www.iso.org/standard/86362.html). General requirements for ultrasonic testing; personnel qualified to ISO 9712.
 - ASME (2025), [Boiler and Pressure Vessel Code, Section V: Nondestructive Examination](https://www.asme.org/codes-standards/find-codes-standards/bpvc-v-bpvc-section-v-nondestructive-examination). Methods and requirements for UT, phased array, TOFD, radiography and the other methods.
+- ASNT, [Nondestructive testing methods](https://www.asnt.org/what-is-nondestructive-testing/methods). Overview of the main NDT methods, including visual, penetrant, magnetic particle, electromagnetic (eddy current), radiographic and ultrasonic testing.
+- ISO 17640, *Non-destructive testing of welds — Ultrasonic testing — Techniques, testing levels, and assessment*; ISO 16809, *Non-destructive testing — Ultrasonic thickness measurement*; ISO 10863, *Non-destructive testing of welds — Ultrasonic testing — Use of time-of-flight diffraction technique (TOFD)*; ISO 9712, *Non-destructive testing — Qualification and certification of NDT personnel*.
+- EN 12223, *Non-destructive testing — Ultrasonic examination — Specification for calibration block No. 1*. The 5,920 m/s reference velocity for steel.
 - ASNT, [Ultrasonic Testing](https://www.asnt.org/what-is-nondestructive-testing/methods/ultrasonic-testing). Overview of ultrasonic testing, its displays, techniques and applications.
 
 <LearnCta position="bottom" chart="ultrasonic scan display" demo="polar-uniform-heatmap-ultrasound" demoLabel="polar ultrasound heatmap" docs="/2d-charts/chart-types/polar-uniform-heatmap-renderable-series/" docsLabel="SciChart.js polar heatmap documentation" />

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 70
 sidebar_label: KPI Dashboard
-title: "KPI Dashboard: What to Put on One and How to Design It (Examples and an Interactive Demo)"
+title: "KPI Dashboard: What to Put on One and How to Design It, With Examples"
 description: "What a KPI dashboard is, how to choose KPIs, which chart suits each one, how to show targets and lay it out, with examples by team and a live sales dashboard to try."
 keywords:
     [
@@ -107,6 +107,8 @@ A good KPI dashboard pairs the two: revenue (lagging) next to the pipeline that 
 
 ## How to choose KPIs for a dashboard
 
+Choose KPIs by starting from the decisions the dashboard's readers make, and keep only the measures that would trigger one of them.
+
 1. Write down the goal and who reads the dashboard. A board, a sales manager and a shift supervisor need different screens.
 2. List the decisions those readers make, such as "move sales effort to a weaker region" or "call in maintenance".
 3. For each decision, find the measure that would trigger it. That measure is a KPI candidate.
@@ -133,7 +135,7 @@ Choose the chart by the question the reader asks of that number.
 
 | Question | Chart | Why it works |
 | --- | --- | --- |
-| Where are we now, and which way is it heading? | Big number with a [sparkline](/learn/chart-types/cartesian/sparkline/) | The value is read instantly; the sparkline shows the trend in the space of a line of text |
+| Where are we now, and which way is it heading? | Big number with a [sparkline](/learn/chart-types/cartesian/sparkline/) | The value is read at a glance; the sparkline shows the trend in the space of a line of text |
 | How close are we to target? | [Bullet chart](/learn/chart-types/cartesian/bullet-chart/) | Value, target and good/poor bands in one compact bar, easy to stack and compare |
 | Is one live value inside its limits? | [Gauge](/learn/chart-types/radial/gauge-chart/) | Familiar, with coloured zones; best kept for one or two values that are watched live |
 | How has it changed over time, against plan? | [Line chart](/learn/chart-types/cartesian/line-chart/) or columns, with target and last-year lines | Shows trend, seasonality and the gap to plan month by month |
@@ -173,6 +175,8 @@ Revenue is on target and well up on last year. Gross margin is 1.3 percentage po
 
 ## KPI dashboard design
 
+A good KPI dashboard puts the most important number top-left, shows every KPI against a target or earlier period, and keeps detail lower down the screen.
+
 ![A wireframe of a KPI dashboard in four zones: headline KPI tiles across the top, with the most important one top-left; a trend against target below; a breakdown and a variance chart side by side at the bottom; and a dashed scan path running across the top and then down the left. Beside it, one KPI tile enlarged, labelled with its name and period, value, comparison with a symbol, status in words, target line and 12-month sparkline](./kpi-dashboard-layout.svg)
 
 - Most important top-left. Readers of left-to-right languages start at the top-left and scan across the top before moving down the left side, the F-shaped pattern described by the Nielsen Norman Group. Put the KPI that matters most there.
@@ -184,6 +188,8 @@ Revenue is on target and well up on last year. Gross margin is 1.3 percentage po
 - Show freshness. Label when the data was last updated, so nobody acts on yesterday's numbers by mistake.
 
 ## KPI dashboard examples
+
+Each team's dashboard has its own headline KPIs, and each KPI suits a particular kind of chart.
 
 | Team | Headline KPIs | Charts that suit it |
 | --- | --- | --- |
@@ -204,6 +210,8 @@ As often as someone can act on the change, and no faster. Most strategic KPIs mo
 
 ## Common KPI dashboard mistakes
 
+Most KPI dashboards fail by showing too much, or by showing numbers that can't be judged or acted on.
+
 - **Too many KPIs.** When thirty numbers are all labelled key, readers can't tell which one to act on first, and the screen needs scrolling.
 - **Vanity metrics.** Followers, page views and total sign-ups since launch only go up and rarely lead to a decision. Prefer rates and measures with a target.
 - **No targets or comparisons.** A value without a target or an earlier period can't be judged, so readers guess.
@@ -215,9 +223,9 @@ As often as someone can act on the change, and no faster. Most strategic KPIs mo
 
 ## How to build a KPI dashboard in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, and all charts on a page share one drawing context, so a dashboard with many panels and years of daily data stays responsive as filters change. The example below is a sales dashboard for a made-up company with four regions and three product lines, with a full year of simulated monthly data.
+The example below is a sales dashboard for a made-up company with four regions and three product lines. Every time you change a filter it recalculates four KPI tiles with sparklines, a revenue trend against target, a bullet chart by region and a variance waterfall from a year of simulated monthly data.
 
-Use **Period** to show December, the fourth quarter or the whole year, and **Compare to** to judge every KPI against the target or last year. **Region** filters the tiles, trend and waterfall to one region; the waterfall then splits the gap by product line instead. **Highlight off-target KPIs** turns the orange flags (more than 2% below the comparison) on and off, so you can see how much faster the problems stand out with them. Hover the charts for values, scroll to zoom, drag to pan and double-click to reset.
+Use **Period** to show December, the fourth quarter or the whole year, and **Compare to** to judge every KPI against the target or last year. **Region** filters the tiles, trend and waterfall to one region; the waterfall then splits the gap by product line instead. **Highlight off-target KPIs** turns the orange flags (more than 2% below the comparison) on and off, so you can compare how clearly the problems stand out with and without them. Hover the charts for values, scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={800} name="./Basic/demo" />
 

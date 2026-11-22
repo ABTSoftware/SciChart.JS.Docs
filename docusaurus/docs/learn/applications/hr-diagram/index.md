@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: HR Diagram
-title: "Hertzsprung–Russell (HR) Diagram: How to Read It, With an Interactive Star Chart"
+title: "Hertzsprung–Russell (HR) Diagram: How to Read It, With an Example"
 description: "What a Hertzsprung–Russell diagram plots, why temperature runs backwards, the main sequence, giants and white dwarfs, spectral classes, cluster ages from the turn-off, and a live HR diagram."
 keywords:
     [
@@ -56,7 +56,7 @@ related: [scatter-plot, heatmap, bubble-chart, density-plot, log-scale-graph]
                 {
                     "@type": "Question",
                     "name": "How do I plot an HR diagram in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Put the stars in a scatter series with temperature on the x-axis and luminosity on the y-axis, both on logarithmic axes, and flip the x-axis so temperature falls from left to right. Colour each point by temperature with a per-point palette, and add zoom, pan and a hover readout. For hundreds of thousands of stars, use a WebGL charting library such as SciChart.js, or show the density as a heatmap." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Put the stars in a scatter series with temperature on the x-axis and luminosity on the y-axis, both on logarithmic axes, and flip the x-axis so temperature falls from left to right. Colour each point by temperature with a per-point palette, and add zoom, pan and a hover readout. For hundreds of thousands of stars, use a charting library that draws with WebGL and WebGPU, such as SciChart.js, or show the density as a heatmap." }
                 }
             ]
         })}
@@ -118,6 +118,8 @@ A **colour index** is the difference between a star's magnitudes through two fil
 
 ## Regions of the HR diagram
 
+Stars on the HR diagram fall into five main regions, the main sequence, subgiants, red giants, supergiants and white dwarfs, and each marks a different stage of a star's life.
+
 ![A labelled HR diagram: surface temperature from 40,000 K on the left to 2,500 K on the right, luminosity from 0.0001 to a million Suns on a log scale. Coloured bands at the top mark spectral classes O, B, A, F, G, K and M. A blue diagonal band is the main sequence, labelled hydrogen burning in the core, with the Sun on it at 5,772 K and luminosity 1. An orange area above it on the right is the giants, with subgiants between them, a purple band across the top is the supergiants, and a grey area at the lower left is the white dwarfs. Dashed lines mark stars of 0.01, 1 and 100 times the Sun's radius](./hr-diagram-regions.svg)
 
 | Region | Where on the diagram | Typical temperature | Typical luminosity (Sun = 1) | What the stars are doing |
@@ -152,9 +154,11 @@ Astronomers sort stars by the absorption lines in their spectra, and the classes
 | K | Orange | 3,700 to 5,200 K | Neutral metals |
 | M | Red | 2,400 to 3,700 K | Molecules, mainly titanium oxide |
 
-Below M come L, T and Y, the brown dwarfs, too small to sustain hydrogen fusion. A second label, the **luminosity class**, says which region a star is in: I for supergiants, II for bright giants, III for giants, IV for subgiants and V for main-sequence stars. The Sun's full type, G2V, reads as a yellow main-sequence star, a little cooler than the hottest G stars.
+Below M come L, T and Y, mostly brown dwarfs, too small to sustain hydrogen fusion. A second label, the **luminosity class**, says which region a star is in: I for supergiants, II for bright giants, III for giants, IV for subgiants and V for main-sequence stars. The Sun's full type, G2V, reads as a yellow main-sequence star, a little cooler than the hottest G stars.
 
 ## How to read an HR diagram
+
+Read an HR diagram by checking the axes first, then finding the main sequence and placing each star relative to it.
 
 1. Read the axis labels. Is the horizontal axis temperature, colour index or spectral class? Is the vertical axis luminosity or absolute magnitude? Check which way each one runs: magnitude axes are brightest at the top, with the most negative numbers there.
 2. Check the scales. On a log luminosity axis, each gridline is usually ten times the one below. On a magnitude axis, 5 magnitudes is a factor of 100.
@@ -177,7 +181,7 @@ That is about 1.4% of the Sun's radius, or roughly 1.5 times the Earth's. By the
 
 A star stays at nearly the same spot on the main sequence for most of its life, then leaves it. The main stages for a star like the Sun are:
 
-- Main sequence: hydrogen fuses into helium in the core. The star brightens slowly, by tens of per cent, over about 10 billion years for the Sun.
+- Main sequence: hydrogen fuses into helium in the core. The star brightens slowly: the Sun roughly doubles in brightness over its main-sequence life of about 10 billion years.
 - Subgiant and red giant: when the core runs out of hydrogen, fusion moves to a shell around it. The envelope swells and cools, and the star moves right and then up the red giant branch.
 - Helium burning: helium ignites in the core and the star settles, for a time, into the red clump (for stars like the Sun) or a horizontal branch.
 - White dwarf: the outer layers drift off as a planetary nebula, and the exposed core drops to the lower left and cools for billions of years.
@@ -206,6 +210,8 @@ In practice astronomers fit **isochrones**, model curves for stars of one age an
 
 ## HR diagram vs colour-magnitude diagram vs spectral-class diagram
 
+The theoretical HR diagram, the colour-magnitude diagram and the spectral-class diagram show the same pattern of stars with different quantities on the axes.
+
 | Version | Axes | Choose it when |
 | --- | --- | --- |
 | Theoretical HR diagram | $\log T$ against $\log L/L_\odot$ | You're comparing with models or evolution tracks, or showing radius lines |
@@ -217,6 +223,8 @@ Large surveys now use the CMD. ESA's Hipparcos satellite, launched in 1989, meas
 
 ## Common HR diagram mistakes
 
+The commonest HR diagram mistakes come from its unusual axes: temperature that falls to the right and magnitudes that are smaller for brighter stars.
+
 - **Reading the temperature axis as rising to the right.** Temperature falls from left to right, with the hottest stars on the left. Label the axis, or add an arrow, when you draw one.
 - **Reading the magnitude scale the wrong way up.** On a magnitude axis smaller numbers are brighter, and the top of the axis carries the most negative values. A star at $M_V = -5$ is about 10,000 times more luminous than one at $M_V = +5$.
 - **Mixing apparent and absolute magnitude.** Apparent magnitude depends on distance: the Sun's is -26.74, its absolute magnitude +4.83. Field stars at different distances only make an HR diagram after converting to absolute magnitude; a cluster CMD can use apparent magnitude because all its stars are at about the same distance.
@@ -227,7 +235,7 @@ Large surveys now use the CMD. ESA's Hipparcos satellite, launched in 1989, meas
 
 ## How to plot an HR diagram in JavaScript, React or Angular
 
-Star catalogues are large: Gaia's holds over a billion sources, and even a cleaned sample for an HR diagram runs to hundreds of thousands of stars. SciChart.js draws scatter series with WebGL and WebGPU, so it stays smooth with millions of points as you zoom into a crowded region, and it can switch the same data between a scatter and a density heatmap. The demo below plots simulated stars, placed with textbook relations rather than taken from a real catalogue.
+Star catalogues are large: Gaia's holds over a billion sources, and even a cleaned sample for an HR diagram runs to hundreds of thousands of stars. The demo below plots 9,000 simulated field stars or an 8,000-star cluster, placed with textbook relations rather than taken from a real catalogue, and switches the same data between a scatter series and a density heatmap. For catalogue-sized data, the [one-million-point performance demo](https://www.scichart.com/demo/react/chart-performance-load-one-million-points) shows how SciChart.js handles a million points on your own device.
 
 Use **Stars** to switch between stars near the Sun and a star cluster, then drag **Cluster age** from 10 million to over 12 billion years and watch the turn-off slide down the main sequence. **Axes** switches between temperature and luminosity and colour index and absolute magnitude, and **View** between points and a density heatmap. **Regions and classes** labels the regions and spectral classes, **Radius lines** draws stars of equal radius, and **The Sun** marks it. Hover over a star for its temperature, luminosity, colour, magnitude, radius and spectral type; scroll to zoom, drag to pan and double-click to reset.
 
@@ -410,7 +418,7 @@ Find the turn-off, the point where the cluster's main sequence stops and bends t
 
 ### How do I plot an HR diagram in JavaScript?
 
-Put the stars in a scatter series with temperature on the x-axis and luminosity on the y-axis, both on logarithmic axes, and flip the x-axis so temperature falls from left to right. Colour each point by temperature with a per-point palette, and add zoom, pan and a hover readout. For hundreds of thousands of stars, use a WebGL charting library such as SciChart.js, or show the density as a heatmap.
+Put the stars in a scatter series with temperature on the x-axis and luminosity on the y-axis, both on logarithmic axes, and flip the x-axis so temperature falls from left to right. Colour each point by temperature with a per-point palette, and add zoom, pan and a hover readout. For hundreds of thousands of stars, use a charting library that draws with WebGL and WebGPU, such as SciChart.js, or show the density as a heatmap.
 
 ## Sources
 

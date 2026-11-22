@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
 sidebar_label: Applications
-title: "Charts in Science, Engineering, Medicine and Business: Telemetry, ECG, Spectroscopy and More (With Interactive Examples)"
+title: "Charts in Science, Engineering, Medicine and Business, With Examples"
 description: "How to read the charts used in science, engineering, medicine and business, from ECGs and spectra to telemetry and KPI dashboards, each with a live example."
-keywords: ["telemetry", "scada", "hmi", "chromatogram", "ecg", "capnography", "spectroscopy", "mass spectrum", "hr diagram", "stress strain curve", "roc curve", "kpi dashboard", "oscilloscope", "vibration analysis", "scientific charts", "engineering charts"]
+keywords: ["telemetry", "scada", "hmi", "chromatogram", "ecg", "capnography", "spectroscopy", "mass spectrum", "hr diagram", "stress strain curve", "kpi dashboard", "oscilloscope", "vibration analysis", "scientific charts", "engineering charts"]
 ---
 
 # Applications
@@ -22,6 +22,8 @@ For more on how SciChart is used in this sector, see [SciChart for aerospace and
 | [Telemetry](/learn/applications/telemetry/) | How telemetry measures, frames and sends data from aircraft, rockets, vehicles and remote sites, and how to read a live telemetry dashboard |
 
 ## Business
+
+Business dashboards turn a handful of KPIs into charts that show at a glance whether targets are being met.
 
 | Guide | What it covers |
 | --- | --- |
@@ -62,11 +64,15 @@ For more on how SciChart is used in this sector, see [SciChart for medical](http
 
 ## Motorsport
 
+Race engineers and sim racers compare laps on distance-based traces to find where time is won and lost.
+
 | Guide | What it covers |
 | --- | --- |
 | [Motorsport telemetry](/learn/applications/motorsport-telemetry/) | How to read lap traces, braking points and the time-delta trace, with two real laps from a racing-simulator demo |
 
 ## Science and mathematics
+
+These guides chart data from astronomy and pure mathematics, where one well-chosen chart reveals the structure in the numbers.
 
 | Guide | What it covers |
 | --- | --- |

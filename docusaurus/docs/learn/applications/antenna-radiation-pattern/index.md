@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Antenna Radiation Pattern
-title: "Antenna Radiation Pattern: How to Read Polar and 3D Antenna Patterns (With an Interactive Example)"
+title: "Antenna Radiation Pattern: How to Read Polar and 3D Patterns"
 description: "What an antenna radiation pattern is, how to read E-plane and H-plane polar plots and 3D patterns, beamwidth, side lobes, front-to-back ratio, dBi vs dBd, and the patterns of common antennas."
 keywords:
     [
@@ -110,6 +110,8 @@ Some datasheets label the cuts by coordinate plane instead: XY (the horizontal p
 
 ## How to read an antenna radiation pattern
 
+Read a radiation pattern from the main lobe outwards: find the peak, measure the beamwidth between the −3 dB points, then check how far down the nulls, side lobes and back lobe sit.
+
 ![A polar plot in decibels of a directional antenna pointing right, with numbered callouts: 1 the main lobe at 0 dB, 2 the half-power beamwidth of 17 degrees between the minus 3 dB points, 3 the first null, 4 the first side lobe 12.9 dB below the peak, and 5 the back lobe, giving a front-to-back ratio of 20 dB](./radiation-pattern-anatomy.svg)
 
 1. Main lobe. The lobe containing the peak, the direction the antenna is designed for. On a normalised plot its tip touches 0 dB.
@@ -132,7 +134,7 @@ The radius of a polar pattern can be the power in dB, the power on a linear scal
 | −20 dB | 0.01 | 0.1 | One per cent: a back lobe 20 dB down is barely a dot |
 | −30 dB | 0.001 | 0.032 | Invisible |
 
-A dB plot needs a floor, the level drawn at the centre, often −30 or −40 dB. Anything weaker is clipped to the centre, so a null looks like it reaches zero even when it is only 35 dB down. The dashed circle on most plots marks −3 dB for reading the beamwidth.
+A dB plot needs a floor, the level drawn at the centre, often −30 or −40 dB. Anything weaker is clipped to the centre, so on a −30 dB plot a null that is only 35 dB down looks as if it reaches zero. The demo's floor is −40 dB. The dashed circle on most plots marks −3 dB for reading the beamwidth.
 
 Switch the demo's Scale to Linear power to see the side lobes almost disappear.
 
@@ -156,6 +158,8 @@ Gain is quoted in decibels against a reference antenna:
 Directivity is linked to the beam size. For a single main beam with small side lobes, Kraus's approximation is $D \approx 41{,}253 / (\theta_E\, \theta_H)$, with the E-plane and H-plane beamwidths in degrees (41,253 is the number of square degrees in a sphere). A beam 20° wide in both planes gives about 103, or 20 dBi.
 
 ## Radiation patterns of common antennas
+
+Each common antenna has a recognisable pattern shape and directivity, from the isotropic reference at 0 dBi to arrays whose directivity grows with the number of elements.
 
 | Antenna | Pattern shape | Directivity | Formula or rule |
 | --- | --- | --- | --- |
@@ -212,6 +216,8 @@ A full measurement is a large grid: one cut every degree, at many frequencies an
 
 ## Where antenna radiation patterns are used
 
+Radiation patterns are used wherever the direction of a signal matters: radar, direction finding, antenna design, wireless networks and satellite links.
+
 - Radar and electronic warfare. Beamwidth sets angular resolution, side lobes set how easily clutter or jamming leaks in, and phased arrays scan beams electronically. See how SciChart is used in [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/).
 - Signals intelligence and direction finding. Direction-finding systems compare the signals received on antennas with known patterns to estimate where a transmitter is. See [SciChart for SIGINT](https://www.scichart.com/sigint-signals-intelligence/).
 - Antenna design and test. Simulated and measured patterns are compared cut by cut, and plotted against frequency. See SciChart in [design, emulation and test](https://www.scichart.com/design-emulation-test/).
@@ -221,6 +227,8 @@ A full measurement is a large grid: one cut every degree, at many frequencies an
 The pattern is one half of an antenna's behaviour; the other is its impedance and match, which is read on a [Smith chart](/learn/chart-types/complex/smith-chart/).
 
 ## Polar plot vs 3D pattern vs rectangular plot
+
+A polar plot is best for reading one cut at a glance, a 3D pattern for seeing the whole shape, and a rectangular plot for measuring low side lobes accurately.
 
 | Chart | Shows | Best for | Watch out for |
 | --- | --- | --- | --- |
@@ -234,6 +242,8 @@ On a [radar chart](/learn/chart-types/radial/radar-chart/) or a [polar area char
 
 ## Common radiation pattern mistakes
 
+Most misreadings of radiation patterns come from the scale, the choice of cut or the unit of gain.
+
 - **Mixing dB and linear radii.** Comparing a dB plot with a linear one, or reading a dB plot's radius as if it were linear, makes side lobes look far bigger or smaller than they are. Check the radial axis labels.
 - **Treating one cut as the whole pattern.** A cut through the main beam can miss a lobe that sits between the E-plane and H-plane. Look at the 3D pattern, or at several cuts, before calling an antenna clean.
 - **Confusing dBi and dBd.** The same antenna reads 2.15 dB lower in dBd. Convert to one unit before comparing datasheets.
@@ -245,7 +255,7 @@ On a [radar chart](/learn/chart-types/radial/radar-chart/) or a [polar area char
 
 ## How to plot an antenna radiation pattern in JavaScript, React or Angular
 
-Antenna software works with patterns sampled every degree, over many frequencies and both polarisations, and often redraws them as a beam steers. SciChart.js draws on the GPU with WebGL, so the polar cuts and the 3D surface update together while you drag a slider, and stay smooth with large measured datasets. The demo computes each pattern in the browser from textbook models.
+Antenna software works with patterns sampled every degree, over many frequencies and both polarisations, and often redraws them as a beam steers. The demo below computes each pattern in the browser from textbook models: every time you change a control it recalculates the 0.5° polar cuts and a 3D surface sampled every 3°, and SciChart.js redraws both charts with WebGL and WebGPU.
 
 Pick an **Antenna**: a half-wave dipole, a short dipole, a quarter-wave monopole, a patch, a Yagi-Uda (approximated as an end-fire array with the Hansen-Woodyard phase, which overstates its side lobes) or a linear phased array. For the Yagi and the array, **Elements** and **Spacing** (in wavelengths) set the size; for the array, **Steering** moves the beam and **Reflector behind array** removes the mirror beam. **Scale** switches both charts between dB and linear power. The readout gives the directivity in dBi and dBd, the beamwidth in each plane, the front-to-back ratio and the first side lobe. Hover over the polar chart for values, scroll to zoom, drag to pan, and drag the 3D chart to rotate it.
 

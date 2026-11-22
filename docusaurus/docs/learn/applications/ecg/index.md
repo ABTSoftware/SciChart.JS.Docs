@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: ECG
-title: "ECG Leads and How to Read an ECG Strip: Waves, Intervals and the 12-Lead ECG (With an Interactive Example)"
+title: "ECG Leads and How to Read an ECG Strip: Waves and Intervals"
 description: "What an ECG records, the 12 ECG leads and where the electrodes go, the P-QRS-T waveform and normal intervals, ECG paper and heart rate, and a step-by-step way to read a strip, with a live ECG."
 keywords:
     [
@@ -66,7 +66,7 @@ related: [capnography-pulse-oximetry, strip-chart, notch-filter, high-pass-filte
     </script>
 </head>
 
-# ECG Leads and How to Read an ECG
+# ECG Leads and How to Read an ECG Strip
 
 ## What is an ECG?
 
@@ -157,6 +157,8 @@ Leads that face the same wall of the left ventricle are read together, because a
 - **Right-sided and posterior leads.** V3R and V4R mirror V3 and V4 on the right of the chest; V7 to V9 continue round the back. They are added to look at the right ventricle or the back wall.
 
 ## The ECG waveform: P, QRS, T and U waves
+
+Each normal heartbeat draws a P wave, a QRS complex and a T wave, sometimes followed by a small U wave, and the intervals between them are what an ECG reader measures.
 
 ![Two heartbeats of lead II on ECG paper. The P wave, the Q, R and S waves and the T wave are labelled, with a small U wave after the T wave. Brackets mark the PR interval of 0.16 s (four small squares), the QRS duration of 0.09 s, the ST segment and the QT interval of 0.37 s. The RR interval between the two R waves is 0.80 s, four large squares or twenty small squares, so the heart rate is 300 divided by 4, or 1,500 divided by 20, which is 75 beats per minute. A 1 mV calibration pulse, 10 mm tall, is at the start. Below, a key shows a large square as 0.2 s by 0.5 mV and a small square as 0.04 s by 0.1 mV](./ecg-waveform-intervals.svg)
 
@@ -302,6 +304,8 @@ A single lead is enough to read rate and rhythm, but not axis, or changes confin
 
 ## Common ECG reading mistakes
 
+Many ECG misreadings come from how the trace was recorded, such as misplaced electrodes or the wrong gain, or from applying a rule of thumb where it doesn't fit.
+
 - **Swapped arm electrodes.** Reversing the left and right arm electrodes turns lead I upside down (negative P wave, QRS and T wave) and swaps aVR with aVL and lead II with lead III. An inverted lead I with an upright aVR is the clue.
 - **Chest electrodes in the wrong place.** V1 and V2 placed one or two spaces too high, or V4 to V6 placed by eye on a large chest, change the R wave progression and can mimic disease.
 - **Ignoring the calibration pulse.** At half gain every wave looks half its true height; at 50 mm/s every interval looks twice as long.
@@ -313,7 +317,7 @@ A single lead is enough to read rate and rhythm, but not axis, or changes confin
 
 ## How to build an ECG chart in JavaScript, React or Angular
 
-SciChart.js draws with WebGL and WebGPU, so a sweeping 12-lead display at 500 samples a second per lead redraws smoothly in the browser, the same job a bedside monitor or ECG review station does. The demo below simulates an ECG from a simple model of the heart's electrical activity: one rotating heart vector, seen by each lead from its own direction, so all twelve leads come from the same beats, and lead II always equals lead I plus lead III. It is sample data, not a patient recording.
+The demo below sweeps twelve leads across the screen at 500 samples a second per lead, the rate of many diagnostic ECGs, and SciChart.js redraws every lead as new samples arrive. It simulates an ECG from a simple model of the heart's electrical activity: one rotating heart vector, seen by each lead from its own direction, so all twelve leads come from the same beats, and lead II always equals lead I plus lead III. It is sample data, not a patient recording.
 
 Choose the **Layout**: a 4-second rhythm strip of one lead, about what a monitor screen shows, or the standard 12-lead layout with a lead II rhythm strip underneath. Pick a **Lead** to see the same beats from another direction: compare II with aVR, or V1 with V6. **Rhythm** switches between normal sinus rhythm, sinus tachycardia and bradycardia, atrial fibrillation and sinus rhythm with PVCs, and **Heart rate** sets the rate. **Show intervals** puts calipers on the latest normal beat, and the readouts give the rate, PR, QRS, QT and both QTc formulas. On most screen sizes the grid keeps the squares square, as on paper at 25 mm/s and 10 mm/mV. Hover for times and voltages. Press **Pause** to freeze the sweep, then scroll to zoom, drag to pan and double-click to reset.
 

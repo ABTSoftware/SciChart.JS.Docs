@@ -1,7 +1,7 @@
 ---
 sidebar_position: 90
 sidebar_label: Motorsport Telemetry
-title: "Motorsport Telemetry: How to Read Lap Traces and Compare Laps (With an Interactive Example)"
+title: "Motorsport Telemetry: How to Read Lap Traces and Compare Laps"
 description: "What motorsport and sim racing telemetry records, why lap traces are plotted against distance, how to read braking, throttle and the time-delta trace, and how to compare two laps."
 keywords:
     [
@@ -57,7 +57,7 @@ related: [telemetry, strip-chart, time-series-graph, downsampling]
                 {
                     "@type": "Question",
                     "name": "How do I make a lap comparison chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Interpolate each lap's channels onto lap distance, compute the time delta at each distance, and draw one chart pane per channel with both laps as overlaid line series. With SciChart.js, use FastLineRenderableSeries for the traces, SciChartVerticalGroup to line the panes up, a CursorModifier with a shared modifierGroup for one crosshair across all panes, and synchronised x-axes for zooming. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Interpolate each lap's channels onto lap distance, compute the time delta at each distance, and draw one chart pane per channel with both laps as overlaid line series. With SciChart.js, use FastLineRenderableSeries for the traces, SciChartVerticalGroup to line the panes up, a CursorModifier with a shared modifierGroup for one crosshair across all panes, and synchronised x-axes for zooming. The scichart-react and scichart-angular packages wrap the same setup for React and Angular." }
                 }
             ]
         })}
@@ -100,7 +100,7 @@ Every sensor becomes a **channel**: a series of values with a unit and its own s
 | Position (GPS or the game's world coordinates) | metres | The racing line, for a track map | 10 Hz |
 | Lap distance | metres | Where on the lap each sample was taken | Derived from speed or position |
 
-The rates in the last column are the minimums suggested by High Performance Academy's data-logging guide; suspension movement needs much more, at least 250 Hz. The laps on this page were logged by the simulator at roughly 30 samples a second, about one sample every 2.5 m at 300 km/h.
+The rates in the last column are the minimums suggested by High Performance Academy's data-logging guide; suspension movement needs much more, at least 250 Hz. The laps on this page were logged by the simulator at roughly 30 samples a second, about one sample every 2.8 m at 300 km/h.
 
 ## Why are lap traces plotted against distance, not time?
 
@@ -169,6 +169,8 @@ A **g-g diagram**, also called a friction circle, plots each sample's lateral g 
 
 ## How to compare laps
 
+Compare laps against a well-chosen reference, starting with the corners where the delta trace rises most steeply.
+
 - Pick a reference lap. Usually your own best lap, a team-mate's best, or a coach's lap in the same car and conditions. A reference from a different car, tyre or fuel load tells you about the car, not the driving.
 - Find the biggest losses first. Read the delta trace for its steepest rises, then go to those corners in the speed, brake and throttle traces. Fixing the two corners that cost the most is worth more than polishing all of them.
 - Change one thing at a time. Brake 5 m later in one corner, then compare again.
@@ -176,6 +178,8 @@ A **g-g diagram**, also called a friction circle, plots each sample's lateral g 
 - Watch the exits. Minimum speed and throttle pickup set the speed for the whole of the next straight.
 
 ## Sim racing telemetry vs real car data acquisition
+
+Simulator telemetry and real-car data show the same channels, but they come from different sources and differ in rate, accuracy and noise.
 
 | | Racing simulator | Real race car |
 | --- | --- | --- |
@@ -190,23 +194,25 @@ The traces read the same way, so sim racing is a cheap way to learn telemetry an
 
 ## Common lap comparison mistakes
 
+Most lap comparison mistakes come from misaligned laps or from reading the delta trace the wrong way.
+
 - **Using time as the x-axis.** The laps drift apart corner by corner, and by mid-lap you are comparing different parts of the track. Plot against lap distance.
 - **Comparing laps that aren't aligned.** If one lap's distance channel starts from a different line or has drifted, braking points appear tens of metres apart when they aren't. Line laps up at the start line and check that a known feature, such as a hard braking point, sits at the same distance in both.
 - **Reading the delta's height instead of its slope.** A delta of 1.4 s at 3,000 m doesn't mean the driver is losing time there; on the example lap it was lost at corner 4 and the line is flat after it. Look for where the line rises.
 - **Blaming the braking point for every lost corner.** In the example, Lap B brakes where Lap A does in its two worst corners. The loss is at the apex and on the exit.
 - **Comparing against one lap only.** A single reference lap can contain a lucky corner, and a single lap of yours can contain a one-off mistake. Compare several laps before changing anything.
 - **Trusting single-sample spikes.** A kerb strike can show as a 9 g spike that the car never sustained. Zoom in before believing an extreme value.
-- **Downsampling the traces naively.** Drawing every 10th sample of a long session can hide a short lock-up or a gear change. Use a [downsampling](/learn/big-data/downsampling/) method that keeps peaks, or a renderer fast enough to draw every point.
+- **Downsampling the traces naively.** Drawing every 10th sample of a long session can hide a short lock-up or a gear change. Use a [downsampling](/learn/big-data/downsampling/) method that keeps peaks, or a renderer that draws every point.
 
 ## How to build a lap comparison dashboard in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a lap comparison can show several laps of thousands of samples in many synchronised panes and still follow the cursor, zoom and pan without lag. SciChart built a full racing telemetry dashboard this way, with more than 30 live charts, replay and lap analysis, and showed it at a developer conference in 2026:
+A lap comparison lines up several laps of thousands of samples in synchronised panes that share one cursor, zoom and pan. SciChart built a full racing telemetry dashboard this way with SciChart.js, with more than 30 live charts, replay and lap analysis, and ran it live at the [WeAreDevelopers World Congress](https://www.wearedevelopers.com/world-congress) in Berlin in 2026. It is shown in this video:
 
 <YouTubeVideo url="https://www.youtube-nocookie.com/embed/U9xYKn16nhA" title="SciChart's real-time racing telemetry dashboard: 30+ live charts and post-race lap analysis" />
 
 That dashboard receives the simulator's telemetry as a plain JSON stream, which is fine at these data rates. A Web Worker turns each message into one `Float64Array` per channel before it reaches the charts. For higher rates or longer recordings, binary, columnar and compressed formats load faster: see [time series data formats](/learn/big-data/time-series-data-formats/).
 
-The demo below is a small subset of that dashboard, with the two real laps from the worked example embedded in the page. Hover over any trace: the crosshair, the track map marker, the g-g diagram and the speed gauge all follow. Use **Zoom to** to jump to a corner, and **Colour the track map by** to switch between where Lap B gains or loses time and Lap A's speed. Press **Replay both laps** to watch both cars at the same moment of their laps, with the gap in metres. Scroll to zoom, drag to pan, and double-click to see the whole lap again.
+The demo below is a small subset of that dashboard, with the two real laps from the worked example embedded in the page. Hover over any trace: the crosshair, the track map marker, the g-g diagram and the speed gauge all follow. Use **Zoom to** to jump to a corner, and **Colour the track map by** to switch between where Lap B gains or loses time and Lap A's speed. Press **Replay both laps** to watch both cars at the same moment of their laps, with the gap in metres. The mouse wheel zooms all five panes together, dragging pans them, and a double-click shows the whole lap again.
 
 <LiveDocSnippet maxWidth={'100%'} height={900} name="./Basic/demo" />
 
@@ -440,7 +446,7 @@ Most racing simulators can send telemetry from the game as UDP network packets, 
 
 ### How do I make a lap comparison chart in JavaScript?
 
-Interpolate each lap's channels onto lap distance, compute the time delta at each distance, and draw one chart pane per channel with both laps as overlaid line series. With SciChart.js, use `FastLineRenderableSeries` for the traces, `SciChartVerticalGroup` to line the panes up, a `CursorModifier` with a shared `modifierGroup` for one crosshair across all panes, and synchronised x-axes for zooming. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Interpolate each lap's channels onto lap distance, compute the time delta at each distance, and draw one chart pane per channel with both laps as overlaid line series. With SciChart.js, use `FastLineRenderableSeries` for the traces, `SciChartVerticalGroup` to line the panes up, a `CursorModifier` with a shared `modifierGroup` for one crosshair across all panes, and synchronised x-axes for zooming. The `scichart-react` and `scichart-angular` packages wrap the same setup for React and Angular.
 
 ## Sources
 

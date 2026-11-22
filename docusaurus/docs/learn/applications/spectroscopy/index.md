@@ -1,7 +1,7 @@
 ---
 sidebar_position: 150
 sidebar_label: Spectroscopy
-title: "Spectroscopy Plots: How to Read IR, Raman and UV-Vis Spectra (With an Interactive Example)"
+title: "Spectroscopy Plots: How to Read IR, Raman and UV-Vis Spectra"
 description: "What a spectrum shows and how to read IR, Raman and UV-Vis spectra: wavenumber axes, transmittance vs absorbance, the fingerprint region, Beer–Lambert, baseline correction and a live example."
 keywords:
     [
@@ -68,7 +68,7 @@ related: [mass-spectrum, chromatogram, low-pass-filter, heatmap]
     </script>
 </head>
 
-# Spectroscopy
+# Spectroscopy Plots
 
 ## What is spectroscopy?
 
@@ -223,6 +223,8 @@ The law holds best at low absorbance. Above an absorbance of about 1.5 to 2, so 
 
 ## IR vs Raman vs UV-Vis vs NMR
 
+IR and Raman both probe molecular vibrations, UV-Vis probes electronic transitions, and NMR probes atomic nuclei, so each answers a different question about a sample.
+
 | | IR | Raman | UV-Vis | NMR |
 | --- | --- | --- | --- | --- |
 | What it measures | Absorption by vibrations that change the dipole | Scattering by vibrations that change the polarisability | Absorption by electronic transitions | Absorption of radio waves by atomic nuclei in a magnetic field |
@@ -250,6 +252,8 @@ A **hyperspectral image** stores a whole spectrum at every pixel, so the data is
 
 ## Common spectroscopy mistakes
 
+Most spectroscopy mistakes come from the axes, the baseline or over-reading the fingerprint region.
+
 - **Reading or averaging %T as if it were linear.** Twice the concentration doesn't halve the transmittance. Convert to absorbance before measuring band heights, subtracting spectra or averaging.
 - **Comparing spectra drawn on opposite axes.** One IR spectrum plotted 4000 → 400 and another plotted 400 → 4000 look like different compounds. Check the axis direction and units before matching patterns.
 - **Trying to assign every band.** Bands below 1500 cm⁻¹ come from coupled vibrations of the whole molecule. Use the functional-group region to propose a structure, and the fingerprint only to confirm it against a reference.
@@ -262,9 +266,9 @@ A **hyperspectral image** stores a whole spectrum at every pixel, so the data is
 
 ## How to plot a spectrum in JavaScript, React or Angular
 
-Spectrometers produce thousands of points per spectrum, and a hyperspectral map or a reaction monitored every second produces thousands of spectra. SciChart.js draws with WebGL and WebGPU, so it stays smooth as you zoom into a shoulder on a band, overlay a stack of spectra or redraw after every change to the processing. The demo below simulates IR, Raman and UV-Vis spectra from typical band positions, and processes them in plain JavaScript.
+Spectrometers produce thousands of points per spectrum, and a hyperspectral map or a reaction monitored every second produces thousands of spectra. The demo below simulates IR, Raman and UV-Vis spectra from typical band positions, 3,601 points from 4000 to 400 cm⁻¹ for IR, and reruns the baseline correction, smoothing and peak picking in plain JavaScript every time you change a setting.
 
-Choose a **Technique** and a **Compound**: an alcohol, a ketone and a carboxylic acid for IR and Raman, or the coenzyme NADH and NAD⁺ for UV-Vis. **IR y-axis** switches between transmittance and absorbance. **Concentration** sets the UV-Vis sample and shows the Beer–Lambert reading. **Baseline drift** adds a background (scattering in IR and UV-Vis, fluorescence in Raman), and **Correct baseline** subtracts the estimated one; untick it to see the raw spectrum with the estimate as a dashed line. **Noise** and **Smoothing** let you compare Savitzky–Golay windows, and **Peak labels** shows the picked peaks with their assignments. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose a **Technique** and a **Compound**: an alcohol, a ketone and a carboxylic acid for IR and Raman, or the coenzyme NADH and NAD⁺ for UV-Vis. **IR y-axis** switches between transmittance and absorbance. **Concentration** sets the UV-Vis sample and shows the Beer–Lambert reading. **Baseline drift** adds a background (scattering in IR and UV-Vis, fluorescence in Raman), and **Correct baseline** subtracts the estimated one; untick it to see the raw spectrum with the estimate as a dashed line. **Noise** and **Smoothing** let you compare Savitzky–Golay windows, and **Peak labels** shows the picked peaks with their assignments. Zoom with the mouse wheel to inspect a shoulder on a band, drag to pan, double-click to reset, and hover to read the wavenumber or wavelength and intensity.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 

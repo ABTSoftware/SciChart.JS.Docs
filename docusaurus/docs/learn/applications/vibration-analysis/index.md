@@ -1,7 +1,7 @@
 ---
 sidebar_position: 180
 sidebar_label: Vibration Analysis
-title: "Vibration Analysis: How to Read Vibration Spectra and Find Machine Faults (With an Interactive Example)"
+title: "Vibration Analysis: How to Read Spectra and Find Machine Faults"
 description: "What vibration analysis is, how sensors, units and ISO 20816 severity zones work, how to read a time waveform and FFT spectrum, and the signatures of imbalance, misalignment, looseness and bearing faults."
 keywords:
     [
@@ -89,7 +89,7 @@ related: [fast-fourier-transform, spectrogram, hilbert-transform, power-spectral
 
 ## What is vibration analysis?
 
-**Vibration analysis** is the measurement and study of how a machine shakes, to judge its condition and find faults before they cause a breakdown. A sensor on a bearing housing records the vibration; software turns it into a time waveform and a frequency spectrum, and each fault, such as imbalance, misalignment or a damaged bearing, leaves its own pattern of peaks.
+**Vibration analysis** is the measurement and study of how a machine shakes, to judge its condition and find faults before they cause a breakdown. A sensor records the vibration; software turns it into a time waveform and a frequency spectrum, and each fault, such as imbalance, misalignment or a damaged bearing, leaves its own pattern of peaks.
 
 ![A simulated motor with an outer-race bearing fault in a dark navy theme: a time waveform with sharp repeated impacts, a velocity spectrum with order markers 1× to 8× and a small BPFO line, and an envelope spectrum with clear peaks at BPFO and its harmonics](/img/learn/vibration-analysis-og.png)
 
@@ -177,7 +177,7 @@ The **spectrum** separates them. A [fast Fourier transform (FFT)](/learn/signal-
 
 Three settings decide what a spectrum can show:
 
-- Maximum frequency (Fmax). The data must be sampled at more than twice Fmax. For general machine faults, Fmax is often set to about 40 to 50 times the running speed; bearing and gear work needs several kilohertz.
+- Maximum frequency (Fmax). The data must be sampled at more than twice Fmax. For general machine faults, a common rule of thumb sets Fmax at about 40 to 50 times the running speed; bearing and gear work needs several kilohertz.
 - Lines of resolution. The spectrum's frequency spacing is Fmax divided by the number of lines (400 to 12,800 is common). Finer spacing needs a longer recording: 1,600 lines up to 1,000 Hz is a spacing of 0.625 Hz and needs 1.6 s of data.
 - Window and averaging. A [window function](/learn/signal-processing/window-functions/) (usually Hann) keeps a peak from smearing across the spectrum, and averaging several spectra steadies the noise.
 
@@ -192,6 +192,8 @@ Most vibration in a machine repeats once per revolution of a shaft, or a whole n
 Speeds change slightly with load, so the first step in reading a spectrum is to find the 1× peak and mark its harmonics. Many analysers can show the frequency axis directly in orders.
 
 ## Common vibration fault signatures
+
+Each common machine fault leaves its own signature in the spectrum, usually at a particular multiple of the shaft speed or at a bearing defect frequency.
 
 ![Six idealised spectra, frequency in orders of shaft speed. 1, healthy machine: small peaks at 1x and 2x. 2, imbalance: one dominant 1x peak. 3, misalignment: a 2x peak taller than 1x, with a 3x peak. 4, mechanical looseness: a long row of harmonics with half orders between them. 5, outer-race bearing defect in the envelope spectrum: peaks at BPFO, about 3.6x, and at 2x and 3x BPFO, between the whole orders. 6, gear tooth wear: a peak at the gear mesh frequency with sidebands spaced at the shaft speed](./fault-signature-spectra.svg)
 
@@ -258,9 +260,11 @@ The overall level (the RMS over a band) is one number per measurement point, che
 - A step: a change in the machine, a repair, or a measurement problem.
 - A rise then a fall: often a bearing late in its life, as the sharp defect edges wear smooth before the bearing fails.
 
-Set alarms per point, from the ISO zones or from the machine's own baseline (for example, 2 to 2.5 times its normal level), and look at the spectrum whenever one trips. Trend a high-frequency or envelope value beside the velocity overall.
+Set alarms per point, from the ISO zones or from the machine's own baseline (a common rule of thumb is 2 to 2.5 times its normal level), and look at the spectrum whenever one trips. Trend a high-frequency or envelope value beside the velocity overall.
 
 ## Vibration analysis vs other condition monitoring methods
+
+Vibration analysis is the main condition monitoring method for rotating machines, and oil analysis, thermography, ultrasound and motor current analysis each catch faults it can miss.
 
 | | Vibration analysis | Oil analysis | Infrared thermography | Ultrasound (airborne and contact) | Motor current analysis |
 | --- | --- | --- | --- | --- | --- |
@@ -273,6 +277,8 @@ Most programmes combine them. Vibration finds and identifies the fault, and oil 
 
 ## Common vibration analysis mistakes
 
+Most vibration analysis mistakes come from trusting one number, guessing the running speed or using too coarse a spectrum.
+
 - **Trusting the overall level alone.** An early bearing defect can leave the velocity overall in zone A. Add a high-frequency or envelope measurement, and look at the crest factor.
 - **Guessing the running speed.** Induction motors slip, so a motor rated 1,800 rpm may run at 1,780. Find the true 1× in the spectrum, or measure it with a tachometer, before naming peaks as orders or bearing frequencies.
 - **Not enough resolution.** Twice the supply frequency (120 Hz) and 4× of a motor running at 1,780 rpm (118.7 Hz) are only 1.3 Hz apart, so a coarse spectrum shows them as one peak. Use more lines, or zoom in on the band.
@@ -283,7 +289,7 @@ Most programmes combine them. Vibration finds and identifies the fault, and oil 
 
 ## How to plot a vibration spectrum in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a web-based vibration tool can show full-resolution waveforms and spectra of tens of thousands of points, update them as fast as data arrives, and stay smooth while you zoom and pan. The demo below simulates a motor with a 6205-size bearing and computes everything in the browser: a 16,384-sample acceleration waveform at 12,800 samples per second, its Hann-windowed velocity spectrum, and the envelope spectrum of the 2 to 5 kHz band.
+The demo below simulates a motor with a 6205-size bearing and, every time you move a control, recomputes everything in the browser and redraws all three charts: a 16,384-sample acceleration waveform at 12,800 samples per second, its Hann-windowed velocity spectrum, and the envelope spectrum of the 2 to 5 kHz band.
 
 Change the **Shaft speed** and watch the order markers and bearing frequencies move. Pick a **Fault**: imbalance raises 1×, misalignment 2×, and looseness a row of harmonics, while the outer-race bearing fault puts impacts in the waveform and clear BPFO lines in the envelope spectrum and barely changes the overall level. Turn up the **Severity** and the **Noise**, and switch the **ISO 20816-3 limits** to see the same reading fall in a different zone. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
 

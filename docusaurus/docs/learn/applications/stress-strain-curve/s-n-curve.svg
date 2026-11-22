@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="14" fill="#1f2a44">
 <title>S-N (fatigue) curves on logarithmic axes</title>
-<desc>Stress amplitude against the number of cycles to failure, both on logarithmic axes from 1,000 to 1,000,000,000 cycles and 50 to 500 MPa. A steel with a tensile strength of 380 MPa follows a straight sloping line from about 342 MPa at 1,000 cycles to its endurance limit of about 190 MPa near one million cycles, then runs flat: below that stress it does not fail. An aluminium alloy has no flat part: its line keeps falling, so its fatigue strength is quoted at a stated number of cycles, such as 500 million. A few scattered test points sit around the steel line.</desc>
+<desc>Stress amplitude against the number of cycles to failure, both on logarithmic axes from 1,000 to 1,000,000,000 cycles and 50 to 500 MPa. A steel with a tensile strength of 380 MPa follows a straight sloping line from about 342 MPa at 1,000 cycles to its endurance limit of about 190 MPa near one million cycles, then runs flat: below that stress a smooth specimen usually does not fail. An aluminium alloy has no flat part: its line keeps falling, so its fatigue strength is quoted at a stated number of cycles, such as 500 million. A few scattered test points sit around the steel line.</desc>
 <rect width="760" height="440" fill="#ffffff"/>
 <path d="M90.0 370 L90.0 40" stroke="#e3e8f0"/>
 <text x="90.0" y="390" text-anchor="middle" font-size="13">10<tspan dy="-6" font-size="10">3</tspan></text>
@@ -33,7 +33,7 @@
 <text x="120.6" y="82.4" fill="#1565c0" font-weight="600">Steel (UTS 380 MPa)</text>
 <path d="M395.0 198.7 L395.0 184.7" stroke="#1f2a44" marker-end="url(#ah)"/>
 <text x="401.0" y="204.7">Knee: endurance limit ≈ 0.5 × UTS</text>
-<text x="514.6" y="168.7" fill="#1565c0">Below this stress: no fatigue failure</text>
+<text x="514.6" y="168.7" fill="#1565c0">Below this: usually no fatigue failure</text>
 <path d="M90.0 151.3 L100.2 153.5 L110.3 155.6 L120.5 157.8 L130.7 160.0 L140.8 162.2 L151.0 164.4 L161.2 166.5 L171.3 168.7 L181.5 170.9 L191.7 173.1 L201.8 175.2 L212.0 177.4 L222.2 179.6 L232.3 181.8 L242.5 184.0 L252.7 186.1 L262.8 188.3 L273.0 190.5 L283.2 192.7 L293.3 194.8 L303.5 197.0 L313.7 199.2 L323.8 201.4 L334.0 203.6 L344.2 205.7 L354.3 207.9 L364.5 210.1 L374.7 212.3 L384.8 214.5 L395.0 216.6 L405.2 218.8 L415.3 221.0 L425.5 223.2 L435.7 225.3 L445.8 227.5 L456.0 229.7 L466.2 231.9 L476.3 234.1 L486.5 236.2 L496.7 238.4 L506.8 240.6 L517.0 242.8 L527.2 244.9 L537.3 247.1 L547.5 249.3 L557.7 251.5 L567.8 253.7 L578.0 255.8 L588.2 258.0 L598.3 260.2 L608.5 262.4 L618.7 264.5 L628.8 266.7 L639.0 268.9 L649.2 271.1 L659.3 273.3 L669.5 275.4 L679.7 277.6 L689.8 279.8 L700.0 282.0" fill="none" stroke="#e65100" stroke-width="3" stroke-dasharray="9 5"/>
 <text x="120.6" y="201.8" fill="#e65100" font-weight="600">Aluminium alloy</text>
 <circle cx="669.4" cy="275.4" r="5" fill="#ffffff" stroke="#e65100" stroke-width="2"/>
