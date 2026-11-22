@@ -1,7 +1,7 @@
 ---
 sidebar_position: 140
 sidebar_label: Heatmap
-title: "Heatmap (Heat Map): What It Is & How to Read It (With Interactive Examples)"
+title: "Heatmap (Heat Map): What It Is & How to Read It (Interactive Example)"
 description: "What a heatmap is, how to read and describe its coloured grid, how to choose a colour scale, the mistakes to avoid and when to use a heat map. With a live, interactive example."
 keywords:
     [
@@ -57,7 +57,7 @@ related: [contour-plot, spectrogram, choropleth-map, 3d-surface-plot]
                 {
                     "@type": "Question",
                     "name": "How do I make a heatmap in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a UniformHeatmapRenderableSeries with a UniformHeatmapDataSeries holding a 2D array of values and a HeatmapColorMap that turns values into colours. Add a HeatmapLegend to show the colour scale. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a UniformHeatmapRenderableSeries with a UniformHeatmapDataSeries holding a 2D array of values and a HeatmapColorMap that turns values into colours. Add a HeatmapLegend to show the colour scale. For React or Angular, hand the same setup to scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -68,7 +68,7 @@ related: [contour-plot, spectrogram, choropleth-map, 3d-surface-plot]
 
 ## What is a heatmap?
 
-A **heatmap** (also written heat map, and also called a heat map chart, heatmap graph or heat chart) is a chart that shows a table of numbers as a grid of coloured cells. Each cell's colour shows the value where its row and column meet. A colour scale turns colours back into numbers, so highs, lows and patterns stand out.
+A **heatmap** (also written heat map) is a chart that shows a table of numbers as a grid of coloured cells. Each cell's colour shows the value where its row and column meet. A colour scale turns colours back into numbers, so highs, lows and patterns stand out.
 
 ![A heatmap of hourly energy use over one week: seven rows from Monday to Sunday, 24 columns for the hours of the day, with dark purple cells overnight and bright yellow cells on weekday evenings](/img/learn/heatmap-og.png)
 
@@ -83,6 +83,8 @@ A **heatmap** (also written heat map, and also called a heat map chart, heatmap 
 :::
 
 ## How to read a heatmap
+
+Read a heatmap by checking the colour scale first, then finding which row and column each cell belongs to and looking for bands, clusters and odd cells.
 
 ![Anatomy of a heatmap: a grid of coloured cells with labelled rows and columns, one cell highlighted, and a colour scale from low (dark purple) to high (yellow)](./heatmap-anatomy.svg)
 
@@ -126,7 +128,9 @@ The colour scale (also called a **colour map** or palette) decides what the read
 
 Also decide the range the scale covers. Stretching it from the data's minimum to its maximum uses every colour. Fixing it, say from 0 to 100%, keeps the colours meaning the same thing across several heatmaps. Perceptually uniform scales such as viridis change brightness evenly from end to end, so equal steps in value look like equal steps in colour, and they stay readable for most people with colour-vision deficiencies.
 
-## Types of heat maps and heat map examples {#types-of-heatmap-and-heat-map-examples}
+## Types of heatmaps and examples {#types-of-heatmap-and-heat-map-examples}
+
+Heatmaps differ in what their rows and columns stand for: categories, time, likelihood and impact, positions in space, or time and frequency.
 
 | Type | What the grid shows | Example |
 | --- | --- | --- |
@@ -157,6 +161,8 @@ Use a heatmap when your data is a **grid**: two dimensions, such as rows and col
 
 ## Common heatmap mistakes
 
+Most heatmap mistakes come from the colour scale, which can invent edges, hide differences or leave readers unable to turn colours back into numbers.
+
 - **Using a rainbow scale.** Rainbow (jet) colours jump in brightness from yellow to cyan, so readers see sharp edges where the data changes smoothly. Use viridis or another perceptually uniform scale.
 - **Using the wrong kind of scale.** A sequential scale hides whether values are above or below zero; a diverging scale with its neutral colour away from the real midpoint makes the wrong cells look important.
 - **Letting one extreme value set the range.** A single very high cell takes the top colour and squashes everything else into a few similar shades. Cap the range, or use a logarithmic scale for data that spans several orders of magnitude.
@@ -166,7 +172,7 @@ Use a heatmap when your data is a **grid**: two dimensions, such as rows and col
 
 ## How to create a heatmap in JavaScript, React or Angular
 
-SciChart.js draws heatmaps with WebGL and WebGPU, so large grids stay smooth to zoom and pan and can update in real time. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a cell to see its value.
+The demo below colours one household's hourly energy use for a week, 7 rows by 24 columns, on a viridis scale from dark purple at 0 kWh to yellow at 3 kWh, with a colour legend beside it. Hover over a cell to read its day, hour and value; zoom with the mouse wheel, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -307,7 +313,7 @@ A data heatmap is a chart of a grid of values, such as a correlation matrix or e
 
 ### How do I make a heatmap in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `UniformHeatmapRenderableSeries` with a `UniformHeatmapDataSeries` holding a 2D array of values and a `HeatmapColorMap` that turns values into colours. Add a `HeatmapLegend` to show the colour scale. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `UniformHeatmapRenderableSeries` with a `UniformHeatmapDataSeries` holding a 2D array of values and a `HeatmapColorMap` that turns values into colours. Add a `HeatmapLegend` to show the colour scale. For React or Angular, hand the same setup to `scichart-react` or `scichart-angular`.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 130
 sidebar_label: Footprint Chart
-title: "Footprint Chart: How to Read Order Flow, Bid/Ask Volume and Delta (With an Interactive Example)"
+title: "Footprint Chart: How to Read Order Flow, Bid/Ask Volume and Delta"
 description: "What a footprint chart is, how to read bid and ask volume at each price, delta and cumulative delta, the point of control, value area and diagonal imbalances, and the data you need. With a live example."
 keywords:
     [
@@ -56,7 +56,7 @@ related: [candlestick-chart, tick-chart, renko-chart, ohlc-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a footprint chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Aggregate your trades into bid and ask volume per bar and price row, then draw each row as two rectangles and two numbers. With SciChart.js, use a FastRectangleRenderableSeries with an XyxyDataSeries for the cells, a FastTextRenderableSeries for the volumes and a FastCandlestickRenderableSeries for the candles. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Aggregate your trades into bid and ask volume per bar and price row, then draw each row as two rectangles and two numbers. With SciChart.js, use a FastRectangleRenderableSeries with an XyxyDataSeries for the cells, a FastTextRenderableSeries for the volumes and a FastCandlestickRenderableSeries for the candles. Inside React or Angular, run the same aggregation and series code through scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -67,7 +67,7 @@ related: [candlestick-chart, tick-chart, renko-chart, ohlc-chart]
 
 ## What is a footprint chart?
 
-A **footprint chart** (also called a cluster chart, bid/ask footprint or order flow chart) is a price chart that opens up each candle to show the volume traded at every price inside it. Each row splits that volume into trades at the bid (sellers crossing the spread) and at the ask (buyers crossing it), so you can see where and how the bar was built.
+A **footprint chart** (also called an order flow chart) is a price chart that opens up each candle to show the volume traded at every price inside it. Each row splits that volume into trades at the bid (sellers crossing the spread) and at the ask (buyers crossing it), so you can see where and how the bar was built.
 
 ![A dark navy footprint chart of six five-minute bars: each bar is a column of price rows with sell volume in red on the left and buy volume in green on the right, the busiest row outlined in yellow, bright green and red cells marking imbalances, and a pane underneath with green and red delta columns and a cumulative delta line](/img/learn/footprint-chart-og.png)
 
@@ -83,6 +83,8 @@ A **footprint chart** (also called a cluster chart, bid/ask footprint or order f
 
 ## What a footprint chart shows
 
+A footprint chart shows volume by aggressor side at each price: how much traded at the bid and how much at the ask, row by row inside every bar.
+
 Every trade has two sides, so total buying always equals total selling. What differs is who started the trade. A trader who sends a market order to buy pays the **ask**, the lowest price anyone is offering to sell at. A trader who sells at market accepts the **bid**, the highest price anyone is offering to pay. The side that crosses the spread is called the **aggressor**; the side whose order was already waiting in the order book is passive.
 
 A footprint chart counts volume by aggressor:
@@ -95,6 +97,8 @@ It counts them separately for every price row in every bar. A row is usually one
 Where a candlestick answers "where did the price go?", a footprint answers "at which prices did the trading happen, and which side was pushing?". The chart describes what traded; it says nothing certain about what happens next. This page explains how footprint charts are built and read, and is not investment advice.
 
 ## How to read a footprint chart
+
+Read a footprint bar row by row: each price shows bid volume on the left and ask volume on the right, with the busiest row and any imbalances marked.
 
 ![Anatomy of one footprint bar: five price rows from 5,001.00 to 5,002.00 with bid volume on the left and ask volume on the right, the busiest row outlined as the point of control, a value area bracket, an arrow comparing 150 at the ask with 40 at the bid one row lower as a 375% ask imbalance, a thin candle beside the rows and a delta row underneath](./footprint-anatomy.svg)
 
@@ -155,7 +159,7 @@ Most footprints also add a summary row under each bar (volume, delta, sometimes 
 - Per bar: the total for the bar, usually printed underneath it or drawn as a column in a pane below.
 - **Cumulative delta**: the bar deltas added up from the start of a session, drawn as a line. It shows whether aggressive buying or selling has dominated over a longer stretch.
 
-Delta measures which side was aggressive. It isn't a measure of money flowing in or out, because every contract bought at the ask was sold by someone whose order was waiting at that price. A positive delta with a falling price is common, for example, when passive sellers with large resting orders absorb the buying. Comparing delta with what the price did is the main way delta is used, which is why the demo draws bar delta and cumulative delta in a pane aligned with the bars.
+Delta measures which side was aggressive. It isn't a measure of money flowing in or out, because every contract bought at the ask was sold by someone whose order was waiting at that price. A positive delta can come with a falling price, for example when passive sellers with large resting orders absorb the buying. Comparing delta with what the price did is the main way delta is used, which is why the demo draws bar delta and cumulative delta in a pane aligned with the bars.
 
 ## Point of control and value area
 
@@ -193,6 +197,8 @@ Volumes add up fast. A liquid market can print many thousands of trades an hour,
 
 ## Footprint chart vs candlestick chart vs volume profile
 
+Use a candlestick for each bar's price range, a volume profile for where a whole session traded, and a footprint for volume and aggressor side inside each bar.
+
 | If the reader needs to… | Use |
 | --- | --- |
 | See open, high, low and close for each period, and the overall trend | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) or [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) |
@@ -205,6 +211,8 @@ A footprint is a candlestick with the volume profile moved inside each bar. It i
 
 ## Common footprint chart mistakes
 
+Most footprint chart mistakes come from reading more into bid and ask volume than it holds, or from comparing charts built with different data or settings.
+
 - **Reading bid and ask as buyers and sellers in total.** Every trade has a buyer and a seller. Bid and ask volume tell you who crossed the spread, not who "won".
 - **Mixing data sources.** Feeds for the same market can split or bundle trades differently, and only some publish the aggressor side, so footprints built from different feeds don't match row for row.
 - **Ignoring the row size and bar length.** Change either and the volumes, imbalances and POC change too. Two footprints are only comparable with the same settings.
@@ -214,7 +222,7 @@ A footprint is a candlestick with the volume profile moved inside each bar. It i
 
 ## How to create a footprint chart in JavaScript, React or Angular
 
-A footprint draws hundreds of cells and numbers per screen and has to redraw them on every zoom, pan and new trade. SciChart.js draws with WebGL, so the cells, candles and text stay smooth as you zoom from a whole session of candles into single bars, and it keeps up with live, tick-by-tick updates. The demo follows the approach of SciChart's footprint chart example ([CandlestickToFootprintZoom on GitHub](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v6.x/Sandbox/CustomerExamples/CandlestickToFootprintZoom)): one chart of candles that turns into a footprint when the bars are wide enough. It simulates about 28,000 trades in the browser and aggregates them into 40 five-minute bars.
+The demo below simulates about 28,000 trades in your browser, aggregates them into 40 five-minute bars, and redraws the cells, numbers and candles as you zoom. It follows the approach of SciChart's footprint chart example ([CandlestickToFootprintZoom on GitHub](https://github.com/ABTSoftware/SciChart.JS.Examples/tree/dev_v6.x/Sandbox/CustomerExamples/CandlestickToFootprintZoom)): one chart of candles that turns into a footprint when the bars are wide enough.
 
 Scroll to zoom and drag to pan; the bars switch between candles and footprints by width, and the numbers appear when there's room. **Zoom out to candles** and **Zoom in to footprint** jump between the two views, and double-click resets. **Display** switches between bid × ask, a volume profile per bar and delta per row. **Imbalance** sets the diagonal threshold (or turns it off), and stacked imbalances appear as bars beside the rows. **Row size** merges ticks into larger rows. **Value area (70%)** shades each bar's value area; the yellow outline is the point of control.
 
@@ -415,7 +423,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, gives you a ready-made trading chart with candlesticks, live exchange feeds, technical indicators including a [volume profile](/financial-charts/studies-and-indicators/add-indicators/volume-profile/), drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, has no footprint series, but two of its studies cover the same ground from other data. Its [volume profile](/financial-charts/studies-and-indicators/add-indicators/volume-profile/) estimates the volume at each price over the bars on screen from their candles, without a bid and ask split. Its order book heatmap and imbalance studies, fed from [order book data](/financial-charts/data-sources/order-book-data/), show the resting orders in the book over time: the passive side of the trades a footprint counts. For bid × ask cells, build them from your trade stream as in the demo above. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 
@@ -441,7 +449,7 @@ A volume profile adds up the volume at each price over a whole session or range 
 
 ### How do I make a footprint chart in JavaScript?
 
-Aggregate your trades into bid and ask volume per bar and price row, then draw each row as two rectangles and two numbers. With SciChart.js, use a `FastRectangleRenderableSeries` with an `XyxyDataSeries` for the cells, a `FastTextRenderableSeries` for the volumes and a `FastCandlestickRenderableSeries` for the candles. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+Aggregate your trades into bid and ask volume per bar and price row, then draw each row as two rectangles and two numbers. With SciChart.js, use a `FastRectangleRenderableSeries` with an `XyxyDataSeries` for the cells, a `FastTextRenderableSeries` for the volumes and a `FastCandlestickRenderableSeries` for the candles. Inside React or Angular, run the same aggregation and series code through `scichart-react` or `scichart-angular`.
 
 ## Sources
 

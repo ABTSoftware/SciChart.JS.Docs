@@ -1,7 +1,7 @@
 ---
 sidebar_position: 90
 sidebar_label: Voronoi Diagram
-title: "Voronoi Diagram: What It Is, How It's Built and Where It's Used (With an Interactive Example)"
+title: "Voronoi Diagram: What It Is, How It's Built and Where It's Used"
 description: "What a Voronoi diagram is, its cells, edges and vertices, how it relates to the Delaunay triangulation, how to make one, Euclidean vs Manhattan cells, and real uses. With a live example."
 keywords:
     [
@@ -189,6 +189,8 @@ A nearest-site heatmap sits between the first two: a grid coloured by the Vorono
 
 ## Common Voronoi diagram mistakes
 
+Most Voronoi diagram mistakes come from trusting the cells more than the sites, distances and scales behind them.
+
 - **Unequal axis scales.** If one unit on the x axis is drawn longer than one unit on the y axis, the bisectors no longer look perpendicular and the cells look wrong, even though the maths is right. Lock the aspect ratio.
 - **Reading the edge cells as real areas.** Open cells are cut wherever the frame happens to be. With randomly placed sites, the largest cell is usually one at the edge for that reason. Compare only closed cells, or clip to a meaningful boundary such as a coastline or a city limit.
 - **Using straight-line distance for travel that isn't straight.** Customers, ambulances and pipes follow networks. A straight-line catchment can put a house in the wrong area when a river or motorway lies between it and the nearest site.
@@ -199,7 +201,7 @@ A nearest-site heatmap sits between the first two: a grid coloured by the Vorono
 
 ## How to make a Voronoi diagram in JavaScript, React or Angular
 
-SciChart.js draws with WebGL, so the cells, the outlines, the Delaunay overlay and a 40,000-square heatmap all redraw while you drag a site, even with 200 sites. The demo computes every cell in the browser by half-plane clipping, with no geometry library.
+In the demo below, the cells, the outlines, the Delaunay overlay and a 200 by 200 nearest-site heatmap (40,000 squares) are recomputed and redrawn as you drag a site, with up to 200 sites. The demo computes every cell in the browser by half-plane clipping, with no geometry library.
 
 Click an empty spot to add a site, drag a site to move it, and Shift+click a site to remove it. **Draw cells as** switches between exact polygons and a nearest-site heatmap with Euclidean or Manhattan distance; **Colour** shows each site in its own colour or shades each cell by its area. **Delaunay triangulation** overlays the dual, and **Euclidean cell edges** draws the polygon outlines, which on the Manhattan heatmap shows how far the two diagrams differ. **Sites**, **New random sites** and **Clear** start again. The readout gives the number of cells, the largest and smallest cell, the Delaunay counts and the nearest site to the pointer. Scroll to zoom, right-drag to pan and double-click to reset.
 

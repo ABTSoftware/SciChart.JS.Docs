@@ -1,7 +1,7 @@
 ---
 sidebar_position: 90
 sidebar_label: Correlation Matrix
-title: "Correlation Matrix: What It Is & How to Read One (Heatmap and Pair Plot, With an Interactive Example)"
+title: "Correlation Matrix: What It Is & How to Read One (Interactive Example)"
 description: "What a correlation matrix is, how to read one as a heatmap, a worked example, Pearson vs Spearman vs Kendall, significance, pair plots and the mistakes to avoid. With a live example."
 keywords:
     [
@@ -57,7 +57,7 @@ related: [heatmap, scatter-plot, bubble-chart, parallel-coordinates-plot]
                 {
                     "@type": "Question",
                     "name": "How do I make a correlation matrix in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Compute Pearson's r for every pair of columns in plain JavaScript (or Spearman's rho, which is Pearson's r of the ranks), giving an n by n array. Then draw it with SciChart.js as a UniformHeatmapRenderableSeries with a diverging HeatmapColorMap from -1 to 1, data labels for the values, and a HeatmapLegend. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Compute Pearson's r for every pair of columns in plain JavaScript (or Spearman's rho, which is Pearson's r of the ranks), giving an n by n array. Then draw it with SciChart.js as a UniformHeatmapRenderableSeries with a diverging HeatmapColorMap from -1 to 1, data labels for the values, and a HeatmapLegend. In React or Angular, the scichart-react and scichart-angular packages run the same chart code." }
                 }
             ]
         })}
@@ -103,6 +103,8 @@ The top line adds up, for each observation, how far x and y are from their means
 The sign gives the direction. The size gives how tightly the points hug a straight line, not how steep the line is: two variables can have r = 0.95 with a shallow slope or a steep one.
 
 ## How to read a correlation matrix
+
+Read a correlation matrix one cell at a time: the cell where a row meets a column holds the correlation between those two variables, and its colour shows the sign and strength.
 
 ![A four by four correlation matrix of pump readings (load, flow, pressure and ambient temperature) on a blue to red scale. Callout 1 marks the diagonal of ones, callout 2 one cell, Pressure against Flow at minus 0.82, callout 3 the faded upper triangle that mirrors the lower one, and callout 4 the colour bar from minus 1 to plus 1 centred on 0](./correlation-matrix-anatomy.svg)
 
@@ -228,6 +230,8 @@ The same matrix is used for feature selection in machine learning: of two inputs
 
 ## Where correlation matrices are used
 
+Correlation matrices are used wherever many measurements are taken together and you need to know which of them move together.
+
 - Engineering and test data: finding which measurements move together on a production line or test rig. In semiconductor test, correlating parametric measurements across wafers and lots shows which tests are redundant and which process steps drive a yield loss (see [big-data visualisation for semiconductors](https://www.scichart.com/semiconductors-big-data-visualization/)).
 - Sensor and condition monitoring: checking that redundant sensors agree, and spotting a sensor whose correlation with its neighbours breaks down.
 - Finance: the correlation of asset returns drives portfolio diversification and risk models.
@@ -236,6 +240,8 @@ The same matrix is used for feature selection in machine learning: of two inputs
 - Genomics: gene co-expression matrices with thousands of rows, where clustering reveals groups of genes that act together.
 
 ## Common correlation matrix mistakes
+
+Most correlation matrix mistakes come from trusting a single number: Pearson's r can be driven by one outlier, miss a curve, or reflect chance in a small sample.
 
 ![Four scatter plots with their Pearson r and Spearman rho. A straight-line trend: r 0.86, rho 0.86. A shapeless cluster with one far-off point: r 0.72 but rho 0.02. An arch that rises then falls: r minus 0.12, rho minus 0.16. A steep curve that always rises: r 0.77, rho 0.98](./correlation-coefficient-pitfalls.svg)
 
@@ -250,7 +256,7 @@ The same matrix is used for feature selection in machine learning: of two inputs
 
 ## How to create a correlation matrix in JavaScript, React or Angular
 
-SciChart.js draws heatmaps and scatter plots with WebGL, so the matrix and the linked scatter plot redraw at once when the data changes, and charts stay smooth with large matrices and hundreds of thousands of points. The demo computes the matrix live from up to 1,000 simulated pump readings of eight variables.
+The demo below computes an eight-by-eight matrix in plain JavaScript from up to 1,000 simulated pump readings, and SciChart.js redraws the heatmap and the linked scatter plot each time you change a setting.
 
 Click any cell to see the scatter plot behind it, with its least-squares line, and hover a cell for its value. Switch the **Method** between Pearson and Spearman, change the **Sample size**, **Add an outlier** (a faulty sensor reading, in orange), **Reorder by similarity**, or show the **Lower triangle only**. The line above the charts gives both coefficients for the selected pair and the significance threshold for the current sample size.
 
@@ -449,7 +455,7 @@ A correlation plot is any chart that shows correlations. Most often it means a c
 
 ### How do I make a correlation matrix in JavaScript?
 
-Compute Pearson's r for every pair of columns in plain JavaScript (or Spearman's rho, which is Pearson's r of the ranks), giving an n by n array. Then draw it with SciChart.js as a UniformHeatmapRenderableSeries with a diverging HeatmapColorMap from -1 to 1, data labels for the values, and a HeatmapLegend. The same chart works in React with scichart-react and in Angular with scichart-angular.
+Compute Pearson's r for every pair of columns in plain JavaScript (or Spearman's rho, which is Pearson's r of the ranks), giving an n by n array. Then draw it with SciChart.js as a UniformHeatmapRenderableSeries with a diverging HeatmapColorMap from -1 to 1, data labels for the values, and a HeatmapLegend. In React or Angular, the scichart-react and scichart-angular packages run the same chart code.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 70
 sidebar_label: Combo Chart
-title: "Combo Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Combo Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a combo chart is, how to read columns and a line on one or two y-axes, when a dual axis chart helps or misleads, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [bar-chart, line-chart, pareto-chart, area-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a combo chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, add more than one series to the same SciChartSurface: for example a FastColumnRenderableSeries and a FastLineRenderableSeries that share the x-axis. For a dual axis chart, add a second NumericAxis with axisAlignment set to EAxisAlignment.Right and an id, and set the line series' yAxisId to that id. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, add more than one series to the same SciChartSurface: for example a FastColumnRenderableSeries and a FastLineRenderableSeries that share the x-axis. For a dual axis chart, add a second NumericAxis with axisAlignment set to EAxisAlignment.Right and an id, and set the line series' yAxisId to that id. The same series and axes work in React through scichart-react and in Angular through scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ A **combo chart** (also called a combination chart or bar and line chart) draws 
 :::
 
 ## How to read a combo chart
+
+Read each series against its own axis, compare how the two patterns move together over the shared x-axis, and ignore where the line crosses the columns.
 
 ![The parts of a combo chart: monthly shipment columns read against a left axis that starts at zero, an orange dispatch-time line read against a right axis in hours, a shared month axis, a legend naming which axis each series uses, and a circled point where the line meets a column, marked as having no meaning](./combo-chart-anatomy.svg)
 
@@ -153,6 +155,8 @@ Use a combo chart when two related measures share the same periods or categories
 
 ## Common combo chart mistakes
 
+Most combo chart mistakes come from the second axis: using one when it isn't needed, or leaving readers unsure which scale to read.
+
 - **A second axis for the same units.** If both series are in dollars or both are counts, put them on one axis. Two axes in the same units hide the real difference in size.
 - **A stretched right-hand axis.** Setting the line's range to fill the plot exaggerates its changes (chart B above). Pick the range for a reason and keep it fixed when you compare charts.
 - **Unlabelled axes or units.** Readers can't tell which scale belongs to which series. Colour and title each axis to match its series.
@@ -162,11 +166,11 @@ Use a combo chart when two related measures share the same periods or categories
 
 ## How to create a combo chart in JavaScript, React or Angular
 
-SciChart.js has no special combo series: you add more than one series to the same chart, and give the line its own y-axis when its units differ. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan as your data grows or updates live. Try the chart below: scroll to zoom, drag to pan, double-click to reset, hover to see both values for a month, and use the legend's checkboxes to hide a series.
+SciChart.js has no special combo series: you add more than one series to the same chart, and give the line its own y-axis when its units differ. The demo below draws a warehouse's monthly shipments as columns on the left axis and its average dispatch time as a line on a right-hand axis fixed at 0 to 40 hours. Hover over a month to see both values, use the legend's checkboxes to hide a series, zoom with the mouse wheel, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="combo chart" demo="chart-with-secondary-y-axis" docs="/2d-charts/chart-types/renderable-series-api-overview/" />
+<LearnCta position="top" chart="combo chart" demo="chart-with-secondary-y-axis" demoLabel="chart with a secondary y-axis" docs="/2d-charts/chart-types/renderable-series-api-overview/" docsLabel="SciChart.js chart types documentation" />
 
 Here is the code for this chart:
 
@@ -379,11 +383,11 @@ The primary y-axis usually goes on the left and belongs to the main series, ofte
 
 ### How do I make a combo chart in JavaScript?
 
-With SciChart.js, add more than one series to the same SciChartSurface: for example a FastColumnRenderableSeries and a FastLineRenderableSeries that share the x-axis. For a dual axis chart, add a second NumericAxis with axisAlignment set to EAxisAlignment.Right and an id, and set the line series' yAxisId to that id. The same chart works in React with scichart-react and in Angular with scichart-angular.
+With SciChart.js, add more than one series to the same SciChartSurface: for example a FastColumnRenderableSeries and a FastLineRenderableSeries that share the x-axis. For a dual axis chart, add a second NumericAxis with axisAlignment set to EAxisAlignment.Right and an id, and set the line series' yAxisId to that id. The same series and axes work in React through scichart-react and in Angular through scichart-angular.
 
 ## Sources
 
 - Few, S. (2008), [Dual-Scaled Axes in Graphs: Are They Ever the Best Solution?](https://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) *Visual Business Intelligence Newsletter*, Perceptual Edge. Why crossings between series on independent scales mean nothing, and indexing and separate charts as alternatives.
 - Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Experiments ranking how accurately people judge values shown in different ways, with position along a common scale the most accurate.
 
-<LearnCta position="bottom" chart="combo chart" demo="chart-with-secondary-y-axis" docs="/2d-charts/chart-types/renderable-series-api-overview/" />
+<LearnCta position="bottom" chart="combo chart" demo="chart-with-secondary-y-axis" demoLabel="chart with a secondary y-axis" docs="/2d-charts/chart-types/renderable-series-api-overview/" docsLabel="SciChart.js chart types documentation" />

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Bar Chart
-title: "Bar Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Bar Chart: What It Is & How to Read It (Interactive Examples)"
 description: "What a bar chart is, how to read and describe one, column vs bar, stacked and grouped bars, which type to choose and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -55,7 +55,7 @@ related: [lollipop-chart, pareto-chart, histogram, combo-chart]
                 {
                     "@type": "Question",
                     "name": "Is a histogram a bar graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. The difference between bar chart and histogram bars is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See bar graph vs histogram for the same data drawn both ways." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See bar graph vs histogram for the same data drawn both ways." }
                 },
                 {
                     "@type": "Question",
@@ -65,7 +65,7 @@ related: [lollipop-chart, pareto-chart, histogram, combo-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a bar chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastColumnRenderableSeries with an XyDataSeries holding one x value per category and one y value per bar. A TextLabelProvider shows the category names. For horizontal bars, put the X axis on the left. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastColumnRenderableSeries with an XyDataSeries holding one x value per category and one y value per bar. A TextLabelProvider shows the category names. For horizontal bars, put the X axis on the left. The same code runs inside React through scichart-react and inside Angular through scichart-angular." }
                 }
             ]
         })}
@@ -92,6 +92,8 @@ A **bar chart** (also called a bar graph, or a column chart when the bars stand 
 
 ## How to read a bar chart
 
+Read a bar chart by comparing bar lengths against the value axis: every bar starts from the same baseline, so the longest bar is the largest value.
+
 ![Four small charts: a bar chart with horizontal bars, a column chart with vertical bars, a stacked column chart whose bands add up to a total, and a grouped column chart with parts side by side](./bar-vs-column-chart.svg)
 
 1. Find the category axis and the value axis. One axis lists the categories, such as products, regions or survey answers. The other has the numbers, with their units.
@@ -102,6 +104,8 @@ A **bar chart** (also called a bar graph, or a column chart when the bars stand 
 Gaps between bars show that each bar is a separate category. Bars that touch usually mean a [histogram](/learn/chart-types/cartesian/histogram/), where each bar is a range of numbers.
 
 ## Types of bar charts {#types-of-bar-chart}
+
+Bar charts come in simple, grouped, stacked, 100% stacked, diverging and animated forms, depending on whether you compare totals, parts or rankings.
 
 | Type | What it looks like | The question it answers |
 | --- | --- | --- |
@@ -140,7 +144,7 @@ A **clustered bar chart**, also called a grouped bar chart, places several bars 
 
 ### Stacked bar chart and stacked column chart {#stacked-bar-chart}
 
-A **stacked bar graph**, also called a segmented bar chart or stacked bar plot, splits each bar into bands placed end to end, one for each part, so the length of the whole bar is the category's total. Drawn upright it's a **stacked column chart**. It answers two questions at once: how big each total is, and roughly what it's made of. Only the bottom band and the total share a baseline, though, so the bands in between are hard to compare (see the worked example below).
+A **stacked bar chart** (or segmented bar chart) splits each bar into bands placed end to end, one for each part, so the length of the whole bar is the category's total. Drawn upright it's a **stacked column chart**. It answers two questions at once: how big each total is, and roughly what it's made of. Only the bottom band and the total share a baseline, though, so the bands in between are hard to compare (see the worked example below).
 
 ### 100% stacked bar chart
 
@@ -163,7 +167,7 @@ Drawn as stacked bars, both bars are the same length, so the totals are easy to 
 
 ## Clustered vs stacked bar chart: the same data both ways {#clustered-vs-stacked-bar-chart}
 
-Here are the same two shops drawn as a clustered column chart. Every product line now has its own bar, starting from zero, so Shop B's slightly higher drinks sales (£27k against £25k) are easy to see. The totals are harder to see: you'd have to add three bars in your head to find that both shops sell £80k. Hover over a bar to see its value, scroll to zoom and double-click to reset.
+Use clustered bars to compare the parts and stacked bars to compare the totals. Here are the same two shops drawn as a clustered column chart: every product line now has its own bar, starting from zero, so Shop B's slightly higher drinks sales (£27k against £25k) are easy to see. The totals are harder to see: you'd have to add three bars in your head to find that both shops sell £80k. Hover over a bar to see its value, scroll to zoom and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Clustered/demo" />
 
@@ -198,7 +202,7 @@ Use a bar chart when you want to compare one value across separate categories, a
 
 A **bar chart race** (also called a racing bar chart or race chart) is an animated, ranked horizontal bar chart. Each frame shows one moment in time, such as a year. As the values change, the bars grow and shrink and swap places, so items climb or fall down the ranking, with the date shown in large type.
 
-The race below shows the ten most populous countries each year from 1960 to 2024, using World Bank figures, with each bar coloured by region. Watch Nigeria and Pakistan climb, Germany, the UK and Japan drop out of the top ten, and India pass China in 2021. Click the chart to pause it, and hover over a bar for its exact value.
+The race below shows the ten most populous countries each year from 1960 to 2024, using World Bank figures, with each bar coloured by region. Watch Nigeria and Pakistan climb, Germany, the UK and Japan drop out of the top ten, and, in World Bank figures, India pass China in 2021. Click the chart to pause it, and hover over a bar for its exact value.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Race/demo" />
 
@@ -219,19 +223,19 @@ To analyse the same data, plot it as a [line chart](/learn/chart-types/cartesian
 
 ## Common bar chart mistakes
 
-Check a bar chart against this list before you publish it:
+Most bar chart mistakes change how long the bars look, or hide the ranking the reader came for.
 
-- **The value axis starts at zero.** A cut-off axis can make a 5% difference look like a doubling. If the small differences are the story, use a dot plot or a line chart instead.
-- **Unordered categories are sorted by size.** Alphabetical or random order makes the reader hunt for the ranking. Keep the natural order only for things like months, age groups or ratings.
-- **One colour, unless colour means something.** A different colour for every bar suggests the colours carry meaning. Use one colour, and a second only to highlight the bar you're talking about.
-- **No 3D bars or shadows.** Perspective changes how long the bars look, and the front face hides where each bar really ends.
-- **No long, tilted labels.** If the category names don't fit under the columns, turn the chart into horizontal bars rather than rotating the text.
-- **Bars aren't standing in for a line.** Many time points, or several series over time, read better as a [line chart](/learn/chart-types/cartesian/line-chart/). A range of numbers (ages 20 to 29, 30 to 39…) with counts is a [histogram](/learn/chart-types/cartesian/histogram/).
-- **The gaps are narrower than the bars.** Wide gaps make the bars hard to compare; no gaps make it look like a histogram.
+- **A value axis that doesn't start at zero.** A cut-off axis can make a 5% difference look like a doubling. If the small differences are the story, use a dot plot or a line chart instead.
+- **Unordered categories left unsorted.** Alphabetical or random order makes the reader hunt for the ranking. Sort them by size, and keep the natural order only for things like months, age groups or ratings.
+- **A different colour for every bar.** It suggests the colours carry meaning. Use one colour, and a second only to highlight the bar you're talking about.
+- **3D bars or shadows.** Perspective changes how long the bars look, and the front face hides where each bar really ends.
+- **Long, tilted labels.** If the category names don't fit under the columns, turn the chart into horizontal bars rather than rotating the text.
+- **Bars standing in for a line.** Many time points, or several series over time, read better as a [line chart](/learn/chart-types/cartesian/line-chart/). A range of numbers (ages 20 to 29, 30 to 39…) with counts is a [histogram](/learn/chart-types/cartesian/histogram/).
+- **Gaps that are too wide, or no gaps at all.** Gaps wider than the bars make them hard to compare; no gaps make the chart look like a histogram. Keep the gaps narrower than the bars.
 
 ## How to create a bar chart in JavaScript, React or Angular
 
-SciChart.js draws bar and column charts with WebGL and WebGPU, so they stay smooth with large datasets and live updates. It has no separate horizontal bar series: you draw a column series and put the X (category) axis on the left. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a bar to see its value.
+SciChart.js has no separate horizontal bar series: the chart below is a column series with its X (category) axis moved to the left, ranking eight products by units sold, with each value printed past the end of its bar. Hover over a bar for its value; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -371,7 +375,7 @@ Stacked bars: [JavaScript stacked column chart](https://www.scichart.com/demo/ja
 
 ## Bar chart examples {#bar-graph-examples}
 
-Here are four bar graph examples from real-world settings. Each bar chart example opens the live, interactive chart in the SciChart.js demo app, where you can zoom, pan and see the code.
+Here are four bar charts from real-world settings. Each one opens in the SciChart.js demo app, where you can zoom, pan and see the code.
 
 | Example | What it shows |
 | --- | --- |
@@ -396,7 +400,7 @@ A stacked bar chart, also called a segmented bar chart, splits each bar into seg
 
 ### Is a histogram a bar graph?
 
-No, although they look alike. The difference between bar chart and histogram bars is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [bar graph vs histogram](/learn/chart-types/cartesian/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
+No, although they look alike. The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [bar graph vs histogram](/learn/chart-types/cartesian/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
 
 ### Does a bar chart have to start at zero?
 
@@ -404,7 +408,7 @@ Yes, the value axis of a bar chart should start at zero. Readers judge a bar by 
 
 ### How do I make a bar chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastColumnRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per bar. A `TextLabelProvider` shows the category names. For horizontal bars, put the X axis on the left. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastColumnRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per bar. A `TextLabelProvider` shows the category names. For horizontal bars, put the X axis on the left. The same code runs inside React through `scichart-react` and inside Angular through `scichart-angular`.
 
 ## Sources
 

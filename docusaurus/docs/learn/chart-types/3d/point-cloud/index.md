@@ -1,8 +1,8 @@
 ---
 sidebar_position: 20
 sidebar_label: Point Cloud
-title: "Point Cloud: What It Is, How LiDAR Point Clouds Are Made and How to Visualise One (With an Interactive 3D Example)"
-description: "What a point cloud is, how LiDAR, photogrammetry and depth cameras make one, what each point stores, the file formats, and how to colour, filter, thin and view millions of 3D points."
+title: "Point Cloud: What It Is, How LiDAR Makes One & How to View It"
+description: "What a point cloud is, how LiDAR, photogrammetry and depth cameras make one, what each point stores, the file formats, and how to colour, filter, thin and view large sets of 3D points."
 keywords:
     [
         "point cloud",
@@ -75,7 +75,7 @@ related: [3d-surface-plot, scatter-plot, heatmap, big-data-visualization]
                     "name": "How do I visualise a point cloud in JavaScript?",
                     "acceptedAnswer": {
                         "@type": "Answer",
-                        "text": "Use a WebGL-based 3D chart that can draw hundreds of thousands to millions of points. With SciChart.js, put the coordinates into an XyzDataSeries3D as Float64Arrays, give each point a colour in its metadata (by height, intensity or class), and draw it with a ScatterRenderableSeries3D and a PixelPointMarker3D. Add OrbitModifier3D and MouseWheelZoomModifier3D to rotate and zoom. The same code works in React with scichart-react and in Angular with scichart-angular."
+                        "text": "Use a 3D chart that draws on the GPU, with WebGL and WebGPU, so it can handle hundreds of thousands of points; the demo on this page draws about 265,000. With SciChart.js, put the coordinates into an XyzDataSeries3D as Float64Arrays, give each point a colour in its metadata (by height, intensity or class), and draw it with a ScatterRenderableSeries3D and a PixelPointMarker3D. Add OrbitModifier3D and MouseWheelZoomModifier3D to rotate and zoom. React and Angular apps reach the same code through scichart-react and scichart-angular."
                     }
                 }
             ]
@@ -131,6 +131,8 @@ The ASPRS LAS specification, the standard LiDAR file format, defines numbered cl
 
 ## How is a point cloud made?
 
+A point cloud is made by a sensor that measures the distance to many spots on a surface: a laser scanner, overlapping photos or a depth camera.
+
 ### LiDAR: timing laser pulses
 
 **LiDAR** (light detection and ranging) fires short laser pulses and times each echo. Light travels about 30 cm in a nanosecond, and the pulse goes out and comes back, so the range is the speed of light times the round-trip time, divided by two. A target 1,000 m below an aircraft answers in about 6.7 microseconds, and timing it to the nearest nanosecond pins the range to about 15 cm.
@@ -158,6 +160,8 @@ Photogrammetry finds the same features in many overlapping photos and works out,
 Depth cameras give a point cloud of a room or an object at video rate. Time-of-flight cameras time light like LiDAR but across a whole image at once; structured-light scanners project a pattern and measure how it bends over the surface; stereo cameras compare two views. They work at short range and suit robotics, gesture tracking and scanning small parts.
 
 ## Point cloud file formats
+
+Most LiDAR point clouds come as LAS files or their compressed form, LAZ; scanners and 3D software add a few formats of their own.
 
 | Format | What it is | Used for |
 | --- | --- | --- |
@@ -218,6 +222,8 @@ Gridded models like the DTM are what a [3D surface plot](/learn/chart-types/3d/3
 
 ## Where are point clouds used?
 
+Point clouds are used wherever the exact shape of the ground, a building or an object has to be measured.
+
 | Field | What the point cloud is for |
 | --- | --- |
 | Surveying and mapping | Terrain models, flood and drainage modelling, volumes of stockpiles and earthworks |
@@ -229,13 +235,13 @@ Gridded models like the DTM are what a [3D surface plot](/learn/chart-types/3d/3
 | Aerospace and defence | Terrain and obstacle mapping, target recognition, helicopter landing aids |
 | Space | Laser altimetry of ice sheets from orbit, and maps of the Moon and Mars |
 
-SciChart is used in these fields to draw large 3D datasets; see SciChart for [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/).
-
 ### Other 3D point data: trajectories and positions
 
 The same chart that draws a LiDAR survey draws any set of x, y, z points: the positions of a satellite or a launch vehicle from its telemetry, a flight path, GPS tracks, particle tracks in a detector, or sensor readings taken around a 3D space. For trajectories, colour each point by time or speed rather than height, and draw a line through them in order if the order matters. For live data, append new positions as they arrive.
 
 ## Point cloud vs mesh vs 3D surface plot vs heatmap
+
+A point cloud keeps every measured point, while a mesh, a surface plot or a heatmap turns the points into something smoother and easier to analyse.
 
 | | Point cloud | Mesh | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | [Heatmap](/learn/chart-types/cartesian/heatmap/) or raster |
 | --- | --- | --- | --- | --- |
@@ -249,6 +255,8 @@ Use the point cloud when you need to see what was really captured; turn it into 
 
 ## Common point cloud visualisation mistakes
 
+Most point cloud mistakes come from treating gaps, noise or stretched scales as if they were part of the scene.
+
 - **Leaving noise in.** A few stray points high in the sky or below ground stretch the axis and the colour scale, so the real scene is squashed into a narrow band of colour. Filter classes 7 and 18, or clip the colour scale to percentiles.
 - **Losing precision in 32-bit floats.** A 32-bit float has about 7 significant digits. A northing of 4,500,000.12 m stored as one becomes 4,500,000, a 12 cm error, and neighbouring points snap together. Keep coordinates in 64-bit, or subtract a local origin first, as LAS does with its scale and offset.
 - **Reading no data as nothing there.** Empty strips beside buildings are occlusion, empty water is absorption, and gaps between flight lines are coverage. Show them as no data, not as zero height.
@@ -260,7 +268,7 @@ Use the point cloud when you need to see what was really captured; turn it into 
 
 ## How to visualise a point cloud in JavaScript, React or Angular
 
-SciChart.js draws 3D charts with WebGL, so a point cloud of hundreds of thousands, or millions, of points rotates and zooms smoothly in the browser. This demo is a simulated airborne LiDAR survey of about 265,000 points, built with a seeded random generator: ground, a road with painted lines, buildings, trees with multiple returns, a pond, a power line and a few noise points.
+The demo below draws a simulated airborne LiDAR survey of about 265,000 points with SciChart.js, and recolours, filters or thins all of them each time you change a control. A seeded random generator builds the scene: ground, a road with painted lines, buildings, trees with multiple returns, a pond, a power line and a few noise points.
 
 Change **Colour by** to see the same points by height, intensity, class and return number; intensity picks out the road paint, and return number shows the ground under the trees. Use **Show** to strip out the ground, keep only the bare earth, or put the noise back and watch the scene flatten. Under **Points**, compare a random 1 in 16 with a 1 m voxel grid. Slide **Point size** up to fill the gaps. Switch **View** to the top-down grid for a 2D raster of the same points, where height mode gives a surface model and "Ground only" gives a terrain model. Drag to rotate, scroll to zoom, double-click to reset, and hover a point to read its class and values.
 
@@ -402,8 +410,8 @@ Here is the code for this point cloud. The scene simulation and the HTML control
 
 Key points:
 
-- `ScatterRenderableSeries3D` with a `PixelPointMarker3D` draws one pixel per point, the fastest marker for large clouds. Swap in a `QuadPointMarker` with a `size` in world units for bigger, camera-facing squares.
-- Coordinates go into an `XyzDataSeries3D` as `Float64Array`s, which keeps full precision and loads quickly. Each point's colour is the `vertexColor` in its metadata, an ARGB integer, so any colouring (height, intensity, class) is a loop over the points.
+- `ScatterRenderableSeries3D` with a `PixelPointMarker3D` draws one pixel per point, the usual marker for large clouds. Swap in a `QuadPointMarker` with a `size` in world units for bigger, camera-facing squares.
+- Coordinates go into an `XyzDataSeries3D` as `Float64Array`s, which keeps full precision. Each point's colour is the `vertexColor` in its metadata, an ARGB integer, so any colouring (height, intensity, class) is a loop over the points.
 - In SciChart.js 3D the Y axis is vertical, so map elevation to Y and the two ground directions to X and Z. `worldDimensions` sets the box size and so the vertical exaggeration.
 - The top-down view is a 2D `UniformHeatmapRenderableSeries` with one cell per square metre; `containsNaN` draws empty cells as transparent, so no-data stays visible.
 
@@ -435,7 +443,7 @@ It depends on the point density and the area. The US Geological Survey's quality
 
 ### How do I visualise a point cloud in JavaScript?
 
-Use a WebGL-based 3D chart that can draw hundreds of thousands to millions of points. With SciChart.js, put the coordinates into an `XyzDataSeries3D` as `Float64Array`s, give each point a colour in its metadata (by height, intensity or class), and draw it with a `ScatterRenderableSeries3D` and a `PixelPointMarker3D`. Add `OrbitModifier3D` and `MouseWheelZoomModifier3D` to rotate and zoom. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Use a 3D chart that draws on the GPU, with WebGL and WebGPU, so it can handle hundreds of thousands of points; the demo on this page draws about 265,000. With SciChart.js, put the coordinates into an `XyzDataSeries3D` as `Float64Array`s, give each point a colour in its metadata (by height, intensity or class), and draw it with a `ScatterRenderableSeries3D` and a `PixelPointMarker3D`. Add `OrbitModifier3D` and `MouseWheelZoomModifier3D` to rotate and zoom. React and Angular apps reach the same code through `scichart-react` and `scichart-angular`.
 
 ## Sources
 

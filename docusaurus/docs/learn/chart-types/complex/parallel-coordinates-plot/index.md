@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Parallel Coordinates Plot
-title: "Parallel Coordinates Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Parallel Coordinates Plot: What It Is & How to Read It"
 description: "What a parallel coordinates plot is, how to read its axes and lines, when to use one instead of a scatter plot or radar chart, and the mistakes to avoid."
 keywords:
     [
@@ -47,7 +47,7 @@ related: [radar-chart, scatter-plot, heatmap, big-data-visualization]
                 {
                     "@type": "Question",
                     "name": "How do I make a parallel coordinates plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a FastLineRenderableSeries, add one inner NumericAxis per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a FastLineRenderableSeries, add one inner NumericAxis per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. Pass the same setup function to scichart-react in React or scichart-angular in Angular." }
                 }
             ]
         })}
@@ -73,6 +73,8 @@ A **parallel coordinates plot** (also called a parallel coordinates chart or par
 :::
 
 ## How to read a parallel coordinates plot
+
+Read a parallel coordinates plot axis by axis, then look at how the lines run between each pair of neighbouring axes.
 
 ![The parts of a parallel coordinates plot: four vertical axes for price, battery size, range and 0 to 100 km/h time, each with its own scale, and three lines, one per car. Numbered markers show an axis, a line with its four values labelled, lines running parallel between battery and range, and lines crossing in an X between range and acceleration time](./parallel-coordinates-anatomy.svg)
 
@@ -104,7 +106,7 @@ A strong negative relationship looks like an X where the lines cross near one po
 
 ## A worked example: comparing electric cars
 
-The chart at the top of this page compares 150 electric cars of three types (50 city cars, 50 saloons and 50 SUVs) on six variables. The data is made up for this guide, but realistic in shape. These are the average values for each type:
+The chart at the top of this page compares 150 electric cars of three types (50 city cars, 50 saloons and 50 SUVs) on six variables. The figures are invented for this guide. These are the average values for each type:
 
 | Type | Price | Battery | Range | 0–100 km/h | Weight | Energy use |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -150,6 +152,8 @@ A radar chart is the circular cousin of a parallel coordinates plot: bend the ro
 
 ## Common parallel coordinates plot mistakes
 
+Most parallel coordinates plot mistakes hide the patterns under too many lines or make the axes hard to compare.
+
 - **Too many solid lines.** Hundreds of opaque lines merge into a block of colour. Make the lines partly transparent, highlight the line under the mouse, and let readers brush axes to filter.
 - **A careless axis order.** Only neighbouring axes compare directly. Put variables you expect to be related next to each other, and try a few orders before settling on one.
 - **Hiding the scales.** Each axis has its own scale, so a line at the top of one axis and the bottom of the next isn't a fall in value. Label each axis with its unit and range.
@@ -160,7 +164,7 @@ A radar chart is the circular cousin of a parallel coordinates plot: bend the ro
 
 ## How to create a parallel coordinates plot in JavaScript, React or Angular
 
-SciChart.js has no single parallel coordinates series, but its line series and inner axes combine into one. Because SciChart.js draws with WebGL and WebGPU, the plot stays smooth with many lines. Try the plot below: hover over a line to highlight it and see its values, drag up or down along an axis to filter, click the axis to clear the filter, scroll to zoom, drag between the axes to pan and double-click to reset.
+The demo below draws the 150 electric cars from the worked example as 150 line series across six axes, and fades every car outside the range you brush. SciChart.js has no single parallel coordinates series, but its line series and inner axes combine into one. Try it: hover over a line to highlight it and see its values, drag up or down along an axis to filter, click the axis to clear the filter, scroll to zoom, drag between the axes to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -290,7 +294,7 @@ There is no fixed limit: each variable is just one more axis. In practice the wi
 
 ### How do I make a parallel coordinates plot in JavaScript?
 
-Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a `FastLineRenderableSeries`, add one inner `NumericAxis` per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a `FastLineRenderableSeries`, add one inner `NumericAxis` per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. Pass the same setup function to `scichart-react` in React or `scichart-angular` in Angular.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 270
 sidebar_label: Timeline Chart
-title: "Timeline Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Timeline Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a timeline chart is, the main types (event, state and swimlane, Gantt, editor tracks), how to read one and when to use it, with a live, zoomable event timeline."
 keywords:
     [
@@ -47,7 +47,7 @@ related: [bar-chart, dumbbell-chart, line-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a timeline chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, turn each lane's state changes into bands with a start time and an end time. Draw them with a FastRectangleRenderableSeries and an XyxyDataSeries, using EColumnMode.StartEnd and EColumnYMode.TopBottom, on a DateTimeNumericAxis. Give each lane its own row on a numeric y-axis with a TextLabelProvider, and draw point events such as alarms with an XyScatterRenderableSeries. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, turn each lane's state changes into bands with a start time and an end time. Draw them with a FastRectangleRenderableSeries and an XyxyDataSeries, using EColumnMode.StartEnd and EColumnYMode.TopBottom, on a DateTimeNumericAxis. Give each lane its own row on a numeric y-axis with a TextLabelProvider, and draw point events such as alarms with an XyScatterRenderableSeries. React (scichart-react) and Angular (scichart-angular) components wrap the same code." }
                 }
             ]
         })}
@@ -58,7 +58,7 @@ related: [bar-chart, dumbbell-chart, line-chart]
 
 ## What is a timeline chart?
 
-A **timeline chart** (also called a timeline graph) shows events and periods in the order they happened, along a time axis. Points mark moments, such as an alarm or a product launch. Bars or bands mark spans of time, such as a machine running or a task in progress. Separate rows (lanes) let you compare several things over the same period.
+A **timeline chart** (also called a timeline graph) shows events and periods in the order they happened, along a time axis. Points mark moments, such as an alarm or a product launch. Bars or bands mark spans of time, such as a machine running or a task in progress. Rows (lanes) compare several things over the same period.
 
 ![A timeline chart of one eight-hour shift on a batch reactor line: lanes for batch phase, reactor state and feed pump state drawn as green running, amber idle, blue cleaning and red fault bands, and a bottom lane of red alarm triangles and white event dots, on a time axis from 06:00 to 14:00](/img/learn/timeline-chart-og.png)
 
@@ -67,16 +67,16 @@ A **timeline chart** (also called a timeline graph) shows events and periods in 
 :::tip Key takeaways
 - A timeline chart puts when on the horizontal axis. Points are instants; bands are periods, and a band's width is its duration.
 - Lanes (rows) let you line up machines, people or processes, so you can see what was happening everywhere at one moment.
-- There are four main kinds: event timelines, state (swimlane) timelines, Gantt charts for project plans, and editor tracks in video and audio software.
+- There are five main kinds: event timelines, state (swimlane) timelines, Gantt charts for project plans, editor tracks in video and audio software, and trace or log timelines in software.
 - In industry, colour carries meaning: green running, amber idle or waiting, red fault. Keep it consistent and give a key.
 - Short events vanish when you look at a whole day. A useful timeline lets you zoom from hours down to seconds.
 :::
 
 ## Types of timeline chart
 
-![Four sketches of timeline charts: an event timeline with dated milestones on one line; a state timeline with three lanes of green, amber, red and blue bands; a Gantt chart with staggered task bars, a dependency arrow and a dashed today line; and video editor tracks with clips on V1, V2, A1 and A2 under a red playhead](./timeline-chart-types.svg)
+"Timeline" covers five main kinds of chart, which share a time axis but answer different questions.
 
-"Timeline" covers several charts that share a time axis but answer different questions:
+![Four sketches of timeline charts: an event timeline with dated milestones on one line; a state timeline with three lanes of green, amber, red and blue bands; a Gantt chart with staggered task bars, a dependency arrow and a dashed today line; and video editor tracks with clips on V1, V2, A1 and A2 under a red playhead](./timeline-chart-types.svg)
 
 | Type | What it shows | Where you see it |
 | --- | --- | --- |
@@ -91,6 +91,8 @@ The first two record what happened. A Gantt chart plans what should happen. Edit
 Joseph Priestley's *Chart of Biography* (1765) already laid out about two thousand lives across three thousand years on one time scale. A plant or a server farm today logs thousands of state changes a day, time-stamped to the second or better, so a timeline has to zoom.
 
 ## How to read a timeline chart
+
+Read a timeline chart across for when and how long, and down for what was happening in every lane at the same moment.
 
 ![The parts of a timeline chart: lanes for Mixer M-1, Conveyor C-2 and Alarms; a time axis from 08:00 to 12:00; a green state band whose width is how long the state lasted; a short red fault that shows as a hairline; triangle markers for point events; and a colour key](./timeline-chart-anatomy.svg)
 
@@ -164,6 +166,8 @@ In process monitoring the two are often stacked: line charts for the measured va
 
 ## Common timeline chart mistakes
 
+Most timeline mistakes hide short events or give colours a meaning that changes from lane to lane.
+
 - **Short events disappear at the full view.** A 20-second fault is thinner than a pixel on an eight-hour chart. Let readers zoom, give every band a minimum visible width, or add a point marker for each fault or alarm.
 - **Colours that mean different things in different lanes.** If red is a fault in one lane, don't use it for a normal state in another. Save the strongest colours for abnormal states, and give a key.
 - **Relying on colour alone.** Red and green are hard to tell apart for many people with colour vision deficiency. Add labels, tooltips, or a different marker shape for alarms.
@@ -174,11 +178,11 @@ In process monitoring the two are often stacked: line charts for the measured va
 
 ## How to create a timeline chart in JavaScript, React or Angular
 
-SciChart.js draws timelines with rectangle series for the bands and scatter series for the point events. It renders with WebGL and WebGPU, so a timeline with a long history stays smooth to zoom and pan, from a whole shift down to single seconds. Try the chart below: scroll to zoom in time, drag to pan, double-click to see the whole shift again, and hover over a band or a marker to see its times. Zoom in around 11:52 to see the alarms separate, and around 07:31 to find the short fault.
+SciChart.js draws timelines with rectangle series for the bands and scatter series for the point events. The chart below shows the eight-hour reactor shift from the worked example: three lanes of state bands and a lane of alarm and event markers, with zooming and panning set to work on the time axis only, so the lanes stay in place. Scroll to zoom in time, drag to pan, double-click to see the whole shift again, and hover over a band or a marker to see its times. Zoom in around 11:52 to see the alarms separate, and around 07:31 to find the short fault.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="timeline chart" demo="gantt-chart" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" />
+<LearnCta position="top" chart="timeline chart" demo="gantt-chart" demoLabel="Gantt chart" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" docsLabel="SciChart.js rectangle series documentation" />
 
 Here is the code for this chart:
 
@@ -387,7 +391,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript Gantt chart](https://www.scichart.com/demo/javascript/gantt-chart) · [React Gantt chart](https://www.scichart.com/demo/react/gantt-chart) · [Angular Gantt chart](https://www.scichart.com/demo/angular/gantt-chart)
 
-**Go deeper:** [SciChart.js timeline chart documentation](/2d-charts/chart-types/fast-rectangle-renderable-series/) (the rectangle series), the [SciChart.js date-time axis documentation](/2d-charts/axis-api/axis-types/date-time-numeric-axis/), and the [SciChart.js annotations documentation](/2d-charts/annotations-api/annotations-api-overview/) for markers and labels on a timeline.
+**Go deeper:** [SciChart.js rectangle series documentation](/2d-charts/chart-types/fast-rectangle-renderable-series/), which draws the bands, the [SciChart.js date-time axis documentation](/2d-charts/axis-api/axis-types/date-time-numeric-axis/), and the [SciChart.js annotations documentation](/2d-charts/annotations-api/annotations-api-overview/) for markers and labels on a timeline.
 
 ## Frequently asked questions
 
@@ -409,13 +413,13 @@ A timeline chart is also called a timeline graph, a chronology or a time line. V
 
 ### How do I make a timeline chart in JavaScript?
 
-With SciChart.js, turn each lane's state changes into bands with a start time and an end time. Draw them with a `FastRectangleRenderableSeries` and an `XyxyDataSeries`, using `EColumnMode.StartEnd` and `EColumnYMode.TopBottom`, on a `DateTimeNumericAxis`. Give each lane its own row on a numeric y-axis with a `TextLabelProvider`, and draw point events such as alarms with an `XyScatterRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, turn each lane's state changes into bands with a start time and an end time. Draw them with a `FastRectangleRenderableSeries` and an `XyxyDataSeries`, using `EColumnMode.StartEnd` and `EColumnYMode.TopBottom`, on a `DateTimeNumericAxis`. Give each lane its own row on a numeric y-axis with a `TextLabelProvider`, and draw point events such as alarms with an `XyScatterRenderableSeries`. React (`scichart-react`) and Angular (`scichart-angular`) components wrap the same code.
 
 ## Sources
 
 - Wikipedia, [A Chart of Biography](https://en.wikipedia.org/wiki/A_Chart_of_Biography). Joseph Priestley's 1765 chart of about two thousand lives from 1200 BC to 1800 AD, an early timeline chart.
 - Wikipedia, [Gantt chart](https://en.wikipedia.org/wiki/Gantt_chart). Henry Gantt's design of around 1910 to 1915, and Karol Adamiecki's earlier harmonogram.
 - Wikipedia, [Sequence of events recorder](https://en.wikipedia.org/wiki/Sequence_of_events_recorder). Devices that time-stamp each change of state so the order of events can be rebuilt for root-cause analysis.
-- ISA, [ISA-101 series of standards](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards). The standard for designing human-machine interfaces (HMIs) in process automation, where state and alarm timelines are used.
+- ISA, [ISA-101 series of standards](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards). The standard for designing human-machine interfaces (HMIs) in process automation.
 
-<LearnCta position="bottom" chart="timeline chart" demo="gantt-chart" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" />
+<LearnCta position="bottom" chart="timeline chart" demo="gantt-chart" demoLabel="Gantt chart" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" docsLabel="SciChart.js rectangle series documentation" />

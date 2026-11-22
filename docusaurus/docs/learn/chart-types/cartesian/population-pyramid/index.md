@@ -1,7 +1,7 @@
 ---
 sidebar_position: 200
 sidebar_label: Population Pyramid
-title: "Population Pyramid: What It Is & How to Read It (With Interactive Examples)"
+title: "Population Pyramid: What It Is & How to Read It (Interactive Example)"
 description: "What a population pyramid (age-sex pyramid) is, how to read it, the expansive, stationary and constrictive types, a worked example and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -27,7 +27,7 @@ related: [bar-chart, histogram, dumbbell-chart, funnel-chart]
                 {
                     "@type": "Question",
                     "name": "What does a population pyramid show?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A population pyramid shows how many people of each age and sex live in a place at one moment. Each horizontal bar is an age group, with males on one side of a centre line and females on the other. Its shape tells you whether births are rising or falling, how quickly people die at each age, and whether the population is young and growing or older and ageing." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A population pyramid shows how many people of each age and sex live in a place at one moment. Each horizontal bar is an age group, with males on one side of a centre line and females on the other. Its shape shows whether births are rising or falling, and whether the population is young and growing or older and ageing. Each bar's length reflects how large that generation was at birth, how many of it have survived and how many people have moved in or out." }
                 },
                 {
                     "@type": "Question",
@@ -52,7 +52,7 @@ related: [bar-chart, histogram, dumbbell-chart, funnel-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a population pyramid in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Put the age groups on a vertical axis and draw two sets of horizontal bars that start from a shared centre line: one for males going left and one for females going right. With SciChart.js you make the chart vertical by placing the X axis on the left, add two value axes along the bottom, flip the female one so its bars grow to the right and lay them side by side with BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy, then draw each side as a StackedColumnRenderableSeries in a StackedColumnCollection. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Put the age groups on a vertical axis and draw two sets of horizontal bars that start from a shared centre line: one for males going left and one for females going right. With SciChart.js you make the chart vertical by placing the X axis on the left, add two value axes along the bottom, flip the female one so its bars grow to the right and lay them side by side with BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy, then draw each side as a StackedColumnRenderableSeries in a StackedColumnCollection. In React or Angular, pass the same setup to scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ A **population pyramid** (also called an age-sex pyramid or age structure diagra
 :::
 
 ## How to read a population pyramid
+
+Read a population pyramid from the bottom up: each pair of bars is one age group, and the outline of all the bars shows how old the population is.
 
 ![The parts of a population pyramid, shown on Japan's 2023 pyramid: age groups run up the middle from 0–4 to 100+, male bars extend left in blue and female bars right in orange against a shared scale in thousands. Labels mark the base (the youngest people, set by recent births), a bulge at ages 45 to 54 and another at 70 to 74 (generations born in baby booms), a notch at ages 65 to 69 (a smaller generation between them), the apex (the oldest survivors) and the much wider female bars at the top, because women live longer on average](./population-pyramid-anatomy.svg)
 
@@ -168,6 +170,8 @@ Use a population pyramid when you want to show how a group of people is spread a
 
 ## Common population pyramid mistakes
 
+Most mistakes make the two sides, or two pyramids, look comparable when they aren't.
+
 - **Different scales on the two sides.** If the male and female axes have different ranges, the bars can't be compared. Use one scale for both sides, starting at zero in the middle.
 - **Comparing counts across places of different sizes.** A country of 100 million will always have longer bars than one of 5 million. To compare shapes, use the percentage of the total population in each bar.
 - **Negative numbers on the left side.** Some chart tools draw the male bars as negative values, so the axis reads −200, −100, 0. Show the left side's labels as positive numbers: there's no such thing as −200,000 people.
@@ -177,11 +181,11 @@ Use a population pyramid when you want to show how a group of people is spread a
 
 ## How to create a population pyramid in JavaScript, React or Angular
 
-SciChart.js has no separate pyramid series: you build one from bar series on a vertical chart, with two value axes laid out back to back. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan, even with one-year age groups or many years of data. Try the chart below: hover over a bar to see the numbers for that age group, scroll to zoom, drag to pan and double-click to reset.
+SciChart.js has no separate pyramid series: you build one from bar series on a vertical chart, with two value axes laid out back to back. The chart below draws Japan's 2023 population in 21 five-year age groups, and keeps the male and female axes on one range: zoom either side and the other follows. Hover over a bar to see the numbers for that age group, scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="population pyramid" demo="population-pyramid" docs="/2d-charts/chart-types/stacked-column-renderable-series/" />
+<LearnCta position="top" chart="population pyramid" demo="population-pyramid" docs="/2d-charts/chart-types/stacked-column-renderable-series/" docsLabel="SciChart.js stacked column documentation" />
 
 Here is the code for this chart:
 
@@ -374,13 +378,13 @@ Key points:
 
 **See it in the demo app:** [JavaScript population pyramid](https://www.scichart.com/demo/javascript/population-pyramid) · [React population pyramid](https://www.scichart.com/demo/react/population-pyramid) · [Angular population pyramid](https://www.scichart.com/demo/angular/population-pyramid)
 
-**Go deeper:** [SciChart.js population pyramid documentation](/2d-charts/chart-types/stacked-column-renderable-series/) for the stacked column series it is built from, and the [SciChart.js vertical charts documentation](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/).
+**Go deeper:** [SciChart.js stacked column documentation](/2d-charts/chart-types/stacked-column-renderable-series/), the series the pyramid is built from, and the [SciChart.js vertical charts documentation](/2d-charts/axis-api/multi-axis-and-layout/vertical-charts-rotate-transpose-axis/).
 
 ## Frequently asked questions
 
 ### What does a population pyramid show?
 
-A population pyramid shows how many people of each age and sex live in a place at one moment. Each horizontal bar is an age group, with males on one side of a centre line and females on the other. Its shape tells you whether births are rising or falling, how quickly people die at each age, and whether the population is young and growing or older and ageing.
+A population pyramid shows how many people of each age and sex live in a place at one moment. Each horizontal bar is an age group, with males on one side of a centre line and females on the other. Its shape shows whether births are rising or falling, and whether the population is young and growing or older and ageing. Each bar's length reflects how large that generation was at birth, how many of it have survived and how many people have moved in or out.
 
 ### What are the three types of population pyramid?
 
@@ -400,7 +404,7 @@ It is called a pyramid because, for most of history, populations had many young 
 
 ### How do I make a population pyramid in JavaScript?
 
-Put the age groups on a vertical axis and draw two sets of horizontal bars that start from a shared centre line: one for males going left and one for females going right. With SciChart.js you make the chart vertical by placing the X axis on the left, add two value axes along the bottom, flip the female one so its bars grow to the right and lay them side by side with `BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy`, then draw each side as a `StackedColumnRenderableSeries` in a `StackedColumnCollection`. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Put the age groups on a vertical axis and draw two sets of horizontal bars that start from a shared centre line: one for males going left and one for females going right. With SciChart.js you make the chart vertical by placing the X axis on the left, add two value axes along the bottom, flip the female one so its bars grow to the right and lay them side by side with `BottomAlignedOuterHorizontallyStackedAxisLayoutStrategy`, then draw each side as a `StackedColumnRenderableSeries` in a `StackedColumnCollection`. In React or Angular, pass the same setup to `scichart-react` or `scichart-angular`.
 
 ## Sources
 
@@ -411,4 +415,4 @@ Put the age groups on a vertical axis and draw two sets of horizontal bars that 
 - Ritchie, H. and Roser, M., [Gender ratio](https://ourworldindata.org/gender-ratio). Our World in Data. The expected sex ratio at birth of about 105 boys per 100 girls, and why women outnumber men at older ages.
 - Ritchie, H. and Roser, M., [Age structure](https://ourworldindata.org/age-structure). Our World in Data. Population pyramids, median age and the age dependency ratio.
 
-<LearnCta position="bottom" chart="population pyramid" demo="population-pyramid" docs="/2d-charts/chart-types/stacked-column-renderable-series/" />
+<LearnCta position="bottom" chart="population pyramid" demo="population-pyramid" docs="/2d-charts/chart-types/stacked-column-renderable-series/" docsLabel="SciChart.js stacked column documentation" />

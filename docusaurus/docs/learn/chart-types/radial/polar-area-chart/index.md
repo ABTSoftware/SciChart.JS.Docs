@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Polar Area Chart
-title: "Polar Area Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Polar Area Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a polar area chart (Nightingale rose or coxcomb chart) is, how to read it, why its radius must be the square root of the value, and how it differs from pie and radar charts."
 keywords:
     [
@@ -47,7 +47,7 @@ related: [radar-chart, pie-chart, bar-chart, sunburst-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a polar area chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Draw one equal-angle wedge per category on a polar chart, and set each wedge's radius to the square root of its value so that its area matches the value. With SciChart.js you use a SciChartPolarSurface with an angular axis for the categories, a radial axis whose labels show the squared values, and a PolarColumnRenderableSeries for the wedges. For stacked wedges, give each band an inner and outer radius with an XyxyDataSeries. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Draw one equal-angle wedge per category on a polar chart, and set each wedge's radius to the square root of its value so that its area matches the value. With SciChart.js you use a SciChartPolarSurface with an angular axis for the categories, a radial axis whose labels show the squared values, and a PolarColumnRenderableSeries for the wedges. For stacked wedges, give each band an inner and outer radius with an XyxyDataSeries. React and Angular apps reuse this code through the scichart-react and scichart-angular wrappers." }
                 }
             ]
         })}
@@ -60,9 +60,9 @@ related: [radar-chart, pie-chart, bar-chart, sunburst-chart]
 
 A **polar area chart** (also called a polar area diagram, Nightingale rose chart, coxcomb chart or rose chart) is a circular chart that divides the circle into equal-angle **wedges**, one for each category. Each wedge reaches out from the centre by an amount set by its value, so that the area of the wedge shows how big the value is.
 
-![A polar area chart of deaths in the British Army in the East, by month from April 1854 to March 1856, using Florence Nightingale's figures. Each month is a wedge split into wounds, other causes and preventable disease. The wedges for the winter of 1854 to 1855 are by far the largest, and almost all of their area is preventable disease](/img/learn/polar-area-chart-og.png)
+![A polar area chart of deaths in the British Army in the East, by month from April 1854 to March 1856, using the monthly counts from Florence Nightingale's data. Each month is a wedge split into wounds, other causes and preventable disease. The wedges for the winter of 1854 to 1855 are by far the largest, and almost all of their area is preventable disease](/img/learn/polar-area-chart-og.png)
 
-*Deaths in the British Army in the East, April 1854 to March 1856, by month and cause, from Florence Nightingale's figures. [Try the interactive version](#how-to-create-a-polar-area-chart-in-javascript-react-or-angular).*
+*Deaths in the British Army in the East, April 1854 to March 1856, by month and cause. The chart plots monthly death counts from Florence Nightingale's data; her own diagram plotted death rates. [Try the interactive version](#how-to-create-a-polar-area-chart-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A polar area chart gives every category the same angle and shows its value by how far its wedge reaches from the centre.
@@ -73,6 +73,8 @@ A **polar area chart** (also called a polar area diagram, Nightingale rose chart
 :::
 
 ## How to read a polar area chart
+
+Read a polar area chart by comparing the areas of its wedges, after checking how its rings are scaled.
 
 ![The parts of a polar area chart: support tickets by day of the week on seven equal 51-degree wedges. Rings labelled 4, 16, 36 and 64 are evenly spaced in radius but not in value. Wednesday's wedge, worth 49 tickets, has a radius of 7, so its area is 49 times that of Sunday's 1-ticket wedge](./polar-area-chart-anatomy.svg)
 
@@ -108,14 +110,14 @@ Florence Nightingale met this problem herself. Her first version plotted death r
 
 The polar area chart is best known from Florence Nightingale's "Diagram of the Causes of Mortality in the Army in the East". She drew it with help from the statistician William Farr, and published it in 1858 in *Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army*, and again in 1859.
 
-- What it showed: deaths among British soldiers in the Crimean War by month, split into three causes. Blue wedges were deaths from "preventible or mitigable zymotic diseases" (infectious diseases, mainly cholera), red wedges deaths from wounds, and black wedges all other causes.
+- What it showed: deaths among British soldiers in the Crimean War by month, split into three causes. Blue wedges were deaths from "preventible or mitigable zymotic diseases" (infectious diseases such as cholera, dysentery and typhus), red wedges deaths from wounds, and black wedges all other causes.
 - How it was laid out: two roses side by side, one for April 1854 to March 1855 and one for April 1855 to March 1856. The split falls around the arrival of the government's Sanitary Commission in the spring of 1855, so readers could compare the year before with the year after.
 - What it argued: most of the soldiers who died were killed by disease, not by the enemy, and much of that disease was preventable with better sanitation. Nightingale used the diagram, with tables and text, to press for reform of army health care.
 - Its place in history: it was not the first radial chart. André-Michel Guerry published circular diagrams of monthly data in 1829, and Farr used radial diagrams in an 1852 report on cholera that Nightingale had seen. The names "rose" and "coxcomb" came later; there is no evidence in her writing that she used them (Friendly and Andrews, 2021).
 
 ### A worked example: Nightingale's figures
 
-The chart at the top of this page, and the live chart further down, draw her monthly figures as one 24-month rose, with each wedge's bands stacked so that each band's area matches its count. The totals tell the same story she told:
+The chart at the top of this page, and the live chart further down, draw the monthly death counts from her tables as one 24-month rose (her published roses plotted death rates instead), with each wedge's bands stacked so that each band's area matches its count. The totals tell the same story she told:
 
 | Period | Preventable disease | Wounds | Other causes | Total | Share from disease |
 | --- | --- | --- | --- | --- | --- |
@@ -159,6 +161,8 @@ If exact comparison matters more than the cycle, use a bar chart: lengths on a s
 
 ## Common polar area chart mistakes
 
+The worst polar area chart mistakes make wedge areas disagree with the values behind them.
+
 - **Stacking the square roots of the parts.** Adding √a to √b gives bands whose areas don't match the data. In a stacked polar area chart, each band's inner and outer edges must be the square roots of the running totals.
 - **Categories with no natural order.** Product names or countries round a circle suggest a cycle that isn't there. Use a bar chart instead.
 - **Too many wedges.** Past about 24 the wedges get thin and the labels crowd. Group the data (weeks into months, for example) or use a line chart.
@@ -167,11 +171,11 @@ If exact comparison matters more than the cycle, use a bar chart: lengths on a s
 
 ## How to create a polar area chart in JavaScript, React or Angular
 
-SciChart.js draws polar charts with WebGL, so even charts with many wedges or live data stay smooth to hover and zoom. A polar area chart uses its **polar column series**, with two changes that make the wedge areas honest: the radius is the square root of each value, and the ring labels show the real values. Try the chart below: hover over a month to see its deaths by cause, scroll to zoom and double-click to reset.
+The demo below draws all 24 months of Nightingale's data as stacked wedges, three bands a month, with the SciChart.js **polar column series** and two changes that make the wedge areas honest: the radius is the square root of each value, and the ring labels show the real values. Try the chart below: hover over a month to see its deaths by cause, scroll to zoom and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="polar area chart" demo="polar-column-chart" docs="/2d-charts/chart-types/polar-column-renderable-series/" />
+<LearnCta position="top" chart="polar area chart" demo="polar-column-chart" demoLabel="polar column chart" docs="/2d-charts/chart-types/polar-column-renderable-series/" docsLabel="SciChart.js polar column series documentation" />
 
 Here is the code for this chart:
 
@@ -361,7 +365,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript polar column chart](https://www.scichart.com/demo/javascript/polar-column-chart) · [React polar column chart](https://www.scichart.com/demo/react/polar-column-chart) · [Angular polar column chart](https://www.scichart.com/demo/angular/polar-column-chart), and the stacked [React polar windrose chart](https://www.scichart.com/demo/react/polar-windrose-column-chart).
 
-**Go deeper:** [SciChart.js polar area chart documentation](/2d-charts/chart-types/polar-column-renderable-series/) (the polar column series), the [polar stacked column documentation](/2d-charts/chart-types/polar-stacked-column-renderable-series/), and the [tick provider documentation](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api/).
+**Go deeper:** [SciChart.js polar column series documentation](/2d-charts/chart-types/polar-column-renderable-series/), the [polar stacked column documentation](/2d-charts/chart-types/polar-stacked-column-renderable-series/), and the [tick provider documentation](/2d-charts/axis-api/axis-tick-label-interval/tick-provider-api/).
 
 ## Frequently asked questions
 
@@ -383,7 +387,7 @@ The best-known early example was drawn by Florence Nightingale, who published po
 
 ### How do I make a polar area chart in JavaScript?
 
-Draw one equal-angle wedge per category on a polar chart, and set each wedge's radius to the square root of its value so that its area matches the value. With SciChart.js you use a `SciChartPolarSurface` with an angular axis for the categories, a radial axis whose labels show the squared values, and a `PolarColumnRenderableSeries` for the wedges. For stacked wedges, give each band an inner and outer radius with an `XyxyDataSeries`. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Draw one equal-angle wedge per category on a polar chart, and set each wedge's radius to the square root of its value so that its area matches the value. With SciChart.js you use a `SciChartPolarSurface` with an angular axis for the categories, a radial axis whose labels show the squared values, and a `PolarColumnRenderableSeries` for the wedges. For stacked wedges, give each band an inner and outer radius with an `XyxyDataSeries`. React and Angular apps reuse this code through the `scichart-react` and `scichart-angular` wrappers.
 
 ## Sources
 
@@ -391,4 +395,4 @@ Draw one equal-angle wedge per category on a polar chart, and set each wedge's r
 - Friendly, M. and Andrews, R. J. (2021), [The radiant diagrams of Florence Nightingale](https://doi.org/10.2436/20.8080.02.77). *SORT: Statistics and Operations Research Transactions*, 45(1), 1–16. How she came to the diagram, her work with William Farr, her switch from a linear to an area-proportional scale, and the earlier radial charts of Guerry and Farr.
 - Friendly, M. and others, [HistData: Data Sets from the History of Statistics and Data Visualization](https://cran.r-project.org/package=HistData), R package, data set `Nightingale`. The monthly deaths by cause used in the charts on this page, transcribed from Nightingale's tables.
 
-<LearnCta position="bottom" chart="polar area chart" demo="polar-column-chart" docs="/2d-charts/chart-types/polar-column-renderable-series/" />
+<LearnCta position="bottom" chart="polar area chart" demo="polar-column-chart" demoLabel="polar column chart" docs="/2d-charts/chart-types/polar-column-renderable-series/" docsLabel="SciChart.js polar column series documentation" />

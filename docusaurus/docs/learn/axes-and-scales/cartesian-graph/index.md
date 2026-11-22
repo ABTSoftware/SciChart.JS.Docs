@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Cartesian Graph
-title: "Cartesian Graph: What It Is & How to Read It (With Interactive Examples)"
+title: "Cartesian Graph: What It Is & How to Read It (Interactive Example)"
 description: "What a Cartesian graph is: the x and y axes, the origin, ordered pairs, the four quadrants and scale. How to read and plot points, and how it compares with polar coordinates."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [xyz-graph, log-scale-graph, scatter-plot, line-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a Cartesian graph in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with a NumericAxis for x and one for y. To make the axes cross at the origin, as on a maths graph, set the surface's layoutManager to a CentralAxesLayoutManager in DataValue mode at position 0, and set isInnerAxis: true on both axes. Then add your points as a scatter or line series, or as annotations. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with a NumericAxis for x and one for y. To make the axes cross at the origin, as on a maths graph, set the surface's layoutManager to a CentralAxesLayoutManager in DataValue mode at position 0, and set isInnerAxis: true on both axes. Then add your points as a scatter or line series, or as annotations. For React, pass the same setup to scichart-react; for Angular, to scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ A **Cartesian graph** (also called a Cartesian plane, coordinate plane or x-y gr
 :::
 
 ## How to read a Cartesian graph
+
+To read a point on a Cartesian graph, go across to its x value, then up or down to its y value, starting from the origin.
 
 ![An annotated Cartesian plane with an x-axis from minus 8 to 8 and a y-axis from minus 6 to 6, crossing at the origin O (0, 0). The four quadrants are shaded and labelled with their signs: I (+, +) top right, II (−, +) top left, III (−, −) bottom left, IV (+, −) bottom right. Point P (−3, 2) is reached by two orange arrows, first 3 left along the x-axis, then 2 up. Point Q (4, −2) is in quadrant IV, with dashed lines to both axes. A note says one grid square is one unit across and up](./cartesian-plane-anatomy.svg)
 
@@ -176,6 +178,8 @@ Cartesian charts are easier to read precisely, because people judge positions al
 
 ## Common mistakes with Cartesian graphs
 
+Most mistakes with Cartesian graphs come from mixing up the axes, their signs or their scales.
+
 - **Swapping x and y.** (2, 5) is not (5, 2). Across first, then up: x comes before y, as in the alphabet.
 - **Numbering the quadrants the wrong way.** They go anticlockwise from the top right: I, II, III, IV. Counting clockwise puts II and IV in the wrong places.
 - **Uneven steps on an axis.** Gridlines at 0, 5, 10, 20, 50 look tidy but bend every line drawn through them. Keep steps equal, or use a [log scale](/learn/axes-and-scales/log-scale-graph/) on purpose and label it.
@@ -186,11 +190,11 @@ Cartesian charts are easier to read precisely, because people judge positions al
 
 ## How to create a Cartesian graph in JavaScript, React or Angular
 
-Every 2D chart in SciChart.js is a Cartesian graph: a `SciChartSurface` with an x-axis and a y-axis. Charts usually put the axes on the edges, but SciChart.js can also place them inside the chart, crossing at the origin like a maths graph, and draws with WebGL and WebGPU, so panning and zooming stay smooth. In the chart below, **drag the cyan points** to new positions and watch their coordinates and quadrant signs change; they snap to whole numbers when you let go. Hover anywhere to read the coordinates under the cursor, scroll to zoom, drag the background to pan and double-click to reset.
+Every 2D chart in SciChart.js is a Cartesian graph: a `SciChartSurface` with an x-axis and a y-axis. Charts usually put the axes on the edges, but the demo below places them inside the chart, crossing at the origin like a maths graph, with four points, one in each quadrant. In it, **drag the cyan points** to new positions and watch their coordinates and quadrant signs change; they snap to whole numbers when you let go. Hover anywhere to read the coordinates under the cursor, scroll to zoom, drag the background to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="Cartesian graph" demo="central-axes" docs="/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout/" />
+<LearnCta position="top" chart="Cartesian graph" demo="central-axes" demoLabel="chart with central axes" docs="/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout/" docsLabel="SciChart.js central axis layout documentation" />
 
 Here is the code for this chart:
 
@@ -375,7 +379,7 @@ Mostly, yes. A flat Cartesian graph uses two coordinates, x and y. Add a third a
 
 ### How do I make a Cartesian graph in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with a `NumericAxis` for x and one for y. To make the axes cross at the origin, as on a maths graph, set the surface's `layoutManager` to a `CentralAxesLayoutManager` in `DataValue` mode at position 0, and set `isInnerAxis: true` on both axes. Then add your points as a scatter or line series, or as annotations. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with a `NumericAxis` for x and one for y. To make the axes cross at the origin, as on a maths graph, set the surface's `layoutManager` to a `CentralAxesLayoutManager` in `DataValue` mode at position 0, and set `isInnerAxis: true` on both axes. Then add your points as a scatter or line series, or as annotations. For React, pass the same setup to `scichart-react`; for Angular, to `scichart-angular`.
 
 ## Sources
 
@@ -385,4 +389,4 @@ With SciChart.js, create a `SciChartSurface` with a `NumericAxis` for x and one 
 - Weisstein, E. W., [Polar Coordinates](https://mathworld.wolfram.com/PolarCoordinates.html), MathWorld. Converting between Cartesian and polar coordinates, and the two-argument arctangent.
 - Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. People judge position along a common scale more accurately than angle or area.
 
-<LearnCta position="bottom" chart="Cartesian graph" demo="central-axes" docs="/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout/" />
+<LearnCta position="bottom" chart="Cartesian graph" demo="central-axes" demoLabel="chart with central axes" docs="/2d-charts/axis-api/multi-axis-and-layout/central-axis-layout/" docsLabel="SciChart.js central axis layout documentation" />

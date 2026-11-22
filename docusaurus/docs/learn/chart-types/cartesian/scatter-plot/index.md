@@ -1,7 +1,7 @@
 ---
 sidebar_position: 230
 sidebar_label: Scatter Plot
-title: "Scatter Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Scatter Plot: What It Is & How to Read It (Interactive Examples)"
 description: "What a scatter plot is, how to read and describe correlation, outliers and clusters, when to use one, and the mistakes to avoid. With live, interactive examples."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [bubble-chart, line-chart, error-bars, cartesian-graph]
                 {
                     "@type": "Question",
                     "name": "How do I make a scatter plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add an XyScatterRenderableSeries with an XyDataSeries holding your x and y values and a point marker such as EllipsePointMarker. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add an XyScatterRenderableSeries with an XyDataSeries holding your x and y values and a point marker such as EllipsePointMarker. To use it in React, pass the same setup function to scichart-react; Angular has scichart-angular." }
                 }
             ]
         })}
@@ -63,7 +63,7 @@ related: [bubble-chart, line-chart, error-bars, cartesian-graph]
 
 ## What is a scatter plot?
 
-A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot: its x value sets how far along it sits and its y value sets how high. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
+A **scatter plot** (also called a scatter chart, scatter graph or scatter diagram) is a chart that shows how two numeric values relate. Each item is one dot, placed by its x and y values. The overall pattern of dots shows whether the two values move together, how strongly, and which items don't fit.
 
 ![A scatter plot of the height and weight of 202 people: blue dots rise from bottom left to top right, with a dashed orange trend line through them](/img/learn/scatter-plot-og.png)
 
@@ -79,6 +79,8 @@ A **scatter plot** (also called a scatter chart, scatter graph or scatter diagra
 
 ## How to read a scatter plot
 
+Read a scatter plot by the shape of the whole cloud of dots: its direction, how tightly it clusters, whether it is straight or curved, and which dots sit apart.
+
 ![Three scatter plots: dots rising from left to right show a positive correlation, with one outlier; dots falling from left to right show a negative correlation; a shapeless cloud of dots shows no correlation](./scatter-plot-correlation.svg)
 
 1. Check the axes. Find out which value runs along the bottom (x) and which runs up the side (y), and their units. The x value is usually the one you think might explain the other.
@@ -91,7 +93,7 @@ A **trend line** (line of best fit), usually calculated by least-squares regress
 
 ## How to describe a scatter plot
 
-Describe a scatter plot with this template:
+Describe a scatter plot by the strength, direction and form of the relationship, then mention any outliers or clusters. Use this template:
 
 > There is a [strong / moderate / weak], [positive / negative], [linear / non-linear] relationship between [x] and [y], [with / without] outliers or clusters.
 
@@ -134,6 +136,8 @@ The chart below has 100,000 points in two groups, each in its own colour: a risi
 
 ## Common scatter plot mistakes
 
+Most scatter plot mistakes are about reading too much into the pattern, or drawing it in a way that changes how strong it looks.
+
 - **Reading cause into correlation.** Ice-cream sales and sunburn rise together because hot weather drives both, not because one causes the other.
 - **Joining the dots.** A line between scatter points implies an order that doesn't exist. Use a [line chart](/learn/chart-types/cartesian/line-chart/) when the order matters.
 - **Squashed or stretched axes.** Axis ranges that crop the data, or don't start where they should, can make a weak relationship look strong. Leave a small margin around the data and label both axes with units.
@@ -142,7 +146,7 @@ The chart below has 100,000 points in two groups, each in its own colour: a risi
 
 ## How to create a scatter plot in JavaScript, React or Angular
 
-SciChart.js draws scatter plots with WebGL and WebGPU, so they stay smooth to zoom and pan with large numbers of points and live updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a dot to see its values.
+The chart below plots the heights and weights of 202 people (sample data, with two outliers added) as a scatter series, and draws a least-squares trend line that the demo code fits to the same points. Hover over a dot to see its values. Zoom with the mouse wheel, drag to pan, and double-click to see every point again.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -275,7 +279,7 @@ Historians of statistics credit the astronomer John Herschel with one of the fir
 
 ### How do I make a scatter plot in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add an `XyScatterRenderableSeries` with an `XyDataSeries` holding your x and y values and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add an `XyScatterRenderableSeries` with an `XyDataSeries` holding your x and y values and a point marker such as `EllipsePointMarker`. To use it in React, pass the same setup function to `scichart-react`; Angular has `scichart-angular`.
 
 ## Sources
 

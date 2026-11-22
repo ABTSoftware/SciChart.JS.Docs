@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: Sunburst Chart
-title: "Sunburst Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Sunburst Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a sunburst chart is, how to read its rings, a worked example, when to use one instead of a treemap or donut chart, and the mistakes to avoid. With a live example."
 keywords:
     [
@@ -55,7 +55,7 @@ related: [treemap, donut-chart, pie-chart, sankey-diagram]
                 {
                     "@type": "Question",
                     "name": "How do I make a sunburst chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a tree, where each item has a name and either a value or a list of children. A layout step walks the tree and gives every item a start and end on a scale from zero to the total, ring by ring. With SciChart.js you draw each ring as a PolarColumnRenderableSeries on a polar chart, with a palette provider for the colours and the series' hit-test for hover and click. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a tree, where each item has a name and either a value or a list of children. A layout step walks the tree and gives every item a start and end on a scale from zero to the total, ring by ring. With SciChart.js you draw each ring as a PolarColumnRenderableSeries on a polar chart, with a palette provider for the colours and the series' hit-test for hover and click. For React or Angular, pass the same setup to scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -82,6 +82,8 @@ A **sunburst chart** (also called a sunburst diagram, sunburst graph, ring chart
 
 ## How to read a sunburst chart
 
+Read a sunburst chart from the centre outwards, judging each segment by how far round the circle it reaches.
+
 ![The parts of a sunburst chart: a total of 100 in the centre, a first ring split into A (50), B (30) and C (20), and outer rings splitting A and B further. Callouts mark the centre, the first ring, a segment's angle, children outside their parent, a branch with no children, and colour by branch](./sunburst-chart-anatomy.svg)
 
 1. Start at the centre. It stands for the whole: all the disk space, the whole budget, every visitor. Many charts print the total there.
@@ -93,7 +95,7 @@ A **sunburst chart** (also called a sunburst diagram, sunburst graph, ring chart
 
 ## A worked example: what's filling a laptop drive
 
-The chart at the top of this page shows 640 GB of used space on a 1 TB laptop drive, split into five top-level folders and then into subfolders. The numbers are made up but realistic in shape. Files and folders are the job the Sunburst tool in the first published studies was built for (see Sources).
+The chart at the top of this page shows 640 GB of used space on a 1 TB laptop drive, split into five top-level folders and then into subfolders. The figures are invented for this example, with sizes typical of a family laptop. Files and folders are the job the Sunburst tool in the first published studies was built for (see Sources).
 
 | Top-level folder | Size (GB) | Share of used space | Split into |
 | --- | --- | --- | --- |
@@ -110,7 +112,7 @@ Three things stand out from the rings:
 - Equal values can look unequal. Games (70 GB, in the second ring) and the 2024 family videos (70 GB, in the third ring) are the same size. Their angles match even though the outer one covers more area.
 - Documents are small. At 60 GB, they are under a tenth of the used space.
 
-The table is better for looking up one number. The chart shows the shape of the whole hierarchy in one look: which branches are big, how deep each goes, and where the space sits within each one.
+Use the table to look up a folder's size. The chart shows the shape of the whole hierarchy in one look: which branches are big, how deep each goes, and where the space sits within each one.
 
 ### How to describe a sunburst chart
 
@@ -122,7 +124,7 @@ Worked example: "Of the 640 GB used on this drive, videos make up 34%, mostly fa
 
 ## How does a sunburst chart work?
 
-A sunburst chart is a tree of data drawn in a circle. Most tools do the layout for you; knowing the steps helps when a chart looks wrong.
+A sunburst chart is a tree of data drawn in a circle, laid out in four steps. Charting tools usually run them for you, but they explain what has gone wrong when a branch doesn't line up.
 
 ![How a tree of data becomes a sunburst chart: on the left, the example data as a tree with All (100) at the root, A, B and C at level 1, A1, A2, B1 and B2 at level 2, and a and b at level 3; on the right, the same data as rings, one ring per level](./sunburst-tree-to-rings.svg)
 
@@ -173,6 +175,8 @@ Both charts come from the same layout: each item has a start and an end on a sca
 
 ## Common sunburst chart mistakes
 
+Most sunburst chart mistakes come from asking the rings to hold more levels, items or labels than they have room for.
+
 - **Too many levels.** Each extra ring splits the segments into thinner slivers. Show two to four levels, and let readers click to zoom into deeper branches.
 - **Children that don't add up.** If a parent's children add up to more than the parent, the chart can't be drawn honestly. If they add up to less, the gap is unexplained. Add an "Other" item so every branch adds up.
 - **Negative values.** An angle can't be negative, so a sunburst chart can't show losses or refunds. Use a bar chart for data that goes below zero.
@@ -182,7 +186,7 @@ Both charts come from the same layout: each item has a start and an end on a sca
 
 ## How to create a sunburst chart in JavaScript, React or Angular
 
-SciChart.js has no separate sunburst series: a short layout helper turns your tree into rings, and each ring is drawn as a polar column series. Because SciChart.js draws with WebGL and WebGPU, hover highlights and drill-down redraw instantly. Try the chart below: hover over a segment to highlight its branch and see its size in the centre, click a segment to zoom into it, and click the centre to go back.
+The demo below draws the laptop-drive example as three rings round a centre, and redraws the rings from whichever segment you click. SciChart.js has no separate sunburst series: a short layout helper turns your tree into rings, and each ring is drawn as a polar column series. Try it: hover over a segment to highlight its branch and see its size in the centre, click a segment to zoom into it, and click the centre to go back.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -288,7 +292,7 @@ Here is the code for this chart. The data is plain JSON: a tree in which each it
 
 Key points:
 
-- `buildSunburstRings` is plain JavaScript with no SciChart code, so you can reuse it anywhere. It totals each branch, then gives every item a `start` and `end` on a scale from zero to the total, ring by ring. Colour comes from the item's top-level branch, lighter for each ring further out.
+- `buildSunburstRings` doesn't touch SciChart.js, so it works with any drawing code. It totals each branch, then gives every item a `start` and `end` on a scale from zero to the total, ring by ring. Colour comes from the item's top-level branch, lighter for each ring further out.
 - Each ring is one [PolarColumnRenderableSeries](/2d-charts/chart-types/polar-column-renderable-series/) with `columnXMode: EColumnMode.StartEnd`. Its `XyxDataSeries` holds each segment's start (`xValues`), end (`x1Values`) and outer radius (`yValues`); `defaultY1` sets the inner radius. The centre is one more series: a single full-circle segment.
 - A palette provider colours each segment from its metadata and fades the ones that aren't highlighted. Labels are the series' data labels, left off segments under 4% of the total.
 - `SunburstModifier` extends `CustomChartModifier2D` and returns `EModifierType.Chart2DPolarModifier` as its `modifierType`, which a polar chart requires. On mouse move it calls each ring's `hitTestProvider.hitTest(x, y)`, which reports a hit only inside a segment; a click redraws the rings from the clicked segment, keeping its colours.
@@ -321,7 +325,7 @@ An icicle chart, or icicle plot, is a sunburst chart unrolled into rows of recta
 
 ### How do I make a sunburst chart in JavaScript?
 
-Store the data as a tree, where each item has a name and either a value or a list of children. A layout step walks the tree and gives every item a start and end on a scale from zero to the total, ring by ring. With SciChart.js you draw each ring as a PolarColumnRenderableSeries on a polar chart, with a palette provider for the colours and the series' hit-test for hover and click. The same code works in React with scichart-react and in Angular with scichart-angular.
+Store the data as a tree, where each item has a name and either a value or a list of children. A layout step walks the tree and gives every item a start and end on a scale from zero to the total, ring by ring. With SciChart.js you draw each ring as a PolarColumnRenderableSeries on a polar chart, with a palette provider for the colours and the series' hit-test for hover and click. For React or Angular, pass the same setup to scichart-react or scichart-angular.
 
 ## Sources
 

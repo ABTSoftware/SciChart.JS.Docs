@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Types of Charts and Graphs
-title: "Types of Charts and Graphs: A Guide to Every Chart Type (With Interactive Examples)"
+title: "Types of Charts and Graphs: A Guide With Interactive Examples"
 description: "A guide to the main types of charts and graphs: what each chart shows, how to read it and when to use it, with a live, interactive example of every chart."
 keywords: ["types of charts", "types of graphs", "types of charts and graphs", "chart types", "graph types", "chart examples", "which chart to use"]
 ---
@@ -11,6 +11,8 @@ keywords: ["types of charts", "types of graphs", "types of charts and graphs", "
 Which chart should you use, and how do you read it? This guide covers the main types of charts and graphs. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Trends and comparisons
+
+Use these charts to compare values across categories, or to show how a value changes over time.
 
 | Chart | What it shows |
 | --- | --- |
@@ -24,6 +26,8 @@ Which chart should you use, and how do you read it? This guide covers the main t
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
 
 ## Parts of a whole
+
+These charts show how a total splits into parts, from a single split to a hierarchy, a flow or a three-part mixture.
 
 | Chart | What it shows |
 | --- | --- |
@@ -47,6 +51,8 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 ## Relationships and distributions
 
+These charts show how values are spread out, how two or more variables relate, and how items connect.
+
 | Chart | What it shows |
 | --- | --- |
 | [Box plot](/learn/chart-types/cartesian/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
@@ -64,6 +70,8 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 ## Scientific and engineering charts
 
+These charts show fields, signals, surfaces and measurements in 2D, 3D or round a circle, as used in science and engineering.
+
 | Chart | What it shows |
 | --- | --- |
 | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
@@ -78,6 +86,8 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 ## Dashboards and KPIs
 
+These charts show where one value stands against a target or limit, or how many items get through each stage of a process.
+
 | Chart | What it shows |
 | --- | --- |
 | [Bullet chart](/learn/chart-types/cartesian/bullet-chart/) | One measure as a dark bar against a short target line and grey bands for poor, satisfactory and good, compact enough to stack many on one dashboard |
@@ -85,6 +95,8 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 | [Gauge chart](/learn/chart-types/radial/gauge-chart/) | One value on a dial between a minimum and a maximum, with a needle and coloured bands showing whether it's good, borderline or bad |
 
 ## Financial charts
+
+These charts show price movements and how a starting value becomes a final one, as used in trading and finance.
 
 | Chart | What it shows |
 | --- | --- |
@@ -97,11 +109,15 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 ## Maps and geographic data
 
+This chart shows a value for each area on a map, such as a state or a country.
+
 | Chart | What it shows |
 | --- | --- |
 | [Choropleth map](/learn/chart-types/complex/choropleth-map/) | A value per area, such as a rate per state or country, shown by shading each area on a map, with a legend for the colour classes |
 
 ## Time and events
+
+This chart shows events and periods in the order they happened.
 
 | Chart | What it shows |
 | --- | --- |

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: Candlestick Chart
-title: "Candlestick Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Candlestick Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a candlestick chart is, how to read open, high, low and close, how timeframes change the candles, common patterns, and when to use one instead of an OHLC or line chart."
 keywords:
     [
@@ -55,7 +55,7 @@ related: [ohlc-chart, line-chart, combo-chart, big-data-visualization]
                 {
                     "@type": "Question",
                     "name": "How do I make a candlestick chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface, add a CategoryAxis and a NumericAxis, then add a FastCandlestickRenderableSeries with an OhlcDataSeries holding your x, open, high, low and close values. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface, add a CategoryAxis and a NumericAxis, then add a FastCandlestickRenderableSeries with an OhlcDataSeries holding your x, open, high, low and close values. React apps can run the same code through scichart-react, and Angular apps through scichart-angular." }
                 }
             ]
         })}
@@ -66,7 +66,7 @@ related: [ohlc-chart, line-chart, combo-chart, big-data-visualization]
 
 ## What is a candlestick chart?
 
-A **candlestick chart** (also called a candlestick graph, candle graph, Japanese candlestick chart or K-line chart) is a price chart in which each "candle" sums up one period (say, a day) with four prices: the **open**, **high**, **low** and **close**. The body spans the open and close, the wicks reach the high and low, and the colour shows whether the price rose or fell.
+A **candlestick chart** (also called a Japanese candlestick or K-line chart) is a price chart in which each "candle" sums up one period (say, a day) with four prices: the **open**, **high**, **low** and **close**. The body spans the open and close, the wicks reach the high and low, and the colour shows whether the price rose or fell.
 
 ![A candlestick chart of five months of daily prices: green rising candles and red falling candles drift down from \$100 to about \$92, climb to about \$117 and then ease back to \$110](/img/learn/candlestick-chart-og.png)
 
@@ -81,6 +81,8 @@ A **candlestick chart** (also called a candlestick graph, candle graph, Japanese
 :::
 
 ## How to read a candlestick chart
+
+Read each candle's colour for the direction, its body for the open and close, and its wicks for the high and low, then follow the candles from left to right.
 
 ![Anatomy of a candlestick: a green bullish candle and a red bearish candle, with the open, high, low, close, body and wicks labelled](./candlestick-anatomy.svg)
 
@@ -157,6 +159,8 @@ Use a candlestick chart when your data has an open, high, low and close for each
 
 ## Candlestick chart mistakes to avoid
 
+Most candlestick mistakes come from reading too much into colours, gaps or single candles.
+
 - **Assuming the colours.** Green-up, red-down is common but not universal. Some platforms and markets use other colours or hollow candles, so check the chart's key.
 - **Gaps on the time axis.** A plain date axis leaves empty spaces for weekends and holidays when markets are closed. An axis that spaces candles evenly by index closes those gaps.
 - **Reading one candle in isolation.** A single candle says what happened in one period. Its meaning depends on the trend before it, the volume behind it and the timeframe.
@@ -164,7 +168,7 @@ Use a candlestick chart when your data has an open, high, low and close for each
 
 ## How to create a candlestick chart in JavaScript, React or Angular
 
-SciChart.js draws candlestick charts with WebGL and WebGPU, so they stay smooth to zoom and pan with years of data and live, tick-by-tick updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a candle to see its open, high, low and close.
+The demo below builds 150 daily candles from a seeded random walk, so it looks the same on every visit, and places them on a category axis that spaces them evenly. Hover over a candle for its open, high, low and close; scroll the mouse wheel to zoom into a few weeks, drag to pan and double-click to see all 150 days again.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -277,7 +281,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, gives you a ready-made trading chart built around candlesticks: live Binance and Coinbase feeds, 30+ technical indicators, drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, builds a whole trading chart around a candlestick series like the one above. It loads candles from built-in [Coinbase and Binance feeds](/financial-charts/data-sources/coinbase-and-binance/), switches them to [Heikin-Ashi, OHLC bars, a line or a mountain](/financial-charts/studies-and-indicators/price-chart-types/#candle-types) at runtime, and adds any of its [32 built-in technical indicators and studies](/financial-charts/studies-and-indicators/#the-catalogue), drawing tools and extra panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 
@@ -303,7 +307,7 @@ Both show the open, high, low and close for each period. An OHLC chart draws eac
 
 ### How do I make a candlestick chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastCandlestickRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastCandlestickRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. React apps can run the same code through `scichart-react`, and Angular apps through `scichart-angular`.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 120
 sidebar_label: Error Bars
-title: "Error Bars: What They Mean & How to Read Them (With Interactive Examples)"
+title: "Error Bars: What They Mean & How to Read Them (Interactive Example)"
 description: "What error bars show, how to read them, standard deviation vs standard error vs confidence interval bars, and what overlapping error bars do and don't mean."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [box-plot, scatter-plot, bar-chart, line-chart]
                 {
                     "@type": "Question",
                     "name": "How do I add error bars to a chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put each point's x value, its plotted value and the top and bottom of its error bar into an HlcDataSeries (x, y, high and low values), then draw it with a FastErrorBarsRenderableSeries. Add a point marker to show the mean, or draw a scatter, line or column series under the bars. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put each point's x value, its plotted value and the top and bottom of its error bar into an HlcDataSeries (x, y, high and low values), then draw it with a FastErrorBarsRenderableSeries. Add a point marker to show the mean, or draw a scatter, line or column series under the bars. React and Angular versions use the same series through scichart-react and scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ related: [box-plot, scatter-plot, bar-chart, line-chart]
 
 ## How to read error bars
 
+Read an error bar by first finding out what it shows (SD, SE or a confidence interval), because the same length means something different for each.
+
 ![Left: the parts of one error bar, with a marker at the mean (12.03 cm), an upper and a lower arm of 1.14 cm each, and a cap at each end (13.17 and 10.89 cm), labelled as a 95% confidence interval for 10 plants. Right: two groups' 95% confidence intervals, Low dose and Medium dose, overlapping by 0.31 cm, about a third of an arm, although a t-test gives P = 0.015](./error-bars-anatomy.svg)
 
 1. Find out what the bars show. Look in the caption, legend or methods for "SD", "SE" (or "SEM", the standard error of the mean), "95% CI" or "range". This changes what the bar means more than anything else on the chart.
@@ -96,7 +98,7 @@ Error bars come in two families. **Descriptive** bars (SD and range) describe th
 | --- | --- | --- | --- | --- |
 | Standard deviation (SD) | The typical distance of individual measurements from the mean. For roughly bell-shaped data, about two-thirds of values fall within ±1 SD | √( Σ(x − mean)² ÷ (n − 1) ) | Stays about the same | Show how variable the data is |
 | Standard error (SE or SEM) | How precisely the mean has been measured: the typical error of a mean from a sample this size | SD ÷ √n | Shrinks: 4 times the data halves it | Compare means, with the overlap rules below |
-| 95% confidence interval (CI) | A range that, across many repeats of the study, would contain the true mean 95% of the time | mean ± t × SE (t = 2.262 for n = 10; about 2 for n of 10 or more) | Shrinks, like SE | Show what you can conclude about the mean. Usually the best choice for comparisons |
+| 95% confidence interval (CI) | A range that, across many repeats of the study, would contain the true mean 95% of the time | mean ± t × SE (t = 2.262 for n = 10 and 2.093 for n = 20; close to 2 only once n is above about 30) | Shrinks, like SE | Show what you can conclude about the mean. Usually the best choice for comparisons |
 | Range | The lowest and highest values | min to max | Tends to grow | Show the extremes. Rare; a [box plot](/learn/chart-types/cartesian/box-plot/) does it better |
 
 In the chart at the top of the page, the three bars around each mean come from the same 10 plants. The SD bars (orange) are the widest; the SE bars (blue) are about a third as long, because √10 ≈ 3.2; the 95% CI bars (pink) are 2.262 times the SE bars.
@@ -181,6 +183,8 @@ Use error bars when each point on a chart is an estimate or a summary (usually a
 
 ## Common error bar mistakes
 
+Most error bar mistakes come from leaving readers to guess what the bars are, or from picking the bar that looks best.
+
 - **Not saying what the bars are.** SD, SE and CI bars look identical. Always name the kind of bar and n in the caption or legend.
 - **Choosing SE because it looks tidier.** SE bars are shorter than SD bars by a factor of √n, so they make data look less variable. Pick the bar that answers your question: SD for spread, CI (or SE) for comparing means.
 - **Counting replicates as n.** Measuring the same sample three times isn't three independent results. n is the number of independent subjects or experiments; error bars from repeated measurements of one sample show only measurement noise.
@@ -189,7 +193,7 @@ Use error bars when each point on a chart is an estimate or a summary (usually a
 
 ## How to create error bars in JavaScript, React or Angular
 
-SciChart.js has a dedicated error bars series, which draws vertical or horizontal error bars over any scatter, line or column series. Because SciChart.js draws with WebGL and WebGPU, charts stay smooth to zoom and pan with many points and live data. Try the chart below: scroll to zoom, drag to pan, double-click to reset, hover over a group to see its mean, SD, SE and 95% CI, and use the legend to show or hide each kind of bar.
+SciChart.js has a dedicated error bars series, which draws vertical or horizontal error bars over any scatter, line or column series. The demo below plots the heights of 10 plants in each of four fertiliser groups as faint dots, works out each group's SD, SE and 95% CI from them in the code, and draws the three kinds of bar side by side. Hover over a group to see its numbers, use the legend to show or hide each kind of bar, and use the mouse wheel, a drag or a double-click to zoom, pan or reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -360,7 +364,7 @@ First work out the mean of each group. For standard deviation bars, take the squ
 
 ### How do I add error bars to a chart in JavaScript?
 
-With SciChart.js, put each point's x value, its plotted value and the top and bottom of its error bar into an `HlcDataSeries` (x, y, high and low values), then draw it with a `FastErrorBarsRenderableSeries`. Add a point marker to show the mean, or draw a scatter, line or column series under the bars. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, put each point's x value, its plotted value and the top and bottom of its error bar into an `HlcDataSeries` (x, y, high and low values), then draw it with a `FastErrorBarsRenderableSeries`. Add a point marker to show the mean, or draw a scatter, line or column series under the bars. React and Angular versions use the same series through `scichart-react` and `scichart-angular`.
 
 ## Sources
 

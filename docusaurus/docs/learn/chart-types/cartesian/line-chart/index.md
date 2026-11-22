@@ -1,7 +1,7 @@
 ---
 sidebar_position: 160
 sidebar_label: Line Chart
-title: "Line Graph (Line Chart): What It Is & How to Read It (With Interactive Examples)"
+title: "Line Graph (Line Chart): What It Is & How to Read It"
 description: "What a line graph (line chart) is, how to read and describe one, the main types, when to use it instead of a bar graph, and the mistakes to avoid. With live examples."
 keywords:
     [
@@ -86,6 +86,8 @@ A **line graph** (also called a line chart or line plot) is a chart that shows h
 
 ## How to read a line graph
 
+Read a line graph from left to right: the height of the line is the value, and its slope is how fast the value changes.
+
 ![Anatomy of a line chart: the y-axis shows the value, the x-axis shows time, and data points are joined by a line that slopes up while values rise, peaks, then slopes down as they fall](./line-chart-anatomy.svg)
 
 1. Read the title and the axes first. The horizontal **x-axis** is usually time (days, months, years), running left to right. The vertical **y-axis** is the measured value. Note the units on both, and the number the y-axis starts at.
@@ -98,6 +100,8 @@ A **line graph** (also called a line chart or line plot) is a chart that shows h
 The points themselves are the real measurements. The straight segments between them are a reasonable guess at what happened in between, not extra data.
 
 ## Types of line graph
+
+Line graphs differ in how many lines they carry, whether the points are marked, and how the points are joined.
 
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
@@ -157,6 +161,8 @@ The chart below shows a day of temperature readings from one sensor, one per sec
 
 ## Common line graph mistakes
 
+Most line graph mistakes come from drawing a line through data that has no order, or from axes that change how steep the line looks.
+
 - **Joining points that have no order.** A line between categories (red, green, blue) suggests a trend that doesn't exist. Use a [bar chart](/learn/chart-types/cartesian/bar-chart/).
 - **Uneven time steps on an even axis.** If readings are missing or irregular, plot them against real dates, so a gap of six months doesn't look like a gap of one.
 - **Too many lines.** Beyond about five lines, colours run out and lines tangle. Highlight one or two and grey out the rest, or split into small multiples.
@@ -167,7 +173,7 @@ The chart below shows a day of temperature readings from one sensor, one per sec
 
 ## How to create a line chart in JavaScript, React or Angular
 
-SciChart.js draws line charts with WebGL and WebGPU, so they stay smooth to zoom and pan with large data sets and real-time updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, hover over a line to see its values, and use the legend to hide or show a line.
+The chart below is two line series on a date axis, one per city, each holding 365 daily temperatures. Hover over a line to read that day's value and use the legend to hide or show a city. The mouse wheel zooms, dragging pans, and a double-click brings back the whole year.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 210
 sidebar_label: Renko Chart
-title: "Renko Chart: How Renko Bricks Work and How to Read Them (With an Interactive Example)"
+title: "Renko Chart: How the Bricks Form & How to Read Them"
 description: "What a Renko chart is, how its fixed-size bricks form from prices, how to choose the box size (fixed, ATR or percentage), how to read trends and reversals, and how Renko compares with candlesticks."
 keywords:
     [
@@ -65,7 +65,7 @@ related: [candlestick-chart, tick-chart, footprint-chart, ohlc-chart]
 
 ## What is a Renko chart?
 
-A **Renko chart** is a price chart made of equal-sized bricks, where each brick stands for a fixed price move (the box size) and time is ignored. A new brick is drawn only when the price moves a full box beyond the last one, up (green) or down (red), so small moves and quiet periods disappear and the trend stands out.
+A **Renko chart** is a price chart made of equal-sized bricks, where each brick stands for a fixed price move (the box size) and time is ignored. A new brick is drawn only when the price moves a full box beyond the last one, up (green) or down (red), so small moves disappear and the trend stands out.
 
 ![A daily candlestick chart of 250 days above the Renko chart built from the same prices with a \$2 box: green and red bricks climb from \$100 to about \$122, fall to about \$96, climb to \$125 and fall back to \$100, with 56 bricks for 250 candles](/img/learn/renko-chart-og.png)
 
@@ -83,7 +83,7 @@ The name comes from *renga*, the Japanese word for brick. Steve Nison described 
 
 ## How Renko bricks form
 
-Building a Renko chart takes three rules:
+Renko bricks form from price moves alone: nothing is drawn until the price has moved a full box. Building the chart takes three rules:
 
 1. Choose a box size, for example \$1.
 2. Draw an up brick each time the price reaches the top of the last brick plus one box. Draw a down brick each time it reaches the bottom of the last brick minus one box.
@@ -113,6 +113,8 @@ Ten daily closing prices, turned into bricks with a \$1 box, starting from \$100
 Ten days became six bricks. Days 2, 5, 6 and 9 drew nothing, and day 4 drew two bricks at once. The bricks also hide that the price touched \$103.40 on day 4 and \$99.80 on day 8: only whole boxes count. The `buildBricks` function in the code section further down reproduces these six bricks.
 
 ## How to read a Renko chart
+
+Read a Renko chart by its box size, the colour of each brick and the length of each run, never by its horizontal axis.
 
 1. Check the box size first. A brick is a move of one box, so a chart with a \$0.50 box and one with a \$5 box can tell different stories about the same prices.
 2. Read the colour. Green (or hollow) bricks are rises of one box; red (or filled) bricks are falls of one box.
@@ -145,6 +147,8 @@ With the demo's sample prices and a \$2 box, the close gives 56 bricks with 9 re
 
 ## What a Renko chart shows and what it hides
 
+A Renko chart makes the direction and length of a trend easy to see, at the cost of time and of every move smaller than a box.
+
 | Shows clearly | Hides or distorts |
 | --- | --- |
 | The direction of the trend and how long it has lasted, in bricks | Time: a brick may take minutes or months to form |
@@ -170,6 +174,8 @@ For the same four prices drawn as bars with ticks instead of bodies, see the [OH
 
 ## Common Renko chart mistakes
 
+Most Renko mistakes come from forgetting that the bricks ignore time, or from a box size that was chosen badly.
+
 - **Reading the horizontal axis as time.** Bricks are evenly spaced however long they took. A steep-looking run of bricks may have taken months; check the dates.
 - **Choosing the box size after the fact.** A box picked because it made past signals look clean is fitted to the past. Choose it from volatility (ATR) or the trading timeframe, and keep it.
 - **Treating brick edges as trade prices.** The price may have jumped through several box levels in one move. Bricks drawn in that jump show levels that nobody traded at.
@@ -179,7 +185,7 @@ For the same four prices drawn as bars with ticks instead of bodies, see the [OH
 
 ## How to create a Renko chart in JavaScript, React or Angular
 
-Core SciChart.js has no Renko series, so this example computes the bricks with a short function and draws them as rectangles, which renders smoothly with WebGL even for thousands of bricks and long price histories. To show Renko bricks in SciTrader.js, SciChart's financial charts SDK, see the [SciTrader.js price chart types documentation](/financial-charts/studies-and-indicators/price-chart-types/#renko-and-point-and-figure), which has a ready-made `RenkoStudy`.
+Core SciChart.js has no Renko series, so this example computes the bricks with a short function and draws them as rectangles, in a second chart under the 250 daily candles they were built from. To show Renko bricks in SciTrader.js, SciChart's financial charts SDK, see the [SciTrader.js price chart types documentation](/financial-charts/studies-and-indicators/price-chart-types/#renko-and-point-and-figure), which has a ready-made `RenkoStudy`.
 
 Try the chart below. Use **Box size** to switch between a fixed size and one set from the 14-day ATR, and drag **Fixed size** to change the box. **Price source** builds the bricks from the close or the high-low range. **Renko x-axis** switches between brick number and the date each brick formed, which shows how bricks ignore time. Hover a brick to mark the day it formed on the candles, or hover a candle to see the latest brick at that point. Scroll to zoom, drag to pan and double-click to reset.
 

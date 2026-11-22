@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Choropleth Map
-title: "Choropleth Map: What It Is & How to Read It (With Interactive Examples)"
+title: "Choropleth Map: What It Is & How to Read It (Interactive Example)"
 description: "What a choropleth map is, how to read one, why it should show rates rather than counts, how classes and colours change the picture, and when to use another map."
 keywords:
     [
@@ -53,7 +53,7 @@ related: [heatmap, treemap, bubble-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a choropleth map in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a FastTriangleRenderableSeries in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a FastTriangleRenderableSeries in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. To use it in React or Angular, hand the same function to scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +79,8 @@ A **choropleth map** (also called a filled map or shaded map) is a map that colo
 :::
 
 ## How to read a choropleth map
+
+To read a choropleth map, learn what each colour stands for from the legend, then look for patterns across neighbouring areas.
 
 1. Read the title and the legend first. Find out what is measured, in what unit and for which year: "people per square mile, 2020" is not the same as "people".
 2. Check the colour scale. A **sequential** scale (light to dark in one colour) runs from low to high. A **diverging** scale (two colours meeting at a neutral middle) shows values above and below a midpoint, such as the national average or zero change.
@@ -139,6 +141,8 @@ Worked example: "In 2020, population density was highest in the Northeast, from 
 
 ## Choosing colours: sequential, diverging or categorical
 
+Choose the colour scheme by the kind of data: sequential for low to high, diverging for above and below a midpoint, and categorical for groups with no order.
+
 | Scheme | Looks like | Use it for | Example |
 | --- | --- | --- | --- |
 | Sequential | One hue, light to dark (or dark to bright on a dark background) | Values from low to high, with no special middle | Population density, income per head |
@@ -176,6 +180,8 @@ A good map often comes with a sorted bar chart or table beside it: the map shows
 
 ## Common choropleth map mistakes
 
+Most choropleth map mistakes come from forgetting that areas differ in size, and that colours stand for ranges rather than exact values.
+
 - **Letting big areas dominate.** In 2020, the 10 least densely populated states held 4.8% of Americans but covered 40.5% of the country's land. On a choropleth, those states fill much of the picture. Use a cartogram, a tile map or a chart beside the map when people, not land, are the point.
 - **Losing small areas.** The District of Columbia is the densest area on the map, yet it is a speck. Add insets, labels or tooltips for small areas.
 - **Picking class breaks without looking at the data.** Check the distribution first, and say which method you used.
@@ -185,7 +191,7 @@ A good map often comes with a sorted bar chart or table beside it: the map shows
 
 ## How to create a choropleth map in JavaScript, React or Angular
 
-SciChart.js draws maps from GeoJSON outlines with its triangle series, so a whole map renders with WebGL and WebGPU and stays smooth to zoom and pan, even with thousands of areas or a value that updates in real time. Hover over a state to see its density, rank and population; scroll to zoom into the small northeastern states, drag to pan and double-click to reset.
+The demo below cuts the GeoJSON outlines of the 50 states and the District of Columbia into triangles, and draws them with five SciChart.js triangle series, one for each density class. Hover over a state to see its density, rank and population; scroll to zoom into the small northeastern states, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -279,7 +285,7 @@ On a map with a light background, darker colours usually mean higher values, and
 
 ### How do I make a choropleth map in JavaScript?
 
-Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a `FastTriangleRenderableSeries` in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a `FastTriangleRenderableSeries` in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. To use it in React or Angular, hand the same function to `scichart-react` or `scichart-angular`.
 
 ## Sources
 

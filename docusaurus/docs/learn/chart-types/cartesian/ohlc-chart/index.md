@@ -1,7 +1,7 @@
 ---
 sidebar_position: 180
 sidebar_label: OHLC Chart
-title: "OHLC Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "OHLC Chart: What It Is & How to Read It (Interactive Example)"
 description: "What an OHLC chart is, how to read the open and close ticks on each bar, how OHLC bars compare with candlesticks and HLC bars, and when traders prefer bars."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [candlestick-chart, line-chart, big-data-visualization]
                 {
                     "@type": "Question",
                     "name": "How do I make an OHLC chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface, add a CategoryAxis and a NumericAxis, then add a FastOhlcRenderableSeries with an OhlcDataSeries holding your x, open, high, low and close values. Set strokeUp and strokeDown for the rising and falling colours. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface, add a CategoryAxis and a NumericAxis, then add a FastOhlcRenderableSeries with an OhlcDataSeries holding your x, open, high, low and close values. Set strokeUp and strokeDown for the rising and falling colours. React apps can reuse the same setup through scichart-react, and Angular apps through scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ An **OHLC chart** (open-high-low-close chart, also called an OHLC bar chart or, 
 :::
 
 ## How to read an OHLC chart
+
+Read each bar as one period: the vertical line is the range from low to high, the left tick is the open and the right tick is the close.
 
 ![Anatomy of an OHLC bar: a green up bar and a red down bar, each with the high, low, open (left tick) and close (right tick) labelled](./ohlc-bar-anatomy.svg)
 
@@ -157,6 +159,8 @@ Use an OHLC chart when your data has an open, high, low and close for each perio
 
 ## OHLC chart mistakes to avoid
 
+Most mistakes with OHLC charts come from misreading the ticks or the colours, or from cramming in more bars than the screen can show.
+
 - **Swapping the ticks.** The left tick is always the open and the right tick the close. Reading them the other way round turns every up bar into a down bar.
 - **Reading colour as "up from yesterday".** Colour usually compares the close with the same bar's open, not with the previous close. A green bar after a gap down can still end the day lower. Some charting tools let you colour bars by the previous close instead; check which rule the chart uses.
 - **Too many bars on screen.** With years of daily data, the ticks shrink until they merge into the line. Zoom in, switch to weekly bars, or use a line chart for the long view. Some charting tools hide the ticks automatically when bars get too close.
@@ -166,7 +170,7 @@ Use an OHLC chart when your data has an open, high, low and close for each perio
 
 ## How to create an OHLC chart in JavaScript, React or Angular
 
-SciChart.js draws OHLC charts with WebGL and WebGPU, so they stay smooth to zoom and pan with long price histories and live updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a bar to see its open, high, low and close. Zoom a long way out and the open and close ticks hide, leaving the high-low lines; zoom back in to bring them back.
+The chart below draws 80 trading days of sample prices as OHLC bars on a category axis, which leaves no gaps for weekends. Hover over a bar to see its open, high, low and close. Scroll to zoom and drag to pan; zoom a long way out and the open and close ticks hide, leaving the high-low lines, then double-click to return to the full view.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -281,7 +285,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, gives you a ready-made trading chart with candlestick and OHLC series, live market data feeds, 30+ technical indicators, drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, has OHLC bars as one of its built-in price chart types. A [candle type selector](/financial-charts/ui-components/candle-type-selector/) switches a trading chart between OHLC bars, candlesticks, line, mountain and Heikin-Ashi, keeping the data, zoom and indicators in place. It also brings live exchange feeds, drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 
@@ -307,7 +311,7 @@ Only if you have more than one price per period. A line chart usually plots just
 
 ### How do I make an OHLC chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastOhlcRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. Set `strokeUp` and `strokeDown` for the rising and falling colours. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `NumericAxis`, then add a `FastOhlcRenderableSeries` with an `OhlcDataSeries` holding your x, open, high, low and close values. Set `strokeUp` and `strokeDown` for the rising and falling colours. React apps can reuse the same setup through `scichart-react`, and Angular apps through `scichart-angular`.
 
 ## Sources
 

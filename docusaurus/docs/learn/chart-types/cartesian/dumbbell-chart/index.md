@@ -1,7 +1,7 @@
 ---
 sidebar_position: 110
 sidebar_label: Dumbbell Chart
-title: "Dumbbell Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Dumbbell Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a dumbbell chart (dumbbell plot or connected dot plot) is, how to read it, how to sort it, when to use one instead of clustered bars, and the mistakes to avoid."
 keywords:
     [
@@ -53,7 +53,7 @@ related: [lollipop-chart, bar-chart, scatter-plot, population-pyramid]
                 {
                     "@type": "Question",
                     "name": "How do I make a dumbbell chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastLineSegmentRenderableSeries for the connecting lines and two XyScatterRenderableSeries for the dots. The line segment series joins its points in pairs, so give it two points per row: the first value and the second value at the same row position. Give each scatter series its own colour and add a LegendModifier to name the two ends. Putting the X axis on the left makes the dumbbells horizontal. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastLineSegmentRenderableSeries for the connecting lines and two XyScatterRenderableSeries for the dots. The line segment series joins its points in pairs, so give it two points per row: the first value and the second value at the same row position. Give each scatter series its own colour and add a LegendModifier to name the two ends. Putting the X axis on the left makes the dumbbells horizontal. React and Angular apps can reuse all of this through scichart-react and scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +79,8 @@ A **dumbbell chart** (also called a dumbbell plot, connected dot plot, barbell c
 :::
 
 ## How to read a dumbbell chart
+
+Read each row of a dumbbell chart as a before-and-after pair: the two dots are the values, and the line between them is the size of the gap.
 
 ![The parts of a dumbbell chart: average hours of sleep on weekdays and at weekends for four age groups (sample data). Callouts label the grey start dot, the teal end dot, the connecting line whose length is the gap, the gap label beside each row, the legend and the value axis, which starts at 6 rather than 0](./dumbbell-chart-anatomy.svg)
 
@@ -132,6 +134,8 @@ The live chart below is sorted by the gap, because its question is "which teams 
 
 ## Types of dumbbell chart
 
+Dumbbell charts vary in direction, in how they mark which way the change went, and in how many values each row holds.
+
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
 | Horizontal dumbbell chart | Rows stacked down the page, category names on the left | Most dumbbell charts: long names and many categories fit easily |
@@ -163,6 +167,8 @@ Use a dumbbell chart when you have two values for each of several categories and
 
 ## Common dumbbell chart mistakes
 
+Most dumbbell chart mistakes leave readers unsure which end is which, or which way the change went.
+
 - **No legend, or two ends in the same colour.** Readers can't tell which dot is "before" and which is "after", so they can't tell rises from falls. Use two clearly different colours and name them.
 - **Hiding the direction.** When some rows rise and some fall, readers may assume they all moved the same way. Point it out in the title or the text, colour the lines by direction, or use arrows.
 - **Not saying which way is good.** A fall in waiting times is good news; a fall in sales isn't. Say so in the title, such as "Waiting times fell at three of four clinics".
@@ -171,11 +177,11 @@ Use a dumbbell chart when you have two values for each of several categories and
 
 ## How to create a dumbbell chart in JavaScript, React or Angular
 
-SciChart.js has no single dumbbell series, but it builds one from two series types: a **line segment series**, which draws a separate line between each pair of points, for the connecting lines, and two **scatter series** for the end dots. Because it renders with WebGL and WebGPU, the same approach stays smooth with hundreds of rows. Try the chart below: hover over a row to see both scores and the change, scroll to zoom, drag to pan and double-click to reset.
+SciChart.js has no single dumbbell series, but it builds one from two series types: a **line segment series**, which draws a separate line between each pair of points, for the connecting lines, and two **scatter series** for the end dots. The demo below uses them to compare ten teams' staff survey scores in 2024 and 2025, sorted from the biggest rise to the biggest fall. Hover over a row to see both scores and the change; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="dumbbell chart" demo="scatter-chart" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" />
+<LearnCta position="top" chart="dumbbell chart" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />
 
 Here is the code for this chart:
 
@@ -354,7 +360,7 @@ Key points:
 
 **See it in the demo app:** there's no dumbbell chart demo yet; the closest is the scatter chart demo, which uses the same scatter series and point markers as the dumbbell ends: [JavaScript scatter chart](https://www.scichart.com/demo/javascript/scatter-chart) · [React scatter chart](https://www.scichart.com/demo/react/scatter-chart) · [Angular scatter chart](https://www.scichart.com/demo/angular/scatter-chart)
 
-**Go deeper:** [SciChart.js dumbbell chart documentation](/2d-charts/chart-types/fast-line-segment-renderable-series/): the line segment series, including colouring each end of a line, and the [SciChart.js scatter chart documentation](/2d-charts/chart-types/xy-scatter-renderable-series/) for the dots.
+**Go deeper:** [SciChart.js line segment series documentation](/2d-charts/chart-types/fast-line-segment-renderable-series/), including colouring each end of a line, and the [SciChart.js scatter chart documentation](/2d-charts/chart-types/xy-scatter-renderable-series/) for the dots.
 
 ## Frequently asked questions
 
@@ -380,11 +386,11 @@ A dumbbell chart is also called a dumbbell plot, barbell chart, connected dot pl
 
 ### How do I make a dumbbell chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastLineSegmentRenderableSeries` for the connecting lines and two `XyScatterRenderableSeries` for the dots. The line segment series joins its points in pairs, so give it two points per row: the first value and the second value at the same row position. Give each scatter series its own colour and add a `LegendModifier` to name the two ends. Putting the X axis on the left makes the dumbbells horizontal. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastLineSegmentRenderableSeries` for the connecting lines and two `XyScatterRenderableSeries` for the dots. The line segment series joins its points in pairs, so give it two points per row: the first value and the second value at the same row position. Give each scatter series its own colour and add a `LegendModifier` to name the two ends. Putting the X axis on the left makes the dumbbells horizontal. React and Angular apps can reuse all of this through `scichart-react` and `scichart-angular`.
 
 ## Sources
 
 - Cleveland, W. S. (1984), [Graphical methods for data presentation: full scale breaks, dot charts, and multibased logging](https://doi.org/10.1080/00031305.1984.10483224). *The American Statistician*, 38(4), 270–280. Introduces the dot chart, the design that dumbbell charts build on.
 - Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Why positions on a common scale, as in dot and dumbbell charts, are compared accurately.
 
-<LearnCta position="bottom" chart="dumbbell chart" demo="scatter-chart" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" />
+<LearnCta position="bottom" chart="dumbbell chart" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />

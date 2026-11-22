@@ -1,7 +1,7 @@
 ---
 sidebar_position: 80
 sidebar_label: Contour Plot
-title: "Contour Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Contour Plot: What It Is & How to Read It (Interactive Example)"
 description: "What a contour plot is, how to read its lines of equal value, peaks, saddles and spacing, how it compares with a heatmap and a 3D surface, and the mistakes to avoid. With a live example."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
                 {
                     "@type": "Question",
                     "name": "How do I make a contour plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put your values in a UniformHeatmapDataSeries as a 2D array, then add a UniformContoursRenderableSeries that uses it, setting zMin, zMax and zStep for the levels and dataLabels to label the lines. For colour, add a UniformHeatmapRenderableSeries with the same data series behind the lines. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put your values in a UniformHeatmapDataSeries as a 2D array, then add a UniformContoursRenderableSeries that uses it, setting zMin, zMax and zStep for the levels and dataLabels to label the lines. For colour, add a UniformHeatmapRenderableSeries with the same data series behind the lines. To use it in React or Angular, call the same code from scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ A **contour plot** (also called a contour chart, contour graph or contour map) i
 :::
 
 ## How to read a contour plot
+
+Read a contour plot like a map: each line joins points with the same value, and lines close together mark a steep change.
 
 ![Anatomy of a contour plot: a surface with two peaks drawn as labelled lines every 10 units over shaded bands, with numbered markers for a contour line, a line label, the highest peak, a lower peak, the saddle between them, lines close together and lines far apart](./contour-plot-anatomy.svg)
 
@@ -127,6 +129,8 @@ Worked example, using the plate chart above:
 
 ## Types of contour plot
 
+Contour plots differ in whether they draw lines only, fill the bands between them, or sit on a coloured heatmap or a map.
+
 | Type | What it looks like | Good for |
 | --- | --- | --- |
 | Line contour plot | Lines only, often labelled with their values | Reading exact levels; printing in black and white; overlaying on other data |
@@ -153,6 +157,8 @@ Contour plots and heatmaps are often combined. The heatmap gives a quick picture
 
 ## Common contour plot mistakes
 
+Most contour plot mistakes come from badly chosen levels, missing labels or lines drawn where there is no data.
+
 - **Leaving out the line labels or colour scale.** Without them, a hill and a hollow look the same.
 - **Uneven intervals.** If the levels are 10, 20, 50 and 100, the spacing of the lines no longer shows the slope. Keep the step constant, or say clearly that it isn't.
 - **Too many lines.** A level every 1 °C on a plate that spans 70 °C draws 70 lines that merge into a solid smudge. Pick a step that gives roughly 5 to 15 lines, and make every fifth or every second line bolder.
@@ -163,7 +169,7 @@ Contour plots and heatmaps are often combined. The heatmap gives a quick picture
 
 ## How to create a contour plot in JavaScript, React or Angular
 
-SciChart.js draws contour plots with WebGL and WebGPU, so large grids stay smooth to zoom and pan and can be updated in real time. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover anywhere to read the temperature at that point.
+The demo below maps made-up temperatures across a 40 cm by 30 cm metal plate, one value every 2 mm (about 30,000 grid points), and draws them as a heatmap with a labelled contour line every 10 °C and a fainter one every 5 °C; a single data series feeds both. Hover anywhere to read the temperature at that point, scroll to zoom in on a heater, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -334,7 +340,7 @@ Put your values on a regular grid first, interpolating if the measurements are s
 
 ### How do I make a contour plot in JavaScript?
 
-With SciChart.js, put your values in a `UniformHeatmapDataSeries` as a 2D array, then add a `UniformContoursRenderableSeries` that uses it, setting `zMin`, `zMax` and `zStep` for the levels and `dataLabels` to label the lines. For colour, add a `UniformHeatmapRenderableSeries` with the same data series behind the lines. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, put your values in a `UniformHeatmapDataSeries` as a 2D array, then add a `UniformContoursRenderableSeries` that uses it, setting `zMin`, `zMax` and `zStep` for the levels and `dataLabels` to label the lines. For colour, add a `UniformHeatmapRenderableSeries` with the same data series behind the lines. To use it in React or Angular, call the same code from `scichart-react` or `scichart-angular`.
 
 ## Sources
 

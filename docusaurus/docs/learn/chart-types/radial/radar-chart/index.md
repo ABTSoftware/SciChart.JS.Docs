@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: Radar Chart
-title: "Radar Chart (Spider Chart): What It Is & How to Read It (With Interactive Examples)"
+title: "Radar Chart (Spider Chart): What It Is & How to Read It"
 description: "What a radar chart (spider chart) is, how to read and describe one, when to use it instead of a bar chart, and why axis order and area can mislead. With a live example."
 keywords:
     [
@@ -59,7 +59,7 @@ related: [polar-area-chart, parallel-coordinates-plot, bar-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a radar chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPolarSurface, add a PolarCategoryAxis as the angular axis with one label per variable, and a PolarNumericAxis as the radial axis with gridlineMode set to EPolarGridlineMode.Polygons. Then add a PolarMountainRenderableSeries or PolarLineRenderableSeries for each item, repeating the first point at the end to close the shape. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPolarSurface, add a PolarCategoryAxis as the angular axis with one label per variable, and a PolarNumericAxis as the radial axis with gridlineMode set to EPolarGridlineMode.Polygons. Then add a PolarMountainRenderableSeries or PolarLineRenderableSeries for each item, repeating the first point at the end to close the shape. The scichart-react and scichart-angular packages run the same setup in React and Angular." }
                 }
             ]
         })}
@@ -85,6 +85,8 @@ A **radar chart** (also called a spider chart, radar plot, spider plot or star p
 :::
 
 ## How to read a radar chart
+
+Read a radar chart one spoke at a time: the further out a shape crosses a spoke, the higher that item scores on that variable.
 
 ![Anatomy of a radar chart: five axes radiating from a centre at zero, pentagon-shaped scale rings, one item's scores plotted on each axis and joined into a filled polygon](./radar-chart-anatomy.svg)
 
@@ -133,11 +135,13 @@ Choose the chart by what the reader needs to do:
 | --- | --- |
 | See the overall profile of no more than 3 or 4 items across 4 to 10 variables on one scale | Radar chart |
 | Compare exact values, or more than 3 items | [Grouped bar chart](/learn/chart-types/cartesian/bar-chart/) |
-| Compare dozens of items across variables with different units | [Parallel coordinate plot](/2d-charts/chart-types/parallel-coordinate-plot/) |
+| Compare dozens of items across variables with different units | [Parallel coordinates plot](/learn/chart-types/complex/parallel-coordinates-plot/) |
 | Follow a variable with a natural order, such as months | [Line chart](/learn/chart-types/cartesian/line-chart/): a radar chart would wrongly join the last month back to the first |
 | Compare many items' profiles | One small radar chart per item, side by side, all on the same scale |
 
 ## Radar chart mistakes to avoid
+
+Most radar chart mistakes make the shape say something the numbers don't.
 
 | Mistake | Why it matters | What to do |
 | --- | --- | --- |
@@ -156,7 +160,7 @@ Now keep the data the same and only change the order of the six spokes. Dependin
 
 ## How to create a radar chart in JavaScript, React or Angular
 
-SciChart.js draws radar charts on a polar chart surface, with the same WebGL and WebGPU rendering, tooltips and zooming as its other charts. Try the chart below: hover over a spoke to see both phones' scores, scroll to zoom, double-click to reset, and use the legend to show or hide a phone.
+The demo below draws the two phones from the worked example as filled shapes on six spokes, on a SciChart.js polar chart surface with straight-sided rings. Try it: hover over a spoke to see both phones' scores, scroll to zoom, double-click to reset, and use the legend to show or hide a phone.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -329,7 +333,7 @@ The German statistician Georg von Mayr is credited with the first radar chart, o
 
 ### How do I make a radar chart in JavaScript?
 
-With SciChart.js, create a `SciChartPolarSurface`, add a `PolarCategoryAxis` as the angular axis with one label per variable, and a `PolarNumericAxis` as the radial axis with `gridlineMode` set to `EPolarGridlineMode.Polygons`. Then add a `PolarMountainRenderableSeries` or `PolarLineRenderableSeries` for each item, repeating the first point at the end to close the shape. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartPolarSurface`, add a `PolarCategoryAxis` as the angular axis with one label per variable, and a `PolarNumericAxis` as the radial axis with `gridlineMode` set to `EPolarGridlineMode.Polygons`. Then add a `PolarMountainRenderableSeries` or `PolarLineRenderableSeries` for each item, repeating the first point at the end to close the shape. The `scichart-react` and `scichart-angular` packages run the same setup in React and Angular.
 
 ## Sources
 

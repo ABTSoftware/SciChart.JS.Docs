@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
 sidebar_label: Axes and Scales
-title: "Chart Axes and Scales: A Guide (With Interactive Examples)"
+title: "Chart Axes and Scales: A Guide (Interactive Examples)"
 description: "How chart axes and scales work and how to read them: Cartesian graphs, 3D axes and logarithmic scales, with live, interactive examples."
 keywords: ["chart axes", "chart scales", "axis scale", "cartesian graph", "x and y axis", "log scale", "logarithmic scale"]
 ---

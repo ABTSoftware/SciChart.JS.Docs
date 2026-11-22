@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Box Plot
-title: "Box Plot (Box and Whisker Plot): What It Is & How to Read It (With Interactive Examples)"
+title: "Box Plot (Box and Whisker Plot): What It Is & How to Read It"
 description: "What a box plot (box and whisker plot) shows, how to read the median, quartiles, whiskers and outliers, how to work one out by hand, and what it can hide. With live examples."
 keywords:
     [
@@ -58,7 +58,7 @@ related: [violin-plot, histogram, density-plot, error-bars]
                 {
                     "@type": "Question",
                     "name": "How do I make a box plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a FastBoxPlotRenderableSeries with a BoxPlotDataSeries holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an XyScatterRenderableSeries. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a FastBoxPlotRenderableSeries with a BoxPlotDataSeries holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an XyScatterRenderableSeries. React and Angular apps make the same calls, through the scichart-react and scichart-angular packages." }
                 }
             ]
         })}
@@ -69,11 +69,11 @@ related: [violin-plot, histogram, density-plot, error-bars]
 
 ## What is a box plot?
 
-A **box plot** (also called a **box and whisker plot**, box and whisker diagram, box whisker plot or box diagram) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
+A **box plot** (also called a **box and whisker plot**) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
 
-![A box and whisker graph of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
+![A box plot of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
 
-*A box and whisker chart comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
+*A box plot comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A box plot draws the five-number summary: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
@@ -84,6 +84,8 @@ A **box plot** (also called a **box and whisker plot**, box and whisker diagram,
 :::
 
 ## How to read a box plot
+
+A box plot shows the median as a line, the middle half of the values as a box, the typical range as whiskers and unusual values as separate dots.
 
 ![Anatomy of a box plot: the minimum, first quartile (Q1), median, third quartile (Q3) and maximum, with the interquartile range, the whiskers and an outlier labelled](./box-plot-anatomy.svg)
 
@@ -159,6 +161,8 @@ To avoid being misled, plot the individual points over the box (with a small sid
 
 ## Common box plot mistakes
 
+Most box plot mistakes come from reading more into five numbers than they can carry.
+
 - **Not saying what the whiskers mean.** Some charts draw whiskers to the minimum and maximum, others to 1.5 × IQR, others to percentiles. State the rule in a note.
 - **Reading a skew from the box alone.** A long whisker can come from one extreme value. Look at where the median sits in the box as well.
 - **Assuming overlapping boxes mean "no difference", or separate boxes mean a real one.** A box plot shows spread, not statistical significance; test the difference if it matters.
@@ -166,7 +170,7 @@ To avoid being misled, plot the individual points over the box (with a small sid
 
 ## How to create a box plot in JavaScript, React or Angular
 
-SciChart.js draws box plots with WebGL and WebGPU, so you can compare many groups, zoom in and update the data live. You calculate the five-number summary for each group, and SciChart.js draws the boxes, whiskers and outliers. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a box to see its values.
+In the demo below, a short function sorts each class's exam scores, works out the quartiles and the 1.5 × IQR whisker limits, and hands the five numbers to a box plot series; the scores beyond the limits go to a separate scatter series as outlier dots. Hover over a box to read its five numbers, use the mouse wheel to zoom, drag to pan, and double-click to see all five classes again.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -313,7 +317,7 @@ Use a histogram to see the full shape of one dataset, including gaps and whether
 
 ### How do I make a box plot in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. React and Angular apps make the same calls, through the `scichart-react` and `scichart-angular` packages.
 
 ## Sources
 

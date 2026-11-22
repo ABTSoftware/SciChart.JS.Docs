@@ -1,7 +1,7 @@
 ---
 sidebar_position: 280
 sidebar_label: Violin Plot
-title: "Violin Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Violin Plot: What It Is & How to Read It (Interactive Examples)"
 description: "What a violin plot (violin chart) shows, how to read its width, median and box, what a violin reveals that a box plot hides, and the mistakes to avoid. With live examples."
 keywords:
     [
@@ -37,7 +37,7 @@ related: [box-plot, density-plot, histogram]
                 {
                     "@type": "Question",
                     "name": "What is the difference between a box plot and a violin plot?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A box plot draws five summary numbers: the minimum, first quartile, median, third quartile and maximum. A violin plot adds the shape of the data between them, drawn as a smoothed density curve mirrored on both sides. Two datasets can have the same box plot but very different violins, for example when one of them has two peaks." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A box plot draws a few summary numbers: the median, the first and third quartiles, and whiskers that reach the furthest typical values, with outliers shown separately. A violin plot adds the shape of the data between them, drawn as a smoothed density curve mirrored on both sides. Two datasets can have the same box plot but very different violins, for example when one of them has two peaks." }
                 },
                 {
                     "@type": "Question",
@@ -52,7 +52,7 @@ related: [box-plot, density-plot, histogram]
                 {
                     "@type": "Question",
                     "name": "How do I make a violin plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, calculate a kernel density estimate for each group, then add a FastBandRenderableSeries per group with an XyyDataSeries: the x values are the measured values, and the two y values are the group's position plus and minus the scaled density. Swap the axis alignments to make the violins vertical. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, calculate a kernel density estimate for each group, then add a FastBandRenderableSeries per group with an XyyDataSeries: the x values are the measured values, and the two y values are the group's position plus and minus the scaled density. Swap the axis alignments to make the violins vertical. It can be dropped into a React app with scichart-react or an Angular app with scichart-angular unchanged." }
                 }
             ]
         })}
@@ -79,9 +79,9 @@ A **violin plot** (also called a violin chart or violin graph) is a chart that s
 
 ## How to read a violin plot
 
-![Anatomy of a violin plot: the mirrored density curve, the widest part where values are most common, the thin tail where they are rare, the white median dot, the box from Q1 to Q3 and the whisker line](./violin-plot-anatomy.svg)
+Read a violin plot from the inside out: the median and box first, then the width and shape of the outline around them.
 
-Read a violin plot from the inside out:
+![Anatomy of a violin plot: the mirrored density curve, the widest part where values are most common, the thin tail where they are rare, the white median dot, the box from Q1 to Q3 and the whisker line](./violin-plot-anatomy.svg)
 
 1. Find the median. The white dot marks the middle value: half the group is above it and half below.
 2. Read the box. The thick bar runs from the first quartile (Q1) to the third quartile (Q3), so it holds the middle half of the values. The thin line (the whisker) reaches out to the furthest typical values, as on a [box plot](/learn/chart-types/cartesian/box-plot/).
@@ -144,7 +144,7 @@ A violin is a [density plot](/learn/chart-types/cartesian/density-plot/) turned 
 
 ## How a violin plot is calculated
 
-Each violin is drawn in three steps:
+A violin is a density estimate of one group's values, mirrored and drawn around that group's box plot. It takes three steps:
 
 1. Estimate the density. For every group, a **kernel density estimate** (KDE) puts a small bell-shaped curve on every value and adds them up. Where values crowd together, the curves pile up into a bulge. The [density plot guide](/learn/chart-types/cartesian/density-plot/) explains the method in detail.
 2. Mirror it. The curve is drawn on both sides of the group's position, so the shape is symmetric, and scaled so the widest violin fits its slot.
@@ -176,6 +176,8 @@ If your software doesn't say which bandwidth it used, try a smaller and a larger
 
 ## Common violin plot mistakes
 
+Most violin plot mistakes give the outline more authority than the data behind it supports.
+
 - **Too few values.** With fewer than a few dozen values per group, the smooth outline is mostly the kernel's shape, not the data's. Use a box plot or plot the individual points.
 - **Not saying how the shape was smoothed.** State the bandwidth, or the rule used to pick it, in a note. Different software picks different defaults.
 - **Letting the outline run past the data.** Some tools extend each violin beyond the lowest and highest values, which can show impossible values, such as negative times. Trim the outline to the data, or say that you didn't.
@@ -184,11 +186,11 @@ If your software doesn't say which bandwidth it used, try a smaller and a larger
 
 ## How to create a violin plot in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so you can compare many groups of large datasets, zoom in and update them live. There is no dedicated violin series: each violin is a **band series**, the filled area between an upper and a lower line, with the density added to and subtracted from the group's position. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover to see what share of each server's requests were faster than the load time under the cursor.
+The chart below compares the load times of four servers, 400 requests each, with every outline worked out by a kernel density estimate in the demo code. There is no dedicated violin series: each violin is a **band series**, the filled area between an upper and a lower line, with the density added to and subtracted from the group's position. Hover over it to see what share of each server's requests were faster than the load time under the cursor. Zoom with the mouse wheel, pan by dragging, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="violin plot" demo="box-plot-chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" />
+<LearnCta position="top" chart="violin plot" demo="box-plot-chart" demoLabel="box plot" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />
 
 Here is the code for this chart. The JavaScript version includes the `kernelDensity` and `boxSummary` helpers in the full demo code; the React and Angular versions assume you have copied `kernelDensity` into your project.
 
@@ -315,7 +317,7 @@ Key points:
 
 **See it in the demo app:** there's no violin plot demo yet. The closest is the box plot demo, which compares the same kind of grouped data: [JavaScript box plot](https://www.scichart.com/demo/javascript/box-plot-chart) · [React box plot](https://www.scichart.com/demo/react/box-plot-chart) · [Angular box plot](https://www.scichart.com/demo/angular/box-plot-chart). The band series that draws each violin: [JavaScript band chart](https://www.scichart.com/demo/javascript/band-chart) · [React band chart](https://www.scichart.com/demo/react/band-chart) · [Angular band chart](https://www.scichart.com/demo/angular/band-chart)
 
-**Go deeper:** [SciChart.js violin plot documentation](/2d-charts/chart-types/fast-band-renderable-series/): the band series, including gradient fills, and the [SciChart.js box plot documentation](/2d-charts/chart-types/fast-box-plot-renderable-series/) for a full box plot alongside.
+**Go deeper:** [SciChart.js band series documentation](/2d-charts/chart-types/fast-band-renderable-series/), the series that draws each violin, including gradient fills, and the [SciChart.js box plot documentation](/2d-charts/chart-types/fast-box-plot-renderable-series/) for a full box plot alongside.
 
 ## Frequently asked questions
 
@@ -329,7 +331,7 @@ The width at any value is the estimated density there: how common values near th
 
 ### What is the difference between a box plot and a violin plot?
 
-A box plot draws five summary numbers: the minimum, first quartile, median, third quartile and maximum. A violin plot adds the shape of the data between them, drawn as a smoothed density curve mirrored on both sides. Two datasets can have the same box plot but very different violins, for example when one of them has two peaks.
+A box plot draws a few summary numbers: the median, the first and third quartiles, and whiskers that reach the furthest typical values, with outliers shown separately. A violin plot adds the shape of the data between them, drawn as a smoothed density curve mirrored on both sides. Two datasets can have the same box plot but very different violins, for example when one of them has two peaks.
 
 ### What does bimodal look like on a violin plot?
 
@@ -341,7 +343,7 @@ Violin plots are good for comparing the shape of several groups with enough data
 
 ### How do I make a violin plot in JavaScript?
 
-With SciChart.js, calculate a kernel density estimate for each group, then add a `FastBandRenderableSeries` per group with an `XyyDataSeries`: the x values are the measured values, and the two y values are the group's position plus and minus the scaled density. Swap the axis alignments to make the violins vertical. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, calculate a kernel density estimate for each group, then add a `FastBandRenderableSeries` per group with an `XyyDataSeries`: the x values are the measured values, and the two y values are the group's position plus and minus the scaled density. Swap the axis alignments to make the violins vertical. It can be dropped into a React app with `scichart-react` or an Angular app with `scichart-angular` unchanged.
 
 ## Sources
 
@@ -349,4 +351,4 @@ With SciChart.js, calculate a kernel density estimate for each group, then add a
 - Silverman, B. W. (1986), [Density Estimation for Statistics and Data Analysis](https://doi.org/10.1201/9781315140919). Chapman and Hall. The source of the bandwidth rule of thumb used on this page.
 - Matejka, J. and Fitzmaurice, G. (2017), [Same Stats, Different Graphs](https://doi.org/10.1145/3025453.3025912). *Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems*, 1290–1294. Shows how datasets with the same summary statistics can look completely different when plotted.
 
-<LearnCta position="bottom" chart="violin plot" demo="box-plot-chart" docs="/2d-charts/chart-types/fast-band-renderable-series/" />
+<LearnCta position="bottom" chart="violin plot" demo="box-plot-chart" demoLabel="box plot" docs="/2d-charts/chart-types/fast-band-renderable-series/" docsLabel="SciChart.js band series documentation" />

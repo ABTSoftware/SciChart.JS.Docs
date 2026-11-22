@@ -1,7 +1,7 @@
 ---
 sidebar_position: 100
 sidebar_label: Density Plot
-title: "Density Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Density Plot: What It Is & How to Read It (Interactive Example)"
 description: "What a density plot (kernel density plot) is, how to read the curve and its y-axis, how bandwidth changes it, how it compares with a histogram, and mistakes to avoid. With a live example."
 keywords:
     [
@@ -53,7 +53,7 @@ related: [histogram, violin-plot, box-plot, area-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a density plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, work out a kernel density estimate on an evenly spaced grid of x values, then draw it with a FastMountainRenderableSeries for a filled curve or a FastLineRenderableSeries for an outline. For several groups, add one series per group; for a ridgeline layout, add each group on its own baseline by setting zeroLineY. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, work out a kernel density estimate on an evenly spaced grid of x values, then draw it with a FastMountainRenderableSeries for a filled curve or a FastLineRenderableSeries for an outline. For several groups, add one series per group; for a ridgeline layout, add each group on its own baseline by setting zeroLineY. The density function and the series code carry over unchanged to React with scichart-react and to Angular with scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +79,8 @@ A **density plot** (also called a density chart, density graph or kernel density
 :::
 
 ## How to read a density plot
+
+Read a density plot by its shape: peaks are where values bunch together, the width is the spread, and the area under any stretch of the curve is the share of values that fall there.
 
 ![The parts of a density plot of test scores: a smooth filled curve with a main peak near 52 and a second, smaller peak near 76, thin tails at each end, a shaded band between scores 60 and 70 holding about 14% of the area, and a rug of short ticks along the x-axis marking each score](./density-plot-anatomy.svg)
 
@@ -126,6 +128,8 @@ Most software picks a starting bandwidth with a rule of thumb. A widely used one
 
 ## Types of density plot
 
+Density plots differ in how many groups they show and how they lay them out: overlapping, stacked into a ridgeline, mirrored or in two dimensions.
+
 | Type | What it shows | Use it for |
 | --- | --- | --- |
 | Single density plot | One curve, often filled | The shape of one variable's distribution |
@@ -159,6 +163,8 @@ With only a few dozen values, prefer a histogram or a plain dot plot of the valu
 
 ## Common density plot mistakes
 
+Most density plot mistakes come from the smoothing: a bandwidth that hides peaks, tails that leak past real limits, and curves that hide how much data is behind them.
+
 - **Trusting the default bandwidth.** A rule-of-thumb bandwidth can merge two peaks into one. Try a smaller and a larger bandwidth and check that the features you report survive both.
 - **Tails beyond the data's possible range.** Each bump spreads a little on both sides, so the curve leaks past the smallest and largest values: negative waiting times, percentages over 100. Cut the curve at the real limits, or use a method that respects them, and say so.
 - **Hiding group sizes.** Every curve has an area of 1, so a group of 50 looks as solid as a group of 50,000. State the count for each group.
@@ -166,11 +172,11 @@ With only a few dozen values, prefer a histogram or a plain dot plot of the valu
 
 ## How to create a density plot in JavaScript, React or Angular
 
-SciChart.js has no separate density series: you work out the kernel density estimate in JavaScript, then draw it as a filled mountain (area) series or a line series. Because SciChart.js draws with WebGL and WebGPU, charts stay smooth to zoom and pan as your data grows or updates live. The chart below estimates densities from one million values in your browser as it loads. Scroll to zoom the time axis, drag to pan, double-click to reset, and hover to see every connection type's density at that load time.
+SciChart.js has no separate density series: you work out the kernel density estimate in JavaScript, then draw it as a filled mountain (area) series or a line series. The ridgeline below does this in your browser as it loads, for one million simulated page load times: 200,000 for each of five connection types, each drawn on its own baseline. Scroll to zoom the time axis, drag to pan, double-click to reset, and hover to see every connection type's density at that load time.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="density plot" demo="mountain-chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" />
+<LearnCta position="top" chart="density plot" demo="mountain-chart" demoLabel="mountain chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" docsLabel="SciChart.js mountain (area) series documentation" />
 
 Here is the code for this chart, including the density calculation:
 
@@ -345,7 +351,7 @@ A kernel density plot, or KDE plot, is a density plot drawn with kernel density 
 
 ### How do I make a density plot in JavaScript?
 
-With SciChart.js, work out a kernel density estimate on an evenly spaced grid of x values, then draw it with a `FastMountainRenderableSeries` for a filled curve or a `FastLineRenderableSeries` for an outline. For several groups, add one series per group; for a ridgeline layout, add each group on its own baseline by setting `zeroLineY`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, work out a kernel density estimate on an evenly spaced grid of x values, then draw it with a `FastMountainRenderableSeries` for a filled curve or a `FastLineRenderableSeries` for an outline. For several groups, add one series per group; for a ridgeline layout, add each group on its own baseline by setting `zeroLineY`. The density function and the series code carry over unchanged to React with `scichart-react` and to Angular with `scichart-angular`.
 
 ## Sources
 
@@ -355,4 +361,4 @@ With SciChart.js, work out a kernel density estimate on an evenly spaced grid of
 - Scott, D. W. (2015), [Multivariate Density Estimation: Theory, Practice, and Visualization](https://doi.org/10.1002/9781118575574), 2nd edition. Wiley. Density estimation in one and more dimensions, including bandwidth choice.
 - Wilke, C. O. (2019), [Fundamentals of Data Visualization, chapter 7: Visualizing distributions: histograms and density plots](https://clauswilke.com/dataviz/histograms-density-plots.html). O'Reilly. Practical guidance on kernels, bandwidth, the area-equals-one scaling and tails that run past the data.
 
-<LearnCta position="bottom" chart="density plot" demo="mountain-chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" />
+<LearnCta position="bottom" chart="density plot" demo="mountain-chart" demoLabel="mountain chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" docsLabel="SciChart.js mountain (area) series documentation" />

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 260
 sidebar_label: Tick Chart
-title: "Tick Chart: What Tick Bars Are and How They Compare With Time Charts (With an Interactive Example)"
+title: "Tick Chart: What Tick Bars Are & How They Compare With Time Charts"
 description: "What a tick chart is, how trades become tick bars, why tick bars speed up when the market is busy, how to choose the number of ticks, and when to use a time, volume or range chart instead."
 keywords:
     [
@@ -54,7 +54,7 @@ related: [candlestick-chart, renko-chart, footprint-chart, time-series-data-form
                 {
                     "@type": "Question",
                     "name": "How do I make a tick chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Group your trades into bars of N trades each, recording the first, highest, lowest and last price of each group. With SciChart.js, put those values in an OhlcDataSeries, plot it with a FastCandlestickRenderableSeries on an axis of bar numbers, and label each bar with its start time. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Group your trades into bars of N trades each, recording the first, highest, lowest and last price of each group. With SciChart.js, put those values in an OhlcDataSeries, plot it with a FastCandlestickRenderableSeries on an axis of bar numbers, and label each bar with its start time. React and Angular projects use the same code through scichart-react and scichart-angular." }
                 }
             ]
         })}
@@ -65,7 +65,7 @@ related: [candlestick-chart, renko-chart, footprint-chart, time-series-data-form
 
 ## What is a tick chart?
 
-A **tick chart** (also called a tick bar chart or trade-count chart) is a price chart in which each bar closes after a fixed number of trades, such as 233 or 1,000, instead of after a fixed amount of time. Bars form quickly when the market is busy and slowly when it is quiet, so the chart gives more detail where the trading is.
+A **tick chart** (also called a tick bar chart or trade-count chart) is a price chart in which each bar closes after a fixed number of trades, such as 233 or 1,000, instead of a fixed time. Bars form fast in busy markets and slowly in quiet ones, so the chart gives more detail where the trading is.
 
 ![Two candlestick charts of one simulated trading day in a dark navy theme. The top chart has one-minute candles at even spacing across the day; the bottom chart has 233-trade candles, with the hour after a 14:00 news release taking up a wide shaded band of candles and the quiet lunchtime hour a narrow band](/img/learn/tick-chart-og.png)
 
@@ -133,6 +133,8 @@ The eight-second burst gets a bar of its own on the tick chart. On the time char
 
 ## How to read a tick chart
 
+Read a tick chart like a candlestick chart, except that each bar is a fixed number of trades, so bar width and spacing say nothing about time.
+
 1. Check N. The chart's settings or title give the number of trades per bar, such as "233T" or "1000 tick". Without it, you can't compare bar sizes.
 2. Read each bar as a candlestick or OHLC bar. Body, wicks and colour mean the same as on a time chart.
 3. Read the spacing as activity. Bars are evenly spaced on screen but not in time. A stretch of many narrow bars is a busy period; a few bars covering a long time is a quiet one. Hover over bars, or read the time labels, to see when each one started.
@@ -168,7 +170,7 @@ $$
 The simulated session on this page has 78,740 trades over 390 minutes, about 200 a minute. For bars that last about a minute on average, N is about 200, and the 233-tick setting gives 338 bars with a median length of 67 seconds. In the busiest minutes after the news, a 233-tick bar closes in 8 seconds; at the quietest, one takes almost 4 minutes.
 
 - Busy instruments need a larger N, quiet ones a smaller one. A setting that works on a heavily traded index future would draw only a few bars a day on a thinly traded stock.
-- Popular settings such as 133, 233, 377 and 610 are Fibonacci numbers. Their appeal is tradition. Any nearby round number gives almost the same chart.
+- Popular settings such as 233, 377 and 610 are Fibonacci numbers; 133 is also popular. Their appeal is tradition. Any nearby round number gives almost the same chart.
 - Traders often pair two settings, such as a small N for timing entries and a larger N, or a time chart, for the trend.
 - Re-check N when activity changes: after a contract roll, in a holiday week, or when you switch from regular to overnight hours.
 
@@ -184,7 +186,7 @@ Every bar chart of prices closes a bar on some rule. The rule decides what the b
 | Tick bars | N trades have happened | Rises and falls with trading | Short-term trading in liquid markets; even detail through the day | A large order split into many small trades fills bars faster than one big trade; settings don't carry over between instruments |
 | Volume bars | N shares or contracts have traded | Rises and falls with volume | Same as tick bars, weighting each trade by its size | Needs trade sizes; one large block trade can fill a bar on its own |
 | Dollar bars | A fixed amount of money has traded | Rises and falls with traded value | Long histories where the price level changed a lot | Needs both price and size; less common in charting tools |
-| Range bars | The price has moved a fixed distance from the bar's open | Rises and falls with volatility | Filtering out small moves; seeing trends clearly | Ignores how much trading it took; bars have no fixed time or trade count |
+| Range bars | The bar's high-to-low range reaches a fixed size | Rises and falls with volatility | Filtering out small moves; seeing trends clearly | Ignores how much trading it took; bars have no fixed time or trade count |
 | Renko bricks | The price has moved a fixed distance past the last brick | Rises and falls with trends | Trend following; removing noise | Drops wicks and time entirely; reversals need two bricks |
 | [Candlestick](/learn/chart-types/cartesian/candlestick-chart/) or [OHLC](/learn/chart-types/cartesian/ohlc-chart/) drawing | (A way of drawing any of the bars above, not a closing rule) | | Showing open, high, low and close | Check which bar type is behind the candles |
 | Tick-by-tick line | Never: every trade is its own point | All of them | Seeing every trade; checking fills; market microstructure | Large datasets; noisy at long time spans |
@@ -199,13 +201,15 @@ The second meaning of "tick chart" is a chart of every individual trade, with no
 
 It shows things bars hide: the price bouncing between neighbouring ticks, pauses in trading, and the exact order of trades inside a burst. It's also the raw material for every other chart on this page, since time, tick, volume and range bars are all built from it.
 
-The simulated day on this page has 78,740 trades, and a heavily traded instrument can produce far more. That many points is beyond what an SVG chart can draw smoothly, so tick-by-tick charts need a WebGL or WebGPU charting library, data sent in a compact format and, for long spans, a way to reduce the points to what the screen can show.
+The simulated day on this page has 78,740 trades, and a heavily traded instrument can produce far more. An SVG chart adds one page element per point, so at this size tick-by-tick charts are usually drawn with a charting library that renders on the GPU through WebGL and WebGPU, with data sent in a compact format and, for long spans, a way to reduce the points to what the screen can show.
 
 - [Big data visualization](/learn/big-data/big-data-visualization/) compares SVG, Canvas and WebGL charts for large datasets.
 - [Time series data formats](/learn/big-data/time-series-data-formats/) covers sending trade times and prices as typed arrays instead of JSON.
 - [Downsampling](/learn/big-data/downsampling/) explains min-max and other methods that keep every spike visible when a day of trades has to fit into a few hundred pixels.
 
 ## Common tick chart mistakes
+
+Most tick chart mistakes come from treating bars as units of time, or from comparing charts built with different settings or data.
 
 - **Reading the horizontal axis as time.** Ten bars can cover ten seconds or an hour. Check the time labels before saying how long a move took.
 - **Copying N from another instrument.** A 1,000-tick chart can be several bars a minute on one market and a few bars an hour on another.
@@ -217,7 +221,7 @@ The simulated day on this page has 78,740 trades, and a heavily traded instrumen
 
 ## How to create a tick chart in JavaScript, React or Angular
 
-Tick charts are built from raw trades, often tens of thousands a day per instrument, and traders redraw them as every trade arrives. SciChart.js draws with WebGL and WebGPU, so both the candles and every raw trade stay smooth to zoom and pan.
+Tick charts are built from raw trades, often tens of thousands a day per instrument, so the bars are computed from the trade stream first and then drawn as candles.
 
 The demo simulates one trading day of 78,740 trades and builds both charts from them in the browser. Change **Ticks per bar** to rebuild the tick bars, and **Time bar size** to rebuild the time bars. Tick **Show raw ticks** to draw every trade as a line over the time bars, then zoom in on the news burst to see each trade. The table underneath counts the bars in the quiet and busy hours and gives their median size. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
 
@@ -408,7 +412,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, gives you a ready-made trading chart with live exchange feeds, 30+ technical indicators, drawing tools and multiple panes. Its candles use time intervals, from one second to one month (see [changing the interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)), and its [price chart types](/financial-charts/studies-and-indicators/price-chart-types/) include Renko and Point & Figure. For tick bars, build them from your trade stream as in the demo above. See what SciChart can do for trading apps on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+Candles in [SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, use time intervals, from one second to one month (see [changing the interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)), and its [price chart types](/financial-charts/studies-and-indicators/price-chart-types/) add Renko and Point & Figure. For tick bars, build them from your trade stream as in the demo above. Around the price chart, SciTrader.js adds live exchange feeds, technical indicators, drawing tools and multiple panes. See what SciChart can do for trading apps on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 
@@ -434,7 +438,7 @@ A tick-by-tick chart plots every individual trade or price update as its own poi
 
 ### How do I make a tick chart in JavaScript?
 
-Group your trades into bars of N trades each, recording the first, highest, lowest and last price of each group. With SciChart.js, put those values in an `OhlcDataSeries`, plot it with a `FastCandlestickRenderableSeries` on an axis of bar numbers, and label each bar with its start time. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+Group your trades into bars of N trades each, recording the first, highest, lowest and last price of each group. With SciChart.js, put those values in an `OhlcDataSeries`, plot it with a `FastCandlestickRenderableSeries` on an axis of bar numbers, and label each bar with its start time. React and Angular projects use the same code through `scichart-react` and `scichart-angular`.
 
 ## Sources
 

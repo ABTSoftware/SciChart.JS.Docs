@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Bubble Chart
-title: "Bubble Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Bubble Chart: What It Is & How to Read It (Interactive Examples)"
 description: "What a bubble chart is, how to read and describe one, why bubble size must show area rather than width, when to use it instead of a scatter plot, and mistakes to avoid."
 keywords:
     [
@@ -52,7 +52,7 @@ related: [scatter-plot, heatmap, treemap, xyz-graph]
                 {
                     "@type": "Question",
                     "name": "How do I make a bubble chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastBubbleRenderableSeries with an XyzDataSeries holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as EllipsePointMarker. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastBubbleRenderableSeries with an XyzDataSeries holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as EllipsePointMarker. For React, pass the same code to the SciChartReact component from scichart-react; for Angular, use scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +78,8 @@ A **bubble chart** (also called a bubble graph or bubble plot) is a chart that s
 :::
 
 ## How to read a bubble chart
+
+Read a bubble chart as a scatter plot of two values, then compare bubble sizes for the third.
 
 ![Anatomy of a bubble chart: horizontal position shows the first value, vertical position the second, bubble size the third, and colour an optional group. An inset shows that a value four times as large has four times the area but only twice the width](./bubble-chart-anatomy.svg)
 
@@ -137,7 +139,7 @@ The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In t
 
 ## Common bubble chart mistakes
 
-Run through this checklist before you publish a bubble chart:
+Most bubble chart mistakes make the sizes hard to judge or hide the smaller bubbles.
 
 - **No key for size.** Readers can't tell what a big bubble means. Say what size shows in the title, the legend or a note, and add two or three reference circles if exact sizes matter.
 - **Too many bubbles.** Large bubbles overlap and hide the small ones behind them. Keep to a few dozen, use semi-transparent fills, draw small bubbles on top, or switch to a scatter plot.
@@ -147,7 +149,7 @@ Run through this checklist before you publish a bubble chart:
 
 ## How to create a bubble chart in JavaScript, React or Angular
 
-SciChart.js draws bubble charts with WebGL and WebGPU, so they stay smooth to zoom and pan with large datasets and live updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover to see each region's nearest store and its number of customers.
+The demo below plots 36 stores in three regions, with each bubble's diameter set to the square root of its number of customers, so the bubble's area carries the value. Hover to see each region's nearest store and its number of customers; zoom with the mouse wheel, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -282,7 +284,7 @@ Put your data in three columns: the x value, the y value and the size value for 
 
 ### How do I make a bubble chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastBubbleRenderableSeries` with an `XyzDataSeries` holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastBubbleRenderableSeries` with an `XyzDataSeries` holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as `EllipsePointMarker`. For React, pass the same code to the `SciChartReact` component from `scichart-react`; for Angular, use `scichart-angular`.
 
 ## Sources
 

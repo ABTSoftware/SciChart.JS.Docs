@@ -1,7 +1,7 @@
 ---
 sidebar_position: 190
 sidebar_label: Pareto Chart
-title: "Pareto Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Pareto Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a Pareto chart is, how to read the bars and cumulative line, the 80/20 rule, how to make one step by step, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -53,7 +53,7 @@ related: [bar-chart, combo-chart, histogram, waterfall-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a Pareto chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a FastColumnRenderableSeries for the counts on the left y-axis, then a second NumericAxis on the right from 0 to 100% and a FastLineRenderableSeries for the cumulative percentages, linked to it with yAxisId. A HorizontalLineAnnotation draws the 80% line. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a FastColumnRenderableSeries for the counts on the left y-axis, then a second NumericAxis on the right from 0 to 100% and a FastLineRenderableSeries for the cumulative percentages, linked to it with yAxisId. A HorizontalLineAnnotation draws the 80% line. The code tabs above show the same chart as a React component (scichart-react) and an Angular component (scichart-angular)." }
                 }
             ]
         })}
@@ -64,9 +64,9 @@ related: [bar-chart, combo-chart, histogram, waterfall-chart]
 
 ## What is a Pareto chart?
 
-A **Pareto chart** (also called a Pareto diagram) is a bar chart with its bars sorted from largest to smallest, plus a line showing the running total as a percentage. The bars show how often each cause or category occurs. The line shows how much of the total the first few causes make up, which tells you what to fix first.
+A **Pareto chart** (also called a Pareto diagram) is a bar chart with its bars sorted from largest to smallest, plus a line showing the running total as a percentage. The bars show how often each cause or category occurs. The line shows how much of the total the first few causes make up, which shows what to fix first.
 
-![A Pareto chart of 410 support tickets by cause: seven columns fall from Sign-in (168) to Other (10), and a white cumulative line rises against a right-hand percentage axis, reaching the dashed 80% line at the third column](/img/learn/pareto-chart-og.png)
+![A Pareto chart of 410 support tickets by cause: seven columns fall from Sign-in (168) to Other (10), and a white cumulative line rises against a right-hand percentage axis, reaching just under the dashed 80% line at the third column](/img/learn/pareto-chart-og.png)
 
 *A Pareto chart of one quarter's support tickets, counted by cause (sample data). [Try the interactive version](#how-to-create-a-pareto-chart-in-javascript-react-or-angular).*
 
@@ -79,6 +79,8 @@ A **Pareto chart** (also called a Pareto diagram) is a bar chart with its bars s
 :::
 
 ## How to read a Pareto chart
+
+Read the bars to see which causes are largest, then follow the cumulative line to see how much of the total the first few of them cover.
 
 ![The parts of a Pareto chart: six bars labelled A to E and Other sorted from largest to smallest against a left count axis, a cumulative line rising against a right axis from 0% to 100%, a dashed 80% reference line, and brackets marking the first three causes as the vital few (82%) and the rest as the useful many (18%)](./pareto-chart-anatomy.svg)
 
@@ -163,6 +165,8 @@ Use a Pareto chart when you have counts or costs for a set of categories and nee
 
 ## Common Pareto chart mistakes
 
+A Pareto chart misleads when its bars aren't sorted, when a catch-all category hides real causes, or when its counts don't come from comparable data.
+
 - **Not sorting the bars.** Unsorted bars hide the ranking, and the cumulative line no longer rises steeply then flattens. Sort from largest to smallest every time the data changes.
 - **A large "Other" bar.** "Other" goes last whatever its size. If it ends up as one of the biggest bars, it is hiding causes: split it into real categories.
 - **Too few data points.** With only a few dozen events, the order of similar-sized bars can be down to chance. Collect enough data before ranking causes that are close.
@@ -171,11 +175,11 @@ Use a Pareto chart when you have counts or costs for a set of categories and nee
 
 ## How to create a Pareto chart in JavaScript, React or Angular
 
-SciChart.js has no separate Pareto series: you combine a column series and a line series on one chart, each with its own y-axis. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan as your data grows or updates live. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a column to see its count and cumulative percentage.
+SciChart.js has no separate Pareto series: you combine a column series and a line series on one chart, each with its own y-axis. The chart below sorts 410 support tickets by cause in code, then draws the counts as columns on the left axis and the running percentage as a line on a right-hand axis fixed at 0% to 100%, with a reference line at 80%. Hover over a column to see its count and cumulative percentage; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="Pareto chart" demo="column-chart" docs="/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/" />
+<LearnCta position="top" chart="Pareto chart" demo="column-chart" demoLabel="column chart" docs="/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/" docsLabel="SciChart.js secondary and multiple axes documentation" />
 
 Here is the code for this chart:
 
@@ -380,7 +384,7 @@ A Pareto chart is a special kind of bar chart. Its bars are always sorted from l
 
 ### How do I make a Pareto chart in JavaScript?
 
-With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a `FastColumnRenderableSeries` for the counts on the left y-axis, then a second `NumericAxis` on the right from 0 to 100% and a `FastLineRenderableSeries` for the cumulative percentages, linked to it with `yAxisId`. A `HorizontalLineAnnotation` draws the 80% line. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, sort your categories from largest to smallest and work out the cumulative percentages. Add a `FastColumnRenderableSeries` for the counts on the left y-axis, then a second `NumericAxis` on the right from 0 to 100% and a `FastLineRenderableSeries` for the cumulative percentages, linked to it with `yAxisId`. A `HorizontalLineAnnotation` draws the 80% line. The code tabs above show the same chart as a React component (`scichart-react`) and an Angular component (`scichart-angular`).
 
 ## Sources
 
@@ -388,4 +392,4 @@ With SciChart.js, sort your categories from largest to smallest and work out the
 - Juran Institute, [A Guide to the Pareto Principle (80/20 Rule) & Pareto Analysis](https://www.juran.com/blog/a-guide-to-the-pareto-principle-80-20-rule-pareto-analysis/). Juran's naming of the principle after Vilfredo Pareto, and the "vital few" and "useful many".
 - Wilkinson, L. (2006), [Revising the Pareto chart](https://doi.org/10.1198/000313006X152243). *The American Statistician*, 60(4), 332–334. Why the order of similar bars can be down to chance, and how to show that uncertainty.
 
-<LearnCta position="bottom" chart="Pareto chart" demo="column-chart" docs="/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/" />
+<LearnCta position="bottom" chart="Pareto chart" demo="column-chart" demoLabel="column chart" docs="/2d-charts/axis-api/multi-axis-and-layout/secondary-and-multiple-axis-overview/" docsLabel="SciChart.js secondary and multiple axes documentation" />

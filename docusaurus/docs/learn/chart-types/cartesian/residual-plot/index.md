@@ -1,7 +1,7 @@
 ---
 sidebar_position: 220
 sidebar_label: Residual Plot and Q-Q Plot
-title: "Residual Plot and Q-Q Plot: How to Read Them and Check a Regression (With Interactive Examples)"
+title: "Residual Plot and Q-Q Plot: How to Read Them (Interactive Example)"
 description: "What a residual plot and a Q-Q plot show, how to read residuals vs fitted, funnel and curve patterns, Q-Q plot shapes, leverage, and what to fix next. With a live example."
 keywords:
     [
@@ -56,7 +56,7 @@ related: [scatter-plot, roc-curve, histogram, correlation-matrix]
                 {
                     "@type": "Question",
                     "name": "How do I make a residual plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Fit the regression in plain JavaScript (least squares), compute each residual as the observed value minus the fitted value, then draw the residuals against the fitted values with SciChart.js as an XyScatterRenderableSeries, with a HorizontalLineAnnotation at zero. For a Q-Q plot, sort the standardised residuals and plot them against normal quantiles of the plotting positions. The same charts work in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Fit the regression in plain JavaScript (least squares), compute each residual as the observed value minus the fitted value, then draw the residuals against the fitted values with SciChart.js as an XyScatterRenderableSeries, with a HorizontalLineAnnotation at zero. For a Q-Q plot, sort the standardised residuals and plot them against normal quantiles of the plotting positions. The charts can be used in React through scichart-react and in Angular through scichart-angular." }
                 }
             ]
         })}
@@ -120,6 +120,8 @@ For a model with one input, residuals vs x shows the same picture as residuals v
 
 ## Residual plot patterns: curves, funnels, clusters and outliers
 
+Each common pattern in a residual plot points to a different problem with the model, so name the pattern before you change anything.
+
 ![Four residuals vs fitted plots with a dashed zero line and an orange smoothing line. A random band with a flat smoothing line, labelled model fits. A U-shaped curve, labelled non-linearity. A funnel that widens to the right, labelled heteroscedasticity. One red point far above the others, labelled outlier](./residual-plot-patterns.svg)
 
 | Pattern in residuals vs fitted | What it means | Usual next step |
@@ -169,6 +171,8 @@ For the five residuals in the worked example (s = 0.63):
 The middle point sits below the line (−0.32 against 0) and the fourth above it (0.88 against 0.50). Five points can't say much about a distribution's shape, which is why Q-Q plots are read from about 20 points up.
 
 ## How to read a Q-Q plot
+
+Read a Q-Q plot by where the points leave the reference line: at one end, at both ends in opposite directions, or along a curve.
 
 ![Four normal Q-Q plots of 30 points with a dashed reference line. Close to normal: the points follow the line. Heavy tails: the low end bends below the line and the high end above it. Light tails: both ends flatten towards the middle. Right-skewed: a bow with both ends above the line](./qq-plot-shapes.svg)
 
@@ -232,6 +236,8 @@ After any change, refit and draw the residual plots again.
 
 ## Common residual plot and Q-Q plot mistakes
 
+Most mistakes come from trusting a single number or a single plot instead of reading the residuals themselves.
+
 - **Trusting R² instead of the residual plot.** A high R² means the model explains much of the variation; it says nothing about whether the model has the right form. In the live demo, a straight line fitted to the curved relationship gives R² = 0.90, and only the U-shaped residual plot shows that a quadratic is better (R² = 0.95, residual SD down from 1.51 to 1.04).
 - **Plotting residuals against observed y.** Residuals are correlated with observed y by construction, so that plot always shows an upward slope, even for a perfect model. Plot against the fitted values.
 - **Reading patterns into noise.** With 20 or 30 points, random residuals often look as if they curve or fan. Use a smoothing line, and only act on patterns that are clear or that you have a reason to expect.
@@ -242,7 +248,7 @@ After any change, refit and draw the residual plots again.
 
 ## How to make a residual plot and Q-Q plot in JavaScript, React or Angular
 
-SciChart.js draws scatter and line charts with WebGL, so residual and Q-Q plots stay smooth with hundreds of thousands of points, and all three charts redraw at once when the model changes. The demo fits the regression and computes the residuals, the smoothing line and the Q-Q points in the browser.
+The demo below draws three linked charts from one simulated regression: the data with its fitted line, the residuals against the fitted values, and a normal Q-Q plot. Each time you change a control, it refits the model in the browser, recomputes the residuals, the smoothing line and the Q-Q points for 30 to 1,000 points, and redraws all three charts.
 
 Pick the **True relationship** (straight or curved), the **Noise** (normal, funnel, heavy-tailed or skewed), an **Extra point** (an outlier or a high-leverage point) and the **Sample size**, or tick **Fit a quadratic** to change the model. The line above the charts gives the fitted equation, R² and the residual standard deviation. Hover any chart for values; scroll to zoom, drag to pan and double-click to reset.
 
@@ -413,7 +419,7 @@ Least-squares estimates do not need normal residuals to be unbiased. Normality m
 
 ### How do I make a residual plot in JavaScript?
 
-Fit the regression in plain JavaScript (least squares), compute each residual as the observed value minus the fitted value, then draw the residuals against the fitted values with SciChart.js as an XyScatterRenderableSeries, with a HorizontalLineAnnotation at zero. For a Q-Q plot, sort the standardised residuals and plot them against normal quantiles of the plotting positions. The same charts work in React with scichart-react and in Angular with scichart-angular.
+Fit the regression in plain JavaScript (least squares), compute each residual as the observed value minus the fitted value, then draw the residuals against the fitted values with SciChart.js as an XyScatterRenderableSeries, with a HorizontalLineAnnotation at zero. For a Q-Q plot, sort the standardised residuals and plot them against normal quantiles of the plotting positions. The charts can be used in React through scichart-react and in Angular through scichart-angular.
 
 ## Sources
 

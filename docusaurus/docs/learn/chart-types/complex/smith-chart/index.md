@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: Smith Chart
-title: "Smith Chart: How to Read It and Use It for Impedance Matching (With an Interactive Example)"
+title: "Smith Chart: How to Read It and Use It for Impedance Matching"
 description: "What a Smith chart is, how to read resistance circles and reactance arcs, VSWR circles, return loss and line length, and how to match a load, with a live interactive Smith chart."
 keywords:
     [
@@ -104,6 +104,8 @@ Any passive load has $r \ge 0$, and for every such load $|\Gamma| \le 1$. So the
 Every resistance circle touches the right-hand edge at $\Gamma = 1$ (the open circuit), and so does every reactance arc. The $r = 0$ circle is the rim itself: pure reactance, with all the power reflected.
 
 ## How to read a Smith chart
+
+To read a Smith chart, normalise the impedance, find where its resistance circle and reactance arc cross, then read that point's distance and direction from the centre.
 
 ![Anatomy of a Smith chart: the rim, the short circuit at the left, the open circuit at the right and the matched point at the centre; the r = 0.5 and r = 1 resistance circles in blue and the x = +1 reactance arc in red; a load z = 0.5 + j1 where the r = 0.5 circle meets the x = +1 arc, with a dashed VSWR circle of radius 0.62 through it; and an arrow round the rim showing that moving toward the generator turns clockwise](./smith-chart-anatomy.svg)
 
@@ -220,15 +222,19 @@ A **single-stub match** follows the same idea with lines instead of components. 
 
 ## Where Smith charts are used
 
+Smith charts are used wherever RF parts have to be matched to the cable or circuit that feeds them.
+
 - Vector network analysers (VNAs). The reflection measurement ($S_{11}$) is shown on a Smith chart, as a trace across a frequency sweep.
 - Antennas. Tuning a feed or matching network; a well-matched antenna's trace loops close to the centre near its working frequency.
 - Amplifiers and oscillators. Input and output matching, and design circles for gain, noise and stability plotted on the same chart.
 - MRI and lab instruments. Tuning and matching RF coils and probes to the 50 Ω electronics.
-- Radio receivers and signals intelligence. Front ends and antennas that have to stay matched across wide bands; see SciChart's [signals intelligence (SIGINT) page](https://www.scichart.com/sigint-signals-intelligence/).
+- Radio receivers and signals intelligence. Front ends and antennas that have to stay matched across wide bands.
 
-The same charts appear in RF design, emulation and test software; see SciChart's [design, emulation and test industry page](https://www.scichart.com/design-emulation-test/).
+The same charts appear in RF design, emulation and test software.
 
 ## Smith chart vs polar plot vs rectangular plots
+
+Use a Smith chart when you need the impedance itself; a polar plot is enough for the size and phase of the reflection, and rectangular plots show how values change with frequency.
 
 | Chart | Shows | Use it when… |
 | --- | --- | --- |
@@ -241,6 +247,8 @@ A [polar area chart](/learn/chart-types/radial/polar-area-chart/) or [radar char
 
 ## Common Smith chart mistakes
 
+Most Smith chart mistakes come from reading the right point on the wrong grid, or turning it the wrong way.
+
 - **Not normalising, or normalising to the wrong $Z_0$.** A chart read as 50 Ω gives wrong answers on a 75 Ω system. Check what the instrument or software normalised to.
 - **Turning the wrong way.** Toward the generator is clockwise; toward the load is anticlockwise. Mixing them up puts a stub on the wrong side of the load.
 - **Adding a shunt part on the impedance grid.** Series parts move along resistance circles; shunt parts move along conductance circles. Switch to the admittance grid before a shunt step.
@@ -250,7 +258,7 @@ A [polar area chart](/learn/chart-types/radial/polar-area-chart/) or [radar char
 
 ## How to make a Smith chart in JavaScript, React or Angular
 
-SciChart.js draws with WebGL, so the grid, the circles and a whole frequency sweep redraw instantly each time a control moves. The live demo below is a Smith chart built from standard line and scatter series on a square chart. Set the **line impedance $Z_0$**, the **load resistance R** and **load reactance X**, and add a **line length** to watch the point turn round its VSWR circle. **Show L-network match** draws a two-component match from the line's input to the centre and lists the parts at the chosen **design frequency**. The panel gives $\Gamma$, VSWR, return loss and mismatch loss, and reads the impedance under the mouse. Scroll to zoom, drag to pan, and double-click to reset.
+Each time you move a control, the demo below works out the load's reflection coefficient, its VSWR circle and the L-network match again, and redraws them on a Smith chart built from standard SciChart.js line and scatter series on a square chart. Set the **line impedance $Z_0$**, the **load resistance R** and **load reactance X**, and add a **line length** to watch the point turn round its VSWR circle. **Show L-network match** draws a two-component match from the line's input to the centre and lists the parts at the chosen **design frequency**. The panel gives $\Gamma$, VSWR, return loss and mismatch loss, and reads the impedance under the mouse. Zoom with the mouse wheel to look closely at one region, drag to pan, and double-click to see the whole chart again.
 
 <LiveDocSnippet maxWidth={'100%'} height={680} name="./Basic/demo" />
 
@@ -451,7 +459,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript Smith chart](https://www.scichart.com/demo/javascript/smith-chart) · [React Smith chart](https://www.scichart.com/demo/react/smith-chart) · [Angular Smith chart](https://www.scichart.com/demo/angular/smith-chart), with impedance and admittance grids, markers, VSWR circles and matching chains.
 
-**Go deeper:** [SciChart.js polar line chart documentation](/2d-charts/chart-types/polar-line-renderable-series/) for circular charts in general, the [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [custom chart modifiers documentation](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/). For the far-field side of antenna design, see [antenna radiation patterns](/learn/applications/antenna-radiation-pattern/).
+**Go deeper:** [SciChart.js polar line chart documentation](/2d-charts/chart-types/polar-line-renderable-series/) for circular charts in general, the [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [custom chart modifiers documentation](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/). For the far-field side of antenna design, see [antenna radiation patterns](/learn/applications/antenna-radiation-pattern/). SciChart.js is used in RF and signals work: see the [signals intelligence (SIGINT)](https://www.scichart.com/sigint-signals-intelligence/) and [design, emulation and test](https://www.scichart.com/design-emulation-test/) industry pages.
 
 ## Frequently asked questions
 
