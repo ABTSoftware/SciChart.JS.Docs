@@ -38,8 +38,12 @@ export const AUTHORS: Record<string, Person> = {
         id: "https://www.scichart.com/#/schema/person/andrew",
         name: "Andrew Burnett-Thompson",
         url: "https://www.scichart.com/author/andrew/",
-        jobTitle: "CEO",
-        sameAs: ["https://github.com/andyb1979"]
+        jobTitle: "CEO / Founder, SciChart",
+        sameAs: [
+            "https://www.linkedin.com/in/dr-andrew-burnett-thompson",
+            "https://github.com/andyb1979",
+            "https://x.com/drandrewbt"
+        ]
     }
 };
 
