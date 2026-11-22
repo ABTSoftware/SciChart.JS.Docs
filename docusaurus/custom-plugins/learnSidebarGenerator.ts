@@ -1,6 +1,6 @@
-// Regroups the learning center's Applications guides by sector in the sidebar, and shows the Signal Processing
-// section as one of those sectors. Only the sidebar tree changes: folders, doc ids and URLs stay as they are
-// (/learn/applications/<slug>/ and /learn/signal-processing/<slug>/).
+// Regroups the learning center's Applications guides by sector in the sidebar, and shows the Machine Learning and
+// Signal Processing sections as sectors too. Only the sidebar tree changes: folders, doc ids and URLs stay as they are
+// (/learn/applications/<slug>/, /learn/machine-learning/<slug>/ and /learn/signal-processing/<slug>/).
 //
 // Everything else in the docs sidebar is still generated from the folder structure. To file a new Applications
 // guide under a sector, add its folder name to APPLICATION_SECTORS below. A guide that isn't listed still appears,
@@ -13,8 +13,11 @@ type GeneratorArgs = { defaultSidebarItemsGenerator: (args: any) => Promise<Item
 
 const LEARN_INDEX = "learn/index";
 const APPLICATIONS_INDEX = "learn/applications/index";
-const SIGNAL_PROCESSING_INDEX = "learn/signal-processing/index";
-const SIGNAL_PROCESSING_SECTOR = "Signal Processing";
+// Whole learning center sections shown as sectors inside Applications: section hub doc id -> sector label
+const SECTIONS_AS_SECTORS: Record<string, string> = {
+    "learn/machine-learning/index": "Machine Learning",
+    "learn/signal-processing/index": "Signal Processing"
+};
 const OTHER_SECTOR = "Other applications";
 
 /** Sector label for each Applications guide, by folder name under docs/learn/applications/. */
@@ -42,7 +45,7 @@ const linkId = (item: Item): string | undefined => (item?.type === "category" ? 
 
 function regroupApplications(learnItems: Item[]): Item[] {
     const applications = learnItems.find((i) => linkId(i) === APPLICATIONS_INDEX);
-    const signalProcessing = learnItems.find((i) => linkId(i) === SIGNAL_PROCESSING_INDEX);
+    const sections = learnItems.filter((i) => (linkId(i) ?? "") in SECTIONS_AS_SECTORS);
     if (!applications) return learnItems;
 
     const groups = new Map<string, Item[]>();
@@ -61,7 +64,7 @@ function regroupApplications(learnItems: Item[]): Item[] {
         collapsible: true,
         items
     }));
-    if (signalProcessing) sectors.push({ ...signalProcessing, label: SIGNAL_PROCESSING_SECTOR });
+    for (const section of sections) sectors.push({ ...section, label: SECTIONS_AS_SECTORS[linkId(section)!] });
 
     sectors.sort((a, b) => {
         // "Other applications" always goes last
@@ -71,7 +74,7 @@ function regroupApplications(learnItems: Item[]): Item[] {
     });
 
     return learnItems
-        .filter((i) => i !== signalProcessing)
+        .filter((i) => !sections.includes(i))
         .map((i) => (i === applications ? { ...applications, items: sectors } : i));
 }
 

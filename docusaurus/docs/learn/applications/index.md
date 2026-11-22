@@ -47,6 +47,10 @@ For more on how SciChart is used in this sector, see [SciChart for life sciences
 | [Mass spectrum](/learn/applications/mass-spectrum/) | Reading a mass spectrometry graph: m/z, base peak, molecular ion, isotope patterns and charge states |
 | [Spectroscopy](/learn/applications/spectroscopy/) | Reading IR, Raman and UV-Vis spectra, Beer–Lambert and baseline correction |
 
+## Machine learning
+
+The [Machine Learning](/learn/machine-learning/) section has 9 guides with models that train live in the browser: activation functions, anomaly detection, decision boundaries, dimensionality reduction, hierarchical and k-means clustering, regularization, ROC curves and support vector machines.
+
 ## Medical
 
 For more on how SciChart is used in this sector, see [SciChart for medical](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/).
