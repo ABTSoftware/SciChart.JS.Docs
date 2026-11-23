@@ -83,7 +83,13 @@ export default function LearnByline(): React.ReactElement | null {
     const reviewer = fm.reviewer ? AUTHORS[fm.reviewer as string] : undefined;
 
     const published = fm.datePublished as string | undefined;
-    const updated = metadata.lastUpdatedAt ?? undefined;
+    // The last update comes from git in production builds. In development (npm start) Docusaurus skips git and
+    // returns a placeholder date (14 October 2018) for every page, so ignore any update earlier than the published
+    // date rather than show a wrong one.
+    const rawUpdated = metadata.lastUpdatedAt ?? undefined;
+    const publishedTime = published ? new Date(published).getTime() : undefined;
+    const updated =
+        rawUpdated !== undefined && (publishedTime === undefined || rawUpdated >= publishedTime) ? rawUpdated : undefined;
     const lastReviewed = fm.lastReviewed as string | undefined;
 
     const pageUrl = new URL(metadata.permalink, siteConfig.url).toString();
