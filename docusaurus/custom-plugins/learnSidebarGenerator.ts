@@ -7,7 +7,7 @@
 // in an "Other applications" group, so nothing goes missing from the sidebar.
 //
 // A sector can also list guides that live in another section, by reference (REFERENCED_GUIDES): the guide stays in its
-// own section and keeps its URL, and also appears in the sector (e.g. the financial chart types under Finance and Trading).
+// own section and keeps its URL, and also appears in the sector (e.g. the footprint, renko and tick charts under Finance and Trading).
 //
 // Order: sectors alphabetically; guides within a sector alphabetically by label.
 
@@ -54,12 +54,9 @@ export const APPLICATION_SECTORS: Record<string, string> = {
 
 /** Guides from other sections also listed in a sector, by doc id (they keep their own section and URL). */
 export const REFERENCED_GUIDES: Record<string, string> = {
-    "learn/chart-types/cartesian/candlestick-chart/index": "Finance and Trading",
     "learn/chart-types/cartesian/footprint-chart/index": "Finance and Trading",
-    "learn/chart-types/cartesian/ohlc-chart/index": "Finance and Trading",
     "learn/chart-types/cartesian/renko-chart/index": "Finance and Trading",
-    "learn/chart-types/cartesian/tick-chart/index": "Finance and Trading",
-    "learn/chart-types/cartesian/waterfall-chart/index": "Finance and Trading"
+    "learn/chart-types/cartesian/tick-chart/index": "Finance and Trading"
 };
 
 const linkId = (item: Item): string | undefined => (item?.type === "category" ? item.link?.id : undefined);
