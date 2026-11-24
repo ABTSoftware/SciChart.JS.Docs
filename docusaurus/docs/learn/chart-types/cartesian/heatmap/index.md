@@ -164,7 +164,7 @@ Use a heatmap when your data is a **grid**: two dimensions, such as rows and col
 
 Most heatmap mistakes come from the colour scale, which can invent edges, hide differences or leave readers unable to turn colours back into numbers.
 
-- **Using a rainbow scale.** Rainbow (jet) colours jump in brightness from yellow to cyan, so readers see sharp edges where the data changes smoothly. Use viridis or another perceptually uniform scale.
+- **Using a rainbow scale.** Rainbow (jet) colours rise and fall in brightness, with bright bands at cyan and yellow, so readers see sharp edges where the data changes smoothly. Use viridis or another perceptually uniform scale.
 - **Using the wrong kind of scale.** A sequential scale hides whether values are above or below zero; a diverging scale with its neutral colour away from the real midpoint makes the wrong cells look important.
 - **Letting one extreme value set the range.** A single very high cell takes the top colour and squashes everything else into a few similar shades. Cap the range, or use a logarithmic scale for data that spans several orders of magnitude.
 - **Leaving rows in an arbitrary order.** Alphabetical order scatters similar rows across the grid. Sort rows and columns by value, by time or by similarity so the pattern can form.
@@ -320,6 +320,7 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then a
 
 - Wilkinson, L. and Friendly, M. (2009), [The History of the Cluster Heat Map](https://doi.org/10.1198/tas.2009.0033). *The American Statistician*, 63(2). Where the heatmap came from, and why sorting rows and columns reveals patterns.
 - Borland, D. and Taylor, R. M. (2007), [Rainbow Color Map (Still) Considered Harmful](https://doi.org/10.1109/MCG.2007.323435). *IEEE Computer Graphics and Applications*, 27(2). Why rainbow colour scales mislead.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Their ranking of how accurately people judge values shown in different ways, which places colour saturation and shading below position and length.
 - Crameri, F., Shephard, G. E. and Heron, P. J. (2020), [The misuse of colour in science communication](https://doi.org/10.1038/s41467-020-19160-7). *Nature Communications*, 11. Perceptually uniform and colour-vision-friendly colour scales.
 
 <LearnCta position="bottom" chart="heatmap" demo="heatmap-chart" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />

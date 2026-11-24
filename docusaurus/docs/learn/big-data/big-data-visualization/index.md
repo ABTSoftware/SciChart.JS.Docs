@@ -73,7 +73,7 @@ datePublished: 2026-11-16
 :::tip Key takeaways
 - For a chart, data is "big" when it has more points than the screen has pixels to show them, or when it changes faster than the chart can redraw.
 - A chart can't show every point. A 1,920-pixel-wide chart of 10 million points has about 5,200 points per pixel column, so the work is choosing what to draw.
-- SVG draws each point as an element in the page; Canvas paints a bitmap with the CPU; WebGL and WebGPU draw with the graphics card. Each step up handles more points and takes more work to program.
+- SVG draws each point as an element in the page; Canvas paints a bitmap from drawing commands that JavaScript issues one shape at a time; WebGL and WebGPU draw with the graphics card. Each step up handles more points and takes more work to program.
 - Downsampling, aggregation, level of detail and progressive loading cut what has to be drawn without hiding peaks and outliers.
 - Measure on your own data and devices. The [live test below](#try-it-svg-vs-webgl-in-your-browser) times SVG and WebGL in your browser.
 :::
@@ -130,7 +130,7 @@ D3.js is a toolkit for building custom charts rather than a chart library: you c
 
 | | SVG | Canvas 2D | WebGL / WebGPU |
 | --- | --- | --- | --- |
-| How it draws | One page element per shape | JavaScript paints a bitmap | Shaders on the GPU |
+| How it draws | One page element per shape | JavaScript issues drawing commands one shape at a time | Shaders on the GPU |
 | What grows with each point | Elements to style, lay out and paint | Draw commands on the CPU | Data copied to GPU memory |
 | Styling with CSS | Yes, per element | No, set in code | No, set in code |
 | Accessibility | Elements can have titles, roles and labels | A bitmap: add accessible text separately | A bitmap: add accessible text separately |

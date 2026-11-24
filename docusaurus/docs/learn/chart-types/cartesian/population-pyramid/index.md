@@ -411,7 +411,6 @@ Put the age groups on a vertical axis and draw two sets of horizontal bars that 
 
 - United Nations, Department of Economic and Social Affairs, Population Division (2024), [World Population Prospects 2024](https://population.un.org/wpp/). Population estimates and projections by age and sex for every country. The Japan data on this page are its estimates for 1 July 2023, from the file of population by five-year age group and sex (Medium variant file, which holds the 1950 to 2023 estimates).
 - Wikipedia, [Demographics of Japan](https://en.wikipedia.org/wiki/Demographics_of_Japan). Japan's post-war baby boom of 1947 to 1949, the smaller baby boom of the early 1970s and the long fall in its birth rate.
-- U.S. Census Bureau, [International Database (IDB)](https://www.census.gov/data-tools/demo/idb/). Population pyramids and age-sex data for countries and areas of the world.
 - Roser, M., [Demographic transition: why is rapid population growth a temporary phenomenon?](https://ourworldindata.org/demographic-transition) Our World in Data. The five stages of the demographic transition and how the population pyramid changes through them.
 - Ritchie, H. and Roser, M., [Gender ratio](https://ourworldindata.org/gender-ratio). Our World in Data. The expected sex ratio at birth of about 105 boys per 100 girls, and why women outnumber men at older ages.
 - Ritchie, H. and Roser, M., [Age structure](https://ourworldindata.org/age-structure). Our World in Data. Population pyramids, median age and the age dependency ratio.

@@ -96,7 +96,7 @@ Use this template when you report a lollipop chart:
 
 > [Top category] has the highest [measure] at [value], and [bottom category] the lowest at [value]. [Pattern: most values are close together / there's a clear gap after the top few / a few categories stand out].
 
-For example, describing the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two fall clearly below the rest."
+For example, describing the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two drop a little faster than the rest."
 
 ## Lollipop chart vs bar chart
 

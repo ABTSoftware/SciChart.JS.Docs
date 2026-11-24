@@ -95,7 +95,7 @@ Read the bars to see which causes are largest, then follow the cumulative line t
 
 The chart is named after the **Pareto principle**, often called the **80/20 rule**: for many outcomes, a small share of the causes produces most of the effect. In quality work it's often put as "about 80% of the problems come from about 20% of the causes".
 
-The name comes from Joseph M. Juran, a pioneer of quality management, who applied the idea to quality problems and credited it to the Italian economist Vilfredo Pareto. Pareto had noticed that a small share of Italy's population owned most of its land. Juran called the few large causes the **vital few** and the rest the **useful many**: still worth fixing, just later.
+The name comes from Joseph M. Juran, a pioneer of quality management, who applied the idea to quality problems and credited it to the Italian economist Vilfredo Pareto. Pareto had shown, in several countries, that income and wealth were concentrated in a small share of the population. Juran later said that naming the principle after Pareto was a mistake, but the name stuck. Juran called the few large causes the **vital few** and the rest the **useful many**: still worth fixing, just later.
 
 Treat 80/20 as a rough guide:
 
@@ -144,7 +144,7 @@ A Pareto chart ranks categories by whatever you measure, and the ranking changes
 Suppose a sign-in ticket takes about 6 minutes to resolve and a slow-page ticket about 50 (illustrative figures):
 
 - By count, sign-in problems are the biggest category, at 41% of tickets.
-- By support hours, slow pages and data export come first. Together they are about 24% of tickets but about 59% of the time spent. Sign-in drops to fourth.
+- By support hours, slow pages and data export come first. Together they are about 24% of tickets but about 60% of the time spent. Sign-in drops to fourth.
 
 Neither chart is wrong. Pick the measure that matches the goal: count for the problems customers see most often, time or cost for where the effort or money goes. If you're unsure, draw both.
 
@@ -390,6 +390,8 @@ With SciChart.js, sort your categories from largest to smallest and work out the
 ## Sources
 
 - ASQ, [Seven Basic Quality Tools](https://asq.org/quality-resources/seven-basic-quality-tools). The Pareto chart as one of the classic quality-control tools.
+- Pareto, V. (1896–97), *Cours d'économie politique*, 2 volumes, F. Rouge, Lausanne ([volume 2 at the Internet Archive](https://archive.org/details/fp-0148-2)). Pareto's study of how income and wealth are distributed.
+- Juran, J. M. (1974), [The Non-Pareto Principle; Mea Culpa](https://www.juran.com/wp-content/uploads/2021/03/The-Non-Pareto-Principle-1974.pdf). Juran Institute archives. Juran's own account of how he came to name the principle after Pareto, and why the name was a mistake.
 - Juran Institute, [A Guide to the Pareto Principle (80/20 Rule) & Pareto Analysis](https://www.juran.com/blog/a-guide-to-the-pareto-principle-80-20-rule-pareto-analysis/). Juran's naming of the principle after Vilfredo Pareto, and the "vital few" and "useful many".
 - Wilkinson, L. (2006), [Revising the Pareto chart](https://doi.org/10.1198/000313006X152243). *The American Statistician*, 60(4), 332–334. Why the order of similar bars can be down to chance, and how to show that uncertainty.
 

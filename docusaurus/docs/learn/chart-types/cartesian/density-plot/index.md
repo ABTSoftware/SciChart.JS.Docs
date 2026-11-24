@@ -83,13 +83,13 @@ A **density plot** (also called a density chart, density graph or kernel density
 
 Read a density plot by its shape: peaks are where values bunch together, the width is the spread, and the area under any stretch of the curve is the share of values that fall there.
 
-![The parts of a density plot of test scores: a smooth filled curve with a main peak near 52 and a second, smaller peak near 76, thin tails at each end, a shaded band between scores 60 and 70 holding about 14% of the area, and a rug of short ticks along the x-axis marking each score](./density-plot-anatomy.svg)
+![The parts of a density plot of test scores: a smooth filled curve with a main peak near 52 and a second, smaller peak near 78, thin tails at each end, a shaded band between scores 60 and 70 holding about 13% of the area, and a rug of short ticks along the x-axis marking each score](./density-plot-anatomy.svg)
 
 1. Check what the x-axis measures. It is the variable you are studying, such as a score, a time or a price, with its units.
 2. Find the peaks. The highest point is the most common range of values (the **mode**). A second peak often means the data mixes two groups, such as two machines, two customer types or cached and uncached requests.
 3. Look at the spread. A narrow, tall curve means the values are consistent. A low, wide curve means they vary a lot. The curve's total area is always the same (1), so a wider curve must also be lower.
 4. Look at the tails. A long tail to the right means a few values are much larger than the rest (right-skewed), as is common with times, sizes and prices.
-5. Read shares from areas, not heights. The area under the curve between two x values is the share of the data in that range. In the diagram, the shaded band between 60 and 70 holds about 14% of the area, so about 14% of the scores lie between 60 and 70.
+5. Read shares from areas, not heights. The area under the curve between two x values is the share of the data in that range. In the diagram, the shaded band between 60 and 70 holds about 13% of the area, so the curve estimates that about 13% of scores lie in that range.
 
 A **rug**, a row of short ticks along the x-axis, is sometimes added to show where the individual values are. It helps with small datasets; with thousands of values it turns into a solid bar.
 

@@ -105,7 +105,7 @@ The chart at the top of this page shows 640 GB of used space on a 1 TB laptop dr
 | Apps | 110 | 17% | Games 70, Creative 25, Utilities 15 |
 | System | 100 | 16% | OS 45, Caches 30, Swap 25 |
 | Documents | 60 | 9% | Work 35 (Reports 20, Data 15); Personal 25 |
-| Total | 640 | 100% (rounded) | |
+| Total | 640 | 100% (shares rounded, so they add up to 99%) | |
 
 Three things stand out from the rings:
 
@@ -334,6 +334,7 @@ Store the data as a tree, where each item has a name and either a value or a lis
 - Stasko, J. and Zhang, E. (2000), [Focus+context display and navigation techniques for enhancing radial, space-filling hierarchy visualizations](https://doi.org/10.1109/INFVIS.2000.885091). *IEEE Symposium on Information Visualization 2000*, 57–65. Techniques for exploring the outer levels of a sunburst display.
 
 - Kruskal, J. B. and Landwehr, J. M. (1983), [Icicle plots: better displays for hierarchical clustering](https://doi.org/10.1080/00031305.1983.10482733). *The American Statistician*, 37(2), 162–168. The paper that introduced the icicle plot.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. The experiments showing that people judge positions and lengths more accurately than angles or areas.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. The experiments showing that people judge positions and lengths more accurately than angles; area appears only in the paper's theoretical ranking, below angle.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI 2010)*, 203–212. Repeats Cleveland and McGill's experiments and adds area judgements, which were less accurate than position, length or angle.
 
 <LearnCta position="bottom" chart="sunburst chart" demo="polar-sunburst-chart" docs="/2d-charts/chart-types/polar-sunburst-chart/" />

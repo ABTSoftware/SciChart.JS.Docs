@@ -125,7 +125,7 @@ To keep a dual axis chart honest:
 - Colour each axis like its series, and put the units in both axis titles.
 - Draw grid lines from one axis only. Two sets of grid lines that don't line up are hard to read.
 - Say what the chart shows in a caption, so readers don't read meaning into crossings or gaps between the line and the columns.
-- Consider an alternative when the comparison matters more than the compact layout: an indexed chart like C, or two charts stacked on the same x-axis.
+- Consider an alternative when the comparison matters more than the compact layout: an indexed chart like C, or two charts stacked on the same x-axis. Some designers, including Stephen Few, argue that one of these is always the better choice.
 
 ## How to describe a combo chart
 
@@ -388,7 +388,7 @@ With SciChart.js, add more than one series to the same SciChartSurface: for exam
 
 ## Sources
 
-- Few, S. (2008), [Dual-Scaled Axes in Graphs: Are They Ever the Best Solution?](https://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) *Visual Business Intelligence Newsletter*, Perceptual Edge. Why crossings between series on independent scales mean nothing, and indexing and separate charts as alternatives.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Experiments ranking how accurately people judge values shown in different ways, with position along a common scale the most accurate.
+- Few, S. (2008), [Dual-Scaled Axes in Graphs: Are They Ever the Best Solution?](https://www.perceptualedge.com/articles/visual_business_intelligence/dual-scaled_axes.pdf) *Visual Business Intelligence Newsletter*, Perceptual Edge. Why crossings between series on independent scales mean nothing, and indexing and separate charts as alternatives. Few concludes that he knows of no case where a better solution than a dual-scaled axis does not exist.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Experiments ranking how accurately people judge values shown in different ways, with position along a common scale the most accurate: why column heights on one axis, and series indexed to one shared scale as in chart C, are compared most easily.
 
 <LearnCta position="bottom" chart="combo chart" demo="chart-with-secondary-y-axis" demoLabel="chart with a secondary y-axis" docs="/2d-charts/chart-types/renderable-series-api-overview/" docsLabel="SciChart.js chart types documentation" />

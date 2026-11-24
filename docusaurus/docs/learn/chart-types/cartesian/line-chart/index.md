@@ -115,7 +115,7 @@ Line graphs differ in how many lines they carry, whether the points are marked, 
 
 ## How to describe a line graph
 
-Exam questions (such as IELTS Writing Task 1), lab reports and dashboards all ask for the same thing: a short summary of what the line does. Use this template:
+Exam questions (such as IELTS Academic Writing Task 1), lab reports and dashboards all ask for the same thing: a short summary of what the line does. Use this template:
 
 > [What] [rose / fell / stayed level] [steadily / sharply / gradually] from [start value] in [start] to [peak or low] in [when], then [what happened next]. Overall, [the main trend or comparison].
 
@@ -154,9 +154,9 @@ Sensors, markets and monitoring systems record values every second or faster, so
 - Noise hides the trend. Small, fast ups and downs make the line look like a thick, jagged band.
 - Detail hides in the overview. At full-day scale, each pixel covers dozens of readings, so short events are squashed together.
 
-The usual fixes are a **moving average**, which replaces each point with the average of the points around it to show the underlying trend, and zooming in to see the raw readings.
+The usual fixes are a **moving average**, which replaces each point with the average of the points around it, or of the points before it, to show the underlying trend, and zooming in to see the raw readings.
 
-The chart below shows a day of temperature readings from one sensor, one per second: 86,400 points (sample data). The blue line is every reading; the orange line is a 10-minute moving average of the same data. Scroll to zoom into any part of the day and the raw line separates into individual readings. Untick a line in the legend to hide it.
+The chart below shows a day of temperature readings from one sensor, one per second: 86,400 points (sample data). The blue line is every reading; the orange line is a 10-minute moving average of the same data, where each point is the average of the previous 10 minutes, so it lags the readings slightly. Scroll to zoom into any part of the day and the raw line separates into individual readings. Untick a line in the legend to hide it.
 
 <LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
 
@@ -314,6 +314,6 @@ With SciChart.js, create a `SciChartSurface`, add a `DateTimeNumericAxis` or `Nu
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods: Run-Sequence Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/runseqpl.htm). How a line plot of values in time order reveals shifts and outliers.
 - Cleveland, W. S., McGill, M. E. and McGill, R. (1988), [The shape parameter of a two-variable graph](https://doi.org/10.1080/01621459.1988.10478598). *Journal of the American Statistical Association*, 83(402). Why a line graph's aspect ratio changes how steep its slopes look.
-- Wikipedia, [William Playfair](https://en.wikipedia.org/wiki/William_Playfair). Playfair's *Commercial and Political Atlas* (1786) and the early history of line graphs.
+- Funkhouser, H. G. (1937), [Historical Development of the Graphical Representation of Statistical Data](https://doi.org/10.1086/368480). *Osiris*, 3, 269–404. Lambert's graphs of measurements, Playfair's *Commercial and Political Atlas* (1786) and the early history of line graphs.
 
 <LearnCta position="bottom" chart="line chart" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" />

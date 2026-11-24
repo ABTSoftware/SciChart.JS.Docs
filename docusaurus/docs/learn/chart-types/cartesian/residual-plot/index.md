@@ -115,7 +115,7 @@ The most used residual plot is **residuals vs fitted**: fitted value on the x-ax
 1. Centre. Do the points balance above and below zero all the way across, or does one region sit mostly above or below? A smoothing line through the points makes this easy to see: it should stay flat near zero.
 2. Spread. Is the vertical spread roughly the same from left to right? Constant spread is called **homoscedasticity**; spread that changes is **heteroscedasticity**.
 3. Shape. Is there a curve, a trend or separate clusters? Any shape means the model has missed some structure.
-4. Stray points. Is any point much further from zero than the rest? A standardised residual (the residual divided by s) beyond about ±3 deserves a look.
+4. Stray points. Is any point much further from zero than the rest? A standardised residual (roughly, the residual divided by s; software usually also adjusts for leverage, giving the internally studentised residual) beyond about ±3 deserves a look.
 
 For a model with one input, residuals vs x shows the same picture as residuals vs fitted, mirrored if the slope is negative. With several inputs, plot the residuals against each input too: a curve against one input says which variable needs a different form.
 
@@ -146,7 +146,7 @@ Least-squares regression assumes that each error is independent of the others. W
 - A steady trend means something changed during the run that the model doesn't include, such as instrument drift or temperature.
 - A saw-tooth (up, down, up) means negative autocorrelation, often from over-correction in a control loop.
 
-The residuals vs fitted plot can look perfect while residuals vs order shows strong dependence, because sorting by fitted value scrambles the time order. The [autocorrelation guide](/learn/signal-processing/autocorrelation/) explains how to measure it by lag, and the Durbin-Watson test gives a single number for lag 1. With autocorrelated errors, the coefficients may be fine, but their standard errors are too small and p-values too optimistic.
+The residuals vs fitted plot can look perfect while residuals vs order shows strong dependence, because sorting by fitted value scrambles the time order. The [autocorrelation guide](/learn/signal-processing/autocorrelation/) explains how to measure it by lag, and the Durbin-Watson test gives a single number for lag 1. With autocorrelated errors, the coefficients may be fine, but their standard errors are usually too small and p-values too optimistic.
 
 ## What is a Q-Q plot?
 

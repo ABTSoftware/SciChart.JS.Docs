@@ -66,7 +66,7 @@ datePublished: 2026-11-16
 
 A **log scale graph** (also called a logarithmic graph or log chart) is a chart where at least one axis uses a logarithmic scale: equal distances along the axis stand for equal ratios, not equal amounts. On a base-10 axis, 1, 10, 100 and 1,000 are evenly spaced, so data spanning many orders of magnitude fits on one chart.
 
-![A semi-log graph with a logarithmic y-axis from 1 to 10 million and a linear x-axis from 0 to 100 time steps. A cyan exponential curve, growing 15% per step, is a straight line; an orange power-law curve rises steeply at first then bends over, and the two cross near step 77](/img/learn/log-scale-graph-og.png)
+![A semi-log graph with a logarithmic y-axis from 1 to 10 million and a linear x-axis from 0 to 100 time steps. A cyan exponential curve, growing 15% per step, is a straight line; an orange power-law curve rises steeply at first then bends over, and the two cross near step 3 and again near step 77](/img/learn/log-scale-graph-og.png)
 
 *Two growth curves on a semi-log graph: the exponential (cyan) is a straight line, the power law (orange) bends over (illustrative data). [Try the interactive version](#how-to-create-a-log-scale-graph-in-javascript-react-or-angular) and switch either axis between linear and log.*
 
@@ -141,7 +141,7 @@ Use a log scale when one of these is true:
 - You care about percentage change, not absolute change. Prices, populations, sales growth and infection counts are often compared this way. A 10% rise looks the same at any level.
 - You suspect exponential growth or decay. On a semi-log graph it becomes a straight line, and a change in the rate shows up as a bend.
 - You're testing for a power law. On a log-log graph a power law is a straight line, and its slope is the exponent.
-- The measurement is already logarithmic, or engineers expect it to be. Frequency response charts (Bode plots) use a log frequency axis with gain in **decibels**, itself a log unit (every +10 dB is ten times the power). Earthquake magnitudes and pH work the same way: each whole step on the magnitude scale is a tenfold increase in measured shaking amplitude, and each pH unit is a tenfold change in acidity.
+- The measurement is already logarithmic, or engineers expect it to be. Frequency response charts (Bode plots) use a log frequency axis with gain in **decibels**, itself a log unit (every +10 dB is ten times the power). Earthquake magnitudes and pH work the same way: each whole step on the magnitude scale is a tenfold increase in the wave amplitude recorded on a seismogram, and each pH unit is a tenfold change in acidity.
 
 Stay with a linear scale when the audience needs to compare amounts (which month sold the most), when the data includes zero or negative values, or when the range is small (say, 40 to 90), where a log axis looks almost linear and only adds confusion.
 

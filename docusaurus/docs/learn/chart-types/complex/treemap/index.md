@@ -136,7 +136,7 @@ A treemap is drawn by a **layout algorithm** that turns the hierarchy into recta
 3. Split each rectangle among its children, the same way, leaving room for the group's header and a small gap.
 4. Keep the rectangles close to square. The simplest layout, slice and dice, cuts each rectangle into strips, which makes small items into thin slivers. The **squarified** layout sorts the items from largest to smallest and places them in rows along the shorter side, adding an item to the current row only if that makes the row's rectangles more square.
 
-![The same seven values (6, 6, 4, 3, 2, 2 and 1) laid out two ways. Cut into strips, the smallest rectangle is 16 times taller than it is wide. Squarified, in three rows, no rectangle is more than 2.8 times longer than it is wide](./treemap-layout-strips-vs-squarified.svg)
+![The same seven values (6, 6, 4, 3, 2, 2 and 1) laid out two ways. Cut into strips, the smallest rectangle is 16 times taller than it is wide. Squarified, no rectangle is more than 2.8 times longer than it is wide](./treemap-layout-strips-vs-squarified.svg)
 
 Near-square rectangles are easier to compare, easier to label and easier to point at. But the squarified layout orders items by size, not by name or date, so the same item can move when the data changes.
 

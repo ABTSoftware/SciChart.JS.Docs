@@ -120,7 +120,7 @@ Stephen Few, who designed the bullet chart (he called it the bullet graph), publ
 | --- | --- |
 | Text label | To the left of a horizontal bullet, above a vertical one |
 | Quantitative scale | Along the bottom (horizontal) or left (vertical), starting at zero, with light grey tick marks |
-| Featured measure | A dark, almost black bar about a third as thick as the bullet, with no border |
+| Featured measure | A black bar about a third as thick as the bullet, with no border |
 | Comparative measure | A short line across the bar, clearly visible but less heavy than the bar. A second one, such as last year, can be added in a lighter shade |
 | Qualitative ranges | Two to five bands, ideally three, as rectangles of one hue with no borders |
 

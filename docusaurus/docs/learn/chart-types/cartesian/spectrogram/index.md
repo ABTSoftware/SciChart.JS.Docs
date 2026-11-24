@@ -64,7 +64,7 @@ datePublished: 2026-11-13
 
 ## What is a spectrogram?
 
-A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the frequencies in a signal change over time. Time runs along the horizontal axis and frequency up the vertical axis. The colour of each point shows how strong that frequency was at that moment, usually in decibels (dB).
+A **spectrogram** (also called a sonogram) is a chart of how the frequencies in a signal change over time. Time runs along the horizontal axis and frequency up the vertical axis. The colour of each point shows how strong that frequency was at that moment, usually in decibels (dB).
 
 ![A spectrogram of a test signal: two steady horizontal lines at 1,000 Hz and 3,000 Hz, a dashed line at 5,500 Hz, and bright diagonal lines sweeping up from 500 Hz to 7,000 Hz, over a dark speckled background of noise](/img/learn/spectrogram-og.png)
 
@@ -128,13 +128,13 @@ The highest frequency a spectrogram can show is half the signal's sample rate, t
 
 A long window separates close frequencies but blurs when things happened; a short window shows timing sharply but merges nearby frequencies.
 
-| Window (at 44,100 samples per second) | Time per column | Frequency band width | Good for |
+| Window (at 44,100 samples per second) | Time per column | Spacing between frequency bands | Good for |
 | --- | --- | --- | --- |
 | 256 samples | about 6 ms | about 172 Hz | Clicks, drum hits and other fast events |
 | 1,024 samples | about 23 ms | about 43 Hz | General audio and speech |
 | 4,096 samples | about 93 ms | about 11 Hz | Separating close musical notes or steady machine tones |
 
-Band width is the sample rate divided by the window length; time per column is the window length divided by the sample rate. Overlapping windows add columns more often, but they don't sharpen the time detail.
+Band spacing is the sample rate divided by the window length; a window function such as the Hann window spreads a single tone over about two bands. Time per column is the window length divided by the sample rate. Overlapping windows add columns more often, but they don't sharpen the time detail.
 
 ## Types of spectrogram
 
@@ -177,7 +177,7 @@ Most spectrogram mistakes come from the settings used to make it, which can hide
 - **Plotting raw amplitude instead of decibels.** On a linear scale only the loudest sounds show; everything else is lost in the darkest colour.
 - **Setting the colour range badly.** Set the bottom of the range near the noise floor and the top just above the loudest signal. Too wide a range makes everything look dark; too narrow a range turns noise into false detail and flattens the loud parts.
 - **Ignoring the Nyquist limit.** Frequencies above half the sample rate don't vanish: they fold back down as false lines (**aliasing**). Filter out high frequencies before sampling.
-- **Using a linear frequency axis for music or speech.** Most of the interest is in the low frequencies, which a linear axis squeezes into the bottom of the chart. Use a logarithmic or mel axis.
+- **Using a linear frequency axis for music.** Most of the interest is in the low frequencies, which a linear axis squeezes into the bottom of the chart. Use a logarithmic or mel axis. For speech, a linear axis up to 5 or 8 kHz is normal in phonetics, where it makes formants easy to read; speech recognition models usually use a mel axis.
 - **Comparing spectrograms made with different settings.** A different window length, colour range or decibel reference can make the same signal look different. Keep the settings the same when you compare.
 
 ## How to create a spectrogram in JavaScript, React or Angular

@@ -116,7 +116,7 @@ Each shape on a surface plot tells you how the value changes as you move across 
 | A hollow | A dip: the value is lowest there | None on this plate |
 | A pass between two hills | A saddle: the low point on the best route from one peak to the other | Between the heaters, at about 43 °C |
 | A steep wall | The value changes quickly over a short distance | The water-cooled right-hand edge |
-| A level plain | The value barely changes | The plate's left-hand strip, which stays at room temperature (24 °C) |
+| A level plain | The value barely changes | The plate's bottom-left corner, which stays at room temperature (24 °C) |
 | A long, narrow crest | A ridge: a direction in which the value stays high | Not on this plate; a heated rod would make one |
 | A flat, tilted sheet | A steady slope: the value climbs evenly in one direction | Absent here; any linear formula, z = 3x − y for instance, draws one |
 
@@ -128,7 +128,7 @@ A good description moves from the biggest feature to the smallest. Fill in this 
 
 Filled in for the plate:
 
-"The surface peaks at roughly 81 °C at the point 11 cm in from the left and 19 cm up, and falls to about 10 °C along the chilled right-hand edge. A second, wider hill reaches 64 °C near (27 cm, 11 cm), and a pass at around 43 °C links the two hills. It drops most sharply in the final 4 cm before the chilled edge, from roughly 32 °C to 13 °C, and is nearly level along the left-hand strip, which stays at 24 °C."
+"The surface peaks at roughly 81 °C at the point 11 cm in from the left and 19 cm up, and falls to about 10 °C along the chilled right-hand edge. A second, wider hill reaches 64 °C near (27 cm, 11 cm), and a pass at around 43 °C links the two hills. It drops most sharply in the final 4 cm before the chilled edge, from roughly 32 °C to 13 °C, and is nearly level in the bottom-left corner, which stays at 24 °C."
 
 ## Types of 3D surface plot
 

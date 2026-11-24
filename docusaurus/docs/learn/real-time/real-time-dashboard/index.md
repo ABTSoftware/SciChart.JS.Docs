@@ -59,7 +59,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "How do I make a real-time dashboard in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Use a charting library built for live data. In SciChart.js, create one SciChartSurface per panel, which share a single WebGL context, give each line an XyDataSeries with fifoCapacity, buffer incoming readings and append them with appendRange on a timer at your update rate, then move the time axes together. SciChartVerticalGroup and a CursorModifier modifierGroup keep the charts aligned and their cursors in step." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Use a charting library built for live data. In SciChart.js, create one SciChartSurface per panel (they share one GPU device under WebGPU, or one WebGL context under the WebGL 2 fallback), give each line an XyDataSeries with fifoCapacity, buffer incoming readings and append them with appendRange on a timer at your update rate, then move the time axes together. SciChartVerticalGroup and a CursorModifier modifierGroup keep the charts aligned and their cursors in step." }
                 }
             ]
         })}
@@ -81,7 +81,7 @@ A **real-time dashboard** (also called a live dashboard or monitoring dashboard)
 - Data rate, update rate and frame rate are three different numbers, and each adds its own share of latency.
 - Strip charts, gauges, sparklines, current-value bars and heatmaps each suit a different kind of live data.
 - Lay it out overview first, keep time axes synchronised, and always show when the data was last updated.
-- Many live charts on one page stay fast when they share a WebGL context, append to circular buffers and are updated in batches.
+- Many live charts on one page stay fast when they share one GPU context (a WebGL context or WebGPU device), append to circular buffers and are updated in batches.
 :::
 
 ## Real-time dashboards vs BI dashboards
@@ -172,7 +172,7 @@ When a dashboard has several strip charts, they should share one time window and
 
 A busy dashboard can have dozens of charts redrawing many times a second. The techniques that cut its drawing work are the same whatever the domain:
 
-- Share one drawing context. Browsers allow only a few WebGL contexts per page (often 16 in Chrome and Safari, and 8 in Chrome on Android, according to [our performance tips](/2d-charts/performance-tips/performance-tips-and-tricks/)). A library that draws every chart through one shared context can put far more charts on a page.
+- Share one drawing context. Browsers allow only a few WebGL contexts per page (often 16 in Chrome and Safari, and 8 in Chrome on Android, according to [our performance tips](/2d-charts/performance-tips/performance-tips-and-tricks/)). The limit doesn't apply to WebGPU, which SciChart.js uses by default. A library that draws every chart through one shared context can put far more charts on a page.
 - Append, don't rebuild. Adding the new points to an existing series costs a fraction of re-creating the series or the chart on every update.
 - Batch the updates. Buffer readings as they arrive and add them in one call per update, not one call per reading.
 - Use circular buffers. A fixed-size first-in, first-out buffer keeps the last N points, so memory stays flat however long the dashboard runs.
@@ -209,7 +209,7 @@ Most real-time dashboard mistakes either show more change than anyone can follow
 
 ## How to build a real-time dashboard in JavaScript, React or Angular
 
-The demo simulates a production line on up to six panels that all draw through one shared WebGL context. At the highest data rate its strip charts hold up to 1.2 million points, and the readout shows the frame time your device takes to draw them. In the simulation, three motor currents and a pump vibration sensor stream in at the data rate you choose, and line speed, station output, utilities and eight oven zones arrive four times a second.
+The demo simulates a production line on up to six panels that all draw with one shared rendering engine. At the highest data rate its strip charts hold up to 1.2 million points, and the readout shows the frame time your device takes to draw them. In the simulation, three motor currents and a pump vibration sensor stream in at the data rate you choose, and line speed, station output, utilities and eight oven zones arrive four times a second.
 
 Use **Update rate** to redraw the dashboard 1, 10 or 60 times a second, and **Data rate** to change how many readings each fast channel sends per second (100 to 10,000, so up to 1.2 million points on the strip charts). **Panels** shows 2, 4 or 6 panels. **Pause** stops the display while data keeps arriving; the readout then shows how far behind live it is. The readout also shows the points drawn and the number of charts. Hover a strip chart to read both at once; scrolling or dragging on one pauses the dashboard and zooms or pans both, and double-clicking shows the whole window.
 
@@ -391,7 +391,7 @@ Here is the code for this dashboard. The plant simulation and the controls are p
 
 Key points:
 
-- Each panel is its own `SciChartSurface` (the gauge is a `SciChartPolarSurface`). `SciChartSurface.create` draws every chart through one shared WebGL context and engine, which keeps memory low and lets one page hold many charts.
+- Each panel is its own `SciChartSurface` (the gauge is a `SciChartPolarSurface`). `SciChartSurface.create` draws every chart with one shared rendering engine (one GPU device under WebGPU, or one WebGL context under WebGL 2), which keeps memory low and lets one page hold many charts.
 - `XyDataSeries` with `fifoCapacity` is a circular buffer: it keeps the newest points and drops the oldest. Readings arrive into `Float64Array` batches and are added with one `appendRange` per series per update, so the update rate is set by a timer, independently of the data rate.
 - `SciChartVerticalGroup` gives the strip charts' y-axes the same width, so their time axes line up; a `visibleRangeChanged` handler copies zooming and panning from one to the other, and `CursorModifier` with a shared `modifierGroup` shows the cursor on both.
 - The gauge is a `PolarArcAnnotation` whose end moves to the latest value; the bars update in place with `XyDataSeries.update`; the heatmap scrolls by shifting its rows and calling `UniformHeatmapDataSeries.setZValues`.
@@ -425,7 +425,7 @@ An IoT dashboard shows live readings from internet-connected devices such as sen
 
 ### How do I make a real-time dashboard in JavaScript?
 
-Use a charting library built for live data. In SciChart.js, create one SciChartSurface per panel, which share a single WebGL context, give each line an XyDataSeries with fifoCapacity, buffer incoming readings and append them with appendRange on a timer at your update rate, then move the time axes together. SciChartVerticalGroup and a CursorModifier modifierGroup keep the charts aligned and their cursors in step.
+Use a charting library built for live data. In SciChart.js, create one SciChartSurface per panel (they share one GPU device under WebGPU, or one WebGL context under the WebGL 2 fallback), give each line an XyDataSeries with fifoCapacity, buffer incoming readings and append them with appendRange on a timer at your update rate, then move the time axes together. SciChartVerticalGroup and a CursorModifier modifierGroup keep the charts aligned and their cursors in step.
 
 ## Sources
 
@@ -433,7 +433,7 @@ Use a charting library built for live data. In SciChart.js, create one SciChartS
 - WHATWG, [HTML Living Standard: server-sent events](https://html.spec.whatwg.org/multipage/server-sent-events.html).
 - OASIS (2019), [MQTT Version 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/mqtt-v5.0.html), OASIS Standard.
 - Shneiderman, B. (1996), "The Eyes Have It: A Task by Data Type Taxonomy for Information Visualizations", Proceedings of the IEEE Symposium on Visual Languages, [doi:10.1109/VL.1996.545307](https://doi.org/10.1109/VL.1996.545307).
-- International Society of Automation, [ANSI/ISA-101.01, Human Machine Interfaces for Process Automation Systems](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards).
+- International Society of Automation, [ANSI/ISA-101.01-2015, Human Machine Interfaces for Process Automation Systems](https://www.isa.org/standards-and-publications/isa-standards/isa-101-standards).
 - MDN Web Docs, [Window: requestAnimationFrame() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame) (paused in background tabs) and [Float64Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array).
 
 <LearnCta position="bottom" chart="real-time dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/" docsLabel="SciChart.js chart synchronisation documentation" />

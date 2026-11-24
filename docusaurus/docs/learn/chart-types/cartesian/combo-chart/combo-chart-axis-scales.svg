@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 900" width="760" height="900" font-family="Segoe UI, Helvetica, Arial, sans-serif">
 <title>The same combo chart data drawn three ways</title>
-<desc>Three charts of the same monthly shipments and average dispatch times. In the first, the right axis runs from 0 to 40 hours and the line rises gently above the columns. In the second, the right axis runs from 17 to 34 hours, so the same line starts near the bottom, runs through the columns and climbs steeply. In the third, both series are indexed to January equals 100 on one shared axis, showing shipments up 96% and dispatch time up 79%.</desc>
+<desc>Three charts of the same monthly shipments and average dispatch times. In the first, the right axis runs from 0 to 40 hours and the line rises gently above the columns. In the second, the right axis runs from 16 to 34 hours, so the same line starts near the bottom, runs through the columns and climbs steeply. In the third, both series are indexed to January equals 100 on one shared axis, showing shipments up 96% and dispatch time up 79%.</desc>
 <rect width="760" height="900" fill="#FFFFFF"/>
 <text x="24" y="40" font-size="16" font-weight="700" fill="#1F2A3C">A. Right axis from 0 to 40 hours</text>
 <text x="24" y="60" font-size="13" fill="#5B6578">Both axes start at zero. Dispatch time rises by about four-fifths, and the line shows that.</text>

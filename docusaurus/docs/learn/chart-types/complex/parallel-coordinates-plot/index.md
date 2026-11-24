@@ -67,7 +67,7 @@ A **parallel coordinates plot** (also called a parallel coordinates chart or par
 
 :::tip Key takeaways
 - A parallel coordinates plot shows many records across many variables: one vertical axis per variable, one line per record.
-- Lines that run parallel between two axes mean those variables rise together. Lines that cross in an X mean one falls as the other rises.
+- Lines that don't cross between two axes mean those variables rise together. When both axes are scaled alike, those lines run roughly parallel. Lines that cross in an X mean one falls as the other rises.
 - Colour marks groups, and lines that leave their group's band are outliers.
 - Only neighbouring axes compare directly, so the order of the axes changes what you can see.
 - With many lines, use transparency and brushing (filtering on an axis) to keep the plot readable.
@@ -81,7 +81,7 @@ Read a parallel coordinates plot axis by axis, then look at how the lines run be
 
 1. Read the axes first. Each vertical axis is one variable, with its own name, unit and scale. Check where each scale starts and ends: two axes at the same height can mean very different numbers.
 2. Follow one line. A line is one record, such as one car, one patient or one test run. Where it crosses an axis is that record's value for that variable. In the diagram, the orange saloon costs \$75k, has a 75 kWh battery and 470 km of range, and reaches 100 km/h in 4.5 seconds.
-3. Look at the space between each pair of axes. The slopes there show how the two variables relate. Lines that run roughly parallel mean the two rise and fall together. Lines that cross in an X mean that high values on one axis go with low values on the other.
+3. Look at the space between each pair of axes. The slopes there show how the two variables relate. Lines that don't cross mean the two rise and fall together; when both axes are scaled alike, they run roughly parallel. Lines that cross in an X mean that high values on one axis go with low values on the other.
 4. Look for bands and colours. Lines that travel together form a group. When colour marks a category, check whether each colour keeps to its own band; where it does, that variable separates the groups.
 5. Spot the outliers. A line that leaves its band, or reaches the far end of an axis on its own, is a record worth a closer look.
 
@@ -97,7 +97,7 @@ Each pair of neighbouring axes works like a small scatter plot, drawn in a diffe
 
 | Pattern between two axes | What it means | Scatter plot equivalent |
 | --- | --- | --- |
-| Lines run roughly parallel | Positive relationship: the two variables rise and fall together | Dots climbing from bottom left to top right |
+| Lines don't cross (roughly parallel when the axes are scaled alike) | Positive relationship: the two variables rise and fall together | Dots climbing from bottom left to top right |
 | Lines cross near one point, in an X | Negative relationship: one rises as the other falls | Dots falling from top left to bottom right |
 | Lines cross at random | No clear relationship | A shapeless cloud |
 | Lines split into separate bands | Groups: records fall into clusters on these variables | Separate clumps of dots |
@@ -299,7 +299,7 @@ Give each variable its own vertical axis, scale every value to between 0 and 1 o
 
 ## Sources
 
-- Inselberg, A. (1985), [The plane with parallel coordinates](https://doi.org/10.1007/BF01898350). *The Visual Computer*, 1(2), 69–91. The paper that set out parallel coordinates as a way to show many dimensions on a flat page.
+- Inselberg, A. (1985), [The plane with parallel coordinates](https://doi.org/10.1007/BF01898350). *The Visual Computer*, 1(2), 69–91. The paper that established parallel coordinates as a way to show many dimensions on a flat page. Parallel axes go back to Maurice d'Ocagne in 1885; Inselberg developed the method from 1959.
 - Wegman, E. J. (1990), [Hyperdimensional data analysis using parallel coordinates](https://doi.org/10.1080/01621459.1990.10474926). *Journal of the American Statistical Association*, 85(411), 664–675. How to use parallel coordinates to explore statistical data, including reading relationships between neighbouring axes.
 - Inselberg, A. (2009), [Parallel Coordinates: Visual Multidimensional Geometry and Its Applications](https://doi.org/10.1007/978-0-387-68628-8). Springer. A book-length treatment of the method and its uses.
 

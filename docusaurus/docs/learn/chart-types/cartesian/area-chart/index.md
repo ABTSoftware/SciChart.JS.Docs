@@ -305,6 +305,5 @@ With SciChart.js, create a `SciChartSurface` with an x-axis and a y-axis, then a
 
 - Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Why values on a shared baseline (the bottom layer) are judged more accurately than values without one (the middle layers).
 - Byron, L. and Wattenberg, M. (2008), [Stacked graphs: geometry and aesthetics](https://doi.org/10.1109/TVCG.2008.166). *IEEE Transactions on Visualization and Computer Graphics*, 14(6). How the order of layers and the choice of baseline change how readable a stacked area chart is.
-- Wikipedia, [Area chart](https://en.wikipedia.org/wiki/Area_chart). Variants of the area chart, and William Playfair's early area charts of trade and national debt (1786).
 
 <LearnCta position="bottom" chart="area chart" demo="mountain-chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" />

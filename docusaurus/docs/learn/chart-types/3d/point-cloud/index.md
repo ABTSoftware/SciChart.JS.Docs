@@ -90,9 +90,9 @@ datePublished: 2026-11-20
 
 A **point cloud** is a set of points in 3D space, each one a measured spot on the surface of an object or a landscape, with x, y and z coordinates and often extra values such as colour, echo strength or a class. Laser scanners (LiDAR), photogrammetry and depth cameras produce them, often millions of points at a time.
 
-![A simulated airborne LiDAR point cloud of a 150 by 100 metre site in 3D, coloured by height from blue at the lowest ground through green and yellow to red at the tallest trees: rolling ground, a road, two gabled houses and two flat-roofed buildings, round tree crowns, a pond with almost no returns, and a power line with two towers](/img/learn/point-cloud-og.png)
+![A simulated airborne LiDAR point cloud of a 150 by 100 metre site in 3D, coloured by height from blue at the lowest ground through green and yellow to red at the top of the power line towers: rolling ground, a road, two gabled houses and two flat-roofed buildings, round tree crowns, a pond with almost no returns, and a power line with two towers](/img/learn/point-cloud-og.png)
 
-*About 265,000 points from a simulated airborne LiDAR survey, coloured by height (sample data). The dark gaps beside each building are ground the scanner could not see, and the pond is almost empty because water absorbs the laser. [Try the interactive version](#how-to-visualise-a-point-cloud-in-javascript-react-or-angular).*
+*About 265,000 points from a simulated airborne LiDAR survey, coloured by height (sample data). The dark patches under each roof are ground the laser could not reach, and the pond is almost empty because water absorbs the laser. [Try the interactive version](#how-to-visualise-a-point-cloud-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A point cloud is raw measurement: separate points with no surface joining them, so it has gaps, noise and see-through areas.
@@ -452,7 +452,7 @@ Use a 3D chart that draws on the GPU, with WebGL and WebGPU, so it can handle hu
 - U.S. Geological Survey, [Topographic data quality levels](https://www.usgs.gov/3d-elevation-program/topographic-data-quality-levels-qls). Pulse density, pulse spacing and vertical accuracy for QL0 to QL3 in the 3D Elevation Program.
 - NOAA National Ocean Service, [What is LIDAR?](https://oceanservice.noaa.gov/facts/lidar.html). How LiDAR works, its parts, and near-infrared topographic versus green bathymetric LiDAR.
 - COPC, [Cloud Optimized Point Cloud specification](https://copc.io/). LAZ 1.4 data arranged as a clustered octree for streaming.
-- ASTM, [E2807 Standard Specification for 3D Imaging Data Exchange](https://www.astm.org/e2807-11r19e01.html). The E57 file format.
+- ASTM, [E2807-11(2026) Standard Specification for 3D Imaging Data Exchange, Version 1.0](https://store.astm.org/e2807-11r26.html). The E57 file format.
 - NASA, [ICESat-2: how it works](https://icesat-2.gsfc.nasa.gov/how-it-works). The ATLAS laser altimeter measuring surface height from orbit.
 
 <LearnCta position="bottom" chart="LiDAR point cloud" demo="3d-lidar-visualization" demoLabel="3D LiDAR chart" docs="/3d-charts/chart-types/scatter-3d-chart/" docsLabel="SciChart.js 3D scatter chart documentation" />

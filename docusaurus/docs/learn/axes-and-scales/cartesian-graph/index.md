@@ -43,7 +43,7 @@ datePublished: 2026-11-16
                 {
                     "@type": "Question",
                     "name": "Who invented the Cartesian coordinate system?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "It is named after the French philosopher and mathematician René Descartes. In La Géométrie, published in 1637, he described geometric shapes with algebra, which is the idea behind placing points and curves on a grid with numbered axes." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "It is named after the French philosopher and mathematician René Descartes, who in La Géométrie (1637) described curves with algebraic equations. Pierre de Fermat developed the same idea independently at about the same time. Descartes drew no axes as we know them today: the familiar grid, with two perpendicular axes and negative values, came later." }
                 },
                 {
                     "@type": "Question",
@@ -147,7 +147,7 @@ Most of the charts you meet are Cartesian graphs with the maths taken out: the a
 | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Time | Price | A candle showing the open, high, low and close |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | One position or category | Another | A coloured cell, with a third value shown as colour |
 
-So "x and y" on a data chart mean the same as on a maths graph: x is the **independent** variable (what you choose or what time it is), and y is the **dependent** one (what you measure). A few charts aren't Cartesian, such as pie, radar and Sankey charts. All the others are listed in the [types of charts and graphs](/learn/chart-types/) guide.
+So "x and y" on a data chart mean the same as on a maths graph: x is often the **independent** variable (what you choose or what time it is), and y the **dependent** one (what you measure). On a scatter plot of two measurements, neither need be. A few charts aren't Cartesian, such as pie, radar and Sankey charts. All the others are listed in the [types of charts and graphs](/learn/chart-types/) guide.
 
 Add a third axis, z, at right angles to x and y, and each point needs three coordinates (x, y, z). That's how 3D charts such as a [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) place their data.
 
@@ -372,7 +372,7 @@ For a point (x, y), the polar distance is r = √(x² + y²) and the angle is θ
 
 ### Who invented the Cartesian coordinate system?
 
-It is named after the French philosopher and mathematician René Descartes. In *La Géométrie*, published in 1637, he described geometric shapes with algebra, which is the idea behind placing points and curves on a grid with numbered axes.
+It is named after the French philosopher and mathematician René Descartes, who in *La Géométrie* (1637) described curves with algebraic equations. Pierre de Fermat developed the same idea independently at about the same time. Descartes drew no axes as we know them today: the familiar grid, with two perpendicular axes and negative values, came later.
 
 ### Are Cartesian coordinates just x, y and z?
 

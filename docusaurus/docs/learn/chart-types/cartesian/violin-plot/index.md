@@ -33,7 +33,7 @@ datePublished: 2026-11-16
                 {
                     "@type": "Question",
                     "name": "What does the width of a violin plot represent?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The width at any value is the estimated density there: how common values near that point are, compared with the rest of the group. Wide means many values, thin means few. The width is usually scaled so every violin has the same maximum width, so it shows the shape of each group, not how many values each group has." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The width at any value is the estimated density there: how common values near that point are, compared with the rest of the group. Wide means many values, thin means few. Depending on the tool, every violin is scaled to the same maximum width or the same area, so the width shows the shape of each group, not how many values each group has." }
                 },
                 {
                     "@type": "Question",
@@ -87,12 +87,12 @@ Read a violin plot from the inside out: the median and box first, then the width
 1. Find the median. The white dot marks the middle value: half the group is above it and half below.
 2. Read the box. The thick bar runs from the first quartile (Q1) to the third quartile (Q3), so it holds the middle half of the values. The thin line (the whisker) reaches out to the furthest typical values, as on a [box plot](/learn/chart-types/cartesian/box-plot/).
 3. Read the width. The outline is a **density curve**: a smoothed version of a histogram, drawn on both sides so the shape is easy to see. The widest point is the most common value. Where the violin is thin, few values fall.
-4. Count the bulges. One bulge means one cluster of values. Two bulges with a narrow waist between them mean the group is two groups mixed together.
+4. Count the bulges. One bulge means one cluster of values. Two bulges with a narrow waist between them often mean the group is two groups mixed together.
 5. Look at the ends. A long, thin tail means a few values reach far from the rest. On most violin plots, including the ones on this page, the outline stops at the lowest and highest values.
 
 Then compare the groups: which sits higher, which is more spread out, and which have a different shape.
 
-The width doesn't tell you how many values each group has. Most charts, including this one, scale every violin to the same maximum width, so a group of 50 values and a group of 5,000 look equally solid. Add the count to each group's label when it differs.
+The width doesn't tell you how many values each group has. Many tools, including this chart, scale every violin to the same maximum width, and others give every violin the same area. Either way, a group of 50 values and a group of 5,000 look equally solid. Add the count to each group's label when it differs.
 
 ### What the shape of a violin tells you
 
@@ -182,7 +182,7 @@ Most violin plot mistakes give the outline more authority than the data behind i
 - **Too few values.** With fewer than a few dozen values per group, the smooth outline is mostly the kernel's shape, not the data's. Use a box plot or plot the individual points.
 - **Not saying how the shape was smoothed.** State the bandwidth, or the rule used to pick it, in a note. Different software picks different defaults.
 - **Letting the outline run past the data.** Some tools extend each violin beyond the lowest and highest values, which can show impossible values, such as negative times. Trim the outline to the data, or say that you didn't.
-- **Rounding off hard edges.** A density estimate always tapers, so data that stops abruptly, at 0% or 100% or at a fixed limit, gets soft ends that aren't in the data. Server D's violin narrows a little at both ends for this reason.
+- **Rounding off hard edges.** A density estimate always tapers, so data that stops abruptly, at 0% or 100% or at a fixed limit, gets soft ends that aren't in the data. Server D's violin narrows to about half its width at both ends for this reason, although the data is just as dense there.
 - **A different colour per violin** when the colours mean nothing. Use one colour, and a second only to highlight a group.
 
 ## How to create a violin plot in JavaScript, React or Angular
@@ -328,7 +328,7 @@ A violin plot shows the full shape of how values are spread out in each group: w
 
 ### What does the width of a violin plot represent?
 
-The width at any value is the estimated density there: how common values near that point are, compared with the rest of the group. Wide means many values, thin means few. The width is usually scaled so every violin has the same maximum width, so it shows the shape of each group, not how many values each group has.
+The width at any value is the estimated density there: how common values near that point are, compared with the rest of the group. Wide means many values, thin means few. Depending on the tool, every violin is scaled to the same maximum width or the same area, so the width shows the shape of each group, not how many values each group has.
 
 ### What is the difference between a box plot and a violin plot?
 

@@ -393,7 +393,7 @@ Draw one equal-angle wedge per category on a polar chart, and set each wedge's r
 ## Sources
 
 - Nightingale, F. (1858), [Notes on Matters Affecting the Health, Efficiency, and Hospital Administration of the British Army](https://archive.org/details/b20387118). London: Harrison and Sons. Digitised by the Wellcome Library. The report that contains her diagram of the causes of mortality in the army in the East.
-- Friendly, M. and Andrews, R. J. (2021), [The radiant diagrams of Florence Nightingale](https://doi.org/10.2436/20.8080.02.77). *SORT: Statistics and Operations Research Transactions*, 45(1), 1–16. How she came to the diagram, her work with William Farr, her switch from a linear to an area-proportional scale, and the earlier radial charts of Guerry and Farr.
+- Friendly, M. and Andrews, R. J. (2021), [The radiant diagrams of Florence Nightingale](https://doi.org/10.2436/20.8080.02.106). *SORT: Statistics and Operations Research Transactions*, 45(1), 3–18. How she came to the diagram, her work with William Farr, her switch from a linear to an area-proportional scale, and the earlier radial charts of Guerry and Farr.
 - Friendly, M. and others, [HistData: Data Sets from the History of Statistics and Data Visualization](https://cran.r-project.org/package=HistData), R package, data set `Nightingale`. The monthly deaths by cause used in the charts on this page, transcribed from Nightingale's tables.
 
 <LearnCta position="bottom" chart="polar area chart" demo="polar-column-chart" demoLabel="polar column chart" docs="/2d-charts/chart-types/polar-column-renderable-series/" docsLabel="SciChart.js polar column series documentation" />

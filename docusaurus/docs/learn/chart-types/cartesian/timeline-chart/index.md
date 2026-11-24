@@ -69,7 +69,7 @@ A **timeline chart** (also called a timeline graph) shows events and periods in 
 - A timeline chart puts when on the horizontal axis. Points are instants; bands are periods, and a band's width is its duration.
 - Lanes (rows) let you line up machines, people or processes, so you can see what was happening everywhere at one moment.
 - There are five main kinds: event timelines, state (swimlane) timelines, Gantt charts for project plans, editor tracks in video and audio software, and trace or log timelines in software.
-- In industry, colour carries meaning: green running, amber idle or waiting, red fault. Keep it consistent and give a key.
+- In industry, colour often carries meaning, for example green running, amber idle or waiting, red fault. High-performance HMI practice goes further: normal states stay grey and bright colours are kept for abnormal ones. Whichever you use, keep it consistent and give a key.
 - Short events vanish when you look at a whole day. A useful timeline lets you zoom from hours down to seconds.
 :::
 

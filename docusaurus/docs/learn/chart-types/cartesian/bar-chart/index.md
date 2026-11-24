@@ -56,7 +56,7 @@ datePublished: 2026-11-13
                 {
                     "@type": "Question",
                     "name": "Is a histogram a bar graph?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No, although they look alike. The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See bar graph vs histogram for the same data drawn both ways." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Not quite. A histogram is drawn with bars, but it shows the distribution of one numeric variable split into ranges (bins). The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See bar graph vs histogram for the same data drawn both ways." }
                 },
                 {
                     "@type": "Question",
@@ -401,7 +401,7 @@ A stacked bar chart, also called a segmented bar chart, splits each bar into seg
 
 ### Is a histogram a bar graph?
 
-No, although they look alike. The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [bar graph vs histogram](/learn/chart-types/cartesian/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
+Not quite. A histogram is drawn with bars, but it shows the distribution of one numeric variable split into ranges (bins). The difference is what each bar stands for. In a bar graph each bar is a separate category, so the bars have gaps and can go in any order. In a histogram each bar is a range of one numeric variable, so the bars touch and must stay in numeric order. See [bar graph vs histogram](/learn/chart-types/cartesian/histogram/#histogram-vs-bar-graph) for the same data drawn both ways.
 
 ### Does a bar chart have to start at zero?
 
@@ -415,6 +415,7 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, the
 
 - Government Analysis Function (UK), [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Official guidance on bar, stacked and clustered bar charts, including ranking bars and starting the axis at zero.
 - World Bank, [Population, total (SP.POP.TOTL)](https://data.worldbank.org/indicator/SP.POP.TOTL), World Development Indicators. The population figures in the bar chart race, retrieved November 2026.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). The experiments showing that people compare positions and lengths on a common scale more accurately than angles or areas.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Experiments showing that people compare positions and lengths more accurately than angles, and an ordering of perceptual tasks that puts area lower still.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems*, 203–212. Experiments showing that people judge areas less accurately than positions and lengths.
 
 <LearnCta position="bottom" chart="bar chart" demo="column-chart" docs="/2d-charts/chart-types/fast-column-renderable-series/column-series-type/" />

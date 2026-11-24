@@ -110,7 +110,7 @@ Every funnel number comes from three simple calculations. Here they are for the 
 The table shows two things the picture alone doesn't.
 
 - The weakest step and the biggest loss are different. Most people (6,600) leave between the first visit and the pricing page, but the lowest rate (30%) is from pricing to trial. Losing many people at the top is normal; a low rate in the middle of the funnel, among people who have already shown interest, usually deserves a closer look.
-- The overall rate is the step rates multiplied together. 45% × 30% × 70.4% × 40% = 3.8%, the same as 456 ÷ 12,000. So a relative improvement at any step lifts the end result by the same proportion. Raising the weakest step from 30% to 40% (a third more) gives 608 customers instead of 456. Raising the first step from 45% to 60% (also a third more) gives the same 608. Fix the step where an improvement is cheapest, not only the step with the lowest rate.
+- The overall rate is the step rates multiplied together. 45% × 30% × 70.4% × 40% = 3.8%, the same as 456 ÷ 12,000. So a relative improvement at any step lifts the end result by the same proportion, as long as the other steps hold their rates. Raising the weakest step from 30% to 40% (a third more) gives 608 customers instead of 456. Raising the first step from 45% to 60% (also a third more) gives the same 608. Fix the step where an improvement is cheapest, not only the step with the lowest rate.
 
 ### How to describe a funnel chart
 

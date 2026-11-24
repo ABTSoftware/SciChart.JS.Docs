@@ -95,7 +95,7 @@ To read a pie chart, find what the whole circle stands for, then judge each slic
 2. Match each slice to its category, using the label on the slice or the legend.
 3. Judge the size of each slice. A half-circle is 50% and a quarter is 25%. Research on pie charts suggests readers judge a slice mostly by the length of its outer edge (its arc) and its area, rather than the angle at the centre.
 4. Read the labels for exact values. People estimate angles and areas less accurately than lengths, so without percentage labels most readers can only guess at anything that isn't close to a quarter or a half.
-5. Note the order. Most well-made pie charts start at 12 o'clock and run clockwise, largest slice first, so the biggest share is the first one you see.
+5. Note the order. Style guides recommend starting at 12 o'clock and running clockwise, largest slice first, so the biggest share is the first one you see.
 
 ## How to calculate pie chart slices
 
@@ -307,9 +307,10 @@ With SciChart.js, create a `SciChartPieSurface` with `pieType` set to `EPieType.
 ## Sources
 
 - Spence, I. (2005), [No Humble Pie: The Origins and Usage of a Statistical Chart](https://doi.org/10.3102/10769986030004353). *Journal of Educational and Behavioral Statistics*, 30(4). William Playfair's first pie charts and how the chart has been used since.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Experiments showing that people judge positions and lengths more accurately than angles and areas.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Experiments showing that people judge positions and lengths more accurately than angles; area appears only in the paper's theoretical ranking, below angle.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI 2010)*, 203–212. Repeats Cleveland and McGill's experiments and adds area judgements, which were less accurate than position, length or angle.
 - Skau, D. and Kosara, R. (2016), [Arcs, Angles, or Areas: Individual Data Encodings in Pie and Donut Charts](https://doi.org/10.1111/cgf.12888). *Computer Graphics Forum*, 35(3). Evidence that readers rely on arc length and area more than the centre angle.
-- UK Government Analysis Function, [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Guidance for government analysts on when to use pie charts (five categories or fewer, a meaningful whole, a dominant category) and how to format them.
+- UK Government Analysis Function, [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Guidance for government analysts on when to use pie charts (five categories or fewer, a meaningful whole, a dominant category) and how to format them, including ranking the slices by size from 12 o'clock.
 - Microsoft, [Available chart types in Office](https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90). When to consider a pie chart, and the pie of pie and bar of pie variants.
 
 <LearnCta position="bottom" chart="pie chart" demo="pie-chart" docs="/2d-charts/chart-types/pie-chart-type/" />

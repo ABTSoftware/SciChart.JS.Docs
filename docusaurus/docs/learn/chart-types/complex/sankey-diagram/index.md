@@ -125,7 +125,7 @@ A Sankey diagram is drawn in four steps. Sankey tools run them behind the scenes
 
 1. Give each node a column. Sources go in the first column. Every other node goes one column to the right of the furthest-right node that feeds it.
 2. Choose one scale for the whole diagram. A flow of 10 units must be equally wide everywhere. The busiest column sets the scale, so it fills the height with gaps between its nodes.
-3. Stack the links on each node. The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That keeps crossings to a minimum.
+3. Stack the links on each node. The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That cuts down the number of crossings.
 4. Draw each link as an S-shaped band from its place on the source node to its place on the target node. It leaves and arrives horizontally, and its vertical thickness is the same all the way across.
 
 ![How a Sankey link is drawn: first as a smooth S-shaped band whose height is the same at every point, then the same band cut into eight slices with each slice split into two triangles](./sankey-link-geometry.svg)
@@ -308,5 +308,6 @@ Store the data as nodes and links, where each link has a source, a target and a 
 - Kennedy, A. B. W. and Sankey, H. R. (1898), [The thermal efficiency of steam engines](https://doi.org/10.1680/imotp.1898.19100). *Minutes of the Proceedings of the Institution of Civil Engineers*, 134, 278–312. The committee report that included Sankey's energy-flow diagram of a steam engine.
 - Schmidt, M. (2008), [The Sankey diagram in energy and material flow management, Part I: History](https://doi.org/10.1111/j.1530-9290.2008.00004.x). *Journal of Industrial Ecology*, 12(1), 82–94. The history of the diagram and how its use spread from engineering to energy and material accounts.
 - Schmidt, M. (2008), [The Sankey diagram in energy and material flow management, Part II: Methodology and current applications](https://doi.org/10.1111/j.1530-9290.2008.00015.x). *Journal of Industrial Ecology*, 12(2), 173–185. How Sankey diagrams are used for energy and material flow accounts.
+- Rosvall, M. and Bergstrom, C. T. (2010), [Mapping change in large networks](https://doi.org/10.1371/journal.pone.0008694). *PLoS ONE*, 5(1), e8694. The paper that introduced alluvial diagrams, to show how groups change over time.
 
 <LearnCta position="bottom" chart="Sankey diagram" demo="triangle-series-chart" demoLabel="triangle series chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" docsLabel="SciChart.js triangle series documentation" />

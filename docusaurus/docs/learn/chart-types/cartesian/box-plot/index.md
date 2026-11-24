@@ -44,7 +44,7 @@ datePublished: 2026-11-13
                 {
                     "@type": "Question",
                     "name": "How do you find Q1 and Q3 for a box plot?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. With an odd number of values, leave the median itself out of both halves. Software often interpolates between values instead, which can give slightly different quartiles." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. One common method: with an odd number of values, leave the median itself out of both halves. Tukey's own method includes it in both halves, and software often interpolates between values instead, so quartiles can differ slightly." }
                 },
                 {
                     "@type": "Question",
@@ -97,7 +97,7 @@ Read a box plot from the middle outwards:
 3. The whiskers show how far the rest of the values reach. In the simplest form they go to the minimum and maximum. In the most common form, introduced by the statistician John Tukey, they stop at the furthest value within 1.5 × IQR of the box. The charts on this page use this rule.
 4. Outliers are the dots beyond the whiskers. Check them: they may be mistakes in the data, or the most interesting values in it.
 
-Each of the four parts (lower whisker, lower half of the box, upper half of the box, upper whisker) holds about a quarter of the values. A part that looks longer doesn't hold more values; it means those values are more spread out.
+Each of the four parts (lower whisker, lower half of the box, upper half of the box, upper whisker) holds about a quarter of the values, not counting outliers. A part that looks longer doesn't hold more values; it means those values are more spread out.
 
 ### What the shape of a box plot tells you
 
@@ -306,7 +306,7 @@ The five points are the five-number summary: the minimum, the first quartile (Q1
 
 ### How do you find Q1 and Q3 for a box plot?
 
-Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. With an odd number of values, leave the median itself out of both halves. Software often interpolates between values instead, which can give slightly different quartiles.
+Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. One common method: with an odd number of values, leave the median itself out of both halves. Tukey's own method includes it in both halves, and software often interpolates between values instead, so quartiles can differ slightly.
 
 ### How do you find the IQR on a box plot?
 
@@ -323,6 +323,7 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then a
 ## Sources
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods: Box Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm). How box plots are built and used to compare groups.
+- Tukey, J. W. (1977), [Exploratory Data Analysis](https://archive.org/details/exploratorydataa00tuke_0). Addison-Wesley. The box plot (box-and-whisker plot) and its 1.5 × IQR whisker rule.
 - McGill, R., Tukey, J. W. and Larsen, W. A. (1978), [Variations of Box Plots](https://doi.org/10.1080/00031305.1978.10479236). *The American Statistician*, 32(1), 12–16. Notched and variable-width box plots.
 - Hyndman, R. J. and Fan, Y. (1996), [Sample Quantiles in Statistical Packages](https://doi.org/10.1080/00031305.1996.10473566). *The American Statistician*, 50(4), 361–365. Why different software calculates slightly different quartiles.
 

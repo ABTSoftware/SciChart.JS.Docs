@@ -38,7 +38,7 @@ datePublished: 2026-11-13
                 {
                     "@type": "Question",
                     "name": "Is it a donut chart or a doughnut chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is the common American spelling, used by many charting libraries and dashboard tools." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is a common American spelling, used by many charting libraries and dashboard tools." }
                 },
                 {
                     "@type": "Question",
@@ -276,7 +276,7 @@ Both show parts of a whole that add up to 100%. A [pie chart](/learn/chart-types
 
 ### Is it a donut chart or a doughnut chart?
 
-Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is the common American spelling, used by many charting libraries and dashboard tools.
+Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is a common American spelling, used by many charting libraries and dashboard tools.
 
 ### Are donut charts harder to read than pie charts?
 

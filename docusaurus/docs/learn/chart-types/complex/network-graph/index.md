@@ -88,7 +88,7 @@ Read a network graph by its links, not its positions: find what the nodes and ed
 2. Check what colour, size and line thickness mean. Colour usually shows a group, such as a team or a type of item. Node size often shows the number of connections. A thicker edge usually means a stronger or more frequent link (a **weighted edge**). An arrow on an edge means the link has a direction (a **directed graph**), such as "follows" or "cites".
 3. Look for clusters. A **cluster** (or **community**) is a group of nodes with many links among themselves and few to the rest. On most layouts they show up as tight knots of dots.
 4. Find the hubs. A **hub** is a node with many more connections than most. The number of connections a node has is its **degree**.
-5. Find the bridges. A **bridge** is a node or edge that joins two clusters. Remove it and the groups lose touch, so bridges often matter more than their number of connections suggests.
+5. Find the bridges. A **bridge** is a node or edge that joins two clusters (a node in this position is also called a **broker**). Remove it and the groups lose their main connection, so bridges often matter more than their number of connections suggests.
 6. Check the edges of the chart. Nodes with one link sit on the outside, and an **isolate**, a node with no links at all, floats on its own.
 7. Don't read the x and y positions as values. In a force-directed layout there are no axes. Linked nodes are drawn close together, but a node on the left is not "less" than one on the right.
 
@@ -102,7 +102,7 @@ The same few shapes turn up again and again, whatever the network is about:
 | --- | --- | --- |
 | Hub and spoke | One large node with lines to many small ones | Everything goes through one person, server or airport: efficient, but a single point of failure |
 | Clusters | Tight knots of nodes with only a few lines between them | Teams, friend groups, topics or modules that mostly keep to themselves |
-| Bridge | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose touch |
+| Bridge | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose their main connection |
 | Chain | Nodes in a line, each linked only to the next | Long paths: information or traffic takes many steps, and one broken link splits the network |
 | Core and periphery | A dense centre with loosely attached nodes around it | An inner group that does most of the work, with occasional contributors on the outside |
 | Isolate | A node with no lines | Someone or something not yet connected: a new starter, an unused page, an error in the data |
@@ -365,7 +365,8 @@ Store the data as a list of nodes and a list of edges, where each edge names the
 ## Sources
 
 - Fruchterman, T. M. J. and Reingold, E. M. (1991), [Graph drawing by force-directed placement](https://doi.org/10.1002/spe.4380211102). *Software: Practice and Experience*, 21(11), 1129–1164. The force-directed layout method used in the live example: nodes repel, edges attract, and the movement cools step by step.
-- Freeman, L. C. (1978), [Centrality in social networks: conceptual clarification](https://doi.org/10.1016/0378-8733(78)90021-7). *Social Networks*, 1(3), 215–239. Defines degree, betweenness and closeness centrality.
+- Freeman, L. C. (1978), [Centrality in social networks: conceptual clarification](https://doi.org/10.1016/0378-8733(78)90021-7). *Social Networks*, 1(3), 215–239. Sets out the standard definitions of degree, betweenness and closeness centrality, building on earlier work by Bavelas and Sabidussi on closeness.
+- Freeman, L. C. (1977), [A set of measures of centrality based on betweenness](https://doi.org/10.2307/3033543). *Sociometry*, 40(1), 35–41. The paper that introduced betweenness centrality.
 - Girvan, M. and Newman, M. E. J. (2002), [Community structure in social and biological networks](https://doi.org/10.1073/pnas.122653799). *Proceedings of the National Academy of Sciences*, 99(12), 7821–7826. Clusters (communities) in networks, and finding them through the edges that bridge them.
 
 <LearnCta position="bottom" chart="network graph" demo="force-directed-graph" demoLabel="force-directed graph" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />

@@ -76,7 +76,7 @@ A **waterfall chart** (also called a bridge chart or cascade chart) shows how a 
 - Floating bars are the changes: green bars go up, red bars go down. Full bars from zero are the start, subtotals and end total.
 - The height of a floating bar is the size of the change, so the tallest floating bars are the ones that mattered most.
 - It's the standard chart for a profit and loss walk, a year-on-year bridge and budget against actual.
-- Keep the value axis starting at zero and the steps in the order the sum is worked out, or the chart misleads.
+- Start the value axis at zero wherever you can, and keep the steps in the order the sum is worked out, or the chart misleads.
 :::
 
 ## How to read a waterfall chart
@@ -160,7 +160,7 @@ The rest of this page is about the financial waterfall.
 
 Most waterfall mistakes break the running total, either in how the bars are drawn or in how they are labelled.
 
-- **Cutting off the value axis.** Floating bars are read against the axis, and full bars are compared by height. If the axis starts above zero, the totals look smaller or larger than they are. Start it at zero.
+- **Cutting off the value axis.** Floating bars are read against the axis, and full bars are compared by height. If the axis starts above zero, the totals look smaller or larger than they are. Start it at zero, or mark a break clearly if you must cut it.
 - **Letting subtotals float.** A subtotal or total must stand on zero. If it floats like a step, readers add it to the total a second time.
 - **Steps in the wrong order.** The steps must follow the order of the sum, such as sales, then costs, then tax. Sorting a profit walk by size breaks the subtotals. Only a bridge between two periods, which has no subtotals, can be sorted largest first.
 - **Unclear colours or signs.** Use one colour for rises, another for falls and a neutral one for totals, and keep them the same across every chart in a report. Label falls with a minus sign as well, for readers who can't tell red from green.

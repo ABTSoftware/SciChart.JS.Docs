@@ -392,6 +392,6 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, the
 ## Sources
 
 - Cleveland, W. S. (1984), [Graphical methods for data presentation: full scale breaks, dot charts, and multibased logging](https://doi.org/10.1080/00031305.1984.10483224). *The American Statistician*, 38(4), 270–280. Introduces the dot chart, the design that dumbbell charts build on.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Why positions on a common scale, as in dot and dumbbell charts, are compared accurately.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Why the dots' positions on a common scale are read accurately, while gaps between them, as lengths that don't share a baseline, are judged less accurately.
 
 <LearnCta position="bottom" chart="dumbbell chart" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />

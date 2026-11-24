@@ -43,7 +43,7 @@ datePublished: 2026-11-14
                 {
                     "@type": "Question",
                     "name": "What are 95% error bars?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "95% error bars show a 95% confidence interval: a range worked out from the data that, across many repeats of the same study, would contain the true value 95% of the time. For a mean, the interval is the mean plus or minus a t value times the standard error. With 10 or more measurements it is roughly the mean plus or minus 2 standard errors. A survey's margin of error is half the width of a 95% confidence interval." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "95% error bars show a 95% confidence interval: a range worked out from the data that, across many repeats of the same study, would contain the true value 95% of the time. For a mean, the interval is the mean plus or minus a t value times the standard error. With 10 measurements it is the mean plus or minus about 2.26 standard errors, and with more than about 30 it is close to 2 standard errors. A survey's margin of error is half the width of a 95% confidence interval." }
                 },
                 {
                     "@type": "Question",
@@ -357,7 +357,7 @@ It depends on the type of bar. For two independent groups of about 10 or more me
 
 ### What are 95% error bars?
 
-95% error bars show a 95% confidence interval: a range worked out from the data that, across many repeats of the same study, would contain the true value 95% of the time. For a mean, the interval is the mean plus or minus a t value times the standard error. With 10 or more measurements it is roughly the mean plus or minus 2 standard errors. A survey's margin of error is half the width of a 95% confidence interval.
+95% error bars show a 95% confidence interval: a range worked out from the data that, across many repeats of the same study, would contain the true value 95% of the time. For a mean, the interval is the mean plus or minus a t value times the standard error. With 10 measurements it is the mean plus or minus about 2.26 standard errors, and with more than about 30 it is close to 2 standard errors. A survey's margin of error is half the width of a 95% confidence interval.
 
 ### How are error bars calculated?
 

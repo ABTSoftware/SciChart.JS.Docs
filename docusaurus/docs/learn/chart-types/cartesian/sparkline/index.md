@@ -39,7 +39,7 @@ datePublished: 2026-11-14
                 {
                     "@type": "Question",
                     "name": "Who invented the sparkline?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician and information designer Edward Tufte named and defined the sparkline in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them." }
                 },
                 {
                     "@type": "Question",
@@ -98,17 +98,17 @@ Use this template when you report what a sparkline shows:
 
 > [What is measured] is [latest value], [up / down / flat] over [period], and [inside / above / below] its normal range. It ranged from [lowest] to [highest].
 
-For example, from the diagram above: "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 63 °C to 78 °C, with one short spike above the range."
+For example, from the diagram above: "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 65 °C to 77 °C, with one short spike above the range."
 
 ## Where sparklines come from
 
-The statistician and information designer Edward Tufte named and defined the sparkline in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart can sit wherever a word or a number can, at the resolution of type, instead of being a big, separate figure with a caption and a frame.
+The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart can sit wherever a word or a number can, at the resolution of type, instead of being a big, separate figure with a caption and a frame.
 
 His examples set out most of what sparklines still look like today:
 
 - a patient's glucose readings with a grey band for the normal range, so readings outside it stand out;
 - tables of exchange rates with a sparkline in every row, using red for the first and last values and blue for the low and high;
-- advice on shape: sparklines should look "lumpy", not spiky and not flat, following William Cleveland's method of choosing a chart's width-to-height ratio so that slopes average about 45°.
+- advice on shape: sparklines should look "lumpy", not spiky and not flat, following William Cleveland's method of choosing a chart's width-to-height ratio so that the typical slope is about 45°.
 
 Small charts embedded in text existed before 2006, but the name and the design rules come from Tufte. Spreadsheet apps such as Excel and Google Sheets now have sparklines built in; their help pages cover the menus and formulas.
 
@@ -336,7 +336,7 @@ The three common types are line sparklines, which show how a value moves over ti
 
 ### Who invented the sparkline?
 
-The statistician and information designer Edward Tufte named and defined the sparkline in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them.
+The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them.
 
 ### What is the difference between a sparkline and a line chart?
 
@@ -353,8 +353,8 @@ With SciChart.js, a sparkline is a `FastLineRenderableSeries` on a chart whose x
 ## Sources
 
 - Tufte, E. (2006). *Beautiful Evidence*. Graphics Press, pages 46–63. The chapter that names and defines sparklines.
-- Tufte, E., [Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/). Drafts of that chapter: the definition, the glucose example with a grey normal-range band, the red and blue markers, and the advice on aspect ratio.
-- Cleveland, W. S. (1993). *Visualizing Data*. Hobart Press. Banking to 45°: choosing a chart's aspect ratio so that slopes average about 45°.
+- Tufte, E., [Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/). Drafts of that chapter, first posted in 2004: the definition, the glucose example with a grey normal-range band, the red and blue markers, and the advice on aspect ratio.
+- Cleveland, W. S. (1993). *Visualizing Data*. Hobart Press. Banking to 45°: choosing a chart's aspect ratio so that the typical slope is about 45°.
 - Heer, J. and Agrawala, M. (2006), [Multi-Scale Banking to 45 Degrees](https://doi.org/10.1109/TVCG.2006.163). *IEEE Transactions on Visualization and Computer Graphics*, 12(5), 701–708. A method for choosing aspect ratios automatically, which Tufte points to for sparklines.
 
 <LearnCta position="bottom" chart="sparkline" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/subcharts-api/subcharts-api-overview/" docsLabel="SciChart.js SubCharts API documentation" />

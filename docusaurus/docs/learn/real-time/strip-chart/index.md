@@ -87,7 +87,7 @@ Before screens, live measurements were recorded on paper. A **strip chart record
 
 - Early examples: Charles Babbage fitted a recorder with about a dozen pens to a railway test carriage he built in 1838 or 1839. In the 1840s the physiologist Carl Ludwig's **kymograph** recorded blood pressure on a turning drum of smoked paper.
 - Industry: recorders became standard for temperatures, pressures and flows in plants. Some had a faster second speed, to follow a process closely while it was being adjusted or had gone wrong.
-- Medicine: an ECG is still printed at a standard 25 mm per second, so each 1 mm square is 40 milliseconds. At that speed, a 10-second window is 250 mm of paper.
+- Medicine: an ECG is usually printed at 25 mm per second (50 mm per second is also used), so each 1 mm square is 40 milliseconds. At that speed, a 10-second window is 250 mm of paper.
 
 Software strip charts copy the same idea onto a screen. The **chart speed** of a paper recorder becomes the **time window** (how many seconds fit across the chart), and the pen becomes the newest point of the trace. Data loggers and on-screen charts have now replaced most paper recorders.
 

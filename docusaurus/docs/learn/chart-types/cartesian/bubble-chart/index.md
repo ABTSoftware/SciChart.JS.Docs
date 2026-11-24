@@ -90,7 +90,7 @@ Read a bubble chart as a scatter plot of two values, then compare bubble sizes f
 4. Look for where big bubbles sit. If the big bubbles collect in one corner, the third value is related to the other two. If big and small bubbles are mixed everywhere, it isn't.
 5. Use colour, if there is any, to compare groups: is one group further right, higher up or bigger than another?
 
-Treat sizes as rough comparisons. In Cleveland and McGill's experiments ([sources](#sources)), people judged position much more accurately than area. Use the tooltip or a table when exact numbers matter.
+Treat sizes as rough comparisons. Cleveland and McGill ranked judgements of area well below judgements of position, and later experiments confirmed that people judge areas less accurately ([sources](#sources)). Use the tooltip or a table when exact numbers matter.
 
 ## How to describe a bubble chart
 
@@ -123,11 +123,11 @@ If the third value isn't important, a scatter plot is clearer. If you only need 
 
 ## Sizing bubbles: area, not diameter
 
-A common bubble chart mistake is scaling the bubble's width (diameter) to the value. A circle twice as wide covers four times the area, and the eye compares circles by area. So a value twice as large looks four times as big, and the differences in the data are exaggerated.
+A common bubble chart mistake is scaling the bubble's width (diameter) to the value. A circle twice as wide covers four times the area, and the eye compares circles by area. So a value twice as large is drawn four times as big, and the differences in the data are exaggerated.
 
 Instead, make each bubble's area proportional to its value. In practice, set the diameter to the square root of the value multiplied by a constant. A value four times as large then gets a bubble twice as wide.
 
-The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In the top row (area) the 8 looks about eight times the 1. In the bottom row (diameter) it looks about 64 times bigger. Untick a row in the legend to look at the other on its own.
+The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In the top row (area) the 8 covers eight times the area of the 1. In the bottom row (diameter) it covers 64 times the area. Untick a row in the legend to look at the other on its own.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Scaling/demo" />
 
@@ -289,7 +289,8 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, the
 
 ## Sources
 
-- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Experiments showing that people judge position more accurately than area.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Ranks position above length, angle and area for accuracy.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems*, 203–212. Experiments showing that people judge areas less accurately than positions and lengths.
 - Gapminder, [Gapminder Tools](https://www.gapminder.org/tools/). The interactive bubble chart of income, life expectancy and population by country, popularised by Hans Rosling.
 
 <LearnCta position="bottom" chart="bubble chart" demo="bubble-chart" docs="/2d-charts/chart-types/fast-bubble-renderable-series/" />

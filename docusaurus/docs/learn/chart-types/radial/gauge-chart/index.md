@@ -45,7 +45,7 @@ datePublished: 2026-11-14
                 {
                     "@type": "Question",
                     "name": "What is the difference between a gauge chart and a bullet chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare, which is why they were designed as a replacement for dashboard gauges." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare. Stephen Few designed them to replace dashboard gauges." }
                 },
                 {
                     "@type": "Question",
@@ -95,7 +95,7 @@ To read a gauge chart, check what it measures and its scale, then see where the 
 
 ## Types of gauge chart
 
-Gauge charts come in five main shapes, from a half circle to a straight bar, and all of them show one value against a scale.
+Gauge charts come in four main shapes, from a half circle to a straight bar, and are often grouped into panels. All of them show one value against a scale.
 
 ![Four types of gauge chart showing the same value, 62 out of 100: a semicircle gauge with a 180 degree scale, a dial or speedometer gauge with a 240 degree scale, a full-circle progress ring with no bands, and a horizontal linear gauge with a marker](./gauge-chart-types.svg)
 
@@ -268,7 +268,7 @@ A gauge chart shows only one value, takes a lot of space for it, and shows no hi
 
 ### What is the difference between a gauge chart and a bullet chart?
 
-Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare, which is why they were designed as a replacement for dashboard gauges.
+Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare. Stephen Few designed them to replace dashboard gauges.
 
 ### Is a gauge chart the same as a sheet metal gauge chart?
 

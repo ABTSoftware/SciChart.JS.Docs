@@ -91,7 +91,7 @@ Read a radar chart one spoke at a time: the further out a shape crosses a spoke,
 
 ![Anatomy of a radar chart: five axes radiating from a centre at zero, pentagon-shaped scale rings, one item's scores plotted on each axis and joined into a filled polygon](./radar-chart-anatomy.svg)
 
-1. Find the variables. Each spoke (axis) is one variable, named at its outer end. Most radar charts have between 4 and 10 spokes.
+1. Find the variables. Each spoke (axis) is one variable, named at its outer end. Radar charts usually work best with about 4 to 10 spokes.
 2. Check the scale. The centre is the lowest value and the rim the highest. The rings (gridlines) join the same value on every spoke and form the "web" that gives the chart its other names, spider chart and spider web diagram. Check that every spoke uses the same scale, and that higher means better on all of them.
 3. Read one shape at a time. Where an item's polygon crosses a spoke is its value for that variable. Points out near the rim are its strengths; points pulled in towards the centre are its weaknesses.
 4. Judge the overall shape. A large, round shape is an all-rounder that scores well everywhere. A small round shape is consistently weak. A spiky or lopsided shape means the item is a specialist.
@@ -134,7 +134,7 @@ Choose the chart by what the reader needs to do:
 
 | If the reader needs to… | Use |
 | --- | --- |
-| See the overall profile of no more than 3 or 4 items across 4 to 10 variables on one scale | Radar chart |
+| See the overall profile of no more than 3 or 4 items across about 4 to 10 variables on one scale | Radar chart |
 | Compare exact values, or more than 3 items | [Grouped bar chart](/learn/chart-types/cartesian/bar-chart/) |
 | Compare dozens of items across variables with different units | [Parallel coordinates plot](/learn/chart-types/complex/parallel-coordinates-plot/) |
 | Follow a variable with a natural order, such as months | [Line chart](/learn/chart-types/cartesian/line-chart/): a radar chart would wrongly join the last month back to the first |
@@ -339,7 +339,7 @@ With SciChart.js, create a `SciChartPolarSurface`, add a `PolarCategoryAxis` as 
 ## Sources
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods: Star Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/starplot.htm). How star plots (radar charts) are used to compare items across many variables.
-- Wikipedia, [Radar chart](https://en.wikipedia.org/wiki/Radar_chart). Other names for the chart, its history from Georg von Mayr (1877), and its limitations.
+- Mayr, G. von (1877), [Die Gesetzmässigkeit im Gesellschaftsleben: statistische Studien](https://archive.org/details/diegesetzmssig00mayruoft). Munich: Oldenbourg, pp. 77–78 and Figure 4. The "line diagrams in a circle" (*Linien-Diagramme im Kreise*) from which the radar chart is traced.
 - Holtz, Y. and Healy, C., [The Radar chart and its caveats](https://www.data-to-viz.com/caveat/spider.html), data-to-viz.com. Why spoke order, scales and overplotting make radar charts hard to read, with alternatives.
 
 <LearnCta position="bottom" chart="radar chart" demo="polar-radar-chart" docs="/2d-charts/chart-types/polar-radar-chart/" />

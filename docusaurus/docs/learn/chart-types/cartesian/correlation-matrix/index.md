@@ -97,7 +97,7 @@ The top line adds up, for each observation, how far x and y are from their means
 | --- | --- | --- |
 | +1 | Perfect positive linear relationship | All points on a rising straight line |
 | About +0.7 | Strong positive | A clear rising band |
-| About +0.3 | Weak positive | A loose cloud with a slight upward tilt |
+| About +0.3 | Weak to moderate positive (Cohen calls 0.3 medium) | A loose cloud with a slight upward tilt |
 | 0 | No linear relationship | No straight-line trend (there may still be a curve) |
 | −0.7 to −1 | Strong to perfect negative | A falling band or line |
 
@@ -225,7 +225,7 @@ To argue causation, you need a mechanism, the right time order, and ideally an e
 
 **Multicollinearity** means that two or more input variables in a regression model are strongly correlated. The model can still predict well, but its individual coefficients become unstable and hard to interpret: small changes in the data swing weight from one variable to its correlated partner.
 
-A correlation matrix of the inputs is the first check, and pairs with |r| above about 0.8 are a warning. It isn't the whole check, because three or more variables can be collinear together without any single pair standing out. The **variance inflation factor** (VIF) catches that: each variable's VIF is the matching diagonal entry of the inverse of the correlation matrix. A VIF above 5 to 10 is a common warning level.
+A correlation matrix of the inputs is the first check, and pairs with |r| above about 0.8 are a warning. It isn't the whole check, because three or more variables can be collinear together without any single pair standing out. The **variance inflation factor** (VIF) catches that: each variable's VIF is the matching diagonal entry of the inverse of the correlation matrix. A VIF above about 4 calls for a closer look, and one above 10 is a sign of serious multicollinearity (conventions differ).
 
 The same matrix is used for feature selection in machine learning: of two inputs that correlate at 0.95, one usually adds little.
 

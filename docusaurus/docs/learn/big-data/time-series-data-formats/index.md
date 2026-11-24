@@ -208,7 +208,7 @@ The best encoding depends on the channel. The table below uses one lap (2,601 sa
 | Lateral g-force (32-bit float) | −0.5049999952… | 19.32 | 8 | not exact | 8.13 |
 | Lap distance (32-bit float) | 268.1181640625 | 15.03 | 8 | not exact | 2.71 |
 
-- XOR compresses whole numbers that repeat or change slowly (gear, temperatures, speed) best, because a repeated value costs one bit and a byte-aligned varint can't go below one byte.
+- XOR compresses whole numbers that repeat or change slowly (gear, tyre temperature, speed) best, because a repeated value costs one bit and a byte-aligned varint can't go below one byte. Whole numbers that change by large steps every sample, such as brake temperature, do better as varint deltas.
 - Decimals (throttle and brake to two places) do better as deltas of scaled integers.
 - Channels the logger recorded as 32-bit floats can't be scaled to exact whole numbers. Send them as a `Float32Array` column (4 bytes) if 32-bit precision is enough, or use XOR.
 - JSON costs least on short whole numbers and most on long floats, where it spends 15 to 19 characters a value.
@@ -270,7 +270,7 @@ Most slow data paths come from sending rows of text where columns of numbers wou
 - **Delta-encoding raw floating-point decimals.** Subtracting doubles such as 212.41 − 212.37 gives 0.03999… and rounding drifts over millions of samples. Scale decimals to whole numbers first, with one known scale per column.
 - **Misaligned typed array views.** A `Float64Array` on a buffer at an offset that isn't a multiple of 8 throws. Pad the header, or copy with `slice()` when you can't control the layout.
 - **Mixing byte orders.** Typed arrays use the machine's byte order and `DataView` defaults to big-endian. Agree on little-endian at both ends, and pass `true` as the `littleEndian` argument when you use `DataView`.
-- **Losing timestamp precision.** A JavaScript number holds whole numbers exactly only up to 2^53. Nanosecond epoch timestamps (around 1.7 × 10^18) exceed that. Send microseconds, or an offset from a base time in each batch.
+- **Losing timestamp precision.** A JavaScript number holds whole numbers exactly only up to 2^53. Nanosecond epoch timestamps (around 1.8 × 10^18) exceed that. Send microseconds, or an offset from a base time in each batch.
 - **Decoding on the main thread.** Parsing a large batch on the main thread freezes zooming, panning and input while it runs. Move decoding to a Web Worker and transfer the results.
 - **Downsampling on the server to save bandwidth.** Thinning to every nth point hides spikes. Send full resolution in a compact format and let the chart reduce it per pixel, or use a min-max method; see [downsampling](/learn/big-data/downsampling/).
 

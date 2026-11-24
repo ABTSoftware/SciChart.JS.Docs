@@ -211,7 +211,7 @@ Decimation aims to keep a valid, evenly spaced signal for more processing, so it
 The word has two other common meanings:
 
 - Images: reducing an image's resolution, for example from 4000 × 3000 pixels to 800 × 600. Blurring slightly before shrinking plays the role of the anti-aliasing filter; without it, fine patterns turn into moiré. In neural networks, pooling and strided layers downsample feature maps in the same sense.
-- Imbalanced data in machine learning: reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model is then corrected for the changed proportions.
+- Imbalanced data in machine learning: reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model's predicted probabilities can then be corrected for the changed proportions.
 
 Both share the idea of keeping fewer samples, but the methods on this page are for time series and charts.
 
@@ -384,6 +384,6 @@ Either write a helper, such as LTTB or min-max, that reduces your arrays before 
 
 - Steinarsson, S. (2013), [Downsampling Time Series for Visual Representation](http://hdl.handle.net/1946/15343). MSc thesis, University of Iceland. The original description of LTTB.
 - Jugel, U., Jerzak, Z., Hackenbroich, G. and Markl, V. (2014), [M4: A Visualization-Oriented Time Series Data Aggregation](https://www.vldb.org/pvldb/vol7/p797-jugel.pdf). *Proceedings of the VLDB Endowment*, 7(10). The M4 method and why it draws the same pixels as the full data.
-- Smith, S. W., [The Scientist and Engineer's Guide to Digital Signal Processing, chapter 3: The Sampling Theorem](https://www.dspguide.com/ch3/2.htm). The Nyquist limit and aliasing.
+- Smith, S. W. (1997), [The Scientist and Engineer's Guide to Digital Signal Processing, chapter 3, ADC and DAC, section 3.2: The Sampling Theorem](https://www.dspguide.com/ch3/2.htm). California Technical Publishing. The Nyquist limit and aliasing.
 
 <LearnCta position="bottom" chart="chart with millions of points" demo="chart-performance-load-one-million-points" demoLabel="1 million point chart" docs="/2d-charts/chart-types/data-series-api/resampling/" docsLabel="SciChart.js resampling documentation" />

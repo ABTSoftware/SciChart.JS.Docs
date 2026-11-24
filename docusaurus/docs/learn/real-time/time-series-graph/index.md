@@ -270,7 +270,7 @@ Most mistakes read a pattern into too little data, or draw something the data do
 - **The wrong aggregate.** A monthly average of a cable's hourly load says nothing about the peak it must carry, and adding up hourly temperatures gives a number with no meaning.
 - **Mixed time zones.** Two series, one stamped in UTC and one in local time, put cause after effect by several hours.
 - **Too many lines on one chart.** Past about five, use small multiples, a heatmap or a selector instead.
-- **A chart too tall or too wide.** Slopes are easiest to compare when the important segments sit at about 45 degrees (Cleveland's "banking to 45°"). A tall narrow chart turns every change into a cliff; a long flat one hides them.
+- **A chart too tall or too wide.** The aspect ratio changes how steep every slope looks. Cleveland's rule of thumb, "banking to 45°", sets it so the important segments sit at about 45 degrees; later experiments found slope comparisons aren't always most accurate there, but the rule is a sensible starting point. A tall narrow chart turns every change into a cliff; a long flat one hides them.
 - **Smoothing without saying so.** A heavy moving average hides real spikes. Name the window in the legend and draw the raw data faintly behind the smoothed line.
 
 ## How to make a time series graph in JavaScript, React or Angular
@@ -473,6 +473,7 @@ Store each time as a Unix timestamp and plot the values against a date-time axis
 - NIST/SEMATECH, [e-Handbook of Statistical Methods, section 6.4: Introduction to Time Series Analysis](https://www.itl.nist.gov/div898/handbook/pmc/section4/pmc4.htm). Autocorrelation, trend and seasonal variation, and moving averages and smoothing.
 - Hyndman, R. J. and Athanasopoulos, G. (2021), *Forecasting: Principles and Practice*, 3rd edition, OTexts: [section 2.3, Time series patterns](https://otexts.com/fpp3/tspatterns.html) (trend, seasonal and cyclic patterns) and [chapter 3, Time series decomposition](https://otexts.com/fpp3/decomposition.html) (additive and multiplicative decomposition, moving averages).
 - Cleveland, W. S., McGill, M. E. and McGill, R. (1988), [The Shape Parameter of a Two-Variable Graph](https://doi.org/10.1080/01621459.1988.10478598). *Journal of the American Statistical Association*, 83(402), 289–300. Banking to 45°.
+- Talbot, J., Gerth, J. and Hanrahan, P. (2012), [An Empirical Model of Slope Ratio Comparisons](https://doi.org/10.1109/TVCG.2012.196). *IEEE Transactions on Visualization and Computer Graphics*, 18(12), 2613–2620. Slope comparisons are not always most accurate at 45°.
 - IANA, [Time Zone Database](https://www.iana.org/time-zones). The zone names and daylight saving rules used by most software.
 - ISO, [ISO 8601 date and time format](https://www.iso.org/iso-8601-date-and-time-format.html). The year-month-day notation.
 - MDN Web Docs, [Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date). JavaScript time values as milliseconds since 1 January 1970 UTC.
