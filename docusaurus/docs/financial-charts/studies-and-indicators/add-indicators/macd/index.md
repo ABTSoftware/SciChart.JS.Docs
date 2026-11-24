@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 sidebar_label: MACD
-title: "MACD Indicator: Add MACD to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the MACD (Moving Average Convergence/Divergence) indicator is, how MACD, its signal line and histogram are calculated, how to read crossovers, and how to add a MACD indicator to a JavaScript or React financial chart with SciTrader.js."
+title: "Add a MACD Indicator to a JavaScript or React Chart"
+description: "Add a MACD indicator to a JavaScript or React chart with SciTrader.js, with live examples. MACD tracks the gap between a fast and a slow moving average."
 keywords: ["MACD indicator", "moving average convergence divergence", "MACD JavaScript", "MACD React chart", "how to calculate MACD", "MACD signal line", "MACD histogram", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# MACD Indicator: Moving Average Convergence/Divergence in a JavaScript or React Financial Chart
+# Add a MACD (Moving Average Convergence/Divergence) Indicator to a JavaScript or React Chart
 
 The **MACD (Moving Average Convergence/Divergence)** indicator shows the trend and momentum of price in one pane. This page explains what MACD is, how its line, signal line and histogram are calculated and how traders read them, and shows how to add a MACD indicator to a JavaScript or React financial chart with SciTrader.js's `MACDStudy`, with live examples you can edit in CodePen.
 
@@ -23,6 +23,8 @@ MACD, developed by Gerald Appel, tracks the gap between a fast and a slow moving
 - **The histogram**: the MACD line minus the signal line, drawn as columns. It shows when the two lines are converging or diverging.
 
 Because its values are differences in price, not prices, a chart draws MACD in a pane of its own below the price chart.
+
+Gerald Appel created MACD in the late 1970s, and describes it in his book *Technical Analysis: Power Tools for Active Investors* (FT Prentice Hall, 2005).
 
 ## How Is MACD Calculated?
 
@@ -201,3 +203,4 @@ interface IMACDOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

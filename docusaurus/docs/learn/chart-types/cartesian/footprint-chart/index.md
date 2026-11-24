@@ -203,7 +203,7 @@ Use a candlestick for each bar's price range, a volume profile for where a whole
 | If the reader needs to… | Use |
 | --- | --- |
 | See open, high, low and close for each period, and the overall trend | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) or [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) |
-| See at which prices a whole session or range traded most | [Volume profile](/financial-charts/studies-and-indicators/add-indicators/volume-profile/): one horizontal histogram for the range |
+| See at which prices a whole session or range traded most | [Volume profile](/learn/applications/volume-profile/): one horizontal histogram for the range |
 | See volume at each price inside each bar, and which side was aggressive | Footprint chart |
 | See resting orders waiting in the book, not trades | A [market depth](/learn/applications/market-depth/) (order book) chart or an order book [heatmap](/learn/chart-types/cartesian/heatmap/) |
 | See how volume is distributed in general, outside of trading | A [histogram](/learn/chart-types/cartesian/histogram/) |

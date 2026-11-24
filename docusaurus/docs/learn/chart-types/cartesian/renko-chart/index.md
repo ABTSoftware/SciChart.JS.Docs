@@ -331,7 +331,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, adds Renko and point and figure panes to a trading chart with one call each (`RenkoStudy` and `PointAndFigureStudy`), next to candlestick, OHLC, line, mountain and Heikin-Ashi price series, live exchange feeds, technical indicators and drawing tools. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, adds Renko and point and figure panes to a trading chart with one call each (`RenkoStudy` and `PointAndFigureStudy`), next to candlestick, OHLC, line, mountain and Heikin-Ashi price series, live exchange feeds, [technical indicators](/financial-charts/studies-and-indicators/add-indicators/) such as [ATR](/financial-charts/studies-and-indicators/add-indicators/atr-average-true-range/) (often used to set the box size) and drawing tools. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 

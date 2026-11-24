@@ -1,14 +1,16 @@
 ---
 sidebar_position: 7
 sidebar_label: Volume Profile
-title: "Volume Profile: Add a Volume Profile to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the Volume Profile indicator is, how volume by price and the point of control are calculated, how traders read high- and low-volume nodes, and how to add a Volume Profile to a JavaScript or React financial chart with SciTrader.js."
+title: "Add a Volume Profile to a JavaScript or React Chart"
+description: "Add a Volume Profile to a JavaScript or React chart with SciTrader.js, with live examples. It shows how much volume traded at each price level."
 keywords: ["volume profile", "volume profile indicator", "volume by price", "point of control", "volume profile JavaScript", "volume profile React chart", "how to calculate volume profile", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# Volume Profile in a JavaScript or React Financial Chart
+# Add a Volume Profile to a JavaScript or React Chart
 
 A **Volume Profile** shows how much volume traded at each price, as horizontal bars beside the candles. This page explains what a Volume Profile is, how it and its point of control are calculated and how traders read it, and shows how to add a Volume Profile to a JavaScript or React financial chart with SciTrader.js's `VolumeProfileStudy`, with live examples you can edit in CodePen.
+
+For how a Volume Profile is calculated and read, with an interactive example, see [Volume Profile explained](/learn/applications/volume-profile/).
 
 :::info
 Volume Profile is one of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
@@ -23,6 +25,8 @@ An ordinary volume study shows volume over **time**: one bar per candle. A Volum
 - **Low-volume nodes** are prices where little traded: areas price moved through quickly.
 
 A Volume Profile is drawn on the price pane, its bars lined up with the price axis.
+
+Volume Profile is related to the Market Profile, which J. Peter Steidlmayer developed at the Chicago Board of Trade in the 1980s and described with Kevin Koy in *Markets and Market Logic* (Porcupine Press, 1986).
 
 ## How Is a Volume Profile Calculated?
 
@@ -183,3 +187,4 @@ interface IVolumeProfileOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Volume Profile explained](/learn/applications/volume-profile/): how it is calculated and read, with an interactive example.

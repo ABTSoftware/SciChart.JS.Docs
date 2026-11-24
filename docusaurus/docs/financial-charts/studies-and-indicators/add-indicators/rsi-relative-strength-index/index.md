@@ -1,12 +1,12 @@
 ---
 sidebar_position: 1
 sidebar_label: RSI (Relative Strength Index)
-title: "RSI Indicator: Add RSI to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the RSI (Relative Strength Index) indicator is, how RSI is calculated, how to read overbought and oversold levels, and how to add an RSI indicator to a JavaScript or React financial chart with SciTrader.js, with live examples."
+title: "Add an RSI Indicator to a JavaScript or React Chart"
+description: "Add an RSI indicator to a JavaScript or React chart with SciTrader.js, with live examples. RSI is a 0 to 100 momentum oscillator of recent rises and falls."
 keywords: ["RSI indicator", "relative strength index", "RSI JavaScript", "RSI React chart", "how to calculate RSI", "RSI overbought oversold", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# RSI Indicator: Relative Strength Index in a JavaScript or React Financial Chart
+# Add an RSI (Relative Strength Index) Indicator to a JavaScript or React Chart
 
 The **RSI (Relative Strength Index)** is one of the most widely used technical indicators. This page explains what the RSI indicator is, how it is calculated and how traders read it, and shows how to add an RSI indicator to a JavaScript or React financial chart with SciTrader.js's `RSIStudy`, with live examples you can edit in CodePen.
 
@@ -23,6 +23,8 @@ The RSI is a **momentum oscillator**, developed by J. Welles Wilder Jr. It measu
 - **Around 50**, rises and falls have been about even.
 
 Because it has its own 0–100 scale, a chart draws the RSI in a pane of its own below the price chart, usually with lines at 70 and 30.
+
+J. Welles Wilder Jr. introduced the RSI in his book *New Concepts in Technical Trading Systems* (Trend Research, 1978).
 
 ## How Is the RSI Calculated?
 
@@ -197,3 +199,4 @@ interface IRsiOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

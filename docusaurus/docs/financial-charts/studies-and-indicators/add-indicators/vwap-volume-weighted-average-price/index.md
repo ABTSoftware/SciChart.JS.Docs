@@ -1,14 +1,16 @@
 ---
 sidebar_position: 5
 sidebar_label: VWAP (Volume Weighted Average Price)
-title: "VWAP Indicator: Add VWAP to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the VWAP (Volume Weighted Average Price) indicator is, how VWAP is calculated, how traders use it, and how to add a VWAP indicator to a JavaScript or React financial chart with SciTrader.js, with live examples."
+title: "Add a VWAP Indicator to a JavaScript or React Chart"
+description: "Add a VWAP indicator to a JavaScript or React chart with SciTrader.js, with live examples. VWAP is the average traded price, weighted by volume."
 keywords: ["VWAP", "VWAP indicator", "volume weighted average price", "VWAP JavaScript", "VWAP React chart", "how to calculate VWAP", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# VWAP Indicator: Volume Weighted Average Price in a JavaScript or React Financial Chart
+# Add a VWAP (Volume Weighted Average Price) Indicator to a JavaScript or React Chart
 
 The **VWAP (Volume Weighted Average Price)** is the average price an asset has traded at, weighted by how much traded at each price. This page explains what the VWAP indicator is, how it is calculated and how traders use it, and shows how to add a VWAP indicator to a JavaScript or React financial chart with SciTrader.js's `VWAPStudy`, with live examples you can edit in CodePen.
+
+For how VWAP is calculated and read, with an interactive example, see [VWAP indicator explained](/learn/applications/vwap/).
 
 :::info
 VWAP is one of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
@@ -22,6 +24,8 @@ VWAP answers the question "what has the average buyer paid?". Unlike a simple mo
 - **Institutions** use it as an execution benchmark: buying below VWAP, or selling above it, counts as a good fill.
 
 VWAP is a price, so a chart draws it on the price pane, over the candles.
+
+Berkowitz, Logue and Noser proposed VWAP as a benchmark for trade execution costs in "The Total Cost of Transactions on the NYSE", *Journal of Finance* 43(1), 1988 ([doi:10.1111/j.1540-6261.1988.tb02591.x](https://doi.org/10.1111/j.1540-6261.1988.tb02591.x)).
 
 ## How Is VWAP Calculated?
 
@@ -155,3 +159,4 @@ interface IVWAPOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [VWAP indicator explained](/learn/applications/vwap/): how VWAP is calculated and read, with an interactive example.

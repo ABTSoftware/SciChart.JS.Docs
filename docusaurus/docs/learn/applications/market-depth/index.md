@@ -23,7 +23,7 @@ keywords:
         "liquidity heatmap"
     ]
 image: /img/learn/market-depth-og.png
-related: [footprint-chart, candlestick-chart, heatmap, tick-chart]
+related: [footprint-chart, volume-profile, heatmap, tick-chart]
 datePublished: 2026-11-24
 ---
 

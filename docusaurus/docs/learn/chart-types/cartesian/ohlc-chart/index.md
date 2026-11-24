@@ -286,7 +286,7 @@ Key points:
 
 ## Building a full trading chart?
 
-[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, has OHLC bars as one of its built-in price chart types. A [candle type selector](/financial-charts/ui-components/candle-type-selector/) switches a trading chart between OHLC bars, candlesticks, line, mountain and Heikin-Ashi, keeping the data, zoom and indicators in place. It also brings live exchange feeds, drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+[SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, has OHLC bars as one of its built-in price chart types. A [candle type selector](/financial-charts/ui-components/candle-type-selector/) switches a trading chart between OHLC bars, candlesticks, line, mountain and Heikin-Ashi, keeping the data, zoom and indicators in place. Lines such as [moving averages](/financial-charts/studies-and-indicators/add-indicators/moving-averages-sma-ema-wma/) and the [Ichimoku cloud](/financial-charts/studies-and-indicators/add-indicators/ichimoku-cloud/) draw over the bars, and oscillators such as [MACD](/financial-charts/studies-and-indicators/add-indicators/macd/) get their own pane. It also brings live exchange feeds, drawing tools and multiple panes, in JavaScript, TypeScript and React. See what it can do on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 

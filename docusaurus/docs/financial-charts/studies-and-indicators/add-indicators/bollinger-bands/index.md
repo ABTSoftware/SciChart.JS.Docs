@@ -1,12 +1,12 @@
 ---
 sidebar_position: 3
 sidebar_label: Bollinger Bands
-title: "Bollinger Bands: Add Bollinger Bands to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What Bollinger Bands are, how the middle, upper and lower bands are calculated, how to read squeezes and band touches, and how to add Bollinger Bands to a JavaScript or React financial chart with SciTrader.js."
+title: "Add Bollinger Bands to a JavaScript or React Chart"
+description: "Add Bollinger Bands to a JavaScript or React chart with SciTrader.js, with live examples. The bands sit standard deviations either side of an average."
 keywords: ["Bollinger Bands", "Bollinger Bands indicator", "Bollinger Bands JavaScript", "Bollinger Bands React chart", "how to calculate Bollinger Bands", "Bollinger squeeze", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# Bollinger Bands in a JavaScript or React Financial Chart
+# Add Bollinger Bands to a JavaScript or React Chart
 
 **Bollinger Bands** show a moving average of price with a band above and below it that widens and narrows with volatility. This page explains what Bollinger Bands are, how they are calculated and how traders read them, and shows how to add Bollinger Bands to a JavaScript or React financial chart with SciTrader.js's `BollingerBandsStudy`, with live examples you can edit in CodePen.
 
@@ -22,6 +22,8 @@ Bollinger Bands, developed by John Bollinger, are a **volatility indicator** dra
 - **The upper and lower bands** sit a number of standard deviations above and below it.
 
 When price swings widely, the standard deviation grows and the bands move apart; when price is quiet, they close in. Because they are prices, a chart draws Bollinger Bands on the price pane, over the candles.
+
+John Bollinger developed Bollinger Bands in the early 1980s and describes them on his site, [bollingerbands.com](https://www.bollingerbands.com/bollinger-bands), and in *Bollinger on Bollinger Bands* (McGraw-Hill, 2001).
 
 ## How Are Bollinger Bands Calculated?
 
@@ -165,3 +167,4 @@ interface IBollingerBandsOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

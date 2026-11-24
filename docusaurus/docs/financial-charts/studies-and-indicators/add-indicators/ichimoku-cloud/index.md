@@ -1,12 +1,12 @@
 ---
 sidebar_position: 6
 sidebar_label: Ichimoku Cloud
-title: "Ichimoku Cloud: Add Ichimoku to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the Ichimoku Cloud (Ichimoku Kinko Hyo) indicator is, how its five lines and cloud are calculated, how to read it, and how to add an Ichimoku Cloud to a JavaScript or React financial chart with SciTrader.js."
+title: "Add Ichimoku Cloud to a JavaScript or React Chart"
+description: "Add an Ichimoku Cloud to a JavaScript or React chart with SciTrader.js, with live examples. Ichimoku shows trend, momentum, support and resistance at once."
 keywords: ["Ichimoku Cloud", "Ichimoku indicator", "Ichimoku Kinko Hyo", "Ichimoku JavaScript", "Ichimoku React chart", "how to calculate Ichimoku", "Tenkan-sen Kijun-sen", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# Ichimoku Cloud in a JavaScript or React Financial Chart
+# Add Ichimoku Cloud (Ichimoku Kinko Hyo) to a JavaScript or React Chart
 
 The **Ichimoku Cloud** (Ichimoku Kinko Hyo, "one-glance equilibrium chart") shows trend, momentum, and support and resistance in one overlay. This page explains what the Ichimoku Cloud is, how its five lines and cloud are calculated and how traders read them, and shows how to add an Ichimoku Cloud to a JavaScript or React financial chart with SciTrader.js's `IchimokuCloudStudy`, with live examples you can edit in CodePen.
 
@@ -29,6 +29,8 @@ Ichimoku, developed by Goichi Hosoda, is drawn over the price as five lines, two
 The cloud is the area between the two leading spans. Because they are shifted forward, the cloud extends past the latest candle: it projects where support and resistance may be.
 
 Every line is a price, so a chart draws Ichimoku on the price pane, over the candles.
+
+Goichi Hosoda, a Japanese journalist, developed Ichimoku from the late 1930s and published it in the late 1960s.
 
 ## How Is the Ichimoku Cloud Calculated?
 
@@ -216,3 +218,4 @@ interface IIchimokuCloudOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

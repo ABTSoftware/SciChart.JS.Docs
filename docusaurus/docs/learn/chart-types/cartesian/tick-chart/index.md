@@ -413,7 +413,7 @@ Key points:
 
 ## Building a full trading chart?
 
-Candles in [SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, use time intervals, from one second to one month (see [changing the interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)), and its [price chart types](/financial-charts/studies-and-indicators/price-chart-types/) add Renko and Point & Figure. For tick bars, build them from your trade stream as in the demo above. Around the price chart, SciTrader.js adds live exchange feeds, technical indicators, drawing tools and multiple panes. See what SciChart can do for trading apps on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
+Candles in [SciTrader.js](/financial-charts/overview/), SciChart's financial charts SDK, use time intervals, from one second to one month (see [changing the interval](/financial-charts/symbols-intervals-periods/changing-the-interval/)), and its [price chart types](/financial-charts/studies-and-indicators/price-chart-types/) add Renko and Point & Figure. For tick bars, build them from your trade stream as in the demo above. Around the price chart, SciTrader.js adds live exchange feeds, [technical indicators](/financial-charts/studies-and-indicators/add-indicators/) such as [VWAP](/financial-charts/studies-and-indicators/add-indicators/vwap-volume-weighted-average-price/) and [volume profile](/financial-charts/studies-and-indicators/add-indicators/volume-profile/), drawing tools and multiple panes. See what SciChart can do for trading apps on the [JavaScript stock charts](https://www.scichart.com/javascript-stock-charts/) page.
 
 ## Frequently asked questions
 

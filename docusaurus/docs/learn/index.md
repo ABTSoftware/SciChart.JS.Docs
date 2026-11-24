@@ -105,10 +105,13 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Power quality](/learn/applications/power-quality/) | Harmonics, THD, sags and power factor |
 | [Riemann Hypothesis](/learn/applications/riemann-hypothesis/) | The zeta zeros, the critical line and the primes, visualised |
 | [Spectroscopy](/learn/applications/spectroscopy/) | Reading IR, Raman and UV-Vis spectra |
+| [Stochastic oscillator](/learn/applications/stochastic-oscillator/) | Reading %K and %D, the 80/20 zones and fast, slow and full settings |
 | [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test curve |
 | [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |
 | [Vibration analysis](/learn/applications/vibration-analysis/) | Finding machine faults in vibration spectra |
 | [Volatility surface](/learn/applications/volatility-surface/) | Reading the implied volatility smile, skew and term structure |
+| [Volume profile](/learn/applications/volume-profile/) | Reading the point of control, value area and volume nodes |
+| [VWAP](/learn/applications/vwap/) | How VWAP is calculated and read, with session, anchored and band variants |
 
 ## Machine learning
 

@@ -1,12 +1,12 @@
 ---
 sidebar_position: 8
 sidebar_label: ADX (Average Directional Index)
-title: "ADX Indicator: Add ADX to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the ADX (Average Directional Index) indicator is, how ADX, +DI and -DI are calculated, how to read trend strength, and how to add an ADX indicator to a JavaScript or React financial chart with SciTrader.js."
+title: "Add an ADX Indicator to a JavaScript or React Chart"
+description: "Add an ADX indicator to a JavaScript or React chart with SciTrader.js, with live examples. ADX measures trend strength, with +DI and -DI showing direction."
 keywords: ["ADX indicator", "average directional index", "ADX +DI -DI", "directional movement index", "ADX JavaScript", "ADX React chart", "how to calculate ADX", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# ADX Indicator: Average Directional Index in a JavaScript or React Financial Chart
+# Add an ADX (Average Directional Index) Indicator to a JavaScript or React Chart
 
 The **ADX (Average Directional Index)** measures how strong a trend is, whichever way it is going. This page explains what the ADX indicator is, how ADX and its +DI and −DI lines are calculated and how traders read them, and shows how to add an ADX indicator to a JavaScript or React financial chart with SciTrader.js's `ADXStudy`, with live examples you can edit in CodePen.
 
@@ -23,6 +23,8 @@ The ADX, developed by J. Welles Wilder Jr. as part of his Directional Movement S
 - **−DI** (the negative directional indicator) measures downward movement.
 
 So ADX says *how strong* the trend is, and +DI and −DI say *which way* it is going. They have their own scale, so a chart draws them in a pane of their own below the price chart.
+
+J. Welles Wilder Jr. introduced the ADX in his book *New Concepts in Technical Trading Systems* (Trend Research, 1978).
 
 ## How Is the ADX Calculated?
 
@@ -188,3 +190,4 @@ interface IADXOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

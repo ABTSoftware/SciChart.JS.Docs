@@ -43,8 +43,11 @@ Trading screens chart prices, volume and order flow as they change, and risk and
 | [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
 | [Options payoff diagram](/learn/applications/options-payoff-diagram/) | Profit or loss of an option position against the price at expiry, for single options and multi-leg strategies |
 | [Renko chart](/learn/chart-types/cartesian/renko-chart/) | Fixed-size price bricks that ignore time and show the trend |
+| [Stochastic oscillator](/learn/applications/stochastic-oscillator/) | Where the close sits in its recent high–low range, as %K and %D lines between 0 and 100 |
 | [Tick chart](/learn/chart-types/cartesian/tick-chart/) | Bars that close after a set number of trades instead of a set time |
 | [Volatility surface](/learn/applications/volatility-surface/) | Implied volatility across strike and expiry as a 3D surface, with the smile, skew and term structure |
+| [Volume profile](/learn/applications/volume-profile/) | Volume traded at each price over a range, with the point of control and value area |
+| [VWAP](/learn/applications/vwap/) | The volume-weighted average price from an anchor, with standard deviation bands, as a fair-value line and execution benchmark |
 | [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
 
 ## Industrial and energy
