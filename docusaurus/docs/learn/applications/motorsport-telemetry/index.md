@@ -1,5 +1,5 @@
 ---
-sidebar_position: 90
+sidebar_position: 110
 sidebar_label: Motorsport Telemetry
 title: "Motorsport Telemetry: How to Read Lap Traces and Compare Laps"
 description: "What motorsport and sim racing telemetry records, why lap traces are plotted against distance, how to read braking, throttle and the time-delta trace, and how to compare two laps."

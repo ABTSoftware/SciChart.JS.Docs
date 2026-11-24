@@ -83,20 +83,23 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Applications
 
-[**Applications**](/learn/applications/): how engineers and scientists chart data from real instruments and systems, with live examples.
+[**Applications**](/learn/applications/): how engineers, scientists and traders chart data from real instruments, systems and markets, with live examples.
 
 | Topic | What it covers |
 | --- | --- |
 | [Antenna radiation pattern](/learn/applications/antenna-radiation-pattern/) | Reading polar and 3D antenna patterns |
 | [Capnography and pulse oximetry](/learn/applications/capnography-pulse-oximetry/) | Reading capnogram and pleth waveforms |
 | [Chromatogram](/learn/applications/chromatogram/) | Reading retention time, peaks and resolution in HPLC and GC |
+| [Drawdown and equity curve](/learn/applications/drawdown-and-equity-curve/) | Reading an equity curve and calculating maximum drawdown |
 | [ECG](/learn/applications/ecg/) | ECG leads and how to read an ECG strip |
 | [HMI and SCADA](/learn/applications/hmi-scada/) | What SCADA and HMI are, and how to read trend charts and alarm limits |
 | [HR diagram](/learn/applications/hr-diagram/) | Reading the Hertzsprung–Russell diagram of stars |
 | [KPI dashboard](/learn/applications/kpi-dashboard/) | What to put on a KPI dashboard and how to design it |
+| [Market depth](/learn/applications/market-depth/) | Reading a depth chart, the order book and an order book heatmap |
 | [Mass spectrum](/learn/applications/mass-spectrum/) | How to read a mass spectrometry graph |
 | [Motorsport telemetry](/learn/applications/motorsport-telemetry/) | Reading lap traces and comparing laps |
 | [Non-destructive testing](/learn/applications/non-destructive-testing/) | NDT methods and ultrasonic A-, B- and C-scans |
+| [Options payoff diagram](/learn/applications/options-payoff-diagram/) | Reading call, put and spread payoffs at and before expiry |
 | [Oscilloscope](/learn/applications/oscilloscope/) | How to use and read an oscilloscope |
 | [PID control](/learn/applications/pid-control/) | Tuning a PID controller from the step response |
 | [Power quality](/learn/applications/power-quality/) | Harmonics, THD, sags and power factor |
@@ -105,6 +108,7 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 | [Stress-strain curve](/learn/applications/stress-strain-curve/) | Reading a tensile test curve |
 | [Telemetry](/learn/applications/telemetry/) | How telemetry data is sent and how to read a live telemetry dashboard |
 | [Vibration analysis](/learn/applications/vibration-analysis/) | Finding machine faults in vibration spectra |
+| [Volatility surface](/learn/applications/volatility-surface/) | Reading the implied volatility smile, skew and term structure |
 
 ## Machine learning
 

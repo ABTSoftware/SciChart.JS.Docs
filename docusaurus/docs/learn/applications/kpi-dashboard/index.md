@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 80
 sidebar_label: KPI Dashboard
 title: "KPI Dashboard: What to Put on One and How to Design It, With Examples"
 description: "What a KPI dashboard is, how to choose KPIs, which chart suits each one, how to show targets and lay it out, with examples by team and a live sales dashboard to try."

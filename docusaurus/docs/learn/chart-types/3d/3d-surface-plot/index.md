@@ -17,7 +17,7 @@ keywords:
         "3d surface plot vs 3d scatter plot"
     ]
 image: /img/learn/3d-surface-plot-og.png
-related: [contour-plot, heatmap, xyz-graph, spectrogram]
+related: [contour-plot, heatmap, xyz-graph, volatility-surface]
 datePublished: 2026-11-14
 ---
 

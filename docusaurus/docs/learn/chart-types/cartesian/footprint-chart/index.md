@@ -19,7 +19,7 @@ keywords:
         "footprint chart vs volume profile"
     ]
 image: /img/learn/footprint-chart-og.png
-related: [candlestick-chart, tick-chart, renko-chart, ohlc-chart]
+related: [market-depth, candlestick-chart, tick-chart, renko-chart]
 datePublished: 2026-11-20
 ---
 
@@ -205,7 +205,7 @@ Use a candlestick for each bar's price range, a volume profile for where a whole
 | See open, high, low and close for each period, and the overall trend | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) or [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) |
 | See at which prices a whole session or range traded most | [Volume profile](/financial-charts/studies-and-indicators/add-indicators/volume-profile/): one horizontal histogram for the range |
 | See volume at each price inside each bar, and which side was aggressive | Footprint chart |
-| See resting orders waiting in the book, not trades | A market depth (order book) chart or an order book [heatmap](/learn/chart-types/cartesian/heatmap/) |
+| See resting orders waiting in the book, not trades | A [market depth](/learn/applications/market-depth/) (order book) chart or an order book [heatmap](/learn/chart-types/cartesian/heatmap/) |
 | See how volume is distributed in general, outside of trading | A [histogram](/learn/chart-types/cartesian/histogram/) |
 
 A footprint is a candlestick with the volume profile moved inside each bar. It is dense, so it works best zoomed in to a handful of bars; zoomed out, it falls back to candles, as the demo does.

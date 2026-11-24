@@ -30,6 +30,23 @@ Business dashboards turn a handful of KPIs into charts that show at a glance whe
 | --- | --- |
 | [KPI dashboard](/learn/applications/kpi-dashboard/) | Choosing KPIs, which chart suits each one, targets and comparisons, and dashboard layout |
 
+## Finance and trading
+
+Trading screens chart prices, volume and order flow as they change, and risk and performance over a strategy's history. For how SciChart is used in this sector, see [SciChart for financial and trading applications](https://www.scichart.com/why-scichart-best-for-financial-stock-trading-applications/). The price chart guides below are also listed under [types of charts](/learn/chart-types/#financial-charts).
+
+| Guide | What it covers |
+| --- | --- |
+| [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+| [Drawdown and equity curve](/learn/applications/drawdown-and-equity-curve/) | How a strategy's balance grows over time, how far it falls from each peak, and how long it takes to recover |
+| [Footprint chart](/learn/chart-types/cartesian/footprint-chart/) | Bid and ask volume at each price inside each bar, with delta and imbalances |
+| [Market depth](/learn/applications/market-depth/) | The buy and sell orders waiting at each price, as a cumulative depth chart and as an order book heatmap over time |
+| [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
+| [Options payoff diagram](/learn/applications/options-payoff-diagram/) | Profit or loss of an option position against the price at expiry, for single options and multi-leg strategies |
+| [Renko chart](/learn/chart-types/cartesian/renko-chart/) | Fixed-size price bricks that ignore time and show the trend |
+| [Tick chart](/learn/chart-types/cartesian/tick-chart/) | Bars that close after a set number of trades instead of a set time |
+| [Volatility surface](/learn/applications/volatility-surface/) | Implied volatility across strike and expiry as a 3D surface, with the smile, skew and term structure |
+| [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
+
 ## Industrial and energy
 
 For more on how SciChart is used in this sector, see [SciChart for industrial and energy](https://www.scichart.com/scada-big-data/).
