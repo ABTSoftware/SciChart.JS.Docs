@@ -1,14 +1,16 @@
 ---
 sidebar_position: 10
 sidebar_label: Stochastic Oscillator
-title: "Stochastic Oscillator: Add a Stochastic Indicator to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the Stochastic Oscillator indicator is, how %K and %D are calculated, how to read overbought, oversold and crossovers, and how to add a Stochastic indicator to a JavaScript or React financial chart with SciTrader.js."
+title: "Add a Stochastic Oscillator to a JavaScript Chart"
+description: "Add a Stochastic Oscillator to a JavaScript or React chart with SciTrader.js, with live examples. It shows where the close sits in the recent range."
 keywords: ["stochastic oscillator", "stochastic indicator", "stochastic %K %D", "stochastic JavaScript", "stochastic React chart", "how to calculate stochastic oscillator", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# Stochastic Oscillator in a JavaScript or React Financial Chart
+# Add a Stochastic Oscillator to a JavaScript or React Chart
 
 The **Stochastic Oscillator** shows where the latest close sits within the recent high–low range. This page explains what the Stochastic indicator is, how its %K and %D lines are calculated and how traders read them, and shows how to add a Stochastic Oscillator to a JavaScript or React financial chart with SciTrader.js's `StochasticStudy`, with live examples you can edit in CodePen.
+
+For how the Stochastic Oscillator is calculated and read, with an interactive example, see [Stochastic Oscillator explained](/learn/applications/stochastic-oscillator/).
 
 :::info
 The Stochastic Oscillator is one of the 32 built-in technical indicators and studies in the SciTrader SDK. For the full list, with each one's options and defaults, see [Every Built-in Indicator and Study](/financial-charts/studies-and-indicators/#the-catalogue). To add and remove any of them, or build an indicator picker, see [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/).
@@ -22,6 +24,8 @@ The Stochastic Oscillator, developed by George Lane, is a **momentum oscillator*
 - **%D** is a moving average of %K, a slower signal line.
 
 The idea is that in an uptrend, closes tend to be near the top of the range, and in a downtrend near the bottom. It has its own 0–100 scale, so a chart draws it in a pane of its own below the price chart.
+
+George Lane developed the Stochastic Oscillator in the 1950s and described it in "Lane's Stochastics", *Technical Analysis of Stocks & Commodities*, volume 2, issue 3 (1984).
 
 ## How Is the Stochastic Oscillator Calculated?
 
@@ -169,3 +173,4 @@ interface IStochasticOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Stochastic Oscillator explained](/learn/applications/stochastic-oscillator/): how it is calculated and read, with an interactive example.

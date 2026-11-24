@@ -11,6 +11,8 @@ import styles from "./LearnCta.module.css";
 // - demo: the chart's slug in the demo app; links go to /demo/javascript|react|angular/<demo>.
 // - docs: the chart's API documentation page (a docs path). docsLabel overrides its link text, which is
 //   otherwise "SciChart.js <chart> documentation".
+// - demoLabel: the demo's own chart name, when the demo is a different chart from the page's (e.g. a Renko
+//   guide whose closest demo is the candlestick chart). Used for the demo pills' link text; defaults to chart.
 // All are optional, for pages about no single chart (the hub). Rules for learn pages: docs/learn/CLAUDE.md.
 // Each link carries data-cta, so Google Tag Manager can count clicks per position and button.
 //
@@ -21,6 +23,9 @@ import styles from "./LearnCta.module.css";
 const GET_STARTED_URL = "https://www.scichart.com/getting-started/scichart-javascript/";
 const DEMO_BASE_URL = "https://www.scichart.com/demo/";
 const FEATURES_URL = "https://www.scichart.com/javascript-chart-features/";
+// Live demos that show the performance claim in the bottom CTA, so it is backed by something the reader can run
+const MILLION_POINTS_DEMO_URL = "https://www.scichart.com/demo/react/chart-performance-load-one-million-points";
+const REALTIME_DEMO_URL = "https://www.scichart.com/demo/react/chart-realtime-performance-demo";
 const PRICING_URL = "https://www.scichart.com/shop/";
 const FRAMEWORKS = [
     { key: "javascript", label: "JavaScript" },
@@ -34,10 +39,12 @@ type Props = {
     demo?: string;
     docs?: string;
     docsLabel?: string;
+    demoLabel?: string;
 };
 
-function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
+function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel, demoLabel }: Props) {
     if (!demo && !docs) return null;
+    const demoName = demoLabel ?? chart;
     return (
         <p className={styles.links}>
             {demo && (
@@ -48,11 +55,11 @@ function DemoAndDocsLinks({ position, chart, demo, docs, docsLabel }: Props) {
                             <a
                                 className={styles.chip}
                                 href={`${DEMO_BASE_URL}${f.key}/${demo}`}
-                                title={chart ? `${f.label} ${chart}` : `${f.label} chart demos`}
+                                title={demoName ? `${f.label} ${demoName}` : `${f.label} chart demos`}
                                 data-cta={`learn-${position}-demo-${f.key}`}
                             >
                                 {f.label}
-                                {chart && <span className={styles.visuallyHidden}> {chart}</span>}
+                                {demoName && <span className={styles.visuallyHidden}> {demoName}</span>}
                             </a>
                         </React.Fragment>
                     ))}
@@ -78,7 +85,7 @@ export default function LearnCta(props: Props) {
                 <div className={styles.topRow}>
                     <p className={styles.text}>
                         <strong>Build {what}</strong> in JavaScript, React or Angular with SciChart.js, the
-                        high-performance WebGL chart library.
+                        WebGL and WebGPU chart library.
                     </p>
                     <div className={styles.buttons}>
                         <a className={`${styles.button} ${styles.primary}`} href={GET_STARTED_URL} data-cta="learn-top-get-started">
@@ -96,8 +103,15 @@ export default function LearnCta(props: Props) {
             <h2 className={styles.heading}>Build {chart ? `your own ${chart}` : "your own charts"} with SciChart.js</h2>
             <ul className={styles.points}>
                 <li>
-                    <strong>Fast:</strong> WebGL and WebGPU rendering keeps charts smooth with millions of points and
-                    real-time updates.
+                    <strong>Fast:</strong> WebGL and WebGPU rendering. Try it with{" "}
+                    <a href={MILLION_POINTS_DEMO_URL} data-cta="learn-bottom-perf-million">
+                        a million points
+                    </a>{" "}
+                    and{" "}
+                    <a href={REALTIME_DEMO_URL} data-cta="learn-bottom-perf-realtime">
+                        real-time updates
+                    </a>{" "}
+                    in the live demos.
                 </li>
                 <li>
                     <strong>Your stack:</strong> JavaScript, TypeScript, React and Angular, with full source code for every

@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 sidebar_label: Signal Processing
-title: "Signal Processing: A Visual Guide (With Interactive Examples)"
+title: "Signal Processing: A Visual Guide (Interactive Examples)"
 description: "Signal processing guides with live examples: Fourier transform and FFT, filters, spectral analysis, sampling and correlation, with code to chart each one."
 keywords: ["signal processing", "digital signal processing", "dsp", "fourier transform", "fft", "power spectral density", "low pass filter", "high pass filter", "bode plot", "convolution", "autocorrelation", "nyquist frequency", "aliasing", "signal to noise ratio", "band pass filter", "notch filter", "fir filter", "iir filter", "audio spectrum analyzer", "fourier series", "window function", "hann window", "hamming window", "spectral leakage", "hilbert transform", "envelope detection"]
+datePublished: 2026-11-19
 ---
 
 # Signal Processing
@@ -12,11 +13,15 @@ keywords: ["signal processing", "digital signal processing", "dsp", "fourier tra
 
 ## Sampling
 
+Sampling turns a continuous signal into numbers, and the sample rate limits which frequencies survive.
+
 | Guide | What it covers |
 | --- | --- |
 | [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and why frequencies above half the sample rate turn into false, lower ones |
 
 ## Frequency analysis
+
+Frequency analysis shows which frequencies a signal contains, how strong each one is and how they change.
 
 | Guide | What it covers |
 | --- | --- |
@@ -33,6 +38,8 @@ keywords: ["signal processing", "digital signal processing", "dsp", "fourier tra
 
 ## Filters
 
+A filter keeps some frequencies and removes others; these guides cover the main types and how to read their response.
+
 | Guide | What it covers |
 | --- | --- |
 | [Band-pass filter](/learn/signal-processing/band-pass-filter/) | Keeps one band of frequencies: centre frequency, bandwidth and Q |
@@ -44,11 +51,13 @@ keywords: ["signal processing", "digital signal processing", "dsp", "fourier tra
 
 ## Combining and comparing signals
 
+Correlation compares a signal with a shifted copy of itself or another signal; convolution combines a signal with a kernel.
+
 | Guide | What it covers |
 | --- | --- |
 | [Autocorrelation and cross-correlation](/learn/signal-processing/autocorrelation/) | Finding a repeating period, or the delay between two signals |
 | [Convolution](/learn/signal-processing/convolution/) | How filtering, smoothing and echoes all come from one operation, step by step |
 
-For charting the results fast, see [real-time charts](/learn/real-time/) and [big data and performance](/learn/big-data/).
+For charting signals as they stream in, or very large recordings, see [real-time charts](/learn/real-time/) and [big data and performance](/learn/big-data/).
 
 <LearnCta position="bottom" />

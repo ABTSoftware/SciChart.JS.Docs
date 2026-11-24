@@ -1,12 +1,12 @@
 ---
 sidebar_position: 9
 sidebar_label: ATR (Average True Range)
-title: "ATR Indicator: Add Average True Range to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What the ATR (Average True Range) indicator is, how true range and ATR are calculated, how traders use ATR for stops and position sizing, and how to add an ATR indicator to a JavaScript or React financial chart with SciTrader.js."
+title: "Add an ATR Indicator to a JavaScript or React Chart"
+description: "Add an ATR indicator to a JavaScript or React chart with SciTrader.js, with live examples. ATR measures volatility: the typical size of a candle."
 keywords: ["ATR indicator", "average true range", "true range", "ATR JavaScript", "ATR React chart", "how to calculate ATR", "ATR stop loss", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# ATR Indicator: Average True Range in a JavaScript or React Financial Chart
+# Add an ATR (Average True Range) Indicator to a JavaScript or React Chart
 
 The **ATR (Average True Range)** measures volatility: how far price typically moves in one candle. This page explains what the ATR indicator is, how true range and ATR are calculated and how traders use them, and shows how to add an ATR indicator to a JavaScript or React financial chart with SciTrader.js's `ATRStudy`, with live examples you can edit in CodePen.
 
@@ -22,6 +22,8 @@ The ATR, developed by J. Welles Wilder Jr., is the average size of each candle's
 - **ATR measures volatility, not direction.** It rises when candles get bigger, whether price is rising or falling.
 
 ATR has its own scale, so a chart draws it in a pane of its own below the price chart.
+
+J. Welles Wilder Jr. introduced average true range in his book *New Concepts in Technical Trading Systems* (Trend Research, 1978).
 
 ## How Is the ATR Calculated?
 
@@ -156,3 +158,4 @@ interface IATROptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

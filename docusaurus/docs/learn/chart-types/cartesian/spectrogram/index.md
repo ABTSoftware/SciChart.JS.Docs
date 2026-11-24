@@ -1,7 +1,7 @@
 ---
-sidebar_position: 210
+sidebar_position: 250
 sidebar_label: Spectrogram
-title: "Spectrogram: What It Is & How to Read It (With Interactive Examples)"
+title: "Spectrogram: What It Is & How to Read It (Interactive Example)"
 description: "What a spectrogram is, how to read its time, frequency and colour, what each shape means, how it is made with an FFT, and the mistakes to avoid. With a live, real-time example."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/spectrogram-og.png
 related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a spectrogram in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a UniformHeatmapDataSeries, one column per time step and one row per frequency band, draw it with a UniformHeatmapRenderableSeries and a HeatmapColorMap in decibels, and call setZValues() as new columns arrive so the chart scrolls. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a UniformHeatmapDataSeries, one column per time step and one row per frequency band, draw it with a UniformHeatmapRenderableSeries and a HeatmapColorMap in decibels, and call setZValues() as new columns arrive so the chart scrolls. The same setup runs inside React through scichart-react and inside Angular through scichart-angular." }
                 }
             ]
         })}
@@ -63,7 +64,7 @@ related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
 
 ## What is a spectrogram?
 
-A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the frequencies in a signal change over time. Time runs along the horizontal axis and frequency up the vertical axis. The colour of each point shows how strong that frequency was at that moment, usually in decibels (dB).
+A **spectrogram** (also called a sonogram) is a chart of how the frequencies in a signal change over time. Time runs along the horizontal axis and frequency up the vertical axis. The colour of each point shows how strong that frequency was at that moment, usually in decibels (dB).
 
 ![A spectrogram of a test signal: two steady horizontal lines at 1,000 Hz and 3,000 Hz, a dashed line at 5,500 Hz, and bright diagonal lines sweeping up from 500 Hz to 7,000 Hz, over a dark speckled background of noise](/img/learn/spectrogram-og.png)
 
@@ -79,6 +80,8 @@ A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the f
 
 ## How to read a spectrogram
 
+Read a spectrogram as time across, frequency up and loudness as colour: each bright line or patch is a sound or signal at that frequency and moment.
+
 ![Anatomy of a spectrogram: time on the horizontal axis, frequency on the vertical axis, colour from quiet (black) to loud (pale yellow), with a steady tone as a horizontal line, a sweep as a rising line and a click as a vertical line](./spectrogram-anatomy.svg)
 
 1. Check the colour scale. It tells you which colours are loud and which are quiet. Levels are usually in decibels, a logarithmic scale, so quiet detail and loud tones fit on one chart. The darkest colour is usually the **noise floor**: the level of the background when nothing else is happening.
@@ -88,6 +91,8 @@ A **spectrogram** (also called a sonogram or voiceprint) is a chart of how the f
 5. Compare against the noise floor. Anything only slightly brighter than the background may be noise; a feature well above it is a real signal.
 
 ## Spectrogram patterns: what each shape means
+
+Each kind of sound leaves its own shape: steady tones draw horizontal lines, changing pitches draw slopes, clicks draw thin vertical lines and noise draws a haze.
 
 | What you see | What it is | Examples |
 | --- | --- | --- |
@@ -123,15 +128,17 @@ The highest frequency a spectrogram can show is half the signal's sample rate, t
 
 A long window separates close frequencies but blurs when things happened; a short window shows timing sharply but merges nearby frequencies.
 
-| Window (at 44,100 samples per second) | Time per column | Frequency band width | Good for |
+| Window (at 44,100 samples per second) | Time per column | Spacing between frequency bands | Good for |
 | --- | --- | --- | --- |
 | 256 samples | about 6 ms | about 172 Hz | Clicks, drum hits and other fast events |
 | 1,024 samples | about 23 ms | about 43 Hz | General audio and speech |
 | 4,096 samples | about 93 ms | about 11 Hz | Separating close musical notes or steady machine tones |
 
-Band width is the sample rate divided by the window length; time per column is the window length divided by the sample rate. Overlapping windows add columns more often, but they don't sharpen the time detail.
+Band spacing is the sample rate divided by the window length; a window function such as the Hann window spreads a single tone over about two bands. Time per column is the window length divided by the sample rate. Overlapping windows add columns more often, but they don't sharpen the time detail.
 
 ## Types of spectrogram
+
+Spectrograms differ mainly in how the frequency axis is spaced, and in whether the display scrolls as new data arrives.
 
 | Type | What changes | Typical use |
 | --- | --- | --- |
@@ -147,7 +154,7 @@ Use a spectrogram when the frequencies in a signal change over time and you need
 - audio and music: finding hum, clicks, noise and clipping, checking mixes, and analysing notes and harmonics;
 - speech: phonetics and voice analysis, where vowels show as formant bands;
 - wildlife sound: identifying birdsong and bat, whale and dolphin calls;
-- vibration and condition monitoring: spotting a bearing or gear fault as a new tone appearing or drifting;
+- [vibration](/learn/applications/vibration-analysis/) and condition monitoring: spotting a bearing or gear fault as a new tone appearing or drifting;
 - radar and sonar: detecting targets and how they move;
 - medicine: time-frequency analysis of EEG (brain wave) signals;
 - radio: watching which channels are busy, on spectrum analysers and SDR waterfall displays.
@@ -160,24 +167,26 @@ Use a spectrogram when the frequencies in a signal change over time and you need
 | [Power spectral density](/learn/signal-processing/power-spectral-density/) | Noise power per hertz averaged over a long stretch: a steady, comparable level, but no history |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | Any grid of values. A spectrogram is a heatmap whose axes are time and frequency |
 
-Many tools show a waveform, a spectrum and a spectrogram together, as in the SciChart audio analyser demo linked below.
+Many tools show a waveform, a spectrum and a spectrogram together.
 
 ## Common spectrogram mistakes
+
+Most spectrogram mistakes come from the settings used to make it, which can hide real signals or invent false ones.
 
 - **Skipping the window function.** Without tapering, energy from a strong tone leaks into the bands either side of it, which can hide quieter signals nearby.
 - **Plotting raw amplitude instead of decibels.** On a linear scale only the loudest sounds show; everything else is lost in the darkest colour.
 - **Setting the colour range badly.** Set the bottom of the range near the noise floor and the top just above the loudest signal. Too wide a range makes everything look dark; too narrow a range turns noise into false detail and flattens the loud parts.
 - **Ignoring the Nyquist limit.** Frequencies above half the sample rate don't vanish: they fold back down as false lines (**aliasing**). Filter out high frequencies before sampling.
-- **Using a linear frequency axis for music or speech.** Most of the interest is in the low frequencies, which a linear axis squeezes into the bottom of the chart. Use a logarithmic or mel axis.
+- **Using a linear frequency axis for music.** Most of the interest is in the low frequencies, which a linear axis squeezes into the bottom of the chart. Use a logarithmic or mel axis. For speech, a linear axis up to 5 or 8 kHz is normal in phonetics, where it makes formants easy to read; speech recognition models usually use a mel axis.
 - **Comparing spectrograms made with different settings.** A different window length, colour range or decibel reference can make the same signal look different. Keep the settings the same when you compare.
 
 ## How to create a spectrogram in JavaScript, React or Angular
 
-In SciChart.js a spectrogram is a real-time, scrolling heatmap. You compute each new spectrum, for example with an FFT of the latest samples, and SciChart.js draws it with WebGL and WebGPU, so the chart keeps up with live data. The spectrogram below is generated live: scroll to zoom into a frequency band, drag up or down to pan, double-click to reset, and hover to read the level.
+In SciChart.js a spectrogram is a real-time, scrolling heatmap. You compute each new spectrum, for example with an FFT of the latest samples, and SciChart.js adds it as a new column. The spectrogram below adds a column of 256 frequency bands, from 0 to 8,000 Hz, every 50 milliseconds and keeps the last 10 seconds; its spectra are simulated in the browser rather than taken from audio. Scroll to zoom into a frequency band, drag up or down to pan, double-click to reset, and hover to read the level.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="spectrogram" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />
+<LearnCta position="top" chart="spectrogram" demo="audio-analyzer-fft-example" demoLabel="audio analyzer" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" docsLabel="SciChart.js uniform heatmap documentation" />
 
 Here is the code for this chart:
 
@@ -332,9 +341,9 @@ Key points:
 - A [HeatmapColorMap](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmapcolormap.html) with `minimum` and `maximum` in decibels sets the colour scale; a [HeatmapLegend](https://www.scichart.com/documentation/js/current/typedoc/classes/heatmaplegend.html) shows it.
 - SciChart.js draws the chart; the FFT is up to you. The audio analyser in the demo app includes an FFT, a microphone input, a waveform and a spectrum alongside its spectrogram.
 
-**See it in the demo app:** [JavaScript spectrogram](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React spectrogram](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular spectrogram](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
+**See it in the demo app:** [JavaScript audio analyzer with spectrogram](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer with spectrogram](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer with spectrogram](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
 
-**Go deeper:** [SciChart.js spectrogram documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), including [updating a heatmap in real time](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/) and [colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/). New to heatmaps? Read our [heatmap guide](/learn/chart-types/cartesian/heatmap/).
+**Go deeper:** [SciChart.js uniform heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), the series a spectrogram is drawn with, including [updating a heatmap in real time](/2d-charts/chart-types/uniform-heatmap-renderable-series/updating-realtime/) and [colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/). New to heatmaps? Read our [heatmap guide](/learn/chart-types/cartesian/heatmap/).
 
 ## Frequently asked questions
 
@@ -360,7 +369,7 @@ A spectrum shows the strength of each frequency at one moment, as a line of leve
 
 ### How do I make a spectrogram in JavaScript?
 
-Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a `UniformHeatmapDataSeries`, one column per time step and one row per frequency band, draw it with a `UniformHeatmapRenderableSeries` and a `HeatmapColorMap` in decibels, and call `setZValues()` as new columns arrive so the chart scrolls. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+Compute a spectrum (for example with an FFT) for each new block of samples. With SciChart.js, put the spectra in a `UniformHeatmapDataSeries`, one column per time step and one row per frequency band, draw it with a `UniformHeatmapRenderableSeries` and a `HeatmapColorMap` in decibels, and call `setZValues()` as new columns arrive so the chart scrolls. The same setup runs inside React through `scichart-react` and inside Angular through `scichart-angular`.
 
 ## Sources
 
@@ -369,4 +378,4 @@ Compute a spectrum (for example with an FFT) for each new block of samples. With
 - Stevens, S. S., Volkmann, J. and Newman, E. B. (1937), [A Scale for the Measurement of the Psychological Magnitude Pitch](https://doi.org/10.1121/1.1915893). *The Journal of the Acoustical Society of America*, 8(3). The origin of the mel scale.
 - SciPy, [scipy.signal.spectrogram](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.spectrogram.html). A reference implementation of the STFT spectrogram, with its window, overlap and scaling options.
 
-<LearnCta position="bottom" chart="spectrogram" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" />
+<LearnCta position="bottom" chart="spectrogram" demo="audio-analyzer-fft-example" demoLabel="audio analyzer" docs="/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/" docsLabel="SciChart.js uniform heatmap documentation" />

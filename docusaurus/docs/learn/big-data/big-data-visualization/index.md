@@ -2,7 +2,7 @@
 sidebar_position: 10
 sidebar_label: Big Data Visualization
 title: "Big Data Visualization: What It Is & How to Visualize Large Datasets"
-description: "What big data visualization is, when a dataset is too big for a chart, SVG vs Canvas vs WebGL, and the techniques that keep millions of points fast. With live tests you can run."
+description: "What big data visualization is, when a dataset is too big for a chart, SVG vs Canvas vs WebGL, and the techniques for charting millions of points. With live tests you can run."
 keywords:
     [
         "big data visualization",
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/big-data-visualization-og.png
 related: [downsampling, strip-chart, scatter-plot, heatmap]
+datePublished: 2026-11-16
 ---
 
 <head>
@@ -27,7 +28,7 @@ related: [downsampling, strip-chart, scatter-plot, heatmap]
                 {
                     "@type": "Question",
                     "name": "What is big data visualization?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Big data visualization is turning datasets too large to read as tables, such as millions of sensor readings or years of tick-by-tick prices, into charts people can explore. It has two halves: reducing what has to be drawn (aggregation and downsampling) and drawing it fast enough that zooming and panning stay smooth." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Big data visualization is turning datasets too large to read as tables, such as millions of sensor readings or years of tick-by-tick prices, into charts people can explore. It has two halves: reducing what has to be drawn (aggregation and downsampling) and drawing it with a renderer that can redraw the chart each time people zoom or pan." }
                 },
                 {
                     "@type": "Question",
@@ -52,7 +53,7 @@ related: [downsampling, strip-chart, scatter-plot, heatmap]
                 {
                     "@type": "Question",
                     "name": "How do I plot millions of points in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Use a chart library that draws with WebGL or WebGPU, such as SciChart.js. Store the values in typed arrays such as Float64Array, add them in one batch with appendRange rather than point by point, and tell the chart if the data is sorted in x. SciChart.js resamples the data to the screen's pixels automatically, so the chart stays interactive. It works the same in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Use a chart library that draws with WebGL or WebGPU, such as SciChart.js. Store the values in typed arrays such as Float64Array, add them in one batch with appendRange rather than point by point, and tell the chart if the data is sorted in x. SciChart.js resamples the data to the screen's pixels automatically, and the demo on this page shows how long each added million points takes to draw on your device. React apps use the same code through scichart-react, and Angular apps through scichart-angular." }
                 }
             ]
         })}
@@ -63,7 +64,7 @@ related: [downsampling, strip-chart, scatter-plot, heatmap]
 
 ## What is big data visualization?
 
-**Big data visualization** (also called large dataset visualization) is turning datasets too large to read as tables, from millions of sensor readings to years of tick-by-tick prices, into charts that people can explore. It combines reducing what has to be drawn, by aggregating or downsampling, with rendering fast enough that zooming and panning stay smooth.
+**Big data visualization** (also called large dataset visualization) is turning datasets too large to read as tables, from millions of sensor readings to years of tick-by-tick prices, into charts that people can explore. It combines reducing what has to be drawn, by aggregating or downsampling, with a renderer that can redraw the chart each time people zoom or pan.
 
 ![A dark navy line chart with five coloured signals, each a band of noisy readings, stacked one above the other across a million samples. A counter at the top reads 1,000,000 points, next to an Add 1 million points button](/img/learn/big-data-visualization-og.png)
 
@@ -72,7 +73,7 @@ related: [downsampling, strip-chart, scatter-plot, heatmap]
 :::tip Key takeaways
 - For a chart, data is "big" when it has more points than the screen has pixels to show them, or when it changes faster than the chart can redraw.
 - A chart can't show every point. A 1,920-pixel-wide chart of 10 million points has about 5,200 points per pixel column, so the work is choosing what to draw.
-- SVG draws each point as an element in the page; Canvas paints a bitmap with the CPU; WebGL and WebGPU draw with the graphics card. Each step up handles more points and takes more work to program.
+- SVG draws each point as an element in the page; Canvas paints a bitmap from drawing commands that JavaScript issues one shape at a time; WebGL and WebGPU draw with the graphics card. Each step up handles more points and takes more work to program.
 - Downsampling, aggregation, level of detail and progressive loading cut what has to be drawn without hiding peaks and outliers.
 - Measure on your own data and devices. The [live test below](#try-it-svg-vs-webgl-in-your-browser) times SVG and WebGL in your browser.
 :::
@@ -129,7 +130,7 @@ D3.js is a toolkit for building custom charts rather than a chart library: you c
 
 | | SVG | Canvas 2D | WebGL / WebGPU |
 | --- | --- | --- | --- |
-| How it draws | One page element per shape | JavaScript paints a bitmap | Shaders on the GPU |
+| How it draws | One page element per shape | JavaScript issues drawing commands one shape at a time | Shaders on the GPU |
 | What grows with each point | Elements to style, lay out and paint | Draw commands on the CPU | Data copied to GPU memory |
 | Styling with CSS | Yes, per element | No, set in code | No, set in code |
 | Accessibility | Elements can have titles, roles and labels | A bitmap: add accessible text separately | A bitmap: add accessible text separately |
@@ -142,7 +143,7 @@ The table is about each technology, not every product built on it: a well-built 
 
 ## Try it: SVG vs WebGL in your browser
 
-Claims about speed are easy to make, so test it. The panels below draw the same scatter points twice: on the left with plain SVG (one `<circle>` element per point, no library), and on the right with WebGL or WebGPU. Pick a size, and each panel reports how long it took in your browser, on your device, from the start of drawing to the frame appearing on screen. Then scroll and drag on the right-hand chart to zoom and pan.
+Claims about speed are easy to make, so test it. The panels below draw the same scatter points twice: on the left with plain SVG (one `<circle>` element per point, no library), and on the right with WebGL or WebGPU. Pick a size, and each panel reports how long it took to draw in your browser, on your device. Then scroll and drag on the right-hand chart to zoom and pan.
 
 <LiveDocSnippet maxWidth={'100%'} height={480} name="./SvgVsWebgl/demo" />
 
@@ -153,7 +154,7 @@ What to look for:
 - At 1,000,000 points SVG has a million elements to create, and the page may freeze for several seconds; on a phone or a low-memory device the tab may even crash. The WebGL panel still draws quickly, and still zooms and pans.
 - Times vary between devices and browsers, and the first run includes some one-off setup. Run each size twice.
 
-For comparison, here are the times measured with this test on two very different machines:
+For comparison, here are the times measured with this test on 18 November 2026, with SciChart.js 6.0.15, on two very different machines:
 
 - Mac: MacBook Pro laptop, Apple M5.
 - PC: Windows desktop, AMD Ryzen 7 7800X3D, AMD Radeon RX 7900 XTX, 32 GB RAM.
@@ -164,6 +165,8 @@ For comparison, here are the times measured with this test on two very different
 | 10,000 | 51 ms | 57 ms | 1 ms | 3 ms |
 | 100,000 | 162 ms | 356 ms | 3 ms | 11 ms |
 | 1,000,000 | 1,434 ms | 3,495 ms | 8 ms | 13 ms |
+
+The two timers stop at different points. The SVG time runs from creating the first `<circle>` element until the browser has styled, laid out and painted the next frame. The SciChart.js time runs from handing over the points until the chart fires its `rendered` event, once it has drawn the frame; the browser shows that frame on its next screen refresh. SciChart.js uses WebGPU where the browser supports it and WebGL otherwise, so the column covers both. Before each timed draw the test clears both panels and waits for the browser to go idle, so one run's clean-up isn't counted in the next.
 
 At 1,000 points SVG and WebGL are close on both machines. From 10,000 points the SVG time climbs with every point added, and from 100,000 points it differs by more than two times between the machines. At a million points SVG takes 1.4 to 3.5 seconds, while the WebGL / WebGPU time stays under 16 ms on both. A frame at 60 frames per second has about 16 ms, so the SVG times of 51 ms and more mean visible stutter or a frozen page. Your numbers will differ on other hardware and browsers; the gap between SVG and WebGL is what to look for.
 
@@ -181,7 +184,7 @@ The renderer sets how many points you can draw. These techniques cut how many yo
 | Aggregation and binning | Replaces raw points with summaries: averages per minute, counts per grid cell, candles per period | Dashboards, scatter data, prices | Averages hide spikes; show the minimum and maximum too |
 | Level of detail | Shows a coarse summary zoomed out and loads more detail as you zoom in | Very long histories, maps | Needs pre-computed summaries at several zoom levels |
 | Progressive loading | Draws a first view quickly, then fills in or streams the rest | Slow networks, huge files | Show that the chart is still loading |
-| Background processing | Parses and reduces data in a web worker, off the page's main thread | Parsing large files, heavy calculations | Transfer data as typed arrays (such as `Float64Array`) to avoid copying |
+| Background processing | Parses and reduces data in a web worker, off the page's main thread | Parsing large files, heavy calculations | Transfer data as typed arrays (such as `Float64Array`) to avoid copying; see [time series data formats](/learn/big-data/time-series-data-formats/) |
 | Server-side reduction | Queries return data already aggregated or downsampled for the current view | Data that lives in a database or data warehouse | A round trip to the server on every zoom |
 
 Downsampling is the one that matters most for line charts. Algorithms such as min-max (keep each pixel column's lowest and highest point) and LTTB (Largest-Triangle-Three-Buckets, which picks the points that best keep the line's shape) reduce millions of points to a few thousand that look the same. The [downsampling guide](/learn/big-data/downsampling/) compares them in detail.
@@ -198,7 +201,7 @@ Start from the number of points on screen, how often they change, and what else 
 | A highly custom, one-off visual design | SVG with a toolkit such as D3.js | Full control over every mark |
 | Tens of thousands of points, simple interaction | Canvas | No per-point elements; still simple to code |
 | Hundreds of thousands to millions of points, or zooming through long histories | WebGL / WebGPU chart library | GPU drawing plus built-in downsampling |
-| Data streaming in many times a second | WebGL / WebGPU chart library | Redraws the whole chart each frame without falling behind |
+| Data streaming in many times a second | WebGL / WebGPU chart library | Redraws the whole chart on the GPU each frame, with no element per point |
 | Many charts on one page (dashboards, multi-channel monitors) | WebGL / WebGPU chart library that shares the GPU between charts | Browsers limit how many WebGL contexts a page can open |
 | Data too large for the browser's memory | Any renderer, after server-side reduction | Send only what the current view needs |
 
@@ -206,21 +209,23 @@ If you're not sure, prototype with your real data size on the slowest device you
 
 ## Common mistakes in big data visualization
 
+Most slow or misleading big data charts draw every point as it comes, or reduce the data in a way that hides its peaks.
+
 - **Sending every point to the chart and hoping.** Without downsampling or a GPU renderer, the page freezes. Decide how many points the screen can show and design for that.
 - **Decimating instead of downsampling.** Keeping every 100th point is fast but can drop the one spike you needed to see. Use min-max or LTTB, which keep peaks.
 - **Averaging away outliers.** A per-minute average of a signal that spikes for one second shows nothing. Plot the minimum and maximum, or a band, alongside the average.
 - **Overplotting.** A million opaque markers in a scatter plot make a solid block. Use small, semi-transparent markers, or switch to a density plot or heatmap.
 - **Updating point by point.** Appending one value at a time triggers a recalculation or redraw each time. Batch updates and append arrays in one call.
 - **Testing only on a fast development machine.** Laptops on battery, older phones and remote desktops can be many times slower. Test on the devices your users have.
-- **One WebGL context per chart on a dashboard.** Browsers cap the number of WebGL contexts per page, often at 16, so a dashboard with dozens of charts can lose some of them. Use a library that shares one context across charts.
+- **One WebGL context per chart on a dashboard.** Browsers cap the number of WebGL contexts per page (16 in Chrome, Edge and Safari, and 8 in Chrome on Android, according to [our performance tips](/2d-charts/performance-tips/performance-tips-and-tricks/)), so a dashboard with dozens of charts can lose some of them. Use a library that shares one context across charts.
 
 ## How to create a big data chart in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU through its own WebAssembly engine, and resamples data to the screen's pixels automatically, so millions of points stay interactive without any downsampling code of your own. The chart below starts with one million points in five signals. Click **Add 1 million points** to keep adding, watch the counter and the time for each million, then scroll to zoom, drag to pan, double-click to zoom back out, and hover to read values.
+The demo starts with one million points in five signals and adds another million, up to ten, each time you click, showing how long each million took to draw on your device. It has no downsampling code of its own: SciChart.js resamples the data to the screen's pixels itself. Click **Add 1 million points** to keep adding and watch the counter and the time for each million, then zoom with the mouse wheel, drag to pan, double-click to zoom back out, and hover to read values.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="big data chart" demo="chart-performance-load-one-million-points" docs="/2d-charts/performance-tips/performance-tips-and-tricks/" />
+<LearnCta position="top" chart="big data chart" demo="chart-performance-load-one-million-points" demoLabel="1 million point chart" docs="/2d-charts/performance-tips/performance-tips-and-tricks/" docsLabel="SciChart.js performance tips" />
 
 Here is the code for this chart:
 
@@ -353,9 +358,9 @@ Key points:
 - From v6, SciChart.js draws with WebGPU where the browser supports it and falls back to WebGL 2 elsewhere, with no code change. See [WebGPU and WebGL renderers](/2d-charts/surface/webgpu-and-webgl-renderers/).
 - For many charts on a page, `SciChartSurface.create()` shares one GPU context across all charts, so a dashboard isn't capped by the browser's context limit; `SciChartSurface.createSingle()` gives each chart its own, which can draw faster for a few large charts. For hundreds of millions of points, the optional [64-bit WebAssembly build](/2d-charts/surface/larger-datasets-with-wasm64/) raises the memory ceiling.
 
-**See it in the demo app:** [JavaScript load 1 million points performance demo](https://www.scichart.com/demo/javascript/chart-performance-load-one-million-points) · [React load 1 million points performance demo](https://www.scichart.com/demo/react/chart-performance-load-one-million-points) · [Angular load 1 million points performance demo](https://www.scichart.com/demo/angular/chart-performance-load-one-million-points)
+**See it in the demo app:** [JavaScript 1 million point chart](https://www.scichart.com/demo/javascript/chart-performance-load-one-million-points) · [React 1 million point chart](https://www.scichart.com/demo/react/chart-performance-load-one-million-points) · [Angular 1 million point chart](https://www.scichart.com/demo/angular/chart-performance-load-one-million-points)
 
-**Go deeper:** [SciChart.js big data chart documentation](/2d-charts/performance-tips/performance-tips-and-tricks/) (performance tips and tricks), and [Performance Comparison of JavaScript Chart Libraries](https://www.scichart.com/blog/chart-bench-compare-javascript-chart-libraries/) for measured benchmarks from 1,000 to 10 million points.
+**Go deeper:** [SciChart.js performance tips and tricks](/2d-charts/performance-tips/performance-tips-and-tricks/), and [Performance Comparison of JavaScript Chart Libraries](https://www.scichart.com/blog/chart-bench-compare-javascript-chart-libraries/) for measured benchmarks from 1,000 to 10 million points.
 
 Further reading on the SciChart blog: [How to Visualize Millions of Data Points Efficiently](https://www.scichart.com/blog/how-to-visualize-millions-of-data-points-efficiently/) (aggregation techniques, client vs server, benchmarking) and [Which Rendering Engine Should You Use for React Charts?](https://www.scichart.com/blog/how-does-react-rendering-work/) (SVG, Canvas and WebGL in a React app).
 
@@ -363,7 +368,7 @@ Further reading on the SciChart blog: [How to Visualize Millions of Data Points 
 
 ### What is big data visualization?
 
-Big data visualization is turning datasets too large to read as tables, such as millions of sensor readings or years of tick-by-tick prices, into charts people can explore. It has two halves: reducing what has to be drawn (aggregation and downsampling) and drawing it fast enough that zooming and panning stay smooth.
+Big data visualization is turning datasets too large to read as tables, such as millions of sensor readings or years of tick-by-tick prices, into charts people can explore. It has two halves: reducing what has to be drawn (aggregation and downsampling) and drawing it with a renderer that can redraw the chart each time people zoom or pan.
 
 ### How do you visualize big data?
 
@@ -383,7 +388,7 @@ D3.js is the most flexible way to build a custom chart on the web, but it leaves
 
 ### How do I plot millions of points in JavaScript?
 
-Use a chart library that draws with WebGL or WebGPU, such as SciChart.js. Store the values in typed arrays such as `Float64Array`, add them in one batch with `appendRange` rather than point by point, and tell the chart if the data is sorted in x. SciChart.js resamples the data to the screen's pixels automatically, so the chart stays interactive. It works the same in React with `scichart-react` and in Angular with `scichart-angular`.
+Use a chart library that draws with WebGL or WebGPU, such as SciChart.js. Store the values in typed arrays such as `Float64Array`, add them in one batch with `appendRange` rather than point by point, and tell the chart if the data is sorted in x. SciChart.js resamples the data to the screen's pixels automatically, and the demo on this page shows how long each added million points takes to draw on your device. React apps use the same code through `scichart-react`, and Angular apps through `scichart-angular`.
 
 ## Sources
 
@@ -394,4 +399,4 @@ Use a chart library that draws with WebGL or WebGPU, such as SciChart.js. Store 
 - MDN Web Docs, [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API). Running scripts in background threads, off the page's main thread.
 - Steinarsson, S. (2013), [Downsampling Time Series for Visual Representation](https://hdl.handle.net/1946/15343). MSc thesis, University of Iceland: the Largest-Triangle-Three-Buckets (LTTB) algorithm.
 
-<LearnCta position="bottom" chart="big data chart" demo="chart-performance-load-one-million-points" docs="/2d-charts/performance-tips/performance-tips-and-tricks/" />
+<LearnCta position="bottom" chart="big data chart" demo="chart-performance-load-one-million-points" demoLabel="1 million point chart" docs="/2d-charts/performance-tips/performance-tips-and-tricks/" docsLabel="SciChart.js performance tips" />

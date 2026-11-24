@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 420" width="860" height="420" role="img" aria-labelledby="t2 d2">
+<title id="t2">How the gradient shrinks through sigmoid layers but not through active ReLU units</title>
+<desc id="d2">Bars show the largest share of the output gradient that can reach each of six layers, counting back from the output. With sigmoid, each layer multiplies the gradient by at most 0.25, so it falls to 1, 0.25, 0.0625, 0.016, 0.0039 and 0.001. With ReLU, an active unit passes the gradient on unchanged, so every bar stays at 1, while an inactive unit passes nothing.</desc>
+<rect width="860" height="420" fill="#ffffff"/>
+<g font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">
+<text x="430" y="34" font-size="17" text-anchor="middle" fill="#222" font-weight="600">Largest share of the gradient that reaches each layer (weights ignored)</text>
+<line x1="90" y1="330" x2="800" y2="330" stroke="#999"/>
+<line x1="90" y1="267.5" x2="800" y2="267.5" stroke="#eef1f6"/>
+<text x="82" y="272.5" font-size="13" text-anchor="end" fill="#666">0.25</text>
+<line x1="90" y1="205.0" x2="800" y2="205.0" stroke="#eef1f6"/>
+<text x="82" y="210.0" font-size="13" text-anchor="end" fill="#666">0.5</text>
+<line x1="90" y1="142.5" x2="800" y2="142.5" stroke="#eef1f6"/>
+<text x="82" y="147.5" font-size="13" text-anchor="end" fill="#666">0.75</text>
+<line x1="90" y1="80.0" x2="800" y2="80.0" stroke="#eef1f6"/>
+<text x="82" y="85.0" font-size="13" text-anchor="end" fill="#666">1</text>
+<rect x="110" y="80.0" width="40" height="250.0" fill="#50a7d8" rx="3"/>
+<rect x="156" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="130" y="74.0" font-size="13" text-anchor="middle" fill="#1d4f7a">1</text>
+<text x="153" y="352" font-size="14" text-anchor="middle" fill="#333">output</text>
+<rect x="225" y="267.5" width="40" height="62.5" fill="#50a7d8" rx="3"/>
+<rect x="271" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="245" y="261.5" font-size="13" text-anchor="middle" fill="#1d4f7a">0.25</text>
+<text x="268" y="352" font-size="14" text-anchor="middle" fill="#333">1 back</text>
+<rect x="340" y="314.4" width="40" height="15.6" fill="#50a7d8" rx="3"/>
+<rect x="386" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="360" y="308.4" font-size="13" text-anchor="middle" fill="#1d4f7a">0.0625</text>
+<text x="383" y="352" font-size="14" text-anchor="middle" fill="#333">2 back</text>
+<rect x="455" y="326.1" width="40" height="3.9" fill="#50a7d8" rx="3"/>
+<rect x="501" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="475" y="320.1" font-size="13" text-anchor="middle" fill="#1d4f7a">0.0156</text>
+<text x="498" y="352" font-size="14" text-anchor="middle" fill="#333">3 back</text>
+<rect x="570" y="329.0" width="40" height="1.0" fill="#50a7d8" rx="3"/>
+<rect x="616" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="590" y="323.0" font-size="13" text-anchor="middle" fill="#1d4f7a">0.0039</text>
+<text x="613" y="352" font-size="14" text-anchor="middle" fill="#333">4 back</text>
+<rect x="685" y="329.8" width="40" height="0.8" fill="#50a7d8" rx="3"/>
+<rect x="731" y="80.0" width="40" height="250.0" fill="#2a9d5c" fill-opacity="0.85" rx="3"/>
+<text x="705" y="323.8" font-size="13" text-anchor="middle" fill="#1d4f7a">0.001</text>
+<text x="728" y="352" font-size="14" text-anchor="middle" fill="#333">5 back</text>
+<text x="455.0" y="376" font-size="14" text-anchor="middle" fill="#333">Layer, counting back from the output</text>
+<rect x="250" y="392" width="16" height="16" fill="#50a7d8" rx="2"/><text x="272" y="405" font-size="14" fill="#333">Sigmoid: ×0.25 at best per layer</text>
+<rect x="520" y="392" width="16" height="16" fill="#2a9d5c" rx="2"/><text x="542" y="405" font-size="14" fill="#333">ReLU, active unit: ×1 per layer</text>
+</g></svg>

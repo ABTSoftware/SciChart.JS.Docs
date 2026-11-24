@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Donut Chart
-title: "Donut Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Donut Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a donut (doughnut) chart is, how to read its ring and centre label, how it differs from a pie chart, and when a bar chart is better. With a live example."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/donut-chart-og.png
 related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -37,7 +38,7 @@ related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
                 {
                     "@type": "Question",
                     "name": "Is it a donut chart or a doughnut chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is the common American spelling, used by many charting libraries and dashboard tools." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is a common American spelling, used by many charting libraries and dashboard tools." }
                 },
                 {
                     "@type": "Question",
@@ -52,7 +53,7 @@ related: [pie-chart, sunburst-chart, gauge-chart, bar-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a donut chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPieSurface with pieType set to EPieType.Donut and a holeRadius such as 0.6, then add one PieSegment per segment with its value, text and colour. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPieSurface with pieType set to EPieType.Donut and a holeRadius such as 0.6, then add one PieSegment per segment with its value, text and colour. React apps can use the same setup through scichart-react, and Angular apps through scichart-angular." }
                 }
             ]
         })}
@@ -78,6 +79,8 @@ A **donut chart** (also spelled **doughnut chart**) is a [pie chart](/learn/char
 :::
 
 ## How to read a donut chart
+
+Read a donut chart from the centre outwards: the centre names the whole, and each segment's length round the ring gives its share.
 
 ![Anatomy of a donut chart: four segments of sales by region around a ring, with labels for the arc length, the ring, the hole and the centre label, which shows the total](./donut-chart-anatomy.svg)
 
@@ -118,13 +121,15 @@ A common claim is that removing the centre makes a donut harder to read, because
 
 ## Types of donut chart
 
+Donut charts differ in how many rings they have, how much of the circle they use and whether a segment is pulled out.
+
 | Variant | What it looks like | Watch out for |
 | --- | --- | --- |
 | Single-ring donut | One ring split into segments, often with a total in the centre | Too many segments, or a ring so thin the segments are hard to compare |
 | Exploded donut | One or more segments pulled out from the ring | Pull out one segment at most, or the emphasis is lost |
-| Multi-ring (nested) donut | Two or more rings, one inside the other, e.g. this year outside and last year inside | Inner rings are shorter than outer ones, so the same percentage looks smaller on an inner ring. A [bar chart](/learn/chart-types/cartesian/bar-chart/) or [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) usually compares groups more clearly |
-| Sunburst | Nested rings where each outer ring splits the segment inside it (region, then country) | Fine for showing a hierarchy, but small outer segments get very thin. See the [sunburst chart documentation](/2d-charts/chart-types/polar-sunburst-chart/) |
-| Single-value (progress) donut | One coloured segment against a grey track, e.g. "72% complete" | Shows one percentage only; a [gauge chart](/2d-charts/chart-types/polar-gauge-chart/) or a plain number may be clearer |
+| Multi-ring (nested) donut | Two or more rings, one inside the other, e.g. this year outside and last year inside | Inner rings are shorter than outer ones, so the same percentage looks smaller on an inner ring. A [bar chart](/learn/chart-types/cartesian/bar-chart/) or [100% stacked column chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) usually compares groups more clearly |
+| Sunburst | Nested rings where each outer ring splits the segment inside it (region, then country) | Fine for showing a hierarchy, but small outer segments get very thin. See the [sunburst chart guide](/learn/chart-types/radial/sunburst-chart/) |
+| Single-value (progress) donut | One coloured segment against a grey track, e.g. "72% complete" | Shows one percentage only; a [gauge chart](/learn/chart-types/radial/gauge-chart/) or a plain number may be clearer |
 | Semicircle donut | Half a ring, like a dial | The half circle is 100%, so readers have to rescale what they see |
 
 ## When to use a donut chart
@@ -135,8 +140,8 @@ Use a donut chart for the same data as a pie chart, a few parts of one whole, wh
 | --- | --- |
 | Donut chart | A few parts of one whole, with a total or headline figure in the centre |
 | [Pie chart](/learn/chart-types/radial/pie-chart/) | A few parts of one whole, when you don't need the centre |
-| [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values accurately, many categories, or values that don't add up to a whole |
-| [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) | Comparing how the split of a whole changes across several groups or periods, instead of a multi-ring donut |
+| [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Ranking segments of similar size, more than about five categories, or figures that aren't parts of one total |
+| [100% stacked column chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) | This year's split next to last year's, or one split per region: the job people try to do with a multi-ring donut |
 
 ## What to put in the centre of a donut chart
 
@@ -271,7 +276,7 @@ Both show parts of a whole that add up to 100%. A [pie chart](/learn/chart-types
 
 ### Is it a donut chart or a doughnut chart?
 
-Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is the common American spelling, used by many charting libraries and dashboard tools.
+Both names mean the same chart. Doughnut is the traditional spelling, used in British English and in Microsoft Excel and Office. Donut is a common American spelling, used by many charting libraries and dashboard tools.
 
 ### Are donut charts harder to read than pie charts?
 
@@ -283,7 +288,7 @@ Avoid a donut chart when the values don't add up to one whole, when there are mo
 
 ### How do I make a donut chart in JavaScript?
 
-With SciChart.js, create a `SciChartPieSurface` with `pieType` set to `EPieType.Donut` and a `holeRadius` such as `0.6`, then add one `PieSegment` per segment with its value, text and colour. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartPieSurface` with `pieType` set to `EPieType.Donut` and a `holeRadius` such as `0.6`, then add one `PieSegment` per segment with its value, text and colour. React apps can use the same setup through `scichart-react`, and Angular apps through `scichart-angular`.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 120
 sidebar_label: Hilbert Transform and Envelope
-title: "Hilbert Transform and Envelope Detection: Analytic Signal, Instantaneous Amplitude and Frequency (With Interactive Examples)"
+title: "Hilbert Transform: Analytic Signal and Envelope Detection"
 description: "What the Hilbert transform does, how the analytic signal gives a signal's envelope, instantaneous phase and frequency, and how to compute it with an FFT or an FIR filter. Live envelope detection example."
 keywords:
     [
@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/hilbert-transform-og.png
 related: [envelope-detector-circuit, fast-fourier-transform, low-pass-filter, audio-spectrum-analyzer]
+datePublished: 2026-11-20
 ---
 
 <head>
@@ -65,7 +66,7 @@ related: [envelope-detector-circuit, fast-fourier-transform, low-pass-filter, au
 
 ## What is the Hilbert transform?
 
-The **Hilbert transform** is an operation that shifts every frequency component of a signal by a quarter of a cycle (−90°) while leaving its amplitude unchanged, so a cosine becomes a sine. Combined with the original signal, it forms the **analytic signal**, whose length is the signal's envelope and whose angle gives its instantaneous phase and frequency. Envelope detection means recovering that outline, for example to demodulate AM radio or to time an ultrasound echo.
+The **Hilbert transform** shifts every frequency component of a signal by a quarter of a cycle (−90°) without changing its amplitude. Combined with the original, it forms the **analytic signal**: its length is the signal's envelope, and its angle gives the instantaneous phase and frequency. Envelope detection recovers that outline, for example to demodulate AM radio.
 
 ![An envelope detection example in a dark navy theme: an amplitude-modulated tone with its envelope traced by two methods, rectify and low-pass in orange running slightly late, and the Hilbert envelope in yellow on both sides of the signal, with each method's error against the true envelope in the chart below](/img/learn/hilbert-transform-og.png)
 
@@ -151,12 +152,12 @@ There are two standard ways: one for a recorded block of samples, and one for a 
 
 ### The FFT method (for a block of samples)
 
-This is what `scipy.signal.hilbert` and MATLAB's `hilbert` do (Marple, 1999):
+Steps 3 to 5 are what `scipy.signal.hilbert` and MATLAB's `hilbert` do (Marple, 1999); steps 1 and 2 are preparation you do yourself first, since neither function removes the mean or pads unless you ask it to:
 
 1. Remove the mean (the DC offset). A constant offset adds to $x$ but not to $\mathcal{H}\{x\}$, so it makes the envelope wobble at the carrier frequency.
 2. Zero pad to a power of 2, at least twice the length, if you use a radix-2 FFT. The FFT treats the block as repeating; padding stops the end of the block wrapping onto its start.
 3. FFT the $N$ samples to get bins $X_0 \ldots X_{N-1}$.
-4. Build the analytic spectrum. Keep $X_0$ (DC) and $X_{N/2}$ (Nyquist) once, double bins $1$ to $N/2 - 1$ (the positive frequencies), and set to zero bins $N/2 + 1$ to $N - 1$ (the negative frequencies).
+4. Build the analytic spectrum. For an even number of samples $N$ (as after step 2), keep $X_0$ (DC) and $X_{N/2}$ (Nyquist) once, double bins $1$ to $N/2 - 1$ (the positive frequencies), and set to zero bins $N/2 + 1$ to $N - 1$ (the negative frequencies).
 5. Inverse FFT. The result is the analytic signal $z_n$: its real part is your signal again, its imaginary part is the Hilbert transform, and $\lvert z_n \rvert$ is the envelope.
 
 While you are in the frequency domain, you can also zero the bins outside the band you care about, which band-pass filters the signal at no extra cost and keeps broadband noise out of the envelope.
@@ -173,7 +174,7 @@ so $h[\pm 1] = \pm 0.637$, $h[\pm 3] = \pm 0.212$, $h[\pm 5] = \pm 0.127$ and so
 
 - Has odd length and is antisymmetric, $h[-n] = -h[n]$, which is what makes the phase shift exactly 90° at every frequency.
 - Has every other tap zero. A 31-tap filter has only 16 non-zero taps, in ± pairs, so it needs just 8 multiplications per output sample.
-- Can't work near 0 Hz or the Nyquist frequency. An odd-length antisymmetric filter always has zero gain at both. We measured a 31-tap Hamming-windowed design: its gain is within 0.1 dB of 1 from $0.054\,f_s$ to $0.446\,f_s$ and within 1 dB from $0.038\,f_s$. Longer filters widen the band: 63 taps hold 0.1 dB from $0.026\,f_s$.
+- Can't work near 0 Hz or the Nyquist frequency. An odd-length antisymmetric filter always has zero gain at both. For example, a 31-tap Hamming-windowed design, computed from its coefficients, has a gain within 0.1 dB of 1 from $0.054\,f_s$ to $0.446\,f_s$ and within 1 dB from $0.038\,f_s$. Longer filters widen the band: 63 taps hold 0.1 dB from $0.026\,f_s$.
 - Delays the output by $M$ samples (15 for 31 taps), so delay the original signal by the same amount before pairing it with the Hilbert output, or the envelope ripples.
 
 | | FFT method | FIR Hilbert transformer |
@@ -186,7 +187,7 @@ so $h[\pm 1] = \pm 0.637$, $h[\pm 3] = \pm 0.212$, $h[\pm 5] = \pm 0.127$ and so
 
 ### Edge effects: why you window or pad
 
-The FFT method assumes the block repeats forever, and the convolution kernel $1/(\pi t)$ dies away only slowly. So samples near the start and end of the block are computed from a signal that suddenly stops. We measured the AM tone from the worked example above, with no band-pass: the envelope is more than 10% wrong for the first 3 ms and more than 1% wrong for about the first 50 ms (ten carrier cycles), while the middle is accurate to about 0.1%.
+The FFT method assumes the block repeats forever, and the convolution kernel $1/(\pi t)$ dies away only slowly. So samples near the start and end of the block are computed from a signal that suddenly stops. Measured with the demo on this page (the AM tone, no noise, no band-pass), the envelope is off by more than 10% of the carrier amplitude for the first 3 ms and by more than 1% for about the first 50 ms (ten carrier cycles), while the middle is accurate to a few tenths of a percent.
 
 - Zero pad to at least twice the length, so the end doesn't wrap around onto the start.
 - Taper the ends with a short [window](/learn/signal-processing/window-functions/), or record a little extra either side and throw it away.
@@ -220,6 +221,8 @@ The simplest hardware envelope detector, used in most AM radios, is a diode foll
 
 ## Hilbert transform vs Fourier transform, quadrature demodulation and other tools
 
+Use the Hilbert transform for the envelope or phase of a narrowband signal, and the tools below for the other questions people bring to it.
+
 | If you need… | Use | Why |
 | --- | --- | --- |
 | Which frequencies a signal contains | [Fourier transform](/learn/signal-processing/fourier-transform/) or [FFT](/learn/signal-processing/fast-fourier-transform/) | It moves to the frequency domain; the Hilbert transform stays in time |
@@ -231,6 +234,8 @@ The simplest hardware envelope detector, used in most AM radios, is a diode foll
 
 ## What the Hilbert transform and envelope detection are used for
 
+They are used wherever information rides on the amplitude or frequency of a carrier rather than on the carrier itself.
+
 - AM demodulation: the envelope of an AM broadcast is the audio. A [diode envelope detector](/learn/signal-processing/envelope-detector-circuit/) does it in hardware; a software radio takes $\lvert z \rvert$.
 - Single-sideband (SSB) modulation: mixing a signal and its Hilbert transform with a cosine and a sine carrier cancels one sideband, halving the bandwidth used.
 - Vibration and bearing fault analysis: a cracked bearing race produces a burst of high-frequency ringing every time a ball passes the crack. Band-pass around the ringing, take the envelope, then an [FFT](/learn/signal-processing/fast-fourier-transform/) of the envelope: the **envelope spectrum** shows peaks at the ball-pass rate, which identifies the faulty part (Randall and Antoni, 2011).
@@ -241,6 +246,8 @@ The simplest hardware envelope detector, used in most AM radios, is a diode foll
 
 ## Common Hilbert transform and envelope detection mistakes
 
+Most mistakes come from using the transform on a signal that isn't narrowband, or from trusting the ends of the block.
+
 - **Applying it to a broadband signal and expecting a meaningful envelope.** The envelope and instantaneous frequency only make sense for a narrowband signal. Band-pass filter around the component you want first.
 - **Forgetting that the analytic signal is complex.** `scipy.signal.hilbert` and MATLAB `hilbert` return $z = x + i\,\mathcal{H}\{x\}$, not $\mathcal{H}\{x\}$. Take the imaginary part for the transform and the magnitude for the envelope.
 - **A low-pass cutoff that's too low** after rectifying. It removes ripple, but also delays and flattens the envelope; in a ranging system that delay is a distance error.
@@ -248,13 +255,13 @@ The simplest hardware envelope detector, used in most AM radios, is a diode foll
 
 ## How to compute the Hilbert transform and envelope in JavaScript, React or Angular
 
-SciChart.js draws signals with WebGL and WebGPU, so you can recompute a Hilbert transform and redraw thousands of samples every time a control moves. In the example below, the top chart shows a signal (blue), its true envelope (dashed white), the rectify-and-low-pass envelope (orange) and the Hilbert envelope $\pm\lvert z \rvert$ (yellow). The bottom chart shows each envelope's error against the truth, or, for the chirp, the instantaneous frequency from the analytic signal's phase.
+The demo takes the analytic signal of 4,096 samples (about 1 second at 4,000 samples per second) with a zero-padded FFT, and recomputes both envelopes each time you change a control. In the example below, the top chart shows a signal (blue), its true envelope (dashed white), the rectify-and-low-pass envelope (orange) and the Hilbert envelope $\pm\lvert z \rvert$ (yellow). The bottom chart shows each envelope's error against the truth, or, for the chirp, the instantaneous frequency from the analytic signal's phase.
 
-Choose the **signal** (an AM tone, an echo train like ultrasound or sonar, or a linear chirp), the **modulation depth** of the AM tone and the **noise** level. **Method** shows either envelope or both, **Low-pass cutoff** sets the filter after the rectifier, and **Band-pass before Hilbert** removes noise outside the carrier band, using the same cutoff. The readout gives each method's delay and its remaining ripple and noise. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose the **signal** (an AM tone, an echo train like ultrasound or sonar, or a linear chirp), the **modulation depth** of the AM tone and the **noise** level. **Method** shows either envelope or both, **Low-pass cutoff** sets the filter after the rectifier, and **Band-pass before Hilbert** removes noise outside the carrier band, using the same cutoff. The readout gives each method's delay and its remaining ripple and noise. Zoom in on the first few milliseconds to see the edge error; drag to pan, double-click to reset, and hover for values.
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
-<LearnCta position="top" chart="audio waveform chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="signal envelope chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this example. The FFT, the analytic signal and both envelope methods are plain JavaScript; the charts are ordinary SciChart.js line series.
 
@@ -385,9 +392,9 @@ Key points:
 - The Hilbert transform is the `analyticSignal()` function: an FFT, a change to the bins and an inverse FFT, about 40 lines of plain JavaScript. Swap in any FFT library; the chart code stays the same.
 - The rectify-and-low-pass envelope runs its filter forwards in time, like a circuit, so its delay is real. Offline, you could run the filter forwards and then backwards to cancel the delay, but not the ripple-versus-bandwidth trade-off.
 
-**See it in the demo app:** [JavaScript audio waveform chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio waveform chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio waveform chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It shows live audio from your microphone as a waveform, an FFT spectrum and a spectrogram.
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), which draws live microphone audio and its FFT; it doesn't compute an envelope.
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for the FFT behind the Hilbert transform.
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for the FFT behind the Hilbert transform. Ultrasonic flaw detectors show the envelope of each echo: see [non-destructive testing](/learn/applications/non-destructive-testing/).
 
 ## Frequently asked questions
 
@@ -426,6 +433,6 @@ Remove the mean, zero pad the samples to a power of 2 at least twice their lengt
 - Haykin, S. and Moher, M. (2009), *Communication Systems*, 5th edition, Wiley. Amplitude modulation and the envelope detector, including the diagonal-clipping limit.
 - Randall, R. B. and Antoni, J. (2011), [Rolling element bearing diagnostics: a tutorial](https://doi.org/10.1016/j.ymssp.2010.07.017). *Mechanical Systems and Signal Processing*, 25(2), 485–520. Envelope analysis of bearing faults.
 - SciPy developers, [scipy.signal.hilbert](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.hilbert.html), SciPy documentation. Returns the analytic signal.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The envelope detection diagram (rectify and low-pass, and the Hilbert method that needs a gentler filter) is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The envelope detection diagram (rectify and low-pass, and the Hilbert method that needs a gentler filter) is adapted from it.
 
-<LearnCta position="bottom" chart="audio waveform chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="signal envelope chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

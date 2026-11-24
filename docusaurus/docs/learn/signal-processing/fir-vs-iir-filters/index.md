@@ -1,7 +1,7 @@
 ---
 sidebar_position: 80
 sidebar_label: FIR vs IIR Filters
-title: "FIR vs IIR Filters: Differences, Windowed-Sinc and Butterworth Design (With Interactive Examples)"
+title: "FIR vs IIR Filters: Differences and Design (Interactive Example)"
 description: "What FIR and IIR digital filters are, how they differ, how to design a windowed-sinc FIR filter and a Butterworth IIR filter, and which to choose. Live demo."
 keywords:
     [
@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/fir-vs-iir-filters-og.png
 related: [low-pass-filter, high-pass-filter, band-pass-filter, bode-plot]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -68,7 +69,7 @@ related: [low-pass-filter, high-pass-filter, band-pass-filter, bode-plot]
 
 ## What are FIR and IIR filters?
 
-**FIR** (finite impulse response) and **IIR** (infinite impulse response) filters are the two families of digital filter. An FIR filter computes each output only from recent inputs, so its memory of any input ends. An IIR filter also feeds back its own past outputs, so its memory fades but never ends. FIR filters are always stable; IIR filters need fewer calculations.
+**FIR** (finite impulse response) and **IIR** (infinite impulse response) filters are the two families of digital filter. An FIR filter computes each output from recent inputs only, so its memory of any input ends. An IIR filter also feeds back past outputs, so its memory fades but never ends. FIR filters are always stable; IIR filters need fewer calculations.
 
 ![Four charts comparing a windowed-sinc FIR filter and a Butterworth IIR filter with the same cutoff: magnitude response in dB against log frequency, group delay, impulse response, and a noisy pulse after each filter](/img/learn/fir-vs-iir-filters-og.png)
 
@@ -106,6 +107,8 @@ In the z-domain (the algebra of sampled signals, in which $z^{-1}$ stands for a 
 To see what a filter does to each frequency, evaluate $H$ around the unit circle and plot the gain and phase: the [Bode plot](/learn/signal-processing/bode-plot/) of the filter.
 
 ## FIR vs IIR filter: which should you use?
+
+Use an FIR filter when waveform shape or exact timing matters, and an IIR filter when computation is tight or the data is live.
 
 | | FIR filter | IIR filter |
 | --- | --- | --- |
@@ -183,7 +186,7 @@ $$
 | Hamming | About 53 dB | $3.1/M$ | A good balance of sharpness and rejection |
 | Blackman | About 74 dB | $4.6/M$ | Deep rejection, with a wider transition |
 
-The transition widths are a guide (they depend on how you define the band edges). For the same number of taps, the window decides between a narrow transition and a deep stopband. With the windowed-sinc recipe, $f_c$ is the half-amplitude point (−6 dB) of the finished filter, not the −3 dB point a Butterworth filter uses. Switch the window in the demo below and watch the stopband ripples drop from about −20 dB to below −70 dB.
+The transition widths are a guide: they depend on how you define the band edges, so other texts give Blackman as roughly $4/M$, the figure the low-pass, high-pass and band-pass guides use. For the same number of taps, the window decides between a narrow transition and a deep stopband. With the windowed-sinc recipe, $f_c$ is the half-amplitude point (−6 dB) of the finished filter, not the −3 dB point a Butterworth filter uses. Switch the window in the demo below and watch the stopband ripples drop from about −20 dB to below −70 dB.
 
 ### High-pass, band-pass and band-stop from the same recipe
 
@@ -277,6 +280,8 @@ Neither works in real time, because both need samples from the future.
 
 ## Common FIR and IIR filter mistakes
 
+The usual mistakes are numerical (IIR stability, too few FIR taps) or about how the cutoff is defined.
+
 - **Building a high-order IIR filter as one difference equation.** Coefficient rounding moves the poles, and a high-order direct-form filter, especially one with a low cutoff, can become unstable in single precision or fixed point. Use a cascade of biquads.
 - **Forgetting phase distortion.** An IIR filter changes the shape of pulses, steps and heartbeats. If shape or timing matters (ECG, seismic picking, measuring edges), use a linear-phase FIR filter or zero-phase filtering.
 - **Using `filtfilt` and expecting the designed cutoff.** Forward-backward filtering doubles the attenuation, so the −3 dB point moves. Design for −1.5 dB at the cutoff, or correct for it.
@@ -288,11 +293,11 @@ Neither works in real time, because both need samples from the future.
 
 ## How to apply FIR and IIR filters in JavaScript, React or Angular
 
-SciChart.js redraws the frequency response, group delay, impulse response and filtered signal with WebGL and WebGPU as fast as you move a slider, so you can explore the trade-offs directly. Choose a response type, then change the cutoff, the FIR length and window, and the Butterworth order: the readout above the charts gives each filter's cost, delay and measured −3 dB point. Hover to read values, scroll to zoom, drag to pan, and double-click to reset.
+The demo designs a windowed-sinc FIR filter and a Butterworth IIR filter to the same cutoff at 1,000 samples per second, and recomputes their frequency responses, group delays, impulse responses and filtered signals on every change. Choose a response type, then change the cutoff, the FIR length and window, and the Butterworth order: the readout above the charts gives each filter's cost, delay and measured −3 dB point. Hover over any of the four charts for values; scroll to zoom, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={820} name="./Basic/demo" />
 
-<LearnCta position="top" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="top" chart="FIR and IIR filter comparison" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
 
 Here is the code for this example. The JavaScript tab has the full windowed-sinc and Butterworth design code; the React and Angular tabs apply a windowed-sinc FIR low-pass and a 2nd-order Butterworth IIR low-pass to live, streaming data:
 
@@ -491,7 +496,7 @@ Key points:
 - The response charts are plain JavaScript: `responseAt` evaluates each section's polynomials at $e^{-j\omega k}$ to get the gain in dB and the group delay, drawn on a [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) like a Bode plot. The impulse responses are the FIR taps and the IIR filter's output for a single 1.
 - Live updates: each control calls `update()`, which redesigns both filters, refills the `XyDataSeries` with `clear()` and `appendRange()`, and sets new filter functions, so all four charts redraw at once.
 
-**See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with moving average, trendline and ratio filters applied live. For frequency responses on log axes, see the [JavaScript chart with a logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis).
+**See it in the demo app:** [JavaScript trendline and moving average filters](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React trendline and moving average filters](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular trendline and moving average filters](https://www.scichart.com/demo/angular/trend-ma-ratio), whose moving average is the simplest FIR filter. For frequency responses on log axes, see the [JavaScript chart with a logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis).
 
 **Go deeper:** [SciChart.js custom filter documentation](/2d-charts/chart-types/data-filters-api/custom-filter/), the [data filters API overview](/2d-charts/chart-types/data-filters-api/data-filters-api-overview/), the [logarithmic axis](/2d-charts/axis-api/axis-types/logarithmic-axis/), and the related guides in this section: [low-pass filter](/learn/signal-processing/low-pass-filter/), [high-pass filter](/learn/signal-processing/high-pass-filter/), [convolution](/learn/signal-processing/convolution/) and the [Bode plot](/learn/signal-processing/bode-plot/).
 
@@ -526,8 +531,8 @@ Design the coefficients first: windowed-sinc taps for an FIR filter, or Butterwo
 - Smith, S. W. (1997), [*The Scientist and Engineer's Guide to Digital Signal Processing*](https://www.dspguide.com/pdfbook.htm), California Technical Publishing. Chapters 14 (introduction to digital filters, spectral inversion and reversal), 16 ([windowed-sinc filters](https://www.dspguide.com/ch16.htm)), 19 (recursive filters) and 20 (Chebyshev filters).
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. FIR design by windowing (window attenuation and transition widths), the bilinear transform, and the effects of coefficient quantisation on direct-form and cascade structures.
 - Butterworth, S. (1930), "On the Theory of Filter Amplifiers", *Experimental Wireless and the Wireless Engineer*, 7, pp. 536–541. The original maximally flat filter.
-- Lyons, R. G. (2010), *Understanding Digital Signal Processing*, 3rd edition, Prentice Hall. FIR and IIR filters compared, biquads, and group delay.
+- Lyons, R. G. (2011), *Understanding Digital Signal Processing*, 3rd edition, Prentice Hall. FIR and IIR filters compared, biquads, and group delay.
 - Smith, J. O. (2007), [*Introduction to Digital Filters with Audio Applications*](https://ccrma.stanford.edu/~jos/filters/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Difference equations, poles and zeros, the bilinear transform and forward-backward (zero-phase) filtering.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The structure of the windowed-sinc design section, and the idea of showing a high-pass kernel next to its frequency response.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The structure of the windowed-sinc design section, and the idea of showing a high-pass kernel next to its frequency response.
 
-<LearnCta position="bottom" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="bottom" chart="FIR and IIR filter comparison" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />

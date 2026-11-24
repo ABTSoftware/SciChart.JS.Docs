@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Bode Plot
-title: "Bode Plot: How to Read and Draw a Frequency Response (With Interactive Examples)"
+title: "Bode Plot: How to Read and Draw a Frequency Response"
 description: "What a Bode plot and frequency response are, how to read and sketch one with the straight-line rules, gain and phase margin, and Bode vs Nyquist plots. Live demo."
 keywords:
     [
@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/bode-plot-og.png
 related: [low-pass-filter, high-pass-filter, band-pass-filter, notch-filter]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -124,7 +125,7 @@ Decibels turn multiplication into addition, which is why the two panels can be b
 
 ## How to draw a Bode plot by hand
 
-Hendrik Bode's insight, set out in his 1945 book on feedback amplifiers, is that a transfer function written as a product of simple factors becomes a sum on a Bode plot, and each factor has an easy straight-line shape. To draw one:
+Hendrik Bode's insight, first published in a 1940 paper and set out in full in his 1945 book on feedback amplifiers, is that a transfer function written as a product of simple factors becomes a sum on a Bode plot, and each factor has an easy straight-line shape. To draw one:
 
 1. Factor the transfer function into a constant gain, powers of $s$, and terms of the form $(1 + s/\omega_c)$ for real poles and zeros, or a quadratic for complex pairs.
 2. Find each corner frequency $\omega_c$ (or $f_c = \omega_c / 2\pi$) and mark it on the log axis.
@@ -176,7 +177,7 @@ $$
 
 where $\omega_n$ is the **natural frequency** and $\zeta$ (zeta) is the **damping ratio**. Filter designers often use the **quality factor** instead, $Q = 1/(2\zeta)$. Its straight-line magnitude is flat, then falls at 40 dB per decade from $\omega_n$. The exact curve depends strongly on $\zeta$:
 
-![Second-order low-pass magnitude and phase for damping ratios 0.1, 0.3, 0.707 and 1. Lower damping gives a taller peak at the natural frequency (+14 dB for 0.1, +4.4 dB for 0.3) and a sharper phase drop; every curve passes -90 degrees at the natural frequency](./second-order-damping.svg)
+![Second-order low-pass magnitude and phase for damping ratios 0.1, 0.3, 0.707 and 1. Lower damping gives a taller peak and a sharper phase drop; the gain at the natural frequency is +14 dB for 0.1 and +4.4 dB for 0.3; every curve passes -90 degrees at the natural frequency](./second-order-damping.svg)
 
 - At $\omega_n$ the gain is exactly $1/(2\zeta) = Q$, or $-20 \log_{10}(2\zeta)$ dB, and the phase is −90° whatever the damping.
 - Below $\zeta \approx 0.707$ the response peaks before falling. With $\zeta = 0.1$ the peak is about +14 dB, five times the input amplitude. This peak is a **resonance**.
@@ -192,7 +193,7 @@ Control engineers use the Bode plot to check a feedback loop before building it.
 - **Gain margin:** at the **phase crossover frequency**, where the phase reaches −180°, how far the gain is below 0 dB. It is how much more gain the loop could take before it oscillates.
 - **Phase margin:** at the **gain crossover frequency**, where the gain crosses 0 dB, how far the phase is above −180°. It is how much extra lag the loop could take.
 
-Both should be positive for a stable closed loop (for loops that are stable when opened, which covers most practical designs). A common rule of thumb in control engineering is a phase margin of 30° to 60° and a gain margin of at least 6 dB (a factor of 2). Small margins give a closed loop that rings and overshoots.
+Both should be positive for a stable closed loop (for loops that are stable when opened and cross 0 dB and −180° only once each, which covers most practical designs). A common rule of thumb in control engineering is a phase margin of 30° to 60° and a gain margin of at least 6 dB (a factor of 2). Small margins give a closed loop that rings and overshoots.
 
 For example, take a loop of three identical poles with a gain of 4, $L = 4/(1 + j f/f_c)^3$:
 
@@ -250,6 +251,8 @@ A Nyquist plot draws $H(j\omega)$ as a path in the complex plane as $\omega$ run
 
 ## Common Bode plot mistakes
 
+Most Bode plot mistakes come from the axes and units, or from reading margins off the wrong curve.
+
 - **Using a linear frequency axis.** Everything below a tenth of the top frequency gets squashed into the left edge, and the straight-line slopes turn into curves. Always use a log axis.
 - **Plotting wrapped phase.** Taking the angle of the complex product with `atan2` gives values between −180° and +180°, so a smooth −200° shows as a jump to +160°. Add up the phase of each factor, or unwrap the phase (add or subtract 360° at each jump), before you read margins from it.
 - **Mixing hertz and radians per second.** $\omega = 2\pi f$, so a corner at 1,000 rad/s is at 159 Hz. Many textbooks and simulation tools use rad/s; many instruments use Hz. Label the axis.
@@ -260,11 +263,11 @@ A Nyquist plot draws $H(j\omega)$ as a path in the complex plane as $\omega$ run
 
 ## How to make a Bode plot in JavaScript, React or Angular
 
-SciChart.js draws both panels with WebGL and WebGPU on true logarithmic axes, so the plot redraws as fast as you move a slider. This Bode plot generator computes the response of the system you choose and draws the exact curves, the straight-line asymptotes and the key points. Pick a system, then drag the corner frequency and the damping (or the loop gain, for the control loop). Lower the damping and watch the error at the corner grow; choose **Control loop** and raise the loop gain $K$ to 8, where both margins reach zero. Hover to read values on both charts at once, scroll to zoom the frequency axis, drag to pan, and double-click to reset.
+This Bode plot generator computes the exact magnitude and phase of the system you choose, adds the straight-line asymptotes and key points, and redraws both panels on true logarithmic frequency axes whenever you drag a control. Pick a system, then drag the corner frequency and the damping (or the loop gain, for the control loop). Lower the damping and watch the error at the corner grow; choose **Control loop** and raise the loop gain $K$ to 8, where both margins reach zero. Hover to read values on both charts at once, scroll to zoom the frequency axis, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="Bode plot" demo="chart-logarithmic-axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="top" chart="Bode plot" demo="chart-logarithmic-axis" demoLabel="chart with a logarithmic axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
 
 Here is the code for this example. The JavaScript tab includes the pole and zero helpers; the React and Angular tabs show the chart setup (two charts with a shared logarithmic frequency axis) for your own magnitude and phase data:
 
@@ -443,7 +446,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript chart with a logarithmic axis](https://www.scichart.com/demo/javascript/chart-logarithmic-axis) · [React chart with a logarithmic axis](https://www.scichart.com/demo/react/chart-logarithmic-axis) · [Angular chart with a logarithmic axis](https://www.scichart.com/demo/angular/chart-logarithmic-axis). For a live spectrum, see the [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example).
 
-**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), [synchronizing multiple charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/), the [log scale graph guide](/learn/axes-and-scales/log-scale-graph/), and the filter guides in this section: [low-pass filter](/learn/signal-processing/low-pass-filter/) and [high-pass filter](/learn/signal-processing/high-pass-filter/), whose live demos each draw a filter's frequency response.
+**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), [synchronizing multiple charts](/2d-charts/chart-synchronization-api/synchronizing-multiple-charts/), the [log scale graph guide](/learn/axes-and-scales/log-scale-graph/), and the filter guides in this section: [low-pass filter](/learn/signal-processing/low-pass-filter/) and [high-pass filter](/learn/signal-processing/high-pass-filter/), whose live demos each draw a filter's frequency response. To tune the controller in a feedback loop, see [PID control](/learn/applications/pid-control/).
 
 ## Frequently asked questions
 
@@ -474,10 +477,11 @@ Compute the magnitude in dB and the phase in degrees of your transfer function a
 ## Sources
 
 - Bode, H. W. (1945), *Network Analysis and Feedback Amplifier Design*, Van Nostrand. The origin of the gain-phase plot, the straight-line approximations and the gain and phase margins.
+- Bode, H. W. (1940), [Relations between attenuation and phase in feedback amplifier design](https://doi.org/10.1002/j.1538-7305.1940.tb00839.x). *Bell System Technical Journal*, 19(3), pp. 421–454. The first publication of the gain-phase relations and the straight-line method.
 - Nyquist, H. (1932), "Regeneration Theory", *Bell System Technical Journal*, 11(1), pp. 126–147. The Nyquist stability criterion.
 - Ogata, K. (2010), *Modern Control Engineering*, 5th edition, Prentice Hall. Bode, Nyquist and Nichols plots; gain and phase margins.
 - Oppenheim, A. V. and Willsky, A. S. (1997), *Signals and Systems*, 2nd edition, Prentice Hall; lectures on [MIT OpenCourseWare, RES.6-007](https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/). Frequency response, impulse response and Bode plots of first- and second-order systems.
 - Bendat, J. S. and Piersol, A. G. (2010), *Random Data: Analysis and Measurement Procedures*, 4th edition, Wiley. Measuring frequency response functions from noise, and the coherence function.
 - Smith, S. W. (1997), [*The Scientist and Engineer's Guide to Digital Signal Processing*](https://www.dspguide.com/pdfbook.htm), California Technical Publishing. Chapters 5 (linear systems), 6 (convolution) and 14 (introduction to digital filters, including the frequency response).
 
-<LearnCta position="bottom" chart="Bode plot" demo="chart-logarithmic-axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="bottom" chart="Bode plot" demo="chart-logarithmic-axis" demoLabel="chart with a logarithmic axis" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />

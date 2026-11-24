@@ -1,7 +1,7 @@
 ---
 sidebar_position: 170
 sidebar_label: Signal-to-Noise Ratio (SNR)
-title: "Signal-to-Noise Ratio (SNR): Meaning, Formula in dB & How to Measure It (With Interactive Demo)"
+title: "Signal-to-Noise Ratio (SNR): Formula in dB and How to Measure It"
 description: "What signal-to-noise ratio (SNR) means, the formula in dB, worked examples, what a good SNR is, and how averaging and filtering improve it. Live SNR demo."
 keywords:
     [
@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/signal-to-noise-ratio-og.png
 related: [power-spectral-density, fast-fourier-transform, low-pass-filter, audio-spectrum-analyzer]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -67,7 +68,7 @@ related: [power-spectral-density, fast-fourier-transform, low-pass-filter, audio
 
 ## What is signal-to-noise ratio?
 
-**Signal-to-noise ratio** (SNR, also written S/N) is the power of a wanted signal divided by the power of the unwanted noise that comes with it. It says how clearly a signal stands out from the background. It is usually given in decibels: 0 dB means the signal and noise are equally strong, and every extra 10 dB makes the signal ten times stronger in power.
+**Signal-to-noise ratio** (SNR, also written S/N) is the power of a wanted signal divided by the power of the noise that comes with it. It says how clearly a signal stands out. It is usually given in decibels: 0 dB means the signal and noise are equally strong, and each extra 10 dB is ten times more signal power.
 
 ![A sine wave buried in random noise, and the same signal after averaging 16 repeated sweeps; below, the power spectrum shows the signal peak standing above a noise floor that drops as sweeps are averaged](/img/learn/signal-to-noise-ratio-og.png)
 
@@ -134,7 +135,7 @@ A high SNR means a clean signal that is easy to measure or decode. A low SNR mea
 | Field | Threshold | Where it comes from |
 | --- | --- | --- |
 | Seeing a detail in an image | SNR of about 5 (amplitude) | The Rose criterion (Rose, 1948) |
-| Analytical chemistry, chromatography | 3 : 1 (sometimes 2 : 1) to detect a peak; 10 : 1 to quantify it | ICH Q2 guideline: limit of detection (LOD) and limit of quantitation (LOQ) |
+| Analytical chemistry, [chromatography](/learn/applications/chromatogram/) | 3 : 1 to detect a peak; at least 10 : 1 to quantify it | ICH Q2(R2) guideline: limit of detection (LOD) and limit of quantitation (LOQ) |
 | An ideal 16-bit audio converter (CD) | 98 dB | $6.02 \times 16 + 1.76$ for a full-scale sine (Kester, MT-001) |
 | An ideal 12-bit converter | 74 dB | The same formula |
 | A data link at 0 dB SNR | Up to 1 bit per second per hertz of bandwidth | Shannon capacity, $\log_2(1 + 1)$ |
@@ -142,6 +143,8 @@ A high SNR means a clean signal that is easy to measure or decode. A low SNR mea
 For Wi-Fi, cable modems and other digital links, the SNR needed rises with the data rate: each step up in modulation (for example from 64-QAM to 256-QAM) packs more bits into each symbol and needs a cleaner signal. Equipment makers publish the minimum SNR for each rate; use those figures for your hardware rather than a single "good" number.
 
 ## SNR in different fields
+
+Each field defines signal and noise in its own way, so check the convention before comparing figures.
 
 | Field | What "signal" and "noise" are | Usual form |
 | --- | --- | --- |
@@ -179,7 +182,7 @@ $$
 
 where $S_n(f)$ is the noise PSD, $N_0$ its average level in units² per hertz, and $B = f_2 - f_1$ the bandwidth. A spectrum makes it easy to leave out hum, harmonics or interference you want to count separately (they belong in SINAD, below).
 
-**Don't read the SNR off the height of the peak above the floor.** Each FFT bin holds only the noise in its own narrow band, so the floor drops 3 dB every time you double the FFT length, while a sine's peak stays put. With an $N$-point FFT and no window, the peak sits about $10 \log_{10}(N/2)$ dB further above the floor than the true SNR: 27 dB for a 1,024-point FFT. That gap is the FFT's **processing gain**. For example, one 1,024-point sweep of the −9 dB sine from the worked examples puts the peak about 18 dB above the floor: 27 dB higher than its true SNR.
+**Don't read the SNR off the height of the peak above the floor.** Each FFT bin holds only the noise in its own narrow band, so the floor drops 3 dB every time you double the FFT length, while a sine's peak stays put. With an $N$-point FFT, no window and a tone centred on a bin, the peak sits about $10 \log_{10}(N/2)$ dB further above the floor than the true SNR: 27 dB for a 1,024-point FFT. That gap is the FFT's **processing gain**. For example, one 1,024-point sweep of the −9 dB sine from the worked examples puts the peak about 18 dB above the floor: 27 dB higher than its true SNR.
 
 ## How to improve the signal-to-noise ratio
 
@@ -254,17 +257,19 @@ with $C$ in bits per second, $B$ in hertz and SNR as a power ratio (not dB). A 2
 
 ## Common SNR mistakes
 
+Most SNR mistakes come from mixing power and amplitude, or from measuring signal and noise in different bandwidths.
+
 - **Mixing power and amplitude dB.** Using $10\log_{10}$ on a voltage ratio halves the answer; using $20\log_{10}$ on a power ratio doubles it. Square amplitudes first, or use 20 log.
 - **Not stating the bandwidth.** "SNR = 90 dB" means nothing without "over 20 Hz to 20 kHz" or "in a 1 Hz bin". The same system gives a different number in a different bandwidth.
-- **Too short a measurement.** An SNR estimated from a few hundred noise samples can be out by a decibel or more. Average more data, or several measurements, before trusting the last decimal place.
+- **Too short a measurement.** An SNR estimated from a few hundred noise samples can be out by about a third of a decibel (a standard error of about 0.34 dB from 300 samples of white noise), and by more if the noise isn't white. Average more data, or several measurements, before trusting the last decimal place.
 
 ## How to measure and chart SNR in JavaScript, React or Angular
 
-SciChart.js redraws a signal and its spectrum with WebGL and WebGPU fast enough to follow a slider. Choose a sine or a pulse, set the signal amplitude and noise level, and move the **Averages** slider: each doubling adds about 3 dB to the measured SNR in the readout. Then pick a **low-pass filter** to cut the bandwidth. On the spectrum, watch the noise floor fall while the signal peak stays put. Hover to read values, scroll to zoom, drag to pan, and double-click to reset.
+The demo averages up to 256 one-second sweeps of 1,024 samples, takes the FFT of the average, and recomputes the SNR each time you move a slider. Choose a sine or a pulse, set the signal amplitude and noise level, and move the **Averages** slider: each doubling adds about 3 dB to the measured SNR in the readout. Then pick a **low-pass filter** to cut the bandwidth. On the spectrum, watch the noise floor fall while the signal peak stays put. Hover over the spectrum to read the floor and the peak; scroll to zoom, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
-<LearnCta position="top" chart="signal and spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="signal-to-noise ratio chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code. The live demo averages up to 256 sweeps of seeded noise, filters in the frequency domain with a radix-2 FFT and measures the SNR from the samples; the React and Angular versions show the core pattern with your own recorded sweeps:
 
@@ -391,9 +396,9 @@ Key points:
 - The spectrum uses a [LogarithmicAxis](/2d-charts/axis-api/axis-types/logarithmic-axis/) for frequency and a dB axis for power. A [HorizontalLineAnnotation](/2d-charts/annotations-api/horizontal-line-annotation/) marks the signal peak and the predicted noise floor, with live labels (`labelValue`), and a `VerticalLineAnnotation` marks the filter cutoff.
 - The FFT, the brick-wall filter and the noise generator are plain JavaScript in the demo (a seeded random generator, so the chart is the same on every load). Swap in your own recorded sweeps to measure a real system.
 
-**See it in the demo app:** [JavaScript signal and spectrum chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React signal and spectrum chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular signal and spectrum chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), a live audio waveform with its FFT spectrum and spectrogram. For a real-time medical signal, see the [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example).
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), a live audio waveform with its FFT spectrum and spectrogram. For a real-time medical signal, see the [JavaScript ECG chart](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example) · [React ECG chart](https://www.scichart.com/demo/react/vital-signs-ecg-medical-chart-example) · [Angular ECG chart](https://www.scichart.com/demo/angular/vital-signs-ecg-medical-chart-example).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [logarithmic axis](/2d-charts/axis-api/axis-types/logarithmic-axis/), [horizontal line annotations](/2d-charts/annotations-api/horizontal-line-annotation/), and the related guides in this section: [power spectral density](/learn/signal-processing/power-spectral-density/), [FFT](/learn/signal-processing/fast-fourier-transform/) and [low-pass filter](/learn/signal-processing/low-pass-filter/).
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [logarithmic axis](/2d-charts/axis-api/axis-types/logarithmic-axis/), [horizontal line annotations](/2d-charts/annotations-api/horizontal-line-annotation/), and the related guides in this section: [power spectral density](/learn/signal-processing/power-spectral-density/), [FFT](/learn/signal-processing/fast-fourier-transform/) and [low-pass filter](/learn/signal-processing/low-pass-filter/).
 
 ## Frequently asked questions
 
@@ -428,7 +433,7 @@ Compute the power of each part as its mean square: the sum of the squared sample
 - Shannon, C. E. (1949), "Communication in the Presence of Noise", *Proceedings of the IRE*, 37(1), pp. 10–21. Channel capacity in terms of bandwidth and SNR.
 - Nyquist, H. (1928), "Thermal Agitation of Electric Charge in Conductors", *Physical Review*, 32, pp. 110–113, and Johnson, J. B. (1928), "Thermal Agitation of Electricity in Conductors", *Physical Review*, 32, pp. 97–109. Thermal noise power proportional to bandwidth.
 - Rose, A. (1948), "The Sensitivity Performance of the Human Eye on an Absolute Scale", *Journal of the Optical Society of America*, 38(2), pp. 196–208. The SNR of about 5 needed to detect an object in an image.
-- International Council for Harmonisation (2005), [*ICH Q2(R1): Validation of Analytical Procedures: Text and Methodology*](https://database.ich.org/sites/default/files/Q2%28R1%29%20Guideline.pdf). Signal-to-noise ratios of 3:1 or 2:1 for the detection limit and 10:1 for the quantitation limit.
+- International Council for Harmonisation (2023), [*ICH Q2(R2): Validation of Analytical Procedures*](https://database.ich.org/sites/default/files/ICH_Q2%28R2%29_Guideline_2023_1130.pdf), section 3.2.3.2. A signal-to-noise ratio of 3:1 for the detection limit and at least 10:1 for the quantitation limit.
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. Quantisation noise, oversampling and spectrum analysis with the DFT.
 
-<LearnCta position="bottom" chart="signal and spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="signal-to-noise ratio chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

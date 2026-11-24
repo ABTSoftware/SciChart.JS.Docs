@@ -1,7 +1,7 @@
 ---
 sidebar_position: 60
 sidebar_label: Envelope Detector Circuit
-title: "Envelope Detector Circuit: How a Diode Detector Works and How to Choose R and C (With an Interactive Simulator)"
+title: "Envelope Detector Circuit: How It Works and How to Choose R and C"
 description: "How a diode envelope detector circuit demodulates AM, how to choose R and C between carrier ripple and diagonal clipping, a worked example, precision detectors, and a live simulator."
 keywords:
     [
@@ -20,6 +20,7 @@ keywords:
     ]
 image: /img/learn/envelope-detector-circuit-og.png
 related: [hilbert-transform, low-pass-filter, band-pass-filter, audio-spectrum-analyzer]
+datePublished: 2026-11-20
 ---
 
 <head>
@@ -67,7 +68,7 @@ related: [hilbert-transform, low-pass-filter, band-pass-filter, audio-spectrum-a
 
 ## What is an envelope detector?
 
-An **envelope detector** is a circuit that follows the slowly changing peak amplitude of a fast oscillation and outputs that outline, the **envelope**, without the oscillation itself. The simplest one is a diode followed by a capacitor and a resistor in parallel. It recovers the audio from an AM radio signal and measures the level of RF, audio and ultrasound signals.
+An **envelope detector** is a circuit that follows the slowly changing peak amplitude of a fast oscillation and outputs that outline, the **envelope**, without the oscillation itself. The simplest one is a diode followed by a capacitor and a resistor in parallel. It recovers audio from AM radio and measures RF, audio and ultrasound levels.
 
 ![A diode envelope detector simulation in a dark navy theme: an amplitude-modulated carrier in blue with the detector output in orange tracing its upper edge and the true envelope dashed, and below it a chart of the output minus the true envelope showing a small sawtooth ripple](/img/learn/envelope-detector-circuit-og.png)
 
@@ -143,7 +144,7 @@ At 22 µs the time constant is 22 carrier periods long and just inside the clipp
 
 A real diode changes the answer. With a 0.3 V Schottky diode and a 5 V carrier, the output is the envelope minus 0.3 V, so the modulation the capacitor has to follow is deeper: $m$ becomes $0.8 \times 5 / (5 - 0.3) = 0.85$, and the limit falls to 19.6 µs. The 22 µs design now clips slightly; $C = 1.8$ nF (18 µs) fixes it at the cost of a little more ripple.
 
-In a superheterodyne radio the detector usually works at the **intermediate frequency** (IF), 455 kHz for AM broadcast receivers, rather than at the station's own frequency. The carrier period is then 2.2 µs, so the same 22 µs leaves about 9% ripple, and the post-detector filter matters more.
+In a superheterodyne radio the detector usually works at the **intermediate frequency** (IF), 455 kHz for AM broadcast receivers, rather than at the station's own frequency. The carrier period is then 2.2 µs, so the same 22 µs leaves about 9.5% ripple, and the post-detector filter matters more.
 
 ## Ripple and distortion in a diode detector
 
@@ -168,6 +169,8 @@ Many audio and measurement circuits replace the RC discharge with separate charg
 
 ## Envelope detector vs synchronous detector vs Hilbert transform
 
+A diode detector is the simplest way to recover an envelope; a synchronous detector or a Hilbert transform copes with signals a diode can't.
+
 | Method | How it works | Needs | Handles | Best for |
 | --- | --- | --- | --- | --- |
 | Diode envelope detector | Rectify, hold on C, discharge through R | A diode, a resistor and a capacitor | AM with $m < 1$ and a strong carrier | AM radio, RF level detection, simple hardware |
@@ -179,6 +182,8 @@ The envelope detector's weaknesses are those of following peaks blindly. When AM
 
 ## What envelope detectors are used for
 
+Envelope detectors are used wherever the level of a fast oscillation matters more than the oscillation itself.
+
 - AM broadcast and shortwave receivers, from crystal sets, which are a tuned circuit and a diode detector with no amplifier, to superheterodyne radios with a detector at the IF.
 - RF power and level detectors: Schottky diode detectors in their square-law region measure transmitted power and drive the power-control loops of transmitters.
 - On-off keying (OOK) and amplitude-shift keying (ASK) receivers, such as RFID tags, remote key fobs and low-power wake-up radios, where an envelope detector is cheaper and lower power than a full receiver.
@@ -187,6 +192,8 @@ The envelope detector's weaknesses are those of following peaks blindly. When AM
 - Radar and sonar, where the envelope of each returned pulse gives its arrival time and strength.
 
 ## Common envelope detector mistakes
+
+Most detector problems come from an RC chosen for only one of its two limits, or from ignoring the diode's forward drop.
 
 - **Choosing RC from the carrier alone.** A long RC kills the ripple but clips the troughs. Check the upper limit at your deepest modulation and highest message frequency.
 - **Ignoring the diode drop.** A silicon diode on a 1 V signal loses the troughs and most of the signal. Raise the level, use a Schottky diode, or use a precision detector.
@@ -197,13 +204,13 @@ The envelope detector's weaknesses are those of following peaks blindly. When AM
 
 ## How to simulate an envelope detector in JavaScript, React or Angular
 
-SciChart.js draws signals with WebGL and WebGPU, so you can re-run a circuit simulation over tens of thousands of time steps and redraw it every time a control moves. In the simulator below, the top chart shows the AM input (blue), the true envelope (dashed) and the diode detector's output (orange). The bottom chart shows the output minus the true envelope, so ripple appears as a sawtooth below zero and diagonal clipping as humps above it.
+The simulator steps the diode, capacitor and resistor through two cycles of the message tone, 40 time steps per carrier cycle, and re-runs on every control change. In the simulator below, the top chart shows the AM input (blue), the true envelope (dashed) and the diode detector's output (orange). The bottom chart shows the output minus the true envelope, so ripple appears as a sawtooth below zero and diagonal clipping as humps above it.
 
-Choose the **carrier** frequency, the **message frequency**, the **modulation depth** and the carrier **amplitude**, then set **R** and **C** from standard component values. **Diode** switches between an ideal diode and a 0.3 V or 0.7 V forward drop, and **Noise** adds random noise (off by default). The readout gives RC against its two limits, the measured ripple and clipping, and a verdict. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Choose the **carrier** frequency, the **message frequency**, the **modulation depth** and the carrier **amplitude**, then set **R** and **C** from standard component values. **Diode** switches between an ideal diode and a 0.3 V or 0.7 V forward drop, and **Noise** adds random noise (off by default). The readout gives RC against its two limits, the measured ripple and clipping, and a verdict. Scroll to zoom in on individual carrier cycles and see the ripple; drag to pan, double-click to reset, and hover for values.
 
 <LiveDocSnippet maxWidth={'100%'} height={760} name="./Basic/demo" />
 
-<LearnCta position="top" chart="audio waveform chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="envelope detector simulator" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Things to try:
 
@@ -351,9 +358,9 @@ Key points:
 - The input, the envelope and the output are three `FastLineRenderableSeries` on one chart; the error is a fourth series on a second chart. On every control change the simulator calls `clear()` then `appendRange()` on each `XyDataSeries` and SciChart.js redraws on the next frame.
 - On a 1 MHz carrier, two cycles of a 500 Hz message are 160,000 samples per series, and the whole simulation and redraw still follow the sliders.
 
-**See it in the demo app:** [JavaScript audio waveform chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio waveform chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio waveform chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It shows live audio from your microphone as a waveform, an FFT spectrum and a spectrogram.
+**See it in the demo app:** the demo app has no envelope detector, so the closest is the [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example), which charts live microphone audio as a waveform, a spectrum and a spectrogram.
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [Hilbert transform guide](/learn/signal-processing/hilbert-transform/) for envelope detection in software.
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [Hilbert transform guide](/learn/signal-processing/hilbert-transform/) for envelope detection in software.
 
 ## Frequently asked questions
 
@@ -386,6 +393,6 @@ Step through the input samples with a time step dt. At each step, let the capaci
 - Haykin, S. and Moher, M. (2009), *Communication Systems*, 5th edition, Wiley. Amplitude modulation, the envelope detector and its time-constant limits, and coherent (synchronous) detection.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Precision rectifiers and peak detectors with op-amps.
 - Analog Devices, [ADALM2000 Activity: Envelope Detector](https://www.analog.com/en/resources/analog-dialogue/studentzone/studentzone-september-2024.html), StudentZone, *Analog Dialogue*, September 2024. A bench build of diode envelope detectors.
-- Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Analytic signals and envelope estimation in software.
+- Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Analytic signals and Hilbert transform filters.
 
-<LearnCta position="bottom" chart="audio waveform chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="envelope detector simulator" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

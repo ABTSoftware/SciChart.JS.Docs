@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Area Chart
-title: "Area Chart & Stacked Area Chart: What They Are & How to Read Them (With Interactive Examples)"
+title: "Area Chart & Stacked Area Chart: What They Are & How to Read Them"
 description: "What an area chart is, how to read and describe a stacked area chart, stacked vs 100% stacked, when to use one instead of a line chart, and the mistakes to avoid."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/area-chart-og.png
 related: [line-chart, bar-chart, density-plot, strip-chart]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [line-chart, bar-chart, density-plot, strip-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make an area chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with an x-axis and a y-axis, then add a FastMountainRenderableSeries with an XyDataSeries holding your x and y values. For a stacked area chart, add one StackedMountainRenderableSeries per layer to a StackedMountainCollection. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with an x-axis and a y-axis, then add a FastMountainRenderableSeries with an XyDataSeries holding your x and y values. For a stacked area chart, add one StackedMountainRenderableSeries per layer to a StackedMountainCollection. In a React app, put the same setup in the initChart function of SciChartReact from scichart-react; Angular apps use scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +80,8 @@ An **area chart** (also called an area graph or mountain chart) is a line chart 
 
 ## How to read an area chart
 
+Read an area chart like a line chart, then use the height of the filled area, measured from a zero baseline, to judge the size of the value.
+
 ![Anatomy of an area chart and a stacked area chart: on the left, a line with the area down to a zero baseline filled; on the right, three stacked bands whose thicknesses are each series' value and whose top edge is the total](./area-chart-anatomy.svg)
 
 - The x-axis is usually time, running left to right.
@@ -88,6 +91,8 @@ An **area chart** (also called an area graph or mountain chart) is a line chart 
 - Check the y-axis starts at zero. If it starts higher, the area no longer matches the amount and small changes look huge.
 
 ## Types of area chart
+
+Area charts differ in how many series they show and whether those series overlap, stack or fill a range between two lines.
 
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
@@ -151,6 +156,8 @@ Here is the visitors data from above as a 100% stacked area chart. Mobile's shar
 
 ## Common area chart mistakes
 
+Most area chart mistakes break the link between the filled area and the amount it stands for.
+
 - **A y-axis that doesn't start at zero.** The filled area stands for the amount, so a cut-off axis exaggerates every change.
 - **Stacking values that don't add up.** Averages, rates and temperatures make a meaningless total. Stack only counts and amounts.
 - **Too many layers.** Beyond about five, thin bands become unreadable. Group the smallest into "Other".
@@ -160,7 +167,7 @@ Here is the visitors data from above as a 100% stacked area chart. Mobile's shar
 
 ## How to create an area chart in JavaScript, React or Angular
 
-SciChart.js calls area charts **mountain charts** and draws them with WebGL and WebGPU, so they stay smooth to zoom and pan with large data sets and real-time updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover to see the values.
+SciChart.js calls area charts **mountain charts**. The chart below draws 90 days of website visitors as one mountain series, with a gradient fill that fades towards its zero baseline. Use the mouse wheel to zoom, drag to move along the timeline, hover for each day's count, and double-click to go back to the full three months.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -292,12 +299,11 @@ A 100% stacked area chart rescales each point in time so the stack always fills 
 
 ### How do I make an area chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with an x-axis and a y-axis, then add a `FastMountainRenderableSeries` with an `XyDataSeries` holding your x and y values. For a stacked area chart, add one `StackedMountainRenderableSeries` per layer to a `StackedMountainCollection`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with an x-axis and a y-axis, then add a `FastMountainRenderableSeries` with an `XyDataSeries` holding your x and y values. For a stacked area chart, add one `StackedMountainRenderableSeries` per layer to a `StackedMountainCollection`. In a React app, put the same setup in the `initChart` function of `SciChartReact` from `scichart-react`; Angular apps use `scichart-angular`.
 
 ## Sources
 
 - Cleveland, W. S. and McGill, R. (1984), [Graphical perception: theory, experimentation, and application to the development of graphical methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Why values on a shared baseline (the bottom layer) are judged more accurately than values without one (the middle layers).
 - Byron, L. and Wattenberg, M. (2008), [Stacked graphs: geometry and aesthetics](https://doi.org/10.1109/TVCG.2008.166). *IEEE Transactions on Visualization and Computer Graphics*, 14(6). How the order of layers and the choice of baseline change how readable a stacked area chart is.
-- Wikipedia, [Area chart](https://en.wikipedia.org/wiki/Area_chart). Variants of the area chart, and William Playfair's early area charts of trade and national debt (1786).
 
 <LearnCta position="bottom" chart="area chart" demo="mountain-chart" docs="/2d-charts/chart-types/fast-mountain-area-renderable-series/" />

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 470" width="760" height="470" font-family="Helvetica, Arial, sans-serif">
+<title>The same telemetry samples in row order and in column order</title>
+<desc>Four samples, each with a time in microseconds, a speed, a throttle and a brake value. On the left, row order: each sample is one JSON object, so the bytes of time, speed, throttle and brake are interleaved and the field names repeat in every row. On the right, column order: all the times sit together, then all the speeds, then all the throttles, then all the brakes. Neighbouring values in a column are close, so their differences are tiny (a first step of 1000 microseconds, then changes of 0 and 3; speed changes of 4, minus 1 and 12 hundredths of a km/h), which is what delta and varint encoding exploit. Each column maps straight onto one Float64Array, which a chart data series accepts with a single appendRange call.</desc>
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4a5568"/></marker>
+</defs>
+<rect width="760" height="470" fill="#ffffff"/>
+
+<!-- Row order -->
+<rect x="12" y="12" width="340" height="446" rx="12" fill="#fdf6ef" stroke="#e8b98c" stroke-dasharray="5 4"/>
+<text x="30" y="40" font-size="16" font-weight="bold" fill="#b35c12">Row order (JSON objects)</text>
+<text x="30" y="60" font-size="12" fill="#4a5568">one record per sample, fields interleaved</text>
+<g font-family="Menlo, Consolas, monospace" font-size="12" fill="#2d3748">
+<rect x="30" y="76" width="304" height="30" rx="5" fill="#ffffff" stroke="#e8b98c"/>
+<text x="40" y="96">{"t":0,"speed":212.37,"throttle":…}</text>
+<rect x="30" y="112" width="304" height="30" rx="5" fill="#ffffff" stroke="#e8b98c"/>
+<text x="40" y="132">{"t":1000,"speed":212.41,"throttle":…}</text>
+<rect x="30" y="148" width="304" height="30" rx="5" fill="#ffffff" stroke="#e8b98c"/>
+<text x="40" y="168">{"t":2000,"speed":212.40,"throttle":…}</text>
+<rect x="30" y="184" width="304" height="30" rx="5" fill="#ffffff" stroke="#e8b98c"/>
+<text x="40" y="204">{"t":3003,"speed":212.52,"throttle":…}</text>
+</g>
+<text x="30" y="246" font-size="13" font-weight="bold" fill="#b35c12">In memory and on the wire</text>
+<g font-size="11" fill="#ffffff" text-anchor="middle">
+<rect x="30" y="258" width="38" height="26" fill="#2e86ab"/><text x="49" y="275">t</text>
+<rect x="68" y="258" width="38" height="26" fill="#3a9d5d"/><text x="87" y="275">spd</text>
+<rect x="106" y="258" width="38" height="26" fill="#d08a1d"/><text x="125" y="275">thr</text>
+<rect x="144" y="258" width="38" height="26" fill="#c0504d"/><text x="163" y="275">brk</text>
+<rect x="182" y="258" width="38" height="26" fill="#2e86ab"/><text x="201" y="275">t</text>
+<rect x="220" y="258" width="38" height="26" fill="#3a9d5d"/><text x="239" y="275">spd</text>
+<rect x="258" y="258" width="38" height="26" fill="#d08a1d"/><text x="277" y="275">thr</text>
+<rect x="296" y="258" width="38" height="26" fill="#c0504d"/><text x="315" y="275">brk</text>
+</g>
+<g font-size="12.5" fill="#2d3748">
+<text x="30" y="316">• field names repeat in every record</text>
+<text x="30" y="338">• numbers travel as text and must be parsed</text>
+<text x="30" y="360">• one object allocated per sample</text>
+<text x="30" y="382">• similar values sit far apart, so</text>
+<text x="42" y="400">compressors find less to squeeze</text>
+<text x="30" y="422">• good for: small payloads, APIs that</text>
+<text x="42" y="440">return a handful of records</text>
+</g>
+
+<!-- Arrow between -->
+<line x1="356" y1="150" x2="402" y2="150" stroke="#4a5568" stroke-width="2" marker-end="url(#arr)"/>
+<text x="379" y="140" font-size="11" fill="#4a5568" text-anchor="middle">vs</text>
+
+<!-- Column order -->
+<rect x="408" y="12" width="340" height="446" rx="12" fill="#f3f8fc" stroke="#9cc3dc" stroke-dasharray="5 4"/>
+<text x="426" y="40" font-size="16" font-weight="bold" fill="#1f6f94">Column order (one array per field)</text>
+<text x="426" y="60" font-size="12" fill="#4a5568">all times, then all speeds, and so on</text>
+<g font-family="Menlo, Consolas, monospace" font-size="12" fill="#2d3748">
+<rect x="426" y="76" width="304" height="30" rx="5" fill="#ffffff" stroke="#2e86ab" stroke-width="1.5"/>
+<text x="436" y="96">t:     0  1000  2000  3003</text>
+<rect x="426" y="112" width="304" height="30" rx="5" fill="#ffffff" stroke="#3a9d5d" stroke-width="1.5"/>
+<text x="436" y="132">speed: 212.37 212.41 212.40 212.52</text>
+<rect x="426" y="148" width="304" height="30" rx="5" fill="#ffffff" stroke="#d08a1d" stroke-width="1.5"/>
+<text x="436" y="168">throttle: …</text>
+<rect x="426" y="184" width="304" height="30" rx="5" fill="#ffffff" stroke="#c0504d" stroke-width="1.5"/>
+<text x="436" y="204">brake:    …</text>
+</g>
+<text x="426" y="246" font-size="13" font-weight="bold" fill="#1f6f94">In memory and on the wire</text>
+<g font-size="11" fill="#ffffff" text-anchor="middle">
+<rect x="426" y="258" width="38" height="26" fill="#2e86ab"/><text x="445" y="275">t</text>
+<rect x="464" y="258" width="38" height="26" fill="#2e86ab"/><text x="483" y="275">t</text>
+<rect x="502" y="258" width="38" height="26" fill="#3a9d5d"/><text x="521" y="275">spd</text>
+<rect x="540" y="258" width="38" height="26" fill="#3a9d5d"/><text x="559" y="275">spd</text>
+<rect x="578" y="258" width="38" height="26" fill="#d08a1d"/><text x="597" y="275">thr</text>
+<rect x="616" y="258" width="38" height="26" fill="#d08a1d"/><text x="635" y="275">thr</text>
+<rect x="654" y="258" width="38" height="26" fill="#c0504d"/><text x="673" y="275">brk</text>
+<rect x="692" y="258" width="38" height="26" fill="#c0504d"/><text x="711" y="275">brk</text>
+</g>
+<g font-size="12.5" fill="#2d3748">
+<text x="426" y="316">• differences between neighbours are tiny:</text>
+<text x="438" y="336" font-family="Menlo, Consolas, monospace" font-size="11.5">t  1000  0  +3   (delta of delta)</text>
+<text x="438" y="354" font-family="Menlo, Consolas, monospace" font-size="11.5">speed  +4  −1  +12 (hundredths)</text>
+<text x="426" y="378">• each column becomes one Float64Array</text>
+<text x="426" y="400">• one appendRange call per channel,</text>
+<text x="438" y="418">no per-sample objects</text>
+<text x="426" y="442">• good for: large and streaming series</text>
+</g>
+</svg>

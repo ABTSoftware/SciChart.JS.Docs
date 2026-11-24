@@ -1,7 +1,7 @@
 ---
-sidebar_position: 70
+sidebar_position: 80
 sidebar_label: Treemap
-title: "Treemap: What It Is & How to Read It (With Interactive Examples)"
+title: "Treemap: What It Is & How to Read It (Interactive Example)"
 description: "What a treemap is, how to read its nested rectangles, what the colours mean, a worked sales example, when to use one instead of a sunburst, bar or pie chart, and mistakes to avoid."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/treemap-og.png
 related: [sunburst-chart, pie-chart, sankey-diagram, bar-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -48,7 +49,7 @@ related: [sunburst-chart, pie-chart, sankey-diagram, bar-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a treemap in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a hierarchy, where each leaf has a name and a value, and each group has a list of children. A layout step, such as the squarified algorithm, turns it into one rectangle per item. With SciChart.js you draw the rectangles with a FastRectangleRenderableSeries, using start and end values for X and top and bottom values for Y, and use the series' hit-test to add tooltips. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a hierarchy, where each leaf has a name and a value, and each group has a list of children. A layout step, such as the squarified algorithm, turns it into one rectangle per item. With SciChart.js you draw the rectangles with a FastRectangleRenderableSeries, using start and end values for X and top and bottom values for Y, and use the series' hit-test to add tooltips. React and Angular apps can call the same setup from scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -74,6 +75,8 @@ A **treemap** (also called a tree map or treemap chart) is a chart that shows ho
 :::
 
 ## How to read a treemap
+
+Read a treemap from the outside in: find what the area measures, then the groups, then compare the rectangles inside them.
 
 ![The parts of a treemap: a total of 100 split into group A (60) and group B (40), each holding three leaf rectangles. Callouts mark a group rectangle with its header, a leaf whose area matches its value, colour showing the group, and a small leaf whose label is left out](./treemap-anatomy.svg)
 
@@ -102,7 +105,7 @@ Three things stand out:
 - Phones alone (\$14M) are almost as big as the whole sports department (\$17M). That's easy to see in the treemap, and easy to miss in a list of departments.
 - The long tail is small. The five smallest categories (jewellery, water sports, bedding, bags and team sports) add up to only \$8M, or 8% of sales.
 
-The table is better for looking up one number. The treemap shows the structure, the biggest items and the long tail in one look.
+For one exact figure, read the table. The treemap shows the structure, the biggest items and the long tail in one look.
 
 ### How to describe a treemap
 
@@ -126,14 +129,14 @@ When colour shows a second value, add a legend with the scale. When it shows the
 
 ## How does a treemap work?
 
-A treemap is drawn by a **layout algorithm** that turns the hierarchy into rectangles. Most tools do it for you; knowing the steps helps you understand why a treemap looks the way it does.
+A treemap is drawn by a **layout algorithm** that turns the hierarchy into rectangles. You rarely run it by hand, but its four steps explain why items sit where they do and why they move when the data changes.
 
 1. Add up the values. Each group's value is the sum of its children, all the way up to the total.
 2. Give the whole chart to the top level. The total fills the chart's rectangle. Each group gets a share of the area that matches its share of the total.
 3. Split each rectangle among its children, the same way, leaving room for the group's header and a small gap.
 4. Keep the rectangles close to square. The simplest layout, slice and dice, cuts each rectangle into strips, which makes small items into thin slivers. The **squarified** layout sorts the items from largest to smallest and places them in rows along the shorter side, adding an item to the current row only if that makes the row's rectangles more square.
 
-![The same seven values (6, 6, 4, 3, 2, 2 and 1) laid out two ways. Cut into strips, the smallest rectangle is 16 times taller than it is wide. Squarified, in three rows, no rectangle is more than 2.8 times longer than it is wide](./treemap-layout-strips-vs-squarified.svg)
+![The same seven values (6, 6, 4, 3, 2, 2 and 1) laid out two ways. Cut into strips, the smallest rectangle is 16 times taller than it is wide. Squarified, no rectangle is more than 2.8 times longer than it is wide](./treemap-layout-strips-vs-squarified.svg)
 
 Near-square rectangles are easier to compare, easier to label and easier to point at. But the squarified layout orders items by size, not by name or date, so the same item can move when the data changes.
 
@@ -156,6 +159,8 @@ Use a treemap when your data is a total split into parts that sit in groups, and
 
 ## Common treemap mistakes
 
+Most treemap mistakes ask the chart to do what areas do badly: show exact values, negative numbers or deep hierarchies.
+
 - **Using it for data without a hierarchy, or with few items.** Five values in a treemap are harder to compare than five bars. Treemaps pay off with many items in groups.
 - **Negative or zero values.** An area can't be negative. Show losses or falls with colour, or use a different chart, such as a waterfall or a bar chart.
 - **Expecting exact comparisons.** Readers judge area far less precisely than length, and different shapes make it harder still. Label the main values, add tooltips, or give the numbers in a table.
@@ -165,7 +170,7 @@ Use a treemap when your data is a total split into parts that sit in groups, and
 
 ## How to create a treemap in JavaScript, React or Angular
 
-SciChart.js draws a treemap with its rectangle series, and a short layout helper turns your hierarchy into rectangles. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan, even with thousands of rectangles. Try the treemap below: hover over a rectangle to see its value and share, scroll to zoom into the small ones until their labels appear, drag to pan and double-click to reset.
+The demo below lays out the shop's 20 product categories in four departments with the squarified layout, and shows each label only once its rectangle is big enough to hold it. SciChart.js draws the treemap with its rectangle series, and a short layout helper turns your hierarchy into rectangles. Try it: hover over a rectangle to see its value and share, scroll to zoom into the small ones until their labels appear, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -276,10 +281,10 @@ Here is the code for this treemap. The data is plain JSON: groups with a list of
 
 Key points:
 
-- `computeTreemapLayout` is plain JavaScript with no SciChart code, so you can reuse it anywhere. It adds up the values, then uses the squarified layout to give every group and leaf a rectangle, leaving a header strip and a small gap in each group. It works for any number of levels.
+- `computeTreemapLayout` works on plain data and returns plain rectangles, so it isn't tied to SciChart.js. It adds up the values, then uses the squarified layout to give every group and leaf a rectangle, leaving a header strip and a small gap in each group. It works for any number of levels.
 - Every rectangle is drawn by a [FastRectangleRenderableSeries](/2d-charts/chart-types/fast-rectangle-renderable-series/) with an `XyxyDataSeries`: `columnXMode: EColumnMode.StartEnd` reads `xValues` and `x1Values` as the left and right edges, and `columnYMode: EColumnYMode.TopBottom` reads `yValues` and `y1Values` as the top and bottom. One series per group gives each group its own colour.
 - The tooltip uses the series' [hit-test API](/2d-charts/chart-types/hit-test-api/hit-test-api-overview/): `series.hitTestProvider.hitTest(x, y)` returns `isHit: true` and the rectangle's `dataSeriesIndex` when the mouse is inside one. `TreemapTooltipModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to run it on every mouse move.
-- Labels are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/). After each redraw, each label is shown only if its rectangle is big enough on screen, so zooming in reveals the small ones. The axes are hidden, but they still set the drawing area, so zoom and pan work as on any chart.
+- Labels are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/). After each redraw, each label is shown only if its rectangle is big enough on screen, so zooming in reveals the small ones. The x and y axes are invisible here, but zoom and pan still act on them.
 
 **See it in the demo app:** [JavaScript treemap chart](https://www.scichart.com/demo/javascript/treemap-chart) · [React treemap chart](https://www.scichart.com/demo/react/treemap-chart) · [Angular treemap chart](https://www.scichart.com/demo/angular/treemap-chart)
 
@@ -305,7 +310,7 @@ The treemap was invented by Ben Shneiderman at the University of Maryland in 199
 
 ### How do I make a treemap in JavaScript?
 
-Store the data as a hierarchy, where each leaf has a name and a value, and each group has a list of children. A layout step, such as the squarified algorithm, turns it into one rectangle per item. With SciChart.js you draw the rectangles with a `FastRectangleRenderableSeries`, using start and end values for X and top and bottom values for Y, and use the series' hit-test to add tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Store the data as a hierarchy, where each leaf has a name and a value, and each group has a list of children. A layout step, such as the squarified algorithm, turns it into one rectangle per item. With SciChart.js you draw the rectangles with a `FastRectangleRenderableSeries`, using start and end values for X and top and bottom values for Y, and use the series' hit-test to add tooltips. React and Angular apps can call the same setup from `scichart-react` or `scichart-angular`.
 
 ## Sources
 

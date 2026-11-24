@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Gauge Chart
-title: "Gauge Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Gauge Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a gauge chart (speedometer or dial chart) is, how to read its needle and bands, how to set the bands, when to use one, and the mistakes to avoid."
 keywords:
     [
@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/gauge-chart-og.png
 related: [bullet-chart, donut-chart, polar-area-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -34,7 +35,7 @@ related: [bullet-chart, donut-chart, polar-area-chart]
                 {
                     "@type": "Question",
                     "name": "Why would you use a gauge chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Use a gauge chart when the question is \"is this one number OK right now?\" and the answer depends on known limits. The dial is instantly familiar from cars and machines, the bands turn a raw number into a status, and a moving needle makes a live value easy to follow. If you need to compare several values or show a trend, a bullet chart or a line chart is a better choice." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Use a gauge chart when the question is \"is this one number OK right now?\" and the answer depends on known limits. The dial is familiar from cars and machines, the bands turn a raw number into a status, and a moving needle makes a live value easy to follow. If you need to compare several values or show a trend, a bullet chart or a line chart is a better choice." }
                 },
                 {
                     "@type": "Question",
@@ -44,7 +45,7 @@ related: [bullet-chart, donut-chart, polar-area-chart]
                 {
                     "@type": "Question",
                     "name": "What is the difference between a gauge chart and a bullet chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare, which is why they were designed as a replacement for dashboard gauges." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare. Stephen Few designed them to replace dashboard gauges." }
                 },
                 {
                     "@type": "Question",
@@ -54,7 +55,7 @@ related: [bullet-chart, donut-chart, polar-area-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a gauge chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Draw the gauge on a polar chart whose angular axis covers only part of a circle, for example 240 degrees with the gap at the bottom. The angular axis is the value scale. Add the coloured bands as polar columns from each band's start value to its end value, a needle with a polar pointer annotation, and the number as a text annotation. With SciChart.js these are PolarColumnRenderableSeries, PolarArcAnnotation and PolarPointerAnnotation on a SciChartPolarSurface; the same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Draw the gauge on a polar chart whose angular axis covers only part of a circle, for example 240 degrees with the gap at the bottom. The angular axis is the value scale. Add the coloured bands as polar columns from each band's start value to its end value, a needle with a polar pointer annotation, and the number as a text annotation. With SciChart.js these are PolarColumnRenderableSeries, PolarArcAnnotation and PolarPointerAnnotation on a SciChartPolarSurface; in React or Angular, wrap the same code in scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -81,6 +82,8 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 
 ## How to read a gauge chart
 
+To read a gauge chart, check what it measures and its scale, then see where the needle points and which band it is in.
+
 ![The parts of a gauge chart: a semicircular gauge from 0 to 100 showing 68% of orders shipped on time, with callouts for the scale and ticks, the minimum and maximum, three bands, the needle, a target marker at 80 and the value readout with its label](./gauge-chart-anatomy.svg)
 
 1. Read the label and units first. They say what is being measured, such as "orders shipped on time, %" or "pressure, bar", and over what period.
@@ -91,6 +94,8 @@ A **gauge chart** (also called a gauge graph, dial chart, speedometer chart or m
 6. Remember what the gauge leaves out. It shows one moment. To know whether 68% is improving or getting worse, you need the history, for example a line chart beside the gauge.
 
 ## Types of gauge chart
+
+Gauge charts come in four main shapes, from a half circle to a straight bar, and are often grouped into panels. All of them show one value against a scale.
 
 ![Four types of gauge chart showing the same value, 62 out of 100: a semicircle gauge with a 180 degree scale, a dial or speedometer gauge with a 240 degree scale, a full-circle progress ring with no bands, and a horizontal linear gauge with a marker](./gauge-chart-types.svg)
 
@@ -160,6 +165,8 @@ A good pattern is to pair them: a gauge for the value now, and a small line char
 
 ## Common gauge chart mistakes
 
+Most gauge chart mistakes waste space or hide the number the gauge is there to show.
+
 - **Too many gauges.** A wall of dials uses a lot of space and is hard to scan. If you are comparing values, use bars or bullet charts; keep gauge charts for the few readings that matter most.
 - **Colour as the only signal.** The most common kind of colour blindness makes red and green hard to tell apart. Label the bands in words ("Normal", "High", "Critical"), and show the status as text next to the number.
 - **A scale that hides the story.** A 0 to 1,000 scale for a value that stays between 40 and 60 leaves the needle barely moving. Choose limits that suit the real range of values, and say so if the scale doesn't start at zero.
@@ -168,7 +175,7 @@ A good pattern is to pair them: a gauge for the value now, and a small line char
 
 ## How to create a gauge chart in JavaScript, React or Angular
 
-SciChart.js draws gauges on a polar chart whose angular axis covers only part of the circle, so the scale, ticks and labels come from a real axis rather than a picture. Because SciChart.js draws with WebGL and WebGPU, the needle stays smooth even when it updates many times a second. Try the gauge below: it shows a live CPU load reading twice a second. Click or drag anywhere on the dial to move the needle yourself and watch the band, the colour and the status change; the live feed comes back after 5 seconds.
+The gauge below moves its needle to a new simulated CPU load reading every half second, and its white arc tracks the lowest and highest of the last 60 readings. SciChart.js draws it on a polar chart whose angular axis covers only part of the circle, so the scale, ticks and labels come from a real axis rather than a picture. Click or drag anywhere on the dial to move the needle yourself and watch the band, the colour and the status change; the live feed comes back after 5 seconds.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -253,7 +260,7 @@ A gauge chart is used to show one current value against its limits and targets, 
 
 ### Why would you use a gauge chart?
 
-Use a gauge chart when the question is "is this one number OK right now?" and the answer depends on known limits. The dial is instantly familiar from cars and machines, the bands turn a raw number into a status, and a moving needle makes a live value easy to follow. If you need to compare several values or show a trend, a bullet chart or a line chart is a better choice.
+Use a gauge chart when the question is "is this one number OK right now?" and the answer depends on known limits. The dial is familiar from cars and machines, the bands turn a raw number into a status, and a moving needle makes a live value easy to follow. If you need to compare several values or show a trend, a bullet chart or a line chart is a better choice.
 
 ### What are the disadvantages of a gauge chart?
 
@@ -261,7 +268,7 @@ A gauge chart shows only one value, takes a lot of space for it, and shows no hi
 
 ### What is the difference between a gauge chart and a bullet chart?
 
-Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare, which is why they were designed as a replacement for dashboard gauges.
+Both show one value against qualitative ranges and a target. A gauge chart draws the scale as an arc with a needle, which looks familiar but takes a lot of space. A bullet chart draws the same information as a short straight bar: a dark bar for the value, shaded bands for the ranges and a line for the target. Bullet charts are more compact and easier to stack and compare. Stephen Few designed them to replace dashboard gauges.
 
 ### Is a gauge chart the same as a sheet metal gauge chart?
 
@@ -269,7 +276,7 @@ No. A sheet metal gauge chart, or wire gauge chart, is a reference table that co
 
 ### How do I make a gauge chart in JavaScript?
 
-Draw the gauge on a polar chart whose angular axis covers only part of a circle, for example 240 degrees with the gap at the bottom. The angular axis is the value scale. Add the coloured bands as polar columns from each band's start value to its end value, a needle with a polar pointer annotation, and the number as a text annotation. With SciChart.js these are `PolarColumnRenderableSeries`, `PolarArcAnnotation` and `PolarPointerAnnotation` on a `SciChartPolarSurface`; the same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Draw the gauge on a polar chart whose angular axis covers only part of a circle, for example 240 degrees with the gap at the bottom. The angular axis is the value scale. Add the coloured bands as polar columns from each band's start value to its end value, a needle with a polar pointer annotation, and the number as a text annotation. With SciChart.js these are `PolarColumnRenderableSeries`, `PolarArcAnnotation` and `PolarPointerAnnotation` on a `SciChartPolarSurface`; in React or Angular, wrap the same code in `scichart-react` or `scichart-angular`.
 
 ## Sources
 

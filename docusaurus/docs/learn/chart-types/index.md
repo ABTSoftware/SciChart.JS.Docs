@@ -1,9 +1,10 @@
 ---
 sidebar_position: 1
 sidebar_label: Types of Charts and Graphs
-title: "Types of Charts and Graphs: A Guide to Every Chart Type (With Interactive Examples)"
+title: "Types of Charts and Graphs: A Guide With Interactive Examples"
 description: "A guide to the main types of charts and graphs: what each chart shows, how to read it and when to use it, with a live, interactive example of every chart."
 keywords: ["types of charts", "types of graphs", "types of charts and graphs", "chart types", "graph types", "chart examples", "which chart to use"]
+datePublished: 2026-11-16
 ---
 
 # Types of Charts and Graphs
@@ -11,6 +12,8 @@ keywords: ["types of charts", "types of graphs", "types of charts and graphs", "
 Which chart should you use, and how do you read it? This guide covers the main types of charts and graphs. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Trends and comparisons
+
+Use these charts to compare values across categories, or to show how a value changes over time.
 
 | Chart | What it shows |
 | --- | --- |
@@ -24,6 +27,8 @@ Which chart should you use, and how do you read it? This guide covers the main t
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
 
 ## Parts of a whole
+
+These charts show how a total splits into parts, from a single split to a hierarchy, a flow or a three-part mixture.
 
 | Chart | What it shows |
 | --- | --- |
@@ -40,38 +45,49 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 | Chart | What it shows |
 | --- | --- |
-| [Stacked area chart](/learn/chart-types/cartesian/area-chart/#how-to-read-a-stacked-area-chart) | How a total and its parts change over time, as bands stacked on top of each other |
 | [100% stacked area chart](/learn/chart-types/cartesian/area-chart/#stacked-vs-100-stacked-area-chart) | How the share of each part changes over time |
-| [Stacked bar chart](/learn/chart-types/cartesian/bar-chart/#stacked-bar-chart) | Totals compared across categories, with each bar split into its parts; drawn upright, it's a stacked column chart |
 | [100% stacked bar chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) | Every bar the same length, so you compare each category's mix of parts rather than its total |
+| [Stacked area chart](/learn/chart-types/cartesian/area-chart/#how-to-read-a-stacked-area-chart) | How a total and its parts change over time, as bands stacked on top of each other |
+| [Stacked bar chart](/learn/chart-types/cartesian/bar-chart/#stacked-bar-chart) | Totals compared across categories, with each bar split into its parts; drawn upright, it's a stacked column chart |
 
 ## Relationships and distributions
+
+These charts show how values are spread out, how two or more variables relate, and how items connect.
 
 | Chart | What it shows |
 | --- | --- |
 | [Box plot](/learn/chart-types/cartesian/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
 | [Bubble chart](/learn/chart-types/cartesian/bubble-chart/) | A scatter plot where bubble size shows a third value |
+| [Correlation matrix](/learn/chart-types/cartesian/correlation-matrix/) | How strongly every pair of variables moves together, as a grid of coefficients |
 | [Density plot](/learn/chart-types/cartesian/density-plot/) | The smooth shape of a distribution: peaks, spread and tails, drawn as a curve; compare groups by overlaying them or stacking them as a ridgeline |
 | [Error bars](/learn/chart-types/cartesian/error-bars/) | The uncertainty or spread around a value, usually a mean: standard deviation, standard error or a confidence interval |
 | [Histogram](/learn/chart-types/cartesian/histogram/) | How values are distributed, counted into ranges (bins) |
 | [Network graph](/learn/chart-types/complex/network-graph/) | How things are connected: items as dots (nodes) and links as lines (edges), showing hubs, clusters and the bridges between them |
 | [Parallel coordinates plot](/learn/chart-types/complex/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
 | [Population pyramid](/learn/chart-types/cartesian/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
+| [Residual plot and Q-Q plot](/learn/chart-types/cartesian/residual-plot/) | Checking a regression: patterns in the residuals and whether they are normal |
 | [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two values, one dot per data point |
 | [Violin plot](/learn/chart-types/cartesian/violin-plot/) | The full shape of several groups side by side: a box plot plus a mirrored density curve that shows peaks, gaps and skew |
 
 ## Scientific and engineering charts
+
+These charts show fields, signals, surfaces and measurements in 2D, 3D or round a circle, as used in science and engineering.
 
 | Chart | What it shows |
 | --- | --- |
 | [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
 | [Contour plot](/learn/chart-types/cartesian/contour-plot/) | Lines of equal value across two dimensions, showing peaks, saddles and steep areas |
 | [Heatmap](/learn/chart-types/cartesian/heatmap/) | A grid of values shown as colours |
+| [Point cloud](/learn/chart-types/3d/point-cloud/) | Millions of 3D points, such as a LiDAR scan, coloured by height, intensity or class |
 | [Polar area chart](/learn/chart-types/radial/polar-area-chart/) | Equal-angle wedges whose area shows each value, for cycles such as months or directions (Nightingale rose) |
 | [Radar chart](/learn/chart-types/radial/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
+| [Smith chart](/learn/chart-types/complex/smith-chart/) | Impedance and reflection on one circular chart, for RF and antenna matching |
 | [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
+| [Voronoi diagram](/learn/chart-types/complex/voronoi-diagram/) | The area nearest each point, as cells; the dual of a Delaunay triangulation |
 
 ## Dashboards and KPIs
+
+These charts show where one value stands against a target or limit, or how many items get through each stage of a process.
 
 | Chart | What it shows |
 | --- | --- |
@@ -81,19 +97,28 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 ## Financial charts
 
+These charts show price movements and how a starting value becomes a final one, as used in trading and finance.
+
 | Chart | What it shows |
 | --- | --- |
 | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
+| [Footprint chart](/learn/chart-types/cartesian/footprint-chart/) | Bid and ask volume at each price inside each bar, with delta and imbalances |
 | [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
+| [Renko chart](/learn/chart-types/cartesian/renko-chart/) | Fixed-size price bricks that ignore time and show the trend |
+| [Tick chart](/learn/chart-types/cartesian/tick-chart/) | Bars that close after a set number of trades instead of a set time |
 | [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
 
 ## Maps and geographic data
+
+This chart shows a value for each area on a map, such as a state or a country.
 
 | Chart | What it shows |
 | --- | --- |
 | [Choropleth map](/learn/chart-types/complex/choropleth-map/) | A value per area, such as a rate per state or country, shown by shading each area on a map, with a legend for the colour classes |
 
 ## Time and events
+
+This chart shows events and periods in the order they happened.
 
 | Chart | What it shows |
 | --- | --- |

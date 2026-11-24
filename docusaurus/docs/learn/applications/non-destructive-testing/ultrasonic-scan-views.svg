@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>A-scan, B-scan, C-scan and S-scan views of the same plate</title>
+  <desc>Four small panels. A-scan: one trace of amplitude against time at a single probe position. B-scan: a side-view cross-section built from many A-scans along a line, with probe position across and depth down; the flaw is a short bright line above the back wall. C-scan: a top-down plan view of the plate where colour is the echo in a depth gate; the flaw is a bright square. S-scan: a fan-shaped sector from a phased array probe, angle across and sound path outward.</desc>
+  <rect width="780" height="300" fill="#ffffff"/>
+  <g font-size="14" font-weight="600" fill="#1d2b4a" text-anchor="middle">
+    <text x="97" y="26">A-scan</text><text x="292" y="26">B-scan</text><text x="487" y="26">C-scan</text><text x="682" y="26">S-scan</text>
+  </g>
+  <g font-size="11" fill="#4a5a78" text-anchor="middle">
+    <text x="97" y="44">one position</text><text x="292" y="44">side view along a line</text>
+    <text x="487" y="44">plan view from above</text><text x="682" y="44">phased array sector</text>
+  </g>
+
+  <!-- A-scan panel -->
+  <rect x="15" y="56" width="164" height="170" fill="#0f1d3a"/>
+  <path d="M22,210 L24,70 L27,210 L30,110 L33,210 L38,200 L42,210 L80,210 L83,170 L86,210 L89,130 L92,210 L95,185 L98,210 L140,210 L143,160 L146,210 L149,100 L152,210 L155,170 L158,210 L172,210" fill="none" stroke="#50C7E0" stroke-width="1.5"/>
+  <text x="97" y="244" font-size="11" fill="#4a5a78" text-anchor="middle">amplitude ↑, time →</text>
+
+  <!-- B-scan panel -->
+  <rect x="210" y="56" width="164" height="170" fill="#0f1d3a"/>
+  <rect x="210" y="56" width="164" height="8" fill="#e8d75c" opacity="0.8"/>
+  <rect x="250" y="120" width="44" height="6" fill="#ff6b4a"/>
+  <path d="M244,128 q28,-14 56,0" fill="none" stroke="#2fb8d9" stroke-width="2" opacity="0.8"/>
+  <rect x="210" y="196" width="40" height="6" fill="#e8d75c"/>
+  <rect x="294" y="196" width="80" height="6" fill="#e8d75c"/>
+  <rect x="250" y="196" width="44" height="6" fill="#2f5aa8"/>
+  <text x="292" y="244" font-size="11" fill="#4a5a78" text-anchor="middle">position →, depth ↓</text>
+
+  <!-- C-scan panel -->
+  <rect x="405" y="56" width="164" height="170" fill="#0f1d3a"/>
+  <rect x="435" y="116" width="40" height="40" fill="#ff6b4a"/>
+  <rect x="431" y="112" width="48" height="48" fill="none" stroke="#2fb8d9" stroke-width="3" opacity="0.7"/>
+  <rect x="520" y="76" width="8" height="130" fill="#2fb8d9"/>
+  <text x="487" y="244" font-size="11" fill="#4a5a78" text-anchor="middle">x →, y ↑, colour = gated echo</text>
+
+  <!-- S-scan panel: apex at 682,60, radius 160, -30..30 deg -->
+  <path d="M682,60 L602,198.6 A160,160 0 0 0 762,198.6 Z" fill="#0f1d3a"/>
+  <path d="M664,176 A118,118 0 0 0 700,176" fill="none" stroke="#e8d75c" stroke-width="6"/>
+  <rect x="664" y="128" width="30" height="5" fill="#ff6b4a"/>
+  <circle cx="720" cy="150" r="5" fill="#2fb8d9"/>
+  <rect x="664" y="52" width="36" height="9" rx="2" fill="#3b5998"/>
+  <text x="682" y="244" font-size="11" fill="#4a5a78" text-anchor="middle">angle ↔, sound path outward</text>
+
+  <g font-size="11" fill="#1d2b4a" text-anchor="middle">
+    <text x="390" y="276">Same plate, same flaw: each view arranges the echoes a different way.</text>
+  </g>
+</svg>

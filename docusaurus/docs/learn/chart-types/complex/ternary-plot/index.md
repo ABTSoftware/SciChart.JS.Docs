@@ -1,7 +1,7 @@
 ---
-sidebar_position: 60
+sidebar_position: 70
 sidebar_label: Ternary Plot
-title: "Ternary Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Ternary Plot: What It Is & How to Read It (Interactive Example)"
 description: "What a ternary plot is, how to read its three scales step by step, where ternary diagrams are used (soil texture, geology, phase diagrams) and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/ternary-plot-og.png
 related: [scatter-plot, cartesian-graph, parallel-coordinates-plot]
+datePublished: 2026-11-16
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [scatter-plot, cartesian-graph, parallel-coordinates-plot]
                 {
                     "@type": "Question",
                     "name": "How do I make a ternary plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Convert each point's three values to x and y: divide each value by the sum, then x is the right-hand component plus half the top component, and y is the top component times the square root of 3 divided by 2. Plot those points as a scatter series, and draw the triangle, gridlines and tick labels yourself. With SciChart.js you can do this with line segment series, text annotations, a scatter series, and triangle series to shade regions. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Convert each point's three values to x and y: divide each value by the sum, then x is the right-hand component plus half the top component, and y is the top component times the square root of 3 divided by 2. Plot those points as a scatter series, and draw the triangle, gridlines and tick labels yourself. With SciChart.js you can do this with line segment series, text annotations, a scatter series, and triangle series to shade regions. Use scichart-react or scichart-angular to run the same setup in a React or Angular app." }
                 }
             ]
         })}
@@ -78,6 +79,8 @@ A **ternary plot** (also called a ternary diagram, ternary graph or triangle plo
 :::
 
 ## How to read a ternary plot
+
+Read a ternary plot one component at a time, following that component's gridline from the point to its scale.
 
 ![How to read point P on a ternary plot with sand at the bottom-left corner, silt at the bottom-right and clay at the top: a horizontal line from P to the left side reads 30% clay, a line parallel to the left side up to the right side reads 20% silt, and a line parallel to the right side down to the base reads 50% sand, which add up to 100](./ternary-plot-reading.svg)
 
@@ -137,6 +140,8 @@ The same chart has other names in other fields: a **Gibbs triangle** in thermody
 
 ## Where ternary plots are used
 
+Ternary plots are used wherever samples are mixtures of three parts, most of all in soil science, geology, chemistry and materials science.
+
 - Soil science: the soil texture triangle names a soil from its sand, silt and clay content, as in the example above.
 - Geology and petrology: sandstones are classified by their quartz, feldspar and rock fragment content, and ultramafic igneous rocks by their olivine, orthopyroxene and clinopyroxene content.
 - Chemistry and chemical engineering: a ternary phase diagram shows which phases form when three substances are mixed at a fixed temperature and pressure, such as when one liquid dissolves in a mix of two others. Process engineers use them to design extraction and separation steps.
@@ -156,6 +161,8 @@ Use a ternary plot when each item is a mixture of exactly three parts that add u
 
 ## Common ternary plot mistakes
 
+Most ternary plot mistakes either put points in the wrong place or leave readers unsure which way the scales run.
+
 - **Values that don't add up.** Plotting raw values that sum to 97 or 104 puts points in the wrong place. Rescale every point so its three values add up to exactly 100%, and say that you did.
 - **Unlabelled direction.** Without angled tick marks, arrows or corner labels, readers can't tell which way each scale runs. Label every corner and every side.
 - **Hiding the dropped parts.** If a fourth component was removed before plotting (water, organic matter, other minerals), say so: the plotted shares are of the three parts, not of the whole sample.
@@ -165,11 +172,11 @@ Use a ternary plot when each item is a mixture of exactly three parts that add u
 
 ## How to create a ternary plot in JavaScript, React or Angular
 
-SciChart.js has no separate ternary series, but a short helper converts each mixture to x and y, and SciChart's line segment, scatter and triangle series draw the rest. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan with many points. Try the chart below: hover anywhere in the triangle to read all three values and see the three gridlines you are reading along, or hover over a sample to read its values. Scroll to zoom, drag to pan and double-click to reset.
+The demo below places the 40 soil samples from the three fields on the USDA texture triangle, with the 12 classes shaded behind them. SciChart.js has no separate ternary series, but a short helper converts each mixture to x and y, and SciChart's line segment, scatter and triangle series draw the rest. Try it: hover anywhere in the triangle to read all three values and see the three gridlines you are reading along, or hover over a sample to read its values. Zoom and pan with the mouse wheel and a drag; a double-click fits the whole triangle back in view.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="ternary plot" demo="scatter-chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" />
+<LearnCta position="top" chart="ternary plot" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" docsLabel="SciChart.js triangle series documentation" />
 
 Here is the code for this chart. The data is plain JSON: one object per point, with a value for each component:
 
@@ -328,10 +335,10 @@ Here is the code for this chart. The data is plain JSON: one object per point, w
 
 Key points:
 
-- `createTernary` is plain JavaScript with no SciChart code. Its `toXY` and `fromXY` convert between three values and a position in a triangle with sides of 100, using the formula above. You choose which component goes on which corner.
+- `createTernary` is pure geometry, independent of the chart library. Its `toXY` and `fromXY` convert between three values and a position in a triangle with sides of 100, using the formula above. You choose which component goes on which corner.
 - The triangle, gridlines and tick marks are [FastLineSegmentRenderableSeries](/2d-charts/chart-types/fast-line-segment-renderable-series/), drawn as pairs of points. Each component's ticks continue its own gridlines out of the triangle, so they show which way to read. Labels and side titles are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/), with `rotation` to run the titles along the sides.
 - Each shaded region is a [FastTriangleRenderableSeries](/2d-charts/chart-types/fast-triangle-renderable-series/) in `ETriangleSeriesDrawMode.List` mode. The `triangulate` helper cuts any outline, including the notched sandy loam class, into triangles. The samples are an [XyScatterRenderableSeries](/2d-charts/chart-types/xy-scatter-renderable-series/).
-- The two normal axes are hidden but still set the drawing area. `fitTernaryView` sets their ranges so one unit is the same number of pixels across and up, `keepTernaryEquilateral` runs it whenever the chart changes size, and `onZoomExtents` calls it on double-click instead of stretching the triangle to fill the chart. `TernaryTooltipModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to read the values under the mouse.
+- The two ordinary x and y axes are hidden, yet they still decide where everything is drawn. `fitTernaryView` sets their ranges so one unit is the same number of pixels across and up, `keepTernaryEquilateral` runs it whenever the chart changes size, and `onZoomExtents` calls it on double-click instead of stretching the triangle to fill the chart. `TernaryTooltipModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to read the values under the mouse.
 
 **See it in the demo app:** [JavaScript scatter chart](https://www.scichart.com/demo/javascript/scatter-chart) · [React scatter chart](https://www.scichart.com/demo/react/scatter-chart) · [Angular scatter chart](https://www.scichart.com/demo/angular/scatter-chart), and the [JavaScript triangle series chart](https://www.scichart.com/demo/javascript/triangle-series-chart) for filled shapes.
 
@@ -363,7 +370,7 @@ Not directly. A ternary plot has exactly three corners. With four or more compon
 
 ### How do I make a ternary plot in JavaScript?
 
-Convert each point's three values to x and y: divide each value by the sum, then x is the right-hand component plus half the top component, and y is the top component times the square root of 3 divided by 2. Plot those points as a scatter series, and draw the triangle, gridlines and tick labels yourself. With SciChart.js you can do this with line segment series, text annotations, a scatter series, and triangle series to shade regions. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Convert each point's three values to x and y: divide each value by the sum, then x is the right-hand component plus half the top component, and y is the top component times the square root of 3 divided by 2. Plot those points as a scatter series, and draw the triangle, gridlines and tick labels yourself. With SciChart.js you can do this with line segment series, text annotations, a scatter series, and triangle series to shade regions. Use `scichart-react` or `scichart-angular` to run the same setup in a React or Angular app.
 
 ## Sources
 
@@ -373,4 +380,4 @@ Convert each point's three values to x and y: divide each value by the sum, then
 - DoITPoMS, University of Cambridge, [Ternary phase diagrams](https://www.doitpoms.ac.uk/tlplib/phase3_diagrams/index.php). A teaching package on reading ternary phase diagrams for alloys, with a tin–silver–copper case study.
 - Howarth, R. J. (1996), [Sources for a history of the ternary diagram](https://doi.org/10.1017/S000708740003449X). *The British Journal for the History of Science*, 29(3), 337–356.
 
-<LearnCta position="bottom" chart="ternary plot" demo="scatter-chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" />
+<LearnCta position="bottom" chart="ternary plot" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" docsLabel="SciChart.js triangle series documentation" />

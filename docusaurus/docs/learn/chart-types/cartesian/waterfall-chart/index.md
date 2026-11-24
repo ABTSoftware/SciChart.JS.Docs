@@ -1,7 +1,7 @@
 ---
-sidebar_position: 240
+sidebar_position: 290
 sidebar_label: Waterfall Chart
-title: "Waterfall Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Waterfall Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a waterfall chart is, how to read its rising and falling bars, subtotals and totals, a worked profit example, when to use one, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/waterfall-chart-og.png
 related: [bar-chart, pareto-chart, funnel-chart, combo-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -53,7 +54,7 @@ related: [bar-chart, pareto-chart, funnel-chart, combo-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a waterfall chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, first work out the running total, so you know where each bar starts and ends. Then add a FastRectangleRenderableSeries with an XyxyDataSeries, setting each bar's bottom as y and its top as y1, and columnYMode to EColumnYMode.TopBottom. A palette provider colours rises, falls and totals. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, first work out the running total, so you know where each bar starts and ends. Then add a FastRectangleRenderableSeries with an XyxyDataSeries, setting each bar's bottom as y and its top as y1, and columnYMode to EColumnYMode.TopBottom. A palette provider colours rises, falls and totals. The React and Angular tabs above show the same chart with scichart-react and scichart-angular." }
                 }
             ]
         })}
@@ -75,10 +76,12 @@ A **waterfall chart** (also called a bridge chart or cascade chart) shows how a 
 - Floating bars are the changes: green bars go up, red bars go down. Full bars from zero are the start, subtotals and end total.
 - The height of a floating bar is the size of the change, so the tallest floating bars are the ones that mattered most.
 - It's the standard chart for a profit and loss walk, a year-on-year bridge and budget against actual.
-- Keep the value axis starting at zero and the steps in the order the sum is worked out, or the chart misleads.
+- Start the value axis at zero wherever you can, and keep the steps in the order the sum is worked out, or the chart misleads.
 :::
 
 ## How to read a waterfall chart
+
+Read a waterfall chart from left to right, from the starting total through each rise and fall to the final total.
 
 ![The parts of a waterfall chart, using a month of household money: a grey starting bar of \$1,200, a green salary bar (+\$2,400), red rent and bills bars, a grey subtotal after fixed costs (\$2,340), red groceries and car repair bars, a green freelance work bar (+\$300), and a grey end-of-month total of \$1,840. Numbered markers point out the starting value, an increase, a decrease, a connector, the subtotal and the end total](./waterfall-chart-anatomy.svg)
 
@@ -93,7 +96,7 @@ A **waterfall chart** (also called a bridge chart or cascade chart) shows how a 
 
 The chart at the top of the page walks one company's year from sales to profit, the most common use of a waterfall in finance. To draw it, work out the **running total** after every step. Each floating bar goes from the running total before the step to the running total after it. Each subtotal or total bar goes from zero to the running total.
 
-| Step | Change ($k) | Running total ($k) | Bar drawn from → to ($k) |
+| Step | Change (\$k) | Running total (\$k) | Bar drawn from → to (\$k) |
 | --- | --- | --- | --- |
 | Products | +900 | 900 | 0 → 900 |
 | Services | +600 | 1,500 | 900 → 1,500 |
@@ -116,6 +119,8 @@ Use this template when you report a waterfall chart:
 For example: "Revenue of \$1.5 million became a profit of \$285,000 this year, a margin of 19%. Product sales were the biggest contributor at \$900,000, and materials were the biggest cost at \$620,000."
 
 ## Types of waterfall chart
+
+Waterfall charts differ in what the walk connects (parts of a sum, two periods, a budget and the actual figure, or a running balance) and in how the bars are laid out.
 
 | Type | What it shows | Example |
 | --- | --- | --- |
@@ -153,7 +158,9 @@ The rest of this page is about the financial waterfall.
 
 ## Common waterfall chart mistakes
 
-- **Cutting off the value axis.** Floating bars are read against the axis, and full bars are compared by height. If the axis starts above zero, the totals look smaller or larger than they are. Start it at zero.
+Most waterfall mistakes break the running total, either in how the bars are drawn or in how they are labelled.
+
+- **Cutting off the value axis.** Floating bars are read against the axis, and full bars are compared by height. If the axis starts above zero, the totals look smaller or larger than they are. Start it at zero, or mark a break clearly if you must cut it.
 - **Letting subtotals float.** A subtotal or total must stand on zero. If it floats like a step, readers add it to the total a second time.
 - **Steps in the wrong order.** The steps must follow the order of the sum, such as sales, then costs, then tax. Sorting a profit walk by size breaks the subtotals. Only a bridge between two periods, which has no subtotals, can be sorted largest first.
 - **Unclear colours or signs.** Use one colour for rises, another for falls and a neutral one for totals, and keep them the same across every chart in a report. Label falls with a minus sign as well, for readers who can't tell red from green.
@@ -162,7 +169,7 @@ The rest of this page is about the financial waterfall.
 
 ## How to create a waterfall chart in JavaScript, React or Angular
 
-SciChart.js draws a waterfall chart with its rectangle series: you give each bar an explicit bottom and top, and colour it by whether it rises, falls or is a total. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan however many steps you add. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a bar to see its change and the running total.
+SciChart.js draws a waterfall chart with its rectangle series: you give each bar an explicit bottom and top, and colour it by whether it rises, falls or is a total. The chart below walks the worked example above, from \$1.5 million of revenue to \$285,000 of profit, in nine bars: seven steps and two totals, each placed from the running total. Hover over a bar to see its change and the running total. The mouse wheel zooms and dragging pans; double-click to bring back all nine bars.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -373,7 +380,7 @@ In finance a waterfall chart is often called a bridge chart, because it bridges 
 
 ### How do I make a waterfall chart in JavaScript?
 
-With SciChart.js, first work out the running total, so you know where each bar starts and ends. Then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries`, setting each bar's bottom as `y` and its top as `y1`, and `columnYMode` to `EColumnYMode.TopBottom`. A palette provider colours rises, falls and totals. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, first work out the running total, so you know where each bar starts and ends. Then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries`, setting each bar's bottom as `y` and its top as `y1`, and `columnYMode` to `EColumnYMode.TopBottom`. A palette provider colours rises, falls and totals. The React and Angular tabs above show the same chart with `scichart-react` and `scichart-angular`.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 160
 sidebar_label: Power Spectral Density (PSD)
-title: "Power Spectral Density (PSD): What It Is, Units & How to Calculate It (With Interactive Examples)"
+title: "Power Spectral Density (PSD): Units and How to Calculate It"
 description: "What power spectral density is, why it's a density, its units (V²/Hz, g²/Hz, dB/Hz), how to calculate it with the periodogram and Welch's method, and PSD vs FFT. Live example."
 keywords:
     [
@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/power-spectral-density-og.png
 related: [fast-fourier-transform, window-functions, autocorrelation, signal-to-noise-ratio]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -124,7 +125,7 @@ The unit of a PSD is the square of the signal's unit, per hertz. Plots often sho
 
 A PSD in dB is $10 \log_{10}(S / S_\text{ref})$, using 10 rather than 20 because a PSD is already a power. So 2.44 × 10⁻⁴ V²/Hz is −36.1 dB re 1 V²/Hz, and its square root is 15.6 mV/√Hz. Every 10 dB is a factor of 10 in power density.
 
-The density works the same way for power in watts. A radio receiver's thermal noise floor is about −174 dBm/Hz at room temperature. In a 1 MHz bandwidth (60 dB above 1 Hz), that adds up to about −114 dBm. The density lets you work out the noise in any bandwidth by adding $10 \log_{10}(\text{bandwidth})$.
+The density works the same way for power in watts. A radio receiver's thermal noise floor is about −174 dBm/Hz at the standard reference temperature of 290 K, close to room temperature. In a 1 MHz bandwidth (60 dB above 1 Hz), that adds up to about −114 dBm. The density lets you work out the noise in any bandwidth by adding $10 \log_{10}(\text{bandwidth})$.
 
 ## How to read a PSD plot
 
@@ -156,7 +157,7 @@ Where:
 
 ### Step 2: why one periodogram isn't enough
 
-A periodogram of noise is very ragged. Each bin's value is random, with a spread as large as its average: about ±5.6 dB on a dB scale, however long the block. Making the block longer gives narrower bins, but each one is just as noisy. We measured a standard deviation of 5.1 dB across the noise floor of one 1,024-point periodogram of the signal in the chart at the top of this page.
+A periodogram of noise is very ragged. Each bin's value is random, with a spread as large as its average: a standard deviation of about 5.6 dB on a dB scale, however long the block. Making the block longer gives narrower bins, but each one is just as noisy. Measured with the demo on this page, one 1,024-point periodogram of its test signal has a standard deviation of about 5.4 dB across the noise floor, away from the two tones.
 
 ### Step 3: Welch's method
 
@@ -173,7 +174,7 @@ $$
 
 ![Welch's method in four steps: a noisy record with a tone; four segments that overlap by half, each with a Hann window; a ragged periodogram for each segment; and their average, a smoother PSD in which the tone peak stands out](./welch-method-segments.svg)
 
-Averaging $K$ independent periodograms cuts the spread by a factor of $\sqrt{K}$. For that signal, 127 segments of 1,024 samples with 50% overlap bring the noise floor's spread down from 5.1 dB to 0.39 dB.
+Averaging $K$ independent periodograms cuts the spread of each bin's power by a factor of $\sqrt{K}$ ([Welch, 1967](#sources)). On a dB scale, that leaves a spread of about $4.3/\sqrt{K}$ dB once $K$ is more than a few, since $10/\ln 10 \approx 4.3$. Hann-windowed segments that overlap by 50% are nearly independent, so the rule still holds closely. In the demo, averaging all 127 segments of 1,024 samples with 50% overlap brings the noise floor's spread down from about 5.4 dB to 0.37 dB, close to the 0.39 dB that $4.3/\sqrt{127}$ predicts.
 
 ### The trade-off: resolution vs variance
 
@@ -224,6 +225,8 @@ Many real signals have tones on top of a noise floor. Instruments often show eit
 
 ## What PSD is used for
 
+A PSD is used wherever noise or random vibration has to be measured in a way that doesn't depend on the analysis settings.
+
 - Random vibration testing: aerospace, automotive and electronics parts are shaken on a test rig to a PSD profile in g²/Hz, and the controller adjusts the drive until the measured PSD matches.
 - Structural and machine monitoring: resonances show as humps in the PSD of an accelerometer signal; a shift in their frequency can mean damage or wear.
 - Electronics noise: amplifier, sensor and ADC data sheets give noise density in nV/√Hz, so designers can work out the noise in their own bandwidth.
@@ -232,6 +235,8 @@ Many real signals have tones on top of a noise floor. Instruments often show eit
 - Audio and acoustics: the PSD shows the tonal balance of a recording or a room's background noise, and checks whether a noise source is white or pink.
 
 ## Common PSD mistakes
+
+Most PSD mistakes are in the scaling, the units or how much averaging was done.
 
 - **Wrong scaling.** Forgetting the window's $\sum w^2$, the sample rate, or the factor of 2 for one-sided bins. Check with Parseval: the area should equal the mean square.
 - **Comparing a PSD with an amplitude spectrum.** A tone at 0 dB in one can be −14 dB/Hz in the other, and noise floors differ by an amount that depends on the bin width. Compare like with like, and label the units.
@@ -242,11 +247,11 @@ Many real signals have tones on top of a noise floor. Instruments often show eit
 
 ## How to plot a power spectral density in JavaScript, React or Angular
 
-SciChart.js draws spectra, PSDs and spectrograms with WebGL and WebGPU, fast enough to redraw them as new samples arrive. The example below runs Welch's method in your browser on 32 seconds of a test signal: a 1 V tone at 128.7 Hz, a weak 0.08 V tone at 330 Hz and 0.5 V RMS of white or pink noise. Change the segment length, overlap, window and number of averages, and compare a single periodogram with the Welch average. The line above the chart compares the RMS from the PSD's area with the RMS of the samples. Hover to read a bin, scroll to zoom, drag to pan and double-click to reset.
+The demo runs Welch's method in your browser on 32 seconds (65,536 samples) of a test signal, and re-runs it each time you change a setting. The signal is a 1 V tone at 128.7 Hz, a weak 0.08 V tone at 330 Hz and 0.5 V RMS of white or pink noise. Change the segment length, overlap, window and number of averages, and compare a single periodogram with the Welch average. The line above the chart compares the RMS from the PSD's area with the RMS of the samples. Hover over the noise floor to compare the single periodogram with the average; scroll to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="power spectral density plot" demo="audio-analyzer-fft-example" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="top" chart="power spectral density plot" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
 
 **Things to try:** set **Averages** to 1 and the weak 330 Hz tone disappears into the ragged floor; slide it up and the floor smooths out until the tone stands clear. Switch the segment length from 1,024 to 8,192: the noise floor stays at about −36 dB/Hz while the 128.7 Hz peak rises. Choose **Pink** noise and a **Log** frequency axis, and the floor becomes a straight line falling 3 dB per octave.
 
@@ -403,9 +408,9 @@ Key points:
 - Plot the PSD in dB/Hz on a fixed y-axis range (`autoRange: EAutoRange.Never`), so the axis doesn't jump as the estimate changes.
 - To update it live, keep the data series and call `clear()` then `appendRange()` with each new estimate, as the example's `update()` function does. The Welch function itself is plain JavaScript: swap in any FFT library and the chart code stays the same.
 
-**See it in the demo app:** [JavaScript FFT spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React FFT spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular FFT spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, with a waveform, an FFT spectrum and a spectrogram.
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It charts your microphone input live, with a waveform, an FFT spectrum and a spectrogram.
 
-**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), the [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [spectrogram guide](/learn/chart-types/cartesian/spectrogram/) for drawing how a spectrum changes over time.
+**Go deeper:** [SciChart.js logarithmic axis documentation](/2d-charts/axis-api/axis-types/logarithmic-axis/), the [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [spectrogram guide](/learn/chart-types/cartesian/spectrogram/) for drawing how a spectrum changes over time.
 
 ## Frequently asked questions
 
@@ -442,4 +447,4 @@ Cut the samples into overlapping segments, window each one, run an FFT, scale th
 - Bendat, J. S. and Piersol, A. G., *Random Data: Analysis and Measurement Procedures*, 4th edition (Wiley, 2010). Spectral density, its estimation and its random error.
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*, [chapter 9, Applications of the DFT](https://www.dspguide.com/ch9.htm). Spectral analysis of noisy signals and averaging.
 
-<LearnCta position="bottom" chart="power spectral density plot" demo="audio-analyzer-fft-example" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />
+<LearnCta position="bottom" chart="power spectral density plot" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/axis-api/axis-types/logarithmic-axis/" docsLabel="SciChart.js logarithmic axis documentation" />

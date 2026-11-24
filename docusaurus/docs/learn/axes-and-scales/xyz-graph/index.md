@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: XYZ Graph (3D Axes)
-title: "XYZ Axis Graph: What It Is & How to Read It (With Interactive Examples)"
+title: "XYZ Graph: What It Is & How to Read It (Interactive Example)"
 description: "What the x, y and z axes are, which one is up, right- vs left-handed axes, how to read a point on a 3D graph, perspective vs orthographic views and the mistakes to avoid."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/xyz-graph-og.png
 related: [cartesian-graph, 3d-surface-plot, bubble-chart, log-scale-graph]
+datePublished: 2026-11-16
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [cartesian-graph, 3d-surface-plot, bubble-chart, log-scale-graph]
                 {
                     "@type": "Question",
                     "name": "How do I make an XYZ graph in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChart3DSurface, set its xAxis, yAxis and zAxis to NumericAxis3D, and add a ScatterRenderableSeries3D with an XyzDataSeries3D holding your x, y and z values. Add OrbitModifier3D and MouseWheelZoomModifier3D so users can rotate and zoom, and use the camera's projectionMode to switch between perspective and orthographic views. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChart3DSurface, set its xAxis, yAxis and zAxis to NumericAxis3D, and add a ScatterRenderableSeries3D with an XyzDataSeries3D holding your x, y and z values. Add OrbitModifier3D and MouseWheelZoomModifier3D so users can rotate and zoom, and use the camera's projectionMode to switch between perspective and orthographic views. In React or Angular, run the same setup with scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -63,7 +64,7 @@ related: [cartesian-graph, 3d-surface-plot, bubble-chart, log-scale-graph]
 
 ## What is an XYZ graph?
 
-An **XYZ graph** (also called a 3D graph, an XYZ axis graph or a three-axis plot) is a chart with three axes at right angles to each other, x, y and z, that meet at a point called the origin. Each data point has three values, written (x, y, z), so the chart shows how three quantities relate in one view.
+An **XYZ graph** (also called a 3D graph, XYZ axis graph or three-axis plot) is a chart with three axes at right angles to each other, x, y and z, that meet at a point called the origin. Each data point has three values, written (x, y, z), so the chart shows how three quantities relate in one view.
 
 ![An XYZ graph: a 3D scatter plot in a cube-shaped box with x, y and z axes each running from 0 to 10, the y axis pointing up. About 250 cyan points form a tilted cloud, and one larger orange point at x 7, y 6, z 3 has dashed lines to its shadows on the floor, the side wall and the back wall](/img/learn/xyz-graph-og.png)
 
@@ -90,6 +91,8 @@ A 2D chart has two axes: x across and y up. A 3D graph adds a third, **z**, at r
 Each pair of axes forms a flat **plane**: the x–y plane, the x–z plane and the z–y plane. On a 3D chart these planes are drawn as the floor and walls of a box, with gridlines, so you can read values off them.
 
 ## How to read an XYZ graph
+
+Read an XYZ graph by finding which axis is up, then turning the chart until the pattern you care about is clear.
 
 ![An annotated XYZ axis box drawn like the corner of a room. The x axis runs across from 0 to 10, the y axis points up from 0 to 10 and the z axis runs back from 0 to 10, all starting at the origin (0, 0, 0). Point P at (7, 6, 3) is reached in three steps: 7 across along x, 3 back along z, then 6 up along y. Dashed lines run from P to its shadows: on the floor at x 7 and z 3, on the back wall at x 7 and y 6, and on the side wall at z 3 and y 6](./xyz-axis-anatomy.svg)
 
@@ -204,6 +207,8 @@ The same three axes hold different kinds of 3D chart:
 
 ## Common XYZ graph mistakes
 
+Most XYZ graph mistakes come from assuming an axis direction, or trusting a single view of a 3D chart.
+
 - **Assuming which axis is up.** Readers of a z-up chart who expect y-up (or the other way round) misread every value. Title every axis, and say which is vertical.
 - **Occlusion.** Points and surfaces in front hide those behind them. Use smaller or partly transparent markers, let users rotate, or show the data as 2D views as well.
 - **Too much rotation, or a bad default angle.** Spinning charts and steep angles make the box hard to read. Start from a view slightly above and to one side, with all three axes' labels readable, and give a reset (in the live chart, double-click).
@@ -212,11 +217,11 @@ The same three axes hold different kinds of 3D chart:
 
 ## How to create an XYZ graph in JavaScript, React or Angular
 
-SciChart.js draws 3D charts with WebGL and WebAssembly, so a 3D scatter or surface stays smooth while you rotate and zoom it, even with large point clouds. In SciChart.js 3D, y is the up axis and x and z make the floor. Try the chart below: drag to rotate, scroll to zoom, double-click to reset, and hover a point to read its x, y and z. Use the buttons to look straight along each axis, and to switch between perspective and orthographic.
+The demo below plots 250 points that form a tilted sheet: a blob seen from the front, a thin line seen from the side. In SciChart.js 3D, y is the up axis and x and z make the floor. Try the chart below: drag to rotate, scroll to zoom, double-click to reset, and hover a point to read its x, y and z. Use the buttons to look straight along each axis, and to switch between perspective and orthographic.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="XYZ graph" demo="3d-bubble-chart" docs="/3d-charts/axis-3d-api/axis-3d-api-overview/" />
+<LearnCta position="top" chart="XYZ graph" demo="3d-bubble-chart" demoLabel="3D bubble chart" docs="/3d-charts/axis-3d-api/axis-3d-api-overview/" docsLabel="SciChart.js 3D axis documentation" />
 
 Here is the code for this chart:
 
@@ -389,7 +394,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript 3D bubble chart](https://www.scichart.com/demo/javascript/3d-bubble-chart) · [React 3D bubble chart](https://www.scichart.com/demo/react/3d-bubble-chart) · [Angular 3D bubble chart](https://www.scichart.com/demo/angular/3d-bubble-chart). With logarithmic 3D axes: [JavaScript 3D log-log scatter chart](https://www.scichart.com/demo/javascript/3d-log-log-scatter-chart) · [React 3D log-log scatter chart](https://www.scichart.com/demo/react/3d-log-log-scatter-chart) · [Angular 3D log-log scatter chart](https://www.scichart.com/demo/angular/3d-log-log-scatter-chart). A large point cloud: [JavaScript LiDAR 3D point cloud](https://www.scichart.com/demo/javascript/3d-lidar-visualization) · [React LiDAR 3D point cloud](https://www.scichart.com/demo/react/3d-lidar-visualization) · [Angular LiDAR 3D point cloud](https://www.scichart.com/demo/angular/3d-lidar-visualization).
 
-**Go deeper:** [SciChart.js XYZ graph documentation](/3d-charts/axis-3d-api/axis-3d-api-overview/) for 3D axes, [coordinates in 3D space](/3d-charts/scichart-3d-basics/coordinates-in-3d-space/) for the left-handed, y-up system and world vs data coordinates, the [3D camera](/3d-charts/scichart-3d-basics/scichart-surface-camera/) for perspective and orthographic views, and the [3D scatter chart](/3d-charts/chart-types/scatter-3d-chart/) for point markers.
+**Go deeper:** [SciChart.js 3D axis documentation](/3d-charts/axis-3d-api/axis-3d-api-overview/), [coordinates in 3D space](/3d-charts/scichart-3d-basics/coordinates-in-3d-space/) for the left-handed, y-up system and world vs data coordinates, the [3D camera](/3d-charts/scichart-3d-basics/scichart-surface-camera/) for perspective and orthographic views, and the [3D scatter chart](/3d-charts/chart-types/scatter-3d-chart/) for point markers.
 
 ## Frequently asked questions
 
@@ -415,7 +420,7 @@ They are mirror images. With x pointing right and y pointing up, a right-handed 
 
 ### How do I make an XYZ graph in JavaScript?
 
-With SciChart.js, create a `SciChart3DSurface`, set its `xAxis`, `yAxis` and `zAxis` to `NumericAxis3D`, and add a `ScatterRenderableSeries3D` with an `XyzDataSeries3D` holding your x, y and z values. Add `OrbitModifier3D` and `MouseWheelZoomModifier3D` so users can rotate and zoom, and use the camera's `projectionMode` to switch between perspective and orthographic views. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChart3DSurface`, set its `xAxis`, `yAxis` and `zAxis` to `NumericAxis3D`, and add a `ScatterRenderableSeries3D` with an `XyzDataSeries3D` holding your x, y and z values. Add `OrbitModifier3D` and `MouseWheelZoomModifier3D` so users can rotate and zoom, and use the camera's `projectionMode` to switch between perspective and orthographic views. In React or Angular, run the same setup with `scichart-react` or `scichart-angular`.
 
 ## Sources
 
@@ -426,4 +431,4 @@ With SciChart.js, create a `SciChart3DSurface`, set its `xAxis`, `yAxis` and `zA
 - Esri, [x,y,z coordinates](https://support.esri.com/en-us/gis-dictionary/x-y-z-coordinates), *GIS Dictionary*. In GIS, x is usually east–west, y north–south and z height or elevation.
 - Matplotlib, [Axes3D.view_init](https://matplotlib.org/stable/api/_as_gen/mpl_toolkits.mplot3d.axes3d.Axes3D.view_init.html). The axis drawn vertically in a 3D plot is z by default.
 
-<LearnCta position="bottom" chart="XYZ graph" demo="3d-bubble-chart" docs="/3d-charts/axis-3d-api/axis-3d-api-overview/" />
+<LearnCta position="bottom" chart="XYZ graph" demo="3d-bubble-chart" demoLabel="3D bubble chart" docs="/3d-charts/axis-3d-api/axis-3d-api-overview/" docsLabel="SciChart.js 3D axis documentation" />

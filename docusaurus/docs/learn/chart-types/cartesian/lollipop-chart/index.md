@@ -1,7 +1,7 @@
 ---
-sidebar_position: 150
+sidebar_position: 170
 sidebar_label: Lollipop Chart
-title: "Lollipop Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Lollipop Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a lollipop chart is, how to read it, how it compares with a bar chart, when to use one and the mistakes to avoid, plus stem plots. With a live, interactive example."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/lollipop-chart-og.png
 related: [bar-chart, dumbbell-chart, bullet-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [bar-chart, dumbbell-chart, bullet-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a lollipop chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastImpulseRenderableSeries with an XyDataSeries holding one x value per category and one y value per lollipop. The series draws the stems and the dots; set fill for their colour, size for the dot size and pointMarker for the dot shape. A TextLabelProvider shows the category names, and putting the X axis on the left makes the lollipops horizontal. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastImpulseRenderableSeries with an XyDataSeries holding one x value per category and one y value per lollipop. The series draws the stems and the dots; set fill for their colour, size for the dot size and pointMarker for the dot shape. A TextLabelProvider shows the category names, and putting the X axis on the left makes the lollipops horizontal. For React, wrap the same setup in SciChartReact from scichart-react; for Angular, use scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +80,8 @@ A **lollipop chart** (also called a lollipop graph or lollipop plot) is a bar ch
 
 ## How to read a lollipop chart
 
+Read each lollipop's value at the centre of its dot, and compare categories by the length of their stems from zero.
+
 ![The parts of a lollipop chart: six upright lollipops for orders by region, sorted from North (42) to Islands (15), with callouts labelling the dot, the stem, the zero baseline and the sorted categories](./lollipop-chart-anatomy.svg)
 
 1. Check what each lollipop stands for. The category axis names them: regions, products, people. Read the value axis title for what is measured and in what unit.
@@ -93,7 +96,7 @@ Use this template when you report a lollipop chart:
 
 > [Top category] has the highest [measure] at [value], and [bottom category] the lowest at [value]. [Pattern: most values are close together / there's a clear gap after the top few / a few categories stand out].
 
-For example, describing the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two fall clearly below the rest."
+For example, describing the chart at the top of the page: "Search was the feature most often rated useful, by 78% of respondents, and custom themes the least, at 41%. The top three features are within 6 points of each other, while the bottom two drop a little faster than the rest."
 
 ## Lollipop chart vs bar chart
 
@@ -115,6 +118,8 @@ In the bar chart above, ten scores between 74 and 88 make a near-solid block of 
 As a rule of thumb, with a handful of categories, a [bar chart](/learn/chart-types/cartesian/bar-chart/) is the safe choice. With a dozen or more similar values, a lollipop chart is usually easier on the eye. The data and the axis rules are the same, so switching between them costs nothing.
 
 ## Types of lollipop chart
+
+Lollipop charts vary in which way the stems point, how many dots each category has, and whether the stems are kept at all.
 
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
@@ -164,6 +169,8 @@ Use a lollipop chart when you have one value for each of many categories and wan
 
 ## Common lollipop chart mistakes
 
+The usual mistakes break the link between stem length and value, or add colour and clutter that the data doesn't call for.
+
 - **Not starting the value axis at zero.** The stems then no longer match the values, and small differences look large. If you need a narrow range, drop the stems and use a dot plot.
 - **Dots too big.** A large dot hides where the value is, and dots on neighbouring lollipops can overlap. Keep the dots just big enough to stand out from the stems.
 - **Not sorting.** An unsorted lollipop chart hides the ranking. Sort by value, unless the categories have a natural order such as months or age groups.
@@ -172,11 +179,11 @@ Use a lollipop chart when you have one value for each of many categories and wan
 
 ## How to create a lollipop chart in JavaScript, React or Angular
 
-SciChart.js draws lollipop charts natively with its impulse series, which draws each stem and dot from one value. Because it renders with WebGL and WebGPU, the same series also draws stem plots of long signals smoothly as you zoom and pan. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a lollipop to see its value.
+SciChart.js draws lollipop charts natively with its impulse series, which draws each stem and dot from one value. The chart below sorts the 12 survey results from highest to lowest and turns the impulse series on its side by putting the category axis on the left. Hover over a lollipop to read its share; zoom with the mouse wheel, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="lollipop chart" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" />
+<LearnCta position="top" chart="lollipop chart" demo="impulse-chart" demoLabel="impulse chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse series documentation" />
 
 Here is the code for this chart:
 
@@ -321,9 +328,9 @@ Key points:
 - The X axis on the left (`axisAlignment: EAxisAlignment.Left`) turns the chart on its side, for horizontal lollipops. A [TextLabelProvider](https://www.scichart.com/documentation/js/current/typedoc/classes/textlabelprovider.html) shows a category name at each x value (0, 1, 2, …). Sort the data before you chart it.
 - For a stem plot of a signal, keep the default axes (X along the bottom) and pass the sample numbers as x values. To highlight one lollipop, use the [PaletteProvider for impulse series](/2d-charts/chart-types/palette-provider-api/fast-impulse-renderable-series/).
 
-**See it in the demo app:** [JavaScript lollipop chart](https://www.scichart.com/demo/javascript/impulse-chart) · [React lollipop chart](https://www.scichart.com/demo/react/impulse-chart) · [Angular lollipop chart](https://www.scichart.com/demo/angular/impulse-chart)
+**See it in the demo app:** [JavaScript impulse chart](https://www.scichart.com/demo/javascript/impulse-chart) · [React impulse chart](https://www.scichart.com/demo/react/impulse-chart) · [Angular impulse chart](https://www.scichart.com/demo/angular/impulse-chart)
 
-**Go deeper:** [SciChart.js lollipop chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), including point markers, gaps and colouring individual lollipops.
+**Go deeper:** [SciChart.js impulse series documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), the series a lollipop chart is drawn with, including point markers, gaps and colouring individual lollipops.
 
 ## Frequently asked questions
 
@@ -349,7 +356,7 @@ In engineering and signal processing, a stem plot is a lollipop chart of a seque
 
 ### How do I make a lollipop chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastImpulseRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per lollipop. The series draws the stems and the dots; set `fill` for their colour, `size` for the dot size and `pointMarker` for the dot shape. A `TextLabelProvider` shows the category names, and putting the X axis on the left makes the lollipops horizontal. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastImpulseRenderableSeries` with an `XyDataSeries` holding one x value per category and one y value per lollipop. The series draws the stems and the dots; set `fill` for their colour, `size` for the dot size and `pointMarker` for the dot shape. A `TextLabelProvider` shows the category names, and putting the X axis on the left makes the lollipops horizontal. For React, wrap the same setup in `SciChartReact` from `scichart-react`; for Angular, use `scichart-angular`.
 
 ## Sources
 
@@ -358,4 +365,4 @@ With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, the
 - MathWorks, [stem: plot discrete sequence data](https://www.mathworks.com/help/matlab/ref/stem.html). MATLAB's stem plot for discrete sequences.
 - NIST/SEMATECH e-Handbook of Statistical Methods, [Stem and leaf plot](https://www.itl.nist.gov/div898/handbook/eda/section3/stemplot.htm). The other meaning of "stem plot" in statistics.
 
-<LearnCta position="bottom" chart="lollipop chart" demo="impulse-chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" />
+<LearnCta position="bottom" chart="lollipop chart" demo="impulse-chart" demoLabel="impulse chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse series documentation" />

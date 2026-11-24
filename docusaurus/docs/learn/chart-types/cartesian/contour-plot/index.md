@@ -1,7 +1,7 @@
 ---
 sidebar_position: 80
 sidebar_label: Contour Plot
-title: "Contour Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Contour Plot: What It Is & How to Read It (Interactive Example)"
 description: "What a contour plot is, how to read its lines of equal value, peaks, saddles and spacing, how it compares with a heatmap and a 3D surface, and the mistakes to avoid. With a live example."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/contour-plot-og.png
 related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
                 {
                     "@type": "Question",
                     "name": "How do I make a contour plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put your values in a UniformHeatmapDataSeries as a 2D array, then add a UniformContoursRenderableSeries that uses it, setting zMin, zMax and zStep for the levels and dataLabels to label the lines. For colour, add a UniformHeatmapRenderableSeries with the same data series behind the lines. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, put your values in a UniformHeatmapDataSeries as a 2D array, then add a UniformContoursRenderableSeries that uses it, setting zMin, zMax and zStep for the levels and dataLabels to label the lines. For colour, add a UniformHeatmapRenderableSeries with the same data series behind the lines. To use it in React or Angular, call the same code from scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +80,8 @@ A **contour plot** (also called a contour chart, contour graph or contour map) i
 
 ## How to read a contour plot
 
+Read a contour plot like a map: each line joins points with the same value, and lines close together mark a steep change.
+
 ![Anatomy of a contour plot: a surface with two peaks drawn as labelled lines every 10 units over shaded bands, with numbered markers for a contour line, a line label, the highest peak, a lower peak, the saddle between them, lines close together and lines far apart](./contour-plot-anatomy.svg)
 
 1. Check the three things being shown. The x and y axes are two inputs or positions; the lines show a third value, often called z. In the plate chart above, x and y are distances across the plate in centimetres and the lines are temperatures.
@@ -93,7 +96,7 @@ Picture the data as a landscape, with the value as height. Slice it with flat, h
 
 ![How contour lines are made: above, a side view of a surface with two humps, cut by dashed horizontal lines at 20, 40 and 60; below, the same surface from above, where each cut is a ring of the same colour, and dotted guides link the points where the side view crosses each level to where the matching ring crosses the middle of the top view](./contour-lines-from-slices.svg)
 
-In practice, software doesn't slice a smooth surface. It starts from a **grid**: one value at every crossing point of evenly spaced x and y positions. For each small square of the grid, it checks which corners are above the level and which are below, and draws a short segment across the square where the value must cross the level, estimating the exact crossing point by straight-line interpolation along each edge. Joined up, the segments form the contour lines. This method is called **marching squares**, the two-dimensional version of the marching cubes algorithm used in 3D graphics.
+In practice, software doesn't slice a smooth surface. It starts from a **grid**: one value at every crossing point of evenly spaced x and y positions. For each small square of the grid, it checks which corners are above the level and which are below, and draws a short segment across the square where the value must cross the level, estimating the exact crossing point by straight-line interpolation along each edge. Joined up, the segments form the contour lines. The most common method is called **marching squares**, the two-dimensional version of the marching cubes algorithm used in 3D graphics.
 
 Two things follow:
 
@@ -123,9 +126,11 @@ When you write about a contour plot in a report or a lab notebook, cover the sam
 
 Worked example, using the plate chart above:
 
-"The plate is hottest above the left-hand heater, at about 81 °C, 11 cm across and 19 cm up. The second heater makes a lower peak of about 64 °C at 27 cm across and 11 cm up, and the two are joined by a saddle at about 43 °C between them. The coolest point is the water-cooled right-hand edge, at about 10 °C, where the temperature drops by about 19 °C over the last 4 cm. The left-hand side of the plate stays close to room temperature, about 24 °C, with widely spaced lines."
+"The plate is hottest above the left-hand heater, at about 81 °C, 11 cm across and 19 cm up. The second heater makes a lower peak of about 64 °C at 27 cm across and 11 cm up, and the two are joined by a saddle at about 43 °C between them. The coolest point is the water-cooled right-hand edge, at about 10 °C, where the temperature drops by about 12 °C to 21 °C over the last 4 cm, depending on the height. The left-hand side of the plate stays close to room temperature, about 24 °C, with widely spaced lines."
 
 ## Types of contour plot
+
+Contour plots differ in whether they draw lines only, fill the bands between them, or sit on a coloured heatmap or a map.
 
 | Type | What it looks like | Good for |
 | --- | --- | --- |
@@ -153,6 +158,8 @@ Contour plots and heatmaps are often combined. The heatmap gives a quick picture
 
 ## Common contour plot mistakes
 
+Most contour plot mistakes come from badly chosen levels, missing labels or lines drawn where there is no data.
+
 - **Leaving out the line labels or colour scale.** Without them, a hill and a hollow look the same.
 - **Uneven intervals.** If the levels are 10, 20, 50 and 100, the spacing of the lines no longer shows the slope. Keep the step constant, or say clearly that it isn't.
 - **Too many lines.** A level every 1 °C on a plate that spans 70 °C draws 70 lines that merge into a solid smudge. Pick a step that gives roughly 5 to 15 lines, and make every fifth or every second line bolder.
@@ -163,7 +170,7 @@ Contour plots and heatmaps are often combined. The heatmap gives a quick picture
 
 ## How to create a contour plot in JavaScript, React or Angular
 
-SciChart.js draws contour plots with WebGL and WebGPU, so large grids stay smooth to zoom and pan and can be updated in real time. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover anywhere to read the temperature at that point.
+The demo below maps made-up temperatures across a 40 cm by 30 cm metal plate, one value every 2 mm (about 30,000 grid points), and draws them as a heatmap with a labelled contour line every 10 °C and a fainter one every 5 °C; a single data series feeds both. Hover anywhere to read the temperature at that point, scroll to zoom in on a heater, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -334,12 +341,12 @@ Put your values on a regular grid first, interpolating if the measurements are s
 
 ### How do I make a contour plot in JavaScript?
 
-With SciChart.js, put your values in a `UniformHeatmapDataSeries` as a 2D array, then add a `UniformContoursRenderableSeries` that uses it, setting `zMin`, `zMax` and `zStep` for the levels and `dataLabels` to label the lines. For colour, add a `UniformHeatmapRenderableSeries` with the same data series behind the lines. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, put your values in a `UniformHeatmapDataSeries` as a 2D array, then add a `UniformContoursRenderableSeries` that uses it, setting `zMin`, `zMax` and `zStep` for the levels and `dataLabels` to label the lines. For colour, add a `UniformHeatmapRenderableSeries` with the same data series behind the lines. To use it in React or Angular, call the same code from `scichart-react` or `scichart-angular`.
 
 ## Sources
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods, section 1.3.3.10: Contour Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/contour.htm). What a contour plot shows, and why the data must be on a regular grid or interpolated onto one.
-- Lorensen, W. E. and Cline, H. E. (1987), [Marching cubes: A high resolution 3D surface construction algorithm](https://doi.org/10.1145/37402.37422). *ACM SIGGRAPH Computer Graphics*, 21(4). The algorithm whose two-dimensional form, marching squares, traces contour lines on a grid.
+- Lorensen, W. E. and Cline, H. E. (1987), [Marching cubes: A high resolution 3D surface construction algorithm](https://doi.org/10.1145/37402.37422). *ACM SIGGRAPH Computer Graphics*, 21(4). The algorithm whose two-dimensional form, marching squares, is a common way to trace contour lines on a grid.
 - Borland, D. and Taylor, R. M. (2007), [Rainbow Color Map (Still) Considered Harmful](https://doi.org/10.1109/MCG.2007.323435). *IEEE Computer Graphics and Applications*, 27(2). Why rainbow colour scales mislead.
 
 <LearnCta position="bottom" chart="contour plot" demo="heatmap-chart-with-contours" docs="/2d-charts/chart-types/uniform-contours-renderable-series/" />

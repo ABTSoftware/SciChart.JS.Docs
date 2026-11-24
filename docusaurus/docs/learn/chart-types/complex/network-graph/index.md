@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Network Graph
-title: "Network Graph: What It Is & How to Read It (With Interactive Examples)"
+title: "Network Graph: What It Is & How to Read It (Interactive Example)"
 description: "What a network graph is, how to read its nodes and edges, how to spot hubs, clusters and bridges, how a force-directed graph is laid out, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/network-graph-og.png
 related: [sankey-diagram, treemap, parallel-coordinates-plot]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [sankey-diagram, treemap, parallel-coordinates-plot]
                 {
                     "@type": "Question",
                     "name": "How do I make a network graph in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a list of nodes and a list of edges, where each edge names the two nodes it joins. Run a layout, such as a force-directed simulation, to give each node an x and y position. Then draw the edges as line segments and the nodes as circles. With SciChart.js you draw all the edges in one FastLineSegmentRenderableSeries and the nodes as bubble or scatter series, and add a custom modifier for hover and drag. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as a list of nodes and a list of edges, where each edge names the two nodes it joins. Run a layout, such as a force-directed simulation, to give each node an x and y position. Then draw the edges as line segments and the nodes as circles. With SciChart.js you draw all the edges in one FastLineSegmentRenderableSeries and the nodes as bubble or scatter series, and add a custom modifier for hover and drag. React projects can run this code through scichart-react, and Angular projects through scichart-angular." }
                 }
             ]
         })}
@@ -79,13 +80,15 @@ A **network graph** (also called a network diagram, network chart, node-link dia
 
 ## How to read a network graph
 
+Read a network graph by its links, not its positions: find what the nodes and edges stand for, then look for clusters, hubs and bridges.
+
 ![The parts of a network graph: a blue cluster on the left and an orange cluster on the right, joined by one bridge node. Callouts mark a node, an edge, a large hub with many connections, the bridge, a thick weighted edge, an isolated node with no connections, and the two clusters](./network-graph-anatomy.svg)
 
 1. Find out what the nodes and edges are. A node might be a person, an airport, a web page or a gene. An edge might mean "emailed", "flies to", "links to" or "interacts with".
 2. Check what colour, size and line thickness mean. Colour usually shows a group, such as a team or a type of item. Node size often shows the number of connections. A thicker edge usually means a stronger or more frequent link (a **weighted edge**). An arrow on an edge means the link has a direction (a **directed graph**), such as "follows" or "cites".
 3. Look for clusters. A **cluster** (or **community**) is a group of nodes with many links among themselves and few to the rest. On most layouts they show up as tight knots of dots.
 4. Find the hubs. A **hub** is a node with many more connections than most. The number of connections a node has is its **degree**.
-5. Find the bridges. A **bridge** is a node or edge that joins two clusters. Remove it and the groups lose touch, so bridges often matter more than their number of connections suggests.
+5. Find the bridges. A **bridge** is a node or edge that joins two clusters (a node in this position is also called a **broker**). Remove it and the groups lose their main connection, so bridges often matter more than their number of connections suggests.
 6. Check the edges of the chart. Nodes with one link sit on the outside, and an **isolate**, a node with no links at all, floats on its own.
 7. Don't read the x and y positions as values. In a force-directed layout there are no axes. Linked nodes are drawn close together, but a node on the left is not "less" than one on the right.
 
@@ -99,7 +102,7 @@ The same few shapes turn up again and again, whatever the network is about:
 | --- | --- | --- |
 | Hub and spoke | One large node with lines to many small ones | Everything goes through one person, server or airport: efficient, but a single point of failure |
 | Clusters | Tight knots of nodes with only a few lines between them | Teams, friend groups, topics or modules that mostly keep to themselves |
-| Bridge | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose touch |
+| Bridge | One node or edge that is the main route between two clusters | A broker or go-between. If it goes, the groups lose their main connection |
 | Chain | Nodes in a line, each linked only to the next | Long paths: information or traffic takes many steps, and one broken link splits the network |
 | Core and periphery | A dense centre with loosely attached nodes around it | An inner group that does most of the work, with occasional contributors on the outside |
 | Isolate | A node with no lines | Someone or something not yet connected: a new starter, an unused page, an error in the data |
@@ -194,6 +197,8 @@ In IT, a network diagram often means a plan of a computer network, with routers,
 
 ## Common network graph mistakes
 
+Most network graph mistakes either draw too much to read or leave out what the reader needs to decode it.
+
 - **The hairball.** Draw every node and edge of a large network and you get a dense tangle that shows nothing. Filter to the nodes that matter, group clusters into single nodes, or show one node's neighbourhood at a time.
 - **Colour or size with no key.** Readers can't guess that colour means team and size means connections. Add a legend, and use colour only for something that matters.
 - **Too many labels.** Labelling every node buries the chart in text. Label the hubs and bridges, and show the rest in a tooltip on hover.
@@ -202,11 +207,11 @@ In IT, a network diagram often means a plan of a computer network, with routers,
 
 ## How to create a network graph in JavaScript, React or Angular
 
-SciChart.js has no separate network series, but a network graph is lines and circles: all the edges go in one line segment series and the nodes in bubble series, both drawn with WebGL or WebGPU. A short helper works out the layout. Try the graph below: hover over a person to highlight their links and neighbours, drag a person to move them (the network follows), scroll to zoom, drag the background to pan and double-click to reset.
+The demo below lays out the 60-person company from the worked example with 300 rounds of a force-directed layout, then runs more rounds as you drag people around. SciChart.js has no separate network series, but a network graph is lines and circles: all the edges go in one line segment series, the nodes in bubble series, and a short helper works out the layout. Try it: hover over a person to highlight their links and neighbours, drag a person to move them (the network follows), scroll to zoom, drag the background to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="network graph" demo="force-directed-graph" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" />
+<LearnCta position="top" chart="network graph" demo="force-directed-graph" demoLabel="force-directed graph" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />
 
 Here is the code for this graph. The data is plain JSON: a list of nodes, each with a group, and a list of links that name the two nodes they join:
 
@@ -326,10 +331,10 @@ Here is the code for this graph. The data is plain JSON: a list of nodes, each w
 
 Key points:
 
-- `createForceLayout` is plain JavaScript with no SciChart code, so you can reuse it anywhere. It runs 300 rounds of a Fruchterman–Reingold layout before the first draw, from a seeded start, so the graph looks the same every time. Its `step()` function runs one more round, which the drag uses to let the network follow the node you move. Each round compares every pair of nodes, so keep to a few hundred nodes or use a faster layout for more.
+- `createForceLayout` has no SciChart.js dependency, so the same layout can feed any renderer. It runs 300 rounds of a Fruchterman–Reingold layout before the first draw, from a seeded start, so the graph looks the same every time. Its `step()` function runs one more round, which the drag uses to let the network follow the node you move. Each round compares every pair of nodes, so keep to a few hundred nodes or use a faster layout for more.
 - All the edges are one [FastLineSegmentRenderableSeries](/2d-charts/chart-types/fast-line-segment-renderable-series/) with an `XyxyDataSeries`, which holds a start point and an end point for each segment. A second line segment series draws the hovered node's edges on top.
 - Each group's nodes are a [FastBubbleRenderableSeries](/2d-charts/chart-types/fast-bubble-renderable-series/), with the bubble size in pixels set from the node's number of connections. One series per group gives the legend one entry per colour. A [palette provider](/2d-charts/chart-types/palette-provider-api/fast-bubble-renderable-series/) fades every node that isn't the hovered node or one of its neighbours.
-- `NetworkModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to find the nearest node on each mouse move, show the tooltip and handle dragging. Setting `args.handled = true` on a node stops `ZoomPanModifier` panning the chart at the same time. The axes are hidden, but they still set the drawing area, so zoom and pan work as on any chart.
+- `NetworkModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to find the nearest node on each mouse move, show the tooltip and handle dragging. Setting `args.handled = true` on a node stops `ZoomPanModifier` panning the chart at the same time. Hidden axes still map the layout's coordinates to the screen, which is what lets zoom and pan work.
 
 **See it in the demo app:** [JavaScript force-directed graph](https://www.scichart.com/demo/javascript/force-directed-graph) · [React force-directed graph](https://www.scichart.com/demo/react/force-directed-graph) · [Angular force-directed graph](https://www.scichart.com/demo/angular/force-directed-graph), a network of US airports and flight routes.
 
@@ -355,12 +360,13 @@ No. A network graph is a chart that draws nodes and the links between them. A gr
 
 ### How do I make a network graph in JavaScript?
 
-Store the data as a list of nodes and a list of edges, where each edge names the two nodes it joins. Run a layout, such as a force-directed simulation, to give each node an x and y position. Then draw the edges as line segments and the nodes as circles. With SciChart.js you draw all the edges in one `FastLineSegmentRenderableSeries` and the nodes as bubble or scatter series, and add a custom modifier for hover and drag. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Store the data as a list of nodes and a list of edges, where each edge names the two nodes it joins. Run a layout, such as a force-directed simulation, to give each node an x and y position. Then draw the edges as line segments and the nodes as circles. With SciChart.js you draw all the edges in one `FastLineSegmentRenderableSeries` and the nodes as bubble or scatter series, and add a custom modifier for hover and drag. React projects can run this code through `scichart-react`, and Angular projects through `scichart-angular`.
 
 ## Sources
 
 - Fruchterman, T. M. J. and Reingold, E. M. (1991), [Graph drawing by force-directed placement](https://doi.org/10.1002/spe.4380211102). *Software: Practice and Experience*, 21(11), 1129–1164. The force-directed layout method used in the live example: nodes repel, edges attract, and the movement cools step by step.
-- Freeman, L. C. (1978), [Centrality in social networks: conceptual clarification](https://doi.org/10.1016/0378-8733(78)90021-7). *Social Networks*, 1(3), 215–239. Defines degree, betweenness and closeness centrality.
+- Freeman, L. C. (1978), [Centrality in social networks: conceptual clarification](https://doi.org/10.1016/0378-8733(78)90021-7). *Social Networks*, 1(3), 215–239. Sets out the standard definitions of degree, betweenness and closeness centrality, building on earlier work by Bavelas and Sabidussi on closeness.
+- Freeman, L. C. (1977), [A set of measures of centrality based on betweenness](https://doi.org/10.2307/3033543). *Sociometry*, 40(1), 35–41. The paper that introduced betweenness centrality.
 - Girvan, M. and Newman, M. E. J. (2002), [Community structure in social and biological networks](https://doi.org/10.1073/pnas.122653799). *Proceedings of the National Academy of Sciences*, 99(12), 7821–7826. Clusters (communities) in networks, and finding them through the edges that bridge them.
 
-<LearnCta position="bottom" chart="network graph" demo="force-directed-graph" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" />
+<LearnCta position="bottom" chart="network graph" demo="force-directed-graph" demoLabel="force-directed graph" docs="/2d-charts/chart-types/fast-line-segment-renderable-series/" docsLabel="SciChart.js line segment series documentation" />

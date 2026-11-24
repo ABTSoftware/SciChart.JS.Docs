@@ -1,7 +1,7 @@
 ---
-sidebar_position: 130
+sidebar_position: 150
 sidebar_label: Histogram
-title: "Histogram: What It Is & How to Read It (With Interactive Examples)"
+title: "Histogram: What It Is & How to Read It (Interactive Example)"
 description: "What a histogram is, how to read and describe one, how to make one step by step, how to choose bins, and how it differs from a bar chart. With a live, interactive example."
 keywords:
     [
@@ -21,6 +21,7 @@ keywords:
     ]
 image: /img/learn/histogram-og.png
 related: [density-plot, box-plot, bar-chart, violin-plot]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -57,7 +58,7 @@ related: [density-plot, box-plot, bar-chart, violin-plot]
                 {
                     "@type": "Question",
                     "name": "How do I make a histogram in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, count your values into bins, then add a FastRectangleRenderableSeries with an XyxyDataSeries holding each bin's start, end and count. Set columnXMode to EColumnMode.StartEnd so each bar fills exactly its bin. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, count your values into bins, then add a FastRectangleRenderableSeries with an XyxyDataSeries holding each bin's start, end and count. Set columnXMode to EColumnMode.StartEnd so each bar fills exactly its bin. The binning function and the series work the same way in React with scichart-react and in Angular with scichart-angular." }
                 }
             ]
         })}
@@ -83,6 +84,8 @@ A **histogram** (also called a frequency histogram) is a chart that shows how th
 :::
 
 ## How to read a histogram
+
+Read a histogram by its shape: each bar counts the values in one range, so tall bars show where values cluster and the outline shows whether the data is symmetric, skewed or has more than one peak.
 
 ![Anatomy of a histogram: equal-width bins on the horizontal axis, frequency on the vertical axis and touching bars, with four common shapes below: normal, right-skewed, left-skewed and bimodal](./histogram-anatomy.svg)
 
@@ -178,7 +181,7 @@ Use a histogram when you have many values of one numeric variable and want to se
 
 ## Bar graph vs histogram: what's the difference? {#histogram-vs-bar-graph}
 
-A histogram and a bar graph (bar chart) look alike, but they answer different questions. The difference between a histogram and a bar graph is the kind of data on the horizontal axis: a histogram counts numbers into ranges, while a bar graph compares separate categories.
+A histogram counts the values of one number into ranges, while a bar graph (bar chart) compares separate categories; they look alike, but answer different questions.
 
 The picture below draws the same 20 deliveries both ways (example data). The histogram uses the delivery times from the [step-by-step example](#how-to-make-a-histogram-step-by-step) above; the bar graph counts the same deliveries by the area they went to.
 
@@ -203,18 +206,18 @@ To tell them apart quickly, ask whether you could rename or shuffle the bars wit
 
 ## Common histogram mistakes
 
-Check a histogram against this list before you publish it:
+Most histogram mistakes come from the bins: their width, their edges, and whether histograms being compared share them.
 
-- **The bins are equal width,** or the chart is a density histogram. With unequal bins and plain counts, the wide bins look bigger than they are.
-- **The bin edges are clear.** Say whether a value on an edge (exactly 20 minutes) goes in the lower or the upper bin, and apply it every time.
-- **More than one bin width was tried.** One width can hide a second peak or invent one; check that the shape holds up.
-- **The frequency axis starts at zero.** Bar heights carry the counts, as in a bar chart.
-- **Histograms being compared use the same bins and scale.** Otherwise differences in shape may come from the bins, not the data. For many groups, consider [box plots](/learn/chart-types/cartesian/box-plot/).
-- **There's enough data.** With a few dozen values, the shape changes a lot with the bin width. Say how many values the chart shows.
+- **Unequal bins with plain counts.** The wide bins look bigger than they are. Use equal widths, or a density histogram.
+- **Unclear bin edges.** Say whether a value on an edge (exactly 20 minutes) goes in the lower or the upper bin, and apply it every time.
+- **Trying only one bin width.** One width can hide a second peak or invent one; check that the shape holds up with others.
+- **A frequency axis that doesn't start at zero.** Bar heights carry the counts, as in a bar chart.
+- **Comparing histograms with different bins or scales.** Differences in shape may then come from the bins, not the data. Use the same bins and scale. For many groups, consider [box plots](/learn/chart-types/cartesian/box-plot/).
+- **Too little data.** With a few dozen values, the shape changes a lot with the bin width. Say how many values the chart shows.
 
 ## How to create a histogram in JavaScript, React or Angular
 
-SciChart.js draws histograms with WebGL and WebGPU, so they stay smooth with large datasets and live updates. It has no separate histogram series: you count your values into bins, then draw each bin as a rectangle from its start to its end. Try the chart below, which shows the 1,000 heights in 5 cm bins: scroll to zoom, drag to pan, double-click to reset, and hover over a bar to see its values.
+SciChart.js has no separate histogram series: you count your values into bins, then draw each bin as a rectangle from its start to its end. The demo below counts the 1,000 simulated heights into 5 cm bins from 130 cm to 210 cm and prints each bin's count above its bar. Hover over a bar to see its values; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -333,7 +336,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript histogram chart](https://www.scichart.com/demo/javascript/histogram-chart) · [React histogram chart](https://www.scichart.com/demo/react/histogram-chart) · [Angular histogram chart](https://www.scichart.com/demo/angular/histogram-chart)
 
-**Go deeper:** [SciChart.js histogram documentation](/2d-charts/chart-types/histogram-chart/), including binning raw data, axis formatting, data labels and texture fills.
+**Go deeper:** [SciChart.js histogram documentation](/2d-charts/chart-types/histogram-chart/), including binning raw data, axis formatting, data labels and texture fills. For a histogram of the gaps between zeta zeros against a random-matrix curve, see [the Riemann Hypothesis](/learn/applications/riemann-hypothesis/).
 
 ## Frequently asked questions
 
@@ -359,7 +362,7 @@ The statistician Karl Pearson gave the histogram its name. He introduced the wor
 
 ### How do I make a histogram in JavaScript?
 
-With SciChart.js, count your values into bins, then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries` holding each bin's start, end and count. Set `columnXMode` to `EColumnMode.StartEnd` so each bar fills exactly its bin. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, count your values into bins, then add a `FastRectangleRenderableSeries` with an `XyxyDataSeries` holding each bin's start, end and count. Set `columnXMode` to `EColumnMode.StartEnd` so each bar fills exactly its bin. The binning function and the series work the same way in React with `scichart-react` and in Angular with `scichart-angular`.
 
 ## Sources
 

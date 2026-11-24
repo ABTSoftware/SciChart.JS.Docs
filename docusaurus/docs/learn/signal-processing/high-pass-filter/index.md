@@ -1,7 +1,7 @@
 ---
 sidebar_position: 110
 sidebar_label: High-Pass Filter
-title: "High-Pass Filter: What It Does, Cutoff, RC Circuit & Digital Design (With Interactive Examples)"
+title: "High-Pass Filter: Cutoff, RC Circuit and Digital Design"
 description: "What a high-pass filter is and what it does: cutoff frequency, roll-off and order, the RC circuit formula with a worked example, digital IIR and FIR designs, and a live drift-removal demo."
 keywords:
     [
@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/high-pass-filter-og.png
 related: [fourier-transform, low-pass-filter, band-pass-filter, notch-filter]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -177,7 +178,7 @@ $$
 y[n] = \alpha\,\big(y[n-1] + x[n] - x[n-1]\big), \qquad \alpha = \frac{RC}{RC + \Delta t}, \quad RC = \frac{1}{2\pi f_c}
 $$
 
-where $\Delta t$ is the time between samples. It takes two multiplications per sample and almost no memory, so it runs on any microcontroller and in real time. With $\alpha$ close to 1, it's the classic **DC blocker** used in audio code. Its trade-offs are the gentle 20 dB per decade roll-off and the phase shift near the cutoff. Its cutoff is accurate when $f_c$ is well below the sample rate.
+where $\Delta t$ is the time between samples. Written this way, it takes one multiplication per sample and almost no memory, so it runs on any microcontroller and in real time. With $\alpha$ close to 1, it's the classic **DC blocker** used in audio code. Its trade-offs are the gentle 20 dB per decade roll-off and the phase shift near the cutoff. Its cutoff is accurate when $f_c$ is well below the sample rate.
 
 ### Subtracting a low-pass filter from the original
 
@@ -195,7 +196,7 @@ A symmetric FIR kernel has **linear phase**: every frequency is delayed by the s
 
 | Method | Roll-off | Phase | Cost per sample | Good for |
 | --- | --- | --- | --- | --- |
-| First-order IIR (DC blocker) | 20 dB per decade | Shifts near the cutoff | 2 multiplications | Real time, removing DC and slow drift |
+| First-order IIR (DC blocker) | 20 dB per decade | Shifts near the cutoff | 1 multiplication | Real time, removing DC and slow drift |
 | Original minus low-pass | Depends on the low-pass | Zero if the low-pass has no delay | That of the low-pass | Quick drift removal, sensor logs |
 | Windowed-sinc FIR | Sharp, set by the kernel length | Linear (zero when centred) | One multiplication per tap | Precise cutoffs, keeping waveform shape |
 | Higher-order IIR (e.g. Butterworth) | 20 dB per decade per order | Shifts more with each order | A few multiplications per stage | Sharp cutoffs on a small budget |
@@ -217,8 +218,10 @@ A band-pass filter is a high-pass and a low-pass in a row. A band-stop filter is
 
 ## Common high-pass filter mistakes
 
+A high-pass filter goes wrong most often through a cutoff set too high, or through side effects that look like real features.
+
 - **Setting the cutoff too high.** The filter removes part of the signal you need. On an ECG, a cutoff of a few hertz flattens and distorts the slow ST segment and T wave; on a voice, it thins out the sound. Set the cutoff just below the lowest frequency you care about.
-- **Ignoring phase shift.** An IIR high-pass filter shifts frequencies near the cutoff by different amounts, so pulses and slow waves change shape even when their size is kept. ECG standards therefore allow a higher cutoff only for zero-phase (linear-phase) digital filters. Use a centred FIR filter, or run an IIR filter forwards then backwards, when shape matters.
+- **Ignoring phase shift.** An IIR high-pass filter shifts frequencies near the cutoff by different amounts, so pulses and slow waves change shape even when their size is kept. ECG recommendations therefore allow a higher cutoff only for zero-phase (linear-phase) digital filters. Use a centred FIR filter, or run an IIR filter forwards then backwards, when shape matters.
 - **Mistaking ringing and undershoot for real events.** A high-pass filter turns a step into a spike that decays, and a sharp filter adds ripples (ringing) on either side of fast edges. A flat-topped pulse sags, then dips below zero after it ends.
 - **Ignoring start-up and edge transients.** If the signal starts far from zero, an IIR filter's output jumps at the start and takes several time constants to settle, and an FIR filter needs data beyond the ends. Start the filter from the first sample's value, or extend the ends, and discard the settling period.
 - **Using a short FIR kernel for a very low cutoff.** A kernel that is short compared with one period of the cutoff can't separate frequencies that close to zero. Use a longer kernel, an IIR filter, or downsample first.
@@ -227,11 +230,11 @@ A band-pass filter is a high-pass and a low-pass in a row. A band-stop filter is
 
 ## How to apply a high-pass filter in JavaScript, React or Angular
 
-SciChart.js draws signals with WebGL and WebGPU, so you can filter thousands of samples and redraw every time a control moves. In the demo below, the orange line is an ECG-like signal with baseline drift, and the blue line is the high-pass filtered copy; the bottom chart is the filter's frequency response, with the cutoff marked. Move the **cutoff** slider, or switch between the **first-order IIR** and the **windowed-sinc FIR** filter. Try a cutoff above 2 Hz to see the filter start to distort the beats. Scroll to zoom, drag to pan, double-click to reset, and hover for values.
+Each time you move a control, the demo filters 8 seconds of signal at 250 samples per second (2,000 samples) with either a one-line IIR filter or a 1,001-tap FIR kernel, and redraws both charts. In the demo below, the orange line is an ECG-like signal with baseline drift, and the blue line is the high-pass filtered copy; the bottom chart is the filter's frequency response, with the cutoff marked. Move the **cutoff** slider, or switch between the **first-order IIR** and the **windowed-sinc FIR** filter. Try a cutoff above 2 Hz to see the filter start to distort the beats. Hover to compare the two lines at any moment; scroll, drag and double-click to zoom, pan and reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="top" chart="high-pass filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
 
 Here is the code for this chart. The filter design helpers are plain JavaScript, and SciChart.js applies the filter to the chart's data with an `XyCustomFilter`.
 
@@ -366,7 +369,7 @@ Key points:
 - Setting `filterFunction` again reruns the filter over all the data; the demo does this whenever a control moves.
 - The frequency response chart uses a `LogarithmicAxis` for frequency, as a Bode plot does, with a `VerticalLineAnnotation` at the cutoff and a `HorizontalLineAnnotation` at −3 dB.
 
-**See it in the demo app:** [JavaScript filtered data chart](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React filtered data chart](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular filtered data chart](https://www.scichart.com/demo/angular/trend-ma-ratio), with trendline, moving average and ratio filters. For a biosignal example, see the [JavaScript vital signs ECG/EKG medical demo](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example).
+**See it in the demo app:** [JavaScript trendline and moving average filters](https://www.scichart.com/demo/javascript/trend-ma-ratio) · [React trendline and moving average filters](https://www.scichart.com/demo/react/trend-ma-ratio) · [Angular trendline and moving average filters](https://www.scichart.com/demo/angular/trend-ma-ratio), where the moving average is the low-pass you would subtract to remove a trend. For a biosignal example, see the [JavaScript vital signs ECG/EKG medical demo](https://www.scichart.com/demo/javascript/vital-signs-ecg-medical-chart-example).
 
 **Go deeper:** [SciChart.js custom filter documentation](/2d-charts/chart-types/data-filters-api/custom-filter/), and the [Filters API overview](/2d-charts/chart-types/data-filters-api/data-filters-api-overview/), including the built-in [moving average filter](/2d-charts/chart-types/data-filters-api/moving-average-filter/), a simple low-pass you can subtract from the original.
 
@@ -404,4 +407,4 @@ For a quick filter, loop over your samples with the first-order recurrence y[n] 
 - Kligfield, P. et al. (2007), [Recommendations for the Standardization and Interpretation of the Electrocardiogram, Part I](https://doi.org/10.1161/CIRCULATIONAHA.106.180200). *Circulation*, 115(10). The 0.05 Hz and 0.67 Hz low-frequency cutoffs for diagnostic ECGs.
 - MIT OpenCourseWare, [6.003 Signals and Systems](https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/). Frequency response, Bode plots and first-order systems.
 
-<LearnCta position="bottom" chart="filtered data chart" demo="trend-ma-ratio" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />
+<LearnCta position="bottom" chart="high-pass filter" demo="trend-ma-ratio" demoLabel="trendline and moving average filters" docs="/2d-charts/chart-types/data-filters-api/custom-filter/" docsLabel="SciChart.js custom filter documentation" />

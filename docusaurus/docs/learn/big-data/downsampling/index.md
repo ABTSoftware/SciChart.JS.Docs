@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Downsampling
-title: "Downsampling: What It Is, LTTB vs Min-Max, and How to Choose (With Interactive Examples)"
+title: "Downsampling: What It Is, LTTB vs Min-Max, and How to Choose"
 description: "What downsampling is, why charts need it, and how every-nth, average, min-max, M4 and LTTB compare on spikes, with decimation and aliasing explained. Live demos."
 keywords:
     [
@@ -18,6 +18,7 @@ keywords:
     ]
 image: /img/learn/downsampling-og.png
 related: [big-data-visualization, line-chart, strip-chart, sparkline]
+datePublished: 2026-11-16
 ---
 
 <head>
@@ -172,6 +173,8 @@ Things to try:
 
 ## How to choose a downsampling method
 
+Choose by what the chart must not lose: min-max or M4 when every spike matters, LTTB for a small overview that keeps the shape, and an average only when you want the noise gone.
+
 | If you need… | Use | Why |
 | --- | --- | --- |
 | Every spike and dip, exactly as the full data would draw | Min-max or M4 | They keep each pixel column's extremes, so nothing visible is lost |
@@ -208,11 +211,13 @@ Decimation aims to keep a valid, evenly spaced signal for more processing, so it
 The word has two other common meanings:
 
 - Images: reducing an image's resolution, for example from 4000 × 3000 pixels to 800 × 600. Blurring slightly before shrinking plays the role of the anti-aliasing filter; without it, fine patterns turn into moiré. In neural networks, pooling and strided layers downsample feature maps in the same sense.
-- Imbalanced data in machine learning: reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model is then corrected for the changed proportions.
+- Imbalanced data in machine learning: reducing the number of examples in the majority class, for example keeping a random 5% of normal transactions so they don't swamp the rare fraud cases. The model's predicted probabilities can then be corrected for the changed proportions.
 
 Both share the idea of keeping fewer samples, but the methods on this page are for time series and charts.
 
 ## Common downsampling mistakes
+
+Most downsampling mistakes come from a method that drops spikes, or from using the reduced copy for anything other than drawing.
 
 - **Using every nth point on spiky data.** It's the default in many quick scripts, and it silently hides short events. Use min-max, M4 or LTTB.
 - **Running statistics on the downsampled copy.** Means, standard deviations, peak counts and thresholds all change. Calculate on the full data, then downsample only to draw.
@@ -221,11 +226,11 @@ Both share the idea of keeping fewer samples, but the methods on this page are f
 
 ## How to downsample data for a chart in JavaScript, React or Angular
 
-SciChart.js resamples line series automatically for each view, using algorithms that keep every peak and trough, then draws them with WebGL and WebGPU. You pass all the raw points; you don't write any downsampling code. The chart below has 1,000,000 points. Scroll to zoom into a spike, drag to pan, double-click to reset, and hover to see values. Switch resampling to **None** and the picture stays the same; only the work behind each frame changes.
+The demo hands all 1,000,000 raw points to a single line series and leaves SciChart.js to resample them for each view, keeping every peak and trough; it contains no downsampling code. Zoom into a spike with the mouse wheel, drag to pan, double-click to reset, and hover to see values. Switch resampling to **None** and the picture stays the same; only the work behind each frame changes.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="chart with millions of points" demo="chart-performance-load-one-million-points" docs="/2d-charts/chart-types/data-series-api/resampling/" docsLabel="SciChart.js resampling documentation" />
+<LearnCta position="top" chart="chart with millions of points" demo="chart-performance-load-one-million-points" demoLabel="1 million point chart" docs="/2d-charts/chart-types/data-series-api/resampling/" docsLabel="SciChart.js resampling documentation" />
 
 Here is the code for this chart:
 
@@ -379,6 +384,6 @@ Either write a helper, such as LTTB or min-max, that reduces your arrays before 
 
 - Steinarsson, S. (2013), [Downsampling Time Series for Visual Representation](http://hdl.handle.net/1946/15343). MSc thesis, University of Iceland. The original description of LTTB.
 - Jugel, U., Jerzak, Z., Hackenbroich, G. and Markl, V. (2014), [M4: A Visualization-Oriented Time Series Data Aggregation](https://www.vldb.org/pvldb/vol7/p797-jugel.pdf). *Proceedings of the VLDB Endowment*, 7(10). The M4 method and why it draws the same pixels as the full data.
-- Smith, S. W., [The Scientist and Engineer's Guide to Digital Signal Processing, chapter 3: The Sampling Theorem](https://www.dspguide.com/ch3/2.htm). The Nyquist limit and aliasing.
+- Smith, S. W. (1997), [The Scientist and Engineer's Guide to Digital Signal Processing, chapter 3, ADC and DAC, section 3.2: The Sampling Theorem](https://www.dspguide.com/ch3/2.htm). California Technical Publishing. The Nyquist limit and aliasing.
 
-<LearnCta position="bottom" chart="chart with millions of points" demo="chart-performance-load-one-million-points" docs="/2d-charts/chart-types/data-series-api/resampling/" docsLabel="SciChart.js resampling documentation" />
+<LearnCta position="bottom" chart="chart with millions of points" demo="chart-performance-load-one-million-points" demoLabel="1 million point chart" docs="/2d-charts/chart-types/data-series-api/resampling/" docsLabel="SciChart.js resampling documentation" />

@@ -13,7 +13,7 @@ const TONES = [
 const PRESETS = [
     { label: "Delta 1–4 Hz", fL: 1, fH: 4 },
     { label: "Alpha 8–13 Hz", fL: 8, fH: 13 },
-    { label: "Beta 13–30 Hz", fL: 13, fH: 30 },
+    { label: "Beta 14–30 Hz", fL: 14, fH: 30 },
     { label: "Narrow: 10 Hz, Q 10", f0: 10, q: 10 }
 ];
 

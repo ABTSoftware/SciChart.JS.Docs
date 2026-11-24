@@ -1,12 +1,12 @@
 ---
 sidebar_position: 2
 sidebar_label: Add Technical Indicators
-title: "Add Technical Indicators to a Financial Chart | SciTrader.js"
-description: "Add technical indicators such as RSI, MACD, moving averages and Bollinger Bands to a JavaScript or React financial chart with SciTrader.js, when the chart is created, at runtime, and from a searchable technical indicator picker."
+title: "Add Technical Indicators to a JavaScript Chart"
+description: "Add technical indicators such as RSI, MACD and Bollinger Bands to a JavaScript or React chart with SciTrader.js: at creation, at runtime or from a picker."
 keywords: ["SciTrader", "SciTrader.js", "technical indicators", "add technical indicators to chart", "add indicator to chart", "JavaScript trading chart indicators", "React stock chart indicators", "attachStudy", "detachStudy", "studyProvider", "indicator picker"]
 ---
 
-# Add Technical Indicators to a Financial Chart
+# Add Technical Indicators to a JavaScript Chart
 
 Technical indicators are studies (see [Technical Indicators and Studies](/financial-charts/studies-and-indicators/) for the full list). This page shows how to:
 
@@ -306,6 +306,7 @@ The code for this example is found below.
 
 ## Where to read next
 
+- [Finance and trading guides](/learn/applications/#finance-and-trading): learning centre guides to financial charts and indicators, with interactive examples.
 - [Technical Indicators and Studies](/financial-charts/studies-and-indicators/): every indicator, with its options.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): let users change an indicator's settings.
 - [Price Chart Types](/financial-charts/studies-and-indicators/price-chart-types/): candlestick, Heikin-Ashi, Renko and Point & Figure charts.

@@ -1,7 +1,7 @@
 ---
-sidebar_position: 140
+sidebar_position: 160
 sidebar_label: Line Chart
-title: "Line Graph (Line Chart): What It Is & How to Read It (With Interactive Examples)"
+title: "Line Graph (Line Chart): What It Is & How to Read It"
 description: "What a line graph (line chart) is, how to read and describe one, the main types, when to use it instead of a bar graph, and the mistakes to avoid. With live examples."
 keywords:
     [
@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/line-chart-og.png
 related: [area-chart, sparkline, strip-chart, scatter-plot]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -86,6 +87,8 @@ A **line graph** (also called a line chart or line plot) is a chart that shows h
 
 ## How to read a line graph
 
+Read a line graph from left to right: the height of the line is the value, and its slope is how fast the value changes.
+
 ![Anatomy of a line chart: the y-axis shows the value, the x-axis shows time, and data points are joined by a line that slopes up while values rise, peaks, then slopes down as they fall](./line-chart-anatomy.svg)
 
 1. Read the title and the axes first. The horizontal **x-axis** is usually time (days, months, years), running left to right. The vertical **y-axis** is the measured value. Note the units on both, and the number the y-axis starts at.
@@ -99,6 +102,8 @@ The points themselves are the real measurements. The straight segments between t
 
 ## Types of line graph
 
+Line graphs differ in how many lines they carry, whether the points are marked, and how the points are joined.
+
 | Type | What it looks like | Use it for |
 | --- | --- | --- |
 | Simple line graph | One line | The trend of a single value, such as a city's monthly rainfall |
@@ -110,7 +115,7 @@ The points themselves are the real measurements. The straight segments between t
 
 ## How to describe a line graph
 
-Exam questions (such as IELTS Writing Task 1), lab reports and dashboards all ask for the same thing: a short summary of what the line does. Use this template:
+Exam questions (such as IELTS Academic Writing Task 1), lab reports and dashboards all ask for the same thing: a short summary of what the line does. Use this template:
 
 > [What] [rose / fell / stayed level] [steadily / sharply / gradually] from [start value] in [start] to [peak or low] in [when], then [what happened next]. Overall, [the main trend or comparison].
 
@@ -130,7 +135,7 @@ Lead with the overall trend, then give the highest and lowest values with their 
 
 ## When to use a line graph
 
-Use a line graph when the x values have a natural order, most often time, and the reader cares about how the value moves from one point to the next. With dates or times on the x axis, it is a **time series line chart**, the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart, because the slope of the line shows the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
+Use a line graph when the x values have a natural order, most often time, and the reader cares about how the value moves from one point to the next. With dates or times on the x axis, it is a **time series line chart** (see the [time series graph](/learn/real-time/time-series-graph/) guide), the most common kind. Drawn to show which way something is heading over time, such as sales, prices or temperatures, a line graph is often called a **trend graph** or trend chart, because the slope of the line shows the trend. Don't confuse a trend graph with a **trend line**: a straight or smoothed line fitted through data, often on a scatter plot, to summarise which way the points are heading.
 
 | Your question | Best chart |
 | --- | --- |
@@ -149,13 +154,15 @@ Sensors, markets and monitoring systems record values every second or faster, so
 - Noise hides the trend. Small, fast ups and downs make the line look like a thick, jagged band.
 - Detail hides in the overview. At full-day scale, each pixel covers dozens of readings, so short events are squashed together.
 
-The usual fixes are a **moving average**, which replaces each point with the average of the points around it to show the underlying trend, and zooming in to see the raw readings.
+The usual fixes are a **moving average**, which replaces each point with the average of the points around it, or of the points before it, to show the underlying trend, and zooming in to see the raw readings.
 
-The chart below shows a day of temperature readings from one sensor, one per second: 86,400 points (sample data). The blue line is every reading; the orange line is a 10-minute moving average of the same data. Scroll to zoom into any part of the day and the raw line separates into individual readings. Untick a line in the legend to hide it.
+The chart below shows a day of temperature readings from one sensor, one per second: 86,400 points (sample data). The blue line is every reading; the orange line is a 10-minute moving average of the same data, where each point is the average of the previous 10 minutes, so it lags the readings slightly. Scroll to zoom into any part of the day and the raw line separates into individual readings. Untick a line in the legend to hide it.
 
 <LiveDocSnippet maxWidth={'100%'} name="./LargeData/demo" />
 
 ## Common line graph mistakes
+
+Most line graph mistakes come from drawing a line through data that has no order, or from axes that change how steep the line looks.
 
 - **Joining points that have no order.** A line between categories (red, green, blue) suggests a trend that doesn't exist. Use a [bar chart](/learn/chart-types/cartesian/bar-chart/).
 - **Uneven time steps on an even axis.** If readings are missing or irregular, plot them against real dates, so a gap of six months doesn't look like a gap of one.
@@ -167,7 +174,7 @@ The chart below shows a day of temperature readings from one sensor, one per sec
 
 ## How to create a line chart in JavaScript, React or Angular
 
-SciChart.js draws line charts with WebGL and WebGPU, so they stay smooth to zoom and pan with large data sets and real-time updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, hover over a line to see its values, and use the legend to hide or show a line.
+The chart below is two line series on a date axis, one per city, each holding 365 daily temperatures. Hover over a line to read that day's value and use the legend to hide or show a city. The mouse wheel zooms, dragging pans, and a double-click brings back the whole year.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -307,6 +314,6 @@ With SciChart.js, create a `SciChartSurface`, add a `DateTimeNumericAxis` or `Nu
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods: Run-Sequence Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/runseqpl.htm). How a line plot of values in time order reveals shifts and outliers.
 - Cleveland, W. S., McGill, M. E. and McGill, R. (1988), [The shape parameter of a two-variable graph](https://doi.org/10.1080/01621459.1988.10478598). *Journal of the American Statistical Association*, 83(402). Why a line graph's aspect ratio changes how steep its slopes look.
-- Wikipedia, [William Playfair](https://en.wikipedia.org/wiki/William_Playfair). Playfair's *Commercial and Political Atlas* (1786) and the early history of line graphs.
+- Funkhouser, H. G. (1937), [Historical Development of the Graphical Representation of Statistical Data](https://doi.org/10.1086/368480). *Osiris*, 3, 269–404. Lambert's graphs of measurements, Playfair's *Commercial and Political Atlas* (1786) and the early history of line graphs.
 
 <LearnCta position="bottom" chart="line chart" demo="line-chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" />

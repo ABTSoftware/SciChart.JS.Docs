@@ -1,7 +1,7 @@
 ---
 sidebar_position: 70
 sidebar_label: FFT (Fast Fourier Transform)
-title: "FFT (Fast Fourier Transform): What It Is & How to Read a Spectrum (With Interactive Examples)"
+title: "FFT (Fast Fourier Transform): How to Read a Spectrum"
 description: "What the FFT is, how it works, and how to read an FFT spectrum: bins, frequency resolution, the Nyquist limit, decibels, windowing, spectral leakage and zero padding. Live example."
 keywords:
     [
@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/fast-fourier-transform-og.png
 related: [fourier-transform, window-functions, power-spectral-density, audio-spectrum-analyzer]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -38,7 +39,7 @@ related: [fourier-transform, window-functions, power-spectral-density, audio-spe
                 {
                     "@type": "Question",
                     "name": "What is the difference between the DFT and the FFT?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The DFT is the calculation: it turns N samples into N frequency bins. The FFT is a family of algorithms that compute exactly the same result much faster. Computed directly, the DFT takes about N squared operations; an FFT takes about N log2 N, which for 1,024 samples is around 200 times fewer." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The DFT is the calculation: it turns N samples into N frequency bins. The FFT is a family of algorithms that compute exactly the same result much faster. Computed directly, the DFT takes about N squared operations; an FFT takes about N log2 N, which for 1,024 samples is about 100 times fewer." }
                 },
                 {
                     "@type": "Question",
@@ -53,12 +54,12 @@ related: [fourier-transform, window-functions, power-spectral-density, audio-spe
                 {
                     "@type": "Question",
                     "name": "Does a JavaScript FFT give the same result as NumPy or MATLAB?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the conventions match. A standard JavaScript FFT, numpy.fft.fft and MATLAB fft(x) all compute the same unnormalised DFT with the same sign, so bin k is identical to within rounding when you use 64-bit numbers (Float64Array). numpy.fft.rfft returns only bins 0 to N/2, the same half you plot; in MATLAB, keep fft(x)(1:N/2+1), since MATLAB counts from 1. When the numbers don't match, the window is the usual cause. numpy.hanning(N) and MATLAB hann(N) are symmetric, while hann(N, 'periodic') and scipy.signal.get_window('hann', N) are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: 2|X[k]| divided by the window's sum, except at bin 0 and bin N/2." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the conventions match. A standard JavaScript FFT, numpy.fft.fft and MATLAB fft(x) all compute the same unnormalised DFT with the same sign, so bin k is identical to within rounding when you use 64-bit numbers (Float64Array). numpy.fft.rfft returns only bins 0 to N/2, the same half you plot; in MATLAB, compute X = fft(x); and keep X(1:N/2+1), since MATLAB counts from 1. When the numbers don't match, the window is the usual cause. numpy.hanning(N) and MATLAB hann(N) are symmetric, while hann(N, 'periodic') and scipy.signal.get_window('hann', N) are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: 2|X[k]| divided by the window's sum, except at bin 0 and bin N/2." }
                 },
                 {
                     "@type": "Question",
                     "name": "How do I plot an FFT in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0 to N/2, and convert each magnitude to an amplitude or decibels. With SciChart.js, put the frequencies and levels in an XyDataSeries and draw them with a FastLineRenderableSeries; call clear() and appendRange() each time new samples arrive. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0 to N/2, and convert each magnitude to an amplitude or decibels. With SciChart.js, put the frequencies and levels in an XyDataSeries and draw them with a FastLineRenderableSeries; call clear() and appendRange() each time new samples arrive. For React or Angular, wrap that chart setup in scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -99,7 +100,7 @@ Done directly, each of the $N$ bins needs $N$ multiplications, so the work grows
 
 ### The radix-2 trick
 
-The FFT avoids most of that work by reusing it. The best-known version, published by James Cooley and John Tukey in 1965 (Gauss had used the same idea around 1805, unpublished in his lifetime), works on blocks whose length is a power of 2:
+The FFT avoids most of that work by reusing it. Its best-known form, the radix-2 version of the algorithm James Cooley and John Tukey published in 1965 (Gauss had used the same idea around 1805, unpublished in his lifetime), works on blocks whose length is a power of 2:
 
 1. Split the samples into the even-numbered ones and the odd-numbered ones.
 2. Transform each half. Each is a DFT of half the length, and each of those splits again, down to blocks of one sample.
@@ -136,7 +137,7 @@ Sample one cycle of a sine wave 8 times, $x_n = \sin(2\pi n / 8)$, which gives $
 
 The output comes out in natural order and is zero everywhere except $X_1 = -4i$ and $X_7 = 4i$: one wave at one cycle per block, plus its mirror image in bin $N - 1$. Its amplitude is $2\lvert X_1 \rvert / N = 2 \times 4 / 8 = 1$, and the $-i$ marks a sine rather than a cosine. A direct DFT gives the same eight numbers with 64 multiplications; the FFT used 12 butterflies.
 
-There are $\log_2 N$ levels of splitting and $N/2$ butterflies per level, so the total work grows as $N \log_2 N$ rather than $N^2$. The answer is the same as the direct DFT. If anything, the FFT's rounding errors are smaller, because each result passes through fewer operations.
+There are $\log_2 N$ levels of splitting and $N/2$ butterflies per level, so the total work grows as $N \log_2 N$ rather than $N^2$. The table below counts butterflies, each one complex multiplication, so its last column is about twice the $N^2 / (N \log_2 N)$ ratio (102 times for 1,024 samples). The answer is the same as the direct DFT. If anything, the FFT's rounding errors are smaller, because each result passes through fewer operations.
 
 | Block size $N$ | Direct DFT ($N^2$ multiplications) | Radix-2 FFT ($\tfrac{N}{2}\log_2 N$ butterflies) | About how many times less work |
 | --- | --- | --- | --- |
@@ -196,7 +197,7 @@ For audio sampled at 48,000 samples a second:
 | 1,024 | 46.9 Hz | 21 ms | Fast-moving level meters and real-time displays |
 | 4,096 | 11.7 Hz | 85 ms | General audio analysis |
 | 16,384 | 2.9 Hz | 341 ms | Separating close musical notes or mains harmonics |
-| 65,536 | 0.73 Hz | 1.4 s | Fine detail on steady signals, such as machine vibration |
+| 65,536 | 0.73 Hz | 1.4 s | Fine detail on steady signals, such as [machine vibration](/learn/applications/vibration-analysis/) |
 
 The trade-off is between detail in frequency and detail in time. A long block gives narrow bins but blurs anything that changes within it. To follow a signal that changes, take many short FFTs one after another and draw them as a [spectrogram](/learn/chart-types/cartesian/spectrogram/).
 
@@ -224,7 +225,7 @@ A [**window function**](/learn/signal-processing/window-functions/) fixes most o
 | Hamming | $0.54 - 0.46\cos\frac{2\pi n}{N}$ | -43 dB | ±2 bins | 1.8 dB | Lower close-in leakage than Hann, often used in speech processing |
 | Blackman | $0.42 - 0.5\cos\frac{2\pi n}{N} + 0.08\cos\frac{4\pi n}{N}$ | -58 dB | ±3 bins | 1.1 dB | Finding weak tones near strong ones |
 
-We measured these figures with the FFT code on this page. They match the standard values in Harris (1978); see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a [flat-top](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing) window, with almost no peak drop but a very wide peak.
+We measured these figures with the FFT code on this page. They match the standard values in Harris (1978) to within rounding; see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a [flat-top](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing) window, with almost no peak drop but a very wide peak.
 
 In the [live example](#how-to-plot-an-fft-in-javascript-react-or-angular), with the moving tone at 120.5 Hz, switch the window to **Rectangular**. Its skirt rises over the weak 160 Hz tone. Switch back to **Hann** or **Blackman** and the small peak reappears. Then move the tone to exactly 120.0 Hz: with a rectangular window the leakage vanishes, because the tone now fits the block.
 
@@ -236,6 +237,8 @@ Padding is also used to reach the next power of 2 so a radix-2 FFT can run, and 
 
 ## FFT vs DFT, Fourier transform and spectrogram
 
+Use an FFT for the spectrum of a block of samples, and one of the related tools below when you need something else.
+
 | If you need… | Use | Why |
 | --- | --- | --- |
 | The spectrum of a block of samples | FFT | The standard tool: same result as the DFT, far less work |
@@ -246,6 +249,8 @@ Padding is also used to reach the next power of 2 so a radix-2 FFT can run, and 
 
 ## What FFT analysis is used for
 
+FFT analysis is used wherever a signal needs to be split into its frequencies, often many times a second.
+
 - Audio: spectrum analysers, equalisers, pitch detection, room measurement and finding hum or noise.
 - Vibration and machine monitoring: bearing and shaft faults show up as peaks linked to the machine's speed.
 - Oscilloscopes and test equipment: most digital oscilloscopes have an FFT mode that shows the spectrum of the captured waveform.
@@ -253,6 +258,8 @@ Padding is also used to reach the next power of 2 so a radix-2 FFT can run, and 
 - Fast filtering: long filters and [convolution](/learn/signal-processing/convolution/) run faster through an FFT than directly.
 
 ## Common FFT mistakes
+
+Most FFT mistakes come from the block, the window or the scaling, not the algorithm.
 
 - **No window on a signal that doesn't fit the block.** Leakage then hides weak tones and lowers peak heights. Use Hann unless you have a reason not to.
 - **Forgetting to scale.** Raw FFT magnitudes grow with $N$. Divide by the sum of the window (and double the one-sided bins) to read amplitudes.
@@ -263,11 +270,11 @@ Padding is also used to reach the next power of 2 so a radix-2 FFT can run, and 
 
 ## How to plot an FFT in JavaScript, React or Angular
 
-SciChart.js draws FFT spectra and spectrograms with WebGL and WebGPU, fast enough to redraw them as new samples stream in. The example below runs the FFT in your browser with the plain JavaScript functions in the code. Move the tone, change the window, the FFT size $N$, zero padding and the scale; the line under the controls says where the tone falls among the bins. Hover over the spectrum to read a bin, scroll to zoom into a frequency range, drag to pan and double-click to reset.
+Each time you change a control, this demo builds a new test signal sampled at 1,024 Hz, windows it, takes its FFT and redraws the spectrum. The example below runs the FFT in your browser with the plain JavaScript functions in the code. Move the tone, change the window, the FFT size $N$, zero padding and the scale; the line under the controls says where the tone falls among the bins. Hover over the spectrum to read a bin, scroll to zoom into a frequency range, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={680} name="./Basic/demo" />
 
-<LearnCta position="top" chart="FFT spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="top" chart="FFT spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
 
 Here is the code for this example. The JavaScript tab includes the FFT, window and spectrum functions; the React and Angular tabs reuse them.
 
@@ -402,9 +409,9 @@ Key points:
 - A fixed y-axis range (`autoRange: EAutoRange.Never` and a `visibleRange` in dB) stops the axis jumping as the noise changes.
 - The FFT itself is plain JavaScript. Swap in any FFT library you prefer; the chart code stays the same.
 
-**See it in the demo app:** [JavaScript FFT spectrum analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React FFT spectrum analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular FFT spectrum analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, with a waveform, an FFT spectrum and a spectrogram.
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It runs the FFT on your microphone input and draws the waveform, the spectrum and a spectrogram.
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [spectrogram guide](/learn/chart-types/cartesian/spectrogram/) for drawing many FFTs over time.
+**Go deeper:** [SciChart.js line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [spectrogram guide](/learn/chart-types/cartesian/spectrogram/) for drawing many FFTs over time.
 
 ## Frequently asked questions
 
@@ -414,7 +421,7 @@ FFT stands for fast Fourier transform. It is a fast way to compute the discrete 
 
 ### What is the difference between the DFT and the FFT?
 
-The DFT is the calculation: it turns N samples into N frequency bins. The FFT is a family of algorithms that compute exactly the same result much faster. Computed directly, the DFT takes about N squared operations; an FFT takes about N log2 N, which for 1,024 samples is around 200 times fewer.
+The DFT is the calculation: it turns N samples into N frequency bins. The FFT is a family of algorithms that compute exactly the same result much faster. Computed directly, the DFT takes about N squared operations; an FFT takes about N log2 N, which for 1,024 samples is about 100 times fewer.
 
 ### What is FFT size, and how do I choose it?
 
@@ -426,13 +433,13 @@ For a real signal, the FFT's second half mirrors the first: bins above N/2 are t
 
 ### Does a JavaScript FFT give the same result as NumPy or MATLAB?
 
-Yes, if the conventions match. A standard JavaScript FFT, `numpy.fft.fft` and MATLAB `fft(x)` all compute the same unnormalised DFT with the same sign, so bin $k$ is identical to within rounding when you use 64-bit numbers (`Float64Array`). `numpy.fft.rfft` returns only bins 0 to $N/2$, the same half you plot; in MATLAB, keep `fft(x)(1:N/2+1)`, since MATLAB counts from 1.
+Yes, if the conventions match. A standard JavaScript FFT, `numpy.fft.fft` and MATLAB `fft(x)` all compute the same unnormalised DFT with the same sign, so bin $k$ is identical to within rounding when you use 64-bit numbers (`Float64Array`). `numpy.fft.rfft` returns only bins 0 to $N/2$, the same half you plot; in MATLAB, compute `X = fft(x);` and keep `X(1:N/2+1)`, since MATLAB counts from 1.
 
 When the numbers don't match, the window is the usual cause. `numpy.hanning(N)` and MATLAB `hann(N)` are symmetric, while `hann(N, 'periodic')` and `scipy.signal.get_window('hann', N)` are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: $2|X[k]|$ divided by the window's sum, except at bin 0 and bin $N/2$.
 
 ### How do I plot an FFT in JavaScript?
 
-Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0 to N/2, and convert each magnitude to an amplitude or decibels. With SciChart.js, put the frequencies and levels in an `XyDataSeries` and draw them with a `FastLineRenderableSeries`; call `clear()` and `appendRange()` each time new samples arrive. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0 to N/2, and convert each magnitude to an amplitude or decibels. With SciChart.js, put the frequencies and levels in an `XyDataSeries` and draw them with a `FastLineRenderableSeries`; call `clear()` and `appendRange()` each time new samples arrive. For React or Angular, wrap that chart setup in `scichart-react` or `scichart-angular`.
 
 ## Sources
 
@@ -441,6 +448,6 @@ Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0
 - Harris, F. J. (1978), [On the Use of Windows for Harmonic Analysis with the Discrete Fourier Transform](https://doi.org/10.1109/PROC.1978.10837). *Proceedings of the IEEE*, 66(1), 51–83. Window side lobes, scalloping loss and bandwidth.
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 8, The Discrete Fourier Transform](https://www.dspguide.com/ch8.htm), [chapter 9, Applications of the DFT](https://www.dspguide.com/ch9.htm) (windows, resolution and zero padding) and [chapter 12, The Fast Fourier Transform](https://www.dspguide.com/ch12.htm).
 - Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Windows, zero padding and spectrum analysis in depth.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The bit-reversal, butterfly and 8-point flow-graph diagrams on this page are adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The bit-reversal, butterfly and 8-point flow-graph diagrams on this page are adapted from it.
 
-<LearnCta position="bottom" chart="FFT spectrum analyzer" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />
+<LearnCta position="bottom" chart="FFT spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

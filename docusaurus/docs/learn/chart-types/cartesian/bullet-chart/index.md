@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: Bullet Chart
-title: "Bullet Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Bullet Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a bullet chart (bullet graph) is, how to read its bar, target line and shaded ranges, the design rules, common variants and when to use one instead of a gauge."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/bullet-chart-og.png
 related: [gauge-chart, bar-chart, lollipop-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [gauge-chart, bar-chart, lollipop-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a bullet chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, draw every part as a rectangle with FastRectangleRenderableSeries and an XyxyDataSeries: one series for each shaded range, a thinner one for the actual values and a narrow one for the targets. Put the row axis on the left and the value axis along the bottom so the bullets run horizontally, one row per measure. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, draw every part as a rectangle with FastRectangleRenderableSeries and an XyxyDataSeries: one series for each shaded range, a thinner one for the actual values and a narrow one for the targets. Put the row axis on the left and the value axis along the bottom so the bullets run horizontally, one row per measure. In React and Angular, the scichart-react and scichart-angular packages host the same chart code." }
                 }
             ]
         })}
@@ -78,6 +79,8 @@ A **bullet chart** (also called a bullet graph) is a compact bar chart that show
 :::
 
 ## How to read a bullet chart
+
+Read a bullet chart from the dark bar's end: compare it with the short target line, then see which grey band it ends in.
 
 ![The parts of a bullet chart: a horizontal bullet for monthly sign-ups on a scale from 0 to 10 thousand, with grey bands for poor (0 to 5), satisfactory (5 to 7.5) and good (7.5 to 10), a dark bar ending at 6.8 thousand and a short target line at 8 thousand. Numbered callouts name the qualitative ranges, text label, quantitative scale, featured measure and comparative measure](./bullet-chart-anatomy.svg)
 
@@ -117,7 +120,7 @@ Stephen Few, who designed the bullet chart (he called it the bullet graph), publ
 | --- | --- |
 | Text label | To the left of a horizontal bullet, above a vertical one |
 | Quantitative scale | Along the bottom (horizontal) or left (vertical), starting at zero, with light grey tick marks |
-| Featured measure | A dark, almost black bar about a third as thick as the bullet, with no border |
+| Featured measure | A black bar about a third as thick as the bullet, with no border |
 | Comparative measure | A short line across the bar, clearly visible but less heavy than the bar. A second one, such as last year, can be added in a lighter shade |
 | Qualitative ranges | Two to five bands, ideally three, as rectangles of one hue with no borders |
 
@@ -137,6 +140,8 @@ The specification gives these shades, as percentages of black:
 The live chart on this page uses the three-range set: `#999999`, `#BFBFBF` and `#E6E6E6`.
 
 ## Bullet chart variants
+
+Bullet charts can reverse their bands, add a projection, show a dot instead of a bar, run vertically or carry a second target.
 
 ![Four bullet chart variants. Standard: orders shipped on time, 82% against a 78% target, dark band on the left. Lower is better: defects per 1,000 units, 4.2 against 3.5, with the dark band on the right. With a projection: revenue quarter to date, a dark bar to \$52k and a lighter segment to a projected \$94k against a \$100k target. Scale not from zero: an average rating of 4.1 shown as a dot on a 3 to 5 scale, against a target of 4.4](./bullet-chart-variants.svg)
 
@@ -166,6 +171,8 @@ Use a bullet chart when you have a few key numbers, each with a target or known 
 
 ## Common bullet chart mistakes
 
+Most bullet chart mistakes add clutter or leave readers unsure what the shades and scales mean.
+
 - **Too many bands.** Few recommends three ranges and no more than five; beyond that, readers can't take in the status at a glance. If you need more detail, the measure probably needs its own chart.
 - **A target line as heavy as the bar.** The bar is the main message. Keep the target line short and thinner, so the two don't merge.
 - **Forgetting to reverse "lower is better" measures.** If costs and revenue sit in one stack, reverse the bands for costs so dark always means bad.
@@ -174,11 +181,11 @@ Use a bullet chart when you have a few key numbers, each with a target or known 
 
 ## How to create a bullet chart in JavaScript, React or Angular
 
-SciChart.js has no separate bullet series: you draw every part as a rectangle with a rectangle series, on a chart turned on its side so the bullets run horizontally. Because SciChart.js draws with WebGL and WebGPU, the same approach stays fast for dashboards with many bullets that update live. Try the chart below: hover over a row to see its values, scroll to zoom, drag to pan and double-click to reset.
+SciChart.js has no separate bullet series. The demo below draws the five regional bullets as rectangles (grey bands, dark bars and thin target lines) on a chart turned on its side, so each row runs horizontally along one shared \$0k to \$600k scale. Hover over a row to see its values; the mouse wheel zooms, dragging pans and a double-click resets.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="bullet chart" demo="linear-gauges" docs="/2d-charts/chart-types/linear-gauge-chart/" />
+<LearnCta position="top" chart="bullet chart" demo="linear-gauges" demoLabel="linear gauges" docs="/2d-charts/chart-types/linear-gauge-chart/" docsLabel="SciChart.js linear gauge chart documentation" />
 
 Here is the code for this chart:
 
@@ -381,7 +388,7 @@ The shaded bands are the qualitative ranges: they mark which results count as po
 
 ### How do I make a bullet chart in JavaScript?
 
-With SciChart.js, draw every part as a rectangle with `FastRectangleRenderableSeries` and an `XyxyDataSeries`: one series for each shaded range, a thinner one for the actual values and a narrow one for the targets. Put the row axis on the left and the value axis along the bottom so the bullets run horizontally, one row per measure. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, draw every part as a rectangle with `FastRectangleRenderableSeries` and an `XyxyDataSeries`: one series for each shaded range, a thinner one for the actual values and a narrow one for the targets. Put the row axis on the left and the value axis along the bottom so the bullets run horizontally, one row per measure. In React and Angular, the `scichart-react` and `scichart-angular` packages host the same chart code.
 
 ## Sources
 
@@ -389,4 +396,4 @@ With SciChart.js, draw every part as a rectangle with `FastRectangleRenderableSe
 - Perceptual Edge, [About](https://www.perceptualedge.com/about.php). Stephen Few as the inventor of the bullet graph.
 - National Eye Institute, [Color blindness](https://www.nei.nih.gov/eye-health-information/eye-conditions-and-diseases/color-blindness). Red and green are the colours the most common type of colour vision deficiency makes hard to tell apart.
 
-<LearnCta position="bottom" chart="bullet chart" demo="linear-gauges" docs="/2d-charts/chart-types/linear-gauge-chart/" />
+<LearnCta position="bottom" chart="bullet chart" demo="linear-gauges" demoLabel="linear gauges" docs="/2d-charts/chart-types/linear-gauge-chart/" docsLabel="SciChart.js linear gauge chart documentation" />

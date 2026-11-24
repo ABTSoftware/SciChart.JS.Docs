@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: 3D Surface Plot
-title: "3D Surface Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "3D Surface Plot: What It Is & How to Read It (Interactive Examples)"
 description: "What a 3D surface plot is, how to read its peaks, saddles and slopes, how it compares with a heatmap, a contour plot and a 3D scatter plot, and the mistakes to avoid. With live examples."
 keywords:
     [
@@ -17,7 +17,8 @@ keywords:
         "3d surface plot vs 3d scatter plot"
     ]
 image: /img/learn/3d-surface-plot-og.png
-related: [contour-plot, heatmap, xyz-graph, spectrogram]
+related: [contour-plot, heatmap, xyz-graph, volatility-surface]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -54,7 +55,7 @@ related: [contour-plot, heatmap, xyz-graph, spectrogram]
                 {
                     "@type": "Question",
                     "name": "How do I make a 3D surface plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChart3DSurface with three NumericAxis3D axes, put your heights in a UniformGridDataSeries3D as a 2D array, and add a SurfaceMeshRenderableSeries3D with a GradientColorPalette to colour it by height. Add OrbitModifier3D, MouseWheelZoomModifier3D and TooltipModifier3D so readers can rotate, zoom and read values. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChart3DSurface with three NumericAxis3D axes, put your heights in a UniformGridDataSeries3D as a 2D array, and add a SurfaceMeshRenderableSeries3D with a GradientColorPalette to colour it by height. Add OrbitModifier3D, MouseWheelZoomModifier3D and TooltipModifier3D so readers can rotate, zoom and read values. The scichart-react and scichart-angular packages run this setup in React and Angular apps." }
                 }
             ]
         })}
@@ -81,6 +82,8 @@ A **3D surface plot** (also called a surface plot, surface chart or 3D surface g
 
 ## How to read a 3D surface plot
 
+Read a 3D surface plot by its shape: name the axes, check the colour scale, find the peaks and dips, then rotate it before trusting what you see.
+
 ![Anatomy of a 3D surface plot: the plate temperatures drawn as a coloured mesh over a flat floor, with an x axis across the plate, a y axis up the plate and a vertical temperature axis, and numbered markers for the highest peak, the lower peak, the saddle between them, the steep cooled edge, a flat area, one grid cell, a dashed area hidden behind the tall peak, and the colour scale](./3d-surface-plot-anatomy.svg)
 
 1. Name the three axes. Two run across the floor and are the inputs, such as position, time or two settings of a machine. The vertical axis is the value being measured, often called z. On the plate chart, the floor is the plate itself and the height is temperature.
@@ -105,13 +108,15 @@ The grid has the same two consequences as for a [contour plot](/learn/chart-type
 
 ## Shapes on a 3D surface plot and what they mean
 
+Each shape on a surface plot tells you how the value changes as you move across the floor.
+
 | What you see | What it means | On the plate chart |
 | --- | --- | --- |
 | A hill with a single top | A peak: the value is highest there | Above the heater on the left, roughly 81 °C |
 | A hollow | A dip: the value is lowest there | None on this plate |
 | A pass between two hills | A saddle: the low point on the best route from one peak to the other | Between the heaters, at about 43 °C |
 | A steep wall | The value changes quickly over a short distance | The water-cooled right-hand edge |
-| A level plain | The value barely changes | The plate's left-hand strip, which stays at room temperature (24 °C) |
+| A level plain | The value barely changes | The plate's bottom-left corner, which stays at room temperature (24 °C) |
 | A long, narrow crest | A ridge: a direction in which the value stays high | Not on this plate; a heated rod would make one |
 | A flat, tilted sheet | A steady slope: the value climbs evenly in one direction | Absent here; any linear formula, z = 3x − y for instance, draws one |
 
@@ -123,9 +128,11 @@ A good description moves from the biggest feature to the smallest. Fill in this 
 
 Filled in for the plate:
 
-"The surface peaks at roughly 81 °C at the point 11 cm in from the left and 19 cm up, and falls to about 10 °C along the chilled right-hand edge. A second, wider hill reaches 64 °C near (27 cm, 11 cm), and a pass at around 43 °C links the two hills. It drops most sharply in the final 4 cm before the chilled edge, from roughly 32 °C to 13 °C, and is nearly level along the left-hand strip, which stays at 24 °C."
+"The surface peaks at roughly 81 °C at the point 11 cm in from the left and 19 cm up, and falls to about 10 °C along the chilled right-hand edge. A second, wider hill reaches 64 °C near (27 cm, 11 cm), and a pass at around 43 °C links the two hills. It drops most sharply in the final 4 cm before the chilled edge, from roughly 32 °C to 13 °C, and is nearly level in the bottom-left corner, which stays at 24 °C."
 
 ## Types of 3D surface plot
+
+Surface plots differ in how the sheet is drawn and what is added to it, not in the data they take.
 
 | Type | What it looks like | Good for |
 | --- | --- | --- |
@@ -157,9 +164,11 @@ Surface plots aren't only for fixed results. Engineers watch them update live: t
 
 Three signals are easy to pick out: a steady tone at 2 kHz is a straight ridge, a tone sweeping between 4 and 8 kHz snakes from side to side, and a tone at 9 kHz that switches on and off appears as a row of separate blocks. A flat [spectrogram](/learn/chart-types/cartesian/spectrogram/) shows the same kind of data as colour, which is easier to read precisely; the surface makes the strongest signals stand out as height.
 
-Charts like this are drawn on the graphics card (GPU), using WebGL or WebGPU, which is built to draw many thousands of small shapes at once.
+SciChart.js draws charts like this on the graphics card (GPU) with WebGL and WebGPU. The demo above shows how that runs on your own device.
 
 ## Common 3D surface plot mistakes
+
+Most 3D surface plot mistakes come from trusting one view, or a colour or height scale that distorts the shape.
 
 - **Showing one fixed view.** A peak can hide a dip, and the near side always looks bigger than the far side. Let readers rotate the chart, or show a top-down heatmap or contour plot beside it.
 - **Reading exact values from height.** Perspective makes the same height look different at the front and the back. Use a tooltip, contour lines or a 2D chart when exact values matter.
@@ -170,7 +179,7 @@ Charts like this are drawn on the graphics card (GPU), using WebGL or WebGPU, wh
 
 ## How to create a 3D surface plot in JavaScript, React or Angular
 
-SciChart.js renders 3D surfaces on the GPU with WebGL and WebGPU, so even large grids turn smoothly and can change live. In the plate chart below, drag to turn the box, scroll to move closer, double-click to go back to the starting view, and point at the surface to see its temperature.
+The plate chart below draws the temperature every 5 mm across the plate, a grid of 81 by 61 points, as one surface with white contour lines every 10 °C. In it, drag to turn the box, scroll to move closer, double-click to go back to the starting view, and point at the surface to see its temperature.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -343,7 +352,7 @@ Yes, but the points must first be turned into a regular grid. Interpolation, for
 
 ### How do I make a 3D surface plot in JavaScript?
 
-With SciChart.js, create a `SciChart3DSurface` with three `NumericAxis3D` axes, put your heights in a `UniformGridDataSeries3D` as a 2D array, and add a `SurfaceMeshRenderableSeries3D` with a `GradientColorPalette` to colour it by height. Add `OrbitModifier3D`, `MouseWheelZoomModifier3D` and `TooltipModifier3D` so readers can rotate, zoom and read values. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChart3DSurface` with three `NumericAxis3D` axes, put your heights in a `UniformGridDataSeries3D` as a 2D array, and add a `SurfaceMeshRenderableSeries3D` with a `GradientColorPalette` to colour it by height. Add `OrbitModifier3D`, `MouseWheelZoomModifier3D` and `TooltipModifier3D` so readers can rotate, zoom and read values. The `scichart-react` and `scichart-angular` packages run this setup in React and Angular apps.
 
 ## Sources
 

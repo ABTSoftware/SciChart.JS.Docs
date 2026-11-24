@@ -1,7 +1,7 @@
 ---
 sidebar_position: 10
 sidebar_label: Choropleth Map
-title: "Choropleth Map: What It Is & How to Read It (With Interactive Examples)"
+title: "Choropleth Map: What It Is & How to Read It (Interactive Example)"
 description: "What a choropleth map is, how to read one, why it should show rates rather than counts, how classes and colours change the picture, and when to use another map."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/choropleth-map-og.png
 related: [heatmap, treemap, bubble-chart]
+datePublished: 2026-11-16
 ---
 
 <head>
@@ -53,7 +54,7 @@ related: [heatmap, treemap, bubble-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a choropleth map in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a FastTriangleRenderableSeries in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a FastTriangleRenderableSeries in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. To use it in React or Angular, hand the same function to scichart-react or scichart-angular." }
                 }
             ]
         })}
@@ -80,9 +81,11 @@ A **choropleth map** (also called a filled map or shaded map) is a map that colo
 
 ## How to read a choropleth map
 
+To read a choropleth map, learn what each colour stands for from the legend, then look for patterns across neighbouring areas.
+
 1. Read the title and the legend first. Find out what is measured, in what unit and for which year: "people per square mile, 2020" is not the same as "people".
 2. Check the colour scale. A **sequential** scale (light to dark in one colour) runs from low to high. A **diverging** scale (two colours meeting at a neutral middle) shows values above and below a midpoint, such as the national average or zero change.
-3. Note the classes. Most choropleth maps group values into four to seven classes, each with one colour. Each colour covers a range, so two areas of the same colour can still differ a lot.
+3. Note the classes. Most choropleth maps group values into five to seven classes, each with one colour. Each colour covers a range, so two areas of the same colour can still differ a lot.
 4. Look for patterns rather than single areas. Clusters of dark or light areas, a gradient from one side to the other, or one area that stands out from its neighbours are what the map shows best.
 5. Allow for size. Large areas catch the eye even when few people live there, and small areas can be almost invisible. Check the small ones before drawing conclusions.
 6. Hover or look up the exact value. A shade tells you the class, not the number. On an interactive map, hover over an area for its value.
@@ -123,7 +126,7 @@ Here is US population density in 2020, from 1.3 people per square mile in Alaska
 
 - Equal interval splits 1.3 to 11,280 into five classes about 2,256 wide. Every state, even New Jersey at 1,263, falls into the first class. Only the District of Columbia, a city of 61 square miles, is in the top class, and it's too small to see, so the map shows no pattern at all.
 - Quantile puts about 10 areas in each class, with breaks at 38, 70, 170 and 290. Now the pattern appears: a dense band from Massachusetts to Maryland, fairly dense states around the Great Lakes, and a sparse middle and west.
-- Natural breaks (five Jenks classes, not drawn) gives a third picture: 30 areas in the first class, up to 116, then 13, 5, 3 and the District of Columbia on its own.
+- Natural breaks (five Jenks classes, not drawn) gives a third picture: 29 areas in the first class, up to 116, then 13, 5, 3 and the District of Columbia on its own.
 
 None of these is the "true" map. Quantiles suit ranking and comparing maps: in a study of series of disease maps, Brewer and Pickle found quantile classes (with minimum boundary error classes) the best suited to general map-reading tasks. Whatever the method, say which one you used, and show the breaks in the legend.
 
@@ -138,6 +141,8 @@ Use this template when you report a choropleth map:
 Worked example: "In 2020, population density was highest in the Northeast, from Massachusetts to Maryland (290 or more people per square mile), and lowest across the Great Plains, the Mountain West and Alaska (under 38). The map uses five quantile classes."
 
 ## Choosing colours: sequential, diverging or categorical
+
+Choose the colour scheme by the kind of data: sequential for low to high, diverging for above and below a midpoint, and categorical for groups with no order.
 
 | Scheme | Looks like | Use it for | Example |
 | --- | --- | --- | --- |
@@ -176,16 +181,18 @@ A good map often comes with a sorted bar chart or table beside it: the map shows
 
 ## Common choropleth map mistakes
 
+Most choropleth map mistakes come from forgetting that areas differ in size, and that colours stand for ranges rather than exact values.
+
 - **Letting big areas dominate.** In 2020, the 10 least densely populated states held 4.8% of Americans but covered 40.5% of the country's land. On a choropleth, those states fill much of the picture. Use a cartogram, a tile map or a chart beside the map when people, not land, are the point.
 - **Losing small areas.** The District of Columbia is the densest area on the map, yet it is a speck. Add insets, labels or tooltips for small areas.
 - **Picking class breaks without looking at the data.** Check the distribution first, and say which method you used.
-- **The wrong projection.** Some projections, such as Web Mercator, enlarge areas far from the equator, so northern countries look bigger and catch more attention. Use an equal-area projection; the map on this page uses an Albers equal-area projection.
+- **The wrong projection.** Some projections, such as Web Mercator, enlarge areas far from the equator, so northern countries look bigger and catch more attention. Use an equal-area projection; the map on this page uses an Albers equal-area projection, except that Alaska and Hawaii are moved below the lower 48 as insets and Alaska is shrunk to about 35% of its size, so Alaska is not shown at equal area.
 - **Treating the colour as true everywhere in the area.** A county's average says nothing about any one place in it, and different borders can give a different picture of the same data.
 - **No legend, unit or date.** Without them, nobody can tell what the colours mean.
 
 ## How to create a choropleth map in JavaScript, React or Angular
 
-SciChart.js draws maps from GeoJSON outlines with its triangle series, so a whole map renders with WebGL and WebGPU and stays smooth to zoom and pan, even with thousands of areas or a value that updates in real time. Hover over a state to see its density, rank and population; scroll to zoom into the small northeastern states, drag to pan and double-click to reset.
+The demo below cuts the GeoJSON outlines of the 50 states and the District of Columbia into triangles, and draws them with five SciChart.js triangle series, one for each density class. Hover over a state to see its density, rank and population; scroll to zoom into the small northeastern states, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -279,7 +286,7 @@ On a map with a light background, darker colours usually mean higher values, and
 
 ### How do I make a choropleth map in JavaScript?
 
-Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a `FastTriangleRenderableSeries` in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Load the area outlines as GeoJSON, join your values to them by name or code, and give each area a colour from its class. To draw them with SciChart.js, split each polygon into triangles, for example by ear clipping, and plot them with a `FastTriangleRenderableSeries` in List mode, one series per colour class. Draw the borders with a line series, keep the axes at the same scale so the map isn't stretched, and add a point-in-polygon test for hover tooltips. To use it in React or Angular, hand the same function to `scichart-react` or `scichart-angular`.
 
 ## Sources
 

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 50
 sidebar_label: Sankey Diagram
-title: "Sankey Diagram: What It Is & How to Read It (With Interactive Examples)"
+title: "Sankey Diagram: What It Is & How to Read It (Interactive Example)"
 description: "What a Sankey diagram is, how to read its nodes and flows, a worked energy example, when to use one instead of a bar or pie chart, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -19,6 +19,7 @@ keywords:
     ]
 image: /img/learn/sankey-diagram-og.png
 related: [funnel-chart, network-graph, treemap, sunburst-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -50,7 +51,7 @@ related: [funnel-chart, network-graph, treemap, sunburst-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a Sankey diagram in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a FastTriangleRenderableSeries in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a FastTriangleRenderableSeries in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same setup runs in React through scichart-react and in Angular through scichart-angular." }
                 }
             ]
         })}
@@ -61,7 +62,7 @@ related: [funnel-chart, network-graph, treemap, sunburst-chart]
 
 ## What is a Sankey diagram?
 
-A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) is a flow diagram that shows how a quantity moves from its sources, through stages, to where it ends up. Each source, stage or end point is a bar called a **node**. Each flow is a band called a **link**, drawn as wide as the amount it carries.
+A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) is a flow diagram that shows how a quantity moves from its sources, through stages, to where it ends up. Each source, stage or end point is a bar called a **node**. Each flow is a band called a **link**, as wide as the amount it carries.
 
 ![A Sankey diagram of 100 TWh of energy in an imaginary country: four sources on the left (wind and solar, natural gas, biomass, oil) flow into electricity and fuels used directly, then into homes, industry, transport and power station losses, and finally into useful energy (49 TWh) and wasted heat (38 TWh)](/img/learn/sankey-diagram-og.png)
 
@@ -77,6 +78,8 @@ A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) i
 
 ## How to read a Sankey diagram
 
+Read a Sankey diagram from left to right, following the bands and comparing their widths.
+
 ![The parts of a Sankey flow diagram: three columns of nodes labelled A to F, from sources on the left to end points on the right. Curved links join them, each as wide as its value; callouts mark a link worth 45, a middle node D with 30 in and 30 out, and an end node](./sankey-diagram-anatomy.svg)
 
 1. Check what is flowing. Find the unit (kilowatt-hours, dollars, tonnes, people) and the period. Every band on the diagram uses the same unit.
@@ -88,7 +91,7 @@ A **Sankey diagram** (also called a Sankey chart, Sankey plot or Sankey graph) i
 
 ## A worked example: where a country's energy goes
 
-The diagram at the top of this page follows 100 terawatt-hours (TWh) of energy through an imaginary country for one year. The numbers are made up but realistic in shape. Because the total is 100, each value is also a percentage.
+The diagram at the top of this page follows 100 terawatt-hours (TWh) of energy through an imaginary country for one year. The numbers are invented for this example. Because the total is 100, each value is also a percentage.
 
 | Node | Flows in (TWh) | Flows out (TWh) |
 | --- | --- | --- |
@@ -106,7 +109,7 @@ Three things stand out once the flows are drawn:
 - Transport is the least efficient sector. Only 9 of its 30 TWh does useful work, against 21 of 30 in homes.
 - Making electricity loses energy. 13 of the 41 TWh that goes into making electricity is lost before it reaches anyone.
 
-The table and the diagram hold the same numbers. The table is better for checking a single value; the diagram shows the structure and the big flows in one look.
+The table and the diagram hold the same numbers. Look up a single value in the table; the diagram shows the structure and the big flows in one look.
 
 ### How to describe a Sankey diagram
 
@@ -118,16 +121,16 @@ Worked example: "Of the 100 TWh of energy this country used in the year, 49 TWh 
 
 ## How does a Sankey diagram work?
 
-A Sankey diagram is drawn in four steps. Most tools that make Sankey charts do them for you; knowing them helps you fix a diagram that looks wrong.
+A Sankey diagram is drawn in four steps. Sankey tools run them behind the scenes, and knowing them makes a tangled or lopsided diagram easier to fix.
 
 1. Give each node a column. Sources go in the first column. Every other node goes one column to the right of the furthest-right node that feeds it.
 2. Choose one scale for the whole diagram. A flow of 10 units must be equally wide everywhere. The busiest column sets the scale, so it fills the height with gaps between its nodes.
-3. Stack the links on each node. The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That keeps crossings to a minimum.
+3. Stack the links on each node. The bands leaving a node are stacked down its edge in the order of the nodes they go to, top to bottom. That cuts down the number of crossings.
 4. Draw each link as an S-shaped band from its place on the source node to its place on the target node. It leaves and arrives horizontally, and its vertical thickness is the same all the way across.
 
 ![How a Sankey link is drawn: first as a smooth S-shaped band whose height is the same at every point, then the same band cut into eight slices with each slice split into two triangles](./sankey-link-geometry.svg)
 
-To put a band on screen, it is cut into thin slices, and each slice is split into two triangles, which is what graphics hardware draws fastest. The more slices, the smoother the curve. The live example on this page draws every band, and every node, this way.
+To put a band on screen, it is cut into thin slices, and each slice is split into two triangles, the shape graphics hardware is built to draw. The more slices, the smoother the curve. The live example on this page draws every band, and every node, this way.
 
 ## When to use a Sankey diagram
 
@@ -149,6 +152,8 @@ The Sankey diagram has two close relatives. An **alluvial diagram** is a Sankey 
 
 ## Common Sankey diagram mistakes
 
+Most Sankey diagram mistakes break the rule that every band shows the same kind of flow, in proportion and in one direction.
+
 - **Flows that don't balance.** If a middle node takes in more than it sends out, readers can't tell whether something is missing. Show losses, storage or "other" as their own bands and nodes.
 - **Too many nodes and hair-thin bands.** A diagram with dozens of tiny links is hard to read. Group the smallest flows into one "Other" link, or split the diagram in two.
 - **Too many crossings.** Order the nodes in each column so bands run mostly straight across. Moving one node up or down a column can remove several crossings.
@@ -158,11 +163,11 @@ The Sankey diagram has two close relatives. An **alluvial diagram** is a Sankey 
 
 ## How to create a Sankey diagram in JavaScript, React or Angular
 
-SciChart.js has no separate Sankey series, but its triangle series can fill any shape, so a short layout helper turns your nodes and links into bars and bands. Because SciChart.js draws with WebGL and WebGPU, the diagram stays smooth to zoom and pan. Try the diagram below: hover over a band or node to highlight its path and see its value, click to keep the highlight, scroll to zoom, drag to pan and double-click to reset.
+The demo below draws the energy example as 12 nodes and 20 bands, each band cut into 40 slices. SciChart.js has no separate Sankey series, but its triangle series can fill any shape, so a short layout helper turns your nodes and links into bars and bands. Try it: hover over a band or node to highlight its path and see its value, click to keep the highlight, and use the mouse wheel and a drag to zoom and pan (double-click shows the whole diagram again).
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="Sankey diagram" demo="triangle-series-chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" />
+<LearnCta position="top" chart="Sankey diagram" demo="triangle-series-chart" demoLabel="triangle series chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" docsLabel="SciChart.js triangle series documentation" />
 
 Here is the code for this diagram. The data is plain JSON: a list of nodes, and a list of links with a `source`, a `target` and a `value`:
 
@@ -267,10 +272,10 @@ Here is the code for this diagram. The data is plain JSON: a list of nodes, and 
 
 Key points:
 
-- `computeSankeyLayout` is plain JavaScript with no SciChart code, so you can reuse it anywhere. It gives each node a column, sets one scale for the whole diagram, stacks the links on each node, and lists the points of each curved band. It throws an error if the links form a loop.
+- `computeSankeyLayout` only does arithmetic on your nodes and links, with no SciChart.js calls. It gives each node a column, sets one scale for the whole diagram, stacks the links on each node, and lists the points of each curved band. It throws an error if the links form a loop.
 - Each band and each node bar is a [FastTriangleRenderableSeries](/2d-charts/chart-types/fast-triangle-renderable-series/) with `drawMode: ETriangleSeriesDrawMode.Strip`: the points go top, bottom, top, bottom along the band, and every three in a row make a triangle. One series per shape lets each one have its own colour and opacity.
 - Hover and click use the series' [hit-test API](/2d-charts/chart-types/hit-test-api/fast-triangle-renderable-series/): `series.hitTestProvider.hitTest(x, y)` returns `isHit: true` when the mouse is inside one of that series' triangles, so no geometry code of your own is needed. `SankeyHoverModifier` extends `CustomChartModifier2D` ([custom chart modifiers](/2d-charts/chart-modifier-api/custom-modifiers/custom-modifiers-overview/)) to run it on every mouse move.
-- Labels and the tooltip are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/). The axes are hidden, but they still set the drawing area, so zoom and pan work as on any chart.
+- Labels and the tooltip are [NativeTextAnnotations](/2d-charts/annotations-api/native-text-annotation/). Zoom and pan still work because the hidden axes set the coordinates every shape is drawn in.
 
 **See it in the demo app:** [JavaScript triangle series chart](https://www.scichart.com/demo/javascript/triangle-series-chart) · [React triangle series chart](https://www.scichart.com/demo/react/triangle-series-chart) · [Angular triangle series chart](https://www.scichart.com/demo/angular/triangle-series-chart)
 
@@ -296,12 +301,13 @@ An alluvial diagram is a kind of Sankey diagram. Its columns are usually the sam
 
 ### How do I make a Sankey diagram in JavaScript?
 
-Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a `FastTriangleRenderableSeries` in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Store the data as nodes and links, where each link has a source, a target and a value. A layout step gives each node a column and a height, stacks the links on each node, and turns every link into an S-shaped band. With SciChart.js you draw each band and bar as a `FastTriangleRenderableSeries` in triangle-strip mode, and use the series' hit-test to add hover highlights and tooltips. The same setup runs in React through `scichart-react` and in Angular through `scichart-angular`.
 
 ## Sources
 
 - Kennedy, A. B. W. and Sankey, H. R. (1898), [The thermal efficiency of steam engines](https://doi.org/10.1680/imotp.1898.19100). *Minutes of the Proceedings of the Institution of Civil Engineers*, 134, 278–312. The committee report that included Sankey's energy-flow diagram of a steam engine.
 - Schmidt, M. (2008), [The Sankey diagram in energy and material flow management, Part I: History](https://doi.org/10.1111/j.1530-9290.2008.00004.x). *Journal of Industrial Ecology*, 12(1), 82–94. The history of the diagram and how its use spread from engineering to energy and material accounts.
 - Schmidt, M. (2008), [The Sankey diagram in energy and material flow management, Part II: Methodology and current applications](https://doi.org/10.1111/j.1530-9290.2008.00015.x). *Journal of Industrial Ecology*, 12(2), 173–185. How Sankey diagrams are used for energy and material flow accounts.
+- Rosvall, M. and Bergstrom, C. T. (2010), [Mapping change in large networks](https://doi.org/10.1371/journal.pone.0008694). *PLoS ONE*, 5(1), e8694. The paper that introduced alluvial diagrams, to show how groups change over time.
 
-<LearnCta position="bottom" chart="Sankey diagram" demo="triangle-series-chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" />
+<LearnCta position="bottom" chart="Sankey diagram" demo="triangle-series-chart" demoLabel="triangle series chart" docs="/2d-charts/chart-types/fast-triangle-renderable-series/" docsLabel="SciChart.js triangle series documentation" />

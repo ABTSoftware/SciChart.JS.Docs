@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Box Plot
-title: "Box Plot (Box and Whisker Plot): What It Is & How to Read It (With Interactive Examples)"
+title: "Box Plot (Box and Whisker Plot): What It Is & How to Read It"
 description: "What a box plot (box and whisker plot) shows, how to read the median, quartiles, whiskers and outliers, how to work one out by hand, and what it can hide. With live examples."
 keywords:
     [
@@ -22,6 +22,7 @@ keywords:
     ]
 image: /img/learn/box-plot-og.png
 related: [violin-plot, histogram, density-plot, error-bars]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -43,7 +44,7 @@ related: [violin-plot, histogram, density-plot, error-bars]
                 {
                     "@type": "Question",
                     "name": "How do you find Q1 and Q3 for a box plot?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. With an odd number of values, leave the median itself out of both halves. Software often interpolates between values instead, which can give slightly different quartiles." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. One common method: with an odd number of values, leave the median itself out of both halves. Tukey's own method includes it in both halves, and software often interpolates between values instead, so quartiles can differ slightly." }
                 },
                 {
                     "@type": "Question",
@@ -58,7 +59,7 @@ related: [violin-plot, histogram, density-plot, error-bars]
                 {
                     "@type": "Question",
                     "name": "How do I make a box plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a FastBoxPlotRenderableSeries with a BoxPlotDataSeries holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an XyScatterRenderableSeries. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis axes, then add a FastBoxPlotRenderableSeries with a BoxPlotDataSeries holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an XyScatterRenderableSeries. React and Angular apps make the same calls, through the scichart-react and scichart-angular packages." }
                 }
             ]
         })}
@@ -69,11 +70,11 @@ related: [violin-plot, histogram, density-plot, error-bars]
 
 ## What is a box plot?
 
-A **box plot** (also called a **box and whisker plot**, box and whisker diagram, box whisker plot or box diagram) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
+A **box plot** (also called a **box and whisker plot**) is a chart that summarises how a set of numbers is spread out. A **box** covers the middle half of the values, a line inside it marks the **median**, and **whiskers** reach to the lowest and highest typical values. Dots beyond the whiskers mark **outliers**.
 
-![A box and whisker graph of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
+![A box plot of exam scores for five classes: each class has a blue box with an orange median line, white whiskers, and red dots for outliers. Class E's box sits highest and is shortest; Class D's box is long, with its median near the bottom](/img/learn/box-plot-og.png)
 
-*A box and whisker chart comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
+*A box plot comparing exam scores for five classes of about 60 students (sample data). [Try the interactive version](#how-to-create-a-box-plot-in-javascript-react-or-angular).*
 
 :::tip Key takeaways
 - A box plot draws the five-number summary: minimum, first quartile (Q1), median, third quartile (Q3) and maximum.
@@ -85,6 +86,8 @@ A **box plot** (also called a **box and whisker plot**, box and whisker diagram,
 
 ## How to read a box plot
 
+A box plot shows the median as a line, the middle half of the values as a box, the typical range as whiskers and unusual values as separate dots.
+
 ![Anatomy of a box plot: the minimum, first quartile (Q1), median, third quartile (Q3) and maximum, with the interquartile range, the whiskers and an outlier labelled](./box-plot-anatomy.svg)
 
 Read a box plot from the middle outwards:
@@ -94,7 +97,7 @@ Read a box plot from the middle outwards:
 3. The whiskers show how far the rest of the values reach. In the simplest form they go to the minimum and maximum. In the most common form, introduced by the statistician John Tukey, they stop at the furthest value within 1.5 × IQR of the box. The charts on this page use this rule.
 4. Outliers are the dots beyond the whiskers. Check them: they may be mistakes in the data, or the most interesting values in it.
 
-Each of the four parts (lower whisker, lower half of the box, upper half of the box, upper whisker) holds about a quarter of the values. A part that looks longer doesn't hold more values; it means those values are more spread out.
+Each of the four parts (lower whisker, lower half of the box, upper half of the box, upper whisker) holds about a quarter of the values, not counting outliers. A part that looks longer doesn't hold more values; it means those values are more spread out.
 
 ### What the shape of a box plot tells you
 
@@ -159,6 +162,8 @@ To avoid being misled, plot the individual points over the box (with a small sid
 
 ## Common box plot mistakes
 
+Most box plot mistakes come from reading more into five numbers than they can carry.
+
 - **Not saying what the whiskers mean.** Some charts draw whiskers to the minimum and maximum, others to 1.5 × IQR, others to percentiles. State the rule in a note.
 - **Reading a skew from the box alone.** A long whisker can come from one extreme value. Look at where the median sits in the box as well.
 - **Assuming overlapping boxes mean "no difference", or separate boxes mean a real one.** A box plot shows spread, not statistical significance; test the difference if it matters.
@@ -166,7 +171,7 @@ To avoid being misled, plot the individual points over the box (with a small sid
 
 ## How to create a box plot in JavaScript, React or Angular
 
-SciChart.js draws box plots with WebGL and WebGPU, so you can compare many groups, zoom in and update the data live. You calculate the five-number summary for each group, and SciChart.js draws the boxes, whiskers and outliers. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover over a box to see its values.
+In the demo below, a short function sorts each class's exam scores, works out the quartiles and the 1.5 × IQR whisker limits, and hands the five numbers to a box plot series; the scores beyond the limits go to a separate scatter series as outlier dots. Hover over a box to read its five numbers, use the mouse wheel to zoom, drag to pan, and double-click to see all five classes again.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -301,7 +306,7 @@ The five points are the five-number summary: the minimum, the first quartile (Q1
 
 ### How do you find Q1 and Q3 for a box plot?
 
-Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. With an odd number of values, leave the median itself out of both halves. Software often interpolates between values instead, which can give slightly different quartiles.
+Sort the values and find the median. Q1 is the median of the lower half of the values and Q3 is the median of the upper half. One common method: with an odd number of values, leave the median itself out of both halves. Tukey's own method includes it in both halves, and software often interpolates between values instead, so quartiles can differ slightly.
 
 ### How do you find the IQR on a box plot?
 
@@ -313,11 +318,12 @@ Use a histogram to see the full shape of one dataset, including gaps and whether
 
 ### How do I make a box plot in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` axes, then add a `FastBoxPlotRenderableSeries` with a `BoxPlotDataSeries` holding an x value plus the minimum, lower quartile, median, upper quartile and maximum for each box. Draw outliers with an `XyScatterRenderableSeries`. React and Angular apps make the same calls, through the `scichart-react` and `scichart-angular` packages.
 
 ## Sources
 
 - NIST/SEMATECH, [e-Handbook of Statistical Methods: Box Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/boxplot.htm). How box plots are built and used to compare groups.
+- Tukey, J. W. (1977), [Exploratory Data Analysis](https://archive.org/details/exploratorydataa00tuke_0). Addison-Wesley. The box plot (box-and-whisker plot) and its 1.5 × IQR whisker rule.
 - McGill, R., Tukey, J. W. and Larsen, W. A. (1978), [Variations of Box Plots](https://doi.org/10.1080/00031305.1978.10479236). *The American Statistician*, 32(1), 12–16. Notched and variable-width box plots.
 - Hyndman, R. J. and Fan, Y. (1996), [Sample Quantiles in Statistical Packages](https://doi.org/10.1080/00031305.1996.10473566). *The American Statistician*, 50(4), 361–365. Why different software calculates slightly different quartiles.
 

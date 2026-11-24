@@ -24,6 +24,7 @@ keywords:
     ]
 image: /img/learn/fourier-series-og.png
 related: [fourier-transform, fast-fourier-transform, window-functions, audio-spectrum-analyzer]
+datePublished: 2026-11-20
 ---
 
 <head>
@@ -50,7 +51,7 @@ related: [fourier-transform, fast-fourier-transform, window-functions, audio-spe
                 {
                     "@type": "Question",
                     "name": "What is the Gibbs phenomenon?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to around 1%, at the cost of a less steep edge." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to about 1.2%, at the cost of a less steep edge." }
                 },
                 {
                     "@type": "Question",
@@ -60,7 +61,7 @@ related: [fourier-transform, fast-fourier-transform, window-functions, audio-spe
                 {
                     "@type": "Question",
                     "name": "How do I plot a Fourier series in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Compute the coefficients an and bn, evaluate the partial sum a0/2 + the sum of an cos(n w0 t) + bn sin(n w0 t) for n = 1 to N at a few thousand time points, and plot the result as a line. With SciChart.js, put the times and values in an XyDataSeries and draw them with a FastLineRenderableSeries; draw the harmonic amplitudes with a FastImpulseRenderableSeries. The same charts work in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Compute the coefficients an and bn, evaluate the partial sum a0/2 + the sum of an cos(n w0 t) + bn sin(n w0 t) for n = 1 to N at a few thousand time points, and plot the result as a line. With SciChart.js, put the times and values in an XyDataSeries and draw them with a FastLineRenderableSeries; draw the harmonic amplitudes with a FastImpulseRenderableSeries. In React or Angular, create the same charts inside scichart-react's SciChartReact or scichart-angular's ScichartAngularComponent." }
                 }
             ]
         })}
@@ -233,7 +234,7 @@ The exact limit is $\frac{1}{\pi}\int_0^{\pi} \frac{\sin x}{x}\,dx - \frac{1}{2}
 
 ### Reducing the Gibbs overshoot with sigma factors
 
-The ringing comes from cutting the series off abruptly at harmonic $N$. Tapering the coefficients instead, by multiplying harmonic $n$ by a **Lanczos sigma factor** $\sigma_n = \operatorname{sinc}\big(n/(N+1)\big)$, cuts the overshoot from about 9% to about 1.2% of the jump, but it softens the edge and slightly raises the RMS error (0.075 instead of 0.060 for the square wave at $N = 100$). This is the same trade-off a [window function](/learn/signal-processing/window-functions/) makes in spectrum analysis, and Gibbs ringing is the same effect you see as ringing from a sharp [low-pass filter](/learn/signal-processing/low-pass-filter/).
+The ringing comes from cutting the series off abruptly at harmonic $N$. Tapering the coefficients instead, by multiplying harmonic $n$ by a **Lanczos sigma factor** $\sigma_n = \operatorname{sinc}\big(n/(N+1)\big)$, cuts the overshoot from about 9% to about 1.2% of the jump, but it softens the edge and slightly raises the RMS error (about 0.078 instead of 0.064 for the square wave at $N = 100$). This is the same trade-off a [window function](/learn/signal-processing/window-functions/) makes in spectrum analysis, and Gibbs ringing is the same effect you see as ringing from a sharp [low-pass filter](/learn/signal-processing/low-pass-filter/).
 
 ## Fourier series vs Fourier transform vs DFT
 
@@ -292,6 +293,8 @@ If the block isn't a whole number of periods, the DFT sees a jump where the end 
 
 ## Common Fourier series mistakes
 
+Most Fourier series mistakes are slips in the coefficient formulas, or misreadings of what a partial sum shows.
+
 - **Forgetting the $a_0/2$.** If you compute $a_0$ with the same $2/T$ formula as the other $a_n$, the constant term is $a_0/2$, not $a_0$. Some books define $a_0$ as the average itself, with $1/T$; check which convention a table uses.
 - **Integrating over less (or more) than one full period.** The orthogonality that makes the formulas work holds only over whole periods. With sampled data, a block that isn't a whole number of periods causes leakage.
 - **Confusing harmonic number with frequency.** Harmonic $n$ is at $n f_0$ hertz. Harmonic 5 of a 60 Hz waveform is at 300 Hz, not 5 Hz.
@@ -301,11 +304,11 @@ If the block isn't a whole number of periods, the DFT sees a jump where the end 
 
 ## How to graph a Fourier series in JavaScript, React or Angular
 
-SciChart.js draws signals and spectra with WebGL and WebGPU, fast enough to redraw thousands of points every time a control moves. The grapher below computes each partial sum in your browser with the plain JavaScript functions in the code. Pick a **waveform** (square, sawtooth, triangle or a pulse train with a **duty cycle**), drag the **harmonics** slider from 1 to 100, **show the harmonics** being added, and turn on **Lanczos σ smoothing** to see the Gibbs overshoot drop. The line under the controls gives the overshoot and the RMS error. Hover to read values, scroll to zoom, drag to pan and double-click to reset.
+Each time you move a control, the grapher below re-adds up to 100 harmonics at 5,001 points across two periods, using the plain JavaScript functions in the code, and redraws the wave and its spectrum. Pick a **waveform** (square, sawtooth, triangle or a pulse train with a **duty cycle**), drag the **harmonics** slider from 1 to 100, **show the harmonics** being added, and turn on **Lanczos σ smoothing** to see the Gibbs overshoot drop. The line under the controls gives the overshoot and the RMS error. Zoom in on a jump to see the Gibbs ripples up close; hover to read values, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={720} name="./Basic/demo" />
 
-<LearnCta position="top" chart="real-time spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="top" chart="Fourier series grapher" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
 
 Here is the code for this example. The JavaScript tab includes the coefficient and partial-sum functions; the React and Angular tabs reuse them.
 
@@ -428,9 +431,9 @@ Key points:
 - The individual harmonics share one `XyDataSeries`, separated by `NaN` values that the line series draws as gaps, so they need only one legend entry.
 - To update the chart live, keep the data series and call `clear()` then `appendRange()` with the new values, as the example's `update()` function does. SciChart.js redraws on the next frame.
 
-**See it in the demo app:** [JavaScript real-time spectrum chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React real-time spectrum chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular real-time spectrum chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, where you can see the harmonics of your own voice or an instrument.
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). It analyses live audio from your microphone, where you can see the harmonics of your own voice or an instrument.
 
-**Go deeper:** [SciChart.js impulse (stem) chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for measuring the spectrum of real signals.
+**Go deeper:** [SciChart.js impulse (stem) series documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/), and the [FFT guide](/learn/signal-processing/fast-fourier-transform/) for measuring the spectrum of real signals.
 
 ## Frequently asked questions
 
@@ -448,7 +451,7 @@ A Fourier series describes a periodic signal as a sum of sine waves at whole-num
 
 ### What is the Gibbs phenomenon?
 
-The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to around 1%, at the cost of a less steep edge.
+The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to about 1.2%, at the cost of a less steep edge.
 
 ### How do I find Fourier series coefficients from measured data?
 
@@ -456,7 +459,7 @@ Sample exactly one period (or a whole number of periods) of the signal at $M$ ev
 
 ### How do I plot a Fourier series in JavaScript?
 
-Compute the coefficients $a_n$ and $b_n$, evaluate the partial sum $a_0/2 + \sum_{n=1}^{N} (a_n \cos n\omega_0 t + b_n \sin n\omega_0 t)$ at a few thousand time points, and plot the result as a line. With SciChart.js, put the times and values in an `XyDataSeries` and draw them with a `FastLineRenderableSeries`; draw the harmonic amplitudes with a `FastImpulseRenderableSeries`. The same charts work in React with `scichart-react` and in Angular with `scichart-angular`.
+Compute the coefficients $a_n$ and $b_n$, evaluate the partial sum $a_0/2 + \sum_{n=1}^{N} (a_n \cos n\omega_0 t + b_n \sin n\omega_0 t)$ at a few thousand time points, and plot the result as a line. With SciChart.js, put the times and values in an `XyDataSeries` and draw them with a `FastLineRenderableSeries`; draw the harmonic amplitudes with a `FastImpulseRenderableSeries`. In React or Angular, create the same charts inside `scichart-react`'s `SciChartReact` or `scichart-angular`'s `ScichartAngularComponent`.
 
 ## Sources
 
@@ -467,4 +470,4 @@ Compute the coefficients $a_n$ and $b_n$, evaluate the partial sum $a_0/2 + \sum
 - Gibbs, J. W. (1899), [Fourier's Series](https://doi.org/10.1038/059606a0). *Nature*, 59, 606. And Hewitt, E. and Hewitt, R. E. (1979), [The Gibbs-Wilbraham phenomenon: an episode in Fourier analysis](https://doi.org/10.1007/BF00330404). *Archive for History of Exact Sciences*, 21, 129–160. The overshoot and its history, including Wilbraham's 1848 description.
 - Lanczos, C. (1956), *Applied Analysis*, Prentice Hall. The sigma factors for reducing Gibbs overshoot.
 
-<LearnCta position="bottom" chart="real-time spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="bottom" chart="Fourier series grapher" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />

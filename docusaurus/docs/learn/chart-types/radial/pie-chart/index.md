@@ -1,7 +1,7 @@
 ---
 sidebar_position: 30
 sidebar_label: Pie Chart
-title: "Pie Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Pie Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a pie chart is, how to read and calculate its slices, when a bar chart works better, and the mistakes to avoid. With a live, interactive example."
 keywords:
     [
@@ -23,6 +23,7 @@ keywords:
     ]
 image: /img/learn/pie-chart-og.png
 related: [donut-chart, bar-chart, treemap, sunburst-chart]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -59,7 +60,7 @@ related: [donut-chart, bar-chart, treemap, sunburst-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a pie chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPieSurface with pieType set to EPieType.Pie, then add one PieSegment per slice with its value, text and colour. SciChart works out each slice's percentage. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartPieSurface with pieType set to EPieType.Pie, then add one PieSegment per slice with its value, text and colour. SciChart works out each slice's percentage. In React, pass the same setup to scichart-react; in Angular, to scichart-angular." }
                 }
             ]
         })}
@@ -86,13 +87,15 @@ A **pie chart** (also called a pie graph or circle chart) is a circular chart di
 
 ## How to read a pie chart
 
+To read a pie chart, find what the whole circle stands for, then judge each slice as a fraction of it.
+
 ![Anatomy of a pie chart: four slices of a household budget, with the slice, its percentage label, its angle, the legend and the whole circle labelled](./pie-chart-anatomy.svg)
 
 1. Find the whole. The full circle is the total: all of the budget, all of the votes or all of the sales. Check the title to see what that total is.
 2. Match each slice to its category, using the label on the slice or the legend.
 3. Judge the size of each slice. A half-circle is 50% and a quarter is 25%. Research on pie charts suggests readers judge a slice mostly by the length of its outer edge (its arc) and its area, rather than the angle at the centre.
 4. Read the labels for exact values. People estimate angles and areas less accurately than lengths, so without percentage labels most readers can only guess at anything that isn't close to a quarter or a half.
-5. Note the order. Most well-made pie charts start at 12 o'clock and run clockwise, largest slice first, so the biggest share is the first one you see.
+5. Note the order. Style guides recommend starting at 12 o'clock and running clockwise, largest slice first, so the biggest share is the first one you see.
 
 ## How to calculate pie chart slices
 
@@ -128,13 +131,15 @@ Worked example: "Housing takes the largest share of the £3,000 monthly budget, 
 
 ## Types of pie chart
 
+Most pie chart variants change the shape of the circle or pull slices out of it; the data is always parts of one whole.
+
 | Type | What it looks like | Use it when |
 | --- | --- | --- |
 | Standard pie chart | A full circle split into slices | You have a few parts of one whole |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) | A pie chart with a hole in the middle | You want a total or label in the centre, or a lighter look on a dashboard |
 | Exploded pie chart | One or more slices pulled out from the centre | You want to draw attention to one slice |
 | 3D pie chart | A pie tilted and given depth | Rarely: the perspective makes front slices look bigger than equal slices at the back |
-| Multi-level or nested pie chart ([sunburst](/2d-charts/chart-types/polar-sunburst-chart/)) | Rings of slices, where each outer ring splits the slice inside it | Your data is a hierarchy, such as region, then country |
+| Multi-level or nested pie chart ([sunburst](/learn/chart-types/radial/sunburst-chart/)) | Rings of slices, where each outer ring splits the slice inside it | Your data is a hierarchy, such as region, then country |
 | Half pie chart or half donut chart | Only the top half of a circle or ring, like a dial | Space is tight, such as a dashboard tile. The half circle stands for 100%, so readers have to rescale what they see |
 | Pie of pie, bar of pie | A main pie with its smallest slices broken out into a second, smaller chart | Several tiny slices need a closer look |
 
@@ -147,7 +152,7 @@ Use a pie chart when you have one total split into a few parts, and the main mes
 | Pie chart | A few parts of one whole, with one or two dominant shares |
 | [Donut chart](/learn/chart-types/radial/donut-chart/) | The same as a pie chart, with room for a total or label in the centre |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Comparing values accurately, many categories, or values that don't add up to a whole |
-| [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) | Comparing how the split of a whole changes across several groups or periods |
+| [100% stacked column chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) | Comparing how the split of a whole changes across several groups or periods |
 
 ### Should this be a pie chart? A quick checklist
 
@@ -159,7 +164,7 @@ Answer each question. If any answer is "no", the right-hand column suggests a be
 | Are all the values positive? A pie can't show a negative share, and zero values vanish. | Use a bar chart |
 | Are there about five categories or fewer, after grouping the smallest into "Other"? | Use a bar chart, sorted largest first |
 | Are the shares clearly different in size, with one or two that stand out? | Use a bar chart: close values are hard to rank in a pie |
-| Is this one snapshot, not a comparison of several groups or a change over time? | Use a [100% stacked column chart](/2d-charts/chart-types/stacked-column-renderable-series/) or a [line chart](/learn/chart-types/cartesian/line-chart/) |
+| Is this one snapshot, not a comparison of several groups or a change over time? | Use a [100% stacked column chart](/learn/chart-types/cartesian/bar-chart/#100-stacked-bar-chart) or a [line chart](/learn/chart-types/cartesian/line-chart/) |
 
 ## Pie chart vs bar chart: the same data both ways
 
@@ -265,13 +270,13 @@ Key points:
 
 ## Pie chart examples
 
-Here are three pie chart examples using real-world shares. Each picture opens the live, interactive chart in the SciChart.js demo app, where you can select slices and see the code.
+Here are three pie chart examples from the SciChart.js demo app. Each picture opens the live, interactive chart, where you can select slices and see the code. The demo app doesn't say where its figures come from, so treat them as illustrations of the chart rather than as data to quote.
 
 | Example | What it shows |
 | --- | --- |
-| <a href="https://www.scichart.com/demo/javascript/pie-chart"><img src={require("@site/static/img/learn/examples/javascript-pie-chart.jpg").default} alt="A pie chart of mobile phone makers' market share in 2022, with two large slices of about 29% each, many thin slices and a legend" width="240" /></a> | Market share: a pie chart with many slices. The share of mobile phones sold by each maker in 2022. Two makers hold about 29% each, which the pie shows well; the thin slices further round show why many charts group small categories into "Other". [JavaScript pie chart](https://www.scichart.com/demo/javascript/pie-chart) |
-| <a href="https://www.scichart.com/demo/javascript/donut-chart"><img src={require("@site/static/img/learn/examples/javascript-donut-chart.jpg").default} alt="A donut chart of web browser market share in 2022, where one browser takes about two thirds of the ring" width="240" /></a> | Browser use: a donut chart. The market share of web browsers in 2022. One browser takes about two thirds of the ring, the kind of single dominant share a pie or donut chart makes obvious at a glance. [JavaScript donut chart](https://www.scichart.com/demo/javascript/donut-chart) |
-| <a href="https://www.scichart.com/demo/javascript/polar-pie-chart"><img src={require("@site/static/img/learn/examples/javascript-polar-pie-chart.jpg").default} alt="A pie chart of the most popular JavaScript frameworks in 2024, with each slice labelled inside" width="240" /></a> | Framework popularity: a labelled pie chart. The most popular JavaScript frameworks in 2024, as shares of one whole. Each slice carries its name, so readers don't have to match colours to a legend. [JavaScript polar pie chart](https://www.scichart.com/demo/javascript/polar-pie-chart) |
+| <a href="https://www.scichart.com/demo/javascript/pie-chart"><img src={require("@site/static/img/learn/examples/javascript-pie-chart.jpg").default} alt="A pie chart of mobile phone makers' market share in 2022, with two large slices of about 29% each, many thin slices and a legend" width="240" /></a> | Market share: a pie chart with many slices. Each phone maker's share of the market in 2022, as given in the demo. Two makers hold about 29% each, which the pie shows well; the thin slices further round show why many charts group small categories into "Other". [JavaScript pie chart](https://www.scichart.com/demo/javascript/pie-chart) |
+| <a href="https://www.scichart.com/demo/javascript/donut-chart"><img src={require("@site/static/img/learn/examples/javascript-donut-chart.jpg").default} alt="A donut chart of web browser market share in 2022, where one browser takes about two thirds of the ring" width="240" /></a> | Browser use: a donut chart. Each web browser's share of use in 2022, as given in the demo. One browser takes about two thirds of the ring, the kind of single dominant share a pie or donut chart makes obvious at a glance. [JavaScript donut chart](https://www.scichart.com/demo/javascript/donut-chart) |
+| <a href="https://www.scichart.com/demo/javascript/polar-pie-chart"><img src={require("@site/static/img/learn/examples/javascript-polar-pie-chart.jpg").default} alt="A pie chart of the most popular JavaScript frameworks in 2024, with each slice labelled inside" width="240" /></a> | Framework popularity: a labelled pie chart. Each slice carries its name, so readers don't have to match colours to a legend. The demo's figures for JavaScript frameworks in 2024 add up to just over 100%, as survey results do when people can pick more than one answer, so this one shows the labelling style rather than true parts of one whole (see the checklist above). [JavaScript polar pie chart](https://www.scichart.com/demo/javascript/polar-pie-chart) |
 
 ## Frequently asked questions
 
@@ -297,14 +302,15 @@ The Scottish engineer and economist William Playfair is credited with the first 
 
 ### How do I make a pie chart in JavaScript?
 
-With SciChart.js, create a `SciChartPieSurface` with `pieType` set to `EPieType.Pie`, then add one `PieSegment` per slice with its value, text and colour. SciChart works out each slice's percentage. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartPieSurface` with `pieType` set to `EPieType.Pie`, then add one `PieSegment` per slice with its value, text and colour. SciChart works out each slice's percentage. In React, pass the same setup to `scichart-react`; in Angular, to `scichart-angular`.
 
 ## Sources
 
 - Spence, I. (2005), [No Humble Pie: The Origins and Usage of a Statistical Chart](https://doi.org/10.3102/10769986030004353). *Journal of Educational and Behavioral Statistics*, 30(4). William Playfair's first pie charts and how the chart has been used since.
-- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Experiments showing that people judge positions and lengths more accurately than angles and areas.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387). Experiments showing that people judge positions and lengths more accurately than angles; area appears only in the paper's theoretical ranking, below angle.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems (CHI 2010)*, 203–212. Repeats Cleveland and McGill's experiments and adds area judgements, which were less accurate than position, length or angle.
 - Skau, D. and Kosara, R. (2016), [Arcs, Angles, or Areas: Individual Data Encodings in Pie and Donut Charts](https://doi.org/10.1111/cgf.12888). *Computer Graphics Forum*, 35(3). Evidence that readers rely on arc length and area more than the centre angle.
-- UK Government Analysis Function, [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Guidance for government analysts on when to use pie charts (five categories or fewer, a meaningful whole, a dominant category) and how to format them.
+- UK Government Analysis Function, [Data visualisation: charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Guidance for government analysts on when to use pie charts (five categories or fewer, a meaningful whole, a dominant category) and how to format them, including ranking the slices by size from 12 o'clock.
 - Microsoft, [Available chart types in Office](https://support.microsoft.com/en-us/office/available-chart-types-in-office-a6187218-807e-4103-9e0a-27cdb19afb90). When to consider a pie chart, and the pie of pie and bar of pie variants.
 
 <LearnCta position="bottom" chart="pie chart" demo="pie-chart" docs="/2d-charts/chart-types/pie-chart-type/" />

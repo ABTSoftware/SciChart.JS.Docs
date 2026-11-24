@@ -12,6 +12,17 @@ import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
 import MinimizedImageAndTextHeader from "../components/MinimizedImageAndTextHeader";
 import StatusEmoji from "../components/StatusEmoji";
 import { YouTubeVideo } from "../components/YouTubeVideo";
+import LearnByline from "../components/LearnByline";
+import { useLocation } from "@docusaurus/router";
+
+// A learning center page's H1 is followed by its byline (author, published and updated dates) and article schema.
+// Only learn pages (under /learn/) get it; every other page's H1 is unchanged.
+function H1(props: Record<string, unknown>) {
+    const { pathname } = useLocation();
+    const heading = React.createElement(MDXComponents.h1, props);
+    if (!/\/learn(\/|$)/.test(pathname)) return heading;
+    return React.createElement(React.Fragment, null, heading, React.createElement(LearnByline));
+}
 
 // Inline code in a Financial Charts table, given optional line breaks (<wbr />) by
 // custom-plugins/remarkTableCodeBreaks. The default `code` component renders code whose children
@@ -28,6 +39,7 @@ export default {
     // Re-use the default mapping
     ...MDXComponents,
     code: Code,
+    h1: H1,
     // Map the "<ChartPreviewWrapper>" tag to our ChartPreviewWrapper component
     // `ChartPreviewWrapper` will receive all props that were passed to `<ChartPreviewWrapper>` in MDX
     ChartPreviewWrapper,

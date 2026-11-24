@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Parallel Coordinates Plot
-title: "Parallel Coordinates Plot: What It Is & How to Read It (With Interactive Examples)"
+title: "Parallel Coordinates Plot: What It Is & How to Read It"
 description: "What a parallel coordinates plot is, how to read its axes and lines, when to use one instead of a scatter plot or radar chart, and the mistakes to avoid."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/parallel-coordinates-plot-og.png
 related: [radar-chart, scatter-plot, heatmap, big-data-visualization]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -47,7 +48,7 @@ related: [radar-chart, scatter-plot, heatmap, big-data-visualization]
                 {
                     "@type": "Question",
                     "name": "How do I make a parallel coordinates plot in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a FastLineRenderableSeries, add one inner NumericAxis per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a FastLineRenderableSeries, add one inner NumericAxis per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. Pass the same setup function to scichart-react in React or scichart-angular in Angular." }
                 }
             ]
         })}
@@ -66,7 +67,7 @@ A **parallel coordinates plot** (also called a parallel coordinates chart or par
 
 :::tip Key takeaways
 - A parallel coordinates plot shows many records across many variables: one vertical axis per variable, one line per record.
-- Lines that run parallel between two axes mean those variables rise together. Lines that cross in an X mean one falls as the other rises.
+- Lines that don't cross between two axes mean those variables rise together. When both axes are scaled alike, those lines run roughly parallel. Lines that cross in an X mean one falls as the other rises.
 - Colour marks groups, and lines that leave their group's band are outliers.
 - Only neighbouring axes compare directly, so the order of the axes changes what you can see.
 - With many lines, use transparency and brushing (filtering on an axis) to keep the plot readable.
@@ -74,11 +75,13 @@ A **parallel coordinates plot** (also called a parallel coordinates chart or par
 
 ## How to read a parallel coordinates plot
 
+Read a parallel coordinates plot axis by axis, then look at how the lines run between each pair of neighbouring axes.
+
 ![The parts of a parallel coordinates plot: four vertical axes for price, battery size, range and 0 to 100 km/h time, each with its own scale, and three lines, one per car. Numbered markers show an axis, a line with its four values labelled, lines running parallel between battery and range, and lines crossing in an X between range and acceleration time](./parallel-coordinates-anatomy.svg)
 
 1. Read the axes first. Each vertical axis is one variable, with its own name, unit and scale. Check where each scale starts and ends: two axes at the same height can mean very different numbers.
 2. Follow one line. A line is one record, such as one car, one patient or one test run. Where it crosses an axis is that record's value for that variable. In the diagram, the orange saloon costs \$75k, has a 75 kWh battery and 470 km of range, and reaches 100 km/h in 4.5 seconds.
-3. Look at the space between each pair of axes. The slopes there show how the two variables relate. Lines that run roughly parallel mean the two rise and fall together. Lines that cross in an X mean that high values on one axis go with low values on the other.
+3. Look at the space between each pair of axes. The slopes there show how the two variables relate. Lines that don't cross mean the two rise and fall together; when both axes are scaled alike, they run roughly parallel. Lines that cross in an X mean that high values on one axis go with low values on the other.
 4. Look for bands and colours. Lines that travel together form a group. When colour marks a category, check whether each colour keeps to its own band; where it does, that variable separates the groups.
 5. Spot the outliers. A line that leaves its band, or reaches the far end of an axis on its own, is a record worth a closer look.
 
@@ -94,7 +97,7 @@ Each pair of neighbouring axes works like a small scatter plot, drawn in a diffe
 
 | Pattern between two axes | What it means | Scatter plot equivalent |
 | --- | --- | --- |
-| Lines run roughly parallel | Positive relationship: the two variables rise and fall together | Dots climbing from bottom left to top right |
+| Lines don't cross (roughly parallel when the axes are scaled alike) | Positive relationship: the two variables rise and fall together | Dots climbing from bottom left to top right |
 | Lines cross near one point, in an X | Negative relationship: one rises as the other falls | Dots falling from top left to bottom right |
 | Lines cross at random | No clear relationship | A shapeless cloud |
 | Lines split into separate bands | Groups: records fall into clusters on these variables | Separate clumps of dots |
@@ -104,7 +107,7 @@ A strong negative relationship looks like an X where the lines cross near one po
 
 ## A worked example: comparing electric cars
 
-The chart at the top of this page compares 150 electric cars of three types (50 city cars, 50 saloons and 50 SUVs) on six variables. The data is made up for this guide, but realistic in shape. These are the average values for each type:
+The chart at the top of this page compares 150 electric cars of three types (50 city cars, 50 saloons and 50 SUVs) on six variables. The figures are invented for this guide. These are the average values for each type:
 
 | Type | Price | Battery | Range | 0–100 km/h | Weight | Energy use |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -150,6 +153,8 @@ A radar chart is the circular cousin of a parallel coordinates plot: bend the ro
 
 ## Common parallel coordinates plot mistakes
 
+Most parallel coordinates plot mistakes hide the patterns under too many lines or make the axes hard to compare.
+
 - **Too many solid lines.** Hundreds of opaque lines merge into a block of colour. Make the lines partly transparent, highlight the line under the mouse, and let readers brush axes to filter.
 - **A careless axis order.** Only neighbouring axes compare directly. Put variables you expect to be related next to each other, and try a few orders before settling on one.
 - **Hiding the scales.** Each axis has its own scale, so a line at the top of one axis and the bottom of the next isn't a fall in value. Label each axis with its unit and range.
@@ -160,7 +165,7 @@ A radar chart is the circular cousin of a parallel coordinates plot: bend the ro
 
 ## How to create a parallel coordinates plot in JavaScript, React or Angular
 
-SciChart.js has no single parallel coordinates series, but its line series and inner axes combine into one. Because SciChart.js draws with WebGL and WebGPU, the plot stays smooth with many lines. Try the plot below: hover over a line to highlight it and see its values, drag up or down along an axis to filter, click the axis to clear the filter, scroll to zoom, drag between the axes to pan and double-click to reset.
+The demo below draws the 150 electric cars from the worked example as 150 line series across six axes, and fades every car outside the range you brush. SciChart.js has no single parallel coordinates series, but its line series and inner axes combine into one. Try it: hover over a line to highlight it and see its values, drag up or down along an axis to filter, click the axis to clear the filter, scroll to zoom, drag between the axes to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -290,11 +295,11 @@ There is no fixed limit: each variable is just one more axis. In practice the wi
 
 ### How do I make a parallel coordinates plot in JavaScript?
 
-Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a `FastLineRenderableSeries`, add one inner `NumericAxis` per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+Give each variable its own vertical axis, scale every value to between 0 and 1 on its axis, and draw each record as a line through its scaled values. With SciChart.js you draw each record as a `FastLineRenderableSeries`, add one inner `NumericAxis` per variable placed by a layout strategy, and add a custom modifier for hover highlighting and brushing. Pass the same setup function to `scichart-react` in React or `scichart-angular` in Angular.
 
 ## Sources
 
-- Inselberg, A. (1985), [The plane with parallel coordinates](https://doi.org/10.1007/BF01898350). *The Visual Computer*, 1(2), 69–91. The paper that set out parallel coordinates as a way to show many dimensions on a flat page.
+- Inselberg, A. (1985), [The plane with parallel coordinates](https://doi.org/10.1007/BF01898350). *The Visual Computer*, 1(2), 69–91. The paper that established parallel coordinates as a way to show many dimensions on a flat page. Parallel axes go back to Maurice d'Ocagne in 1885; Inselberg developed the method from 1959.
 - Wegman, E. J. (1990), [Hyperdimensional data analysis using parallel coordinates](https://doi.org/10.1080/01621459.1990.10474926). *Journal of the American Statistical Association*, 85(411), 664–675. How to use parallel coordinates to explore statistical data, including reading relationships between neighbouring axes.
 - Inselberg, A. (2009), [Parallel Coordinates: Visual Multidimensional Geometry and Its Applications](https://doi.org/10.1007/978-0-387-68628-8). Springer. A book-length treatment of the method and its uses.
 

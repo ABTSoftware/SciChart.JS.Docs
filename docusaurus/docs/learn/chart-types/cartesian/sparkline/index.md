@@ -1,7 +1,7 @@
 ---
-sidebar_position: 200
+sidebar_position: 240
 sidebar_label: Sparkline
-title: "Sparkline: What It Is & How to Read It (With Interactive Examples)"
+title: "Sparkline: What It Is & How to Read It (Interactive Example)"
 description: "What a sparkline is, how to read one, the main types, whether rows should share a scale, and the mistakes to avoid. With a live table of 40 sparklines."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/sparkline-og.png
 related: [line-chart, strip-chart, bullet-chart, area-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -38,7 +39,7 @@ related: [line-chart, strip-chart, bullet-chart, area-chart]
                 {
                     "@type": "Question",
                     "name": "Who invented the sparkline?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician and information designer Edward Tufte named and defined the sparkline in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them." }
                 },
                 {
                     "@type": "Question",
@@ -53,7 +54,7 @@ related: [line-chart, strip-chart, bullet-chart, area-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a sparkline in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, a sparkline is a FastLineRenderableSeries on a chart whose x- and y-axes have isVisible set to false, with no chart modifiers. Add XyScatterRenderableSeries with EllipsePointMarker for the lowest, highest and latest points, and a BoxAnnotation for a normal-range band. For a table of many sparklines, create one SciChartSurface and add each cell with SciChartSubSurface.createSubSurface, so all of them share one WebGL context. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, a sparkline is a FastLineRenderableSeries on a chart whose x- and y-axes have isVisible set to false, with no chart modifiers. Add XyScatterRenderableSeries with EllipsePointMarker for the lowest, highest and latest points, and a BoxAnnotation for a normal-range band. For a table of many sparklines, create one SciChartSurface and add each cell with SciChartSubSurface.createSubSurface, so all of them draw through one parent chart. React and Angular wrappers (scichart-react and scichart-angular) take the same setup code." }
                 }
             ]
         })}
@@ -80,6 +81,8 @@ A **sparkline** (also called a sparkline chart or spark line) is a tiny line cha
 
 ## How to read a sparkline
 
+Read a sparkline for its shape and its latest value, not for exact numbers: it has no axis, so the label and the printed value carry the detail.
+
 ![The parts of a sparkline: an enlarged line of a tank's temperature over 24 hours, with the label Tank 3 temp on the left and the latest value, 71.8 °C, in red on the right. A grey band marks the normal range of 62 to 74 °C, blue dots mark the lowest and highest readings, and a red dot marks the latest reading. Below, the same sparkline at actual size inside a sentence](./sparkline-anatomy.svg)
 
 1. Start with the label. It tells you what is measured, and often the period: the last 24 hours, the last 12 months.
@@ -95,21 +98,23 @@ Use this template when you report what a sparkline shows:
 
 > [What is measured] is [latest value], [up / down / flat] over [period], and [inside / above / below] its normal range. It ranged from [lowest] to [highest].
 
-For example, from the diagram above: "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 63 °C to 78 °C, with one short spike above the range."
+For example, from the diagram above: "Tank 3's temperature is 71.8 °C, rising over the last few hours and back inside its normal range of 62 to 74 °C. Over 24 hours it ranged from about 65 °C to 77 °C, with one short spike above the range."
 
 ## Where sparklines come from
 
-The statistician and information designer Edward Tufte named and defined the sparkline in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart can sit wherever a word or a number can, at the resolution of type, instead of being a big, separate figure with a caption and a frame.
+The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his book *Beautiful Evidence* (2006), in a chapter that describes sparklines as "data-intense, design-simple, word-sized graphics". His idea was that a chart can sit wherever a word or a number can, at the resolution of type, instead of being a big, separate figure with a caption and a frame.
 
 His examples set out most of what sparklines still look like today:
 
 - a patient's glucose readings with a grey band for the normal range, so readings outside it stand out;
 - tables of exchange rates with a sparkline in every row, using red for the first and last values and blue for the low and high;
-- advice on shape: sparklines should look "lumpy", not spiky and not flat, following William Cleveland's method of choosing a chart's width-to-height ratio so that slopes average about 45°.
+- advice on shape: sparklines should look "lumpy", not spiky and not flat, following William Cleveland's method of choosing a chart's width-to-height ratio so that the typical slope is about 45°.
 
 Small charts embedded in text existed before 2006, but the name and the design rules come from Tufte. Spreadsheet apps such as Excel and Google Sheets now have sparklines built in; their help pages cover the menus and formulas.
 
 ## Types of sparkline
+
+Sparklines come in a few shapes, chosen by whether the data is a trend, a set of separate values or a win-or-lose result.
 
 | Type | What it shows | Use it for |
 | --- | --- | --- |
@@ -149,6 +154,8 @@ Use a sparkline when you have many series and want to show the recent trend of e
 
 ## Common sparkline mistakes
 
+Most sparkline mistakes either leave the reader without a number or make rows look comparable when they aren't.
+
 - **No number beside the line.** A sparkline has no axis, so readers can't get a value from it. Print the latest value next to the line.
 - **Comparing rows on different scales without saying so.** If every row has its own scale, readers can't compare the heights of the lines. Say so in the column header, or use one scale.
 - **Too few points.** A line through 4 or 5 values says little. Show the numbers, or use a column sparkline.
@@ -158,11 +165,11 @@ Use a sparkline when you have many series and want to show the recent trend of e
 
 ## How to create sparklines in JavaScript, React or Angular
 
-SciChart.js has no separate sparkline series: a sparkline is a line series on a chart with its axes hidden. The table below is one SciChart.js chart rather than one chart per cell, and each sparkline is a sub-chart drawn with the same WebGL context. Each of its 40 sparklines shows a simulated sensor's last 300 readings and gets a new reading every 50 milliseconds. There is nothing to click. Watch the lines scroll; a value turns amber with a HIGH or LOW flag when its channel leaves the grey normal range.
+SciChart.js has no separate sparkline series: a sparkline is a line series on a chart with its axes hidden. The table below is one SciChart.js chart rather than one chart per cell, and each sparkline is a sub-chart inside it. Each of its 40 sparklines (20 on a narrow screen) shows a simulated sensor's last 300 readings and gets a new reading every 50 milliseconds. There is nothing to click. Watch the lines scroll; a value turns amber with a HIGH or LOW flag when its channel leaves the grey normal range.
 
 <LiveDocSnippet maxWidth={'100%'} height={640} name="./Basic/demo" />
 
-<LearnCta position="top" chart="sparkline" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/subcharts-api/subcharts-api-overview/" />
+<LearnCta position="top" chart="sparkline" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/subcharts-api/subcharts-api-overview/" docsLabel="SciChart.js SubCharts API documentation" />
 
 Here is the code for this chart:
 
@@ -307,15 +314,15 @@ Here is the code for this chart:
 Key points:
 
 - Each sparkline is a [FastLineRenderableSeries](/2d-charts/chart-types/fast-line-renderable-series/) on a chart whose two `NumericAxis` have `isVisible: false`, so there are no ticks, labels or gridlines. There are no chart modifiers: a sparkline is too small to zoom.
-- `SciChartSubSurface.createSubSurface()` adds each cell to one parent `SciChartSurface`, positioned with a `Rect` as fractions of the parent's width and height. All the sub-charts share one WebGL context, which is what keeps dozens of live charts fast. See the [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview/) and the [worked example of a large dashboard](/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard/).
-- The markers are `XyScatterRenderableSeries` with an `EllipsePointMarker`, and the normal range is a [BoxAnnotation](/2d-charts/annotations-api/box-annotation/) with `xCoordinateMode: ECoordinateMode.Relative`, so it always spans the full width. The labels and values are [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation/)s on the parent chart, drawn by WebGL too.
+- `SciChartSubSurface.createSubSurface()` adds each cell to one parent `SciChartSurface`, positioned with a `Rect` as fractions of the parent's width and height. All the sub-charts draw through the parent chart, so the page has one chart to set up and render instead of one per cell. See the [SubCharts API](/2d-charts/subcharts-api/subcharts-api-overview/) and the [worked example of a large dashboard](/2d-charts/subcharts-api/example-using-sub-charts-to-create-large-dashboard/).
+- The markers are `XyScatterRenderableSeries` with an `EllipsePointMarker`, and the normal range is a [BoxAnnotation](/2d-charts/annotations-api/box-annotation/) with `xCoordinateMode: ECoordinateMode.Relative`, so it always spans the full width. The labels and values are [NativeTextAnnotation](/2d-charts/annotations-api/native-text-annotation/)s on the parent chart, drawn by the chart itself rather than as HTML.
 - For live data, create each `XyDataSeries` with `fifoCapacity` and call `append()`: the oldest point drops off as each new one arrives. See [real-time updates](/2d-charts/chart-types/data-series-api/realtime-updates/).
 
 **See it in the demo app** (64 small charts with hidden axes, updating live in one SubCharts grid): [JavaScript multi-chart dashboard](https://www.scichart.com/demo/javascript/multiple-chart-dashboard-performance-demo) · [React multi-chart dashboard](https://www.scichart.com/demo/react/multiple-chart-dashboard-performance-demo) · [Angular multi-chart dashboard](https://www.scichart.com/demo/angular/multiple-chart-dashboard-performance-demo)
 
 For one line at full size: [JavaScript line chart](https://www.scichart.com/demo/javascript/line-chart) · [React line chart](https://www.scichart.com/demo/react/line-chart) · [Angular line chart](https://www.scichart.com/demo/angular/line-chart)
 
-**Go deeper:** [SciChart.js sparkline documentation](/2d-charts/subcharts-api/subcharts-api-overview/) (the SubCharts API), and the [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/).
+**Go deeper:** [SciChart.js SubCharts API documentation](/2d-charts/subcharts-api/subcharts-api-overview/), and the [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/).
 
 ## Frequently asked questions
 
@@ -329,7 +336,7 @@ The three common types are line sparklines, which show how a value moves over ti
 
 ### Who invented the sparkline?
 
-The statistician and information designer Edward Tufte named and defined the sparkline in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them.
+The statistician and information designer Edward Tufte named the sparkline in drafts he posted online in 2004 and defined it in his 2006 book Beautiful Evidence, describing sparklines as data-intense, design-simple, word-sized graphics. Small charts set inside text had appeared before, but Tufte gave them their name and set out how to design them.
 
 ### What is the difference between a sparkline and a line chart?
 
@@ -341,13 +348,13 @@ It depends on the question. Give each row its own vertical scale to show the sha
 
 ### How do I make a sparkline in JavaScript?
 
-With SciChart.js, a sparkline is a `FastLineRenderableSeries` on a chart whose x- and y-axes have `isVisible` set to `false`, with no chart modifiers. Add `XyScatterRenderableSeries` with `EllipsePointMarker` for the lowest, highest and latest points, and a `BoxAnnotation` for a normal-range band. For a table of many sparklines, create one `SciChartSurface` and add each cell with `SciChartSubSurface.createSubSurface`, so all of them share one WebGL context. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, a sparkline is a `FastLineRenderableSeries` on a chart whose x- and y-axes have `isVisible` set to `false`, with no chart modifiers. Add `XyScatterRenderableSeries` with `EllipsePointMarker` for the lowest, highest and latest points, and a `BoxAnnotation` for a normal-range band. For a table of many sparklines, create one `SciChartSurface` and add each cell with `SciChartSubSurface.createSubSurface`, so all of them draw through one parent chart. React and Angular wrappers (`scichart-react` and `scichart-angular`) take the same setup code.
 
 ## Sources
 
 - Tufte, E. (2006). *Beautiful Evidence*. Graphics Press, pages 46–63. The chapter that names and defines sparklines.
-- Tufte, E., [Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/). Drafts of that chapter: the definition, the glucose example with a grey normal-range band, the red and blue markers, and the advice on aspect ratio.
-- Cleveland, W. S. (1993). *Visualizing Data*. Hobart Press. Banking to 45°: choosing a chart's aspect ratio so that slopes average about 45°.
+- Tufte, E., [Sparkline theory and practice](https://www.edwardtufte.com/notebook/sparkline-theory-and-practice-edward-tufte/). Drafts of that chapter, first posted in 2004: the definition, the glucose example with a grey normal-range band, the red and blue markers, and the advice on aspect ratio.
+- Cleveland, W. S. (1993). *Visualizing Data*. Hobart Press. Banking to 45°: choosing a chart's aspect ratio so that the typical slope is about 45°.
 - Heer, J. and Agrawala, M. (2006), [Multi-Scale Banking to 45 Degrees](https://doi.org/10.1109/TVCG.2006.163). *IEEE Transactions on Visualization and Computer Graphics*, 12(5), 701–708. A method for choosing aspect ratios automatically, which Tufte points to for sparklines.
 
-<LearnCta position="bottom" chart="sparkline" demo="multiple-chart-dashboard-performance-demo" docs="/2d-charts/subcharts-api/subcharts-api-overview/" />
+<LearnCta position="bottom" chart="sparkline" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/subcharts-api/subcharts-api-overview/" docsLabel="SciChart.js SubCharts API documentation" />

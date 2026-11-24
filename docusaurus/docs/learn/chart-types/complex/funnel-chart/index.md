@@ -1,7 +1,7 @@
 ---
 sidebar_position: 20
 sidebar_label: Funnel Chart
-title: "Funnel Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Funnel Chart: What It Is & How to Read It (Interactive Example)"
 description: "What a funnel chart is, how to read stage counts and conversion rates, how to work out drop-off between steps, when a bar chart is the better choice, and the mistakes to avoid."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/funnel-chart-og.png
 related: [sankey-diagram, bar-chart, waterfall-chart, pie-chart]
+datePublished: 2026-11-14
 ---
 
 <head>
@@ -53,7 +54,7 @@ related: [sankey-diagram, bar-chart, waterfall-chart, pie-chart]
                 {
                     "@type": "Question",
                     "name": "How do I make a funnel chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, draw each stage as a centred rectangle with a FastRectangleRenderableSeries and an XyxyDataSeries, spanning minus half to plus half of the stage's count, one row per stage. Draw the tapered connectors between stages with a FastTriangleRenderableSeries, and add the counts and conversion rates as TextAnnotations. The same code works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, draw each stage as a centred rectangle with a FastRectangleRenderableSeries and an XyxyDataSeries, spanning minus half to plus half of the stage's count, one row per stage. Draw the tapered connectors between stages with a FastTriangleRenderableSeries, and add the counts and conversion rates as TextAnnotations. In React, wrap the same setup in scichart-react; in Angular, use scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +80,8 @@ A **funnel chart** (also called a funnel graph or conversion funnel) shows how m
 :::
 
 ## How to read a funnel chart
+
+Read a funnel chart from top to bottom, comparing each stage with the one above it and with the first stage.
 
 ![The parts of a funnel chart, drawn for a sales pipeline of 800 leads, 320 qualified, 120 proposals sent and 36 won. Numbered markers show the stage bar, the count with its share of the first stage, the step conversion between two stages, the drop-off between them and the final outcome of 4.5%](./funnel-chart-anatomy.svg)
 
@@ -107,7 +110,7 @@ Every funnel number comes from three simple calculations. Here they are for the 
 The table shows two things the picture alone doesn't.
 
 - The weakest step and the biggest loss are different. Most people (6,600) leave between the first visit and the pricing page, but the lowest rate (30%) is from pricing to trial. Losing many people at the top is normal; a low rate in the middle of the funnel, among people who have already shown interest, usually deserves a closer look.
-- The overall rate is the step rates multiplied together. 45% × 30% × 70.4% × 40% = 3.8%, the same as 456 ÷ 12,000. So a relative improvement at any step lifts the end result by the same proportion. Raising the weakest step from 30% to 40% (a third more) gives 608 customers instead of 456. Raising the first step from 45% to 60% (also a third more) gives the same 608. Fix the step where an improvement is cheapest, not only the step with the lowest rate.
+- The overall rate is the step rates multiplied together. 45% × 30% × 70.4% × 40% = 3.8%, the same as 456 ÷ 12,000. So a relative improvement at any step lifts the end result by the same proportion, as long as the other steps hold their rates. Raising the weakest step from 30% to 40% (a third more) gives 608 customers instead of 456. Raising the first step from 45% to 60% (also a third more) gives the same 608. Fix the step where an improvement is cheapest, not only the step with the lowest rate.
 
 ### How to describe a funnel chart
 
@@ -118,6 +121,8 @@ Use this template when you report a funnel:
 Worked example: "Of 12,000 site visitors, 456 (3.8%) became paying customers this month. The weakest step was from viewing pricing to starting a trial, where 30% continued."
 
 ## Types of funnel chart
+
+Funnel charts differ in how they draw the stages, which way they run and who they count.
 
 | Type | What it looks like | Good for |
 | --- | --- | --- |
@@ -159,6 +164,8 @@ Use a funnel chart when the stages are **sequential** (they happen in a fixed or
 
 ## Common funnel chart mistakes
 
+Most funnel chart mistakes come from stages that don't count the same people in the same way.
+
 - **Stages that aren't nested.** If a later stage counts things the earlier one didn't (page views instead of people, or people who skipped a step), a step conversion can go over 100%. Count the same unit at every stage, and decide whether the funnel is open or closed.
 - **Mixing time windows.** Counting each stage over the same calendar month mixes people who started last month with people who started this month. For processes that take days or weeks, follow one group (a **cohort**) from the first stage to the last.
 - **Showing only percentages, or only counts.** Readers need both: the count shows scale, and the rate shows performance. Label each stage with its number, and each step with its conversion rate.
@@ -168,11 +175,11 @@ Use a funnel chart when the stages are **sequential** (they happen in a fixed or
 
 ## How to create a funnel chart in JavaScript, React or Angular
 
-SciChart.js has no funnel series: you build one from a rectangle series for the stages and a triangle series for the tapered connectors, with text annotations for the numbers. Because SciChart.js draws with WebGL and WebGPU, the chart stays smooth to zoom and pan. Try the chart below: hover over a stage to see its counts and conversion rates, scroll to zoom, drag to pan and double-click to reset.
+The demo below draws the five-stage sign-up funnel from the worked example, with the 30% step from pricing to trial in pink. SciChart.js has no funnel series, so it is built from a rectangle series for the stages and a triangle series for the tapered connectors, with text annotations for the numbers. Try it: hover over a stage to see its counts and conversion rates. The mouse wheel zooms, dragging pans, and a double-click brings back the whole funnel.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
-<LearnCta position="top" chart="funnel chart" demo="population-pyramid" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" />
+<LearnCta position="top" chart="funnel chart" demo="population-pyramid" demoLabel="population pyramid" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" docsLabel="SciChart.js rectangle series documentation" />
 
 Here is the code for this chart. The `buildFunnel` helper turns a list of stages into the bar rectangles, the connector triangles and the conversion rates, so you can reuse it with your own data:
 
@@ -423,11 +430,11 @@ A funnel chart is a bar chart with its bars centred and in process order, usuall
 
 ### How do I make a funnel chart in JavaScript?
 
-With SciChart.js, draw each stage as a centred rectangle with a `FastRectangleRenderableSeries` and an `XyxyDataSeries`, spanning minus half to plus half of the stage's count, one row per stage. Draw the tapered connectors between stages with a `FastTriangleRenderableSeries`, and add the counts and conversion rates as `TextAnnotation`s. The same code works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, draw each stage as a centred rectangle with a `FastRectangleRenderableSeries` and an `XyxyDataSeries`, spanning minus half to plus half of the stage's count, one row per stage. Draw the tapered connectors between stages with a `FastTriangleRenderableSeries`, and add the counts and conversion rates as `TextAnnotation`s. In React, wrap the same setup in `scichart-react`; in Angular, use `scichart-angular`.
 
 ## Sources
 
 - Google, [[GA4] Funnel exploration](https://support.google.com/analytics/answer/9327974). Open and closed funnels: whether people can enter at any step or only at the first.
 - Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Why positions and lengths on a common scale are judged more accurately than areas.
 
-<LearnCta position="bottom" chart="funnel chart" demo="population-pyramid" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" />
+<LearnCta position="bottom" chart="funnel chart" demo="population-pyramid" demoLabel="population pyramid" docs="/2d-charts/chart-types/fast-rectangle-renderable-series/" docsLabel="SciChart.js rectangle series documentation" />

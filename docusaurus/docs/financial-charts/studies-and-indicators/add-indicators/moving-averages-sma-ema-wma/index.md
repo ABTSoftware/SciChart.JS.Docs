@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
 sidebar_label: Moving Averages (SMA, EMA, WMA)
-title: "Moving Averages (SMA, EMA, WMA): Add to a JavaScript or React Financial Chart | SciTrader.js"
-description: "What simple, exponential and weighted moving averages (SMA, EMA, WMA) are, how each is calculated, how traders use crossovers, and how to add moving averages to a JavaScript or React financial chart with SciTrader.js."
+title: "Add Moving Averages to a JavaScript or React Chart"
+description: "Add SMA, EMA and WMA moving averages to a JavaScript or React chart with SciTrader.js, with live examples. Moving averages smooth price to show the trend."
 keywords: ["moving average indicator", "SMA", "EMA", "WMA", "simple moving average", "exponential moving average", "weighted moving average", "moving average JavaScript", "moving average React chart", "how to calculate EMA", "golden cross", "JavaScript financial chart", "React financial chart", "SciTrader.js"]
 ---
 
-# Moving Averages (SMA, EMA, WMA) in a JavaScript or React Financial Chart
+# Add Moving Averages (SMA, EMA, WMA) to a JavaScript or React Chart
 
 **Moving averages** smooth price into a line, so the trend is easier to see. SciTrader.js has three: the **SMA** (simple), the **EMA** (exponential) and the **WMA** (weighted). This page explains what each is, how each is calculated and how traders use them, and shows how to add moving averages to a JavaScript or React financial chart with SciTrader.js, with live examples you can edit in CodePen.
 
@@ -217,3 +217,4 @@ interface IWMAOptions extends IStudyOptions {
 - [Add Technical Indicators to a Financial Chart](/financial-charts/studies-and-indicators/add-indicators/): the other indicators, adding and removing indicators at runtime, and an indicator picker.
 - [Altering Study Settings](/financial-charts/studies-and-indicators/altering-study-settings/): change an indicator's settings from code.
 - [Study Settings Form and Study List](/financial-charts/ui-components/study-settings-form-and-study-list/): let users edit them.
+- [Candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/): what a candlestick chart shows and how to read one.

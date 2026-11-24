@@ -1,7 +1,7 @@
 ---
 sidebar_position: 100
 sidebar_label: Fourier Transform
-title: "Fourier Transform: What It Is, the Formula & Examples (With an Interactive Demo)"
+title: "Fourier Transform: What It Is and the Formula (Interactive Example)"
 description: "What the Fourier transform is, how it splits a signal into sine waves, its formula and inverse, the DFT, magnitude and phase, key pairs and properties. Live demo."
 keywords:
     [
@@ -17,6 +17,7 @@ keywords:
     ]
 image: /img/learn/fourier-transform-og.png
 related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
+datePublished: 2026-11-19
 ---
 
 <head>
@@ -38,7 +39,7 @@ related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
                 {
                     "@type": "Question",
                     "name": "What is the difference between a Fourier series and a Fourier transform?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "A Fourier series describes a periodic signal, one that repeats forever, as a sum of sine waves at whole-number multiples of its repeat frequency, so its spectrum is a set of separate lines. A Fourier transform works on any signal, repeating or not, and gives a continuous spectrum. The Fourier series is the special case of the transform for periodic signals." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "A Fourier series describes a periodic signal, one that repeats forever, as a sum of sine waves at whole-number multiples of its repeat frequency, so its spectrum is a set of separate lines. A Fourier transform works on any signal, repeating or not: a non-repeating signal gives a continuous spectrum, and a periodic one gives the same separate lines as its series. The Fourier series is the special case of the transform for periodic signals." }
                 },
                 {
                     "@type": "Question",
@@ -48,12 +49,12 @@ related: [fourier-series, fast-fourier-transform, spectrogram, convolution]
                 {
                     "@type": "Question",
                     "name": "Is the Fourier transform reversible?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, the signal cannot be rebuilt." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, in general the signal cannot be rebuilt." }
                 },
                 {
                     "@type": "Question",
                     "name": "How do I compute and plot a Fourier transform in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Compute the discrete Fourier transform of your samples with a short DFT or FFT function, convert each result to an amplitude (scaled by 2/N) and a frequency (bin number times sample rate divided by N), and plot them. With SciChart.js, put the frequencies and amplitudes in an XyDataSeries and draw them with a FastImpulseRenderableSeries or FastLineRenderableSeries. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Compute the discrete Fourier transform of your samples with a short DFT or FFT function, convert each result to an amplitude (scaled by 2/N) and a frequency (bin number times sample rate divided by N), and plot them. With SciChart.js, put the frequencies and amplitudes in an XyDataSeries and draw them with a FastImpulseRenderableSeries or FastLineRenderableSeries. The scichart-react and scichart-angular packages wrap the same chart for those frameworks." }
                 }
             ]
         })}
@@ -104,7 +105,7 @@ Take four samples of one cycle of a sine wave, $x = [0, 1, 0, -1]$. Testing each
 | 2 | 2 cycles per 4 samples | 0 | 0 | none |
 | 3 | mirror of bin 1 | $+2i$ | (mirror) | +90° |
 
-The transform finds one wave, of amplitude 1, at bin 1, which is exactly what went in. The −90° phase says it is a sine (which starts at zero) rather than a cosine (which starts at its peak). Bin 3 is a mirror image of bin 1: for real-valued signals, the top half of the DFT repeats the bottom half, which is why spectrum charts show only frequencies up to half the sample rate.
+The transform finds one wave, of amplitude 1, at bin 1, which is exactly what went in. The −90° phase says it is a sine (which starts at zero) rather than a cosine (which starts at its peak). Bin 3 is a mirror image of bin 1: for real-valued signals, the top half of the DFT is a mirror image of the bottom half (the complex conjugate), which is why spectrum charts show only frequencies up to half the sample rate.
 
 ## The Fourier transform formula
 
@@ -174,7 +175,7 @@ Each value of a Fourier transform is a **complex number**, $X = a + ib$. It hold
 
 Most charts show only the magnitude, because that answers "what frequencies are in here?". Two signals with the same magnitude spectrum and different phases can look completely different over time: a single click and a burst of white noise both have a roughly flat magnitude spectrum. You need both to run the inverse transform.
 
-To scale a DFT to real units, so that a sine wave of amplitude $A$ shows as a bar of height $A$, multiply $\lvert X[k] \rvert$ by $2/N$ (and the zero-frequency bin, the average, by $1/N$). Libraries differ in where they put the $1/N$, so a spectrum that is 512 times too tall usually means a missing scale factor.
+To scale a DFT to real units, so that a sine wave of amplitude $A$ shows as a bar of height $A$, multiply $\lvert X[k] \rvert$ by $2/N$ (and the zero-frequency bin, the average, by $1/N$). Libraries differ in where they put the $1/N$, so a spectrum that is $N/2$ times too tall (512 times, for $N = 1{,}024$) usually means a missing scale factor.
 
 ## Common Fourier transform pairs
 
@@ -219,13 +220,15 @@ Four names cover closely related ideas. They differ in the kind of signal they t
 | Tool | Input | Output | Use it when |
 | --- | --- | --- | --- |
 | [Fourier series](/learn/signal-processing/fourier-series/) | A periodic signal (one that repeats forever) | Separate lines at whole-number multiples of the repeat frequency (harmonics) | You are analysing or building a repeating waveform: a square wave, a musical note, a rotating machine |
-| Fourier transform | Any continuous signal, repeating or not | A continuous spectrum | You are working with formulas on paper: deriving filter responses, solving equations, proving results |
+| Fourier transform | Any continuous signal, repeating or not | A continuous spectrum, or lines for a periodic signal | You are working with formulas on paper: deriving filter responses, solving equations, proving results |
 | Discrete Fourier transform (DFT) | $N$ samples | $N$ frequency bins, spaced $f_s / N$ apart | You have real, sampled data: audio, sensor readings, prices. This is what a computer calculates |
 | Fast Fourier transform (FFT) | Same as the DFT | Same as the DFT | Always, in practice: it is an algorithm that computes the DFT quickly. See the [FFT guide](/learn/signal-processing/fast-fourier-transform/) |
 
 In the live demo below, the square, sawtooth and triangle presets are the first four terms of each wave's Fourier series, and the chart under them is a DFT of the summed samples, which finds each term again.
 
 ## What is the Fourier transform used for?
+
+The Fourier transform is used whenever it is easier to work with a signal's frequencies than with its samples.
 
 - Audio and music: spectrum analysers, equalisers, pitch detection and noise reduction. MP3 and AAC compression use a close relative, the modified discrete cosine transform.
 - Vibration and machine monitoring: a worn bearing or an unbalanced shaft shows up as a spike at a known frequency long before it fails.
@@ -238,25 +241,27 @@ In the live demo below, the square, sawtooth and triangle presets are the first 
 
 ## Common Fourier transform mistakes
 
+Most mistakes in reading a computed spectrum come from leakage, the sample rate and the length of the record, not from the maths.
+
 - **Expecting perfect spikes from real data.** A spike is only clean when the signal fits a whole number of cycles into the window. Otherwise its energy leaks into neighbouring bins. A [window function](/learn/signal-processing/window-functions/) such as Hann reduces the leakage; the [FFT guide](/learn/signal-processing/fast-fourier-transform/) shows it live.
 - **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they [alias](/learn/signal-processing/nyquist-and-aliasing/), folding back and appearing as false lower frequencies. Filter them out before sampling.
-- **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude.
+- **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude, except at bin $0$ and bin $N/2$.
 - **Confusing frequency resolution with accuracy.** The bin spacing is $f_s / N$. To separate two close frequencies you need a longer recording; zero padding doesn't add detail.
 - **Using one transform for a signal that changes.** A single Fourier transform averages over the whole recording, so a rising siren and a chord can look alike. Use a [spectrogram](/learn/chart-types/cartesian/spectrogram/) for signals whose frequencies change over time.
 
 ## How to compute and plot a Fourier transform in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL and WebGPU, so a spectrum can update smoothly as new data arrives, even with thousands of frequency bins. The example below builds a signal from four sine waves and computes its DFT in the browser every time you move a control:
+The demo adds four sine waves into one second of signal at 1,024 samples per second, and recomputes its DFT in your browser every time you move a control:
 
 - choose a **Signal** preset: a square, sawtooth or triangle wave (the first four terms of each Fourier series) or a single sine wave;
 - drag a wave's **Hz** or **amp.** slider to change one ingredient. A negative amplitude flips that wave upside down: a 180° phase change. The spike stays the same height, but hover over it and its phase reads +90° instead of −90°;
 - add **Noise** to see the spikes stand out from a noise floor.
 
-The top chart shows the four sine waves (orange) and their sum (blue). The bottom chart is the transform of the blue line alone, yet it finds every orange wave again. Scroll to zoom, drag to pan and double-click to reset.
+The top chart shows the four sine waves (orange) and their sum (blue). The bottom chart is the transform of the blue line alone, yet it finds every orange wave again. Scroll over either chart to zoom, drag to pan and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} height={660} name="./Basic/demo" />
 
-<LearnCta position="top" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="top" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />
 
 Here is the code for this example, including a plain DFT function with no dependencies:
 
@@ -371,9 +376,9 @@ Key points:
 - The four sine waves share one [XyDataSeries](https://www.scichart.com/documentation/js/current/typedoc/classes/xydataseries.html), separated by `NaN` values that the line series draws as gaps, so they need only one legend entry.
 - `clear()` and `appendRange()` replace the data each time a control moves, and `EAutoRange.Always` rescales the y axes to fit.
 
-**See it in the demo app:** [JavaScript frequency spectrum chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React frequency spectrum chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular frequency spectrum chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
+**See it in the demo app:** [JavaScript audio spectrum analyzer chart](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio spectrum analyzer chart](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio spectrum analyzer chart](https://www.scichart.com/demo/angular/audio-analyzer-fft-example)
 
-**Go deeper:** [SciChart.js impulse (stem) chart documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), and the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/) for dense spectra.
+**Go deeper:** [SciChart.js impulse (stem) series documentation](/2d-charts/chart-types/fast-impulse-renderable-series/), and the [line series documentation](/2d-charts/chart-types/fast-line-renderable-series/) for dense spectra. In number theory, Riemann's explicit formula builds the prime-counting function from a sum of oscillations, one per zeta zero: see [the Riemann Hypothesis, visualised](/learn/applications/riemann-hypothesis/).
 
 ## Frequently asked questions
 
@@ -387,7 +392,7 @@ It is used wherever the frequencies in a signal matter: audio analysis, removing
 
 ### What is the difference between a Fourier series and a Fourier transform?
 
-A Fourier series describes a periodic signal, one that repeats forever, as a sum of sine waves at whole-number multiples of its repeat frequency, so its spectrum is a set of separate lines. A Fourier transform works on any signal, repeating or not, and gives a continuous spectrum. The Fourier series is the special case of the transform for periodic signals.
+A Fourier series describes a periodic signal, one that repeats forever, as a sum of sine waves at whole-number multiples of its repeat frequency, so its spectrum is a set of separate lines. A Fourier transform works on any signal, repeating or not: a non-repeating signal gives a continuous spectrum, and a periodic one gives the same separate lines as its series. The Fourier series is the special case of the transform for periodic signals.
 
 ### What is the difference between the DFT and the FFT?
 
@@ -395,11 +400,11 @@ The discrete Fourier transform (DFT) is the calculation: the Fourier transform o
 
 ### Is the Fourier transform reversible?
 
-Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, the signal cannot be rebuilt.
+Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, in general the signal cannot be rebuilt.
 
 ### How do I compute and plot a Fourier transform in JavaScript?
 
-Compute the discrete Fourier transform of your samples with a short DFT or FFT function, convert each result to an amplitude (scaled by 2/N) and a frequency (bin number times sample rate divided by N), and plot them. With SciChart.js, put the frequencies and amplitudes in an `XyDataSeries` and draw them with a `FastImpulseRenderableSeries` or `FastLineRenderableSeries`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+Compute the discrete Fourier transform of your samples with a short DFT or FFT function, convert each result to an amplitude (scaled by 2/N) and a frequency (bin number times sample rate divided by N), and plot them. With SciChart.js, put the frequencies and amplitudes in an `XyDataSeries` and draw them with a `FastImpulseRenderableSeries` or `FastLineRenderableSeries`. The `scichart-react` and `scichart-angular` packages wrap the same chart for those frameworks.
 
 ## Sources
 
@@ -408,6 +413,6 @@ Compute the discrete Fourier transform of your samples with a short DFT or FFT f
 - Smith, J. O., [*Mathematics of the Discrete Fourier Transform (DFT)*](https://ccrma.stanford.edu/~jos/mdft/), Stanford CCRMA. The DFT, orthogonality of sinusoids and the DFT theorems.
 - Cooley, J. W. and Tukey, J. W. (1965), [An algorithm for the machine calculation of complex Fourier series](https://doi.org/10.1090/S0025-5718-1965-0178586-1). *Mathematics of Computation*, 19(90). The paper that made the FFT widely known.
 - Oppenheim, A. V. and Schafer, R. W., *Discrete-Time Signal Processing*, 3rd edition, Pearson (2010). The standard textbook reference for the DFT, sampling and aliasing.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3 ([associated published paper](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c)). The real and complex DFT diagram on this page is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The real and complex DFT diagram on this page is adapted from it.
 
-<LearnCta position="bottom" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) chart documentation" />
+<LearnCta position="bottom" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />

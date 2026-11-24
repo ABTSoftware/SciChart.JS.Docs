@@ -1,7 +1,7 @@
 ---
 sidebar_position: 40
 sidebar_label: Bubble Chart
-title: "Bubble Chart: What It Is & How to Read It (With Interactive Examples)"
+title: "Bubble Chart: What It Is & How to Read It (Interactive Examples)"
 description: "What a bubble chart is, how to read and describe one, why bubble size must show area rather than width, when to use it instead of a scatter plot, and mistakes to avoid."
 keywords:
     [
@@ -16,6 +16,7 @@ keywords:
     ]
 image: /img/learn/bubble-chart-og.png
 related: [scatter-plot, heatmap, treemap, xyz-graph]
+datePublished: 2026-11-13
 ---
 
 <head>
@@ -52,7 +53,7 @@ related: [scatter-plot, heatmap, treemap, xyz-graph]
                 {
                     "@type": "Question",
                     "name": "How do I make a bubble chart in JavaScript?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastBubbleRenderableSeries with an XyzDataSeries holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as EllipsePointMarker. The same chart works in React with scichart-react and in Angular with scichart-angular." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "With SciChart.js, create a SciChartSurface with two NumericAxis objects, then add a FastBubbleRenderableSeries with an XyzDataSeries holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as EllipsePointMarker. For React, pass the same code to the SciChartReact component from scichart-react; for Angular, use scichart-angular." }
                 }
             ]
         })}
@@ -79,6 +80,8 @@ A **bubble chart** (also called a bubble graph or bubble plot) is a chart that s
 
 ## How to read a bubble chart
 
+Read a bubble chart as a scatter plot of two values, then compare bubble sizes for the third.
+
 ![Anatomy of a bubble chart: horizontal position shows the first value, vertical position the second, bubble size the third, and colour an optional group. An inset shows that a value four times as large has four times the area but only twice the width](./bubble-chart-anatomy.svg)
 
 1. Check what each part shows. Find the value along the bottom (x), the value up the side (y), and what bubble size stands for. A good chart says all three, with units.
@@ -87,7 +90,7 @@ A **bubble chart** (also called a bubble graph or bubble plot) is a chart that s
 4. Look for where big bubbles sit. If the big bubbles collect in one corner, the third value is related to the other two. If big and small bubbles are mixed everywhere, it isn't.
 5. Use colour, if there is any, to compare groups: is one group further right, higher up or bigger than another?
 
-Treat sizes as rough comparisons. In Cleveland and McGill's experiments ([sources](#sources)), people judged position much more accurately than area. Use the tooltip or a table when exact numbers matter.
+Treat sizes as rough comparisons. Cleveland and McGill ranked judgements of area well below judgements of position, and later experiments confirmed that people judge areas less accurately ([sources](#sources)). Use the tooltip or a table when exact numbers matter.
 
 ## How to describe a bubble chart
 
@@ -120,11 +123,11 @@ If the third value isn't important, a scatter plot is clearer. If you only need 
 
 ## Sizing bubbles: area, not diameter
 
-A common bubble chart mistake is scaling the bubble's width (diameter) to the value. A circle twice as wide covers four times the area, and the eye compares circles by area. So a value twice as large looks four times as big, and the differences in the data are exaggerated.
+A common bubble chart mistake is scaling the bubble's width (diameter) to the value. A circle twice as wide covers four times the area, and the eye compares circles by area. So a value twice as large is drawn four times as big, and the differences in the data are exaggerated.
 
 Instead, make each bubble's area proportional to its value. In practice, set the diameter to the square root of the value multiplied by a constant. A value four times as large then gets a bubble twice as wide.
 
-The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In the top row (area) the 8 looks about eight times the 1. In the bottom row (diameter) it looks about 64 times bigger. Untick a row in the legend to look at the other on its own.
+The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In the top row (area) the 8 covers eight times the area of the 1. In the bottom row (diameter) it covers 64 times the area. Untick a row in the legend to look at the other on its own.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Scaling/demo" />
 
@@ -137,7 +140,7 @@ The chart below shows the same four values, 1, 2, 4 and 8, sized both ways. In t
 
 ## Common bubble chart mistakes
 
-Run through this checklist before you publish a bubble chart:
+Most bubble chart mistakes make the sizes hard to judge or hide the smaller bubbles.
 
 - **No key for size.** Readers can't tell what a big bubble means. Say what size shows in the title, the legend or a note, and add two or three reference circles if exact sizes matter.
 - **Too many bubbles.** Large bubbles overlap and hide the small ones behind them. Keep to a few dozen, use semi-transparent fills, draw small bubbles on top, or switch to a scatter plot.
@@ -147,7 +150,7 @@ Run through this checklist before you publish a bubble chart:
 
 ## How to create a bubble chart in JavaScript, React or Angular
 
-SciChart.js draws bubble charts with WebGL and WebGPU, so they stay smooth to zoom and pan with large datasets and live updates. Try the chart below: scroll to zoom, drag to pan, double-click to reset, and hover to see each region's nearest store and its number of customers.
+The demo below plots 36 stores in three regions, with each bubble's diameter set to the square root of its number of customers, so the bubble's area carries the value. Hover to see each region's nearest store and its number of customers; zoom with the mouse wheel, drag to pan, and double-click to reset.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 
@@ -282,11 +285,12 @@ Put your data in three columns: the x value, the y value and the size value for 
 
 ### How do I make a bubble chart in JavaScript?
 
-With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastBubbleRenderableSeries` with an `XyzDataSeries` holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as `EllipsePointMarker`. The same chart works in React with `scichart-react` and in Angular with `scichart-angular`.
+With SciChart.js, create a `SciChartSurface` with two `NumericAxis` objects, then add a `FastBubbleRenderableSeries` with an `XyzDataSeries` holding your x, y and z values, where z sets each bubble's diameter in pixels, and a point marker such as `EllipsePointMarker`. For React, pass the same code to the `SciChartReact` component from `scichart-react`; for Angular, use `scichart-angular`.
 
 ## Sources
 
-- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Experiments showing that people judge position more accurately than area.
+- Cleveland, W. S. and McGill, R. (1984), [Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods](https://doi.org/10.1080/01621459.1984.10478080). *Journal of the American Statistical Association*, 79(387), 531–554. Ranks position above length, angle and area for accuracy.
+- Heer, J. and Bostock, M. (2010), [Crowdsourcing graphical perception: using Mechanical Turk to assess visualization design](https://doi.org/10.1145/1753326.1753357). *Proceedings of the SIGCHI Conference on Human Factors in Computing Systems*, 203–212. Experiments showing that people judge areas less accurately than positions and lengths.
 - Gapminder, [Gapminder Tools](https://www.gapminder.org/tools/). The interactive bubble chart of income, life expectancy and population by country, popularised by Hans Rosling.
 
 <LearnCta position="bottom" chart="bubble chart" demo="bubble-chart" docs="/2d-charts/chart-types/fast-bubble-renderable-series/" />
