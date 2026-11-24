@@ -47,7 +47,7 @@ datePublished: 2026-11-24
                 {
                     "@type": "Question",
                     "name": "What do the stochastic settings 14,3,3 mean?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "14,3,3 means a 14-bar look-back for the high-low range, a 3-bar average to smooth raw %K, and a 3-bar average of the smoothed %K to make %D. The bars are whatever the chart uses, so on a daily chart 14 means 14 trading days and on a 5-minute chart it means 70 minutes. It is the most common default today; nothing about the numbers makes them better than nearby settings." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "14,3,3 means a 14-bar look-back for the high-low range, a 3-bar average to smooth raw %K, and a 3-bar average of the smoothed %K to make %D. The bars are whatever the chart uses, so on a daily chart 14 means 14 trading days and on a 5-minute chart it means 70 minutes. It is a common default today; nothing about the numbers makes them better than nearby settings." }
                 },
                 {
                     "@type": "Question",
@@ -77,7 +77,7 @@ The **stochastic oscillator** (also called stochastics) is a momentum indicator 
 :::tip Key takeaways
 - %K measures where the close sits in the N-bar range: 100 at the highest high, 0 at the lowest low.
 - %D is a moving average of %K. Fast, slow and full stochastics differ only in how much they smooth.
-- 14,3,3 is a 14-bar look-back with two 3-bar averages, and it is the most common default.
+- 14,3,3 is a 14-bar look-back with two 3-bar averages, and it is a common default.
 - Above 80 and below 20 are conventional zones. In a strong trend the oscillator can stay in one of them for weeks.
 - Crossovers and divergence are ways traders read the lines, not rules that hold every time.
 :::
@@ -94,7 +94,7 @@ The idea behind it is that in a rising market, closes tend to land near the top 
 
 It uses three inputs from every bar: the high, the low and the close. The open and volume play no part.
 
-George Lane, a US technical analyst and educator, developed the indicator in the 1950s and described %K and %D in his article "Lane's Stochastics" (1984). Despite its name, it is a fixed calculation on past prices and has no link with stochastic processes in probability theory.
+The indicator is usually credited to George Lane, a US technical analyst and educator, in the 1950s; he described %K and %D in his article "Lane's Stochastics" (1984). Despite its name, it is a fixed calculation on past prices and has no link with stochastic processes in probability theory.
 
 ## How to calculate the stochastic oscillator
 
@@ -169,7 +169,7 @@ In the demo's simulated year, the fast 14,3 lines cross each other 104 times and
 
 ### Where does 14,3,3 come from?
 
-The 14-bar look-back with two 3-bar averages is the setting most charting software uses by default today; it is a convention, and nothing in the maths singles out 14. Published examples use other look-backs too, and 5, 9 and 14 bars are all common. The look-back is counted in bars of the chart's own timeframe, so 14 is about three weeks on a daily chart and 70 minutes on a 5-minute chart.
+The 14-bar look-back with two 3-bar averages is a common default in charting software today; it is a convention, and nothing in the maths singles out 14. Published examples use other look-backs too, and 5, 9 and 14 bars are all common. The look-back is counted in bars of the chart's own timeframe, so 14 is about three weeks on a daily chart and 70 minutes on a 5-minute chart.
 
 A shorter look-back makes the range narrower, so the close reaches the extremes more often and the oscillator swings harder. A longer one gives a wider range and fewer readings near 0 or 100. In the demo, raising the look-back from 5 to 30 with slow smoothing cuts the share of bars in the first range with %K above 80 or below 20 only a little, but it lifts the share of uptrend bars above 80 from 49% to 73%.
 
@@ -217,11 +217,11 @@ All three are bounded momentum oscillators, but they measure different things an
 | What it measures | Close's position in the N-bar high–low range | Average size of up closes against down closes over N bars | RSI's position in its own N-bar range |
 | Inputs | High, low and close | Close only | Close only, through RSI |
 | Scale and usual zones | 0 to 100; 80 and 20 | 0 to 100; 70 and 30 | 0 to 1 (or 0 to 100); 0.8 and 0.2 |
-| Introduced by | George Lane (1950s; article 1984) | J. Welles Wilder Jr. (1978) | Tushar Chande and Stanley Kroll (1994) |
+| Introduced by | George Lane (usually credited, 1950s; article 1984) | J. Welles Wilder Jr. (1978) | Tushar Chande and Stanley Kroll (1994) |
 | Behaviour | Quick; reaches both ends often | Smoother; extremes are rarer | Most sensitive; often sits at 0 or 1 |
 | Choose it when | You care where price closes within its bars' range, including the wicks | You want the strength of closing moves, less affected by single-bar spikes | You want RSI turns to show sooner, and accept many more signals |
 
-Stochastic RSI uses the same formula as raw %K with RSI values in place of highs, lows and closes: (RSI − lowest RSI) ÷ (highest RSI − lowest RSI) over the look-back. Because RSI often moves within a narrow band, stretching that band to fill 0 to 1 makes the result swing hard. A gap or a long wick changes the stochastic but not RSI, since RSI ignores highs and lows.
+Stochastic RSI uses the same formula as raw %K with RSI values in place of highs, lows and closes: (RSI − lowest RSI) ÷ (highest RSI − lowest RSI) over the look-back. Because RSI often moves within a narrow band, stretching that band to fill 0 to 1 makes the result swing hard. A long wick changes the stochastic but not RSI, since RSI ignores highs and lows.
 
 ## Common stochastic oscillator mistakes
 
@@ -232,7 +232,7 @@ Most mistakes come from using the zones as signals in the wrong market, or compa
 - **Reading the current bar as final.** Until a bar closes, its high, low and close keep changing, so %K for the latest bar moves around and can cross %D and back again.
 - **Feeding it closes only.** Without real highs and lows, the range is built from closes and every reading changes. Data with no intraday range, such as a daily close-only series, needs a different indicator or must say what it used.
 - **Ignoring the warm-up.** The first values need $n + k + d - 2$ bars of history. Start the calculation earlier than the chart's first visible bar, or the left edge shows nothing or a misleading value.
-- **Tuning the settings until a backtest looks good.** Trying many look-backs and zone levels on past data finds one that fits by chance. Park and Irwin's review of studies on technical trading rules found mixed results and noted that many studies suffer from data snooping and from difficulty estimating risk and trading costs.
+- **Tuning the settings until a backtest looks good.** Trying many look-backs and zone levels on past data finds one that fits by chance. Park and Irwin's review of 95 studies of technical trading rules found that most reported profits, at least until the early 1990s, but that most also had problems in how they were tested, such as data snooping, choosing rules after the fact, and difficulty estimating risk and trading costs.
 - **Treating divergence as a timing signal.** A divergence can persist through several further highs or lows before anything happens, or never resolve.
 
 ## How to plot a stochastic oscillator in JavaScript, React or Angular
@@ -444,7 +444,7 @@ The fast stochastic plots raw %K and a 3-bar average of it as %D. The slow stoch
 
 ### What do the stochastic settings 14,3,3 mean?
 
-14,3,3 means a 14-bar look-back for the high-low range, a 3-bar average to smooth raw %K, and a 3-bar average of the smoothed %K to make %D. The bars are whatever the chart uses, so on a daily chart 14 means 14 trading days and on a 5-minute chart it means 70 minutes. It is the most common default today; nothing about the numbers makes them better than nearby settings.
+14,3,3 means a 14-bar look-back for the high-low range, a 3-bar average to smooth raw %K, and a 3-bar average of the smoothed %K to make %D. The bars are whatever the chart uses, so on a daily chart 14 means 14 trading days and on a 5-minute chart it means 70 minutes. It is a common default today; nothing about the numbers makes them better than nearby settings.
 
 ### What is the difference between the stochastic oscillator and RSI?
 
@@ -460,6 +460,6 @@ Work out raw %K, %K and %D from your candles' highs, lows and closes in plain Ja
 - Murphy, J. J. (1999), *Technical Analysis of the Financial Markets*, New York Institute of Finance. The standard textbook treatment of oscillators, including stochastics, overbought and oversold zones, and divergence.
 - Wilder, J. W., Jr. (1978), *New Concepts in Technical Trading Systems*, Trend Research. Introduces the relative strength index (RSI).
 - Chande, T. S. and Kroll, S. (1994), *The New Technical Trader*, Wiley. Introduces the stochastic RSI.
-- Park, C.-H. and Irwin, S. H. (2007), [What do we know about the profitability of technical analysis?](https://doi.org/10.1111/j.1467-6419.2007.00519.x), *Journal of Economic Surveys*, 21(4), 786–826. A review of studies of technical trading rules, with their mixed results and common testing problems.
+- Park, C.-H. and Irwin, S. H. (2007), [What do we know about the profitability of technical analysis?](https://doi.org/10.1111/j.1467-6419.2007.00519.x), *Journal of Economic Surveys*, 21(4), 786–826. A review of 95 studies of technical trading rules and the problems in how they were tested.
 
 <LearnCta position="bottom" chart="stochastic oscillator" demo="sync-multi-chart" demoLabel="synchronised multi-chart" docs="/financial-charts/studies-and-indicators/add-indicators/stochastic-oscillator/" docsLabel="SciTrader.js stochastic oscillator documentation" />

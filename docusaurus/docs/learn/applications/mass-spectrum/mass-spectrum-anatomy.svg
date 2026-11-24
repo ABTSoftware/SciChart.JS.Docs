@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-labelledby="t d">
 <title id="t">Annotated mass spectrum of chlorobenzene</title>
-<desc id="d">A stick mass spectrum with m/z on the horizontal axis and relative abundance in per cent on the vertical axis. The molecular ion at m/z 112 is also the base peak, set to 100 per cent, with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of its height, from chlorine-37. An arrow from 112 to the fragment at m/z 77, about 60 per cent, marks the loss of 35, a chlorine atom, and a fragment at m/z 51 comes from the loss of 26 from 77.</desc>
+<desc id="d">A stick mass spectrum with m/z on the horizontal axis and relative abundance in per cent on the vertical axis. The molecular ion at m/z 112 is also the base peak, set to 100 per cent, with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of its height, from chlorine-37. An arrow from 112 to the fragment at m/z 77, about 45 per cent, marks the loss of 35, a chlorine atom, and a fragment at m/z 51 comes from the loss of 26 from 77.</desc>
 <rect width="760" height="430" fill="#ffffff"/>
 <line x1="80" y1="370.0" x2="730" y2="370.0" stroke="#e3e8f0"/>
 <text x="72" y="375.0" text-anchor="end" font-size="14" fill="#33415c" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">0</text>
@@ -36,17 +36,17 @@
 <line x1="80" y1="370" x2="80" y2="60" stroke="#33415c" stroke-width="1.5"/>
 <text x="405.0" y="420" text-anchor="middle" font-size="16" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">m/z (mass-to-charge ratio)</text>
 <text transform="translate(24 220.0) rotate(-90)" text-anchor="middle" font-size="16" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Relative abundance (%)</text>
-<line x1="149.1" y1="370" x2="149.1" y2="348.4" stroke="#3a7bd5" stroke-width="4"/>
-<line x1="156.1" y1="370" x2="156.1" y2="316.0" stroke="#3a7bd5" stroke-width="4"/>
+<line x1="149.1" y1="370" x2="149.1" y2="341.2" stroke="#3a7bd5" stroke-width="4"/>
+<line x1="156.1" y1="370" x2="156.1" y2="334.0" stroke="#3a7bd5" stroke-width="4"/>
 <line x1="315.1" y1="370" x2="315.1" y2="361.0" stroke="#3a7bd5" stroke-width="4"/>
-<line x1="335.9" y1="370" x2="335.9" y2="190.0" stroke="#3a7bd5" stroke-width="4"/>
+<line x1="335.9" y1="370" x2="335.9" y2="235.0" stroke="#3a7bd5" stroke-width="4"/>
 <line x1="342.8" y1="370" x2="342.8" y2="358.1" stroke="#3a7bd5" stroke-width="4"/>
 <line x1="577.9" y1="370" x2="577.9" y2="70.0" stroke="#e8711a" stroke-width="4"/>
 <line x1="584.8" y1="370" x2="584.8" y2="350.4" stroke="#e8711a" stroke-width="4"/>
 <line x1="591.7" y1="370" x2="591.7" y2="273.6" stroke="#e8711a" stroke-width="4"/>
 <line x1="598.6" y1="370" x2="598.6" y2="363.6" stroke="#e8711a" stroke-width="4"/>
-<text x="335.9" y="152.0" text-anchor="middle" font-size="14" fill="#1b2840" font-weight="600" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Fragment m/z 77</text>
-<text x="335.9" y="170.0" text-anchor="middle" font-size="14" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">(C6H5+), about 60%</text>
+<text x="335.9" y="197.0" text-anchor="middle" font-size="14" fill="#1b2840" font-weight="600" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Fragment m/z 77</text>
+<text x="335.9" y="215.0" text-anchor="middle" font-size="14" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">(C6H5+), about 45%</text>
 <text x="577.9" y="40.0" text-anchor="middle" font-size="14" fill="#b3530b" font-weight="600" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Molecular ion M+• = base peak</text>
 <text x="577.9" y="58.0" text-anchor="middle" font-size="14" fill="#b3530b" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">m/z 112 (C6H5 35Cl), set to 100%</text>
 <line x1="594.7" y1="270.0" x2="626.3" y2="232.0" stroke="#b3530b"/>
@@ -56,9 +56,9 @@
 <line x1="586.8" y1="346.0" x2="626.3" y2="322.0" stroke="#b3530b"/>
 <text x="628.3" y="320.0" text-anchor="start" font-size="14" fill="#b3530b" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">M+1: 13C</text>
 <defs><marker id="ah" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#5b6b87"/></marker></defs>
-<line x1="571.0" y1="196.0" x2="346.2" y2="196.0" stroke="#5b6b87" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
-<text x="458.6" y="188.0" text-anchor="middle" font-size="14" fill="#5b6b87" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">loses 35 (Cl•)</text>
+<line x1="571.0" y1="231.0" x2="346.2" y2="231.0" stroke="#5b6b87" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
+<text x="458.6" y="223.0" text-anchor="middle" font-size="14" fill="#5b6b87" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">loses 35 (Cl•)</text>
 <line x1="328.9" y1="255.0" x2="166.4" y2="255.0" stroke="#5b6b87" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#ah)"/>
 <text x="247.7" y="247.0" text-anchor="middle" font-size="14" fill="#5b6b87" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">loses 26 (C2H2)</text>
-<text x="156.1" y="306.0" text-anchor="middle" font-size="14" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Fragment m/z 51</text>
+<text x="156.1" y="324.0" text-anchor="middle" font-size="14" fill="#1b2840" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">Fragment m/z 51</text>
 </svg>

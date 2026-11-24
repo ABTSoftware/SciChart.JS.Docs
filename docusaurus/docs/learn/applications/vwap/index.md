@@ -131,7 +131,7 @@ Session VWAP and anchored VWAP use the same formula and differ only in where the
 | Typical anchors | The regular-hours open | An earnings release, a gap, a swing high or low, the start of a week or year |
 | Answers | What has the average share cost today? | What has the average share cost since that event? |
 
-Session VWAP is the default on most intraday charts. Conventions differ on what a session is: some charts start at the regular open (09:30 New York time for US shares), some include pre-market trading, and markets that trade around the clock, such as many futures and cryptocurrencies, need a chosen reset time, such as the exchange's daily settlement or midnight UTC. Two charts of the same instrument can therefore show different VWAPs.
+Session VWAP is the default on most intraday charts. Conventions differ on what a session is: some charts start at the regular open (09:30 New York time for US shares), some include pre-market trading, and markets that trade nearly 24 hours, such as many futures, or around the clock, such as cryptocurrencies, need a chosen reset time, such as the exchange's daily settlement or midnight UTC. Two charts of the same instrument can therefore show different VWAPs.
 
 Anchored VWAP is the same running average started somewhere meaningful. Anchored at a sharp low, it shows the average price paid by everyone who has bought or sold since that low. Some charting software anchors at the first bar it has loaded, which makes the line depend on how much history is on screen.
 

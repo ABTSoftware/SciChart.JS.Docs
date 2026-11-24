@@ -104,7 +104,7 @@ Every KPI is a metric, but few metrics deserve to be KPIs. A **metric** is anyth
 | Strength | Easy to measure, hard to argue with | Gives time to act before the outcome is fixed |
 | Weakness | Arrives too late to change this period | Its link to the outcome is a prediction, which can fail |
 
-A good KPI dashboard pairs the two: revenue (lagging) next to the pipeline that will become next quarter's revenue (leading). Kaplan and Norton's balanced scorecard is built on the same idea, balancing financial results with customer, internal-process, and learning and growth measures that drive future results.
+A good KPI dashboard pairs the two: revenue (lagging) next to the pipeline that will become next quarter's revenue (leading). Kaplan and Norton's balanced scorecard is built on the same idea, balancing financial results with customer, internal-process, and innovation and learning measures (later renamed learning and growth) that drive future results.
 
 ## How to choose KPIs for a dashboard
 
@@ -180,7 +180,7 @@ A good KPI dashboard puts the most important number top-left, shows every KPI ag
 
 ![A wireframe of a KPI dashboard in four zones: headline KPI tiles across the top, with the most important one top-left; a trend against target below; a breakdown and a variance chart side by side at the bottom; and a dashed scan path running across the top and then down the left. Beside it, one KPI tile enlarged, labelled with its name and period, value, comparison with a symbol, status in words, target line and 12-month sparkline](./kpi-dashboard-layout.svg)
 
-- Most important top-left. Readers of left-to-right languages start at the top-left and scan across the top before moving down the left side, the F-shaped pattern described by the Nielsen Norman Group. Put the KPI that matters most there.
+- Most important top-left. Readers of left-to-right languages tend to start at the top-left; on pages they scan rather than read, the Nielsen Norman Group found an F-shaped pattern across the top and down the left side. Put the KPI that matters most there.
 - Overview, then detail. Headline tiles first, the trend below, then breakdowns and variance. Each row should explain the row above it.
 - Group related KPIs. Keep revenue next to the pipeline that feeds it, and output next to downtime. Use space and alignment to show the groups, not heavy borders.
 - One period everywhere. Every number on the screen should cover the same period unless it says otherwise, and the period should be visible ("Q4", "last 30 days").

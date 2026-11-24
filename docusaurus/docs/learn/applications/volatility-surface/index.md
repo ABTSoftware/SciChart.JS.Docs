@@ -145,7 +145,7 @@ A volatility smile is a curve of implied volatility against strike that rises on
 | Shape | What it looks like | Where it is typical |
 | --- | --- | --- |
 | Flat | One implied volatility at every strike | Only in the Black–Scholes model |
-| Smile | Both wings above the at-the-money level | Currency options |
+| Smile | Both wings above the at-the-money level | Currency options in the major pairs |
 | Skew (put skew) | Low strikes well above high strikes | Equity index options, many single stocks |
 
 ### Why do index options have a skew?
@@ -155,7 +155,7 @@ Before October 1987, implied volatilities of S&P 500 index options were close to
 - Crash risk. Index returns have a fatter left tail than the lognormal model behind Black–Scholes, and investors pay up for puts that protect portfolios against a fall.
 - Leverage. When a company's share price falls, its debt is a larger part of its value, so its equity becomes riskier and more volatile.
 
-Currency options have no natural "down" direction, so their smiles are closer to symmetric. Traders quote them by delta: the 25-delta risk reversal, the call's implied volatility minus the put's, measures the skew, and the 25-delta butterfly measures the curvature.
+Currency options have no natural "down" direction, so smiles in the major pairs are closer to symmetric, though many pairs show a lasting skew towards one currency. Traders quote them by delta: the 25-delta risk reversal, the call's implied volatility minus the put's, measures the skew, and the 25-delta butterfly measures the curvature.
 
 ## Term structure of volatility
 
@@ -191,7 +191,7 @@ So the implied volatility is 20.02%. Repricing at exactly 20% gives \$4.4852, wh
 
 ### SVI: fitting a smile to each expiry
 
-The **SVI** (stochastic volatility inspired) parameterisation, introduced by Jim Gatheral, writes the total implied variance $w = \sigma^2 T$ at log-moneyness $k = \ln(K/F)$ as
+The **SVI** (stochastic volatility inspired) parameterisation, devised at Merrill Lynch in 1999 and published by Jim Gatheral in 2004, writes the total implied variance $w = \sigma^2 T$ at log-moneyness $k = \ln(K/F)$ as
 
 $$
 w(k) = a + b\left(\rho\,(k - m) + \sqrt{(k - m)^2 + s^2}\right)
@@ -201,7 +201,7 @@ with five parameters per expiry: $a$ sets the level, $b$ the steepness of the wi
 
 ### No-arbitrage constraints
 
-A surface that is fitted point by point can imply prices that allow a riskless profit, so two constraints are checked. Across strikes, call prices must fall as the strike rises and be convex in strike: otherwise a butterfly spread (long one low and one high strike, short two in the middle) would cost less than nothing, and the probability density implied by the smile would go negative somewhere. Across expiries, total implied variance at the same log-moneyness must not fall as expiry gets longer; if it does, a calendar spread is an arbitrage. Gatheral and Jacquier give Durrleman's condition, g(k) ≥ 0, as a direct test of the first constraint on a smile, and the demo applies both tests to every expiry.
+A surface that is fitted point by point can imply prices that allow a riskless profit, so two constraints are checked. Across strikes, call prices must fall as the strike rises, or a call spread would pay off for nothing, and must be convex in strike, or a butterfly spread (long one low and one high strike, short two in the middle) would cost less than nothing and the probability density implied by the smile would go negative somewhere. Across expiries, total implied variance at the same log-moneyness must not fall as expiry gets longer; if it does, a calendar spread is an arbitrage. Gatheral and Jacquier give Durrleman's condition, g(k) ≥ 0, as a direct test of the butterfly condition on a smile, and the demo applies both tests to every expiry.
 
 ## 3D surface vs heatmap vs slices
 

@@ -170,13 +170,13 @@ Read an HR diagram by checking the axes first, then finding the main sequence an
 
 ### Worked example: the radius of a white dwarf
 
-The white dwarf 40 Eridani B has a surface temperature of about 12,000 K and a luminosity of about 1/275 of the Sun's. On an HR diagram it sits well below the main sequence, at the left. Its radius is
+The white dwarf 40 Eridani B has a surface temperature of about 17,200 K and a luminosity of about 0.0135 times the Sun's. On an HR diagram it sits well below the main sequence, at the left. Its radius is
 
 $$
-\frac{R}{R_\odot} = \sqrt{\frac{L}{L_\odot}}\left(\frac{5772\ \text{K}}{T}\right)^2 = \sqrt{0.00364}\times\left(\frac{5772}{12000}\right)^2 \approx 0.060 \times 0.231 \approx 0.014
+\frac{R}{R_\odot} = \sqrt{\frac{L}{L_\odot}}\left(\frac{5772\ \text{K}}{T}\right)^2 = \sqrt{0.0135}\times\left(\frac{5772}{17200}\right)^2 \approx 0.116 \times 0.113 \approx 0.013
 $$
 
-That is about 1.4% of the Sun's radius, or roughly 1.5 times the Earth's. By the same formula, a cool star at 3,600 K with 50,000 times the Sun's luminosity has a radius of about 570 Suns: a red supergiant that, in place of the Sun, would reach beyond the orbit of Mars.
+That is about 1.3% of the Sun's radius, or roughly 1.4 times the Earth's. By the same formula, a cool star at 3,600 K with 50,000 times the Sun's luminosity has a radius of about 570 Suns: a red supergiant that, in place of the Sun, would reach beyond the orbit of Mars.
 
 ## How a star moves across the HR diagram
 
@@ -220,7 +220,7 @@ The theoretical HR diagram, the colour-magnitude diagram and the spectral-class 
 | Spectral-class diagram | Spectral class against absolute magnitude or luminosity | You're teaching, or the stars were classified from spectra rather than photometry |
 | Density HR diagram (heatmap) | Either of the above, coloured by star count per cell | You have hundreds of thousands of stars and the points overlap, as in Gaia plots |
 
-Large surveys now use the CMD. ESA's Hipparcos satellite, launched in 1989, measured precise positions and parallaxes (distances) for 118,218 stars, giving the first HR diagram with accurate distances for a large sample. ESA's Gaia mission has since measured hundreds of millions, plotted as colour BP-RP against absolute magnitude $M_G$, and its HR diagram is thin enough to show features such as two separate white dwarf sequences.
+Large surveys now use the CMD. ESA's Hipparcos satellite, launched in 1989, measured precise positions and parallaxes (distances) for 118,218 stars, giving the first HR diagram with accurate distances for a large sample. ESA's Gaia mission has since measured parallaxes for more than a billion stars (Data Release 3, 2022), plotted as colour BP-RP against absolute magnitude $M_G$, and its HR diagram is thin enough to show features such as two separate white dwarf sequences.
 
 ## Common HR diagram mistakes
 
@@ -423,10 +423,11 @@ Put the stars in a scatter series with temperature on the x-axis and luminosity 
 
 ## Sources
 
-- Fraknoi, A., Morrison, D. and Wolff, S. C., *Astronomy 2e*, OpenStax (2022, CC BY 4.0): [17.3 The spectra of stars (and brown dwarfs)](https://openstax.org/books/astronomy-2e/pages/17-3-the-spectra-of-stars-and-brown-dwarfs) for the spectral classes and temperatures; [18.4 The H–R diagram](https://openstax.org/books/astronomy-2e/pages/18-4-the-h-r-diagram) for its history, regions, the share of main-sequence stars and 40 Eridani B; [22.1 Evolution from the main sequence to red giants](https://openstax.org/books/astronomy-2e/pages/22-1-evolution-from-the-main-sequence-to-red-giants) and [22.3 Checking out the theory](https://openstax.org/books/astronomy-2e/pages/22-3-checking-out-the-theory) for stellar evolution and cluster turn-offs.
+- Fraknoi, A., Morrison, D. and Wolff, S. C., *Astronomy 2e*, OpenStax (2022, CC BY 4.0): [17.3 The spectra of stars (and brown dwarfs)](https://openstax.org/books/astronomy-2e/pages/17-3-the-spectra-of-stars-and-brown-dwarfs) for the spectral classes and temperatures; [18.4 The H–R diagram](https://openstax.org/books/astronomy-2e/pages/18-4-the-h-r-diagram) for its history, regions, and the share of main-sequence stars; [22.1 Evolution from the main sequence to red giants](https://openstax.org/books/astronomy-2e/pages/22-1-evolution-from-the-main-sequence-to-red-giants) and [22.3 Checking out the theory](https://openstax.org/books/astronomy-2e/pages/22-3-checking-out-the-theory) for stellar evolution and cluster turn-offs.
 - NASA Goddard Space Flight Center, [Sun fact sheet](https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html): the Sun's effective temperature, luminosity, apparent and absolute visual magnitude and spectral type.
 - International Astronomical Union (2015), [Resolution B3 on nominal solar values](https://arxiv.org/abs/1510.07674) (5,772 K, 3.828 × 10²⁶ W) and [Resolution B2 on the bolometric magnitude scale](https://arxiv.org/abs/1510.06262) (the Sun's absolute bolometric magnitude, 4.74).
-- European Space Agency, [Hipparcos](https://www.cosmos.esa.int/web/hipparcos) (118,218 stars) and [Gaia Data Release 2 HR diagrams](https://www.cosmos.esa.int/web/gaia/gaiadr2_hrd); Gaia Collaboration, Babusiaux, C. et al. (2018), [Gaia Data Release 2: Observational Hertzsprung-Russell diagrams](https://doi.org/10.1051/0004-6361/201832843), *Astronomy & Astrophysics*, 616, A10.
+- European Space Agency, [Hipparcos](https://www.cosmos.esa.int/web/hipparcos) (118,218 stars) and [Gaia Data Release 2 HR diagrams](https://www.cosmos.esa.int/web/gaia/gaiadr2_hrd); Gaia Collaboration, Babusiaux, C. et al. (2018), [Gaia Data Release 2: Observational Hertzsprung-Russell diagrams](https://doi.org/10.1051/0004-6361/201832843), *Astronomy & Astrophysics*, 616, A10. Gaia Collaboration, Vallenari, A. et al. (2023), [Gaia Data Release 3: Summary of the content and survey properties](https://doi.org/10.1051/0004-6361/202243940), *Astronomy & Astrophysics*, 674, A1.
+- Bond, H. E., Bergeron, P. and Bédard, A. (2017), [Astrophysical implications of a new dynamical mass for the nearby white dwarf 40 Eridani B](https://doi.org/10.3847/1538-4357/aa8a63), *Astrophysical Journal*, 848, 16: the temperature and luminosity of 40 Eridani B.
 - Pecaut, M. J. and Mamajek, E. E. (2013), [Intrinsic colors, temperatures, and bolometric corrections of pre-main-sequence stars](https://doi.org/10.1088/0067-0049/208/1/9), *Astrophysical Journal Supplement*, 208, 9, and its online table of main-sequence colours and temperatures: the colour-temperature relation in the demo. Torres, G. (2010), [On the use of empirical bolometric corrections for stars](https://doi.org/10.1088/0004-6256/140/5/1158), *Astronomical Journal*, 140, 1158: the bolometric corrections in the demo.
 
 <LearnCta position="bottom" chart="HR diagram" demo="scatter-chart" demoLabel="scatter chart" docs="/2d-charts/chart-types/xy-scatter-renderable-series/" docsLabel="SciChart.js scatter series documentation" />

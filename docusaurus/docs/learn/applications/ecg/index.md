@@ -557,8 +557,8 @@ Plot the samples in millivolts against time with a line series, on fixed axes wi
 - Surawicz, B. et al. (2009), [Part III: intraventricular conduction disturbances](https://doi.org/10.1161/CIRCULATIONAHA.108.191095). *Circulation*, 119(10). QRS duration, bundle branch block and axis deviation.
 - Rautaharju, P. M., Surawicz, B. and Gettes, L. S. (2009), [Part IV: the ST segment, T and U waves, and the QT interval](https://doi.org/10.1161/CIRCULATIONAHA.108.191096). *Circulation*, 119(10). QT measurement, rate correction and the 450 ms and 460 ms QTc thresholds.
 - Becker, D. E. (2006), [Fundamentals of electrocardiography interpretation](https://pmc.ncbi.nlm.nih.gov/articles/PMC1614214/). *Anesthesia Progress*, 53(2). The conduction system, ECG paper, rate calculation and a systematic reading order.
-- Sattar, Y. and Chhabra, L., [Electrocardiogram](https://www.ncbi.nlm.nih.gov/books/NBK549803/). *StatPearls*, NCBI Bookshelf. Leads, waves, intervals and normal values.
-- Resuscitation Council UK, *Advanced Life Support*, 8th edition (2021), chapter on monitoring and rhythm recognition. The structured approach to reading rhythm strips.
+- Hegde, S. and Ahmed, I. (updated 2026), [Electrocardiogram: fundamentals, interpretation, and rhythm analysis](https://www.ncbi.nlm.nih.gov/books/NBK549803/). *StatPearls*, NCBI Bookshelf. Leads, waves, intervals and normal values.
+- Resuscitation Council UK, *Advanced Life Support*, 9th edition (2025), chapter on monitoring and rhythm recognition. The structured approach to reading rhythm strips.
 - Joglar, J. A. et al. (2024), [2023 ACC/AHA/ACCP/HRS guideline for the diagnosis and management of atrial fibrillation](https://doi.org/10.1161/CIR.0000000000001193). *Circulation*, 149(1). The ECG features of atrial fibrillation.
 
 <LearnCta position="bottom" chart="ECG chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

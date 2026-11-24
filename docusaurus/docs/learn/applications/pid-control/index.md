@@ -267,7 +267,7 @@ Step tests show how a loop behaves; frequency response shows how close it is to 
 
 PID control runs most of the feedback loops in industry, from process plants to motor drives and temperature controllers.
 
-- Process plants. Flow, pressure, level and temperature loops in refineries, chemical plants and paper mills. A survey of more than 11,000 controllers in those industries found that 97% used a PID algorithm (Desborough and Miller, 2002). Operators watch the loops on [HMI and SCADA trend charts](/learn/applications/hmi-scada/), and SciChart is used to build [HMI and SCADA](https://www.scichart.com/scada-big-data/) software.
+- Process plants. Flow, pressure, level and temperature loops in refineries, chemical plants and paper mills. A Honeywell survey of more than 11,000 controllers in those industries found that 97% of regulatory controllers used a PID algorithm (reported by Desborough and Miller, 2002). Operators watch the loops on [HMI and SCADA trend charts](/learn/applications/hmi-scada/), and SciChart is used to build [HMI and SCADA](https://www.scichart.com/scada-big-data/) software.
 - Temperature control. Ovens, furnaces, 3D-printer hot ends, incubators, and heating, ventilation and air conditioning. Thermal loops are slow and lag-dominated, so they often use derivative action.
 - Motor speed and position. Drives, conveyors, CNC axes and robot joints, usually with a fast current loop inside a speed loop inside a position loop (a cascade).
 - Drones and vehicles. Multirotor flight controllers stabilise attitude with cascaded PID loops on angle and angular rate, tuned from step responses logged in flight. Cruise control and lane keeping use PID too.
@@ -470,7 +470,7 @@ Write the process as a difference equation (for a first-order process with dead 
 - Åström, K. J. and Hägglund, T. (2006), *Advanced PID Control*, ISA. Controller forms, anti-windup, the relay autotuner and tuning rules.
 - Skogestad, S. (2003), [Simple analytic rules for model reduction and PID controller tuning](https://doi.org/10.1016/S0959-1524(02)00062-8). *Journal of Process Control*, 13(4), 291–309. The SIMC (lambda-style) rules for FOPDT models.
 - Cohen, G. H. and Coon, G. A. (1953), Theoretical consideration of retarded control. *Transactions of the ASME*, 75, 827–834.
-- Desborough, L. and Miller, R. (2002), Increasing customer value of industrial control performance monitoring. *Chemical Process Control VI*, AIChE Symposium Series 98(326), 169–189. The survey of 11,000 industrial controllers.
+- Desborough, L. and Miller, R. (2002), Increasing customer value of industrial control performance monitoring. *Chemical Process Control VI*, AIChE Symposium Series 98(326), 169–189. Reports Honeywell's survey of 11,000 industrial controllers.
 - Ogata, K. (2010), *Modern Control Engineering*, 5th edition, Pearson. Transient response specifications and the second-order overshoot formula.
 
 <LearnCta position="bottom" chart="control loop chart" demo="chart-realtime-performance-demo" demoLabel="real-time line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

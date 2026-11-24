@@ -513,7 +513,7 @@ Draw each acquisition as a line series on a chart whose axes have fixed ranges a
 ## Sources
 
 - Tektronix (2009), [XYZs of Oscilloscopes](https://www.ece.ucdavis.edu/~spencer/195/datasheets/XYZ.pdf), primer 03W-8605-4. The vertical, horizontal and trigger systems, trigger modes and holdoff, 1× and 10× probes, probe compensation, the −3 dB definition of bandwidth and the 5 times rule, rise time = k ÷ bandwidth (k = 0.35 for most scopes under 1 GHz), and sample rates for sin(x)/x and linear interpolation.
-- Tektronix, [XYZs of Logic Analyzers](https://web.mit.edu/6.111/www/s2007/handouts/LA.pdf), primer (course copy hosted by MIT 6.111). How a logic analyzer samples many channels against a threshold, its timing and state modes, and its triggers.
+- Tektronix (2003), [XYZs of Logic Analyzers](https://web.mit.edu/6.111/www/s2007/handouts/LA.pdf), primer 52W-14266-1 (course copy hosted by MIT 6.111). How a logic analyzer samples many channels against a threshold, its timing and state modes, and its triggers.
 - Kester, W., [Taking the Mystery out of the Infamous Formula, "SNR = 6.02N + 1.76dB"](https://www.analog.com/media/en/training-seminars/tutorials/MT-001.pdf), Analog Devices tutorial MT-001, Rev. A (2008). The ideal signal-to-noise ratio of an N-bit converter, and the FFT processing gain that lowers the noise floor per bin.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Oscilloscopes, probes, grounding and measurement practice.
 

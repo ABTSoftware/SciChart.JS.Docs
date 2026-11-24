@@ -53,7 +53,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "How does sim racing telemetry work?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Most racing simulators can send telemetry from the game as UDP network packets, several dozen times a second, or write it to a file at the end of a session. A separate program on the same computer or network receives the packets, decodes the channels, and charts and stores the laps, just as a data logger does on a real race car." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Most racing simulators publish telemetry while the game runs, either as UDP network packets several dozen times a second or through shared memory, and many also write it to a file at the end of a session. A separate program on the same computer or network reads the data, decodes the channels, and charts and stores the laps, just as a data logger does on a real race car." }
                 },
                 {
                     "@type": "Question",
@@ -150,10 +150,10 @@ The table splits the lap into zones, each running from halfway after the previou
 
 | Corner (distance) | Minimum speed, Lap A / Lap B | Time Lap B loses | What the traces show |
 | --- | --- | --- | --- |
-| 1 (356 m) | 155 / 155 km/h | 0.05 s | Lap B brakes slightly later and lighter, carries up to 29 km/h more into the corner and is 0.19 s ahead by 380 m, but reaches full throttle 40 m later and gives it all back on the exit |
+| 1 (356 m) | 155 / 155 km/h | 0.03 s | Lap B brakes slightly later and lighter, carries up to 35 km/h more into the corner and is 0.19 s ahead by 380 m, but reaches full throttle 40 m later and gives it all back on the exit |
 | 2 and 3 (1,110–1,265 m) | 107 / 98 and 139 / 142 km/h | 0.52 s | A slower first apex in the chicane |
 | 4 (1,884 m) | 168 / 153 km/h | 0.83 s | Braking within 6 m of Lap A, but 15 km/h less at the apex and full throttle 40 m later; Lap B's lateral g spikes to over 9 g there, most likely a kerb strike |
-| 5 and 6 (3,309–3,454 m) | 204 / 207 and 216 / 210 km/h | 0.08 s | Almost identical |
+| 5 and 6 (3,309–3,454 m) | 204 / 207 and 227 / 222 km/h | 0.08 s | Almost identical |
 | 7 (4,148 m) | 112 / 89 km/h | 0.38 s | 23 km/h slower at the apex |
 | 8 (4,409 m) | 199 / 198 km/h | 0.06 s | Almost identical |
 | 9 (4,675 m) | 90 / 61 km/h | 0.83 s | Same braking point, but Lap B stays on the brake past Lap A's release and slows to 61 km/h |
@@ -443,7 +443,7 @@ Because two laps are only comparable at the same place on the track. A slower la
 
 ### How does sim racing telemetry work?
 
-Most racing simulators can send telemetry from the game as UDP network packets, several dozen times a second, or write it to a file at the end of a session. A separate program on the same computer or network receives the packets, decodes the channels, and charts and stores the laps, just as a data logger does on a real race car.
+Most racing simulators publish telemetry while the game runs, either as UDP network packets several dozen times a second or through shared memory, and many also write it to a file at the end of a session. A separate program on the same computer or network reads the data, decodes the channels, and charts and stores the laps, just as a data logger does on a real race car.
 
 ### How do I make a lap comparison chart in JavaScript?
 
@@ -454,7 +454,7 @@ Interpolate each lap's channels onto lap distance, compute the time delta at eac
 - High Performance Academy, [Data Logging Frequencies](https://www.hpacademy.com/assets/Course-Content/Professional-Data-Course/24af8b0f4e/HPA_Data-Logging-Rates.pdf). Minimum suggested logging rates for driver, chassis and powertrain channels.
 - Mitchell, W. C. (1998), [A Method for Data Alignment](https://saemobilus.sae.org/papers/a-method-data-alignment-983087). SAE Technical Paper 983087. Aligning laps by matching patterns in the data rather than by distance alone.
 - Segers, J. (2014), [Analysis Techniques for Racecar Data Acquisition](https://saemobilus.sae.org/content/R-408), 2nd edition. SAE International. Lap comparison, time slip and the analysis of driver and vehicle channels.
-- Milliken, W. F. and Milliken, D. L., [Race Car Vehicle Dynamics](https://saemobilus.sae.org/content/R-146). SAE International. The g-g diagram and the friction circle.
+- Milliken, W. F. and Milliken, D. L. (1995), [Race Car Vehicle Dynamics](https://saemobilus.sae.org/content/R-146). SAE International. The g-g diagram and the friction circle.
 - Postel, J. (1980), [RFC 768: User Datagram Protocol](https://www.rfc-editor.org/rfc/rfc768). The UDP packets racing simulators use to send telemetry.
 
 <LearnCta position="bottom" chart="racing telemetry dashboard" demo="sync-multi-chart" demoLabel="synchronised multi-chart" docs="/2d-charts/chart-synchronization-api/synchronizing-vertical-charts/" docsLabel="SciChart.js chart synchronisation documentation" />

@@ -87,7 +87,7 @@ datePublished: 2026-11-24
 
 ## What is an options payoff diagram?
 
-An **options payoff diagram** (also called a profit and loss diagram or risk graph) is a line chart of the profit or loss an option position makes at expiry, plotted against the underlying asset's price on that date. It shows the breakeven prices, the maximum profit and maximum loss, and where the outcome changes direction.
+An **options payoff diagram** (also called a profit and loss diagram) is a line chart of the profit or loss an option position makes at expiry, plotted against the underlying asset's price on that date. It shows the breakeven prices, the maximum profit and maximum loss, and where the outcome changes direction.
 
 ![An options payoff diagram on a dark navy background: the at-expiry profit and loss of a long call as a white line, flat below the 100 strike and rising after it, shaded red below zero and green above, with a dashed blue curve for its value 45 days before expiry, a yellow breakeven marker at 104.45 and a red dashed line marking the maximum loss](/img/learn/options-payoff-diagram-og.png)
 
@@ -107,7 +107,7 @@ An option's payoff is what it's worth at expiry, while its profit also counts th
 
 ![A long call with a strike of 100 and a premium of 4.45. The dashed payoff line is flat at zero up to 100, then rises one for one. The solid profit line is the same shape moved down by 4.45: a flat loss of 4.45 below 100, a kink at the strike, zero at the breakeven of 104.45 and profit with no upper limit above it](./long-call-payoff-vs-profit.svg)
 
-A **call** gives its buyer the right, but not the obligation, to buy the underlying at a fixed price, the **strike** (K), on or before the expiry date. A **put** gives the right to sell at the strike. The price paid for that right is the **premium**. Writing S for the underlying price at expiry:
+A **call** gives its buyer the right, but not the obligation, to buy the underlying at a fixed price, the **strike** (K), at any time up to the expiry date (American style) or only on it (European style). A **put** gives the right to sell at the strike. The price paid for that right is the **premium**. Writing S for the underlying price at expiry:
 
 $$
 \text{call payoff} = \max(S - K,\ 0) \qquad \text{put payoff} = \max(K - S,\ 0)
@@ -181,7 +181,7 @@ In the formulas, K1 < K2 < K3 < K4 are the strikes, D the net debit paid and C t
 | Long call butterfly | Buy K1 call, sell two K2 calls, buy K3 call (equal gaps) | Tent with its peak at K2 | K2 − K1 − D | D | K1 + D and K3 − D | 95/100/105: debit 0.90, max profit 4.10, breakevens 95.90 and 104.10 |
 | Iron condor | Buy K1 put, sell K2 put, sell K3 call, buy K4 call | Flat-topped plateau between K2 and K3 | C | Wing width − C | K2 − C and K3 + C | 90/95/105/110: credit 2.35, max loss 2.65, breakevens 92.65 and 107.35 |
 
-S0 is the price paid for the stock. Selling any of these strategies instead of buying it flips its diagram: a short straddle has a tent shape, keeps the premium if the price stays near the strike, and has an open-ended loss on both sides.
+S0 is the price paid for the stock. Selling any of these strategies instead of buying it flips its diagram: a short straddle has a tent shape, keeps the premium if the price stays near the strike, and has a large loss on either side: open-ended above, and up to the strike minus the premium below.
 
 ### Worked example: an iron condor
 
@@ -197,13 +197,13 @@ Between 95 and 105 every option expires worthless and the whole 2.35 is kept, wh
 
 Before expiry, a position is worth its model value, not its payoff, so the diagram gains a smooth curve that sinks onto the payoff line as expiry approaches.
 
-An option that hasn't expired still has **time value**: the price could move further before expiry. The standard way to price it is the Black–Scholes model, which gives the value of a European call as
+An option that hasn't expired still has **time value**: the price could move further before expiry. The standard way to price it is the Black–Scholes model, which gives the value of a European call on a stock paying no dividends as
 
 $$
 C = S\,N(d_1) - K e^{-rT} N(d_2), \qquad d_1 = \frac{\ln(S/K) + (r + \sigma^2/2)\,T}{\sigma\sqrt{T}}, \qquad d_2 = d_1 - \sigma\sqrt{T}
 $$
 
-where N is the standard normal cumulative distribution, T the time to expiry in years, r the interest rate and σ the volatility. A put's value follows from put–call parity. Plotting the position's model value minus what was paid, across a range of prices, gives a before-expiry curve, often labelled "T+0" for today, or with the number of days left.
+where N is the standard normal cumulative distribution, T the time to expiry in years, r the interest rate and σ the volatility. A put's value follows from put–call parity. US equity options are American style, so for them, and for stocks that pay dividends, the formula is an approximation, which is close enough for the shape of the curve. Plotting the position's model value minus what was paid, across a range of prices, gives a before-expiry curve, often labelled "T+0" for today, or with the number of days left.
 
 What the curve shows for the presets (stock at 100, 30% volatility, 4% interest rate):
 
@@ -441,7 +441,7 @@ Sum each leg's profit at expiry over a grid of underlying prices, adding each st
 
 ## Sources
 
-- Hull, J. C. (2021), *Options, Futures, and Other Derivatives*, 11th edition. Pearson. Option payoffs and profit diagrams, trading strategies (spreads, straddles, strangles, butterflies), put–call parity and the Black–Scholes–Merton model.
+- Hull, J. C. (2022), *Options, Futures, and Other Derivatives*, 11th edition. Pearson. Option payoffs and profit diagrams, trading strategies (spreads, straddles, strangles, butterflies), put–call parity and the Black–Scholes–Merton model.
 - Black, F. and Scholes, M. (1973), [The pricing of options and corporate liabilities](https://doi.org/10.1086/260062). *Journal of Political Economy*, 81(3), 637–654. The option pricing formula used for the before-expiry curve.
 - Merton, R. C. (1973), [Theory of rational option pricing](https://doi.org/10.2307/3003143). *The Bell Journal of Economics and Management Science*, 4(1), 141–183. Extensions of the model and the bounds on option prices.
 - Options Clearing Corporation, [Characteristics and Risks of Standardized Options](https://www.theocc.com/company-information/documents-and-archives/options-disclosure-document). The options disclosure document: calls and puts, American and European exercise, assignment and the risks of buying and writing options.

@@ -489,6 +489,6 @@ Load the spectrum as two arrays, the x-axis values (wavenumber, Raman shift or w
 - Horecker, B. L. and Kornberg, A. (1948), The extinction coefficients of the reduced band of pyridine nucleotides. *Journal of Biological Chemistry*, 175, 385–390. The molar absorptivity of NADH at 340 nm, 6.22 × 10³ L mol⁻¹ cm⁻¹.
 - Savitzky, A. and Golay, M. J. E. (1964), [Smoothing and differentiation of data by simplified least squares procedures](https://doi.org/10.1021/ac60214a047). *Analytical Chemistry*, 36(8).
 - Lieber, C. A. and Mahadevan-Jansen, A. (2003), [Automated method for subtraction of fluorescence from biological Raman spectra](https://doi.org/10.1366/000370203322554518). *Applied Spectroscopy*, 57(11). The iterated polynomial baseline used in the demo.
-- ASTM E1840, *Standard Guide for Raman Shift Standards for Spectrometer Calibration*, ASTM International.
+- ASTM E1840-96 (reapproved 2022), *Standard Guide for Raman Shift Standards for Spectrometer Calibration*, ASTM International.
 
 <LearnCta position="bottom" chart="spectrum chart" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

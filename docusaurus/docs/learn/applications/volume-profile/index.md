@@ -94,7 +94,7 @@ Read a volume profile from its longest bar outwards: the point of control, then 
 ![Anatomy of a volume profile: candles of one session rising from about 101 to 105 on the left, and on the right horizontal bars of volume at each price, with the point of control at 104.50 as the longest bar, the value area from 103.50 to 105.50 shaded and holding 72% of the volume, a high-volume node near 101.25 in the lower part and a low-volume node near 102.75 in the thin gap between the two busy areas](./volume-profile-anatomy.svg)
 
 1. Check the range. A profile covers a stretch of time: one session, several, a range you picked or the bars on screen. The same chart can carry several profiles, one per session.
-2. Check the row size. Each bar is one price row: one tick (the smallest price step) or several ticks merged. Bigger rows smooth the shape and can move the POC.
+2. Check the row size. Each bar is one price row: one tick (the smallest price step the exchange allows; Harris, 2003) or several ticks merged. Bigger rows smooth the shape and can move the POC.
 3. Find the point of control, the longest bar, usually marked with a line across the chart.
 4. Find the value area, usually shaded or bounded by two lines. Its top is the VAH and its bottom the VAL.
 5. Look at the shape. One rounded hump means the range traded around one price; two humps with a thin waist mean it traded in two places and moved quickly between them.
@@ -122,7 +122,7 @@ The algorithm in the value area section below decides which rows from $L$ to $H$
 
 The point of control is the price row with the most volume in the range, the place where the most contracts or shares changed hands.
 
-The idea comes from Market Profile, the charting method J. Peter Steidlmayer developed as a trader at the Chicago Board of Trade (CBOT), which published it as CBOT Market Profile in 1985. In Market Profile, the POC is the price traded in the most time periods; in a volume profile, it is the price with the most volume.
+The idea comes from Market Profile, the charting method J. Peter Steidlmayer developed as a trader at the Chicago Board of Trade (CBOT) and described in his books (Steidlmayer and Koy, 1986; Steidlmayer, 1989). The CBOT began publishing it as CBOT Market Profile in the mid-1980s. In Market Profile, the POC is the price traded in the most time periods; in a volume profile, it is the price with the most volume.
 
 Some details change where the POC lands:
 
@@ -473,7 +473,7 @@ Add up the size of every trade into price rows, find the busiest row and grow th
 
 - Steidlmayer, J. P. and Koy, K. (1986), *Markets and Market Logic*. Porcupine Press. The first book-length account of Market Profile, the point of control and value.
 - Steidlmayer, J. P. (1989), *Steidlmayer on Markets: A New Approach to Trading*. Wiley.
-- Chicago Board of Trade (1985, revised 1991), *CBOT Market Profile* manual. The exchange's own guide to Market Profile.
+- Chicago Board of Trade (mid-1980s, revised 1991), *CBOT Market Profile* manual. The exchange's own guide to Market Profile.
 - Dalton, J. F., Jones, E. T. and Dalton, R. B. (2013), *Mind Over Markets: Power Trading with Market Generated Information*, updated edition. Wiley. Day types, and the appendix on calculating the value area two prices at a time until 70% of the volume is reached.
 - Harris, L. (2003), *Trading and Exchanges: Market Microstructure for Practitioners*. Oxford University Press. Trades, tick sizes and how exchanges report them.
 

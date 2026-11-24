@@ -480,12 +480,12 @@ Give each group of channels its own chart pane with a fixed y-range, and line th
 
 ## Sources
 
-- Range Commanders Council (2022), [IRIG 106-22 Telemetry Standards, chapter 4: Pulse Code Modulation Standards](https://www.irig106.org/docs/106-22/chapter4.pdf). Minor and major frames, sync patterns, word lengths, subcommutation and supercommutation, and the Class I and Class II limits.
-- Range Commanders Council (2022), [IRIG 106-22 Telemetry Standards, chapter 2: Transmitter and Receiver Systems](https://www.irig106.org/docs/106-22/chapter2.pdf). The L-, S- and C-band allocations for aeronautical telemetry.
+- Range Commanders Council (2025), [IRIG 106-24R1 Telemetry Standards, chapter 4: Pulse Code Modulation Standards](https://www.irig106.org/docs/106-24R1/chapter4.pdf). Minor and major frames, sync patterns, word lengths, subcommutation and supercommutation, and the Class I and Class II limits.
+- Range Commanders Council (2025), [IRIG 106-24R1 Telemetry Standards, chapter 2: Transmitter and Receiver Systems](https://www.irig106.org/docs/106-24R1/chapter2.pdf). The L-, S- and C-band allocations for aeronautical telemetry.
 - CCSDS (2020), [Space Packet Protocol, CCSDS 133.0-B-2](https://ccsds.org/Pubs/133x0b2e2.pdf). Blue Book. The space packet's primary header, application process identifier and length limits.
 - CCSDS (2023), [Overview of Space Communications Protocols, CCSDS 130.0-G-4](https://ccsds.org/Pubs/130x0g4e1.pdf). Green Book. How telemetry and telecommand fit into the space link protocols.
 - Sandau, K. E. et al. (2017), [Update to Practice Standards for Electrocardiographic Monitoring in Hospital Settings](https://doi.org/10.1161/CIR.0000000000000527). *Circulation*, 136(19), e273–e344. American Heart Association scientific statement on hospital ECG and telemetry monitoring.
 - OpenTelemetry, [Signals](https://opentelemetry.io/docs/concepts/signals/). The traces, metrics and logs of software telemetry.
-- Wiktionary, [telemetry](https://en.wiktionary.org/wiki/telemetry), [tele-](https://en.wiktionary.org/wiki/tele-) and [-metry](https://en.wiktionary.org/wiki/-metry). The word's origin in the Greek for "far" and "measure".
+- Merriam-Webster, [telemetry](https://www.merriam-webster.com/dictionary/telemetry), [tele-](https://www.merriam-webster.com/dictionary/tele-) and [-metry](https://www.merriam-webster.com/dictionary/-metry). The word's origin in the Greek for "far" and "measure".
 
 <LearnCta position="bottom" chart="real-time telemetry dashboard" demo="multiple-chart-dashboard-performance-demo" demoLabel="multi-chart dashboard" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line chart documentation" />

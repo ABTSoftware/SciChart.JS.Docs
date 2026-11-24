@@ -171,7 +171,7 @@ Each common antenna has a recognisable pattern shape and directivity, from the i
 | Small loop | Doughnut like the short dipole, with nulls along the loop's axis | 1.5 (1.76 dBi) | $F = \sin\theta$, with θ from the loop axis |
 | Patch (microstrip) | One broad lobe away from the ground plane | About 7 dBi in the demo's model (5 dBd) | Two radiating slots: $\cos(\frac{kL}{2}\sin\theta)$ in the E-plane |
 | Yagi-Uda | End-fire beam along the boom, with side lobes and a back lobe | Rises with the number of elements and the boom length | Mutual coupling between a driven element, a reflector and directors |
-| Helical (axial mode) | End-fire beam along the helix axis, circularly polarised | Kraus's empirical $D \approx 15 N C^2 S / \lambda^3$ | N turns of circumference C and spacing S |
+| Helical (axial mode) | End-fire beam along the helix axis, circularly polarised | Kraus's empirical $D \approx k N C^2 S / \lambda^3$, with $k$ about 12 to 15 | N turns of circumference C and spacing S |
 | Horn | One main lobe, low side lobes, small back lobe | From the aperture area A | $D = \dfrac{4\pi}{\lambda^2}\varepsilon_{ap} A$, with $\varepsilon_{ap}$ about 0.5 for an optimum-gain pyramidal horn |
 | Phased array | A narrow beam that can be steered electronically | About $2Nd/\lambda$ for a broadside line of N isotropic elements | Element pattern × array factor |
 
@@ -445,7 +445,7 @@ Compute or load the gain in dB at each angle of a cut, clip it at a floor such a
 
 - Balanis, C. A. (2016), *Antenna Theory: Analysis and Design*, 4th edition, Wiley. Radiation patterns, directivity, dipoles and monopoles, the cavity model of the patch, array factor and beam steering, horns.
 - Kraus, J. D. and Marhefka, R. J. (2002), *Antennas for All Applications*, 3rd edition, McGraw-Hill. The beam-area approximation of directivity, helical antennas, Yagi-Uda arrays.
-- [IEEE Std 145-2013, IEEE Standard for Definitions of Terms for Antennas](https://doi.org/10.1109/IEEESTD.2014.6758443). Definitions of radiation pattern, E-plane and H-plane, directivity, gain and side lobes.
+- [IEEE Std 145-2025, IEEE Standard for Definitions of Terms for Antennas](https://doi.org/10.1109/IEEESTD.2025.11459445). Definitions of radiation pattern, E-plane and H-plane, directivity, gain and side lobes.
 - [IEEE Std 149-2021, IEEE Recommended Practice for Antenna Measurements](https://ieeexplore.ieee.org/document/9714428). Pattern measurement ranges and the far-field distance.
 - Hansen, W. W. and Woodyard, J. R. (1938), A new principle in directional antenna design. *Proceedings of the IRE*, 26(3), 333–345. The end-fire phase condition used for the demo's Yagi approximation.
 

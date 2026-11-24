@@ -44,7 +44,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "How do you find the yield strength with the 0.2% offset method?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Draw a straight line with the same slope as the elastic part of the curve (Young's modulus), starting at 0.2% strain (0.002) on the strain axis instead of at the origin. The stress where this line crosses the curve is the 0.2% offset yield strength, also called the 0.2% proof stress or Rp0.2. It is the stress that leaves a permanent strain of 0.2% when the load is removed." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Draw a straight line with the same slope as the elastic part of the curve (Young's modulus), starting at 0.2% strain (0.002) on the strain axis instead of at the origin. The stress where this line crosses the curve is the 0.2% offset yield strength, also called the 0.2% proof strength (often proof stress) or Rp0.2. It is the stress that leaves a permanent strain of 0.2% when the load is removed." }
                 },
                 {
                     "@type": "Question",
@@ -81,7 +81,7 @@ A **stress-strain curve** (also called a stress-strain graph or diagram) plots t
 - The first straight part is elastic: its slope is Young's modulus, and the material springs back when unloaded.
 - Most metals have no sharp yield point, so yield strength is read with the 0.2% offset method.
 - The peak is the ultimate tensile strength (UTS). After it the specimen necks, and the engineering stress falls until fracture.
-- Ductile materials stretch a long way before breaking; brittle ones, such as cast iron, break with almost no plastic strain.
+- Ductile materials stretch a long way before breaking; brittle ones, such as grey cast iron, break with almost no plastic strain.
 :::
 
 ## How a tensile test produces the curve
@@ -139,7 +139,7 @@ For those, the **0.2% offset method** gives a repeatable value:
 
 1. Draw a line with slope $E$, parallel to the elastic part, starting at a strain of 0.2% (0.002) instead of at the origin.
 2. Find where this line crosses the curve.
-3. The stress there is the 0.2% offset yield strength, written $R_{p0.2}$ in ISO 6892-1 and called the proof stress.
+3. The stress there is the 0.2% offset yield strength, written $R_{p0.2}$ in ISO 6892-1 and called the proof strength (often proof stress).
 
 It means the stress that leaves 0.2% of permanent strain after the load is taken off. For the aluminium bar, the offset line is $\sigma = 69{,}000\,(\varepsilon - 0.002)$. At a force of 33.9 kN the curve reads 276 MPa at 0.600% strain, and the line gives $69{,}000 \times (0.006 - 0.002) = 276$ MPa: they cross, so the yield strength is 276 MPa. At 30 kN (244.5 MPa, 0.359%) the curve is still above the line; by 36 kN it has passed below it.
 
@@ -223,7 +223,7 @@ Both axes are almost always on a [log scale](/learn/axes-and-scales/log-scale-gr
 
 - Steels and titanium alloys usually show a knee and then a flat line, the **endurance limit**. Below it, a smooth specimen is expected to survive indefinitely, in normal conditions without corrosion. A common first estimate for steels with a UTS up to about 1,400 MPa is an endurance limit of half the UTS, and a fatigue strength at 1,000 cycles of about 0.8 to 0.9 × UTS in bending, depending on strength. The steel line in the diagram uses 0.9.
 - Aluminium and copper alloys have no knee: the line keeps falling. Their fatigue strength is quoted at a stated life, often $10^7$ or $5 \times 10^8$ cycles.
-- Fatigue lives scatter widely, and can differ by a factor of ten or more at the same stress, so curves are fitted statistically (ASTM E739) and design curves sit well below the average. Surface finish, notches, size and mean stress all lower them further.
+- Fatigue lives scatter widely, and can differ by a factor of ten or more at the same stress, so curves are fitted statistically (as in ISO 12107) and design curves sit well below the average. Surface finish, notches, size and mean stress all lower them further.
 
 ## Common stress-strain curve mistakes
 
@@ -438,7 +438,7 @@ Young's modulus is the slope of the straight, elastic part at the start of the c
 
 ### How do you find the yield strength with the 0.2% offset method?
 
-Draw a straight line with the same slope as the elastic part of the curve (Young's modulus), starting at 0.2% strain (0.002) on the strain axis instead of at the origin. The stress where this line crosses the curve is the 0.2% offset yield strength, also called the 0.2% proof stress or Rp0.2. It is the stress that leaves a permanent strain of 0.2% when the load is removed.
+Draw a straight line with the same slope as the elastic part of the curve (Young's modulus), starting at 0.2% strain (0.002) on the strain axis instead of at the origin. The stress where this line crosses the curve is the 0.2% offset yield strength, also called the 0.2% proof strength (often proof stress) or Rp0.2. It is the stress that leaves a permanent strain of 0.2% when the load is removed.
 
 ### What is the difference between engineering and true stress-strain curves?
 
@@ -458,6 +458,7 @@ Convert the test machine's force and extension readings to stress (force over or
 - ASTM E111, *Standard Test Method for Young's Modulus, Tangent Modulus, and Chord Modulus*; ISO 527-1, *Plastics: Determination of tensile properties*, for the yield point and modulus of plastics.
 - Callister, W. D. and Rethwisch, D. G. (2018), *Materials Science and Engineering: An Introduction*, 10th edition, Wiley. Chapter 6 (mechanical properties of metals) and the property tables in Appendix B, the source of the typical values above.
 - Roylance, D., *Mechanics of Materials*, MIT, on LibreTexts: [Stress-strain curves](https://eng.libretexts.org/Bookshelves/Mechanical_Engineering/Mechanics_of_Materials_(Roylance)/01%3A_Tensile_Response_of_Materials/1.04%3A_Stress-Strain_Curves). Engineering and true stress, Considère's construction and strain energy.
-- Budynas, R. G. and Nisbett, J. K. (2020), *Shigley's Mechanical Engineering Design*, 11th edition, McGraw-Hill. Chapter 6: S-N curves, the endurance limit estimate and the fatigue strength fraction at 1,000 cycles. ASTM E466 and E739 cover fatigue testing and the statistical analysis of S-N data.
+- Budynas, R. G. and Nisbett, J. K. (2020), *Shigley's Mechanical Engineering Design*, 11th edition, McGraw-Hill. Chapter 6: S-N curves, the endurance limit estimate and the fatigue strength fraction at 1,000 cycles. ASTM E466 covers axial fatigue testing.
+- ISO 12107:2012, [*Metallic materials: Fatigue testing, Statistical planning and analysis of data*](https://www.iso.org/standard/50242.html). Fitting S-N curves to scattered fatigue lives.
 
 <LearnCta position="bottom" chart="stress-strain curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

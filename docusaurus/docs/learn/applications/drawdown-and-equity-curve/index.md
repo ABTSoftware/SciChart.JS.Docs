@@ -92,7 +92,7 @@ An equity curve shows how much an account, fund or trading strategy is worth at 
 
 ### Linear or log scale for an equity curve?
 
-A log scale is the better choice for an equity curve that spans several years or a large change in value. On a linear axis a move from \$10,000 to \$20,000 takes the same height as a move from \$100,000 to \$110,000, so early gains and losses look tiny and recent ones look huge. On a log axis, equal heights mean equal percentage changes: doubling from \$10,000 to \$20,000 is as tall as doubling from \$20,000 to \$40,000. Compounding growth at a steady rate becomes a straight line, and a drawdown of 20% looks the same size wherever it happens. The [log scale graph guide](/learn/axes-and-scales/log-scale-graph/) explains how log axes work and when to use them.
+For an equity curve that spans several years or a large change in value, a log scale is usually the better choice. On a linear axis a move from \$10,000 to \$20,000 takes the same height as a move from \$100,000 to \$110,000, so early gains and losses look tiny and recent ones look huge. On a log axis, equal heights mean equal percentage changes: doubling from \$10,000 to \$20,000 is as tall as doubling from \$20,000 to \$40,000. Compounding growth at a steady rate becomes a straight line, and a drawdown of 20% looks the same size wherever it happens. The [log scale graph guide](/learn/axes-and-scales/log-scale-graph/) explains how log axes work and when to use them.
 
 ## What is drawdown?
 
@@ -161,7 +161,7 @@ A shallow drawdown can last for years, and a long spell without a new high tests
 Two other measures are common:
 
 - Time to recovery (trough to recovery) shows how quickly the strategy makes losses back.
-- Time underwater is the share of all dates spent below a previous high. The simulated strategy in the demo ends five years 80% up, yet closes below its previous high on 93% of trading days, because most of those days are small dips just under a recent high.
+- The share of time underwater is the proportion of all dates spent below a previous high. The simulated strategy in the demo ends five years 80% up, yet closes below its previous high on 93% of trading days, because most of those days are small dips just under a recent high.
 
 ## Underwater chart: drawdown over time
 
@@ -239,7 +239,7 @@ A backtest equity curve that rises in a near-straight line with tiny drawdowns i
 - Survivorship bias: the test universe includes only assets that still exist, leaving out companies or funds that failed, which inflates past returns.
 - Missing costs: commissions, spreads, slippage and financing are left out or underestimated, which matters most for strategies that trade often.
 
-Test on data the rules never saw, record how many variations were tried, and expect live drawdowns to be deeper than the backtest's.
+Testing on data the rules never saw, and recording how many variations were tried, helps to catch these. Even so, live drawdowns are often deeper than a backtest's, for the reasons above.
 
 ## Comparing two strategies
 
@@ -496,7 +496,7 @@ Work out the running peak and the drawdown series in plain JavaScript in one pas
 ## Sources
 
 - Magdon-Ismail, M., Atiya, A. F., Pratap, A. and Abu-Mostafa, Y. S. (2004), [On the maximum drawdown of a Brownian motion](https://doi.org/10.1239/jap/1077134674), *Journal of Applied Probability*, 41(1), 147–161. Derives the expected maximum drawdown of a random walk and how it grows with time.
-- Wikipedia, [Calmar ratio](https://en.wikipedia.org/wiki/Calmar_ratio). Terry W. Young's 1991 definition over 36 months, and the related MAR and Sterling ratios.
+- Young, T. W. (1991), Calmar ratio: a smoother tool. *Futures*, 1 October 1991. Defines the Calmar ratio as the average annual return over the latest 36 months divided by the maximum drawdown over the same 36 months, measured monthly.
 - Sharpe, W. F. (1994), [The Sharpe ratio](https://doi.org/10.3905/jpm.1994.409501), *The Journal of Portfolio Management*, 21(1), 49–58.
 - Sortino, F. A. and Price, L. N. (1994), [Performance measurement in a downside risk framework](https://doi.org/10.3905/joi.3.3.59), *The Journal of Investing*, 3(3), 59–64.
 - Bailey, D. H., Borwein, J. M., López de Prado, M. and Zhu, Q. J. (2014), [Pseudo-mathematics and financial charlatanism: the effects of backtest overfitting on out-of-sample performance](https://doi.org/10.1090/noti1105), *Notices of the American Mathematical Society*, 61(5), 458–471.

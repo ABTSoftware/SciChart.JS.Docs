@@ -51,7 +51,7 @@ datePublished: 2026-11-24
                 {
                     "@type": "Question",
                     "name": "What is an order book heatmap?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "An order book heatmap shows market depth over time. Time runs along the x axis, price up the y axis, and the colour of each cell is the resting size at that price at that moment. Bright horizontal lines are large orders that stayed in the book; a line that stops before the price reaches it is an order that was cancelled." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "An order book heatmap shows market depth over time. Time runs along the x axis, price up the y axis, and the colour of each cell is the resting size at that price at that moment. Bright horizontal lines are large orders that stayed in the book; a line that stops before the price reaches it is usually an order that was cancelled or moved (or, on a feed limited to a few levels, a price that moved out of view)." }
                 },
                 {
                     "@type": "Question",
@@ -109,7 +109,7 @@ At any moment the book looks something like this:
 
 The highest bid (100.00) is the **best bid**; the lowest ask (100.02) is the **best ask**. Together they make the inside quote. Bids are always below asks: an order that would cross them trades instead of resting.
 
-Within a price level, most exchanges fill orders in time order, first come, first served. This is called price-time priority, and it's why traders care about their place in the queue as well as their price. The smallest step between prices is the tick size, 0.01 in this example.
+Within a price level, most exchanges fill orders in time order, first come, first served. This is called price-time priority, and it's why traders care about their place in the queue as well as their price. Some futures markets share fills at a price in proportion to order size (pro rata) instead. The smallest step between prices is the tick size, 0.01 in this example.
 
 ## Top of book vs market depth
 
@@ -131,7 +131,7 @@ The spread is the best ask minus the best bid, and the mid price is halfway betw
 
 - **Spread** = best ask − best bid = 100.02 − 100.00 = 0.02. As a share of the mid, that is 0.02 ÷ 100.01 = 2.0 basis points (a basis point is 0.01%). Narrow spreads go with liquid markets.
 - **Mid price** = (best bid + best ask) ÷ 2 = 100.01. Charts often plot the mid as "the price" between trades, but nobody can trade at it: buyers pay the ask and sellers receive the bid.
-- **Size-weighted mid** (sometimes called the micro-price) leans the mid towards the side with less size, because that side is more likely to be used up first: (100.00 × 300 + 100.02 × 400) ÷ (300 + 400) = 100.0114, a little above the plain mid because more size is bid than offered at the top.
+- **Size-weighted mid** (also called the weighted mid) leans the mid towards the side with less size, because that side is more likely to be used up first: (100.00 × 300 + 100.02 × 400) ÷ (300 + 400) = 100.0114, a little above the plain mid because more size is bid than offered at the top. A refinement of it, the micro-price, adjusts the mid for imbalance and spread together (Stoikov, 2018).
 
 ## How to read a market depth chart
 
@@ -205,7 +205,7 @@ Cryptocurrency exchanges, futures exchanges and share markets all use order book
 | --- | --- | --- | --- |
 | Where the book is | Each exchange runs its own book for each pair | One exchange per contract | Many exchanges and other venues for the same stock |
 | Trading hours | Usually around the clock, every day | Close to 24 hours on weekdays for many contracts, with breaks | Set sessions, with pre- and post-market trading |
-| Depth commonly available | Often full depth through public data feeds | A set number of price levels (market by price) or full market by order, from the exchange | Each venue's own depth; the best prices across venues are combined into the national best bid and offer (NBBO) |
+| Depth commonly available | Often deep books (hundreds or thousands of levels) through public data feeds | A set number of price levels (market by price) or full market by order, from the exchange | Each venue's own depth; the best prices across venues are combined into the national best bid and offer (NBBO) |
 | Size units | Coins or contracts; check whether size is in the base or quote currency | Contracts | Shares |
 
 Because the same share or coin trades in many places, a depth chart from one venue shows only part of the liquidity. Consolidated views add venues together, but each venue's book still has its own queue and fees.
@@ -418,7 +418,7 @@ Top of book (level 1) is only the best bid and best ask, with the size at each. 
 
 ### What is an order book heatmap?
 
-An order book heatmap shows market depth over time. Time runs along the x axis, price up the y axis, and the colour of each cell is the resting size at that price at that moment. Bright horizontal lines are large orders that stayed in the book; a line that stops before the price reaches it is an order that was cancelled.
+An order book heatmap shows market depth over time. Time runs along the x axis, price up the y axis, and the colour of each cell is the resting size at that price at that moment. Bright horizontal lines are large orders that stayed in the book; a line that stops before the price reaches it is usually an order that was cancelled or moved (or, on a feed limited to a few levels, a price that moved out of view).
 
 ### Why does liquidity disappear from the order book?
 
@@ -434,6 +434,7 @@ Sort the bids from the best price down and the asks from the best price up, add 
 - Gould, M. D., Porter, M. A., Williams, S., McDonald, M., Fenn, D. J. and Howison, S. D. (2013), [Limit order books](https://doi.org/10.1080/14697688.2013.803148). *Quantitative Finance*, 13(11), 1709–1742. A review of how limit order books work and what studies of them have found, including how many orders are cancelled rather than filled.
 - Cont, R., Kukanov, A. and Stoikov, S. (2014), [The price impact of order book events](https://doi.org/10.1093/jjfinec/nbt003). *Journal of Financial Econometrics*, 12(1), 47–88. Links short-term price changes to the imbalance of order flow at the best bid and ask.
 - CME Group, [Market by Order (MBO)](https://www.cmegroup.com/education/market-by-order-mbo.html) and [MDP 3.0: Market by Price, multiple depth book](https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457574047/MDP+3.0+-+Market+by+Price+-+Multiple+Depth+Book). How an exchange publishes depth by price level and by individual order.
+- Stoikov, S. (2018), [The micro-price: a high-frequency estimator of future prices](https://doi.org/10.1080/14697688.2018.1489139). *Quantitative Finance*, 18(12), 1959–1966. Defines the micro-price, an estimate of the mid that takes account of order book imbalance and the spread.
 - Commodity Futures Trading Commission (2013), [Antidisruptive Practices Authority](https://www.cftc.gov/LawRegulation/FederalRegister/finalrules/2013-12365.html), 78 FR 31890. Interpretive guidance on the spoofing prohibition in section 4c(a)(5)(C) of the Commodity Exchange Act.
 - U.S. Securities and Exchange Commission, Investor.gov, [National best bid and offer (NBBO)](https://www.investor.gov/introduction-investing/investing-basics/glossary/national-best-bid-and-offer-nbbo).
 

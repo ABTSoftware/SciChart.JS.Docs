@@ -152,14 +152,14 @@ A worked example: a motor vibrating at 5 mm/s RMS at its running speed of 30 Hz 
 
 ## Vibration severity: ISO 20816 zones
 
-ISO 20816-3 (which replaced ISO 10816-3 in 2022) gives vibration limits for industrial machines over 15 kW running at 120 to 30,000 r/min. It measures the overall velocity, in mm/s RMS, on the bearing housings, over 10 to 1,000 Hz for machines above 600 r/min (2 to 1,000 Hz for slower ones), and sorts it into four zones:
+ISO 20816-3 (first published in 2022, replacing ISO 10816-3; revised in 2026) gives vibration limits for industrial machines running at 120 to 30,000 r/min. It measures the overall velocity, in mm/s RMS, on the bearing housings, over 10 to 1,000 Hz for machines above 600 r/min (2 to 1,000 Hz for slower ones), and sorts it into four zones:
 
 - Zone A: typical of newly commissioned machines.
 - Zone B: acceptable for unrestricted long-term running.
 - Zone C: unsatisfactory for long-term running; plan a repair at the next opportunity.
 - Zone D: severe enough to damage the machine.
 
-The boundaries depend on the size of the machine and how stiff its support is:
+The boundaries depend on the size of the machine and how stiff its support is. The values below follow the earlier editions; check them against the 2026 table:
 
 | Machine group (ISO 20816-3) | Support | A/B | B/C | C/D |
 | --- | --- | --- | --- | --- |
@@ -501,7 +501,7 @@ Compute the spectrum with an FFT of a windowed block of samples, scale it to the
 
 ## Sources
 
-- ISO (2022), [ISO 20816-3:2022 Mechanical vibration — Measurement and evaluation of machine vibration — Part 3: Industrial machines with a power rating above 15 kW and operating speeds between 120 r/min and 30 000 r/min](https://www.iso.org/standard/78311.html). Measurement bands, evaluation zones A to D, machine groups and support classes; replaces ISO 10816-3:2009.
+- ISO (2026), [ISO 20816-3:2026 Mechanical vibration — Measurement and evaluation of machine vibration — Part 3: Industrial machines with operating speeds between 120 r/min and 30 000 r/min](https://www.iso.org/standard/89922.html). Measurement bands, evaluation zones A to D, machine groups and support classes; replaces ISO 20816-3:2022, which replaced ISO 10816-3:2009.
 - Randall, R. B. (2021), [Vibration-based Condition Monitoring: Industrial, Automotive and Aerospace Applications](https://doi.org/10.1002/9781119477631), 2nd edition. Wiley. Spectrum analysis, fault signatures, bearing and gear diagnostics, order tracking.
 - Randall, R. B. and Antoni, J. (2011), [Rolling element bearing diagnostics: a tutorial](https://doi.org/10.1016/j.ymssp.2010.07.017). *Mechanical Systems and Signal Processing*, 25(2), 485–520. Bearing defect frequency formulas, slip, and envelope analysis.
 - NASA (2008), [Reliability-Centered Maintenance Guide for Facilities and Collateral Equipment](https://www.nasa.gov/wp-content/uploads/2023/06/nasa-rcmguide.pdf). Vibration monitoring and analysis within predictive testing and inspection.

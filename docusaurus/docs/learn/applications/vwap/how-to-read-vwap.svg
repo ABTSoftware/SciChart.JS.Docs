@@ -102,7 +102,7 @@
 <text x="298.4" y="308.0" font-size="13" fill="#222" text-anchor="start">trades below it</text>
 <line x1="463.8" y1="203.8" x2="572.0" y2="222.0" stroke="#333" stroke-width="1"/><circle cx="463.8" cy="203.8" r="3" fill="#333"/>
 <text x="576.0" y="226.0" font-size="13" fill="#222" text-anchor="start">Afternoon: each bar</text>
-<text x="576.0" y="242.0" font-size="13" fill="#222" text-anchor="start">adds only 2–4% of the</text>
+<text x="576.0" y="242.0" font-size="13" fill="#222" text-anchor="start">adds only 2–5% of the</text>
 <text x="576.0" y="258.0" font-size="13" fill="#222" text-anchor="start">volume so far, so</text>
 <text x="576.0" y="274.0" font-size="13" fill="#222" text-anchor="start">VWAP barely moves</text>
 <line x1="515.1" y1="50.0" x2="572.0" y2="140.0" stroke="#333" stroke-width="1"/><circle cx="515.1" cy="50.0" r="3" fill="#333"/>

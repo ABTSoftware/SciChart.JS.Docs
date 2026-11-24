@@ -127,7 +127,7 @@ Real peaks are rarely perfect bell curves.
 - A **tailing peak** rises quickly and falls slowly, leaving a long tail. Common causes are strong secondary interactions with the stationary phase (basic compounds on silica in HPLC, for example), a damaged column or dead volume in the fittings.
 - A **fronting peak** is the mirror image, with a sloping front. It usually means the column is overloaded, or the sample solvent is much stronger than the mobile phase.
 
-Both are measured by the tailing factor (USP) $T = W_{0.05}/2f$, where $W_{0.05}$ is the peak width at 5% of its height and $f$ is the distance from the front edge to the apex at that height. A symmetric peak has $T = 1$; above 1 it tails, below 1 it fronts.
+Both are measured by the symmetry factor (USP &lt;621&gt;, also called the tailing factor) $T = W_{0.05}/2f$, where $W_{0.05}$ is the peak width at 5% of its height and $f$ is the distance from the front edge to the apex at that height. A symmetric peak has $T = 1$; above 1 it tails, below 1 it fronts.
 
 ## How to read a chromatogram
 
@@ -470,7 +470,8 @@ Load the detector readings as time and response arrays into a line series, with 
 - Harvey, D., *Analytical Chemistry 2.1*, LibreTexts: [General theory of column chromatography](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/12:_Chromatographic_and_Electrophoretic_Methods/12.02:_General_Theory_of_Column_Chromatography), [optimising chromatographic separations](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/12:_Chromatographic_and_Electrophoretic_Methods/12.03:_Optimizing_Chromatographic_Separations), [gas chromatography](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/12:_Chromatographic_and_Electrophoretic_Methods/12.04:_Gas_Chromatography) and [high-performance liquid chromatography](https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Analytical_Chemistry_2.1_(Harvey)/12:_Chromatographic_and_Electrophoretic_Methods/12.05:_High-Performance_Liquid_Chromatography).
 - Snyder, L. R., Kirkland, J. J. and Dolan, J. W. (2010), *Introduction to Modern Liquid Chromatography*, 3rd edition, Wiley. Resolution, the Purnell equation, peak tailing and integration.
 - Skoog, D. A., Holler, F. J. and Crouch, S. R. (2018), *Principles of Instrumental Analysis*, 7th edition, Cengage. Chromatographic theory, detectors, GC and HPLC.
-- Sanger, F., Nicklen, S. and Coulson, A. R. (1977), [DNA sequencing with chain-terminating inhibitors](https://doi.org/10.1073/pnas.74.12.5463). *Proceedings of the National Academy of Sciences*, 74(12). The method behind four-colour sequencing traces.
+- Sanger, F., Nicklen, S. and Coulson, A. R. (1977), [DNA sequencing with chain-terminating inhibitors](https://doi.org/10.1073/pnas.74.12.5463). *Proceedings of the National Academy of Sciences*, 74(12). The chain-termination method behind sequencing traces.
+- Smith, L. M. et al. (1986), [Fluorescence detection in automated DNA sequence analysis](https://doi.org/10.1038/321674a0). *Nature*, 321(6071). Four fluorescent dyes, one per base: the four-colour trace.
 - International Council for Harmonisation (2023), *ICH Q2(R2): Validation of Analytical Procedures*. Signal-to-noise ratios of about 3 for detection and 10 for quantitation.
 - Lieber, C. A. and Mahadevan-Jansen, A. (2003), [Automated method for subtraction of fluorescence from biological Raman spectra](https://doi.org/10.1366/000370203322554518). *Applied Spectroscopy*, 57(11). The iterative polynomial baseline used by the demo's peak finder.
 

@@ -178,7 +178,7 @@ $$
 d = \frac{v \, t}{2}
 $$
 
-where $v$ is the sound velocity in the material and $t$ is the time of flight. Longitudinal waves travel at about 5,920 m/s (5.92 mm/µs) in low-alloy steel, the reference velocity that EN 12223 specifies for steel calibration block No. 1, and close to what NIST measured on IIW-type blocks. Shear waves travel at a little over half that, about 3,200 m/s.
+where $v$ is the sound velocity in the material and $t$ is the time of flight. Longitudinal waves travel at about 5,920 m/s (5.92 mm/µs) in low-alloy steel, the reference velocity for steel standard block No. 1 (ISO 2400, which replaced EN 12223). NIST studied how accurately that velocity can be measured on IIW-type blocks. Shear waves travel at a little over half that, about 3,200 m/s.
 
 A worked example: in a 25 mm steel plate, an echo at 4.05 µs is a reflector 5.92 × 4.05 ÷ 2 = 12.0 mm deep, and the back wall returns at 2 × 25 ÷ 5.92 = 8.45 µs. Each millimetre of steel adds 0.338 µs to the round trip.
 
@@ -513,12 +513,12 @@ Plot the A-scan as a line chart of amplitude against time of flight, and add a s
 ## Sources
 
 - Krautkrämer, J. and Krautkrämer, H. (1990), [Ultrasonic Testing of Materials](https://doi.org/10.1007/978-3-662-10680-8), 4th edition. Springer. Wave types and velocities, near field and beam spread, pulse-echo and through-transmission, displays, DAC and DGS evaluation, TOFD.
-- Lerch, T., Renken, M. C. and Fortunko, C. M. (2008), [Accurate measurements of longitudinal-wave velocity in IIW-type calibration blocks](https://www.nist.gov/node/713321). NIST. The 5,920 m/s reference velocity for low-alloy steel.
+- Lerch, T., Renken, M. C. and Fortunko, C. M. (1999), [Measurements of longitudinal-wave velocity in IIW-type calibration blocks](https://doi.org/10.1007/978-1-4615-4791-4_298). *Review of Progress in Quantitative Nondestructive Evaluation*, vol. 18. How accurately the 5,920 m/s reference velocity can be measured.
 - ISO (2024), [ISO 16810:2024 Non-destructive testing — Ultrasonic testing — General principles](https://www.iso.org/standard/86362.html). General requirements for ultrasonic testing; personnel qualified to ISO 9712.
 - ASME (2025), [Boiler and Pressure Vessel Code, Section V: Nondestructive Examination](https://www.asme.org/codes-standards/find-codes-standards/bpvc-v-bpvc-section-v-nondestructive-examination). Methods and requirements for UT, phased array, TOFD, radiography and the other methods.
 - ASNT, [Nondestructive testing methods](https://www.asnt.org/what-is-nondestructive-testing/methods). Overview of the main NDT methods, including visual, penetrant, magnetic particle, electromagnetic (eddy current), radiographic and ultrasonic testing.
 - ISO 17640, *Non-destructive testing of welds — Ultrasonic testing — Techniques, testing levels, and assessment*; ISO 16809, *Non-destructive testing — Ultrasonic thickness measurement*; ISO 10863, *Non-destructive testing of welds — Ultrasonic testing — Use of time-of-flight diffraction technique (TOFD)*; ISO 9712, *Non-destructive testing — Qualification and certification of NDT personnel*.
-- EN 12223, *Non-destructive testing — Ultrasonic examination — Specification for calibration block No. 1*. The 5,920 m/s reference velocity for steel.
+- ISO (2025), [ISO 2400:2025 Non-destructive testing — Ultrasonic testing — Specification for standard block No. 1](https://www.iso.org/standard/87438.html). The steel block used to set up ultrasonic equipment, and its 5,920 m/s reference velocity.
 - ASNT, [Ultrasonic Testing](https://www.asnt.org/what-is-nondestructive-testing/methods/ultrasonic-testing). Overview of ultrasonic testing, its displays, techniques and applications.
 
 <LearnCta position="bottom" chart="ultrasonic scan display" demo="polar-uniform-heatmap-ultrasound" demoLabel="polar ultrasound heatmap" docs="/2d-charts/chart-types/polar-uniform-heatmap-renderable-series/" docsLabel="SciChart.js polar heatmap documentation" />

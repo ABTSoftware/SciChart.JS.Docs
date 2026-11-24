@@ -52,7 +52,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "What is a pleth waveform on a pulse oximeter?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The pleth waveform, short for plethysmograph, is the pulse oximeter's trace of how much light the blood in a finger or earlobe absorbs from moment to moment. It rises with each heartbeat as arterial blood swells the tissue. A clean, regular pleth with a sharp upstroke shows the sensor is picking up a real pulse, so the SpO2 and pulse rate readings can be trusted." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The pleth waveform, short for plethysmograph, is the pulse oximeter's trace of how much light the blood in a finger or earlobe absorbs from moment to moment. It rises with each heartbeat as arterial blood swells the tissue. A clean, regular pleth with a sharp upstroke shows the sensor is picking up a real pulse, which is the first check before believing the SpO2 and pulse rate. It doesn't rule out every error: carbon monoxide and skin pigmentation, for example, can make SpO2 read high behind a normal-looking pleth." }
                 },
                 {
                     "@type": "Question",
@@ -101,7 +101,7 @@ Three related words are easy to mix up:
 | Capnography | Continuous measurement and display of CO₂ as a waveform |
 | Capnogram | The waveform itself. A time capnogram plots CO₂ against time (the usual monitor trace); a volumetric capnogram plots it against the volume breathed out |
 
-It is used in operating theatres, intensive care, emergency departments, ambulances and sedation suites. A capnogram can confirm that a breathing tube is in the windpipe rather than the oesophagus, warn of a disconnected circuit or a stopped breath within seconds, and help judge the quality of chest compressions during resuscitation. The American Society of Anesthesiologists' monitoring standards call for continual monitoring of exhaled CO₂ during general anaesthesia and during moderate or deep sedation.
+It is used in operating theatres, intensive care, emergency departments, ambulances and sedation suites. A capnogram can confirm that a breathing tube is in the windpipe rather than the oesophagus, warn of a disconnected circuit or a stopped breath within seconds, and help judge the quality of chest compressions during resuscitation. The American Society of Anesthesiologists' monitoring standards require end-tidal CO₂ monitoring whenever a breathing tube or supraglottic airway is in place, and ask for every effort to monitor exhaled CO₂ during general anaesthesia and during moderate or deep sedation.
 
 ### Mainstream vs sidestream capnography
 
@@ -160,7 +160,7 @@ Each common breathing or equipment problem changes the capnogram in its own way,
 | --- | --- | --- |
 | Shark fin | Slow, curved rise and a plateau that keeps sloping upwards, so each breath looks like a fin | Bronchospasm, asthma, COPD; a kinked or partly blocked tube |
 | Rebreathing | Baseline (and the downstroke) no longer returns to zero; EtCO₂ creeps up | An exhausted CO₂ absorber, a faulty valve in the breathing circuit, too little fresh gas flow |
-| Hypoventilation | Fewer breaths, with higher EtCO₂ (above 45 mmHg); the waveforms can also get smaller with shallow breathing | Opioids and sedatives, exhaustion, neuromuscular weakness |
+| Hypoventilation | Fewer breaths, with higher EtCO₂ (above 45 mmHg); the waveforms can also get smaller with shallow breathing, and with very shallow breaths EtCO₂ can read falsely low | Opioids and sedatives, exhaustion, neuromuscular weakness |
 | Hyperventilation | More breaths, with lower EtCO₂ (below 35 mmHg) | Anxiety, pain, over-ventilation by a ventilator or bag |
 | Curare cleft | A notch cut into the plateau | The patient's own breathing effort during mechanical ventilation, often as a muscle relaxant wears off |
 | Cardiogenic oscillations | Small ripples at the end of the downstroke, in time with the heartbeat | The heart beating against the lungs during a slow breath out; harmless |
@@ -181,7 +181,7 @@ $$
 R = \frac{AC_{\text{red}} / DC_{\text{red}}}{AC_{\text{IR}} / DC_{\text{IR}}}
 $$
 
-A low $R$ means well-oxygenated blood. Each manufacturer turns $R$ into SpO₂ with a calibration curve measured on healthy volunteers breathing low-oxygen gas mixtures. A commonly quoted straight-line approximation is $\text{SpO}_2 \approx 110 - 25R$, so $R = 0.5$ reads about 97% and $R = 1$ reads about 85%. Because the calibration comes from volunteers whose saturation was taken down only to about 70%, readings below that are less certain.
+A low $R$ means well-oxygenated blood. Each manufacturer turns $R$ into SpO₂ with a calibration curve measured on healthy volunteers breathing low-oxygen gas mixtures. A commonly quoted straight-line approximation is $\text{SpO}_2 \approx 110 - 25R$, so $R = 0.5$ reads about 97% and $R = 1$ reads about 85%. Because the calibration comes from volunteers whose saturation was taken down only to about 70%, readings below that are less certain. The pulse oximeter standard, ISO 80601-2-61, sets out how makers run these controlled desaturation studies.
 
 ## The pleth waveform (photoplethysmogram)
 
@@ -264,7 +264,7 @@ Capnography shows breathing, pulse oximetry shows oxygenation and the pulse, and
 | Typical sweep speed | 6.25 mm/s | 25 mm/s | 25 mm/s |
 | Common failure | Blocked or leaking sampling line | Motion, low perfusion | Electrode noise, movement |
 
-The two respiratory monitors answer different questions, and each covers the other's blind spot. A study of patients breathing supplemental oxygen found that pulse oximetry detected hypoventilation late or not at all, while CO₂ monitoring showed it at once.
+The two respiratory monitors answer different questions, and each covers the other's blind spot. In a study of anaesthetised patients whose breathing was deliberately cut by half, SpO₂ fell in those breathing room air but did not fall at all over 10 minutes in those breathing 25 or 30% oxygen.
 
 ## Common capnography and pleth mistakes
 
@@ -466,7 +466,7 @@ A shark fin capnogram has a slow, curved rise and a plateau that keeps sloping u
 
 ### What is a pleth waveform on a pulse oximeter?
 
-The pleth waveform, short for plethysmograph, is the pulse oximeter's trace of how much light the blood in a finger or earlobe absorbs from moment to moment. It rises with each heartbeat as arterial blood swells the tissue. A clean, regular pleth with a sharp upstroke shows the sensor is picking up a real pulse, so the SpO2 and pulse rate readings can be trusted.
+The pleth waveform, short for plethysmograph, is the pulse oximeter's trace of how much light the blood in a finger or earlobe absorbs from moment to moment. It rises with each heartbeat as arterial blood swells the tissue. A clean, regular pleth with a sharp upstroke shows the sensor is picking up a real pulse, which is the first check before believing the SpO2 and pulse rate. It doesn't rule out every error: carbon monoxide and skin pigmentation, for example, can make SpO2 read high behind a normal-looking pleth.
 
 ### What is the difference between capnography and pulse oximetry?
 
@@ -481,10 +481,10 @@ Use a line series with a first-in, first-out data buffer sized to one screen of 
 - Bhavani-Shankar, K. and Philip, J. H. (2000), [Defining segments and phases of a time capnogram](https://doi.org/10.1097/00000539-200010000-00038). *Anesthesia & Analgesia*, 91(4). Phases 0, I, II and III (and IV), and the alpha and beta angles.
 - Siobal, M. S. (2016), [Monitoring exhaled carbon dioxide](https://doi.org/10.4187/respcare.04919). *Respiratory Care*, 61(10). Capnometry and capnography, mainstream and sidestream sensors, normal values, the arterial to end-tidal gradient and abnormal waveforms.
 - Kodali, B. S. (2013), [Capnography outside the operating rooms](https://doi.org/10.1097/ALN.0b013e318278c8b6). *Anesthesiology*, 118(1). Uses in sedation, emergency care and resuscitation, and abnormal capnograms.
-- American Society of Anesthesiologists, *Standards for Basic Anesthetic Monitoring*. Continual monitoring of exhaled CO₂ during general anaesthesia and moderate or deep sedation.
-- Panchal, A. R. et al. (2020), [Part 3: Adult basic and advanced life support: 2020 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care](https://doi.org/10.1161/CIR.0000000000000916). *Circulation*, 142(16 suppl 2). Waveform capnography for tube placement and during CPR.
+- American Society of Anesthesiologists, [*Standards for Basic Anesthetic Monitoring*](https://www.asahq.org/standards-and-practice-parameters/standards-for-basic-anesthetic-monitoring) (amended 2025). End-tidal CO₂ monitoring with a breathing tube or supraglottic airway in place, and during general anaesthesia and moderate or deep sedation.
+- Wigginton, J. G. et al. (2025), [Part 9: Adult advanced life support: 2025 American Heart Association guidelines for cardiopulmonary resuscitation and emergency cardiovascular care](https://doi.org/10.1161/CIR.0000000000001376). *Circulation*, 152(16 suppl 2). Waveform capnography for tube placement and during CPR.
 - Royal College of Physicians (2017), *National Early Warning Score (NEWS) 2*. Respiratory rate scoring bands.
-- ISO 80601-2-55: *Medical electrical equipment, particular requirements for respiratory gas monitors*; ISO 80601-2-61: *particular requirements for pulse oximeter equipment*.
+- ISO 80601-2-55:2018 with Amd 1:2023: *Medical electrical equipment, particular requirements for respiratory gas monitors*; ISO 80601-2-61:2026: *particular requirements for pulse oximeter equipment*, including the controlled desaturation study used for calibration.
 - Nitzan, M., Romem, A. and Koppel, R. (2014), [Pulse oximetry: fundamentals and technology update](https://doi.org/10.2147/MDER.S47319). *Medical Devices: Evidence and Research*, 7. Red and infrared absorption, the ratio of ratios and calibration.
 - Allen, J. (2007), [Photoplethysmography and its application in clinical physiological measurement](https://doi.org/10.1088/0967-3334/28/3/R01). *Physiological Measurement*, 28(3). The PPG waveform, the dicrotic notch and sources of artefact.
 - Lima, A. P., Beelen, P. and Bakker, J. (2002), [Use of a peripheral perfusion index derived from the pulse oximetry signal as a noninvasive indicator of perfusion](https://doi.org/10.1097/00003246-200206000-00006). *Critical Care Medicine*, 30(6).

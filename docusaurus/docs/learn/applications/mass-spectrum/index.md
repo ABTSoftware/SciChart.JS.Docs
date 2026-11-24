@@ -114,7 +114,7 @@ Other soft sources include chemical ionisation (CI), atmospheric pressure chemic
 
 Read a mass spectrum by finding the molecular ion first, then working down through the fragments and isotope peaks to piece the molecule together.
 
-![An annotated stick mass spectrum of chlorobenzene: the molecular ion at m/z 112 is also the base peak, set to 100%, with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of M, from chlorine-37; a dashed arrow from 112 to the C6H5+ fragment at m/z 77, about 60%, marking the loss of 35, a chlorine atom; and a fragment at m/z 51 from the loss of 26, acetylene](./mass-spectrum-anatomy.svg)
+![An annotated stick mass spectrum of chlorobenzene: the molecular ion at m/z 112 is also the base peak, set to 100%, with a small M+1 peak at 113 from carbon-13 and an M+2 peak at 114, about a third of M, from chlorine-37; a dashed arrow from 112 to the C6H5+ fragment at m/z 77, about 45%, marking the loss of 35, a chlorine atom; and a fragment at m/z 51 from the loss of 26, acetylene](./mass-spectrum-anatomy.svg)
 
 - The x-axis is the **mass-to-charge ratio** (m/z): the ion's mass in daltons (Da, also unified atomic mass units, u) divided by its number of charges. Most EI ions carry one charge, so m/z reads as the ion's mass.
 - The y-axis is the relative abundance: the ion count at each m/z, divided by the count of the tallest peak and multiplied by 100. Some software shows raw counts ("intensity") instead; the shape is the same.

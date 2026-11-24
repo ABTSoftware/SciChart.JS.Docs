@@ -194,7 +194,7 @@ $$
 \operatorname{li}(x) = \int_0^x \frac{dt}{\ln t}
 $$
 
-(the offset version $\operatorname{Li}(x) = \operatorname{li}(x) - \operatorname{li}(2)$ starts the integral at 2 and differs by about 1.045). The **prime number theorem**, proved by Hadamard and de la Vallée Poussin in 1896, says $\pi(x) / \operatorname{li}(x) \to 1$. Its proof rests on zeta having no zeros on the line $\sigma = 1$.
+(taken as a principal value, because the integrand blows up at $t = 1$; the offset version $\operatorname{Li}(x) = \operatorname{li}(x) - \operatorname{li}(2)$ starts the integral at 2 and differs by about 1.045). The **prime number theorem**, proved by Hadamard and de la Vallée Poussin in 1896, says $\pi(x) / \operatorname{li}(x) \to 1$. Its proof rests on zeta having no zeros on the line $\sigma = 1$.
 
 | $x$ | $\pi(x)$ | $x / \ln x$ | $\operatorname{li}(x)$ | $\operatorname{li}(x) - \pi(x)$ | Bound if the hypothesis holds |
 | --- | --- | --- | --- | --- | --- |
@@ -203,7 +203,7 @@ $$
 | 1,000,000 | 78,498 | 72,382.4 | 78,627.5 | 129.5 | 549.7 |
 | 10,000,000 | 664,579 | 620,420.7 | 664,918.4 | 339.4 | 2,028.0 |
 
-The last column is Lowell Schoenfeld's 1976 form of the hypothesis: it is true if and only if
+The last column is the bound Lowell Schoenfeld proved in 1976 on the assumption that the hypothesis holds. The converse follows from an argument going back to Helge von Koch in 1901, so the hypothesis is equivalent to the bound: it is true if and only if
 
 $$
 |\pi(x) - \operatorname{li}(x)| < \frac{\sqrt{x}\,\ln x}{8\pi} \quad \text{for all } x \ge 2657
@@ -235,13 +235,14 @@ The evidence for the hypothesis is strong but not a proof: trillions of zeros ch
 
 ### Numerical verification
 
-Each generation of computers has checked more zeros. In 2021 Dave Platt and Tim Trudgian proved, with rigorous interval arithmetic, that every zero up to height $3 \times 10^{12}$ lies on the critical line and is simple: the first 12,363,153,437,138 zeros. Odlyzko's computations have checked large blocks of zeros much higher up, near the $10^{20}$-th zero and beyond.
+Each generation of computers has checked more zeros. In 2021 Dave Platt and Tim Trudgian proved, with rigorous interval arithmetic, that every zero up to height $3 \times 10^{12}$ lies on the critical line: the first 12,363,153,437,138 zeros. Odlyzko's computations have checked large blocks of zeros much higher up, near the $10^{20}$-th zero and beyond.
 
 ### Theorems
 
 - Hardy proved in 1914 that infinitely many zeros lie on the critical line.
-- Selberg proved in 1942 that a positive proportion of them do, and Conrey raised the proportion to more than two-fifths in 1989.
+- Selberg proved in 1942 that a positive proportion of them do. Conrey raised the proportion above two-fifths in 1989, and Pratt, Robles, Zaharescu and Zeindler above five-twelfths in 2020. Two preprints from 2026, not yet refereed, claim that more than two-thirds of the zeros are simple and on the line.
 - No zero has real part 1 (the prime number theorem), and there are explicit zero-free regions just inside the strip.
+- In autumn 2026, preprints claimed the first zero-free half-plane of fixed width inside the critical strip (a "quasi-Riemann hypothesis"). None had been refereed by November 2026, and none says anything about the line 1/2 itself.
 
 None of these shows that all of the zeros are on the line.
 
@@ -253,7 +254,7 @@ To compare gaps at different heights, divide each gap between neighbouring zeros
 
 ### The status in November 2026
 
-Claimed proofs appear from time to time, some now written in proof assistants such as Lean so that a computer can check each step. A claim counts only once mathematicians have checked it, including that the formal statement really is the Riemann hypothesis, and the result has been accepted. Until then the hypothesis is unproven, and the Clay Mathematics Institute lists it as unsolved.
+Claimed proofs appear from time to time, some now written in proof assistants such as Lean so that a computer can check each step. Partial results are moving faster: in 2026, preprints claimed that more than two-thirds of the zeros are on the line, and the first zero-free half-plane of fixed width inside the strip. None had been refereed by November 2026, and none implies the hypothesis. A claim counts only once mathematicians have checked it, including that the formal statement really is the Riemann hypothesis, and the result has been accepted. Until then the hypothesis is unproven, and the Clay Mathematics Institute lists it as unsolved.
 
 ## Ways to visualise the Riemann hypothesis
 
@@ -453,7 +454,9 @@ Compute Hardy's Z(t), a real function whose sign changes are the zeros on the cr
 - Edwards, H. M., *Riemann's Zeta Function*, Academic Press (1974; Dover reprint 2001): the explicit formula, the Riemann–Siegel formula and its correction terms. Titchmarsh, E. C., *The Theory of the Riemann Zeta-Function*, 2nd edition revised by D. R. Heath-Brown, Oxford University Press (1986): the functional equation, $N(T)$, Hardy's and Selberg's theorems.
 - Odlyzko, A. M., [Tables of zeros of the Riemann zeta function](https://www-users.cse.umn.edu/~odlyzko/zeta_tables/index.html) (the first 100,000 zeros, used to check the demo) and (1987), [On the distribution of spacings between zeros of the zeta function](https://doi.org/10.1090/S0025-5718-1987-0866115-0), *Mathematics of Computation*, 48, 273–308. Montgomery, H. L. (1973), The pair correlation of zeros of the zeta function, *Proceedings of Symposia in Pure Mathematics*, 24, 181–193. [LMFDB: zeros of the Riemann zeta function](https://www.lmfdb.org/zeros/zeta/).
 - Platt, D. and Trudgian, T. (2021), [The Riemann hypothesis is true up to 3·10¹²](https://doi.org/10.1112/blms.12460), *Bulletin of the London Mathematical Society*, 53, 792–797 ([arXiv:2004.09765](https://arxiv.org/abs/2004.09765)).
-- Schoenfeld, L. (1976), [Sharper bounds for the Chebyshev functions θ(x) and ψ(x). II](https://doi.org/10.1090/S0025-5718-1976-0457374-X), *Mathematics of Computation*, 30, 337–360: the bound on $|\pi(x) - \operatorname{li}(x)|$. Conrey, J. B. (1989), *Journal für die reine und angewandte Mathematik*, 399, 1–26: more than two-fifths of the zeros are on the line.
+- Schoenfeld, L. (1976), [Sharper bounds for the Chebyshev functions θ(x) and ψ(x). II](https://doi.org/10.1090/S0025-5718-1976-0457374-X), *Mathematics of Computation*, 30, 337–360: the bound on $|\pi(x) - \operatorname{li}(x)|$. Conrey, J. B. (1989), [More than two fifths of the zeros of the Riemann zeta function are on the critical line](https://doi.org/10.1515/crll.1989.399.1), *Journal für die reine und angewandte Mathematik*, 399, 1–26.
+- Pratt, K., Robles, N., Zaharescu, A. and Zeindler, D. (2020), [More than five-twelfths of the zeros of ζ are on the critical line](https://doi.org/10.1007/s40687-019-0199-8), *Research in the Mathematical Sciences*, 7, article 2.
+- Preprints, not yet refereed: Alpöge, L. and Furman, R. (2026), [More than two thirds of the zeta zeros are simple and on the critical line](https://arxiv.org/abs/2608.13637), arXiv:2608.13637. Lamzouri, Y. (2026), [A new proof that more than 2/3 of the zeros of the Riemann zeta function are simple and on the critical line](https://arxiv.org/abs/2609.02882), arXiv:2609.02882. Liu, B. (2026), [Improved zero-free half-planes for the quasi-Riemann hypothesis](https://arxiv.org/abs/2610.12234), arXiv:2610.12234.
 - NIST Digital Library of Mathematical Functions, [§25.10 Zeros of the Riemann zeta function](https://dlmf.nist.gov/25.10): $Z(t)$, $\theta(t)$ and the Riemann–Siegel formula.
 
 <LearnCta position="bottom" chart="zeta function chart" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />
