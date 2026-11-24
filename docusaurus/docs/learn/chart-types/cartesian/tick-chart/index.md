@@ -35,7 +35,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "What does a 233 tick chart mean?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "On a 233 tick chart, every bar holds 233 trades. The first trade sets the bar's open, the 233rd its close, and the highest and lowest trade prices in between set its high and low. Then a new bar starts. 233 is a Fibonacci number, chosen by habit; it has no special mathematical property, and 200 or 250 would behave almost the same." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "On a 233 tick chart, every bar holds 233 trades. The first trade sets the bar's open, the 233rd its close, and the highest and lowest trade prices in between set its high and low. Then a new bar starts. 233 is a Fibonacci number, chosen by habit; it has no special meaning for the chart, and 200 or 250 would behave almost the same." }
                 },
                 {
                     "@type": "Question",
@@ -85,7 +85,7 @@ A **tick chart** (also called a tick bar chart or trade-count chart) is a price 
 The word tick has two meanings in trading, and they are easy to mix up.
 
 - On a tick chart, a tick is one market event. For stocks and futures it is usually one reported trade. In currency markets, where there is no single exchange reporting trades, a tick is usually one change in the quoted price from your data provider.
-- The **tick size** is the smallest step a price can move by, set by the exchange. A futures contract with a tick size of 0.25 can trade at 5000.00 or 5000.25, but not in between. "The price moved four ticks" means it moved four of these steps.
+- The **tick size** is the smallest step a price can move by, set by the exchange. A futures contract with a tick size of 0.25, such as the E-mini S&P 500, can trade at 5000.00 or 5000.25, but not in between. "The price moved four ticks" means it moved four of these steps.
 
 This page is about the first meaning. The two are unrelated. A 233 tick chart counts 233 trades, however far the price moves during them.
 
@@ -158,7 +158,7 @@ A tick chart spends its bars where the trades are. Over the whole simulated day 
 
 The time bars split both hours into 60 bars, so the busy hour's bars are taller and the quiet hour's bars are mostly noise. The tick bars give the busy hour more than four times as many bars, and their typical height barely changes between the two hours.
 
-In 1973 Peter Clark suggested that prices move in step with trading activity rather than with the clock, which explains why returns measured over fixed time intervals have fatter tails than a normal distribution. Ané and Geman later found that stock returns measured over a fixed number of trades were close to normally distributed. More recently, Easley, López de Prado and O'Hara argued that high-frequency markets run on a "volume clock", and López de Prado recommends tick, volume or dollar bars over time bars when preparing market data for statistical models. The simulated data on this page is built the same way: every trade moves the price by at most one tick, so the price moves more in an hour with more trades.
+In 1973 Peter Clark suggested that prices move in step with trading activity rather than with the clock, which would explain why returns measured over fixed time intervals have fatter tails than a normal distribution. Ané and Geman (2000) reported that stock returns measured over a fixed number of trades were close to normally distributed, though later studies using other data found the tails barely change. More recently, Easley, López de Prado and O'Hara argued that high-frequency markets run on a "volume clock", and López de Prado recommends tick, volume or dollar bars over time bars when preparing market data for statistical models. The simulated data on this page is built the same way: every trade moves the price by at most one tick, so the price moves more in an hour with more trades.
 
 ## How to choose the number of ticks per bar
 
@@ -423,7 +423,7 @@ A tick chart is a price chart in which each bar closes after a fixed number of t
 
 ### What does a 233 tick chart mean?
 
-On a 233 tick chart, every bar holds 233 trades. The first trade sets the bar's open, the 233rd its close, and the highest and lowest trade prices in between set its high and low. Then a new bar starts. 233 is a Fibonacci number, chosen by habit; it has no special mathematical property, and 200 or 250 would behave almost the same.
+On a 233 tick chart, every bar holds 233 trades. The first trade sets the bar's open, the 233rd its close, and the highest and lowest trade prices in between set its high and low. Then a new bar starts. 233 is a Fibonacci number, chosen by habit; it has no special meaning for the chart, and 200 or 250 would behave almost the same.
 
 ### Are tick charts better than time charts?
 
@@ -444,9 +444,10 @@ Group your trades into bars of N trades each, recording the first, highest, lowe
 ## Sources
 
 - Clark, P. K. (1973), [A subordinated stochastic process model with finite variance for speculative prices](https://doi.org/10.2307/1913889), *Econometrica*, 41(1), 135–155. Proposes that prices evolve with trading activity rather than calendar time, explaining fat-tailed returns over fixed time intervals.
-- Ané, T. and Geman, H. (2000), [Order flow, transaction clock, and normality of asset returns](https://doi.org/10.1111/0022-1082.00286), *The Journal of Finance*, 55(5), 2259–2284. Finds that stock returns measured in number of trades are close to normally distributed.
+- Ané, T. and Geman, H. (2000), [Order flow, transaction clock, and normality of asset returns](https://doi.org/10.1111/0022-1082.00286), *The Journal of Finance*, 55(5), 2259–2284. Reports that stock returns measured in number of trades are close to normally distributed; later studies dispute this.
+- Gillemot, L., Farmer, J. D. and Lillo, F. (2006), [There's more to volatility than volume](https://doi.org/10.1080/14697680600835688), *Quantitative Finance*, 6(5), 371–384. Finds that holding the number of trades fixed barely changes the heavy tails of returns.
 - Easley, D., López de Prado, M. M. and O'Hara, M. (2012), [The volume clock: insights into the high-frequency paradigm](https://doi.org/10.3905/jpm.2012.39.1.019), *The Journal of Portfolio Management*, 39(1), 19–29. Argues that high-frequency markets are best sampled by trading activity, not time.
 - López de Prado, M. (2018), [*Advances in Financial Machine Learning*](https://www.wiley.com/en-us/Advances+in+Financial+Machine+Learning-p-9781119482086), Wiley, chapter 2, "Financial data structures". Defines time, tick, volume and dollar bars and compares their statistical properties.
-- Wikipedia, [Tick size](https://en.wikipedia.org/wiki/Tick_size). The other meaning of "tick": the smallest price increment an exchange allows.
+- CME Group, [E-mini S&P 500 contract specifications](https://www.cmegroup.com/markets/equities/sp/e-mini-sandp500.contractSpecs.html). The other meaning of "tick": the smallest price increment an exchange allows, 0.25 index points (\$12.50) for this contract.
 
 <LearnCta position="bottom" chart="tick chart" demo="realtime-ticking-stock-charts" demoLabel="real-time ticking stock chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="SciChart.js candlestick series documentation" />

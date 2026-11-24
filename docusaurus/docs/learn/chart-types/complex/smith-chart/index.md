@@ -492,8 +492,8 @@ Convert each impedance to a reflection coefficient, gamma = (z - 1) / (z + 1), a
 
 - Smith, P. H. (1939), "Transmission Line Calculator", *Electronics*, 12(1), pp. 29–31. The original Smith chart.
 - Smith, P. H. (1969), *Electronic Applications of the Smith Chart*, McGraw-Hill. The chart's construction, scales and uses, by its inventor.
-- Pozar, D. M. (2012), *Microwave Engineering*, 4th edition, Wiley. Section 2.4 (the Smith chart) and chapter 5 (L-section and single-stub matching); the L-network formulas used in the demo.
+- Pozar, D. M. (2012), *Microwave Engineering*, 4th edition, Wiley. Section 2.4 (the Smith chart), chapter 5 (L-section and single-stub matching; the L-network formulas used in the demo) and chapter 12 (amplifier design with gain, noise and stability circles).
 - MIT OpenCourseWare, [6.013 Electromagnetics and Applications](https://ocw.mit.edu/courses/6-013-electromagnetics-and-applications-spring-2009/). Transmission lines, reflection and the Smith chart.
-- Orfanidis, S. J., *Electromagnetic Waves and Antennas*, Rutgers University. Free online textbook; chapters on transmission lines and impedance matching.
+- Orfanidis, S. J. (2016), [*Electromagnetic Waves and Antennas*](https://ece.rutgers.edu/orfanidis), Rutgers University. Free online textbook; chapters on transmission lines and impedance matching.
 
 <LearnCta position="bottom" chart="Smith chart" demo="smith-chart" docs="/2d-charts/chart-types/polar-line-renderable-series/" docsLabel="SciChart.js polar line chart documentation" />

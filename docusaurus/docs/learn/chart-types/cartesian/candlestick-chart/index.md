@@ -136,7 +136,7 @@ On the hourly chart there is a rise, a two-hour fall and a recovery. On the four
 
 ## Common candlestick patterns
 
-Traders give names to candles and small groups of candles with a recognisable shape. The table describes what each one shows about the period. Studies of candlestick trading rules on real market data have found little evidence that these patterns predict prices reliably on their own (see [Sources](#sources)), so treat them as descriptions, not signals.
+Traders give names to candles and small groups of candles with a recognisable shape. The table describes what each one shows about the period. Tests of candlestick patterns on real market data disagree. A study of large US stocks found that candlestick trading strategies did not create value for investors, while studies of other samples found some patterns profitable (see [Sources](#sources)). Treat them as descriptions of what happened, not as reliable signals.
 
 | Pattern | What it looks like | What it shows |
 | --- | --- | --- |
@@ -315,5 +315,8 @@ With SciChart.js, create a `SciChartSurface`, add a `CategoryAxis` and a `Numeri
 - Wikipedia, [Candlestick chart](https://en.wikipedia.org/wiki/Candlestick_chart). Other names for the chart, how bodies and wicks are defined, and its history from Japanese rice trading to Steve Nison's *Japanese Candlestick Charting Techniques* (1991).
 - Wikipedia, [Open-high-low-close chart](https://en.wikipedia.org/wiki/Open-high-low-close_chart). The bar-and-tick alternative that shows the same four prices.
 - Marshall, B. R., Young, M. R. and Rose, L. C. (2006), [Candlestick technical trading strategies: Can they create value for investors?](https://doi.org/10.1016/j.jbankfin.2005.08.001) *Journal of Banking & Finance*, 30(8), 2303–2323. A test of candlestick trading strategies on the Dow Jones Industrial Average stocks from 1992 to 2002, which found that they did not create value for investors.
+- Caginalp, G. and Laurent, H. (1998), [The predictive power of price patterns](https://doi.org/10.1080/135048698334637). *Applied Mathematical Finance*, 5(3–4), 181–205. Found three-day candlestick patterns on S&P 500 stocks from 1992 to 1996 statistically significant out of sample.
+- Lu, T.-H., Shiu, Y.-M. and Liu, T.-C. (2012), [Profitable candlestick trading strategies: the evidence from a new perspective](https://doi.org/10.1016/j.rfe.2012.02.001). *Review of Financial Economics*, 21(2), 63–68. Found three bullish reversal patterns profitable on Taiwanese stocks from 2002 to 2008.
+- Nison, S. (2001), [*Japanese Candlestick Charting Techniques*](https://openlibrary.org/isbn/9780735201811), 2nd edition. New York Institute of Finance (first published 1991). The pattern names and definitions in the table, including the hammer's lower wick of at least twice the body.
 
 <LearnCta position="bottom" chart="candlestick chart" demo="candlestick-chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" />

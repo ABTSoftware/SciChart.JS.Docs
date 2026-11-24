@@ -136,7 +136,7 @@ The lower two rows were dominated by selling (delta −86 and −74), the upper 
 
 ### How the row size changes the picture
 
-Merge the same trades into rows two ticks (0.50) tall and the bar has three rows: 5,001.00–5,001.25 with 219 × 59, 5,001.50–5,001.75 with 104 × 268, and 5,002.00 with 6 × 22. The ask imbalance disappears: 268 at the ask against 219 at the bid one row lower is only 122%. Bigger rows make the chart easier to read on screen and smooth out single-tick spikes, but they also hide detail. Try the Row size control in the demo below to see it happen.
+Merge the same trades into rows two ticks (0.50) tall and the bar has three rows: 5,001.00–5,001.25 with 219 × 59, 5,001.50–5,001.75 with 104 × 268, and 5,002.00 with 6 × 22. The ask imbalance disappears: 268 at the ask against 219 at the bid one row lower is only 122%. A bid imbalance appears instead: 104 at the bid against 22 at the ask one row up is 473%. Bigger rows make the chart easier to read on screen and smooth out single-tick spikes, but they also hide detail. Try the Row size control in the demo below to see it happen.
 
 ## Types of footprint chart
 
@@ -182,7 +182,7 @@ The comparison is made diagonally, not across the row. At any moment the ask is 
 - **Ask imbalance** at price P: ask volume at P ≥ threshold × bid volume at P − 1 row.
 - **Bid imbalance** at price P: bid volume at P ≥ threshold × ask volume at P + 1 row.
 
-Two practical details change what gets highlighted. Most tools ignore rows with very small volumes (a 3 against a 1 is 300% but means little), and they handle the top and bottom rows differently because one side of the comparison is missing. The demo ignores cells under 10 contracts and never flags the edge rows.
+Two practical details change what gets highlighted. Most tools ignore rows with very small volumes (a 3 against a 1 is 300% but means little), and they handle the top and bottom rows differently because one side of the comparison is missing. The demo ignores cells under 10 contracts, and never compares the ask in the bottom row or the bid in the top row, because the other side of the quote is outside the bar.
 
 A **stacked imbalance** is three or more imbalances on the same side in consecutive rows. It marks a stretch of prices where one side kept crossing the spread while the price moved through several ticks. Traders often note these price zones and watch how the price behaves when it returns to them. That describes how the chart is used; it is not evidence that the zones hold or that the price will react there.
 
@@ -194,7 +194,7 @@ A footprint can't be built from candles. It needs every trade, or at least volum
 - Aggressor side: buy or sell. Some exchange feeds publish it with each trade. CME Group's market data, for example, carries an aggressor side field on its trade summary messages.
 - Where the side isn't published, it has to be inferred, usually by comparing the trade price with the bid and ask quoted just before it. The Lee and Ready algorithm is the classic method; any inference misclassifies some trades.
 
-Volumes add up fast. A liquid market can print many thousands of trades an hour, so a day of footprints for one market is typically aggregated on a server into a compact grid (bar, price row, bid volume, ask volume) and sent to the browser in a binary or columnar format. See [time series data formats](/learn/big-data/time-series-data-formats/) for how to keep that small. Cryptocurrency exchanges' public trade feeds usually include the taker side, which plays the same role as the aggressor side.
+Volumes add up fast. A liquid market can print many thousands of trades an hour, so a day of footprints for one market is typically aggregated on a server into a compact grid (bar, price row, bid volume, ask volume) and sent to the browser in a binary or columnar format. See [time series data formats](/learn/big-data/time-series-data-formats/) for how to keep that small. Cryptocurrency exchanges' public trade feeds usually say which side was the taker, which plays the same role as the aggressor side, but check each feed's documentation before computing delta: in Coinbase Exchange's feed the `side` field is the maker's side, so the taker is on the opposite side.
 
 ## Footprint chart vs candlestick chart vs volume profile
 
@@ -457,6 +457,8 @@ Aggregate your trades into bid and ask volume per bar and price row, then draw e
 - CME Group, [MDP 3.0: Trade Summary](https://cmegroupclientsite.atlassian.net/wiki/spaces/EPICSANDBOX/pages/457418925/MDP+3.0+-+Trade+Summary). The exchange's market data specification, including the aggressor side field (buy, sell or none) published with each trade.
 - Lee, C. M. C. and Ready, M. J. (1991), [Inferring trade direction from intraday data](https://doi.org/10.1111/j.1540-6261.1991.tb02683.x). *The Journal of Finance*, 46(2), 733–746. The standard method for classifying trades as buyer- or seller-initiated when the feed doesn't say.
 - Cont, R., Kukanov, A. and Stoikov, S. (2014), [The price impact of order book events](https://doi.org/10.1093/jjfinec/nbt003). *Journal of Financial Econometrics*, 12(1), 47–88. A study linking short-term price changes to the imbalance between buying and selling pressure at the best bid and ask.
-- Wikipedia, [Market profile](https://en.wikipedia.org/wiki/Market_profile). The origin of the point of control and the 70% value area.
+- Coinbase Exchange, [WebSocket channels](https://docs.cdp.coinbase.com/exchange/websocket-feed/channels). The feed documentation, which states that a trade's `side` field is the maker order side.
+- Steidlmayer, J. P. and Koy, K. (1986), [*Markets and Market Logic*](https://openlibrary.org/isbn/9780941275002). Porcupine Press. The origin of market profile analysis.
+- Dalton, J. F., Jones, E. T. and Dalton, R. B. (2013), [*Mind Over Markets: Power Trading with Market Generated Information*](https://www.wiley.com/en-us/Mind+Over+Markets%3A+Power+Trading+with+Market+Generated+Information%2C+Updated+Edition-p-9781118531730), updated edition. Wiley. The point of control and the 70% value area, and why 70% is taken as roughly one standard deviation.
 
 <LearnCta position="bottom" chart="footprint chart" demo="candlestick-chart" demoLabel="candlestick chart" docs="/2d-charts/chart-types/fast-candlestick-renderable-series/" docsLabel="SciChart.js candlestick chart documentation" />

@@ -124,7 +124,7 @@ An OHLC chart and a [candlestick chart](/learn/chart-types/cartesian/candlestick
 | Width on screen | Thin: more periods fit | Wider: fewer periods fit |
 | Stands out most | The closes and the range | The direction and size of each period's move |
 | Works in black and white | Yes | Only with hollow and filled bodies |
-| Pattern names (doji, hammer…) | Rarely used | Widely used |
+| Pattern names | Candlestick names (doji, hammer…) rarely used; bars have their own (inside day, outside day, key reversal) | Widely used (doji, hammer…) |
 
 Neither shows more information than the other. Candlesticks make the move within each period jump out, which suits short-term trading and pattern reading. OHLC bars put the emphasis on where each period closed and leave more room for lines drawn on top. For patterns, the timeframe and the colour conventions of candles, read the [candlestick chart guide](/learn/chart-types/cartesian/candlestick-chart/).
 
@@ -135,7 +135,7 @@ The same five days can be drawn four ways. OHLC bars and candlesticks keep all f
 ![The same five days drawn four ways: OHLC bars with open and close ticks, HLC bars with only a close tick in a single colour, candlesticks with filled bodies, and a line joining the five closing prices](./ohlc-vs-hlc-vs-candlestick-vs-line.svg)
 
 - OHLC bars show all four prices. Day 3 shows its gap down: its left tick sits well below day 2's right tick.
-- **HLC bars** (high-low-close) drop the open tick. They show the range and where the period settled, which is enough for many analyses and suits data where the opening price is missing or unreliable. Without an open there is no "up" or "down" for the period, so HLC bars are usually drawn in one colour.
+- **HLC bars** (high-low-close) drop the open tick. They show the range and where the period settled, which is enough for many analyses and suits data where the opening price is missing or unreliable. Without an open there is no "up" or "down" for the period, so HLC bars are often drawn in one colour by convention; some tools colour them by the change from the previous close instead.
 - Candlesticks show the same four prices as OHLC bars, with a filled body between the open and close.
 - A line of closes keeps one price per period. The range and the open are gone, so day 3's gap and recovery disappear. In exchange the trend is easiest to see, and several prices can share one chart. See the [line chart guide](/learn/chart-types/cartesian/line-chart/).
 

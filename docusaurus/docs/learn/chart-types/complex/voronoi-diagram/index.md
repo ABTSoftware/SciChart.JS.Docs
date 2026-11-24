@@ -104,7 +104,7 @@ $$
 Some properties follow from that definition and are useful when you check a diagram:
 
 - With straight-line distance, every cell is a convex polygon: a line between two points in a cell never leaves it. Each cell is the overlap of half-planes, one for each other site.
-- For $n \ge 3$ sites that don't all lie on one line, there are at most $2n - 5$ vertices and $3n - 6$ edges. On average a cell has fewer than six neighbours; with many sites the average tends to six.
+- For $n \ge 3$ sites that don't all lie on one line, there are at most $2n - 5$ vertices and $3n - 6$ edges. On average a cell has fewer than six neighbours; for many randomly scattered sites the average approaches six.
 - A site's nearest other site is always one of its neighbours across a cell edge.
 - Moving one site only changes its own cell and the cells of its neighbours, before and after the move. The rest of the diagram stays put.
 
@@ -157,10 +157,11 @@ Everything above assumes straight-line, or **Euclidean**, distance. A Voronoi di
 | Euclidean | $\sqrt{\Delta x^2 + \Delta y^2}$ | Convex polygons; edges at any angle | Travel in a straight line: radio signals, open ground, most data sets |
 | Manhattan (city block, L1) | $\lvert \Delta x \rvert + \lvert \Delta y \rvert$ | Edges only horizontal, vertical or at 45°; cells can be non-convex | Travel on a grid of streets, chip and circuit layout |
 | Chebyshev (L∞) | $\max(\lvert \Delta x \rvert, \lvert \Delta y \rvert)$ | Also horizontal, vertical and 45° edges, but in different places from the Manhattan ones | Moves where a diagonal step costs the same as a straight one |
-| Weighted (power or multiplicative) | Distance adjusted per site | Edges may curve; a weak site can end up with a tiny cell, or none | Masts of different power, shops of different appeal |
+| Weighted: power | Squared distance minus a weight for each site | Straight edges; a weak site can lose its cell entirely | Masts of different power, shops of different appeal |
+| Weighted: multiplicative | Distance divided by a weight for each site | Edges are circular arcs; a weak site keeps only a small cell | Masts of different power, shops of different appeal |
 | Along a network | Shortest path on roads or pipes | Cells follow the network | Real travel times, service areas |
 
-Manhattan cells have one quirk. When two sites are diagonal to each other, with equal horizontal and vertical offsets, a whole region can be the same distance from both, so the boundary is not a line but an area. Software has to break the tie, usually by giving such points to the first site in the list.
+Manhattan cells have one quirk. When two sites are diagonal to each other, with equal horizontal and vertical offsets, a whole region can be the same distance from both, so the boundary is not a line but an area. Software has to break the tie. The demo on this page gives such points to the first site in the list.
 
 ## Voronoi diagram examples and uses
 
@@ -168,7 +169,7 @@ Voronoi diagrams answer one question, "which of these is nearest?", for every po
 
 - Service areas and catchments. The area each school, hospital, shop or depot is nearest to is a first estimate of who it serves. In hydrology, the meteorologist Alfred Thiessen used the same construction in 1911 to weight rain gauges by the area each one represents, which is why GIS tools still call the cells Thiessen polygons.
 - Mobile phone coverage. A phone usually connects to the strongest signal, which, for masts of similar power on open ground, is roughly the nearest one. A Voronoi diagram of the masts is a common first model of each cell's coverage.
-- The 1854 cholera outbreak in London. In a map published in 1855, John Snow drew a dotted line around the area that was closer, by walking distance along the streets, to the Broad Street pump than to any other pump. Nearly all the deaths lay inside it. That boundary is a Voronoi cell measured along a street network.
+- The 1854 cholera outbreak in London. In a map published in 1855, John Snow drew a dotted line around the area that was closer, by walking distance along the streets, to the Broad Street pump than to any other pump. Deaths fell away sharply, or stopped, outside it. That boundary is a Voronoi cell measured along a street network.
 - Machine learning. A 1-nearest-neighbour classifier gives each point the label of its nearest training example, so its decision boundary is made of Voronoi edges between examples of different classes. In [k-means clustering](/learn/machine-learning/k-means-clustering/), each point is assigned to its nearest centre, so the clusters at each step are the Voronoi cells of the centres. See the [decision boundary guide](/learn/machine-learning/decision-boundary/) for how other classifiers divide the plane.
 - Materials and biology. If crystals start growing at random points at the same moment and at the same speed, the grains they form when they meet are Voronoi cells. Real metals deviate from this, but it is a standard starting model for grain structure, and similar models describe packed cells in plant and animal tissue.
 - Computer graphics. Worley noise, a texture function published in 1996, shades each pixel by its distance to the nearest of a set of random points. It is behind many stone, scale and cell textures in games and films.
@@ -459,7 +460,7 @@ For a few hundred sites, compute each cell by half-plane clipping: start with a 
 - de Berg, M., Cheong, O., van Kreveld, M. and Overmars, M. (2008), *Computational Geometry: Algorithms and Applications*, 3rd edition, Springer. Chapter 7 (Voronoi diagrams, Fortune's algorithm, the $2n - 5$ and $3n - 6$ bounds) and chapter 9 (Delaunay triangulations and the angle property).
 - Fortune, S. (1987), [A sweepline algorithm for Voronoi diagrams](https://doi.org/10.1007/BF01840357). *Algorithmica*, 2, 153–174.
 - Okabe, A., Boots, B., Sugihara, K. and Chiu, S. N. (2000), *Spatial Tessellations: Concepts and Applications of Voronoi Diagrams*, 2nd edition, Wiley. Applications in geography, biology and materials, and generalised distances.
-- Thiessen, A. H. (1911), [Precipitation averages for large areas](https://journals.ametsoc.org/view/journals/mwre/39/7/1520-0493_1911_39_1082b_pafla_2_0_co_2.xml). *Monthly Weather Review*, 39(7).
+- Thiessen, A. H. (1911), [Precipitation averages for large areas](https://journals.ametsoc.org/view/journals/mwre/39/7/1520-0493_1911_39_1082b_pafla_2_0_co_2.xml). *Monthly Weather Review*, 39(7), 1082–1089.
 - Snow, J. (1855), [map of the Broad Street outbreak with the boundary of equal walking distance to the pump](https://johnsnow.matrix.msu.edu/documentUploads/15-78-298/15-78-298-22-1855-08-Snow-CICmap-Beem02.pdf), from the *Report on the Cholera Outbreak in the Parish of St. James, Westminster* (Cholera Inquiry Committee). John Snow Archive, Michigan State University.
 - Hoff, K. E., Keyser, J., Lin, M., Manocha, D. and Culver, T. (1999), [Fast computation of generalized Voronoi diagrams using graphics hardware](https://doi.org/10.1145/311535.311567). *Proceedings of SIGGRAPH 99*, 277–286.
 - Worley, S. (1996), [A cellular texture basis function](https://doi.org/10.1145/237170.237267). *Proceedings of SIGGRAPH 96*, 291–294.

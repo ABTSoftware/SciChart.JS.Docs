@@ -35,7 +35,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "What box size should I use for a Renko chart?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Start from the instrument's volatility. A box equal to the 14-period average true range (ATR) is a common default, because it sizes bricks to the typical daily range. A smaller box shows more detail and more reversals; a larger one shows only the main trend. A fixed price or a percentage of price also work, and the right size depends on the timeframe you trade or analyse." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Start from the instrument's volatility. A box equal to the 14-period average true range (ATR) is a common default, because it sizes bricks to the typical range of one period. A smaller box shows more detail and more reversals; a larger one shows only the main trend. A fixed price or a percentage of price also work, and the right size depends on the timeframe you trade or analyse." }
                 },
                 {
                     "@type": "Question",
@@ -80,7 +80,7 @@ A **Renko chart** is a price chart made of equal-sized bricks, where each brick 
 - Bricks describe past moves. They don't predict future ones.
 :::
 
-The name comes from *renga*, the Japanese word for brick. Steve Nison described it in English, with the three-line break and kagi charts, in his 1994 book *Beyond Candlesticks* (see [Sources](#sources)). This page explains how the charts are built and read; it is not investment advice.
+The name is usually said to come from *renga*, the Japanese word for brick. Steve Nison described it in English, with the three-line break and kagi charts, in his 1994 book *Beyond Candlesticks* (see [Sources](#sources)). This page explains how the charts are built and read; it is not investment advice.
 
 ## How Renko bricks form
 
@@ -120,7 +120,7 @@ Read a Renko chart by its box size, the colour of each brick and the length of e
 1. Check the box size first. A brick is a move of one box, so a chart with a \$0.50 box and one with a \$5 box can tell different stories about the same prices.
 2. Read the colour. Green (or hollow) bricks are rises of one box; red (or filled) bricks are falls of one box.
 3. Read the runs. A long staircase of same-colour bricks is a trend. Short alternating runs are a sideways market, where the price keeps reversing by just over two boxes.
-4. Read the turns. A change of colour means the price has moved at least two boxes against the trend. Turning points tend to cluster at the same price levels, which shows where support (a floor buyers defend) and resistance (a ceiling sellers defend) sit.
+4. Read the turns. A change of colour means the price has moved at least two boxes against the trend. Turning points tend to cluster at the same price levels, and chartists read those levels as support (a floor buyers defend) and resistance (a ceiling sellers defend).
 5. Remember what the horizontal axis is. Ten bricks may have taken one hour or six months. To see when a brick formed, check the date on a time-based chart.
 
 ## Choosing the Renko box size
@@ -166,7 +166,7 @@ Renko is one of several charts that reshape price data to make trends easier to 
 | Chart | Horizontal axis | What each mark shows | Choose it when you need to… |
 | --- | --- | --- | --- |
 | [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Time | Open, high, low and close of one period | See exactly what happened in each period, and when |
-| Heikin-Ashi | Time | A smoothed candle: averages of this period's and the previous period's prices | Smooth noise but keep the time axis and every period |
+| Heikin-Ashi | Time | A smoothed candle: averages of this period's prices and the previous smoothed candle | Smooth noise but keep the time axis and every period |
 | Renko chart | Brick count | A fixed move of one box size | Show the trend in fixed price steps, with small moves removed |
 | Point and figure chart | Column count | A column of X (rising) or O (falling) boxes; usually a three-box reversal | Count the extent of each move in a compact grid, with several boxes per column |
 | Line break chart | Line count | A block from the previous close to a new high or low close; reverses when the close passes the last three blocks | Follow closes with blocks of varying height, set by the market rather than a box size |
@@ -186,7 +186,7 @@ Most Renko mistakes come from forgetting that the bricks ignore time, or from a 
 
 ## How to create a Renko chart in JavaScript, React or Angular
 
-Core SciChart.js has no Renko series, so this example computes the bricks with a short function and draws them as rectangles, in a second chart under the 250 daily candles they were built from. To show Renko bricks in SciTrader.js, SciChart's financial charts SDK, see the [SciTrader.js price chart types documentation](/financial-charts/studies-and-indicators/price-chart-types/#renko-and-point-and-figure), which has a ready-made `RenkoStudy`.
+Core SciChart.js has no Renko series, so this example computes the bricks with a short function and draws them as rectangles, in a second chart under the 250 daily candles they were built from. To show Renko bricks in SciTrader.js, SciChart's financial charts SDK, see the [SciTrader.js price chart types documentation](/financial-charts/studies-and-indicators/price-chart-types/#renko-and-point-and-figure), which has a ready-made `RenkoStudy`. Unless you set its `brickSize`, `RenkoStudy` sizes bricks from the range of closing prices (one-fiftieth of it, rounded up to 1, 2 or 5 times a power of ten), not from the ATR.
 
 Try the chart below. Use **Box size** to switch between a fixed size and one set from the 14-day ATR, and drag **Fixed size** to change the box. **Price source** builds the bricks from the close or the high-low range. **Renko x-axis** switches between brick number and the date each brick formed, which shows how bricks ignore time. Hover a brick to mark the day it formed on the candles, or hover a candle to see the latest brick at that point. Scroll to zoom, drag to pan and double-click to reset.
 
@@ -341,7 +341,7 @@ Each brick stands for a price move of one box size. A green (up) brick means the
 
 ### What box size should I use for a Renko chart?
 
-Start from the instrument's volatility. A box equal to the 14-period average true range (ATR) is a common default, because it sizes bricks to the typical daily range. A smaller box shows more detail and more reversals; a larger one shows only the main trend. A fixed price or a percentage of price also work, and the right size depends on the timeframe you trade or analyse.
+Start from the instrument's volatility. A box equal to the 14-period average true range (ATR) is a common default, because it sizes bricks to the typical range of one period. A smaller box shows more detail and more reversals; a larger one shows only the main trend. A fixed price or a percentage of price also work, and the right size depends on the timeframe you trade or analyse.
 
 ### Why does a Renko reversal need two bricks?
 
@@ -361,7 +361,7 @@ Compute the bricks from your prices with a short function (box size, last brick 
 
 ## Sources
 
-- Wikipedia, [Renko chart](https://en.wikipedia.org/wiki/Renko_chart). How bricks are constructed (whole bricks only, each in a new column) and the name from the Japanese *renga* (brick).
+- Wikipedia, [Renko chart](https://en.wikipedia.org/wiki/Renko_chart). How bricks are constructed: whole bricks only, each in a new column, usually from closing prices.
 - Nison, S. (1994), *Beyond Candlesticks: New Japanese Charting Techniques Revealed*. John Wiley & Sons. The book that introduced Renko, three-line break and kagi charts in English.
 - Wilder, J. W. Jr. (1978), *New Concepts in Technical Trading Systems*. Trend Research. The original definition of true range and the average true range; summarised in Wikipedia, [Average true range](https://en.wikipedia.org/wiki/Average_true_range).
 - Wikipedia, [Point and figure chart](https://en.wikipedia.org/wiki/Point_and_figure_chart). Columns of X and O boxes and the three-box reversal.
