@@ -97,7 +97,7 @@ The discrete Fourier transform, and the FFT that computes it, works on a block o
 
 That spreading is **spectral leakage**. It comes from cutting a finite record out of a longer one.
 
-![Two rows. Top: a record holding exactly 4 cycles, repeated end to end with smooth joins, and its spectrum, a single line at bin 4. Bottom: a record holding 4.5 cycles, repeated with a jump at every join, and its spectrum, which spreads into every bin and is still about -27 dB ten bins away; a dashed Hann-window spectrum is wider at the peak but falls below -60 dB about six bins away](./spectral-leakage-repeated-record.svg)
+![Two rows. Top: a record holding exactly 4 cycles, repeated end to end with smooth joins, and its spectrum, a single line at bin 4. Bottom: a record holding 4.5 cycles, repeated with a jump at every join, and its spectrum, which spreads into every bin and is still about -27 dB ten bins away; a dashed Hann-window spectrum is wider at the peak but falls below -60 dB about seven bins away](./spectral-leakage-repeated-record.svg)
 
 In real measurements a tone almost never fits the record exactly, because the record length is set by the FFT size, not by the signal. So leakage is the normal case, and it causes three problems:
 
@@ -470,7 +470,7 @@ Build an array of weights, for example w[i] = 0.5 - 0.5 * Math.cos(2 * Math.PI *
 - Harris, F. J. (1978), [On the Use of Windows for Harmonic Analysis with the Discrete Fourier Transform](https://doi.org/10.1109/PROC.1978.10837). *Proceedings of the IEEE*, 66(1), 51–83. The standard reference for window figures of merit: side lobes, roll-off, bandwidths, coherent gain, ENBW and scalloping loss; the Blackman–Harris windows.
 - Nuttall, A. H. (1981), [Some Windows with Very Good Sidelobe Behavior](https://doi.org/10.1109/TASSP.1981.1163506). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 29(1), 84–91. Cosine-sum windows and their side-lobe roll-off.
 - Heinzel, G., Rüdiger, A. and Schilling, R. (2002), [Spectrum and spectral density estimation by the Discrete Fourier transform (DFT), including a comprehensive list of window functions and some new flat-top windows](https://hdl.handle.net/11858/00-001M-0000-0013-557A-5). Max Planck Institute for Gravitational Physics. Amplitude and power scaling, ENBW and flat-top windows.
-- Blackman, R. B. and Tukey, J. W. (1958), *The Measurement of Power Spectra from the Point of View of Communications Engineering*, Dover. The origin of "hanning" and "hamming".
+- Blackman, R. B. and Tukey, J. W. (1958), The Measurement of Power Spectra from the Point of View of Communications Engineering, [Part I](https://doi.org/10.1002/j.1538-7305.1958.tb03874.x) and [Part II](https://doi.org/10.1002/j.1538-7305.1958.tb01530.x). *Bell System Technical Journal*, 37(1), 185–282, and 37(2), 485–569; reprinted as a book by Dover, 1959. The origin of "hanning" and "hamming".
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 9, Applications of the DFT](https://www.dspguide.com/ch9.htm) (spectral analysis and windows) and [chapter 16, Windowed-Sinc Filters](https://www.dspguide.com/ch16.htm).
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. FIR filter design by windowing, and the windows' stopband attenuation.
 - Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Windows and spectrum analysis in depth.

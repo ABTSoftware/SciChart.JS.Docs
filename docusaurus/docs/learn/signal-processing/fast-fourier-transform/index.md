@@ -54,7 +54,7 @@ datePublished: 2026-11-19
                 {
                     "@type": "Question",
                     "name": "Does a JavaScript FFT give the same result as NumPy or MATLAB?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the conventions match. A standard JavaScript FFT, numpy.fft.fft and MATLAB fft(x) all compute the same unnormalised DFT with the same sign, so bin k is identical to within rounding when you use 64-bit numbers (Float64Array). numpy.fft.rfft returns only bins 0 to N/2, the same half you plot; in MATLAB, keep fft(x)(1:N/2+1), since MATLAB counts from 1. When the numbers don't match, the window is the usual cause. numpy.hanning(N) and MATLAB hann(N) are symmetric, while hann(N, 'periodic') and scipy.signal.get_window('hann', N) are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: 2|X[k]| divided by the window's sum, except at bin 0 and bin N/2." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes, if the conventions match. A standard JavaScript FFT, numpy.fft.fft and MATLAB fft(x) all compute the same unnormalised DFT with the same sign, so bin k is identical to within rounding when you use 64-bit numbers (Float64Array). numpy.fft.rfft returns only bins 0 to N/2, the same half you plot; in MATLAB, compute X = fft(x); and keep X(1:N/2+1), since MATLAB counts from 1. When the numbers don't match, the window is the usual cause. numpy.hanning(N) and MATLAB hann(N) are symmetric, while hann(N, 'periodic') and scipy.signal.get_window('hann', N) are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: 2|X[k]| divided by the window's sum, except at bin 0 and bin N/2." }
                 },
                 {
                     "@type": "Question",
@@ -100,7 +100,7 @@ Done directly, each of the $N$ bins needs $N$ multiplications, so the work grows
 
 ### The radix-2 trick
 
-The FFT avoids most of that work by reusing it. The best-known version, published by James Cooley and John Tukey in 1965 (Gauss had used the same idea around 1805, unpublished in his lifetime), works on blocks whose length is a power of 2:
+The FFT avoids most of that work by reusing it. Its best-known form, the radix-2 version of the algorithm James Cooley and John Tukey published in 1965 (Gauss had used the same idea around 1805, unpublished in his lifetime), works on blocks whose length is a power of 2:
 
 1. Split the samples into the even-numbered ones and the odd-numbered ones.
 2. Transform each half. Each is a DFT of half the length, and each of those splits again, down to blocks of one sample.
@@ -225,7 +225,7 @@ A [**window function**](/learn/signal-processing/window-functions/) fixes most o
 | Hamming | $0.54 - 0.46\cos\frac{2\pi n}{N}$ | -43 dB | ±2 bins | 1.8 dB | Lower close-in leakage than Hann, often used in speech processing |
 | Blackman | $0.42 - 0.5\cos\frac{2\pi n}{N} + 0.08\cos\frac{4\pi n}{N}$ | -58 dB | ±3 bins | 1.1 dB | Finding weak tones near strong ones |
 
-We measured these figures with the FFT code on this page. They match the standard values in Harris (1978); see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a [flat-top](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing) window, with almost no peak drop but a very wide peak.
+We measured these figures with the FFT code on this page. They match the standard values in Harris (1978) to within rounding; see [Sources](#sources). Far from the peak, leakage falls away quickly with Hann and Blackman but only slowly with Hamming, whose side lobes stay in the -40s and -50s of dB for many bins. For the most accurate peak heights, test equipment also offers a [flat-top](/learn/signal-processing/window-functions/#correcting-amplitude-and-power-after-windowing) window, with almost no peak drop but a very wide peak.
 
 In the [live example](#how-to-plot-an-fft-in-javascript-react-or-angular), with the moving tone at 120.5 Hz, switch the window to **Rectangular**. Its skirt rises over the weak 160 Hz tone. Switch back to **Hann** or **Blackman** and the small peak reappears. Then move the tone to exactly 120.0 Hz: with a rectangular window the leakage vanishes, because the tone now fits the block.
 
@@ -433,7 +433,7 @@ For a real signal, the FFT's second half mirrors the first: bins above N/2 are t
 
 ### Does a JavaScript FFT give the same result as NumPy or MATLAB?
 
-Yes, if the conventions match. A standard JavaScript FFT, `numpy.fft.fft` and MATLAB `fft(x)` all compute the same unnormalised DFT with the same sign, so bin $k$ is identical to within rounding when you use 64-bit numbers (`Float64Array`). `numpy.fft.rfft` returns only bins 0 to $N/2$, the same half you plot; in MATLAB, keep `fft(x)(1:N/2+1)`, since MATLAB counts from 1.
+Yes, if the conventions match. A standard JavaScript FFT, `numpy.fft.fft` and MATLAB `fft(x)` all compute the same unnormalised DFT with the same sign, so bin $k$ is identical to within rounding when you use 64-bit numbers (`Float64Array`). `numpy.fft.rfft` returns only bins 0 to $N/2$, the same half you plot; in MATLAB, compute `X = fft(x);` and keep `X(1:N/2+1)`, since MATLAB counts from 1.
 
 When the numbers don't match, the window is the usual cause. `numpy.hanning(N)` and MATLAB `hann(N)` are symmetric, while `hann(N, 'periodic')` and `scipy.signal.get_window('hann', N)` are periodic (the demo above uses the periodic form), so use the same one on both sides. Scale amplitudes the same way too: $2|X[k]|$ divided by the window's sum, except at bin 0 and bin $N/2$.
 
@@ -448,6 +448,6 @@ Window the samples, run an FFT (a short radix-2 function is enough), keep bins 0
 - Harris, F. J. (1978), [On the Use of Windows for Harmonic Analysis with the Discrete Fourier Transform](https://doi.org/10.1109/PROC.1978.10837). *Proceedings of the IEEE*, 66(1), 51–83. Window side lobes, scalloping loss and bandwidth.
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 8, The Discrete Fourier Transform](https://www.dspguide.com/ch8.htm), [chapter 9, Applications of the DFT](https://www.dspguide.com/ch9.htm) (windows, resolution and zero padding) and [chapter 12, The Fast Fourier Transform](https://www.dspguide.com/ch12.htm).
 - Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Windows, zero padding and spectrum analysis in depth.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The bit-reversal, butterfly and 8-point flow-graph diagrams on this page are adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The bit-reversal, butterfly and 8-point flow-graph diagrams on this page are adapted from it.
 
 <LearnCta position="bottom" chart="FFT spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

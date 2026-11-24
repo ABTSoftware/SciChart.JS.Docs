@@ -178,7 +178,7 @@ $$
 
 where $K(\mathbf{x}_i, \mathbf{x})$ is a **kernel function**: the dot product of the two points after mapping them to the new space. Only support vectors have $\alpha_i > 0$, so only they appear in the sum. For the paraboloid lift, $K(\mathbf{a}, \mathbf{b}) = \mathbf{a}^\top \mathbf{b} + \lVert \mathbf{a} \rVert^2 \lVert \mathbf{b} \rVert^2$, which works on the 2D points and never builds the third coordinate.
 
-The saving grows with the number of dimensions. For the polynomial kernel $K(\mathbf{a}, \mathbf{b}) = (\mathbf{a}^\top \mathbf{b})^2$ with $\mathbf{a} = (1, 2)$ and $\mathbf{b} = (3, 1)$, the kernel is $(3 + 2)^2 = 25$. The explicit map $\phi(\mathbf{x}) = (x_1^2,\ \sqrt{2}\,x_1 x_2,\ x_2^2)$ gives $\phi(\mathbf{a}) = (1,\ 2\sqrt{2},\ 4)$ and $\phi(\mathbf{b}) = (9,\ 3\sqrt{2},\ 1)$, whose dot product is $9 + 12 + 4 = 25$. The kernel got there with one 2D dot product and a square. A degree-5 polynomial on 100 features would need tens of millions of coordinates, and the kernel still needs one dot product and a power. A function can serve as a kernel when it is a dot product in some space, which Mercer's theorem characterises.
+The saving grows with the number of dimensions. For the polynomial kernel $K(\mathbf{a}, \mathbf{b}) = (\mathbf{a}^\top \mathbf{b})^2$ with $\mathbf{a} = (1, 2)$ and $\mathbf{b} = (3, 1)$, the kernel is $(3 + 2)^2 = 25$. The explicit map $\phi(\mathbf{x}) = (x_1^2,\ \sqrt{2}\,x_1 x_2,\ x_2^2)$ gives $\phi(\mathbf{a}) = (1,\ 2\sqrt{2},\ 4)$ and $\phi(\mathbf{b}) = (9,\ 3\sqrt{2},\ 1)$, whose dot product is $9 + 12 + 4 = 25$. The kernel got there with one 2D dot product and a square. A degree-5 polynomial on 100 features would need about 92 million coordinates, and the kernel still needs one dot product and a power. A function can serve as a kernel when it is a dot product in some space, which Mercer's theorem characterises.
 
 ## SVM kernels: linear, polynomial and RBF
 
@@ -213,7 +213,7 @@ An SVM decision boundary plot colours each point of the plane by the SVM's score
 4. White rings mark the support vectors. If almost every point is ringed, C is small or the classes overlap. If the rings sit only along the boundary, the model is compact.
 5. Islands of colour around single points mean gamma is too high.
 
-The score is a signed distance, not a probability. To turn it into one, fit a logistic curve to the scores on held-out data (Platt scaling), and judge the ranking with a [ROC curve](/learn/machine-learning/roc-curve/). With more than two features, plot two at a time, or project the data first. The [decision boundary guide](/learn/machine-learning/decision-boundary/) compares how different classifiers carve up the same plane.
+The score is proportional to the signed distance from the boundary, not a probability. To turn it into one, fit a logistic curve to the scores on held-out data (Platt scaling), and judge the ranking with a [ROC curve](/learn/machine-learning/roc-curve/). With more than two features, plot two at a time, or project the data first. The [decision boundary guide](/learn/machine-learning/decision-boundary/) compares how different classifiers carve up the same plane.
 
 ## Multi-class SVM
 
@@ -246,7 +246,7 @@ Support vector machines are used most where there are many features and fairly f
 - Image and signal classification, from face detection to fault detection in vibration and sensor data.
 - Industrial inspection, such as classifying defect patterns in [semiconductor](https://www.scichart.com/semiconductors-big-data-visualization/) test and wafer data.
 - Anomaly detection with a one-class SVM, which learns a boundary around normal data only. See the [anomaly detection guide](/learn/machine-learning/anomaly-detection/).
-- Regression. Support vector regression fits a tube of width ε around the data and ignores errors inside it.
+- Regression. Support vector regression fits a tube that runs ε either side of the curve and ignores errors inside it.
 
 ## Common SVM mistakes
 
@@ -255,7 +255,7 @@ Most SVM mistakes come from unscaled features and from settings of C and gamma t
 - **Not scaling the features.** The largest feature dominates the distances and the margin. Fit the scaler on training data only.
 - **Gamma too high.** The model memorises the training points and scores 100% on them. Compare training and test accuracy, as the demo does, and pick C and gamma by cross-validation.
 - **Tuning C and gamma one at a time.** The best gamma depends on C and the reverse, so search them together on a log grid.
-- **Reading the score as a probability.** f(x) is a signed distance in the kernel's feature space. Calibrate it before you use it as a risk.
+- **Reading the score as a probability.** f(x) is proportional to the signed distance from the boundary in the kernel's feature space. Calibrate it before you use it as a risk.
 - **Using a kernel SVM on a very large dataset.** The kernel matrix grows with the square of the number of rows. Use a linear SVM, a kernel approximation or a sample.
 - **Ignoring class imbalance.** With 1% positives, the boundary can cut into the minority class. Weight C per class, and judge the model with a precision-recall curve rather than accuracy.
 - **Pairing the polynomial kernel with a large gamma and degree.** The kernel values explode and training fails to converge, which the demo reports as "stopped at the step limit". Start with RBF.

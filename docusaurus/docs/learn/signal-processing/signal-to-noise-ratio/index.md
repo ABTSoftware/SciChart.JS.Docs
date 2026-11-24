@@ -182,7 +182,7 @@ $$
 
 where $S_n(f)$ is the noise PSD, $N_0$ its average level in units² per hertz, and $B = f_2 - f_1$ the bandwidth. A spectrum makes it easy to leave out hum, harmonics or interference you want to count separately (they belong in SINAD, below).
 
-**Don't read the SNR off the height of the peak above the floor.** Each FFT bin holds only the noise in its own narrow band, so the floor drops 3 dB every time you double the FFT length, while a sine's peak stays put. With an $N$-point FFT and no window, the peak sits about $10 \log_{10}(N/2)$ dB further above the floor than the true SNR: 27 dB for a 1,024-point FFT. That gap is the FFT's **processing gain**. For example, one 1,024-point sweep of the −9 dB sine from the worked examples puts the peak about 18 dB above the floor: 27 dB higher than its true SNR.
+**Don't read the SNR off the height of the peak above the floor.** Each FFT bin holds only the noise in its own narrow band, so the floor drops 3 dB every time you double the FFT length, while a sine's peak stays put. With an $N$-point FFT, no window and a tone centred on a bin, the peak sits about $10 \log_{10}(N/2)$ dB further above the floor than the true SNR: 27 dB for a 1,024-point FFT. That gap is the FFT's **processing gain**. For example, one 1,024-point sweep of the −9 dB sine from the worked examples puts the peak about 18 dB above the floor: 27 dB higher than its true SNR.
 
 ## How to improve the signal-to-noise ratio
 
@@ -261,7 +261,7 @@ Most SNR mistakes come from mixing power and amplitude, or from measuring signal
 
 - **Mixing power and amplitude dB.** Using $10\log_{10}$ on a voltage ratio halves the answer; using $20\log_{10}$ on a power ratio doubles it. Square amplitudes first, or use 20 log.
 - **Not stating the bandwidth.** "SNR = 90 dB" means nothing without "over 20 Hz to 20 kHz" or "in a 1 Hz bin". The same system gives a different number in a different bandwidth.
-- **Too short a measurement.** An SNR estimated from a few hundred noise samples can be out by a decibel or more. Average more data, or several measurements, before trusting the last decimal place.
+- **Too short a measurement.** An SNR estimated from a few hundred noise samples can be out by about a third of a decibel (a standard error of about 0.34 dB from 300 samples of white noise), and by more if the noise isn't white. Average more data, or several measurements, before trusting the last decimal place.
 
 ## How to measure and chart SNR in JavaScript, React or Angular
 

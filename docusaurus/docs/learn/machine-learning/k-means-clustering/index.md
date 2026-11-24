@@ -55,7 +55,7 @@ datePublished: 2026-11-21
                 {
                     "@type": "Question",
                     "name": "Does k-means always find the best clusters?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "No. Each run of k-means always converges, because neither step can increase the within-cluster sum of squares, but it converges to a local minimum that depends on the starting centroids. Finding the true minimum is NP-hard even for points in a plane. In practice you run it several times from different starts, ideally with k-means++ seeding, and keep the run with the lowest inertia." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "No. Each run of k-means always converges, because neither step can increase the within-cluster sum of squares, but it converges to a local minimum that depends on the starting centroids. Finding the true minimum is NP-hard, even for points in a plane when the number of clusters can be any number; for a fixed number of clusters it can be solved in polynomial time, but not quickly. In practice you run it several times from different starts, ideally with k-means++ seeding, and keep the run with the lowest inertia." }
                 },
                 {
                     "@type": "Question",
@@ -137,14 +137,14 @@ P3 at (2, 3) moves because, after the first update, it is 1.58 from centroid A a
 
 ## Initialisation: random starts, k-means++ and local minima
 
-K-means always converges, but not always to the best answer. Where it ends depends on where the centroids start. Two centroids that start in the same natural group can leave another group with none, and the algorithm cannot climb out of that, because every single step makes the inertia smaller or leaves it the same. Finding the best possible clustering is NP-hard even for points in a plane, so every practical method settles for a good local minimum.
+K-means always converges, but not always to the best answer. Where it ends depends on where the centroids start. Two centroids that start in the same natural group can leave another group with none, and the algorithm cannot climb out of that, because every single step makes the inertia smaller or leaves it the same. Finding the best possible clustering is NP-hard, even for points in a plane when k can be any number (for a fixed k it can be solved in polynomial time, though far too slowly to be practical), so every practical method settles for a good local minimum.
 
 Two ways to start:
 
 - Random points (Forgy's method): pick k data points at random as the centroids.
 - **K-means++** (Arthur and Vassilvitskii, 2007): pick the first centroid at random, then pick each next one from the data with probability proportional to its squared distance from the nearest centroid already chosen. This spreads the starts out. The authors proved the expected inertia right after seeding is within a factor of O(log k) of the optimum.
 
-On the four-group dataset in the demo, with k = 4, 27 of 200 random-point starts ended more than 1% above the best inertia (the worst at 2,663 against the best 714), against 10 of 200 for k-means++. The standard fix is to run k-means several times from different starts and keep the lowest inertia. Libraries do this by default; the demo's side charts use the best of 10 k-means++ starts at each k.
+On the four-group dataset in the demo, with k = 4, 27 of 200 random-point starts ended more than 1% above the best inertia (the worst at 2,662 against the best 714), against 10 of 200 for k-means++. The standard fix is to run k-means several times from different starts and keep the lowest inertia. Libraries do this by default; the demo's side charts use the best of 10 k-means++ starts at each k.
 
 ## How to choose k: the elbow method and silhouette score
 
@@ -500,7 +500,7 @@ K-means is unsupervised clustering: it takes unlabelled data and splits it into 
 
 ### Does k-means always find the best clusters?
 
-No. Each run of k-means always converges, because neither step can increase the within-cluster sum of squares, but it converges to a local minimum that depends on the starting centroids. Finding the true minimum is NP-hard even for points in a plane. In practice you run it several times from different starts, ideally with k-means++ seeding, and keep the run with the lowest inertia.
+No. Each run of k-means always converges, because neither step can increase the within-cluster sum of squares, but it converges to a local minimum that depends on the starting centroids. Finding the true minimum is NP-hard, even for points in a plane when the number of clusters can be any number; for a fixed number of clusters it can be solved in polynomial time, but not quickly. In practice you run it several times from different starts, ideally with k-means++ seeding, and keep the run with the lowest inertia.
 
 ### How do I visualise k-means clustering in JavaScript?
 
@@ -508,10 +508,12 @@ Run k-means in plain JavaScript (assign each point to its nearest centroid, move
 
 ## Sources
 
+- Steinhaus, H. (1956), [Sur la division des corps matériels en parties](https://zbmath.org/?q=an:0079.16403). *Bulletin de l'Académie Polonaise des Sciences, Classe III*, 4(12), 801–804. The first description of the idea.
 - Lloyd, S. P. (1982), [Least squares quantization in PCM](https://doi.org/10.1109/TIT.1982.1056489). *IEEE Transactions on Information Theory*, 28(2), 129–137. The assign-and-update algorithm, first written up at Bell Labs in 1957.
 - MacQueen, J. (1967), [Some methods for classification and analysis of multivariate observations](https://projecteuclid.org/euclid.bsmsp/1200512992). *Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability*, 1, 281–297. The name "k-means".
 - Arthur, D. and Vassilvitskii, S. (2007), [k-means++: the advantages of careful seeding](https://dl.acm.org/doi/10.5555/1283383.1283494). *Proceedings of the 18th Annual ACM-SIAM Symposium on Discrete Algorithms*, 1027–1035.
-- Mahajan, M., Nimbhorkar, P. and Varadarajan, K. (2012), [The planar k-means problem is NP-hard](https://doi.org/10.1016/j.tcs.2010.05.034). *Theoretical Computer Science*, 442, 13–21.
+- Mahajan, M., Nimbhorkar, P. and Varadarajan, K. (2012), [The planar k-means problem is NP-hard](https://doi.org/10.1016/j.tcs.2010.05.034). *Theoretical Computer Science*, 442, 13–21. NP-hard when k is part of the input.
+- Inaba, M., Katoh, N. and Imai, H. (1994), [Applications of weighted Voronoi diagrams and randomization to variance-based k-clustering](https://doi.org/10.1145/177424.178042). *Proceedings of the Tenth Annual Symposium on Computational Geometry*, 332–339. Polynomial time for a fixed k and dimension.
 - Rousseeuw, P. J. (1987), [Silhouettes: a graphical aid to the interpretation and validation of cluster analysis](https://doi.org/10.1016/0377-0427(87)90125-7). *Journal of Computational and Applied Mathematics*, 20, 53–65.
 - Kaufman, L. and Rousseeuw, P. J. (1990), *Finding Groups in Data: An Introduction to Cluster Analysis*, Wiley. Rule of thumb for silhouette scores.
 - Tibshirani, R., Walther, G. and Hastie, T. (2001), [Estimating the number of clusters in a data set via the gap statistic](https://doi.org/10.1111/1467-9868.00293). *Journal of the Royal Statistical Society: Series B*, 63(2), 411–423.

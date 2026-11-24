@@ -49,7 +49,7 @@ datePublished: 2026-11-19
                 {
                     "@type": "Question",
                     "name": "Is the Fourier transform reversible?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, the signal cannot be rebuilt." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, in general the signal cannot be rebuilt." }
                 },
                 {
                     "@type": "Question",
@@ -105,7 +105,7 @@ Take four samples of one cycle of a sine wave, $x = [0, 1, 0, -1]$. Testing each
 | 2 | 2 cycles per 4 samples | 0 | 0 | none |
 | 3 | mirror of bin 1 | $+2i$ | (mirror) | +90° |
 
-The transform finds one wave, of amplitude 1, at bin 1, which is exactly what went in. The −90° phase says it is a sine (which starts at zero) rather than a cosine (which starts at its peak). Bin 3 is a mirror image of bin 1: for real-valued signals, the top half of the DFT repeats the bottom half, which is why spectrum charts show only frequencies up to half the sample rate.
+The transform finds one wave, of amplitude 1, at bin 1, which is exactly what went in. The −90° phase says it is a sine (which starts at zero) rather than a cosine (which starts at its peak). Bin 3 is a mirror image of bin 1: for real-valued signals, the top half of the DFT is a mirror image of the bottom half (the complex conjugate), which is why spectrum charts show only frequencies up to half the sample rate.
 
 ## The Fourier transform formula
 
@@ -245,7 +245,7 @@ Most mistakes in reading a computed spectrum come from leakage, the sample rate 
 
 - **Expecting perfect spikes from real data.** A spike is only clean when the signal fits a whole number of cycles into the window. Otherwise its energy leaks into neighbouring bins. A [window function](/learn/signal-processing/window-functions/) such as Hann reduces the leakage; the [FFT guide](/learn/signal-processing/fast-fourier-transform/) shows it live.
 - **Sampling too slowly.** Frequencies above half the sample rate don't vanish: they [alias](/learn/signal-processing/nyquist-and-aliasing/), folding back and appearing as false lower frequencies. Filter them out before sampling.
-- **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude.
+- **Reading the mirror half as real.** For a real signal, bins above $N/2$ mirror those below. Plot only bins $0$ to $N/2$ and double their amplitude, except at bin $0$ and bin $N/2$.
 - **Confusing frequency resolution with accuracy.** The bin spacing is $f_s / N$. To separate two close frequencies you need a longer recording; zero padding doesn't add detail.
 - **Using one transform for a signal that changes.** A single Fourier transform averages over the whole recording, so a rising siren and a chord can look alike. Use a [spectrogram](/learn/chart-types/cartesian/spectrogram/) for signals whose frequencies change over time.
 
@@ -400,7 +400,7 @@ The discrete Fourier transform (DFT) is the calculation: the Fourier transform o
 
 ### Is the Fourier transform reversible?
 
-Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, the signal cannot be rebuilt.
+Yes. The inverse Fourier transform rebuilds the original signal from its spectrum, as long as you keep both the magnitude and the phase of every frequency. For sampled data, the inverse DFT recovers the samples exactly, apart from tiny rounding errors. If you keep only the magnitude, in general the signal cannot be rebuilt.
 
 ### How do I compute and plot a Fourier transform in JavaScript?
 
@@ -413,6 +413,6 @@ Compute the discrete Fourier transform of your samples with a short DFT or FFT f
 - Smith, J. O., [*Mathematics of the Discrete Fourier Transform (DFT)*](https://ccrma.stanford.edu/~jos/mdft/), Stanford CCRMA. The DFT, orthogonality of sinusoids and the DFT theorems.
 - Cooley, J. W. and Tukey, J. W. (1965), [An algorithm for the machine calculation of complex Fourier series](https://doi.org/10.1090/S0025-5718-1965-0178586-1). *Mathematics of Computation*, 19(90). The paper that made the FFT widely known.
 - Oppenheim, A. V. and Schafer, R. W., *Discrete-Time Signal Processing*, 3rd edition, Pearson (2010). The standard textbook reference for the DFT, sampling and aliasing.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The real and complex DFT diagram on this page is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The real and complex DFT diagram on this page is adapted from it.
 
 <LearnCta position="bottom" chart="frequency spectrum chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-impulse-renderable-series/" docsLabel="SciChart.js impulse (stem) series documentation" />

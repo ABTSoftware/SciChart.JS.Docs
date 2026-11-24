@@ -101,7 +101,7 @@ The boundary is a property of the trained model, not of the data alone. The same
 
 ## How to read a decision boundary plot
 
-![An annotated decision boundary plot of two features. A dark curved line splits a red region on the left from a blue region on the right. Dashed curves either side mark probabilities of 0.25 and 0.75, with a paler band between them. Solid dots are training points and pale outlined dots are test points. One pale blue test point on the red side is circled. A box in the corner reads Test: 90%. Numbered badges 1 to 6 match a list beside the plot](./decision-boundary-anatomy.svg)
+![An annotated decision boundary plot of two features. A dark curved line splits a red region on the left from a blue region on the right. Dashed curves either side mark probabilities of 0.25 and 0.75, with a paler band between them. Solid dots are training points and pale outlined dots are test points. One pale blue test point on the red side is circled. A box in the corner reads Test: 92%. Numbered badges 1 to 6 match a list beside the plot](./decision-boundary-anatomy.svg)
 
 1. The boundary. The line where the colour changes is where the predicted class flips. Check whether its shape is plausible for the problem: smooth, stepped, straight or ragged.
 2. The colour depth. Deep red or deep blue means the model is confident. A good model is confident where the training data is dense and one-sided, and less sure elsewhere.
@@ -202,7 +202,7 @@ Decision boundaries belong to **classification**, which predicts a category. **R
 | Measured by | Accuracy, precision and recall, ROC AUC, log loss | Mean squared error, mean absolute error, R² |
 | Picture | Decision boundary over a probability heatmap | Fitted line or surface, residual plot |
 
-Many algorithms come in both forms. A k-NN regressor averages its neighbours' values instead of voting, and a regression tree predicts the mean value in each leaf. Logistic regression, despite its name, is a classifier.
+Many algorithms come in both forms. A k-NN regressor averages its neighbours' values instead of voting, and a regression tree predicts the mean value in each leaf. Logistic regression, despite its name, is mostly used for classification: it models the probability of each class, and a threshold turns that into a label.
 
 ## How to draw a decision boundary
 
@@ -481,7 +481,8 @@ Train the classifier, then evaluate its probability for one class on a grid of p
 - Breiman, L., Friedman, J., Olshen, R. and Stone, C. (1984), *Classification and Regression Trees*, Wadsworth. The CART algorithm and the Gini impurity used in the demo's trees.
 - Breiman, L. (2001), [Random forests](https://doi.org/10.1023/A:1010933404324). *Machine Learning*, 45, 5–32.
 - Cortes, C. and Vapnik, V. (1995), [Support-vector networks](https://doi.org/10.1007/BF00994018). *Machine Learning*, 20, 273–297.
-- Fan, R.-E., Chen, P.-H. and Lin, C.-J. (2005), [Working set selection using second order information for training support vector machines](https://www.jmlr.org/papers/v6/fan05a.html). *Journal of Machine Learning Research*, 6, 1889–1918. The SMO pair selection the demo's SVM uses (first-order version).
+- Fan, R.-E., Chen, P.-H. and Lin, C.-J. (2005), [Working set selection using second order information for training support vector machines](https://www.jmlr.org/papers/v6/fan05a.html). *Journal of Machine Learning Research*, 6, 1889–1918. Describes, as background, the first-order SMO pair selection the demo's SVM uses.
+- Keerthi, S. S., Shevade, S. K., Bhattacharyya, C. and Murthy, K. R. K. (2001), [Improvements to Platt's SMO algorithm for SVM classifier design](https://doi.org/10.1162/089976601300014493). *Neural Computation*, 13(3), 637–649. The first-order (maximal violating pair) selection the demo's SVM uses.
 - Domingos, P. and Pazzani, M. (1997), [On the optimality of the simple Bayesian classifier under zero-one loss](https://doi.org/10.1023/A:1007413511361). *Machine Learning*, 29, 103–130. Why naive Bayes classifies well even when its independence assumption is wrong.
 - scikit-learn, [Classifier comparison](https://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html), the widely used reference picture of decision boundaries across classifiers and datasets.
 

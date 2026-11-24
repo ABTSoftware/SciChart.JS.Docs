@@ -50,7 +50,7 @@ datePublished: 2026-11-19
                 {
                     "@type": "Question",
                     "name": "Why is autocorrelation a problem in regression?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Ordinary least squares assumes the errors are independent. When the residuals are autocorrelated, the coefficients are still unbiased, but their standard errors are usually too small, so confidence intervals are too narrow and results look more significant than they are. Check the residuals with an ACF plot or a Durbin-Watson or Ljung-Box test, and model the dependence if it is there." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Ordinary least squares assumes the errors are independent. When the residuals are autocorrelated, the coefficients are still unbiased as long as no regressor is a lagged value of the outcome, but their standard errors are usually too small, so confidence intervals are too narrow and results look more significant than they are. Check the residuals with an ACF plot or a Durbin-Watson or Ljung-Box test, and model the dependence if it is there." }
                 },
                 {
                     "@type": "Question",
@@ -458,7 +458,7 @@ Positive autocorrelation at lag 1 means high values tend to follow high values a
 
 ### Why is autocorrelation a problem in regression?
 
-Ordinary least squares assumes the errors are independent. When the residuals are autocorrelated, the coefficients are still unbiased, but their standard errors are usually too small, so confidence intervals are too narrow and results look more significant than they are. Check the residuals with an ACF plot or a Durbin-Watson or Ljung-Box test, and model the dependence if it is there.
+Ordinary least squares assumes the errors are independent. When the residuals are autocorrelated, the coefficients are still unbiased as long as no regressor is a lagged value of the outcome, but their standard errors are usually too small, so confidence intervals are too narrow and results look more significant than they are. Check the residuals with an ACF plot or a Durbin-Watson or Ljung-Box test, and model the dependence if it is there.
 
 ### How do I match numpy.correlate, MATLAB xcorr or pandas autocorr?
 
@@ -472,11 +472,11 @@ Subtract the mean, then for each lag k add up x[n] times x[n + k] over every n w
 
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*: [chapter 7, Properties of Convolution](https://www.dspguide.com/ch7/3.htm) (correlation, and matched filtering of a known pattern) and [chapter 18, FFT Convolution](https://www.dspguide.com/ch18.htm).
 - NIST/SEMATECH, *e-Handbook of Statistical Methods*: [Autocorrelation](https://www.itl.nist.gov/div898/handbook/eda/section3/eda35c.htm) and [Autocorrelation Plot](https://www.itl.nist.gov/div898/handbook/eda/section3/autocopl.htm), including the confidence band.
-- Hyndman, R. J. and Athanasopoulos, G., *Forecasting: Principles and Practice*, 3rd ed., [section 2.8, Autocorrelation](https://otexts.com/fpp3/acf.html) and [section 2.9, White noise](https://otexts.com/fpp3/wn.html).
+- Hyndman, R. J. and Athanasopoulos, G., *Forecasting: Principles and Practice*, 3rd ed., [section 2.8, Autocorrelation](https://otexts.com/fpp3/graphics.html#sec-acf) and [section 2.9, White noise](https://otexts.com/fpp3/graphics.html#sec-wn).
 - Box, G. E. P., Jenkins, G. M., Reinsel, G. C. and Ljung, G. M., *Time Series Analysis: Forecasting and Control*, 5th ed., Wiley, 2015. The sample ACF and PACF, and model identification.
 - Rabiner, L. R. (1977), [On the Use of Autocorrelation Analysis for Pitch Detection](https://doi.org/10.1109/TASSP.1977.1162905). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 25(1), 24–33.
 - Knapp, C. H. and Carter, G. C. (1976), [The Generalized Correlation Method for Estimation of Time Delay](https://doi.org/10.1109/TASSP.1976.1162830). *IEEE Transactions on Acoustics, Speech, and Signal Processing*, 24(4), 320–327.
 - Bendat, J. S. and Piersol, A. G., *Random Data: Analysis and Measurement Procedures*, 4th ed., Wiley, 2010. Correlation functions, the Wiener–Khinchin relation and time-delay measurement.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The direct-versus-FFT correlation diagram on this page is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The direct-versus-FFT correlation diagram on this page is adapted from it.
 
 <LearnCta position="bottom" chart="autocorrelation chart" demo="vital-signs-ecg-medical-chart-example" demoLabel="ECG vital signs chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

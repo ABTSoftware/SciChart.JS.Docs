@@ -99,7 +99,7 @@ It does not show when something happens within a block, or the phase of each com
 
 ## How an FFT spectrum analyzer works
 
-Almost every audio analyser, whether a plug-in, a phone app or a measurement system, is an **FFT analyser**. It repeats the same chain of steps for every new block of samples:
+Most software audio analysers, whether a plug-in, a phone app or a page in the browser, are **FFT analysers** (sound level meters and many 1/3-octave analysers use a bank of band filters to IEC 61260-1 instead). An FFT analyser repeats the same chain of steps for every new block of samples:
 
 ![The signal chain of an FFT spectrum analyser, from left to right: capture at 48,000 samples per second, a block of N samples, a Hann window, the FFT, magnitude squared converted to decibels, averaging and peak hold, and the display on a log frequency axis. Below, the numbers for N = 4,096: each block lasts 85 ms, the bins are 11.7 Hz apart, and the result has 2,048 bins](./fft-analyser-signal-chain.svg)
 
@@ -130,7 +130,7 @@ The vertical axis is in **decibels**, a log scale where every 20 dB is a factor 
 
 | Unit | Reference (0 dB) | Where you'll see it |
 | --- | --- | --- |
-| dBFS | Digital full scale: a full-scale sine wave, the loudest clean tone a digital system can store | Software analysers, DAWs, plug-ins. Values are 0 or negative |
+| dBFS | Digital full scale: a full-scale sine wave, the loudest clean tone a digital system can store | Software analysers, DAWs, plug-ins. Values are almost always 0 or negative; a full-scale square wave reads +3 dBFS |
 | dBV | 1 volt RMS | Measurement interfaces and analogue test gear |
 | dBu | 0.775 volt RMS | Professional audio line levels (+4 dBu is a common nominal level) |
 | dB SPL | 20 µPa of sound pressure, about the threshold of hearing at 1 kHz | Calibrated measurement microphones, sound level meters, room acoustics |
@@ -185,7 +185,7 @@ The displayed noise floor depends on the RBW as well as the noise. For broadband
 
 ### A-weighting
 
-**A-weighting** is a standard correction curve (IEC 61672-1) that approximates the ear's lower sensitivity to bass and extreme treble at moderate levels. It is 0 dB at 1 kHz, about −16 dB at 125 Hz and −39 dB at 31.5 Hz, and close to 0 dB from 1 to 6 kHz. Sound levels quoted in dB(A) use it. It is the right choice for judging how loud noise sounds and for regulations, but the wrong one for finding a 50 Hz hum or a rumbling fan, which it hides: switch weighting off (Z-weighting) for troubleshooting.
+**A-weighting** is a standard correction curve (IEC 61672-1) that approximates the ear's lower sensitivity to bass and extreme treble at moderate levels. It is 0 dB at 1 kHz, about −16 dB at 125 Hz and −39 dB at 31.5 Hz, and within about 1.3 dB of 0 dB from 1 to 6 kHz, peaking at about +1.3 dB near 2.5 kHz. Sound levels quoted in dB(A) use it. It is the right choice for judging how loud noise sounds and for regulations, but the wrong one for finding a 50 Hz hum or a rumbling fan, which it hides: switch weighting off (Z-weighting) for troubleshooting.
 
 ## Swept-tuned vs FFT spectrum analyzers
 

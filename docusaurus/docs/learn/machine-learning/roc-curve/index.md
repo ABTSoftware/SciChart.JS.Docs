@@ -199,7 +199,7 @@ The area under this staircase is 0.833. You can get it two ways: by adding up th
 
 ## What AUC means
 
-The **area under the ROC curve** (AUC, or ROC AUC) has a direct meaning: it is the probability that the model gives a randomly chosen positive a higher score than a randomly chosen negative, with ties counting half. Hanley and McNeil showed this equals the Wilcoxon–Mann–Whitney statistic.
+The **area under the ROC curve** (AUC, or ROC AUC) has a direct meaning: it is the probability that the model gives a randomly chosen positive a higher score than a randomly chosen negative, with ties counting half. Bamber showed in 1975 that this equals the Wilcoxon–Mann–Whitney statistic, and Hanley and McNeil made it the standard way to read AUC.
 
 $$
 \text{AUC} = P(s_{+} > s_{-}) + \tfrac{1}{2}P(s_{+} = s_{-})
@@ -279,7 +279,7 @@ A ROC curve measures **discrimination**, how well the model ranks cases. It says
 
 ROC curves are used wherever a yes/no decision trades missed cases against false alarms.
 
-- Radar and signal detection. ROC analysis began with radar operators in the Second World War, judging how well they could tell aircraft from noise. Psychology adopted it as signal detection theory.
+- Radar and signal detection. ROC analysis grew out of radar signal detection in the 1940s and 1950s; Peterson, Birdsall and Fox set out its theory in 1954. Psychology adopted it as signal detection theory.
 - Medical diagnostic tests. ROC curves compare tests and set cut-offs, for example the level of a blood marker above which a test counts as positive, trading sensitivity against specificity. This page explains how the curves are drawn and read; it is not clinical guidance. See how SciChart is used for [diagnostics and life sciences](https://www.scichart.com/why-scichart-diagnostics-lifesciences/) software.
 - Machine learning. ROC AUC and average precision are standard ways to evaluate classifiers, from spam filters to image classifiers.
 - Credit scoring and fraud detection. Lenders report AUC or the Gini coefficient for scorecards; fraud teams lean on precision-recall because fraud is rare.
@@ -509,9 +509,11 @@ Sort the test cases by score from highest to lowest, then walk down the list cou
 - Saito, T. and Rehmsmeier, M. (2015), [The precision-recall plot is more informative than the ROC plot when evaluating binary classifiers on imbalanced datasets](https://doi.org/10.1371/journal.pone.0118432). *PLOS ONE*, 10(3), e0118432.
 - Davis, J. and Goadrich, M. (2006), [The relationship between precision-recall and ROC curves](https://doi.org/10.1145/1143844.1143874). *Proceedings of the 23rd International Conference on Machine Learning*, 233–240. Dominance in both spaces, and why PR points can't be joined with straight lines.
 - Hanley, J. A. and McNeil, B. J. (1982), [The meaning and use of the area under a receiver operating characteristic (ROC) curve](https://doi.org/10.1148/radiology.143.1.7063747). *Radiology*, 143(1), 29–36. AUC as the probability of ranking a positive above a negative.
+- Bamber, D. (1975), [The area above the ordinal dominance graph and the area below the receiver operating characteristic graph](https://doi.org/10.1016/0022-2496(75)90001-2). *Journal of Mathematical Psychology*, 12(4), 387–415. AUC equals the Wilcoxon–Mann–Whitney statistic.
+- Peterson, W. W., Birdsall, T. G. and Fox, W. C. (1954), [The theory of signal detectability](https://doi.org/10.1109/TIT.1954.1057460). *Transactions of the IRE Professional Group on Information Theory*, 4(4), 171–212. The formal origin of ROC analysis.
 - DeLong, E. R., DeLong, D. M. and Clarke-Pearson, D. L. (1988), [Comparing the areas under two or more correlated receiver operating characteristic curves: a nonparametric approach](https://doi.org/10.2307/2531595). *Biometrics*, 44(3), 837–845.
-- Youden, W. J. (1950), Index for rating diagnostic tests. *Cancer*, 3(1), 32–35.
-- Hosmer, D. W. and Lemeshow, S. (2000), *Applied Logistic Regression*, 2nd edition, Wiley. Rule of thumb for AUC values.
+- Youden, W. J. (1950), [Index for rating diagnostic tests](https://doi.org/10.1002/1097-0142(1950)3:1%3C32::AID-CNCR2820030106%3E3.0.CO;2-3). *Cancer*, 3(1), 32–35.
+- Hosmer, D. W., Lemeshow, S. and Sturdivant, R. X. (2013), [*Applied Logistic Regression*](https://doi.org/10.1002/9781118548387), 3rd edition, Wiley. Rule of thumb for AUC values.
 - scikit-learn, [Metrics and scoring: classification metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics) (ROC, average precision, confusion matrix) and [probability calibration](https://scikit-learn.org/stable/modules/calibration.html).
 
 <LearnCta position="bottom" chart="ROC curve" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

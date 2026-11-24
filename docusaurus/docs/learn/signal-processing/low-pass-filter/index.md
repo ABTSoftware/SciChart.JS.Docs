@@ -145,7 +145,7 @@ Some example pairs, worked out with the formula above:
 | R | C | Time constant RC | Cutoff $f_c$ | Typical use |
 | --- | --- | --- | --- | --- |
 | 10 kΩ | 1.5 µF | 15 ms | 10.6 Hz | Smoothing a slow sensor |
-| 10 kΩ | 100 nF | 1 ms | 159 Hz | Removing hum-band noise above a slow signal |
+| 10 kΩ | 100 nF | 1 ms | 159 Hz | Removing audio-band noise from a slow control or sensor signal (mains hum at 50 or 60 Hz still gets through) |
 | 1 kΩ | 220 nF | 0.22 ms | 723 Hz | The worked example |
 | 1.6 kΩ | 10 nF | 16 µs | 9.95 kHz | Taming hiss on a voice or audio line |
 | 330 Ω | 22 nF | 7.3 µs | 21.9 kHz | Just above the range of human hearing |

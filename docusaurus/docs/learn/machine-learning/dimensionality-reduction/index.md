@@ -167,7 +167,7 @@ Common implementations exaggerate the input probabilities for the first 250 or s
 - High perplexity blends in more distant points. Clusters merge more easily, but more of the overall arrangement survives.
 - Perplexity must be smaller than the number of points. With a few hundred points, values near the top of the range behave like a global method.
 
-In the demo's digits, a perplexity of 2 keeps 50% of each point's 10 nearest neighbours, 5 keeps 57%, 30 keeps 63% and 100 keeps 62%. The best value depends on the data, so try several before reading meaning into a shape.
+In the demo's digits, a perplexity of 2 keeps 50% of each point's 10 nearest neighbours, 5 keeps 57%, 30 keeps 63% and 100 keeps 61%. The best value depends on the data, so try several before reading meaning into a shape.
 
 ### What t-SNE distances do and don't mean
 
@@ -175,7 +175,7 @@ In the demo's digits, a perplexity of 2 keeps 50% of each point's 10 nearest nei
 
 t-SNE's cost function penalises near neighbours that end up far apart much more than distant points that end up close, and the per-point Gaussian widths even out density. As a result:
 
-- Points that are neighbours on the map were usually neighbours in the data.
+- Points that were neighbours in the data usually stay neighbours on the map. The reverse is less certain: the cost barely penalises distant points placed close together, so two points next to each other on the map are not always close in the data.
 - Cluster sizes on the map say little about how spread out the clusters really are.
 - Gaps between clusters are not to scale; a big gap doesn't mean "more different".
 - The axes have no units and no meaning; the map can be rotated or mirrored freely.
@@ -204,7 +204,7 @@ This page's live demo computes PCA and t-SNE in the browser. UMAP's graph constr
 | Preserves | Global variance and large distances | Local neighbourhoods | Local neighbourhoods, some global layout |
 | Same result every run | Yes (up to the sign of each axis) | No, unless the start and random seed are fixed | No, unless the random seed is fixed |
 | Speed | Fast: one eigendecomposition or SVD | Slow: exact version grows with the square of the points; Barnes-Hut approximation scales to large datasets | Usually faster than t-SNE, scales to millions of points |
-| New points | Project with the same components | No standard way: rerun | Supported |
+| New points | Project with the same components | Not built in to most implementations; some libraries can add points to an existing map | Supported |
 | Axes mean | Weighted sums of the original variables | Nothing | Nothing |
 | Main settings | Number of components; whether to standardise | Perplexity, iterations, learning rate | `n_neighbors`, `min_dist` |
 | Best for | Preprocessing, compression, interpretable axes, a first look | Revealing clusters in small to medium datasets | Clusters in large datasets; reduction before clustering |
@@ -242,7 +242,7 @@ Most mistakes come from unscaled inputs, from trusting a single run, or from rea
 - **Stopping t-SNE too early.** During early exaggeration the map is compressed and misleading. Let it run until the KL divergence stops falling.
 - **Clustering the map instead of the data.** Clusters drawn around t-SNE islands inherit its distortions. Cluster in the original space or on PCA components, then colour the map by the result.
 - **Fitting the reduction on the test set.** For a model, fit PCA (means, scaling and components) on the training data only, then apply it to the test data, or the evaluation leaks information.
-- **Using t-SNE output as model features.** t-SNE has no transform for new points, and its coordinates change from run to run. Use PCA, UMAP or an autoencoder for features.
+- **Using t-SNE output as model features.** Most t-SNE implementations have no transform for new points, and its coordinates change from run to run. Use PCA, UMAP or an autoencoder for features.
 
 ## How to plot PCA and t-SNE results in JavaScript, React or Angular
 
@@ -429,6 +429,8 @@ Compute the embedding first: for PCA, centre the data, take the eigenvectors of 
 - Beyer, K., Goldstein, J., Ramakrishnan, R. and Shaft, U. (1999), [When is "nearest neighbor" meaningful?](https://doi.org/10.1007/3-540-49257-7_15). *Database Theory – ICDT'99*, 217–235. Distance concentration in high dimensions.
 - Cattell, R. B. (1966), [The scree test for the number of factors](https://doi.org/10.1207/s15327906mbr0102_10). *Multivariate Behavioral Research*, 1(2), 245–276.
 - Litterman, R. and Scheinkman, J. (1991), [Common factors affecting bond returns](https://doi.org/10.3905/jfi.1991.692347). *The Journal of Fixed Income*, 1(1), 54–61. Level, slope and curvature components of yield curves.
+- Venna, J., Peltonen, J., Nybo, K., Aidos, H. and Kaski, S. (2010), [Information retrieval perspective to nonlinear dimensionality reduction for data visualization](https://www.jmlr.org/papers/v11/venna10a.html). *Journal of Machine Learning Research*, 11, 451–490. The SNE cost as a smoothed measure of recall: neighbours in the data stay neighbours on the map.
+- Poličar, P. G., Stražar, M. and Zupan, B. (2024), [openTSNE: a modular Python library for t-SNE dimensionality reduction and embedding](https://doi.org/10.18637/jss.v109.i03). *Journal of Statistical Software*, 109(3). Adding new points to an existing t-SNE map.
 - Becht, E. et al. (2019), [Dimensionality reduction for visualizing single-cell data using UMAP](https://doi.org/10.1038/nbt.4314). *Nature Biotechnology*, 37, 38–44.
 - The demo's digit images are simulated, in the style of the UCI "Optical Recognition of Handwritten Digits" dataset (8 × 8 images, pixel values 0 to 16); no real data is used.
 

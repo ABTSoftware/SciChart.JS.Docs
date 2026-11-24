@@ -172,7 +172,7 @@ An image classifier gives a photo the logits 2.0 for cat, 1.0 for dog and −1.0
 | Class | Logit $z$ | $e^{z}$ | Probability, $T = 1$ | $T = 0.5$ | $T = 2$ |
 | --- | --- | --- | --- | --- | --- |
 | Cat | 2.0 | 7.389 | 70.5% | 87.9% | 54.7% |
-| Dog | 1.0 | 2.718 | 25.9% | 11.9% | 33.2% |
+| Dog | 1.0 | 2.718 | 25.9% | 11.9% | 33.1% |
 | Bird | −1.0 | 0.368 | 3.5% | 0.2% | 12.2% |
 | Sum | | 10.475 | 100% | 100% | 100% |
 
@@ -196,10 +196,10 @@ Use ReLU or GELU in hidden layers, and choose the output activation by task: sig
 
 | Property | Sigmoid | Tanh | ReLU | Leaky ReLU / ELU | GELU / Swish |
 | --- | --- | --- | --- | --- | --- |
-| Zero-centred output | No | Yes | No | Nearly | Nearly |
+| Zero-centred output | No | Yes | No | Leaky ReLU: no; ELU: closer to zero | No, but closer than ReLU |
 | Saturates (flat gradient) | Both ends | Both ends | Left half only (gradient 0) | Leaky ReLU: no; ELU: left side, towards $-\alpha$ | Left side, slowly |
 | Can units die? | No | No | Yes | No | Rarely |
-| Smooth at 0 | Yes | Yes | No (a corner) | Leaky: no; ELU: yes | Yes |
+| Smooth at 0 | Yes | Yes | No (a corner) | Leaky: no; ELU: yes when $\alpha = 1$ | Yes |
 | Cost to compute | An exponential | An exponential | A comparison | A comparison (+ exp for ELU) | An erf or exponential |
 
 Choose by where the function sits in the network:
@@ -226,7 +226,7 @@ The demo's third chart trains a network with one input, one hidden layer and one
 | Sigmoid, 8 | 0.0157 | 0.0022 | |
 | GELU, 8 | 0.0116 | 0.0025 | |
 | ReLU, 8 | 0.067 | 0.055 | 2 of 8 |
-| Leaky ReLU, 8 | 0.066 | 0.055 | |
+| Leaky ReLU ($\alpha = 0.1$), 8 | 0.066 | 0.055 | |
 | ReLU, 32 | 0.0049 | 0.0040 | 10 of 32 |
 
 Smooth activations fit this curve with few units, and sigmoid gets there more slowly than tanh. ReLU builds the curve from straight segments, one bend per live unit, so with 8 units it settles on a rough zig-zag; leaky ReLU, which has no dead units, stalls at the same loss, so the shortage of bends matters more than the deaths here. With 32 units ReLU fits well even with 10 dead. The vanishing gradient problem doesn't arise in a network this shallow; ReLU's advantage shows in deep networks, so a toy result like this one is not a reason to drop it.

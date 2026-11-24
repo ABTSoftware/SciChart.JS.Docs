@@ -104,7 +104,7 @@ The table uses the same 20 points, drawn from a smooth curve with random noise o
 
 Training error can only fall as the degree rises, because each higher-degree model contains the lower ones. That makes it useless for choosing the degree. The test error falls and then climbs, and its minimum is the model to keep.
 
-The unpenalised degree-15 coefficients show the cause. On standardised features the largest is about 10,800, and neighbouring coefficients have opposite signs, so they cancel each other at the training points and swing apart between them. Regularization works by keeping coefficients like these small.
+The unpenalised degree-15 coefficients show the cause. On standardised features the largest is about 10,800, and there are large coefficients of both signs, which cancel each other at the training points and swing apart between them. Regularization works by keeping coefficients like these small.
 
 ## The bias–variance trade-off
 
@@ -154,7 +154,7 @@ $$
 
 Tibshirani introduced it in 1996. Replacing the squares with absolute values means the lasso sets some coefficients exactly to zero, so it fits the model and selects features in one step. At the λ chosen by cross-validation in the example (0.16), the lasso keeps 7 of the 15 powers of x and reaches a test RMSE of 0.29.
 
-There is no closed form, because $|\beta_j|$ has a corner at zero. The usual solver, used by glmnet, is **coordinate descent**: fix all coefficients but one, solve for that one exactly, and cycle until nothing changes. Each one-coefficient step is a soft-threshold: work out the least squares value for that coefficient given the others, move it towards zero by λ/2, and set it to zero if it would cross. Coordinate descent slows down badly on nearly collinear features such as high powers of x, so the live demo runs it for a while and then finishes with an exact active-set step (feature-sign search) that checks the lasso's optimality conditions.
+There is no closed form, because $|\beta_j|$ has a corner at zero. The usual solver, used by glmnet, is **coordinate descent**: fix all coefficients but one, solve for that one exactly, and cycle until nothing changes. Each one-coefficient step is a soft-threshold: work out the least squares value for that coefficient given the others, move it towards zero by λ/2 divided by that feature's sum of squares, and set it to zero if it would cross. Coordinate descent slows down badly on nearly collinear features such as high powers of x, so the live demo runs it for a while and then finishes with an exact active-set step (feature-sign search) that checks the lasso's optimality conditions.
 
 ### Worked example: ridge and lasso on three coefficients
 
@@ -196,7 +196,7 @@ A **coefficient path** plot shows every coefficient against λ, usually on a log
 - The x-axis is λ on a logarithmic axis, because the interesting changes happen over several powers of ten. Some tools reverse it, or plot against the L1 norm of the coefficients instead.
 - At the right, with a very large λ, every coefficient is at or near zero: the model predicts the mean.
 - Moving left, coefficients grow. For ridge they all grow together, smoothly. For the lasso they enter one at a time: in the example, only the $x$ term is non-zero at λ = 10, and $x^3$ and $x^4$ have joined it by λ = 1.
-- At the far left, the paths approach the least squares values, which for an overfitted model are large and of alternating sign.
+- At the far left, the paths approach the least squares values, which for an overfitted model are large and of both signs.
 - A vertical line marks the λ chosen by cross-validation. Read across it to see which features the chosen model uses and how much each one counts.
 - Lasso paths can cross zero or leave the model again as λ falls. A feature that enters early and stays is a strong, stable predictor; one that flickers in and out is not.
 
@@ -236,7 +236,7 @@ Use ridge when many features each matter a little, lasso when you want a small m
 | Elastic net | Both | Yes | Keeps or drops the group together | Iterative | Many correlated features and you want selection |
 | Fewer features or lower degree | Hard limit | Drops them by hand | Up to you | Closed form | You know which features matter |
 
-For neural networks the same ideas appear as weight decay (an L2 penalty), early stopping (halting training when the validation error starts to rise) and dropout.
+For neural networks the same ideas appear as weight decay (equivalent to an L2 penalty under plain gradient descent, but not with adaptive optimisers such as Adam), early stopping (halting training when the validation error starts to rise) and dropout.
 
 ## Common regularization mistakes
 
@@ -454,6 +454,7 @@ Standardise the features, then fit the model at each lambda on a grid spaced eve
 - Hastie, T., Tibshirani, R. and Friedman, J. (2009), [*The Elements of Statistical Learning*](https://hastie.su.domains/ElemStatLearn/), 2nd edition, Springer. Ridge and lasso (section 3.4), the bias–variance decomposition (7.3), cross-validation and the one-standard-error rule (7.10).
 - Friedman, J., Hastie, T. and Tibshirani, R. (2010), [Regularization paths for generalized linear models via coordinate descent](https://doi.org/10.18637/jss.v033.i01). *Journal of Statistical Software*, 33(1), 1–22.
 - Lee, H., Battle, A., Raina, R. and Ng, A. Y. (2007), [Efficient sparse coding algorithms](https://proceedings.neurips.cc/paper/2006/hash/2d71b2ae158c7c5912cc0bbde2bb9d95-Abstract.html). *Advances in Neural Information Processing Systems 19*. The feature-sign search the demo uses to finish each lasso fit exactly.
+- Loshchilov, I. and Hutter, F. (2019), [Decoupled weight decay regularization](https://arxiv.org/abs/1711.05101). *International Conference on Learning Representations (ICLR 2019)*. Why weight decay and an L2 penalty differ under Adam.
 - scikit-learn, [Linear models: ridge, lasso and elastic net](https://scikit-learn.org/stable/modules/linear_model.html), for how one widely used library scales the penalty.
 
 <LearnCta position="bottom" chart="regularization plot" demo="line-chart" demoLabel="line chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

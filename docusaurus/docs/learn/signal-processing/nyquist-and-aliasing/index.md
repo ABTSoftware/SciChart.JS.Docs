@@ -188,7 +188,7 @@ The samples, and any FFT of them, show a 100 Hz tone. More examples, all checked
 | 25 kHz | 44.1 kHz | 1 | 19.1 kHz | Ultrasound folds into the audible range |
 | 30 kHz | 44.1 kHz | 1 | 14.1 kHz | Further up, and further down into the audio band |
 
-Tones between $f_s/2$ and $f_s$ (and in every other "falling" stretch of the zigzag) are mirrored: as the true frequency rises, the alias falls. Their phase is reversed too, which is why a wheel just under the frame rate seems to turn backwards.
+Tones between $f_s/2$ and $f_s$ (and in every other "falling" stretch of the zigzag) are mirrored: as the true frequency rises, the alias falls. Their phase is mirrored too (its sign flips), which is why a wheel just under the frame rate seems to turn backwards.
 
 ### Why aliases can't be told apart after sampling
 
@@ -478,9 +478,12 @@ Generate or load your samples, then draw them as stems with an impulse series an
 
 - Nyquist, H. (1928), [Certain Topics in Telegraph Transmission Theory](https://doi.org/10.1109/T-AIEE.1928.5055024). *Transactions of the AIEE*, 47(2), 617–644. The $2B$ pulses-per-second limit.
 - Shannon, C. E. (1949), [Communication in the Presence of Noise](https://doi.org/10.1109/JRPROC.1949.232969). *Proceedings of the IRE*, 37(1), 10–21. The sampling theorem and sinc reconstruction.
+- Whittaker, E. T. (1915), [On the Functions which are represented by the Expansions of the Interpolation-Theory](https://doi.org/10.1017/S0370164600017806). *Proceedings of the Royal Society of Edinburgh*, 35, 181–194. The sinc interpolation series.
+- Kotelnikov, V. A. (1933), On the Transmission Capacity of the "Ether" and Wire in Electrocommunications, in Russian; [English translation](https://doi.org/10.1007/978-1-4612-0143-4_2) in Benedetto, J. J. and Ferreira, P. J. S. G. (eds.) (2001), *Modern Sampling Theory*, Birkhäuser, 27–45. The sampling theorem, reached independently.
 - Smith, S. W., *The Scientist and Engineer's Guide to Digital Signal Processing*, [chapter 3: ADC and DAC](https://www.dspguide.com/ch3.htm). The sampling theorem, aliasing and anti-aliasing filters.
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. Chapter 4, sampling of continuous-time signals, decimation and oversampling.
 - ITU-T Recommendation [G.711](https://www.itu.int/rec/T-REC-G.711) (8 kHz telephone sampling) and [G.722](https://www.itu.int/rec/T-REC-G.722) (16 kHz wideband speech); Audio Engineering Society, *AES5: Preferred sampling frequencies for applications employing pulse-code modulation*.
+- IEC [60908:1999](https://webstore.iec.ch/en/publication/3885), *Audio recording: Compact disc digital audio system*. The 44.1 kHz CD sampling rate.
 - Kligfield, P. et al. (2007), [Recommendations for the Standardization and Interpretation of the Electrocardiogram, Part I](https://doi.org/10.1161/CIRCULATIONAHA.106.180200). *Circulation*, 115(10), 1306–1324. ECG bandwidth (high-frequency cutoff).
 - Randall, R. B. (1987), *Frequency Analysis*, 3rd edition, Brüel & Kjær. FFT analysers and anti-aliasing filters.
 

@@ -152,7 +152,7 @@ The **local outlier factor** (LOF) of Breunig and colleagues fixes that by compa
 
 An **isolation forest** (Liu, Ting and Zhou, 2008) turns the problem round. Instead of modelling normal points, it measures how easy each point is to isolate. Each tree takes a random sample of the data and keeps cutting it, on a randomly chosen feature at a random value between that feature's minimum and maximum, until every point sits alone or a depth limit is reached. A point far from the rest ends up alone after a few cuts; a point inside a dense cluster needs many.
 
-![Left: a cluster of about sixty readings in a two-feature space and one reading far to the upper right, with a vertical cut numbered 1 and a horizontal cut numbered 2 that box the far reading on its own, while grey dashed cuts show the many cuts needed for a reading in the middle of the cluster. Right: the same cuts as a tree, with the anomaly reached at depth 2 and the cluster reading at about depth 9, and the score formula](./isolation-forest-splits.svg)
+![Left: a cluster of about sixty readings in a two-feature space and one reading far to the upper right, with a vertical cut numbered 1 and a horizontal cut numbered 2 that box the far reading on its own, while grey dashed cuts show the many cuts needed for a reading in the middle of the cluster. Right: the same cuts as a tree, with the anomaly reached at depth 2 and the cluster reading at a path length of about 9, and the score formula](./isolation-forest-splits.svg)
 
 The anomaly score averages the path length $h(x)$ over the trees and normalises it by $c(n)$, the average path length of an unsuccessful search in a binary search tree of $n$ points:
 
@@ -229,7 +229,7 @@ Raising the threshold trades recall for precision. To compare detectors across a
 
 Time series need one more step. A level shift that lasts 216 readings and triggers an alert on 150 of them counts as 66 misses, though the operator was warned. Report event-level recall too (how many incidents got at least one alert, and how soon) alongside point-level precision. Be wary of "point-adjusted" scores that mark a whole incident as found if any point in it is flagged: Kim and colleagues showed that under that protocol even random scores can match published detectors.
 
-The live demo shows these numbers for the 14 streamed days, against seven injected anomalies (665 anomalous readings out of 2,016), at each detector's default threshold:
+The live demo shows these numbers for the 14 streamed days, against seven injected anomalies (665 anomalous readings out of 2,016, about a third; real anomalies are far rarer, but the demo exaggerates them so that all seven show within 14 days), at each detector's default threshold:
 
 | Detector (default threshold) | Precision | Recall (readings) | Incidents caught | What it misses |
 | --- | --- | --- | --- | --- |

@@ -152,12 +152,12 @@ There are two standard ways: one for a recorded block of samples, and one for a 
 
 ### The FFT method (for a block of samples)
 
-This is what `scipy.signal.hilbert` and MATLAB's `hilbert` do (Marple, 1999):
+Steps 3 to 5 are what `scipy.signal.hilbert` and MATLAB's `hilbert` do (Marple, 1999); steps 1 and 2 are preparation you do yourself first, since neither function removes the mean or pads unless you ask it to:
 
 1. Remove the mean (the DC offset). A constant offset adds to $x$ but not to $\mathcal{H}\{x\}$, so it makes the envelope wobble at the carrier frequency.
 2. Zero pad to a power of 2, at least twice the length, if you use a radix-2 FFT. The FFT treats the block as repeating; padding stops the end of the block wrapping onto its start.
 3. FFT the $N$ samples to get bins $X_0 \ldots X_{N-1}$.
-4. Build the analytic spectrum. Keep $X_0$ (DC) and $X_{N/2}$ (Nyquist) once, double bins $1$ to $N/2 - 1$ (the positive frequencies), and set to zero bins $N/2 + 1$ to $N - 1$ (the negative frequencies).
+4. Build the analytic spectrum. For an even number of samples $N$ (as after step 2), keep $X_0$ (DC) and $X_{N/2}$ (Nyquist) once, double bins $1$ to $N/2 - 1$ (the positive frequencies), and set to zero bins $N/2 + 1$ to $N - 1$ (the negative frequencies).
 5. Inverse FFT. The result is the analytic signal $z_n$: its real part is your signal again, its imaginary part is the Hilbert transform, and $\lvert z_n \rvert$ is the envelope.
 
 While you are in the frequency domain, you can also zero the bins outside the band you care about, which band-pass filters the signal at no extra cost and keeps broadband noise out of the envelope.
@@ -433,6 +433,6 @@ Remove the mean, zero pad the samples to a power of 2 at least twice their lengt
 - Haykin, S. and Moher, M. (2009), *Communication Systems*, 5th edition, Wiley. Amplitude modulation and the envelope detector, including the diagonal-clipping limit.
 - Randall, R. B. and Antoni, J. (2011), [Rolling element bearing diagnostics: a tutorial](https://doi.org/10.1016/j.ymssp.2010.07.017). *Mechanical Systems and Signal Processing*, 25(2), 485–520. Envelope analysis of bearing faults.
 - SciPy developers, [scipy.signal.hilbert](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.hilbert.html), SciPy documentation. Returns the analytic signal.
-- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://www.semanticscholar.org/paper/A-3D-Acoustic-Local-Positioning-System-to-Track-a-Burnett-Thompson-York/13e659919f6201ceecdf458643b708d58912841c), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The envelope detection diagram (rectify and low-pass, and the Hilbert method that needs a gentler filter) is adapted from it.
+- Burnett-Thompson, A. (2007), *A 3D Local Positioning System to track A Neutrally Buoyant Flow Follower*, PhD thesis, University of Manchester, UK, chapter 3. The associated published paper is Burnett-Thompson, A. and York, T. (2007), [*A 3D Acoustic Local Positioning System to Track a Neutrally Buoyant Flow Follower*](https://doi.org/10.1109/IMTC.2007.379071), IEEE Instrumentation and Measurement Technology Conference (IMTC 2007). The envelope detection diagram (rectify and low-pass, and the Hilbert method that needs a gentler filter) is adapted from it.
 
 <LearnCta position="bottom" chart="signal envelope chart" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

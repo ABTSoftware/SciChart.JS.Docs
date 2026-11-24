@@ -51,7 +51,7 @@ datePublished: 2026-11-20
                 {
                     "@type": "Question",
                     "name": "What is the Gibbs phenomenon?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to around 1%, at the cost of a less steep edge." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to about 1.2%, at the cost of a less steep edge." }
                 },
                 {
                     "@type": "Question",
@@ -234,7 +234,7 @@ The exact limit is $\frac{1}{\pi}\int_0^{\pi} \frac{\sin x}{x}\,dx - \frac{1}{2}
 
 ### Reducing the Gibbs overshoot with sigma factors
 
-The ringing comes from cutting the series off abruptly at harmonic $N$. Tapering the coefficients instead, by multiplying harmonic $n$ by a **Lanczos sigma factor** $\sigma_n = \operatorname{sinc}\big(n/(N+1)\big)$, cuts the overshoot from about 9% to about 1.2% of the jump, but it softens the edge and slightly raises the RMS error (0.075 instead of 0.060 for the square wave at $N = 100$). This is the same trade-off a [window function](/learn/signal-processing/window-functions/) makes in spectrum analysis, and Gibbs ringing is the same effect you see as ringing from a sharp [low-pass filter](/learn/signal-processing/low-pass-filter/).
+The ringing comes from cutting the series off abruptly at harmonic $N$. Tapering the coefficients instead, by multiplying harmonic $n$ by a **Lanczos sigma factor** $\sigma_n = \operatorname{sinc}\big(n/(N+1)\big)$, cuts the overshoot from about 9% to about 1.2% of the jump, but it softens the edge and slightly raises the RMS error (about 0.078 instead of 0.064 for the square wave at $N = 100$). This is the same trade-off a [window function](/learn/signal-processing/window-functions/) makes in spectrum analysis, and Gibbs ringing is the same effect you see as ringing from a sharp [low-pass filter](/learn/signal-processing/low-pass-filter/).
 
 ## Fourier series vs Fourier transform vs DFT
 
@@ -451,7 +451,7 @@ A Fourier series describes a periodic signal as a sum of sine waves at whole-num
 
 ### What is the Gibbs phenomenon?
 
-The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to around 1%, at the cost of a less steep edge.
+The Gibbs phenomenon is the overshoot a Fourier series makes next to a jump in the signal. However many harmonics you add, the partial sum overshoots by about 9% of the jump on each side; more harmonics only squeeze the ripple closer to the jump. Smoothing the coefficients, for example with Lanczos sigma factors, reduces the overshoot to about 1.2%, at the cost of a less steep edge.
 
 ### How do I find Fourier series coefficients from measured data?
 

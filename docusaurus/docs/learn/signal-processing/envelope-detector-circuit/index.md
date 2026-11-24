@@ -144,7 +144,7 @@ At 22 µs the time constant is 22 carrier periods long and just inside the clipp
 
 A real diode changes the answer. With a 0.3 V Schottky diode and a 5 V carrier, the output is the envelope minus 0.3 V, so the modulation the capacitor has to follow is deeper: $m$ becomes $0.8 \times 5 / (5 - 0.3) = 0.85$, and the limit falls to 19.6 µs. The 22 µs design now clips slightly; $C = 1.8$ nF (18 µs) fixes it at the cost of a little more ripple.
 
-In a superheterodyne radio the detector usually works at the **intermediate frequency** (IF), 455 kHz for AM broadcast receivers, rather than at the station's own frequency. The carrier period is then 2.2 µs, so the same 22 µs leaves about 9% ripple, and the post-detector filter matters more.
+In a superheterodyne radio the detector usually works at the **intermediate frequency** (IF), 455 kHz for AM broadcast receivers, rather than at the station's own frequency. The carrier period is then 2.2 µs, so the same 22 µs leaves about 9.5% ripple, and the post-detector filter matters more.
 
 ## Ripple and distortion in a diode detector
 
@@ -393,6 +393,6 @@ Step through the input samples with a time step dt. At each step, let the capaci
 - Haykin, S. and Moher, M. (2009), *Communication Systems*, 5th edition, Wiley. Amplitude modulation, the envelope detector and its time-constant limits, and coherent (synchronous) detection.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Precision rectifiers and peak detectors with op-amps.
 - Analog Devices, [ADALM2000 Activity: Envelope Detector](https://www.analog.com/en/resources/analog-dialogue/studentzone/studentzone-september-2024.html), StudentZone, *Analog Dialogue*, September 2024. A bench build of diode envelope detectors.
-- Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Analytic signals and envelope estimation in software.
+- Smith, J. O., [Spectral Audio Signal Processing](https://ccrma.stanford.edu/~jos/sasp/), Center for Computer Research in Music and Acoustics (CCRMA), Stanford University. Analytic signals and Hilbert transform filters.
 
 <LearnCta position="bottom" chart="envelope detector simulator" demo="audio-analyzer-fft-example" demoLabel="audio spectrum analyzer chart" docs="/2d-charts/chart-types/fast-line-renderable-series/" docsLabel="SciChart.js line series documentation" />

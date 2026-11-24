@@ -125,7 +125,7 @@ The unit of a PSD is the square of the signal's unit, per hertz. Plots often sho
 
 A PSD in dB is $10 \log_{10}(S / S_\text{ref})$, using 10 rather than 20 because a PSD is already a power. So 2.44 × 10⁻⁴ V²/Hz is −36.1 dB re 1 V²/Hz, and its square root is 15.6 mV/√Hz. Every 10 dB is a factor of 10 in power density.
 
-The density works the same way for power in watts. A radio receiver's thermal noise floor is about −174 dBm/Hz at room temperature. In a 1 MHz bandwidth (60 dB above 1 Hz), that adds up to about −114 dBm. The density lets you work out the noise in any bandwidth by adding $10 \log_{10}(\text{bandwidth})$.
+The density works the same way for power in watts. A radio receiver's thermal noise floor is about −174 dBm/Hz at the standard reference temperature of 290 K, close to room temperature. In a 1 MHz bandwidth (60 dB above 1 Hz), that adds up to about −114 dBm. The density lets you work out the noise in any bandwidth by adding $10 \log_{10}(\text{bandwidth})$.
 
 ## How to read a PSD plot
 
@@ -157,7 +157,7 @@ Where:
 
 ### Step 2: why one periodogram isn't enough
 
-A periodogram of noise is very ragged. Each bin's value is random, with a spread as large as its average: about ±5.6 dB on a dB scale, however long the block. Making the block longer gives narrower bins, but each one is just as noisy. Measured with the demo on this page, one 1,024-point periodogram of its test signal has a standard deviation of about 5.4 dB across the noise floor, away from the two tones.
+A periodogram of noise is very ragged. Each bin's value is random, with a spread as large as its average: a standard deviation of about 5.6 dB on a dB scale, however long the block. Making the block longer gives narrower bins, but each one is just as noisy. Measured with the demo on this page, one 1,024-point periodogram of its test signal has a standard deviation of about 5.4 dB across the noise floor, away from the two tones.
 
 ### Step 3: Welch's method
 
@@ -174,7 +174,7 @@ $$
 
 ![Welch's method in four steps: a noisy record with a tone; four segments that overlap by half, each with a Hann window; a ragged periodogram for each segment; and their average, a smoother PSD in which the tone peak stands out](./welch-method-segments.svg)
 
-Averaging $K$ independent periodograms cuts the spread of each bin's power by a factor of $\sqrt{K}$ ([Welch, 1967](#sources)). On a dB scale, that leaves a spread of about $4.3/\sqrt{K}$ dB once $K$ is more than a few, since $10/\ln 10 \approx 4.3$. In the demo, averaging all 127 segments of 1,024 samples with 50% overlap brings the noise floor's spread down from about 5.4 dB to 0.37 dB, close to the 0.39 dB that $4.3/\sqrt{127}$ predicts.
+Averaging $K$ independent periodograms cuts the spread of each bin's power by a factor of $\sqrt{K}$ ([Welch, 1967](#sources)). On a dB scale, that leaves a spread of about $4.3/\sqrt{K}$ dB once $K$ is more than a few, since $10/\ln 10 \approx 4.3$. Hann-windowed segments that overlap by 50% are nearly independent, so the rule still holds closely. In the demo, averaging all 127 segments of 1,024 samples with 50% overlap brings the noise floor's spread down from about 5.4 dB to 0.37 dB, close to the 0.39 dB that $4.3/\sqrt{127}$ predicts.
 
 ### The trade-off: resolution vs variance
 

@@ -39,7 +39,7 @@ datePublished: 2026-11-19
                 {
                     "@type": "Question",
                     "name": "How do you calculate the centre frequency and bandwidth of a band-pass filter?",
-                    "acceptedAnswer": { "@type": "Answer", "text": "Take the two -3 dB cutoff frequencies, fL and fH. The bandwidth is their difference, fH - fL. The centre frequency is their geometric mean, the square root of fL × fH, not their average. For a band from 8 Hz to 13 Hz, the bandwidth is 5 Hz and the centre frequency is the square root of 104, about 10.2 Hz." }
+                    "acceptedAnswer": { "@type": "Answer", "text": "Take the two -3 dB cutoff frequencies, fL and fH. The bandwidth is their difference, fH - fL. For an analogue or IIR filter, the centre frequency is their geometric mean, the square root of fL × fH, not their average; a linear-phase FIR band is centred on the average. For a band from 8 Hz to 13 Hz, the bandwidth is 5 Hz and the centre frequency is the square root of 104, about 10.2 Hz." }
                 },
                 {
                     "@type": "Question",
@@ -78,7 +78,7 @@ A **band-pass filter** (BPF, also written bandpass) is a filter that lets throug
 
 :::tip Key takeaways
 - A band-pass filter keeps a band between two cutoffs and removes slower and faster changes. It behaves like a high-pass and a low-pass filter in a row.
-- Bandwidth is $f_H - f_L$. The centre frequency is the geometric mean, $f_0 = \sqrt{f_L f_H}$.
+- Bandwidth is $f_H - f_L$. For analogue and IIR filters, the centre frequency is the geometric mean, $f_0 = \sqrt{f_L f_H}$.
 - Q $= f_0 / \text{bandwidth}$. A high Q means a narrow band and more ringing.
 - A second-order band-pass falls at 20 dB per decade on each side. Higher orders fall faster.
 - In code, the usual designs are the biquad, a Butterworth high-pass plus low-pass, and the windowed-sinc FIR.
@@ -103,13 +103,13 @@ Any signal can be split into sine waves of different frequencies (the idea behin
 
 ### Centre frequency, bandwidth and Q
 
-The centre of a band-pass filter is the geometric mean of its cutoffs, because a filter's response is symmetrical on a log frequency scale, not a linear one:
+For analogue and IIR band-pass filters, the centre is the geometric mean of the cutoffs, because their response is symmetrical on a log frequency scale, not a linear one:
 
 $$
 f_0 = \sqrt{f_L \, f_H}, \qquad \text{BW} = f_H - f_L, \qquad Q = \frac{f_0}{\text{BW}}
 $$
 
-As a worked example, take the EEG alpha band. Brain rhythms between 8 and 13 Hz are called alpha waves. A filter for that band has $\text{BW} = 13 - 8 = 5$ Hz and $f_0 = \sqrt{8 \times 13} = \sqrt{104} \approx 10.2$ Hz, so $Q \approx 10.2 / 5 = 2.04$. The average of 8 and 13 is 10.5 Hz, which is not the centre. The gap grows with the band: for 300 Hz to 3.4 kHz, the centre is about 1 kHz but the average is 1.85 kHz.
+As a worked example, take the EEG alpha band. Brain rhythms between 8 and 13 Hz are called alpha waves. A filter for that band has $\text{BW} = 13 - 8 = 5$ Hz and $f_0 = \sqrt{8 \times 13} = \sqrt{104} \approx 10.2$ Hz, so $Q \approx 10.2 / 5 = 2.04$. The average of 8 and 13 is 10.5 Hz, which is not the centre of an analogue or IIR design. The gap grows with the band: for 300 Hz to 3.4 kHz, the centre is about 1 kHz but the average is 1.85 kHz.
 
 Working backwards from a centre and a Q, the cutoffs are:
 
@@ -135,7 +135,7 @@ Band-pass filters are used wherever one range of frequencies carries the informa
 - Radio and wireless: every receiver uses band-pass filters to select one channel and reject its neighbours. FM radios commonly filter at a 10.7 MHz intermediate frequency with a band roughly 200 kHz wide; mobile phones have band-pass filters for each frequency band they support.
 - Audio: a graphic equaliser is a bank of band-pass filters on standard octave or third-octave centres; a three-way loudspeaker crossover feeds the midrange driver through a band-pass; and a synthesiser's band-pass mode gives a thin, nasal tone.
 - Speech: telephone networks pass roughly 300 Hz to 3.4 kHz, enough for speech to be understood.
-- Brain and body signals: EEG analysis splits brain activity into conventional bands, roughly delta (below 4 Hz), theta (4–8 Hz), alpha (8–13 Hz), beta (13–30 Hz) and gamma (above 30 Hz). ECG and EMG monitors band-pass their signals to remove both baseline drift and high-frequency noise.
+- Brain and body signals: EEG analysis splits brain activity into conventional bands, delta (below 4 Hz), theta (4 to under 8 Hz), alpha (8–13 Hz), beta (14–30 Hz) and gamma (above 30 Hz, up to about 80 Hz). ECG and EMG monitors band-pass their signals to remove both baseline drift and high-frequency noise.
 - Vibration and machine monitoring: a damaged rolling bearing gives repeated small impacts that excite a high-frequency resonance of the machine. [Envelope analysis](/learn/signal-processing/hilbert-transform/) band-passes the vibration around that resonance, then looks for the impact rate in the envelope's spectrum.
 - Measuring one tone: before measuring the amplitude or phase of a test tone in a noisy signal, a narrow band-pass around it removes most of the noise.
 
@@ -238,7 +238,7 @@ For a wide band with steep sides, chain a Butterworth high-pass at $f_L$ and a B
 
 ### Windowed-sinc band-pass filter (FIR)
 
-An FIR filter is a list of weights, its **kernel**, slid along the signal by [convolution](/learn/signal-processing/convolution/). For a band-pass kernel, design two windowed-sinc low-pass kernels of the same length, one at $f_H$ and one at $f_L$, and subtract the second from the first: what passes the wider low-pass but not the narrower one is the band. With a symmetric kernel, every frequency is delayed by the same time (**linear phase**), so waveform shapes survive, and the stopband can be extremely deep. The price is length: the transition at each edge is roughly $4/M$ of the sample rate wide for a Blackman window of $M + 1$ taps, so a narrow band at a low frequency needs a long kernel. A windowed-sinc's edge frequency is where the gain is −6 dB, not −3 dB.
+An FIR filter is a list of weights, its **kernel**, slid along the signal by [convolution](/learn/signal-processing/convolution/). For a band-pass kernel, design two windowed-sinc low-pass kernels of the same length, one at $f_H$ and one at $f_L$, and subtract the second from the first: what passes the wider low-pass but not the narrower one is the band. With a symmetric kernel, every frequency is delayed by the same time (**linear phase**), so waveform shapes survive, and the stopband can be extremely deep. The price is length: the transition at each edge is roughly $4/M$ of the sample rate wide for a Blackman window of $M + 1$ taps, so a narrow band at a low frequency needs a long kernel. A windowed-sinc's edge frequency is where the gain is −6 dB, not −3 dB. Subtracting two low-pass kernels gives a response that is symmetrical on a linear frequency scale, so a linear-phase FIR band is centred on the average of its edges, not the geometric mean: the demo's 8–13 Hz kernel peaks at 10.5 Hz.
 
 ### How the three designs compare
 
@@ -433,7 +433,7 @@ A band-pass filter keeps one range of frequencies and reduces everything below a
 
 ### How do you calculate the centre frequency and bandwidth of a band-pass filter?
 
-Take the two -3 dB cutoff frequencies, fL and fH. The bandwidth is their difference, fH - fL. The centre frequency is their geometric mean, the square root of fL × fH, not their average. For a band from 8 Hz to 13 Hz, the bandwidth is 5 Hz and the centre frequency is the square root of 104, about 10.2 Hz.
+Take the two -3 dB cutoff frequencies, fL and fH. The bandwidth is their difference, fH - fL. For an analogue or IIR filter, the centre frequency is their geometric mean, the square root of fL × fH, not their average; a linear-phase FIR band is centred on the average. For a band from 8 Hz to 13 Hz, the bandwidth is 5 Hz and the centre frequency is the square root of 104, about 10.2 Hz.
 
 ### What is Q in a band-pass filter?
 

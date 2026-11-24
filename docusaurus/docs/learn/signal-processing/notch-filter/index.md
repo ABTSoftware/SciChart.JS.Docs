@@ -213,7 +213,7 @@ Its −3 dB width is exactly $\tfrac{f_s}{\pi}\arctan\alpha$, very close to $f_0
 
 Other digital approaches:
 
-- **FIR notch.** Zeros alone, $1 - 2\cos\omega_0\,z^{-1} + z^{-2}$, make a notch with no feedback, but it's very wide. A sharp FIR notch needs a long kernel (hundreds of taps for a few hertz at 1,000 samples per second), in exchange for linear phase.
+- **FIR notch.** Zeros alone, $1 - 2\cos\omega_0\,z^{-1} + z^{-2}$, make a notch with no feedback, but it's very wide. A sharp FIR notch needs a long kernel (several hundred to about a thousand taps for a few hertz at 1,000 samples per second), in exchange for linear phase.
 - **Forward-backward (zero-phase) filtering.** Run the biquad over recorded data forwards, then backwards. The phase shifts cancel and the notch gets twice as deep (in dB), at the cost of working offline only.
 - **Adaptive notch filter.** An adaptive filter, such as an LMS noise canceller fed with a reference taken from the mains, tracks the interference as its frequency and amplitude change, instead of using a fixed $f_0$.
 - **Spectral editing.** Take the [FFT](/learn/signal-processing/fast-fourier-transform/), set the bins around the hum to zero, and transform back. This is simple but leaks unless the hum sits exactly on a bin, and it treats the whole recording as one block.
@@ -231,7 +231,7 @@ Hum is rarely a pure sine. Rectifiers, lighting and motors distort the mains cur
 
 To remove them, run a notch at each harmonic in a row (a cascade of biquads), all with the same Q so the higher notches are proportionally wider. A set of evenly spaced notches like this is a **comb filter**. It can also be built in one step as $y[n] = x[n] - x[n-D]$ with $D = f_s / f_0$ samples, which places zeros at every multiple of $f_0$ (including 0 Hz), but its notches are very wide unless feedback is added.
 
-Check your result in the frequency domain: compute the [power spectral density](/learn/signal-processing/power-spectral-density/) before and after, and the hum peaks should be gone with the rest of the spectrum unchanged. Hum often arrives together with slow baseline wander; remove that with a [high-pass filter](/learn/signal-processing/high-pass-filter/) at about 0.5 Hz, before or after the notch. A harmonic above half the sample rate doesn't vanish: it [aliases](/learn/signal-processing/nyquist-and-aliasing/) to a lower frequency, where a notch at the "expected" harmonic won't find it.
+Check your result in the frequency domain: compute the [power spectral density](/learn/signal-processing/power-spectral-density/) before and after, and the hum peaks should be gone with the rest of the spectrum unchanged. Hum often arrives together with slow baseline wander; remove that with a [high-pass filter](/learn/signal-processing/high-pass-filter/), before or after the notch. Diagnostic ECGs use a cutoff of about 0.05 Hz, or up to 0.67 Hz with a linear-phase filter (Kligfield et al., 2007); about 0.5 Hz is a monitoring setting. A harmonic above half the sample rate doesn't vanish: it [aliases](/learn/signal-processing/nyquist-and-aliasing/) to a lower frequency, where a notch at the "expected" harmonic won't find it.
 
 ## Notch vs band-stop vs low-pass filter
 
@@ -494,6 +494,7 @@ Compute the coefficients of a second-order IIR notch (a biquad) from the centre 
 - Smith, J. O., [Introduction to Digital Filters with Audio Applications](https://ccrma.stanford.edu/~jos/filters/). Center for Computer Research in Music and Acoustics, Stanford University. Poles, zeros and the z-plane.
 - Oppenheim, A. V. and Schafer, R. W. (2010), *Discrete-Time Signal Processing*, 3rd edition, Pearson. IIR filter design and the bilinear transform.
 - Horowitz, P. and Hill, W. (2015), *The Art of Electronics*, 3rd edition, Cambridge University Press. Twin-T and active notch filters.
+- Kligfield, P. et al. (2007), [Recommendations for the Standardization and Interpretation of the Electrocardiogram, Part I](https://doi.org/10.1161/CIRCULATIONAHA.106.180200). *Circulation*, 115(10), 1306–1324. The 0.05 Hz and 0.67 Hz low-frequency cutoffs for diagnostic ECGs.
 - Widrow, B. et al. (1975), [Adaptive noise cancelling: principles and applications](https://doi.org/10.1109/PROC.1975.10036). *Proceedings of the IEEE*, 63(12). Adaptive cancellation of mains interference in ECGs.
 - [The Electricity Safety, Quality and Continuity Regulations 2002, regulation 27](https://www.legislation.gov.uk/uksi/2002/2665/regulation/27) (the ±1% limit on mains frequency in Great Britain), and the IEC's [World Plugs](https://www.iec.ch/world-plugs) list of mains frequencies by country.
 

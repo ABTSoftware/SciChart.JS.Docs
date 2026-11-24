@@ -125,7 +125,7 @@ Decibels turn multiplication into addition, which is why the two panels can be b
 
 ## How to draw a Bode plot by hand
 
-Hendrik Bode's insight, set out in his 1945 book on feedback amplifiers, is that a transfer function written as a product of simple factors becomes a sum on a Bode plot, and each factor has an easy straight-line shape. To draw one:
+Hendrik Bode's insight, first published in a 1940 paper and set out in full in his 1945 book on feedback amplifiers, is that a transfer function written as a product of simple factors becomes a sum on a Bode plot, and each factor has an easy straight-line shape. To draw one:
 
 1. Factor the transfer function into a constant gain, powers of $s$, and terms of the form $(1 + s/\omega_c)$ for real poles and zeros, or a quadratic for complex pairs.
 2. Find each corner frequency $\omega_c$ (or $f_c = \omega_c / 2\pi$) and mark it on the log axis.
@@ -193,7 +193,7 @@ Control engineers use the Bode plot to check a feedback loop before building it.
 - **Gain margin:** at the **phase crossover frequency**, where the phase reaches −180°, how far the gain is below 0 dB. It is how much more gain the loop could take before it oscillates.
 - **Phase margin:** at the **gain crossover frequency**, where the gain crosses 0 dB, how far the phase is above −180°. It is how much extra lag the loop could take.
 
-Both should be positive for a stable closed loop (for loops that are stable when opened, which covers most practical designs). A common rule of thumb in control engineering is a phase margin of 30° to 60° and a gain margin of at least 6 dB (a factor of 2). Small margins give a closed loop that rings and overshoots.
+Both should be positive for a stable closed loop (for loops that are stable when opened and cross 0 dB and −180° only once each, which covers most practical designs). A common rule of thumb in control engineering is a phase margin of 30° to 60° and a gain margin of at least 6 dB (a factor of 2). Small margins give a closed loop that rings and overshoots.
 
 For example, take a loop of three identical poles with a gain of 4, $L = 4/(1 + j f/f_c)^3$:
 
@@ -477,6 +477,7 @@ Compute the magnitude in dB and the phase in degrees of your transfer function a
 ## Sources
 
 - Bode, H. W. (1945), *Network Analysis and Feedback Amplifier Design*, Van Nostrand. The origin of the gain-phase plot, the straight-line approximations and the gain and phase margins.
+- Bode, H. W. (1940), [Relations between attenuation and phase in feedback amplifier design](https://doi.org/10.1002/j.1538-7305.1940.tb00839.x). *Bell System Technical Journal*, 19(3), pp. 421–454. The first publication of the gain-phase relations and the straight-line method.
 - Nyquist, H. (1932), "Regeneration Theory", *Bell System Technical Journal*, 11(1), pp. 126–147. The Nyquist stability criterion.
 - Ogata, K. (2010), *Modern Control Engineering*, 5th edition, Prentice Hall. Bode, Nyquist and Nichols plots; gain and phase margins.
 - Oppenheim, A. V. and Willsky, A. S. (1997), *Signals and Systems*, 2nd edition, Prentice Hall; lectures on [MIT OpenCourseWare, RES.6-007](https://ocw.mit.edu/courses/res-6-007-signals-and-systems-spring-2011/). Frequency response, impulse response and Bode plots of first- and second-order systems.

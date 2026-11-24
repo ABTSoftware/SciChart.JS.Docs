@@ -165,7 +165,7 @@ $$
 d(A, B) = \sqrt{\frac{2\, n_A n_B}{n_A + n_B}}\; \lVert \bar{a} - \bar{b} \rVert
 $$
 
-which equals the plain distance when both clusters are single points. All four methods can be computed with one update formula, published by Lance and Williams in 1967, so the algorithm stays the same and only the update changes.
+which equals the plain distance when both clusters are single points. All four methods can be computed with one update formula, published by Lance and Williams in 1967 (Wishart showed in 1969 that Ward's method fits it too), so the algorithm stays the same and only the update changes.
 
 Two other linkages, **centroid** and **median**, measure the distance between cluster centres. They can produce inversions, where a later merge sits lower than an earlier one, which makes the tree impossible to cut cleanly. Single, complete, average and Ward never do.
 
@@ -470,6 +470,9 @@ Run agglomerative clustering to get the list of merges, each with its two childr
 - Schubert, E., Sander, J., Ester, M., Kriegel, H.-P. and Xu, X. (2017), [DBSCAN revisited, revisited: why and how you should (still) use DBSCAN](https://doi.org/10.1145/3068335). *ACM Transactions on Database Systems*, 42(3), 19.
 - Ward, J. H. (1963), [Hierarchical grouping to optimize an objective function](https://doi.org/10.1080/01621459.1963.10500845). *Journal of the American Statistical Association*, 58(301), 236–244.
 - Lance, G. N. and Williams, W. T. (1967), [A general theory of classificatory sorting strategies: 1. Hierarchical systems](https://doi.org/10.1093/comjnl/9.4.373). *The Computer Journal*, 9(4), 373–380.
+- Wishart, D. (1969), [An algorithm for hierarchical classifications](https://doi.org/10.2307/2528688). *Biometrics*, 25(1), 165–170. Ward's method in the Lance–Williams formula.
+- Bar-Joseph, Z., Gifford, D. K. and Jaakkola, T. S. (2001), [Fast optimal leaf ordering for hierarchical clustering](https://doi.org/10.1093/bioinformatics/17.suppl_1.S22). *Bioinformatics*, 17(suppl 1), S22–S29.
+- Campello, R. J. G. B., Moulavi, D. and Sander, J. (2013), [Density-based clustering based on hierarchical density estimates](https://doi.org/10.1007/978-3-642-37456-2_14). *Advances in Knowledge Discovery and Data Mining (PAKDD 2013)*, Lecture Notes in Computer Science 7819, 160–172. HDBSCAN.
 - Eisen, M. B., Spellman, P. T., Brown, P. O. and Botstein, D. (1998), [Cluster analysis and display of genome-wide expression patterns](https://doi.org/10.1073/pnas.95.25.14863). *Proceedings of the National Academy of Sciences*, 95(25), 14863–14868.
 - Sokal, R. R. and Rohlf, F. J. (1962), [The comparison of dendrograms by objective methods](https://doi.org/10.2307/1217208). *Taxon*, 11(2), 33–40. The cophenetic correlation.
 - Hubert, L. and Arabie, P. (1985), [Comparing partitions](https://doi.org/10.1007/BF01908075). *Journal of Classification*, 2, 193–218. The adjusted Rand index.
