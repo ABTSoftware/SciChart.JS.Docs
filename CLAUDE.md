@@ -33,6 +33,23 @@ The site uses `@docusaurus/plugin-client-redirects` (configured in `plugins` in 
 - Update internal links to the new URL as well. Don't rely on the redirect for links inside the docs.
 - Redirects only exist in production builds. Check them with `npm run build` (look for the old path under `docusaurus/build/`) or `npm run serve`, not `npm start`. The build fails if a `to` path doesn't exist.
 
+## Small HTML (Bing SEO rule)
+
+Bing's Site Scan can flag pages whose HTML is too large ("HTML size is too long"), so keep each page's HTML small. This applies to every page, not only the learning center.
+
+- **Code samples are served as plain text, then coloured in the browser.** `docusaurus/src/theme/CodeBlock/Content/index.tsx` writes each code block into the HTML as plain text (one line per row, with line numbers and highlighted lines), and Prism colours it once the page has loaded. Build-time highlighting wrapped every token in a `<span>` with an inline colour style: on learn pages that was about two thirds of the HTML (a median of 288 KB of a 417 KB page, for about 17 KB of code).
+  - **Keep all sample code in the HTML.** Search engines and AI crawlers index it, so never load it only on demand (when a tab is opened) or move it out to an external link.
+  - **Put code in fenced code blocks**, on their own or inside `<CodeSnippetBlock>` tabs, so it goes through Docusaurus's `CodeBlock`. Don't highlight code at build time another way, for example with `prism-react-renderer`'s `Highlight`, or with hand-written `<span>` markup.
+  - **Check the HTML after a change to code blocks:** in `npm run build` output, the code is in the page's HTML with no `class="token …"` spans, and is coloured after the page loads.
+
+## React components: no hydration mismatches
+
+Each page is rendered to HTML at build time, then React "hydrates" it in the browser. If the two don't match, React discards the built HTML and renders the whole page again in the browser, which slows the page down (React errors #418, #423 and #425 in the console).
+
+- **Never put CSS as a text child of `<style>`** (`<style>{css}</style>`) in a component. React escapes `>` to `&gt;` in the built HTML, and a `<style>` element doesn't decode it, so the CSS breaks and hydration fails. Use `<style dangerouslySetInnerHTML={{ __html: css }} />`, or a CSS module.
+- **Render the same thing on the server and in the browser's first render.** Anything that depends on the browser (`window`, the screen size, the current date) goes in a `useEffect`, `useIsBrowser` or `<BrowserOnly>`.
+- **Check after changing a component:** load a production build (`npm run build`, then `npm run serve`) and look for React errors in the console. `npx docusaurus build --dev` gives the full messages, naming the text that doesn't match.
+
 ## Learning center (`/learn/`)
 
 Guides to data visualisation ("What is a candlestick chart?", "How to read a log scale") at `/documentation/js/current/learn/`, in `docusaurus/docs/learn/`. Branch: `v6.x-learning-center`, off `v6.x`.
@@ -44,10 +61,6 @@ Guides to data visualisation ("What is a candlestick chart?", "How to read a log
   - **PNG page images** (`static/img/learn/<slug>-og.png`, made by the page image script): run `sh scripts/compress-learn-images.sh` (or pass the new files as arguments), then `sh scripts/make-learn-thumbnails.sh`. It shrinks each image to a 256-colour palette with `pngquant`, then recompresses with `oxipng`. They stay 1200×630 PNGs at the same path, because they're also the share image (`og:image`). Expect about 60 to 200 KB each; an uncompressed one is 400 to 800 KB. Needs `brew install pngquant oxipng webp`.
   - **SVG diagrams** (in each page folder): minify with svgo using the repo's settings, which keep `<title>`, `<desc>`, IDs and `viewBox`: `npx -y svgo@3.3.2 --config svgo.config.cjs <file>.svg`. Look at the diagram afterwards.
   - **Other images** (JPG, PNG examples): no wider than twice the width they're shown at (a 240 px thumbnail → 480 px), JPEG quality about 80.
-- **Code samples are served as plain text, then coloured in the browser.** On `/learn/` pages, `src/theme/CodeBlock/Content/index.tsx` writes each code block into the HTML as plain text (one line per row, with line numbers and highlighted lines), and Prism colours it once the page has loaded. Build-time highlighting wrapped every token in a `<span>` with an inline colour style, about two thirds of a learn page's HTML.
-  - **Keep all sample code in the HTML.** Search engines and AI crawlers index it, so never load it only on demand (when a tab is opened) or move it out to an external link.
-  - **Put code in fenced code blocks**, on their own or inside `<CodeSnippetBlock>` tabs, so it goes through Docusaurus's `CodeBlock`. Don't highlight code at build time another way, for example with `prism-react-renderer`'s `Highlight`, or with hand-written `<span>` markup.
-  - **Check the HTML after a change to code blocks:** in `npm run build` output, the code is in the learn page's HTML with no `class="token …"` spans, and is coloured after the page loads.
 - **Moving learn pages:** a page's URL follows its folder, so moving a folder changes its URLs. Add a redirect for every page moved (see *Moving or renaming pages* above), and update the `related:` front matter, section hubs and the sidebar generator (`custom-plugins/learnSidebarGenerator.ts`) where needed.
 - **Archived versions:** when a new version moves to `/current/`, the old version's copy of `/learn/` may stay in its archive (for example `/documentation/js/v6/learn/`). Like every archived page, each of those pages **must** carry a canonical link to the same path under `/documentation/js/current/learn/`.
 - **Before writing or changing a learn page, read [docusaurus/docs/learn/CLAUDE.md](docusaurus/docs/learn/CLAUDE.md).** It points to the private rules, which are kept in the git-ignored `private/` folder.
