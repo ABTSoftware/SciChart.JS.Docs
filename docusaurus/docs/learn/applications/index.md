@@ -99,7 +99,7 @@ For more on how SciChart is used in this sector, see [SciChart for medical](http
 
 ## Motorsport
 
-Race engineers and sim racers compare laps on distance-based traces to find where time is won and lost.
+Race engineers and sim racers compare laps on distance-based traces to find where time is won and lost. For more on how SciChart is used in this sector, see [SciChart for motorsport and automotive](https://www.scichart.com/why-scichart-best-for-motorsport-and-automotive/).
 
 | Guide | What it covers |
 | --- | --- |
