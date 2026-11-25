@@ -184,7 +184,7 @@ export default function SciChartIntroCard() {
                 </div>
                 <video
                     ref={videoRef}
-                    className={`${styles.video} ${videoState === "playing" ? styles.videoPlaying : ""}`}
+                    className={videoState === "playing" ? `${styles.video} ${styles.videoPlaying}` : styles.video}
                     preload="none"
                     muted
                     loop

@@ -5,6 +5,57 @@ type Props = {
     title?: string;
 };
 
+// The bar above each live demo, with the "Edit in CodePen" button.
+// Note the "> div" selector: see the comment where the <style> is rendered.
+const CODEPEN_NAV_CSS = `.codepen-nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(8,13,51);
+
+    .scichart {
+        display: flex;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        color: #CCCCCC;
+        font-size: 1.5rem;
+
+        > div {
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    span, svg {
+        color: #CCCCCC;
+        transition: all 0.2s;
+    }
+
+    button {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        color: white;
+        padding: 0.4rem 0.8rem;
+        margin-left: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+
+        .codepen_logo {
+            width: 100px;
+            margin-bottom: -2px;
+            cursor: pointer;
+        }
+    }
+
+    &:hover {
+        span, svg {
+            color: #FFFFFF;
+        }
+    }
+}`;
+
 export const CodePenLauncher: React.FC<Props> = ({ html, js, css, title = "Demo" }) => {
     const openInCodePen = () => {
         if (!js) {
@@ -38,56 +89,10 @@ export const CodePenLauncher: React.FC<Props> = ({ html, js, css, title = "Demo"
 
     return (
         <nav className="codepen-nav">
-            <style>{
-                `.codepen-nav {
-                    display: flex;
-                    align-items: center;
-                    width: 100%;
-                    background-color: rgb(8,13,51);
-
-                    .scichart {
-                        display: flex;
-                        padding: 0.5rem 1rem;
-                        align-items: center;
-                        color: #CCCCCC;
-                        font-size: 1.5rem;
-
-                        > div {
-                            width: 2rem;
-                            height: 2rem;
-                        }
-                    }
-
-                    span, svg {
-                        color: #CCCCCC;
-                        transition: all 0.2s;
-                    }
-
-                    button {
-                        all: unset;
-                        cursor: pointer;
-                        display: flex;
-                        color: white;
-                        padding: 0.4rem 0.8rem;
-                        margin-left: auto;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: end;
-
-                        .codepen_logo {
-                            width: 100px;
-                            margin-bottom: -2px;
-                            cursor: pointer;
-                        }
-                    }
-
-                    &:hover {
-                        span, svg {
-                            color: #FFFFFF;
-                        }
-                    }
-                }`
-            }</style>
+            {/* Set as raw HTML: as a text child, React escapes the ">" in CODEPEN_NAV_CSS to "&gt;" in the page's HTML,
+                which a <style> element doesn't decode, so hydration fails and React re-renders the whole page in the
+                browser. */}
+            <style dangerouslySetInnerHTML={{ __html: CODEPEN_NAV_CSS }} />
 
             <div className="scichart">
                 <div>
