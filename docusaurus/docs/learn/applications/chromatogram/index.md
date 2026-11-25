@@ -213,9 +213,9 @@ In both, a gradient (HPLC) or temperature ramp (GC) speeds up the late peaks and
 A real baseline has two problems, and they are handled differently.
 
 - Drift is a slow change in the baseline over the run: a gradient changing the mobile phase's absorbance in HPLC, column bleed as a GC oven heats up, or a detector warming up. It moves the start and end of each integration line, so it changes the areas, especially of wide, low peaks.
-- Noise is the fast random wobble on top. It sets the smallest peak you can see. A common rule is that a peak is detectable at a signal-to-noise ratio of about 3 and can be measured reliably at about 10 (see [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/)).
+- Noise is the fast random wobble on top. It sets the smallest peak you can see. A common rule is that a peak is detectable at a signal-to-noise ratio of about 3 and can be measured reliably at about 10 (see [signal-to-noise ratio](/learn/applications/signal-processing/signal-to-noise-ratio/)).
 
-Smoothing the trace with a [low-pass filter](/learn/signal-processing/low-pass-filter/), such as a moving average or a Savitzky-Golay filter, reduces noise, but a filter that is too strong widens narrow peaks and cuts their height. Keep the filter narrow compared with the narrowest peak. Data systems often smooth only to find the peaks, and integrate the raw signal.
+Smoothing the trace with a [low-pass filter](/learn/applications/signal-processing/low-pass-filter/), such as a moving average or a Savitzky-Golay filter, reduces noise, but a filter that is too strong widens narrow peaks and cuts their height. Keep the filter narrow compared with the narrowest peak. Data systems often smooth only to find the peaks, and integrate the raw signal.
 
 ## Common chromatogram mistakes
 

@@ -159,7 +159,7 @@ Results from many sites are usually plotted as a scatter of residual voltage aga
 
 ## What are harmonics in power systems?
 
-A **harmonic** is a sine wave at a whole multiple of the supply frequency, called its order: on a 50 Hz supply, the 3rd harmonic is 150 Hz, the 5th 250 Hz and the 7th 350 Hz. Any distorted waveform that repeats every cycle can be split into a fundamental and a set of harmonics, which is what a [fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/) does.
+A **harmonic** is a sine wave at a whole multiple of the supply frequency, called its order: on a 50 Hz supply, the 3rd harmonic is 150 Hz, the 5th 250 Hz and the 7th 350 Hz. Any distorted waveform that repeats every cycle can be split into a fundamental and a set of harmonics, which is what a [fast Fourier transform (FFT)](/learn/applications/signal-processing/fast-fourier-transform/) does.
 
 Harmonics start in the current. A linear load, such as a heater or a filament lamp, draws a current the same shape as the voltage. A non-linear load doesn't:
 
@@ -246,7 +246,7 @@ Some standards set limits; others set measurement methods, so that every analyse
 
 IEEE 519 is assessed statistically. The 95th percentile of 10-minute values over a week must meet the limits, and short bursts may go higher, so a single snapshot can't show compliance.
 
-The IEC 61000-4-7 window is why the harmonic analysis uses a whole number of cycles. With exactly 10 cycles in the window, every harmonic lands on an FFT line, and a rectangular window gives exact amplitudes. A tapered [window function](/learn/signal-processing/window-functions/) such as Hann is only needed when the window falls out of step with the supply frequency.
+The IEC 61000-4-7 window is why the harmonic analysis uses a whole number of cycles. With exactly 10 cycles in the window, every harmonic lands on an FFT line, and a rectangular window gives exact amplitudes. A tapered [window function](/learn/applications/signal-processing/window-functions/) such as Hann is only needed when the window falls out of step with the supply frequency.
 
 ## How a power quality analyser displays data
 
@@ -462,7 +462,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript FFT spectrum analyser](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React FFT spectrum analyser](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular FFT spectrum analyser](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). Related techniques: the [React realtime ghosted traces chart](https://www.scichart.com/demo/react/realtime-ghosted-traces-chart), [React line chart with threshold colours](https://www.scichart.com/demo/react/line-splitting-thresholds), [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart) and [React polar gauge dashboard](https://www.scichart.com/demo/react/polar-gauge-fifo-dashboard).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [column chart](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/), the [polar line chart](/2d-charts/chart-types/polar-line-renderable-series/), the [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/), [window functions](/learn/signal-processing/window-functions/), [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) and [HMI and SCADA](/learn/applications/hmi-scada/). For the industry, see SciChart for [HMI and SCADA](https://www.scichart.com/scada-big-data/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/).
+**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [column chart](/2d-charts/chart-types/fast-column-renderable-series/column-series-type/), the [polar line chart](/2d-charts/chart-types/polar-line-renderable-series/), the [horizontal line annotation](/2d-charts/annotations-api/horizontal-line-annotation/), and the learning center guides to the [fast Fourier transform](/learn/applications/signal-processing/fast-fourier-transform/), [window functions](/learn/applications/signal-processing/window-functions/), [signal-to-noise ratio](/learn/applications/signal-processing/signal-to-noise-ratio/) and [HMI and SCADA](/learn/applications/hmi-scada/). For the industry, see SciChart for [HMI and SCADA](https://www.scichart.com/scada-big-data/) and [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/).
 
 ## Frequently asked questions
 

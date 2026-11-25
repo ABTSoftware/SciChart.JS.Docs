@@ -115,7 +115,7 @@ Every telemetry system, from a model rocket to a deep-space probe, follows the s
 
 1. Sensors. Thermocouples, pressure transducers, strain gauges, accelerometers, GPS receivers and position sensors turn physical quantities into voltages or digital readings.
 2. Signal conditioning. Amplifiers scale each signal to the range of the converter, remove offsets, and an anti-aliasing low-pass filter removes frequencies too high for the sample rate.
-3. Sampling. An analogue-to-digital converter (ADC) turns each voltage into a number of counts. Each channel is sampled only as fast as it needs: more than twice the highest frequency it contains, by the [Nyquist rule](/learn/signal-processing/nyquist-and-aliasing/). A tank temperature changes over seconds; a vibration sensor needs thousands of samples a second.
+3. Sampling. An analogue-to-digital converter (ADC) turns each voltage into a number of counts. Each channel is sampled only as fast as it needs: more than twice the highest frequency it contains, by the [Nyquist rule](/learn/applications/signal-processing/nyquist-and-aliasing/). A tank temperature changes over seconds; a vibration sensor needs thousands of samples a second.
 4. Framing. The samples from all channels are interleaved into a fixed pattern of words (a frame) or into self-describing packets, with a sync pattern so the receiver can find the start, a counter, and a time stamp.
 
 Between steps 4 and 5 sits the link, the downlink in the diagram. A transmitter sends the bit stream over a radio link, through a satellite relay, or along a cable or fibre. On a test range, aircraft and missile telemetry uses dedicated bands; in the USA, 1435 to 1525 MHz in L-band is set aside for aeronautical telemetry.
@@ -224,7 +224,7 @@ Most real systems mix them. A racing car or a test aircraft sends a subset of it
 Most telemetry display mistakes distort time: misaligned clocks, aliasing, hidden peaks and invented data across gaps.
 
 - **Plotting channels on unsynchronised time bases.** If one stream is stamped when it was sampled and another when it reached the ground, the panes disagree by the link delay, and causes appear after their effects. Use the on-board time stamp for every channel.
-- **Ignoring aliasing.** A vibration channel sampled too slowly, or without an anti-aliasing filter, shows a slow wobble that isn't there. The fix is upstream, in the sample rate and filter; see [Nyquist and aliasing](/learn/signal-processing/nyquist-and-aliasing/).
+- **Ignoring aliasing.** A vibration channel sampled too slowly, or without an anti-aliasing filter, shows a slow wobble that isn't there. The fix is upstream, in the sample rate and filter; see [Nyquist and aliasing](/learn/applications/signal-processing/nyquist-and-aliasing/).
 - **Decimating fast channels for display.** Showing every 20th point of a 1,000 samples-per-second channel can make a millisecond shock vanish. Use a min-max [downsampling](/learn/big-data/downsampling/) method that keeps the extremes in each pixel, or draw every point with a renderer that can.
 - **Putting too many channels on one axis.** Ten traces with different units on one y-axis makes all of them hard to read. Group related channels into panes, each with its own scale.
 - **Autoscaling live axes.** A y-axis that rescales on every update makes the trace jump about and hides how far a value is from its limit. Fix each pane's range to the channel's expected span.

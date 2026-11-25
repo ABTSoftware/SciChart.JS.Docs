@@ -284,9 +284,9 @@ Behind the trace, the signal is sampled, digitised and filtered before it is dra
 
 | Problem | What causes it | Filter that removes it |
 | --- | --- | --- |
-| Baseline wander | Breathing, movement, electrode contact | [High-pass filter](/learn/signal-processing/high-pass-filter/) |
-| Mains hum at 50 or 60 Hz | Nearby power cables and equipment | [Notch filter](/learn/signal-processing/notch-filter/) |
-| Fuzzy, jittery trace | Muscle activity, shivering | [Low-pass filter](/learn/signal-processing/low-pass-filter/) |
+| Baseline wander | Breathing, movement, electrode contact | [High-pass filter](/learn/applications/signal-processing/high-pass-filter/) |
+| Mains hum at 50 or 60 Hz | Nearby power cables and equipment | [Notch filter](/learn/applications/signal-processing/notch-filter/) |
+| Fuzzy, jittery trace | Muscle activity, shivering | [Low-pass filter](/learn/applications/signal-processing/low-pass-filter/) |
 
 Filters change the waveform as well as the noise. The AHA recommendations for diagnostic ECGs set the low-frequency cut-off at 0.05 Hz (or up to 0.67 Hz with linear-phase digital filters) and the high-frequency cut-off at 150 Hz for adults. Monitors often offer a narrower "monitoring" band, for example around 0.5 to 40 Hz, which gives a steadier trace but can distort the ST segment and reduce small, sharp features such as pacemaker spikes. Check which filter mode a strip was recorded in before reading its ST segments.
 

@@ -254,7 +254,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript scatter chart](https://www.scichart.com/demo/javascript/scatter-chart) · [React scatter chart](https://www.scichart.com/demo/react/scatter-chart) · [Angular scatter chart](https://www.scichart.com/demo/angular/scatter-chart)
 
-**Go deeper:** [SciChart.js scatter plot documentation](/2d-charts/chart-types/xy-scatter-renderable-series/), including point marker types and colouring individual points. To find groups in a scatter plot, see [k-means clustering](/learn/machine-learning/k-means-clustering/) and [dimensionality reduction](/learn/machine-learning/dimensionality-reduction/).
+**Go deeper:** [SciChart.js scatter plot documentation](/2d-charts/chart-types/xy-scatter-renderable-series/), including point marker types and colouring individual points. To find groups in a scatter plot, see [k-means clustering](/learn/applications/machine-learning/k-means-clustering/) and [dimensionality reduction](/learn/applications/machine-learning/dimensionality-reduction/).
 
 ## Frequently asked questions
 

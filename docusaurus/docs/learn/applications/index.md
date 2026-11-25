@@ -2,14 +2,14 @@
 sidebar_position: 1
 sidebar_label: Applications
 title: "Charts in Science, Engineering, Medicine and Business, With Examples"
-description: "How to read the charts used in science, engineering, medicine and business, from ECGs and spectra to telemetry and KPI dashboards, each with a live example."
-keywords: ["telemetry", "scada", "hmi", "chromatogram", "ecg", "capnography", "spectroscopy", "mass spectrum", "hr diagram", "stress strain curve", "kpi dashboard", "oscilloscope", "vibration analysis", "scientific charts", "engineering charts"]
+description: "How to read the charts used in science, engineering, medicine and business, from ECGs, spectra and telemetry to signal processing and machine learning, each with a live example."
+keywords: ["telemetry", "scada", "hmi", "chromatogram", "ecg", "capnography", "spectroscopy", "mass spectrum", "hr diagram", "stress strain curve", "kpi dashboard", "oscilloscope", "vibration analysis", "scientific charts", "engineering charts", "signal processing", "fourier transform", "fft", "low pass filter", "machine learning visualization", "decision boundary", "roc curve", "k means clustering"]
 datePublished: 2026-11-20
 ---
 
 # Applications
 
-Each guide here covers one application, from medicine and life sciences to engineering, energy, motorsport, astronomy, data science and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
+Each guide here covers one application, from medicine and life sciences to engineering, energy, motorsport, astronomy, signal processing, machine learning and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
 
 The guides are grouped by sector, in alphabetical order.
 
@@ -72,7 +72,21 @@ For more on how SciChart is used in this sector, see [SciChart for life sciences
 
 ## Machine learning
 
-The [Machine Learning](/learn/machine-learning/) section has 9 guides with models that train live in the browser: activation functions, anomaly detection, decision boundaries, dimensionality reduction, hierarchical and k-means clustering, regularization, ROC curves and support vector machines.
+These guides explain one machine learning idea each with a live chart: the model trains or recomputes as you move a slider, so you can see what it does rather than read about it.
+
+| Guide | What it covers |
+| --- | --- |
+| [Activation functions](/learn/applications/machine-learning/activation-functions/) | Sigmoid, tanh, ReLU, GELU and softmax: formulas, derivatives and a network trained live |
+| [Anomaly detection](/learn/applications/machine-learning/anomaly-detection/) | Z-scores, seasonal baselines and isolation forests on a live sensor stream |
+| [Decision boundary](/learn/applications/machine-learning/decision-boundary/) | How k-NN, logistic regression, trees, forests, naive Bayes and SVMs divide data, trained live |
+| [Dimensionality reduction](/learn/applications/machine-learning/dimensionality-reduction/) | PCA, t-SNE and UMAP compared, with a 2D and 3D embedding of digit images |
+| [Hierarchical clustering](/learn/applications/machine-learning/hierarchical-clustering/) | How to read a dendrogram, linkage methods, and DBSCAN |
+| [K-means clustering](/learn/applications/machine-learning/k-means-clustering/) | How k-means works, the elbow method and silhouette score, step by step |
+| [Regularization](/learn/applications/machine-learning/regularization/) | Ridge and lasso regression, overfitting and the bias–variance trade-off |
+| [ROC curve](/learn/applications/machine-learning/roc-curve/) | How ROC and precision-recall curves are built, what AUC means, and choosing a threshold |
+| [Support vector machine](/learn/applications/machine-learning/support-vector-machine/) | Margins, support vectors and the kernel trick, in 2D and 3D |
+
+For the statistics charts these guides use, see [correlation matrix](/learn/chart-types/cartesian/correlation-matrix/) and [residual plot and Q-Q plot](/learn/chart-types/cartesian/residual-plot/).
 
 ## Medical
 
@@ -85,7 +99,7 @@ For more on how SciChart is used in this sector, see [SciChart for medical](http
 
 ## Motorsport
 
-Race engineers and sim racers compare laps on distance-based traces to find where time is won and lost.
+Race engineers and sim racers compare laps on distance-based traces to find where time is won and lost. For more on how SciChart is used in this sector, see [SciChart for motorsport and automotive](https://www.scichart.com/why-scichart-best-for-motorsport-and-automotive/).
 
 | Guide | What it covers |
 | --- | --- |
@@ -102,7 +116,46 @@ These guides chart data from astronomy and pure mathematics, where one well-chos
 
 ## Signal processing
 
-The [Signal Processing](/learn/signal-processing/) section has 18 guides on the maths behind instruments and analysers: the Fourier transform and FFT, filters, power spectral density, sampling and aliasing, correlation and envelope detection.
+**Signal processing** is how instruments and analysers see what frequencies a signal contains, remove noise or pick out a pattern, in sound, vibration, sensor readings and radio.
+
+### Sampling
+
+| Guide | What it covers |
+| --- | --- |
+| [Nyquist frequency and aliasing](/learn/applications/signal-processing/nyquist-and-aliasing/) | How fast to sample, and why frequencies above half the sample rate turn into false, lower ones |
+
+### Frequency analysis
+
+| Guide | What it covers |
+| --- | --- |
+| [Audio spectrum analyzer](/learn/applications/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one, with a real-time demo |
+| [Envelope detector circuit](/learn/applications/signal-processing/envelope-detector-circuit/) | How a diode detector recovers the envelope of an AM signal, and how to choose R and C |
+| [FFT (fast Fourier transform)](/learn/applications/signal-processing/fast-fourier-transform/) | The fast algorithm behind every spectrum analyser: bins, resolution, windowing and leakage |
+| [Fourier series](/learn/applications/signal-processing/fourier-series/) | How a repeating wave is built from harmonics |
+| [Fourier transform](/learn/applications/signal-processing/fourier-transform/) | How any signal can be split into sine waves, and what its frequency spectrum shows |
+| [Hilbert transform and envelope detection](/learn/applications/signal-processing/hilbert-transform/) | The analytic signal, a signal's envelope, and its instantaneous phase and frequency |
+| [Power spectral density](/learn/applications/signal-processing/power-spectral-density/) | Noise and vibration power per hertz, Welch averaging and RMS from the spectrum |
+| [Signal-to-noise ratio](/learn/applications/signal-processing/signal-to-noise-ratio/) | Measuring SNR in decibels, and improving it with filtering and averaging |
+| [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How a signal's frequencies change over time, as a chart |
+| [Window functions](/learn/applications/signal-processing/window-functions/) | Hann, Hamming, Blackman and flat-top windows, and how they control spectral leakage |
+
+### Filters
+
+| Guide | What it covers |
+| --- | --- |
+| [Band-pass filter](/learn/applications/signal-processing/band-pass-filter/) | Keeps one band of frequencies: centre frequency, bandwidth and Q |
+| [Bode plot and frequency response](/learn/applications/signal-processing/bode-plot/) | How a filter or system changes each frequency's gain and phase, and how to read and sketch the plot |
+| [FIR vs IIR filters](/learn/applications/signal-processing/fir-vs-iir-filters/) | The two ways to build a digital filter: windowed-sinc and Butterworth design |
+| [High-pass filter](/learn/applications/signal-processing/high-pass-filter/) | Removes drift and slow changes and keeps the fast detail |
+| [Low-pass filter](/learn/applications/signal-processing/low-pass-filter/) | Keeps slow changes and removes high-frequency noise: cutoff, roll-off and filter types |
+| [Notch filter](/learn/applications/signal-processing/notch-filter/) | Removes one narrow frequency, such as 50 or 60 Hz mains hum |
+
+### Combining and comparing signals
+
+| Guide | What it covers |
+| --- | --- |
+| [Autocorrelation and cross-correlation](/learn/applications/signal-processing/autocorrelation/) | Finding a repeating period, or the delay between two signals |
+| [Convolution](/learn/applications/signal-processing/convolution/) | How filtering, smoothing and echoes all come from one operation, step by step |
 
 ## Test and measurement
 
@@ -116,6 +169,6 @@ For more on how SciChart is used in this sector, see [SciChart for test and meas
 | [Vibration analysis](/learn/applications/vibration-analysis/) | Reading vibration spectra to find imbalance, misalignment, looseness and bearing faults, with ISO severity zones |
 
 
-For the chart types these guides use, see [types of charts](/learn/chart-types/), [real-time charts](/learn/real-time/) and [signal processing](/learn/signal-processing/).
+For the chart types these guides use, see [types of charts](/learn/chart-types/), [real-time charts](/learn/real-time/) and [big data and performance](/learn/big-data/).
 
 <LearnCta position="bottom" />

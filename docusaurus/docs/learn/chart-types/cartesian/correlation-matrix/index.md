@@ -196,7 +196,7 @@ A correlation matrix compresses each scatter plot to one number. Other charts ke
 
 In practice, use the heatmap to find the interesting pairs, then open each one as a scatter plot.
 
-The word correlogram has a second meaning. In time-series analysis, it is a plot of a signal's [autocorrelation](/learn/signal-processing/autocorrelation/) against the time lag, a different chart.
+The word correlogram has a second meaning. In time-series analysis, it is a plot of a signal's [autocorrelation](/learn/applications/signal-processing/autocorrelation/) against the time lag, a different chart.
 
 ## Ordering and clustering the variables
 
@@ -430,7 +430,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript correlation plot](https://www.scichart.com/demo/javascript/correlation-plot) · [React correlation plot](https://www.scichart.com/demo/react/correlation-plot) · [Angular correlation plot](https://www.scichart.com/demo/angular/correlation-plot). For heatmaps in general, see the [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart) and [React heatmap interactions](https://www.scichart.com/demo/react/heatmap-interactions).
 
-**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), [heatmap colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), and how SciChart is used for [semiconductor test and yield data](https://www.scichart.com/semiconductors-big-data-visualization/). PCA is built from the correlation (or covariance) matrix: see [dimensionality reduction](/learn/machine-learning/dimensionality-reduction/).
+**Go deeper:** [SciChart.js heatmap documentation](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), [heatmap colour maps and legends](/2d-charts/chart-types/uniform-heatmap-renderable-series/color-maps-and-legends/), and how SciChart is used for [semiconductor test and yield data](https://www.scichart.com/semiconductors-big-data-visualization/). PCA is built from the correlation (or covariance) matrix: see [dimensionality reduction](/learn/applications/machine-learning/dimensionality-reduction/).
 
 ## Frequently asked questions
 
