@@ -191,7 +191,7 @@ Two rules of thumb:
 
 In digital signal processing (audio, sensors, radio), **downsampling by a factor M** means keeping every Mth sample, which divides the **sample rate** by M. Recording at 96,000 samples a second and keeping every second sample gives 48,000 samples a second.
 
-Downsampling also lowers the [Nyquist limit](/learn/signal-processing/nyquist-and-aliasing/). A signal sampled at a rate *f*<sub>s</sub> can only represent frequencies below *f*<sub>s</sub>/2. After downsampling by M, that limit falls to *f*<sub>s</sub>/(2M). Any part of the signal above the new limit doesn't disappear. It **aliases**: it folds back and shows up as a false, lower frequency that can't be told apart from real content.
+Downsampling also lowers the [Nyquist limit](/learn/applications/signal-processing/nyquist-and-aliasing/). A signal sampled at a rate *f*<sub>s</sub> can only represent frequencies below *f*<sub>s</sub>/2. After downsampling by M, that limit falls to *f*<sub>s</sub>/(2M). Any part of the signal above the new limit doesn't disappear. It **aliases**: it folds back and shows up as a false, lower frequency that can't be told apart from real content.
 
 ![Two panels: on the left, a slow wave with a fast ripple sampled once a second with no filter, where the samples trace a false wave with the wrong height and timing; on the right, the same signal filtered first, where the samples follow the real slow wave](./decimation-aliasing.svg)
 

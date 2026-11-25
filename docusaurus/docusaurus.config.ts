@@ -231,6 +231,26 @@ const config: Config = {
         CustomCopyPlugin,
         // Front matter of every learning center guide, for the "Related guides" cards (see the plugin's comments)
         learnGuidesPlugin,
+        // Learning center: Machine Learning and Signal Processing moved under Applications (Nov 2026). The build writes a
+        // small page at each old URL that sends readers (and search engines, via a canonical link) to the new one.
+        [
+            "@docusaurus/plugin-client-redirects",
+            {
+                redirects: [
+                    { from: "/learn/machine-learning/", to: "/learn/applications/" },
+                    { from: "/learn/signal-processing/", to: "/learn/applications/" }
+                ],
+                createRedirects(existingPath: string) {
+                    for (const section of ["machine-learning", "signal-processing"]) {
+                        const prefix = `/learn/applications/${section}/`;
+                        if (existingPath.startsWith(prefix) && existingPath.length > prefix.length) {
+                            return existingPath.replace(prefix, `/learn/${section}/`);
+                        }
+                    }
+                    return undefined;
+                }
+            }
+        ],
         [
             require.resolve("@cmfcmf/docusaurus-search-local"),
             {

@@ -1,6 +1,7 @@
-// Regroups the learning center's Applications guides by sector in the sidebar, and shows the Machine Learning and
-// Signal Processing sections as sectors too. Only the sidebar tree changes: folders, doc ids and URLs stay as they are
-// (/learn/applications/<slug>/, /learn/machine-learning/<slug>/ and /learn/signal-processing/<slug>/).
+// Regroups the learning center's Applications guides by sector in the sidebar. The Machine Learning and Signal
+// Processing guides live in sub-folders of Applications (/learn/applications/machine-learning/<slug>/ and
+// /learn/applications/signal-processing/<slug>/) and each sub-folder is shown as a sector as it is, in its own order.
+// Only the sidebar tree changes: folders, doc ids and URLs stay as they are.
 //
 // Everything else in the docs sidebar is still generated from the folder structure. To file a new Applications
 // guide under a sector, add its folder name to APPLICATION_SECTORS below. A guide that isn't listed still appears,
@@ -16,10 +17,10 @@ type GeneratorArgs = { defaultSidebarItemsGenerator: (args: any) => Promise<Item
 
 const LEARN_INDEX = "learn/index";
 const APPLICATIONS_INDEX = "learn/applications/index";
-// Whole learning center sections shown as sectors inside Applications: section hub doc id -> sector label
-const SECTIONS_AS_SECTORS: Record<string, string> = {
-    "learn/machine-learning/index": "Machine Learning",
-    "learn/signal-processing/index": "Signal Processing"
+// Sub-folders of Applications shown as whole sectors: folder name -> sector label
+const SUBFOLDER_SECTORS: Record<string, string> = {
+    "machine-learning": "Machine Learning",
+    "signal-processing": "Signal Processing"
 };
 const OTHER_SECTOR = "Other applications";
 
@@ -65,6 +66,13 @@ const itemLabel = (item: Item): string => item.label ?? item.id ?? "";
 /** Doc id without a trailing "/index", so "a/b/index" and "a/b" match. */
 const baseId = (id: string): string => id.replace(/\/index$/, "");
 
+/** Doc id of the first doc inside a sidebar item (the item itself, its link, or its first descendant). */
+function firstDocId(item: Item): string {
+    if (item?.type === "doc") return item.id;
+    if (item?.type === "category") return linkId(item) ?? (item.items?.length ? firstDocId(item.items[0]) : "");
+    return "";
+}
+
 /**
  * Finds the sidebar entries for referenced guides anywhere in the tree, so their labels and real doc ids can be reused.
  * A guide can appear as a doc item or as a category whose link is the guide.
@@ -83,13 +91,16 @@ function findDocs(items: Item[], ids: Set<string>, found: Map<string, { id: stri
 
 function regroupApplications(learnItems: Item[]): Item[] {
     const applications = learnItems.find((i) => linkId(i) === APPLICATIONS_INDEX);
-    const sections = learnItems.filter((i) => (linkId(i) ?? "") in SECTIONS_AS_SECTORS);
     if (!applications) return learnItems;
 
     const groups = new Map<string, Item[]>();
+    const subfolderSectors: Item[] = [];
     for (const item of applications.items as Item[]) {
-        const id: string = item.type === "doc" ? item.id : (linkId(item) ?? "");
-        const folder = id.replace(/^learn\/applications\//, "").split("/")[0];
+        const folder = firstDocId(item).replace(/^learn\/applications\//, "").split("/")[0];
+        if (item.type === "category" && !linkId(item) && folder in SUBFOLDER_SECTORS) {
+            subfolderSectors.push({ ...item, label: SUBFOLDER_SECTORS[folder] });
+            continue;
+        }
         const sector = APPLICATION_SECTORS[folder] ?? OTHER_SECTOR;
         if (!groups.has(sector)) groups.set(sector, []);
         groups.get(sector)!.push(item);
@@ -112,7 +123,7 @@ function regroupApplications(learnItems: Item[]): Item[] {
         collapsible: true,
         items
     }));
-    for (const section of sections) sectors.push({ ...section, label: SECTIONS_AS_SECTORS[linkId(section)!] });
+    sectors.push(...subfolderSectors);
 
     sectors.sort((a, b) => {
         // "Other applications" always goes last
@@ -121,9 +132,7 @@ function regroupApplications(learnItems: Item[]): Item[] {
         return a.label.localeCompare(b.label, "en");
     });
 
-    return learnItems
-        .filter((i) => !sections.includes(i))
-        .map((i) => (i === applications ? { ...applications, items: sectors } : i));
+    return learnItems.map((i) => (i === applications ? { ...applications, items: sectors } : i));
 }
 
 function walk(items: Item[]): Item[] {

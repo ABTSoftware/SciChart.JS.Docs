@@ -244,7 +244,7 @@ Use a Smith chart when you need the impedance itself; a polar plot is enough for
 | $\lvert S_{11} \rvert$ in dB, or VSWR, against frequency | Reflection size on a rectangular chart | You need bandwidth: over which frequencies the return loss beats, say, 10 dB |
 | $R$ and $X$ against frequency | Resistance and reactance on a rectangular chart | You are fitting a circuit model, or want exact values at each frequency |
 
-A [polar area chart](/learn/chart-types/radial/polar-area-chart/) or [radar chart](/learn/chart-types/radial/radar-chart/) uses the same circular layout for other data. For a filter's gain and phase against frequency, use a [Bode plot](/learn/signal-processing/bode-plot/).
+A [polar area chart](/learn/chart-types/radial/polar-area-chart/) or [radar chart](/learn/chart-types/radial/radar-chart/) uses the same circular layout for other data. For a filter's gain and phase against frequency, use a [Bode plot](/learn/applications/signal-processing/bode-plot/).
 
 ## Common Smith chart mistakes
 

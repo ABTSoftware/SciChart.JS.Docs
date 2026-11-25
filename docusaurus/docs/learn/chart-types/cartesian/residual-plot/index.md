@@ -146,7 +146,7 @@ Least-squares regression assumes that each error is independent of the others. W
 - A steady trend means something changed during the run that the model doesn't include, such as instrument drift or temperature.
 - A saw-tooth (up, down, up) means negative autocorrelation, often from over-correction in a control loop.
 
-The residuals vs fitted plot can look perfect while residuals vs order shows strong dependence, because sorting by fitted value scrambles the time order. The [autocorrelation guide](/learn/signal-processing/autocorrelation/) explains how to measure it by lag, and the Durbin-Watson test gives a single number for lag 1. With autocorrelated errors, the coefficients may be fine, but their standard errors are usually too small and p-values too optimistic.
+The residuals vs fitted plot can look perfect while residuals vs order shows strong dependence, because sorting by fitted value scrambles the time order. The [autocorrelation guide](/learn/applications/signal-processing/autocorrelation/) explains how to measure it by lag, and the Durbin-Watson test gives a single number for lag 1. With autocorrelated errors, the coefficients may be fine, but their standard errors are usually too small and p-values too optimistic.
 
 ## What is a Q-Q plot?
 

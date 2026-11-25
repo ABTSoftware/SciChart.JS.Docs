@@ -102,7 +102,7 @@ A **time series graph** (also known as a time series chart or time plot) is a gr
 - A live time series appends new readings and drops the oldest, so the graph shows a moving window of fixed length.
 :::
 
-A **time series** is a list of values of one quantity, each with a time stamp, in time order: a city's hourly temperature, a share's daily closing price, a heart monitor's 500 samples a second, a website's visits per day. Two things set it apart from other data. The order matters, and neighbouring values tend to resemble each other (statisticians call this [autocorrelation](/learn/signal-processing/autocorrelation/)), so the graph has to keep them in sequence.
+A **time series** is a list of values of one quantity, each with a time stamp, in time order: a city's hourly temperature, a share's daily closing price, a heart monitor's 500 samples a second, a website's visits per day. Two things set it apart from other data. The order matters, and neighbouring values tend to resemble each other (statisticians call this [autocorrelation](/learn/applications/signal-processing/autocorrelation/)), so the graph has to keep them in sequence.
 
 ### What does a time series graph look like?
 
@@ -218,7 +218,7 @@ Three things decide what it shows:
 - Trailing or centred. A trailing average uses only past readings, so it can run live, but it lags behind the data by half its window: a 24-hour trailing average shows the retrofit drop about 12 hours late. A centred average puts the window around each point, so it doesn't lag, but it can't be computed for the newest half-window until the future readings arrive.
 - Missing data. An average over a window with gaps should average only the readings it has, and show nothing when too few are left.
 
-A moving average is a simple [low-pass filter](/learn/signal-processing/low-pass-filter/): it passes slow changes and blocks fast ones. An exponential moving average weights recent readings more heavily and is cheaper to update live.
+A moving average is a simple [low-pass filter](/learn/applications/signal-processing/low-pass-filter/): it passes slow changes and blocks fast ones. An exponential moving average weights recent readings more heavily and is cheaper to update live.
 
 ## Resampling large time series
 

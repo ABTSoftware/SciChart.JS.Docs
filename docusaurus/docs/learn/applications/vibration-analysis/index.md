@@ -174,13 +174,13 @@ The standard also treats a large change as significant on its own, even inside z
 
 A vibration reading starts as a **time waveform**: the sensor's signal over a fraction of a second or a few seconds. It shows impacts, rubs and beats directly, but a running machine mixes dozens of sources into one trace, so it's hard to pick them apart by eye.
 
-The **spectrum** separates them. A [fast Fourier transform (FFT)](/learn/signal-processing/fast-fourier-transform/) turns the waveform into a list of frequencies and their amplitudes, and each source in the machine shows up as a peak at its own frequency. Analysts usually look at the velocity spectrum for machine faults and the acceleration spectrum for bearings and gears.
+The **spectrum** separates them. A [fast Fourier transform (FFT)](/learn/applications/signal-processing/fast-fourier-transform/) turns the waveform into a list of frequencies and their amplitudes, and each source in the machine shows up as a peak at its own frequency. Analysts usually look at the velocity spectrum for machine faults and the acceleration spectrum for bearings and gears.
 
 Three settings decide what a spectrum can show:
 
 - Maximum frequency (Fmax). The data must be sampled at more than twice Fmax. For general machine faults, a common rule of thumb sets Fmax at about 40 to 50 times the running speed; bearing and gear work needs several kilohertz.
 - Lines of resolution. The spectrum's frequency spacing is Fmax divided by the number of lines (400 to 12,800 is common). Finer spacing needs a longer recording: 1,600 lines up to 1,000 Hz is a spacing of 0.625 Hz and needs 1.6 s of data.
-- Window and averaging. A [window function](/learn/signal-processing/window-functions/) (usually Hann) keeps a peak from smearing across the spectrum, and averaging several spectra steadies the noise.
+- Window and averaging. A [window function](/learn/applications/signal-processing/window-functions/) (usually Hann) keeps a peak from smearing across the spectrum, and averaging several spectra steadies the noise.
 
 ### Orders: 1×, 2× and harmonics
 
@@ -238,7 +238,7 @@ A small bearing defect makes short, weak impacts. In a velocity spectrum, their 
 **Envelope analysis** (also called demodulation) uses that ringing:
 
 1. Band-pass filter the acceleration signal around the excited resonance, for example 2 to 5 kHz.
-2. Take its envelope, the outline of the ringing bursts, with a rectifier and low-pass filter or the [Hilbert transform](/learn/signal-processing/hilbert-transform/).
+2. Take its envelope, the outline of the ringing bursts, with a rectifier and low-pass filter or the [Hilbert transform](/learn/applications/signal-processing/hilbert-transform/).
 3. Take the spectrum of the envelope. Its lines are the rate at which the impacts repeat: BPFO and its harmonics for an outer-race defect, BPFI with 1× sidebands for an inner-race defect.
 
 Randall and Antoni's tutorial on bearing diagnostics calls envelope analysis the benchmark method, and describes how to choose the band with spectral kurtosis.
@@ -471,7 +471,7 @@ Key points:
 
 **See it in the demo app:** [JavaScript audio analyzer](https://www.scichart.com/demo/javascript/audio-analyzer-fft-example) · [React audio analyzer](https://www.scichart.com/demo/react/audio-analyzer-fft-example) · [Angular audio analyzer](https://www.scichart.com/demo/angular/audio-analyzer-fft-example). Related techniques: the [React interactive waterfall chart](https://www.scichart.com/demo/react/interactive-waterfall-chart), [React 3D waterfall spectral chart](https://www.scichart.com/demo/react/interactive-3d-waterfall-spectral-chart), [React heatmap chart](https://www.scichart.com/demo/react/heatmap-chart) and [React synchronised multi-chart](https://www.scichart.com/demo/react/sync-multi-chart).
 
-**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [mountain (area) chart](/2d-charts/chart-types/fast-mountain-area-renderable-series/), the [vertical line annotation](/2d-charts/annotations-api/vertical-line-annotation/), the [uniform heatmap for spectrograms](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), and the learning center guides to the [fast Fourier transform](/learn/signal-processing/fast-fourier-transform/), [window functions](/learn/signal-processing/window-functions/), [power spectral density](/learn/signal-processing/power-spectral-density/) and the [Hilbert transform](/learn/signal-processing/hilbert-transform/). For the industries, see SciChart for [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/), [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/) and [HMI and SCADA](https://www.scichart.com/scada-big-data/).
+**Go deeper:** [SciChart.js line chart documentation](/2d-charts/chart-types/fast-line-renderable-series/), the [mountain (area) chart](/2d-charts/chart-types/fast-mountain-area-renderable-series/), the [vertical line annotation](/2d-charts/annotations-api/vertical-line-annotation/), the [uniform heatmap for spectrograms](/2d-charts/chart-types/uniform-heatmap-renderable-series/uniform-heatmap-chart-type/), and the learning center guides to the [fast Fourier transform](/learn/applications/signal-processing/fast-fourier-transform/), [window functions](/learn/applications/signal-processing/window-functions/), [power spectral density](/learn/applications/signal-processing/power-spectral-density/) and the [Hilbert transform](/learn/applications/signal-processing/hilbert-transform/). For the industries, see SciChart for [instrumentation](https://www.scichart.com/best-instrumentation-engineering-software/), [aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/) and [HMI and SCADA](https://www.scichart.com/scada-big-data/).
 
 ## Frequently asked questions
 

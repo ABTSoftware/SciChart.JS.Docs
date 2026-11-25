@@ -225,7 +225,7 @@ $$
 \frac{2\sqrt{x}}{|\rho| \ln x} \cos\left(\gamma \ln x - \arg\rho\right)
 $$
 
-to leading order: an oscillation in $\ln x$ with frequency $\gamma$ and an amplitude that grows like $x^\beta$, which is $\sqrt{x}$ on the critical line. Adding waves of increasing frequency to sharpen a smooth curve into steps is the same idea as a Fourier series building a square wave (see the [Fourier transform guide](/learn/signal-processing/fourier-transform/)).
+to leading order: an oscillation in $\ln x$ with frequency $\gamma$ and an amplitude that grows like $x^\beta$, which is $\sqrt{x}$ on the critical line. Adding waves of increasing frequency to sharpen a smooth curve into steps is the same idea as a Fourier series building a square wave (see the [Fourier transform guide](/learn/applications/signal-processing/fourier-transform/)).
 
 With no zeros, the formula is a smooth curve close to $\operatorname{li}(x)$. With 30 zeros it gives 15.07 at $x = 50$ and 25.18 at $x = 100$, against true counts of 15 and 25; with 300 zeros, 15.02 and 25.01, and the steps at each prime are sharp.
 

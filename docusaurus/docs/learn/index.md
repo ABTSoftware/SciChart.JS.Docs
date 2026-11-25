@@ -58,28 +58,28 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Signal processing
 
-[**Signal processing**](/learn/signal-processing/): how to see what frequencies a signal contains, and how to filter it, with live examples.
+[**Signal processing**](/learn/applications/#signal-processing): how to see what frequencies a signal contains, and how to filter it, with live examples.
 
 | Topic | What it covers |
 | --- | --- |
-| [Audio spectrum analyzer](/learn/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one |
-| [Autocorrelation](/learn/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
-| [Band-pass filter](/learn/signal-processing/band-pass-filter/) | Keeping one band of frequencies |
-| [Bode plot](/learn/signal-processing/bode-plot/) | Reading a filter's frequency response: gain and phase |
-| [Convolution](/learn/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
-| [Envelope detector circuit](/learn/signal-processing/envelope-detector-circuit/) | Recovering an AM signal's envelope with a diode and an RC filter |
-| [FFT (fast Fourier transform)](/learn/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
-| [FIR vs IIR filters](/learn/signal-processing/fir-vs-iir-filters/) | Windowed-sinc and Butterworth design compared |
-| [Fourier series](/learn/signal-processing/fourier-series/) | Building a repeating wave from harmonics |
-| [Fourier transform](/learn/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
-| [High-pass filter](/learn/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
-| [Hilbert transform](/learn/signal-processing/hilbert-transform/) | Envelope detection, and instantaneous phase and frequency |
-| [Low-pass filter](/learn/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
-| [Notch filter](/learn/signal-processing/notch-filter/) | Removing mains hum and other single tones |
-| [Nyquist frequency and aliasing](/learn/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
-| [Power spectral density](/learn/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
-| [Signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
-| [Window functions](/learn/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
+| [Audio spectrum analyzer](/learn/applications/signal-processing/audio-spectrum-analyzer/) | How a live spectrum analyser works and how to read one |
+| [Autocorrelation](/learn/applications/signal-processing/autocorrelation/) | Finding repeating periods and time delays |
+| [Band-pass filter](/learn/applications/signal-processing/band-pass-filter/) | Keeping one band of frequencies |
+| [Bode plot](/learn/applications/signal-processing/bode-plot/) | Reading a filter's frequency response: gain and phase |
+| [Convolution](/learn/applications/signal-processing/convolution/) | The one operation behind filtering, smoothing and echoes |
+| [Envelope detector circuit](/learn/applications/signal-processing/envelope-detector-circuit/) | Recovering an AM signal's envelope with a diode and an RC filter |
+| [FFT (fast Fourier transform)](/learn/applications/signal-processing/fast-fourier-transform/) | The fast algorithm behind spectrum analysers, with windowing and leakage |
+| [FIR vs IIR filters](/learn/applications/signal-processing/fir-vs-iir-filters/) | Windowed-sinc and Butterworth design compared |
+| [Fourier series](/learn/applications/signal-processing/fourier-series/) | Building a repeating wave from harmonics |
+| [Fourier transform](/learn/applications/signal-processing/fourier-transform/) | Splitting a signal into sine waves, and reading its spectrum |
+| [High-pass filter](/learn/applications/signal-processing/high-pass-filter/) | Removing drift and keeping the fast detail |
+| [Hilbert transform](/learn/applications/signal-processing/hilbert-transform/) | Envelope detection, and instantaneous phase and frequency |
+| [Low-pass filter](/learn/applications/signal-processing/low-pass-filter/) | Removing high-frequency noise: cutoff, roll-off and filter types |
+| [Notch filter](/learn/applications/signal-processing/notch-filter/) | Removing mains hum and other single tones |
+| [Nyquist frequency and aliasing](/learn/applications/signal-processing/nyquist-and-aliasing/) | How fast to sample, and what goes wrong when you don't |
+| [Power spectral density](/learn/applications/signal-processing/power-spectral-density/) | Measuring noise and vibration per hertz, with Welch averaging |
+| [Signal-to-noise ratio](/learn/applications/signal-processing/signal-to-noise-ratio/) | Measuring and improving SNR |
+| [Window functions](/learn/applications/signal-processing/window-functions/) | Hann, Hamming and Blackman windows, and spectral leakage |
 
 ## Applications
 
@@ -115,18 +115,18 @@ A guide to data visualisation. Which chart should you use, how do you read it, a
 
 ## Machine learning
 
-[**Machine learning**](/learn/machine-learning/): classifiers, clustering and model evaluation explained with live charts.
+[**Machine learning**](/learn/applications/#machine-learning): classifiers, clustering and model evaluation explained with live charts.
 
 | Topic | What it covers |
 | --- | --- |
-| [Activation functions](/learn/machine-learning/activation-functions/) | Sigmoid, ReLU, softmax and the rest, with a network trained live |
-| [Anomaly detection](/learn/machine-learning/anomaly-detection/) | Spotting anomalies in a live time series |
-| [Decision boundary](/learn/machine-learning/decision-boundary/) | How classifiers divide data, compared side by side |
-| [Dimensionality reduction](/learn/machine-learning/dimensionality-reduction/) | PCA, t-SNE and UMAP compared |
-| [Hierarchical clustering](/learn/machine-learning/hierarchical-clustering/) | Reading a dendrogram, and DBSCAN |
-| [K-means clustering](/learn/machine-learning/k-means-clustering/) | K-means, the elbow method and silhouette score |
-| [Regularization](/learn/machine-learning/regularization/) | Ridge and lasso regression and overfitting |
-| [ROC curve](/learn/machine-learning/roc-curve/) | ROC and precision-recall curves and what AUC means |
-| [Support vector machine](/learn/machine-learning/support-vector-machine/) | SVMs and the kernel trick in 2D and 3D |
+| [Activation functions](/learn/applications/machine-learning/activation-functions/) | Sigmoid, ReLU, softmax and the rest, with a network trained live |
+| [Anomaly detection](/learn/applications/machine-learning/anomaly-detection/) | Spotting anomalies in a live time series |
+| [Decision boundary](/learn/applications/machine-learning/decision-boundary/) | How classifiers divide data, compared side by side |
+| [Dimensionality reduction](/learn/applications/machine-learning/dimensionality-reduction/) | PCA, t-SNE and UMAP compared |
+| [Hierarchical clustering](/learn/applications/machine-learning/hierarchical-clustering/) | Reading a dendrogram, and DBSCAN |
+| [K-means clustering](/learn/applications/machine-learning/k-means-clustering/) | K-means, the elbow method and silhouette score |
+| [Regularization](/learn/applications/machine-learning/regularization/) | Ridge and lasso regression and overfitting |
+| [ROC curve](/learn/applications/machine-learning/roc-curve/) | ROC and precision-recall curves and what AUC means |
+| [Support vector machine](/learn/applications/machine-learning/support-vector-machine/) | SVMs and the kernel trick in 2D and 3D |
 
 <LearnCta position="bottom" />

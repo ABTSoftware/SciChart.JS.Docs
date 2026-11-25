@@ -117,7 +117,7 @@ A peak has three things to read: its position (which energy, so which bond or tr
 
 **Infrared (IR) spectroscopy** shines infrared light through or onto a sample and records which wavenumbers it absorbs. A bond absorbs when the light matches the frequency at which it stretches or bends, and only if that vibration changes the molecule's dipole moment. Polar bonds such as O–H, N–H and C=O therefore give strong bands.
 
-Most modern instruments are FTIR spectrometers: they record an interferogram and turn it into a spectrum with a [Fourier transform](/learn/signal-processing/fourier-transform/). Many measure by attenuated total reflectance (ATR), pressing the sample against a crystal, so liquids and solids need almost no preparation.
+Most modern instruments are FTIR spectrometers: they record an interferogram and turn it into a spectrum with a [Fourier transform](/learn/applications/signal-processing/fourier-transform/). Many measure by attenuated total reflectance (ATR), pressing the sample against a crystal, so liquids and solids need almost no preparation.
 
 ### How to read an IR spectrum
 
@@ -241,7 +241,7 @@ An **NMR spectrum** (nuclear magnetic resonance) also runs from right to left, l
 A spectrum from an instrument is rarely ready to read. Four steps are common, in this order:
 
 1. Baseline correction. Remove the slow background under the bands: scattering in IR and UV-Vis, fluorescence in Raman, a drifting lamp or detector. The usual methods fit a smooth curve to the points between the bands: an iterated polynomial that is pushed down under the bands, an asymmetric least-squares curve, or a "rubber band" stretched under the spectrum. For turbid UV-Vis samples, scattering rises steeply towards short wavelengths, roughly as $1/\lambda^4$, and can be fitted in a region where the sample doesn't absorb.
-2. Smoothing. Reduce noise without blunting the bands. The **Savitzky–Golay filter** fits a short polynomial in a moving window, and keeps peak heights and positions better than a moving average of the same width. It is a [low-pass filter](/learn/signal-processing/low-pass-filter/), so a window wider than the narrowest band widens it and lowers its peak. See [signal-to-noise ratio](/learn/signal-processing/signal-to-noise-ratio/) for how to measure the noise you are removing.
+2. Smoothing. Reduce noise without blunting the bands. The **Savitzky–Golay filter** fits a short polynomial in a moving window, and keeps peak heights and positions better than a moving average of the same width. It is a [low-pass filter](/learn/applications/signal-processing/low-pass-filter/), so a window wider than the narrowest band widens it and lowers its peak. See [signal-to-noise ratio](/learn/applications/signal-processing/signal-to-noise-ratio/) for how to measure the noise you are removing.
 3. Peak picking. Find band positions automatically: local maxima that stand out from their surroundings by a minimum prominence, or zero crossings of the first derivative. Second-derivative spectra help separate overlapping bands.
 4. Normalisation. Put spectra on the same scale before comparing them: divide by the largest band, by the total area, or by an internal standard band that shouldn't change. Standard normal variate (SNV) scaling is common before chemometrics such as principal component analysis.
 
