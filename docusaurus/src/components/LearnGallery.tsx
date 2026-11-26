@@ -10,16 +10,21 @@ import styles from "./RelatedGuides.module.css";
 // - group: every guide directly in a folder, e.g. group="learn/axes-and-scales". Sorted by sidebar label,
 //   so a new guide appears in the gallery without editing the hub.
 // - slugs: a list of guide slugs (folder names), shown in the order given. For galleries that don't follow
-//   the folders, such as the chart type groups. An unknown slug fails the build, so a renamed guide is caught.
+//   the folders, such as the chart type groups. An unknown slug fails the production build, so a renamed guide
+//   is caught. On the dev server it is skipped with a console warning instead, because the guide list can be
+//   briefly out of date while the server reloads, and one missing card shouldn't crash the whole page.
 
 type Props = { group?: string; slugs?: string[] };
 
 function pickGuides(guides: LearnGuide[], { group, slugs }: Props): LearnGuide[] {
     if (slugs) {
-        return slugs.map((slug) => {
+        return slugs.flatMap((slug) => {
             const guide = guides.find((g) => g.slug === slug);
-            if (!guide) throw new Error(`LearnGallery: "${slug}" is not a learn guide slug`);
-            return guide;
+            if (guide) return [guide];
+            const message = `LearnGallery: "${slug}" is not a learn guide slug`;
+            if (process.env.NODE_ENV === "production") throw new Error(message);
+            console.warn(message);
+            return [];
         });
     }
     if (group) {
