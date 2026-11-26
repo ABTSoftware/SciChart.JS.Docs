@@ -178,9 +178,9 @@ For the general rules of shading areas by a value, such as normalising and choos
 
 ## How to create a population density map in JavaScript, React or Angular
 
-SciChart.js draws charts with WebGL, so a map of 3,108 county outlines, or 1.6 million dots, stays smooth to zoom and pan. The demo below draws the counties with triangle series, one per density class, and the dots with a single scatter series.
+SciChart.js draws charts with WebGL, so a map of 3,108 county outlines, or 1.6 million dots, stays smooth to zoom and pan. The demo below draws the counties with triangle series, one per density class, the dots with a single scatter series, and the 3D view with a 3D column series.
 
-Choose **Choropleth** or **Dot density** with the buttons; in the dot view, choose how many people each dot stands for. Hover over a county to see its name, density, population and land area. Scroll to zoom into a city, drag to pan, and double-click to reset.
+Choose **Choropleth**, **Dot density** or **3D** with the buttons; in the dot view, choose how many people each dot stands for. Hover over a county to see its name, density, population and land area. Scroll to zoom into a city, drag to pan, and double-click to reset. The 3D view is the column map from the section above, in the same demo.
 
 <LiveDocSnippet maxWidth={'100%'} name="./Basic/demo" />
 

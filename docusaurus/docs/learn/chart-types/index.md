@@ -64,7 +64,7 @@ These charts show price movements and how a starting value becomes a final one, 
 
 ## Maps and geospatial data
 
-These charts show data tied to places: a value for each area on a map, the height of the land as contours or a 3D surface, and 3D scans of the ground such as LiDAR. The contour plot, 3D surface plot and point cloud guides are also listed under scientific and engineering charts.
+These charts show data tied to places: a value for each area on a map, how densely people live, the height of the land as contours or a 3D surface, and 3D scans of the ground such as LiDAR. The contour plot, 3D surface plot and point cloud guides are also listed under scientific and engineering charts.
 
 <LearnGallery slugs={["3d-surface-plot", "choropleth-map", "contour-plot", "point-cloud", "population-density-map"]} />
 
