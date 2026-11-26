@@ -1,5 +1,5 @@
 ---
-sidebar_position: 90
+sidebar_position: 100
 sidebar_label: Voronoi Diagram
 title: "Voronoi Diagram: What It Is, How It's Built and Where It's Used"
 description: "What a Voronoi diagram is, its cells, edges and vertices, how it relates to the Delaunay triangulation, how to make one, Euclidean vs Manhattan cells, and real uses. With a live example."

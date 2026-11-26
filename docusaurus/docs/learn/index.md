@@ -2,7 +2,7 @@
 sidebar_position: 1
 sidebar_label: Learning Center
 title: "Data Visualization Examples: 100+ Interactive Charts & Guides"
-description: "100+ interactive data visualization examples: 46 chart types plus real charts from finance, medicine, engineering and science, each with a guide to reading it."
+description: "100+ interactive data visualization examples: 47 chart types plus real charts from finance, medicine, engineering and science, each with a guide to reading it."
 keywords: ["data visualization examples", "data visualisation examples", "interactive data visualization", "data visualization guide", "data visualisation guide", "how to read charts"]
 image: /img/learn/learn-og.png
 datePublished: 2026-11-13
@@ -10,11 +10,11 @@ datePublished: 2026-11-13
 
 # Data Visualisation Examples and Guides
 
-Over 100 interactive data visualisation examples, each with a plain-language guide. Browse 46 types of charts and graphs, then real charts from finance, medicine, engineering and science. Every guide explains what the chart shows, how to read it and when to use it, with a live example you can zoom, pan and hover over, and the code to build it in JavaScript, React or Angular with SciChart.js.
+Over 100 interactive data visualisation examples, each with a plain-language guide. Browse 47 types of charts and graphs, then real charts from finance, medicine, engineering and science. Every guide explains what the chart shows, how to read it and when to use it, with a live example you can zoom, pan and hover over, and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Types of charts and graphs
 
-[**Types of charts and graphs**](/learn/chart-types/): guides to 46 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
+[**Types of charts and graphs**](/learn/chart-types/): guides to 47 chart types, from line, bar and pie charts to heatmaps, Sankey diagrams, violin plots and timelines. Each explains what the chart shows, how to read it and when to use it.
 
 ### Trends and comparisons
 
@@ -40,9 +40,11 @@ Over 100 interactive data visualisation examples, each with a plain-language gui
 
 <LearnGallery slugs={["candlestick-chart", "footprint-chart", "ohlc-chart", "renko-chart", "tick-chart", "waterfall-chart"]} />
 
-### Maps and geographic data
+### Maps and geospatial data
 
-<LearnGallery slugs={["choropleth-map"]} />
+<LearnGallery slugs={["choropleth-map", "population-density-map"]} />
+
+For terrain and elevation, see the [contour plot](/learn/chart-types/cartesian/contour-plot/) and [3D surface plot](/learn/chart-types/3d/3d-surface-plot/); for LiDAR scans, the [point cloud](/learn/chart-types/3d/point-cloud/).
 
 ### Time and events
 

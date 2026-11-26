@@ -16,7 +16,7 @@ keywords:
         "filled map"
     ]
 image: /img/learn/choropleth-map-og.png
-related: [heatmap, treemap, bubble-chart]
+related: [population-density-map, heatmap, treemap, bubble-chart]
 datePublished: 2026-11-16
 ---
 
@@ -171,6 +171,7 @@ Use a choropleth map when your data is a rate, ratio or average for each of a se
 | --- | --- |
 | Choropleth map | Rates or averages per area, where the geographic pattern is the point |
 | Proportional symbol map | Raw counts per area or per place: a circle sized by the value, like a [bubble chart](/learn/chart-types/cartesian/bubble-chart/) on a map |
+| [Dot density map](/learn/chart-types/complex/population-density-map/) | Counts shown as dots, one per fixed number of people or things, so you see where they are as well as how many |
 | Cartogram | Giving each area a size that matches its population or value, so big empty areas don't dominate |
 | Hex or tile map | Every area the same size (one hexagon or square per state), so small areas count as much as big ones |
 | [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Exact comparison and ranking, when location doesn't matter |
