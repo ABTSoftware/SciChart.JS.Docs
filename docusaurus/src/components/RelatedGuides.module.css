@@ -71,8 +71,27 @@
     overflow: hidden;
 }
 
+/* The hub's gallery (LearnGallery.tsx): space before the next heading */
+.gallery {
+    margin-bottom: 2rem;
+}
+
 @media (max-width: 600px) {
     .grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Two narrow cards per row on phones, so a long gallery isn't dozens of screens */
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+    }
+
+    .gallery .body {
+        padding: 0.5rem 0.6rem 0.65rem;
+    }
+
+    .gallery .summary {
+        display: none;
     }
 }

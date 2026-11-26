@@ -26,11 +26,13 @@ function pickRelated(current: LearnGuide, guides: LearnGuide[]): LearnGuide[] {
     return ordered.slice(0, FALLBACK_CARDS);
 }
 
-function GuideCard({ guide }: { guide: LearnGuide }) {
+// One guide as a card: thumbnail, title and one-line summary, all inside one link.
+// Also used by the learning center hub's gallery (LearnGallery.tsx), with its own click-tracking prefix.
+export function GuideCard({ guide, ctaPrefix = "learn-related" }: { guide: LearnGuide; ctaPrefix?: string }) {
     const image = useBaseUrl(guide.thumbnail ?? guide.image ?? "/img/Default-Social-Image.jpg");
     return (
         <li className={styles.item}>
-            <Link className={styles.card} to={guide.permalink} data-cta={`learn-related-${guide.slug}`}>
+            <Link className={styles.card} to={guide.permalink} data-cta={`${ctaPrefix}-${guide.slug}`}>
                 <img className={styles.image} src={image} alt="" width={480} height={252} loading="lazy" decoding="async" />
                 <span className={styles.body}>
                     <span className={styles.title}>{guide.label}</span>

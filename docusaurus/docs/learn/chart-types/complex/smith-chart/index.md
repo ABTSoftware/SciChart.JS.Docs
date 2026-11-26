@@ -1,5 +1,5 @@
 ---
-sidebar_position: 60
+sidebar_position: 70
 sidebar_label: Smith Chart
 title: "Smith Chart: How to Read It and Use It for Impedance Matching"
 description: "What a Smith chart is, how to read resistance circles and reactance arcs, VSWR circles, return loss and line length, and how to match a load, with a live interactive Smith chart."
