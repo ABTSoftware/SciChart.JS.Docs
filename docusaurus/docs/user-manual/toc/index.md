@@ -56,7 +56,7 @@ The [TypeDoc documentation for SciChart.js can be found here:blue_book:](https:/
     - [Hover and Click Interactions](/get-started/faqs/faq_hover_interactions)
     - [FAQ: Generating a Standalone SciChart HTML File](/get-started/faqs/faq_standaloneHTMLfile)
 - **Learning Center**
-  - [Learning Center: A Guide to Data Visualisation](/learn)
+  - [Learning Center: data visualisation examples and guides](/learn/)
   - **Chart Types**
     - [Types of Charts and Graphs: A Guide With Interactive Examples](/learn/chart-types)
     - **Cartesian Charts**

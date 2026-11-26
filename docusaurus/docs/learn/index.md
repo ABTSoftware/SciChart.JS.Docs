@@ -1,15 +1,16 @@
 ---
 sidebar_position: 1
 sidebar_label: Learning Center
-title: "Learning Center: A Guide to Data Visualisation"
-description: "A guide to data visualisation: the types of charts and graphs, how to read them and when to use them, how chart axes and scales work, how to chart big data, and signal processing basics, with live, interactive examples."
-keywords: ["data visualisation guide", "data visualization guide", "types of charts", "types of graphs", "how to read charts"]
+title: "Data Visualization Examples: 100+ Interactive Charts & Guides"
+description: "100+ interactive data visualization examples: 46 chart types plus real charts from finance, medicine, engineering and science, each with a guide to reading it."
+keywords: ["data visualization examples", "data visualisation examples", "interactive data visualization", "data visualization guide", "data visualisation guide", "how to read charts"]
+image: /img/learn/learn-og.png
 datePublished: 2026-11-13
 ---
 
-# Learning Center
+# Data Visualisation Examples and Guides
 
-A guide to data visualisation. Which chart should you use, how do you read it, and how do its axes work? These guides explain each topic in plain language, and every one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
+Over 100 interactive data visualisation examples, each with a plain-language guide. Browse 46 types of charts and graphs, then real charts from finance, medicine, engineering and science. Every guide explains what the chart shows, how to read it and when to use it, with a live example you can zoom, pan and hover over, and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Types of charts and graphs
 
