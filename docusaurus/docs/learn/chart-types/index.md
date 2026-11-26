@@ -1,43 +1,31 @@
 ---
 sidebar_position: 1
 sidebar_label: Types of Charts and Graphs
-title: "Types of Charts and Graphs: A Guide With Interactive Examples"
-description: "A guide to the main types of charts and graphs: what each chart shows, how to read it and when to use it, with a live, interactive example of every chart."
-keywords: ["types of charts", "types of graphs", "types of charts and graphs", "chart types", "graph types", "chart examples", "which chart to use"]
+title: "Types of Graphs and Charts: 46 Types With Interactive Examples"
+description: "46 types of graphs and charts, from line, bar and pie charts to heatmaps, Sankey diagrams and violin plots: what each shows, how to read it and when to use it."
+keywords: ["types of graphs", "types of charts", "different types of graphs", "chart types", "types of charts and graphs", "graph types", "graph examples", "chart examples", "which chart to use"]
 datePublished: 2026-11-16
 ---
 
-# Types of Charts and Graphs
+# Types of Graphs and Charts
 
-Which chart should you use, and how do you read it? This guide covers the main types of charts and graphs. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
+Which chart should you use, and how do you read it? This guide covers 46 different types of graphs and charts. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Trends and comparisons
 
 Use these charts to compare values across categories, or to show how a value changes over time.
 
-| Chart | What it shows |
-| --- | --- |
-| [Area chart](/learn/chart-types/cartesian/area-chart/) | A line chart with the area below it filled, often stacked to show parts of a total |
-| [Bar chart](/learn/chart-types/cartesian/bar-chart/) | Values compared across categories as bars or columns. Covers the main [types of bar graph](/learn/chart-types/cartesian/bar-chart/#types-of-bar-chart): column, horizontal, clustered, stacked and diverging, and the animated [bar chart race](/learn/chart-types/cartesian/bar-chart/#bar-chart-race) |
-| [Combo chart](/learn/chart-types/cartesian/combo-chart/) | Two related measures on one chart, usually columns and a line, often with a second y-axis for the line (a dual axis chart) |
-| [Dumbbell chart](/learn/chart-types/cartesian/dumbbell-chart/) | Two values per category, such as before and after, as two dots joined by a line, so the gap and its direction stand out |
-| [Line chart](/learn/chart-types/cartesian/line-chart/) | How a value changes over time, as points joined by a line |
-| [Lollipop chart](/learn/chart-types/cartesian/lollipop-chart/) | Values compared across many categories as thin stems with a dot at the end: a bar chart with less ink, best when the values are close |
-| [Pareto chart](/learn/chart-types/cartesian/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
-| [Sparkline](/learn/chart-types/cartesian/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
+<LearnGallery slugs={["area-chart", "bar-chart", "combo-chart", "dumbbell-chart", "line-chart", "lollipop-chart", "pareto-chart", "sparkline"]} />
+
+Also in these guides: [types of bar graph](/learn/chart-types/cartesian/bar-chart/#types-of-bar-chart), [bar chart race](/learn/chart-types/cartesian/bar-chart/#bar-chart-race).
 
 ## Composition and flow
 
 These charts show what a total is made of and where it goes: shares of a total (pie, donut), mixtures of three parts (ternary), shares in nested levels (sunburst, treemap) and flows from sources to destinations (Sankey).
 
-| Chart | What it shows |
-| --- | --- |
-| [Donut chart](/learn/chart-types/radial/donut-chart/) | A pie chart with a hole in the middle, often used to show the total |
-| [Pie chart](/learn/chart-types/radial/pie-chart/) | How a total splits into parts, as slices of a circle |
-| [Sankey diagram](/learn/chart-types/complex/sankey-diagram/) | How a total flows from sources through stages to where it ends up, with each band as wide as its value |
-| [Sunburst chart](/learn/chart-types/radial/sunburst-chart/) | A total broken down over several levels, as rings around a centre: each ring is one level, and each segment's angle is its share. Also covers its unrolled form, the [icicle chart](/learn/chart-types/radial/sunburst-chart/#icicle-chart) |
-| [Ternary plot](/learn/chart-types/complex/ternary-plot/) | Mixtures of three parts that add up to 100%, such as soil texture, rock types and phase diagrams |
-| [Treemap](/learn/chart-types/complex/treemap/) | How a total splits into parts and groups, as nested rectangles with each area matching its value |
+<LearnGallery slugs={["donut-chart", "pie-chart", "sankey-diagram", "sunburst-chart", "ternary-plot", "treemap"]} />
+
+Also in these guides: [icicle chart](/learn/chart-types/radial/sunburst-chart/#icicle-chart).
 
 ## Stacked charts
 
@@ -54,80 +42,44 @@ A **stacked chart** shows a total and the parts that make it up, by drawing each
 
 These charts show how values are spread out, how two or more variables relate, and how items connect.
 
-| Chart | What it shows |
-| --- | --- |
-| [Box plot](/learn/chart-types/cartesian/box-plot/) | The spread of a dataset: median, quartiles, range and outliers |
-| [Bubble chart](/learn/chart-types/cartesian/bubble-chart/) | A scatter plot where bubble size shows a third value |
-| [Correlation matrix](/learn/chart-types/cartesian/correlation-matrix/) | How strongly every pair of variables moves together, as a grid of coefficients |
-| [Density plot](/learn/chart-types/cartesian/density-plot/) | The smooth shape of a distribution: peaks, spread and tails, drawn as a curve; compare groups by overlaying them or stacking them as a ridgeline |
-| [Error bars](/learn/chart-types/cartesian/error-bars/) | The uncertainty or spread around a value, usually a mean: standard deviation, standard error or a confidence interval |
-| [Histogram](/learn/chart-types/cartesian/histogram/) | How values are distributed, counted into ranges (bins) |
-| [Network graph](/learn/chart-types/complex/network-graph/) | How things are connected: items as dots (nodes) and links as lines (edges), showing hubs, clusters and the bridges between them |
-| [Parallel coordinates plot](/learn/chart-types/complex/parallel-coordinates-plot/) | Many records compared across many variables: one vertical axis per variable, one line per record |
-| [Population pyramid](/learn/chart-types/cartesian/population-pyramid/) | How a population splits by age and sex, as back-to-back bars: males on one side, females on the other, youngest at the bottom |
-| [Residual plot and Q-Q plot](/learn/chart-types/cartesian/residual-plot/) | Checking a regression: patterns in the residuals and whether they are normal |
-| [Scatter plot](/learn/chart-types/cartesian/scatter-plot/) | The relationship between two values, one dot per data point |
-| [Violin plot](/learn/chart-types/cartesian/violin-plot/) | The full shape of several groups side by side: a box plot plus a mirrored density curve that shows peaks, gaps and skew |
+<LearnGallery slugs={["box-plot", "bubble-chart", "correlation-matrix", "density-plot", "error-bars", "histogram", "network-graph", "parallel-coordinates-plot", "population-pyramid", "residual-plot", "scatter-plot", "violin-plot"]} />
 
 ## Scientific and engineering charts
 
 These charts show fields, signals, surfaces and measurements in 2D, 3D or round a circle, as used in science and engineering.
 
-| Chart | What it shows |
-| --- | --- |
-| [3D surface plot](/learn/chart-types/3d/3d-surface-plot/) | A value drawn as height over two dimensions, showing peaks, valleys and slopes as a 3D landscape |
-| [Contour plot](/learn/chart-types/cartesian/contour-plot/) | Lines of equal value across two dimensions, showing peaks, saddles and steep areas |
-| [Heatmap](/learn/chart-types/cartesian/heatmap/) | A grid of values shown as colours |
-| [Point cloud](/learn/chart-types/3d/point-cloud/) | Millions of 3D points, such as a LiDAR scan, coloured by height, intensity or class |
-| [Polar area chart](/learn/chart-types/radial/polar-area-chart/) | Equal-angle wedges whose area shows each value, for cycles such as months or directions (Nightingale rose) |
-| [Radar chart](/learn/chart-types/radial/radar-chart/) | Several variables on axes radiating from a centre, joined into a shape |
-| [Smith chart](/learn/chart-types/complex/smith-chart/) | Impedance and reflection on one circular chart, for RF and antenna matching |
-| [Spectrogram](/learn/chart-types/cartesian/spectrogram/) | How the frequencies in a signal change over time, with colour showing strength |
-| [Voronoi diagram](/learn/chart-types/complex/voronoi-diagram/) | The area nearest each point, as cells; the dual of a Delaunay triangulation |
+<LearnGallery slugs={["3d-surface-plot", "contour-plot", "heatmap", "point-cloud", "polar-area-chart", "radar-chart", "smith-chart", "spectrogram", "voronoi-diagram"]} />
 
 ## Dashboards and KPIs
 
 These charts show where one value stands against a target or limit, or how many items get through each stage of a process.
 
-| Chart | What it shows |
-| --- | --- |
-| [Bullet chart](/learn/chart-types/cartesian/bullet-chart/) | One measure as a dark bar against a short target line and grey bands for poor, satisfactory and good, compact enough to stack many on one dashboard |
-| [Funnel chart](/learn/chart-types/complex/funnel-chart/) | How many people or items reach each step of a process, as centred bars that narrow from stage to stage, with the conversion rate between steps |
-| [Gauge chart](/learn/chart-types/radial/gauge-chart/) | One value on a dial between a minimum and a maximum, with a needle and coloured bands showing whether it's good, borderline or bad |
+<LearnGallery slugs={["bullet-chart", "funnel-chart", "gauge-chart"]} />
 
 ## Financial charts
 
 These charts show price movements and how a starting value becomes a final one, as used in trading and finance.
 
-| Chart | What it shows |
-| --- | --- |
-| [Candlestick chart](/learn/chart-types/cartesian/candlestick-chart/) | Open, high, low and close prices per period, with colour showing whether the price rose or fell |
-| [Footprint chart](/learn/chart-types/cartesian/footprint-chart/) | Bid and ask volume at each price inside each bar, with delta and imbalances |
-| [OHLC chart](/learn/chart-types/cartesian/ohlc-chart/) | Open, high, low and close prices per period as thin bars, with a left tick for the open and a right tick for the close |
-| [Renko chart](/learn/chart-types/cartesian/renko-chart/) | Fixed-size price bricks that ignore time and show the trend |
-| [Tick chart](/learn/chart-types/cartesian/tick-chart/) | Bars that close after a set number of trades instead of a set time |
-| [Waterfall chart](/learn/chart-types/cartesian/waterfall-chart/) | How a starting total becomes an end total through a series of gains and losses, with subtotals along the way |
+<LearnGallery slugs={["candlestick-chart", "footprint-chart", "ohlc-chart", "renko-chart", "tick-chart", "waterfall-chart"]} />
 
 ## Maps and geographic data
 
 This chart shows a value for each area on a map, such as a state or a country.
 
-| Chart | What it shows |
-| --- | --- |
-| [Choropleth map](/learn/chart-types/complex/choropleth-map/) | A value per area, such as a rate per state or country, shown by shading each area on a map, with a legend for the colour classes |
+<LearnGallery slugs={["choropleth-map"]} />
 
 ## Time and events
 
 This chart shows events and periods in the order they happened.
 
-| Chart | What it shows |
-| --- | --- |
-| [Timeline chart](/learn/chart-types/cartesian/timeline-chart/) | When events happened and how long states lasted, on a time axis: points for events, bands in lanes for states such as running, idle or fault |
+<LearnGallery slugs={["timeline-chart"]} />
 
 ## Chart examples
 
 Each guide includes a live, interactive chart you can zoom, pan and hover over. For charts from real-world settings, such as sports rankings, market share, patient monitors and climate data, see the [bar graph examples](/learn/chart-types/cartesian/bar-chart/#bar-graph-examples), [pie chart examples](/learn/chart-types/radial/pie-chart/#pie-chart-examples) and [line chart examples](/learn/chart-types/cartesian/line-chart/#line-chart-examples).
 
 For the full gallery, browse the [JavaScript chart examples](https://www.scichart.com/demo/) in the SciChart.js demo app. Each example shows the code behind it, with versions for JavaScript, React and Angular.
+
+For every guide in the learning center, from chart types to real-world applications, see [Data Visualisation Examples and Guides](/learn/).
 
 <LearnCta position="bottom" />
