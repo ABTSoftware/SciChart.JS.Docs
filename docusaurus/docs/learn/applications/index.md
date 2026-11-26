@@ -9,7 +9,7 @@ datePublished: 2026-11-20
 
 # Applications
 
-Each guide here covers one application, from medicine and life sciences to engineering, energy, defence, the oceans, the weather, motorsport, astronomy, signal processing, machine learning and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
+Each guide here covers one application, from medicine and life sciences to engineering, energy, defence, motorsport, astronomy, weather, signal processing, machine learning and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
 
 The guides are grouped by sector, in alphabetical order.
 
@@ -17,7 +17,7 @@ The guides are grouped by sector, in alphabetical order.
 
 For more on how SciChart is used in this sector, see [SciChart for aerospace and defence](https://www.scichart.com/why-scichart-aerospace-defence/).
 
-<LearnGallery slugs={["antenna-radiation-pattern", "radar-display", "telemetry"]} />
+<LearnGallery slugs={["antenna-radiation-pattern", "radar-display", "sonar", "telemetry"]} />
 
 ## Business
 
@@ -51,12 +51,6 @@ These guides explain one machine learning idea each with a live chart: the model
 
 For the statistics charts these guides use, see [correlation matrix](/learn/chart-types/cartesian/correlation-matrix/) and [residual plot and Q-Q plot](/learn/chart-types/cartesian/residual-plot/).
 
-## Marine and subsea
-
-Ships, survey vessels and fishing boats see under the water with sound: sonar pings and listens for echoes, and draws them as scans, seabed images and bearing-over-time displays.
-
-<LearnGallery slugs={["sonar"]} />
-
 ## Medical
 
 For more on how SciChart is used in this sector, see [SciChart for medical](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/).
@@ -71,9 +65,9 @@ Race engineers and sim racers compare laps on distance-based traces to find wher
 
 ## Science and mathematics
 
-These guides chart data from astronomy and pure mathematics, where one well-chosen chart reveals the structure in the numbers.
+These guides chart data from astronomy, meteorology and pure mathematics, where one well-chosen chart reveals the structure in the numbers.
 
-<LearnGallery slugs={["hr-diagram", "riemann-hypothesis"]} />
+<LearnGallery slugs={["hr-diagram", "riemann-hypothesis", "weather-radar"]} />
 
 ## Signal processing
 
@@ -100,12 +94,6 @@ These guides chart data from astronomy and pure mathematics, where one well-chos
 For more on how SciChart is used in this sector, see [SciChart for test and measurement](https://www.scichart.com/best-instrumentation-engineering-software/).
 
 <LearnGallery slugs={["non-destructive-testing", "oscilloscope", "stress-strain-curve", "vibration-analysis"]} />
-
-## Weather and climate
-
-Weather radar scans the sky for rain, snow and hail, and forecasters read its colours and wind patterns to warn of storms.
-
-<LearnGallery slugs={["weather-radar"]} />
 
 For the chart types these guides use, see [types of charts](/learn/chart-types/), [real-time charts](/learn/real-time/) and [big data and performance](/learn/big-data/).
 

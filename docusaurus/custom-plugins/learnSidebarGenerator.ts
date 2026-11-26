@@ -27,11 +27,14 @@ const OTHER_SECTOR = "Other applications";
 /** Sector label for each Applications guide, by folder name under docs/learn/applications/. */
 export const APPLICATION_SECTORS: Record<string, string> = {
     "antenna-radiation-pattern": "Aerospace and Defence",
+    "radar-display": "Aerospace and Defence",
+    sonar: "Aerospace and Defence",
     telemetry: "Aerospace and Defence",
     "kpi-dashboard": "Business",
     "hmi-scada": "Industrial and Energy",
     "pid-control": "Industrial and Energy",
     "power-quality": "Industrial and Energy",
+    "well-log": "Industrial and Energy",
     chromatogram: "Life Sciences",
     "mass-spectrum": "Life Sciences",
     spectroscopy: "Life Sciences",
@@ -47,6 +50,7 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     vwap: "Finance and Trading",
     "hr-diagram": "Science and Mathematics",
     "riemann-hypothesis": "Science and Mathematics",
+    "weather-radar": "Science and Mathematics",
     "non-destructive-testing": "Test and Measurement",
     oscilloscope: "Test and Measurement",
     "stress-strain-curve": "Test and Measurement",

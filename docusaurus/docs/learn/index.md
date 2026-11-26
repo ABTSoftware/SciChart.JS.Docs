@@ -74,7 +74,7 @@ For more on terrain, see the [contour plot](/learn/chart-types/cartesian/contour
 
 ### Aerospace and defence
 
-<LearnGallery slugs={["antenna-radiation-pattern", "radar-display", "telemetry"]} />
+<LearnGallery slugs={["antenna-radiation-pattern", "radar-display", "sonar", "telemetry"]} />
 
 ### Business
 
@@ -100,10 +100,6 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 
 <LearnGallery group="learn/applications/machine-learning" />
 
-### Marine and subsea
-
-<LearnGallery slugs={["sonar"]} />
-
 ### Medical
 
 <LearnGallery slugs={["capnography-pulse-oximetry", "ecg"]} />
@@ -114,7 +110,7 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 
 ### Science and mathematics
 
-<LearnGallery slugs={["hr-diagram", "riemann-hypothesis"]} />
+<LearnGallery slugs={["hr-diagram", "riemann-hypothesis", "weather-radar"]} />
 
 ### Signal processing
 
@@ -125,9 +121,5 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 ### Test and measurement
 
 <LearnGallery slugs={["non-destructive-testing", "oscilloscope", "stress-strain-curve", "vibration-analysis"]} />
-
-### Weather and climate
-
-<LearnGallery slugs={["weather-radar"]} />
 
 <LearnCta position="bottom" />
