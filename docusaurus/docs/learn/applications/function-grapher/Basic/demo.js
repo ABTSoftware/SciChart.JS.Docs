@@ -19,7 +19,11 @@ function parseFunction(math, text, variables) {
         .replace(/^\s*(y|r|f\s*\(\s*\w+\s*\))\s*=/, "") // allow "y = ...", "r = ..." and "f(x) = ..."
         .replace(/θ/g, "theta")
         .replace(/π/g, "pi")
-        .replace(/\bln\s*\(/g, "log("); // math.js calls the natural logarithm log
+        .replace(/\bln\s*\(/g, "log(") // math.js calls the natural logarithm log
+        .replace(
+            new RegExp("\\b(" + variables.slice(1).join("|") + ")\\b", "g"),
+            variables.length > 1 ? variables[0] : "$1"
+        ); // "t" for theta
     if (!expression.trim()) throw new Error("Type a function");
     const node = math.parse(expression);
     const names = [];
@@ -767,22 +771,53 @@ async function createCartesianChart(div, onChange, onSelect) {
     };
 }
 
-// --- The polar chart. A curve is { label, colour, f }, where f(θ) returns r, with θ in radians ---
-async function createPolarChart(div, onChange) {
+// A chart modifier that reports where the mouse is, in pixels right of and above the centre of the plot
+class MouseFromCentre extends SciChart.CustomChartModifier2D {
+    onMove;
+
+    // A modifier has to say it is for a polar chart before a polar chart will take it
+    get modifierType() {
+        return SciChart.EModifierType.Chart2DPolarModifier;
+    }
+
+    constructor(onMove) {
+        super();
+        this.onMove = onMove;
+    }
+
+    modifierMouseMove(args) {
+        super.modifierMouseMove(args);
+        const rect = this.parentSurface.seriesViewRect;
+        const point = SciChart.translateFromCanvasToSeriesViewRect(args.mousePoint, rect);
+        if (point)
+            this.onMove(point.x - rect.width / 2, rect.height / 2 - point.y, Math.min(rect.width, rect.height) / 2);
+    }
+}
+
+// --- The polar chart. A curve is { label, colour, f, d1 }: f(θ) returns r, with θ in radians, and d1 is dr/dθ ---
+// onChange is called with the results when the curves change and as the mouse moves.
+// onSelect is called with a curve's index when it is clicked
+async function createPolarChart(div, onChange, onSelect) {
     const {
         SciChartPolarSurface,
         PolarNumericAxis,
         PolarLineRenderableSeries,
+        PolarMountainRenderableSeries,
         PolarXyScatterRenderableSeries,
         EPolarAxisMode,
         EPolarLabelMode,
         EAxisAlignment,
+        EHorizontalAnchorPoint,
+        EVerticalAnchorPoint,
         EllipsePointMarker,
+        TrianglePointMarker,
+        LineAnnotation,
+        TextAnnotation,
+        Thickness,
         NumberRange,
         XyDataSeries,
-        PolarCursorModifier,
+        PolarSeriesSelectionModifier,
         PolarMouseWheelZoomModifier,
-        PolarPanModifier,
         PolarZoomExtentsModifier,
         SciChartJsNavyTheme
     } = SciChart;
@@ -809,8 +844,37 @@ async function createPolarChart(div, onChange) {
     });
     sciChartSurface.yAxes.add(radiusAxis);
 
-    const pointData = new XyDataSeries(wasmContext, { dataSeriesName: "Intersections" });
+    // Bottom to top: the area swept out so far, the curves, then three kinds of marker
+    const xy = () => new XyDataSeries(wasmContext, { containsNaN: true, dataIsSortedInX: false });
+    const sweepData = xy();
+    const sweepSeries = new PolarMountainRenderableSeries(wasmContext, {
+        dataSeries: sweepData,
+        fill: "#FFFFFF33",
+        stroke: "#00000000",
+        strokeThickness: 0
+    });
+    const extremeData = xy();
+    const pointData = xy();
+    const probeData = xy();
+    const probeMarker = new EllipsePointMarker(wasmContext, {
+        width: 15,
+        height: 15,
+        fill: "#FFFFFF",
+        stroke: "#FFFFFF",
+        strokeThickness: 2
+    });
     sciChartSurface.renderableSeries.add(
+        sweepSeries,
+        new PolarXyScatterRenderableSeries(wasmContext, {
+            dataSeries: extremeData,
+            pointMarker: new TrianglePointMarker(wasmContext, {
+                width: 11,
+                height: 11,
+                fill: "#F5E663",
+                stroke: "#17243D",
+                strokeThickness: 1
+            })
+        }),
         new PolarXyScatterRenderableSeries(wasmContext, {
             dataSeries: pointData,
             pointMarker: new EllipsePointMarker(wasmContext, {
@@ -820,47 +884,185 @@ async function createPolarChart(div, onChange) {
                 stroke: "#17243D",
                 strokeThickness: 2
             })
-        })
+        }),
+        new PolarXyScatterRenderableSeries(wasmContext, { dataSeries: probeData, pointMarker: probeMarker })
     );
     const setLines = createLinePool(
         sciChartSurface,
-        1,
-        () =>
-            new PolarLineRenderableSeries(wasmContext, {
-                dataSeries: new XyDataSeries(wasmContext, { containsNaN: true, dataIsSortedInX: false }),
-                strokeThickness: 2.5
-            })
+        3,
+        () => new PolarLineRenderableSeries(wasmContext, { dataSeries: xy(), strokeThickness: 2.5 })
     );
+
+    // The probe: the radius out to the point, the tangent there and two lines of text. Annotations on a polar chart
+    // are placed by angle and radius, like the data
+    const radiusLine = new LineAnnotation({
+        stroke: "#FFFFFFAA",
+        strokeThickness: 1.5,
+        strokeDashArray: [5, 4],
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: 0
+    });
+    const tangentLine = new LineAnnotation({ stroke: "#FFFFFF", strokeThickness: 2, x1: 0, y1: 0, x2: 0, y2: 0 });
+    const label = () =>
+        new TextAnnotation({
+            x1: 0,
+            y1: 0,
+            text: "",
+            fontSize: 13,
+            textColor: "#FFFFFF",
+            background: "#17243DDD",
+            padding: Thickness.fromNumber(3)
+        });
+    const valueLabel = label();
+    const slopeLabel = label();
+    const probeParts = [radiusLine, tangentLine, valueLabel, slopeLabel];
+    sciChartSurface.annotations.add(...probeParts);
+
+    let curves = [];
+    let options = { selected: 0, showProbe: true, showSpecial: true, thetaMax: TWO_PI };
+    let curveLines = [];
+    let paths = []; // for each curve: its samples as { theta, r, x, y, angle, radius }, the last two as drawn
+    let swept = { area: [], length: [] }; // for the selected curve: the area and the arc length from θ = 0 to each sample
+    let probeIndex = -1; // the sample the probe is on
+    let results = { points: [], roots: 0, turningPoints: 0, inflections: 0, integral: null, sweep: null };
+
+    // A point (x, y) as the angle and radius to plot it at
+    const toPolar = (x, y) => ({ angle: (Math.atan2(y, x) + TWO_PI) % TWO_PI, radius: Math.hypot(x, y) });
+
+    // Put the probe on sample i of the selected curve
+    const placeProbe = i => {
+        const path = paths[options.selected];
+        const shown = options.showProbe && path && Number.isFinite(path.r[i]);
+        probeParts.forEach(part => (part.isHidden = !shown));
+        probeData.clear();
+        sweepData.clear();
+        results.sweep = null;
+        if (!shown) return onChange(results);
+        probeIndex = i;
+        const curve = curves[options.selected];
+        const theta = path.theta[i];
+        const r = path.r[i];
+        const x = path.x[i];
+        const y = path.y[i];
+        probeMarker.fill = curve.colour;
+        probeData.append(path.angle[i], path.radius[i]);
+        radiusLine.x1 = path.angle[i];
+        radiusLine.x2 = path.angle[i];
+        radiusLine.y2 = path.radius[i];
+
+        // The tangent's direction is (dx/dθ, dy/dθ), from x = r cos θ and y = r sin θ
+        const slopeOfR = curve.d1(theta);
+        const dx = slopeOfR * Math.cos(theta) - r * Math.sin(theta);
+        const dy = slopeOfR * Math.sin(theta) + r * Math.cos(theta);
+        const reach = (0.22 * radiusAxis.visibleRange.max) / (Math.hypot(dx, dy) || 1);
+        const from = toPolar(x - reach * dx, y - reach * dy);
+        const to = toPolar(x + reach * dx, y + reach * dy);
+        tangentLine.x1 = from.angle;
+        tangentLine.y1 = from.radius;
+        tangentLine.x2 = to.angle;
+        tangentLine.y2 = to.radius;
+        tangentLine.isHidden = !Number.isFinite(dx + dy);
+
+        // The labels go on the outside of the point: right of it on the right half of the chart, above it on the top half
+        const lines = [valueLabel, slopeLabel];
+        lines.forEach((line, k) => {
+            line.x1 = path.angle[i];
+            line.y1 = path.radius[i];
+            line.horizontalAnchorPoint = x >= 0 ? EHorizontalAnchorPoint.Left : EHorizontalAnchorPoint.Right;
+            line.verticalAnchorPoint = y >= 0 ? EVerticalAnchorPoint.Bottom : EVerticalAnchorPoint.Top;
+            line.xCoordShift = x >= 0 ? 14 : -14;
+            line.yCoordShift = y >= 0 ? -8 - 22 * (1 - k) : 8 + 22 * k;
+        });
+        const name = curve.label.split(" ")[0];
+        valueLabel.text = name + "(" + formatNumber(theta / Math.PI, 3) + "π) = " + formatNumber(r, 4);
+        slopeLabel.text =
+            "dr/dθ " +
+            formatNumber(slopeOfR, 4) +
+            "   slope dy/dx " +
+            (Math.abs(dx) < 1e-9 * Math.abs(dy) ? "vertical" : formatNumber(dy / dx, 4));
+
+        // Shade what the radius has swept out from θ = 0 to here
+        sweepSeries.fill = curve.colour + "44";
+        sweepData.appendRange(path.angle.slice(0, i + 1), path.radius.slice(0, i + 1));
+        const last = path.theta.length - 1;
+        results.sweep = {
+            theta,
+            area: swept.area[i],
+            length: swept.length[i],
+            thetaMax: path.theta[last],
+            totalArea: swept.area[last],
+            totalLength: swept.length[last]
+        };
+        onChange(results);
+    };
+
+    // The mouse, from the centre of the plot: move the probe to the nearest sample of the selected curve.
+    // The plot's circle is a little smaller than the plot area, which leaves room for the angle labels
+    const onMouseMove = (right, up, halfSize) => {
+        const path = paths[options.selected];
+        if (!path || !options.showProbe) return;
+        const perPixel = radiusAxis.visibleRange.max / (0.87 * halfSize);
+        const mouseX = right * perPixel;
+        const mouseY = up * perPixel;
+        let nearest = Infinity;
+        let index = -1;
+        for (let i = 0; i < path.x.length; i++) {
+            const distance = (path.x[i] - mouseX) ** 2 + (path.y[i] - mouseY) ** 2;
+            if (distance < nearest) {
+                nearest = distance;
+                index = i;
+            }
+        }
+        if (index >= 0 && index !== probeIndex) placeProbe(index);
+    };
+
     sciChartSurface.chartModifiers.add(
-        new PolarCursorModifier({ showTooltip: true }),
+        new MouseFromCentre(onMouseMove),
+        // Click a curve to select it, as on the Cartesian chart
+        new PolarSeriesSelectionModifier({
+            enableSelection: true,
+            onSelectionChanged: args => {
+                const picked = curveLines.findIndex(line => args.selectedSeries.includes(line));
+                args.allSeries.forEach(series => {
+                    if (series.isSelected) series.isSelected = false;
+                });
+                if (picked >= 0 && picked !== options.selected) onSelect(picked);
+            }
+        }),
         new PolarMouseWheelZoomModifier(),
-        new PolarPanModifier(),
         new PolarZoomExtentsModifier()
     );
 
     return {
-        // options.thetaMax: the curves are drawn for θ from 0 to thetaMax
-        setCurves: (curves, options) => {
+        // newOptions: { selected, showProbe, showSpecial, thetaMax }: the curves are drawn for θ from 0 to thetaMax
+        setCurves: (newCurves, newOptions) => {
+            curves = newCurves;
+            options = newOptions;
             const count = Math.min(5760, Math.round((720 * options.thetaMax) / TWO_PI)); // a sample every 0.5°
-            const lines = setLines(curves);
+            const step = options.thetaMax / count;
+            curveLines = setLines(curves);
             const sizes = [];
-            const paths = curves.map((curve, c) => {
-                const angle = [];
-                const radius = [];
-                const path = { x: [], y: [] };
+            paths = curves.map((curve, c) => {
+                const path = { theta: [], r: [], x: [], y: [], angle: [], radius: [] };
                 for (let i = 0; i <= count; i++) {
-                    const theta = (options.thetaMax * i) / count;
-                    const r = curve.f(theta);
-                    const ok = Number.isFinite(r) && Math.abs(r) < 1e12;
+                    const theta = step * i;
+                    const value = curve.f(theta);
+                    const r = Number.isFinite(value) && Math.abs(value) < 1e12 ? value : NaN;
+                    path.theta.push(theta);
+                    path.r.push(r);
+                    path.x.push(r * Math.cos(theta));
+                    path.y.push(r * Math.sin(theta));
                     // A negative r is drawn at distance |r| in the opposite direction, θ + π
-                    angle.push(ok && r < 0 ? theta + Math.PI : theta);
-                    radius.push(ok ? Math.abs(r) : NaN);
-                    path.x.push(ok ? r * Math.cos(theta) : NaN);
-                    path.y.push(ok ? r * Math.sin(theta) : NaN);
-                    if (ok) sizes.push(Math.abs(r));
+                    path.angle.push(r < 0 ? theta + Math.PI : theta);
+                    path.radius.push(Math.abs(r));
+                    if (!Number.isNaN(r)) sizes.push(Math.abs(r));
                 }
-                lines[c].dataSeries.clear();
-                lines[c].dataSeries.appendRange(angle, radius);
+                curveLines[c].dataSeries.clear();
+                curveLines[c].dataSeries.appendRange(path.angle, path.radius);
+                curveLines[c].strokeThickness = c === options.selected ? 4 : 2;
+                curveLines[c].opacity = c === options.selected ? 1 : 0.9;
                 return path;
             });
             // Fit the radius axis to the curves. A curve that runs off to infinity (r = 1/cos θ) mustn't set the scale,
@@ -871,18 +1073,58 @@ async function createPolarChart(div, onChange) {
                 : 1;
             radiusAxis.visibleRange = new NumberRange(0, (largest || 1) * 1.08);
 
+            // Intersections of every pair of curves
             const found = [];
             for (let a = 0; a < paths.length; a++) {
                 for (let b = a + 1; b < paths.length; b++) found.push(...findPolylineCrossings(paths[a], paths[b]));
             }
             const points = distinctPoints(found, (largest || 1) * 2e-3);
-            pointData.clear();
-            // Back to (θ, r), with θ from 0 to 2π
-            pointData.appendRange(
-                points.map(p => (Math.atan2(p.y, p.x) + TWO_PI) % TWO_PI),
-                points.map(p => Math.hypot(p.x, p.y))
-            );
-            onChange({ points, roots: 0, turningPoints: 0, inflections: 0, integral: null });
+            const plot = (dataSeries, list) => {
+                const polar = list.map(p => toPolar(p.x, p.y));
+                dataSeries.clear();
+                dataSeries.appendRange(
+                    polar.map(p => p.angle),
+                    polar.map(p => p.radius)
+                );
+            };
+            plot(pointData, points);
+
+            // Where each curve is furthest from or nearest to the pole: dr/dθ changes sign there
+            const extremes = [];
+            if (options.showSpecial) {
+                const zeros = paths.length ? paths[0].theta.map(() => 0) : [];
+                curves.forEach((curve, c) => {
+                    const slopes = paths[c].theta.map(theta => curve.d1(theta));
+                    for (const theta of findCrossings(curve.d1, () => 0, paths[c].theta, slopes, zeros, false)) {
+                        const r = curve.f(theta);
+                        extremes.push({ x: r * Math.cos(theta), y: r * Math.sin(theta) });
+                    }
+                });
+            }
+            const distinctExtremes = distinctPoints(extremes, (largest || 1) * 2e-3);
+            plot(extremeData, distinctExtremes);
+
+            // For the selected curve, the area swept out by the radius, ½∫r² dθ, and the arc length, ∫√(r² + (dr/dθ)²) dθ,
+            // from θ = 0 to each sample (trapezium rule)
+            swept = { area: [0], length: [0] };
+            const path = paths[options.selected];
+            if (path) {
+                const speed = path.theta.map((theta, i) => Math.hypot(path.r[i], curves[options.selected].d1(theta)));
+                for (let i = 1; i < path.theta.length; i++) {
+                    swept.area.push(swept.area[i - 1] + ((path.r[i - 1] ** 2 + path.r[i] ** 2) / 4) * step);
+                    swept.length.push(swept.length[i - 1] + ((speed[i - 1] + speed[i]) / 2) * step);
+                }
+            }
+
+            results = {
+                points,
+                roots: 0,
+                turningPoints: distinctExtremes.length,
+                inflections: 0,
+                integral: null,
+                sweep: null
+            };
+            placeProbe(probeIndex >= 0 && probeIndex <= count ? probeIndex : Math.round(count / 6));
         },
         dispose: () => sciChartSurface.delete()
     };
@@ -959,8 +1201,9 @@ function checkbox(text, checked, onChange) {
     box.type = "checkbox";
     box.checked = checked;
     box.addEventListener("change", () => onChange(box.checked));
-    label.append(box, document.createTextNode(text));
-    return { label, box };
+    const caption = document.createTextNode(text);
+    label.append(box, caption);
+    return { label, box, caption };
 }
 
 function createLayout(divElementId) {
@@ -1144,7 +1387,10 @@ async function functionGrapherDemo(divElementId) {
             view.line.style.background = isSelected ? "#22365B" : "transparent";
             view.line.style.boxShadow = isSelected ? "inset 3px 0 0 " + ROW_COLOURS[r] : "none";
         });
-        ui.tools.style.display = polar ? "none" : "flex";
+        integralGroup.style.display = polar ? "none" : "inline-flex";
+        specialBox.caption.textContent = polar
+            ? "Furthest and nearest points ▲"
+            : "Roots ○  turning points ▲  inflections ✕";
         turnsGroup.style.display = polar ? "inline-flex" : "none";
         addButton.style.display = rows.length < MAX_ROWS ? "" : "none";
 
@@ -1179,6 +1425,7 @@ async function functionGrapherDemo(divElementId) {
             .join(", ");
         let text = n === 0 ? "No intersections" : n + (n === 1 ? " intersection" : " intersections");
         text += (polar ? "" : " in view") + (n ? ": " + list + (n > 6 ? ", …" : "") : "");
+        if (polar && state.special) text += " · " + result.turningPoints + " furthest or nearest points";
         if (!polar && state.special)
             text +=
                 " · " +
@@ -1207,6 +1454,27 @@ async function functionGrapherDemo(divElementId) {
                   formatNumber(value.area, 4) +
                   " · drag the dashed lines to change the limits"
                 : ": not finite, there is a pole between the limits";
+        }
+        if (result.sweep) {
+            const sweep = result.sweep;
+            const name = curves[state.selected].label;
+            const finite = value => (Number.isFinite(value) ? formatNumber(value, 4) : "not finite");
+            text +=
+                "\n" +
+                name +
+                " from θ = 0 to " +
+                formatNumber(sweep.theta / Math.PI, 3) +
+                "π: area swept " +
+                finite(sweep.area) +
+                ", arc length " +
+                finite(sweep.length);
+            text +=
+                " · to " +
+                formatNumber(sweep.thetaMax / Math.PI, 3) +
+                "π: area " +
+                finite(sweep.totalArea) +
+                ", arc length " +
+                finite(sweep.totalLength);
         }
         ui.status.textContent = text;
     };
@@ -1305,6 +1573,7 @@ async function functionGrapherDemo(divElementId) {
         if (busy) return;
         busy = true;
         state.mode = mode;
+        state.selected = 0;
         state.resetLimits = true;
         for (const key of ["cartesian", "polar"]) {
             modeButtons[key].style.background = key === mode ? "#50C7E0" : "#22365B";
@@ -1314,7 +1583,7 @@ async function functionGrapherDemo(divElementId) {
         if (chart) chart.dispose();
         chart =
             mode === "polar"
-                ? await createPolarChart(ui.chartDiv, showResult)
+                ? await createPolarChart(ui.chartDiv, showResult, select)
                 : await createCartesianChart(ui.chartDiv, showResult, select);
         renderRows();
         recompute();
