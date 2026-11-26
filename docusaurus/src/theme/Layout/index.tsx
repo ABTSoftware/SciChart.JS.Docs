@@ -5,6 +5,10 @@ import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 export default function LayoutWrapper(props) {
     useEffect(() => {
         if (!ExecutionEnvironment.canUseDOM) return;
+        // Not on the local dev server (npm start): the tags it loads are registered for the live site only. The cookie
+        // banner throws on localhost, which the dev server shows as a full-page "Uncaught runtime errors" overlay,
+        // and local page views would be counted as real ones. Production builds are not affected.
+        if (process.env.NODE_ENV === 'development') return;
 
         const gtmScript = document.createElement('script');
         gtmScript.innerHTML = `
