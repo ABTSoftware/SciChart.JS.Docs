@@ -16,7 +16,7 @@ keywords:
         "filled map"
     ]
 image: /img/learn/choropleth-map-og.png
-related: [population-density-map, heatmap, treemap, bubble-chart]
+related: [population-density-map, dot-density-map, heatmap, bubble-chart]
 datePublished: 2026-11-16
 ---
 

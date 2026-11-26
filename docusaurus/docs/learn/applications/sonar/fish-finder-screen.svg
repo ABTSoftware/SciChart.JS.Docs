@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <title>How to read a fish finder screen</title>
+  <desc>An annotated fish finder screen with depth from 0 to 30 m down the side and time running from left (older) to right (newest). Near the top is surface clutter, at about 7 m a faint horizontal band is a thermocline, between 8 and 10 m three arches are single fish, a dense cloud is a school of bait fish, a thick bright line at 12 m is the bottom with a dimmer layer under it, and a fainter copy of the bottom at 24 m is the second bottom echo. An inset shows why a fish makes an arch: the boat passes over it, and the distance to the fish is shortest when it is under the middle of the cone.</desc>
+  <rect width="860" height="480" fill="#ffffff"/>
+  <text x="20" y="30" font-size="19" font-weight="600" fill="#1b2a47">An annotated fish finder screen</text>
+  <!-- screen -->
+  <rect x="60" y="50" width="420" height="400" fill="#0b1e3f"/>
+  <!-- depth axis: 0-30 m over 400 px, 13.33 px per m -->
+  <g font-size="13" fill="#1b2a47" text-anchor="end">
+    <text x="54" y="55">0 m</text>
+    <text x="54" y="121">5</text>
+    <text x="54" y="188">10</text>
+    <text x="54" y="255">15</text>
+    <text x="54" y="321">20</text>
+    <text x="54" y="388">25</text>
+    <text x="54" y="450">30</text>
+  </g>
+  <text x="270" y="470" font-size="13" text-anchor="middle" fill="#1b2a47">← older · time · newest →</text>
+  <!-- surface clutter -->
+  <g fill="#3fbf7f" fill-opacity="0.7">
+    <rect x="60" y="50" width="420" height="10"/>
+    <circle cx="90" cy="64" r="2"/><circle cx="150" cy="66" r="2"/><circle cx="230" cy="63" r="2"/><circle cx="330" cy="67" r="2"/><circle cx="420" cy="64" r="2"/>
+  </g>
+  <!-- thermocline at about 7 m -->
+  <rect x="60" y="141" width="420" height="8" fill="#126e86" fill-opacity="0.8"/>
+  <!-- fish arches at 8.5 to 9.5 m -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M 118 175 Q 132 160 146 175" stroke="#ff8a3d" stroke-width="5"/>
+    <path d="M 208 182 Q 224 166 240 182" stroke="#f2d24b" stroke-width="5"/>
+    <path d="M 392 170 Q 406 156 420 170" stroke="#ff8a3d" stroke-width="5"/>
+  </g>
+  <!-- bait school -->
+  <g fill="#3fbf7f">
+    <ellipse cx="315" cy="190" rx="34" ry="14" fill-opacity="0.55"/>
+    <circle cx="300" cy="186" r="3"/><circle cx="312" cy="194" r="3"/><circle cx="325" cy="185" r="3"/><circle cx="334" cy="195" r="3"/><circle cx="292" cy="196" r="3"/><circle cx="318" cy="182" r="3"/>
+  </g>
+  <!-- bottom at about 12 m, with a softer layer under it -->
+  <path d="M 60 212 L 120 210 L 180 214 L 240 211 L 300 216 L 360 213 L 420 215 L 480 212 L 480 222 L 60 222 Z" fill="#fff4e6"/>
+  <path d="M 60 222 L 480 222 L 480 246 L 60 246 Z" fill="#ff8a3d" fill-opacity="0.55"/>
+  <!-- second bottom at about 24 m -->
+  <path d="M 60 370 L 120 366 L 180 374 L 240 368 L 300 378 L 360 372 L 420 376 L 480 370" stroke="#f2d24b" stroke-opacity="0.6" stroke-width="6" fill="none"/>
+  <!-- labels -->
+  <g font-size="14" fill="#1b2a47">
+    <line x1="480" y1="58" x2="500" y2="70" stroke="#1b2a47"/><text x="504" y="75">Surface clutter: waves, bubbles, wake</text>
+    <line x1="480" y1="145" x2="500" y2="132" stroke="#1b2a47"/><text x="504" y="128">Thermocline: a sharp temperature change</text>
+    <line x1="420" y1="168" x2="500" y2="165" stroke="#1b2a47"/><text x="504" y="162">Arches: single fish passing</text>
+    <text x="504" y="180">through the beam</text>
+    <line x1="349" y1="190" x2="500" y2="205" stroke="#1b2a47"/><text x="504" y="210">School of bait fish</text>
+    <line x1="480" y1="216" x2="500" y2="236" stroke="#1b2a47"/><text x="504" y="240">Bottom: bright, thick line</text>
+    <text x="504" y="258">hard bottom = brighter, thinner</text>
+    <line x1="480" y1="372" x2="500" y2="360" stroke="#1b2a47"/><text x="504" y="356">Second bottom at twice the depth:</text>
+    <text x="504" y="374">sound bounced bottom–surface–bottom</text>
+  </g>
+  <!-- inset: why an arch -->
+  <rect x="500" y="388" width="350" height="84" fill="#f3f6fb" stroke="#c9d3e6"/>
+  <text x="510" y="406" font-size="13" font-weight="600" fill="#1b2a47">Why a fish makes an arch</text>
+  <text x="510" y="424" font-size="12" fill="#1b2a47">The fish is closest</text>
+  <text x="510" y="440" font-size="12" fill="#1b2a47">when it is straight</text>
+  <text x="510" y="456" font-size="12" fill="#1b2a47">below the boat</text>
+  <g stroke="#1b2a47" stroke-width="1.2" fill="none">
+    <path d="M 690 400 L 672 462 L 708 462 Z" stroke-dasharray="3 3"/>
+    <path d="M 755 400 L 737 462 L 773 462 Z"/>
+    <path d="M 820 400 L 802 462 L 838 462 Z" stroke-dasharray="3 3"/>
+  </g>
+  <line x1="690" y1="400" x2="752" y2="452" stroke="#c0392b" stroke-width="1"/>
+  <line x1="755" y1="400" x2="755" y2="448" stroke="#c0392b" stroke-width="1.5"/>
+  <line x1="820" y1="400" x2="758" y2="452" stroke="#c0392b" stroke-width="1"/>
+  <circle cx="755" cy="452" r="4" fill="#ff8a3d"/>
+</svg>

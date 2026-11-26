@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 60
 sidebar_label: Population Density Map
 title: "Population Density Map: Choropleth, Dot Density & 3D Compared"
 description: "What a population density map is and how to read one, with the same Census data mapped three ways: a choropleth, a dot density map and 3D columns."
@@ -16,7 +16,7 @@ keywords:
         "people per square mile"
     ]
 image: /img/learn/population-density-map-og.png
-related: [choropleth-map, heatmap, scatter-plot, big-data-visualization]
+related: [choropleth-map, dot-density-map, heatmap, big-data-visualization]
 datePublished: 2026-11-26
 ---
 
@@ -111,6 +111,8 @@ A dot density map shows those 40% as dense crowds of dots on a small part of the
 A **dot density map** (also called a dot distribution map or dot map) shows a count with dots of one size, each standing for a fixed number, such as 1 dot = 1,000 people, placed inside the area the count belongs to. Density shows as how tightly the dots are packed.
 
 A dot density map is drawn from counts, so you don't divide by the area first as you would for a choropleth. A big county and a small one with the same population get the same number of dots, and the small one looks denser because its dots are closer together.
+
+For how to choose the dot value and dot size, where to place the dots, and how to map two categories in two colours, see the [dot density map](/learn/chart-types/complex/dot-density-map/) guide.
 
 ### Dot value and dot size
 

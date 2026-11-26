@@ -1,5 +1,5 @@
 ---
-sidebar_position: 40
+sidebar_position: 50
 sidebar_label: Parallel Coordinates Plot
 title: "Parallel Coordinates Plot: What It Is & How to Read It"
 description: "What a parallel coordinates plot is, how to read its axes and lines, when to use one instead of a scatter plot or radar chart, and the mistakes to avoid."

@@ -15,7 +15,7 @@ keywords:
         "linear vs logarithmic scale"
     ]
 image: /img/learn/log-scale-graph-og.png
-related: [cartesian-graph, line-chart, drawdown-and-equity-curve, scatter-plot]
+related: [cartesian-graph, line-chart, well-log, scatter-plot]
 datePublished: 2026-11-16
 ---
 
