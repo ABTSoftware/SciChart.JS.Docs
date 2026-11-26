@@ -20,7 +20,7 @@ Over 100 interactive data visualisation examples, each with a plain-language gui
 
 <LearnGallery slugs={["area-chart", "bar-chart", "combo-chart", "dumbbell-chart", "line-chart", "lollipop-chart", "pareto-chart", "sparkline"]} />
 
-### Parts of a whole
+### Composition and flow
 
 <LearnGallery slugs={["donut-chart", "pie-chart", "sankey-diagram", "sunburst-chart", "ternary-plot", "treemap"]} />
 

@@ -26,9 +26,9 @@ Use these charts to compare values across categories, or to show how a value cha
 | [Pareto chart](/learn/chart-types/cartesian/pareto-chart/) | Categories ranked from largest to smallest, with a cumulative percentage line showing which few make up most of the total |
 | [Sparkline](/learn/chart-types/cartesian/sparkline/) | A word-sized line chart with no axes, showing the recent trend of a value beside the value itself, often one per row of a table |
 
-## Parts of a whole
+## Composition and flow
 
-These charts show how a total splits into parts, from a single split to a hierarchy, a flow or a three-part mixture.
+These charts show what a total is made of and where it goes: shares of a total (pie, donut), mixtures of three parts (ternary), shares in nested levels (sunburst, treemap) and flows from sources to destinations (Sankey).
 
 | Chart | What it shows |
 | --- | --- |
