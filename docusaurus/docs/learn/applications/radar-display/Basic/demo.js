@@ -15,6 +15,7 @@ const LOOP_SCANS = 30; // the scenario runs for 30 turns (6 minutes of simulated
 const PERSISTENCE_SECONDS = 1.6; // how quickly the afterglow fades: about 8% is left after one turn
 const BEAMWIDTH_DEG = 1.4; // a blip is about one beamwidth wide in bearing
 const TRAIL_LENGTH = 8; // past plots kept for each track
+const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 
 // Standard identities, coloured and shaped loosely after the public military symbol standards
 const IDENTITIES = {
@@ -126,7 +127,7 @@ function createLayout(divElementId) {
     body.style.cssText = "flex:1; min-height:0; display:flex;";
     const chartDiv = document.createElement("div");
     chartDiv.id = `${divElementId}-ppi`;
-    chartDiv.style.cssText = "flex:1; min-width:0; min-height:0;";
+    chartDiv.style.cssText = "flex:1; min-width:0; min-height:0; position:relative;";
     const legend = document.createElement("div");
     legend.style.cssText = "flex:0 0 150px; padding:8px 8px 8px 4px; overflow:auto; font-size:12px; line-height:1.3;";
     body.append(chartDiv, legend);
@@ -161,6 +162,11 @@ async function radarDisplayChart(divElementId) {
         PolarUniformHeatmapRenderableSeries,
         HeatmapColorMap,
         PolarLineRenderableSeries,
+        PolarColumnRenderableSeries,
+        XyxDataSeries,
+        EColumnMode,
+        GradientParams,
+        Point,
         PolarXyScatterRenderableSeries,
         PolarTextRenderableSeries,
         XyDataSeries,
@@ -256,6 +262,31 @@ async function radarDisplayChart(divElementId) {
     const sweepData = new XyDataSeries(wasmContext, { xValues: [0, 0], yValues: [0, MAX_RANGE_NM] });
     const sweepGlow = new PolarLineRenderableSeries(wasmContext, { dataSeries: sweepData, stroke: "#7CFFB2", strokeThickness: 8, opacity: 0.25 });
     const sweepLine = new PolarLineRenderableSeries(wasmContext, { dataSeries: sweepData, stroke: "#D8FFE8", strokeThickness: 2 });
+    // The glow behind the sweep: one polar column, a wedge from SWEEP_GLOW_DEG behind the line up to the line,
+    // filled with a gradient from soft green at the line to clear, so the echoes still show through.
+    // Two copies, one turn apart: the chart only draws 0° to 360°, so when the wedge crosses north
+    // the first copy draws the part after 0° and the second the part before 360°.
+    const glowData = new XyxDataSeries(wasmContext, {
+        xValues: [-SWEEP_GLOW_DEG, 360 - SWEEP_GLOW_DEG],
+        x1Values: [0, 360],
+        yValues: [MAX_RANGE_NM, MAX_RANGE_NM]
+    });
+    const sweepWedge = new PolarColumnRenderableSeries(wasmContext, {
+        dataSeries: glowData,
+        columnXMode: EColumnMode.StartEnd, // x is where the wedge starts, x1 where it ends
+        strokeThickness: 0,
+        // The gradient runs around the circle across the column. The bearing axis is flipped (clockwise, like a compass),
+        // so offset 0 is the sweep line's end
+        fillLinearGradient: new GradientParams(new Point(0, 0), new Point(1, 0), [
+            { offset: 0, color: "#7CFFB270" },
+            { offset: 0.5, color: "#7CFFB21C" },
+            { offset: 1, color: "#7CFFB200" }
+        ])
+    });
+    function moveSweepWedge(angle) {
+        glowData.updateXyz(0, angle - SWEEP_GLOW_DEG, MAX_RANGE_NM, angle);
+        glowData.updateXyz(1, angle - SWEEP_GLOW_DEG + 360, MAX_RANGE_NM, angle + 360);
+    }
 
     // Own position at the centre
     const ownPosition = new PolarXyScatterRenderableSeries(wasmContext, {
@@ -292,7 +323,7 @@ async function radarDisplayChart(divElementId) {
         }
     });
 
-    sciChartSurface.renderableSeries.add(videoSeries, coastline, sweepGlow, sweepLine, ownPosition);
+    sciChartSurface.renderableSeries.add(videoSeries, coastline, sweepWedge, sweepGlow, sweepLine, ownPosition);
     const allLayers = Object.keys(layers).map((identity) => layers[identity]);
     for (const layer of allLayers) sciChartSurface.renderableSeries.add(layer.trails, layer.leaders);
     for (const layer of allLayers) sciChartSurface.renderableSeries.add(layer.symbols);
@@ -411,12 +442,45 @@ async function radarDisplayChart(divElementId) {
         }
     }
 
-    // --- Readout: the track under the mouse, or the range and bearing of the cursor ---
+    // --- Tooltip and readout: the track under the mouse, or the range and bearing of the cursor ---
     let lastMouse = null;
-    const defaultText = "Hover over a track to read its range, bearing, speed and heading.";
+    // The tooltip is an HTML card over the chart, placed next to the mouse
+    const tooltip = document.createElement("div");
+    tooltip.style.cssText =
+        "position:absolute; z-index:5; pointer-events:none; display:none; min-width:170px; padding:8px 10px;" +
+        "background:#0B1424EE; border:1px solid #FFFFFF33; border-left-width:4px; border-radius:6px;" +
+        "color:#E8EEF8; font:13px system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height:1.45;";
+    ui.chartDiv.append(tooltip);
+    function showTooltip(track, last) {
+        const s = track.state;
+        const identity = IDENTITIES[track.identity];
+        const rows = [
+            ["Range", `${last.range.toFixed(1)} NM`],
+            ["Bearing", `${pad3(last.bearing)}°`],
+            ["Speed", `${s.speed} kt`],
+            ["Heading", `${pad3(s.heading)}°`],
+            ["Transponder", track.contact.squawk ? `${track.contact.squawk}, FL${String(s.flightLevel).padStart(3, "0")}` : "no reply"]
+        ];
+        tooltip.style.borderLeftColor = identity.color;
+        tooltip.innerHTML =
+            `<div style="font-weight:700; color:${identity.color}">${identity.label.toUpperCase()}</div>` +
+            `<div style="margin-bottom:4px; color:#AFC0DC">${track.contact.name}, ${track.contact.kind === "surface" ? "surface" : "air"} track</div>` +
+            rows.map(([k, v]) => `<div style="display:flex; justify-content:space-between; gap:14px"><span style="color:#AFC0DC">${k}</span><b>${v}</b></div>`).join("") +
+            (s.coasting ? `<div style="margin-top:4px; color:#FFD166">Coasting: no echo on the last sweep</div>` : "");
+        // Beside the cursor, flipped to the other side near the right or bottom edge
+        const { x, y } = lastMouse.pixel;
+        const box = ui.chartDiv.getBoundingClientRect();
+        tooltip.style.display = "block";
+        const w = tooltip.offsetWidth;
+        const h = tooltip.offsetHeight;
+        tooltip.style.left = `${x + 16 + w > box.width ? x - 16 - w : x + 16}px`;
+        tooltip.style.top = `${Math.max(4, Math.min(y - h / 2, box.height - h - 4))}px`;
+    }
+    const defaultText = "Hover over a track for its identity, range, bearing, speed and heading.";
     ui.readout.textContent = defaultText;
     function showReadout() {
         if (!lastMouse) {
+            tooltip.style.display = "none";
             ui.readout.textContent = defaultText;
             return;
         }
@@ -434,9 +498,11 @@ async function radarDisplayChart(divElementId) {
             if (d < pickRadius && (!best || d < best.d)) best = { d, track, last };
         }
         if (!best) {
+            tooltip.style.display = "none";
             ui.readout.textContent = `Cursor: range ${range.toFixed(1)} NM, bearing ${pad3(bearing)}°.`;
             return;
         }
+        showTooltip(best.track, best.last);
         const { track, last } = best;
         const s = track.state;
         const id = IDENTITIES[track.identity].label;
@@ -462,7 +528,10 @@ async function radarDisplayChart(divElementId) {
                 const polar = bearingAxis.reverseTransform(point.x, point.y);
                 const bearing = (bearingAxis.getCurrentCoordinateCalculator().getDataValue(polar.x) + 360) % 360;
                 const range = rangeAxis.getCurrentCoordinateCalculator().getDataValue(polar.y);
-                lastMouse = range >= 0 && range <= MAX_RANGE_NM ? { bearing, range } : null;
+                // The mouse's position in the chart's div, in CSS pixels, to place the tooltip
+                const box = ui.chartDiv.getBoundingClientRect();
+                const pixel = { x: args.nativeEvent.clientX - box.left, y: args.nativeEvent.clientY - box.top };
+                lastMouse = range >= 0 && range <= MAX_RANGE_NM ? { bearing, range, pixel } : null;
             }
             showReadout();
         }
@@ -549,6 +618,7 @@ async function radarDisplayChart(divElementId) {
             const angle = sweepCol % AZIMUTHS;
             sweepData.clear();
             sweepData.appendRange([angle, angle], [0, MAX_RANGE_NM]);
+            moveSweepWedge(angle);
         }
         videoData.setZValues(video);
         showReadout();

@@ -14,7 +14,7 @@ const MINUTES_PER_SWEEP = 4.5; // the time one turn stands for: about one radar 
 const LOOP_SWEEPS = 16; // the weather moves for 16 scans, then the loop starts again
 const STORM_MOTION = { x: 0.68, y: 0.3 }; // km per minute: about 45 km/h towards the east-north-east
 const ELEVATION_DEG = 0.5; // the radar's lowest tilt
-const TRAIL_DEG = 60; // the glow behind the sweep line fades out over this many degrees
+const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 
 // A reflectivity colour scale in the style of the classic US National Weather Service radar images:
 // one colour per 5 dBZ step, from 5 dBZ to 75 dBZ and above
@@ -222,6 +222,11 @@ async function weatherRadarChart(divElementId) {
         PolarUniformHeatmapRenderableSeries,
         HeatmapColorMap,
         PolarLineRenderableSeries,
+        PolarColumnRenderableSeries,
+        XyxDataSeries,
+        EColumnMode,
+        GradientParams,
+        Point,
         XyDataSeries,
         CustomChartModifier2D,
         EModifierType,
@@ -328,39 +333,33 @@ async function weatherRadarChart(divElementId) {
         opacity: 0.25
     });
     const sweepLine = new PolarLineRenderableSeries(wasmContext, { dataSeries: sweepData, stroke: "#C9FFE0", strokeThickness: 2 });
-    // The glow behind the sweep: a second polar heatmap, one cell deep and one cell per degree, drawn over the weather.
-    // Each cell's value is how recently the beam passed it (1 at the line, 0 once it is TRAIL_DEG behind),
-    // and the colour map runs from see-through to a soft green, so the weather still shows through.
-    const trailValues = [new Array(AZIMUTHS).fill(NaN)];
-    const trailData = new UniformHeatmapDataSeries(wasmContext, {
-        xStart: 0,
-        xStep: 360 / AZIMUTHS,
-        yStart: 0,
-        yStep: MAX_RANGE,
-        zValues: trailValues
+    // The glow behind the sweep: one polar column, a wedge from SWEEP_GLOW_DEG behind the line up to the line,
+    // filled with a gradient from see-through to a soft green, so the weather still shows through
+    // Two copies of the wedge, one turn apart: the chart only draws 0° to 360°, so when the wedge crosses north
+    // the first copy draws the part after 0° and the second the part before 360°
+    const glowData = new XyxDataSeries(wasmContext, {
+        xValues: [-SWEEP_GLOW_DEG, 360 - SWEEP_GLOW_DEG],
+        x1Values: [0, 360],
+        yValues: [MAX_RANGE, MAX_RANGE]
     });
-    trailData.hasNaNs = true;
-    const sweepTrail = new PolarUniformHeatmapRenderableSeries(wasmContext, {
-        dataSeries: trailData,
-        colorMap: new HeatmapColorMap({
-            minimum: 0,
-            maximum: 1,
-            gradientStops: [
-                { offset: 0, color: "#7CFFB200" },
-                { offset: 1, color: "#7CFFB270" }
-            ]
-        })
+    const sweepWedge = new PolarColumnRenderableSeries(wasmContext, {
+        dataSeries: glowData,
+        columnXMode: EColumnMode.StartEnd, // x is where the wedge starts, x1 where it ends
+        strokeThickness: 0,
+        // The gradient runs around the circle across the column. The azimuth axis is flipped (clockwise, like a compass),
+        // so offset 0 is the sweep line's end: bright there, fading to clear SWEEP_GLOW_DEG behind it
+        fillLinearGradient: new GradientParams(new Point(0, 0), new Point(1, 0), [
+            { offset: 0, color: "#7CFFB270" },
+            { offset: 0.5, color: "#7CFFB21C" },
+            { offset: 1, color: "#7CFFB200" }
+        ])
     });
-    function updateTrail(sweepAngle) {
-        for (let col = 0; col < AZIMUTHS; col++) {
-            const behind = (sweepAngle - (col + 0.5) * (360 / AZIMUTHS) + 360) % 360; // degrees behind the line
-            const glow = 1 - behind / TRAIL_DEG;
-            trailValues[0][col] = glow > 0 ? glow * glow : NaN; // NaN draws nothing
-        }
-        trailData.setZValues(trailValues);
+    function moveSweepWedge(sweepAngle) {
+        glowData.updateXyz(0, sweepAngle - SWEEP_GLOW_DEG, MAX_RANGE, sweepAngle);
+        glowData.updateXyz(1, sweepAngle - SWEEP_GLOW_DEG + 360, MAX_RANGE, sweepAngle + 360);
     }
-    updateTrail(0);
-    sciChartSurface.renderableSeries.add(reflectivitySeries, velocitySeries, sweepTrail, sweepGlow, sweepLine);
+    moveSweepWedge(0);
+    sciChartSurface.renderableSeries.add(reflectivitySeries, velocitySeries, sweepWedge, sweepGlow, sweepLine);
 
     // Fill in the beams between two azimuths with the weather at time t (minutes), as the antenna passes over them
     function scanColumns(fromCol, toCol, t, scanNumber) {
@@ -549,7 +548,7 @@ async function weatherRadarChart(divElementId) {
                 const angle = ((sweepCol % AZIMUTHS) * 360) / AZIMUTHS;
                 sweepData.clear();
                 sweepData.appendRange([angle, angle], [0, MAX_RANGE]);
-                updateTrail(angle);
+                moveSweepWedge(angle);
                 if (mode === "reflectivity") reflectivityData.setZValues(reflectivity);
                 else velocityData.setZValues(velocity);
                 showReadout();
@@ -565,9 +564,9 @@ async function weatherRadarChart(divElementId) {
             else velocityData.setZValues(velocity);
         });
     }
-    sweepLine.isVisible = sweepGlow.isVisible = sweepTrail.isVisible = true;
+    sweepLine.isVisible = sweepGlow.isVisible = sweepWedge.isVisible = true;
     ui.sweepInput.addEventListener("change", () => {
-        sweepLine.isVisible = sweepGlow.isVisible = sweepTrail.isVisible = ui.sweepInput.checked;
+        sweepLine.isVisible = sweepGlow.isVisible = sweepWedge.isVisible = ui.sweepInput.checked;
     });
     requestAnimationFrame(animate);
     // #region_A_end

@@ -17,6 +17,7 @@ const SOUND_SPEED = 1500; // m/s, a typical value for seawater
 const SWEEP_SECONDS = 4; // one turn of the beam on screen
 const SIM_SECONDS_PER_SWEEP = 30; // the time one turn stands for
 const ECHO_MAX = 40; // top of the colour scale, dB above the noise floor
+const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 const FADE_DB = 16; // how much an echo dims over one turn
 const TRAIL_DB = 9; // how much an old echo dims each time the beam repaints it, leaving a short trail behind a mover
 
@@ -259,6 +260,11 @@ async function sonarDisplays(divElementId) {
         UniformHeatmapRenderableSeries,
         HeatmapColorMap,
         PolarLineRenderableSeries,
+        PolarColumnRenderableSeries,
+        XyxDataSeries,
+        EColumnMode,
+        GradientParams,
+        Point,
         XyDataSeries,
         CustomChartModifier2D,
         EModifierType,
@@ -343,7 +349,32 @@ async function sonarDisplays(divElementId) {
     const sweepData = new XyDataSeries(wasmContext, { xValues: [0, 0], yValues: [0, MAX_RANGE] });
     const sweepGlow = new PolarLineRenderableSeries(wasmContext, { dataSeries: sweepData, stroke: "#FFD27A", strokeThickness: 8, opacity: 0.3 });
     const sweepLine = new PolarLineRenderableSeries(wasmContext, { dataSeries: sweepData, stroke: "#FFF4E6", strokeThickness: 2 });
-    ppi.renderableSeries.add(echoSeries, sweepGlow, sweepLine);
+    // The glow behind the sweep: one polar column, a wedge from SWEEP_GLOW_DEG behind the line up to the line,
+    // filled with a gradient from soft amber at the line to clear, so the echoes still show through.
+    // Two copies, one turn apart: the chart only draws 0° to 360°, so when the wedge crosses north
+    // the first copy draws the part after 0° and the second the part before 360°.
+    const glowData = new XyxDataSeries(wasmContext, {
+        xValues: [-SWEEP_GLOW_DEG, 360 - SWEEP_GLOW_DEG],
+        x1Values: [0, 360],
+        yValues: [MAX_RANGE, MAX_RANGE]
+    });
+    const sweepWedge = new PolarColumnRenderableSeries(wasmContext, {
+        dataSeries: glowData,
+        columnXMode: EColumnMode.StartEnd, // x is where the wedge starts, x1 where it ends
+        strokeThickness: 0,
+        // The gradient runs around the circle across the column. The bearing axis is flipped (clockwise, like a compass),
+        // so offset 0 is the sweep line's end
+        fillLinearGradient: new GradientParams(new Point(0, 0), new Point(1, 0), [
+            { offset: 0, color: "#FFD27A70" },
+            { offset: 0.5, color: "#FFD27A1C" },
+            { offset: 1, color: "#FFD27A00" }
+        ])
+    });
+    function moveSweepWedge(angle) {
+        glowData.updateXyz(0, angle - SWEEP_GLOW_DEG, MAX_RANGE, angle);
+        glowData.updateXyz(1, angle - SWEEP_GLOW_DEG + 360, MAX_RANGE, angle + 360);
+    }
+    ppi.renderableSeries.add(echoSeries, sweepWedge, sweepGlow, sweepLine);
     ppi.chartModifiers.add(new PolarMouseWheelZoomModifier(), new PolarPanModifier(), new PolarZoomExtentsModifier());
 
     // Paint the beams between two columns of the endless sweep (column k is bearing k mod 360 on turn k / 360)
@@ -377,6 +408,7 @@ async function sonarDisplays(divElementId) {
         const angle = ((sweepK % BEARINGS) * 360) / BEARINGS;
         sweepData.clear();
         sweepData.appendRange([angle, angle], [0, MAX_RANGE]);
+        moveSweepWedge(angle);
     }
 
     // --- 2. The passive sonar waterfall: a heatmap that scrolls down ---
