@@ -8,6 +8,7 @@ import { DemoExampleWrapper } from "@site/src/components/DemoExampleWrapper";
 import CenteredImageWrapper from "../components/CenteredImageWrapper";
 import LiveDocSnippet from "../components/LiveDocSnippet";
 import LearnCta from "../components/LearnCta";
+import LearnGallery from "../components/LearnGallery";
 import ChartFromSciChartDemo from "../components/ChartFromSciChartDemo";
 import MinimizedImageAndTextHeader from "../components/MinimizedImageAndTextHeader";
 import StatusEmoji from "../components/StatusEmoji";
@@ -47,6 +48,7 @@ export default {
     CenteredImageWrapper,
     LiveDocSnippet,
     LearnCta,
+    LearnGallery,
     DemoExampleWrapper,
     ChartFromSciChartDemo,
     YouTubeVideo,
