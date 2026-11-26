@@ -17,6 +17,7 @@ const SOUND_SPEED = 1500; // m/s, a typical value for seawater
 const SWEEP_SECONDS = 4; // one turn of the beam on screen
 const SIM_SECONDS_PER_SWEEP = 30; // the time one turn stands for
 const ECHO_MAX = 40; // top of the colour scale, dB above the noise floor
+const HEATMAP_UPDATES_PER_SECOND = 30; // how often the heatmap is recomputed and sent to the chart (see the animation below)
 const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 const FADE_DB = 16; // how much an echo dims over one turn
 const TRAIL_DB = 9; // how much an old echo dims each time the beam repaints it, leaving a short trail behind a mover
@@ -330,9 +331,9 @@ async function sonarDisplays(divElementId) {
         ]
     });
     // raw: the echo each cell held when the beam last passed; shown: raw, dimmed by how long ago that was
-    const raw = Array.from({ length: GATES }, () => new Array(BEARINGS).fill(0));
+    const raw = Array.from({ length: GATES }, () => new Float64Array(BEARINGS));
     const source = Array.from({ length: GATES }, () => new Array(BEARINGS).fill(SRC.WATER));
-    const shown = Array.from({ length: GATES }, () => new Array(BEARINGS).fill(0));
+    const shown = Array.from({ length: GATES }, () => new Float64Array(BEARINGS)); // Float64Array rows copy into the chart faster
     const echoData = new UniformHeatmapDataSeries(wasmContext, {
         xStart: 0,
         xStep: 360 / BEARINGS,
@@ -405,7 +406,9 @@ async function sonarDisplays(divElementId) {
             for (let row = 0; row < GATES; row++) shown[row][col] = Math.max(0, raw[row][col] - dim);
         }
         echoData.setZValues(shown);
-        const angle = ((sweepK % BEARINGS) * 360) / BEARINGS;
+    }
+    // The sweep line and its glow, at the beam's bearing
+    function moveSweep(angle) {
         sweepData.clear();
         sweepData.appendRange([angle, angle], [0, MAX_RANGE]);
         moveSweepWedge(angle);
@@ -451,7 +454,7 @@ async function sonarDisplays(divElementId) {
     const rows = [];
     const rowTimes = [];
     const addRow = (t, seed) => {
-        rows.unshift(Array.from({ length: WF_BINS }, (_, bin) => passiveLevel(bin, t, seed).db));
+        rows.unshift(Float64Array.from({ length: WF_BINS }, (_, bin) => passiveLevel(bin, t, seed).db));
         rowTimes.unshift({ t, seed });
         if (rows.length > WF_ROWS) {
             rows.pop();
@@ -474,6 +477,7 @@ async function sonarDisplays(divElementId) {
     let sweepK = 4 * BEARINGS;
     paint(0, sweepK);
     updateShown(sweepK);
+    moveSweep(0);
     let rowCount = 0;
     const t0 = simTimeAt(sweepK);
     for (let i = WF_ROWS - 1; i >= 0; i--) addRow(t0 - i * WF_DT, rowCount++);
@@ -550,13 +554,21 @@ async function sonarDisplays(divElementId) {
     let lastTime = performance.now();
     let elapsed = 0;
     const startK = sweepK;
+    let sinceHeatmap = 0; // ms since the scanning display was last sent to the chart
     function animate(now) {
         // Stop when either chart is deleted (for example when a React component unmounts)
         if (ppi.isDeleted || waterfall.isDeleted) return;
         if (!paused) {
-            elapsed += Math.min(now - lastTime, 100);
+            const dt = Math.min(now - lastTime, 100);
+            elapsed += dt;
+            sinceHeatmap += dt;
+            // Performance: every heatmap update makes SciChart re-process the whole grid, however few cells changed.
+            // So the cheap parts (the sweep line and its glow) move every frame, and the echo display is repainted,
+            // dimmed and sent HEATMAP_UPDATES_PER_SECOND times a second. For large grids, use 15.
+            moveSweep(((elapsed / 1000 / SWEEP_SECONDS) * 360) % 360);
             const targetK = startK + Math.floor((elapsed / 1000 / SWEEP_SECONDS) * BEARINGS);
-            if (targetK > sweepK) {
+            if (sinceHeatmap >= 1000 / HEATMAP_UPDATES_PER_SECOND && targetK > sweepK) {
+                sinceHeatmap = 0;
                 paint(sweepK, targetK);
                 sweepK = targetK;
                 updateShown(sweepK);

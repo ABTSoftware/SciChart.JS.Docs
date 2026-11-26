@@ -14,6 +14,7 @@ const MINUTES_PER_SWEEP = 4.5; // the time one turn stands for: about one radar 
 const LOOP_SWEEPS = 16; // the weather moves for 16 scans, then the loop starts again
 const STORM_MOTION = { x: 0.68, y: 0.3 }; // km per minute: about 45 km/h towards the east-north-east
 const ELEVATION_DEG = 0.5; // the radar's lowest tilt
+const HEATMAP_UPDATES_PER_SECOND = 30; // how often the heatmap is recomputed and sent to the chart (see the animation below)
 const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 
 // A reflectivity colour scale in the style of the classic US National Weather Service radar images:
@@ -304,9 +305,10 @@ async function weatherRadarChart(divElementId) {
         ]
     });
 
-    // One row per range gate, one column per degree. NaN means no echo, which draws nothing
-    const reflectivity = Array.from({ length: GATES }, () => new Array(AZIMUTHS).fill(NaN));
-    const velocity = Array.from({ length: GATES }, () => new Array(AZIMUTHS).fill(NaN));
+    // One row per range gate, one column per degree. NaN means no echo, which draws nothing.
+    // Float64Array rows are copied into the chart faster than plain arrays.
+    const reflectivity = Array.from({ length: GATES }, () => new Float64Array(AZIMUTHS).fill(NaN));
+    const velocity = Array.from({ length: GATES }, () => new Float64Array(AZIMUTHS).fill(NaN));
     const heatmapOptions = { xStart: 0, xStep: 360 / AZIMUTHS, yStart: 0, yStep: GATE_KM };
     const reflectivityData = new UniformHeatmapDataSeries(wasmContext, { ...heatmapOptions, zValues: reflectivity });
     const velocityData = new UniformHeatmapDataSeries(wasmContext, { ...heatmapOptions, zValues: velocity });
@@ -529,12 +531,23 @@ async function weatherRadarChart(divElementId) {
     let sweepCol = 0;
     let lastTime = performance.now();
     let elapsed = 0;
+    let sinceHeatmap = 0; // ms since the heatmap was last sent to the chart
     function animate(now) {
         if (sciChartSurface.isDeleted) return;
         if (ui.sweepInput.checked) {
-            elapsed += Math.min(now - lastTime, 100);
+            const dt = Math.min(now - lastTime, 100);
+            elapsed += dt;
+            sinceHeatmap += dt;
+            // Performance: every heatmap update makes SciChart re-process the whole grid, however few cells changed.
+            // So the cheap parts (the sweep line and its glow) move every frame, and the heatmap is updated
+            // HEATMAP_UPDATES_PER_SECOND times a second. For large grids (a million cells or more), use 15.
+            const angle = ((elapsed / 1000 / SWEEP_SECONDS) * 360) % 360;
+            sweepData.clear();
+            sweepData.appendRange([angle, angle], [0, MAX_RANGE]);
+            moveSweepWedge(angle);
             const targetCol = Math.floor((elapsed / 1000 / SWEEP_SECONDS) * AZIMUTHS);
-            if (targetCol > sweepCol) {
+            if (sinceHeatmap >= 1000 / HEATMAP_UPDATES_PER_SECOND && targetCol > sweepCol) {
+                sinceHeatmap = 0;
                 const fromCol = sweepCol;
                 const firstScan = Math.floor(fromCol / AZIMUTHS);
                 scan = Math.floor(targetCol / AZIMUTHS);
@@ -545,10 +558,6 @@ async function weatherRadarChart(divElementId) {
                     if (b > a) scanColumns(a, b, minutesAt(s, (a % AZIMUTHS) / AZIMUTHS), s);
                 }
                 sweepCol = targetCol;
-                const angle = ((sweepCol % AZIMUTHS) * 360) / AZIMUTHS;
-                sweepData.clear();
-                sweepData.appendRange([angle, angle], [0, MAX_RANGE]);
-                moveSweepWedge(angle);
                 if (mode === "reflectivity") reflectivityData.setZValues(reflectivity);
                 else velocityData.setZValues(velocity);
                 showReadout();

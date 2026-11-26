@@ -15,6 +15,7 @@ const LOOP_SCANS = 30; // the scenario runs for 30 turns (6 minutes of simulated
 const PERSISTENCE_SECONDS = 1.6; // how quickly the afterglow fades: about 8% is left after one turn
 const BEAMWIDTH_DEG = 1.4; // a blip is about one beamwidth wide in bearing
 const TRAIL_LENGTH = 8; // past plots kept for each track
+const HEATMAP_UPDATES_PER_SECOND = 30; // how often the heatmap is recomputed and sent to the chart (see the animation below)
 const SWEEP_GLOW_DEG = 60; // the glow behind the sweep line fades out over this many degrees
 
 // Standard identities, coloured and shaped loosely after the public military symbol standards
@@ -230,7 +231,7 @@ async function radarDisplayChart(divElementId) {
 
     // The radar video: one cell per degree and half mile, holding how brightly it glows (0 to 1). Each turn of the
     // sweep writes fresh echoes into the cells it passes; between turns every cell fades, like long-persistence phosphor
-    const video = Array.from({ length: GATES }, () => new Array(AZIMUTHS).fill(NaN));
+    const video = Array.from({ length: GATES }, () => new Float64Array(AZIMUTHS).fill(NaN)); // Float64Array rows copy into the chart faster
     const videoData = new UniformHeatmapDataSeries(wasmContext, { xStart: 0, xStep: 360 / AZIMUTHS, yStart: 0, yStep: GATE_NM, zValues: video });
     videoData.hasNaNs = true;
     const phosphor = new HeatmapColorMap({
@@ -596,32 +597,40 @@ async function radarDisplayChart(divElementId) {
     sweepCol = PREFILL;
     redrawTracks();
 
+    let sinceHeatmap = 0; // seconds since the heatmap was last sent to the chart
     function animate(now) {
         if (sciChartSurface.isDeleted) return; // stop when the chart is deleted
         const dt = Math.min(now - lastTime, 100) / 1000;
         lastTime = now;
         elapsed += dt;
-        const targetCol = PREFILL + Math.floor((elapsed / SWEEP_SECONDS) * AZIMUTHS);
-        // Afterglow: every cell fades a little each frame
-        const k = fade(dt);
-        for (let row = 0; row < GATES; row++) {
-            const line = video[row];
-            for (let col = 0; col < AZIMUTHS; col++) {
-                const v = line[col] * k;
-                line[col] = v < 0.012 ? NaN : v;
+        sinceHeatmap += dt;
+        // Performance: every heatmap update makes SciChart re-process the whole grid, however few cells changed.
+        // So the cheap parts (the sweep line and its glow) move every frame, and the heatmap (afterglow fade,
+        // new beams, tracks) is updated HEATMAP_UPDATES_PER_SECOND times a second. For large grids, use 15.
+        const angle = ((elapsed / SWEEP_SECONDS) * 360) % 360;
+        sweepData.clear();
+        sweepData.appendRange([angle, angle], [0, MAX_RANGE_NM]);
+        moveSweepWedge(angle);
+        if (sinceHeatmap >= 1 / HEATMAP_UPDATES_PER_SECOND) {
+            // Afterglow: every cell fades by the time since the last update
+            const k = fade(sinceHeatmap);
+            sinceHeatmap = 0;
+            for (let row = 0; row < GATES; row++) {
+                const line = video[row];
+                for (let col = 0; col < AZIMUTHS; col++) {
+                    const v = line[col] * k;
+                    line[col] = v < 0.012 ? NaN : v;
+                }
             }
+            const targetCol = PREFILL + Math.floor((elapsed / SWEEP_SECONDS) * AZIMUTHS);
+            if (targetCol > sweepCol) {
+                scanColumns(sweepCol, targetCol);
+                sweepCol = targetCol;
+                redrawTracks();
+            }
+            videoData.setZValues(video);
+            showReadout();
         }
-        if (targetCol > sweepCol) {
-            scanColumns(sweepCol, targetCol);
-            sweepCol = targetCol;
-            redrawTracks();
-            const angle = sweepCol % AZIMUTHS;
-            sweepData.clear();
-            sweepData.appendRange([angle, angle], [0, MAX_RANGE_NM]);
-            moveSweepWedge(angle);
-        }
-        videoData.setZValues(video);
-        showReadout();
         requestAnimationFrame(animate);
     }
     ui.trailsInput.addEventListener("change", redrawTracks);
