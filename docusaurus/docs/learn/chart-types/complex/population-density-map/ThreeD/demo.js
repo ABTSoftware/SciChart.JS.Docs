@@ -63,7 +63,8 @@ async function populationDensity3D(divElementId, grid) {
     const { wasmContext, sciChart3DSurface } = await SciChart3DSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
         worldDimensions: new Vector3(464, 160, 296),
-        cameraOptions: { position: new Vector3(-110, 250, -330), target: new Vector3(55, 15, 20) }
+        // Look at the middle of the map (x and z run from minus to plus half the world size), just above the floor
+        cameraOptions: { position: new Vector3(-200, 300, -420), target: new Vector3(0, 20, 0) }
     });
     const hiddenAxis = { drawLabels: false, drawMajorGridLines: false, drawMinorGridLines: false, drawMajorBands: false };
     const xMin = grid.x0;

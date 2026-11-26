@@ -245,7 +245,14 @@ class CountyTooltipModifier extends CustomChartModifier2D {
         super.onDetach();
     }
 
-    // The smallest county that contains the point: a few independent cities sit inside a county
+    // The smallest county that contains the point: a few independent cities sit inside a county.
+    // This checks every county on each mouse move. The bounding-box test rules most of them out cheaply,
+    // which is fast enough for about 3,000 counties. For much more data, such as 85,000 census tracts:
+    // - Build a spatial index once: cut the map into a grid of cells (say 50 km) and list, for each cell,
+    //   the areas whose bounding box overlaps it. On mouse move, look up the one cell under the mouse
+    //   and test only its areas, a handful instead of thousands. A library such as rbush (an R-tree) does the same job.
+    // - Skip the search when the mouse is still inside the last area found.
+    // - Or use a hit-test bitmap: draw each area offscreen in a unique colour, and read the colour under the mouse.
     findCounty(x, y) {
         let found;
         for (const county of this.counties) {
@@ -284,6 +291,7 @@ class CountyTooltipModifier extends CustomChartModifier2D {
                 `Land area ${format(county.landArea, 1)} sq miles`
             ].join("\n");
             this.tooltip.horizontalAnchorPoint = nearRightEdge ? EHorizontalAnchorPoint.Right : EHorizontalAnchorPoint.Left;
+            // Offsets are a fraction of the visible range, so the gap from the cursor looks the same at every zoom level
             this.tooltip.x1 = x + xAxis.visibleRange.diff * (nearRightEdge ? -0.012 : 0.012);
             this.tooltip.y1 = y + yAxis.visibleRange.diff * 0.03;
         }
@@ -525,7 +533,8 @@ async function populationDensity3D(divElementId, grid) {
     const { wasmContext, sciChart3DSurface } = await SciChart3DSurface.create(divElementId, {
         theme: new SciChartJsNavyTheme(),
         worldDimensions: new Vector3(464, 160, 296),
-        cameraOptions: { position: new Vector3(-110, 250, -330), target: new Vector3(55, 15, 20) }
+        // Look at the middle of the map (x and z run from minus to plus half the world size), just above the floor
+        cameraOptions: { position: new Vector3(-200, 300, -420), target: new Vector3(0, 20, 0) }
     });
     const hiddenAxis = { drawLabels: false, drawMajorGridLines: false, drawMinorGridLines: false, drawMajorBands: false };
     const xMin = grid.x0;
