@@ -56,6 +56,11 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     "non-destructive-testing": "Test and Measurement",
     oscilloscope: "Test and Measurement",
     "stress-strain-curve": "Test and Measurement",
+    sigint: "Signals Intelligence",
+    "rf-spectrum-analyzer": "Signals Intelligence",
+    elint: "Signals Intelligence",
+    "direction-finding": "Signals Intelligence",
+    "iq-constellation-diagram": "Signals Intelligence",
     "vibration-analysis": "Test and Measurement"
 };
 

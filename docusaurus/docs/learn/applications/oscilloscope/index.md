@@ -1,5 +1,5 @@
 ---
-sidebar_position: 150
+sidebar_position: 180
 sidebar_label: Oscilloscope
 title: "How to Use an Oscilloscope: The Display, Triggering and Measurements"
 description: "How to use and read an oscilloscope: volts and time per division, probes, coupling, triggering, measurements, bandwidth and sample rate, software oscilloscopes, and scope vs logic analyzer."

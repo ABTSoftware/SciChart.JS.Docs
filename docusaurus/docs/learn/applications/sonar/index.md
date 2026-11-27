@@ -1,5 +1,5 @@
 ---
-sidebar_position: 200
+sidebar_position: 250
 sidebar_label: Sonar
 title: "Sonar: How It Works and How to Read Sonar Displays (Interactive)"
 description: "What sonar is, how active and passive sonar work, and how to read scanning sonar, side scan, bearing-time waterfall and fish finder displays, with a live example."
@@ -22,7 +22,7 @@ keywords:
         "speed of sound in water"
     ]
 image: /img/learn/sonar-og.png
-related: [ultrasound, radar-display, weather-radar, non-destructive-testing]
+related: [ultrasound, radar-display, weather-radar, rf-spectrum-analyzer]
 datePublished: 2026-11-26
 ---
 

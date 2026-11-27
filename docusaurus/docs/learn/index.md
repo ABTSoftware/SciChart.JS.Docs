@@ -118,6 +118,12 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 
 <LearnGallery group="learn/applications/signal-processing" />
 
+### Signals intelligence
+
+[**Signals intelligence**](/learn/applications/#signals-intelligence): how spectrum, waterfall, pulse, direction-finding and IQ displays show the radio signals around a receiver, with live examples.
+
+<LearnGallery slugs={["direction-finding", "elint", "iq-constellation-diagram", "rf-spectrum-analyzer", "sigint"]} />
+
 ### Test and measurement
 
 <LearnGallery slugs={["non-destructive-testing", "oscilloscope", "stress-strain-curve", "vibration-analysis"]} />

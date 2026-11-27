@@ -1,5 +1,5 @@
 ---
-sidebar_position: 310
+sidebar_position: 360
 sidebar_label: Well Log
 title: "Well Log Interpretation: How to Read a Well Log (Interactive Example)"
 description: "What a well log is and how to read one: gamma ray, resistivity, neutron, density and sonic curves, the gas crossover, LAS files and correlating wells, with a live log."

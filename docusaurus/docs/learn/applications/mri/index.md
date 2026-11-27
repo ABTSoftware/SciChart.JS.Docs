@@ -1,5 +1,5 @@
 ---
-sidebar_position: 120
+sidebar_position: 150
 sidebar_label: MRI
 title: "How to Read an MRI Scan: Planes, T1 vs T2 and Contrast (Interactive)"
 description: "How to read an MRI scan: axial, sagittal and coronal planes, T1 vs T2 vs FLAIR, gadolinium contrast, window and level, and artefacts, with an interactive brain MRI viewer."

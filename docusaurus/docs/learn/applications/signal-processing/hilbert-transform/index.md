@@ -17,7 +17,7 @@ keywords:
         "fir hilbert transformer"
     ]
 image: /img/learn/hilbert-transform-og.png
-related: [envelope-detector-circuit, fast-fourier-transform, low-pass-filter, audio-spectrum-analyzer]
+related: [envelope-detector-circuit, fast-fourier-transform, iq-constellation-diagram, audio-spectrum-analyzer]
 datePublished: 2026-11-20
 ---
 

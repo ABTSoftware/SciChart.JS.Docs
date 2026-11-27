@@ -1,5 +1,5 @@
 ---
-sidebar_position: 40
+sidebar_position: 50
 sidebar_label: Drawdown and Equity Curve
 title: "Drawdown and Equity Curve: How to Read and Calculate Max Drawdown"
 description: "What an equity curve and a drawdown are, how to calculate maximum drawdown and its duration, how to read an underwater chart, and what the Calmar ratio shows."

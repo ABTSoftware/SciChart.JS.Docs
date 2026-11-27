@@ -1,5 +1,5 @@
 ---
-sidebar_position: 280
+sidebar_position: 330
 sidebar_label: Volume Profile
 title: "Volume Profile: Point of Control, Value Area and How to Read It"
 description: "What a volume profile is, how the point of control and the 70% value area are calculated, and how to read high- and low-volume nodes, with a live example."

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 180
+sidebar_position: 210
 sidebar_label: Radar Display
 title: "Radar Screen: How to Read a Radar Display (Interactive)"
 description: "How to read a radar screen (PPI scope): range rings, bearing, the sweep, blips, tracks and trails, transponder labels, clutter and identity symbols, with a live simulation."
@@ -19,7 +19,7 @@ keywords:
         "radar range rings"
     ]
 image: /img/learn/radar-display-og.png
-related: [weather-radar, sonar, antenna-radiation-pattern, telemetry]
+related: [weather-radar, sonar, elint, antenna-radiation-pattern]
 datePublished: 2026-11-26
 ---
 
@@ -92,6 +92,8 @@ A pulse radar sends out a short burst of radio energy and listens for echoes. Tw
 - **Bearing** comes from where the antenna is pointing when the echo arrives. A surveillance antenna has a narrow beam in the horizontal plane, typically a degree or two wide, and turns steadily, so the radar knows the direction of each echo from the antenna's angle at that moment.
 
 Radar people sometimes quote the **radar mile**: about 12.36 microseconds, the round-trip time to a target 1 NM away. Because the beam has a width, a point target shows as a short arc rather than a dot. A 1.4° beam at 40 NM is about 1 NM wide, so two aircraft side by side at that range can merge into one blip, while two at the same bearing but different ranges stay separate.
+
+How often the radar sends pulses (its pulse repetition interval, PRI) sets the longest range it can measure without ambiguity; a passive receiver measures the same PRI to identify a radar, as described in [ELINT: radar pulse analysis](/learn/applications/elint/).
 
 ## How to read a radar screen
 

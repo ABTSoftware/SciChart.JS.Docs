@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 60
 sidebar_label: ECG
 title: "ECG Leads and How to Read an ECG Strip: Waves and Intervals"
 description: "What an ECG records, the 12 ECG leads and where the electrodes go, the P-QRS-T waveform and normal intervals, ECG paper and heart rate, and a step-by-step way to read a strip, with a live ECG."

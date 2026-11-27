@@ -1,5 +1,5 @@
 ---
-sidebar_position: 130
+sidebar_position: 160
 sidebar_label: Non-Destructive Testing (NDT)
 title: "Non-Destructive Testing (NDT): Ultrasonic A-, B- and C-Scans Explained"
 description: "What non-destructive testing is, how the main NDT methods compare, and how ultrasonic testing works: A-scans, B-scans, C-scans, thickness gauging, phased array (PAUT) and TOFD."

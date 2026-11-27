@@ -1,0 +1,158 @@
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 760 606' width='760' height='606' font-family='system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif'>
+<title>Five PRI types: pulse trains and their PRI sequences</title>
+<desc>For each of five pulse repetition interval types, a pulse train on a time line on the left, and on the right a plot of PRI against pulse number. Constant: evenly spaced pulses, a flat line of dots. Staggered: a repeating cycle of three intervals, dots stepping up through three levels and repeating. Jittered: uneven spacing, dots scattered randomly about a mean. Sliding: intervals growing steadily, dots on a rising ramp. Dwell-and-switch: one interval held for several pulses then another, dots on two flat levels.</desc>
+<rect width='760' height='606' fill='#ffffff'/>
+<text x='190' y='30' text-anchor='middle' font-size='15' fill='#1f2a44' font-weight='600'>Pulse train (time →)</text>
+<text x='600' y='30' text-anchor='middle' font-size='15' fill='#1f2a44' font-weight='600'>PRI vs pulse number</text>
+<line x1='20' y1='154' x2='740' y2='154' stroke='#d8dee9'/>
+<text x='20' y='72' font-size='15' fill='#1f2a44' font-weight='600'>Constant (stable)</text>
+<text x='20' y='90' font-size='13' fill='#5b6b88'>one value</text>
+<line x1='30' y1='136' x2='382' y2='136' stroke='#1f2a44' stroke-width='1'/>
+<rect x='28.5' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='66.6' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='104.7' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='142.8' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='180.9' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='219.1' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='257.2' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='295.3' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='333.4' y='110' width='3' height='26' fill='#1f77b4'/>
+<rect x='371.5' y='110' width='3' height='26' fill='#1f77b4'/>
+<line x1='440' y1='142' x2='740' y2='142' stroke='#1f2a44' stroke-width='1'/>
+<line x1='440' y1='142' x2='440' y2='66' stroke='#1f2a44' stroke-width='1'/>
+<circle cx='452.0' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='473.5' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='495.1' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='516.6' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='538.2' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='559.7' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='581.2' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='602.8' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='624.3' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='645.8' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='667.4' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='688.9' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='710.5' cy='95.2' r='4' fill='#d9661f'/>
+<circle cx='732.0' cy='95.2' r='4' fill='#d9661f'/>
+<line x1='20' y1='258' x2='740' y2='258' stroke='#d8dee9'/>
+<text x='20' y='176' font-size='15' fill='#1f2a44' font-weight='600'>Staggered</text>
+<text x='20' y='194' font-size='13' fill='#5b6b88'>a short repeating cycle</text>
+<line x1='30' y1='240' x2='382' y2='240' stroke='#1f2a44' stroke-width='1'/>
+<rect x='28.5' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='61.8' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='100.0' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='142.8' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='176.2' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='214.3' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='257.2' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='290.5' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='328.6' y='214' width='3' height='26' fill='#1f77b4'/>
+<rect x='371.5' y='214' width='3' height='26' fill='#1f77b4'/>
+<line x1='440' y1='246' x2='740' y2='246' stroke='#1f2a44' stroke-width='1'/>
+<line x1='440' y1='246' x2='440' y2='170' stroke='#1f2a44' stroke-width='1'/>
+<circle cx='452.0' cy='234.3' r='4' fill='#d9661f'/>
+<circle cx='473.5' cy='222.6' r='4' fill='#d9661f'/>
+<circle cx='495.1' cy='210.9' r='4' fill='#d9661f'/>
+<circle cx='516.6' cy='234.3' r='4' fill='#d9661f'/>
+<circle cx='538.2' cy='222.6' r='4' fill='#d9661f'/>
+<circle cx='559.7' cy='210.9' r='4' fill='#d9661f'/>
+<circle cx='581.2' cy='234.3' r='4' fill='#d9661f'/>
+<circle cx='602.8' cy='222.6' r='4' fill='#d9661f'/>
+<circle cx='624.3' cy='210.9' r='4' fill='#d9661f'/>
+<circle cx='645.8' cy='234.3' r='4' fill='#d9661f'/>
+<circle cx='667.4' cy='222.6' r='4' fill='#d9661f'/>
+<circle cx='688.9' cy='210.9' r='4' fill='#d9661f'/>
+<circle cx='710.5' cy='234.3' r='4' fill='#d9661f'/>
+<circle cx='732.0' cy='222.6' r='4' fill='#d9661f'/>
+<line x1='20' y1='362' x2='740' y2='362' stroke='#d8dee9'/>
+<text x='20' y='280' font-size='15' fill='#1f2a44' font-weight='600'>Jittered</text>
+<text x='20' y='298' font-size='13' fill='#5b6b88'>random about a mean</text>
+<line x1='30' y1='344' x2='382' y2='344' stroke='#1f2a44' stroke-width='1'/>
+<rect x='28.5' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='66.8' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='103.5' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='145.0' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='180.9' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='221.3' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='260.0' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='295.8' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='335.9' y='318' width='3' height='26' fill='#1f77b4'/>
+<rect x='371.5' y='318' width='3' height='26' fill='#1f77b4'/>
+<line x1='440' y1='350' x2='740' y2='350' stroke='#1f2a44' stroke-width='1'/>
+<line x1='440' y1='350' x2='440' y2='274' stroke='#1f2a44' stroke-width='1'/>
+<circle cx='452.0' cy='308.2' r='4' fill='#d9661f'/>
+<circle cx='473.5' cy='313.0' r='4' fill='#d9661f'/>
+<circle cx='495.1' cy='299.0' r='4' fill='#d9661f'/>
+<circle cx='516.6' cy='315.2' r='4' fill='#d9661f'/>
+<circle cx='538.2' cy='302.2' r='4' fill='#d9661f'/>
+<circle cx='559.7' cy='307.0' r='4' fill='#d9661f'/>
+<circle cx='581.2' cy='315.6' r='4' fill='#d9661f'/>
+<circle cx='602.8' cy='303.0' r='4' fill='#d9661f'/>
+<circle cx='624.3' cy='316.2' r='4' fill='#d9661f'/>
+<circle cx='645.8' cy='305.1' r='4' fill='#d9661f'/>
+<circle cx='667.4' cy='315.3' r='4' fill='#d9661f'/>
+<circle cx='688.9' cy='314.7' r='4' fill='#d9661f'/>
+<circle cx='710.5' cy='305.3' r='4' fill='#d9661f'/>
+<circle cx='732.0' cy='294.1' r='4' fill='#d9661f'/>
+<line x1='20' y1='466' x2='740' y2='466' stroke='#d8dee9'/>
+<text x='20' y='384' font-size='15' fill='#1f2a44' font-weight='600'>Sliding</text>
+<text x='20' y='402' font-size='13' fill='#5b6b88'>ramps, then starts again</text>
+<line x1='30' y1='448' x2='382' y2='448' stroke='#1f2a44' stroke-width='1'/>
+<rect x='28.5' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='57.5' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='88.8' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='122.3' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='158.2' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='196.3' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='236.7' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='279.3' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='324.3' y='422' width='3' height='26' fill='#1f77b4'/>
+<rect x='371.5' y='422' width='3' height='26' fill='#1f77b4'/>
+<line x1='440' y1='454' x2='740' y2='454' stroke='#1f2a44' stroke-width='1'/>
+<line x1='440' y1='454' x2='440' y2='378' stroke='#1f2a44' stroke-width='1'/>
+<circle cx='452.0' cy='442.3' r='4' fill='#d9661f'/>
+<circle cx='473.5' cy='435.9' r='4' fill='#d9661f'/>
+<circle cx='495.1' cy='429.4' r='4' fill='#d9661f'/>
+<circle cx='516.6' cy='423.0' r='4' fill='#d9661f'/>
+<circle cx='538.2' cy='416.6' r='4' fill='#d9661f'/>
+<circle cx='559.7' cy='410.2' r='4' fill='#d9661f'/>
+<circle cx='581.2' cy='403.7' r='4' fill='#d9661f'/>
+<circle cx='602.8' cy='397.3' r='4' fill='#d9661f'/>
+<circle cx='624.3' cy='390.9' r='4' fill='#d9661f'/>
+<circle cx='645.8' cy='384.4' r='4' fill='#d9661f'/>
+<circle cx='667.4' cy='442.3' r='4' fill='#d9661f'/>
+<circle cx='688.9' cy='435.9' r='4' fill='#d9661f'/>
+<circle cx='710.5' cy='429.4' r='4' fill='#d9661f'/>
+<circle cx='732.0' cy='423.0' r='4' fill='#d9661f'/>
+<line x1='20' y1='570' x2='740' y2='570' stroke='#d8dee9'/>
+<text x='20' y='488' font-size='15' fill='#1f2a44' font-weight='600'>Dwell-and-switch</text>
+<text x='20' y='506' font-size='13' fill='#5b6b88'>holds, then jumps</text>
+<line x1='30' y1='552' x2='382' y2='552' stroke='#1f2a44' stroke-width='1'/>
+<rect x='28.5' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='62.6' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='96.6' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='130.7' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='164.8' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='198.9' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='232.9' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='267.0' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='319.3' y='526' width='3' height='26' fill='#1f77b4'/>
+<rect x='371.5' y='526' width='3' height='26' fill='#1f77b4'/>
+<line x1='440' y1='558' x2='740' y2='558' stroke='#1f2a44' stroke-width='1'/>
+<line x1='440' y1='558' x2='440' y2='482' stroke='#1f2a44' stroke-width='1'/>
+<circle cx='452.0' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='473.5' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='495.1' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='516.6' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='538.2' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='559.7' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='581.2' cy='540.5' r='4' fill='#d9661f'/>
+<circle cx='602.8' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='624.3' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='645.8' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='667.4' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='688.9' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='710.5' cy='493.7' r='4' fill='#d9661f'/>
+<circle cx='732.0' cy='493.7' r='4' fill='#d9661f'/>
+<text x='590' y='596' text-anchor='middle' font-size='12' fill='#5b6b88'>Illustrative sequences, not to scale</text>
+</svg>
