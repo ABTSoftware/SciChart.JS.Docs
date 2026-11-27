@@ -40,6 +40,11 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     spectroscopy: "Life Sciences",
     "capnography-pulse-oximetry": "Medical",
     ecg: "Medical",
+    eeg: "Medical",
+    "heart-rate-variability": "Medical",
+    mri: "Medical",
+    spirometry: "Medical",
+    ultrasound: "Medical",
     "motorsport-telemetry": "Motorsport",
     "drawdown-and-equity-curve": "Finance and Trading",
     "market-depth": "Finance and Trading",
@@ -54,6 +59,11 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     "non-destructive-testing": "Test and Measurement",
     oscilloscope: "Test and Measurement",
     "stress-strain-curve": "Test and Measurement",
+    sigint: "Signals Intelligence",
+    "rf-spectrum-analyzer": "Signals Intelligence",
+    elint: "Signals Intelligence",
+    "direction-finding": "Signals Intelligence",
+    "iq-constellation-diagram": "Signals Intelligence",
     "vibration-analysis": "Test and Measurement"
 };
 

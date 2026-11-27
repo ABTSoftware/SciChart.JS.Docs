@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 520" width="980" height="520" role="img" aria-labelledby="t2 d2">
+<title id="t2">Ultrasound probe types and the image shape each makes</title>
+<desc id="d2">Three probes side by side, each with the shape of image it produces. A linear probe has a flat face and makes a rectangular image the width of the probe; it uses high frequencies for fine detail near the surface, such as vessels, muscles, tendons and the thyroid. A curved (curvilinear) probe has a convex face and makes a wide fan whose top follows the curve of the probe; it uses lower frequencies to see deep into the abdomen and pelvis, including pregnancy scans. A phased array probe has a small flat face and steers its beam electronically to make a fan that starts from a point; its small footprint fits between the ribs for scans of the heart.</desc>
+<rect width="980" height="520" fill="#ffffff"/>
+<rect x="110" y="80" width="120" height="44" rx="8" fill="#8a94a6" stroke="#4a5568" stroke-width="2"/>
+<rect x="110" y="132" width="120" height="200" fill="#cfd8e3" stroke="#4a5568" stroke-width="2"/>
+<line x1="118.0" y1="132" x2="118.0" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="135.3" y1="132" x2="135.3" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="152.6" y1="132" x2="152.6" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="169.9" y1="132" x2="169.9" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="187.2" y1="132" x2="187.2" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="204.5" y1="132" x2="204.5" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="221.8" y1="132" x2="221.8" y2="332" stroke="#9aa8b8" stroke-width="1.5"/>
+<path d="M442.3,106.3 A90,90 0 0 0 537.7,106.3 L649.0,284.4 A300,300 0 0 1 331.0,284.4 Z" fill="#cfd8e3" stroke="#4a5568" stroke-width="2"/>
+<line x1="448.5" y1="109.9" x2="351.8" y2="296.3" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="461.8" y1="115.5" x2="395.9" y2="314.9" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="475.7" y1="118.9" x2="442.3" y2="326.2" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="490.0" y1="120.0" x2="490.0" y2="330.0" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="504.3" y1="118.9" x2="537.7" y2="326.2" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="518.2" y1="115.5" x2="584.1" y2="314.9" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="531.5" y1="109.9" x2="628.2" y2="296.3" stroke="#9aa8b8" stroke-width="1.5"/>
+<path d="M438.1,103.5 A90,90 0 0 0 541.9,103.5 L529.9,63.5 L450.1,63.5 Z" fill="#8a94a6" stroke="#4a5568" stroke-width="2"/>
+<rect x="786" y="82" width="48" height="44" rx="8" fill="#8a94a6" stroke="#4a5568" stroke-width="2"/>
+<path d="M802,126 L818,126 L948.2,290.7 A215,215 0 0 1 671.8,290.7 Z" fill="#cfd8e3" stroke="#4a5568" stroke-width="2"/>
+<line x1="810" y1="126" x2="688.9" y2="303.6" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="726.5" y2="324.1" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="767.4" y2="336.7" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="810.0" y2="341.0" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="852.6" y2="336.7" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="893.5" y2="324.1" stroke="#9aa8b8" stroke-width="1.5"/>
+<line x1="810" y1="126" x2="931.1" y2="303.6" stroke="#9aa8b8" stroke-width="1.5"/>
+<text x="170" y="28" font-size="20" font-weight="600" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Linear</text>
+<text x="170" y="380" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Flat face, rectangular image</text>
+<text x="170" y="406" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">High frequency: fine detail,</text>
+<text x="170" y="432" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">shallow. Vessels, muscles,</text>
+<text x="170" y="458" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">tendons, thyroid, breast</text>
+<text x="490" y="28" font-size="20" font-weight="600" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Curved (curvilinear)</text>
+<text x="490" y="380" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Convex face, wide fan</text>
+<text x="490" y="406" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Lower frequency: sees deep.</text>
+<text x="490" y="432" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Abdomen, pelvis,</text>
+<text x="490" y="458" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">pregnancy scans</text>
+<text x="810" y="28" font-size="20" font-weight="600" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Phased array</text>
+<text x="810" y="380" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Small face, fan from a point</text>
+<text x="810" y="406" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Lower frequency, beam steered</text>
+<text x="810" y="432" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">electronically. Fits between</text>
+<text x="810" y="458" font-size="17" text-anchor="middle" fill="#1a202c" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">the ribs: heart scans</text>
+<text x="20" y="508" font-size="14" fill="#4a5568" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif">Grey lines are scan lines. Each image is drawn with the probe at the top.</text>
+</svg>

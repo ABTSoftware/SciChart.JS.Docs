@@ -22,7 +22,7 @@ keywords:
         "negative autocorrelation"
     ]
 image: /img/learn/autocorrelation-og.png
-related: [convolution, power-spectral-density, fast-fourier-transform, hilbert-transform]
+related: [convolution, power-spectral-density, fast-fourier-transform, direction-finding]
 datePublished: 2026-11-19
 ---
 
@@ -200,7 +200,7 @@ To measure a delay, cross-correlate the signal you sent, or recorded at one poin
 
 - Sonar, radar and ultrasound send a known pulse, often a **chirp** that sweeps through a range of frequencies, and cross-correlate the echo with it. A chirp's autocorrelation has one narrow main peak, so its echoes give sharp, unambiguous peaks. Taking the [envelope](/learn/applications/signal-processing/hilbert-transform/) of the correlation output turns each echo's ripple into one smooth peak that is easy to time.
 - GPS receivers correlate the incoming signal with a local copy of each satellite's code. The lag of the peak gives the signal's travel time, and from several satellites, the receiver's position.
-- Microphone arrays and leak detectors cross-correlate two sensors. The delay between them shows which side a sound came from, or where along a pipe a leak is.
+- Microphone arrays and leak detectors cross-correlate two sensors. The delay between them shows which side a sound came from, or where along a pipe a leak is. Radio receivers do the same to locate a transmitter: see [direction finding and TDOA](/learn/applications/direction-finding/).
 - Finding a known pattern in noise: cross-correlating a recording with the pattern you expect is a **matched filter**. For a known shape in white noise, it gives the highest possible peak-to-noise ratio, which is why it's used in radar, communications and the detection of gravitational waves.
 
 Whether a delay shows up at $+D$ or $-D$ depends on which signal you shift, and libraries differ (see the FAQ). Test with a signal you have delayed on purpose before trusting the direction.

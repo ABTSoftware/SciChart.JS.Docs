@@ -1,5 +1,5 @@
 ---
-sidebar_position: 250
+sidebar_position: 350
 sidebar_label: Volatility Surface
 title: "Volatility Surface: Implied Volatility Smile, Skew and Term Structure"
 description: "What a volatility surface is, how to read the implied volatility smile, skew and term structure, and how a surface is built from option prices. Live 3D example."

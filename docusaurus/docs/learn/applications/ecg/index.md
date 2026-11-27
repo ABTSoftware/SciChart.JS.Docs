@@ -1,5 +1,5 @@
 ---
-sidebar_position: 50
+sidebar_position: 60
 sidebar_label: ECG
 title: "ECG Leads and How to Read an ECG Strip: Waves and Intervals"
 description: "What an ECG records, the 12 ECG leads and where the electrodes go, the P-QRS-T waveform and normal intervals, ECG paper and heart rate, and a step-by-step way to read a strip, with a live ECG."
@@ -22,7 +22,7 @@ keywords:
         "ekg strip"
     ]
 image: /img/learn/ecg-og.png
-related: [capnography-pulse-oximetry, strip-chart, notch-filter, high-pass-filter]
+related: [heart-rate-variability, capnography-pulse-oximetry, eeg, strip-chart]
 datePublished: 2026-11-20
 ---
 
@@ -95,7 +95,7 @@ As the wave of activation moves through the heart muscle, the cells it has reach
 
 An electrode pair records how much of the arrow points along the line between them. When the activation moves towards the positive electrode, the trace goes up; when it moves away, the trace goes down; when it moves at right angles, the trace barely moves. So the same beat looks different in each lead, depending on where the lead's electrodes sit.
 
-"ECG" and "EKG" mean the same thing. EKG comes from the German spelling, *Elektrokardiogramm*, and is common in the United States, partly so that it isn't misheard as EEG, the recording of brain activity.
+"ECG" and "EKG" mean the same thing. EKG comes from the German spelling, *Elektrokardiogramm*, and is common in the United States, partly so that it isn't misheard as EEG, the recording of brain activity (see [how to read an EEG](/learn/applications/eeg/)).
 
 ## ECG leads: what the 12 leads are
 
@@ -264,7 +264,7 @@ For a finer estimate, find the limb lead where the QRS is most nearly equal up a
 
 ## Common heart rhythms on an ECG strip
 
-These are descriptions of how the strips look, not a guide to diagnosis.
+These are descriptions of how the strips look, not a guide to diagnosis. The small beat-to-beat changes in the time between normal beats are measured as [heart rate variability (HRV)](/learn/applications/heart-rate-variability/).
 
 | Rhythm | Rate | Regularity | P waves | QRS |
 | --- | --- | --- | --- | --- |

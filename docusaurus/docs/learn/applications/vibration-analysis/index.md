@@ -1,5 +1,5 @@
 ---
-sidebar_position: 240
+sidebar_position: 340
 sidebar_label: Vibration Analysis
 title: "Vibration Analysis: How to Read Spectra and Find Machine Faults"
 description: "What vibration analysis is, how sensors, units and ISO 20816 severity zones work, how to read a time waveform and FFT spectrum, and the signatures of imbalance, misalignment, looseness and bearing faults."

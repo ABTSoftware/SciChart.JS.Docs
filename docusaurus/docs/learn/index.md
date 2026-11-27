@@ -102,7 +102,7 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 
 ### Medical
 
-<LearnGallery slugs={["capnography-pulse-oximetry", "ecg"]} />
+<LearnGallery slugs={["capnography-pulse-oximetry", "ecg", "eeg", "heart-rate-variability", "mri", "spirometry", "ultrasound"]} />
 
 ### Motorsport
 
@@ -117,6 +117,12 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 [**Signal processing**](/learn/applications/#signal-processing): how to see what frequencies a signal contains, and how to filter it, with live examples.
 
 <LearnGallery group="learn/applications/signal-processing" />
+
+### Signals intelligence
+
+[**Signals intelligence**](/learn/applications/#signals-intelligence): how spectrum, waterfall, pulse, direction-finding and IQ displays show the radio signals around a receiver, with live examples.
+
+<LearnGallery slugs={["direction-finding", "elint", "iq-constellation-diagram", "rf-spectrum-analyzer", "sigint"]} />
 
 ### Test and measurement
 

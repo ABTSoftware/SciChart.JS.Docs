@@ -19,7 +19,7 @@ keywords:
         "how to measure signal to noise ratio"
     ]
 image: /img/learn/signal-to-noise-ratio-og.png
-related: [power-spectral-density, fast-fourier-transform, low-pass-filter, audio-spectrum-analyzer]
+related: [power-spectral-density, fast-fourier-transform, iq-constellation-diagram, audio-spectrum-analyzer]
 datePublished: 2026-11-19
 ---
 

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 490" width="700" height="490" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<title>How to read a 16-QAM constellation diagram</title>
+<desc>A 16-QAM constellation on the I-Q plane: sixteen ideal symbol positions in a 4 by 4 grid, each labelled with its four Gray-coded bits so that neighbours differ by one bit. Dashed lines halfway between points are the decision boundaries. One received sample sits near the ideal symbol 1011, and the arrow from the ideal point to the sample is the error vector used to compute EVM. The spacing d between neighbouring points is marked.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#d9480f"/></marker>
+<marker id="arrowGrey" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker></defs>
+<rect width="700" height="490" fill="#ffffff"/>
+<rect x="20.25" y="20.25" width="449.5" height="449.5" fill="#f4f7fb" stroke="#c9d3e0"/>
+<line x1="20.25" y1="245" x2="479.9" y2="245" stroke="#374151" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+<line x1="245" y1="469.75" x2="245" y2="10.099999999999994" stroke="#374151" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
+<text x="479.9" y="237" text-anchor="end" font-size="15" font-weight="600" fill="#111827">I (in-phase)</text>
+<text x="253" y="24.25" font-size="15" font-weight="600" fill="#111827" dominant-baseline="hanging">Q (quadrature)</text>
+<line x1="153.3" y1="20.25" x2="153.3" y2="469.75" stroke="#7c3aed" stroke-dasharray="6 5" stroke-width="1.3"/><line x1="20.25" y1="336.7" x2="469.75" y2="336.7" stroke="#7c3aed" stroke-dasharray="6 5" stroke-width="1.3"/>
+<line x1="336.7" y1="20.25" x2="336.7" y2="469.75" stroke="#7c3aed" stroke-dasharray="6 5" stroke-width="1.3"/><line x1="20.25" y1="153.3" x2="469.75" y2="153.3" stroke="#7c3aed" stroke-dasharray="6 5" stroke-width="1.3"/>
+<circle cx="107.4" cy="382.6" r="7" fill="#1f77b4"/><text x="107.4" y="404.6" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0000</text>
+<circle cx="107.4" cy="290.9" r="7" fill="#1f77b4"/><text x="107.4" y="312.9" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0001</text>
+<circle cx="107.4" cy="199.1" r="7" fill="#1f77b4"/><text x="107.4" y="221.1" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0011</text>
+<circle cx="107.4" cy="107.4" r="7" fill="#1f77b4"/><text x="107.4" y="129.4" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0010</text>
+<circle cx="199.1" cy="382.6" r="7" fill="#1f77b4"/><text x="199.1" y="404.6" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0100</text>
+<circle cx="199.1" cy="290.9" r="7" fill="#1f77b4"/><text x="199.1" y="312.9" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0101</text>
+<circle cx="199.1" cy="199.1" r="7" fill="#1f77b4"/><text x="199.1" y="221.1" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0111</text>
+<circle cx="199.1" cy="107.4" r="7" fill="#1f77b4"/><text x="199.1" y="129.4" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">0110</text>
+<circle cx="290.9" cy="382.6" r="7" fill="#1f77b4"/><text x="290.9" y="404.6" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1100</text>
+<circle cx="290.9" cy="290.9" r="7" fill="#1f77b4"/><text x="290.9" y="312.9" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1101</text>
+<circle cx="290.9" cy="199.1" r="7" fill="#1f77b4"/><text x="290.9" y="221.1" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1111</text>
+<circle cx="290.9" cy="107.4" r="7" fill="#1f77b4"/><text x="290.9" y="129.4" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1110</text>
+<circle cx="382.6" cy="382.6" r="7" fill="#1f77b4"/><text x="382.6" y="404.6" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1000</text>
+<circle cx="382.6" cy="290.9" r="7" fill="#1f77b4"/><text x="382.6" y="312.9" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1001</text>
+<circle cx="382.6" cy="199.1" r="7" fill="#1f77b4"/><text x="382.6" y="221.1" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1011</text>
+<circle cx="382.6" cy="107.4" r="7" fill="#1f77b4"/><text x="382.6" y="129.4" text-anchor="middle" font-size="14" font-family="ui-monospace, Menlo, Consolas, monospace" fill="#111827">1010</text>
+<line x1="382.6" y1="199.1" x2="358.8" y2="174.7" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrow)"/>
+<circle cx="352.3" cy="168.1" r="6" fill="#ffffff" stroke="#d9480f" stroke-width="2.5"/>
+<line x1="107.4" y1="418.6" x2="199.1" y2="418.6" stroke="#374151" stroke-width="1.5" marker-start="url(#arrowGrey)" marker-end="url(#arrowGrey)"/><text x="153.3" y="435.6" text-anchor="middle" font-size="14" font-style="italic" fill="#111827">d</text>
+<text x="485.7" y="71.0" font-size="15" font-weight="600" fill="#1f77b4">Ideal symbol positions</text><text x="485.7" y="90.0" font-size="14" fill="#374151">16 points: 4 bits per symbol</text>
+<text x="485.7" y="131.9" font-size="15" font-weight="600" fill="#111827">Gray-coded bits</text><text x="485.7" y="150.9" font-size="14" fill="#374151">Neighbours differ by one bit</text>
+<text x="485.7" y="201.5" font-size="15" font-weight="600" fill="#d9480f">Received sample and</text><text x="485.7" y="220.5" font-size="14" fill="#374151">error vector (for EVM)</text>
+<text x="485.7" y="281.3" font-size="15" font-weight="600" fill="#7c3aed">Decision boundaries</text><text x="485.7" y="300.3" font-size="14" fill="#374151">halfway between points</text>
+<text x="485.7" y="358.1" font-size="15" font-weight="600" fill="#374151">Spacing d</text><text x="485.7" y="377.1" font-size="14" fill="#374151">Errors once noise reaches d/2</text>
+<line x1="479.7" y1="196.5" x2="361.3" y2="166.1" stroke="#d9480f" stroke-width="1" stroke-dasharray="3 3"/>
+</svg>

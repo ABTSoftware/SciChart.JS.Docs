@@ -9,7 +9,7 @@ datePublished: 2026-11-20
 
 # Applications
 
-Each guide here covers one application, from medicine and life sciences to engineering, energy, defence, motorsport, astronomy, weather, signal processing, machine learning and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
+Each guide here covers one application, from medicine and life sciences to engineering, energy, defence, motorsport, astronomy, weather, signal processing, signals intelligence, machine learning and business. It explains how that field records its data, how people read the charts that come out of it, and how to build the same view with a live example you can change in your browser and the code to chart it in JavaScript, React or Angular with SciChart.js.
 
 The guides are grouped by sector, in alphabetical order.
 
@@ -55,7 +55,7 @@ For the statistics charts these guides use, see [correlation matrix](/learn/char
 
 For more on how SciChart is used in this sector, see [SciChart for medical](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/).
 
-<LearnGallery slugs={["capnography-pulse-oximetry", "ecg"]} />
+<LearnGallery slugs={["capnography-pulse-oximetry", "ecg", "eeg", "heart-rate-variability", "mri", "spirometry", "ultrasound"]} />
 
 ## Motorsport
 
@@ -88,6 +88,12 @@ These guides chart data from astronomy, meteorology and pure mathematics, where 
 ### Combining and comparing signals
 
 <LearnGallery slugs={["autocorrelation", "convolution"]} />
+
+## Signals intelligence
+
+**Signals intelligence (SIGINT)** listens to radio signals rather than transmitting: spectrum and waterfall displays to find them, pulse analysis to identify radars, direction finding to locate transmitters, and IQ data to see how they are modulated. The same displays are used to monitor the radio spectrum and hunt interference.
+
+<LearnGallery slugs={["direction-finding", "elint", "iq-constellation-diagram", "rf-spectrum-analyzer", "sigint"]} />
 
 ## Test and measurement
 

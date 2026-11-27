@@ -1,5 +1,5 @@
 ---
-sidebar_position: 190
+sidebar_position: 270
 sidebar_label: Sonar
 title: "Sonar: How It Works and How to Read Sonar Displays (Interactive)"
 description: "What sonar is, how active and passive sonar work, and how to read scanning sonar, side scan, bearing-time waterfall and fish finder displays, with a live example."
@@ -22,7 +22,7 @@ keywords:
         "speed of sound in water"
     ]
 image: /img/learn/sonar-og.png
-related: [radar-display, weather-radar, non-destructive-testing, heatmap]
+related: [ultrasound, radar-display, weather-radar, rf-spectrum-analyzer]
 datePublished: 2026-11-26
 ---
 
@@ -112,6 +112,8 @@ Sonar is the main way to see and measure anything under the water:
 - Defence. Navies use active and passive sonar to detect and track submarines, and sonar on mine countermeasure vessels finds mines on the seabed.
 - Fishing and fisheries science. Fish finders and scanning sonars show fish under and around a boat; research ships use calibrated echo sounders to estimate how many fish there are.
 - Science and engineering. Sonar maps the deep ocean, tracks marine animals, guides underwater vehicles and inspects pipelines, dams and harbour walls.
+
+Medical ultrasound uses the same pulse-echo principle inside the body: see [how ultrasound works and how to read an ultrasound image](/learn/applications/ultrasound/).
 
 ## How does sonar work?
 

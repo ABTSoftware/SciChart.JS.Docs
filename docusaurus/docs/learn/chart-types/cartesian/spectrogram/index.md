@@ -15,7 +15,7 @@ keywords:
         "waterfall plot"
     ]
 image: /img/learn/spectrogram-og.png
-related: [fast-fourier-transform, fourier-transform, heatmap, strip-chart]
+related: [fast-fourier-transform, fourier-transform, heatmap, rf-spectrum-analyzer]
 datePublished: 2026-11-13
 ---
 

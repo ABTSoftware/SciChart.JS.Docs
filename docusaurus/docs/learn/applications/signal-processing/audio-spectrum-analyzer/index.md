@@ -20,7 +20,7 @@ keywords:
         "spectrum analyzer software"
     ]
 image: /img/learn/audio-spectrum-analyzer-og.png
-related: [fast-fourier-transform, spectrogram, power-spectral-density, signal-to-noise-ratio]
+related: [fast-fourier-transform, spectrogram, power-spectral-density, rf-spectrum-analyzer]
 datePublished: 2026-11-19
 ---
 
