@@ -7,7 +7,7 @@ import * as SciChart from "scichart";
 // A seeded random generator makes the noise the same every time. Nothing is loaded from outside.
 const C_KM_PER_US = 0.299792458; // radio waves travel about 300 m per microsecond
 const DEG = Math.PI / 180;
-const MEASUREMENTS_PER_SECOND = 5; // how often each receiver reports a new bearing and arrival time
+const MEASUREMENTS_PER_SECOND = 20; // how often each receiver reports a new bearing and arrival time
 const HISTORY = 24; // past bearings shown on the DF display
 const FIX_HISTORY = 40; // past fixes shown on the map
 const ELLIPSE_95 = Math.sqrt(-2 * Math.log(0.05)); // 2.45: scales a 1-sigma ellipse to contain 95% of fixes (2 degrees of freedom)
@@ -626,7 +626,7 @@ async function directionFindingChart(divElementId) {
                 dragging.x = m.x;
                 dragging.y = m.y;
                 fixHistory.length = 0; // the old fixes belong to the old geometry
-                draw();
+                step(); // measure again at once, so the bearings, hyperbolas and fix follow the mouse
             }
             hoverText = m ? hoverReadout(m) : "";
             ui.hover.textContent = hoverText;
