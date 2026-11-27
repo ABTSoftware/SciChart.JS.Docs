@@ -15,7 +15,7 @@ keywords:
         "contour plot vs surface plot"
     ]
 image: /img/learn/contour-plot-og.png
-related: [heatmap, 3d-surface-plot, density-plot, spectrogram]
+related: [heatmap, 3d-surface-plot, digital-elevation-model, density-plot]
 datePublished: 2026-11-14
 ---
 

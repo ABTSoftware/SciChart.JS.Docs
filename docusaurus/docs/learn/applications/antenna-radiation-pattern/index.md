@@ -25,7 +25,7 @@ keywords:
         "dbi vs dbd"
     ]
 image: /img/learn/antenna-radiation-pattern-og.png
-related: [smith-chart, polar-area-chart, radar-chart, point-cloud]
+related: [radar-display, smith-chart, polar-area-chart, radar-chart]
 datePublished: 2026-11-20
 ---
 

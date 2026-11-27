@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 40
 sidebar_label: Network Graph
 title: "Network Graph: What It Is & How to Read It (Interactive Example)"
 description: "What a network graph is, how to read its nodes and edges, how to spot hubs, clusters and bridges, how a force-directed graph is laid out, and the mistakes to avoid. With a live, interactive example."

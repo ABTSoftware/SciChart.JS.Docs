@@ -1,5 +1,5 @@
 ---
-sidebar_position: 60
+sidebar_position: 70
 sidebar_label: Sankey Diagram
 title: "Sankey Diagram: What It Is & How to Read It (Interactive Example)"
 description: "What a Sankey diagram is, how to read its nodes and flows, a worked energy example, when to use one instead of a bar or pie chart, and the mistakes to avoid. With a live, interactive example."

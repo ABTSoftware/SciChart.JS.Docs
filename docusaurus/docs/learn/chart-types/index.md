@@ -1,15 +1,15 @@
 ---
 sidebar_position: 1
 sidebar_label: Types of Charts and Graphs
-title: "Types of Graphs and Charts: 47 Types With Interactive Examples"
-description: "47 types of graphs and charts, from line, bar and pie charts to heatmaps, Sankey diagrams and violin plots: what each shows, how to read it and when to use it."
+title: "Types of Graphs and Charts: 49 Types With Interactive Examples"
+description: "49 types of graphs and charts, from line, bar and pie charts to heatmaps, Sankey diagrams and violin plots: what each shows, how to read it and when to use it."
 keywords: ["types of graphs", "types of charts", "different types of graphs", "chart types", "types of charts and graphs", "graph types", "graph examples", "chart examples", "which chart to use"]
 datePublished: 2026-11-16
 ---
 
 # Types of Graphs and Charts
 
-Which chart should you use, and how do you read it? This guide covers 47 different types of graphs and charts. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
+Which chart should you use, and how do you read it? This guide covers 49 different types of graphs and charts. Each guide explains one chart type in plain language: what it shows, how to read it and when to use it. Each one comes with a live, interactive example and the code to build it in JavaScript, React or Angular with SciChart.js.
 
 ## Trends and comparisons
 
@@ -48,7 +48,7 @@ These charts show how values are spread out, how two or more variables relate, a
 
 These charts show fields, signals, surfaces and measurements in 2D, 3D or round a circle, as used in science and engineering.
 
-<LearnGallery slugs={["3d-surface-plot", "contour-plot", "heatmap", "point-cloud", "polar-area-chart", "radar-chart", "smith-chart", "spectrogram", "voronoi-diagram"]} />
+<LearnGallery slugs={["3d-surface-plot", "contour-plot", "digital-elevation-model", "heatmap", "point-cloud", "polar-area-chart", "radar-chart", "smith-chart", "spectrogram", "voronoi-diagram"]} />
 
 ## Dashboards and KPIs
 
@@ -64,9 +64,9 @@ These charts show price movements and how a starting value becomes a final one, 
 
 ## Maps and geospatial data
 
-These charts show data tied to places: a value for each area on a map, how densely people live, the height of the land as contours or a 3D surface, and 3D scans of the ground such as LiDAR. The contour plot, 3D surface plot and point cloud guides are also listed under scientific and engineering charts.
+These charts show data tied to places: a value for each area on a map, counts as dots, how densely people live, the height of the land and seabed as a digital elevation model, contours or a 3D surface, and 3D scans of the ground such as LiDAR. The contour plot, 3D surface plot, digital elevation model and point cloud guides are also listed under scientific and engineering charts.
 
-<LearnGallery slugs={["3d-surface-plot", "choropleth-map", "contour-plot", "point-cloud", "population-density-map"]} />
+<LearnGallery slugs={["3d-surface-plot", "choropleth-map", "contour-plot", "digital-elevation-model", "dot-density-map", "point-cloud", "population-density-map"]} />
 
 ## Time and events
 

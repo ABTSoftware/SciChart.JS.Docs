@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 870 586" width="870" height="586" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">A digital elevation model is a grid of heights</title>
+<desc id="d">A 9 by 9 patch of the Mount St. Helens DEM used on this page, one square per 70 m cell, each labelled with its height in metres and tinted from dark (lower) to light (higher). The highest cell, 2,522 m on the crater rim, is outlined in red, and a blue 2,300 m contour line runs between the cells. Notes explain the cell size, the value, why the cell is lower than the 2,549 m summit, the contour line and the colours.</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<rect x="40" y="60" width="54" height="54" fill="#7c804c" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,317</text>
+<rect x="94" y="60" width="54" height="54" fill="#556c3f" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,266</text>
+<rect x="148" y="60" width="54" height="54" fill="#3f5838" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,222</text>
+<rect x="202" y="60" width="54" height="54" fill="#334e35" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,200</text>
+<rect x="256" y="60" width="54" height="54" fill="#344f35" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,201</text>
+<rect x="310" y="60" width="54" height="54" fill="#375236" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,208</text>
+<rect x="364" y="60" width="54" height="54" fill="#3a5437" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,213</text>
+<rect x="418" y="60" width="54" height="54" fill="#465f3a" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,237</text>
+<rect x="472" y="60" width="54" height="54" fill="#4f663d" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="92.0" text-anchor="middle" font-size="14" fill="#ffffff">2,253</text>
+<rect x="40" y="114" width="54" height="54" fill="#a89562" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="146.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,379</text>
+<rect x="94" y="114" width="54" height="54" fill="#7c804c" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,318</text>
+<rect x="148" y="114" width="54" height="54" fill="#5d7241" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,279</text>
+<rect x="202" y="114" width="54" height="54" fill="#465f3a" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,237</text>
+<rect x="256" y="114" width="54" height="54" fill="#405938" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,224</text>
+<rect x="310" y="114" width="54" height="54" fill="#435c39" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,230</text>
+<rect x="364" y="114" width="54" height="54" fill="#445d39" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,232</text>
+<rect x="418" y="114" width="54" height="54" fill="#435c39" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,230</text>
+<rect x="472" y="114" width="54" height="54" fill="#435c39" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="146.0" text-anchor="middle" font-size="14" fill="#ffffff">2,231</text>
+<rect x="40" y="168" width="54" height="54" fill="#c1a179" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="200.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,426</text>
+<rect x="94" y="168" width="54" height="54" fill="#ae9867" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="200.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,390</text>
+<rect x="148" y="168" width="54" height="54" fill="#8a8751" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,335</text>
+<rect x="202" y="168" width="54" height="54" fill="#687745" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,293</text>
+<rect x="256" y="168" width="54" height="54" fill="#586f40" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,272</text>
+<rect x="310" y="168" width="54" height="54" fill="#52693e" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,259</text>
+<rect x="364" y="168" width="54" height="54" fill="#51683d" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,258</text>
+<rect x="418" y="168" width="54" height="54" fill="#52693e" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,259</text>
+<rect x="472" y="168" width="54" height="54" fill="#536a3e" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="200.0" text-anchor="middle" font-size="14" fill="#ffffff">2,261</text>
+<rect x="40" y="222" width="54" height="54" fill="#dcc4ad" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="254.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,479</text>
+<rect x="94" y="222" width="54" height="54" fill="#cda987" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="254.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,448</text>
+<rect x="148" y="222" width="54" height="54" fill="#b59b6e" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="254.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,404</text>
+<rect x="202" y="222" width="54" height="54" fill="#9c8f57" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,357</text>
+<rect x="256" y="222" width="54" height="54" fill="#85844f" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,329</text>
+<rect x="310" y="222" width="54" height="54" fill="#757d4a" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,309</text>
+<rect x="364" y="222" width="54" height="54" fill="#667644" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,290</text>
+<rect x="418" y="222" width="54" height="54" fill="#5c7141" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,278</text>
+<rect x="472" y="222" width="54" height="54" fill="#5d7241" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="254.0" text-anchor="middle" font-size="14" fill="#ffffff">2,279</text>
+<rect x="40" y="276" width="54" height="54" fill="#cfad8d" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="308.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,453</text>
+<rect x="94" y="276" width="54" height="54" fill="#dfc8b3" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="308.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,484</text>
+<rect x="148" y="276" width="54" height="54" fill="#d9bfa6" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="308.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,473</text>
+<rect x="202" y="276" width="54" height="54" fill="#c6a47e" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="308.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,436</text>
+<rect x="256" y="276" width="54" height="54" fill="#b69c6f" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="308.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,406</text>
+<rect x="310" y="276" width="54" height="54" fill="#a3935d" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="308.0" text-anchor="middle" font-size="14" fill="#ffffff">2,370</text>
+<rect x="364" y="276" width="54" height="54" fill="#908953" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="308.0" text-anchor="middle" font-size="14" fill="#ffffff">2,342</text>
+<rect x="418" y="276" width="54" height="54" fill="#787e4a" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="308.0" text-anchor="middle" font-size="14" fill="#ffffff">2,312</text>
+<rect x="472" y="276" width="54" height="54" fill="#6d7947" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="308.0" text-anchor="middle" font-size="14" fill="#ffffff">2,299</text>
+<rect x="40" y="330" width="54" height="54" fill="#c7a47f" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,437</text>
+<rect x="94" y="330" width="54" height="54" fill="#d3b497" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,461</text>
+<rect x="148" y="330" width="54" height="54" fill="#e9dacc" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,504</text>
+<rect x="202" y="330" width="54" height="54" fill="#ebded2" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,509</text>
+<rect x="256" y="330" width="54" height="54" fill="#e0cbb7" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,487</text>
+<rect x="310" y="330" width="54" height="54" fill="#c5a37d" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,434</text>
+<rect x="364" y="330" width="54" height="54" fill="#ad9867" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="362.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,389</text>
+<rect x="418" y="330" width="54" height="54" fill="#918a53" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="362.0" text-anchor="middle" font-size="14" fill="#ffffff">2,344</text>
+<rect x="472" y="330" width="54" height="54" fill="#83834e" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="362.0" text-anchor="middle" font-size="14" fill="#ffffff">2,326</text>
+<rect x="40" y="384" width="54" height="54" fill="#bb9e73" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,414</text>
+<rect x="94" y="384" width="54" height="54" fill="#cca784" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,446</text>
+<rect x="148" y="384" width="54" height="54" fill="#ddc5ae" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,480</text>
+<rect x="202" y="384" width="54" height="54" fill="#ebded2" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,509</text>
+<rect x="256" y="384" width="54" height="54" fill="#f2eae2" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,522</text>
+<rect x="310" y="384" width="54" height="54" fill="#e1cdb9" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,489</text>
+<rect x="364" y="384" width="54" height="54" fill="#ba9e73" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,413</text>
+<rect x="418" y="384" width="54" height="54" fill="#aa9664" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="416.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,383</text>
+<rect x="472" y="384" width="54" height="54" fill="#a5945f" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="416.0" text-anchor="middle" font-size="14" fill="#ffffff">2,374</text>
+<rect x="40" y="438" width="54" height="54" fill="#b39a6c" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,400</text>
+<rect x="94" y="438" width="54" height="54" fill="#bfa077" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,422</text>
+<rect x="148" y="438" width="54" height="54" fill="#ceab8a" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,451</text>
+<rect x="202" y="438" width="54" height="54" fill="#dbc1a9" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,476</text>
+<rect x="256" y="438" width="54" height="54" fill="#e5d4c3" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,497</text>
+<rect x="310" y="438" width="54" height="54" fill="#e5d3c2" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,496</text>
+<rect x="364" y="438" width="54" height="54" fill="#d1b192" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,457</text>
+<rect x="418" y="438" width="54" height="54" fill="#d4b699" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,463</text>
+<rect x="472" y="438" width="54" height="54" fill="#d0af8f" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="470.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,455</text>
+<rect x="40" y="492" width="54" height="54" fill="#a3925d" stroke="#ffffff" stroke-width="1"/>
+<text x="67.0" y="524.0" text-anchor="middle" font-size="14" fill="#ffffff">2,369</text>
+<rect x="94" y="492" width="54" height="54" fill="#b1996a" stroke="#ffffff" stroke-width="1"/>
+<text x="121.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,396</text>
+<rect x="148" y="492" width="54" height="54" fill="#bfa078" stroke="#ffffff" stroke-width="1"/>
+<text x="175.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,423</text>
+<rect x="202" y="492" width="54" height="54" fill="#c9a581" stroke="#ffffff" stroke-width="1"/>
+<text x="229.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,442</text>
+<rect x="256" y="492" width="54" height="54" fill="#d5b89c" stroke="#ffffff" stroke-width="1"/>
+<text x="283.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,465</text>
+<rect x="310" y="492" width="54" height="54" fill="#d9bfa6" stroke="#ffffff" stroke-width="1"/>
+<text x="337.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,473</text>
+<rect x="364" y="492" width="54" height="54" fill="#d5b89c" stroke="#ffffff" stroke-width="1"/>
+<text x="391.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,465</text>
+<rect x="418" y="492" width="54" height="54" fill="#d7bba1" stroke="#ffffff" stroke-width="1"/>
+<text x="445.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,469</text>
+<rect x="472" y="492" width="54" height="54" fill="#e2cfbc" stroke="#ffffff" stroke-width="1"/>
+<text x="499.0" y="524.0" text-anchor="middle" font-size="14" fill="#1b1b1b">2,491</text>
+<rect x="257.5" y="385.5" width="51" height="51" fill="none" stroke="#c0392b" stroke-width="3"/>
+<path d="M85.0,87.0 L121.0,122.3 L145.9,141.0 L175.0,161.2 L220.0,195.0 L229.0,200.9 L283.0,221.5 L337.0,239.3 L362.6,249.0 L391.0,259.4 L445.0,283.9 L494.8,303.0 L499.0,305.0" fill="none" stroke="#1f3a68" stroke-width="3" stroke-opacity="0.85"/>
+<line x1="40" y1="562" x2="94" y2="562" stroke="#333" stroke-width="2"/><line x1="40" y1="556" x2="40" y2="568" stroke="#333" stroke-width="2"/><line x1="94" y1="556" x2="94" y2="568" stroke="#333" stroke-width="2"/>
+<text x="102" y="567" font-size="14" fill="#333">70 m on the ground (one cell)</text>
+<path d="M542,64 L549,82 L535,82 Z" fill="#333"/><text x="542" y="98" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">N</text>
+<text x="40" y="40" font-size="16" font-weight="bold" fill="#1f3a68">Part of a real DEM: Mount St. Helens crater rim (heights in metres)</text>
+<text x="570" y="70" font-size="15" font-weight="bold" fill="#222">Cell</text>
+<text x="570" y="90" font-size="15" fill="#333">The DEM divides the ground into equal</text>
+<text x="570" y="109" font-size="15" fill="#333">squares. Here each is 70 m × 70 m.</text>
+<text x="570" y="142" font-size="15" font-weight="bold" fill="#222">Value</text>
+<text x="570" y="162" font-size="15" fill="#333">Each cell holds one number: the height</text>
+<text x="570" y="181" font-size="15" fill="#333">of the ground there, in metres above</text>
+<text x="570" y="200" font-size="15" fill="#333">the vertical datum (sea level, roughly).</text>
+<text x="570" y="233" font-size="15" font-weight="bold" fill="#222">Red outline</text>
+<text x="570" y="253" font-size="15" fill="#333">The highest cell in this patch, 2,522 m,</text>
+<text x="570" y="272" font-size="15" fill="#333">on the crater rim. The real summit is</text>
+<text x="570" y="291" font-size="15" fill="#333">2,549 m: a 70 m cell averages the peak</text>
+<text x="570" y="310" font-size="15" fill="#333">with the lower ground around it.</text>
+<text x="570" y="343" font-size="15" font-weight="bold" fill="#222">Blue line</text>
+<text x="570" y="363" font-size="15" fill="#333">The 2,300 m contour. Software threads</text>
+<text x="570" y="382" font-size="15" fill="#333">it between cell values, so the line</text>
+<text x="570" y="401" font-size="15" fill="#333">separates cells above 2,300 m from</text>
+<text x="570" y="420" font-size="15" fill="#333">cells below it.</text>
+<text x="570" y="453" font-size="15" font-weight="bold" fill="#222">Colour</text>
+<text x="570" y="473" font-size="15" fill="#333">Darker is lower, lighter is higher,</text>
+<text x="570" y="492" font-size="15" fill="#333">stretched to the heights in this patch.</text>
+</svg>

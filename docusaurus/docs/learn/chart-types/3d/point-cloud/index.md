@@ -1,5 +1,5 @@
 ---
-sidebar_position: 20
+sidebar_position: 30
 sidebar_label: Point Cloud
 title: "Point Cloud: What It Is, How LiDAR Makes One & How to View It"
 description: "What a point cloud is, how LiDAR, photogrammetry and depth cameras make one, what each point stores, the file formats, and how to colour, filter, thin and view large sets of 3D points."
@@ -21,7 +21,7 @@ keywords:
         "voxel downsampling"
     ]
 image: /img/learn/point-cloud-og.png
-related: [3d-surface-plot, scatter-plot, heatmap, big-data-visualization]
+related: [3d-surface-plot, digital-elevation-model, scatter-plot, big-data-visualization]
 datePublished: 2026-11-20
 ---
 

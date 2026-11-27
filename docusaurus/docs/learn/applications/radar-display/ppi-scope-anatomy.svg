@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 540" width="820" height="540" font-family="system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+<title id="t">Parts of a radar display (PPI scope)</title>
+<desc id="d">A circular radar display with the radar at the centre, range rings every 10 nautical miles, a bearing scale with 000 degrees at the top, a sweep line at bearing 060 with a fading afterglow behind it, a raw echo (blip), a track symbol with a trail of past plots and a velocity leader, and a data block giving the transponder code, flight level and ground speed. Numbered callouts 1 to 8 are explained in a key on the right.</desc>
+<rect width="820" height="540" fill="#ffffff"/>
+<defs><radialGradient id="g" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(270 270) scale(215)"><stop offset="0" stop-color="#2FBF71" stop-opacity="0.55"/><stop offset="1" stop-color="#2FBF71" stop-opacity="0.25"/></radialGradient></defs>
+<circle cx="270" cy="270" r="215" fill="#0B1A2E"/>
+<path d="M270,270 L325.6,62.3 A215,215 0 0 1 335.7,65.3 Z" fill="#2FBF71" fill-opacity="0.040"/>
+<path d="M270,270 L334.7,65.0 A215,215 0 0 1 344.6,68.4 Z" fill="#2FBF71" fill-opacity="0.041"/>
+<path d="M270,270 L343.5,68.0 A215,215 0 0 1 353.3,71.8 Z" fill="#2FBF71" fill-opacity="0.045"/>
+<path d="M270,270 L352.3,71.4 A215,215 0 0 1 361.9,75.6 Z" fill="#2FBF71" fill-opacity="0.052"/>
+<path d="M270,270 L360.9,75.1 A215,215 0 0 1 370.3,79.8 Z" fill="#2FBF71" fill-opacity="0.061"/>
+<path d="M270,270 L369.3,79.3 A215,215 0 0 1 378.5,84.4 Z" fill="#2FBF71" fill-opacity="0.072"/>
+<path d="M270,270 L377.5,83.8 A215,215 0 0 1 386.5,89.3 Z" fill="#2FBF71" fill-opacity="0.087"/>
+<path d="M270,270 L385.5,88.7 A215,215 0 0 1 394.2,94.5 Z" fill="#2FBF71" fill-opacity="0.104"/>
+<path d="M270,270 L393.3,93.9 A215,215 0 0 1 401.8,100.1 Z" fill="#2FBF71" fill-opacity="0.123"/>
+<path d="M270,270 L400.9,99.4 A215,215 0 0 1 409.1,106.0 Z" fill="#2FBF71" fill-opacity="0.145"/>
+<path d="M270,270 L408.2,105.3 A215,215 0 0 1 416.1,112.2 Z" fill="#2FBF71" fill-opacity="0.170"/>
+<path d="M270,270 L415.3,111.5 A215,215 0 0 1 422.8,118.8 Z" fill="#2FBF71" fill-opacity="0.197"/>
+<path d="M270,270 L422.0,118.0 A215,215 0 0 1 429.3,125.6 Z" fill="#2FBF71" fill-opacity="0.227"/>
+<path d="M270,270 L428.5,124.7 A215,215 0 0 1 435.4,132.7 Z" fill="#2FBF71" fill-opacity="0.259"/>
+<path d="M270,270 L434.7,131.8 A215,215 0 0 1 441.3,140.0 Z" fill="#2FBF71" fill-opacity="0.294"/>
+<path d="M270,270 L440.6,139.1 A215,215 0 0 1 446.8,147.6 Z" fill="#2FBF71" fill-opacity="0.332"/>
+<path d="M270,270 L446.1,146.7 A215,215 0 0 1 451.9,155.4 Z" fill="#2FBF71" fill-opacity="0.372"/>
+<path d="M270,270 L451.3,154.5 A215,215 0 0 1 456.8,163.5 Z" fill="#2FBF71" fill-opacity="0.415"/>
+<circle cx="270" cy="270" r="53.8" fill="none" stroke="#7CFFB2" stroke-opacity="0.45" stroke-width="1"/>
+<text x="274" y="230.2" font-size="12" fill="#9FE8BD">10 NM</text>
+<circle cx="270" cy="270" r="107.5" fill="none" stroke="#7CFFB2" stroke-opacity="0.45" stroke-width="1"/>
+<text x="274" y="176.5" font-size="12" fill="#9FE8BD">20 NM</text>
+<circle cx="270" cy="270" r="161.2" fill="none" stroke="#7CFFB2" stroke-opacity="0.45" stroke-width="1"/>
+<text x="274" y="122.8" font-size="12" fill="#9FE8BD">30 NM</text>
+<circle cx="270" cy="270" r="215.0" fill="none" stroke="#7CFFB2" stroke-opacity="0.45" stroke-width="1"/>
+<text x="274" y="69.0" font-size="12" fill="#9FE8BD">40 NM</text>
+<line x1="270.0" y1="55.0" x2="270.0" y2="46.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="270.0" y="36.0" font-size="14" text-anchor="middle" fill="#1F2A44">000°</text>
+<line x1="307.3" y1="58.3" x2="308.2" y2="53.3" stroke="#33415C" stroke-width="1.5"/>
+<line x1="343.5" y1="68.0" x2="345.2" y2="63.3" stroke="#33415C" stroke-width="1.5"/>
+<line x1="377.5" y1="83.8" x2="382.0" y2="76.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="389.5" y="68.0" font-size="14" text-anchor="middle" fill="#1F2A44">030°</text>
+<line x1="408.2" y1="105.3" x2="411.4" y2="101.5" stroke="#33415C" stroke-width="1.5"/>
+<line x1="434.7" y1="131.8" x2="438.5" y2="128.6" stroke="#33415C" stroke-width="1.5"/>
+<line x1="456.2" y1="162.5" x2="464.0" y2="158.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="477.0" y="155.5" font-size="14" text-anchor="middle" fill="#1F2A44">060°</text>
+<line x1="472.0" y1="196.5" x2="476.7" y2="194.8" stroke="#33415C" stroke-width="1.5"/>
+<line x1="481.7" y1="232.7" x2="486.7" y2="231.8" stroke="#33415C" stroke-width="1.5"/>
+<line x1="485.0" y1="270.0" x2="494.0" y2="270.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="509.0" y="275.0" font-size="14" text-anchor="middle" fill="#1F2A44">090°</text>
+<line x1="481.7" y1="307.3" x2="486.7" y2="308.2" stroke="#33415C" stroke-width="1.5"/>
+<line x1="472.0" y1="343.5" x2="476.7" y2="345.2" stroke="#33415C" stroke-width="1.5"/>
+<line x1="456.2" y1="377.5" x2="464.0" y2="382.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="477.0" y="394.5" font-size="14" text-anchor="middle" fill="#1F2A44">120°</text>
+<line x1="434.7" y1="408.2" x2="438.5" y2="411.4" stroke="#33415C" stroke-width="1.5"/>
+<line x1="408.2" y1="434.7" x2="411.4" y2="438.5" stroke="#33415C" stroke-width="1.5"/>
+<line x1="377.5" y1="456.2" x2="382.0" y2="464.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="389.5" y="482.0" font-size="14" text-anchor="middle" fill="#1F2A44">150°</text>
+<line x1="343.5" y1="472.0" x2="345.2" y2="476.7" stroke="#33415C" stroke-width="1.5"/>
+<line x1="307.3" y1="481.7" x2="308.2" y2="486.7" stroke="#33415C" stroke-width="1.5"/>
+<line x1="270.0" y1="485.0" x2="270.0" y2="494.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="270.0" y="514.0" font-size="14" text-anchor="middle" fill="#1F2A44">180°</text>
+<line x1="232.7" y1="481.7" x2="231.8" y2="486.7" stroke="#33415C" stroke-width="1.5"/>
+<line x1="196.5" y1="472.0" x2="194.8" y2="476.7" stroke="#33415C" stroke-width="1.5"/>
+<line x1="162.5" y1="456.2" x2="158.0" y2="464.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="150.5" y="482.0" font-size="14" text-anchor="middle" fill="#1F2A44">210°</text>
+<line x1="131.8" y1="434.7" x2="128.6" y2="438.5" stroke="#33415C" stroke-width="1.5"/>
+<line x1="105.3" y1="408.2" x2="101.5" y2="411.4" stroke="#33415C" stroke-width="1.5"/>
+<line x1="83.8" y1="377.5" x2="76.0" y2="382.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="63.0" y="394.5" font-size="14" text-anchor="middle" fill="#1F2A44">240°</text>
+<line x1="68.0" y1="343.5" x2="63.3" y2="345.2" stroke="#33415C" stroke-width="1.5"/>
+<line x1="58.3" y1="307.3" x2="53.3" y2="308.2" stroke="#33415C" stroke-width="1.5"/>
+<line x1="55.0" y1="270.0" x2="46.0" y2="270.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="31.0" y="275.0" font-size="14" text-anchor="middle" fill="#1F2A44">270°</text>
+<line x1="58.3" y1="232.7" x2="53.3" y2="231.8" stroke="#33415C" stroke-width="1.5"/>
+<line x1="68.0" y1="196.5" x2="63.3" y2="194.8" stroke="#33415C" stroke-width="1.5"/>
+<line x1="83.8" y1="162.5" x2="76.0" y2="158.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="63.0" y="155.5" font-size="14" text-anchor="middle" fill="#1F2A44">300°</text>
+<line x1="105.3" y1="131.8" x2="101.5" y2="128.6" stroke="#33415C" stroke-width="1.5"/>
+<line x1="131.8" y1="105.3" x2="128.6" y2="101.5" stroke="#33415C" stroke-width="1.5"/>
+<line x1="162.5" y1="83.8" x2="158.0" y2="76.0" stroke="#33415C" stroke-width="1.5"/>
+<text x="150.5" y="68.0" font-size="14" text-anchor="middle" fill="#1F2A44">330°</text>
+<line x1="196.5" y1="68.0" x2="194.8" y2="63.3" stroke="#33415C" stroke-width="1.5"/>
+<line x1="232.7" y1="58.3" x2="231.8" y2="53.3" stroke="#33415C" stroke-width="1.5"/>
+<line x1="270.0" y1="270.0" x2="270.0" y2="55.0" stroke="#7CFFB2" stroke-opacity="0.18"/>
+<line x1="270.0" y1="270.0" x2="485.0" y2="270.0" stroke="#7CFFB2" stroke-opacity="0.18"/>
+<line x1="270.0" y1="270.0" x2="270.0" y2="485.0" stroke="#7CFFB2" stroke-opacity="0.18"/>
+<line x1="270.0" y1="270.0" x2="55.0" y2="270.0" stroke="#7CFFB2" stroke-opacity="0.18"/>
+<line x1="270" y1="270" x2="456.2" y2="162.5" stroke="#D8FFE8" stroke-width="2.5"/>
+<path d="M262,270 h16 M270,262 v16" stroke="#ffffff" stroke-width="2.5"/>
+<path d="M353.0,165.7 A133.3,133.3 0 0 1 358.3,170.2" fill="none" stroke="#E8FFF2" stroke-opacity="0.35" stroke-width="7" stroke-linecap="round"/>
+<path d="M353.0,165.7 A133.3,133.3 0 0 1 358.3,170.2" fill="none" stroke="#E8FFF2" stroke-opacity="0.9" stroke-width="4" stroke-linecap="round"/>
+<circle cx="165.3" cy="197.7" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<circle cx="157.5" cy="193.2" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<circle cx="149.8" cy="188.7" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<circle cx="142.0" cy="184.2" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<circle cx="134.2" cy="179.7" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<circle cx="126.4" cy="175.2" r="2.6" fill="#6CE07A" fill-opacity="0.75"/>
+<line x1="173.1" y1="202.2" x2="213.0" y2="225.2" stroke="#6CE07A" stroke-width="2"/>
+<rect x="166.1" y="195.2" width="14" height="14" fill="#6CE07A" fill-opacity="0.15" stroke="#6CE07A" stroke-width="2.2"/>
+<text x="185.1" y="178.2" font-size="12.5" fill="#E6F0FF">3421</text>
+<text x="185.1" y="192.2" font-size="12.5" fill="#E6F0FF">FL310 440kt</text>
+<line x1="267.0" y1="274.0" x2="210.0" y2="340.0" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="210.0" cy="340.0" r="12" fill="#F48420"/>
+<text x="210.0" y="345.0" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">1</text>
+<line x1="214.8" y1="421.5" x2="184.8" y2="473.5" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="184.8" cy="473.5" r="12" fill="#F48420"/>
+<text x="184.8" y="478.5" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">2</text>
+<line x1="428.3" y1="178.6" x2="488.3" y2="188.6" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="488.3" cy="188.6" r="12" fill="#F48420"/>
+<text x="488.3" y="193.6" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">4</text>
+<line x1="359.7" y1="171.9" x2="405.7" y2="227.9" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="405.7" cy="227.9" r="12" fill="#F48420"/>
+<text x="405.7" y="232.9" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">6</text>
+<line x1="164.1" y1="210.2" x2="113.1" y2="264.2" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="113.1" cy="264.2" r="12" fill="#F48420"/>
+<text x="113.1" y="269.2" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">7</text>
+<line x1="233.1" y1="178.2" x2="213.1" y2="132.2" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="213.1" cy="132.2" r="12" fill="#F48420"/>
+<text x="213.1" y="137.2" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">8</text>
+<line x1="308.2" y1="53.3" x2="335.0" y2="27.6" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="335.0" cy="27.6" r="12" fill="#F48420"/>
+<text x="335.0" y="32.6" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">3</text>
+<line x1="394.4" y1="121.8" x2="447.5" y2="92.5" stroke="#F48420" stroke-width="1.5"/>
+<circle cx="447.5" cy="92.5" r="12" fill="#F48420"/>
+<text x="447.5" y="97.5" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">5</text>
+<text x="545" y="58" font-size="16" font-weight="700" fill="#1F2A44">How to read it</text>
+<circle cx="556" cy="87" r="11" fill="#F48420"/><text x="556" y="92" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">1</text>
+<text x="575" y="92" font-size="14.5" font-weight="600" fill="#1F2A44">Radar (own position)</text>
+<text x="575" y="110" font-size="13.5" fill="#33415C">at the centre</text>
+<circle cx="556" cy="136" r="11" fill="#F48420"/><text x="556" y="141" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">2</text>
+<text x="575" y="141" font-size="14.5" font-weight="600" fill="#1F2A44">Range rings</text>
+<text x="575" y="159" font-size="13.5" fill="#33415C">distance from the radar</text>
+<circle cx="556" cy="185" r="11" fill="#F48420"/><text x="556" y="190" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">3</text>
+<text x="575" y="190" font-size="14.5" font-weight="600" fill="#1F2A44">Bearing scale</text>
+<text x="575" y="208" font-size="13.5" fill="#33415C">000° = north, clockwise</text>
+<circle cx="556" cy="234" r="11" fill="#F48420"/><text x="556" y="239" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">4</text>
+<text x="575" y="239" font-size="14.5" font-weight="600" fill="#1F2A44">Sweep</text>
+<text x="575" y="257" font-size="13.5" fill="#33415C">where the antenna points now</text>
+<circle cx="556" cy="283" r="11" fill="#F48420"/><text x="556" y="288" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">5</text>
+<text x="575" y="288" font-size="14.5" font-weight="600" fill="#1F2A44">Afterglow</text>
+<text x="575" y="306" font-size="13.5" fill="#33415C">echoes fading behind the sweep</text>
+<circle cx="556" cy="332" r="11" fill="#F48420"/><text x="556" y="337" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">6</text>
+<text x="575" y="337" font-size="14.5" font-weight="600" fill="#1F2A44">Blip</text>
+<text x="575" y="355" font-size="13.5" fill="#33415C">a raw echo, one beam wide</text>
+<circle cx="556" cy="381" r="11" fill="#F48420"/><text x="556" y="386" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">7</text>
+<text x="575" y="386" font-size="14.5" font-weight="600" fill="#1F2A44">Track</text>
+<text x="575" y="404" font-size="13.5" fill="#33415C">symbol, trail of past plots,</text>
+<text x="575" y="421" font-size="13.5" fill="#33415C">and leader showing heading</text>
+<circle cx="556" cy="447" r="11" fill="#F48420"/><text x="556" y="452" font-size="13" font-weight="700" text-anchor="middle" fill="#fff">8</text>
+<text x="575" y="452" font-size="14.5" font-weight="600" fill="#1F2A44">Data block</text>
+<text x="575" y="470" font-size="13.5" fill="#33415C">transponder code, flight</text>
+<text x="575" y="487" font-size="13.5" fill="#33415C">level, ground speed</text>
+<text x="545" y="520" font-size="12" fill="#5A6680">Simulated display, north-up, 40 NM range.</text>
+</svg>

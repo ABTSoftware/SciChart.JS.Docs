@@ -25,7 +25,7 @@ keywords:
         "c-scan"
     ]
 image: /img/learn/non-destructive-testing-og.png
-related: [oscilloscope, vibration-analysis, hilbert-transform, heatmap]
+related: [oscilloscope, sonar, vibration-analysis, hilbert-transform]
 datePublished: 2026-11-22
 ---
 
