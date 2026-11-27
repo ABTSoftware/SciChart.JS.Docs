@@ -1,5 +1,5 @@
 ---
-sidebar_position: 90
+sidebar_position: 110
 sidebar_label: Market Depth and Order Book
 title: "Market Depth Chart: How to Read the Order Book (Interactive Example)"
 description: "What market depth is, how to read a depth chart and an order book heatmap, top of book vs depth, spread, mid price and slippage, with a live simulated order book."

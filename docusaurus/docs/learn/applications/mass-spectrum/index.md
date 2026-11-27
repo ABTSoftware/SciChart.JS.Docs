@@ -1,5 +1,5 @@
 ---
-sidebar_position: 100
+sidebar_position: 120
 sidebar_label: Mass Spectrum
 title: "Mass Spectrum: How to Read m/z, the Base Peak and Isotope Patterns"
 description: "How to read a mass spectrum: the m/z axis, relative abundance, the molecular ion and base peak, fragments, chlorine and bromine isotope patterns, ESI charge states, resolution and ppm accuracy, with a live example."

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 60
+sidebar_position: 80
 sidebar_label: HMI and SCADA
 title: "HMI and SCADA: What They Are, How They Work and Trend Chart Examples"
 description: "What SCADA and HMI mean, how a SCADA system is built, SCADA vs DCS, what is on an HMI screen, and how to read trend charts, alarm limits and deadbands, with a live example."

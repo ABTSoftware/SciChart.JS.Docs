@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 90
 sidebar_label: HR Diagram
 title: "Hertzsprung–Russell (HR) Diagram: How to Read It, With an Example"
 description: "What a Hertzsprung–Russell diagram plots, why temperature runs backwards, the main sequence, giants and white dwarfs, spectral classes, cluster ages from the turn-off, and a live HR diagram."

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" aria-labelledby="t d">
+<title id="t">The 10-20 electrode system and the longitudinal bipolar (double banana) montage</title>
+<desc id="d">Left: a head seen from above, nose at the top, with the 19 scalp electrodes of the international 10-20 system. Letters name the region (Fp frontopolar, F frontal, T temporal, C central, P parietal, O occipital), odd numbers are on the left in blue, even numbers on the right in orange and z electrodes on the midline in grey. Along the line from nasion to inion the electrodes sit at 10% and then 20% steps of the distance. A1 and A2 are the ear electrodes. Right: the same electrodes joined by arrows into the five front-to-back chains of the longitudinal bipolar montage: left temporal Fp1-F7-T7-P7-O1, left parasagittal Fp1-F3-C3-P3-O1, midline Fz-Cz-Pz, right parasagittal Fp2-F4-C4-P4-O2 and right temporal Fp2-F8-T8-P8-O2. Each arrow is one channel, the first electrode minus the second.</desc>
+<defs>
+<marker id="arrowL" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1f77b4"/></marker>
+<marker id="arrowR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#d9480f"/></marker>
+<marker id="arrowM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#495057"/></marker>
+</defs><rect width="100%" height="100%" fill="#fff"/>
+<text x="225" y="68" text-anchor="middle" font-size="17" font-weight="600" fill="#212529">10-20 electrode positions</text>
+<path d="M209,122 L225,98 L241,122" fill="#fff" stroke="#212529" stroke-width="2"/>
+<ellipse cx="67" cy="270" rx="10" ry="26" fill="#fff" stroke="#212529" stroke-width="2"/>
+<ellipse cx="383" cy="270" rx="10" ry="26" fill="#fff" stroke="#212529" stroke-width="2"/>
+<circle cx="225" cy="270" r="150" fill="#fff" stroke="#212529" stroke-width="2"/>
+<text x="225" y="92" text-anchor="middle" font-size="12" fill="#868e96">Nasion (front)</text>
+<text x="225" y="442" text-anchor="middle" font-size="12" fill="#868e96">Inion (back)</text>
+<text x="45" y="318" text-anchor="middle" font-size="12" fill="#868e96">A1</text>
+<text x="405" y="318" text-anchor="middle" font-size="12" fill="#868e96">A2</text>
+<line x1="225" y1="120" x2="225" y2="420" stroke="#dee2e6" stroke-width="1"/>
+<line x1="75" y1="270" x2="375" y2="270" stroke="#dee2e6" stroke-width="1"/>
+<circle cx="225" cy="270" r="120.0" fill="none" stroke="#dee2e6" stroke-width="1"/>
+<text x="231" y="139.0" font-size="11" fill="#868e96">10%</text>
+<text x="231" y="184.0" font-size="11" fill="#868e96">20%</text>
+<text x="231" y="244.0" font-size="11" fill="#868e96">20%</text>
+<text x="231" y="304.0" font-size="11" fill="#868e96">20%</text>
+<text x="231" y="364.0" font-size="11" fill="#868e96">20%</text>
+<text x="231" y="409.0" font-size="11" fill="#868e96">10%</text>
+<circle cx="187.9" cy="155.9" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="187.9" y="159.9" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">Fp1</text>
+<circle cx="262.1" cy="155.9" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="262.1" y="159.9" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">Fp2</text>
+<circle cx="127.9" cy="199.5" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="127.9" y="203.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">F7</text>
+<circle cx="176.5" cy="204.7" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="176.5" y="208.7" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">F3</text>
+<circle cx="225.0" cy="210.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="225.0" y="214.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Fz</text>
+<circle cx="273.5" cy="204.7" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="273.5" y="208.7" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">F4</text>
+<circle cx="322.1" cy="199.5" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="322.1" y="203.5" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">F8</text>
+<circle cx="105.0" cy="270.0" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="105.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">T7</text>
+<circle cx="165.0" cy="270.0" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="165.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">C3</text>
+<circle cx="225.0" cy="270.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="225.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Cz</text>
+<circle cx="285.0" cy="270.0" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="285.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">C4</text>
+<circle cx="345.0" cy="270.0" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="345.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">T8</text>
+<circle cx="127.9" cy="340.5" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="127.9" y="344.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">P7</text>
+<circle cx="176.5" cy="335.3" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="176.5" y="339.3" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">P3</text>
+<circle cx="225.0" cy="330.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="225.0" y="334.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Pz</text>
+<circle cx="273.5" cy="335.3" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="273.5" y="339.3" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">P4</text>
+<circle cx="322.1" cy="340.5" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="322.1" y="344.5" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">P8</text>
+<circle cx="187.9" cy="384.1" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="187.9" y="388.1" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">O1</text>
+<circle cx="262.1" cy="384.1" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="262.1" y="388.1" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">O2</text>
+<text x="675" y="68" text-anchor="middle" font-size="17" font-weight="600" fill="#212529">Longitudinal bipolar montage</text>
+<path d="M659,122 L675,98 L691,122" fill="#fff" stroke="#212529" stroke-width="2"/>
+<ellipse cx="517" cy="270" rx="10" ry="26" fill="#fff" stroke="#212529" stroke-width="2"/>
+<ellipse cx="833" cy="270" rx="10" ry="26" fill="#fff" stroke="#212529" stroke-width="2"/>
+<circle cx="675" cy="270" r="150" fill="#fff" stroke="#212529" stroke-width="2"/>
+<text x="675" y="92" text-anchor="middle" font-size="12" fill="#868e96">Nasion (front)</text>
+<text x="675" y="442" text-anchor="middle" font-size="12" fill="#868e96">Inion (back)</text>
+<text x="495" y="318" text-anchor="middle" font-size="12" fill="#868e96">A1</text>
+<text x="855" y="318" text-anchor="middle" font-size="12" fill="#868e96">A2</text>
+<line x1="675" y1="120" x2="675" y2="420" stroke="#dee2e6" stroke-width="1"/>
+<line x1="525" y1="270" x2="825" y2="270" stroke="#dee2e6" stroke-width="1"/>
+<circle cx="675" cy="270" r="120.0" fill="none" stroke="#dee2e6" stroke-width="1"/>
+<line x1="626.6" y1="164.1" x2="591.7" y2="189.5" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="573.6" y1="212.8" x2="560.3" y2="253.8" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="559.3" y1="283.3" x2="572.7" y2="324.4" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="589.2" y1="348.8" x2="624.2" y2="374.1" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="634.7" y1="169.5" x2="630.3" y2="188.2" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="624.0" y1="218.5" x2="617.9" y2="253.3" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="617.4" y1="283.8" x2="623.5" y2="318.5" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="629.7" y1="348.9" x2="634.0" y2="367.6" stroke="#1f77b4" stroke-width="2.5" marker-end="url(#arrowL)"/>
+<line x1="675.0" y1="224.0" x2="675.0" y2="253.0" stroke="#495057" stroke-width="2.5" marker-end="url(#arrowM)"/>
+<line x1="675.0" y1="284.0" x2="675.0" y2="313.0" stroke="#495057" stroke-width="2.5" marker-end="url(#arrowM)"/>
+<line x1="715.3" y1="169.5" x2="719.7" y2="188.2" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="726.0" y1="218.5" x2="732.1" y2="253.3" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="732.6" y1="283.8" x2="726.5" y2="318.5" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="720.3" y1="348.9" x2="716.0" y2="367.6" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="723.4" y1="164.1" x2="758.3" y2="189.5" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="776.4" y1="212.8" x2="789.7" y2="253.8" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="790.7" y1="283.3" x2="777.3" y2="324.4" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<line x1="760.8" y1="348.8" x2="725.8" y2="374.1" stroke="#d9480f" stroke-width="2.5" marker-end="url(#arrowR)"/>
+<circle cx="637.9" cy="155.9" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="637.9" y="159.9" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">Fp1</text>
+<circle cx="712.1" cy="155.9" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="712.1" y="159.9" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">Fp2</text>
+<circle cx="577.9" cy="199.5" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="577.9" y="203.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">F7</text>
+<circle cx="626.5" cy="204.7" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="626.5" y="208.7" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">F3</text>
+<circle cx="675.0" cy="210.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="675.0" y="214.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Fz</text>
+<circle cx="723.5" cy="204.7" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="723.5" y="208.7" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">F4</text>
+<circle cx="772.1" cy="199.5" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="772.1" y="203.5" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">F8</text>
+<circle cx="555.0" cy="270.0" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="555.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">T7</text>
+<circle cx="615.0" cy="270.0" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="615.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">C3</text>
+<circle cx="675.0" cy="270.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="675.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Cz</text>
+<circle cx="735.0" cy="270.0" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="735.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">C4</text>
+<circle cx="795.0" cy="270.0" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="795.0" y="274.0" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">T8</text>
+<circle cx="577.9" cy="340.5" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="577.9" y="344.5" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">P7</text>
+<circle cx="626.5" cy="335.3" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="626.5" y="339.3" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">P3</text>
+<circle cx="675.0" cy="330.0" r="13" fill="#fff" stroke="#495057" stroke-width="2"/>
+<text x="675.0" y="334.0" text-anchor="middle" font-size="11" font-weight="600" fill="#495057">Pz</text>
+<circle cx="723.5" cy="335.3" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="723.5" y="339.3" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">P4</text>
+<circle cx="772.1" cy="340.5" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="772.1" y="344.5" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">P8</text>
+<circle cx="637.9" cy="384.1" r="13" fill="#fff" stroke="#1f77b4" stroke-width="2"/>
+<text x="637.9" y="388.1" text-anchor="middle" font-size="11" font-weight="600" fill="#1f77b4">O1</text>
+<circle cx="712.1" cy="384.1" r="13" fill="#fff" stroke="#d9480f" stroke-width="2"/>
+<text x="712.1" y="388.1" text-anchor="middle" font-size="11" font-weight="600" fill="#d9480f">O2</text>
+<text x="450.0" y="506" text-anchor="middle" font-size="12" fill="#868e96">Odd numbers left · even numbers right · z = midline. Each arrow is one channel: first electrode minus second.</text>
+</svg>
