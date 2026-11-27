@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" width="760" height="430" role="img" aria-labelledby="t2 d2" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+<title id="t2">Resting RMSSD by age group and sex</title>
+<desc id="d2">Bar chart of mean resting RMSSD from 5-minute ECG recordings lying down in 1,906 healthy adults (Voss et al. 2015). Women: 43, 35, 26, 21 and 19 ms; men: 40, 32, 23, 20 and 19 ms for ages 25–34, 35–44, 45–54, 55–64 and 65–74. Whiskers show one standard deviation either side of the mean, about 11 to 23 ms, so individuals vary widely.</desc>
+<rect width="760" height="430" fill="#ffffff"/>
+<text x="20" y="30" font-size="17" font-weight="600" fill="#1b2a41">Resting RMSSD by age: mean ± 1 standard deviation</text>
+<text x="20" y="52" font-size="13" fill="#3c4a5e">5-minute ECG, lying down, 1,906 healthy adults (Voss et al., 2015)</text>
+<line x1="90" y1="370.0" x2="730" y2="370.0" stroke="#1b2a41"/>
+<text x="82" y="375.0" font-size="13" text-anchor="end" fill="#3c4a5e">0</text>
+<line x1="90" y1="327.1" x2="730" y2="327.1" stroke="#e1e6ee"/>
+<text x="82" y="332.1" font-size="13" text-anchor="end" fill="#3c4a5e">10</text>
+<line x1="90" y1="284.3" x2="730" y2="284.3" stroke="#e1e6ee"/>
+<text x="82" y="289.3" font-size="13" text-anchor="end" fill="#3c4a5e">20</text>
+<line x1="90" y1="241.4" x2="730" y2="241.4" stroke="#e1e6ee"/>
+<text x="82" y="246.4" font-size="13" text-anchor="end" fill="#3c4a5e">30</text>
+<line x1="90" y1="198.6" x2="730" y2="198.6" stroke="#e1e6ee"/>
+<text x="82" y="203.6" font-size="13" text-anchor="end" fill="#3c4a5e">40</text>
+<line x1="90" y1="155.7" x2="730" y2="155.7" stroke="#e1e6ee"/>
+<text x="82" y="160.7" font-size="13" text-anchor="end" fill="#3c4a5e">50</text>
+<line x1="90" y1="112.9" x2="730" y2="112.9" stroke="#e1e6ee"/>
+<text x="82" y="117.9" font-size="13" text-anchor="end" fill="#3c4a5e">60</text>
+<line x1="90" y1="70.0" x2="730" y2="70.0" stroke="#e1e6ee"/>
+<text x="82" y="75.0" font-size="13" text-anchor="end" fill="#3c4a5e">70</text>
+<text x="34" y="220.0" font-size="14" text-anchor="middle" fill="#1b2a41" transform="rotate(-90 34 220.0)">RMSSD (ms)</text>
+<rect x="113.0" y="186.1" width="38" height="183.9" fill="#c0477f" fill-opacity="0.85" rx="3"/>
+<line x1="132.0" y1="88.4" x2="132.0" y2="283.9" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="126.0" y1="88.4" x2="138.0" y2="88.4" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="126.0" y1="283.9" x2="138.0" y2="283.9" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="132.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">43</text>
+<rect x="157.0" y="199.9" width="38" height="170.1" fill="#1767a8" fill-opacity="0.85" rx="3"/>
+<line x1="176.0" y1="114.6" x2="176.0" y2="285.1" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="170.0" y1="114.6" x2="182.0" y2="114.6" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="170.0" y1="285.1" x2="182.0" y2="285.1" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="176.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">40</text>
+<text x="154.0" y="392" font-size="14" text-anchor="middle" fill="#1b2a41">25–34</text>
+<rect x="241.0" y="218.3" width="38" height="151.7" fill="#c0477f" fill-opacity="0.85" rx="3"/>
+<line x1="260.0" y1="139.0" x2="260.0" y2="297.6" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="254.0" y1="139.0" x2="266.0" y2="139.0" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="254.0" y1="297.6" x2="266.0" y2="297.6" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="260.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">35</text>
+<rect x="285.0" y="232.9" width="38" height="137.1" fill="#1767a8" fill-opacity="0.85" rx="3"/>
+<line x1="304.0" y1="162.1" x2="304.0" y2="303.6" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="298.0" y1="162.1" x2="310.0" y2="162.1" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="298.0" y1="303.6" x2="310.0" y2="303.6" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="304.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">32</text>
+<text x="282.0" y="392" font-size="14" text-anchor="middle" fill="#1b2a41">35–44</text>
+<rect x="369.0" y="257.3" width="38" height="112.7" fill="#c0477f" fill-opacity="0.85" rx="3"/>
+<line x1="388.0" y1="199.0" x2="388.0" y2="315.6" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="382.0" y1="199.0" x2="394.0" y2="199.0" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="382.0" y1="315.6" x2="394.0" y2="315.6" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="388.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">26</text>
+<rect x="413.0" y="271.4" width="38" height="98.6" fill="#1767a8" fill-opacity="0.85" rx="3"/>
+<line x1="432.0" y1="224.7" x2="432.0" y2="318.1" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="426.0" y1="224.7" x2="438.0" y2="224.7" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="426.0" y1="318.1" x2="438.0" y2="318.1" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="432.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">23</text>
+<text x="410.0" y="392" font-size="14" text-anchor="middle" fill="#1b2a41">45–54</text>
+<rect x="497.0" y="278.3" width="38" height="91.7" fill="#c0477f" fill-opacity="0.85" rx="3"/>
+<line x1="516.0" y1="227.3" x2="516.0" y2="329.3" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="510.0" y1="227.3" x2="522.0" y2="227.3" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="510.0" y1="329.3" x2="522.0" y2="329.3" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="516.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">21</text>
+<rect x="541.0" y="284.7" width="38" height="85.3" fill="#1767a8" fill-opacity="0.85" rx="3"/>
+<line x1="560.0" y1="237.1" x2="560.0" y2="332.3" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="554.0" y1="237.1" x2="566.0" y2="237.1" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="554.0" y1="332.3" x2="566.0" y2="332.3" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="560.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">20</text>
+<text x="538.0" y="392" font-size="14" text-anchor="middle" fill="#1b2a41">55–64</text>
+<rect x="625.0" y="288.1" width="38" height="81.9" fill="#c0477f" fill-opacity="0.85" rx="3"/>
+<line x1="644.0" y1="237.6" x2="644.0" y2="338.7" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="638.0" y1="237.6" x2="650.0" y2="237.6" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="638.0" y1="338.7" x2="650.0" y2="338.7" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="644.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">19</text>
+<rect x="669.0" y="288.1" width="38" height="81.9" fill="#1767a8" fill-opacity="0.85" rx="3"/>
+<line x1="688.0" y1="242.3" x2="688.0" y2="334.0" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="682.0" y1="242.3" x2="694.0" y2="242.3" stroke="#1b2a41" stroke-width="1.5"/>
+<line x1="682.0" y1="334.0" x2="694.0" y2="334.0" stroke="#1b2a41" stroke-width="1.5"/>
+<text x="688.0" y="362.0" font-size="13" font-weight="600" text-anchor="middle" fill="#ffffff">19</text>
+<text x="666.0" y="392" font-size="14" text-anchor="middle" fill="#1b2a41">65–74</text>
+<text x="410.0" y="416" font-size="14" text-anchor="middle" fill="#1b2a41">Age (years)</text>
+<rect x="560" y="66" width="16" height="16" fill="#c0477f" rx="3"/>
+<text x="582" y="79" font-size="14" fill="#1b2a41">Women</text>
+<rect x="650" y="66" width="16" height="16" fill="#1767a8" rx="3"/>
+<text x="672" y="79" font-size="14" fill="#1b2a41">Men</text>
+</svg>

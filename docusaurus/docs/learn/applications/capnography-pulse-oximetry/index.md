@@ -24,7 +24,7 @@ keywords:
         "capnography vs pulse oximetry"
     ]
 image: /img/learn/capnography-pulse-oximetry-og.png
-related: [ecg, strip-chart, telemetry, low-pass-filter]
+related: [ecg, spirometry, heart-rate-variability, strip-chart]
 datePublished: 2026-11-20
 ---
 
@@ -202,8 +202,8 @@ The notch is clearest in young people with elastic arteries. It fades with age a
 
 These words describe the same kind of measurement at different levels:
 
-- A plethysmograph is any instrument that measures changes in the volume of part of the body. A body plethysmograph, the sealed "body box" used in lung function tests, is one; the pulse oximeter's light sensor is another.
-- Photoplethysmography (PPG) is the optical method: measuring volume changes in tissue through changes in absorbed light. Smartwatches and fitness bands use green-light PPG for heart rate.
+- A plethysmograph is any instrument that measures changes in the volume of part of the body. A body plethysmograph, the sealed "body box" used in lung function tests (see [spirometry](/learn/applications/spirometry/)), is one; the pulse oximeter's light sensor is another.
+- Photoplethysmography (PPG) is the optical method: measuring volume changes in tissue through changes in absorbed light. Smartwatches and fitness bands use green-light PPG for heart rate and [heart rate variability](/learn/applications/heart-rate-variability/).
 - A photoplethysmogram, PPG signal or pleth waveform is the trace it produces. On a patient monitor the channel is labelled "Pleth".
 
 ### Perfusion index

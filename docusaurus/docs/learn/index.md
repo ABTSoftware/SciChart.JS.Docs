@@ -102,7 +102,7 @@ For the financial chart types themselves (candlestick, OHLC, footprint, Renko, t
 
 ### Medical
 
-<LearnGallery slugs={["capnography-pulse-oximetry", "ecg", "mri", "ultrasound"]} />
+<LearnGallery slugs={["capnography-pulse-oximetry", "ecg", "eeg", "heart-rate-variability", "mri", "spirometry", "ultrasound"]} />
 
 ### Motorsport
 

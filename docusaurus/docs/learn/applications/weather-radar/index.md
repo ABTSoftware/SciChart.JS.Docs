@@ -1,5 +1,5 @@
 ---
-sidebar_position: 350
+sidebar_position: 380
 sidebar_label: Weather Radar
 title: "How to Read Weather Radar: What the Colours Mean (Interactive)"
 description: "How to read weather radar: what each colour means in dBZ, from green rain to pink hail, how radar works, velocity couplets, false echoes, and radar vs satellite."

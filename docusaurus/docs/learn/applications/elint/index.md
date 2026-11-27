@@ -1,5 +1,5 @@
 ---
-sidebar_position: 70
+sidebar_position: 80
 sidebar_label: ELINT
 title: "ELINT: Radar Pulse Analysis and PRI Explained (Interactive)"
 description: "What ELINT is and how radar pulses are analysed: pulse descriptor words, PRI and PRF, PRI types, deinterleaving and scan patterns, with a live simulation."

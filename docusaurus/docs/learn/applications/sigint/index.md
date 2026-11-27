@@ -1,5 +1,5 @@
 ---
-sidebar_position: 240
+sidebar_position: 260
 sidebar_label: SIGINT
 title: "What Is SIGINT? Signals Intelligence and How to Read a SIGINT Dashboard"
 description: "What SIGINT (signals intelligence) is: COMINT, ELINT and FISINT, how it relates to electronic warfare, and how to read a SIGINT dashboard, with a live example."

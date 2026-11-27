@@ -1,5 +1,5 @@
 ---
-sidebar_position: 220
+sidebar_position: 240
 sidebar_label: RF Spectrum Analyzer
 title: "RF Spectrum Analyzer and Waterfall Display: How to Read Them"
 description: "What an RF spectrum analyzer shows, how span, RBW and reference level change the screen, how to read dBm, signals and a waterfall display. With a live example."

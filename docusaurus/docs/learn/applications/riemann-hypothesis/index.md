@@ -1,5 +1,5 @@
 ---
-sidebar_position: 230
+sidebar_position: 250
 sidebar_label: Riemann Hypothesis
 title: "The Riemann Hypothesis, Visualised: Zeta Zeros, the Critical Line and the Primes (With Interactive Charts)"
 description: "What the Riemann hypothesis says, the zeta function and its zeros, the critical line, why it matters for the primes, and the evidence, with live charts computed in the browser."

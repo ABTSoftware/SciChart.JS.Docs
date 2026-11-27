@@ -1,5 +1,5 @@
 ---
-sidebar_position: 250
+sidebar_position: 270
 sidebar_label: Sonar
 title: "Sonar: How It Works and How to Read Sonar Displays (Interactive)"
 description: "What sonar is, how active and passive sonar work, and how to read scanning sonar, side scan, bearing-time waterfall and fish finder displays, with a live example."
