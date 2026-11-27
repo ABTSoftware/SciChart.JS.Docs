@@ -1,5 +1,5 @@
 ---
-sidebar_position: 210
+sidebar_position: 220
 sidebar_label: Stochastic Oscillator
 title: "Stochastic Oscillator: %K, %D Formula and How to Read It"
 description: "What the stochastic oscillator measures, how %K and %D are calculated, fast vs slow vs full settings, and how to read 80/20 zones, crossovers and divergence."

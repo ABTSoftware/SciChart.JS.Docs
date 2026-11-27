@@ -55,7 +55,7 @@ For the statistics charts these guides use, see [correlation matrix](/learn/char
 
 For more on how SciChart is used in this sector, see [SciChart for medical](https://www.scichart.com/why-scichart-medical-charts-dashboarding-for-research-and-healthcare/).
 
-<LearnGallery slugs={["capnography-pulse-oximetry", "ecg"]} />
+<LearnGallery slugs={["capnography-pulse-oximetry", "ecg", "mri", "ultrasound"]} />
 
 ## Motorsport
 

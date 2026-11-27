@@ -1,5 +1,5 @@
 ---
-sidebar_position: 200
+sidebar_position: 210
 sidebar_label: Spectroscopy
 title: "Spectroscopy Plots: How to Read IR, Raman and UV-Vis Spectra"
 description: "What a spectrum shows and how to read IR, Raman and UV-Vis spectra: wavenumber axes, transmittance vs absorbance, the fingerprint region, Beer–Lambert, baseline correction and a live example."

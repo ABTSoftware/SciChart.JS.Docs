@@ -1,5 +1,5 @@
 ---
-sidebar_position: 120
+sidebar_position: 130
 sidebar_label: Non-Destructive Testing (NDT)
 title: "Non-Destructive Testing (NDT): Ultrasonic A-, B- and C-Scans Explained"
 description: "What non-destructive testing is, how the main NDT methods compare, and how ultrasonic testing works: A-scans, B-scans, C-scans, thickness gauging, phased array (PAUT) and TOFD."
@@ -25,7 +25,7 @@ keywords:
         "c-scan"
     ]
 image: /img/learn/non-destructive-testing-og.png
-related: [oscilloscope, sonar, vibration-analysis, hilbert-transform]
+related: [oscilloscope, sonar, ultrasound, vibration-analysis]
 datePublished: 2026-11-22
 ---
 
@@ -142,7 +142,7 @@ Visual, penetrant and magnetic particle testing check the surface; eddy current 
 
 ## How ultrasonic testing works
 
-**Ultrasonic testing (UT)** sends short pulses of high-frequency sound, usually between about 0.5 and 20 MHz, into a part and listens for echoes. Sound reflects wherever the material changes, at a crack, a void or the far wall, and the time each echo takes to come back gives the depth of whatever reflected it.
+**Ultrasonic testing (UT)** sends short pulses of high-frequency sound, usually between about 0.5 and 20 MHz, into a part and listens for echoes. Sound reflects wherever the material changes, at a crack, a void or the far wall, and the time each echo takes to come back gives the depth of whatever reflected it. Medical scanners use the same principle on the body: see [how ultrasound works and how to read an ultrasound image](/learn/applications/ultrasound/).
 
 A piezoelectric probe turns an electrical pulse into a pulse of sound and turns returning echoes back into a voltage. Air reflects almost all of the sound, so a thin layer of couplant (gel, oil or water) fills the gap between probe and surface.
 

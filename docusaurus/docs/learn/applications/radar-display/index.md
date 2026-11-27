@@ -1,5 +1,5 @@
 ---
-sidebar_position: 170
+sidebar_position: 180
 sidebar_label: Radar Display
 title: "Radar Screen: How to Read a Radar Display (Interactive)"
 description: "How to read a radar screen (PPI scope): range rings, bearing, the sweep, blips, tracks and trails, transponder labels, clutter and identity symbols, with a live simulation."

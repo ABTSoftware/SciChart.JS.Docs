@@ -1,5 +1,5 @@
 ---
-sidebar_position: 270
+sidebar_position: 290
 sidebar_label: VWAP
 title: "VWAP Indicator: Formula, Calculation and How to Read It"
 description: "What VWAP is, the formula with a worked example, session vs anchored VWAP, standard deviation bands, VWAP as an execution benchmark and VWAP vs moving averages."

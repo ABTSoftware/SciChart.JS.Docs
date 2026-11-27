@@ -1,5 +1,5 @@
 ---
-sidebar_position: 220
+sidebar_position: 230
 sidebar_label: Stress-Strain Curve
 title: "Stress-Strain Curve: How to Read Yield Strength, Modulus and UTS"
 description: "How to read a stress-strain curve: Young's modulus, 0.2% offset yield strength, UTS, necking, ductile vs brittle, true stress and S-N curves, with a live tensile test."

@@ -40,6 +40,8 @@ export const APPLICATION_SECTORS: Record<string, string> = {
     spectroscopy: "Life Sciences",
     "capnography-pulse-oximetry": "Medical",
     ecg: "Medical",
+    mri: "Medical",
+    ultrasound: "Medical",
     "motorsport-telemetry": "Motorsport",
     "drawdown-and-equity-curve": "Finance and Trading",
     "market-depth": "Finance and Trading",
